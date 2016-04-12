@@ -39,6 +39,7 @@
 					
 					<input runat="server" type="text" placeholder="Nombre" class="form-control" id="nombre" name ="nombre">                    
 					<input style="margin-top:5%" runat="server" type="text" placeholder="Apellido" class="form-control" id="apellido" name ="apellido" >                   
+					<input style="margin-top:5%" runat="server" type="text" placeholder="Departamento" class="form-control" id="departamento" name ="departamento" >                  
 					<input style="margin-top:5%" runat="server" type="text" placeholder="Cargo" class="form-control" id="cargo" name ="cargo" >
                     <input style="margin-top:5%" runat="server" type="text" placeholder="Telefono 1" class="form-control" id="telefono" name="telefono">
                     <input style="margin-top:5%" runat="server" type="text" placeholder="Telefono 2" class="form-control" id="telefono2" name="telefono2">
