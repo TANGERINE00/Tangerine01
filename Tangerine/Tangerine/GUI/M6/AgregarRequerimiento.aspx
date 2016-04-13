@@ -6,12 +6,11 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
 <asp:Content ID="Content8" ContentPlaceHolderID="titulo" Runat="Server">Gestión de Requerimientos</asp:Content>
 <asp:Content ID="Content9" ContentPlaceHolderID="subtitulo" Runat="Server">Agregar Requerimiento</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="contenidoCentral" Runat="Server">
+<asp:Content ID="Content6" ContentPlaceHolderID="contenidoCentral" Runat="Server">
 
+     <form role="form">
     <div id="formularioAgregar" class="col-sm-10 col-md-10 col-lg-10 col-md-offset-1"> 
         <div id="alert" runat="server">
                 </div>     
@@ -66,10 +65,10 @@
                 <div class="col-sm-10 col-md-10 col-lg-10">
                     <p><b>Status:</b></p>
                     <label class="radio-inline">
-                    <input type="radio" name="radioStatus" disabled="disabled" runat="server"
+                    <input type="radio" name="radioStatus"  runat="server"
                          checked="true" id="inputStatusNoFinalizado"/>No Finalizado</label>
                     <label class="radio-inline">
-                    <input type="radio" name="radioStatus" disabled="disabled"
+                    <input type="radio" name="radioStatus" 
                          id="inputStatusFinalizado" runat="server"/>Finalizado</label>
                 </div>
             </div>
@@ -83,6 +82,7 @@
             </div>
        
     </div>
+         </form>
     
     </asp:Content>
 
