@@ -143,6 +143,7 @@
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
     <Content Include="GUI\M5\ModificarContacto.aspx" />
+    <Content Include="GUI\M6\Data_Picker%28Pureba%29.html" />
     <Content Include="GUI\M6\ListarPropuesta.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />

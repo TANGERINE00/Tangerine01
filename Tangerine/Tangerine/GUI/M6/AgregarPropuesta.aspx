@@ -2,8 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
+    Gestion de Propuesta
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
+    Agregar Propuesta
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
 </asp:Content>
@@ -12,12 +14,7 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-     <!-- date-range-picker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
-
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
+     
 
     <div class="box box-primary">
 
