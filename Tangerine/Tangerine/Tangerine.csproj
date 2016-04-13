@@ -126,8 +126,17 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="Gruntfile.js" />
+    <Content Include="GUI\M10\AdminContrato.aspx" />
+    <Content Include="GUI\M10\CrearContrato.aspx" />
     <Content Include="GUI\M10\EjemploM10.aspx" />
+    <Content Include="GUI\M10\AdminCargo.aspx" />
+    <Content Include="GUI\M10\CrearCargo.aspx" />
+    <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\EjemploM1.aspx" />
+    <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
+    <Content Include="GUI\M1\Login.aspx" />
+    <Content Include="GUI\M1\ModificarEmpleado.aspx" />
+    <Content Include="GUI\M1\VerEmpleado.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
     <Content Include="GUI\M4\EjemploM4.aspx" />
@@ -137,8 +146,11 @@
     <Content Include="GUI\M4\GCompaniaModificar.aspx" />
     <Content Include="GUI\M4\GCompaniaRegistrar.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
-    <Content Include="GUI\M6\AgregarRequerimiento.aspx" />
+    <Content Include="GUI\M5\ConsultarContactos.aspx" />
+    <Content Include="GUI\M5\ModificarContacto.aspx" />
+    <Content Include="GUI\M6\ListarPropuesta.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
+    <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
@@ -898,6 +910,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\M10\AdminContrato.aspx.cs">
+      <DependentUpon>AdminContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M10\AdminContrato.aspx.designer.cs">
+      <DependentUpon>AdminContrato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M10\CrearContrato.aspx.cs">
+      <DependentUpon>CrearContrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M10\CrearContrato.aspx.designer.cs">
+      <DependentUpon>CrearContrato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M10\EjemploM10.aspx.cs">
       <DependentUpon>EjemploM10.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -905,12 +931,68 @@
     <Compile Include="GUI\M10\EjemploM10.aspx.designer.cs">
       <DependentUpon>EjemploM10.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M10\AdminCargo.aspx.cs">
+      <DependentUpon>AdminCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M10\AdminCargo.aspx.designer.cs">
+      <DependentUpon>AdminCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M10\CrearCargo.aspx.cs">
+      <DependentUpon>CrearCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M10\CrearCargo.aspx.designer.cs">
+      <DependentUpon>CrearCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\CrearEmpleado.aspx.cs">
+      <DependentUpon>CrearEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\CrearEmpleado.aspx.designer.cs">
+      <DependentUpon>CrearEmpleado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\EjemploM1.aspx.cs">
       <DependentUpon>EjemploM1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
       <DependentUpon>EjemploM1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\EmpleadosAdmin.aspx.cs">
+      <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\EmpleadosAdmin.aspx.designer.cs">
+      <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\ModificarEmpleado.aspx.cs">
+      <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\ModificarEmpleado.aspx.designer.cs">
+      <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\VerEmpleado.aspx.cs">
+      <DependentUpon>VerEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\VerEmpleado.aspx.designer.cs">
+      <DependentUpon>VerEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M2\EjemploM2.aspx.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
@@ -975,12 +1057,26 @@
     <Compile Include="GUI\M5\AgregarContacto.aspx.designer.cs">
       <DependentUpon>AgregarContacto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M6\AgregarRequerimiento.aspx.cs">
-      <DependentUpon>AgregarRequerimiento.aspx</DependentUpon>
+    <Compile Include="GUI\M5\ConsultarContactos.aspx.cs">
+      <DependentUpon>ConsultarContactos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M6\AgregarRequerimiento.aspx.designer.cs">
-      <DependentUpon>AgregarRequerimiento.aspx</DependentUpon>
+    <Compile Include="GUI\M5\ConsultarContactos.aspx.designer.cs">
+      <DependentUpon>ConsultarContactos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M5\ModificarContacto.aspx.cs">
+      <DependentUpon>ModificarContacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M5\ModificarContacto.aspx.designer.cs">
+      <DependentUpon>ModificarContacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\ListarPropuesta.aspx.cs">
+      <DependentUpon>ListarPropuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\ListarPropuesta.aspx.designer.cs">
+      <DependentUpon>ListarPropuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\EjemploM6.aspx.cs">
       <DependentUpon>EjemploM6.aspx</DependentUpon>
@@ -988,6 +1084,13 @@
     </Compile>
     <Compile Include="GUI\M6\EjemploM6.aspx.designer.cs">
       <DependentUpon>EjemploM6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\AgregarPropuesta.aspx.cs">
+      <DependentUpon>AgregarPropuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\AgregarPropuesta.aspx.designer.cs">
+      <DependentUpon>AgregarPropuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
@@ -1135,6 +1238,7 @@
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\Tangerine.Master" />
+    <Content Include="GUI\M1\Login.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
