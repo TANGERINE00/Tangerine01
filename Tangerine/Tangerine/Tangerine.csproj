@@ -136,7 +136,6 @@
     <Content Include="GUI\M6\AgregarRequerimiento.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
-    <Content Include="GUI\M8\EjemploM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="index.html" />
     <Content Include="index2.html" />
@@ -964,13 +963,6 @@
     <Compile Include="GUI\M7\EjemploM7.aspx.designer.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M8\EjemploM8.aspx.cs">
-      <DependentUpon>EjemploM8.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M8\EjemploM8.aspx.designer.cs">
-      <DependentUpon>EjemploM8.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\M9\EjemploM9.aspx.cs">
       <DependentUpon>EjemploM9.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1110,7 +1102,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUI\M8\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
