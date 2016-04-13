@@ -147,6 +147,7 @@
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
+    <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="index.html" />
@@ -1058,6 +1059,13 @@
     </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.designer.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.cs">
+      <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
+      <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>
