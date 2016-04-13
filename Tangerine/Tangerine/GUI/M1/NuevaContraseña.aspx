@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="RecuperarContraseñaPregunta.aspx.cs" Inherits="Tangerine.GUI.M1.RecuperarContraseñaPregunta" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="NuevaContraseña.aspx.cs" Inherits="Tangerine.GUI.M1.NuevaContraseña" %>
 
 <!DOCTYPE html>
 <html>
@@ -34,21 +34,18 @@
         </div>
 
         <div class="login-box-body " style=" background: black; box-shadow:  0px 0px 40px #000000;">
-          <p class="login-box-msg">Responda las siguientes preguntas</p>
+          <p class="login-box-msg">Introduzca su nueva contraseña</p>
 
           <form action="../../index2.html" method="post" style="text-align: center;">
             <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Número de contrato">
+              <input type="password" class="form-control" placeholder="Nueva contraseña">
             </div>
             <div class="form-group has-feedback">
-              <input type="email" class="form-control" placeholder="Correo personal">
-            </div>
-            <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Pregunta de seguridad">
+              <input type="password" class="form-control" placeholder="Confirme su nueva contraseña">
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6 col-lg-6">
-                <a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>
+                <a href="Login.aspx" type="button" class="btn btn-default">Aceptar</a>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-6">
                 <a href="Login.aspx" type="button" class="btn btn-default">Cancelar</a>
@@ -77,4 +74,3 @@
     </script>
   </body>
 </html>
-
