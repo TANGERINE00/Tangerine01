@@ -131,6 +131,7 @@
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
     <Content Include="GUI\M4\EjemploM4.aspx" />
+    <Content Include="GUI\M4\GCompaniaInicio.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M6\AgregarRequerimiento.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
@@ -927,6 +928,13 @@
     </Compile>
     <Compile Include="GUI\M4\EjemploM4.aspx.designer.cs">
       <DependentUpon>EjemploM4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M4\GCompaniaInicio.aspx.cs">
+      <DependentUpon>GCompaniaInicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M4\GCompaniaInicio.aspx.designer.cs">
+      <DependentUpon>GCompaniaInicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M5\AgregarContacto.aspx.cs">
       <DependentUpon>AgregarContacto.aspx</DependentUpon>
