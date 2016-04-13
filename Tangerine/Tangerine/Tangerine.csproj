@@ -127,7 +127,10 @@
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="Gruntfile.js" />
     <Content Include="GUI\M10\EjemploM10.aspx" />
+    <Content Include="GUI\M10\AdminCargo.aspx" />
+    <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\EjemploM1.aspx" />
+    <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
@@ -903,12 +906,33 @@
     <Compile Include="GUI\M10\EjemploM10.aspx.designer.cs">
       <DependentUpon>EjemploM10.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M10\AdminCargo.aspx.cs">
+      <DependentUpon>AdminCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M10\AdminCargo.aspx.designer.cs">
+      <DependentUpon>AdminCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M10\CrearCargo.aspx.cs">
+      <DependentUpon>CrearCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M10\CrearCargo.aspx.designer.cs">
+      <DependentUpon>CrearCargo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\EjemploM1.aspx.cs">
       <DependentUpon>EjemploM1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
       <DependentUpon>EjemploM1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\EmpleadosAdmin.aspx.cs">
+      <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\EmpleadosAdmin.aspx.designer.cs">
+      <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
