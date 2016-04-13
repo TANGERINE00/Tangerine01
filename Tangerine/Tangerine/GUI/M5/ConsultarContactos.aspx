@@ -10,7 +10,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
     <li><a href="#">Gestión de contactos</a></li>
-    <li class="active">Agregar Contactos</li>
+    <li class="active">Consultar Contactos</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
@@ -32,6 +32,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
+                <th>Empresa</th>
                 <th>Departamento</th>
                 <th>Cargo</th>
                 <th>Telefono</th>
@@ -43,6 +44,7 @@
            <tbody>
                 <th>1</th>
                 <th>Cesar Rodriguez</th>
+                <th>UCAB</th>
                 <th>Informatica</th>
                 <th>Lider de Proyecto</th>
                 <th>0412-230.03.53</th>
