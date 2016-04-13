@@ -22,93 +22,39 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// inputIdRequerimiento control.
+        /// Input_Nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputIdRequerimiento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Input_Nombre;
         
         /// <summary>
-        /// inputFuncional control.
+        /// Input_Codigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputFuncional;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Input_Codigo;
         
         /// <summary>
-        /// inputNoFuncional control.
+        /// Input_Descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputNoFuncional;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Input_Descripcion;
         
         /// <summary>
-        /// inputRequerimiento control.
+        /// comboMoneda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea inputRequerimiento;
-        
-        /// <summary>
-        /// inputPrioridadBaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputPrioridadBaja;
-        
-        /// <summary>
-        /// inputPrioridadMedia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputPrioridadMedia;
-        
-        /// <summary>
-        /// inputPrioridadAlta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputPrioridadAlta;
-        
-        /// <summary>
-        /// inputStatusNoFinalizado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputStatusNoFinalizado;
-        
-        /// <summary>
-        /// inputStatusFinalizado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton inputStatusFinalizado;
-        
-        /// <summary>
-        /// btn_agregarReq control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btn_agregarReq;
+        protected global::System.Web.UI.WebControls.DropDownList comboMoneda;
     }
 }
