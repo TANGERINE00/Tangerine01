@@ -9,6 +9,7 @@
 *.sln
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+*.dll
 
 # Build results
 [Dd]ebug/

@@ -7,81 +7,99 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.Master {
+namespace Tangerine.GUI.M5 {
     
     
-    public partial class Tangerine {
+    public partial class EjemploM5 {
         
         /// <summary>
-        /// head control.
+        /// combo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl combo;
         
         /// <summary>
-        /// form1 control.
+        /// combo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.DropDownList combo1;
         
         /// <summary>
-        /// Titulo control.
+        /// id_otro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Titulo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_otro;
         
         /// <summary>
-        /// Subtitulo control.
+        /// nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Subtitulo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText nombre;
         
         /// <summary>
-        /// Breadcrumps control.
+        /// apellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Breadcrumps;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText apellido;
         
         /// <summary>
-        /// ContentPlaceHolder2 control.
+        /// telefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText telefono;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// telefono2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText telefono2;
         
         /// <summary>
-        /// contenidoCentral control.
+        /// Correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder contenidoCentral;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo;
+        
+        /// <summary>
+        /// Correo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo2;
+        
+        /// <summary>
+        /// btnaceptar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnaceptar;
     }
 }
