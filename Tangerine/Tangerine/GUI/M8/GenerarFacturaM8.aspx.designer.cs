@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M8 {
+namespace Tangerine.GUI.M7 {
     
     
-    public partial class EjemploM8 {
+    public partial class EjemploM7 {
         
         /// <summary>
-        /// btnaceptar control.
+        /// buttomGenerar_M8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaceptar;
+        protected global::System.Web.UI.WebControls.Button buttomGenerar_M8;
     }
 }
