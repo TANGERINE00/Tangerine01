@@ -1,16 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="GCompaniaInicio.aspx.cs" Inherits="Tangerine.GUI.M4.GCompaniaInicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="GCompaniaRegistrar.aspx.cs" Inherits="Tangerine.GUI.M4.GCompaniaRegistrar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de Compañias
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
-    Inicio
+    Registrar
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
     <li><a href="#">Gestión de Compañias</a></li>
-    <li class="active">Inicio</li>
+    <li><a href="#">Inicio</a></li>
+    <li class="active">Registrar</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     
@@ -27,31 +28,8 @@
                 <!-- form start -->
                 <form role="form">
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Consultar</button>
-                    </div>
-                    <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Registrar</button>
-                    </div>
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Modificar</button>
-                    </div>
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Habilitar/Inhabilitar</button>
-                    </div>
-
-                    <div class="box-footer">
-                        <a href="#">Consultar datos de una compañía</a>
-                    </div>
-                    <div class="box-footer">
-                        <a href="#">Registrar nueva compañía</a>
-                    </div>
-                    <div class="box-footer">
-                        <a href="#">Modificar datos de una compañía</a>
-                    </div>
-                    <div class="box-footer">
-                        <a href="#">Habilitar o Inhabilitar una compañía registrada</a>
-                    </div>
-                    
+                    </div> 
                 </form>
               </div><!-- /.box -->
          
