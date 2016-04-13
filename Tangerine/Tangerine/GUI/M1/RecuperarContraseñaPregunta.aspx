@@ -48,7 +48,7 @@
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6 col-lg-6">
-                <button type="submit" class="btn btn-default">Aceptar</button>
+                <a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-6">
                 <a href="Login.aspx" type="button" class="btn btn-default">Cancelar</a>
