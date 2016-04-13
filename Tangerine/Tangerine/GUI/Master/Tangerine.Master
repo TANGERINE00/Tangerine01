@@ -133,7 +133,7 @@
           <ul class="sidebar-menu">
             <li class="header">Menu Principal</li>
             <li class="treeview">
-              <a href="GUI/GestionContactos.aspx">
+              <a href="GUI/ConsultarContactos.aspx">
                 <i></i> <span>Gestion de Contactos</span> 
               </a>              
             </li>
@@ -145,6 +145,16 @@
             <li class="treeview">
               <a href="#">
                 <i></i> <span>Gestion de Compañías</span> 
+              </a>              
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i></i> <span>Gestion de Proyectos</span> 
+              </a>              
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i></i> <span>Gestion de Propuestas</span> 
               </a>              
             </li>
              <li class="treeview">

@@ -23,7 +23,7 @@
        <div class="box-header">
            <h3 class="box-title">Planillas Creadas</h3>
         </div><!-- /.box-header -->
-      <form role="form" name="consultar_planilla" id="consular_planillas">
+      <form role="form" name="consultar" id="consultar">
          
           <div class="box-body table-responsive">
              
@@ -47,7 +47,7 @@
                 <th>Lider de Proyecto</th>
                 <th>0412-230.03.53</th>
                 <th>carr235@gmail.com</th>                 
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th> 
+                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th> 
            </tbody>
         </table>
        </div>
@@ -61,7 +61,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Activaci&oacute;n/Desactivaci&oacute;n de Planilla Solicitada</h4>
+              <h4 class="modal-title" >Activaci&oacute;n/Desactivaci&oacute;n de Personal Seleccionado</h4>
             </div>
             <div class="modal-body">
               <div class="container-fluid">
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" >Aceptar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div>
