@@ -7,7 +7,7 @@
     Gestión de Cargos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
-    
+    Crear cargo
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
@@ -17,8 +17,8 @@
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 <div class="container-fluid">
-      <div class="panel panel-default">
-        <div class="panel-heading">Crear Cargo</div>
+      <div class="box box-default">
+        <!--<div class="panel-heading">Crear Cargo</div>-->
         <div class="container-fluid">
           <br>
           <form role="form">               

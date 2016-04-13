@@ -1,16 +1,26 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="EmpleadosAdmin.aspx.cs" Inherits="Tangerine.GUI.M1.CargoAdmin" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
+    Gestión de empleados
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
+    <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+    <li class="active">Gestión de empleados</li>
+</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
     <div class="container-fluid">
-        <div class="panel panel-success">
-            <div class="panel-heading">Filtrar empleados</div>
+        <div class="box box-success">
+            <!--<div class="panel-heading">Filtrar empleados</div>-->
             <div class="panel-body">
               <div class="form-group">
                 <div class="row">
                   <div class="col-xs-12 col-md-6 col-lg-6">
                     <select class="form-control">
-                      <option>tipo de filtro</option>
+                      <option>Tipo de filtro para empleados</option>
                       <option>filtro 1</option>
                       <option>filtro 2</option>
                       <option>filtro 3</option>

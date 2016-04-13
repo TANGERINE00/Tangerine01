@@ -16,8 +16,8 @@
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 <div class="container-fluid">
-      <div class="panel panel-default">
-        <div class="panel-heading">Modificar ficha de empleado</div>
+      <div class="box box-default">
+        <!--<div class="panel-heading">Modificar ficha de empleado</div>-->
         <div class="container-fluid">
           <br>
           <form role="form">
@@ -112,8 +112,11 @@
 
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control"placeholder="fecha de nacimiento">
+                <div class="input-group date" data-provide="datepicker">
+                  <input type="text" class="form-control" placeholder="Fecha de nacimiento">
+                  <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
+                  </div>
                 </div>
               </div>
             </div>

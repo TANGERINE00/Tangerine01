@@ -17,8 +17,8 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 <div class="container-fluid">
       
-      <div class="panel panel-default">
-        <div class="panel-heading">Crear de empleado</div>
+      <div class="box box-default">
+        <!--<div class="panel-heading">Nuevo empleado</div>-->
         <div class="container-fluid">
           <br>
           <form role="form">
@@ -31,7 +31,7 @@
                 <h4>Datos Personales</h4>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6">
-                <h4>Datos de Contrato</h4>
+                <h4>Datos de Domicilio</h4>
               </div> 
             </div>
             <!--  seccion de datos -->
@@ -43,9 +43,9 @@
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="# de contrato">
+                  <input type="text" class="form-control"placeholder="País">
                 </div>
-              </div> 
+              </div>
             </div>
 
             <div class="row">
@@ -54,12 +54,22 @@
                   <input type="text" class="form-control"placeholder="Cédula">
                 </div>
               </div> 
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control"placeholder="Estado">
+                </div>
+              </div>
             </div>
 
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
                   <input type="text" class="form-control"placeholder="Nombres">
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control"placeholder="Direccion">
                 </div>
               </div>
             </div>
@@ -87,39 +97,9 @@
                   <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
                   </div>
-              </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <h4>Datos de Domicilio</h4>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control"placeholder="País">
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Estado">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Direccion">
-                </div>
-              </div>
-            </div>
-            
-
+            </div><br>
             <!--  seccion de datos -->
             <button class="btn btn-default" type="submit">Aceptar</button><br><br>
           </form>
