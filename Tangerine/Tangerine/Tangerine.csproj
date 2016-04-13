@@ -128,6 +128,8 @@
     <Content Include="Gruntfile.js" />
     <Content Include="GUI\M10\EjemploM10.aspx" />
     <Content Include="GUI\M1\EjemploM1.aspx" />
+    <Content Include="GUI\M1\Login.aspx" />
+    <Content Include="GUI\M1\M1Prueba.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
     <Content Include="GUI\M4\EjemploM4.aspx" />
@@ -909,6 +911,27 @@
     <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
       <DependentUpon>EjemploM1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\M1Prueba.aspx.cs">
+      <DependentUpon>M1Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\M1Prueba.aspx.designer.cs">
+      <DependentUpon>M1Prueba.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M2\EjemploM2.aspx.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1111,6 +1134,7 @@
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\Tangerine.Master" />
+    <Content Include="GUI\M1\Login.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
