@@ -129,7 +129,6 @@
     <Content Include="GUI\M10\EjemploM10.aspx" />
     <Content Include="GUI\M1\EjemploM1.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
-    <Content Include="GUI\M1\M1Prueba.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
     <Content Include="GUI\M4\EjemploM4.aspx" />
@@ -924,13 +923,6 @@
     </Compile>
     <Compile Include="GUI\M1\Login.Master.designer.cs">
       <DependentUpon>Login.Master</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M1\M1Prueba.aspx.cs">
-      <DependentUpon>M1Prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M1\M1Prueba.aspx.designer.cs">
-      <DependentUpon>M1Prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M2\EjemploM2.aspx.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
