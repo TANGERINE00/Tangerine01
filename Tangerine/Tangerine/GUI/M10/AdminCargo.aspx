@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
-    <li class="active">Gestionar Cargos</li>
+    <li class="active">Gestión de Cargos</li>
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -40,10 +40,10 @@
         </div>
         <!-- Table -->
         <table class="table table-hover table-striped">
-          <tr>
+          <thead>
               <th>Cargo</th>
               <th>Descripcion</th>
-          </tr>
+          </thead>
           <tbody>
             <tr>
               <td>Desarrollador Fron End</td>
