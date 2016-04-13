@@ -148,6 +148,11 @@
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
+<<<<<<< HEAD
+    <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
+=======
+    <Content Include="GUI\M7\Agregar proyecto.aspx" />
+>>>>>>> 919f988616ff36f933da1605221bca3123ff8963
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="index.html" />
@@ -1059,6 +1064,22 @@
     </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.designer.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.cs">
+      <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
+      <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+=======
+    <Compile Include="GUI\M7\Agregar proyecto.aspx.cs">
+      <DependentUpon>Agregar proyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M7\Agregar proyecto.aspx.designer.cs">
+      <DependentUpon>Agregar proyecto.aspx</DependentUpon>
+>>>>>>> 919f988616ff36f933da1605221bca3123ff8963
     </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>
