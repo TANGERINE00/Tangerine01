@@ -50,7 +50,7 @@
                 <button type="submit" class="btn btn-default">Aceptar</button>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-6">
-                <a href="#">Recuperar contraseña</a><br>
+                <a href="RecuperarContraseñaPregunta.aspx">Recuperar contraseña</a><br>
               </div>
             </div>
           </form>
