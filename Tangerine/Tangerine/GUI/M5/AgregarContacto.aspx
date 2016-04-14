@@ -24,8 +24,13 @@
           </div>
           <div class="col-sm-8 col-md-8 col-lg-84">
              <div class="dropdown" runat="server" id="combo" >
-                 <asp:DropDownList ID="combo1" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
-                 </asp:DropDownList>
+                 <select>
+  <option value="1">Movistar</option>
+  <option value="2">UCAB</option>
+  <option value="3">VisionTec</option>
+</select>
+                <!-- <asp:DropDownList ID="combo1" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                 </asp:DropDownList>-->
               </div>  
           </div>
       </div>
@@ -46,8 +51,9 @@
                     <input style="margin-top:5%" runat="server" type="text" placeholder="Correo 1" class="form-control" id="Correo" name="Correo">
                     <input style="margin-top:5%" runat="server" type="text" placeholder="correo 2" class="form-control" id="Correo2" name="Correo2">
 					
-                    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="#">Cancelar</a>
-                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+                    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="ConsultarContactos.aspx">Cancelar</a>
+                    <!--<asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Agregar"  href="ConsultarContactos.aspx"></asp:Button>-->
+                    <a id="btnaceptara" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="ConsultarContactos.aspx">Crear</a>
 				</div>	
 			
             </div>
