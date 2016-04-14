@@ -106,7 +106,7 @@
                 
 
             <div class="box-foot">
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="submit" class="btn btn-primary" >Agregar</button>
             </div>
 
         </form>
