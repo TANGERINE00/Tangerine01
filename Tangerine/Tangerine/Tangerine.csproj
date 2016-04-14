@@ -162,7 +162,9 @@
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
+    <Content Include="GUI\M7\ConsultaProyecto.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
+    <Content Include="GUI\M7\modificarProyecto.aspx" />
     <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
@@ -1172,12 +1174,24 @@
     <Compile Include="GUI\M7\Agregar proyecto.aspx.designer.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M7\ConsultaProyecto.aspx.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\ConsultaProyecto.aspx.designer.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.designer.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\modificarProyecto.aspx.cs">
+      <DependentUpon>modificarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\modificarProyecto.aspx.designer.cs">
+      <DependentUpon>modificarProyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\AnularFacturaM8.aspx.cs">
       <DependentUpon>AnularFacturaM8.aspx</DependentUpon>
