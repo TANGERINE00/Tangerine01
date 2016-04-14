@@ -133,6 +133,7 @@
     <Content Include="GUI\M10\AdminCargo.aspx" />
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
+    <Content Include="GUI\M1\Dashboard.aspx" />
     <Content Include="GUI\M1\EjemploM1.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
@@ -174,7 +175,6 @@
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="GUI\M9\FacturasPorPagar.aspx" />
     <Content Include="GUI\M9\SeleccionCompania.aspx" />
-    <Content Include="GUI\M9\CargarPago.aspx" />
     <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="pages\calendar.html" />
@@ -973,6 +973,13 @@
     <Compile Include="GUI\M1\CrearEmpleado.aspx.designer.cs">
       <DependentUpon>CrearEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M1\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\EjemploM1.aspx.cs">
       <DependentUpon>EjemploM1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1259,13 +1266,6 @@
     </Compile>
     <Compile Include="GUI\M9\SeleccionCompania.aspx.designer.cs">
       <DependentUpon>SeleccionCompania.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M9\CargarPago.aspx.cs">
-      <DependentUpon>CargarPago.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M9\CargarPago.aspx.designer.cs">
-      <DependentUpon>CargarPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Master\Tangerine.Master.cs">
       <DependentUpon>Tangerine.Master</DependentUpon>
