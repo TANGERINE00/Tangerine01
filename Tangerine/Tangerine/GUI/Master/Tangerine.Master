@@ -137,8 +137,8 @@
                 <i></i> <span>Gestion de usuarios</span><i class="fa fa-angle-left pull-right"></i> 
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Registrar usuario</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Modificar Rol</a></li>
+                <li><a href="../M2/RegistroUsuario.aspx"><i class="fa fa-circle-o"></i>Registrar usuario</a></li>
+                <li><a href="../M2/CambiarRol.aspx"><i class="fa fa-circle-o"></i>Modificar Rol</a></li>
               </ul>               
             </li>
             <li class="treeview">
