@@ -989,12 +989,14 @@
     </Compile>
     <Compile Include="GUI\M1\NuevaContraseña.aspx.cs">
       <DependentUpon>NuevaContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M1\NuevaContraseña.aspx.designer.cs">
       <DependentUpon>NuevaContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
@@ -1071,6 +1073,7 @@
     </Compile>
     <Compile Include="GUI\M7\Agregar proyecto.aspx.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\Agregar proyecto.aspx.designer.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
@@ -1084,6 +1087,7 @@
     </Compile>
     <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.cs">
       <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
       <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
