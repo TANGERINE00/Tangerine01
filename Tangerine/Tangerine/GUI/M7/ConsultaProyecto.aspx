@@ -15,12 +15,19 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
      <div class="form-group">
-            <asp:Label ID="Label10" runat="server" Text="Consulta de un proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
+            <asp:Label ID="Label10" runat="server" Text="Proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
 
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-      <div role="form">
+     <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Consultar Proyecto</h3>
+                </div><!-- /.box-header -->
+      <form role="form">
           <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Codigo del Proyecto" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
@@ -61,7 +68,7 @@
              <asp:Label ID="Label8" runat="server" Text="Gerente Encargado" Font-Bold="True"></asp:Label></div>
          <div>
              <asp:Label ID="gerente" runat="server" Text="-Gerente-" ></asp:Label></div>
-         </div>
+         </form>
 
           <div class="form-group">
               <hr />
@@ -73,14 +80,30 @@
          </div> 
            <div class="form-group"><hr /></div>
 
-         <div class="form-group">
+         
+    </form>
+                  </div><!-- /.box -->
+         
+            </div> 
+    
+    <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+               <form role="form">
+                   <div class="form-group">
               <asp:Label ID="Label19" runat="server" Text=" Empresa" Font-Bold="True"></asp:Label>
+                       </div>
+                       <div class="form-group">
               <asp:Label ID="empresa" runat="server" Text=" -Nombre de la Empresa-"></asp:Label>
          </div> 
          <div class="form-group">
               <asp:Label ID="Label20" runat="server" Text=" Persona de contacto" Font-Bold="True"></asp:Label>
+             </div><div class="form-group">
               <asp:Label ID="personaC" runat="server" Text=" -Nombre persona-"></asp:Label>
+                 </div>
+                   <div class="form-group">
              <asp:Label ID="telefono" runat="server" Text=" -telefono-"></asp:Label>
          </div> 
-    </div>
+               </form>
+            </div>
 </asp:Content>

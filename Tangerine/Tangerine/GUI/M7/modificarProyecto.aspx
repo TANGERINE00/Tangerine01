@@ -14,12 +14,19 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <div class="form-group">
-            <asp:Label ID="Label10" runat="server" Text="Modificación de un proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
+            <asp:Label ID="Label10" runat="server" Text="Proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
    
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
     
-    <div role="form">
+     <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Consultar Proyecto</h3>
+                </div><!-- /.box-header -->
+    <form role="form">
           <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Codigo del Proyecto" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
@@ -62,23 +69,33 @@
              <asp:DropDownList ID="gerenteResponsable" runat="server"></asp:DropDownList>
          </div>
 
-          <div class="form-group">
-              <hr />
-             <asp:Label ID="Label2" runat="server" Text=" Personal Asignado" Font-Bold="True"></asp:Label>
+            <div class="form-group">
+                                <hr />
+                                <asp:Label ID="Label2" runat="server" Text=" Personal Asignado" Font-Bold="True"></asp:Label>
               
-         </div>
-         <div class="form-group">
-             <asp:DropDownList ID="personalTrabajo" runat="server"> </asp:DropDownList>
-             <asp:Button ID="Button1" class="btn btn-info pull-right" runat="server" Text="Eliminar" />
-         </div> 
-            <asp:Label ID="Label12" runat="server" Text="Asignar nuevo personal" Font-Bold="True"></asp:Label>
-              
-         </div>
-          <div class="form-group">
-             <asp:DropDownList ID="personalNoAsignado" runat="server"> </asp:DropDownList>
-             <asp:Button ID="Button2" class="btn btn-info pull-right" runat="server" Text="Asignar" />
-         </div>
-         <div class="form-group"></div>
-         <div style="height: 49px; width: 822px;">  <button type="submit" class="btn btn-info pull-right">Crear</button></div>
-    </div>
+                              </div>
+                               <div class="form-group">
+                                    <asp:DropDownList ID="personalTrabajo" runat="server"> </asp:DropDownList>
+                                    <asp:Button ID="Button1" class="btn btn-info pull-right" runat="server" Text="Eliminar" />
+                                 </div> 
+                            <div class="form-group">
+                                     <asp:Label ID="Label12" runat="server" Text="Asignar nuevo personal" Font-Bold="True"></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                      <asp:DropDownList ID="personalNoAsignado" runat="server"> </asp:DropDownList>
+                                       <asp:Button ID="Button2" class="btn btn-info pull-right" runat="server" Text="Asignar" />
+                            </div>
+          
+         
+         
+    </form>
+                    </div><!-- /.box -->
+       
+            </div> 
+    
+    <!--/.col (left) -->
+            <!-- right column -->
+             <div class="col-md-6">
+              <div style="width: 821px"> <asp:Button ID="Button3" class="btn btn-info pull-right" runat="server" Text="Modificar"  /></div>
+            </div>
 </asp:Content>
