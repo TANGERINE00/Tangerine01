@@ -142,12 +142,7 @@
               </ul>               
             </li>
             <li class="treeview">
-              <a href="ConsultarContactos.aspx">
-                <i></i> <span>Gestion de Contactos</span> 
-              </a>              
-            </li>
-            <li class="treeview">
-              <a href="#">
+              <a href="../M3/Listar.aspx">
                 <i></i> <span>Gestion de Leads</span> 
               </a>              
             </li>
@@ -163,15 +158,9 @@
               </ul>                
             </li>
             <li class="treeview">
-              <a href="#">
-                <i></i> <span>Gestion de Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-                   <ul class="treeview-menu">
-                <li><a href="../M7/Agregar proyecto.aspx"><i class="fa fa-circle-o"></i> Crear Proyecto</a></li>
-                <li><a href="../M7/modificarProyecto.aspx"><i class="fa fa-circle-o"></i> Modificar Proyecto</a></li>
-                <li><a href="../M7/ConsultaProyecto.aspx"><i class="fa fa-circle-o"></i> Consultar Proyecto</a></li>
-
-              </ul>            
+              <a href="../M5/ConsultarContactos.aspx">
+                <i></i> <span>Gestion de Contactos</span> 
+              </a>              
             </li>
             <li class="treeview">
               <a href="#">
@@ -183,16 +172,21 @@
                 
               </ul>             
             </li>
-             <li class="treeview">
+            <li class="treeview">
               <a href="#">
-                <i></i> <span>Gestion de Empleados</span><i class="fa fa-angle-left pull-right"></i>
+                <i></i> <span>Gestion de Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Empleados</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Contratos</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Cargos</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Pagos</a></li>
-              </ul>
+                   <ul class="treeview-menu">
+                <li><a href="../M7/Agregar proyecto.aspx"><i class="fa fa-circle-o"></i> Crear Proyecto</a></li>
+                <li><a href="../M7/modificarProyecto.aspx"><i class="fa fa-circle-o"></i> Modificar Proyecto</a></li>
+                <li><a href="../M7/ConsultaProyecto.aspx"><i class="fa fa-circle-o"></i> Consultar Proyecto</a></li>
+
+              </ul>            
+            </li>
+              <li class="treeview">
+              <a href="../M8/InicioFacturaM8.aspx">
+                <i></i> <span>Gestion de Facturas</span> 
+              </a>              
             </li>
              <li class="treeview">
               <a href="#">
@@ -201,6 +195,17 @@
               <ul class="treeview-menu">
                 <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                 <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+              </ul>
+            </li>
+             <li class="treeview">
+              <a href="#">
+                <i></i> <span>Gestion de Empleados</span><i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="../M1/EmpleadosAdmin.aspx" ><i class="fa fa-circle-o"></i> Empleados</a></li>
+                <li><a href="../M10/AdminContrato.aspx" ><i class="fa fa-circle-o"></i> Contratos</a></li>
+                <li><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Pagos</a></li>
               </ul>
             </li>
             <!--<li class="header">LABELS</li>
