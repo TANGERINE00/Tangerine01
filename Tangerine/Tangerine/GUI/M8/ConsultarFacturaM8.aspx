@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-    <li><a href="#">Facturación</a></li>
+    <li><a href="#">Gestión de Factura</a></li>
     <li class="active">Consulta de facturas</li>
 </asp:Content>
 
