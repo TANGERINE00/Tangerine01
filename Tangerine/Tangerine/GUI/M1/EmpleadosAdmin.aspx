@@ -37,7 +37,7 @@
         <div class="panel panel-default">
         <div class="panel-heading">
           Resultado de busqueda
-          <button class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+          <a href="CrearEmpleado.aspx" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></a>
         </div>
         <!-- Table -->
         <table class="table table-hover table-striped">
@@ -62,9 +62,9 @@
               <td>Activo</td>
               <td>
                 <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></button>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></button>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></button>
+                  <a href="VerEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></span></button>
                 </div>
               </td>
             </tr>
@@ -78,9 +78,9 @@
               <td>Activo</td>
               <td>
                 <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></button>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></button>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></button>
+                  <a href="VerEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></span></button>
                 </div>
               </td>
             </tr>
@@ -94,9 +94,9 @@
               <td>Activo</td>
               <td>
                 <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></button>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></button>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></button>
+                  <a href="VerEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></span></button>
                 </div>
               </td>
             </tr>
