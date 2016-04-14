@@ -140,7 +140,14 @@
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
+    <Content Include="GUI\M3\AgregarLeads.aspx" />
+    <Content Include="GUI\M3\ConsultarLead.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
+    <Content Include="GUI\M3\EliminarLead.aspx" />
+    <Content Include="GUI\M3\Listar - Copy.aspx" />
+    <Content Include="GUI\M3\Listar.aspx" />
+    <Content Include="GUI\M3\ModificarLead.aspx" />
+    <Content Include="GUI\M3\Promover.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\HabilitarCompania.aspx" />
@@ -1019,12 +1026,61 @@
     <Compile Include="GUI\M2\EjemploM2.aspx.designer.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
+      <DependentUpon>AgregarLeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\AgregarLeads.aspx.designer.cs">
+      <DependentUpon>AgregarLeads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\ConsultarLead.aspx.cs">
+      <DependentUpon>ConsultarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\ConsultarLead.aspx.designer.cs">
+      <DependentUpon>ConsultarLead.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M3\EjemploM3.aspx.cs">
       <DependentUpon>EjemploM3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M3\EjemploM3.aspx.designer.cs">
       <DependentUpon>EjemploM3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\EliminarLead.aspx.cs">
+      <DependentUpon>EliminarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\EliminarLead.aspx.designer.cs">
+      <DependentUpon>EliminarLead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\Listar - Copy.aspx.cs">
+      <DependentUpon>Listar - Copy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\Listar - Copy.aspx.designer.cs">
+      <DependentUpon>Listar - Copy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\ModificarLead.aspx.cs">
+      <DependentUpon>ModificarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\ModificarLead.aspx.designer.cs">
+      <DependentUpon>ModificarLead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\Promover.aspx.cs">
+      <DependentUpon>Promover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\Promover.aspx.designer.cs">
+      <DependentUpon>Promover.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>
