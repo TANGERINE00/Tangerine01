@@ -14,19 +14,13 @@
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
-    <div class="panel panel-success">
-        <div class="panel-heading">Filtrar Cargos</div>
+    <div class="box box-success">
+        <!--<div class="panel-heading">Filtrar Cargos</div>-->
         <div class="panel-body">
           <div class="form-group">
             <div class="row">
-              <div class="col-xs-12 col-md-6 col-lg-6">
-                <select class="form-control">
-                  <option>tipo de filtro</option>
-                  <option>Cargo</option>
-                </select>
-              </div>
-              <div class="col-xs-12 col-md-6 col-lg-6">
-                <input type="text" class="form-control" placeholder="Parametro de filtro">
+              <div class="col-xs-12 col-md-12 col-lg-12">
+                <input type="text" class="form-control" placeholder="Filtrar cargos">
               </div>
             </div> 
           </div>

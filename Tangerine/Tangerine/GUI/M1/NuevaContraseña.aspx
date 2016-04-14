@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Login.master.cs" Inherits="Tangerine.GUI.M1.Login1" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="NuevaContraseña.aspx.cs" Inherits="Tangerine.GUI.M1.NuevaContraseña" %>
 
 <!DOCTYPE html>
 <html>
@@ -27,8 +27,6 @@
     <![endif]-->
   </head>
   <body class="hold-transition login-page" style="background: #3c8dbc;">
-    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
     <div class="login-box" >
     
         <div class="login-logo">
@@ -36,21 +34,21 @@
         </div>
 
         <div class="login-box-body " style=" background: black; box-shadow:  0px 0px 40px #000000;">
-          <p class="login-box-msg">Inicio de sesion a sistema</p>
+          <p class="login-box-msg">Introduzca su nueva contraseña</p>
 
-          <form action="../../index2.html" method="post">
+          <form action="../../index2.html" method="post" style="text-align: center;">
             <div class="form-group has-feedback">
-              <input type="email" class="form-control" placeholder="Usuario">
+              <input type="password" class="form-control" placeholder="Nueva contraseña">
             </div>
             <div class="form-group has-feedback">
-              <input type="password" class="form-control" placeholder="Contraseña">
+              <input type="password" class="form-control" placeholder="Confirme su nueva contraseña">
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6 col-lg-6">
-                <button type="submit" class="btn btn-default">Aceptar</button>
+                <a href="Login.aspx" type="button" class="btn btn-default">Aceptar</a>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-6">
-                <a href="RecuperarContraseñaPregunta.aspx">Recuperar contraseña</a><br>
+                <a href="Login.aspx" type="button" class="btn btn-default">Cancelar</a>
               </div>
             </div>
           </form>

@@ -16,8 +16,8 @@
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 <div class="container-fluid">
-      <div class="panel panel-default">
-        <div class="panel-heading">Crear Contrato</div>
+      <div class="box box-default">
+        <!--<div class="panel-heading">Crear Contrato</div>-->
         <div class="container-fluid">
           <br>
           <form role="form">
@@ -72,7 +72,7 @@
                 </div>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="input-group date" data-provide="datepicker">
+               <div class="input-group date" data-provide="datepicker">
                   <input type="text" class="form-control" placeholder="fecha fin">
                   <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
@@ -89,6 +89,11 @@
                     <option>2</option>
                   </select>
                 </div>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control"placeholder="Cedula del empleado">
+                </div>   
               </div>
             </div>
 

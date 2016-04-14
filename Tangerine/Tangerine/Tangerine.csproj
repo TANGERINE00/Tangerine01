@@ -136,6 +136,8 @@
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
+    <Content Include="GUI\M1\NuevaContraseña.aspx" />
+    <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
@@ -147,10 +149,13 @@
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
     <Content Include="GUI\M5\ModificarContacto.aspx" />
+    <Content Include="GUI\M6\Data_Picker%28Pureba%29.html" />
     <Content Include="GUI\M6\ListarPropuesta.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
+    <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
+    <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="index.html" />
@@ -986,6 +991,18 @@
     <Compile Include="GUI\M1\ModificarEmpleado.aspx.designer.cs">
       <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\NuevaContraseña.aspx.cs">
+      <DependentUpon>NuevaContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\NuevaContraseña.aspx.designer.cs">
+      <DependentUpon>NuevaContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.cs">
+      <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\VerEmpleado.aspx.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1084,12 +1101,24 @@
     <Compile Include="GUI\M6\AgregarPropuesta.aspx.designer.cs">
       <DependentUpon>AgregarPropuesta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M7\Agregar proyecto.aspx.cs">
+      <DependentUpon>Agregar proyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\Agregar proyecto.aspx.designer.cs">
+      <DependentUpon>Agregar proyecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.designer.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.cs">
+      <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
+      <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>

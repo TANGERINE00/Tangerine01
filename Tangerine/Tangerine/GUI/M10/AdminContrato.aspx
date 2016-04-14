@@ -15,14 +15,14 @@
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 <div class="container-fluid">
-      <div class="panel panel-success">
-        <div class="panel-heading">Filtrar Contratos</div>
+      <div class="box box-success">
+        <!--<div class="panel-heading">Filtros de contrato</div>-->
         <div class="panel-body">
           <div class="form-group">
             <div class="row">
               <div class="col-xs-12 col-md-6 col-lg-6">
                 <select class="form-control">
-                  <option>tipo de filtro</option>
+                  <option>tipo de filtro de contrato</option>
                   <option>filtro 1</option>
                   <option>filtro 2</option>
                   <option>filtro 3</option>

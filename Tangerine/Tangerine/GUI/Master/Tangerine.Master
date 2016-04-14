@@ -154,8 +154,13 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i></i> <span>Gestion de Propuestas</span> 
-              </a>              
+                <i></i> <span>Gestion de Propuestas</span> <i class="fa fa-angle-left pull-right"></i>
+              </a> 
+                <ul class="treeview-menu">
+                <li><a href="../M6/AgregarPropuesta.aspx"><i class="fa fa-circle-o"></i> Agregar Propuesta</a></li>
+                <li><a href="../M6/ListarPropuesta.aspx"><i class="fa fa-circle-o"></i> Administrar Propuestas</a></li>
+                
+              </ul>             
             </li>
              <li class="treeview">
               <a href="#">
