@@ -10,7 +10,7 @@
 namespace Tangerine.GUI.M5 {
     
     
-    public partial class EjemploM5 {
+    public partial class AgregarContacto {
         
         /// <summary>
         /// combo control.
