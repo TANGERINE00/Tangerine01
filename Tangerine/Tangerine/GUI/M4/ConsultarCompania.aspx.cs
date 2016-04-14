@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine.GUI.M4
 {
-    public partial class GCompaniaHabilitar : System.Web.UI.Page
+    public partial class ConsultarCompania : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="GCompaniaInicio.aspx.cs" Inherits="Tangerine.GUI.M4.GCompaniaInicio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="InicioCompania.aspx.cs" Inherits="Tangerine.GUI.M4.InicioCompania" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -39,6 +39,7 @@
                         <button type="submit" class="btn btn-primary">Habilitar/Inhabilitar</button>
                     </div>
 
+                    <!-- 
                     <div class="box-footer">
                         <a href="#">Consultar datos de una compañía</a>
                     </div>
@@ -51,6 +52,7 @@
                     <div class="box-footer">
                         <a href="#">Habilitar o Inhabilitar una compañía registrada</a>
                     </div>
+                    -->
                     
                 </form>
               </div><!-- /.box -->

@@ -10,6 +10,6 @@
 namespace Tangerine.GUI.M4 {
     
     
-    public partial class GCompaniaRegistrar {
+    public partial class InicioCompania {
     }
 }

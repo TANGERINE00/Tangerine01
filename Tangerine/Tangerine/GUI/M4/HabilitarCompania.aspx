@@ -1,17 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="GCompaniaModificar.aspx.cs" Inherits="Tangerine.GUI.M4.GCompaniaModificar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="HabilitarCompania.aspx.cs" Inherits="Tangerine.GUI.M4.HabilitarCompania" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de Compañias
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
-    Modificar
+    Habilitar/Inhabilitar
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
     <li><a href="#">Gestión de Compañias</a></li>
     <li><a href="#">Inicio</a></li>
-    <li class="active">Modificar</li>
+    <li class="active">Habilitar/Inhabilitar</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     
@@ -28,7 +28,7 @@
                 <!-- form start -->
                 <form role="form">
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Modiicar</button>
+                        <button type="submit" class="btn btn-primary">Habilitar/Inhabilitar</button>
                     </div> 
                 </form>
               </div><!-- /.box -->

@@ -139,12 +139,12 @@
     <Content Include="GUI\M1\VerEmpleado.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
+    <Content Include="GUI\M4\AgregarCompania.aspx" />
+    <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\EjemploM4.aspx" />
-    <Content Include="GUI\M4\GCompaniaConsultar.aspx" />
-    <Content Include="GUI\M4\GCompaniaHabilitar.aspx" />
-    <Content Include="GUI\M4\GCompaniaInicio.aspx" />
-    <Content Include="GUI\M4\GCompaniaModificar.aspx" />
-    <Content Include="GUI\M4\GCompaniaRegistrar.aspx" />
+    <Content Include="GUI\M4\HabilitarCompania.aspx" />
+    <Content Include="GUI\M4\InicioCompania.aspx" />
+    <Content Include="GUI\M4\ModificarCompania.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
     <Content Include="GUI\M5\ModificarContacto.aspx" />
@@ -1008,6 +1008,20 @@
     <Compile Include="GUI\M3\EjemploM3.aspx.designer.cs">
       <DependentUpon>EjemploM3.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
+      <DependentUpon>AgregarCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M4\AgregarCompania.aspx.designer.cs">
+      <DependentUpon>AgregarCompania.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M4\ConsultarCompania.aspx.cs">
+      <DependentUpon>ConsultarCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M4\ConsultarCompania.aspx.designer.cs">
+      <DependentUpon>ConsultarCompania.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M4\EjemploM4.aspx.cs">
       <DependentUpon>EjemploM4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1015,40 +1029,26 @@
     <Compile Include="GUI\M4\EjemploM4.aspx.designer.cs">
       <DependentUpon>EjemploM4.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M4\GCompaniaConsultar.aspx.cs">
-      <DependentUpon>GCompaniaConsultar.aspx</DependentUpon>
+    <Compile Include="GUI\M4\HabilitarCompania.aspx.cs">
+      <DependentUpon>HabilitarCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M4\GCompaniaConsultar.aspx.designer.cs">
-      <DependentUpon>GCompaniaConsultar.aspx</DependentUpon>
+    <Compile Include="GUI\M4\HabilitarCompania.aspx.designer.cs">
+      <DependentUpon>HabilitarCompania.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M4\GCompaniaHabilitar.aspx.cs">
-      <DependentUpon>GCompaniaHabilitar.aspx</DependentUpon>
+    <Compile Include="GUI\M4\InicioCompania.aspx.cs">
+      <DependentUpon>InicioCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M4\GCompaniaHabilitar.aspx.designer.cs">
-      <DependentUpon>GCompaniaHabilitar.aspx</DependentUpon>
+    <Compile Include="GUI\M4\InicioCompania.aspx.designer.cs">
+      <DependentUpon>InicioCompania.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M4\GCompaniaInicio.aspx.cs">
-      <DependentUpon>GCompaniaInicio.aspx</DependentUpon>
+    <Compile Include="GUI\M4\ModificarCompania.aspx.cs">
+      <DependentUpon>ModificarCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M4\GCompaniaInicio.aspx.designer.cs">
-      <DependentUpon>GCompaniaInicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M4\GCompaniaModificar.aspx.cs">
-      <DependentUpon>GCompaniaModificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M4\GCompaniaModificar.aspx.designer.cs">
-      <DependentUpon>GCompaniaModificar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M4\GCompaniaRegistrar.aspx.cs">
-      <DependentUpon>GCompaniaRegistrar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M4\GCompaniaRegistrar.aspx.designer.cs">
-      <DependentUpon>GCompaniaRegistrar.aspx</DependentUpon>
+    <Compile Include="GUI\M4\ModificarCompania.aspx.designer.cs">
+      <DependentUpon>ModificarCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M5\AgregarContacto.aspx.cs">
       <DependentUpon>AgregarContacto.aspx</DependentUpon>
