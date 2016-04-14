@@ -150,7 +150,6 @@
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\HabilitarCompania.aspx" />
-    <Content Include="GUI\M4\InicioCompania.aspx" />
     <Content Include="GUI\M4\ModificarCompania.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
@@ -1099,13 +1098,6 @@
     </Compile>
     <Compile Include="GUI\M4\HabilitarCompania.aspx.designer.cs">
       <DependentUpon>HabilitarCompania.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M4\InicioCompania.aspx.cs">
-      <DependentUpon>InicioCompania.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M4\InicioCompania.aspx.designer.cs">
-      <DependentUpon>InicioCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\ModificarCompania.aspx.cs">
       <DependentUpon>ModificarCompania.aspx</DependentUpon>

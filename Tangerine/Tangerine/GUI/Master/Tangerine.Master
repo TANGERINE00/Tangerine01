@@ -144,8 +144,14 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i></i> <span>Gestion de Compañías</span> 
-              </a>              
+                <i></i> <span>Gestion de Compañías</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="../M4/AgregarCompania.aspx"><i class="fa fa-circle-o"></i>Registrar Compañía</a></li>
+                <li><a href="../M4/ConsultarCompania.aspx"><i class="fa fa-circle-o"></i>Consultar Compañía</a></li>
+                <li><a href="../M4/ModificarCompania.aspx"><i class="fa fa-circle-o"></i>Modificar Compañía</a></li>
+                <li><a href="../M4/HabilitarCompania.aspx"><i class="fa fa-circle-o"></i>Habilitar/Deshabilitar</a></li>
+              </ul>                
             </li>
             <li class="treeview">
               <a href="#">
