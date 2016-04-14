@@ -68,7 +68,7 @@
 
                 <div class="form-group">
                     <label>Forma de Pago</label>
-                    <select class="form-control">
+                    <select class="form-control" disabled>
                         <option></option>
                         <option data-icon="fa-heart">Deposito</option>
                         <option>Transferencia</option>
