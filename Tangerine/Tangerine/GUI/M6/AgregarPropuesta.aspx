@@ -8,14 +8,16 @@
     Agregar Propuesta
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
+    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">Gestión de Propuesta</a></li>
+    <li class="active">Agregar Propuesta</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
+<div class="col-md-6">
      
-
     <div class="box box-primary">
 
         <!-- form start -->
@@ -39,7 +41,7 @@
                 </div>
 
 
-                <div class="box box-default">
+            
 
                     <!-- Date range -->
                     <div class="form-group">
@@ -54,7 +56,7 @@
                     </div>
                     <!-- /.form group -->
 
-                </div>
+             
                 <!-- /.box-body -->
 
                 <div class="form-group">
@@ -113,7 +115,7 @@
         </form>
     </div>
     
-
+</div>
 
     <script>
         $(function () {
