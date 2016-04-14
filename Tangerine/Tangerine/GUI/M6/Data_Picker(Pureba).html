@@ -1,0 +1,35 @@
+﻿
+<html>
+<head>
+    <title>bootstrap datepicker examples</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Bootstrap CSS and bootstrap datepicker CSS used for styling the demo pages-->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
+    <!-- Load jQuery and bootstrap datepicker scripts -->
+    <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+
+
+</head>
+<body>
+    <!-- Date picker -->
+    <div class="form-group">
+        <label>Date range:</label>
+        <input type="text" placeholder="click to show datepicker" id="example1">
+    </div>
+
+
+    <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+
+                $('#example1').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+
+            });
+    </script>
+</body>
+</html>

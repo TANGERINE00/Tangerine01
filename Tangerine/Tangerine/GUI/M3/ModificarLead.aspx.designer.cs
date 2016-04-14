@@ -7,28 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M5 {
+namespace Tangerine.GUI.M3 {
     
     
-    public partial class AgregarContacto {
-        
-        /// <summary>
-        /// combo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl combo;
-        
-        /// <summary>
-        /// combo1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList combo1;
+    public partial class ModificarLead {
         
         /// <summary>
         /// id_otro control.

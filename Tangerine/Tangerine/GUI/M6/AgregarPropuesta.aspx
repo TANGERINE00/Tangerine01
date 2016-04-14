@@ -2,23 +2,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
+    Gestion de Propuesta
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
+    Agregar Propuesta
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
+    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">Gestión de Propuesta</a></li>
+    <li class="active">Agregar Propuesta</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-     <!-- date-range-picker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
-
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
-
+<div class="col-md-6">
+     
     <div class="box box-primary">
 
         <!-- form start -->
@@ -42,7 +41,7 @@
                 </div>
 
 
-                <div class="box box-default">
+            
 
                     <!-- Date range -->
                     <div class="form-group">
@@ -57,7 +56,7 @@
                     </div>
                     <!-- /.form group -->
 
-                </div>
+             
                 <!-- /.box-body -->
 
                 <div class="form-group">
@@ -75,10 +74,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="input_costo">Costo del Proyecto</label>
-                    <input type="input_costo" class="form-control" id="costo_id" placeholder="Costo del proyecto">
-                </div>
+                
 
                 <label for="input_costo">Costo del Proyecto</label>
                 <div class="input-group">
@@ -110,13 +106,13 @@
                 
 
             <div class="box-foot">
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="submit" class="btn btn-primary" >Agregar</button>
             </div>
 
         </form>
     </div>
     
-
+</div>
 
     <script>
         $(function () {
