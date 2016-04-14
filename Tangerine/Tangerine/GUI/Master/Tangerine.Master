@@ -188,6 +188,7 @@
                 <i></i> <span>Gestion de Facturas</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
                    <ul class="treeview-menu">
+                <li><a href="../M8/GenerarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Generar Factura</a></li>
                 <li><a href="../M8/ConsultarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Consultar Factura</a></li>
                 <li><a href="../M8/ModificarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Modificar Factura</a></li>
                 <li><a href="../M8/AnularFacturaM8.aspx"><i class="fa fa-circle-o"></i> Anular Factura</a></li>
