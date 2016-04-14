@@ -29,7 +29,7 @@
              
           <table id="planillascreadas" class="table table-bordered table-striped dataTable" accesskey="">
            <thead>
-            <tr>
+            <tr style="font-size:18px;">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Empresa</th>
@@ -37,11 +37,12 @@
                 <th>Cargo</th>
                 <th>Telefono</th>
                 <th>Correo</th>                 
-                <th style="text-align:center;">Acciones</th>
+                <th style="width:150PX; text-align:center;">Acciones</th>
             </tr>
           </thead>
               <asp:Literal runat="server" ID="tabla"></asp:Literal>
            <tbody>
+             <tr>
                 <th>1</th>
                 <th>Cesar Rodriguez</th>
                 <th>UCAB</th>
@@ -49,9 +50,31 @@
                 <th>Lider de Proyecto</th>
                 <th>0412-230.03.53</th>
                 <th>carr235@gmail.com</th>                 
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th> 
+                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
+             </tr>
+               <tr>
+                <th>2</th>
+                <th>Pedro Perez</th>
+                <th>Movistar</th>
+                <th>RRHH</th>
+                <th>Gerente</th>
+                <th>0424.098.76.54 0212.987.12.34</th>
+                <th>pperez@movistar.com</th>                 
+                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
+             </tr>
+               <tr>
+                <th>3</th>
+                <th>Ana Riera</th>
+                <th>VisionTec</th>
+                <th>Comercio Electronico</th>
+                <th>Gerente</th>
+                <th>0412-123.45.67</th>
+                <th>ariera@vtec.com rieraana76@gmail.com</th>                 
+                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
+             </tr>
            </tbody>
         </table>
+              <a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx">Nuevo Contacto</a>
        </div>
       </form>
     </div>

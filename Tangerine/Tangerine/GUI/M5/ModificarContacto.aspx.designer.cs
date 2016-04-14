@@ -67,15 +67,6 @@ namespace Tangerine.GUI.M5 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText telefono;
         
         /// <summary>
-        /// telefono2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText telefono2;
-        
-        /// <summary>
         /// Correo control.
         /// </summary>
         /// <remarks>
@@ -85,15 +76,6 @@ namespace Tangerine.GUI.M5 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Correo;
         
         /// <summary>
-        /// Correo2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo2;
-        
-        /// <summary>
         /// btnaceptar control.
         /// </summary>
         /// <remarks>
@@ -101,5 +83,14 @@ namespace Tangerine.GUI.M5 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnaceptar;
+        
+        /// <summary>
+        /// btnaceptara control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnaceptara;
     }
 }

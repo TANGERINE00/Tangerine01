@@ -133,7 +133,7 @@
           <ul class="sidebar-menu">
             <li class="header">Menu Principal</li>
             <li class="treeview">
-              <a href="GUI/ConsultarContactos.aspx">
+              <a href="ConsultarContactos.aspx">
                 <i></i> <span>Gestion de Contactos</span> 
               </a>              
             </li>
@@ -149,8 +149,14 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i></i> <span>Gestion de Proyectos</span> 
-              </a>              
+                <i></i> <span>Gestion de Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+                   <ul class="treeview-menu">
+                <li><a href="../M7/Agregar proyecto.aspx"><i class="fa fa-circle-o"></i> Crear Proyecto</a></li>
+                <li><a href="../M7/modificarProyecto.aspx"><i class="fa fa-circle-o"></i> Modificar Proyecto</a></li>
+                <li><a href="../M7/ConsultaProyecto.aspx"><i class="fa fa-circle-o"></i> Consultar Proyecto</a></li>
+
+              </ul>            
             </li>
             <li class="treeview">
               <a href="#">

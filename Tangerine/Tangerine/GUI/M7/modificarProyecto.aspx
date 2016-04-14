@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Agregar proyecto.aspx.cs" Inherits="Tangerine.GUI.M7.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="modificarProyecto.aspx.cs" Inherits="Tangerine.GUI.M7.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -8,23 +8,31 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
     <li><a href="#">Proyectos</a></li>
-    <li class="active">Crear Proyecto</li>
+    <li class="active">Modificar Proyecto</li>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-         <div class="form-group">
-            <asp:Label ID="Label10" runat="server" Text="Creación de un proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
+
+     <div class="form-group">
+            <asp:Label ID="Label10" runat="server" Text="Modificación de un proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
+   
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
-      <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css" /> 
     
-     <div role="form">
-         
-     
-        <div class="form-group">
+    <div role="form">
+          <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Codigo del Proyecto" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="codigoProyecto" runat="server" placeholder="Codigo" Width="351px" ></asp:TextBox></div>
+            <asp:DropDownList ID="codigoProyecto" runat="server"> </asp:DropDownList>
+        <div> <hr /></div>
+        <div class="form-group">
+            <asp:Label ID="Label11" runat="server" Text="Estatus" Font-Bold="True"></asp:Label></div>
+            <div class="form-group"> <asp:RadioButton ID="RadioButton1" runat="server"  Text="En Desarrollo"/>
+                <asp:RadioButton ID="RadioButton2" runat="server" Text="Finalizado" />
+            </div>
+            
+
+  
         <div class="form-group">
             <asp:Label ID="Lable2" runat="server" Text="Fecha de inicio" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
@@ -56,12 +64,19 @@
 
           <div class="form-group">
               <hr />
-             <asp:Label ID="Label2" runat="server" Text="Agregar peersonal del trabajo" Font-Bold="True"></asp:Label>
+             <asp:Label ID="Label2" runat="server" Text=" Personal Asignado" Font-Bold="True"></asp:Label>
               
          </div>
          <div class="form-group">
              <asp:DropDownList ID="personalTrabajo" runat="server"> </asp:DropDownList>
-             <asp:Button ID="Button1" class="btn btn-info pull-right" runat="server" Text="Agregar" />
+             <asp:Button ID="Button1" class="btn btn-info pull-right" runat="server" Text="Eliminar" />
+         </div> 
+            <asp:Label ID="Label12" runat="server" Text="Asignar nuevo personal" Font-Bold="True"></asp:Label>
+              
+         </div>
+          <div class="form-group">
+             <asp:DropDownList ID="personalNoAsignado" runat="server"> </asp:DropDownList>
+             <asp:Button ID="Button2" class="btn btn-info pull-right" runat="server" Text="Asignar" />
          </div>
          <div class="form-group"></div>
          <div style="height: 49px; width: 822px;">  <button type="submit" class="btn btn-info pull-right">Crear</button></div>
