@@ -9,8 +9,8 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-    <li><a href="#">Ejemplo</a></li>
-    <li class="active">Facturación</li>
+    <li><a href="#">Gestion Factura</a></li>
+    <li class="active">Factura</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     
@@ -39,8 +39,8 @@
                     </div>
 
                       <div class="form-group">
-                      <label for="labelCompañia_M8">Compañía</label>
-                      <input type="text" class="form-control" id="textCompañia_M8" placeholder="Compañía" disabled ="disabled" >
+                      <label for="labelCliente_M8">Cliente</label>
+                      <input type="text" class="form-control" id="textCliente_M8" placeholder="Cliente" disabled ="disabled" >
                     </div>
 
                         <div class="form-group">
