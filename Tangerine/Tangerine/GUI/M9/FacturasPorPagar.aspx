@@ -10,7 +10,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Gestión de Pagos</a></li>
-    <li><a href="#">Seleccion del cliente</a></li>
+    <li><a href="SeleccionCompania.aspx">Seleccion de compania</a></li>
     <li class="active">Consulta de facturas por pagar</li>
 </asp:Content>
 
@@ -79,9 +79,6 @@
                       <label for="labelMonto_M8">Monto</label>
                       <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled="disabled">
                     </div>
-
-
-
 
                   </div><!-- /.box-body -->
 
