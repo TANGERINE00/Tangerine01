@@ -118,7 +118,7 @@
                         <td><span class="label label-danger">No pagada</span></td>
                         <td>Conexión de usuarios en la planta de Guarenas.</td>
                         <th style="text-align: center;">20<a class="glyphicon glyphicon-euro"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx"></a></th>
                     </tr>
                     <tr>
                         <td>00000000002</td>
@@ -127,7 +127,7 @@
                         <td><span class="label label-warning">Por pagar</span></td>
                         <td>Base de datos para el departamento A.</td>
                         <th style="text-align: center;">40<a class="glyphicon glyphicon-usd"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx"></a></th>
                     </tr>
                     <tr>
                         <td>00000000003</td>
@@ -136,7 +136,7 @@
                         <td><span class="label label-warning">Por pagar</span></td>
                         <td>Base de datos para el departamento B.</td>
                         <th style="text-align: center;">50<a class="glyphicon glyphicon-bitcoin"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx"></a></th>
                     </tr>
                 </tbody>
             </table>

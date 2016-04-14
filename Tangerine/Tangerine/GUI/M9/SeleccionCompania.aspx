@@ -52,7 +52,7 @@
                                 <td>tangerine00@gmail.com</td>
                                 <td>14/04/2016</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
                             </tr>
                             <tr>
                                 <td>Touch Solutions</td>
@@ -61,7 +61,7 @@
                                 <td>touchs@gmail.com</td>
                                 <td>30/01/2005</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
                             </tr>
                             <tr>
                                 <td>Universidad Católica Andrés Bello</td>
@@ -70,7 +70,7 @@
                                 <td>ucab@gmail.com</td>
                                 <td>13/05/2014</td>
                                 <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
                             </tr>
                             <tr>
                                 <td>International Business Machines</td>
@@ -79,7 +79,7 @@
                                 <td>ibm@gmail.com</td>
                                 <td>22/12/2012</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
                             </tr>
                         </tbody>
                     </table>
