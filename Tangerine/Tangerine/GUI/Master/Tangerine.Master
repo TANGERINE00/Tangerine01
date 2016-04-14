@@ -133,7 +133,7 @@
           <ul class="sidebar-menu">
             <li class="header">Menu Principal</li>
             <li class="treeview">
-              <a href="GUI/ConsultarContactos.aspx">
+              <a href="ConsultarContactos.aspx">
                 <i></i> <span>Gestion de Contactos</span> 
               </a>              
             </li>
