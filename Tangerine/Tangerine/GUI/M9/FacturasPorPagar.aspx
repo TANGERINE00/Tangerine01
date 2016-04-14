@@ -1,24 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ListarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.EjemploM6" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="FacturasPorPagar.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
-    Consulta de facturas
+    Consulta de facturas por pagar
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
     Lista de facturas
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-    <li><a href="#">Gestión de Factura</a></li>
-    <li class="active">Consulta de facturas</li>
+    <li><a href="#">Gestión de Pagos</a></li>
+    <li><a href="#">Seleccion del cliente</a></li>
+    <li class="active">Consulta de facturas por pagar</li>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
-
-
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Consulta de facturas</h3>
@@ -113,43 +109,34 @@
                         <th>Estatus Factura</th>
                         <th>Proyecto</th>
                         <th>Monto</th>
-                        <th style="text-align: center;">Contacto</th>
+                        <th style="text-align: center;">Pagar</th>
                     </tr>
                     <tr>
                         <td>00000000001</td>
                         <td>Trascend</td>
                         <td>13-04-2016</td>
-                        <td><span class="label label-success">Pagada</span></td>
+                        <td><span class="label label-danger">No pagada</span></td>
                         <td>Conexión de usuarios en la planta de Guarenas.</td>
                         <th style="text-align: center;">20<a class="glyphicon glyphicon-euro"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" data-toggle="modal" data-target="#myModal"></a></th>
                     </tr>
                     <tr>
                         <td>00000000002</td>
-                        <td>Pepsi</td>
+                        <td>Trascend</td>
                         <td>13-04-2016</td>
-                        <td><span class="label label-warning">Anulada</span></td>
+                        <td><span class="label label-warning">Por pagar</span></td>
                         <td>Base de datos para el departamento A.</td>
                         <th style="text-align: center;">40<a class="glyphicon glyphicon-usd"></a></th>
-                                              <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" data-toggle="modal" data-target="#myModal"></a></th>
                     </tr>
                     <tr>
                         <td>00000000003</td>
-                        <td>Google</td>
+                        <td>Trascend</td>
                         <td>13-04-2016</td>
-                        <td><span class="label label-warning">Anulada</span></td>
-                        <td>Página web para el soporte técnico.</td>
+                        <td><span class="label label-warning">Por pagar</span></td>
+                        <td>Base de datos para el departamento B.</td>
                         <th style="text-align: center;">50<a class="glyphicon glyphicon-bitcoin"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
-                    </tr>
-                    <tr>
-                        <td>00000000004</td>
-                        <td>Tebca</td>
-                        <td>13-04-2016</td>
-                        <td><span class="label label-danger">No pagada</span></td>
-                        <td>Página web para el uso publicitario.</td>
-                        <th style="text-align: center;">10<a class="glyphicon glyphicon-usd"></a></th>
-                         <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" data-toggle="modal" data-target="#myModal"></a></th>
                     </tr>
                 </tbody>
             </table>
@@ -157,8 +144,6 @@
         <!-- /.box-body -->
     </div>
     <!-- /.box -->
-
-
-
-
+</asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 </asp:Content>

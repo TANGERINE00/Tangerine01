@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine.GUI.M5
 {
-    public partial class AgregarContacto : System.Web.UI.Page
+    public partial class EliminarLead : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

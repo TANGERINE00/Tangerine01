@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -139,12 +140,19 @@
     <Content Include="GUI\M1\NuevaContraseña.aspx" />
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
+    <Content Include="GUI\M2\CambiarRol.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
+    <Content Include="GUI\M2\RegistroUsuario.aspx" />
+    <Content Include="GUI\M3\AgregarLeads.aspx" />
+    <Content Include="GUI\M3\ConsultarLead.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
+    <Content Include="GUI\M3\EliminarLead.aspx" />
+    <Content Include="GUI\M3\Listar.aspx" />
+    <Content Include="GUI\M3\ModificarLead.aspx" />
+    <Content Include="GUI\M3\Promover.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\HabilitarCompania.aspx" />
-    <Content Include="GUI\M4\InicioCompania.aspx" />
     <Content Include="GUI\M4\ModificarCompania.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
@@ -155,10 +163,17 @@
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
+    <Content Include="GUI\M7\ConsultaProyecto.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
+    <Content Include="GUI\M7\modificarProyecto.aspx" />
+    <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
+    <Content Include="GUI\M8\InicioFacturaM8.aspx" />
+    <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
+    <Content Include="GUI\M9\FacturasPorPagar.aspx" />
+    <Content Include="GUI\M9\SeleccionCompania.aspx" />
     <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="pages\calendar.html" />
@@ -1013,6 +1028,13 @@
     <Compile Include="GUI\M1\VerEmpleado.aspx.designer.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\CambiarRol.aspx.cs">
+      <DependentUpon>CambiarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\CambiarRol.aspx.designer.cs">
+      <DependentUpon>CambiarRol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M2\EjemploM2.aspx.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1020,12 +1042,61 @@
     <Compile Include="GUI\M2\EjemploM2.aspx.designer.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
+      <DependentUpon>AgregarLeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\AgregarLeads.aspx.designer.cs">
+      <DependentUpon>AgregarLeads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\ConsultarLead.aspx.cs">
+      <DependentUpon>ConsultarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\ConsultarLead.aspx.designer.cs">
+      <DependentUpon>ConsultarLead.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M3\EjemploM3.aspx.cs">
       <DependentUpon>EjemploM3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M3\EjemploM3.aspx.designer.cs">
       <DependentUpon>EjemploM3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\EliminarLead.aspx.cs">
+      <DependentUpon>EliminarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\EliminarLead.aspx.designer.cs">
+      <DependentUpon>EliminarLead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\Listar.aspx.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\Listar.aspx.designer.cs">
+      <DependentUpon>Listar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\ModificarLead.aspx.cs">
+      <DependentUpon>ModificarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\ModificarLead.aspx.designer.cs">
+      <DependentUpon>ModificarLead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\Promover.aspx.cs">
+      <DependentUpon>Promover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\Promover.aspx.designer.cs">
+      <DependentUpon>Promover.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>
@@ -1047,13 +1118,6 @@
     </Compile>
     <Compile Include="GUI\M4\HabilitarCompania.aspx.designer.cs">
       <DependentUpon>HabilitarCompania.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M4\InicioCompania.aspx.cs">
-      <DependentUpon>InicioCompania.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M4\InicioCompania.aspx.designer.cs">
-      <DependentUpon>InicioCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\ModificarCompania.aspx.cs">
       <DependentUpon>ModificarCompania.aspx</DependentUpon>
@@ -1118,12 +1182,31 @@
     <Compile Include="GUI\M7\Agregar proyecto.aspx.designer.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M7\ConsultaProyecto.aspx.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\ConsultaProyecto.aspx.designer.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\EjemploM7.aspx.designer.cs">
       <DependentUpon>EjemploM7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\modificarProyecto.aspx.cs">
+      <DependentUpon>modificarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\modificarProyecto.aspx.designer.cs">
+      <DependentUpon>modificarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\AnularFacturaM8.aspx.cs">
+      <DependentUpon>AnularFacturaM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\AnularFacturaM8.aspx.designer.cs">
+      <DependentUpon>AnularFacturaM8.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.cs">
       <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
@@ -1139,12 +1222,40 @@
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.designer.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M8\InicioFacturaM8.aspx.cs">
+      <DependentUpon>InicioFacturaM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\InicioFacturaM8.aspx.designer.cs">
+      <DependentUpon>InicioFacturaM8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\ModificarFacturaM8.aspx.cs">
+      <DependentUpon>ModificarFacturaM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\ModificarFacturaM8.aspx.designer.cs">
+      <DependentUpon>ModificarFacturaM8.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M9\EjemploM9.aspx.cs">
       <DependentUpon>EjemploM9.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M9\EjemploM9.aspx.designer.cs">
       <DependentUpon>EjemploM9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\FacturasPorPagar.aspx.cs">
+      <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
+      <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\SeleccionCompania.aspx.cs">
+      <DependentUpon>SeleccionCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\SeleccionCompania.aspx.designer.cs">
+      <DependentUpon>SeleccionCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Master\Tangerine.Master.cs">
       <DependentUpon>Tangerine.Master</DependentUpon>

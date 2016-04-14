@@ -10,12 +10,9 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
     <li><a href="#">Gestión de Compañias</a></li>
-    <li><a href="#">Inicio</a></li>
     <li class="active">Consultar</li>
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    
-</asp:Content>
+
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
             <!-- left column -->

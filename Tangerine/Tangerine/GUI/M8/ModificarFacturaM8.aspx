@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="EjemploM7.aspx.cs" Inherits="Tangerine.GUI.M7.EjemploM7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ModificarFacturaM8.aspx.cs" Inherits="Tangerine.GUI.M8.ModificarFacturaM8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -22,7 +22,7 @@
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Generar Factura</h3>
+                  <h3 class="box-title">Modificar Factura</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form role="form">
@@ -30,7 +30,11 @@
 
                     <div class="form-group">
                       <label for="labelNumeroFactura_M8">Número Factura</label>
-                      <input type="text" class="form-control" id="textNumeroFactura_M8" placeholder="Número Factura" disabled ="disabled" >
+                      <select class="form-control" name="op1" disabled ="disabled"> 
+                     <option>Numero</option>
+                     <option>No Aplica</option>
+                    </select>
+                    
                     </div>
 
                     <div class="form-group">
