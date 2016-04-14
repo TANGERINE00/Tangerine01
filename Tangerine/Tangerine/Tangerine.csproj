@@ -168,6 +168,7 @@
     <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="GUI\M9\FacturasPorPagar.aspx" />
+    <Content Include="GUI\M9\Seleccion.aspx" />
     <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="pages\calendar.html" />
@@ -1218,6 +1219,13 @@
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M9\Seleccion.aspx.cs">
+      <DependentUpon>Seleccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\Seleccion.aspx.designer.cs">
+      <DependentUpon>Seleccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Master\Tangerine.Master.cs">
       <DependentUpon>Tangerine.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1384,4 +1392,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  </Project>
+</Project>
