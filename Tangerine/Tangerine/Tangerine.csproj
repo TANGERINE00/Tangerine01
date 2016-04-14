@@ -153,6 +153,7 @@
     <Content Include="GUI\M6\ListarPropuesta.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
+    <Content Include="GUI\M6\ModificarPropuesta.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
@@ -1102,6 +1103,13 @@
     </Compile>
     <Compile Include="GUI\M6\AgregarPropuesta.aspx.designer.cs">
       <DependentUpon>AgregarPropuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarPropuesta.aspx.cs">
+      <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarPropuesta.aspx.designer.cs">
+      <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M7\Agregar proyecto.aspx.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
