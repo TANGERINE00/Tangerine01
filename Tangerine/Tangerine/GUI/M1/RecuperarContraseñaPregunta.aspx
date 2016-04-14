@@ -38,13 +38,10 @@
 
           <form action="../../index2.html" method="post" style="text-align: center;">
             <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Número de contrato">
-            </div>
-            <div class="form-group has-feedback">
               <input type="email" class="form-control" placeholder="Correo personal">
             </div>
             <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Pregunta de seguridad">
+              <input type="text" class="form-control" placeholder="Código de seguridad">
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6 col-lg-6">

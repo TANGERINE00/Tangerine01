@@ -41,7 +41,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="#" class="logo">
+        <a href="../M1/Dashboard.aspx" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>TG</b>E</span>
           <!-- logo for regular state and mobile devices -->
@@ -92,7 +92,7 @@
                       <a href="#" class="btn btn-default btn-flat">Datos</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="../M1/Login.aspx" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
