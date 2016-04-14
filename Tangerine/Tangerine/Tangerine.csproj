@@ -144,7 +144,6 @@
     <Content Include="GUI\M3\ConsultarLead.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
     <Content Include="GUI\M3\EliminarLead.aspx" />
-    <Content Include="GUI\M3\Listar - Copy.aspx" />
     <Content Include="GUI\M3\Listar.aspx" />
     <Content Include="GUI\M3\ModificarLead.aspx" />
     <Content Include="GUI\M3\Promover.aspx" />
@@ -1054,13 +1053,6 @@
     </Compile>
     <Compile Include="GUI\M3\EliminarLead.aspx.designer.cs">
       <DependentUpon>EliminarLead.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M3\Listar - Copy.aspx.cs">
-      <DependentUpon>Listar - Copy.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M3\Listar - Copy.aspx.designer.cs">
-      <DependentUpon>Listar - Copy.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\Listar.aspx.cs">
       <DependentUpon>Listar.aspx</DependentUpon>

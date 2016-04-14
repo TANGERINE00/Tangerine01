@@ -10,7 +10,7 @@
 namespace Tangerine.GUI.M3 {
     
     
-    public partial class EjemploM3 {
+    public partial class ModificarLead {
         
         /// <summary>
         /// id_otro control.

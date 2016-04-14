@@ -10,6 +10,6 @@
 namespace Tangerine.GUI.M3 {
     
     
-    public partial class EjemploM3 {
+    public partial class ConsultarLead {
     }
 }
