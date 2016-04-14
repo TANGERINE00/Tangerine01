@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M5 {
+namespace Tangerine.GUI.M3 {
     
     
-    public partial class EjemploM5 {
+    public partial class EjemploM3 {
     }
 }
