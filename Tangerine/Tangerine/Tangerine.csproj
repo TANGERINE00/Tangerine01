@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -139,7 +140,9 @@
     <Content Include="GUI\M1\NuevaContraseña.aspx" />
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
+    <Content Include="GUI\M2\CambiarRol.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
+    <Content Include="GUI\M2\RegistroUsuario.aspx" />
     <Content Include="GUI\M3\AgregarLeads.aspx" />
     <Content Include="GUI\M3\ConsultarLead.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
@@ -1022,12 +1025,26 @@
     <Compile Include="GUI\M1\VerEmpleado.aspx.designer.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\CambiarRol.aspx.cs">
+      <DependentUpon>CambiarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\CambiarRol.aspx.designer.cs">
+      <DependentUpon>CambiarRol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M2\EjemploM2.aspx.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M2\EjemploM2.aspx.designer.cs">
       <DependentUpon>EjemploM2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M2\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
       <DependentUpon>AgregarLeads.aspx</DependentUpon>
