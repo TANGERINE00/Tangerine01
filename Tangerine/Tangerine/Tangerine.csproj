@@ -174,6 +174,7 @@
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="GUI\M9\FacturasPorPagar.aspx" />
     <Content Include="GUI\M9\SeleccionCompania.aspx" />
+    <Content Include="GUI\M9\CargarPago.aspx" />
     <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="pages\calendar.html" />
@@ -1184,6 +1185,7 @@
     </Compile>
     <Compile Include="GUI\M7\ConsultaProyecto.aspx.cs">
       <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\ConsultaProyecto.aspx.designer.cs">
       <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
@@ -1197,6 +1199,7 @@
     </Compile>
     <Compile Include="GUI\M7\modificarProyecto.aspx.cs">
       <DependentUpon>modificarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\modificarProyecto.aspx.designer.cs">
       <DependentUpon>modificarProyecto.aspx</DependentUpon>
@@ -1256,6 +1259,13 @@
     </Compile>
     <Compile Include="GUI\M9\SeleccionCompania.aspx.designer.cs">
       <DependentUpon>SeleccionCompania.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\CargarPago.aspx.cs">
+      <DependentUpon>CargarPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\CargarPago.aspx.designer.cs">
+      <DependentUpon>CargarPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Master\Tangerine.Master.cs">
       <DependentUpon>Tangerine.Master</DependentUpon>
