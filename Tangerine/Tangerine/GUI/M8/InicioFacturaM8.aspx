@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="InicioCompania.aspx.cs" Inherits="Tangerine.GUI.M4.InicioCompania" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="InicioFacturaM8.aspx.cs" Inherits="Tangerine.GUI.M8.InicioFacturaM8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -27,14 +27,16 @@
                 <!-- form start -->
                 <form role="form">
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary col-md-4" >Consultar</button>
+                        <button type="submit" class="btn btn-primary">Consultar</button>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary col-md-4">Modificar</button>
+                        <button type="submit" class="btn btn-primary">Modificar</button>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary col-md-4">Anular</button>
+                        <button type="submit" class="btn btn-primary">Anular</button>
                     </div>
+
+                   
 
                     <!-- 
                     <div class="box-footer">
