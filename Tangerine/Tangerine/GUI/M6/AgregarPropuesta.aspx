@@ -74,10 +74,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="input_costo">Costo del Proyecto</label>
-                    <input type="input_costo" class="form-control" id="costo_id" placeholder="Costo del proyecto">
-                </div>
+                
 
                 <label for="input_costo">Costo del Proyecto</label>
                 <div class="input-group">
