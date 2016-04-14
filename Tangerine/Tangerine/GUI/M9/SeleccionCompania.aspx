@@ -1,37 +1,33 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultarCompania.aspx.cs" Inherits="Tangerine.GUI.M4.ConsultarCompania" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="SeleccionCompania.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
-    Gestión de Compañias
+    Seleccion de la compañia
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
-    Consultar
+    Lista de compañias
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-<<<<<<< HEAD
-    <li><a href="#">Gestión de Compañias</a></li>
-    <li><a href="#">Inicio</a></li>
-=======
- <li><a href="InicioCompania.aspx">Gestión de Compañias</a></li>
->>>>>>> origin/master
-    <li class="active">Consultar</li>
+    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+    <li><a href="#">Gestión de Pagos</a></li>
+    <li class="active">Seleccion de la compañia</li>
 </asp:Content>
-
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+</asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
     <div class="row">
             <!-- left column -->
             <div class="col-md-12">
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Consulta de Datos</h3>
+                    <h3 class="box-title">Compañias</h3>
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
                             <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
 
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
                             </div>
                         </div>
                      </div>
