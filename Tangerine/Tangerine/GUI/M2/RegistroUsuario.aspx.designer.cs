@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M4 {
+namespace Tangerine.GUI.M2 {
     
     
-    public partial class InicioCompania {
+    public partial class RegistroUsuario {
     }
 }
