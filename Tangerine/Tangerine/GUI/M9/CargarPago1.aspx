@@ -78,7 +78,7 @@
 
                 <div class="form-group">
                     <label for="input_cliente">Codigo de aprobacion</label>
-                    <input type="input_cliente" class="form-control" id="cliente_id" placeholder="Codigo de aprobacion">
+                    <input type="input_cliente" class="form-control"  placeholder="Codigo de aprobacion">
                 </div>
 
             <div class="box-foot">
