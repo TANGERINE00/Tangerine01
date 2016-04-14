@@ -34,7 +34,7 @@
 
                     <!-- Date range -->
                     <div class="form-group">
-                        <label>Date range:</label>
+                        <label>Fecha factura</label>
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
