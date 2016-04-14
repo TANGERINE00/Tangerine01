@@ -41,21 +41,21 @@
 
   
         <div class="form-group">
-            <asp:Label ID="Lable2" runat="server" Text="Fecha de inicio" Font-Bold="True"></asp:Label></div>
+            <asp:Label ID="Lable2"  runat="server" Text="Fecha de inicio" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="fechaInicio" runat="server" placeholder="Fecha" Width="351px"></asp:TextBox></div>
+            <asp:TextBox ID="fechaInicio"  class="form-control" runat="server" placeholder="Fecha" Width="351px"></asp:TextBox></div>
         <div class="form-group">
             <asp:Label ID="Label3" runat="server" Text="Fecha estimada de culminación" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="fechaCulminacion" runat="server" placeholder="Fecha culminación" Width="351px"></asp:TextBox></div>
+            <asp:TextBox ID="fechaCulminacion" runat="server" class="form-control" placeholder="Fecha culminación" Width="351px"></asp:TextBox></div>
         <div  class="form-group">
             <asp:Label ID="Label4" runat="server" Text="Costo estimado" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="costoProyecto" runat="server" Width="198px">0</asp:TextBox> <asp:Label ID="Label5" runat="server" Text=" Bs"></asp:Label> </div>
+            <asp:TextBox ID="costoProyecto" class="form-control" runat="server" Width="198px">0</asp:TextBox> <asp:Label ID="Label5" runat="server" Text=" Bs"></asp:Label> </div>
         <div  class="form-group">
             <asp:Label ID="Label6" runat="server" Text="Porcentaje de Realización" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="porcentajeRealizacion" runat="server" Width="119px">0</asp:TextBox> <asp:Label ID="Label7" runat="server" Text="%"></asp:Label> </div>
+            <asp:TextBox ID="porcentajeRealizacion"  class="form-control" runat="server" Width="119px">0</asp:TextBox> <asp:Label ID="Label7" runat="server" Text="%"></asp:Label> </div>
 
 
         <div class="form-group">
@@ -96,6 +96,6 @@
     <!--/.col (left) -->
             <!-- right column -->
              <div class="col-md-6">
-              <div style="width: 821px"> <asp:Button ID="Button3" class="btn btn-info pull-right" runat="server" Text="Modificar"  /></div>
+              <div style="width: 821px"> <asp:Button ID="Button3" class="btn btn-primary" runat="server" Text="Modificar"  /></div>
             </div>
 </asp:Content>

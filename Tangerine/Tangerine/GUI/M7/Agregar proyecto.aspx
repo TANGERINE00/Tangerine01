@@ -30,23 +30,23 @@
         <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Codigo del Proyecto" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="codigoProyecto" runat="server" placeholder="Codigo" Width="351px" ></asp:TextBox></div>
+            <asp:TextBox ID="codigoProyecto" class="form-control" runat="server" placeholder="Codigo" Width="351px" ></asp:TextBox></div>
         <div class="form-group">
             <asp:Label ID="Lable2" runat="server" Text="Fecha de inicio" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="fechaInicio" runat="server" placeholder="Fecha" Width="351px"></asp:TextBox></div>
+            <asp:TextBox ID="fechaInicio" runat="server" class="form-control" placeholder="Fecha" Width="351px"></asp:TextBox></div>
         <div class="form-group">
             <asp:Label ID="Label3" runat="server" Text="Fecha estimada de culminación" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="fechaCulminacion" runat="server" placeholder="Fecha culminación" Width="351px"></asp:TextBox></div>
+            <asp:TextBox ID="fechaCulminacion" class="form-control" runat="server" placeholder="Fecha culminación" Width="351px"></asp:TextBox></div>
         <div  class="form-group">
             <asp:Label ID="Label4" runat="server" Text="Costo estimado" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="costoProyecto" runat="server" Width="198px">0</asp:TextBox> <asp:Label ID="Label5" runat="server" Text=" Bs"></asp:Label> </div>
+            <asp:TextBox ID="costoProyecto" class="form-control" runat="server" Width="198px">0</asp:TextBox> <asp:Label ID="Label5" runat="server" Text=" Bs"></asp:Label> </div>
         <div  class="form-group">
             <asp:Label ID="Label6" runat="server" Text="Porcentaje de Realización" Font-Bold="True"></asp:Label></div>
         <div class="form-group">
-            <asp:TextBox ID="porcentajeRealizacion" runat="server" Width="119px">0</asp:TextBox> <asp:Label ID="Label7" runat="server" Text="%"></asp:Label> </div>
+            <asp:TextBox ID="porcentajeRealizacion" class="form-control" runat="server" Width="119px">0</asp:TextBox> <asp:Label ID="Label7" runat="server" Text="%"></asp:Label> </div>
 
 
         <div class="form-group">
@@ -73,7 +73,7 @@
  
     </form>
                   </div><!-- /.box -->
-         <div style="height: 49px; width: 822px;">  <button type="submit" class="btn btn-info pull-right">Crear</button></div>
+         <div style="height: 49px; width: 822px;">  <button type="submit" class="btn btn-primary">Crear</button></div>
             </div> 
     
     <!--/.col (left) -->
