@@ -141,7 +141,6 @@
     <Content Include="GUI\M3\EjemploM3.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
-    <Content Include="GUI\M4\EjemploM4.aspx" />
     <Content Include="GUI\M4\HabilitarCompania.aspx" />
     <Content Include="GUI\M4\InicioCompania.aspx" />
     <Content Include="GUI\M4\ModificarCompania.aspx" />
@@ -1021,13 +1020,6 @@
     </Compile>
     <Compile Include="GUI\M4\ConsultarCompania.aspx.designer.cs">
       <DependentUpon>ConsultarCompania.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M4\EjemploM4.aspx.cs">
-      <DependentUpon>EjemploM4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M4\EjemploM4.aspx.designer.cs">
-      <DependentUpon>EjemploM4.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\HabilitarCompania.aspx.cs">
       <DependentUpon>HabilitarCompania.aspx</DependentUpon>

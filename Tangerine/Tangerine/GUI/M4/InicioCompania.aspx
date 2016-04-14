@@ -27,16 +27,16 @@
                 <!-- form start -->
                 <form role="form">
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Consultar</button>
+                        <button type="submit" class="btn btn-primary col-md-4" >Consultar</button>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button type="submit" class="btn btn-primary col-md-4">Registrar</button>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Modificar</button>
+                        <button type="submit" class="btn btn-primary col-md-4">Modificar</button>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Habilitar/Inhabilitar</button>
+                        <button type="submit" class="btn btn-primary col-md-4">Habilitar/Inhabilitar</button>
                     </div>
 
                     <!-- 
