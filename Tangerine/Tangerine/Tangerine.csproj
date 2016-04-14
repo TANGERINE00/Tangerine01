@@ -160,9 +160,14 @@
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
+<<<<<<< HEAD
+    <Content Include="GUI\M7\modificarProyecto.aspx" />
+    <Content Include="GUI\M7\ConsultaProyecto.aspx" />
+=======
     <Content Include="GUI\M7\EjemploM7.aspx" />
     <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
+>>>>>>> origin/master
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M8\InicioFacturaM8.aspx" />
     <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
@@ -1182,6 +1187,20 @@
     </Compile>
     <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
       <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\modificarProyecto.aspx.cs">
+      <DependentUpon>modificarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M7\modificarProyecto.aspx.designer.cs">
+      <DependentUpon>modificarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M7\ConsultaProyecto.aspx.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M7\ConsultaProyecto.aspx.designer.cs">
+      <DependentUpon>ConsultaProyecto.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>

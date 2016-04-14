@@ -9,7 +9,12 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+<<<<<<< HEAD
+    <li><a href="#">Gestión de Compañias</a></li>
+    <li class="active">Inicio</li>
+=======
     <li class="active">Gestión de Compañias</li>
+>>>>>>> origin/master
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     
@@ -26,6 +31,18 @@
                 <!-- form start -->
                 <form role="form">
                     <div class="box-footer">
+<<<<<<< HEAD
+                        <button type="submit" class="btn btn-primary col-md-4" >Consultar</button>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary col-md-4">Registrar</button>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary col-md-4">Modificar</button>
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary col-md-4">Habilitar/Inhabilitar</button>
+=======
                         <asp:Button 
                           ID="Button1" 
                           type="submit" class="btn btn-primary col-md-4"
@@ -60,6 +77,7 @@
                           runat="server"
                           Text="Habilitar/Inhabilitar" 
                             />  
+>>>>>>> origin/master
                     </div>
 
                     <!-- 
