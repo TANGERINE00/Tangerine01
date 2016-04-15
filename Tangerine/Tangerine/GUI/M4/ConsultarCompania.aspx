@@ -39,46 +39,74 @@
                                 <th>Nombre</th>
                                 <th>Acrónimo</th>
                                 <th>RIF</th>
-                                <th>Email</th>
+                                <th>Teléfono</th>
                                 <th>Fecha Registro</th>
                                 <th>Status</th>
-                                <th style="text-align: center;">Información</th>
+                                <th style="text-align: center;">Acciones</th>
                             </tr>
                             <tr>
                                 <td>Tangerine Systems</td>
                                 <td>TGE</td>
                                 <td>J-234435634</td>
-                                <td>tangerine00@gmail.com</td>
+                                <td>+584122362151</td>
                                 <td>14/04/2016</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;">
+                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
+                                </th>
                             </tr>
                             <tr>
                                 <td>Touch Solutions</td>
                                 <td></td>
                                 <td>J-8673254432</td>
-                                <td>touchs@gmail.com</td>
+                                <td>+582129764901</td>
                                 <td>30/01/2005</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;">
+                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
+                                </th>
                             </tr>
                             <tr>
                                 <td>Universidad Católica Andrés Bello</td>
                                 <td>UCAB</td>
                                 <td>J-9832457896</td>
-                                <td>ucab@gmail.com</td>
+                                <td>+582126659375</td>
                                 <td>13/05/2014</td>
                                 <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;">
+                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
+                                </th>
                             </tr>
                             <tr>
                                 <td>International Business Machines</td>
                                 <td>IBM</td>
                                 <td>J-8764553432</td>
-                                <td>ibm@gmail.com</td>
+                                <td>+582129774543</td>
                                 <td>22/12/2012</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                                <th style="text-align: center;">
+                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
+                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
+                                </th>
                             </tr>
                         </tbody>
                     </table>
