@@ -41,8 +41,7 @@
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                 <a id="buttomCancela_M8" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="#">Cancelar</a>
-                    <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-warning"  type="submit" runat="server" Text = "Generar"   ></asp:Button>
+                    <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Anular"   ></asp:Button>
                   </div>
                 </form>
               </div><!-- /.box -->
