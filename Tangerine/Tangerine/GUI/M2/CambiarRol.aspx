@@ -31,85 +31,117 @@
             element.style.display='none';
         }
     </script>
-    <div class="row">
-            <!-- left column -->
-            <div class="col-md-6">
-              <!-- TABLE: USUARIOS -->
-              <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Lista de usuarios del sistema</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <div class="table-responsive">
-                    <table class="table no-margin">
-                      <thead>
-                        <tr>
-                          <th>NickName</th>
-                          <th>Nombre y Apellido</th>
-                          <th>Rol</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>luarropa</td>
-                          <td>Luis Rodríguez</td>
-                          <td>Gerente</td>
-                          <td><a href="javascript::;" class="btn btn-sm btn-info btn-success pull-left" onclick="javascript:showContent('luarropa','Gerente')">Cambiar Rol</a></td>
-                        </tr>
-                          <tr>
-                          <td>gerastone</td>
-                          <td>Gerardo Astone</td>
-                          <td>Director</td>
-                          <td><a href="javascript::;" class="btn btn-sm btn-info btn-success pull-left" onclick="javascript:showContent('gerastone','Director')">Cambiar Rol</a></td>
-                        </tr>
-                        <tr>
-                          <td>Craloz</td>
-                          <td>Carlos Lozano</td>
-                          <td>Administrador</td>
-                          <td><a href="javascript::;" class="btn btn-sm btn-info btn-success pull-left" onclick="javascript:showContent('Craloz','Administrador')">Cambiar Rol</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div><!-- /.table-responsive -->
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-         
-            </div><!--/.col (left) -->
-            <!-- right column -->
-            <div class="col-md-6" id="boxCambiarRol" style="display:none;">
-              <!-- Horizontal Form -->
-              <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Selecciona el Rol para el usuario</h3>
-                </div><!-- /.box-header -->
-                <!-- form start -->
-                <form class="form-horizontal">
-                  <div class="box-body">
-                     <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">Nickname</label>
-                      <div class="col-sm-8">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="nickname" disabled>
-                      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Selecciona el rol para el usuario</h4>
+                </div>
+                <div class="modal-body">  
+                    <div class="box-body">     
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="usuario" disabled>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
+                            <div class="col-sm-10">
+                                <select class="form-control">
+                                    <option>Administrador</option>
+                                    <option>Director</option>
+                                    <option>Gerente</option>
+                                    <option>Programador</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Cambiar</button>
+                    </div><!-- /.box-footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="box box-info">
+            <!--<div class="panel-heading">Filtrar empleados</div>-->
+            <div class="box-header with-border">
+                <h3 class="box-title">Lista de empleados sin cuenta de usuario</h3>
+                <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                     </div>
-                    <p>&nbsp;</p>
-                    <div class="form-group">
-                      <div class="col-sm-10">
-                        <select class="form-control" id="SelecRol">
-                             <option>Administrador</option>
-                             <option>Director</option>
-                             <option>Gerente</option>
-                             <option>Programador</option>
-                        </select>
-                      </div>
-                   </div>
-                  </div><!-- /.box-body -->
-                  <div class="box-footer">
-                    <button type="button" class="btn btn-default" onclick="javascript:hideContent()">Cancelar</button>
-                    <button type="submit" class="btn btn-info pull-right">Cambiar</button>
-                  </div><!-- /.box-footer -->
-                </form>
-              </div><!-- /.box -->              
-            </div><!--/.col (right) -->
-          </div>
+                </div>
+            </div>
+
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <div class="table-responsive">
+                    <table class="table no-margin">
+                        <thead>
+                            <tr>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Usuario</th>
+                                <th>Rol</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Luis</td>
+                                <td>Rodríguez</td>
+                                <td>luarropa</td>
+                                <td>Gerente</td>
+                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('luarropa','Gerente')"></span></a></td>
+                            </tr>
+                            <tr>
+                                <td>Carlos</td>
+                                <td>Lozano</td>
+                                <td>craloz</td>
+                                <td>Administrador</td>
+                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></span></a></td>
+                            </tr>
+                            <tr>
+                                <td>Gerardo</td>
+                                <td>Astone</td>
+                                <td>gerastone</td>
+                                <td>Director</td>
+                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div><!-- /.table-responsive -->
+            </div>
+        </div>
+    </div>
 </asp:Content>
