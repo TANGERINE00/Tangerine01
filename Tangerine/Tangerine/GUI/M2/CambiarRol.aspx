@@ -20,15 +20,12 @@
     <script type="text/javascript">
         function showContent(nick,rol) {
             
-            element = document.getElementById("boxCambiarRol");
-            element.style.display = 'block';
             element2 = document.getElementById("inputEmail3");
             element2.placeholder = nick;
 
         }
         function hideContent() {
-            element = document.getElementById("boxCambiarRol");
-            element.style.display='none';
+
         }
     </script>
     <!-- Modal -->
@@ -44,7 +41,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="usuario" disabled>
+                                <input type="email" class="form-control" id="inputEmail3" placeholder= disabled>
                             </div>
                         </div>
                         <p>&nbsp;</p>
@@ -110,14 +107,14 @@
                                 <td>Lozano</td>
                                 <td>craloz</td>
                                 <td>Administrador</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></span></a></td>
+                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('craloz','Gerente')"></span></a></td>
                             </tr>
                             <tr>
                                 <td>Gerardo</td>
                                 <td>Astone</td>
                                 <td>gerastone</td>
                                 <td>Director</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></span></a></td>
+                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('gerastone','Gerente')"></span></a></td>
                             </tr>
                         </tbody>
                     </table>
