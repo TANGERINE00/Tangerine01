@@ -22,17 +22,17 @@
 		<div class="col-md-6">
 			<div id="id_otro" runat="server" class="form-group">
 				<div class="icon-addon addon-lg">
-					<a>Nombre</a>
+					<label>Nombre <a style="color:rgb(255, 0, 0);">*</a></label>
 					<input style="margin-bottom:3%" runat="server" type="text" value="Cesar" class="form-control" id="nombre" name ="nombre">                    
-					<a>Apellido</a>
+					<label>Apellido <a style="color:rgb(255, 0, 0);">*</a></label>
                     <input style="margin-bottom:3%" runat="server" type="text" value="Rodriguez" class="form-control" id="apellido" name ="apellido" >                   
-					<a>Departamento</a>
+					<label>Departamento <a style="color:rgb(255, 0, 0);">*</a></label>
                     <input style="margin-bottom:3%" runat="server" type="text" value="Informatica" class="form-control" id="departamento" name ="departamento" >                  
-					<a>Cargo</a>
+					<label>Cargo <a style="color:rgb(255, 0, 0);">*</a></label>
                     <input style="margin-bottom:3%" runat="server" type="text" value="Lider de Proyecto" class="form-control" id="cargo" name ="cargo" >
-                    <a>Telefono</a>
+                    <label>Telefono</label>
                     <input style="margin-bottom:3%" runat="server" type="text" value="0412-230.03.53" class="form-control" id="telefono" name="telefono">
-                    <a>Correo</a>
+                    <label>Correo</label>
                     <input runat="server" type="text" value="carr235@gmail.com" class="form-control" id="Correo" name="Correo">
 					
                     <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="ConsultarContactos.aspx">Cancelar</a>
