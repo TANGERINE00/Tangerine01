@@ -106,12 +106,18 @@
                     <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Agregar"   ></asp:Button>
                   
                     </div>
+                      <hr />
+
+                       <div class="form-group">
+                      <label for="labelencargado_M7">Encargado de la empresa contratante</label>
+                     <select class="form-control" name="EncargadoProyecto" > 
+                     <option>Pedro Perez</option>
+                     <option> Ana Rodriguez</option> </select>
+                    </div>
       </form>
                     </div>
           </div>
           </div>
 </asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
-     
-           
+<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">   
 </asp:Content>
