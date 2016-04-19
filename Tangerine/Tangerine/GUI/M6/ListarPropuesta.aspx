@@ -23,15 +23,7 @@
         <div class="box-header">
             <h3 class="box-title">Propuestas</h3>
 
-            <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
-
-                    <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
         <!-- Modal -->
@@ -104,8 +96,8 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-            <table class="table table-hover">
-                <tbody>
+            <table id="listar" class="table table-bordered table-striped dataTable">
+                 <thead>
                     <tr>
                         <th>N° Referencia</th>
                         <th>Cliente</th>
@@ -115,6 +107,8 @@
                         <th>Moneda/Pago</th>
                         <th style="text-align: center;">Acciones</th>
                     </tr>
+                  </thead>
+                <tbody>
                     <tr>
                         <td>TRSC012016</td>
                         <td>Trascend</td>
@@ -158,7 +152,48 @@
     </div>
     <!-- /.box -->
 
+     <script type="text/javascript">
+         $(document).ready(function () {
 
+             var table = $('#listar').DataTable({
+                 "language": {
+                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+                 }
+             });
+             var req;
+             var tr;
+
+             $('#listar tbody').on('click', 'a', function () {
+                 if ($(this).parent().hasClass('selected')) {
+                     req = $(this).parent().prev().prev().prev().prev().text();
+                     tr = $(this).parents('tr');//se guarda la fila seleccionada
+                     $(this).parent().removeClass('selected');
+
+                 }
+                 else {
+                     req = $(this).parent().prev().prev().prev().prev().text();
+                     tr = $(this).parents('tr');//se guarda la fila seleccionada
+                     table.$('tr.selected').removeClass('selected');
+                     $(this).parent().addClass('selected');
+                 }
+             });
+
+
+
+             $('#modal-delete').on('show.bs.modal', function (event) {
+                 var modal = $(this)
+                 modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
+                 modal.find('#req').text(req)
+             })
+             $('#btn-eliminar').on('click', function () {
+                 table.row(tr).remove().draw();//se elimina la fila de la tabla
+                 $('#modal-delete').modal('hide');//se esconde el modal
+             });
+
+
+         });
+
+         </script>
 
 
 </asp:Content>
