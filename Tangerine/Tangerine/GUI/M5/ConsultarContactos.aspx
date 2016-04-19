@@ -2,10 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
-    Gestión de contactos
+    Nombre Compañía/Lead
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
-    Listado de Contactos
+    <!--Lista de Contactos-->
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -21,7 +21,7 @@
    <div class="col-xs-12">
      <div class="box">
        <div class="box-header">
-           <h3 class="box-title">Planillas Creadas</h3>
+           <h3 class="box-title">Contactos Existentes</h3>
         </div><!-- /.box-header -->
       <form role="form" name="consultar" id="consultar">
          
@@ -30,9 +30,7 @@
           <table id="planillascreadas" class="table table-bordered table-striped dataTable" accesskey="">
            <thead>
             <tr style="font-size:18px;">
-                <th>ID</th>
                 <th>Nombre</th>
-                <th>Empresa</th>
                 <th>Departamento</th>
                 <th>Cargo</th>
                 <th>Telefono</th>
@@ -43,34 +41,28 @@
               <asp:Literal runat="server" ID="tabla"></asp:Literal>
            <tbody>
              <tr>
-                <th>1</th>
                 <th>Cesar Rodriguez</th>
-                <th>UCAB</th>
                 <th>Informatica</th>
                 <th>Lider de Proyecto</th>
                 <th>0412-230.03.53</th>
                 <th>carr235@gmail.com</th>                 
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
+                <th style="text-align:center;"><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a style="margin-left:5px;" class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
              </tr>
                <tr>
-                <th>2</th>
                 <th>Pedro Perez</th>
-                <th>Movistar</th>
                 <th>RRHH</th>
                 <th>Gerente</th>
                 <th>0424.098.76.54 0212.987.12.34</th>
                 <th>pperez@movistar.com</th>                 
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
+                <th style="text-align:center;"><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a style="margin-left:5px;" class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
              </tr>
                <tr>
-                <th>3</th>
                 <th>Ana Riera</th>
-                <th>VisionTec</th>
                 <th>Comercio Electronico</th>
                 <th>Gerente</th>
                 <th>0412-123.45.67</th>
                 <th>ariera@vtec.com rieraana76@gmail.com</th>                 
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
+                <th style="text-align:center;"><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a style="margin-left:5px;" class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
              </tr>
            </tbody>
         </table>

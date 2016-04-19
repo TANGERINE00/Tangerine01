@@ -22,22 +22,21 @@
 		<div class="col-md-6">
 			<div id="id_otro" runat="server" class="form-group">
 				<div class="icon-addon addon-lg">
-					<a>Nombre</a>
-					<input style="margin-bottom:3%" runat="server" type="text" value="Cesar" class="form-control" id="nombre" name ="nombre">                    
-					<a>Apellido</a>
-                    <input style="margin-bottom:3%" runat="server" type="text" value="Rodriguez" class="form-control" id="apellido" name ="apellido" >                   
-					<a>Departamento</a>
-                    <input style="margin-bottom:3%" runat="server" type="text" value="Informatica" class="form-control" id="departamento" name ="departamento" >                  
-					<a>Cargo</a>
-                    <input style="margin-bottom:3%" runat="server" type="text" value="Lider de Proyecto" class="form-control" id="cargo" name ="cargo" >
-                    <a>Telefono</a>
-                    <input style="margin-bottom:3%" runat="server" type="text" value="0412-230.03.53" class="form-control" id="telefono" name="telefono">
-                    <a>Correo</a>
-                    <input runat="server" type="text" value="carr235@gmail.com" class="form-control" id="Correo" name="Correo">
+					<label>Nombre <a style="color:rgb(255, 0, 0);">*</a></label>
+					<input style="margin-bottom:3%" runat="server" type="text" placeholder="Cesar" class="form-control" id="nombre" name ="nombre">                    
+					<label>Apellido <a style="color:rgb(255, 0, 0);">*</a></label>
+                    <input style="margin-bottom:3%" runat="server" type="text" placeholder="Rodriguez" class="form-control" id="apellido" name ="apellido" >                   
+					<label>Departamento <a style="color:rgb(255, 0, 0);">*</a></label>
+                    <input style="margin-bottom:3%" runat="server" type="text" placeholder="Informatica" class="form-control" id="departamento" name ="departamento" >                  
+					<label>Cargo <a style="color:rgb(255, 0, 0);">*</a></label>
+                    <input style="margin-bottom:3%" runat="server" type="text" placeholder="Lider de Proyecto" class="form-control" id="cargo" name ="cargo" >
+                    <label>Telefono</label>
+                    <input style="margin-bottom:3%" runat="server" type="text" placeholder="0412-230.03.53" class="form-control" id="telefono" name="telefono">
+                    <label>Correo</label>
+                    <input runat="server" type="text" placeholder="carr235@gmail.com" class="form-control" id="Correo" name="Correo">
 					
-                    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="ConsultarContactos.aspx">Cancelar</a>
-                    <!--<asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar"   ></asp:Button>-->
-                    <a id="btnaceptara" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="ConsultarContactos.aspx">Modificar</a>
+                    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx">Cancelar</a>
+                    <a id="btnaceptara" type="submit" style="margin-top:5%" class="btn btn-primary pull-right" runat="server" href="ConsultarContactos.aspx">Modificar</a>
 				</div>	
 			
             </div>

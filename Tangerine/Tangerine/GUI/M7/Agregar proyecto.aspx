@@ -12,72 +12,106 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-         <div class="form-group">
-            <asp:Label ID="Label10" runat="server" Text="Proyectos" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
-      <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css" /> 
-     <!-- left column -->
+          <div class="row">
+            <!-- left column -->
             <div class="col-md-6">
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Crear Proyecto</h3>
+                  <h3 class="box-title">Nuevo Proyecto</h3>
                 </div><!-- /.box-header -->
-     <form role="form">
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+
+                     <div class="form-group">
+                      <label for="labelPropuesta_M7">Propuetsa Aprobada</label>
+                     <select class="form-control" name="Propuesta Aprobada" > 
+                     <option>sistema A</option>
+                     <option> sistema B</option> </select>
+                    </div>
+                      
+                      <div class="form-group">
+                      <label for="labelNumeroFactura_M7">Nombre de proyecto</label>
+                      <input type="text" class="form-control" id="textNombreProyecto_M7" placeholder="Nombre Proyecto"  >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="labelFecha_M7">Codigo del proyecto</label>
+                      <input type="text" class="form-control" id="textCodigoProyecto_M7" placeholder="Codigo" >
+                    </div>
+
+                      <div class="form-group">
+                      <label for="labelCliente_M7">Fecha de inicio</label>
+                      <input type="date" class="form-control" id="textFechaInicio_M7" placeholder="Feha de inicio"  >
+                    </div>
+
+                        <div class="form-group">
+                      <label for="labelProyecto_M7">Fecha Estimada de culminación</label>
+                      <input type="date" class="form-control" id="textFechaCulminacion_M7" placeholder="Fecha fin" >
+                    </div>
+
+                      
+                        <div class="form-group">
+                      <label for="labelMonto_M7">Costo estimado</label>
+                      <input type="text" class="form-control" id="textCosto_M7" placeholder="0 Bs"  >
+                    </div>
+
+                       <div class="form-group">
+                      <label for="labelMonto_M7">Porsentaje de realizacion</label>
+                      <input type="dropdownlist" class="form-control" id="textCosto_M7" placeholder="0 %"  > 
+                    </div>
+                    
+                      <hr />
+
+                      
+
+                  </div><!-- /.box-body -->
+
+                  <div class="box-footer">
+                    <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Generar"   ></asp:Button>
+                  </div>
+                </form>
+              </div><!-- /.box -->
          
-     
-        <div class="form-group">
-            <asp:Label ID="Label1" runat="server" Text="Codigo del Proyecto" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-            <asp:TextBox ID="codigoProyecto" class="form-control" runat="server" placeholder="Codigo" Width="351px" ></asp:TextBox></div>
-        <div class="form-group">
-            <asp:Label ID="Lable2" runat="server" Text="Fecha de inicio" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-            <asp:TextBox ID="fechaInicio" runat="server" class="form-control" placeholder="Fecha" Width="351px"></asp:TextBox></div>
-        <div class="form-group">
-            <asp:Label ID="Label3" runat="server" Text="Fecha estimada de culminación" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-            <asp:TextBox ID="fechaCulminacion" class="form-control" runat="server" placeholder="Fecha culminación" Width="351px"></asp:TextBox></div>
-        <div  class="form-group">
-            <asp:Label ID="Label4" runat="server" Text="Costo estimado" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-            <asp:TextBox ID="costoProyecto" class="form-control" runat="server" Width="198px">0</asp:TextBox> <asp:Label ID="Label5" runat="server" Text=" Bs"></asp:Label> </div>
-        <div  class="form-group">
-            <asp:Label ID="Label6" runat="server" Text="Porcentaje de Realización" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-            <asp:TextBox ID="porcentajeRealizacion" class="form-control" runat="server" Width="119px">0</asp:TextBox> <asp:Label ID="Label7" runat="server" Text="%"></asp:Label> </div>
-
-
-        <div class="form-group">
-             <asp:Label ID="Label9" runat="server" Text="Propuesta Aprobada" Font-Bold="True"></asp:Label></div>
-            <div class="form-group"><asp:DropDownList class="form-control" ID="propuetaAprobada" runat="server"></asp:DropDownList>
-         </div>
-         <div class="form-group">
-             <hr />
-             <asp:Label ID="Label8" runat="server" Text="Gerente Encargado" Font-Bold="True"></asp:Label></div>
-         <div>
-             <asp:DropDownList class="form-control" ID="gerenteResponsable" runat="server"></asp:DropDownList>
-         </div>
-
-          <div class="form-group">
-              <hr />
-             <asp:Label ID="Label2" runat="server" Text="Agregar peersonal del trabajo" Font-Bold="True"></asp:Label>
-              
-         </div>
-         <div class="form-group">
-             <asp:DropDownList  ID="personalTrabajo" runat="server" Width="372px"> </asp:DropDownList>
-             <asp:Button ID="Button1" class="btn btn-info pull-right" runat="server" Text="Agregar" />
-         </div>
-         
- 
-    </form>
-                  </div><!-- /.box -->
-         <div style="height: 49px; width: 822px;">  <button type="submit" class="btn btn-primary">Crear</button></div>
-            </div> 
-    
-    <!--/.col (left) -->
+            </div><!--/.col (left) -->
             <!-- right column -->
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+
+                <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Personal del Proyecto</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+
+                 <div class="form-group">
+                      <label for="labelGerete_M7">Gerente de proyecto</label>
+                     <select class="form-control" name="gerenteProyecto" > 
+                     <option>Pedro Perez</option>
+                     <option> Ana Rodriguez</option> </select>
+                    </div>
+
+                      <hr />
+
+                       <div class="form-group">
+                      <label for="labelPersonal_M7">Personal Responsable</label>
+                     <select class="form-control" name="personalProyecto" > 
+                     <option>jose</option>
+                     <option> pedro</option> 
+                         <option> maria</option>
+                         <option> ana</option>
+                     </select>
+                    <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+                  
+                    </div>
+      </form>
+                    </div>
+          </div>
+          </div>
+</asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
+     
            
 </asp:Content>
