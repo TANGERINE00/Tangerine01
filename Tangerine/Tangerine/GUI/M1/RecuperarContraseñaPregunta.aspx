@@ -34,7 +34,7 @@
         </div>
 
         <div class="login-box-body " style=" background: black; box-shadow:  0px 0px 40px #000000;">
-          <p class="login-box-msg">Responda las siguientes preguntas</p>
+          <p class="login-box-msg" style="color:#FFFFFF">Responda las siguientes preguntas</p>
 
           <form action="../../index2.html" method="post" style="text-align: center;">
             <div class="form-group has-feedback">
@@ -44,11 +44,8 @@
               <input type="text" class="form-control" placeholder="Código de seguridad">
             </div>
             <div class="row">
-              <div class="col-xs-12 col-md-6 col-lg-6">
+              <div class="col-xs-12 col-md-12 col-lg-12">
                 <a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>
-              </div>
-              <div class="col-xs-12 col-md-6 col-lg-6">
-                <a href="Login.aspx" type="button" class="btn btn-default">Cancelar</a>
               </div>
             </div>
           </form>

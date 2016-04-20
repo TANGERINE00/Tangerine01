@@ -211,9 +211,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../M1/EmpleadosAdmin.aspx" ><i class="fa fa-circle-o"></i> Empleados</a></li>
-                <li><a href="../M10/AdminContrato.aspx" ><i class="fa fa-circle-o"></i> Contratos</a></li>
                 <li><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Pagos</a></li>
               </ul>
             </li>
             <!--<li class="header">LABELS</li>
