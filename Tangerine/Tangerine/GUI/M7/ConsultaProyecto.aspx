@@ -14,96 +14,117 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-     <div class="form-group">
-            <asp:Label ID="Label10" runat="server" Text="Proyecto" Font-Bold="True" Font-Size="Larger"></asp:Label></div>
-
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
-
-     <!-- left column -->
+     <div class="row">
+            <!-- left column -->
             <div class="col-md-6">
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Consultar Proyecto</h3>
+                  <h3 class="box-title">Nuevo Proyecto</h3>
                 </div><!-- /.box-header -->
-      <form role="form">
-          <div class="form-group">
-            <asp:Label ID="Label1" runat="server" Text="Codigo del Proyecto" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-            <asp:DropDownList ID="codigoProyecto" runat="server"> </asp:DropDownList>
-        <div> <hr /></div>
-        <div class="form-group">
-            <asp:Label ID="Label11" runat="server" Text="Estatus" Font-Bold="True"></asp:Label></div>
-            <div class="form-group"> 
-                <asp:Label ID="estatus" runat="server" Text="-Estatus-" ></asp:Label>
-            </div>
-            
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
 
-  
-        <div class="form-group">
-            <asp:Label ID="Lable2" runat="server" Text="Fecha de inicio" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-             <asp:Label ID="fechaI" runat="server" Text="-Fecha-" ></asp:Label></div>
-        <div class="form-group">
-            <asp:Label ID="Label3" runat="server" Text="Fecha estimada de culminación" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-             <asp:Label ID="fechaE" runat="server" Text="-Fecha-"></asp:Label></div>
-        <div  class="form-group">
-            <asp:Label ID="Label4" runat="server" Text="Costo estimado" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-             <asp:Label ID="costo" runat="server" Text="-costo-" ></asp:Label> <asp:Label ID="Label5" runat="server" Text=" Bs"></asp:Label> </div>
-        <div  class="form-group">
-            <asp:Label ID="Label6" runat="server" Text="Porcentaje de Realización" Font-Bold="True"></asp:Label></div>
-        <div class="form-group">
-             <asp:Label ID="realizacion" runat="server" Text="-Realizacion-"></asp:Label> <asp:Label ID="Label7" runat="server" Text="%"></asp:Label> </div>
+                     <div class="form-group">
+                      <label for="labelPropuesta_M7">Propuetsa Aprobada</label> </div><div>
+                     <label name="propuestaAprobada" > sistema A </label>
+                    </div>
+                      
+                      <div class="form-group">
+                      <label for="labelNumeroFactura_M7">Nombre de proyecto</label>
+                  </div><div>
+                     <label name="nombreProyecto" > -Nombre del proyecto- </label>
+                    </div>
 
+                    <div class="form-group">
+                      <label for="labelFecha_M7">Codigo del proyecto</label>
+                      </div><div>
+                     <label name="codigoProyecto" > Codigo </label>
+                    </div>
 
-        <div class="form-group">
-             <asp:Label ID="Label9" runat="server" Text="Propuesta Aprobada" Font-Bold="True"></asp:Label></div>
-            <asp:Label ID="propuesta" runat="server" Text="-Informacion de la propuesta-"></asp:Label>
-         </div>
-         <div class="form-group">
-             <hr />
-             <asp:Label ID="Label8" runat="server" Text="Gerente Encargado" Font-Bold="True"></asp:Label></div>
-         <div>
-             <asp:Label ID="gerente" runat="server" Text="-Gerente-" ></asp:Label></div>
-         </form>
+                      <div class="form-group">
+                      <label for="labelCliente_M7">Fecha de inicio</label>
+                          </div><div>
+                     <label name="fechaInicio" > dd/mm/yyy </label>
+                    </div>
 
-          <div class="form-group">
-              <hr />
-             <asp:Label ID="Label2" runat="server" Text=" Personal Asignado" Font-Bold="True"></asp:Label>
-              
-         </div>
-         <div class="form-group">
-              <asp:Label ID="personal" runat="server" Text=" -Lista personal Asignado-"></asp:Label>
-         </div> 
-           <div class="form-group"><hr /></div>
+                        <div class="form-group">
+                      <label for="labelProyecto_M7">Fecha Estimada de culminación</label></div><div>
+                     <label name="fechaFin" > dd/mm/yyy </label>
+                    </div>
 
+                      
+                        <div class="form-group">
+                      <label for="labelMonto_M7">Costo estimado</label>
+                      </div><div>
+                     <label name="montoEstimado" > 100000 bs </label>
+                    </div>
+
+                       <div class="form-group">
+                      <label for="labelMonto_M7">Porsentaje de realizacion</label>
+                      </div><div>
+                     <label name="realizacion" > 30 %</label>
+                    </div>
+                    
+                      <hr />
+
+                      
+
+                  </div><!-- /.box-body -->
+
+                </form>
+              </div><!-- /.box -->
          
-    </form>
-                  </div><!-- /.box -->
-         
-            </div> 
-    
-    <!--/.col (left) -->
+            </div><!--/.col (left) -->
             <!-- right column -->
             <div class="col-md-6">
-               <form role="form">
-                   <div class="form-group">
-              <asp:Label ID="Label19" runat="server" Text=" Empresa" Font-Bold="True"></asp:Label>
-                       </div>
+
+                <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Personal del Proyecto</h3>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                <form role="form">
+                  <div class="box-body">
+
+                 <div class="form-group">
+                      <label for="labelGerete_M7">Gerente de proyecto</label>
+                     </div><div>
+                     <label name="gerenteResponsable" >  Pedro Perez </label>
+                    
+                    </div>
+
+                      <hr />
+
                        <div class="form-group">
-              <asp:Label ID="empresa" runat="server" Text=" -Nombre de la Empresa-"></asp:Label>
-         </div> 
-         <div class="form-group">
-              <asp:Label ID="Label20" runat="server" Text=" Persona de contacto" Font-Bold="True"></asp:Label>
-             </div><div class="form-group">
-              <asp:Label ID="personaC" runat="server" Text=" -Nombre persona-"></asp:Label>
-                 </div>
-                   <div class="form-group">
-             <asp:Label ID="telefono" runat="server" Text=" -telefono-"></asp:Label>
-         </div> 
-               </form>
-            </div>
+                      <label for="labelPersonal_M7">Personal Responsable</label>
+                      </div><div>
+                     <label name="gerenteResponsablea" >  jose </label></div><div>
+                     <label name="gerenteResponsableb" >  pedro </label></div><div>
+                     <label name="gerenteResponsablec" >  ana </label>
+                    
+                     
+                   
+                    </div>
+                      <hr />
+
+                       <div class="form-group">
+                      <label for="labelencargado_M7">Encargado de la empresa contratante</label>
+                     </div><div>
+                     <label name="Responsable" >  juan Rodriguez </label>
+                         </div><div>
+                     <label name="TelfResponsable" >  - Tlefono - </label>
+                             </div><div>
+                     <label name="Empresa" >  -Nombre Empresa- </label>
+
+
+                    </div>
+      </form>
+                    </div>
+          </div>
+          </div>
+</asp:Content>
+
+<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 </asp:Content>
