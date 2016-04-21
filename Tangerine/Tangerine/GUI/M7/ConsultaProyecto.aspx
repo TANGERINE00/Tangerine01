@@ -120,6 +120,12 @@
 
 
                     </div>
+
+                      <hr />
+
+                      <div class="form-group">
+                        <label for="labelencargado_M7">Estatus</label>  </div>
+                      <div class="form-group">   <label for="labelencargado_M7">Desarrollo</label>  </div>
       </form>
                     </div>
           </div>
