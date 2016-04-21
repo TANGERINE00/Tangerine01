@@ -39,7 +39,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.102.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\ActiproSoftware.Shared.Net20.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework, Version=3.0.5797.27550, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -1408,7 +1416,24 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="DatosTangerine\DatosTangerine.csproj">
+      <Project>{aade4db2-ab86-432e-8d4d-31bc301e0dcf}</Project>
+      <Name>DatosTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="DominioTangerine\DominioTangerine.csproj">
+      <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
+      <Name>DominioTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+      <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
+      <Name>ExcepcionesTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="LogicaTangerine\LogicaTangerine.csproj">
+      <Project>{e0a749b2-762b-41a8-b134-064a6a4dfb07}</Project>
+      <Name>LogicaTangerine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
