@@ -33,95 +33,88 @@
               </div>
             </div>
           </div> 
-
-        <div class="panel panel-default">
-        <div class="panel-heading">
-          Resultado de busqueda
-          <a href="CrearEmpleado.aspx" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></a>
+          
+        <div class="box box-body table-responsive">
+            <div class="panel-heading">
+              Resultado de busqueda
+              <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+            </div><br>
+            <!--table-->
+            <table class="table table-bordered table-striped dataTable">
+              <thead>
+                  <th>Nombres</th>
+                  <th>Apellidos</th>
+                  <th>Cedula</th>
+                  <th>Cargo</th>
+                  <th>Fecha</th>
+                  <th>Estatus</th>
+                  <th></th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Edgar Rafael</td>
+                  <td>Landaeta Malave</td>
+                   <td>20097258</td>
+                  <td>Desarrollador web</td>
+                  <td style="text-align: right;">01/03/2016</td>
+                  <td style="text-align:center;"><span class="label label-success">Activo</span></td>
+                  <td style="text-align:center;">
+                    <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Luz Marina</td>
+                  <td>Eljuri Risquez</td>
+                  <td>18604645</td>
+                  <td>Desaroolador</td>
+                  <td style="text-align:right;">15/03/2016</td>
+                  <td style="text-align:center;"><span class="label label-danger">Inactivo</span></td>
+                  <td style="text-align:center;">
+                    <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Antonio Juan</td>
+                  <td>Garcia</td>
+                  <td>20097260</td>
+                  <td>DBA</td>
+                  <td style="text-align: right;">21/04/2016</td>
+                  <td style="text-align:center;"><span class="label label-success">Activo</span></td>
+                  <td style="text-align:center;">
+                    <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- table-->
+            <nav>
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
         </div>
-        <!-- Table -->
-        <table class="table table-hover table-striped">
-          <thead>
-              <th>Ficha</th>
-              <th>Cedula</th>
-              <th>Nombres</th>
-              <th>Apellidos</th>
-              <th>Cargo</th>
-              <th>Fecha</th>
-              <th>Estatus</th>
-              <th></th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>a0001</td>
-              <td>20097258</td>
-              <td>Edgar Rafael</td>
-              <td>Landaeta Malave</td>
-              <td>Desarrollador web</td>
-              <td>01/03/2016</td>
-              <td>Activo</td>
-              <td>
-                <div class="btn-group" role="group">
-                  <a href="VerEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
-                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></span></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>a0002</td>
-              <td>18604645</td>
-              <td>Luz Marina</td>
-              <td>Eljuri Risquez</td>
-              <td>Risquez</td>
-              <td>15/03/2016</td>
-              <td>Activo</td>
-              <td>
-                <div class="btn-group" role="group">
-                  <a href="VerEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
-                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></span></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>a0003</td>
-              <td>20097260</td>
-              <td>Antonio Juan</td>
-              <td>Garcia</td>
-              <td></td>
-              <td>21/04/2016</td>
-              <td>Activo</td>
-              <td>
-                <div class="btn-group" role="group">
-                  <a href="VerEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></a>
-                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
-                  <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-check"></span></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <nav>
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>   
+
+
     </div>
 
 

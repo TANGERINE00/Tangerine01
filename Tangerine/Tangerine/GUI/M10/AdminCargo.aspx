@@ -19,7 +19,7 @@
         <div class="panel-body">
           <div class="form-group">
             <div class="row">
-              <div class="col-xs-12 col-md-12 col-lg-12">
+              <div class="col-xs-12 col-md-12 col-lg-12" >
                 <input type="text" class="form-control" placeholder="Filtrar cargos">
               </div>
             </div> 
@@ -27,29 +27,45 @@
         </div>
       </div> 
 
-      <div class="panel panel-default">
+      <div class="box box-body table-responsive">
         <div class="panel-heading">
-          Resultado de busqueda
-          <a href="CrearCargo.aspx" class="btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-plus"></span></a>
-        </div>
+            Resultado de busqueda
+            <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+        </div><br>
         <!-- Table -->
-        <table class="table table-hover table-striped">
+        <table class="table table-hover table-bordered table-striped">
           <thead>
               <th>Cargo</th>
               <th>Descripcion</th>
+              <th></th>
           </thead>
           <tbody>
             <tr>
               <td>Desarrollador Fron End</td>
               <td>.......</td>
+              <td style="text-align:center;">
+                  <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+              </td>
             </tr>
             <tr>
               <td>Desarrollador Back End</td>
               <td>........</td>
+              <td style="text-align:center;">
+                  <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+              </td>
             </tr>
             <tr>
               <td>Desarrollador Full Stack</td>
               <td>.......</td>
+              <td style="text-align:center;">
+                  <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                  <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+              </td>
             </tr>
           </tbody>
         </table>

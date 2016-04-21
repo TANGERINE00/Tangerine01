@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -209,9 +211,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../M1/EmpleadosAdmin.aspx" ><i class="fa fa-circle-o"></i> Empleados</a></li>
-                <li><a href="../M10/AdminContrato.aspx" ><i class="fa fa-circle-o"></i> Contratos</a></li>
                 <li><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Pagos</a></li>
               </ul>
             </li>
             <!--<li class="header">LABELS</li>
@@ -456,6 +456,9 @@
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
+     <!-- DataTables -->
+    <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
     <!-- SlimScroll -->
     <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
@@ -464,6 +467,19 @@
     <script src="../../dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script> 
+    <!-- page script -->
+    <script>
+      $(function () {
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
 
     </form>
   </body>
