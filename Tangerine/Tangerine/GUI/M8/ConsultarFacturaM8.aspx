@@ -35,16 +35,17 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" style="display: height: 350px; align-content:center;" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document" style="height: 350px; align-content:center;">
+                <div class="modal-content" style="height: 350px; align-content:center;">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Consulta</h4>
+                        <h4 class="modal-title" id="myModalLabel">Contacto</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="height: 350px; align-content:center;">
                        
-                        <div class="box box-primary">
+                        <div class="box box-primary" style="height: 272px; align-content:center;">
                 <div class="box-header with-border">
                   
                 </div><!-- /.box-header -->
@@ -53,39 +54,17 @@
                   <div class="box-body">
 
                     <div class="form-group">
-                      <label for="labelNumeroFactura_M8">Número Factura </label>
-                      <input type="text" class="form-control" id="textNumeroFactura_M8"  disabled="disabled">
+                      <label for="labelTelefono_M8">Teléfono</label>
+                      <input type="text" class="form-control" id="textTelefono_M8" placeholder="Teléfono" disabled="disabled">
                     </div>
 
-                    <div class="form-group">
-                      <label for="labelFecha_M8">Fecha de registro</label>
-                        <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" disabled="disabled">
-                </div>
-                     
+                     <div class="form-group">
+                      <label for="labelEMail_M8">Correo Electrónico</label>
+                      <input type="text" class="form-control" id="textEMail_M8" placeholder="Correo Electrónico" disabled="disabled">
                     </div>
-
-                      <div class="form-group">
-                      <label for="labelCompañia_M8">Compañía</label>
-                      <input type="text" class="form-control" id="textCompañia_M8" placeholder="Compañía" disabled="disabled">
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                     </div>
-
-                        <div class="form-group">
-                      <label for="labelProyecto_M8">Proyecto</label>
-                      <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
-                    </div>
-
-                      
-                        <div class="form-group">
-                      <label for="labelMonto_M8">Monto</label>
-                      <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled="disabled">
-                    </div>
-
-
-
 
                   </div><!-- /.box-body -->
 
@@ -95,10 +74,7 @@
 
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                        
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -162,3 +138,5 @@
 
 
 </asp:Content>
+
+
