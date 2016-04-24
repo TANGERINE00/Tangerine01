@@ -48,16 +48,25 @@
                       <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled ="disabled" >
                     </div>
 
+                        <div class="form-group">
+                      <label for="labelDescripcion_M8">Descripción</label>
+                      <input type="text" class="form-control" id="textDescripcion_M8" placeholder="Descripción">
+                    </div>
+
                       
                         <div class="form-group">
                       <label for="labelMonto_M8">Monto</label>
                       <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled ="disabled" >
                     </div>
+                      <div>
+<asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Generar"   ></asp:Button>
+                      </div>
+                      
 
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Generar"   ></asp:Button>
+                    
                   </div>
                 </form>
               </div><!-- /.box -->

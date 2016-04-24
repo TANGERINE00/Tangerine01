@@ -131,7 +131,7 @@
                         <td><span class="label label-warning">Anulada</span></td>
                         <td>Base de datos para el departamento A.</td>
                         <th style="text-align: center;">40<a class="glyphicon glyphicon-usd"></a></th>
-                                              <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
+                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a></th>
                     </tr>
                     <tr>
                         <td>00000000003</td>
