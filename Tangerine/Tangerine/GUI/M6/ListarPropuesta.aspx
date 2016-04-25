@@ -96,7 +96,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-            <table id="listar" class="table table-bordered table-striped dataTable">
+            <table id="example2" class="table table-bordered table-striped dataTable">
                  <thead>
                     <tr>
                         <th>N° Referencia</th>

@@ -144,8 +144,8 @@
             this.separator = ' - ';
 
             this.locale = {
-                applyLabel: 'Apply',
-                cancelLabel: 'Cancel',
+                applyLabel: 'Aceptar',
+                cancelLabel: 'Atras',
                 fromLabel: 'From',
                 toLabel: 'To',
                 weekLabel: 'W',

@@ -21,6 +21,8 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+      <!-- DateRangePicker -->
+      <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -170,7 +172,7 @@
               </a> 
                 <ul class="treeview-menu">
                 <li><a href="../M6/AgregarPropuesta.aspx"><i class="fa fa-circle-o"></i> Agregar Propuesta</a></li>
-                <li><a href="../M6/ListarPropuesta.aspx"><i class="fa fa-circle-o"></i> Administrar Propuestas</a></li>
+                <li><a href="../M6/ListarPropuesta.aspx"><i class="fa fa-circle-o"></i> Consultar Propuestas</a></li>
                 
               </ul>             
             </li>
@@ -267,6 +269,7 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
             </asp:ContentPlaceHolder>
+
 
             <asp:ContentPlaceHolder ID="contenidoCentral" runat="server">
         
@@ -468,6 +471,11 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script> 
     <!-- page script -->
+        <script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+            <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+       
+
     <script>
       $(function () {
         $('#example2').DataTable({
@@ -478,6 +486,9 @@
           "info": true,
           "autoWidth": false
         });
+
+        $('#reservation').daterangepicker();
+
       });
     </script>
 
