@@ -38,7 +38,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDConexion.cs" />
     <Compile Include="Parametro.cs" />
+    <Compile Include="RecursoGeneralBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoGeneralBD.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +61,10 @@
       <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
       <Name>DominioTangerine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+      <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
+      <Name>ExcepcionesTangerine</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="M10\" />
@@ -66,6 +77,12 @@
     <Folder Include="M7\" />
     <Folder Include="M8\" />
     <Folder Include="M9\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RecursoGeneralBD.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoGeneralBD.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

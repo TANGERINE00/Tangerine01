@@ -58,6 +58,23 @@
     <Folder Include="M8\" />
     <Folder Include="M9\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InformacionPersonalInvalidaException.cs" />
+    <Compile Include="ExceptionsTangerine.cs" />
+    <Compile Include="ExceptionTGConBD.cs" />
+    <Compile Include="ExceptionTGRecursoGeneral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExceptionTGRecursoGeneral.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ParametroInvalidoException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionTGRecursoGeneral.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExceptionTGRecursoGeneral.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
