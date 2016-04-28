@@ -18,8 +18,6 @@ namespace DominioTangerine
         private String departamento;
         private String cargo;
 
-        
-       
         #endregion
 
         #region Get's Set's
@@ -65,7 +63,7 @@ namespace DominioTangerine
             set { cargo = value; }
         }
 
-        
+       
         #endregion
 
         #region Constructores
@@ -80,15 +78,15 @@ namespace DominioTangerine
             cargo = String.Empty;
         }
 
-        public Contacto(int inputId, String inputNombre, String inputApellido, String inputTelefono, String inputCorreo, String inputDepartamento, String inputCargo)
+        public Contacto(Contacto elContacto)
         {
-            this.idContacto = inputId;
-            this.nombre = inputNombre;
-            this.apellido = inputApellido;
-            this.telefono = inputTelefono;
-            this.correo = inputCorreo;
-            this.departamento = inputDepartamento;
-            this.cargo = inputCargo;
+            this.idContacto = elContacto.idContacto;
+            this.nombre = elContacto.nombre;
+            this.apellido = elContacto.apellido;
+            this.telefono = elContacto.telefono;
+            this.correo = elContacto.correo;
+            this.departamento = elContacto.departamento;
+            this.cargo = elContacto.cargo;
         }
         #endregion
     }
