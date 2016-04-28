@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.WebForm1" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -16,6 +17,33 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <style>
+        .main-footer {
+            float:left;
+            position:relative; 
+            width:100%;
+        }
+
+        .content-wrapper {
+            float: left;
+        }
+
+        .input-group, .form-control {
+            width:95%;
+        }
+
+        .date {
+            width: 48.5% !important;
+            float: left;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .date {
+                width: 100% !important;
+                float: left;
+            }
+        }
+    </style>
 
     <!-- Modal -->
         <div class="modal fade" id="reqModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -60,7 +88,7 @@
 
     <div class="col-md-6">
 
-        <div class="box box-primary">
+        <div class="box box-primary" style="height:inherit !important">
 
             <!-- form start -->
             <form role="form">
@@ -88,24 +116,44 @@
 
                     <div class="form-group">
                         <label>Requerimientos</label>
-                        <input type="text" class="form-control" id="reque" placeholder="Agregar Requerimientos" data-toggle="modal" data-target="#reqModal">
+                        <%--<input type="text" class="form-control" id="reque" placeholder="Agregar Requerimientos" data-toggle="modal" data-target="#reqModal">--%>
                         <%--<h1 onclick="this.innerHTML='Ooops!'">Click on this text!</h1>--%>
                         <%-- <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" ></button>--%>
-                    </div>
 
-
-
-                    <!-- Date range -->
-                    <div class="form-group">
-                        <label>Fecha Estimada        Inicio - Fin :</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                        <div class="panel-body panel-minuta">
+                            <div class="col-xs-12">
+                                <button type="button" id="1-pun" class="close" data-dismiss="alert" aria-label="Close" onclick="borrarPunto(this);"><span aria-hidden="true">×</span></button>
+                                <input class="form-control" placeholder="Título del Punto" type="text">
                             </div>
-                            <input type="text" class="form-control pull-right" id="reservation">
+                            <div class="col-xs-12 form-group"></div>
+                            <div class="col-xs-12"><textarea name="desarrollo" placeholder="Desarrollo del Punto" class="form-control" style="text-align: justify;resize:none;" rows="3"></textarea></div>
                         </div>
-                        <!-- /.input group -->
                     </div>
+
+
+                    <div class="form-group date">
+                <label>Fecha estimada Incio:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input class="form-control pull-right" id="datepicker1" type="text">
+                </div>
+                <!-- /.input group -->
+              </div>
+
+                 <div class="form-group date">
+                <label>Fecha estimada Final:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input class="form-control pull-right" id="datepicker2" type="text">
+                </div>
+                <!-- /.input group -->
+              </div>
                     <!-- /.form group -->
 
 
@@ -160,16 +208,16 @@
 
                 </div>
 
-                <div class="box-foot">
-                    <button type="submit" class="btn btn-primary">Agregar</button>
-                </div>
+               
 
             </form>
 
         </div>
-
+        
+     <div class="box-foot">
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
     </div>
-
 
 
 

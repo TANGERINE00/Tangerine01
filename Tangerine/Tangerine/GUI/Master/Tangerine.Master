@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
       <!-- DateRangePicker -->
       <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker-bs3.css">
+      <!-- DatePicker -->
+      <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -493,6 +495,15 @@
         });
 
         $('#reservation').daterangepicker();
+
+          //Date picker
+        $('#datepicker1').datepicker({
+            autoclose: true
+        });
+
+        $('#datepicker2').datepicker({
+            autoclose: true
+        });
 
       });
     </script>
