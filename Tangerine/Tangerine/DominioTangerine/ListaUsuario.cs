@@ -5,8 +5,15 @@ namespace DominioTangerine
 {
     public class ListaUsuario
     {
+
+        #region Atributos
+
         private SortedSet<Usuario> _listaDeUsuarios;
         private ComparadorUsuario _comparador;
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Constructor de la lista
@@ -16,6 +23,10 @@ namespace DominioTangerine
             this._comparador = new ComparadorUsuario();
             this._listaDeUsuarios = new SortedSet<Usuario>( _comparador );
         }
+
+        #endregion
+
+        #region Métodos
 
         /// <summary>
         /// Método para agregar un usuario a la lista
@@ -50,5 +61,7 @@ namespace DominioTangerine
                 System.Diagnostics.Debug.Write( "Estatus: " + u.getActivo() );
             }
         }
+
+        #endregion
     }
 }
