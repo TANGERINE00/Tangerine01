@@ -1,30 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DominioTangerine 
+namespace DominioTangerine
 {
-    public class ListaUsuario
+    class ListaUsuarios
     {
-        private SortedSet<Usuario> _listaDeUsuarios;
-        private ComparadorUsuario _comparador;
+        #region Atributos
+
+        private List<Usuario> _listaDeUsuarios;
+
+        #endregion
+
+        #region Constructor
 
         /// <summary>
         /// Constructor de la lista
         /// </summary>
-        public ListaUsuario() 
+        public ListaUsuarios() 
         {
-            this._comparador = new ComparadorUsuario();
-            this._listaDeUsuarios = new SortedSet<Usuario>( _comparador );
+            this._listaDeUsuarios = new List<Usuario>();
         }
+
+        #endregion
+
+        #region Métodos
 
         /// <summary>
         /// Método para agregar un usuario a la lista
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        public bool agregarUsuario( Usuario usuario ) 
+        public void AgregarUsuario( Usuario usuario ) 
         {
-            return this._listaDeUsuarios.Add( usuario );
+            this._listaDeUsuarios.Add( usuario );
         }
 
         /// <summary>
@@ -32,7 +43,7 @@ namespace DominioTangerine
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        public bool eliminarUsuario( Usuario usuario ) 
+        public bool EliminarUsuario( Usuario usuario ) 
         {
             return this._listaDeUsuarios.Remove( usuario );
         }
@@ -40,7 +51,7 @@ namespace DominioTangerine
         /// <summary>
         /// Método para imprimir los datos actuales de la lista
         /// </summary>
-        public void imprimirListaDeUsuarios() 
+        public void ImprimirListaDeUsuarios() 
         {
             foreach( Usuario u in this._listaDeUsuarios )
             {
@@ -50,5 +61,7 @@ namespace DominioTangerine
                 System.Diagnostics.Debug.Write( "Estatus: " + u.getActivo() );
             }
         }
+
+        #endregion
     }
 }
