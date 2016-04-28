@@ -146,8 +146,8 @@
             this.locale = {
                 applyLabel: 'Aceptar',
                 cancelLabel: 'Atras',
-                fromLabel: 'From',
-                toLabel: 'To',
+                fromLabel: 'Inicio',
+                toLabel: 'Fin',
                 weekLabel: 'W',
                 customRangeLabel: 'Custom Range',
                 daysOfWeek: moment.weekdaysMin(),
