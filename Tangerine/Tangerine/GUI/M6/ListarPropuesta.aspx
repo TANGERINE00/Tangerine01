@@ -141,49 +141,11 @@
         </table>
     </div>
     <!-- /.box-body -->
-    </div>
+    
     <!-- /.box -->
 
     <script type="text/javascript">
-        $(document).ready(function () {
-
-            var table = $('#listar').DataTable({
-                "language": {
-                    "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }
-            });
-            var req;
-            var tr;
-
-            $('#listar tbody').on('click', 'a', function () {
-                if ($(this).parent().hasClass('selected')) {
-                    req = $(this).parent().prev().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    $(this).parent().removeClass('selected');
-
-                }
-                else {
-                    req = $(this).parent().prev().prev().prev().prev().text();
-                    tr = $(this).parents('tr');//se guarda la fila seleccionada
-                    table.$('tr.selected').removeClass('selected');
-                    $(this).parent().addClass('selected');
-                }
-            });
-
-
-
-            $('#modal-delete').on('show.bs.modal', function (event) {
-                var modal = $(this)
-                modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
-                modal.find('#req').text(req)
-            })
-            $('#btn-eliminar').on('click', function () {
-                table.row(tr).remove().draw();//se elimina la fila de la tabla
-                $('#modal-delete').modal('hide');//se esconde el modal
-            });
-
-
-        });
+       
 
     </script>
 

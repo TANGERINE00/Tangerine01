@@ -198,25 +198,15 @@ create table CONTACTO
 	con_apellido varchar(50) not null,
 	con_detartamento varchar(50) not null,
 	con_cargo varchar(50) not null,
-	con_tipo_emp varchar(20) not null,
-	con_tipo_com_lead varchar(50),
-	fk_cli_pot_id int,
-	fk_com_id int,
+	con_telefono varchar(50),
+	con_correo varchar(50),
+	con_tipo_emp int not null,
+	fk_id_com_lead int not null,
 
 	constraint pk_con primary key
 	(
 		con_id
-	),
-
-	constraint fk_cli_pot_con foreign key
-	(
-		fk_cli_pot_id
-	) references CLIENTE_POTENCIAL(cli_pot_id),
-
-	constraint fk_com_con foreign key
-	(
-		fk_com_id
-	)references COMPANIA(com_id)
+	)
 );
 
 create table PROPUESTA
@@ -311,13 +301,13 @@ create table EMPLEADO_PROYECTO
 
 create table CONTACTO_PROYECTO
 (
+	cp_id int not null,
 	fk_con_id int not null,
 	fk_proy_id int not null,
 
-	constraint pk_con_proy primary key
+	constraint pk_cp_id primary key
 	(
-		fk_con_id,
-		fk_proy_id
+		cp_id
 	),
 
 	constraint fk_con_con_proy foreign key
