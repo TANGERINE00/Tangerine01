@@ -46,8 +46,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListaUsuarios.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="Facturacion.cs" />
+    <Compile Include="Proyecto.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
