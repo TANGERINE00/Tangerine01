@@ -13,8 +13,7 @@
     <li><a href="#">Gestión de Propuesta</a></li>
     <li class="active">Agregar Propuesta</li>
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="col-md-6">
@@ -45,17 +44,19 @@
                         <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label>Alcance del proyecto ( Breve resumen de  requerimientos)</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
-                    </div>
+                  <div class="form-group">
+                      <label>Requerimientos</label>
+                      <input type="input_horas" class="form-control" id="horas_id" placeholder="Agregar Requerimientos" onclick="agregarExtension()"> <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarExtension()"></button>
+                 <div id="div-extensiones" class="col-sm-10 col-md-10 col-lg-10">
+          
+         <div class="col-sm-11 col-md-11 col-lg-11">   </div>    <div class="col-sm-1 col-md-1 col-lg-1"></div></div>
+                      </div>
 
-
-
-
+                    
+                   
                     <!-- Date range -->
                     <div class="form-group">
-                        <label>Date range:</label>
+                        <label>Fecha Estimada        Inicio - Fin :</label>
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
