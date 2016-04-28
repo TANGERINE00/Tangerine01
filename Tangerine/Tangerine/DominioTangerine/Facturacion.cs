@@ -25,7 +25,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener el ID de la factura
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna el numero de la factura</returns>
         public int getIdNumeroFactura() { return _idNumeroFactura; }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener la fecha
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna la fecha de la factura</returns>
         public DateTime getFecha() { return _fecha; }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener el ID del cliente
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna el ID del cliente</returns>
         public int getIdCliente() { return _idCliente; }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener el ID del proyecto
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna el ID del proyecto</returns>
         public int getIdProyecto() { return _idProyecto; }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener la descripcion
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna la descripcion del proyecto</returns>
         public String getDescripcion() { return _descripcion; }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener el monto de la factura
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna el monto de facturacion del proyecto</returns>
         public double getMonto() { return _monto; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace DominioTangerine
         /// <summary>
         /// Metodo para obtener el monto restante de la factura
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna el monto restante de facturacion del proyecto</returns>
         public double getMontoRestante() { return _montoRestante; }
 
         /// <summary>
