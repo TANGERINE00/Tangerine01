@@ -3,15 +3,19 @@ using System;
 namespace DominioTangerine
 {
 	public class Usuario
-	{
-		
-		private string _usuario;
+    {
+        #region Atributos
+
+        private string _usuario;
 		private string _contrasenia;
 		private string _activo;
         private string _rol;
         private int _fichaEmpleado;
         private DateTime _fechaCreacion;
-        
+
+        #endregion  
+
+        #region Constructores
 
         /// <summary>
         /// Constructor vacío de la clase Usuario
@@ -60,6 +64,10 @@ namespace DominioTangerine
             this._fichaEmpleado = fichaEmpleado;
             this._fechaCreacion = fechaCreacion;
         }
+
+        #endregion
+
+        #region Get's
 
         /// <summary>
         /// Método que devuelve el valor del atributo usuario
@@ -115,5 +123,6 @@ namespace DominioTangerine
             return this._fechaCreacion;
         }
 
-	}
+        #endregion
+    }
 }
