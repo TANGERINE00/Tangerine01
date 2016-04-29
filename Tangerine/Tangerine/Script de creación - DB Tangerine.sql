@@ -301,13 +301,13 @@ create table EMPLEADO_PROYECTO
 
 create table CONTACTO_PROYECTO
 (
-	cp_id int not null,
 	fk_con_id int not null,
 	fk_proy_id int not null,
 
 	constraint pk_cp_id primary key
 	(
-		cp_id
+		fk_con_id,
+		fk_proy_id
 	),
 
 	constraint fk_con_con_proy foreign key
@@ -393,4 +393,55 @@ create table DETALLE_PAGO
 	(
 		fk_pag_id
 	) references PAGO(pag_id)
+);
+
+create table MENU
+(
+	men_id int not null,
+	men_nombre varchar(100) not null,
+
+	constraint pk_men primary key
+	(
+		men_id
+	)
+);
+
+create table ROL_MENU
+(
+	fk_rol_id int not null,
+	fk_men_id int not null,
+
+	constraint pk_rol_men primary key
+	(
+		fk_rol_id,
+		fk_men_id
+	),
+
+	constraint fk_rol_rol_men foreign key
+	(
+		fk_rol_id
+	) references ROL(rol_id),
+
+	constraint fk_men_rol_men foreign key
+	(
+		fk_men_id
+	) references MENU(men_id)
+);
+
+create table OPCION
+(
+	opc_id int not null,
+	opc_nombre varchar(100) not null,
+	opc_url varchar(500) not null,
+	fk_men_id int not null,
+
+	constraint pk_opc primary key
+	(
+		opc_id
+	),
+
+	constraint fk_men_opc foreign key
+	(
+		fk_men_id
+	) references MENU(men_id)	
 );
