@@ -193,7 +193,7 @@ create table TELEFONO
 
 create table CONTACTO
 (
-	con_id int not null,
+	con_id int  IDENTITY(1,1) not null,
 	con_nombre varchar(50) not null,
 	con_apellido varchar(50) not null,
 	con_detartamento varchar(50) not null,
@@ -301,13 +301,13 @@ create table EMPLEADO_PROYECTO
 
 create table CONTACTO_PROYECTO
 (
+	cp_id  int  IDENTITY(1,1) not null,
 	fk_con_id int not null,
 	fk_proy_id int not null,
 
 	constraint pk_cp_id primary key
 	(
-		fk_con_id,
-		fk_proy_id
+		cp_id
 	),
 
 	constraint fk_con_con_proy foreign key
