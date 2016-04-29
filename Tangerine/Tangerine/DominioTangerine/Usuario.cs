@@ -124,5 +124,63 @@ namespace DominioTangerine
         }
 
         #endregion
+
+        #region Set´s
+
+        /// <summary>
+        /// Método que setea el valor del atributo usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        public void SetUsuario( string usuario )
+        {
+            this._usuario = usuario;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo contrasenia
+        /// </summary>
+        /// <param name="contrasenia"></param>
+        public void SetContrasenia( string contrasenia ) 
+        {
+            this._contrasenia = contrasenia;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo activo
+        /// </summary>
+        /// <param name="activo"></param>
+        public void SetActivo( string activo ) 
+        {
+            this._activo = activo;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo rol
+        /// </summary>
+        /// <param name="rol"></param>
+        public void SetRol( string rol ) 
+        {
+            this._rol = rol;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo fichaEmpleado
+        /// </summary>
+        /// <param name="fichaEmpleado"></param>
+        public void SetFichaEmpleado( int fichaEmpleado ) 
+        {
+            this._fichaEmpleado = fichaEmpleado;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo fechaCreacion
+        /// </summary>
+        /// <param name="fechaCreacion"></param>
+        public void SetFechaCreacion( DateTime fechaCreacion ) 
+        {
+            this._fechaCreacion = fechaCreacion;
+        }
+
+        #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace DominioTangerine
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="url"></param>
-        public Opcion(string nombre, string url)
+        public Opcion( string nombre, string url )
         {
             this._nombre = nombre;
             this._url = url;
