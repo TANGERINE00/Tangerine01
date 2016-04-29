@@ -196,7 +196,7 @@ create table CONTACTO
 	con_id int  IDENTITY(1,1) not null,
 	con_nombre varchar(50) not null,
 	con_apellido varchar(50) not null,
-	con_detartamento varchar(50) not null,
+	con_departamento varchar(50) not null,
 	con_cargo varchar(50) not null,
 	con_telefono varchar(50),
 	con_correo varchar(50),
