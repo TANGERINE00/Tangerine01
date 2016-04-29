@@ -73,7 +73,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo usuario
         /// </summary>
         /// <returns>Usuario de acceso al sistema Tangerine</returns>
-		public string getUsuario()
+		public string GetUsuario()
 		{
 			return this._usuario;
 		}
@@ -82,7 +82,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo contraseña
         /// </summary>
         /// <returns>Contraseña del usuario</returns>
-		public string getContrasenia()
+		public string GetContrasenia()
 		{
 			return this._contrasenia;
 		}
@@ -91,7 +91,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo activo
         /// </summary>
         /// <returns>Activo si el usuario se encuentra activa o Inactivo si el usuario se encuentra inactivo</returns>
-        public string getActivo()
+        public string GetActivo()
         {
             return this._activo;
         }
@@ -100,7 +100,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo rol
         /// </summary>
         /// <returns>Rol del usuario</returns>
-		public string getRol()
+		public string GetRol()
 		{
 			return this._rol;
 		}
@@ -109,7 +109,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor de la ficha del empleado al que pertenece este usuario
         /// </summary>
         /// <returns></returns>
-        public int getFichaEmpleado() 
+        public int GetFichaEmpleado() 
         {
             return this._fichaEmpleado;
         }
@@ -118,7 +118,7 @@ namespace DominioTangerine
         /// Método que retorna la fecha de creacion del usuario
         /// </summary>
         /// <returns></returns>
-        public DateTime getFechaCreacion() 
+        public DateTime GetFechaCreacion() 
         {
             return this._fechaCreacion;
         }
