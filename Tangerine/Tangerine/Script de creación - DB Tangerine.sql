@@ -445,3 +445,27 @@ create table OPCION
 		fk_men_id
 	) references MENU(men_id)	
 );
+
+
+
+
+
+--------Stored Procedure M5--------
+CREATE PROCEDURE M5_AgregarContacto
+	@nombre [varchar](50),
+	@apellido [varchar](50),
+	@departamento [varchar](50),
+	@cargo [varchar](50),
+	@telefono [varchar](50),
+	@correo [varchar](50),
+	@tipo_comp int,
+	@id_empresa int
+as
+ begin
+     
+    INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead) 
+	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
+
+ end;
+GO
+------Fin Stored Procedure M5------
