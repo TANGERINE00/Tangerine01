@@ -17,6 +17,8 @@ namespace DominioTangerine
         private String correo;
         private String departamento;
         private String cargo;
+        private int tipoCompañia;
+        private int idCompañia;
 
         #endregion
 
@@ -63,6 +65,17 @@ namespace DominioTangerine
             set { cargo = value; }
         }
 
+        public int TipoCompañia
+        {
+            get { return tipoCompañia; }
+            set { tipoCompañia = value; }
+        }
+
+        public int IdCompañia
+        {
+            get { return idCompañia; }
+            set { idCompañia = value; }
+        }
        
         #endregion
 
@@ -76,6 +89,8 @@ namespace DominioTangerine
             correo = String.Empty;
             departamento = String.Empty;
             cargo = String.Empty;
+            tipoCompañia = 0;
+            idCompañia = 0;
         }
 
         public Contacto(Contacto elContacto)
@@ -87,6 +102,8 @@ namespace DominioTangerine
             this.correo = elContacto.correo;
             this.departamento = elContacto.departamento;
             this.cargo = elContacto.cargo;
+            this.tipoCompañia = elContacto.tipoCompañia;
+            this.idCompañia = elContacto.idCompañia;
         }
         #endregion
     }

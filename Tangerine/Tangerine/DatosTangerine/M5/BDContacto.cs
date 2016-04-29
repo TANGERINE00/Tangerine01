@@ -15,7 +15,6 @@ namespace DatosTangerine.M5
         BDConexion theConnection;
         List<Parametro> parameters;
         Parametro theParam = new Parametro();
-        Boolean retBool = false;
 
         public Boolean AddContact(Contacto theContact)
         {
@@ -25,18 +24,39 @@ namespace DatosTangerine.M5
             try
             {
                 
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, theContact.IdContacto.ToString(),false);
+                theParam = new Parametro(ResourceContact.ParamName, SqlDbType.VarChar, theContact.Nombre,false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamLName, SqlDbType.VarChar, theContact.Apellido, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamDepa, SqlDbType.VarChar, theContact.Departamento, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamRol, SqlDbType.VarChar, theContact.Cargo, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamTele, SqlDbType.VarChar, theContact.Telefono, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, theContact.IdCompañia.ToString(), false);
                 parameters.Add(theParam);
 
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
 
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                //throw new ExcepcionesTangerine.OtrasExcep();
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
-            return retBool;
+            return true;
         }
 
 

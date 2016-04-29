@@ -118,33 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddNewContact" xml:space="preserve">
-    <value>AgregarContacto</value>
+    <value>M5_AgregarContacto</value>
   </data>
-  <data name="ParamDepartmentContact" xml:space="preserve">
+  <data name="ConDepartmentContact" xml:space="preserve">
     <value>con_departamento</value>
   </data>
-  <data name="ParamEmailContact" xml:space="preserve">
+  <data name="ConEmailContact" xml:space="preserve">
     <value>con_correo</value>
   </data>
-  <data name="ParamIdComp" xml:space="preserve">
+  <data name="ConIdComp" xml:space="preserve">
     <value>fk_id_comp_lead</value>
   </data>
-  <data name="ParamIdContact" xml:space="preserve">
+  <data name="ConIdContact" xml:space="preserve">
     <value>con_id</value>
   </data>
-  <data name="ParamLastNameContact" xml:space="preserve">
+  <data name="ConLastNameContact" xml:space="preserve">
     <value>con_apellido</value>
   </data>
-  <data name="ParamNameContact" xml:space="preserve">
+  <data name="ConNameContact" xml:space="preserve">
     <value>con_nombre</value>
   </data>
-  <data name="ParamPhoneContact" xml:space="preserve">
+  <data name="ConPhoneContact" xml:space="preserve">
     <value>con_telefono</value>
   </data>
-  <data name="ParamRolContact" xml:space="preserve">
+  <data name="ConRolContact" xml:space="preserve">
     <value>con_cargo</value>
   </data>
-  <data name="ParamTipeComp" xml:space="preserve">
+  <data name="ConTipeComp" xml:space="preserve">
     <value>con_tipo_emp</value>
+  </data>
+  <data name="ParamDepa" xml:space="preserve">
+    <value>@departamento</value>
+  </data>
+  <data name="ParamEmail" xml:space="preserve">
+    <value>@correo</value>
+  </data>
+  <data name="ParamId" xml:space="preserve">
+    <value>@id</value>
+  </data>
+  <data name="ParamIdComp" xml:space="preserve">
+    <value>@id_empresa</value>
+  </data>
+  <data name="ParamLName" xml:space="preserve">
+    <value>@apellido</value>
+  </data>
+  <data name="ParamName" xml:space="preserve">
+    <value>@nombre</value>
+  </data>
+  <data name="ParamRol" xml:space="preserve">
+    <value>@cargo</value>
+  </data>
+  <data name="ParamTComp" xml:space="preserve">
+    <value>@tipo_comp</value>
+  </data>
+  <data name="ParamTele" xml:space="preserve">
+    <value>@telefono</value>
   </data>
 </root>

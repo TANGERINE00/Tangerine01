@@ -61,7 +61,7 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AgregarContacto.
+        ///   Looks up a localized string similar to M5_AgregarContacto.
         /// </summary>
         internal static string AddNewContact {
             get {
@@ -72,23 +72,113 @@ namespace DatosTangerine.M5 {
         /// <summary>
         ///   Looks up a localized string similar to con_departamento.
         /// </summary>
-        internal static string ParamDepartmentContact {
+        internal static string ConDepartmentContact {
             get {
-                return ResourceManager.GetString("ParamDepartmentContact", resourceCulture);
+                return ResourceManager.GetString("ConDepartmentContact", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to con_correo.
         /// </summary>
-        internal static string ParamEmailContact {
+        internal static string ConEmailContact {
             get {
-                return ResourceManager.GetString("ParamEmailContact", resourceCulture);
+                return ResourceManager.GetString("ConEmailContact", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to fk_id_comp_lead.
+        /// </summary>
+        internal static string ConIdComp {
+            get {
+                return ResourceManager.GetString("ConIdComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_id.
+        /// </summary>
+        internal static string ConIdContact {
+            get {
+                return ResourceManager.GetString("ConIdContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_apellido.
+        /// </summary>
+        internal static string ConLastNameContact {
+            get {
+                return ResourceManager.GetString("ConLastNameContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_nombre.
+        /// </summary>
+        internal static string ConNameContact {
+            get {
+                return ResourceManager.GetString("ConNameContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_telefono.
+        /// </summary>
+        internal static string ConPhoneContact {
+            get {
+                return ResourceManager.GetString("ConPhoneContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_cargo.
+        /// </summary>
+        internal static string ConRolContact {
+            get {
+                return ResourceManager.GetString("ConRolContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_tipo_emp.
+        /// </summary>
+        internal static string ConTipeComp {
+            get {
+                return ResourceManager.GetString("ConTipeComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @departamento.
+        /// </summary>
+        internal static string ParamDepa {
+            get {
+                return ResourceManager.GetString("ParamDepa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @correo.
+        /// </summary>
+        internal static string ParamEmail {
+            get {
+                return ResourceManager.GetString("ParamEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id.
+        /// </summary>
+        internal static string ParamId {
+            get {
+                return ResourceManager.GetString("ParamId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_empresa.
         /// </summary>
         internal static string ParamIdComp {
             get {
@@ -97,56 +187,47 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to con_id.
+        ///   Looks up a localized string similar to @apellido.
         /// </summary>
-        internal static string ParamIdContact {
+        internal static string ParamLName {
             get {
-                return ResourceManager.GetString("ParamIdContact", resourceCulture);
+                return ResourceManager.GetString("ParamLName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to con_apellido.
+        ///   Looks up a localized string similar to @nombre.
         /// </summary>
-        internal static string ParamLastNameContact {
+        internal static string ParamName {
             get {
-                return ResourceManager.GetString("ParamLastNameContact", resourceCulture);
+                return ResourceManager.GetString("ParamName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to con_nombre.
+        ///   Looks up a localized string similar to @cargo.
         /// </summary>
-        internal static string ParamNameContact {
+        internal static string ParamRol {
             get {
-                return ResourceManager.GetString("ParamNameContact", resourceCulture);
+                return ResourceManager.GetString("ParamRol", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to con_telefono.
+        ///   Looks up a localized string similar to @tipo_comp.
         /// </summary>
-        internal static string ParamPhoneContact {
+        internal static string ParamTComp {
             get {
-                return ResourceManager.GetString("ParamPhoneContact", resourceCulture);
+                return ResourceManager.GetString("ParamTComp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to con_cargo.
+        ///   Looks up a localized string similar to @telefono.
         /// </summary>
-        internal static string ParamRolContact {
+        internal static string ParamTele {
             get {
-                return ResourceManager.GetString("ParamRolContact", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to con_tipo_emp.
-        /// </summary>
-        internal static string ParamTipeComp {
-            get {
-                return ResourceManager.GetString("ParamTipeComp", resourceCulture);
+                return ResourceManager.GetString("ParamTele", resourceCulture);
             }
         }
     }
