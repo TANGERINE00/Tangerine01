@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Menu
+    class Rol
     {
         #region Atributos
 
         private string _nombre;
-        private ListaOpciones _opciones;
+        private ListaMenus _menus;
 
         #endregion
 
         #region Constructores
 
         /// <summary>
-        /// Constructor por defecto de la clase Menu
+        /// Constructor por defecto de la clase Rol
         /// </summary>
-        public Menu()
+        public Rol() 
         {
 
         }
 
         /// <summary>
-        /// Constructor solo con el nombre del menu
+        /// Constructor solo con el nombre
         /// </summary>
         /// <param name="nombre"></param>
-        public Menu( string nombre ) 
+        public Rol( string nombre ) 
         {
             this._nombre = nombre;
         }
@@ -38,10 +38,10 @@ namespace DominioTangerine
         /// Constructor con todos los atributos
         /// </summary>
         /// <param name="nombre"></param>
-        /// <param name="opciones"></param>
-        public Menu( string nombre, ListaOpciones opciones ) : this( nombre )
+        /// <param name="menus"></param>
+        public Rol( string nombre, ListaMenus menus ) : this( nombre ) 
         {
-            this._opciones = opciones;
+            this._menus = menus;
         }
 
         #endregion
@@ -49,7 +49,7 @@ namespace DominioTangerine
         #region Get's
 
         /// <summary>
-        /// Método que devuelve el nombre del menu
+        /// Método que devuelve el nombre del rol
         /// </summary>
         /// <returns></returns>
         public string GetNombre() 
@@ -58,12 +58,12 @@ namespace DominioTangerine
         }
 
         /// <summary>
-        /// Método que devuelve las opciones del menu
+        /// Método que devuelve la lista de menus
         /// </summary>
         /// <returns></returns>
-        public ListaOpciones GetOpciones() 
+        public ListaMenus GetMenus() 
         {
-            return this._opciones;
+            return this._menus;
         }
 
         #endregion
@@ -71,7 +71,7 @@ namespace DominioTangerine
         #region Set's
 
         /// <summary>
-        /// Setea el nombre del menu
+        /// Setea el nombre del rol
         /// </summary>
         /// <param name="nombre"></param>
         public void SetNombre( string nombre ) 
@@ -80,12 +80,12 @@ namespace DominioTangerine
         }
 
         /// <summary>
-        /// Setea las opciones del menu
+        /// Setea la lista de menus
         /// </summary>
-        /// <param name="opciones"></param>
-        public void SetOpciones( ListaOpciones opciones ) 
+        /// <param name="menus"></param>
+        public void SetMenus( ListaMenus menus ) 
         {
-            this._opciones = opciones;
+            this._menus = menus;
         }
 
         #endregion

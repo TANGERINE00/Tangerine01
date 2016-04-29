@@ -47,10 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compania.cs" />
+    <Compile Include="ListaMenus.cs" />
+    <Compile Include="ListaOpciones.cs" />
     <Compile Include="ListaUsuarios.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="Facturacion.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Opcion.cs" />
     <Compile Include="Proyecto.cs" />
+    <Compile Include="Rol.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
