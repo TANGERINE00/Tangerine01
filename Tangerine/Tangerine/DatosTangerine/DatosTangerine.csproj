@@ -39,6 +39,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="M4\BDCompania.cs" />
+    <Compile Include="M4\ResourceCompany.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceCompany.resx</DependentUpon>
+    </Compile>
     <Compile Include="M5\BDContacto.cs" />
     <Compile Include="M5\ResourceContact.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -77,13 +83,16 @@
     <Folder Include="M1\" />
     <Folder Include="M2\" />
     <Folder Include="M3\" />
-    <Folder Include="M4\" />
     <Folder Include="M6\" />
     <Folder Include="M7\" />
     <Folder Include="M8\" />
     <Folder Include="M9\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="M4\ResourceCompany.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCompany.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M5\ResourceContact.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceContact.Designer.cs</LastGenOutput>
