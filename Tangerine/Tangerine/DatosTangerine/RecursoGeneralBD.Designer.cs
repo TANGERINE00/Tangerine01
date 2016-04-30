@@ -124,7 +124,7 @@ namespace DatosTangerine {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BaseDeDatosTGE.
+        ///   Looks up a localized string similar to BDTangerine.
         /// </summary>
         internal static string NombreBD {
             get {

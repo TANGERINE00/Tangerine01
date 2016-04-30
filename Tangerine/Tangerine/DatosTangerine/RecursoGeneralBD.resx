@@ -144,7 +144,7 @@
     <comment>Mensajer de error cuando se coloca un parametro errado</comment>
   </data>
   <data name="NombreBD" xml:space="preserve">
-    <value>BaseDeDatosTGE</value>
+    <value>BDTangerine</value>
   </data>
   <data name="StringDeConexion" xml:space="preserve">
     <value>Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\BaseDeDatosTGE.mdf;Integrated Security=True</value>
