@@ -16,6 +16,11 @@ namespace DatosTangerine.M5
         List<Parametro> parameters;
         Parametro theParam = new Parametro();
 
+        /// <summary>
+        /// Metodo para agregar una contacton nuevo en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
         public Boolean AddContact(Contacto theContact)
         {
             parameters = new List<Parametro>();
@@ -23,10 +28,12 @@ namespace DatosTangerine.M5
 
             try
             {
-                
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceContact.ParamName, SqlDbType.VarChar, theContact.Nombre,false);
                 parameters.Add(theParam);
 
+                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceContact.ParamLName, SqlDbType.VarChar, theContact.Apellido, false);
                 parameters.Add(theParam);
 
@@ -48,6 +55,7 @@ namespace DatosTangerine.M5
                 theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, theContact.IdCompañia.ToString(), false);
                 parameters.Add(theParam);
 
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
 
             }

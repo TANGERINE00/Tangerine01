@@ -7,6 +7,8 @@ using DominioTangerine;
 
 namespace LogicaTangerine.M5
 {
+    //Esta clase la invente para probar la base de datos, no es la logica de Contacto
+    //se activa corriendo la interfaz de consultar contacto
     public class Class1
     {
 
@@ -26,6 +28,8 @@ namespace LogicaTangerine.M5
             theContact.IdCompañia = 1;
 
             DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
+
+            //Aqui llamo al metodo que inserta un contacto (theContact)
             answer = prueba.AddContact(theContact);
         }
     }

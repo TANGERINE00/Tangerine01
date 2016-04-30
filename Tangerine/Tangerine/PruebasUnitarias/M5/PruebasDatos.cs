@@ -32,8 +32,6 @@ namespace PruebasUnitarias.M5
             theContact.Telefono = "7654321";
             theContact.TipoCompañia = 1;
             theContact.IdCompañia = 1;
-
-
         }
 
         [TearDown]
@@ -43,11 +41,17 @@ namespace PruebasUnitarias.M5
         }
         #endregion
 
+        /// <summary>
+        /// Prueba que permite verificar el insertar de un contacto en la base de datos
+        /// </summary>
         [Test]
         public void UTAddContact()
         {
-            DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
-            answer = prueba.AddContact(theContact);
+            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+            DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
+            answer = test.AddContact(theContact);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
     }

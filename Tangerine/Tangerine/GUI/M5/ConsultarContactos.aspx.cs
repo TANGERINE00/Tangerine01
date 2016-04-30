@@ -13,6 +13,8 @@ namespace Tangerine.GUI.M5
         protected void Page_Load(object sender, EventArgs e)
         {
             LogicaTangerine.M5.Class1 prueba = new Class1();
+            
+            //Aqui ejecuto el init de la clase creada en logica para probar la conexion a la bd
             prueba.init();
             
         }
