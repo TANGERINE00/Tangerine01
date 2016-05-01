@@ -476,4 +476,21 @@ AS
 	DELETE FROM CONTACTO WHERE con_id = @id;
  END;
 GO
+
+
+CREATE PROCEDURE M5_ModificarContacto
+	@id int,
+	@nombre [varchar](50),
+	@apellido [varchar](50),
+	@departamento [varchar](50),
+	@cargo [varchar](50),
+	@telefono [varchar](50),
+	@correo [varchar](50)
+AS
+ BEGIN
+    update CONTACTO set con_nombre = @nombre, con_apellido = @apellido, con_departamento = @departamento,
+    con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
+    where con_id = @id;  
+ end;
+GO
 ------Fin Stored Procedure M5------
