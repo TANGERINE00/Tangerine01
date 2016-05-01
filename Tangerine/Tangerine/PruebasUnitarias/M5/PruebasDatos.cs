@@ -54,5 +54,19 @@ namespace PruebasUnitarias.M5
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
+
+        /// <summary>
+        /// Prueba que permite verificar el eliminar de un contacto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestDeleteContact()
+        {
+            //Declaro test de tipo BDContacto para poder invocar el "DeleteContact(Contacto theContact)"
+            DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
+            answer = test.DeleteContact(theContact);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.IsTrue(answer);
+        }
     }
 }
