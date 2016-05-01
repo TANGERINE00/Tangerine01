@@ -147,6 +147,9 @@
   <data name="ConTipeComp" xml:space="preserve">
     <value>con_tipo_emp</value>
   </data>
+  <data name="DeleteContact" xml:space="preserve">
+    <value>M5_EliminarContacto</value>
+  </data>
   <data name="ParamDepa" xml:space="preserve">
     <value>@departamento</value>
   </data>

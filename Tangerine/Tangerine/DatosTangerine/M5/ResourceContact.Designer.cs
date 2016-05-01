@@ -151,6 +151,15 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_EliminarContacto.
+        /// </summary>
+        internal static string DeleteContact {
+            get {
+                return ResourceManager.GetString("DeleteContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @departamento.
         /// </summary>
         internal static string ParamDepa {

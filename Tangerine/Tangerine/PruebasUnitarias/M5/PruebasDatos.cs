@@ -45,7 +45,7 @@ namespace PruebasUnitarias.M5
         /// Prueba que permite verificar el insertar de un contacto en la base de datos
         /// </summary>
         [Test]
-        public void UTAddContact()
+        public void TestAddContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
             DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
