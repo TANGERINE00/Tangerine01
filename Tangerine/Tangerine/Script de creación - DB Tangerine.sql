@@ -460,12 +460,20 @@ CREATE PROCEDURE M5_AgregarContacto
 	@correo [varchar](50),
 	@tipo_comp int,
 	@id_empresa int
-as
- begin
-     
+AS
+ BEGIN
     INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead) 
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
-
  end;
+GO
+
+
+CREATE PROCEDURE M5_EliminarContacto
+@id int
+AS
+ BEGIN
+    DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id;
+	DELETE FROM CONTACTO WHERE con_id = @id;
+ END;
 GO
 ------Fin Stored Procedure M5------
