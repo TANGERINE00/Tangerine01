@@ -23,7 +23,7 @@ namespace PruebasUnitarias.M5
         public void init()
         {
             theContact = new Contacto();
-            theContact.IdContacto = 1;
+            theContact.IdContacto = 8;
             theContact.Nombre = "Istvan";
             theContact.Apellido = "Bokor";
             theContact.Departamento = "Ventas";
@@ -56,6 +56,20 @@ namespace PruebasUnitarias.M5
         }
 
         /// <summary>
+        /// Prueba que permite verificar el modificar de un contacto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestChamgeContact()
+        {
+            //Declaro test de tipo BDContacto para poder invocar el "ChangeContact(Contacto theContact)"
+            DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
+            answer = test.ChangeContact(theContact);
+
+            //answer obtiene true si se modifica el contacto, si no, deberia agarrar un excepcion
+            Assert.IsTrue(answer);
+        }
+
+        /// <summary>
         /// Prueba que permite verificar el eliminar de un contacto en la base de datos
         /// </summary>
         [Test]
@@ -65,7 +79,7 @@ namespace PruebasUnitarias.M5
             DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
             answer = test.DeleteContact(theContact);
 
-            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            //answer obtiene true si se elimina el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
     }
