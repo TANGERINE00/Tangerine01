@@ -17,20 +17,20 @@ namespace LogicaTangerine.M5
         public void init()
         {
             theContact = new Contacto();
-            theContact.IdContacto = 5;
-            theContact.Nombre = "Istvan";
-            theContact.Apellido = "Bokor";
-            theContact.Departamento = "Ventas";
-            theContact.Cargo = "Gerente";
-            theContact.Correo = "asd@asd.com";
-            theContact.Telefono = "7654321";
+            theContact.IdContacto = 7;
+            theContact.Nombre = "Eduardo";
+            theContact.Apellido = "Araque";
+            theContact.Departamento = "Satnev";
+            theContact.Cargo = "Etnereg";
+            theContact.Correo = "b@b.com";
+            theContact.Telefono = "1234567";
             theContact.TipoCompañia = 1;
             theContact.IdCompañia = 1;
 
             DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
 
             //Aqui llamo al metodo que inserta un contacto (theContact)
-            answer = prueba.DeleteContact(theContact);
+            answer = prueba.ChangeContact(theContact);
         }
     }
 }

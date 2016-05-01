@@ -70,6 +70,15 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_ModificarContacto.
+        /// </summary>
+        internal static string ChangeContact {
+            get {
+                return ResourceManager.GetString("ChangeContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to con_departamento.
         /// </summary>
         internal static string ConDepartmentContact {

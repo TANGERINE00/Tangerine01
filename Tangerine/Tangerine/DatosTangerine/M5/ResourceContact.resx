@@ -120,6 +120,9 @@
   <data name="AddNewContact" xml:space="preserve">
     <value>M5_AgregarContacto</value>
   </data>
+  <data name="ChangeContact" xml:space="preserve">
+    <value>M5_ModificarContacto</value>
+  </data>
   <data name="ConDepartmentContact" xml:space="preserve">
     <value>con_departamento</value>
   </data>
