@@ -24,9 +24,9 @@ namespace PruebasUnitarias.M5
         {
             theContact = new Contacto();
             theContact.IdContacto = 1;
-            theContact.Nombre = "Las";
-            theContact.Apellido = "Bol";
-            theContact.Departamento = "as";
+            theContact.Nombre = "Istvan";
+            theContact.Apellido = "Bokor";
+            theContact.Departamento = "Ventas";
             theContact.Cargo = "Gerente";
             theContact.Correo = "asd@asd.com";
             theContact.Telefono = "7654321";
