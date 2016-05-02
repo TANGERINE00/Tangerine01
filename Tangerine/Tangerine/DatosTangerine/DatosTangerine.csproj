@@ -51,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceContact.resx</DependentUpon>
     </Compile>
+    <Compile Include="M8\BDFactura.cs" />
+    <Compile Include="M8\ResourceFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceFactura.resx</DependentUpon>
+    </Compile>
     <Compile Include="Parametro.cs" />
     <Compile Include="RecursoGeneralBD.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -85,7 +91,6 @@
     <Folder Include="M3\" />
     <Folder Include="M6\" />
     <Folder Include="M7\" />
-    <Folder Include="M8\" />
     <Folder Include="M9\" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +101,10 @@
     <EmbeddedResource Include="M5\ResourceContact.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceContact.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M8\ResourceFactura.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceFactura.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RecursoGeneralBD.resx">
       <Generator>ResXFileCodeGenerator</Generator>
