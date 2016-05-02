@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class ListaUsuarios
+    public class ListaUsuarios
     {
         #region Atributos
 

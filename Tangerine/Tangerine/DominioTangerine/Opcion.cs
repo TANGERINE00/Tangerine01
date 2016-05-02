@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Opcion
+    public class Opcion
     {
         #region Atributos
 
@@ -38,24 +38,26 @@ namespace DominioTangerine
 
         #endregion
 
-        #region Get's
+        #region Get's y Set's
 
         /// <summary>
-        /// Método que devuelve el nombre de la opción
+        /// Get y Set del nombre de la opción
         /// </summary>
         /// <returns></returns>
-        public string GetNombre()
+        public string Nombre
         {
-            return this._nombre;
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
         /// <summary>
-        /// Método que devuelve el url de la opción
+        /// Get y Set del url de la opción
         /// </summary>
         /// <returns></returns>
-        public string GetUrl()
+        public string Url
         {
-            return this._url;
+            get { return _url; }
+            set { _url = value; }
         }
 
         #endregion

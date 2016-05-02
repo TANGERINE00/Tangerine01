@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Rol
+    public class Rol
     {
         #region Atributos
 
@@ -46,46 +46,26 @@ namespace DominioTangerine
 
         #endregion
 
-        #region Get's
+        #region Get's y Set's
 
         /// <summary>
-        /// Método que devuelve el nombre del rol
+        /// Get y Set del nombre del rol
         /// </summary>
-        /// <returns></returns>
-        public string GetNombre() 
+        /// <returns>Nombre del rol</returns>
+        public string Nombre
         {
-            return this._nombre;
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
         /// <summary>
-        /// Método que devuelve la lista de menus
+        /// Get y Set de la lista de menus
         /// </summary>
-        /// <returns></returns>
-        public ListaMenus GetMenus() 
+        /// <returns>Lista de los menus a los que puede acceder el rol</returns>
+        public ListaMenus Menus
         {
-            return this._menus;
-        }
-
-        #endregion
-
-        #region Set's
-
-        /// <summary>
-        /// Setea el nombre del rol
-        /// </summary>
-        /// <param name="nombre"></param>
-        public void SetNombre( string nombre ) 
-        {
-            this._nombre = nombre;
-        }
-
-        /// <summary>
-        /// Setea la lista de menus
-        /// </summary>
-        /// <param name="menus"></param>
-        public void SetMenus( ListaMenus menus ) 
-        {
-            this._menus = menus;
+            get { return _menus; }
+            set { _menus = value; }
         }
 
         #endregion

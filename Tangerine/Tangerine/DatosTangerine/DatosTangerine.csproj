@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="M2\BDUsuario.cs" />
     <Compile Include="M4\BDCompania.cs" />
     <Compile Include="M4\ResourceCompany.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,7 +82,6 @@
   <ItemGroup>
     <Folder Include="M10\" />
     <Folder Include="M1\" />
-    <Folder Include="M2\" />
     <Folder Include="M3\" />
     <Folder Include="M6\" />
     <Folder Include="M7\" />

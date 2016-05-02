@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class ListaMenus
+    public class ListaMenus
     {
         #region Atributos
 
