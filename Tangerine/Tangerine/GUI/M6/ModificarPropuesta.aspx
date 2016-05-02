@@ -17,20 +17,40 @@
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <style>
+        .main-footer {
+            float:left;
+            position:relative; 
+            width:100%;
+        }
+
+        .content-wrapper {
+            float: left;
+        }
+
+        .input-group, .form-control {
+            width:95%;
+        }
+
+        .date {
+            width: 48.5% !important;
+            float: left;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .date {
+                width: 100% !important;
+                float: left;
+            }
+        }
+    </style>
+
+
+   
+
     <div class="col-md-6">
 
-        <script type="text/javascript" language="javascript">
-            $(document).ready(function () {
-                $("#success-alert").hide();
-                $("#myWish").click(function showAlert() {
-                    $("#success-alert").alert();
-                    $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
-                        $("#success-alert").alert('close');
-                    });
-                });
-            });
-
-        </script>
+        
 
 
         <div class="box box-primary">
@@ -45,51 +65,65 @@
                         <input type="input_cliente" class="form-control" id="cliente_id" placeholder="Trascend" disabled="disabled">
                     </div>
 
-                    <div class="form-group">
+                     <div class="form-group">
                         <label>Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Lorem Ipsum"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Alcance del proyecto ( Breve resumen de  requerimientos)</label>
-                        <textarea class="form-control" rows="3" placeholder="Requerimiento 1: Lorem Ipsum"></textarea>
-                    </div>
+                        <label>Requerimientos</label>
+                        <%--<input type="text" class="form-control" id="reque" placeholder="Agregar Requerimientos" data-toggle="modal" data-target="#reqModal">--%>
+                        <%--<h1 onclick="this.innerHTML='Ooops!'">Click on this text!</h1>--%>
+                        <%-- <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" ></button>--%>
 
-
-
-
-                    <!-- Date range -->
-                    <div class="form-group">
-                        <label>Periodo de realizacion:</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
+                        <div class="panel-body panel-minuta">
+                            <div class="col-xs-12">
+                                <button type="button" id="1-pun" class="close" data-dismiss="alert" aria-label="Close" onclick="borrarPunto(this);"><span aria-hidden="true">×</span></button>
+                                <input class="form-control" placeholder="Título del Punto" type="text">
                             </div>
-                            <input type="text" class="form-control pull-right" id="reservation" placeholder="04/14/2016 - 06/15/2016">
+                            <div class="col-xs-12 form-group"></div>
+                            <div class="col-xs-12"><textarea name="desarrollo" placeholder="Desarrollo del Punto" class="form-control" style="text-align: justify;resize:none;" rows="3"></textarea></div>
                         </div>
-                        <!-- /.input group -->
                     </div>
-                    <!-- /.form group -->
+
+
+
+
+                     <div class="form-group date">
+                <label>Fecha estimada Incio:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input class="form-control pull-right" id="datepicker1" type="text">
+                </div>
+                <!-- /.input group -->
+              </div>
+
+
+
+                    <div class="form-group date">
+                <label>Fecha estimada Final:</label>
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input class="form-control pull-right" id="datepicker2" type="text">
+                </div>
+                <!-- /.input group -->
+              </div>
 
 
                     <!-- /.box-body -->
 
                     <div class="form-group">
-                        <label for="input_horas">Horas Trabajadas</label>
+                        <label for="input_horas">Duración del Proyecto</label>
                         <input type="input_horas" class="form-control" id="horas_id" placeholder="120 h">
                     </div>
 
-                    <div class="form-group">
-                        <label>Estatus</label>
-                        <select class="form-control">
-                            <option>Aprobado</option>
-                            <option>Aprobado</option>
-                            <option>Pendiente</option>
-                            <option>En ejecucion</option>
-                        </select>
-                    </div>
-
-
+                    
 
                     <label for="input_costo">Costo del Proyecto</label>
                     <div class="input-group">
@@ -121,6 +155,18 @@
 
 
 
+                    <div class="form-group">
+                        <label>Estatus</label>
+                        <select class="form-control">
+                            <option>Aprobado</option>
+                            <option>Aprobado</option>
+                            <option>Pendiente</option>
+                            <option>En ejecucion</option>
+                        </select>
+                    </div>
+
+
+
 
                     <div class="box-foot">
                         <button  type="submit" class="btn btn-primary" >Modificar</button>
@@ -128,13 +174,14 @@
 
                     </div>
 
-
+                    </div>
             </form>
         </div>
 
     </div>
 
 
+    
 
 
 
