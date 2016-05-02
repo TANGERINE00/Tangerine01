@@ -127,7 +127,8 @@ create table CLIENTE_POTENCIAL
 	cli_pot_pres_anual_inv numeric(12,3) not null,
 	cli_pot_num_llamadas int not null,
 	cli_pot_num_visitas int not null,
-	cli_pot_potencial varchar(20) not null,
+	cli_pot_potencial bit default(0) not null,
+	cli_pot_borrado bit default(0) not null,
 
 	constraint pk_cli_pot primary key
 	(
@@ -445,7 +446,7 @@ create table OPCION
 		fk_men_id
 	) references MENU(men_id)	
 );
-
+GO
 
 
 
