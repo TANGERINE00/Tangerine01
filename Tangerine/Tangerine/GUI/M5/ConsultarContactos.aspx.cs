@@ -12,10 +12,11 @@ namespace Tangerine.GUI.M5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaTangerine.M5.Class1 prueba = new Class1();
+            LogicaTangerine.M5.LogicaM5 prueba = new LogicaM5();
             
-            //Aqui ejecuto el init de la clase creada en logica para probar la conexion a la bd
-            prueba.init();
+            //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
+            //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
+            prueba.fillTable(1,1);
             
         }
     }
