@@ -493,4 +493,16 @@ AS
     where con_id = @id;  
  end;
 GO
+
+CREATE PROCEDURE M5_ConsultarContactoCompania
+		@tipo_comp INT,
+		@id_empresa INT
+AS
+	BEGIN
+		SELECT con_id as con_id, con_nombre as con_nombre, con_apellido as con_apellido,
+		con_departamento as con_departamento, con_cargo as con_cargo, con_telefono as con_telefono,
+		con_correo as con_correo, con_tipo_emp as con_tipo_emp, fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO WHERE fk_id_com_lead = @id_empresa and con_tipo_emp = @tipo_comp;
+	END
+GO
 ------Fin Stored Procedure M5------
