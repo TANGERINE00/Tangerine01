@@ -14,35 +14,37 @@ namespace DatosTangerine.M2
         List<Parametro> parametros;
         Parametro elParametro;
 
-        public bool agregarUsuario(Usuario usuario)
+        public bool agregarUsuario( Usuario usuario )
         {
             parametros = new List<Parametro>();
             laConexion = new BDConexion();
 
             try
             {
-                elParametro = new Parametro("", SqlDbType.VarChar, usuario.Usuario, false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.Usuario,
+                                             false );
+                parametros.Add( elParametro );
 
-                elParametro = new Parametro("", SqlDbType.VarChar, usuario.Contrasenia, false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroContrasenia, SqlDbType.VarChar, usuario.Contrasenia,
+                                             false );
+                parametros.Add( elParametro );
 
-                elParametro = new Parametro("", SqlDbType.Int, usuario.FichaEmpleado.ToString(), false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroNumFicha, SqlDbType.Int, 
+                                             usuario.FichaEmpleado.ToString(), false );
+                parametros.Add( elParametro );
 
-                elParametro = new Parametro("", SqlDbType.Date, usuario.FechaCreacion.ToString(), false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroFechaCreacion, SqlDbType.Date,
+                                             usuario.FechaCreacion.ToString(), false );
+                parametros.Add( elParametro );
 
-                elParametro = new Parametro("", SqlDbType.VarChar, usuario.Rol.GetNombre(), false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroRolNombre, SqlDbType.VarChar, usuario.Rol.Nombre,
+                                             false );
+                parametros.Add( elParametro );
 
-                List<Resultado> results = laConexion.EjecutarStoredProcedure("", parametros);
+                List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.AgregarUsuario, 
+                                                                              parametros );
             }
-            catch (Exception ex)
-            {
-
-            }
-            finally
+            catch ( Exception ex )
             {
 
             }
