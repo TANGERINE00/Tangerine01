@@ -73,7 +73,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo usuario
         /// </summary>
         /// <returns>Usuario de acceso al sistema Tangerine</returns>
-		public string getUsuario()
+		public string GetUsuario()
 		{
 			return this._usuario;
 		}
@@ -82,7 +82,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo contraseña
         /// </summary>
         /// <returns>Contraseña del usuario</returns>
-		public string getContrasenia()
+		public string GetContrasenia()
 		{
 			return this._contrasenia;
 		}
@@ -91,7 +91,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo activo
         /// </summary>
         /// <returns>Activo si el usuario se encuentra activa o Inactivo si el usuario se encuentra inactivo</returns>
-        public string getActivo()
+        public string GetActivo()
         {
             return this._activo;
         }
@@ -100,7 +100,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo rol
         /// </summary>
         /// <returns>Rol del usuario</returns>
-		public string getRol()
+		public string GetRol()
 		{
 			return this._rol;
 		}
@@ -109,7 +109,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor de la ficha del empleado al que pertenece este usuario
         /// </summary>
         /// <returns></returns>
-        public int getFichaEmpleado() 
+        public int GetFichaEmpleado() 
         {
             return this._fichaEmpleado;
         }
@@ -118,9 +118,67 @@ namespace DominioTangerine
         /// Método que retorna la fecha de creacion del usuario
         /// </summary>
         /// <returns></returns>
-        public DateTime getFechaCreacion() 
+        public DateTime GetFechaCreacion() 
         {
             return this._fechaCreacion;
+        }
+
+        #endregion
+
+        #region Set´s
+
+        /// <summary>
+        /// Método que setea el valor del atributo usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        public void SetUsuario( string usuario )
+        {
+            this._usuario = usuario;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo contrasenia
+        /// </summary>
+        /// <param name="contrasenia"></param>
+        public void SetContrasenia( string contrasenia ) 
+        {
+            this._contrasenia = contrasenia;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo activo
+        /// </summary>
+        /// <param name="activo"></param>
+        public void SetActivo( string activo ) 
+        {
+            this._activo = activo;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo rol
+        /// </summary>
+        /// <param name="rol"></param>
+        public void SetRol( string rol ) 
+        {
+            this._rol = rol;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo fichaEmpleado
+        /// </summary>
+        /// <param name="fichaEmpleado"></param>
+        public void SetFichaEmpleado( int fichaEmpleado ) 
+        {
+            this._fichaEmpleado = fichaEmpleado;
+        }
+
+        /// <summary>
+        /// Método que setea el valor del atributo fechaCreacion
+        /// </summary>
+        /// <param name="fechaCreacion"></param>
+        public void SetFechaCreacion( DateTime fechaCreacion ) 
+        {
+            this._fechaCreacion = fechaCreacion;
         }
 
         #endregion

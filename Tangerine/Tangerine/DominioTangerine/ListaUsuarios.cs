@@ -55,10 +55,10 @@ namespace DominioTangerine
         {
             foreach( Usuario u in this._listaDeUsuarios )
             {
-                System.Diagnostics.Debug.Write( "Usuario: " + u.getUsuario() );
-                System.Diagnostics.Debug.Write( "Rol: " + u.getRol() );
-                System.Diagnostics.Debug.Write( "Fecha de creación: " + u.getFechaCreacion() );
-                System.Diagnostics.Debug.Write( "Estatus: " + u.getActivo() );
+                System.Diagnostics.Debug.Write( "Usuario: " + u.GetUsuario() );
+                System.Diagnostics.Debug.Write( "Rol: " + u.GetRol() );
+                System.Diagnostics.Debug.Write( "Fecha de creación: " + u.GetFechaCreacion() );
+                System.Diagnostics.Debug.Write( "Estatus: " + u.GetActivo() );
             }
         }
 

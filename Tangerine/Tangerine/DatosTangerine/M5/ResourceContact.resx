@@ -120,6 +120,9 @@
   <data name="AddNewContact" xml:space="preserve">
     <value>M5_AgregarContacto</value>
   </data>
+  <data name="ChangeContact" xml:space="preserve">
+    <value>M5_ModificarContacto</value>
+  </data>
   <data name="ConDepartmentContact" xml:space="preserve">
     <value>con_departamento</value>
   </data>
@@ -127,7 +130,7 @@
     <value>con_correo</value>
   </data>
   <data name="ConIdComp" xml:space="preserve">
-    <value>fk_id_comp_lead</value>
+    <value>fk_id_com_lead</value>
   </data>
   <data name="ConIdContact" xml:space="preserve">
     <value>con_id</value>
@@ -144,8 +147,14 @@
   <data name="ConRolContact" xml:space="preserve">
     <value>con_cargo</value>
   </data>
-  <data name="ConTipeComp" xml:space="preserve">
+  <data name="ContactCompany" xml:space="preserve">
+    <value>M5_ConsultarContactoCompania</value>
+  </data>
+  <data name="ConTypeComp" xml:space="preserve">
     <value>con_tipo_emp</value>
+  </data>
+  <data name="DeleteContact" xml:space="preserve">
+    <value>M5_EliminarContacto</value>
   </data>
   <data name="ParamDepa" xml:space="preserve">
     <value>@departamento</value>

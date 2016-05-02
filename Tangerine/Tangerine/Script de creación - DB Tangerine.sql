@@ -127,7 +127,8 @@ create table CLIENTE_POTENCIAL
 	cli_pot_pres_anual_inv numeric(12,3) not null,
 	cli_pot_num_llamadas int not null,
 	cli_pot_num_visitas int not null,
-	cli_pot_potencial varchar(20) not null,
+	cli_pot_potencial bit default(0) not null,
+	cli_pot_borrado bit default(0) not null,
 
 	constraint pk_cli_pot primary key
 	(
@@ -445,7 +446,7 @@ create table OPCION
 		fk_men_id
 	) references MENU(men_id)	
 );
-
+GO
 
 
 
@@ -460,12 +461,49 @@ CREATE PROCEDURE M5_AgregarContacto
 	@correo [varchar](50),
 	@tipo_comp int,
 	@id_empresa int
-as
- begin
-     
+AS
+ BEGIN
     INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead) 
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
-
  end;
+GO
+
+
+CREATE PROCEDURE M5_EliminarContacto
+@id int
+AS
+ BEGIN
+    DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id;
+	DELETE FROM CONTACTO WHERE con_id = @id;
+ END;
+GO
+
+
+CREATE PROCEDURE M5_ModificarContacto
+	@id int,
+	@nombre [varchar](50),
+	@apellido [varchar](50),
+	@departamento [varchar](50),
+	@cargo [varchar](50),
+	@telefono [varchar](50),
+	@correo [varchar](50)
+AS
+ BEGIN
+    update CONTACTO set con_nombre = @nombre, con_apellido = @apellido, con_departamento = @departamento,
+    con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
+    where con_id = @id;  
+ end;
+GO
+
+CREATE PROCEDURE M5_ConsultarContactoCompania
+		@tipo_comp INT,
+		@id_empresa INT
+AS
+	BEGIN
+		SELECT con_id as con_id, con_nombre as con_nombre, con_apellido as con_apellido,
+		con_departamento as con_departamento, con_cargo as con_cargo, con_telefono as con_telefono,
+		con_correo as con_correo, con_tipo_emp as con_tipo_emp, fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO WHERE fk_id_com_lead = @id_empresa and con_tipo_emp = @tipo_comp;
+	END
 GO
 ------Fin Stored Procedure M5------
