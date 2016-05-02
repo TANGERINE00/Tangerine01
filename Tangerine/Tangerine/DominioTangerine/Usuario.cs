@@ -9,7 +9,7 @@ namespace DominioTangerine
         private string _usuario;
 		private string _contrasenia;
 		private string _activo;
-        private string _rol;
+        private Rol _rol;
         private int _fichaEmpleado;
         private DateTime _fechaCreacion;
 
@@ -43,7 +43,7 @@ namespace DominioTangerine
         /// <param name="contrasenia"></param>
         /// <param name="activo"></param>
         /// <param name="rol"></param>
-        public Usuario( string usuario, string contrasenia, string activo, string rol )
+        public Usuario( string usuario, string contrasenia, string activo, Rol rol )
                : this( usuario, contrasenia, activo )
 		{
 			this._rol = rol;
@@ -58,7 +58,7 @@ namespace DominioTangerine
         /// <param name="rol"></param>
         /// <param name="fichaEmpleado"></param>
         /// <param name="fechaCreacion"></param>
-        public Usuario( string usuario, string contrasenia, string activo, string rol, int fichaEmpleado, 
+        public Usuario( string usuario, string contrasenia, string activo, Rol rol, int fichaEmpleado, 
                         DateTime fechaCreacion ) : this( usuario, contrasenia, activo, rol )
         {
             this._fichaEmpleado = fichaEmpleado;
@@ -100,7 +100,7 @@ namespace DominioTangerine
         /// Método que devuelve el valor del atributo rol
         /// </summary>
         /// <returns>Rol del usuario</returns>
-		public string GetRol()
+		public Rol GetRol()
 		{
 			return this._rol;
 		}
@@ -158,7 +158,7 @@ namespace DominioTangerine
         /// Método que setea el valor del atributo rol
         /// </summary>
         /// <param name="rol"></param>
-        public void SetRol( string rol ) 
+        public void SetRol( Rol rol ) 
         {
             this._rol = rol;
         }
