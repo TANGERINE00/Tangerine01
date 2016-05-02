@@ -55,8 +55,8 @@ namespace DominioTangerine
         {
             foreach ( Opcion o in this._listaDeOpciones )
             {
-                System.Diagnostics.Debug.WriteLine( "Opcion: " + o.GetNombre() );
-                System.Diagnostics.Debug.WriteLine( "Url: " + o.GetUrl() );
+                System.Diagnostics.Debug.WriteLine( "Opcion: " + o.Nombre );
+                System.Diagnostics.Debug.WriteLine( "Url: " + o.Url );
             }
         }
 

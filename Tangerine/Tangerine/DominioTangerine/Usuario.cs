@@ -73,7 +73,7 @@ namespace DominioTangerine
         /// Get y Set del atributo usuario
         /// </summary>
         /// <returns>Usuario de acceso al sistema Tangerine</returns>
-		public string Usuario
+		public string NonbreUsuario
 		{
             get { return _usuario; }
             set { _usuario = value; }
