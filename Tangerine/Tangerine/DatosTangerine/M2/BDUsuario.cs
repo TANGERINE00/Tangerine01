@@ -21,7 +21,7 @@ namespace DatosTangerine.M2
 
             try
             {
-                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.Usuario,
+                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
                                              false );
                 parametros.Add( elParametro );
 

@@ -55,7 +55,7 @@ namespace DominioTangerine
         {
             foreach ( Menu m in this._listaDeMenus )
             {
-                System.Diagnostics.Debug.WriteLine( "Menu: " + m.GetNombre() );
+                System.Diagnostics.Debug.WriteLine( "Menu: " + m.Nombre );
             }
         }
 
