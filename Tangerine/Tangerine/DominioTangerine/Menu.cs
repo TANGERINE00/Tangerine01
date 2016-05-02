@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Menu
+    public class Menu
     {
         #region Atributos
 
@@ -46,46 +46,26 @@ namespace DominioTangerine
 
         #endregion
 
-        #region Get's
+        #region Get's y Set's
 
         /// <summary>
-        /// Método que devuelve el nombre del menu
+        /// Get y Set del nombre del menu
         /// </summary>
-        /// <returns></returns>
-        public string GetNombre() 
+        /// <returns>El nombre del menu</returns>
+        public string Nombre
         {
-            return this._nombre;
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
         /// <summary>
-        /// Método que devuelve las opciones del menu
+        /// Get y Set de las opciones del menu
         /// </summary>
-        /// <returns></returns>
-        public ListaOpciones GetOpciones() 
+        /// <returns>Opciones que posee el menu</returns>
+        public ListaOpciones Opciones
         {
-            return this._opciones;
-        }
-
-        #endregion
-
-        #region Set's
-
-        /// <summary>
-        /// Setea el nombre del menu
-        /// </summary>
-        /// <param name="nombre"></param>
-        public void SetNombre( string nombre ) 
-        {
-            this._nombre = nombre;
-        }
-
-        /// <summary>
-        /// Setea las opciones del menu
-        /// </summary>
-        /// <param name="opciones"></param>
-        public void SetOpciones( ListaOpciones opciones ) 
-        {
-            this._opciones = opciones;
+            get { return _opciones; }
+            set { _opciones = value; }
         }
 
         #endregion
