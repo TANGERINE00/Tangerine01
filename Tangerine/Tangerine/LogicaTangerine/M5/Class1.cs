@@ -13,7 +13,7 @@ namespace LogicaTangerine.M5
     {
 
         public Contacto theContact;
-        public bool answer;
+        List<Contacto> answer;
         public void init()
         {
             theContact = new Contacto();
@@ -30,7 +30,7 @@ namespace LogicaTangerine.M5
             DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
 
             //Aqui llamo al metodo que inserta un contacto (theContact)
-            answer = prueba.ChangeContact(theContact);
+            answer = prueba.ContactCompany(1,1);
         }
     }
 }

@@ -97,7 +97,7 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fk_id_comp_lead.
+        ///   Looks up a localized string similar to fk_id_com_lead.
         /// </summary>
         internal static string ConIdComp {
             get {
@@ -151,11 +151,20 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoCompania.
+        /// </summary>
+        internal static string ContactCompany {
+            get {
+                return ResourceManager.GetString("ContactCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to con_tipo_emp.
         /// </summary>
-        internal static string ConTipeComp {
+        internal static string ConTypeComp {
             get {
-                return ResourceManager.GetString("ConTipeComp", resourceCulture);
+                return ResourceManager.GetString("ConTypeComp", resourceCulture);
             }
         }
         

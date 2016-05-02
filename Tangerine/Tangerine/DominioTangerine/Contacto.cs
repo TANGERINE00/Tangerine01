@@ -93,17 +93,18 @@ namespace DominioTangerine
             idCompañia = 0;
         }
 
-        public Contacto(Contacto elContacto)
+        public Contacto(int inputId, string inputNombre, string inputApellido, string inputDepartamento,
+            string inputCargo, string inputTelefono, string inputCorreo, int inputTipoE, int inputIdEmpresa)
         {
-            this.idContacto = elContacto.idContacto;
-            this.nombre = elContacto.nombre;
-            this.apellido = elContacto.apellido;
-            this.telefono = elContacto.telefono;
-            this.correo = elContacto.correo;
-            this.departamento = elContacto.departamento;
-            this.cargo = elContacto.cargo;
-            this.tipoCompañia = elContacto.tipoCompañia;
-            this.idCompañia = elContacto.idCompañia;
+            this.idContacto = inputId;
+            this.nombre = inputNombre;
+            this.apellido = inputApellido;
+            this.telefono = inputTelefono;
+            this.correo = inputCorreo;
+            this.departamento = inputDepartamento;
+            this.cargo = inputCargo;
+            this.tipoCompañia = inputTipoE;
+            this.idCompañia = inputIdEmpresa;
         }
         #endregion
     }
