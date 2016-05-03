@@ -478,6 +478,16 @@ AS
  end;
 GO
 
+---- SP Eliminar Contacto a Proyecto ----
+CREATE PROCEDURE M5_EliminarContactoProyecto
+	@id_contacto int,
+	@id_proyecto int
+AS
+ BEGIN
+    DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;  
+ end;
+GO
+
 CREATE PROCEDURE M5_EliminarContacto
 @id int
 AS
