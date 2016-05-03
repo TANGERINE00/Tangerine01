@@ -97,6 +97,7 @@ drop procedure M8_ConsultarMontoRestanteFactura;
 drop procedure M8_VerificarFacturaExistente;
 
 drop procedure M9_AgregarPago;
+drop procedure M9_CambioStatus;
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;
