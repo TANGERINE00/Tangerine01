@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
+using DatosTangerine.M5;
 
 namespace LogicaTangerine.M5
 {
-    //Esta clase la invente para probar la base de datos, no es la logica de Contacto
-    //se activa corriendo la interfaz de consultar contacto
-    public class Class1
+    public class LogicaM5
     {
-
         public Contacto theContact;
         List<Contacto> answer;
         public void init()
@@ -27,10 +25,18 @@ namespace LogicaTangerine.M5
             theContact.TipoCompañia = 1;
             theContact.IdCompañia = 1;
 
-            DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
+            //DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
 
             //Aqui llamo al metodo que inserta un contacto (theContact)
-            answer = prueba.ContactCompany(1,1);
+            //answer = prueba.ContactCompany(1, 1);
+        }
+
+        public List<Contacto> fillTable(int typeComp, int idComp) 
+        {
+            BDContacto bdContact = new BDContacto();
+            List<Contacto> listContact =  bdContact.ContactCompany(typeComp,idComp);
+
+            return listContact; 
         }
     }
 }

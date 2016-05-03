@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Facturacion
+    public class Facturacion
     {
         #region Atributos
 
