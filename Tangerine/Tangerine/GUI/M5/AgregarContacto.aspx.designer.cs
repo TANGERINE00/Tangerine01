@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M5 {
     public partial class AgregarContacto {
         
         /// <summary>
+        /// agregar_contacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_contacto;
+        
+        /// <summary>
         /// id_otro control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace Tangerine.GUI.M5 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText telefono;
         
         /// <summary>
-        /// Correo control.
+        /// correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText correo;
         
         /// <summary>
         /// btnaceptar control.
@@ -83,7 +92,7 @@ namespace Tangerine.GUI.M5 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnaceptar;
-        
+           
         /// <summary>
         /// btnaceptara control.
         /// </summary>

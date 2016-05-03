@@ -16,7 +16,8 @@ namespace Tangerine.GUI.M5
             
             //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
             //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
-            prueba.fillTable(1,1);
+           // prueba.fillTable(1,1);
+            prueba.init();
             
         }
     }

@@ -21,10 +21,11 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public Boolean AddContact(Contacto theContact)
+        public static bool AddContact(Contacto theContact)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -48,13 +49,7 @@ namespace DatosTangerine.M5
 
                 theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
                 parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, theContact.IdCompañia.ToString(), false);
-                parameters.Add(theParam);
-
+                
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
 
@@ -194,6 +189,38 @@ namespace DatosTangerine.M5
             }
 
             return listContact;
+        }
+
+        /// <summary>
+        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
+        public Boolean AddContactProy(int idContact, int idProy)
+        {
+            parameters = new List<Parametro>();
+            theConnection = new BDConexion();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, idContact.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, idProy.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContactProy, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
         }
     }
 }
