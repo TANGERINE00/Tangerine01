@@ -2,6 +2,8 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestion de Propuesta
@@ -19,9 +21,9 @@
 
     <style>
         .main-footer {
-            float:left;
-            position:relative; 
-            width:100%;
+            float: left;
+            position: relative;
+            width: 100%;
         }
 
         .content-wrapper {
@@ -29,13 +31,21 @@
         }
 
         .input-group, .form-control {
-            width:95%;
+            width: 95%;
         }
 
         .date {
             width: 48.5% !important;
             float: left;
         }
+
+        #div-precondiciones {
+            margin-bottom: 20px;
+        }
+
+            #div-precondiciones .form-group {
+                padding: 15px 0;
+            }
 
         @media only screen and (max-width: 550px) {
             .date {
@@ -45,50 +55,11 @@
         }
     </style>
 
-    <!-- Modal -->
-        <div class="modal fade" id="reqModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Detalle Propuesta </h4>
-                    </div>
-                    <div class="modal-body">
 
-
-                        <!-- form start -->
-
-                        <div id="puntosMinuta" class="list-group col-xs-12 col-md-8 col-lg-6">
-                    <div id="1-pun-div" class="panel panel-default panel-punto">
-                        <div class="panel-body panel-minuta">
-                            <div class="col-xs-12">
-                                <button type="button" id="1-pun" class="close" data-dismiss="alert" aria-label="Close" onclick="borrarPunto(this);"><span aria-hidden="true">×</span></button>
-                                <input class="form-control" placeholder="Título del Punto" type="text">
-                            </div>
-                            <div class="col-xs-12 form-group"></div>
-                            <div class="col-xs-12"><textarea name="desarrollo" placeholder="Desarrollo del Punto" class="form-control" style="text-align: justify;resize:none;" rows="3"></textarea></div>
-                        </div>
-                    </div>
-                </div>
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                    </div><!-- /.box-footer -->
-
-                    </div>
-
-
-
-                </div>
-             
-            </div>
-        </div>
-       <!-- Fin Modal -->
-    
 
     <div class="col-md-6">
 
-        <div class="box box-primary" style="height:inherit !important">
+        <div class="box box-primary" style="height: inherit !important">
 
             <!-- form start -->
             <form role="form">
@@ -115,53 +86,70 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Requerimientos</label>
-                        <%--<input type="text" class="form-control" id="reque" placeholder="Agregar Requerimientos" data-toggle="modal" data-target="#reqModal">--%>
-                        <%--<h1 onclick="this.innerHTML='Ooops!'">Click on this text!</h1>--%>
-                        <%-- <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" ></button>--%>
+                        <label>Alcance del Proyecto</label>
+                        <div class="form-group">
+                            <div id="div-precondiciones" class="col-sm-10 col-md-10 col-lg-10">
 
-                        <div class="panel-body panel-minuta">
-                            <div class="col-xs-12">
-                                <button type="button" id="1-pun" class="close" data-dismiss="alert" aria-label="Close" onclick="borrarPunto(this);"><span aria-hidden="true">×</span></button>
-                                <input class="form-control" placeholder="Título del Punto" type="text">
+                                <div class="form-group">
+                                    <div class="col-sm-11 col-md-11 col-lg-11">
+                                        <input type="text" placeholder="Requerimiento" class="form-control" id="precondicion_0" name="precondicion_0" />
+                                    </div>
+                                    <div class="col-sm-1 col-md-1 col-lg-1">
+                                        <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarPrecondicion()"></button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-xs-12 form-group"></div>
-                            <div class="col-xs-12"><textarea name="desarrollo" placeholder="Desarrollo del Punto" class="form-control" style="text-align: justify;resize:none;" rows="3"></textarea></div>
                         </div>
+
                     </div>
 
 
                     <div class="form-group date">
-                <label>Fecha estimada Incio:</label>
+                        <label>Fecha estimada Incio:</label>
 
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input class="form-control pull-right" id="datepicker1" type="text">
-                </div>
-                <!-- /.input group -->
-              </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="datepicker1" type="text">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
 
-                 <div class="form-group date">
-                <label>Fecha estimada Final:</label>
+                    <div class="form-group date">
+                        <label>Fecha estimada Final:</label>
 
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input class="form-control pull-right" id="datepicker2" type="text">
-                </div>
-                <!-- /.input group -->
-              </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="datepicker2" type="text">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
                     <!-- /.form group -->
 
 
                     <!-- /.box-body -->
 
                     <div class="form-group">
-                        <label for="input_horas">Horas de trabajo</label>
-                        <input type="text" class="form-control" id="horas_id" placeholder="Horas de trabajo">
+                        <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-btn">
+                                
+                              <select class="form-control">
+                            <option></option>
+                            <option>Aprobado</option>
+                            <option>Pendiente</option>
+                            <option>En ejecucion</option>
+                        </select>
+                            </div>
+                            <!-- /btn-group -->
+                            <input type="text" class="form-control">
+                        </div>
+
+
                     </div>
 
                     <div class="form-group">
@@ -208,15 +196,15 @@
 
                 </div>
 
-               
+
 
             </form>
 
         </div>
-        
-     <div class="box-foot">
-                    <button type="submit" class="btn btn-primary">Agregar</button>
-                </div>
+
+        <div class="box-foot">
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </div>
     </div>
 
 
