@@ -21,10 +21,11 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public Boolean AddContact(Contacto theContact)
+        public static bool AddContact(Contacto theContact)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -48,13 +49,7 @@ namespace DatosTangerine.M5
 
                 theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
                 parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, theContact.IdCompañia.ToString(), false);
-                parameters.Add(theParam);
-
+                
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
 
