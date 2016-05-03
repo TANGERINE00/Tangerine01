@@ -92,7 +92,7 @@ namespace Tangerine.GUI.M5 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnaceptar;
-           
+        
         /// <summary>
         /// btnaceptara control.
         /// </summary>
@@ -100,6 +100,6 @@ namespace Tangerine.GUI.M5 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnaceptara;
+        ///protected global::System.Web.UI.HtmlControls.HtmlAnchor btnaceptara;
     }
 }

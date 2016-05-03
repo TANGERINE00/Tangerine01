@@ -42,9 +42,7 @@
                         <input style="margin-bottom:3%" runat="server" type="text" placeholder="0412-230.03.53" class="form-control" id="telefono" name="telefono">
                         <label>Correo</label>
                         <input runat="server" type="text" placeholder="carr235@gmail.com" class="form-control" id="correo" name="correo">
-					    <!--<asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar"   ></asp:Button>-->
                         <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary pull-right" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>
-                        <!--<a id="btnaceptara" type="submit" style="margin-top:5%" class="btn btn-primary pull-right" runat="server" href="ConsultarContactos.aspx">Agregar</a>-->
 				        <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx">Cancelar</a>
                     </div>			
                 </div>
