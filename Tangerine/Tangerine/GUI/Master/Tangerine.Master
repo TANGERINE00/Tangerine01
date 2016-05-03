@@ -39,8 +39,6 @@
    <body class="hold-transition skin-blue sidebar-mini">
 
     
-
-    <form id="form1" runat="server">
     
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -505,10 +503,15 @@
             autoclose: true
         });
 
+        $(".dropdown-menu li a").click(function () {
+            $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+            $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+        });
+
       });
     </script>
 
-    </form>
+
   </body>
 </html>
 

@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DatosTangerine;
+using DatosTangerine.M5;
 using DominioTangerine;
+
 
 namespace PruebasUnitarias.M5
 {
@@ -48,8 +49,7 @@ namespace PruebasUnitarias.M5
         public void TestAddContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
-            answer = test.AddContact(theContact);
+            answer = DatosTangerine.M5.BDContacto.AddContact(theContact);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);

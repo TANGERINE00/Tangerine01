@@ -31,3 +31,4 @@ function eliminarCampo(caller) {
     var parent = caller.parentElement.parentElement;
     parent.parentElement.removeChild(parent);
 }
+

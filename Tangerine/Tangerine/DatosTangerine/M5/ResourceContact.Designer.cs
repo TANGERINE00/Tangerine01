@@ -70,6 +70,15 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_AgregarContactoProyecto.
+        /// </summary>
+        internal static string AddNewContactProy {
+            get {
+                return ResourceManager.GetString("AddNewContactProy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M5_ModificarContacto.
         /// </summary>
         internal static string ChangeContact {
@@ -210,6 +219,24 @@ namespace DatosTangerine.M5 {
         internal static string ParamIdComp {
             get {
                 return ResourceManager.GetString("ParamIdComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_contacto.
+        /// </summary>
+        internal static string ParamIdContact {
+            get {
+                return ResourceManager.GetString("ParamIdContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_proyecto.
+        /// </summary>
+        internal static string ParamIdProy {
+            get {
+                return ResourceManager.GetString("ParamIdProy", resourceCulture);
             }
         }
         

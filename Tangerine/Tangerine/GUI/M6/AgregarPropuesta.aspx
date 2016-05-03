@@ -103,6 +103,30 @@
 
                     </div>
 
+                    <div class="form-group">
+                        <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-btn">
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        Duracion
+                    <span class="fa fa-caret-down"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Meses</a></li>
+                                        <li><a href="#">Dias</a></li>
+                                        <li><a href="#">Horas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /btn-group -->
+                            <input type="text" class="form-control">
+                        </div>
+
+
+                    </div>
+
 
                     <div class="form-group date">
                         <label>Fecha estimada Incio:</label>
@@ -132,55 +156,36 @@
 
                     <!-- /.box-body -->
 
-                    <div class="form-group">
-                        <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
 
+
+                    <div class="form-group">
+                        <label for="input_costo">Costo del Proyecto</label>
                         <div class="input-group input-group-sm">
                             <div class="input-group-btn">
-                                
-                              <select class="form-control">
-                            <option></option>
-                            <option>Aprobado</option>
-                            <option>Pendiente</option>
-                            <option>En ejecucion</option>
-                        </select>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        Moneda
+                                        <span class="fa fa-caret-down"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Bolivar</a></li>
+                                        <li><a href="#">Dolar</a></li>
+                                        <li><a href="#">Euro</a></li>
+                                        <li><a href="#">Bitcoin</a></li>
+                                    </ul>
+
+                                </div>
                             </div>
                             <!-- /btn-group -->
                             <input type="text" class="form-control">
+                            <%--<span class="input-group-addon">.00</span>--%>
                         </div>
 
 
-                    </div>
 
-                    <div class="form-group">
-                        <label>Estatus</label>
-                        <select class="form-control">
-                            <option></option>
-                            <option>Aprobado</option>
-                            <option>Pendiente</option>
-                            <option>En ejecucion</option>
-                        </select>
                     </div>
 
 
-
-                    <label for="input_costo">Costo del Proyecto</label>
-                    <div class="input-group">
-
-                        <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                        <span class="input-group-addon">.00</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Moneda</label>
-                        <select class="form-control">
-                            <option></option>
-                            <option>Dolares</option>
-                            <option>Bolivares</option>
-                            <option>Bitcoin</option>
-                        </select>
-                    </div>
 
                     <div class="form-group">
                         <label>Forma de Pago</label>
@@ -194,17 +199,34 @@
 
 
 
+                    <div class="form-group">
+                        <label>Estatus</label>
+                        <select class="form-control">
+                            <option></option>
+                            <option>Aprobado</option>
+                            <option>Pendiente</option>
+                            <option>En ejecucion</option>
+                        </select>
+                    </div>
+
+
+
+
+
+
                 </div>
-
-
 
             </form>
 
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Agregar</button>
+              </div>
+
         </div>
 
-        <div class="box-foot">
+      <%--  <div class="box-foot">
             <button type="submit" class="btn btn-primary">Agregar</button>
-        </div>
+        </div>--%>
     </div>
 
 

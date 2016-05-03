@@ -183,4 +183,13 @@
   <data name="ParamTele" xml:space="preserve">
     <value>@telefono</value>
   </data>
+  <data name="AddNewContactProy" xml:space="preserve">
+    <value>M5_AgregarContactoProyecto</value>
+  </data>
+  <data name="ParamIdContact" xml:space="preserve">
+    <value>@id_contacto</value>
+  </data>
+  <data name="ParamIdProy" xml:space="preserve">
+    <value>@id_proyecto</value>
+  </data>
 </root>
