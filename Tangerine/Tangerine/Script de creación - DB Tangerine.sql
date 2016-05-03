@@ -467,7 +467,16 @@ AS
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
  end;
 GO
-
+---- SP Agregar Contacto a Proyecto ----
+CREATE PROCEDURE M5_AgregarContactoProyecto
+	@id_contacto [varchar](50),
+	@id_proyecto [varchar](50),
+AS
+ BEGIN
+    INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id) 
+	VALUES(@id_contacto,@id_proyecto);  
+ end;
+GO
 
 CREATE PROCEDURE M5_EliminarContacto
 @id int
