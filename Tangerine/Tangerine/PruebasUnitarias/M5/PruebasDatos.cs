@@ -59,7 +59,7 @@ namespace PruebasUnitarias.M5
         /// Prueba que permite verificar el modificar de un contacto en la base de datos
         /// </summary>
         [Test]
-        public void TestChamgeContact()
+        public void TestChangeContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "ChangeContact(Contacto theContact)"
             DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
