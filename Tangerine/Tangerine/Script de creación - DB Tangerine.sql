@@ -469,8 +469,8 @@ AS
 GO
 ---- SP Agregar Contacto a Proyecto ----
 CREATE PROCEDURE M5_AgregarContactoProyecto
-	@id_contacto [varchar](50),
-	@id_proyecto [varchar](50),
+	@id_contacto int,
+	@id_proyecto int
 AS
  BEGIN
     INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id) 
