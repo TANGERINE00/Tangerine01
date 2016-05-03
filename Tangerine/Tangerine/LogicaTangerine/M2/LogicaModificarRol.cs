@@ -19,7 +19,7 @@ namespace LogicaTangerine.M2
         /// <param name="elusuario"></param>
         /// <param name="elrol"></param>
         /// <returns></returns>
-        public static bool ModificarRol( string elusuario, string elrol )
+        public static bool ModificarRol(string elusuario, string elrol)
         {
             bool resultado = false;
 
@@ -42,26 +42,14 @@ namespace LogicaTangerine.M2
                                                                  "Error al ejecutar ConsultarListaDeEmpleados()",
                                                                  ex );
             }
-
-            return resultado;
-        }
-
-        /// <summary>
-        /// Metodo que retorna una lista de todos los usuarios que hay en el sistema
-        /// </summary>
-        /// <returns></returns>
-        public static List<Usuario> ConsultarListaDeUsuarios()
-        {
-            List<Usuario> listaDeUsuarios = new List<Usuario>();
-
-            List<Empleado> listaDeEmpleados = BDEmpleado.ListarEmpleados();
-
-            foreach (Empleado empleado in listaDeEmpleados)
+            catch (Exception ex)
             {
-                listaDeUsuarios.Add(BDUsuario.ObtenerUsuarioDeEmpleado(empleado));
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
+                                                                     "ModificarRol()", ex);
             }
 
-            return listaDeUsuarios;
+            return resultado;
         }
 
         /// <summary>
@@ -83,6 +71,12 @@ namespace LogicaTangerine.M2
                 throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
                                                                  "Error al ejecutar ConsultarListaDeEmpleados()",
                                                                  ex );
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
+                                                                     "ObtenerUsuario()", ex);
             }
             return usuario;
         }

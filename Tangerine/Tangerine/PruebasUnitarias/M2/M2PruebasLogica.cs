@@ -104,13 +104,6 @@ namespace PruebasUnitarias.M2
 
         }
 
-      
-
-        [Test]
-        public void TestConsultarListaDeUsuarios()
-        {
-            Assert.IsNotNull(LogicaModificarRol.ConsultarListaDeUsuarios());
-        }
 
 
 
