@@ -31,20 +31,18 @@
 			    <div id="id_otro" runat="server" class="form-group">
 				    <div class="icon-addon addon-lg">
 					    <label>Nombre <a style="color:rgb(255, 0, 0);">*</a></label>
-					    <input style="margin-bottom:3%" runat="server" type="text" placeholder="Cesar" class="form-control" id="nombre" name ="nombre" required>                    
+					    <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="nombre" name ="nombre" required>                    
 					    <label>Apellido <a style="color:rgb(255, 0, 0);">*</a></label>
-                        <input style="margin-bottom:3%" runat="server" type="text" placeholder="Rodriguez" class="form-control" id="apellido" name ="apellido" required>                   
+                        <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="apellido" name ="apellido" required>                   
 					    <label>Departamento <a style="color:rgb(255, 0, 0);">*</a></label>
-                        <input style="margin-bottom:3%" runat="server" type="text" placeholder="Informatica" class="form-control" id="departamento" name ="departamento" required>                  
+                        <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="departamento" name ="departamento" required>                  
 					    <label>Cargo <a style="color:rgb(255, 0, 0);">*</a></label>
-                        <input style="margin-bottom:3%" runat="server" type="text" placeholder="Lider de Proyecto" class="form-control" id="cargo" name ="cargo" required>
+                        <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="cargo" name ="cargo" required>
                         <label>Telefono</label>
-                        <input style="margin-bottom:3%" runat="server" type="text" placeholder="0412-230.03.53" class="form-control" id="telefono" name="telefono">
+                        <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="telefono" name="telefono">
                         <label>Correo</label>
-                        <input runat="server" type="text" placeholder="carr235@gmail.com" class="form-control" id="correo" name="correo">
-					    <!--<asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar"   ></asp:Button>-->
+                        <input runat="server" type="text" class="form-control" id="correo" name="correo">
                         <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary pull-right" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>
-                        <!--<a id="btnaceptara" type="submit" style="margin-top:5%" class="btn btn-primary pull-right" runat="server" href="ConsultarContactos.aspx">Agregar</a>-->
 				        <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx">Cancelar</a>
                     </div>			
                 </div>
