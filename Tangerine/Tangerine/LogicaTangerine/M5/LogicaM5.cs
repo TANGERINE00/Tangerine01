@@ -26,18 +26,22 @@ namespace LogicaTangerine.M5
             theContact.TipoCompañia = 1;
             theContact.IdCompañia = 1;
 
-            DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
+            //DatosTangerine.M5.BDContacto prueba = new DatosTangerine.M5.BDContacto();
 
             //Aqui llamo al metodo que inserta un contacto (theContact)
-            answer2 =prueba.AddContactProy(2,1);
+            //answer2 =prueba.AddContactProy(2,1);
         }
 
         public List<Contacto> fillTable(int typeComp, int idComp) 
         {
-            BDContacto bdContact = new BDContacto();
-            List<Contacto> listContact =  bdContact.ContactCompany(typeComp,idComp);
-
-            return listContact; 
+            try
+            {
+            return BDContacto.ContactCompany(typeComp,idComp); 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public bool AddNewContact(Contacto contact){

@@ -12,9 +12,6 @@ namespace DatosTangerine.M5
 {
     public class BDContacto
     {
-        BDConexion theConnection;
-        List<Parametro> parameters;
-        Parametro theParam = new Parametro();
 
         /// <summary>
         /// Metodo para agregar una contacto nuevo en la base de datos.
@@ -73,10 +70,11 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public Boolean DeleteContact(Contacto theContact)
+        public static Boolean DeleteContact(Contacto theContact)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -102,10 +100,11 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto para modificar en bd</param>
         /// <returns>true si fue modificado</returns>
-        public Boolean ChangeContact(Contacto theContact)
+        public static Boolean ChangeContact(Contacto theContact)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -150,10 +149,11 @@ namespace DatosTangerine.M5
         ///                        idCompany que es el id de la Empresa (Compania o Lead)
         /// </summary>
         /// <returns>Lista de contactos de la Empresa</returns>
-        public List<Contacto> ContactCompany(int typeCompany, int idCompany)
+        public static List<Contacto> ContactCompany(int typeCompany, int idCompany)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             List<Contacto> listContact = new List<Contacto>();
 
@@ -202,10 +202,11 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public Boolean AddContactProy(int idContact, int idProy)
+        public static Boolean AddContactProy(int idContact, int idProy)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
