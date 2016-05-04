@@ -59,5 +59,212 @@ namespace DatosTangerine.M4 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_AgregarCompania.
+        /// </summary>
+        internal static string AddNewCompany {
+            get {
+                return ResourceManager.GetString("AddNewCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ModificarCompania.
+        /// </summary>
+        internal static string ChangeCompany {
+            get {
+                return ResourceManager.GetString("ChangeCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_acronimo.
+        /// </summary>
+        internal static string ComAcronymCompany {
+            get {
+                return ResourceManager.GetString("ComAcronymCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_email.
+        /// </summary>
+        internal static string ComEmailCompany {
+            get {
+                return ResourceManager.GetString("ComEmailCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_id.
+        /// </summary>
+        internal static string ComIdCompany {
+            get {
+                return ResourceManager.GetString("ComIdCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_lug_dir_id.
+        /// </summary>
+        internal static string ComIdPlace {
+            get {
+                return ResourceManager.GetString("ComIdPlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_cli_pot_id.
+        /// </summary>
+        internal static string ComIdPotentialClient {
+            get {
+                return ResourceManager.GetString("ComIdPotentialClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_nombre.
+        /// </summary>
+        internal static string ComNameCompany {
+            get {
+                return ResourceManager.GetString("ComNameCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_fecha_registro.
+        /// </summary>
+        internal static string ComRegisterDateCompany {
+            get {
+                return ResourceManager.GetString("ComRegisterDateCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_rif.
+        /// </summary>
+        internal static string ComRifCompany {
+            get {
+                return ResourceManager.GetString("ComRifCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_status.
+        /// </summary>
+        internal static string ComStatusCompany {
+            get {
+                return ResourceManager.GetString("ComStatusCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarCompanias.
+        /// </summary>
+        internal static string ContactCompanies {
+            get {
+                return ResourceManager.GetString("ContactCompanies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarCompania.
+        /// </summary>
+        internal static string ContactCompany {
+            get {
+                return ResourceManager.GetString("ContactCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_InhabilitarHabilitarCompania.
+        /// </summary>
+        internal static string DisableAbleComany {
+            get {
+                return ResourceManager.GetString("DisableAbleComany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @acronimo.
+        /// </summary>
+        internal static string ParamAcronimo {
+            get {
+                return ResourceManager.GetString("ParamAcronimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @email.
+        /// </summary>
+        internal static string ParamEmail {
+            get {
+                return ResourceManager.GetString("ParamEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fecha_registro.
+        /// </summary>
+        internal static string ParamFechaRegistro {
+            get {
+                return ResourceManager.GetString("ParamFechaRegistro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id.
+        /// </summary>
+        internal static string ParamId {
+            get {
+                return ResourceManager.GetString("ParamId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_cliente_potencial.
+        /// </summary>
+        internal static string ParamIdClientePotencial {
+            get {
+                return ResourceManager.GetString("ParamIdClientePotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_lugar.
+        /// </summary>
+        internal static string ParamIdLugar {
+            get {
+                return ResourceManager.GetString("ParamIdLugar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombre.
+        /// </summary>
+        internal static string ParamNombre {
+            get {
+                return ResourceManager.GetString("ParamNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rif.
+        /// </summary>
+        internal static string ParamRif {
+            get {
+                return ResourceManager.GetString("ParamRif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
+            }
+        }
     }
 }

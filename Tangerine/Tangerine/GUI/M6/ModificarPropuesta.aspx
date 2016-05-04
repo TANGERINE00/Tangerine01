@@ -69,25 +69,8 @@
                         <label>Objeto del proyecto</label>
                         <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label>Requerimientos</label>
-                        <%--<input type="text" class="form-control" id="reque" placeholder="Agregar Requerimientos" data-toggle="modal" data-target="#reqModal">--%>
-                        <%--<h1 onclick="this.innerHTML='Ooops!'">Click on this text!</h1>--%>
-                        <%-- <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" ></button>--%>
-
-                        <div class="panel-body panel-minuta">
-                            <div class="col-xs-12">
-                                <button type="button" id="1-pun" class="close" data-dismiss="alert" aria-label="Close" onclick="borrarPunto(this);"><span aria-hidden="true">×</span></button>
-                                <input class="form-control" placeholder="Título del Punto" type="text">
-                            </div>
-                            <div class="col-xs-12 form-group"></div>
-                            <div class="col-xs-12"><textarea name="desarrollo" placeholder="Desarrollo del Punto" class="form-control" style="text-align: justify;resize:none;" rows="3"></textarea></div>
-                        </div>
-                    </div>
-
-
-
+             <!-- form end -->
+                                                                      
 
                      <div class="form-group date">
                 <label>Fecha estimada Incio:</label>
