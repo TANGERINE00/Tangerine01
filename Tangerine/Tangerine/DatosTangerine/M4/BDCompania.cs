@@ -49,7 +49,13 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, theCompany.IdClientePotencial.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.AddNewCompany, parameters);
 
             }
@@ -95,6 +101,12 @@ namespace DatosTangerine.M4
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, theCompany.IdClientePotencial.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -209,4 +221,6 @@ namespace DatosTangerine.M4
         }
 
     }
+
+    //Falta implementar el metodo de cambio de status (habilitar/inhabilitar)
 }
