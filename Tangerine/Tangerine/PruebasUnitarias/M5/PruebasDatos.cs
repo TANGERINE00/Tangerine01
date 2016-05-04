@@ -49,7 +49,7 @@ namespace PruebasUnitarias.M5
         public void TestAddContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            answer = DatosTangerine.M5.BDContacto.AddContact(theContact);
+            answer = BDContacto.AddContact(theContact);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
@@ -62,8 +62,7 @@ namespace PruebasUnitarias.M5
         public void TestChangeContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "ChangeContact(Contacto theContact)"
-            DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
-            answer = test.ChangeContact(theContact);
+            answer = BDContacto.ChangeContact(theContact);
 
             //answer obtiene true si se modifica el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
@@ -76,8 +75,7 @@ namespace PruebasUnitarias.M5
         public void TestDeleteContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "DeleteContact(Contacto theContact)"
-            DatosTangerine.M5.BDContacto test = new DatosTangerine.M5.BDContacto();
-            answer = test.DeleteContact(theContact);
+            answer = BDContacto.DeleteContact(theContact);
 
             //answer obtiene true si se elimina el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
