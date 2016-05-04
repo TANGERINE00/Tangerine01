@@ -138,12 +138,13 @@ create table CLIENTE_POTENCIAL
 
 create table COMPANIA
 (
-	com_id int not null,
-	com_nombre varchar(20) not null,
+	com_id int IDENTITY(1,1) not null,
+	com_nombre varchar(50) not null,
 	com_rif varchar(20) not null,
 	com_email varchar(50) not null,
 	com_acronimo varchar(20) not null,
 	com_fecha_registro date not null,
+	com_status int not null,
 	fk_lug_dir_id int not null,
 	fk_cli_pot_id int,
 
@@ -165,7 +166,7 @@ create table COMPANIA
 
 create table TELEFONO 
 (
-	tel_id int not null,
+	tel_id IDENTITY(1,1) int not null,
 	tel_numero int not null,
 	fk_emp_num_ficha int,
 	fk_com_id int,
@@ -447,6 +448,86 @@ create table OPCION
 	) references MENU(men_id)	
 );
 GO
+
+
+
+
+--------Stored Procedure M4--------
+---- StoredProcedure Agregar Compañia ----
+CREATE PROCEDURE M4_AgregarCompania
+	@nombre [varchar](50),
+	@rif [varchar](20),
+	@email [varchar](50),
+	@acronimo [varchar](20),
+	@fecha_registro date
+	@status int,
+	@id_lugar int,
+	@id_cliente_potencial int
+
+AS
+ BEGIN
+    INSERT INTO COMPANIA(com_nombre, com_rif, com_email, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id, fk_cli_pot_id) 
+	VALUES(@nombre,	@rif, @email, @acronimo, @fecha_registro, @status, @id_lugar, @id_cliente_potencial);  
+ END;
+GO
+
+---- StoredProcedure Consultar Compañia ----
+CREATE PROCEDURE M4_ConsultarCompania
+		@id int
+AS
+	BEGIN
+		SELECT com_nombre as com_nombre, com_rif as con_rif, com_email as con_email, com_acronimo as com_acronimo,
+			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id,
+			fk_cli_pot_id as fk_cli_pot_id
+		FROM COMPANIA WHERE com_id = @id;
+	END
+GO
+
+---- StoredProcedure Consultar Compañias ----
+CREATE PROCEDURE M4_ConsultarCompanias
+
+AS
+	BEGIN
+		SELECT com_nombre as com_nombre, com_rif as con_rif, com_email as con_email, com_acronimo as com_acronimo,
+			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id,
+			fk_cli_pot_id as fk_cli_pot_id
+		FROM COMPANIA;
+	END
+GO
+
+---- StoredProcedure Modificar Compañia ----
+CREATE PROCEDURE M4_ModificarCompania
+	@id int,
+	@nombre [varchar](50),
+	@rif [varchar](20),
+	@email [varchar](50),
+	@acronimo [varchar](20),
+	@fecha_registro date
+	@status int,
+	@id_lugar int,
+	@id_cliente_potencial int
+AS
+ BEGIN
+    update COMPANIA set com_nombre = @nombre, com_rif = @rif, com_email = @email,
+    com_acronimo = @acronimo, com_fecha_registro = @fecha_registro, com_status = @status,
+    fk_lug_dir_id = @id_lugar, fk_cli_pot_id = @id_cliente_potencial
+    where com_id = @id;  
+ end;
+GO
+
+---- StoredProcedure Inhabilitar/Habilirar Compañia ----
+CREATE PROCEDURE M4_InhabilitarHabilitarCompania
+	@id int,
+	@status int
+AS
+ BEGIN
+    update COMPANIA set com_status = @status
+    where com_id = @id;  
+ end;
+GO
+
+------Fin Stored Procedure M4------
+
 
 
 

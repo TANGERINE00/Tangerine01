@@ -49,6 +49,12 @@ namespace DatosTangerine.M5
 
                 theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
                 parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, theContact.IdCompañia.ToString(), false);
+                parameters.Add(theParam);
                 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);

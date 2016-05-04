@@ -16,6 +16,9 @@ namespace DominioTangerine
         private string emailCompania;
         private string acronimoCompania;
         private DateTime fechaRegistroCompania;
+        private int statusCompania;
+        private int idLugar;
+        private int idClientePotencial;
 
         #endregion
 
@@ -57,6 +60,24 @@ namespace DominioTangerine
             set { fechaRegistroCompania = value; }
         }
 
+        public int StatusCompania
+        {
+            get { return statusCompania; }
+            set { statusCompania = value; }
+        }
+
+        public int IdLugar
+        {
+            get { return idLugar; }
+            set { idLugar = value; }
+        }
+
+        public int IdClientePotencial
+        {
+            get { return idClientePotencial; }
+            set { idClientePotencial = value; }
+        }
+
         #endregion
 
         #region Constructores
@@ -69,16 +90,23 @@ namespace DominioTangerine
             emailCompania = String.Empty;
             acronimoCompania = String.Empty;
             fechaRegistroCompania = DateTime.Now;
+            statusCompania = 0;
+            idLugar = 0;
+            idClientePotencial = 0;
         }
 
-        public Compania(Compania laCompania)
+        public Compania(int inputId, string inputNombre, string inputRif, string inputEmail, string inputAcronimo,
+                        DateTime inputFechaRegistro, int inputStatus, int inputIdLugar, int inputIdCliente)
         {
-            this.idCompania = laCompania.idCompania;
-            this.nombreCompania = laCompania.nombreCompania;
-            this.rifCompania = laCompania.rifCompania;
-            this.emailCompania = laCompania.emailCompania;
-            this.acronimoCompania = laCompania.acronimoCompania;
-            this.fechaRegistroCompania = laCompania.fechaRegistroCompania;
+            this.idCompania = inputId;
+            this.nombreCompania = inputNombre;
+            this.rifCompania = inputRif;
+            this.emailCompania = inputEmail;
+            this.acronimoCompania = inputAcronimo;
+            this.fechaRegistroCompania = inputFechaRegistro;
+            this.statusCompania = inputStatus;
+            this.idLugar = inputIdLugar;
+            this.idClientePotencial = inputIdCliente;
         }
 
         #endregion

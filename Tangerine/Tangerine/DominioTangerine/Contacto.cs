@@ -108,14 +108,16 @@ namespace DominioTangerine
         }
 
         public Contacto(string inputNombre, string inputApellido, string inputDepartamento,
-            string inputCargo, string inputTelefono, string inputCorreo)
-        {            
+            string inputCargo, string inputTelefono, string inputCorreo, int inputTipoE, int inputIdEmpresa)
+        {
             this.nombre = inputNombre;
             this.apellido = inputApellido;
             this.telefono = inputTelefono;
             this.correo = inputCorreo;
             this.departamento = inputDepartamento;
             this.cargo = inputCargo;
+            this.tipoCompañia = inputTipoE;
+            this.idCompañia = inputIdEmpresa;
         }
         #endregion
     }
