@@ -10,37 +10,203 @@ using DominioTangerine;
 
 namespace DatosTangerine.M4
 {
-    public class BDCompania
+    public class BDContacto
     {
-        /*
         BDConexion theConnection;
         List<Parametro> parameters;
         Parametro theParam = new Parametro();
-        Boolean retBool = false;
-        
-        public Boolean AddContact(Contacto theContact)
+
+        /// <summary>
+        /// Metodo para agregar una compañia nueva en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Compania para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
+        public static bool AddCompany(Compania theCompany)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, theCompany.NombreCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, theCompany.FechaRegistroCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.AddNewCompany, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
+       
+        /// <summary>
+        /// Metodo para modificar una compañia en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Compania para modificar en bd</param>
+        /// <returns>true si fue modificado</returns>
+        public Boolean ChangeCompany(Compania theCompany)
         {
             parameters = new List<Parametro>();
             theConnection = new BDConexion();
 
             try
             {
-
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, theContact.IdContacto.ToString(), false);
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.IdCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
+                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, theCompany.NombreCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, theCompany.FechaRegistroCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.ChangeCompany, parameters);
 
             }
-         
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                //throw new ExcepcionesTangerine.OtrasExcep();
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
-            return retBool;
+            return true;
         }
-     */
+
+       
+        /// <summary>
+        /// Metodo para consultar una compañia en especifico.
+        /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
+        /// </summary>
+        /// <returns>Lista de contactos de la Empresa</returns>
+        public Compania ContactCompany(int idCompany)
+        {
+            parameters = new List<Parametro>();
+            theConnection = new BDConexion();
+
+            Compania theCompany = new Compania();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, idCompany.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ContactCompany, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                int comId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
+                String comName = row[ResourceCompany.ComNameCompany].ToString();
+                String comRif = row[ResourceCompany.ComRifCompany].ToString();
+                String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
+                String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
+                DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
+                int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
+                int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
+                int comIdPotentialClient = int.Parse(row[ResourceCompany.ComIdPotentialClient].ToString());
+
+                //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comAcronym, 
+                                                    comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+
+                theCompany = theCompanybeta;
+            
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return theCompany;
+        }
+
+        
+        /// <summary>
+        /// Metodo para consultar todas las Compañias registradas en la BD.
+        /// Recibe cero parametros.
+        /// </summary>
+        /// <returns>Lista de Companias registradas</returns>
+        public List<Compania> ContactCompanies()
+        {
+            parameters = new List<Parametro>();
+            theConnection = new BDConexion();
+
+            List<Compania> listCompany = new List<Compania>();
+
+            try
+            {
+                theConnection.Conectar();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ContactCompanies, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int comId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
+                    String comName = row[ResourceCompany.ComNameCompany].ToString();
+                    String comRif = row[ResourceCompany.ComRifCompany].ToString();
+                    String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
+                    String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
+                    DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
+                    int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
+                    int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
+                    int comIdPotentialClient = int.Parse(row[ResourceCompany.ComIdPotentialClient].ToString());
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Compania theCompany = new Compania(comId, comName, comRif, comEmail, comAcronym,
+                                                   comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+                    listCompany.Add(theCompany);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listCompany;
+        }
 
     }
 }
