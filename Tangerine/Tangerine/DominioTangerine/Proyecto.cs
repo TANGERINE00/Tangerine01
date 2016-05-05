@@ -14,8 +14,9 @@ namespace DominioTangerine
         private string _codigo;
         private DateTime _fechainicio;
         private DateTime _fechaestimadafin;
-        private double _costo;
-        private double _realizacion;
+        private int _costo;
+        private string _descripcion;
+        private string _realizacion;
         private string _estatus;
         private string _razon;
         private int _idpropuesta;
@@ -51,7 +52,7 @@ namespace DominioTangerine
         /// <param name="id_gerente"></param>
 
         Proyecto(int id_proyecto,string nombre,string codigo,DateTime fecha_inicio,DateTime fecha_estimada_fin,
-                  double costo,double realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
+                  int costo,string descripcion, string realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
                  int id_gerente)
         {
             this._idproyecto = id_proyecto;
@@ -60,6 +61,7 @@ namespace DominioTangerine
             this._fechainicio = fecha_inicio;
             this._fechaestimadafin = fecha_estimada_fin;
             this._costo = costo;
+            this._descripcion = descripcion;
             this._realizacion = realizacion;
             this._estatus = estatus;
             this._razon = razon;
@@ -73,240 +75,157 @@ namespace DominioTangerine
 
         #region Get's Set's
 
-
         /// <summary>
-        /// Metodo para obtener el ID del proyecto
+        /// Metodo para setear y obtener el ID del proyecto
         /// </summary>
-        /// <returns>Retorna el numero del proyecto</returns>
-        public int getId_Proyecto()
+        /// <returns>Retorna el id del proyecto</returns>
+        public int Idproyecto
         {
-            return this._idproyecto;
+            get { return _idproyecto; }
+            set { _idproyecto = value; }
         }
 
         /// <summary>
-        /// Metodo para setear el ID del proyecto
-        /// </summary>
-        /// <param name="id_proyecto"></param>
-       
-        public void setId_Proyecto(int id_proyecto)
-        {
-            this._idproyecto = id_proyecto;
-        }
-
-
-        /// <summary>
-        /// Metodo para obtener el nombre del proyecto
+        /// Metodo para setear y obtener el nombre del proyecto
         /// </summary>
         /// <returns>Retorna el nombre del proyecto</returns>
-        public string getNombre()
+        
+        
+        public string Nombre
         {
-            return this._nombre;
-        }
-
-
-        /// <summary>
-        /// Metodo para setear el nombre del proyecto
-        /// </summary>
-        /// <param name="Nombre"></param>
-        public void setNombre(string Nombre)
-        {
-            this._nombre = Nombre;
+            get { return _nombre; }
+            set { _nombre = value; }
         }
 
         /// <summary>
-        /// Metodo para obtener el codigo del proyecto
+        /// Metodo para setear y obtener el codigo del proyecto
         /// </summary>
         /// <returns>Retorna el codigo del proyecto</returns>
-        public string getCodigo()
+        
+        public string Codigo
         {
-            return this._codigo;
+            get { return _codigo; }
+            set { _codigo = value; }
         }
 
-
         /// <summary>
-        /// Metodo para setear el codigo del proyecto
-        /// </summary>
-        /// <param name="Codigo"></param>
-        public void setCodigo(string Codigo)
-        {
-            this._codigo = Codigo;
-        }
-
-
-        /// <summary>
-        /// Metodo para obtener la fecha de inicio del proyecto
+        /// Metodo para setear y obtener la fecha de inicio del proyecto
         /// </summary>
         /// <returns>Retorna la fecha de inicio del proyecto</returns>
-        public DateTime getFecha_inicio()
+        
+        public DateTime Fechainicio
         {
-            return this._fechainicio;
+            get { return _fechainicio; }
+            set { _fechainicio = value; }
         }
 
-
-
         /// <summary>
-        /// Metodo para setear la fecha de inicio del proyecto
+        /// Metodo para setear y obtener la fecha estimada de fin del proyecto
         /// </summary>
-        /// <param name="Fecha_inicio"></param>
-        public void setFecha_inicio(DateTime Fecha_inicio)
+        /// <returns>Retorna la fecha estimada de fin del proyecto</returns>
+        
+
+        public DateTime Fechaestimadafin
         {
-            this._fechainicio = Fecha_inicio;
+            get { return _fechaestimadafin; }
+            set { _fechaestimadafin = value; }
         }
 
 
         /// <summary>
-        /// Metodo para obtener la fecha estimada para el fin del proyecto
-        /// </summary>
-        /// <returns>Retorna la fecha estimada para el fin del proyecto</returns>
-        public DateTime getFecha_estimada_fin()
-        {
-            return this._fechaestimadafin;
-        }
-
-
-        /// <summary>
-        /// Metodo para setear la fecha estimada de fin para el proyecto
-        /// </summary>
-        /// <param name="fecha_estimada_fin"></param>
-        public void setFecha_estimada_fin(DateTime fecha_estimada_fin)
-        {
-            this._fechaestimadafin = fecha_estimada_fin;
-        }
-
-        /// <summary>
-        /// Metodo para obtener el costo del proyecto
+        /// Metodo para setear y obtener el costo del proyecto
         /// </summary>
         /// <returns>Retorna el costo del proyecto</returns>
-        public double getCosto()
+        
+
+        public int Costo
         {
-            return this._costo;
+            get { return _costo; }
+            set { _costo = value; }
         }
 
         /// <summary>
-        /// Metodo para setear el costo del proyecto
+        /// Metodo para setear y obtener la descripcion del proyecto
         /// </summary>
-        /// <param name="costo"></param>
-        public void setCosto(double costo)
+        /// <returns>Retorna la descripcion del proyecto</returns>
+        
+
+        public string Descripcion
         {
-            this._costo = costo;
+            get { return _descripcion; }
+            set { _descripcion = value; }
         }
 
+
         /// <summary>
-        /// Metodo para obtener el porcentaje de realizacion del proyecto
+        /// Metodo para setear y obtener la realizacion del proyecto
         /// </summary>
-        /// <returns>Retorna el porcentje de realizacion proyecto</returns>
-        public double getRealizacion()
+        /// <returns>Retorna la realizacion del proyecto</returns>
+        
+        public string Realizacion
         {
-            return this._realizacion;
-        }
-
-        /// <summary>
-        /// Metodo para setear porcentaje de realizacion del proyecto
-        /// </summary>
-        /// <param name="realizacion"></param>
-        public void setRealizacion(double realizacion)
-        {
-            this._realizacion = realizacion;
+            get { return _realizacion; }
+            set { _realizacion = value; }
         }
 
 
         /// <summary>
-        /// Metodo para obtener el estatus del proyecto
+        /// Metodo para setear y obtener el estatus del proyecto
         /// </summary>
         /// <returns>Retorna el estatus del proyecto</returns>
-        public string getEstatus()
+
+        public string Estatus
         {
-            return this._estatus;
+            get { return _estatus; }
+            set { _estatus = value; }
         }
 
         /// <summary>
-        /// Metodo para setear el estatus del proyecto
+        /// Metodo para setear y obtener la razon de cancelacion del proyecto
         /// </summary>
-        /// <param name="estatus"></param>
-        public void setEstatus(string estatus)
+        /// <returns>Retorna la razon de cancelacion del proyecto</returns>
+
+
+        public string Razon
         {
-            this._estatus = estatus;
-        }
-
-
-        /// <summary>
-        /// Metodo para obtener la razon para la cancelacion del proyecto
-        /// </summary>
-        /// <returns>Retorna la razon para la cancelacion del proyecto</returns>
-        public string getRazon()
-        {
-            return this._razon;
-        }
-
-
-        /// <summary>
-        /// Metodo para setear la razon para la cancelacion del proyecto
-        /// </summary>
-        /// <param name="razon"></param>
-        public void setRazon(string razon)
-        {
-            this._razon = razon;
+            get { return _razon; }
+            set { _razon = value; }
         }
 
         /// <summary>
-        /// Metodo para obtener el ID de la propuesta del proyecto
+        /// Metodo para setear y obtener el id de la propuesta del proyecto
         /// </summary>
-        /// <returns>Retorna el ID de la propuesta del proyecto</returns>
-        public int getId_Propuesta()
+        /// <returns>Retorna el id de la propuesta del proyecto</returns>
+
+        public int Idpropuesta
         {
-            return this._idpropuesta;
-        }
-
-
-        /// <summary>
-        /// Metodo para setear el ID de la propuesta del proyecto
-        /// </summary>
-        /// <param name="id_propuesta"></param>
-        public void setId_Propuesta(int id_propuesta)
-        {
-            this._idpropuesta = id_propuesta;
-        }
-
-
-        /// <summary>
-        /// Metodo para obtener el ID del gerente del proyecto
-        /// </summary>
-        /// <returns>Retorna el ID del gerente del proyecto</returns>
-        public int getId_Gerente()
-        {
-            return this._idgerente;
-        }
-
-
-        /// <summary>
-        /// Metodo para setear el ID del gerente del proyecto
-        /// </summary>
-        /// <param name="id_gerente"></param>
-        public void setId_Gerente(int id_gerente)
-        {
-            this._idgerente = id_gerente;
+            get { return _idpropuesta; }
+            set { _idpropuesta = value; }
         }
 
         /// <summary>
-        /// Metodo para obtener el ID del responsable del proyecto
+        /// Metodo para setear y obtener el id del responsable del proyecto
         /// </summary>
-        /// <returns>Retorna el ID del responsable del proyecto</returns>
-        public int getId_Responsable()
-        {
-            return this._idresponsable;
-        }
+        /// <returns>Retorna el id del responsable del proyecto</returns>
 
+
+        public int Idresponsable
+        {
+            get { return _idresponsable; }
+            set { _idresponsable = value; }
+        }
 
         /// <summary>
-        /// Metodo para setear el ID del responsable del proyecto
+        /// Metodo para setear y obtener el id del gerente del proyecto
         /// </summary>
-        /// <param name="id_responsable"></param>
-        public void setId_Responsable(int id_responsable)
+        /// <returns>Retorna el id del gerente del proyecto</returns>
+
+
+        public int Idgerente
         {
-            this._idresponsable = id_responsable;
+            get { return _idgerente; }
+            set { _idgerente = value; }
         }
-
-
 
         #endregion
     }

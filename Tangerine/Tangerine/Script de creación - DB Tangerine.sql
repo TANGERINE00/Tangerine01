@@ -257,16 +257,19 @@ create table REQUERIMIENTO
 
 create table PROYECTO
 (
-	proy_id int not null,
+	proy_id int IDENTITY(1,1) not null,
 	proy_nombre varchar(50) not null,
-	proy_codigo int not null,
+	proy_codigo varchar(255) not null,
 	proy_fecha_inicio date not null,
 	proy_fecha_est_fin date not null,
-	proy_descripcion varchar(255) not null,
 	proy_costo int not null,
+	proy_descripcion varchar(255) not null,
 	proy_realizacion varchar(100) not null,
-	proy_estatus varchar(20) not null, 
+	proy_estatus varchar(20) not null,
+	proy_razon varchar(100) not null,
+	fk_propuesta_id int not null,
 	fk_com_id int not null,
+	fk_gerente_id int not null,
 
 	constraint pk_proy primary key
 	(
@@ -276,7 +279,17 @@ create table PROYECTO
 	constraint fk_com_proy foreign key
 	(
 		fk_com_id
-	) references COMPANIA(com_id)
+	) references COMPANIA(com_id),
+	
+	constraint fk_propuesta_proy foreign key
+	(
+		fk_propuesta_id
+	) references PROPUESTA(prop_id),
+	
+	constraint fk_gerente_proy foreign key
+	(
+		fk_gerente_id
+	) references EMPLEADO(emp_num_ficha)
 );
 
 create table EMPLEADO_PROYECTO
