@@ -23,97 +23,87 @@ namespace DominioTangerine
         #region Get´s Set´s
 
         /// <summary>
-        /// Metodo para obtener el ID de la factura
+        /// Metodo para setear y obtener el ID de la factura
         /// </summary>
-        /// <returns>Retorna el numero de la factura</returns>
-        public int getIdNumeroFactura() { return _idNumeroFactura; }
+        /// <returns>Retorna el id de la factura</returns>
+
+        public int idFactura
+        {
+            get { return _idNumeroFactura; }
+            set { _idNumeroFactura = value; }
+        }
 
         /// <summary>
-        /// Metodo para setear el ID de la factura
-        /// </summary>
-        /// <param name="idNumeroFactura"></param>
-        public void setIdNumeroFactura( int idNumeroFactura ) { _idNumeroFactura = idNumeroFactura; }
-
-        /// <summary>
-        /// Metodo para obtener la fecha
+        /// Metodo para setear y obtener la fecha de la factura
         /// </summary>
         /// <returns>Retorna la fecha de la factura</returns>
-        public DateTime getFecha() { return _fecha; }
+
+        public DateTime fechaFactura
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
 
         /// <summary>
-        /// Metodo para setear la fecha
+        /// Metodo para setear y obtener el id del cliente en la factura
         /// </summary>
-        /// <param name="fecha"></param>
-        public void setFecha( DateTime fecha ) { _fecha = fecha; }
+        /// <returns>Retorna el id del cliente de la factura</returns>
+
+        public int idClienteFactura
+        {
+            get { return _idCliente; }
+            set { _idCliente = value; }
+        }
+
 
         /// <summary>
-        /// Metodo para obtener el ID del cliente
+        /// Metodo para setear y obtener el monto de la factura
         /// </summary>
-        /// <returns>Retorna el ID del cliente</returns>
-        public int getIdCliente() { return _idCliente; }
+        /// <returns>Retorna el monto de la factura</returns>
+
+        public double montoFactura
+        {
+            get { return _monto; }
+            set { _monto = value; }
+        }
 
         /// <summary>
-        /// Metodo para setear el ID del cliente
+        /// Metodo para setear y obtener el monto restante de la factura
         /// </summary>
-        /// <param name="idCliente"></param>
-        public void setIdCliente( int idCliente ) { _idCliente = idCliente; }
+        /// <returns>Retorna el monto restante de la factura</returns>
+
+        public double montoRestanteFactura
+        {
+            get { return _montoRestante; }
+            set { _montoRestante = value; }
+        }
 
         /// <summary>
-        /// Metodo para obtener el ID del proyecto
+        /// Metodo para setear y obtener el id proyecto de la factura
         /// </summary>
-        /// <returns>Retorna el ID del proyecto</returns>
-        public int getIdProyecto() { return _idProyecto; }
+        /// <returns>Retorna el id del proyecto de la factura</returns>
+
+        public int idProyectoFactura
+        {
+            get { return _idProyecto; }
+            set { _idProyecto = value; }
+        }
 
         /// <summary>
-        /// Metodo para setear el ID del proyecto
+        /// Metodo para setear y obtener la descripcion del proyecto de la factura
         /// </summary>
-        /// <param name="idProyecto"></param>
-        public void setIdProyecto( int idProyecto ) { _idProyecto = idProyecto; }
+        /// <returns>Retorna la descripcion del proyecto de la factura</returns>
 
-        /// <summary>
-        /// Metodo para obtener la descripcion
-        /// </summary>
-        /// <returns>Retorna la descripcion del proyecto</returns>
-        public String getDescripcion() { return _descripcion; }
+        public String descripcionFactura
+        {
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
 
-        /// <summary>
-        /// Metodo para setear la descripcion
-        /// </summary>
-        /// <param name="descripcion"></param>
-        public void setDescripcion( String descripcion ) { _descripcion = descripcion; }
-
-        /// <summary>
-        /// Metodo para obtener el monto de la factura
-        /// </summary>
-        /// <returns>Retorna el monto de facturacion del proyecto</returns>
-        public double getMonto() { return _monto; }
-
-        /// <summary>
-        /// Metodo para setear el monto de la factura
-        /// </summary>
-        /// <param name="monto"></param>
-        public void setMonto( double monto ) { _monto = monto; }
-
-        /// <summary>
-        /// Metodo para obtener el monto restante de la factura
-        /// </summary>
-        /// <returns>Retorna el monto restante de facturacion del proyecto</returns>
-        public double getMontoRestante() { return _montoRestante; }
-
-        /// <summary>
-        /// Metodo para setear el monto restante de la factura
-        /// </summary>
-        /// <param name="montoRestante"></param>
-        public void setMontoRestante( double montoRestante ) { _montoRestante = montoRestante; }
 
         #endregion
 
         #region Constructores
-
-        /// <summary>
-        /// Constructor por defecto de la clase.
-        /// </summary>
-        public Facturacion() { }
 
         /// <summary>
         /// Constructor con los atributos.
@@ -125,15 +115,37 @@ namespace DominioTangerine
         /// <param name="descripcion"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( int idNumeroFactura, DateTime fecha, int idCliente, int idProyecto, String descripcion, double monto, double montoRestante )
+        public Facturacion()
         {
-            _idNumeroFactura = idNumeroFactura;
-            _fecha = fecha;
-            _idCliente = idCliente;
-            _idProyecto = idProyecto;
-            _descripcion = descripcion;
-            _monto = monto;
-            _montoRestante = montoRestante;
+            _idNumeroFactura = 0;
+            _fecha = DateTime.Now;
+            _idCliente = 0;
+            _idProyecto = 0;
+            _descripcion = String.Empty;
+            _monto = 0;
+            _montoRestante = 0;
+        }
+
+
+        /// <summary>
+        /// Constructor con los atributos.
+        /// </summary>
+        /// <param name="idNumeroFactura"></param>
+        /// <param name="fecha"></param>
+        /// <param name="idCliente"></param>
+        /// <param name="idProyecto"></param>
+        /// <param name="descripcion"></param>
+        /// <param name="monto"></param>
+        /// <param name="montoRestante"></param>
+        public Facturacion( int idNumeroFactura, DateTime fecha,   double monto, double montoRestante, String descripcion, int idProyecto, int idCliente )
+        {
+            this._idNumeroFactura = idNumeroFactura;
+            this._fecha = fecha;
+            this._idCliente = idCliente;
+            this._idProyecto = idProyecto;
+            this._descripcion = descripcion;
+            this._monto = monto;
+            this._montoRestante = montoRestante;
         }
 
         #endregion

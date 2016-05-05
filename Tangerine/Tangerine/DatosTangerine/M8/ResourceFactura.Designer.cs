@@ -81,9 +81,9 @@ namespace DatosTangerine.M8 {
         /// <summary>
         ///   Looks up a localized string similar to M8_ConsultarFactura.
         /// </summary>
-        internal static string ConsultFactura {
+        internal static string ContactFactura {
             get {
-                return ResourceManager.GetString("ConsultFactura", resourceCulture);
+                return ResourceManager.GetString("ContactFactura", resourceCulture);
             }
         }
         
@@ -97,47 +97,65 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fac_descripcion.
+        /// </summary>
+        internal static string FacDescripcion {
+            get {
+                return ResourceManager.GetString("FacDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fac_fecha_emision.
         /// </summary>
-        internal static string Fac_FechaEmision {
+        internal static string FacFechaEmision {
             get {
-                return ResourceManager.GetString("Fac_FechaEmision", resourceCulture);
+                return ResourceManager.GetString("FacFechaEmision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_cliente_id.
+        /// </summary>
+        internal static string FacIdCliente {
+            get {
+                return ResourceManager.GetString("FacIdCliente", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to fac_id.
         /// </summary>
-        internal static string Fac_IdFactura {
+        internal static string FacIdFactura {
             get {
-                return ResourceManager.GetString("Fac_IdFactura", resourceCulture);
+                return ResourceManager.GetString("FacIdFactura", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to fk_proy_id.
         /// </summary>
-        internal static string Fac_IdProyecto {
+        internal static string FacIdProyecto {
             get {
-                return ResourceManager.GetString("Fac_IdProyecto", resourceCulture);
+                return ResourceManager.GetString("FacIdProyecto", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to fac_monto_restante.
         /// </summary>
-        internal static string Fac_MontoRestante {
+        internal static string FacMontoRestante {
             get {
-                return ResourceManager.GetString("Fac_MontoRestante", resourceCulture);
+                return ResourceManager.GetString("FacMontoRestante", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to fac_monto_total.
         /// </summary>
-        internal static string Fac_MontoTotal {
+        internal static string FacMontoTotal {
             get {
-                return ResourceManager.GetString("Fac_MontoTotal", resourceCulture);
+                return ResourceManager.GetString("FacMontoTotal", resourceCulture);
             }
         }
         
@@ -160,6 +178,15 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @IdCliente.
+        /// </summary>
+        internal static string ParamIdCliente {
+            get {
+                return ResourceManager.GetString("ParamIdCliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @IdFactura.
         /// </summary>
         internal static string ParamIdFactura {
@@ -169,7 +196,16 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @Monto_Restante.
+        ///   Looks up a localized string similar to @IdProyecto.
+        /// </summary>
+        internal static string ParamIdProyecto {
+            get {
+                return ResourceManager.GetString("ParamIdProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @MontoRestante.
         /// </summary>
         internal static string ParamMonto_Restante {
             get {
@@ -183,15 +219,6 @@ namespace DatosTangerine.M8 {
         internal static string ParamMonto_Total {
             get {
                 return ResourceManager.GetString("ParamMonto_Total", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @IdProyecto.
-        /// </summary>
-        internal static string ParamProyectoId {
-            get {
-                return ResourceManager.GetString("ParamProyectoId", resourceCulture);
             }
         }
     }

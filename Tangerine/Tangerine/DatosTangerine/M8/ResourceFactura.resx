@@ -123,25 +123,31 @@
   <data name="ChangeFactura" xml:space="preserve">
     <value>M8_ModificarContacto</value>
   </data>
-  <data name="ConsultFactura" xml:space="preserve">
+  <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
   </data>
   <data name="DeleteFactura" xml:space="preserve">
     <value>M8_EliminarFactura</value>
   </data>
-  <data name="Fac_FechaEmision" xml:space="preserve">
+  <data name="FacDescripcion" xml:space="preserve">
+    <value>fac_descripcion</value>
+  </data>
+  <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
   </data>
-  <data name="Fac_IdFactura" xml:space="preserve">
+  <data name="FacIdCliente" xml:space="preserve">
+    <value>fk_cliente_id</value>
+  </data>
+  <data name="FacIdFactura" xml:space="preserve">
     <value>fac_id</value>
   </data>
-  <data name="Fac_IdProyecto" xml:space="preserve">
+  <data name="FacIdProyecto" xml:space="preserve">
     <value>fk_proy_id</value>
   </data>
-  <data name="Fac_MontoRestante" xml:space="preserve">
+  <data name="FacMontoRestante" xml:space="preserve">
     <value>fac_monto_restante</value>
   </data>
-  <data name="Fac_MontoTotal" xml:space="preserve">
+  <data name="FacMontoTotal" xml:space="preserve">
     <value>fac_monto_total</value>
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
@@ -150,16 +156,19 @@
   <data name="ParamFecha_Emision" xml:space="preserve">
     <value>@FechaEmision</value>
   </data>
+  <data name="ParamIdCliente" xml:space="preserve">
+    <value>@IdCliente</value>
+  </data>
   <data name="ParamIdFactura" xml:space="preserve">
     <value>@IdFactura</value>
   </data>
+  <data name="ParamIdProyecto" xml:space="preserve">
+    <value>@IdProyecto</value>
+  </data>
   <data name="ParamMonto_Restante" xml:space="preserve">
-    <value>@Monto_Restante</value>
+    <value>@MontoRestante</value>
   </data>
   <data name="ParamMonto_Total" xml:space="preserve">
     <value>@MontoTotal</value>
-  </data>
-  <data name="ParamProyectoId" xml:space="preserve">
-    <value>@IdProyecto</value>
   </data>
 </root>

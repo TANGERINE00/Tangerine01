@@ -325,11 +325,18 @@ create table CONTACTO_PROYECTO
 
 create table FACTURA 
 (
-	fac_id int not null,
+	fac_id int IDENTITY (1,1) not null,
 	fac_fecha_emision date not null,
 	fac_monto_total numeric(12,3) not null,
 	fac_monto_restante numeric(12,3) not null,
+	fac_descripcion varchar(500) not null,
 	fk_proy_id int not null,
+	fk_cliente_id int not null,
+
+	constraint fk_cliente_id foreign key
+	(
+		fk_cliente_id
+	),
 
 	constraint pk_fac primary key
 	(
