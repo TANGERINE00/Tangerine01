@@ -70,8 +70,113 @@
                         <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
                     </div>
              <!-- form end -->
-                                                                      
 
+                    <div class="table-responsive">
+	    <table id="table-requerimientos" class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th style="width: 530px">Requerimiento</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+		</table>
+        <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" >Eliminaci&oacute;n de Requerimiento</h4>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                    <p>Seguro que desea eliminar el requerimiento:</p>
+                    <p id="req"></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">  
+                <a id="btn-eliminar" type="button" class="btn btn-primary" onclick="EliminarRequerimiento()" href="ListarRequerimientos.aspx?success=3">Eliminar</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+           </div>
+          </div><!-- /.modal-delete-content -->
+        </div><!-- /.modal-delete-dialog -->
+      </div><!-- /.modal-delete -->
+      <div id="modal-update" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+        <form id="modificar_requerimientos" class="form-horizontal" method="post" action="Reportes.aspx?success=2">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" >Modificaci&oacute;n de Requerimiento</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                <div class="form-group">
+				    <div id="div-id" class="col-sm-5 col-md-5 col-lg-5">
+					    <input type="text" name="idreq" id="idreq_input" placeholder="ID" class="form-control" disabled="disabled" value="TOT_RF_5_1"/>
+				    </div>
+			    </div>
+              
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button id="btn-modificarReq" disabled="disabled" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div><!-- /.modal-update-content -->
+        </div><!-- /.modal-update-dialog -->
+        </form>
+      </div><!-- /.modal-update -->
+    </div><!-- table-responsive -->
+    <!-- Data tables init -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                      
+             <!-- form estimated date -->
                      <div class="form-group date">
                 <label>Fecha estimada Incio:</label>
 
