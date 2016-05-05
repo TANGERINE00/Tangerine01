@@ -14,6 +14,12 @@ namespace DatosTangerine.M2
         List<Parametro> parametros;
         Parametro elParametro;
 
+        /// <summary>
+        /// Método que arma la lista de los parametros del Stored Procedure para agregar un usuario nuevo y llama 
+        /// al metodo que ejecuta el Stored Procedure.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>true se es exitoso y false si es fallido</returns>
         public bool agregarUsuario( Usuario usuario )
         {
             parametros = new List<Parametro>();
@@ -45,6 +51,71 @@ namespace DatosTangerine.M2
                                                                               parametros );
             }
             catch ( Exception ex )
+            {
+
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Método que arma la lista de los parametros del Stored Procedure para modificar el rol del usuario 
+        /// y llama al método que ejecuta el Stored Procedure (El objeto usuario debe tener agregado el rol nuevo).
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>true se es exitoso y false si es fallido</returns>
+        public bool modificarRolUsuario(Usuario usuario) 
+        {
+            parametros = new List<Parametro>();
+            laConexion = new BDConexion();
+
+            try
+            {
+                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
+                                             false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(ResourceUser.ParametroRolUsuario, SqlDbType.VarChar, usuario.Rol.Nombre,
+                                             false);
+                parametros.Add(elParametro);
+
+                List<Resultado> results = laConexion.EjecutarStoredProcedure(ResourceUser.ModificarRolUsuario,
+                                                                              parametros);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Método que arma la lista de los parametros del Stored Procedure para modificar la contraseña 
+        /// del usuario y llama al método que ejecuta el Stored Procedure (El objeto usuario debe tener 
+        /// agregada la contraseña nueva).
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>true se es exitoso y false si es fallido</returns>
+        public bool modificarContraseniaUsuario(Usuario usuario)
+        {
+            parametros = new List<Parametro>();
+            laConexion = new BDConexion();
+
+            try
+            {
+                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
+                                             false);
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro(ResourceUser.ParametroContraseniaNueva, SqlDbType.VarChar, usuario.Contrasenia,
+                                             false);
+                parametros.Add(elParametro);
+
+                List<Resultado> results = laConexion.EjecutarStoredProcedure(ResourceUser.ModificarContraUsuario,
+                                                                              parametros);
+            }
+            catch (Exception ex)
             {
 
             }

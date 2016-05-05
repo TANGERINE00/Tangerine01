@@ -121,9 +121,21 @@
     <value>M2_AgregarUsuario</value>
     <comment>Stored procedure para agregar un usuario a un empleado</comment>
   </data>
+  <data name="ModificarContraUsuario" xml:space="preserve">
+    <value>M2_ModificarContraUsuario</value>
+    <comment>Stored procedure para modificar la contraseña del usuario</comment>
+  </data>
+  <data name="ModificarRolUsuario" xml:space="preserve">
+    <value>M2_ModificarRolUsuario</value>
+    <comment>Stored procedure para modificar el rol del usuario</comment>
+  </data>
   <data name="ParametroContrasenia" xml:space="preserve">
     <value>@contraseña</value>
     <comment>Parametro que representa la contraseña del usuario</comment>
+  </data>
+  <data name="ParametroContraseniaNueva" xml:space="preserve">
+    <value>@contraseña_nueva</value>
+    <comment>Parametro que representa la contraseña nueva del usuario</comment>
   </data>
   <data name="ParametroFechaCreacion" xml:space="preserve">
     <value>@fecha_creacion</value>
@@ -136,6 +148,10 @@
   <data name="ParametroRolNombre" xml:space="preserve">
     <value>@rol_nombre</value>
     <comment>Parmetro que representa el rol del usuario</comment>
+  </data>
+  <data name="ParametroRolUsuario" xml:space="preserve">
+    <value>@rol_nombre_nuevo</value>
+    <comment>Parametro que representa el rol nuevo del usuario</comment>
   </data>
   <data name="ParametroUsuario" xml:space="preserve">
     <value>@usuario</value>
