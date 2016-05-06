@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>true se es exitoso y false si es fallido</returns>
-        public bool agregarUsuario( Usuario usuario )
+        public bool AgregarUsuario( Usuario usuario )
         {
             parametros = new List<Parametro>();
             laConexion = new BDConexion();
@@ -64,25 +65,25 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>true se es exitoso y false si es fallido</returns>
-        public bool modificarRolUsuario(Usuario usuario) 
+        public bool ModificarRolUsuario( Usuario usuario ) 
         {
             parametros = new List<Parametro>();
             laConexion = new BDConexion();
 
             try
             {
-                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
-                                             false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
+                                             false );
+                parametros.Add( elParametro );
 
-                elParametro = new Parametro(ResourceUser.ParametroRolUsuario, SqlDbType.VarChar, usuario.Rol.Nombre,
-                                             false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroRolUsuario, SqlDbType.VarChar, usuario.Rol.Nombre,
+                                             false );
+                parametros.Add( elParametro );
 
-                List<Resultado> results = laConexion.EjecutarStoredProcedure(ResourceUser.ModificarRolUsuario,
-                                                                              parametros);
+                List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.ModificarRolUsuario,
+                                                                              parametros );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
 
             }
@@ -97,30 +98,52 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>true se es exitoso y false si es fallido</returns>
-        public bool modificarContraseniaUsuario(Usuario usuario)
+        public bool ModificarContraseniaUsuario( Usuario usuario )
         {
             parametros = new List<Parametro>();
             laConexion = new BDConexion();
 
             try
             {
-                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
-                                             false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
+                                             false );
+                parametros.Add( elParametro );
 
-                elParametro = new Parametro(ResourceUser.ParametroContraseniaNueva, SqlDbType.VarChar, usuario.Contrasenia,
-                                             false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroContraseniaNueva, SqlDbType.VarChar,
+                                             usuario.Contrasenia, false );
+                parametros.Add( elParametro );
 
-                List<Resultado> results = laConexion.EjecutarStoredProcedure(ResourceUser.ModificarContraUsuario,
-                                                                              parametros);
+                List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.ModificarContraUsuario,
+                                                                              parametros );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
 
             }
 
             return true;
+        }
+
+        public bool ObtenerDatoUsuario( Usuario usuario ) 
+        {
+            laConexion = new BDConexion();
+            SqlDataReader resultadoConsulta;
+
+            try 
+            {
+                resultadoConsulta = laConexion.EjecutarQuery( "" );
+
+                while ( resultadoConsulta.Read() )
+                {
+
+                }
+            }
+            catch ( Exception ex )
+            {
+
+            }
+
+            return false;
         }
     }
 }
