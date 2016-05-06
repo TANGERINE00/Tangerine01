@@ -117,82 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddNewContact" xml:space="preserve">
-    <value>M5_AgregarContacto</value>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="ChangeContact" xml:space="preserve">
-    <value>M5_ModificarContacto</value>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="ConDepartmentContact" xml:space="preserve">
-    <value>con_departamento</value>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
   </data>
-  <data name="ConEmailContact" xml:space="preserve">
-    <value>con_correo</value>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
   </data>
-  <data name="ConIdComp" xml:space="preserve">
-    <value>fk_id_com_lead</value>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
   </data>
-  <data name="ConIdContact" xml:space="preserve">
-    <value>con_id</value>
+  <data name="alertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
   </data>
-  <data name="ConLastNameContact" xml:space="preserve">
-    <value>con_apellido</value>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
   </data>
-  <data name="ConNameContact" xml:space="preserve">
-    <value>con_nombre</value>
+  <data name="alertClase1" xml:space="preserve">
+    <value>class</value>
   </data>
-  <data name="ConPhoneContact" xml:space="preserve">
-    <value>con_telefono</value>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
   </data>
-  <data name="ConRolContact" xml:space="preserve">
-    <value>con_cargo</value>
+  <data name="alertRole1" xml:space="preserve">
+    <value>role</value>
   </data>
-  <data name="ContactCompany" xml:space="preserve">
-    <value>M5_ConsultarContactoCompania</value>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="ConTypeComp" xml:space="preserve">
-    <value>con_tipo_emp</value>
+  <data name="BotonCerrar1" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
   </data>
-  <data name="DeleteContact" xml:space="preserve">
-    <value>M5_EliminarContacto</value>
+  <data name="BotonEliminarSolicitud" xml:space="preserve">
+    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
-  <data name="ParamDepa" xml:space="preserve">
-    <value>@departamento</value>
+  <data name="ButtonModContact" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarContacto.aspx?idCont=</value>
   </data>
-  <data name="ParamEmail" xml:space="preserve">
-    <value>@correo</value>
+  <data name="CerrarSolicitud" xml:space="preserve">
+    <value>"&gt;Solicitar&lt;/a&gt;</value>
   </data>
-  <data name="ParamId" xml:space="preserve">
-    <value>@id</value>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="ParamIdComp" xml:space="preserve">
-    <value>@id_empresa</value>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
-  <data name="ParamLName" xml:space="preserve">
-    <value>@apellido</value>
+  <data name="Coma" xml:space="preserve">
+    <value>, </value>
   </data>
-  <data name="ParamName" xml:space="preserve">
-    <value>@nombre</value>
+  <data name="interfazRCi" xml:space="preserve">
+    <value>8.3</value>
   </data>
-  <data name="ParamRol" xml:space="preserve">
-    <value>@cargo</value>
+  <data name="interfazRH" xml:space="preserve">
+    <value>8.1</value>
   </data>
-  <data name="ParamTComp" xml:space="preserve">
-    <value>@tipo_comp</value>
+  <data name="Mod8" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="ParamTele" xml:space="preserve">
-    <value>@telefono</value>
+  <data name="nombre" xml:space="preserve">
+    <value>nombre</value>
   </data>
-  <data name="AddNewContactProy" xml:space="preserve">
-    <value>M5_AgregarContactoProyecto</value>
+  <data name="ReturnRestCinta" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true</value>
   </data>
-  <data name="ParamIdContact" xml:space="preserve">
-    <value>@id_contacto</value>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
   </data>
-  <data name="ParamIdProy" xml:space="preserve">
-    <value>@id_proyecto</value>
+  <data name="volverRestriccionHorario" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesHorario.aspx?stat=</value>
   </data>
-  <data name="SingleContact" xml:space="preserve">
-    <value>M5_ConsultarContactoId</value>
+  <data name="volverRestriccionHorario2" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesHorario.aspx?idPlan=</value>
   </data>
 </root>

@@ -1164,6 +1164,11 @@
     <Compile Include="GUI\M5\ModificarContacto.aspx.designer.cs">
       <DependentUpon>ModificarContacto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M5\ResourceGUIM5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM5.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M6\ListarPropuesta.aspx.cs">
       <DependentUpon>ListarPropuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1433,6 +1438,12 @@
       <Project>{e0a749b2-762b-41a8-b134-064a6a4dfb07}</Project>
       <Name>LogicaTangerine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\M5\ResourceGUIM5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

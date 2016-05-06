@@ -67,13 +67,13 @@ namespace Tangerine.GUI.M5 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText telefono;
         
         /// <summary>
-        /// Correo control.
+        /// correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText correo;
         
         /// <summary>
         /// btnaceptara control.

@@ -38,10 +38,9 @@ namespace Tangerine.GUI.M5
 
             //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
             Contacto contact = new Contacto(_nombre, _apellido, _departamento, _cargo, _telefono, _correo,1,1);
-
             LogicaM5 contactLogic = new LogicaM5();
-
             contactLogic.AddNewContact(contact);
+            
         }
     }
 }
