@@ -27,13 +27,13 @@ namespace DominioTangerine
         /// <attr name="_listaRequerimiento">lista de requerimientos asociados a un proyecto</attr> 
         /// </summary>
 
-        private String _codigo;
-        private String _nombre;
-        private String _descripcion;
-        private String _duracion;
-        private String _acuerdopago;
-        private String _estatus;
-        private String _moneda;
+        private string _codigoP;
+        private string _nombre;
+        private string _descripcion;
+        private string _duracion;
+        private string _acuerdopago;
+        private string _estatus;
+        private string _moneda;
         private int _entrega;
         private DateTime _feincio;
         private DateTime _fefinal;
@@ -44,6 +44,72 @@ namespace DominioTangerine
 
         #endregion
 
+        #region Propiedades
+
+        public string CodigoP
+        {
+            get { return _codigoP; }
+            set { _codigoP = value; }
+        }
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+        public string Descripcion
+        {
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
+        public string Duracion
+        {
+            get { return _duracion; }
+            set { _duracion = value; }
+        }
+        public string Acuerdopago
+        {
+            get { return _acuerdopago; }
+            set { _acuerdopago = value; }
+        }
+        public string Estatus
+        {
+            get { return _estatus; }
+            set { _estatus = value; }
+        }
+        public string Moneda
+        {
+            get { return _moneda; }
+            set { _moneda = value; }
+        }
+        public int Entrega
+        {
+            get { return _entrega; }
+            set { _entrega = value; }
+        }
+        public DateTime Feincio
+        {
+            get { return _feincio; }
+            set { _feincio = value; }
+        }
+        public DateTime Fefinal
+        {
+            get { return _fefinal; }
+            set { _fefinal = value; }
+        }
+        public int Costo
+        {
+            get { return _costo; }
+            set { _costo = value; }
+        }
+        public List<Compania> ListaCompania
+        {
+            get { return _listaCompania; }
+            set { _listaCompania = value; }
+        }
+
+
+        #endregion
+
         #region Constructor
 
         public Propuesta()
@@ -51,9 +117,27 @@ namespace DominioTangerine
 
         }
 
+        public Propuesta(string codigoP, string nombre, string descripcion, string duracion, string acuerdopago, string estatus,
+                         string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, List<Compania> listaCompania,
+                         List<Requerimiento> listaRequerimiento)
+        {
+            this._codigoP = codigoP;
+            this._nombre = nombre;
+            this._descripcion = descripcion;
+            this._duracion = duracion;
+            this._acuerdopago = acuerdopago;
+            this._estatus = estatus;
+            this._moneda = moneda;
+            this._entrega = entrega;
+            this._feincio = feincio;
+            this._fefinal = fefinal;
+            this._costo = costo;
+            this._listaCompania = listaCompania;
+            this._listaRequerimiento = listaRequerimiento;
+
+        }
+
         #endregion
-
-
 
     }
 }
