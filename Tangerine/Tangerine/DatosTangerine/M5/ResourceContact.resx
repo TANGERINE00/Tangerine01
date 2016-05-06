@@ -192,4 +192,7 @@
   <data name="ParamIdProy" xml:space="preserve">
     <value>@id_proyecto</value>
   </data>
+  <data name="SingleContact" xml:space="preserve">
+    <value>M5_ConsultarContactoId</value>
+  </data>
 </root>

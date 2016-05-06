@@ -229,5 +229,55 @@ namespace DatosTangerine.M5
 
             return true;
         }
+
+        /// <summary>
+        /// Metodo para consultar el Contacto relacionado a una ID.
+        /// Recibe dos parametros: idContact referente al contacto a buscar
+        /// </summary>
+        /// <returns>Objeto de tipo Contacto si existe</returns>
+        public static Contacto SingleContact(int idContact)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Contacto> listContact = new List<Contacto>();
+            Contacto theContact = null;
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, idContact.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceContact.SingleContact, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int conId = int.Parse(row[ResourceContact.ConIdContact].ToString());
+                    String conName = row[ResourceContact.ConNameContact].ToString();
+                    String conLName = row[ResourceContact.ConLastNameContact].ToString();
+                    String conDepart = row[ResourceContact.ConDepartmentContact].ToString();
+                    String conRol = row[ResourceContact.ConRolContact].ToString();
+                    String conTele = row[ResourceContact.ConPhoneContact].ToString();
+                    String conEmail = row[ResourceContact.ConEmailContact].ToString();
+                    int conTypeC = int.Parse(row[ResourceContact.ConTypeComp].ToString());
+                    int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return theContact;
+        }
     }
 }

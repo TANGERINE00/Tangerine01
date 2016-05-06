@@ -40,12 +40,17 @@ namespace Tangerine.GUI.M5
                     foreach (Contacto theContact in listContact)
                     {
                         contact += ResourceGUIM5.AbrirTR;
-                        contact += ResourceGUIM5.AbrirTD + theContact.Apellido.ToString() + ResourceGUIM5.Coma + theContact.Nombre.ToString() + ResourceGUIM5.CerrarTD;
+                        contact += ResourceGUIM5.AbrirTD + theContact.Apellido.ToString() + ResourceGUIM5.Coma 
+                            + theContact.Nombre.ToString() + ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.AbrirTD + theContact.Departamento.ToString() + ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.AbrirTD + theContact.Cargo.ToString() + ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.AbrirTD + theContact.Telefono.ToString() + ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.AbrirTD + theContact.Correo.ToString() + ResourceGUIM5.CerrarTD;
-                        contact += ResourceGUIM5.AbrirTD + "botones" + ResourceGUIM5.CerrarTD;
+                        //Acciones de cada contacto
+                        contact += ResourceGUIM5.AbrirTD;
+                        contact += ResourceGUIM5.ButtonModContact + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
+                            + "<a style='margin-left:5px;' class='btn btn-danger glyphicon glyphicon-remove-circle'></a>";
+                        contact += ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.CerrarTR;
                     }
                 }

@@ -11,7 +11,7 @@ namespace DominioTangerine
         #region Atributos
 
         private string _nombre;
-        private ListaMenus _menus;
+        private ListaGenerica<Menu> _menus;
 
         #endregion
 
@@ -39,7 +39,7 @@ namespace DominioTangerine
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="menus"></param>
-        public Rol( string nombre, ListaMenus menus ) : this( nombre ) 
+        public Rol( string nombre, ListaGenerica<Menu> menus ) : this( nombre ) 
         {
             _menus = menus;
         }
@@ -62,10 +62,25 @@ namespace DominioTangerine
         /// Get y Set de la lista de menus
         /// </summary>
         /// <returns>Lista de los menus a los que puede acceder el rol</returns>
-        public ListaMenus Menus
+        public ListaGenerica<Menu> Menus
         {
             get { return _menus; }
             set { _menus = value; }
+        }
+
+        #endregion
+
+        #region Métodos
+
+        /// <summary>
+        /// Método para imprimir los datos actuales de la lista
+        /// </summary>
+        public void imprimirListaDeMenus()
+        {
+            foreach (Menu m in _menus)
+            {
+                System.Diagnostics.Debug.WriteLine("Menú: " + m.Nombre);
+            }
         }
 
         #endregion

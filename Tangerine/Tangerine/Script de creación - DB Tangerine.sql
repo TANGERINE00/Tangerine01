@@ -568,6 +568,17 @@ AS
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
  end;
 GO
+
+CREATE PROCEDURE M5_ConsultarContactoId
+		@id INT
+AS
+	BEGIN
+		SELECT con_id as con_id, con_nombre as con_nombre, con_apellido as con_apellido,
+		con_departamento as con_departamento, con_cargo as con_cargo, con_telefono as con_telefono,
+		con_correo as con_correo, con_tipo_emp as con_tipo_emp, fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO WHERE con_id = @id;
+	END;
+GO
 ---- SP Agregar Contacto a Proyecto ----
 CREATE PROCEDURE M5_AgregarContactoProyecto
 	@id_contacto int,
