@@ -21,7 +21,7 @@ namespace DominioTangerine
         /// </summary>
         public ListaMenus() 
         {
-            this._listaDeMenus = new List<Menu>();
+            _listaDeMenus = new List<Menu>();
         }
 
         #endregion
@@ -35,7 +35,7 @@ namespace DominioTangerine
         /// <returns></returns>
         public void AgregarMenu( Menu menu )
         {
-            this._listaDeMenus.Add( menu );
+            _listaDeMenus.Add( menu );
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace DominioTangerine
         /// <returns></returns>
         public bool EliminarMenu( Menu menu )
         {
-            return this._listaDeMenus.Remove( menu );
+            return _listaDeMenus.Remove( menu );
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace DominioTangerine
         /// </summary>
         public void ImprimirListaDeMenus()
         {
-            foreach ( Menu m in this._listaDeMenus )
+            foreach ( Menu m in _listaDeMenus )
             {
                 System.Diagnostics.Debug.WriteLine( "Menu: " + m.Nombre );
             }

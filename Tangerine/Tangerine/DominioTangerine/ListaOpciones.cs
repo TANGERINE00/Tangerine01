@@ -35,7 +35,7 @@ namespace DominioTangerine
         /// <returns></returns>
         public void AgregarOpcion( Opcion opcion )
         {
-            this._listaDeOpciones.Add( opcion );
+            _listaDeOpciones.Add( opcion );
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace DominioTangerine
         /// <returns></returns>
         public bool EliminarOpcion( Opcion opcion )
         {
-            return this._listaDeOpciones.Remove( opcion );
+            return _listaDeOpciones.Remove( opcion );
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace DominioTangerine
         /// </summary>
         public void ImprimirListaDeOpciones()
         {
-            foreach ( Opcion o in this._listaDeOpciones )
+            foreach ( Opcion o in _listaDeOpciones )
             {
                 System.Diagnostics.Debug.WriteLine( "Opcion: " + o.Nombre );
                 System.Diagnostics.Debug.WriteLine( "Url: " + o.Url );

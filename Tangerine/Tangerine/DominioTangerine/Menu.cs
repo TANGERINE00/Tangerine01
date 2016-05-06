@@ -31,7 +31,7 @@ namespace DominioTangerine
         /// <param name="nombre"></param>
         public Menu( string nombre ) 
         {
-            this._nombre = nombre;
+            _nombre = nombre;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DominioTangerine
         /// <param name="opciones"></param>
         public Menu( string nombre, ListaOpciones opciones ) : this( nombre )
         {
-            this._opciones = opciones;
+            _opciones = opciones;
         }
 
         #endregion

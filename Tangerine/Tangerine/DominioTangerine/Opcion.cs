@@ -32,8 +32,8 @@ namespace DominioTangerine
         /// <param name="url"></param>
         public Opcion( string nombre, string url )
         {
-            this._nombre = nombre;
-            this._url = url;
+            _nombre = nombre;
+            _url = url;
         }
 
         #endregion

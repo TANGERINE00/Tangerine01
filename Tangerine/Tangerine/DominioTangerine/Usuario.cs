@@ -25,15 +25,26 @@ namespace DominioTangerine
 		}
 
         /// <summary>
+        /// Constructo de Usuario solo con usuario, contraseña
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="contrasenia"></param>
+        public Usuario( string usuario, string contrasenia )
+        {
+            _usuario = usuario;
+            _contrasenia = contrasenia;
+        }
+
+        /// <summary>
         /// Constructo de Usuario solo con usuario, contraseña y activo
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasenia"></param>
+        /// <param name="activo"></param>
         public Usuario( string usuario, string contrasenia, string activo ) 
+               : this( usuario, contrasenia )
         {
-            this._usuario = usuario;
-            this._contrasenia = contrasenia;
-            this._activo = activo;
+            _activo = activo;
         }
 
         /// <summary>
@@ -46,7 +57,7 @@ namespace DominioTangerine
         public Usuario( string usuario, string contrasenia, string activo, Rol rol )
                : this( usuario, contrasenia, activo )
 		{
-			this._rol = rol;
+			_rol = rol;
 		}
 
         /// <summary>
@@ -61,8 +72,8 @@ namespace DominioTangerine
         public Usuario( string usuario, string contrasenia, string activo, Rol rol, int fichaEmpleado, 
                         DateTime fechaCreacion ) : this( usuario, contrasenia, activo, rol )
         {
-            this._fichaEmpleado = fichaEmpleado;
-            this._fechaCreacion = fechaCreacion;
+            _fichaEmpleado = fichaEmpleado;
+            _fechaCreacion = fechaCreacion;
         }
 
         #endregion

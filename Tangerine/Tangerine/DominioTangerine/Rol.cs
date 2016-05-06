@@ -31,7 +31,7 @@ namespace DominioTangerine
         /// <param name="nombre"></param>
         public Rol( string nombre ) 
         {
-            this._nombre = nombre;
+            _nombre = nombre;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace DominioTangerine
         /// <param name="menus"></param>
         public Rol( string nombre, ListaMenus menus ) : this( nombre ) 
         {
-            this._menus = menus;
+            _menus = menus;
         }
 
         #endregion

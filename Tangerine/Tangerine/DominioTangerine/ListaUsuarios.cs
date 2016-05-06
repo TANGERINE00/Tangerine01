@@ -21,7 +21,7 @@ namespace DominioTangerine
         /// </summary>
         public ListaUsuarios() 
         {
-            this._listaDeUsuarios = new List<Usuario>();
+            _listaDeUsuarios = new List<Usuario>();
         }
 
         #endregion
@@ -35,7 +35,7 @@ namespace DominioTangerine
         /// <returns></returns>
         public void AgregarUsuario( Usuario usuario ) 
         {
-            this._listaDeUsuarios.Add( usuario );
+            _listaDeUsuarios.Add( usuario );
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace DominioTangerine
         /// <returns></returns>
         public bool EliminarUsuario( Usuario usuario ) 
         {
-            return this._listaDeUsuarios.Remove( usuario );
+            return _listaDeUsuarios.Remove( usuario );
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace DominioTangerine
         /// </summary>
         public void ImprimirListaDeUsuarios() 
         {
-            foreach( Usuario u in this._listaDeUsuarios )
+            foreach( Usuario u in _listaDeUsuarios )
             {
                 System.Diagnostics.Debug.Write( "Usuario: " + u.NombreUsuario );
                 System.Diagnostics.Debug.Write( "Rol: " + u.Rol );
