@@ -50,9 +50,6 @@
     <Compile Include="ClientePotencial.cs" />
     <Compile Include="Compania.cs" />
     <Compile Include="ListaGenerica.cs" />
-    <Compile Include="ListaMenus.cs" />
-    <Compile Include="ListaOpciones.cs" />
-    <Compile Include="ListaUsuarios.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="Facturacion.cs" />
     <Compile Include="Menu.cs" />

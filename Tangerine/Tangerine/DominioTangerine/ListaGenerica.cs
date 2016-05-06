@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,14 +51,22 @@ namespace DominioTangerine
 
         #endregion
 
+        /// <summary>
+        /// Método para obtener el enumerador de la lista
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return _listaGenerica.GetEnumerator();
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        /// <summary>
+        /// Método que retorna el enumerador
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator IEnumerable.GetEnumerator() 
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }
