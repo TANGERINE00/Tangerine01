@@ -284,5 +284,14 @@ namespace DatosTangerine.M5 {
                 return ResourceManager.GetString("ParamTele", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoId.
+        /// </summary>
+        internal static string SingleContact {
+            get {
+                return ResourceManager.GetString("SingleContact", resourceCulture);
+            }
+        }
     }
 }
