@@ -40,30 +40,7 @@
           </thead>
               <asp:Literal runat="server" ID="tabla"></asp:Literal>
            <tbody>
-             <tr>
-                <th>Cesar Rodriguez</th>
-                <th>Informatica</th>
-                <th>Lider de Proyecto</th>
-                <th>0412-230.03.53</th>
-                <th>carr235@gmail.com</th>                 
-                <th style="text-align:center;"><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a style="margin-left:5px;" class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
-             </tr>
-               <tr>
-                <th>Pedro Perez</th>
-                <th>RRHH</th>
-                <th>Gerente</th>
-                <th>0424.098.76.54 0212.987.12.34</th>
-                <th>pperez@movistar.com</th>                 
-                <th style="text-align:center;"><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a style="margin-left:5px;" class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
-             </tr>
-               <tr>
-                <th>Ana Riera</th>
-                <th>Comercio Electronico</th>
-                <th>Gerente</th>
-                <th>0412-123.45.67</th>
-                <th>ariera@vtec.com rieraana76@gmail.com</th>                 
-                <th style="text-align:center;"><a  class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a style="margin-left:5px;" class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
-             </tr>
+             
            </tbody>
         </table>
               <a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx">Nuevo Contacto</a>

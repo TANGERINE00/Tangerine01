@@ -44,7 +44,8 @@ namespace LogicaTangerine.M5
             }
         }
 
-        public bool AddNewContact(Contacto contact){
+        public bool AddNewContact(Contacto contact)
+        {
             try
             {
                 return BDContacto.AddContact(contact);
