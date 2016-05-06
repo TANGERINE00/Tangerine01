@@ -11,7 +11,7 @@ namespace DominioTangerine
         #region Atributos
 
         private string _nombre;
-        private ListaOpciones _opciones;
+        private ListaGenerica<Opcion> _opciones;
 
         #endregion
 
@@ -39,7 +39,7 @@ namespace DominioTangerine
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="opciones"></param>
-        public Menu( string nombre, ListaOpciones opciones ) : this( nombre )
+        public Menu( string nombre, ListaGenerica<Opcion> opciones ) : this( nombre )
         {
             _opciones = opciones;
         }
@@ -62,10 +62,26 @@ namespace DominioTangerine
         /// Get y Set de las opciones del menu
         /// </summary>
         /// <returns>Opciones que posee el menu</returns>
-        public ListaOpciones Opciones
+        public ListaGenerica<Opcion> Opciones
         {
             get { return _opciones; }
             set { _opciones = value; }
+        }
+
+        #endregion
+
+        #region Métodos
+
+        /// <summary>
+        /// Método para imprimir los datos actuales de la lista
+        /// </summary>
+        public void imprimirListaDeOpciones() 
+        {
+            foreach (Opcion o in _opciones)
+            {
+                System.Diagnostics.Debug.WriteLine("Opcion: " + o.Nombre);
+                System.Diagnostics.Debug.WriteLine("Url: " + o.Url);
+            }
         }
 
         #endregion
