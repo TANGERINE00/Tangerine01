@@ -170,17 +170,11 @@
   <data name="BotonInfoSolicitud" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" href="M14_ConsultarPlanillasSolicitadas.aspx?idSolici=</value>
   </data>
-  <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
-  </data>
-  <data name="BotonModificarRegistro" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="M14_ModificarPlanillaCreada.aspx?idPlan=</value>
-  </data>
-  <data name="BotonModificarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="M14_ModificarPlanillaSolicitada.aspx?idSol=</value>
-  </data>
   <data name="BotonSolicitarPlanilla" xml:space="preserve">
     <value>&lt;a  class="btn btn-primary" href="M14_SolicitudPlanilla.aspx?idPlan=</value>
+  </data>
+  <data name="ButtonModContact" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarContacto.aspx?idCont=</value>
   </data>
   <data name="camposVacios" xml:space="preserve">
     <value>Existen campos vacios, todos los campos son obligatorios</value>

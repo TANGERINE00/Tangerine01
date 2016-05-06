@@ -216,38 +216,20 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonModificar {
-            get {
-                return ResourceManager.GetString("BotonModificar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;M14_ModificarPlanillaCreada.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonModificarRegistro {
-            get {
-                return ResourceManager.GetString("BotonModificarRegistro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx?idSol=.
-        /// </summary>
-        internal static string BotonModificarSolicitud {
-            get {
-                return ResourceManager.GetString("BotonModificarSolicitud", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary&quot; href=&quot;M14_SolicitudPlanilla.aspx?idPlan=.
         /// </summary>
         internal static string BotonSolicitarPlanilla {
             get {
                 return ResourceManager.GetString("BotonSolicitarPlanilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarContacto.aspx?idCont=.
+        /// </summary>
+        internal static string ButtonModContact {
+            get {
+                return ResourceManager.GetString("ButtonModContact", resourceCulture);
             }
         }
         
