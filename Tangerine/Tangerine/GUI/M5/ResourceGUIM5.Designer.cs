@@ -151,16 +151,6 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
-        ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
-        /// </summary>
-        internal static string BotonActivarPlanilla {
-            get {
-                return ResourceManager.GetString("BotonActivarPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -179,16 +169,6 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
-        ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
-        /// </summary>
-        internal static string BotonDesactivarPlanilla {
-            get {
-                return ResourceManager.GetString("BotonDesactivarPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
         /// </summary>
         internal static string BotonEliminarSolicitud {
@@ -198,47 +178,11 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;.
-        /// </summary>
-        internal static string BotonInfo {
-            get {
-                return ResourceManager.GetString("BotonInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idSolici=.
-        /// </summary>
-        internal static string BotonInfoSolicitud {
-            get {
-                return ResourceManager.GetString("BotonInfoSolicitud", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary&quot; href=&quot;M14_SolicitudPlanilla.aspx?idPlan=.
-        /// </summary>
-        internal static string BotonSolicitarPlanilla {
-            get {
-                return ResourceManager.GetString("BotonSolicitarPlanilla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarContacto.aspx?idCont=.
         /// </summary>
         internal static string ButtonModContact {
             get {
                 return ResourceManager.GetString("ButtonModContact", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Existen campos vacios, todos los campos son obligatorios.
-        /// </summary>
-        internal static string camposVacios {
-            get {
-                return ResourceManager.GetString("camposVacios", resourceCulture);
             }
         }
         
@@ -275,51 +219,6 @@ namespace Tangerine.GUI.M5 {
         internal static string Coma {
             get {
                 return ResourceManager.GetString("Coma", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to descripcion.
-        /// </summary>
-        internal static string descripcion {
-            get {
-                return ResourceManager.GetString("descripcion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to emax.
-        /// </summary>
-        internal static string emax {
-            get {
-                return ResourceManager.GetString("emax", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to emin.
-        /// </summary>
-        internal static string emin {
-            get {
-                return ResourceManager.GetString("emin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to idPlan.
-        /// </summary>
-        internal static string idP {
-            get {
-                return ResourceManager.GetString("idP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to idPlan.
-        /// </summary>
-        internal static string IdPlan {
-            get {
-                return ResourceManager.GetString("IdPlan", resourceCulture);
             }
         }
         
@@ -365,33 +264,6 @@ namespace Tangerine.GUI.M5 {
         internal static string ReturnRestCinta {
             get {
                 return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to sexo.
-        /// </summary>
-        internal static string sexo {
-            get {
-                return ResourceManager.GetString("sexo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to stat.
-        /// </summary>
-        internal static string stat {
-            get {
-                return ResourceManager.GetString("stat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to stat.
-        /// </summary>
-        internal static string statrec {
-            get {
-                return ResourceManager.GetString("statrec", resourceCulture);
             }
         }
         
