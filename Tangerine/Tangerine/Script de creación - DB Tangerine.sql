@@ -551,8 +551,10 @@ GO
 
 
 
-
+-----------------------------------
 --------Stored Procedure M5--------
+-----------------------------------
+--Agregar Contacto
 CREATE PROCEDURE M5_AgregarContacto
 	@nombre [varchar](50),
 	@apellido [varchar](50),
@@ -568,7 +570,7 @@ AS
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
  end;
 GO
-
+--Consultar un contacto por su id
 CREATE PROCEDURE M5_ConsultarContactoId
 		@id INT
 AS
@@ -579,7 +581,7 @@ AS
 		FROM CONTACTO WHERE con_id = @id;
 	END;
 GO
----- SP Agregar Contacto a Proyecto ----
+--Agregar a contacto_proyecto
 CREATE PROCEDURE M5_AgregarContactoProyecto
 	@id_contacto int,
 	@id_proyecto int
@@ -589,8 +591,7 @@ AS
 	VALUES(@id_contacto,@id_proyecto);  
  end;
 GO
-
----- SP Eliminar Contacto a Proyecto ----
+--Eliminar a contacto_proyecto
 CREATE PROCEDURE M5_EliminarContactoProyecto
 	@id_contacto int,
 	@id_proyecto int
@@ -599,7 +600,7 @@ AS
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;  
  end;
 GO
-
+--Eliminar de contacto y contacto_proyecto por id
 CREATE PROCEDURE M5_EliminarContacto
 @id int
 AS
@@ -608,8 +609,7 @@ AS
 	DELETE FROM CONTACTO WHERE con_id = @id;
  END;
 GO
-
-
+--Modificar un contacto
 CREATE PROCEDURE M5_ModificarContacto
 	@id int,
 	@nombre [varchar](50),
@@ -625,7 +625,7 @@ AS
     where con_id = @id;  
  end;
 GO
-
+--Consultar contactos de una empresa
 CREATE PROCEDURE M5_ConsultarContactoCompania
 		@tipo_comp INT,
 		@id_empresa INT
@@ -637,4 +637,6 @@ AS
 		FROM CONTACTO WHERE fk_id_com_lead = @id_empresa and con_tipo_emp = @tipo_comp;
 	END
 GO
+-----------------------------------
 ------Fin Stored Procedure M5------
+-----------------------------------
