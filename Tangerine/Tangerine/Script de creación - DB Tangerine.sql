@@ -496,7 +496,7 @@ CREATE PROCEDURE M4_ConsultarCompania
 		@id int
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre, com_rif as con_rif, com_email as con_email, com_acronimo as com_acronimo,
+		SELECT com_nombre as com_nombre, com_rif as com_rif, com_email as con_email, com_acronimo as com_acronimo,
 			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id,
 			fk_cli_pot_id as fk_cli_pot_id
 		FROM COMPANIA WHERE com_id = @id;
@@ -508,7 +508,7 @@ CREATE PROCEDURE M4_ConsultarCompanias
 
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre, com_rif as con_rif, com_email as con_email, com_acronimo as com_acronimo,
+		SELECT com_nombre as com_nombre, com_rif as com_rif, com_email as con_email, com_acronimo as com_acronimo,
 			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id,
 			fk_cli_pot_id as fk_cli_pot_id
 		FROM COMPANIA;
@@ -639,4 +639,71 @@ AS
 GO
 -----------------------------------
 ------Fin Stored Procedure M5------
+-----------------------------------
+
+
+
+
+-----------------------------------
+--------Stored Procedure M8--------
+-----------------------------------
+---- StoredProcedure Agregar Factura ----
+CREATE PROCEDURE M8_AgregarFactura
+	@fecha_emision date,
+	@monto_total numeric(12,3),
+	@monto_restante numeric(12,3),
+	@descripcion [varchar](500),
+	@id_proyecto int,
+	@id_cliente int
+
+AS
+	BEGIN
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fk_proy_id, fk_cliente_id) 
+		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @id_proyecto, @id_cliente);  
+ 	END;
+GO
+
+---- StoredProcedure Consultar Factura ----
+CREATE PROCEDURE M8_ConsultarFactura
+	@id int
+
+AS
+	BEGIN
+		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_cliente_id AS fk_cliente_id
+		FROM FACTURA WHERE fac_id = @id;
+	END
+GO
+
+---- StoredProcedure Consultar Facturas ----
+CREATE PROCEDURE M8_ConsultarFacturas
+
+AS
+	BEGIN
+		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_cliente_id AS fk_cliente_id
+		FROM FACTURA;
+	END
+GO
+
+---- StoredProcedure Modificar Factura ----
+CREATE PROCEDURE M8_ModificarFactura
+	@id int,
+	@fecha_emision date,
+	@monto_total numeric(12,3),
+	@monto_restante numeric(12,3),
+	@descripcion [varchar](500),
+	@id_proyecto int,
+	@id_cliente int
+
+AS
+ 	BEGIN
+    	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
+    		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_cliente_id = @id_cliente
+    	WHERE fac_id = @id;  
+ 	end;
+GO
+
+-----------------------------------
+------Fin Stored Procedure M8------
 -----------------------------------
