@@ -214,18 +214,18 @@ create table CONTACTO
 create table PROPUESTA
 (
 	prop_id int not null,
-	prop_nombre varchar(50) not null,
-	prop_descripcion varchar(255) not null,
-	prop_duracion varchar(200) not null,
-	prop_fecha_emision date not null,
-	prop_fecha_aprob date not null,
-	prop_acuerdo_pago varchar(200) not null,
-	prop_estatus varchar(20) not null,
-	prop_moneda varchar(40) not null,
+	prop_nombre varchar(50),
+	prop_descripcion varchar(255),
+	prop_duracion varchar(200),
+	prop_fecha_emision date,
+	prop_fecha_aprob date,
+	prop_acuerdo_pago varchar(200),
+	prop_estatus varchar(20),
+	prop_moneda varchar(40),
 	prop_cant_entregas int,
-	prop_fecha_inicio date not null,
+	prop_fecha_inicio date,
 	prop_fecha_fin date,
-	fk_com_id int not null,
+	fk_com_id int,
 
 	constraint pk_prop primary key
 	(
@@ -639,6 +639,30 @@ AS
 GO
 -----------------------------------
 ------Fin Stored Procedure M5------
+-----------------------------------
+
+-----------------------------------
+--------Stored Procedure M6--------
+-----------------------------------
+--Agregar Propuesta
+CREATE PROCEDURE M6_AgregarPropuesta
+	@nombre [varchar](50),
+	@descripcion [varchar](255),
+	@duracion [varchar](200),
+	@acuerdo [varchar](200),
+	@estatus [varchar](20),
+	@moneda [varchar](40),
+	@cantEntr int,
+	@fechai date,
+	@fechaf date
+AS
+ BEGIN
+    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_duracion, prop_acuerdo, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin) 
+	VALUES(@nombre,	@descripcion, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai,@fechaf);  
+ end;
+GO
+-----------------------------------
+------Fin Stored Procedure M6------
 -----------------------------------
 
 
