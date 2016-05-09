@@ -14,7 +14,7 @@ namespace DominioTangerine
         private string _codigo;
         private DateTime _fechainicio;
         private DateTime _fechaestimadafin;
-        private int _costo;
+        private double _costo;
         private string _descripcion;
         private string _realizacion;
         private string _estatus;
@@ -30,7 +30,7 @@ namespace DominioTangerine
         /// <summary>
         /// Constructor por defecto de la clase.
         /// </summary>
-        Proyecto()
+        public Proyecto()
         {
 
         }
@@ -51,8 +51,8 @@ namespace DominioTangerine
         /// <param name="id_responsable"></param>
         /// <param name="id_gerente"></param>
 
-        Proyecto(int id_proyecto,string nombre,string codigo,DateTime fecha_inicio,DateTime fecha_estimada_fin,
-                  int costo,string descripcion, string realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
+        public Proyecto(int id_proyecto,string nombre,string codigo,DateTime fecha_inicio,DateTime fecha_estimada_fin,
+                 double costo,string descripcion, string realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
                  int id_gerente)
         {
             this._idproyecto = id_proyecto;
@@ -138,7 +138,7 @@ namespace DominioTangerine
         /// <returns>Retorna el costo del proyecto</returns>
         
 
-        public int Costo
+        public double Costo
         {
             get { return _costo; }
             set { _costo = value; }

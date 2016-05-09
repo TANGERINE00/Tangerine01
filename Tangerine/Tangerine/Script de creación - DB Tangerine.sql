@@ -262,7 +262,7 @@ create table PROYECTO
 	proy_codigo varchar(255) not null,
 	proy_fecha_inicio date not null,
 	proy_fecha_est_fin date not null,
-	proy_costo int not null,
+	proy_costo numeric(12,3) not null,
 	proy_descripcion varchar(255) not null,
 	proy_realizacion varchar(100) not null,
 	proy_estatus varchar(20) not null,
@@ -666,7 +666,87 @@ GO
 -----------------------------------
 
 
+-----------------------------------
+--------Stored Procedure M7--------
+-----------------------------------
+---- StoredProcedure Agregar Proyecto ----
+CREATE PROCEDURE M7_AgregarProyecto
+    @Nombre [varchar](500),
+    @Codigo [varchar](500),
+    @FechaInicio date,
+    @FechaEstFin date,
+    @Costo numeric(12,3),
+    @Descripcion [varchar](500),
+    @Realizacion [varchar](500),
+    @Estatus [varchar](500),
+    @Razon [varchar](500),
+    @IdPropuesta int,
+    @IdResponsable int,
+    @IdGerente int,
 
+AS
+	BEGIN
+    	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id) 
+		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion),@Realizacion,@Estatus,@Razon,@IdPropuesta,@IdResponsable,@IdGerente);  
+ 	END;
+GO
+
+---- StoredProcedure Consultar Proyecto ----
+CREATE PROCEDURE M7_ConsultarProyecto
+	@IdProyecto int
+
+AS
+	BEGIN
+		SELECT proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO WHERE proy_id = @IdProyecto;
+	END
+GO
+
+---- StoredProcedure Consultar Proyectos ----
+CREATE PROCEDURE M7_ConsultarProyectos
+
+AS
+	BEGIN
+		SELECT proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO;
+	END
+GO
+
+---- StoredProcedure Modificar Proyecto ----
+CREATE PROCEDURE M7_ModificarProyecto
+	@IdProyecto int
+	@Nombre [varchar](500),
+    @Codigo [varchar](500),
+    @FechaInicio date,
+    @FechaEstFin date,
+    @Costo numeric(12,3),
+    @Descripcion [varchar](500),
+    @Realizacion [varchar](500),
+    @Estatus [varchar](500),
+    @Razon [varchar](500),
+    @IdPropuesta int,
+    @IdResponsable int,
+    @IdGerente int,
+
+AS
+ 	BEGIN
+    	UPDATE PROYECTO SET proy_nombre = @Nombre, proy_codigo = @Codigo, proy_fecha_inicio = @FechaInicio,
+    		proy_fecha_est_fin = @FechaEstFin, proy_costo = @Costo, proy_descripcion = @Descripcion,
+    		proy_realizacion = @Realizacion, proy_estatus = @Estatus, proy_razon = @Razon,
+    		fk_propuesta_id = @IdPropuesta, fk_com_id = @IdResponsable, fk_gerente_id = @IdGerente
+    	WHERE proy_id = @IdProyecto;  
+ 	end;
+GO
+
+-----------------------------------
+------Fin Stored Procedure M7------
+-----------------------------------
 
 -----------------------------------
 --------Stored Procedure M8--------
