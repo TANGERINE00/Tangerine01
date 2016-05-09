@@ -54,6 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceContact.resx</DependentUpon>
     </Compile>
+    <Compile Include="M7\BDProyecto.cs" />
     <Compile Include="M7\ResourceProyecto.Designer.cs">
       <DependentUpon>ResourceProyecto.resx</DependentUpon>
       <AutoGen>True</AutoGen>
