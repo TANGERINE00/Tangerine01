@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DominioTangerine;
 
 namespace Tangerine.GUI.M7
 {
@@ -11,7 +12,7 @@ namespace Tangerine.GUI.M7
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

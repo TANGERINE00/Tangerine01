@@ -12,7 +12,7 @@ using DatosTangerine;
 
 namespace DatosTangerine.M7
 {
-    class BDProyecto
+   public class BDProyecto
     {
         BDConexion theConnection;
         List<Parametro> parameters;

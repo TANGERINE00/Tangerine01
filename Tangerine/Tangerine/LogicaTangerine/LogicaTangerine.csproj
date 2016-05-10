@@ -68,12 +68,12 @@
     <Folder Include="M3\" />
     <Folder Include="M4\" />
     <Folder Include="M6\" />
-    <Folder Include="M7\" />
     <Folder Include="M8\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
