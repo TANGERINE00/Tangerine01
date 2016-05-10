@@ -166,7 +166,7 @@ create table COMPANIA
 
 create table TELEFONO 
 (
-	tel_id IDENTITY(1,1) int not null,
+	tel_id int IDENTITY(1,1) not null,
 	tel_numero int not null,
 	fk_emp_num_ficha int,
 	fk_com_id int,
@@ -344,12 +344,12 @@ create table FACTURA
 	fac_monto_restante numeric(12,3) not null,
 	fac_descripcion varchar(500) not null,
 	fk_proy_id int not null,
-	fk_cliente_id int not null,
+	fk_compania_id int not null,
 
 	constraint fk_cliente_id foreign key
 	(
-		fk_cliente_id
-	),
+		fk_compania_id
+	)references COMPANIA(com_id)
 
 	constraint pk_fac primary key
 	(

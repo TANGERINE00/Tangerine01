@@ -135,8 +135,8 @@
   <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
   </data>
-  <data name="FacIdCliente" xml:space="preserve">
-    <value>fk_cliente_id</value>
+  <data name="FacIdCompania" xml:space="preserve">
+    <value>fk_compania_id</value>
   </data>
   <data name="FacIdFactura" xml:space="preserve">
     <value>fac_id</value>
@@ -156,8 +156,8 @@
   <data name="ParamFecha_Emision" xml:space="preserve">
     <value>@FechaEmision</value>
   </data>
-  <data name="ParamIdCliente" xml:space="preserve">
-    <value>@IdCliente</value>
+  <data name="ParamIdCompania" xml:space="preserve">
+    <value>@IdCompania</value>
   </data>
   <data name="ParamIdFactura" xml:space="preserve">
     <value>@IdFactura</value>
