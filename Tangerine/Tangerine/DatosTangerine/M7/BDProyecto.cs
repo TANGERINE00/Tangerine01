@@ -119,7 +119,7 @@ namespace DatosTangerine.M7
 
 
         /// <summary>
-        /// Metodo para modificar un factura en la base de datos.
+        /// Metodo para modificar un Proyecto en la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para modificar en bd</param>
         /// <returns>true si fue modificado</returns>
