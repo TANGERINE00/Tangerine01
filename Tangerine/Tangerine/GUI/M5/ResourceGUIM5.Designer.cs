@@ -223,6 +223,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;Nuevo Contacto&lt;/a&gt;.
+        /// </summary>
+        internal static string FinalAgregarContacto {
+            get {
+                return ResourceManager.GetString("FinalAgregarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 8.3.
         /// </summary>
         internal static string interfazRCi {
@@ -259,6 +268,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ?idComp=.
+        /// </summary>
+        internal static string ParametroIdComp {
+            get {
+                return ResourceManager.GetString("ParametroIdComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true.
         /// </summary>
         internal static string ReturnRestCinta {
@@ -277,20 +295,11 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?stat=.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btnaceptar&quot; style=&quot;margin-top:5%&quot; class=&quot;btn btn-primary&quot;  type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;AgregarContacto.aspx?typeComp=.
         /// </summary>
-        internal static string volverRestriccionHorario {
+        internal static string VentanaAgregarContacto {
             get {
-                return ResourceManager.GetString("volverRestriccionHorario", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?idPlan=.
-        /// </summary>
-        internal static string volverRestriccionHorario2 {
-            get {
-                return ResourceManager.GetString("volverRestriccionHorario2", resourceCulture);
+                return ResourceManager.GetString("VentanaAgregarContacto", resourceCulture);
             }
         }
     }

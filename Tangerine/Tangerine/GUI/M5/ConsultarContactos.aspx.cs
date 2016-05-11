@@ -26,12 +26,26 @@ namespace Tangerine.GUI.M5
             }
         }
 
+        public string button
+        {
+            get
+            {
+                return this.nuevocontacto.Text;
+            }
+            set
+            {
+                this.nuevocontacto.Text = value;
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
+            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            //int idComp = int.Parse(Request.QueryString["idComp"]);
+            int typeComp = 1;
+            int idComp = 1;
             LogicaM5 prueba = new LogicaM5();
-            typeComp = 1;
-            idComp = 1;
 
             if (!IsPostBack)
             {
@@ -58,6 +72,8 @@ namespace Tangerine.GUI.M5
                         contact += ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.CerrarTR;
                     }
+                    button += ResourceGUIM5.VentanaAgregarContacto + typeComp.ToString()
+                            + ResourceGUIM5.ParametroIdComp + idComp.ToString() + ResourceGUIM5.FinalAgregarContacto;
                 }
                 catch (Exception ex)
                 {
