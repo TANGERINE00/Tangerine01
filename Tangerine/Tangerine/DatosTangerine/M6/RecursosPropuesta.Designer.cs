@@ -68,5 +68,167 @@ namespace DatosTangerine.M6 {
                 return ResourceManager.GetString("AgregarPropuesta", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @acuerdo.
+        /// </summary>
+        internal static string ParamAcuerdoProp {
+            get {
+                return ResourceManager.GetString("ParamAcuerdoProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cantEntr.
+        /// </summary>
+        internal static string ParamCantidaProp {
+            get {
+                return ResourceManager.GetString("ParamCantidaProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @descripcion.
+        /// </summary>
+        internal static string ParamDescriProp {
+            get {
+                return ResourceManager.GetString("ParamDescriProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @duracion.
+        /// </summary>
+        internal static string ParamDuracProp {
+            get {
+                return ResourceManager.GetString("ParamDuracProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @estatus.
+        /// </summary>
+        internal static string ParamEstatusProp {
+            get {
+                return ResourceManager.GetString("ParamEstatusProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fechaf.
+        /// </summary>
+        internal static string ParamFechaFProp {
+            get {
+                return ResourceManager.GetString("ParamFechaFProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fechai.
+        /// </summary>
+        internal static string ParamFechaIProp {
+            get {
+                return ResourceManager.GetString("ParamFechaIProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @moneda.
+        /// </summary>
+        internal static string ParamMonedaProp {
+            get {
+                return ResourceManager.GetString("ParamMonedaProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombre.
+        /// </summary>
+        internal static string ParamNombreProp {
+            get {
+                return ResourceManager.GetString("ParamNombreProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_acuerdo_pago.
+        /// </summary>
+        internal static string PropAcuerdo {
+            get {
+                return ResourceManager.GetString("PropAcuerdo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_cant_entregas.
+        /// </summary>
+        internal static string PropCantidad {
+            get {
+                return ResourceManager.GetString("PropCantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_descripcion.
+        /// </summary>
+        internal static string PropDescripcion {
+            get {
+                return ResourceManager.GetString("PropDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_duracion.
+        /// </summary>
+        internal static string PropDuracion {
+            get {
+                return ResourceManager.GetString("PropDuracion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_estatus.
+        /// </summary>
+        internal static string PropEstatus {
+            get {
+                return ResourceManager.GetString("PropEstatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_fecha_fin.
+        /// </summary>
+        internal static string PropFechaFin {
+            get {
+                return ResourceManager.GetString("PropFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_fecha_inicio.
+        /// </summary>
+        internal static string PropFechaIni {
+            get {
+                return ResourceManager.GetString("PropFechaIni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_moneda.
+        /// </summary>
+        internal static string PropMoneda {
+            get {
+                return ResourceManager.GetString("PropMoneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_nombre.
+        /// </summary>
+        internal static string PropNombre {
+            get {
+                return ResourceManager.GetString("PropNombre", resourceCulture);
+            }
+        }
     }
 }
