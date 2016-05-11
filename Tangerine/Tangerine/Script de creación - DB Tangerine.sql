@@ -657,7 +657,7 @@ CREATE PROCEDURE M6_AgregarPropuesta
 	@fechaf date
 AS
  BEGIN
-    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_duracion, prop_acuerdo, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin) 
+    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin) 
 	VALUES(@nombre,	@descripcion, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai,@fechaf);  
  end;
 GO
