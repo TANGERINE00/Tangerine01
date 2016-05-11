@@ -115,11 +115,11 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fk_cliente_id.
+        ///   Looks up a localized string similar to fk_compania_id.
         /// </summary>
-        internal static string FacIdCliente {
+        internal static string FacIdCompania {
             get {
-                return ResourceManager.GetString("FacIdCliente", resourceCulture);
+                return ResourceManager.GetString("FacIdCompania", resourceCulture);
             }
         }
         
@@ -178,11 +178,11 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @IdCliente.
+        ///   Looks up a localized string similar to @IdCompania.
         /// </summary>
-        internal static string ParamIdCliente {
+        internal static string ParamIdCompania {
             get {
-                return ResourceManager.GetString("ParamIdCliente", resourceCulture);
+                return ResourceManager.GetString("ParamIdCompania", resourceCulture);
             }
         }
         

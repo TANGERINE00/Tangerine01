@@ -12,6 +12,8 @@ namespace Tangerine.GUI.M5
 {
     public partial class ConsultarContactos : System.Web.UI.Page
     {
+        int typeComp;
+        int idComp;
         public string contact
         {
             get
@@ -26,14 +28,17 @@ namespace Tangerine.GUI.M5
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
             LogicaM5 prueba = new LogicaM5();
+            typeComp = 1;
+            idComp = 1;
 
             if (!IsPostBack)
             {
                 //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
                 //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
                 //prueba.fillTable(1,1);
-                List<Contacto> listContact = prueba.fillTable(1,1);
+                List<Contacto> listContact = prueba.fillTable(typeComp, idComp);
 
                 try
                 {
@@ -60,6 +65,13 @@ namespace Tangerine.GUI.M5
                 }
             }
             
+        }
+        protected void btnaceptar_Click(object sender, EventArgs e)
+        {
+            //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
+
+
+
         }
     }
 }

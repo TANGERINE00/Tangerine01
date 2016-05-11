@@ -126,6 +126,9 @@
   <data name="ContactProyecto" xml:space="preserve">
     <value>M7_ConsultarProyecto</value>
   </data>
+  <data name="ContactProyectos" xml:space="preserve">
+    <value>M7_ConsultarProyectos</value>
+  </data>
   <data name="DeleteProyecto" xml:space="preserve">
     <value>M7_EliminarProyecto</value>
   </data>
@@ -133,7 +136,7 @@
     <value>@Codigo</value>
   </data>
   <data name="ParamCosto" xml:space="preserve">
-    <value>@FechaCosto</value>
+    <value>@Costo</value>
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
     <value>@Descripcion</value>
@@ -187,10 +190,10 @@
     <value>proy_fecha_inicio</value>
   </data>
   <data name="ProyIdGerente" xml:space="preserve">
-    <value>fk_emp_id</value>
+    <value>fk_gerente_id</value>
   </data>
   <data name="ProyIdPropuesta" xml:space="preserve">
-    <value>fk_prop_id</value>
+    <value>fk_propuesta_id</value>
   </data>
   <data name="ProyIdProyecto" xml:space="preserve">
     <value>proy_id</value>

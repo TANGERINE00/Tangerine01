@@ -10,7 +10,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.M8
 {
-    public class BDContacto
+    public class BDFactura
     {
         BDConexion theConnection;
         List<Parametro> parameters;
@@ -50,7 +50,7 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idClienteFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
@@ -126,7 +126,7 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idClienteFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M8_ModificarFactura y todos los parametros que recibe
@@ -178,11 +178,11 @@ namespace DatosTangerine.M8
                 int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                 String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                 int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
-                int facIdCliente = int.Parse(row[ResourceFactura.FacIdCliente].ToString());
+                int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
                 Facturacion theFacturabeta = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
-                                                    facIdProyecto, facIdCliente);
+                                                    facIdProyecto, facIdCompania);
 
                 theFactura = theFacturabeta;
 
@@ -220,11 +220,11 @@ namespace DatosTangerine.M8
                     int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
-                    int facIdCliente = int.Parse(row[ResourceFactura.FacIdCliente].ToString());
+                    int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
                     Facturacion theFactura = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
-                                                        facIdProyecto, facIdCliente);
+                                                        facIdProyecto, facIdCompania);
                     listFactura.Add(theFactura);
 
                 }

@@ -18,9 +18,14 @@ namespace Tangerine.GUI.M5
         string _cargo = String.Empty;
         string _telefono = String.Empty;
         string _correo = String.Empty;
-
+        int typeComp;
+        int idComp;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //typeComp = int.Parse(Request.QueryString["typeComp"]);
+            //idComp = int.Parse(Request.QueryString["idComp"]);
+            typeComp = 1;
+            idComp = 1;
             if (!IsPostBack)
             {
                 
@@ -37,7 +42,8 @@ namespace Tangerine.GUI.M5
             _correo = correo.Value;
 
             //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
-            Contacto contact = new Contacto(_nombre, _apellido, _departamento, _cargo, _telefono, _correo,1,1);
+            Contacto contact = new Contacto(_nombre, _apellido, _departamento,
+                _cargo, _telefono, _correo, typeComp, idComp);
             LogicaM5 contactLogic = new LogicaM5();
             contactLogic.AddNewContact(contact);
             

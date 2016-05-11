@@ -88,6 +88,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarProyectos.
+        /// </summary>
+        internal static string ContactProyectos {
+            get {
+                return ResourceManager.GetString("ContactProyectos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_EliminarProyecto.
         /// </summary>
         internal static string DeleteProyecto {
@@ -106,7 +115,7 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a @FechaCosto.
+        ///   Busca una cadena traducida similar a @Costo.
         /// </summary>
         internal static string ParamCosto {
             get {
@@ -268,7 +277,7 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a fk_emp_id.
+        ///   Busca una cadena traducida similar a fk_gerente_id.
         /// </summary>
         internal static string ProyIdGerente {
             get {
@@ -277,7 +286,7 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a fk_prop_id.
+        ///   Busca una cadena traducida similar a fk_propuesta_id.
         /// </summary>
         internal static string ProyIdPropuesta {
             get {

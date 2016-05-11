@@ -61,7 +61,7 @@ namespace DominioTangerine
         /// <summary>
         /// Get y Set de la lista de menus
         /// </summary>
-        /// <returns>Lista de los menus a los que puede acceder el rol</returns>
+        /// <returns>Lista de los menus que continen las opciones a las que no puede acceder el rol</returns>
         public ListaGenerica<Menu> Menus
         {
             get { return _menus; }

@@ -166,7 +166,7 @@ create table COMPANIA
 
 create table TELEFONO 
 (
-	tel_id IDENTITY(1,1) int not null,
+	tel_id int IDENTITY(1,1) not null,
 	tel_numero int not null,
 	fk_emp_num_ficha int,
 	fk_com_id int,
@@ -214,18 +214,18 @@ create table CONTACTO
 create table PROPUESTA
 (
 	prop_id int not null,
-	prop_nombre varchar(50) not null,
-	prop_descripcion varchar(255) not null,
-	prop_duracion varchar(200) not null,
-	prop_fecha_emision date not null,
-	prop_fecha_aprob date not null,
-	prop_acuerdo_pago varchar(200) not null,
-	prop_estatus varchar(20) not null,
-	prop_moneda varchar(40) not null,
+	prop_nombre varchar(50),
+	prop_descripcion varchar(255),
+	prop_duracion varchar(200),
+	prop_fecha_emision date,
+	prop_fecha_aprob date,
+	prop_acuerdo_pago varchar(200),
+	prop_estatus varchar(20),
+	prop_moneda varchar(40),
 	prop_cant_entregas int,
-	prop_fecha_inicio date not null,
+	prop_fecha_inicio date,
 	prop_fecha_fin date,
-	fk_com_id int not null,
+	fk_com_id int,
 
 	constraint pk_prop primary key
 	(
@@ -262,7 +262,7 @@ create table PROYECTO
 	proy_codigo varchar(255) not null,
 	proy_fecha_inicio date not null,
 	proy_fecha_est_fin date not null,
-	proy_costo int not null,
+	proy_costo numeric(12,3) not null,
 	proy_descripcion varchar(255) not null,
 	proy_realizacion varchar(100) not null,
 	proy_estatus varchar(20) not null,
@@ -344,17 +344,17 @@ create table FACTURA
 	fac_monto_restante numeric(12,3) not null,
 	fac_descripcion varchar(500) not null,
 	fk_proy_id int not null,
-	fk_cliente_id int not null,
-
-	constraint fk_cliente_id foreign key
-	(
-		fk_cliente_id
-	),
+	fk_compania_id int not null,
 
 	constraint pk_fac primary key
 	(
 		fac_id
 	),
+	
+	constraint fk_compania_fac foreign key
+	(
+		fk_compania_id
+	)references COMPANIA(com_id),
 
 	constraint fk_proy_fac foreign key
 	(
@@ -479,7 +479,7 @@ CREATE PROCEDURE M4_AgregarCompania
 	@rif [varchar](20),
 	@email [varchar](50),
 	@acronimo [varchar](20),
-	@fecha_registro date
+	@fecha_registro date,
 	@status int,
 	@id_lugar int,
 	@id_cliente_potencial int
@@ -496,7 +496,7 @@ CREATE PROCEDURE M4_ConsultarCompania
 		@id int
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre, com_rif as con_rif, com_email as con_email, com_acronimo as com_acronimo,
+		SELECT com_nombre as com_nombre, com_rif as com_rif, com_email as con_email, com_acronimo as com_acronimo,
 			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id,
 			fk_cli_pot_id as fk_cli_pot_id
 		FROM COMPANIA WHERE com_id = @id;
@@ -508,7 +508,7 @@ CREATE PROCEDURE M4_ConsultarCompanias
 
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre, com_rif as con_rif, com_email as con_email, com_acronimo as com_acronimo,
+		SELECT com_nombre as com_nombre, com_rif as com_rif, com_email as con_email, com_acronimo as com_acronimo,
 			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id,
 			fk_cli_pot_id as fk_cli_pot_id
 		FROM COMPANIA;
@@ -522,7 +522,7 @@ CREATE PROCEDURE M4_ModificarCompania
 	@rif [varchar](20),
 	@email [varchar](50),
 	@acronimo [varchar](20),
-	@fecha_registro date
+	@fecha_registro date,
 	@status int,
 	@id_lugar int,
 	@id_cliente_potencial int
@@ -639,4 +639,175 @@ AS
 GO
 -----------------------------------
 ------Fin Stored Procedure M5------
+-----------------------------------
+
+-----------------------------------
+--------Stored Procedure M6--------
+-----------------------------------
+--Agregar Propuesta
+CREATE PROCEDURE M6_AgregarPropuesta
+	@nombre [varchar](50),
+	@descripcion [varchar](255),
+	@duracion [varchar](200),
+	@acuerdo [varchar](200),
+	@estatus [varchar](20),
+	@moneda [varchar](40),
+	@cantEntr int,
+	@fechai date,
+	@fechaf date
+AS
+ BEGIN
+    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_duracion, prop_acuerdo, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin) 
+	VALUES(@nombre,	@descripcion, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai,@fechaf);  
+ end;
+GO
+-----------------------------------
+------Fin Stored Procedure M6------
+-----------------------------------
+
+
+-----------------------------------
+--------Stored Procedure M7--------
+-----------------------------------
+---- StoredProcedure Agregar Proyecto ----
+CREATE PROCEDURE M7_AgregarProyecto
+    @Nombre [varchar](500),
+    @Codigo [varchar](500),
+    @FechaInicio date,
+    @FechaEstFin date,
+    @Costo numeric(12,3),
+    @Descripcion [varchar](500),
+    @Realizacion [varchar](500),
+    @Estatus [varchar](500),
+    @Razon [varchar](500),
+    @IdPropuesta int,
+    @IdResponsable int,
+    @IdGerente int
+
+AS
+	BEGIN
+    	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id) 
+		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion),@Realizacion,@Estatus,@Razon,@IdPropuesta,@IdResponsable,@IdGerente);  
+ 	END;
+GO
+
+---- StoredProcedure Consultar Proyecto ----
+CREATE PROCEDURE M7_ConsultarProyecto
+	@IdProyecto int
+
+AS
+	BEGIN
+		SELECT proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO WHERE proy_id = @IdProyecto;
+	END
+GO
+
+---- StoredProcedure Consultar Proyectos ----
+CREATE PROCEDURE M7_ConsultarProyectos
+
+AS
+	BEGIN
+		SELECT proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO;
+	END
+GO
+
+---- StoredProcedure Modificar Proyecto ----
+CREATE PROCEDURE M7_ModificarProyecto
+	@IdProyecto int,
+	@Nombre [varchar](500),
+    @Codigo [varchar](500),
+    @FechaInicio date,
+    @FechaEstFin date,
+    @Costo numeric(12,3),
+    @Descripcion [varchar](500),
+    @Realizacion [varchar](500),
+    @Estatus [varchar](500),
+    @Razon [varchar](500),
+    @IdPropuesta int,
+    @IdResponsable int,
+    @IdGerente int
+
+AS
+ 	BEGIN
+    	UPDATE PROYECTO SET proy_nombre = @Nombre, proy_codigo = @Codigo, proy_fecha_inicio = @FechaInicio,
+    		proy_fecha_est_fin = @FechaEstFin, proy_costo = @Costo, proy_descripcion = @Descripcion,
+    		proy_realizacion = @Realizacion, proy_estatus = @Estatus, proy_razon = @Razon,
+    		fk_propuesta_id = @IdPropuesta, fk_com_id = @IdResponsable, fk_gerente_id = @IdGerente
+    	WHERE proy_id = @IdProyecto;  
+ 	end;
+GO
+
+-----------------------------------
+------Fin Stored Procedure M7------
+-----------------------------------
+
+-----------------------------------
+--------Stored Procedure M8--------
+-----------------------------------
+---- StoredProcedure Agregar Factura ----
+CREATE PROCEDURE M8_AgregarFactura
+	@fecha_emision date,
+	@monto_total numeric(12,3),
+	@monto_restante numeric(12,3),
+	@descripcion [varchar](500),
+	@id_proyecto int,
+	@id_cliente int
+
+AS
+	BEGIN
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fk_proy_id, fk_cliente_id) 
+		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @id_proyecto, @id_cliente);  
+ 	END;
+GO
+
+---- StoredProcedure Consultar Factura ----
+CREATE PROCEDURE M8_ConsultarFactura
+	@id int
+
+AS
+	BEGIN
+		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_cliente_id AS fk_cliente_id
+		FROM FACTURA WHERE fac_id = @id;
+	END
+GO
+
+---- StoredProcedure Consultar Facturas ----
+CREATE PROCEDURE M8_ConsultarFacturas
+
+AS
+	BEGIN
+		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_cliente_id AS fk_cliente_id
+		FROM FACTURA;
+	END
+GO
+
+---- StoredProcedure Modificar Factura ----
+CREATE PROCEDURE M8_ModificarFactura
+	@id int,
+	@fecha_emision date,
+	@monto_total numeric(12,3),
+	@monto_restante numeric(12,3),
+	@descripcion [varchar](500),
+	@id_proyecto int,
+	@id_cliente int
+
+AS
+ 	BEGIN
+    	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
+    		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_cliente_id = @id_cliente
+    	WHERE fac_id = @id;  
+ 	end;
+GO
+
+-----------------------------------
+------Fin Stored Procedure M8------
 -----------------------------------
