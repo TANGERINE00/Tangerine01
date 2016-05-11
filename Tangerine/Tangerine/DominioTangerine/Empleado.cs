@@ -9,18 +9,18 @@ namespace DominioTangerine
   public   class Empleado
     {
 
-       private int emp_num_ficha ;
-	   private int emp_cedula ;
-	   private String emp_genero ;
-	   private String emp_p_nombre ;
-	   private String emp_s_nombre ;
-	   private String emp_p_apellido ;
-	   private String emp_s_apellido ;
-	   private DateTime emp_fecha_nac ;
-	   private String emp_nivel_estudio ;
-	   private String emp_email ;
-	   private String emp_activo ;
-	   private int fk_lug_dir_id ;
+       public int emp_num_ficha ;
+	   public int emp_cedula ;
+	   public String emp_genero ;
+	   public String emp_p_nombre ;
+	   public String emp_s_nombre ;
+	   public String emp_p_apellido ;
+	   public String emp_s_apellido ;
+	   public DateTime emp_fecha_nac ;
+	   public String emp_nivel_estudio ;
+	   public String emp_email ;
+	   public String emp_activo ;
+	   public int fk_lug_dir_id ;
     }
 
 }
