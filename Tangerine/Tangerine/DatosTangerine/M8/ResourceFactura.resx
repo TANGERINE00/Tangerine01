@@ -151,24 +151,24 @@
     <value>fac_monto_total</value>
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
-    <value>@Descripcion</value>
+    <value>@descripcion</value>
   </data>
   <data name="ParamFecha_Emision" xml:space="preserve">
-    <value>@FechaEmision</value>
+    <value>@fecha_emision</value>
   </data>
   <data name="ParamIdCompania" xml:space="preserve">
-    <value>@IdCompania</value>
+    <value>@id_compania</value>
   </data>
   <data name="ParamIdFactura" xml:space="preserve">
     <value>@IdFactura</value>
   </data>
   <data name="ParamIdProyecto" xml:space="preserve">
-    <value>@IdProyecto</value>
+    <value>@id_proyecto</value>
   </data>
   <data name="ParamMonto_Restante" xml:space="preserve">
-    <value>@MontoRestante</value>
+    <value>@monto_restante</value>
   </data>
   <data name="ParamMonto_Total" xml:space="preserve">
-    <value>@MontoTotal</value>
+    <value>@monto_total</value>
   </data>
 </root>
