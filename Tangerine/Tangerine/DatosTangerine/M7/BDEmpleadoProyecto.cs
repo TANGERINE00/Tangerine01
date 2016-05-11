@@ -11,7 +11,7 @@ using DatosTangerine;
 
 namespace DatosTangerine.M7
 {
-    class BDEmpleadoProyecto
+    public class BDEmpleadoProyecto
     {
         BDConexion theConnection;
         List<Parametro> parameters;

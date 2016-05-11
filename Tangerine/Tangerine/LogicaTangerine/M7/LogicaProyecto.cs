@@ -11,6 +11,8 @@ namespace LogicaTangerine.M7
     class LogicaProyecto
     {
         BDProyecto _Pro = new BDProyecto();
+        BDEmpleadoProyecto _Empl = new BDEmpleadoProyecto();
+        BDProyectoContanto _Cont = new BDProyectoContanto();
 
         /// <summary>
         /// Metodo que agrega o crea nuevos proyectos
@@ -20,7 +22,7 @@ namespace LogicaTangerine.M7
         /// <param name="Contacto"></param>
         public Boolean agregarProyecto(Proyecto P)
         {
-            if (_Pro.AddProyecto(P))
+            if (_Pro.AddProyecto(P) && _Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
             {
                 return true;
             }

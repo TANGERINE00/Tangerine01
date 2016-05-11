@@ -211,20 +211,20 @@ create table CONTACTO
 	)
 );
 
-create table PROPUESTA
+      create table PROPUESTA
 (
 	prop_id int not null,
 	prop_nombre varchar(50),
 	prop_descripcion varchar(255),
-	prop_duracion varchar(200),
-	prop_fecha_emision date,
-	prop_fecha_aprob date,
+	prop_tipoDuracion varchar(200),
+	prop_Duracion varchar(200),
 	prop_acuerdo_pago varchar(200),
 	prop_estatus varchar(20),
 	prop_moneda varchar(40),
 	prop_cant_entregas int,
 	prop_fecha_inicio date,
 	prop_fecha_fin date,
+	prop_costo int,
 	fk_com_id int,
 
 	constraint pk_prop primary key
@@ -748,7 +748,7 @@ GO
 ---- StoredProcedure Agregar ProyectoContacto ----
 CREATE PROCEDURE M7_AgregarProyectoContacto
     @PCIdContacto int,
-    @IdProyecto int,
+    @IdProyecto int
 AS
 	BEGIN
     	INSERT INTO CONTACTO_PROYECTO(	fk_con_id,fk_proy_id) 
@@ -776,14 +776,15 @@ AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;  
  end;
+GO
 
 ---- StoredProcedure Agregar ProyectoEmpleado ----
 CREATE PROCEDURE M7_AgregarProyectoEmpleado
 	@PEIdEmpleado int,
-    @IdProyecto int,
+    @IdProyecto int
 AS
 	BEGIN
-    	INSERT INTO CONTACTO_PROYECTO(	fk_emp_num_ficha,fk_proy_id) 
+    	INSERT INTO EMPLEADO_PROYECTO(	fk_emp_num_ficha,fk_proy_id) 
 		VALUES(@PEIdEmpleado,@IdProyecto);  
  	END;
 GO
@@ -792,11 +793,10 @@ GO
 ---- StoredProcedure Consultar ProyectoEmpleado ----
 CREATE PROCEDURE M7_ConsultarProyectoEmpleado
 	@IdProyecto int
-
 AS
 	BEGIN
 		SELECT fk_emp_num_ficha AS fk_emp_num_ficha
-		FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;
+		FROM EMPLEADO_PROYECTO WHERE fk_proy_id = @IdProyecto;
 	END
 GO
 
@@ -810,6 +810,7 @@ AS
      WHERE fk_proy_id = @IdProyecto;  
  end;
 GO
+
 
 
 -----------------------------------
@@ -873,8 +874,20 @@ AS
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
     		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id;  
- 	end;
+ 	END;
 GO
+
+/*Falta el campo factura*/
+/*---- StoredProcedure Cambiar Estatus de Factura ----
+CREATE PROCEDURE M8_EstatusFactura
+	@id int,
+	@estatus [varchar](500)
+AS
+ 	BEGIN
+    	UPDATE FACTURA SET fac_estatus = @estatus
+    	WHERE fac_id = @id;  
+ 	END;
+GO*/
 
 -----------------------------------
 ------Fin Stored Procedure M8------
