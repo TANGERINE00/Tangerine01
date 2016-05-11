@@ -43,6 +43,18 @@ namespace LogicaTangerine.M5
             }
         }
 
+        public bool DeleteContact(int idCont)
+        {
+            try
+            {
+                return BDContacto.DeleteContact(idCont);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Contacto SearchContact(int idContact)
         {
             try

@@ -169,6 +169,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?idCont=.
+        /// </summary>
+        internal static string BotonEliminar {
+            get {
+                return ResourceManager.GetString("BotonEliminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
         /// </summary>
         internal static string BotonEliminarSolicitud {
