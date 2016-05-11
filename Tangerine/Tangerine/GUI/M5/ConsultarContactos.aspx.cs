@@ -43,8 +43,8 @@ namespace Tangerine.GUI.M5
             //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
             //int typeComp = int.Parse(Request.QueryString["typeComp"]);
             //int idComp = int.Parse(Request.QueryString["idComp"]);
-            int typeComp = 1;
-            int idComp = 1;
+            int typeComp = 2;
+            int idComp = 3;
             LogicaM5 prueba = new LogicaM5();
 
             if (!IsPostBack)

@@ -268,7 +268,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ?idComp=.
+        ///   Looks up a localized string similar to &amp;idComp=.
         /// </summary>
         internal static string ParametroIdComp {
             get {
