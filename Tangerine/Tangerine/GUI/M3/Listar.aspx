@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Listar.aspx.cs" Inherits="Tangerine.GUI.M3.ModificarLead" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Listar.aspx.cs" Inherits="Tangerine.GUI.M3.ModificarLead" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -34,31 +35,22 @@
           <table id="planillascreadas" class="table table-bordered table-striped dataTable" accesskey="">
            <thead>
             <tr>
-                <th>ID</th>
-                <th>Empresa</th>
+                <th>Nombre</th>
                 <th>RIF</th>
-                <th>Telefono</th>
                 <th>Email</th>
+                <th>PresupuestoAnual</th>
                 <th style="text-align:center;">Acciones</th>
             </tr>
           </thead>
-              <asp:Literal runat="server" ID="Literal1"></asp:Literal>
-           <tbody>
-                <th>1</th>
-                <th>Umbrella</th>
-                <th>J-156373</th>
-                <th>675849</th>
-                <th>info@umbrella.com</th>                
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-search" href="ConsultarLead.aspx"></a><a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarLead.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-trash" href="EliminarLead.aspx"></a></th> 
-           </tbody>
-              <tbody>
-                <th>2</th>
-                <th>Skynet</th>
-                <th>J-472521</th>
-                <th>3457651</th>
-                <th>info@skynet.com</th>                
-                <th style="text-align:center;"><a class="btn btn-primary glyphicon glyphicon-search" href="ConsultarLead.aspx"></a><a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarLead.aspx"></a><a  class="btn btn-danger glyphicon glyphicon-trash" href="EliminarLead.aspx"></a></th> 
-           </tbody>
+            <tbody> 
+              <asp:Literal runat="server" ID="tabla"></asp:Literal>
+             </tbody>
+            
+
+
+
+
+         
         </table>
        </div>
       </form>

@@ -12,7 +12,7 @@ namespace DominioTangerine
 
         private int _idNumeroFactura;
         private DateTime _fecha;
-        private int _idCliente;
+        private int _idCompania;
         private int _idProyecto;
         private String _descripcion;
         private double _monto;
@@ -45,14 +45,14 @@ namespace DominioTangerine
         }
 
         /// <summary>
-        /// Metodo para setear y obtener el id del cliente en la factura
+        /// Metodo para setear y obtener el id del compañia en la factura
         /// </summary>
-        /// <returns>Retorna el id del cliente de la factura</returns>
+        /// <returns>Retorna el id del compañia de la factura</returns>
 
-        public int idClienteFactura
+        public int idCompaniaFactura
         {
-            get { return _idCliente; }
-            set { _idCliente = value; }
+            get { return _idCompania; }
+            set { _idCompania = value; }
         }
 
 
@@ -119,7 +119,7 @@ namespace DominioTangerine
         {
             _idNumeroFactura = 0;
             _fecha = DateTime.Now;
-            _idCliente = 0;
+            _idCompania = 0;
             _idProyecto = 0;
             _descripcion = String.Empty;
             _monto = 0;
@@ -137,11 +137,11 @@ namespace DominioTangerine
         /// <param name="descripcion"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( int idNumeroFactura, DateTime fecha,   double monto, double montoRestante, String descripcion, int idProyecto, int idCliente )
+        public Facturacion( int idNumeroFactura, DateTime fecha,   double monto, double montoRestante, String descripcion, int idProyecto, int idCompania )
         {
             this._idNumeroFactura = idNumeroFactura;
             this._fecha = fecha;
-            this._idCliente = idCliente;
+            this._idCompania = idCompania;
             this._idProyecto = idProyecto;
             this._descripcion = descripcion;
             this._monto = monto;

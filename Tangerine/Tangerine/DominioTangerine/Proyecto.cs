@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DominioTangerine
 {
@@ -22,6 +24,8 @@ namespace DominioTangerine
         private int _idpropuesta;
         private int _idresponsable;
         private int _idgerente;
+        private  List<Empleado> _empleados ;
+        private List <Contacto> _contacto;
 
         #endregion
 
@@ -53,7 +57,7 @@ namespace DominioTangerine
 
         public Proyecto(int id_proyecto,string nombre,string codigo,DateTime fecha_inicio,DateTime fecha_estimada_fin,
                  double costo,string descripcion, string realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
-                 int id_gerente)
+                 int id_gerente )
         {
             this._idproyecto = id_proyecto;
             this._nombre = nombre;
@@ -68,6 +72,7 @@ namespace DominioTangerine
             this._idpropuesta = id_propuesta;
             this._idresponsable = id_responsable;
             this._idgerente = id_gerente;
+           
         }
 
 
@@ -227,6 +232,48 @@ namespace DominioTangerine
             set { _idgerente = value; }
         }
 
+       /// <summary>
+       /// Metodo que devuelve la lista de empleados
+       /// </summary>
+       /// <returns>Lista de empleados</returns>
+        public List<Empleado> get_empleados ()
+        {
+             return _empleados;  
+         
+        }
+
+        /// <summary>
+        /// medtodo que define la lista de empleado
+        /// </summary>
+        /// <param name="e"></param>
+        public void set_empleados ( List<Empleado> e ) {
+           
+            _empleados =  e;
+            
+        }
+
+        /// <summary>
+        /// Metodo que devuelve la lista de empleados
+        /// </summary>
+        /// <returns>Lista de empleados</returns>
+        public List<Contacto> get__contactos()
+        {
+            return _contacto;
+
+        }
+
+        /// <summary>
+        /// medtodo que define la lista de contacto
+        /// </summary>
+        /// <param name="e"></param>
+        public void set_contactos(List<Contacto> e)
+        {
+
+            _contacto = e;
+
+        }
+        
+        
         #endregion
     }
 }

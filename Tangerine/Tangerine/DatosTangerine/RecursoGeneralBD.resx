@@ -144,9 +144,9 @@
     <comment>Mensajer de error cuando se coloca un parametro errado</comment>
   </data>
   <data name="NombreBD" xml:space="preserve">
-    <value>BDTangerine</value>
+    <value>fenix2-lt.BDTangerine.dbo</value>
   </data>
   <data name="StringDeConexion" xml:space="preserve">
-    <value>Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\BaseDeDatosTGE.mdf;Integrated Security=True</value>
+    <value>Data Source=FENIX2-LT;Initial Catalog=BDTangerine;Integrated Security=True</value>
   </data>
 </root>

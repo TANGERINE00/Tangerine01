@@ -33,7 +33,7 @@
                       
                       <div class="form-group">
                       <label for="labelNumeroFactura_M7">Nombre de proyecto *</label>
-                      <input type="text" class="form-control" id="textNombreProyecto_M7" placeholder="Nombre Proyecto"  >
+                      <input type="text" class="form-control" id="textNombreProyecto_M7" placeholder="Nombre Proyecto" name="textNombreProyecto_M7"  >
                     </div>
 
                     <div class="form-group">

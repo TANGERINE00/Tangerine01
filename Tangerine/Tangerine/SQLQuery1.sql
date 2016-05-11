@@ -1,0 +1,1 @@
+﻿execute listar_cliente_potencial
