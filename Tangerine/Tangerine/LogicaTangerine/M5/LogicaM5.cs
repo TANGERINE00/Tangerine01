@@ -19,7 +19,13 @@ namespace LogicaTangerine.M5
 
         }
 
-        public List<Contacto> fillTable(int typeComp, int idComp) 
+        /// <summary>
+        /// Metodo para consultar contactos de una empresa, sirve para Compania y Cliente Potencial.
+        /// </summary>
+        /// <param name="typeComp">entero que representa el tipo de empresa a consultar (1 para Compania, 2 para Cliente Potencial)</param>
+        /// /// <param name="idComp">entero que representa el id de la empresa a consultar</param>
+        /// <returns>Retorna una lista de contactos de la empresa</returns>
+        public List<Contacto> GetContacts(int typeComp, int idComp) 
         {
             try
             {
@@ -31,6 +37,11 @@ namespace LogicaTangerine.M5
             }
         }
 
+        /// <summary>
+        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
         public bool AddNewContact(Contacto contact)
         {
             try
@@ -43,6 +54,11 @@ namespace LogicaTangerine.M5
             }
         }
 
+        /// <summary>
+        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
         public bool DeleteContact(int idCont)
         {
             try
@@ -55,6 +71,11 @@ namespace LogicaTangerine.M5
             }
         }
 
+        /// <summary>
+        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
         public Contacto SearchContact(int idContact)
         {
             try
