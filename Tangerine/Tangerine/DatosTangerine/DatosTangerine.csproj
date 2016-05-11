@@ -113,11 +113,8 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="M10\" />
     <Folder Include="M1\" />
-<<<<<<< HEAD
     <Folder Include="M6\" />
-=======
     <Folder Include="M3\" />
->>>>>>> fd136714e98e181e4a9d646cbfe486a66ec72e59
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
