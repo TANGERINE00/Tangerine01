@@ -10,7 +10,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.M4
 {
-    public class BDContacto
+    public class BDCompania
     {
         BDConexion theConnection;
         List<Parametro> parameters;
@@ -73,10 +73,11 @@ namespace DatosTangerine.M4
         /// </summary>
         /// <param name="parametro">objeto de tipo Compania para modificar en bd</param>
         /// <returns>true si fue modificado</returns>
-        public Boolean ChangeCompany(Compania theCompany)
+        public static Boolean ChangeCompany(Compania theCompany)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -127,10 +128,11 @@ namespace DatosTangerine.M4
         /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
         /// </summary>
         /// <returns>Lista de contactos de la Empresa</returns>
-        public Compania ContactCompany(int idCompany)
+        public static Compania ConsultCompany(int idCompany)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             Compania theCompany = new Compania();
 
@@ -142,7 +144,7 @@ namespace DatosTangerine.M4
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ContactCompany, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ConsultCompany, parameters);
 
                 //Guardar los datos 
                 DataRow row = dt.Rows[0];
@@ -178,10 +180,10 @@ namespace DatosTangerine.M4
         /// Recibe cero parametros.
         /// </summary>
         /// <returns>Lista de Companias registradas</returns>
-        public List<Compania> ContactCompanies()
+        public static List<Compania> ConsultCompanies()
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
 
             List<Compania> listCompany = new List<Compania>();
 
@@ -190,7 +192,7 @@ namespace DatosTangerine.M4
                 theConnection.Conectar();
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ContactCompanies, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ConsultCompanies, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)

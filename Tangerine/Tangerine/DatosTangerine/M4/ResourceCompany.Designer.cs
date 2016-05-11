@@ -162,18 +162,18 @@ namespace DatosTangerine.M4 {
         /// <summary>
         ///   Looks up a localized string similar to M4_ConsultarCompanias.
         /// </summary>
-        internal static string ContactCompanies {
+        internal static string ConsultCompanies {
             get {
-                return ResourceManager.GetString("ContactCompanies", resourceCulture);
+                return ResourceManager.GetString("ConsultCompanies", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to M4_ConsultarCompania.
         /// </summary>
-        internal static string ContactCompany {
+        internal static string ConsultCompany {
             get {
-                return ResourceManager.GetString("ContactCompany", resourceCulture);
+                return ResourceManager.GetString("ConsultCompany", resourceCulture);
             }
         }
         

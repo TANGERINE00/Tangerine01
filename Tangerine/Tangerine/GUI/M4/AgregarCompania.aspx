@@ -25,32 +25,32 @@
                   <h3 class="box-title">Datos de la Compañía</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
-                    <div class="box-body">
-                        <div class="form-group">
+                <form role="form" name="agregar_compania" id="agregar_compania" method="post" runat="server">
+                    <div class="box-body" runat="server">
+                        <div class="form-group" runat="server">
                             <label for="InputNombre">Nombre</label>
-                            <input type="text" class="form-control" id="InputNombre1" placeholder="Introduzca nombre de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputNombre1" name="InputNombre1" placeholder="Introduzca nombre de la compañía">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
                             <label for="InputAcronimo">Acrónimo (opcional)</label>
-                            <input type="text" class="form-control" id="InputAcronimo1" placeholder="Introduzca acrónimo de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputAcronimo1" name="InputAcronimo1" placeholder="Introduzca acrónimo de la compañía">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
                             <label for="InputRIF">RIF</label>
-                            <input type="text" class="form-control" id="InputRIF1" placeholder="Introduzca RIF de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputRIF1" name="InputRIF1" placeholder="Introduzca RIF de la compañía">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
                             <label for="InputEmail">Correo Electrónico</label>
-                            <input type="text" class="form-control" id="InputEmail1" placeholder="Introduzca correo electrónico de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputEmail1" name="InputEmail1" placeholder="Introduzca correo electrónico de la compañía">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
                             <label for="InputFechaRegistro">Fecha de Registro</label>
-                            <input type="text" class="form-control" id="InputFechaRegistro1" placeholder="dd/mm/aaaa">
+                            <input runat="server" type="text" class="form-control" id="InputFechaRegistro1" name="InputFechaRegistro1" placeholder="dd/mm/aaaa">
                         </div>
                      </div><!-- /.box-body -->
 
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    <div class="box-footer" runat="server">
+                        <asp:Button id="btnagregar" class="btn btn-primary" OnClick="btnagregar_Click" type="submit" runat="server" Text = "Registrar"></asp:Button>
                     </div>
                 </form>
               </div><!-- /.box -->

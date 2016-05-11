@@ -150,10 +150,10 @@
   <data name="ComStatusCompany" xml:space="preserve">
     <value>com_status</value>
   </data>
-  <data name="ContactCompanies" xml:space="preserve">
+  <data name="ConsultCompanies" xml:space="preserve">
     <value>M4_ConsultarCompanias</value>
   </data>
-  <data name="ContactCompany" xml:space="preserve">
+  <data name="ConsultCompany" xml:space="preserve">
     <value>M4_ConsultarCompania</value>
   </data>
   <data name="DisableAbleComany" xml:space="preserve">

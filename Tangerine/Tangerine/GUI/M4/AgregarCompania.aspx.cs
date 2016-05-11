@@ -4,13 +4,40 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DominioTangerine;
+using LogicaTangerine;
+using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M4
 {
     public partial class AgregarCompania : System.Web.UI.Page
     {
+        string _nombre = String.Empty;
+        string _acronimo = String.Empty;
+        string _rif = String.Empty;
+        string _email = String.Empty;
+        string _fecha = String.Empty;
+        int _status = 1; // se crea el status activo por default.
+        int _direccionId = 0;
+        int _clientePotencialId = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnagregar_Click(object sender, EventArgs e)
+        {
+            _nombre = InputNombre1.Value;
+            _acronimo = InputAcronimo1.Value;
+            _rif = InputRIF1.Value;
+            _email = InputEmail1.Value;
+            _fecha = InputFechaRegistro1.Value;
+
+            Compania company = new Compania(_nombre, _rif, _email, _acronimo, DateTime.Parse(_fecha),
+                                                _status, _direccionId, _clientePotencialId);
+            LogicaM4 companyLogic = new LogicaM4();
+            companyLogic.AddNewCompany(company);
 
         }
     }

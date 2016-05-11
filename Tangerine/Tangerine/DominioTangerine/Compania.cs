@@ -109,6 +109,18 @@ namespace DominioTangerine
             this.idClientePotencial = inputIdCliente;
         }
 
+        public Compania(string inputNombre, string inputRif, string inputEmail, string inputAcronimo,
+                        DateTime inputFechaRegistro, int inputStatus, int inputIdLugar, int inputIdCliente)
+        {
+            this.nombreCompania = inputNombre;
+            this.rifCompania = inputRif;
+            this.emailCompania = inputEmail;
+            this.acronimoCompania = inputAcronimo;
+            this.fechaRegistroCompania = inputFechaRegistro;
+            this.statusCompania = inputStatus;
+            this.idLugar = inputIdLugar;
+            this.idClientePotencial = inputIdCliente;
+        }
         #endregion
     }
 
