@@ -873,8 +873,20 @@ AS
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
     		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id;  
- 	end;
+ 	END;
 GO
+
+/*Falta el campo factura*/
+/*---- StoredProcedure Cambiar Estatus de Factura ----
+CREATE PROCEDURE M8_EstatusFactura
+	@id int,
+	@estatus [varchar](500)
+AS
+ 	BEGIN
+    	UPDATE FACTURA SET fac_estatus = @estatus
+    	WHERE fac_id = @id;  
+ 	END;
+GO*/
 
 -----------------------------------
 ------Fin Stored Procedure M8------
