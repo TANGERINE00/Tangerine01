@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M7 {
+namespace Tangerine.GUI.M8 {
     
     
-    public partial class EjemploM7 {
+    public partial class GenerarFacturaM8 {
         
         /// <summary>
         /// buttomGenerar_M8 control.

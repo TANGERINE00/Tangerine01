@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="EjemploM7.aspx.cs" Inherits="Tangerine.GUI.M7.EjemploM7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="GenerarFacturaM8.aspx.cs" Inherits="Tangerine.GUI.M8.GenerarFacturaM8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -59,7 +59,7 @@
                       <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled ="disabled" >
                     </div>
                       <div class="box-footer" runat="server">
-                             <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Generar" ></asp:Button>
+                             <asp:Button id="buttomGenerar_M8" style="margin-top:5%"  class="btn btn-primary" type="submit" runat="server" Text = "Generar" OnClick="buttomGenerarFactura_Click" ></asp:Button>
                       </div>
                       
 
@@ -76,4 +76,5 @@
             <div class="col-md-6" runat ="server">
       
           </div>
+    </div>
 </asp:Content>
