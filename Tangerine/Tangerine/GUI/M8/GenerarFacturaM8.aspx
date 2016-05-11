@@ -25,38 +25,38 @@
                   <h3 class="box-title">Generar Factura</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" runat ="server">
+                <form role="form" runat ="server" method="post"  name="generar_factura" id="generar_factura" >
                   <div class="box-body" runat ="server">
 
                     <div class="form-group" runat ="server">
                       <label for="labelNumeroFactura_M8">Número Factura</label>
-                      <input type="text" class="form-control" id="textNumeroFactura_M8" placeholder="Número Factura" disabled ="disabled" >
+                      <input type="text" runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" placeholder="Número Factura"  >
                     </div>
 
                     <div class="form-group" runat ="server">
                       <label for="labelFecha_M8">Fecha</label>
-                      <input type="date" class="form-control" id="textFecha_M8" placeholder="Fecha" disabled ="disabled">
+                      <input type="text" runat="server"  class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy"  >
                     </div>
 
                       <div class="form-group" runat ="server">
-                      <label for="labelCliente_M8">Cliente</label>
-                      <input type="text" class="form-control" id="textCliente_M8" placeholder="Cliente" disabled ="disabled" >
+                      <label for="labelCliente_M8">Compañia</label>
+                      <input type="text" runat="server"  class="form-control" id="textCompania_M8" name="textCompania_M8" placeholder="Compañia" >
                     </div>
 
                         <div class="form-group" runat ="server">
                       <label for="labelProyecto_M8">Proyecto</label>
-                      <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled ="disabled" >
+                      <input type="text" runat="server"  class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto"  >
                     </div>
 
                         <div class="form-group" runat ="server">
                       <label for="labelDescripcion_M8">Descripción</label>
-                      <input type="text" class="form-control" id="textDescripcion_M8" placeholder="Descripción">
+                      <input type="text" runat="server"  class="form-control" id="textDescripcion_M8" name="textDescripcion_M8" placeholder="Descripción" >
                     </div>
 
                       
                         <div class="form-group" runat ="server">
                       <label for="labelMonto_M8">Monto</label>
-                      <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled ="disabled" >
+                      <input type="text" runat="server"  class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto"  >
                     </div>
                       <div class="box-footer" runat="server">
                              <asp:Button id="buttomGenerar_M8" style="margin-top:5%"  class="btn btn-primary" type="submit" runat="server" Text = "Generar" OnClick="buttomGenerarFactura_Click" ></asp:Button>
