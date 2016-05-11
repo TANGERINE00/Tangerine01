@@ -70,6 +70,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_AgregarProyectoContacto.
+        /// </summary>
+        internal static string AddNewProyectoContacto {
+            get {
+                return ResourceManager.GetString("AddNewProyectoContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ModificarProyecto.
         /// </summary>
         internal static string ChangeProyecto {
@@ -88,6 +97,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarProyectoContacto.
+        /// </summary>
+        internal static string ContactProyectoContacto {
+            get {
+                return ResourceManager.GetString("ContactProyectoContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarProyectos.
         /// </summary>
         internal static string ContactProyectos {
@@ -102,6 +120,15 @@ namespace DatosTangerine.M7 {
         internal static string DeleteProyecto {
             get {
                 return ResourceManager.GetString("DeleteProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M7_EliminarProyectoContacto.
+        /// </summary>
+        internal static string DeleteProyectoContacto {
+            get {
+                return ResourceManager.GetString("DeleteProyectoContacto", resourceCulture);
             }
         }
         
@@ -205,6 +232,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @PCIdContacto.
+        /// </summary>
+        internal static string ParamPCIdContacto {
+            get {
+                return ResourceManager.GetString("ParamPCIdContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @Razon.
         /// </summary>
         internal static string ParamRazon {
@@ -219,6 +255,15 @@ namespace DatosTangerine.M7 {
         internal static string ParamRealizacion {
             get {
                 return ResourceManager.GetString("ParamRealizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a fk_con_id.
+        /// </summary>
+        internal static string PCIdContacto {
+            get {
+                return ResourceManager.GetString("PCIdContacto", resourceCulture);
             }
         }
         

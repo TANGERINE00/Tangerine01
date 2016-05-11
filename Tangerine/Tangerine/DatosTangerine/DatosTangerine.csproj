@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="M7\BDEmpleadoProyecto.cs" />
     <Compile Include="M7\BDProyecto.cs" />
+    <Compile Include="M7\BDProyectoContanto.cs" />
     <Compile Include="M7\ResourceProyecto.Designer.cs">
       <DependentUpon>ResourceProyecto.resx</DependentUpon>
       <AutoGen>True</AutoGen>
