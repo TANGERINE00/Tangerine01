@@ -31,11 +31,11 @@ namespace DatosTangerine.M8
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
-                parameters.Add(theParam);
+                //theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
+                //parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.Date, theFactura.fechaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
@@ -44,13 +44,13 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.Int, theFactura.descripcionFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe

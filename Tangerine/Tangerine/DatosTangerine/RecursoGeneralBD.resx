@@ -147,6 +147,6 @@
     <value>BDTangerine</value>
   </data>
   <data name="StringDeConexion" xml:space="preserve">
-    <value>Data Source=TOTE\SQLEXPRESS;Initial Catalog=BDTangerine;Integrated Security=True</value>
+    <value>Data Source=GIANFRANCO-PC\SQLEXPRESS;Initial Catalog=BDTangerine;Integrated Security=True</value>
   </data>
 </root>
