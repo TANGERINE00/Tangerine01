@@ -211,20 +211,20 @@ create table CONTACTO
 	)
 );
 
-create table PROPUESTA
+      create table PROPUESTA
 (
 	prop_id int not null,
 	prop_nombre varchar(50),
 	prop_descripcion varchar(255),
-	prop_duracion varchar(200),
-	prop_fecha_emision date,
-	prop_fecha_aprob date,
+	prop_tipoDuracion varchar(200),
+	prop_Duracion varchar(200),
 	prop_acuerdo_pago varchar(200),
 	prop_estatus varchar(20),
 	prop_moneda varchar(40),
 	prop_cant_entregas int,
 	prop_fecha_inicio date,
 	prop_fecha_fin date,
+	prop_costo int,
 	fk_com_id int,
 
 	constraint pk_prop primary key

@@ -129,6 +129,10 @@
     <value>@cantEntr</value>
     <comment>Atributo que identifica la cantidad de pago de la propuesta</comment>
   </data>
+  <data name="ParamCostoProp" xml:space="preserve">
+    <value>@costo</value>
+    <comment>Atributo que identifica el costo de la propuesta</comment>
+  </data>
   <data name="ParamDescriProp" xml:space="preserve">
     <value>@descripcion</value>
     <comment>Atributo que identifica la descripcion de la propuesta</comment>
@@ -162,6 +166,9 @@
   </data>
   <data name="PropCantidad" xml:space="preserve">
     <value>prop_cant_entregas</value>
+  </data>
+  <data name="PropCosto" xml:space="preserve">
+    <value>prop_costo</value>
   </data>
   <data name="PropDescripcion" xml:space="preserve">
     <value>prop_descripcion</value>
