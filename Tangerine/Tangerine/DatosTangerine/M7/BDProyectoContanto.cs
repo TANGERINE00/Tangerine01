@@ -6,62 +6,64 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DominioTangerine; 
+using DominioTangerine;
 using DatosTangerine;
+
 
 namespace DatosTangerine.M7
 {
-    class BDEmpleadoProyecto
+    class BDProyectoContanto
     {
+
         BDConexion theConnection;
         List<Parametro> parameters;
         Parametro theParam = new Parametro();
 
         /// <summary>
-        /// Metodo para agregar los Empleados que tiene un proyecto en la base de datos.
+        /// Metodo para agregar los contactos que tiene un proyecto en la base de datos.
         /// </summary>
         /// <param name="TheProyecto">objeto de tipo Proyecto para agregar en bd la lista que este tiene</param>
         /// <returns>true si fue agregado</returns>
 
-        public Boolean AddProyectoEmpleado(Proyecto TheProyecto)
+        public Boolean AddProyectoContacto(Proyecto TheProyecto)
         {
             {
-                parameters = new List<Parametro>();
-                theConnection = new BDConexion();
+                  parameters = new List<Parametro>();
+                  theConnection = new BDConexion();
 
-                for (int i = 0; i < TheProyecto.get_empleados().Count(); i++)
-                {
-                    try
-                    {
-                        //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                        //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-
-
-
-                        theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Idproyecto.ToString(), false);
-                        parameters.Add(theParam);
-
-                        theParam = new Parametro(ResourceProyecto.ParamPCIdContacto, SqlDbType.Int, TheProyecto.get_empleados()[i].emp_num_ficha.ToString(), false);
-                        parameters.Add(theParam);
+                  for (int i = 0; i < TheProyecto.get__contactos().Count(); i++)
+                  {
+                      try
+                      {
+                          //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                          //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
 
 
-                        //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
-                        List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceProyecto.AddProyectoEmpleado, parameters);
+                          theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Idproyecto.ToString(), false);
+                          parameters.Add(theParam);
 
-                    }
-                    catch (Exception ex)
-                    {
-                        throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                    }
+                          theParam = new Parametro(ResourceProyecto.ParamPCIdContacto, SqlDbType.Int, TheProyecto.get__contactos()[i].IdContacto.ToString(), false);
+                          parameters.Add(theParam);
 
-                }
+
+
+                          //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
+                          List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceProyecto.AddNewProyectoContacto, parameters);
+
+                      }
+                      catch (Exception ex)
+                      {
+                          throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                      }
+
+                  }
                 return true;
             }
         }
 
         /// <summary>
-        /// Metodo para consultar los empleados de un proyecto específico que pertenecen a la base de datos.
+        /// Metodo para consultar los contactos de un proyecto específico que pertenecen a la base de datos.
         /// Recibe un parametros:  TheProyecto que es un objeto de tipo proyecto.
         ///                     
         /// </summary>
@@ -71,12 +73,12 @@ namespace DatosTangerine.M7
         /// Recibe un parametros:  TheProyecto que es un objeto de tipo proyecto.
         /// </summary>
         /// <returns>Lista de contactos </returns>
-        public void ContactProyectoEmpleado(Proyecto TheProyecto)
+        public void ContactProyectoContacto(Proyecto TheProyecto)
         {
             parameters = new List<Parametro>();
             theConnection = new BDConexion();
 
-            List<Empleado> listEmpleado = new List<Empleado>();
+            List<Contacto> listContacto = new List<Contacto>();
 
             try
             {
@@ -86,22 +88,22 @@ namespace DatosTangerine.M7
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceProyecto.ContactProyectoEmpleado, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceProyecto.ContactProyectoContacto, parameters);
 
                 //Guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
 
-                    int PEIdEmpleado = int.Parse(row[ResourceProyecto.PEIdEmpleado].ToString());
+                    int PCIdContacto = int.Parse(row[ResourceProyecto.PCIdContacto].ToString());
 
                     //creo un objeto de tipo Contacto con los datos del id y lo guardo
-                    Empleado contacto = new Empleado();
-                    contacto.emp_num_ficha = PEIdEmpleado;
-                    listEmpleado.Add(contacto);
+                    Contacto contacto = new Contacto();
+                    contacto.IdContacto = PCIdContacto;
+                    listContacto.Add(contacto);
 
                 }
 
-                TheProyecto.set_empleados(listEmpleado);
+                TheProyecto.set_contactos(listContacto);
             }
             catch (Exception ex)
             {
@@ -116,7 +118,7 @@ namespace DatosTangerine.M7
         /// </summary>
         /// <param name="TheProyecto">objeto de tipo Proyecto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public Boolean DeleteProyectoEmpleado(Proyecto TheProyecto)
+        public Boolean DeleteProyectoContacto(Proyecto TheProyecto)
         {
             parameters = new List<Parametro>();
             theConnection = new BDConexion();
@@ -129,7 +131,7 @@ namespace DatosTangerine.M7
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M7_EliminarProyecto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceProyecto.DeleteProyectoEmpleado, parameters);
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceProyecto.DeleteProyectoContacto, parameters);
 
             }
             catch (Exception ex)

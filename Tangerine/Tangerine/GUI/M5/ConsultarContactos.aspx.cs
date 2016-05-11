@@ -40,19 +40,31 @@ namespace Tangerine.GUI.M5
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
-            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
-            //int idComp = int.Parse(Request.QueryString["idComp"]);
             int typeComp = 2;
             int idComp = 3;
             LogicaM5 prueba = new LogicaM5();
+            //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
+            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            //int idComp = int.Parse(Request.QueryString["idComp"]);
+            try
+            {
+                int idCont = int.Parse(Request.QueryString["idCont"]);
+                if (idCont != null)
+                {
+                    prueba.DeleteContact(idCont);
+                }
+            }
+            catch
+            {
+ 
+            } 
 
             if (!IsPostBack)
             {
                 //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
                 //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
                 //prueba.fillTable(1,1);
-                List<Contacto> listContact = prueba.fillTable(typeComp, idComp);
+                List<Contacto> listContact = prueba.GetContacts(typeComp, idComp);
 
                 try
                 {
@@ -68,7 +80,7 @@ namespace Tangerine.GUI.M5
                         //Acciones de cada contacto
                         contact += ResourceGUIM5.AbrirTD;
                         contact += ResourceGUIM5.ButtonModContact + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
-                            + "<a style='margin-left:5px;' class='btn btn-danger glyphicon glyphicon-remove-circle'></a>";
+                            + ResourceGUIM5.BotonEliminar + theContact.IdContacto + ResourceGUIM5.BotonCerrar ;
                         contact += ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.CerrarTR;
                     }

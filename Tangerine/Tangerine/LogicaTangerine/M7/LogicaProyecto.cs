@@ -18,7 +18,7 @@ namespace LogicaTangerine.M7
         /// <param name="P"></param>
         /// <param name="Empleados"></param>
         /// <param name="Contacto"></param>
-        public Boolean agregarProyecto(Proyecto P, int[] Empleados, int[] Contacto)
+        public Boolean agregarProyecto(Proyecto P)
         {
             if (_Pro.AddProyecto(P))
             {

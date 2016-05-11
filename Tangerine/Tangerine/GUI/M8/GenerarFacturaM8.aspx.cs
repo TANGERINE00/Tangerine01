@@ -13,5 +13,10 @@ namespace Tangerine.GUI.M8
         {
 
         }
+
+        protected void buttomGenerarFactura_Click(object sender, EventArgs e)
+        {
+            int i;
+        }
     }
 }
