@@ -38,9 +38,9 @@ namespace LogicaTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// Metodo para agregar una contacto nuevo a la empresa.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <param name="contact">objeto de tipo Contacto para agregar a la empresa</param>
         /// <returns>true si fue agregado</returns>
         public bool AddNewContact(Contacto contact)
         {
@@ -55,15 +55,15 @@ namespace LogicaTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// Metodo para eliminar un contacto de una empresa.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
-        /// <returns>true si fue agregado</returns>
-        public bool DeleteContact(int idCont)
+        /// <param name="idContact">entero que representa el id del contacto a eliminar de la empresa</param>
+        /// <returns>true si fue eliminado</returns>
+        public bool DeleteContact(int idContact)
         {
             try
             {
-                return BDContacto.DeleteContact(idCont);
+                return BDContacto.DeleteContact(idContact);
             }
             catch (Exception ex)
             {
@@ -72,10 +72,10 @@ namespace LogicaTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// Metodo para consultar toda la informacion de un contacto.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="idContact">entero que representa el id del contacto a consultar</param>
+        /// <returns>Objeto de tipo contacto con los valores</returns>
         public Contacto SearchContact(int idContact)
         {
             try
