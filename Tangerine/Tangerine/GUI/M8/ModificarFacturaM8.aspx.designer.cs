@@ -13,12 +13,12 @@ namespace Tangerine.GUI.M8 {
     public partial class ModificarFacturaM8 {
         
         /// <summary>
-        /// buttomGenerar_M8 control.
+        /// buttomModificar_M8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttomGenerar_M8;
+        protected global::System.Web.UI.WebControls.Button buttomModificar_M8;
     }
 }
