@@ -80,7 +80,7 @@ namespace PruebasUnitarias.M7
             theProyect = null;
             theProyect2 = null;
             Contactos = null;
-            Empleados = null
+            Empleados = null;
         }
         #endregion
 
@@ -96,6 +96,38 @@ namespace PruebasUnitarias.M7
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
+
+
+        /// <summary>
+        /// Prueba que permite verificar el modificar el proyecto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestChangeProyecto()
+        {
+            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+            answer = theProyect2.ChangeProyecto(theProyect);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.IsTrue(answer);
+        }
+
+
+        /// <summary>
+        /// Prueba que permite verificar el consultar de un proyecto en la base de datos
+        /// </summary>
+
+        [Test]
+        public void TestContactProyecto()
+        {
+            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+            theProyect = theProyect2.ContactProyecto(1);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.Equals(1,theProyect.Idproyecto);
+        }
+
+
+
 
         /// <summary>
         /// Prueba el metodo de insertar en la N:M Proyecto-Empleado
