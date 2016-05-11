@@ -13,13 +13,13 @@ namespace Tangerine.GUI.M7 {
     public partial class WebForm1 {
         
         /// <summary>
-        /// buttomGenerar_M8 control.
+        /// buttomGenerar_M7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttomGenerar_M8;
+        protected global::System.Web.UI.WebControls.Button buttomGenerar_M7;
         
         /// <summary>
         /// Button1 control.
