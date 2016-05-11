@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace DominioTangerine
         private int _idresponsable;
         private int _idgerente;
         private List<Empleado> _empleados;
-        private List<Contacto> _contacto;
+        private List <Contacto> _contacto;
 
         #endregion
 
@@ -55,7 +56,7 @@ namespace DominioTangerine
 
         public Proyecto(int id_proyecto,string nombre,string codigo,DateTime fecha_inicio,DateTime fecha_estimada_fin,
                  double costo,string descripcion, string realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
-                 int id_gerente, List<Contacto> contacto, List<Empleado> empleado )
+                 int id_gerente )
         {
             this._idproyecto = id_proyecto;
             this._nombre = nombre;
@@ -70,8 +71,7 @@ namespace DominioTangerine
             this._idpropuesta = id_propuesta;
             this._idresponsable = id_responsable;
             this._idgerente = id_gerente;
-            this._contacto = contacto;
-            this._empleados = empleado;
+           
         }
 
 
@@ -231,6 +231,11 @@ namespace DominioTangerine
             set { _idgerente = value; }
         }
 
+      //  public List<Empleado> _empleados
+        //{
+          //  get { return _empleados;  }
+            //set {_empleados = value; }
+         //}
         #endregion
     }
 }
