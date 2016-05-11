@@ -117,36 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Codigo" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en la conexion con la BD</comment>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="Codigo_Error_Desconexion" xml:space="preserve">
-    <value>TGE_00_003</value>
-    <comment>Codigo de error al cerrar sesion de la BD</comment>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="Codigo_Parametro_Errado" xml:space="preserve">
-    <value>TGE_00_02</value>
-    <comment>Codigo de error cuando se coloca un parametro errado</comment>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="Mensaje" xml:space="preserve">
-    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
-    <comment>Mensaje al dar error en la conexion con la BD</comment>
+  <data name="BotonEliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-trash" href="EliminarLead.aspx?idclp=</value>
   </data>
-  <data name="Mensaje_Error_Desconexion" xml:space="preserve">
-    <value>Error al Desconectarse de la Base de Datos</value>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-search"  href="ConsultarLead.aspx?idclp=</value>
   </data>
-  <data name="Mensaje_Generico_Error" xml:space="preserve">
-    <value>No se pudo completar la operacion</value>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="ModificarLead.aspx?idclp=</value>
   </data>
-  <data name="Mensaje_Parametro_Errado" xml:space="preserve">
-    <value>Error en un parametro del stored procedure</value>
-    <comment>Mensajer de error cuando se coloca un parametro errado</comment>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="NombreBD" xml:space="preserve">
-    <value>fenix2-lt.BDTangerine.dbo</value>
+  <data name="CerrarTR" xml:space="preserve">
+    <value />
   </data>
-  <data name="StringDeConexion" xml:space="preserve">
-    <value>Data Source=FENIX2-LT;Initial Catalog=BDTangerine;Integrated Security=True</value>
+  <data name="idclp" xml:space="preserve">
+    <value>idclp</value>
   </data>
 </root>

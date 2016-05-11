@@ -1115,6 +1115,11 @@
     <Compile Include="GUI\M3\Promover.aspx.designer.cs">
       <DependentUpon>Promover.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M3\ResourceInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1440,6 +1445,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M5\ResourceGUIM5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM5.Designer.cs</LastGenOutput>

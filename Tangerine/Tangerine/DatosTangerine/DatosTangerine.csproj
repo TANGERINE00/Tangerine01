@@ -42,6 +42,12 @@
     <Compile Include="BDConexion.cs" />
     <Compile Include="M2\BDUsuario.cs" />
     <Compile Include="M2\ResourceUser.Designer.cs" />
+    <Compile Include="M3\BDClientePotencial.cs" />
+    <Compile Include="M3\ResourceClientePotencial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceClientePotencial.resx</DependentUpon>
+    </Compile>
     <Compile Include="M4\BDCompania.cs" />
     <Compile Include="M4\ResourceCompany.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -99,13 +105,16 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="M10\" />
     <Folder Include="M1\" />
-    <Folder Include="M3\" />
     <Folder Include="M6\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="M2\ResourceUser.resx" />
+    <EmbeddedResource Include="M3\ResourceClientePotencial.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceClientePotencial.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M4\ResourceCompany.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceCompany.Designer.cs</LastGenOutput>

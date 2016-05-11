@@ -117,36 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Codigo" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en la conexion con la BD</comment>
+  <data name="Aborrado" xml:space="preserve">
+    <value>@borrado</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="Codigo_Error_Desconexion" xml:space="preserve">
-    <value>TGE_00_003</value>
-    <comment>Codigo de error al cerrar sesion de la BD</comment>
+  <data name="AemailClientePotencial" xml:space="preserve">
+    <value>@emailClientePotencial</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="Codigo_Parametro_Errado" xml:space="preserve">
-    <value>TGE_00_02</value>
-    <comment>Codigo de error cuando se coloca un parametro errado</comment>
+  <data name="AnombreClientePotencial" xml:space="preserve">
+    <value>@nombreClientePotencial</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="Mensaje" xml:space="preserve">
-    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
-    <comment>Mensaje al dar error en la conexion con la BD</comment>
+  <data name="AnumLlamadas" xml:space="preserve">
+    <value>@num_llamadas</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="Mensaje_Error_Desconexion" xml:space="preserve">
-    <value>Error al Desconectarse de la Base de Datos</value>
+  <data name="AnumVisitas" xml:space="preserve">
+    <value>@num_visitas</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="Mensaje_Generico_Error" xml:space="preserve">
-    <value>No se pudo completar la operacion</value>
+  <data name="Apotencial" xml:space="preserve">
+    <value>@potencial</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="Mensaje_Parametro_Errado" xml:space="preserve">
-    <value>Error en un parametro del stored procedure</value>
-    <comment>Mensajer de error cuando se coloca un parametro errado</comment>
+  <data name="ApresupuestoAnualInversion" xml:space="preserve">
+    <value>@presupuestoAnualInversion</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="NombreBD" xml:space="preserve">
-    <value>fenix2-lt.BDTangerine.dbo</value>
+  <data name="ArifClientePotencial" xml:space="preserve">
+    <value>@rifClientePotencial</value>
+    <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
-  <data name="StringDeConexion" xml:space="preserve">
-    <value>Data Source=FENIX2-LT;Initial Catalog=BDTangerine;Integrated Security=True</value>
+  <data name="emailClientePotencial" xml:space="preserve">
+    <value>emailClientePotencial</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="idClientePotencial" xml:space="preserve">
+    <value>idClientePotencial</value>
+    <comment>variable usada en la rutina</comment>
+  </data>
+  <data name="nombreClientePotencial" xml:space="preserve">
+    <value>nombreClientePotencial</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="numeroLlamadas" xml:space="preserve">
+    <value>numeroLlamadas</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="numeroVisitas" xml:space="preserve">
+    <value>numeroVisitas</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="potencial" xml:space="preserve">
+    <value>potencial</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="presupuestoAnual_inversion" xml:space="preserve">
+    <value>presupuestoAnual_inversion</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="rifClientePotencial" xml:space="preserve">
+    <value>rifClientePotencial</value>
+    <comment>variable usada en las rutinas</comment>
+  </data>
+  <data name="SP_agregar_clientePotencial" xml:space="preserve">
+    <value>agregar_clientePotencial</value>
+    <comment>Nombre del store Procedure para agregar</comment>
+  </data>
+  <data name="SP_eliminarClientePotencial" xml:space="preserve">
+    <value>eliminar_cliente_potencial</value>
+    <comment>Nombre del store Procedure para eliminar</comment>
+  </data>
+  <data name="SP_listarClientePotencial" xml:space="preserve">
+    <value>listar_cliente_potencial</value>
+    <comment>Nombre del store Procedure para listar</comment>
   </data>
 </root>

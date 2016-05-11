@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarLeads.aspx.cs" Inherits="Tangerine.GUI.M3.ModificarLead" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarLeads.aspx.cs" Inherits="Tangerine.GUI.M3.AgregarLeads" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -22,6 +22,7 @@
 
 
 </div>
+<form role="form" name="agregar_lead" id="agregar_lead" method="post"   runat="server">
 
  <div class="container">
 	<div class="row" style="margin-top: 5%">
@@ -30,13 +31,13 @@
 				<div class="icon-addon addon-lg">
 					
 					<input runat="server" type="text" placeholder="Nombre" class="form-control" id="nombre" name ="nombre">                    
-					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="apellido" name ="apellido" >                   
-					<input style="margin-top:5%" runat="server" type="text" placeholder="Direccion" class="form-control" id="departamento" name ="departamento" >                  
-					<input style="margin-top:5%" runat="server" type="text" placeholder="Telefono" class="form-control" id="cargo" name ="cargo" >
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="telefono" name="telefono">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto anual de Inversion" class="form-control" id="telefono2" name="telefono2">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Nombre del contacto" class="form-control" id="Correo" name="Correo">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Telefono del contacto" class="form-control" id="Correo2" name="Correo2">
+					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="rif" name ="rif" >                   
+					<input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="email" name ="email" >                  
+					<input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto" class="form-control" id="presupuesto" name ="presupuesto" >
+                    <input style="margin-top:5%" runat="server" type="text" placeholder="LLamadas" class="form-control" id="llamadas" name="llamadas">
+                    <input style="margin-top:5%" runat="server" type="text" placeholder="Visitas" class="form-control" id="Visitas" name="telefono2">
+                    <input style="margin-top:5%" runat="server" type="text" placeholder="Potencial" class="form-control" id="Potencial" name="Correo">
+                    <input style="margin-top:5%" runat="server" type="text" placeholder="Borrado" class="form-control" id="Borrado" name="Correo2">
 
          		
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
@@ -141,9 +142,9 @@
                     
     
 
-                     <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
-
-                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+                   <!--  <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
+                    -->
+                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>
 				</div>	
 			
             </div>
@@ -151,4 +152,5 @@
         
 	</div>
 </div>
+</form>
 </asp:Content>
