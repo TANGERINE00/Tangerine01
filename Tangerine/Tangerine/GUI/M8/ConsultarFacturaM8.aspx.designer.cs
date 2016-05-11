@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M6 {
+namespace Tangerine.GUI.M8 {
     
     
-    public partial class EjemploM6 {
+    public partial class ConsultarFacturaM8 {
     }
 }

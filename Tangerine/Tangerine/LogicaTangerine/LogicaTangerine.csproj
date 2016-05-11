@@ -62,16 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="M10\" />
     <Folder Include="M1\" />
     <Folder Include="M2\" />
-    <Folder Include="M3\" />
-    <Folder Include="M4\" />
     <Folder Include="M6\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M10\LogicaM10.cs" />
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M3\LogicaM3.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />

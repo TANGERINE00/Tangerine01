@@ -121,4 +121,74 @@
     <value>M6_AgregarPropuesta</value>
     <comment>agrega una propuesta a la BD</comment>
   </data>
+  <data name="ParamAcuerdoProp" xml:space="preserve">
+    <value>@acuerdo</value>
+    <comment>Atributo que identifica el acuerdo de pago de la propuesta</comment>
+  </data>
+  <data name="ParamCantidaProp" xml:space="preserve">
+    <value>@cantEntr</value>
+    <comment>Atributo que identifica la cantidad de pago de la propuesta</comment>
+  </data>
+  <data name="ParamCostoProp" xml:space="preserve">
+    <value>@costo</value>
+    <comment>Atributo que identifica el costo de la propuesta</comment>
+  </data>
+  <data name="ParamDescriProp" xml:space="preserve">
+    <value>@descripcion</value>
+    <comment>Atributo que identifica la descripcion de la propuesta</comment>
+  </data>
+  <data name="ParamDuracProp" xml:space="preserve">
+    <value>@duracion</value>
+    <comment>Atributo que identifica la duracion de la propuesta</comment>
+  </data>
+  <data name="ParamEstatusProp" xml:space="preserve">
+    <value>@estatus</value>
+    <comment>Atributo que identifica el estatus que se encuentra  la propuesta</comment>
+  </data>
+  <data name="ParamFechaFProp" xml:space="preserve">
+    <value>@fechaf</value>
+    <comment>Atributo que identifica la fecha estimada de finalizacion de la propuesta</comment>
+  </data>
+  <data name="ParamFechaIProp" xml:space="preserve">
+    <value>@fechai</value>
+    <comment>Atributo que identifica la fecha estimada de inicio de la propuesta</comment>
+  </data>
+  <data name="ParamMonedaProp" xml:space="preserve">
+    <value>@moneda</value>
+    <comment>Atributo que identifica la moneda de pago de la propuesta</comment>
+  </data>
+  <data name="ParamNombreProp" xml:space="preserve">
+    <value>@nombre</value>
+    <comment>Atributo que identifica el nombre de la propuesta</comment>
+  </data>
+  <data name="PropAcuerdo" xml:space="preserve">
+    <value>prop_acuerdo_pago</value>
+  </data>
+  <data name="PropCantidad" xml:space="preserve">
+    <value>prop_cant_entregas</value>
+  </data>
+  <data name="PropCosto" xml:space="preserve">
+    <value>prop_costo</value>
+  </data>
+  <data name="PropDescripcion" xml:space="preserve">
+    <value>prop_descripcion</value>
+  </data>
+  <data name="PropDuracion" xml:space="preserve">
+    <value>prop_duracion</value>
+  </data>
+  <data name="PropEstatus" xml:space="preserve">
+    <value>prop_estatus</value>
+  </data>
+  <data name="PropFechaFin" xml:space="preserve">
+    <value>prop_fecha_fin</value>
+  </data>
+  <data name="PropFechaIni" xml:space="preserve">
+    <value>prop_fecha_inicio</value>
+  </data>
+  <data name="PropMoneda" xml:space="preserve">
+    <value>prop_moneda</value>
+  </data>
+  <data name="PropNombre" xml:space="preserve">
+    <value>prop_nombre</value>
+  </data>
 </root>

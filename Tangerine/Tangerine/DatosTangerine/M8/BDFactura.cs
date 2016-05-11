@@ -21,11 +21,11 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public Boolean AddFactura(Facturacion theFactura)
+        public static bool AddFactura(Facturacion theFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
-            
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -70,10 +70,11 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public Boolean DeleteFactura(Facturacion theFactura)
+        public static bool DeleteFactura(Facturacion theFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -99,10 +100,11 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para modificar en bd</param>
         /// <returns>true si fue modificado</returns>
-        public Boolean ChangeFactura(Facturacion theFactura)
+        public static bool ChangeFactura(Facturacion theFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -152,10 +154,11 @@ namespace DatosTangerine.M8
         /// Recibe un parametros: idFactura que es el id de la Factura a consultar.
         /// </summary>
         /// <returns>Lista de facturas </returns>
-        public Facturacion ContactFactura(int idFactura)
+        public static Facturacion ContactFactura(int idFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             Facturacion theFactura = new Facturacion();
 
@@ -195,10 +198,11 @@ namespace DatosTangerine.M8
             return theFactura;
         }
 
-        public List<Facturacion> ContactFacturas()
+        public static List<Facturacion> ContactFacturas()
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             List<Facturacion> listFactura = new List<Facturacion>();
 

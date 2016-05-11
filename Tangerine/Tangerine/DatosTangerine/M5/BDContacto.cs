@@ -70,7 +70,7 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public static Boolean DeleteContact(Contacto theContact)
+        public static Boolean DeleteContact(int IdContacto)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -80,7 +80,7 @@ namespace DatosTangerine.M5
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, theContact.IdContacto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
