@@ -117,8 +117,8 @@ namespace DominioTangerine
 
         }
 
-        public Propuesta(string codigoP, string nombre, string descripcion, string duracion, string acuerdopago, string estatus,
-                         string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, List<Compania> listaCompania,
+        public Propuesta(String codigoP, String nombre, String descripcion, String duracion, String acuerdopago, String estatus,
+                         String moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, List<Compania> listaCompania,
                          List<Requerimiento> listaRequerimiento)
         {
             this._codigoP = codigoP;

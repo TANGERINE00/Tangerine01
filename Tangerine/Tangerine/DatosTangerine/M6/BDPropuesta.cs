@@ -54,13 +54,13 @@ namespace DatosTangerine.M6
                 parametro = new Parametro(RecursosPropuesta.ParamCantidaProp, SqlDbType.Int, laPropuesta.Entrega.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro(RecursosPropuesta., SqlDbType.Int, laPropuesta.Costo.ToString(), false);
+                parametro = new Parametro(RecursosPropuesta.ParamCostoProp, SqlDbType.Int, laPropuesta.Costo.ToString(), false);
                 parametros.Add(parametro);
 
 
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AddNewContact, parametros);
+               // List<Resultado> results = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AddNewContact, parametros);
 
             }
             catch (Exception ex)
