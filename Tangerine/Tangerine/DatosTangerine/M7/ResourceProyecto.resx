@@ -120,17 +120,26 @@
   <data name="AddNewProyecto" xml:space="preserve">
     <value>M7_AgregarProyecto</value>
   </data>
+  <data name="AddNewProyectoContacto" xml:space="preserve">
+    <value>M7_AgregarProyectoContacto</value>
+  </data>
   <data name="ChangeProyecto" xml:space="preserve">
     <value>M7_ModificarProyecto</value>
   </data>
   <data name="ContactProyecto" xml:space="preserve">
     <value>M7_ConsultarProyecto</value>
   </data>
+  <data name="ContactProyectoContacto" xml:space="preserve">
+    <value>M7_ConsultarProyectoContacto</value>
+  </data>
   <data name="ContactProyectos" xml:space="preserve">
     <value>M7_ConsultarProyectos</value>
   </data>
   <data name="DeleteProyecto" xml:space="preserve">
     <value>M7_EliminarProyecto</value>
+  </data>
+  <data name="DeleteProyectoContacto" xml:space="preserve">
+    <value>M7_EliminarProyectoContacto</value>
   </data>
   <data name="ParamCodigo" xml:space="preserve">
     <value>@Codigo</value>
@@ -165,11 +174,17 @@
   <data name="ParamNombre" xml:space="preserve">
     <value>@Nombre</value>
   </data>
+  <data name="ParamPCIdContacto" xml:space="preserve">
+    <value>@PCIdContacto</value>
+  </data>
   <data name="ParamRazon" xml:space="preserve">
     <value>@Razon</value>
   </data>
   <data name="ParamRealizacion" xml:space="preserve">
     <value>@Realizacion</value>
+  </data>
+  <data name="PCIdContacto" xml:space="preserve">
+    <value>fk_con_id</value>
   </data>
   <data name="ProyCodigo" xml:space="preserve">
     <value>proy_codigo</value>

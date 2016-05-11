@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="M7\BDEmpleadoProyecto.cs" />
     <Compile Include="M7\BDProyecto.cs" />
+    <Compile Include="M7\BDProyectoContanto.cs" />
     <Compile Include="M7\ResourceProyecto.Designer.cs">
       <DependentUpon>ResourceProyecto.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -113,8 +114,6 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="M10\" />
     <Folder Include="M1\" />
-    <Folder Include="M6\" />
-    <Folder Include="M3\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
