@@ -133,7 +133,7 @@ namespace DatosTangerine {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=FENIX2-LT;Initial Catalog=BDTangerine;Integrated Security=True.
+        ///   Looks up a localized string similar to Data Source=TOTE\SQLEXPRESS;Initial Catalog=BDTangerine;Integrated Security=True.
         /// </summary>
         internal static string StringDeConexion {
             get {

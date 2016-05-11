@@ -32,7 +32,7 @@ namespace LogicaTangerine.M8
             }
         }
 
-        public bool AddNewContact(Facturacion factura)
+        public bool AddNewFactura(Facturacion factura)
         {
             try
             {

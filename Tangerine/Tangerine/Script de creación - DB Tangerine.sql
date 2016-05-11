@@ -748,7 +748,7 @@ GO
 ---- StoredProcedure Agregar ProyectoContacto ----
 CREATE PROCEDURE M7_AgregarProyectoContacto
     @PCIdContacto int,
-    @IdProyecto int,
+    @IdProyecto int
 AS
 	BEGIN
     	INSERT INTO CONTACTO_PROYECTO(	fk_con_id,fk_proy_id) 
@@ -776,14 +776,15 @@ AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;  
  end;
+GO
 
 ---- StoredProcedure Agregar ProyectoEmpleado ----
 CREATE PROCEDURE M7_AgregarProyectoEmpleado
 	@PEIdEmpleado int,
-    @IdProyecto int,
+    @IdProyecto int
 AS
 	BEGIN
-    	INSERT INTO CONTACTO_PROYECTO(	fk_emp_num_ficha,fk_proy_id) 
+    	INSERT INTO EMPLEADO_PROYECTO(	fk_emp_num_ficha,fk_proy_id) 
 		VALUES(@PEIdEmpleado,@IdProyecto);  
  	END;
 GO
@@ -792,11 +793,10 @@ GO
 ---- StoredProcedure Consultar ProyectoEmpleado ----
 CREATE PROCEDURE M7_ConsultarProyectoEmpleado
 	@IdProyecto int
-
 AS
 	BEGIN
 		SELECT fk_emp_num_ficha AS fk_emp_num_ficha
-		FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;
+		FROM EMPLEADO_PROYECTO WHERE fk_proy_id = @IdProyecto;
 	END
 GO
 
@@ -810,6 +810,7 @@ AS
      WHERE fk_proy_id = @IdProyecto;  
  end;
 GO
+
 
 
 -----------------------------------

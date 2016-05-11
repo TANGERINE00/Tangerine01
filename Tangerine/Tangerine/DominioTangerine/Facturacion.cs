@@ -108,22 +108,41 @@ namespace DominioTangerine
         /// <summary>
         /// Constructor con los atributos.
         /// </summary>
-        /// <param name="idNumeroFactura"></param>
         /// <param name="fecha"></param>
-        /// <param name="idCliente"></param>
+        /// <param name="idCompania"></param>
         /// <param name="idProyecto"></param>
         /// <param name="descripcion"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
         public Facturacion()
         {
-            _idNumeroFactura = 0;
-            _fecha = DateTime.Now;
-            _idCompania = 0;
-            _idProyecto = 0;
-            _descripcion = String.Empty;
-            _monto = 0;
-            _montoRestante = 0;
+            this._fecha = DateTime.Now;
+            this._idCompania = 0;
+            this._idProyecto = 0;
+            this._descripcion = String.Empty;
+            this._monto = 0;
+            this._montoRestante = 0;
+        }
+
+
+
+        /// <summary>
+        /// Constructor con los atributos.
+        /// </summary>
+        /// <param name="fecha"></param>
+        /// <param name="idCompania"></param>
+        /// <param name="idProyecto"></param>
+        /// <param name="descripcion"></param>
+        /// <param name="monto"></param>
+        /// <param name="montoRestante"></param>
+        public Facturacion( DateTime fecha, double monto, double montoRestante, String descripcion, int idProyecto, int idCompania)
+        {
+            this._fecha = fecha;
+            this._idCompania = idCompania;
+            this._idProyecto = idProyecto;
+            this._descripcion = descripcion;
+            this._monto = monto;
+            this._montoRestante = montoRestante;
         }
 
 
@@ -132,12 +151,12 @@ namespace DominioTangerine
         /// </summary>
         /// <param name="idNumeroFactura"></param>
         /// <param name="fecha"></param>
-        /// <param name="idCliente"></param>
+        /// <param name="idCompania"></param>
         /// <param name="idProyecto"></param>
         /// <param name="descripcion"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( int idNumeroFactura, DateTime fecha,   double monto, double montoRestante, String descripcion, int idProyecto, int idCompania )
+        public Facturacion( int idNumeroFactura, DateTime fecha, double monto, double montoRestante, String descripcion, int idProyecto, int idCompania )
         {
             this._idNumeroFactura = idNumeroFactura;
             this._fecha = fecha;
