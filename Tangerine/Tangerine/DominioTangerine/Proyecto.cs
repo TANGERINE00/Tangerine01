@@ -251,6 +251,28 @@ namespace DominioTangerine
             _empleados =  e;
             
         }
+
+        /// <summary>
+        /// Metodo que devuelve la lista de empleados
+        /// </summary>
+        /// <returns>Lista de empleados</returns>
+        public List<Contacto> get__contactos()
+        {
+            return _contacto;
+
+        }
+
+        /// <summary>
+        /// medtodo que define la lista de contacto
+        /// </summary>
+        /// <param name="e"></param>
+        public void set_contactos(List<Contacto> e)
+        {
+
+            _contacto = e;
+
+        }
+        
         
         #endregion
     }
