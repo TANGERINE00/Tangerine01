@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Propuesta
+    public class Propuesta
     {
         #region Atributos
 
@@ -27,13 +27,13 @@ namespace DominioTangerine
         /// <attr name="_listaRequerimiento">lista de requerimientos asociados a un proyecto</attr> 
         /// </summary>
 
-        private string _codigoP;
-        private string _nombre;
-        private string _descripcion;
-        private string _duracion;
-        private string _acuerdopago;
-        private string _estatus;
-        private string _moneda;
+        private String _codigoP;
+        private String _nombre;
+        private String _descripcion;
+        private String _duracion;
+        private String _acuerdopago;
+        private String _estatus;
+        private String _moneda;
         private int _entrega;
         private DateTime _feincio;
         private DateTime _fefinal;
@@ -46,37 +46,37 @@ namespace DominioTangerine
 
         #region Propiedades
 
-        public string CodigoP
+        public String CodigoP
         {
             get { return _codigoP; }
             set { _codigoP = value; }
         }
-        public string Nombre
+        public String Nombre
         {
             get { return _nombre; }
             set { _nombre = value; }
         }
-        public string Descripcion
+        public String Descripcion
         {
             get { return _descripcion; }
             set { _descripcion = value; }
         }
-        public string Duracion
+        public String Duracion
         {
             get { return _duracion; }
             set { _duracion = value; }
         }
-        public string Acuerdopago
+        public String Acuerdopago
         {
             get { return _acuerdopago; }
             set { _acuerdopago = value; }
         }
-        public string Estatus
+        public String Estatus
         {
             get { return _estatus; }
             set { _estatus = value; }
         }
-        public string Moneda
+        public String Moneda
         {
             get { return _moneda; }
             set { _moneda = value; }
