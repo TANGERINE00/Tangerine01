@@ -123,79 +123,25 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
-  <data name="alertaError" xml:space="preserve">
-    <value>alert alert-danger alert-dismissible</value>
-  </data>
-  <data name="alertaHtml" xml:space="preserve">
-    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
-  </data>
-  <data name="alertaHtmlFinal" xml:space="preserve">
-    <value>&lt;/div&gt;</value>
-  </data>
-  <data name="alertaSuccess" xml:space="preserve">
-    <value>alert alert-success alert-dismissible</value>
-  </data>
-  <data name="alertClase" xml:space="preserve">
-    <value>class</value>
-  </data>
-  <data name="alertClase1" xml:space="preserve">
-    <value>class</value>
-  </data>
-  <data name="alertRole" xml:space="preserve">
-    <value>role</value>
-  </data>
-  <data name="alertRole1" xml:space="preserve">
-    <value>role</value>
-  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonCerrar1" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
+  <data name="BotonEliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-trash" href="EliminarLead.aspx?idclp=</value>
   </data>
-  <data name="BotonEliminarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-search"  href="ConsultarLead.aspx?idclp=</value>
   </data>
-  <data name="ButtonModContact" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarContacto.aspx?idCont=</value>
-  </data>
-  <data name="CerrarSolicitud" xml:space="preserve">
-    <value>"&gt;Solicitar&lt;/a&gt;</value>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="ModificarLead.aspx?idclp=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CerrarTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+    <value />
   </data>
-  <data name="Coma" xml:space="preserve">
-    <value>, </value>
-  </data>
-  <data name="interfazRCi" xml:space="preserve">
-    <value>8.3</value>
-  </data>
-  <data name="interfazRH" xml:space="preserve">
-    <value>8.1</value>
-  </data>
-  <data name="Mod8" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="nombre" xml:space="preserve">
-    <value>nombre</value>
-  </data>
-  <data name="ReturnRestCinta" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true</value>
-  </data>
-  <data name="tipoAlerta" xml:space="preserve">
-    <value>alert</value>
-  </data>
-  <data name="FinalAgregarContacto" xml:space="preserve">
-    <value>"&gt;Nuevo Contacto&lt;/a&gt;</value>
-  </data>
-  <data name="ParametroIdComp" xml:space="preserve">
-    <value>&amp;idComp=</value>
-  </data>
-  <data name="VentanaAgregarContacto" xml:space="preserve">
-    <value>&lt;a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
+  <data name="idclp" xml:space="preserve">
+    <value>idclp</value>
   </data>
 </root>

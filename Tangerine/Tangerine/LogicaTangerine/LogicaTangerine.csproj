@@ -65,13 +65,21 @@
     <Folder Include="M10\" />
     <Folder Include="M1\" />
     <Folder Include="M2\" />
+<<<<<<< HEAD
     <Folder Include="M3\" />
+=======
+    <Folder Include="M4\" />
+>>>>>>> 80803e48d97052512959bbf5c43abda35cf2a179
     <Folder Include="M6\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="M4\LogicaM4.cs" />
+=======
+    <Compile Include="M3\LogicaM3.cs" />
+>>>>>>> 80803e48d97052512959bbf5c43abda35cf2a179
     <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="M8\LogicaM8.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

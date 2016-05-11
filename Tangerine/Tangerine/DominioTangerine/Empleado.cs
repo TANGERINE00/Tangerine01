@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    class Empleado
+  public   class Empleado
     {
 
        private int emp_num_ficha ;

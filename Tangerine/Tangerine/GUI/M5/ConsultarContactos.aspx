@@ -43,7 +43,7 @@
              
            </tbody>
         </table>
-              <a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx">Nuevo Contacto</a>
+              <asp:Literal runat="server" ID="nuevocontacto"></asp:Literal>
        </div>
       </form>
     </div>

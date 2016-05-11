@@ -4,6 +4,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DominioTangerine
 {
@@ -23,7 +24,7 @@ namespace DominioTangerine
         private int _idpropuesta;
         private int _idresponsable;
         private int _idgerente;
-        private List<Empleado> _empleados;
+        private  List<Empleado> _empleados ;
         private List <Contacto> _contacto;
 
         #endregion
@@ -231,11 +232,48 @@ namespace DominioTangerine
             set { _idgerente = value; }
         }
 
-      //  public List<Empleado> _empleados
-        //{
-          //  get { return _empleados;  }
-            //set {_empleados = value; }
-         //}
+       /// <summary>
+       /// Metodo que devuelve la lista de empleados
+       /// </summary>
+       /// <returns>Lista de empleados</returns>
+        public List<Empleado> get_empleados ()
+        {
+             return _empleados;  
+         
+        }
+
+        /// <summary>
+        /// medtodo que define la lista de empleado
+        /// </summary>
+        /// <param name="e"></param>
+        public void set_empleados ( List<Empleado> e ) {
+           
+            _empleados =  e;
+            
+        }
+
+        /// <summary>
+        /// Metodo que devuelve la lista de empleados
+        /// </summary>
+        /// <returns>Lista de empleados</returns>
+        public List<Contacto> get__contactos()
+        {
+            return _contacto;
+
+        }
+
+        /// <summary>
+        /// medtodo que define la lista de contacto
+        /// </summary>
+        /// <param name="e"></param>
+        public void set_contactos(List<Contacto> e)
+        {
+
+            _contacto = e;
+
+        }
+        
+        
         #endregion
     }
 }

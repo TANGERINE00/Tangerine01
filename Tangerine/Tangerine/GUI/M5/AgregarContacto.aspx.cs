@@ -22,10 +22,9 @@ namespace Tangerine.GUI.M5
         int idComp;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //typeComp = int.Parse(Request.QueryString["typeComp"]);
-            //idComp = int.Parse(Request.QueryString["idComp"]);
-            typeComp = 1;
-            idComp = 1;
+            typeComp = int.Parse(Request.QueryString["typeComp"]);
+            idComp = int.Parse(Request.QueryString["idComp"]);
+
             if (!IsPostBack)
             {
                 
