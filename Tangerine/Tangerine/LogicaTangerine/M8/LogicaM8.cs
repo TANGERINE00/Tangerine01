@@ -13,7 +13,7 @@ namespace LogicaTangerine.M8
         public Facturacion theFactura;
         List<Facturacion> answer;
         bool answer2;
-        BDFactura bdFactura = new BDFactura();
+        
 
         public void init()
         {
@@ -24,7 +24,7 @@ namespace LogicaTangerine.M8
         {
             try
             {
-                return bdFactura.ContactFacturas();
+                return BDFactura.ContactFacturas();
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace LogicaTangerine.M8
         {
             try
             {
-                return bdFactura.AddFactura(factura);
+                return BDFactura.AddFactura(factura);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace LogicaTangerine.M8
         {
             try
             {
-                return bdFactura.ContactFactura(idFactura);
+                return BDFactura.ContactFactura(idFactura);
             }
             catch (Exception ex)
             {
