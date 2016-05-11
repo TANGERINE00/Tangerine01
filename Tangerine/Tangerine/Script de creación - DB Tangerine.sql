@@ -346,15 +346,15 @@ create table FACTURA
 	fk_proy_id int not null,
 	fk_compania_id int not null,
 
-	constraint fk_cliente_id foreign key
-	(
-		fk_compania_id
-	)references COMPANIA(com_id)
-
 	constraint pk_fac primary key
 	(
 		fac_id
 	),
+	
+	constraint fk_compania_fac foreign key
+	(
+		fk_compania_id
+	)references COMPANIA(com_id),
 
 	constraint fk_proy_fac foreign key
 	(
@@ -479,7 +479,7 @@ CREATE PROCEDURE M4_AgregarCompania
 	@rif [varchar](20),
 	@email [varchar](50),
 	@acronimo [varchar](20),
-	@fecha_registro date
+	@fecha_registro date,
 	@status int,
 	@id_lugar int,
 	@id_cliente_potencial int
@@ -522,7 +522,7 @@ CREATE PROCEDURE M4_ModificarCompania
 	@rif [varchar](20),
 	@email [varchar](50),
 	@acronimo [varchar](20),
-	@fecha_registro date
+	@fecha_registro date,
 	@status int,
 	@id_lugar int,
 	@id_cliente_potencial int
@@ -682,7 +682,7 @@ CREATE PROCEDURE M7_AgregarProyecto
     @Razon [varchar](500),
     @IdPropuesta int,
     @IdResponsable int,
-    @IdGerente int,
+    @IdGerente int
 
 AS
 	BEGIN
@@ -720,7 +720,7 @@ GO
 
 ---- StoredProcedure Modificar Proyecto ----
 CREATE PROCEDURE M7_ModificarProyecto
-	@IdProyecto int
+	@IdProyecto int,
 	@Nombre [varchar](500),
     @Codigo [varchar](500),
     @FechaInicio date,
@@ -732,7 +732,7 @@ CREATE PROCEDURE M7_ModificarProyecto
     @Razon [varchar](500),
     @IdPropuesta int,
     @IdResponsable int,
-    @IdGerente int,
+    @IdGerente int
 
 AS
  	BEGIN
