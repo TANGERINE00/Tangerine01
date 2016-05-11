@@ -162,8 +162,6 @@
               <ul class="treeview-menu">
                 <li><a href="../M4/AgregarCompania.aspx"><i class="fa fa-circle-o"></i>Registrar Compañía</a></li>
                 <li><a href="../M4/ConsultarCompania.aspx"><i class="fa fa-circle-o"></i>Consultar Compañía</a></li>
-                <li><a href="../M4/ModificarCompania.aspx"><i class="fa fa-circle-o"></i>Modificar Compañía</a></li>
-                <li><a href="../M4/HabilitarCompania.aspx"><i class="fa fa-circle-o"></i>Habilitar/Deshabilitar</a></li>
               </ul>                
             </li>
             <li class="treeview">
