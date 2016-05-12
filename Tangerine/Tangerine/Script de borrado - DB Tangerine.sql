@@ -52,6 +52,7 @@ drop procedure M8_AgregarFactura;
 drop procedure M8_ConsultarFactura;
 drop procedure M8_ConsultarFacturas;
 drop procedure M8_ModificarFactura;
+
 drop procedure M10_AgregarEmpleado;
 
 
