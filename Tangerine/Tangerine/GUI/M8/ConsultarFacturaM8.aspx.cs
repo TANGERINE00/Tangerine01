@@ -8,6 +8,7 @@ using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M8;
 using LogicaTangerine.M4;
+using LogicaTangerine.M7;
 
 namespace Tangerine.GUI.M8
 {
@@ -39,7 +40,6 @@ namespace Tangerine.GUI.M8
                 //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
                 //prueba.fillTable(1,1);
                 List<Facturacion> listFactura = prueba.getFacturas();
-                int idCompania = 0;
 
                 try
                 {
@@ -48,10 +48,8 @@ namespace Tangerine.GUI.M8
                         factura += ResourceGUIM8.OpenTR;
 
                         factura += ResourceGUIM8.OpenTD + theFactura.idFactura.ToString() + ResourceGUIM8.CloseTD;
-                        //string nombreCompania = prueba.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                        /*idCompania = theFactura.idCompaniaFactura;
-                        Compania theCompania = pruebaM4.SearchCompany(idCompania);*/
-                        //factura += ResourceGUIM8.OpenTD + theCompania.NombreCompania.ToString() +ResourceGUIM8.CloseTD;
+                        Compania compania = prueba.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
+                        factura += ResourceGUIM8.OpenTD + compania.NombreCompania.ToString() +ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + " " + ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + theFactura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + theFactura.fechaFactura.ToString() + ResourceGUIM8.CloseTD;
@@ -65,7 +63,6 @@ namespace Tangerine.GUI.M8
                     }   */
                         factura += ResourceGUIM8.OpenTD + " " + ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + ResourceGUIM8.CloseTD;
-                        //factura += ResourceGUIM8.OpenTD + "040401234" + ResourceGUIM8.CloseTD;
                         
                    
                         //Acciones de cada compania

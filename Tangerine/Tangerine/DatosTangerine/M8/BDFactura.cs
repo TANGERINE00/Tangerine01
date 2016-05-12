@@ -193,7 +193,6 @@ namespace DatosTangerine.M8
 
             return theFactura;
         }
-
         public static List<Facturacion> ContactFacturas()
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -208,7 +207,7 @@ namespace DatosTangerine.M8
 
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ContactFactura, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ConsultFacturas, parameters);
 
                 //Guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -216,8 +215,8 @@ namespace DatosTangerine.M8
 
                     int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                     DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
-                    int facMonto = int.Parse(row[ResourceFactura.FacMontoTotal].ToString());
-                    int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                    double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
@@ -238,6 +237,54 @@ namespace DatosTangerine.M8
 
             return listFactura;
         }
+
+        public static Compania ConsultCompany(int idCompany)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            Compania theCompany = new Compania();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceFactura.ParamId, SqlDbType.Int, idCompany.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ConsultCompany, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+
+                String comName = row[ResourceFactura.ComNameCompany].ToString();
+                int comId = 0;
+                String comRif = null;
+                String comEmail = null;
+                String comAcronym = null;
+                DateTime comRegisterDate = DateTime.Now;
+                int comStatus = 0;
+                int comIdPlace = 0;
+                int comIdPotentialClient = 0;
+
+                //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comAcronym,
+                                                    comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+
+                theCompany = theCompanybeta;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return theCompany;
+        }
+
 
     }
 }

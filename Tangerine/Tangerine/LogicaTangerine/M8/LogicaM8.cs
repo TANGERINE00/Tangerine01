@@ -68,16 +68,18 @@ namespace LogicaTangerine.M8
             }
         }
 
-       /* public String SearchCompaniaFactura(int idCompania)
+        public Compania SearchCompaniaFactura(int idCompania)
         {
             try
             {
-                return BDFactura.ContactFacturaCompania(idCompania);
+                return BDFactura.ConsultCompany(idCompania);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
+
+
     }
 }

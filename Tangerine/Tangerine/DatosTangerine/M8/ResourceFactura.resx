@@ -123,6 +123,15 @@
   <data name="ChangeFactura" xml:space="preserve">
     <value>M8_ModificarFactura</value>
   </data>
+  <data name="ComNameCompany" xml:space="preserve">
+    <value>com_nombre</value>
+  </data>
+  <data name="ConsultCompany" xml:space="preserve">
+    <value>M4_ConsultarCompania</value>
+  </data>
+  <data name="ConsultFacturas" xml:space="preserve">
+    <value>M8_ConsultarFacturas</value>
+  </data>
   <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
   </data>
@@ -156,6 +165,9 @@
   <data name="ParamFecha_Emision" xml:space="preserve">
     <value>@fecha_emision</value>
   </data>
+  <data name="ParamId" xml:space="preserve">
+    <value>@id</value>
+  </data>
   <data name="ParamIdCompania" xml:space="preserve">
     <value>@id_compania</value>
   </data>
@@ -170,5 +182,11 @@
   </data>
   <data name="ParamMonto_Total" xml:space="preserve">
     <value>@monto_total</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value />
   </data>
 </root>
