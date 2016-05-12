@@ -853,9 +853,18 @@ CREATE PROCEDURE M8_ConsultarFacturas
 
 AS
 	BEGIN
-		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
 			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA;
+	END
+GO
+
+CREATE PROCEDURE M8_ConsultarNombreCompaniaFacturas
+ @id int
+AS
+	BEGIN
+		SELECT com_nombre as com_nombre
+		FROM COMPANIA WHERE com_id = @id;
 	END
 GO
 

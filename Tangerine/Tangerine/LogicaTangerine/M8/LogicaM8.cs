@@ -20,7 +20,7 @@ namespace LogicaTangerine.M8
 
         }
 
-        public List<Facturacion> fillTable()
+        public List<Facturacion> getFacturas()
         {
             try
             {
@@ -55,5 +55,17 @@ namespace LogicaTangerine.M8
                 throw ex;
             }
         }
+
+       /* public String SearchCompaniaFactura(int idCompania)
+        {
+            try
+            {
+                return BDFactura.ContactFacturaCompania(idCompania);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }*/
     }
 }
