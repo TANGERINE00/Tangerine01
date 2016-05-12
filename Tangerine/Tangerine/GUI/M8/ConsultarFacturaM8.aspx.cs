@@ -50,7 +50,8 @@ namespace Tangerine.GUI.M8
                         factura += ResourceGUIM8.OpenTD + theFactura.idFactura.ToString() + ResourceGUIM8.CloseTD;
                         Compania compania = prueba.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
                         factura += ResourceGUIM8.OpenTD + compania.NombreCompania.ToString() +ResourceGUIM8.CloseTD;
-                        factura += ResourceGUIM8.OpenTD + " " + ResourceGUIM8.CloseTD;
+                        Proyecto proyecto = prueba.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
+                        factura += ResourceGUIM8.OpenTD + proyecto.Nombre.ToString() + ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + theFactura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + theFactura.fechaFactura.ToString() + ResourceGUIM8.CloseTD;
                         /* if (theFactura.StatusCompania.Equals(1))
@@ -62,7 +63,7 @@ namespace Tangerine.GUI.M8
                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.inhabilitado + ResourceGUIM8.CloseTD;
                     }   */
                         factura += ResourceGUIM8.OpenTD + " " + ResourceGUIM8.CloseTD;
-                        factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + ResourceGUIM8.CloseTD;
+                        factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " $" + ResourceGUIM8.CloseTD;
                         
                    
                         //Acciones de cada compania

@@ -135,6 +135,9 @@
   <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
   </data>
+  <data name="ContactProyecto" xml:space="preserve">
+    <value>M7_ConsultarProyecto</value>
+  </data>
   <data name="DeleteFactura" xml:space="preserve">
     <value>M8_EliminarFactura</value>
   </data>
@@ -177,11 +180,17 @@
   <data name="ParamIdProyecto" xml:space="preserve">
     <value>@id_proyecto</value>
   </data>
+  <data name="ParamId_Proyecto" xml:space="preserve">
+    <value>@IdProyecto</value>
+  </data>
   <data name="ParamMonto_Restante" xml:space="preserve">
     <value>@monto_restante</value>
   </data>
   <data name="ParamMonto_Total" xml:space="preserve">
     <value>@monto_total</value>
+  </data>
+  <data name="ProyNombre" xml:space="preserve">
+    <value>proy_nombre</value>
   </data>
   <data name="String" xml:space="preserve">
     <value />
