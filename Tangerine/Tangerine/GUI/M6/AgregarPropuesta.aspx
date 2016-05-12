@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.AgregarPropuesta" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -69,7 +69,7 @@
                     <div class="form-group">
 
                         <label>Cliente (compañía contratante)</label>
-                        <select class="form-control">
+                        <select class="form-control" id="cliente" runat="server">
                             <option>Trascend</option>
                             <option>Tebca</option>
                             <option>Trascend</option>
@@ -82,7 +82,7 @@
 
                     <div class="form-group">
                         <label>Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"> </textarea>
                     </div>
 
                     <div class="form-group">
@@ -92,7 +92,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-11 col-md-11 col-lg-11">
-                                        <input type="text" placeholder="Requerimiento" class="form-control" id="precondicion_0" name="precondicion_0" />
+                                        <input runat="server" type="text" placeholder="Requerimiento" class="form-control" id="precondicion_0" name="precondicion_0" />
                                     </div>
                                     <div class="col-sm-1 col-md-1 col-lg-1">
                                         <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarPrecondicion()"></button>
@@ -109,11 +109,11 @@
                         <div class="input-group input-group-sm">
                             <div class="input-group-btn">
                                 <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
                                         Duracion
                     <span class="fa fa-caret-down"></span>
                                     </button>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" id="duracion" name="duracion" runat="server">
                                         <li><a href="#">Meses</a></li>
                                         <li><a href="#">Dias</a></li>
                                         <li><a href="#">Horas</a></li>
@@ -135,7 +135,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -147,7 +147,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text">
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -163,7 +163,7 @@
                         <div class="input-group input-group-sm">
                             <div class="input-group-btn">
                                 <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="Moneda" runat="server">
                                         Moneda
                                         <span class="fa fa-caret-down"></span>
                                     </button>
@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="costo" runat="server">
                             <%--<span class="input-group-addon">.00</span>--%>
                         </div>
 
@@ -189,7 +189,7 @@
 
                     <div class="form-group">
                         <label>Forma de Pago</label>
-                        <select class="form-control">
+                        <select class="form-control" id="fpago" runat="server">
                             <option></option>
                             <option data-icon="fa-heart">Deposito</option>
                             <option>Transferencia</option>
@@ -201,7 +201,7 @@
 
                     <div class="form-group">
                         <label>Estatus</label>
-                        <select class="form-control">
+                        <select class="form-control" id="estatus" runat="server">
                             <option></option>
                             <option>Aprobado</option>
                             <option>Pendiente</option>
@@ -219,14 +219,12 @@
             </form>
 
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Agregar</button>
-              </div>
+                <asp:Button ID="btnagregar" class="btn btn-primary"
+                    OnClick="btnagregar_Click" type="submit" runat="server"
+                    Text="Agregar"></asp:Button>
+            </div>
 
         </div>
-
-      <%--  <div class="box-foot">
-            <button type="submit" class="btn btn-primary">Agregar</button>
-        </div>--%>
     </div>
 
 
