@@ -44,6 +44,10 @@
                             <input runat="server" type="text" class="form-control" id="InputEmail1" name="InputEmail1" placeholder="Introduzca correo electrónico de la compañía">
                         </div>
                         <div class="form-group" runat="server">
+                            <label for="InputTelefono">Teléfono</label>
+                            <input runat="server" type="text" class="form-control" id="InputTelefono1" name="InputTelefono1" placeholder="Introduzca teléfono de la compañía">
+                        </div>
+                        <div class="form-group" runat="server">
                             <label for="InputFechaRegistro">Fecha de Registro</label>
                             <input runat="server" type="text" class="form-control" id="InputFechaRegistro1" name="InputFechaRegistro1" placeholder="dd/mm/aaaa">
                         </div>
