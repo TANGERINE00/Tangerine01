@@ -52,9 +52,6 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, theCompany.IdClientePotencial.ToString(), false);
-                parameters.Add(theParam);
-
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.AddNewCompany, parameters);
 
@@ -95,6 +92,9 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
@@ -105,9 +105,6 @@ namespace DatosTangerine.M4
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, theCompany.IdClientePotencial.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -153,15 +150,15 @@ namespace DatosTangerine.M4
                 String comName = row[ResourceCompany.ComNameCompany].ToString();
                 String comRif = row[ResourceCompany.ComRifCompany].ToString();
                 String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
+                String comTelephone = row[ResourceCompany.ComTelephoneCompany].ToString();
                 String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
                 DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
                 int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
                 int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
-                int comIdPotentialClient = int.Parse(row[ResourceCompany.ComIdPotentialClient].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comAcronym, 
-                                                    comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym, 
+                                                    comRegisterDate, comStatus, comIdPlace);
 
                 theCompany = theCompanybeta;
             
@@ -201,23 +198,14 @@ namespace DatosTangerine.M4
                     String comName = row[ResourceCompany.ComNameCompany].ToString();
                     String comRif = row[ResourceCompany.ComRifCompany].ToString();
                     String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
+                    String comTelephone = row[ResourceCompany.ComTelephoneCompany].ToString();
                     String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
                     DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
                     int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
                     int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
-                    int comIdPotentialClient = 0;
 
-                    //BORRAR DESPUES DE HACER PRUEBAS.
-                    bool prueba = row[ResourceCompany.ComIdPotentialClient].ToString().Equals("");
-                    String pruebatexto = row[ResourceCompany.ComIdPotentialClient].ToString();
-
-                    if (row[ResourceCompany.ComIdPotentialClient].ToString().Equals("") != true)
-                    {
-                        comIdPotentialClient = int.Parse(row[ResourceCompany.ComIdPotentialClient].ToString());
-                    }
-
-                    Compania theCompany = new Compania(comId, comName, comRif, comEmail, comAcronym,
-                                                         comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+                    Compania theCompany = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+                                                         comRegisterDate, comStatus, comIdPlace);
                     listCompany.Add(theCompany);
                 }
 
