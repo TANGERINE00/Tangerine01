@@ -892,3 +892,33 @@ GO*/
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
+
+-----------------------------------
+--------Stored Procedure M10--------
+-----------------------------------
+---- StoredProcedure Agregar Empleado ----
+CREATE PROCEDURE M10_AgregarEmpleado
+	@activo [varchar](50),
+	@cedula int,
+	@direccion [varchar](50),
+	@email [varchar](50),
+	@estado [varchar](50),
+	@fecha_nac date,
+	@ficha int,
+	@genero [varchar](50),
+	@nivel_estudio [varchar](50),
+	@pais [varchar](50),
+	@p_apellido [varchar](50),
+	@p_nombre [varchar](50),
+	@s_apellido [varchar](50),
+	@s_nombre [varchar](50)
+AS
+ BEGIN
+    INSERT INTO EMPLEADO(emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_cedula, emp_activo,
+						emp_email, emp_fecha_nac, emp_genero, emp_nivel_estudio,fk_lug_dir_id) 
+	VALUES(@p_nombre,	@s_nombre, @p_apellido, @s_apellido, @cedula, @activo, @email, @fecha_nac, @genero, @nivel_estudio,1);  
+ end;
+GO
+-----------------------------------
+------Fin Stored Procedure M10-----
+-----------------------------------

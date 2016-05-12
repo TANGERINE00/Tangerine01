@@ -61,7 +61,7 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M10_Agregar_Empleado.
+        ///   Busca una cadena traducida similar a M10_AgregarEmpleado.
         /// </summary>
         internal static string AddNewEmpleado {
             get {

@@ -14,16 +14,14 @@
     <li class="active"> Crear Empleado</li>
 </asp:Content>
 
-<asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="container-fluid">
       
       <div class="box box-default">
         <!--<div class="panel-heading">Nuevo empleado</div>-->
         <div class="container-fluid">
           <br>
-          <form role="form">
-            
-            
+          <form role="form" name="agregar_empleado" id="agregar_empleado" method="post"   runat="server">
             <!-- <button type="submit" class="btn btn-default">Enviar</button>-->
             
             <div class="row">
@@ -38,12 +36,12 @@
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="# de ficha de empleado" disabled>
+                  <input type="text" runat="server" id="ficha" class="form-control" placeholder="# de ficha de empleado" disabled>
                 </div>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="País">
+                  <input type="text" runat="server" id="pais" class="form-control" placeholder="País">
                 </div>
               </div>
             </div>
@@ -51,12 +49,12 @@
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Cédula">
+                  <input type="text" runat="server" id="cedula" class="form-control" placeholder="Cédula">
                 </div>
               </div> 
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Estado">
+                  <input type="text" runat="server" id="estado" class="form-control" placeholder="Estado">
                 </div>
               </div>
             </div>
@@ -64,20 +62,12 @@
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Nombres">
+                  <input type="text" runat="server" id="primer_nombre" class="form-control" placeholder="Primer Nombre">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Direccion">
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-12 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Apellidos">
+                  <input type="text" runat="server" id="direccion" class="form-control" placeholder="Direccion">
                 </div>
               </div>
             </div>
@@ -85,7 +75,47 @@
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
-                  <input type="text" class="form-control"placeholder="Sexo">
+                  <input type="text" runat="server" id="segundo_nombre" class="form-control" placeholder="Segundo Nombre">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" runat="server" id="primer_apellido" class="form-control" placeholder="Primer Apellido">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" runat="server" id="segundo_apellido" class="form-control" placeholder="Segundo Apellido">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" runat="server" id="genero" class="form-control" placeholder="Genero">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" runat="server" id="nivel_estudio" class="form-control" placeholder="Nivel de Estudio">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <input type="text" runat="server" id="email" class="form-control" placeholder="Correo Electrónico">
                 </div>
               </div>
             </div>
@@ -93,7 +123,7 @@
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="input-group date" data-provide="datepicker">
-                  <input type="text" class="form-control" placeholder="Fecha de nacimiento">
+                  <input type="text" runat="server" id="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento">
                   <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
                   </div>
@@ -101,7 +131,8 @@
               </div>
             </div><br>
             <!--  seccion de datos -->
-            <button class="btn btn-default" type="submit">Aceptar</button><br><br>
+            <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-default" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+            
           </form>
         </div>
       </div>

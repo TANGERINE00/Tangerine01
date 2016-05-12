@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddNewEmpleado" xml:space="preserve">
-    <value>M10_Agregar_Empleado</value>
+    <value>M10_AgregarEmpleado</value>
   </data>
   <data name="ParamActivo" xml:space="preserve">
     <value>@activo</value>
