@@ -177,7 +177,7 @@ namespace PruebasUnitarias.M7
      {
          theProyect.set_empleados(null);
          _Emp.ContactProyectoEmpleado(theProyect);
-         Assert.Equals(0, theProyect.get_empleados()[0].emp_num_ficha);
+         Assert.Equals(1, theProyect.get_empleados()[0].emp_num_ficha);
          Assert.Equals(2, theProyect.get_empleados()[1].emp_num_ficha);
          Assert.Equals(3, theProyect.get_empleados()[2].emp_num_ficha);
          Assert.Equals(4, theProyect.get_empleados()[3].emp_num_ficha);
