@@ -34,8 +34,8 @@ namespace DatosTangerine.M7
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Idproyecto.ToString(), false);
-                parameters.Add(theParam);
+                //theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Idproyecto.ToString(), false);
+                //parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar, TheProyecto.Nombre.ToString(), false);
@@ -65,10 +65,13 @@ namespace DatosTangerine.M7
                 theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, TheProyecto.Razon.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, TheProyecto.Acuerdopago.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, TheProyecto.Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdResponsable, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, TheProyecto.Idgerente.ToString(), false);
@@ -163,10 +166,13 @@ namespace DatosTangerine.M7
                 theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, TheProyecto.Razon.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, TheProyecto.Acuerdopago.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, TheProyecto.Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdResponsable, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, TheProyecto.Idgerente.ToString(), false);
@@ -221,19 +227,20 @@ namespace DatosTangerine.M7
                 string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
                 DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
                 DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                int proyCosto = int.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
                 String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
                 String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
                 String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
                 String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
+                String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
                 int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
-                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
+                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                 //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
                 Proyecto theProyectobeta = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
                                                     proyCosto, proyDescripcion, proyRealizacion, proyEstatus, proyRazon,
-                                                    proyIdPropuesta, proyIdResponsable, proyIdGerente);
+                                                    proyAcuerdoPago,proyIdPropuesta, proyIdResponsable, proyIdGerente);
 
                 TheProyecto = theProyectobeta;
 
@@ -271,19 +278,20 @@ namespace DatosTangerine.M7
                     string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
                     DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
                     DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                    int proyCosto = int.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                    double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
                     String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
                     String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
                     String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
                     String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
+                    String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
                     int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                    int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
-                    int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
+                    int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                    int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                     //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
                     Proyecto theProyecto = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
                                                         proyCosto, proyDescripcion, proyRealizacion, proyEstatus, proyRazon,
-                                                        proyIdPropuesta, proyIdResponsable, proyIdGerente);
+                                                        proyAcuerdoPago,proyIdPropuesta, proyIdResponsable, proyIdGerente);
 
                     listProyecto.Add(theProyecto);
 
