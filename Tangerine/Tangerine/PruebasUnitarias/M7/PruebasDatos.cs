@@ -21,6 +21,7 @@ namespace PruebasUnitarias.M7
         private BDProyectoContanto _Cont;
         private List<Empleado> Empleados;
         private List<Contacto> Contactos;
+        private List<Proyecto> proyectos;
         public bool answer;
         public DateTime fechainicio = new DateTime(2015,2,10);
         public DateTime fechaestimadafin = new DateTime(2015, 2, 10);
@@ -34,8 +35,8 @@ namespace PruebasUnitarias.M7
             _Emp = new BDEmpleadoProyecto();
             _Cont = new BDProyectoContanto();
             theProyect = new Proyecto();
-            theProyect.Idproyecto = 2;
-            theProyect.Nombre = "El proyecto";
+            theProyect.Idproyecto = 1;
+            theProyect.Nombre = "El proyecto nuevo";
             theProyect.Codigo = "elpr1234";
             theProyect.Fechainicio = fechainicio;
             theProyect.Fechaestimadafin = fechaestimadafin;
@@ -123,9 +124,29 @@ namespace PruebasUnitarias.M7
             theProyect = theProyect2.ContactProyecto(1);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
-            Assert.Equals(1,theProyect.Idproyecto);
+            Assert.IsTrue(1 == theProyect.Idproyecto);
         }
 
+
+
+        /// <summary>
+        /// Prueba que permite verificar el consultar de todos los proyectos en la base de datos
+        /// </summary>
+
+        [Test]
+        public void TestContactProyectos()
+        {
+            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+            proyectos = theProyect2.ContactProyectos();
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            for (int i = 0; i < proyectos.Count(); i++)
+            {
+
+                Assert.IsTrue(i+1 == proyectos[i].Idproyecto);
+            }
+                
+        }
 
 
 
@@ -177,10 +198,10 @@ namespace PruebasUnitarias.M7
      {
          theProyect.set_empleados(null);
          _Emp.ContactProyectoEmpleado(theProyect);
-         Assert.Equals(1, theProyect.get_empleados()[0].emp_num_ficha);
-         Assert.Equals(2, theProyect.get_empleados()[1].emp_num_ficha);
-         Assert.Equals(3, theProyect.get_empleados()[2].emp_num_ficha);
-         Assert.Equals(4, theProyect.get_empleados()[3].emp_num_ficha);
+         Assert.IsTrue(1 == theProyect.get_empleados()[0].emp_num_ficha);
+         Assert.IsTrue(2 == theProyect.get_empleados()[1].emp_num_ficha);
+         Assert.IsTrue(3 == theProyect.get_empleados()[2].emp_num_ficha);
+         Assert.IsTrue(4 == theProyect.get_empleados()[3].emp_num_ficha);
 
 
      }
@@ -192,10 +213,10 @@ namespace PruebasUnitarias.M7
      {
          theProyect.set_contactos(null);
          _Cont.ContactProyectoContacto(theProyect);
-         Assert.Equals(0, theProyect.get__contactos()[0].IdContacto);
-         Assert.Equals(1, theProyect.get__contactos()[1].IdContacto);
-         Assert.Equals(2, theProyect.get__contactos()[2].IdContacto);
-         Assert.Equals(3, theProyect.get__contactos()[3].IdContacto);
+         Assert.IsTrue( 1 == theProyect.get__contactos()[0].IdContacto );
+         Assert.IsTrue( 2 == theProyect.get__contactos()[1].IdContacto );
+         Assert.IsTrue( 3 == theProyect.get__contactos()[2].IdContacto );
+         Assert.IsTrue( 4 == theProyect.get__contactos()[3].IdContacto );
 
 
      }

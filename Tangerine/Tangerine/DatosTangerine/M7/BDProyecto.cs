@@ -221,7 +221,7 @@ namespace DatosTangerine.M7
                 string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
                 DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
                 DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                int proyCosto = int.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
                 String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
                 String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
                 String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
@@ -271,7 +271,7 @@ namespace DatosTangerine.M7
                     string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
                     DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
                     DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                    int proyCosto = int.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                    double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
                     String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
                     String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
                     String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
