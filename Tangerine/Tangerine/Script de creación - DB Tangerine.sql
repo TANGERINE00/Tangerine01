@@ -774,9 +774,44 @@ CREATE PROCEDURE M7_EliminarProyectoContacto
 	@IdProyecto int
 AS
  BEGIN
-    DELETE FROM CONTACTO_PROYECTO WHERE fk_proy_id = @id_proyecto;  
+    DELETE FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;  
+ end;
+
+---- StoredProcedure Agregar ProyectoEmpleado ----
+CREATE PROCEDURE M7_AgregarProyectoEmpleado
+	@PEIdEmpleado int,
+    @IdProyecto int,
+AS
+	BEGIN
+    	INSERT INTO CONTACTO_PROYECTO(	fk_emp_num_ficha,fk_proy_id) 
+		VALUES(@PEIdEmpleado,@IdProyecto);  
+ 	END;
+GO
+
+
+---- StoredProcedure Consultar ProyectoEmpleado ----
+CREATE PROCEDURE M7_ConsultarProyectoEmpleado
+	@IdProyecto int
+
+AS
+	BEGIN
+		SELECT fk_emp_num_ficha AS fk_emp_num_ficha
+		FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;
+	END
+GO
+
+
+---- StoredProcedure Eliminar ProyectoEmpleado ----
+CREATE PROCEDURE M7_EliminarProyectoEmpleado
+	@IdProyecto int
+AS
+ BEGIN
+    DELETE FROM EMPLEADO_PROYECTO 
+     WHERE fk_proy_id = @IdProyecto;  
  end;
 GO
+
+
 -----------------------------------
 ------Fin Stored Procedure M7------
 -----------------------------------
