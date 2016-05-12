@@ -34,7 +34,7 @@ namespace PruebasUnitarias.M7
             _Emp = new BDEmpleadoProyecto();
             _Cont = new BDProyectoContanto();
             theProyect = new Proyecto();
-            theProyect.Idproyecto = 8;
+            theProyect.Idproyecto = 2;
             theProyect.Nombre = "El proyecto";
             theProyect.Codigo = "elpr1234";
             theProyect.Fechainicio = fechainicio;
@@ -60,9 +60,9 @@ namespace PruebasUnitarias.M7
             theProyect.set_empleados(Empleados);
 
             Contactos = new List<Contacto>();
-            for ( int i = 0 ; i < 6 ; i++ )
+            for ( int i = 1 ; i < 7 ; i++ )
             {
-                Contacto a = new Contacto();
+                Contacto a = new Contacto(i, "Istvan", "Bokor", "Ventas", "Gerente", "asd@asd.com", "7654321", 1, 1);
                 a.IdContacto = i;
                 Contactos.Add(a);
 
