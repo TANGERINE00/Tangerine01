@@ -26,13 +26,14 @@ namespace DatosTangerine.M7
         public Boolean AddProyectoEmpleado(Proyecto TheProyecto)
         {
             {
-                parameters = new List<Parametro>();
-                theConnection = new BDConexion();
+               
 
                 for (int i = 0; i < TheProyecto.get_empleados().Count(); i++)
                 {
                     try
                     {
+                        parameters = new List<Parametro>();
+                        theConnection = new BDConexion();
                         //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                         //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 

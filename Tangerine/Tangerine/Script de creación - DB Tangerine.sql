@@ -861,7 +861,7 @@ GO
 
 ---- StoredProcedure Modificar Factura ----
 CREATE PROCEDURE M8_ModificarFactura
-	@id int,
+	@id_Factura int,
 	@fecha_emision date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
@@ -873,7 +873,7 @@ AS
  	BEGIN
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
     		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
-    	WHERE fac_id = @id;  
+    	WHERE fac_id = @id_Factura;  
  	END;
 GO
 
