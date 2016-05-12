@@ -240,4 +240,10 @@
   <data name="PEIdEmpleado" xml:space="preserve">
     <value>fk_emp_num_ficha</value>
   </data>
+  <data name="ParamAcuerdoPago" xml:space="preserve">
+    <value>@AcuerdoPago</value>
+  </data>
+  <data name="ProyAcuerdoPago" xml:space="preserve">
+    <value>proy_acuerdo_pago</value>
+  </data>
 </root>
