@@ -52,7 +52,15 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, theCompany.IdClientePotencial.ToString(), false);
+                if (theCompany.IdClientePotencial.Equals(0))
+                {
+                    theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, "NULL", false);
+                }
+                else
+                {
+                    theParam = new Parametro(ResourceCompany.ParamIdClientePotencial, SqlDbType.Int, theCompany.IdClientePotencial.ToString(), false);
+                }
+          
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
