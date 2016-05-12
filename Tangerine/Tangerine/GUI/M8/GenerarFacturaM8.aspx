@@ -28,10 +28,10 @@
                 <form role="form" runat ="server" method="post"  name="generar_factura" id="generar_factura" >
                   <div class="box-body" runat ="server">
 
-                    <div class="form-group" runat ="server">
+                    <%--<div class="form-group" runat ="server">
                       <label for="labelNumeroFactura_M8">Número Factura</label>
                       <input type="text" runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" placeholder="Número Factura"  >
-                    </div>
+                    </div>--%>
 
                     <div class="form-group" runat ="server">
                       <label for="labelFecha_M8">Fecha</label>

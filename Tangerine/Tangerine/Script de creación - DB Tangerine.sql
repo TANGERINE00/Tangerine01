@@ -681,13 +681,13 @@ CREATE PROCEDURE M7_AgregarProyecto
     @Estatus [varchar](500),
     @Razon [varchar](500),
     @IdPropuesta int,
-    @IdResponsable int,
+    @IdCompania int,
     @IdGerente int
 
 AS
 	BEGIN
     	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id) 
-		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@IdPropuesta,@IdResponsable,@IdGerente);  
+		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@IdPropuesta,@IdCompania,@IdGerente);  
  	END;
 GO
 
@@ -697,7 +697,7 @@ CREATE PROCEDURE M7_ConsultarProyecto
 
 AS
 	BEGIN
-		SELECT proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+		SELECT proy_id AS proy_id ,proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
 			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
 			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
 			fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
@@ -710,7 +710,7 @@ CREATE PROCEDURE M7_ConsultarProyectos
 
 AS
 	BEGIN
-		SELECT proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+		SELECT proy_id AS proy_id, proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
 			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
 			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
 			fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
@@ -731,7 +731,7 @@ CREATE PROCEDURE M7_ModificarProyecto
     @Estatus [varchar](500),
     @Razon [varchar](500),
     @IdPropuesta int,
-    @IdResponsable int,
+    @IdCompania int,
     @IdGerente int
 
 AS
@@ -739,7 +739,7 @@ AS
     	UPDATE PROYECTO SET proy_nombre = @Nombre, proy_codigo = @Codigo, proy_fecha_inicio = @FechaInicio,
     		proy_fecha_est_fin = @FechaEstFin, proy_costo = @Costo, proy_descripcion = @Descripcion,
     		proy_realizacion = @Realizacion, proy_estatus = @Estatus, proy_razon = @Razon,
-    		fk_propuesta_id = @IdPropuesta, fk_com_id = @IdResponsable, fk_gerente_id = @IdGerente
+    		fk_propuesta_id = @IdPropuesta, fk_com_id = @IdCompania, fk_gerente_id = @IdGerente
     	WHERE proy_id = @IdProyecto;  
  	end;
 GO
@@ -870,7 +870,7 @@ GO
 
 ---- StoredProcedure Modificar Factura ----
 CREATE PROCEDURE M8_ModificarFactura
-	@id int,
+	@id_Factura int,
 	@fecha_emision date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
@@ -882,7 +882,7 @@ AS
  	BEGIN
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
     		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
-    	WHERE fac_id = @id;  
+    	WHERE fac_id = @id_Factura;  
  	END;
 GO
 

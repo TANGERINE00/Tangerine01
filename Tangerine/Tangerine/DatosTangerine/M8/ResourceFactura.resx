@@ -121,7 +121,7 @@
     <value>M8_AgregarFactura</value>
   </data>
   <data name="ChangeFactura" xml:space="preserve">
-    <value>M8_ModificarContacto</value>
+    <value>M8_ModificarFactura</value>
   </data>
   <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
@@ -160,7 +160,7 @@
     <value>@id_compania</value>
   </data>
   <data name="ParamIdFactura" xml:space="preserve">
-    <value>@IdFactura</value>
+    <value>@id_Factura</value>
   </data>
   <data name="ParamIdProyecto" xml:space="preserve">
     <value>@id_proyecto</value>

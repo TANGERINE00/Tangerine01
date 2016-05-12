@@ -223,6 +223,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @IdCompania.
+        /// </summary>
+        internal static string ParamIdCompania {
+            get {
+                return ResourceManager.GetString("ParamIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @IdGerente.
         /// </summary>
         internal static string ParamIdGerente {
@@ -237,15 +246,6 @@ namespace DatosTangerine.M7 {
         internal static string ParamIdPropuesta {
             get {
                 return ResourceManager.GetString("ParamIdPropuesta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to @IdResponsable.
-        /// </summary>
-        internal static string ParamIdResponsable {
-            get {
-                return ResourceManager.GetString("ParamIdResponsable", resourceCulture);
             }
         }
         
@@ -367,6 +367,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fk_com_id.
+        /// </summary>
+        internal static string ProyIdCompania {
+            get {
+                return ResourceManager.GetString("ProyIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fk_gerente_id.
         /// </summary>
         internal static string ProyIdGerente {
@@ -390,15 +399,6 @@ namespace DatosTangerine.M7 {
         internal static string ProyIdProyecto {
             get {
                 return ResourceManager.GetString("ProyIdProyecto", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to fk_com_id.
-        /// </summary>
-        internal static string ProyIdResponsable {
-            get {
-                return ResourceManager.GetString("ProyIdResponsable", resourceCulture);
             }
         }
         

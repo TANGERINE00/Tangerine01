@@ -165,8 +165,8 @@
   <data name="ParamIdPropuesta" xml:space="preserve">
     <value>@IdPropuesta</value>
   </data>
-  <data name="ParamIdResponsable" xml:space="preserve">
-    <value>@IdResponsable</value>
+  <data name="ParamIdCompania" xml:space="preserve">
+    <value>@IdCompania</value>
   </data>
   <data name="ParamId_Proyecto" xml:space="preserve">
     <value>@IdProyecto</value>
@@ -213,7 +213,7 @@
   <data name="ProyIdProyecto" xml:space="preserve">
     <value>proy_id</value>
   </data>
-  <data name="ProyIdResponsable" xml:space="preserve">
+  <data name="ProyIdCompania" xml:space="preserve">
     <value>fk_com_id</value>
   </data>
   <data name="ProyNombre" xml:space="preserve">
