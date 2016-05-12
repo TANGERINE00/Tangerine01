@@ -22,7 +22,7 @@ namespace DominioTangerine
         private string _estatus;
         private string _razon;
         private int _idpropuesta;
-        private int _idresponsable;
+        private int _idcompania;
         private int _idgerente;
         private  List<Empleado> _empleados ;
         private List <Contacto> _contacto;
@@ -70,7 +70,7 @@ namespace DominioTangerine
             this._estatus = estatus;
             this._razon = razon;
             this._idpropuesta = id_propuesta;
-            this._idresponsable = id_responsable;
+            this._idcompania = id_responsable;
             this._idgerente = id_gerente;
         }
 
@@ -215,8 +215,8 @@ namespace DominioTangerine
 
         public int Idresponsable
         {
-            get { return _idresponsable; }
-            set { _idresponsable = value; }
+            get { return _idcompania; }
+            set { _idcompania = value; }
         }
 
         /// <summary>

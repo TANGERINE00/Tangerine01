@@ -681,13 +681,13 @@ CREATE PROCEDURE M7_AgregarProyecto
     @Estatus [varchar](500),
     @Razon [varchar](500),
     @IdPropuesta int,
-    @IdResponsable int,
+    @IdCompania int,
     @IdGerente int
 
 AS
 	BEGIN
     	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id) 
-		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@IdPropuesta,@IdResponsable,@IdGerente);  
+		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@IdPropuesta,@IdCompania,@IdGerente);  
  	END;
 GO
 
@@ -731,7 +731,7 @@ CREATE PROCEDURE M7_ModificarProyecto
     @Estatus [varchar](500),
     @Razon [varchar](500),
     @IdPropuesta int,
-    @IdResponsable int,
+    @IdCompania int,
     @IdGerente int
 
 AS
@@ -739,7 +739,7 @@ AS
     	UPDATE PROYECTO SET proy_nombre = @Nombre, proy_codigo = @Codigo, proy_fecha_inicio = @FechaInicio,
     		proy_fecha_est_fin = @FechaEstFin, proy_costo = @Costo, proy_descripcion = @Descripcion,
     		proy_realizacion = @Realizacion, proy_estatus = @Estatus, proy_razon = @Razon,
-    		fk_propuesta_id = @IdPropuesta, fk_com_id = @IdResponsable, fk_gerente_id = @IdGerente
+    		fk_propuesta_id = @IdPropuesta, fk_com_id = @IdCompania, fk_gerente_id = @IdGerente
     	WHERE proy_id = @IdProyecto;  
  	end;
 GO

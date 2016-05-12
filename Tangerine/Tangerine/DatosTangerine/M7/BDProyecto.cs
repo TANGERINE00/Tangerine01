@@ -68,7 +68,7 @@ namespace DatosTangerine.M7
                 theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, TheProyecto.Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdResponsable, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, TheProyecto.Idgerente.ToString(), false);
@@ -166,7 +166,7 @@ namespace DatosTangerine.M7
                 theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, TheProyecto.Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdResponsable, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, TheProyecto.Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, TheProyecto.Idgerente.ToString(), false);
@@ -227,8 +227,8 @@ namespace DatosTangerine.M7
                 String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
                 String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
                 int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
-                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
+                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                 //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
                 Proyecto theProyectobeta = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
@@ -277,8 +277,8 @@ namespace DatosTangerine.M7
                     String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
                     String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
                     int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                    int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
-                    int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdResponsable].ToString());
+                    int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                    int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                     //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
                     Proyecto theProyecto = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
