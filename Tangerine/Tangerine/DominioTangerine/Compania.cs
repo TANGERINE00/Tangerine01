@@ -93,6 +93,7 @@ namespace DominioTangerine
             statusCompania = 0;
             idLugar = 0;
             idClientePotencial = 0;
+         
         }
 
         public Compania(int inputId, string inputNombre, string inputRif, string inputEmail, string inputAcronimo,
@@ -107,6 +108,19 @@ namespace DominioTangerine
             this.statusCompania = inputStatus;
             this.idLugar = inputIdLugar;
             this.idClientePotencial = inputIdCliente;
+        }
+
+        public Compania(int inputId, string inputNombre, string inputRif, string inputEmail, string inputAcronimo,
+                        DateTime inputFechaRegistro, int inputStatus, int inputIdLugar)
+        {
+            this.idCompania = inputId;
+            this.nombreCompania = inputNombre;
+            this.rifCompania = inputRif;
+            this.emailCompania = inputEmail;
+            this.acronimoCompania = inputAcronimo;
+            this.fechaRegistroCompania = inputFechaRegistro;
+            this.statusCompania = inputStatus;
+            this.idLugar = inputIdLugar;
         }
 
         public Compania(string inputNombre, string inputRif, string inputEmail, string inputAcronimo,
