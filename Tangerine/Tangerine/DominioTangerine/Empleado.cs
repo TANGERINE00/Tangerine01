@@ -42,18 +42,32 @@ namespace DominioTangerine
                string email, string genero, DateTime fechaNacimiento, int ficha, int cedula,
                string nivelEstudio, string activo)
        {
-           emp_num_ficha = ficha;
-           emp_cedula = cedula;
-           emp_genero = genero;
-           emp_p_nombre = pNombre;
-           emp_s_nombre = sNombre;
-           emp_p_apellido = pApellido;
-           emp_s_apellido = sApellido;
-           emp_fecha_nac = fechaNacimiento;
-           emp_nivel_estudio = nivelEstudio;
-           emp_email = email;
-           emp_activo = activo;
-           fk_lug_dir_id = 1;
+           this.emp_num_ficha = ficha;
+           this.emp_cedula = cedula;
+           this.emp_genero = genero;
+           this.emp_p_nombre = pNombre;
+           this.emp_s_nombre = sNombre;
+           this.emp_p_apellido = pApellido;
+           this.emp_s_apellido = sApellido;
+           this.emp_fecha_nac = fechaNacimiento;
+           this.emp_nivel_estudio = nivelEstudio;
+           this.emp_email = email;
+           this.emp_activo = activo;
+           this.fk_lug_dir_id = 1;
+       }
+
+       public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                       int empCedula, DateTime empFecha, string empActivo, int empLugId)
+       {
+           this.emp_num_ficha = empId;
+           this.emp_cedula = empCedula;
+           this.emp_p_nombre = empPNombre;
+           this.emp_s_nombre = empSNombre;
+           this.emp_p_apellido = empPApellido;
+           this.emp_s_apellido = empSApellido;
+           this.emp_fecha_nac = empFecha;
+           this.emp_activo = empActivo;
+           this.fk_lug_dir_id = empLugId;
        }
   
   }

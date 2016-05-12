@@ -60,5 +60,58 @@ namespace DatosTangerine.M10
 
             return true;
         }
+
+        /// <summary>
+        /// Metodo para consultar todos los Contactos que pertenecen a una Empresa.
+        /// Recibe dos parametros: typeCompany que es 1 si es Compania o 2 si es Cliente Potencial (Lead)
+        ///                        idCompany que es el id de la Empresa (Compania o Lead)
+        /// </summary>
+        /// <returns>Lista de contactos de la Empresa</returns>
+        public static List<Empleado> ListarEmpleados()
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Empleado> listEmpleado = new List<Empleado>();
+
+            try
+            {
+                theConnection.Conectar();
+                //PRUEBA
+                theParam = new Parametro(ResourceEmpleado.ParamCPrueba, SqlDbType.Int, "1", false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleado, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                    //String empCargo = row[ResourceEmpleado.ConEmailContact].ToString();
+                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                    int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                                                        empCedula, empFecha, empActivo, empLugId);
+                    listEmpleado.Add(theEmpleado);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listEmpleado;
+        }
     }
 }

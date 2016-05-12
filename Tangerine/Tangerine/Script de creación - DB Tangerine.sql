@@ -919,6 +919,20 @@ AS
 	VALUES(@p_nombre,	@s_nombre, @p_apellido, @s_apellido, @cedula, @activo, @email, @fecha_nac, @genero, @nivel_estudio,1);  
  end;
 GO
+
+--Consultar empleados
+CREATE PROCEDURE M10_ConsultarEmpleado
+		@prueba INT
+AS
+	BEGIN
+		SELECT emp_num_ficha as emp_num_ficha, emp_p_nombre as emp_p_nombre,emp_s_nombre as emp_s_nombre,
+		emp_p_apellido as emp_p_apellido, emp_s_apellido as emp_s_apellido,
+		emp_cedula as emp_cedula, emp_fecha_nac as emp_fecha_nac,
+		emp_activo as emp_activo, fk_lug_dir_id as fk_lug_dir_id
+		FROM EMPLEADO;
+	END
+GO
+
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------

@@ -117,82 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddNewEmpleado" xml:space="preserve">
-    <value>M10_AgregarEmpleado</value>
+  <data name="AbrirTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
   </data>
-  <data name="ParamActivo" xml:space="preserve">
-    <value>@activo</value>
+  <data name="AbrirTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
   </data>
-  <data name="ParamCedula" xml:space="preserve">
-    <value>@cedula</value>
+  <data name="BotonModificarEmpAbrir" xml:space="preserve">
+    <value>&lt;a href="ModificarEmpleado.aspx?idEmp=</value>
   </data>
-  <data name="ParamDireccion" xml:space="preserve">
-    <value>@direccion</value>
+  <data name="BotonModificarEmpCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-default"&gt;&lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
-  <data name="ParamEmail" xml:space="preserve">
-    <value>@email</value>
+  <data name="BotonStatusEmpAbrir" xml:space="preserve">
+    <value>&lt;a href="ModificarEmpleado.aspx</value>
   </data>
-  <data name="ParamEstado" xml:space="preserve">
-    <value>@estado</value>
+  <data name="BotonStatusEmpCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove-circle"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
-  <data name="ParamFechaNac" xml:space="preserve">
-    <value>@fecha_nac</value>
+  <data name="BotonVerEmpAbrir" xml:space="preserve">
+    <value>&lt;a href="VerEmpleado.aspx?idEmp=</value>
   </data>
-  <data name="ParamFicha" xml:space="preserve">
-    <value>@ficha</value>
+  <data name="BotonVerEmpCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-primary"&gt;&lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
-  <data name="ParamGenero" xml:space="preserve">
-    <value>@genero</value>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="ParamNivelEstudio" xml:space="preserve">
-    <value>@nivel_estudio</value>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
-  <data name="ParamPais" xml:space="preserve">
-    <value>@pais</value>
+  <data name="Espacio" xml:space="preserve">
+    <value> </value>
   </data>
-  <data name="ParamPApellido" xml:space="preserve">
-    <value>@p_apellido</value>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
   </data>
-  <data name="ParamPNombre" xml:space="preserve">
-    <value>@p_nombre</value>
-  </data>
-  <data name="ParamSApellido" xml:space="preserve">
-    <value>@s_apellido</value>
-  </data>
-  <data name="ParamSNombre" xml:space="preserve">
-    <value>@s_nombre</value>
-  </data>
-  <data name="ConsultarEmpleado" xml:space="preserve">
-    <value>M10_ConsultarEmpleado</value>
-  </data>
-  <data name="EmpActivo" xml:space="preserve">
-    <value>emp_activo</value>
-  </data>
-  <data name="EmpCedula" xml:space="preserve">
-    <value>emp_cedula</value>
-  </data>
-  <data name="EmpFecha" xml:space="preserve">
-    <value>emp_fecha_nac</value>
-  </data>
-  <data name="EmpIdEmpleado" xml:space="preserve">
-    <value>emp_num_ficha</value>
-  </data>
-  <data name="EmpLugId" xml:space="preserve">
-    <value>fk_lug_dir_id</value>
-  </data>
-  <data name="EmpPApellido" xml:space="preserve">
-    <value>emp_p_apellido</value>
-  </data>
-  <data name="EmpPNombre" xml:space="preserve">
-    <value>emp_p_nombre</value>
-  </data>
-  <data name="EmpSApellido" xml:space="preserve">
-    <value>emp_s_apellido</value>
-  </data>
-  <data name="EmpSNombre" xml:space="preserve">
-    <value>emp_s_nombre</value>
-  </data>
-  <data name="ParamCPrueba" xml:space="preserve">
-    <value>@prueba</value>
+  <data name="VentanaAgregarEmpleado" xml:space="preserve">
+    <value>&lt;a href="CrearEmpleado.aspx" type="button" class="btn btn-success pull-right"&gt;&lt;span class="glyphicon glyphicon-plus"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
 </root>

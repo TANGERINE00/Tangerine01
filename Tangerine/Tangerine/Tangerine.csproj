@@ -1038,6 +1038,11 @@
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\ResourceGUIM10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM10.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\VerEmpleado.aspx.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1450,6 +1455,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\M1\ResourceGUIM10.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
