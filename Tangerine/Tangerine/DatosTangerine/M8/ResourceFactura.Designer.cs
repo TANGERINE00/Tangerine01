@@ -160,7 +160,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @Descripcion.
+        ///   Looks up a localized string similar to @descripcion.
         /// </summary>
         internal static string ParamDescripcion {
             get {
@@ -169,7 +169,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @FechaEmision.
+        ///   Looks up a localized string similar to @fecha_emision.
         /// </summary>
         internal static string ParamFecha_Emision {
             get {
@@ -178,7 +178,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @IdCompania.
+        ///   Looks up a localized string similar to @id_compania.
         /// </summary>
         internal static string ParamIdCompania {
             get {
@@ -196,7 +196,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @IdProyecto.
+        ///   Looks up a localized string similar to @id_proyecto.
         /// </summary>
         internal static string ParamIdProyecto {
             get {
@@ -205,7 +205,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @MontoRestante.
+        ///   Looks up a localized string similar to @monto_restante.
         /// </summary>
         internal static string ParamMonto_Restante {
             get {
@@ -214,7 +214,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @MontoTotal.
+        ///   Looks up a localized string similar to @monto_total.
         /// </summary>
         internal static string ParamMonto_Total {
             get {
