@@ -264,15 +264,15 @@ namespace DatosTangerine.M8
                 int comId = 0;
                 String comRif = null;
                 String comEmail = null;
+                String comTelefono = null;
                 String comAcronym = null;
                 DateTime comRegisterDate = DateTime.Now;
                 int comStatus = 0;
                 int comIdPlace = 0;
-                int comIdPotentialClient = 0;
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comAcronym,
-                                                    comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelefono, comAcronym,
+                                                    comRegisterDate, comStatus, comIdPlace);
 
                 theCompany = theCompanybeta;
 
