@@ -70,6 +70,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ConsultarFacturaM8.aspx.
+        /// </summary>
+        internal static string BotonGenerarFactura {
+            get {
+                return ResourceManager.GetString("BotonGenerarFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Habilitar&quot;  class=&quot;btn btn-success glyphicon glyphicon-ok&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonHab {
@@ -106,7 +115,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarFacturaM8.aspx?idCont=.
         /// </summary>
         internal static string BotonModif {
             get {

@@ -133,7 +133,7 @@
     <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonModif" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarFacturaM8.aspx?idCont=</value>
   </data>
   <data name="CloseBoton" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
@@ -161,5 +161,8 @@
   </data>
   <data name="OpenTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
+  </data>
+  <data name="BotonGenerarFactura" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ConsultarFacturaM8.aspx</value>
   </data>
 </root>

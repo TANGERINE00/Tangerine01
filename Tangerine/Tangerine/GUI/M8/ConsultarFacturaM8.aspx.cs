@@ -63,13 +63,15 @@ namespace Tangerine.GUI.M8
                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.inhabilitado + ResourceGUIM8.CloseTD;
                     }   */
                         factura += ResourceGUIM8.OpenTD + " " + ResourceGUIM8.CloseTD;
-                        factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " $" + ResourceGUIM8.CloseTD;
-                        
-                   
-                        //Acciones de cada compania
+                        factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " $" + ResourceGUIM8.CloseTD;                     
 
-                        factura += ResourceGUIM8.OpenTD + ResourceGUIM8.BotonInfo + ResourceGUIM8.BotonModif + 
-                                   ResourceGUIM8.CloseTD;  
+                        //Acciones de cada contacto
+                        factura += ResourceGUIM8.OpenTD;
+                        factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                        factura += ResourceGUIM8.CloseTD;
+
+                       /* factura += ResourceGUIM8.OpenTD + ResourceGUIM8.BotonInfo + ResourceGUIM8.BotonModif + 
+                                   ResourceGUIM8.CloseTD;  */
                         
                         factura += ResourceGUIM8.CloseTR;
                     }
