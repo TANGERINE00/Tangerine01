@@ -19,7 +19,7 @@ namespace Tangerine.GUI.M4
         string _fecha = String.Empty;
         int _status = 1; // se crea el status activo por default.
         int _direccionId = 1; //hacer el combo-box de lugares, se utiliza 1 para pruebas.
-        int _clientePotencialId = 0;
+        int _clientePotencialId = 1; //preguntar como es la logica de los leads.
 
         protected void Page_Load(object sender, EventArgs e)
         {
