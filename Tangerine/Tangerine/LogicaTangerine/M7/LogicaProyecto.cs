@@ -39,10 +39,11 @@ namespace LogicaTangerine.M7
         /// <param name="Empleados"></param>
         /// <param name="Contacto"></param>
         /// <returns></returns>
-        public Boolean modificarProyecto(Proyecto P, int[] Empleados, int[] Contacto)
+        public Boolean modificarProyecto(Proyecto P)
         {
 
-            if (_Pro.ChangeProyecto(P))
+            if (_Pro.ChangeProyecto(P) && _Cont.DeleteProyectoContacto(P) &&
+                _Cont.AddProyectoContacto(P) && _Empl.DeleteProyectoEmpleado(P) && _Empl.AddProyectoEmpleado(P))
             {
                 return true;
             }
