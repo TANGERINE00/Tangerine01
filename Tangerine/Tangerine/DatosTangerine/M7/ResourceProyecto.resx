@@ -225,4 +225,19 @@
   <data name="ProyRealizacion" xml:space="preserve">
     <value>proy_realizacion</value>
   </data>
+  <data name="AddProyectoEmpleado" xml:space="preserve">
+    <value>M7_AgregarProyectoEmpleado</value>
+  </data>
+  <data name="ContactProyectoEmpleado" xml:space="preserve">
+    <value>M7_ConsultarProyectoEmpleado</value>
+  </data>
+  <data name="DeleteProyectoEmpleado" xml:space="preserve">
+    <value>M7_EliminarProyectoEmpleado</value>
+  </data>
+  <data name="ParamPEIdEmpleado" xml:space="preserve">
+    <value>@PEIdEmpleado</value>
+  </data>
+  <data name="PEIdEmpleado" xml:space="preserve">
+    <value>fk_emp_num_ficha</value>
+  </data>
 </root>
