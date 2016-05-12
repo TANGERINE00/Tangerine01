@@ -8,7 +8,7 @@ using DatosTangerine.M7;
 
 namespace LogicaTangerine.M7
 {
-    class LogicaProyecto
+    public class LogicaProyecto
     {
         BDProyecto _Pro = new BDProyecto();
         BDEmpleadoProyecto _Empl = new BDEmpleadoProyecto();
@@ -30,7 +30,6 @@ namespace LogicaTangerine.M7
             {
                 return false;
             }
-
         }
 
         /// <summary>

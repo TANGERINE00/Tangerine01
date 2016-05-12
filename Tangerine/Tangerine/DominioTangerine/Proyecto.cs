@@ -72,7 +72,6 @@ namespace DominioTangerine
             this._idpropuesta = id_propuesta;
             this._idresponsable = id_responsable;
             this._idgerente = id_gerente;
-           
         }
 
 
