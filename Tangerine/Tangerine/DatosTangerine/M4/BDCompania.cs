@@ -184,7 +184,6 @@ namespace DatosTangerine.M4
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
-
             List<Compania> listCompany = new List<Compania>();
 
             try
@@ -197,6 +196,7 @@ namespace DatosTangerine.M4
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
+
                     int comId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
                     String comName = row[ResourceCompany.ComNameCompany].ToString();
                     String comRif = row[ResourceCompany.ComRifCompany].ToString();
@@ -205,11 +205,19 @@ namespace DatosTangerine.M4
                     DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
                     int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
                     int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
-                    int comIdPotentialClient = int.Parse(row[ResourceCompany.ComIdPotentialClient].ToString());
+                    int comIdPotentialClient = 0;
 
-                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    //BORRAR DESPUES DE HACER PRUEBAS.
+                    bool prueba = row[ResourceCompany.ComIdPotentialClient].ToString().Equals("");
+                    String pruebatexto = row[ResourceCompany.ComIdPotentialClient].ToString();
+
+                    if (row[ResourceCompany.ComIdPotentialClient].ToString().Equals("") != true)
+                    {
+                        comIdPotentialClient = int.Parse(row[ResourceCompany.ComIdPotentialClient].ToString());
+                    }
+
                     Compania theCompany = new Compania(comId, comName, comRif, comEmail, comAcronym,
-                                                   comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
+                                                         comRegisterDate, comStatus, comIdPlace, comIdPotentialClient);
                     listCompany.Add(theCompany);
                 }
 
