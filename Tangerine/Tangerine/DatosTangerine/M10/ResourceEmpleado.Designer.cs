@@ -61,11 +61,101 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M10_Agregar_Empleado.
+        ///   Busca una cadena traducida similar a M10_AgregarEmpleado.
         /// </summary>
         internal static string AddNewEmpleado {
             get {
                 return ResourceManager.GetString("AddNewEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M10_ConsultarEmpleado.
+        /// </summary>
+        internal static string ConsultarEmpleado {
+            get {
+                return ResourceManager.GetString("ConsultarEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_activo.
+        /// </summary>
+        internal static string EmpActivo {
+            get {
+                return ResourceManager.GetString("EmpActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_cedula.
+        /// </summary>
+        internal static string EmpCedula {
+            get {
+                return ResourceManager.GetString("EmpCedula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_fecha_nac.
+        /// </summary>
+        internal static string EmpFecha {
+            get {
+                return ResourceManager.GetString("EmpFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_num_ficha.
+        /// </summary>
+        internal static string EmpIdEmpleado {
+            get {
+                return ResourceManager.GetString("EmpIdEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a fk_lug_dir_id.
+        /// </summary>
+        internal static string EmpLugId {
+            get {
+                return ResourceManager.GetString("EmpLugId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_p_apellido.
+        /// </summary>
+        internal static string EmpPApellido {
+            get {
+                return ResourceManager.GetString("EmpPApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_p_nombre.
+        /// </summary>
+        internal static string EmpPNombre {
+            get {
+                return ResourceManager.GetString("EmpPNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_s_apellido.
+        /// </summary>
+        internal static string EmpSApellido {
+            get {
+                return ResourceManager.GetString("EmpSApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_s_nombre.
+        /// </summary>
+        internal static string EmpSNombre {
+            get {
+                return ResourceManager.GetString("EmpSNombre", resourceCulture);
             }
         }
         
@@ -84,6 +174,15 @@ namespace DatosTangerine.M10 {
         internal static string ParamCedula {
             get {
                 return ResourceManager.GetString("ParamCedula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @prueba.
+        /// </summary>
+        internal static string ParamCPrueba {
+            get {
+                return ResourceManager.GetString("ParamCPrueba", resourceCulture);
             }
         }
         

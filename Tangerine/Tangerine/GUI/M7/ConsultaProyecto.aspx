@@ -12,9 +12,6 @@
     <li><a href="#">Gestión de Proyectos</a></li>
     <li class="active">Consulta Proyecto</li>
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    
-</asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <!-- Main content -->
    

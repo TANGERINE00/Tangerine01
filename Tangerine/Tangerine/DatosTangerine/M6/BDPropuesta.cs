@@ -10,7 +10,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.M6
 {
-    class BDPropuesta
+    public class BDPropuesta
     {
 
         /// <summary>

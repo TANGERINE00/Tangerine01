@@ -2,12 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
+    Gestión de Proyectos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
+    Modificar
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-    <li><a href="#">Proyectos</a></li>
+    <li><a href="#">Gestión de Proyectos</a></li>
     <li class="active">Modificar Proyecto</li>
 </asp:Content>
 
@@ -24,7 +26,7 @@
                   <h3 class="box-title">Proyecto</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form role="form" runat="server">
                   <div class="box-body">
 
                      <div class="form-group">
@@ -74,7 +76,7 @@
                   <div class="box-footer">
                     <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Guardar"   ></asp:Button>
                   </div><div>  <label>* Todos los campos son obligatorios</label></div>
-                </form>
+                
               </div><!-- /.box -->
          
             </div><!--/.col (left) -->
@@ -86,7 +88,7 @@
                   <h3 class="box-title">Personal del Proyecto *</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                
                   <div class="box-body">
 
                  <div class="form-group">

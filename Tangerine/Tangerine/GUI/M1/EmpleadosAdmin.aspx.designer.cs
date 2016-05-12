@@ -10,6 +10,24 @@
 namespace Tangerine.GUI.M1 {
     
     
-    public partial class CargoAdmin {
+    public partial class EmpleadosAdmin {
+        
+        /// <summary>
+        /// Control nuevoempleado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal nuevoempleado;
+        
+        /// <summary>
+        /// Control tabla.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal tabla;
     }
 }

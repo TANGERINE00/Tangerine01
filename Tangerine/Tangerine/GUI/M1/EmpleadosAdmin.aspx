@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="EmpleadosAdmin.aspx.cs" Inherits="Tangerine.GUI.M1.CargoAdmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="EmpleadosAdmin.aspx.cs" Inherits="Tangerine.GUI.M1.EmpleadosAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -37,10 +37,11 @@
         <div class="box box-body table-responsive">
             <div class="panel-heading">
               Resultado de busqueda
-              <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus"></span></button>
+              <asp:Literal runat="server" ID="nuevoempleado"></asp:Literal>
+              
             </div><br>
             <!--table-->
-            <table class="table table-bordered table-striped dataTable">
+            <table id="tablaempleados" class="table table-bordered table-striped dataTable" accesskey="">
               <thead>
                   <th>Nombres</th>
                   <th>Apellidos</th>
@@ -48,15 +49,19 @@
                   <th>Cargo</th>
                   <th>Fecha</th>
                   <th>Estatus</th>
-                  <th></th>
+                  <th style="width:150PX; text-align:center;">Acciones</th>
               </thead>
+                <asp:Literal runat="server" ID="tabla"></asp:Literal>
               <tbody>
+             
+              </tbody>
+              <!--<tbody>
                 <tr>
                   <td>Edgar Rafael</td>
                   <td>Landaeta Malave</td>
                    <td>20097258</td>
                   <td>Desarrollador web</td>
-                  <td style="text-align: right;">01/03/2016</td>
+                  <td style='text-align: right;'>01/03/2016</td>
                   <td style="text-align:center;"><span class="label label-success">Activo</span></td>
                   <td style="text-align:center;">
                     <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
@@ -90,7 +95,7 @@
                     <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
                   </td>
                 </tr>
-              </tbody>
+              </tbody>-->
             </table>
             <!-- table-->
             <nav>

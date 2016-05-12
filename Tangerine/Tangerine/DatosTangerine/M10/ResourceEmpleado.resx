@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddNewEmpleado" xml:space="preserve">
-    <value>M10_Agregar_Empleado</value>
+    <value>M10_AgregarEmpleado</value>
   </data>
   <data name="ParamActivo" xml:space="preserve">
     <value>@activo</value>
@@ -161,5 +161,38 @@
   </data>
   <data name="ParamSNombre" xml:space="preserve">
     <value>@s_nombre</value>
+  </data>
+  <data name="ConsultarEmpleado" xml:space="preserve">
+    <value>M10_ConsultarEmpleado</value>
+  </data>
+  <data name="EmpActivo" xml:space="preserve">
+    <value>emp_activo</value>
+  </data>
+  <data name="EmpCedula" xml:space="preserve">
+    <value>emp_cedula</value>
+  </data>
+  <data name="EmpFecha" xml:space="preserve">
+    <value>emp_fecha_nac</value>
+  </data>
+  <data name="EmpIdEmpleado" xml:space="preserve">
+    <value>emp_num_ficha</value>
+  </data>
+  <data name="EmpLugId" xml:space="preserve">
+    <value>fk_lug_dir_id</value>
+  </data>
+  <data name="EmpPApellido" xml:space="preserve">
+    <value>emp_p_apellido</value>
+  </data>
+  <data name="EmpPNombre" xml:space="preserve">
+    <value>emp_p_nombre</value>
+  </data>
+  <data name="EmpSApellido" xml:space="preserve">
+    <value>emp_s_apellido</value>
+  </data>
+  <data name="EmpSNombre" xml:space="preserve">
+    <value>emp_s_nombre</value>
+  </data>
+  <data name="ParamCPrueba" xml:space="preserve">
+    <value>@prueba</value>
   </data>
 </root>

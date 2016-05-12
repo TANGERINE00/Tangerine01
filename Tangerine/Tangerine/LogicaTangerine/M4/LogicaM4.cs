@@ -18,7 +18,20 @@ namespace LogicaTangerine.M4
         {
 
         }
-
+        
+        public List<Compania> getCompanies()
+        { 
+             try
+            {
+            return BDCompania.ConsultCompanies(); 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+  
+        }
+        
         public List<Compania> fillTable()
         {
             try

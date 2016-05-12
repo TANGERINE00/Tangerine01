@@ -24,5 +24,23 @@ namespace LogicaTangerine.M10
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// Metodo para consultar todos los empleados
+        /// </summary>
+        /// <returns>Retorna una lista de empleados</returns>
+        public List<Empleado> GetEmpleados()
+        {
+            try
+            {
+                return BDEmpleado.ListarEmpleados();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

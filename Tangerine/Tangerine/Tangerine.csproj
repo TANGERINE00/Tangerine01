@@ -1038,6 +1038,11 @@
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\ResourceGUIM10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM10.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\VerEmpleado.aspx.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1147,6 +1152,11 @@
     </Compile>
     <Compile Include="GUI\M4\ModificarCompania.aspx.designer.cs">
       <DependentUpon>ModificarCompania.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M4\ResourceGUIM4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM4.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M5\AgregarContacto.aspx.cs">
       <DependentUpon>AgregarContacto.aspx</DependentUpon>
@@ -1264,6 +1274,11 @@
     </Compile>
     <Compile Include="GUI\M8\ModificarFacturaM8.aspx.designer.cs">
       <DependentUpon>ModificarFacturaM8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\ResourceGUIM8.Designer.cs">
+      <DependentUpon>ResourceGUIM8.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="GUI\M9\EjemploM9.aspx.cs">
       <DependentUpon>EjemploM9.aspx</DependentUpon>
@@ -1445,13 +1460,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\M1\ResourceGUIM10.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M4\ResourceGUIM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M5\ResourceGUIM5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M8\ResourceGUIM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
