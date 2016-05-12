@@ -22,7 +22,7 @@ namespace Tangerine.GUI.M7
         {
             Proyecto _proyecto = new Proyecto(0, textInputNombreProyecto.Value, textInputCodigo.Value, DateTime.Parse(textInputFechaInicio.Value),
                                               DateTime.Parse(textInputFechaEstimada.Value),Double.Parse(textInputCosto.Value), "", "", "En curso",
-                                              "", 0, 0, 0);
+                                              "","", 0, 0, 0);  //OSCAR EDITE AQUI EL CONSTRUCTOR... EL DATO DESPUES DE RAZON ES ACUERDO DE PAGO QUE HAY 
             LogicaProyecto _logica =  new LogicaProyecto();
             if (_logica.agregarProyecto(_proyecto))
             {

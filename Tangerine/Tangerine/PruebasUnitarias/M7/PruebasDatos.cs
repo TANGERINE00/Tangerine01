@@ -45,6 +45,7 @@ namespace PruebasUnitarias.M7
             theProyect.Realizacion = "20%";
             theProyect.Estatus = "En Curso";
             theProyect.Razon = "";
+            theProyect.Acuerdopago = "Mensual";
             theProyect.Idpropuesta = 1;
             theProyect.Idresponsable = 1;
             theProyect.Idgerente = 1;
