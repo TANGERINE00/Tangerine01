@@ -61,6 +61,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Anulada&lt;/span&gt;.
+        /// </summary>
+        internal static string anulada {
+            get {
+                return ResourceManager.GetString("anulada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Contactos&quot; class=&quot;btn btn-warning glyphicon glyphicon-list-alt&quot; &gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonContac {
@@ -97,7 +106,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Inhabilitar&quot; class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; &gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; href=&quot;AnularFacturaM8.aspx?idCont=.
         /// </summary>
         internal static string BotonInhab {
             get {
@@ -115,7 +124,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarFacturaM8.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarFacturaM8.aspx?idCont=.
         /// </summary>
         internal static string BotonModif {
             get {
@@ -169,24 +178,6 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;td&gt;&lt;span class=&quot;label label-success&quot;&gt;Habilitada&lt;/span&gt;&lt;/td&gt;.
-        /// </summary>
-        internal static string habilitado {
-            get {
-                return ResourceManager.GetString("habilitado", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;td&gt;&lt;span class=&quot;label label-error&quot;&gt;Inhabilitada&lt;/span&gt;&lt;/td&gt;.
-        /// </summary>
-        internal static string inhabilitado {
-            get {
-                return ResourceManager.GetString("inhabilitado", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
         internal static string OpenTD {
@@ -201,6 +192,24 @@ namespace Tangerine.GUI.M8 {
         internal static string OpenTR {
             get {
                 return ResourceManager.GetString("OpenTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot;&gt;Pagada&lt;/span&gt;.
+        /// </summary>
+        internal static string pagada {
+            get {
+                return ResourceManager.GetString("pagada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-warning&quot;&gt;Por Pagar&lt;/span&gt;.
+        /// </summary>
+        internal static string porPagar {
+            get {
+                return ResourceManager.GetString("porPagar", resourceCulture);
             }
         }
     }

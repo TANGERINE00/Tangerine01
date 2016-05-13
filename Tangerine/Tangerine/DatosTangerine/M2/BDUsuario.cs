@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.M2
 {
-    class BDUsuario
+    public class BDUsuario
     {
-        BDConexion laConexion;
-        List<Parametro> parametros;
-        Parametro elParametro;
 
         /// <summary>
         /// Método que arma la lista de los parametros del Stored Procedure para agregar un usuario nuevo y llama 
@@ -21,10 +18,11 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>true se es exitoso y false si es fallido</returns>
-        public bool AgregarUsuario( Usuario usuario )
+        public static bool AgregarUsuario( Usuario usuario )
         {
-            parametros = new List<Parametro>();
-            laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            BDConexion laConexion = new BDConexion();
+            Parametro elParametro;
 
             try
             {
@@ -65,10 +63,11 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>true se es exitoso y false si es fallido</returns>
-        public bool ModificarRolUsuario( Usuario usuario ) 
+        public static bool ModificarRolUsuario( Usuario usuario ) 
         {
-            parametros = new List<Parametro>();
-            laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            BDConexion laConexion = new BDConexion();
+            Parametro elParametro;
 
             try
             {
@@ -98,10 +97,11 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>true se es exitoso y false si es fallido</returns>
-        public bool ModificarContraseniaUsuario( Usuario usuario )
+        public static bool ModificarContraseniaUsuario( Usuario usuario )
         {
-            parametros = new List<Parametro>();
-            laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            BDConexion laConexion = new BDConexion();
+            Parametro elParametro; ;
 
             try
             {
@@ -124,26 +124,80 @@ namespace DatosTangerine.M2
             return true;
         }
 
-        public bool ObtenerDatoUsuario( Usuario usuario ) 
+        /// <summary>
+        /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public static Usuario ObtenerDatoUsuario( Usuario usuario ) 
         {
-            laConexion = new BDConexion();
+            BDConexion laConexion = new BDConexion();
             SqlDataReader resultadoConsulta;
 
             try 
             {
-                resultadoConsulta = laConexion.EjecutarQuery( "" );
+                resultadoConsulta = laConexion.EjecutarQuery( @"SELECT usu_fecha_creacion, usu_activo, fk_rol_id,
+                                                                       fk_emp_num_ficha
+                                                                FROM usuario
+                                                                WHERE usu_usuario = '" + usuario.NombreUsuario +
+                                                               "' and usu_contrasena = '" + usuario.Contrasenia +
+                                                               "'" );
 
                 while ( resultadoConsulta.Read() )
                 {
-
+                    usuario.FechaCreacion = resultadoConsulta.GetDateTime( 0 );
+                    usuario.Activo = resultadoConsulta.GetString( 1 );
+                    usuario.FichaEmpleado = resultadoConsulta.GetInt32( 3 );
                 }
+
             }
             catch ( Exception ex )
             {
 
             }
 
-            return false;
+            return usuario;
+        }
+
+        public static Rol ObtenerRolUsuario( int codigoRol ) 
+        {
+            Rol rol = new Rol();
+            ListaGenerica<Menu> lista = new ListaGenerica<Menu>(); ;
+
+            BDConexion laConexion = new BDConexion();
+            SqlDataReader resultadoConsulta;
+
+            try
+            {
+                resultadoConsulta = laConexion.EjecutarQuery( @"select distinct rol_nombre, m.men_nombre
+                                                                from rol, rol_opcion, opcion, menu m
+                                                                where rol_id = fk_rol_id and fk_opc_id = opc_id
+                                                                      and fk_men_id = m.men_id 
+                                                                      and rol_id = " + codigoRol.ToString() );
+                bool rolAgregado = false;
+
+                while (resultadoConsulta.Read())
+                {
+                    if ( rolAgregado == false )
+                    {
+                        rol.Nombre = resultadoConsulta.GetString(0);
+                        rolAgregado = true;
+                    }
+
+                    string nombreMenu = resultadoConsulta.GetString( 1 );
+                    Menu menu = new Menu( nombreMenu );
+                    
+                    lista.AgregarElemento( menu );
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return rol;
         }
     }
 }

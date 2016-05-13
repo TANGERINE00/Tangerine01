@@ -19,7 +19,7 @@ namespace Tangerine.GUI.M8 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect textNumeroFactura_M8;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText textNumeroFactura_M8;
         
         /// <summary>
         /// Control textFecha_M8.

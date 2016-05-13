@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M6;
@@ -22,7 +23,7 @@ namespace Tangerine.GUI.M6
        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LlenaComboDuracion();
         }
 
         protected void btnagregar_Click(object sender, EventArgs e)
@@ -31,6 +32,13 @@ namespace Tangerine.GUI.M6
           //  _duracion = ;
             
 
+        }
+
+        public void LlenaComboDuracion()
+        {
+            comboDuracion.Items.Add("Meses");
+            comboDuracion.Items.Add("Dias2");
+            comboDuracion.Items.Add("Horas");
         }
     }
 }

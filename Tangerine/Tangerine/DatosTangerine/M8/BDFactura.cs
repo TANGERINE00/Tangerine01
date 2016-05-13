@@ -43,6 +43,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
@@ -121,6 +124,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
@@ -173,15 +179,16 @@ namespace DatosTangerine.M8
 
                 int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                 DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
-                int facMonto = int.Parse(row[ResourceFactura.FacMontoTotal].ToString());
-                int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                 String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                 int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
                 Facturacion theFacturabeta = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
-                                                    facIdProyecto, facIdCompania);
+                                                    facEstatus, facIdProyecto, facIdCompania);
 
                 theFactura = theFacturabeta;
 
@@ -218,12 +225,13 @@ namespace DatosTangerine.M8
                     double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
                     double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                    int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
                     Facturacion theFactura = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
-                                                        facIdProyecto, facIdCompania);
+                                                        facEstatus, facIdProyecto, facIdCompania);
                     listFactura.Add(theFactura);
 
                 }

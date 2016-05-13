@@ -14,19 +14,22 @@ namespace PruebasUnitarias.M8
 
         #region Atributos
         public Facturacion theInvoice;
-        public DateTime fecha = new DateTime(2015, 2, 10);
         public bool answer;
+        public DateTime fecha = new DateTime(2015, 2, 10);
         #endregion
 
         #region SetUp and TearDown
         [SetUp]
         public void init()
         {
-            theInvoice = new Facturacion();
-            theInvoice.idFactura = 1;
-            theInvoice.fechaFactura = fecha;
+            theInvoice = new Facturacion(DateTime.Now, 100, 50,"Hola",0,1,1);
+           /* theInvoice.fechaFactura = fecha;
             theInvoice.montoFactura = 9000;
             theInvoice.montoRestanteFactura = 3000;
+            theInvoice.descripcionFactura = "Hola";
+            theInvoice.idProyectoFactura = 1;
+            theInvoice.idCompaniaFactura = 1;*/
+
 
         }
 
@@ -37,14 +40,13 @@ namespace PruebasUnitarias.M8
         }
         #endregion
 
-
         /// <summary>
         /// Prueba que permite verificar el insertar de una Factura en la base de datos
         /// </summary>
         [Test]
         public void TestAddInvoice()
         {
-            //Declaro test de tipo BDFactura para poder invocar el "AddContact(Facturacion theInvoice)"
+            //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
             answer = BDFactura.AddFactura(theInvoice);
 
             //answer obtiene true si se inserta la Factura, si no, deberia agarrar un excepcion
@@ -58,6 +60,7 @@ namespace PruebasUnitarias.M8
         public void TestChangeInvoice()
         {
             //Declaro test de tipo BDFactura para poder invocar el "ChangeContact(Facturacion theInvoice)"
+            theInvoice.descripcionFactura = "Factura Modificada";
             answer = BDFactura.ChangeFactura(theInvoice);
 
             //answer obtiene true si se modifica la Factura, si no, deberia agarrar un excepcion

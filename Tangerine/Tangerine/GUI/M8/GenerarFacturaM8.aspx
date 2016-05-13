@@ -35,7 +35,7 @@
 
                     <div class="form-group" runat ="server">
                       <label for="labelFecha_M8">Fecha</label>
-                      <input type="text" runat="server"  class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy" >
+                      <input type="text" runat="server"  class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy" disabled="disabled" >
                     </div>
 
                       <div class="form-group" runat ="server">
@@ -59,7 +59,7 @@
                       <input type="text" runat="server"  class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto"  >
                     </div>
                       <div class="box-footer" runat="server">
-                             <asp:Button id="buttomGenerar_M8" style="margin-top:5%"  class="btn btn-primary" type="submit" runat="server" Text = "Generar" OnClick="buttomGenerarFactura_Click"  OnClientClick="window.location.href='ConsultarFacturaM8.aspx'; return false;" ></asp:Button>
+                             <asp:Button id="buttomGenerar_M8" style="margin-top:5%"  class="btn btn-primary" type="submit" runat="server" Text = "Generar" OnClick="buttomGenerarFactura_Click" ></asp:Button>
                               </div>
                       
 
