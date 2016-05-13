@@ -11,11 +11,12 @@ namespace PruebasUnitarias.M8
 {
     class PruebasDatos
     {
-        
+
         #region Atributos
         public Facturacion theInvoice;
-        public DateTime fecha = new DateTime(2015, 2, 10);
+        public Contacto theInvoice2;
         public bool answer;
+        public DateTime fecha = new DateTime(2015, 2, 10);
         #endregion
 
         #region SetUp and TearDown
@@ -36,7 +37,6 @@ namespace PruebasUnitarias.M8
             theInvoice = null;
         }
         #endregion
-
 
         /// <summary>
         /// Prueba que permite verificar el insertar de una Factura en la base de datos
