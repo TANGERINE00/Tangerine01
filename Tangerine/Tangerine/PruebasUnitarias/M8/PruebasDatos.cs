@@ -22,7 +22,7 @@ namespace PruebasUnitarias.M8
         [SetUp]
         public void init()
         {
-            theInvoice = new Facturacion(DateTime.Now, 100, 50,"Hola",1,1);
+            theInvoice = new Facturacion(DateTime.Now, 100, 50,"Hola",0,1,1);
            /* theInvoice.fechaFactura = fecha;
             theInvoice.montoFactura = 9000;
             theInvoice.montoRestanteFactura = 3000;

@@ -19,6 +19,7 @@ namespace Tangerine.GUI.M8
         int _montoTotal = 0;
         int _montoRestante = 0;
         string _descripcion = String.Empty;
+        int _estatus = 0;
         int _proyectoId = 0;
         int _companiaId = 0;
         Facturacion theFactura = null;
@@ -62,11 +63,12 @@ namespace Tangerine.GUI.M8
             _companiaId = int.Parse(textCliente_M8.Value);
             _proyectoId = int.Parse(textProyecto_M8.Value);
             _descripcion = textDescripcion_M8.Value;
+            _estatus = 1;
             _montoTotal = int.Parse(textMonto_M8.Value);
             _montoRestante = int.Parse(textMonto_M8.Value);
 
-            Facturacion factura = new Facturacion( _numeroFactura , _fechaEmision , _montoTotal , _montoRestante , _descripcion , _proyectoId
-                , _companiaId);
+            Facturacion factura = new Facturacion( _numeroFactura , _fechaEmision , _montoTotal , _montoRestante , _descripcion , _estatus ,
+                _proyectoId , _companiaId );
             LogicaM8 facturaLogic = new LogicaM8();
             facturaLogic.ChangeExistingFactura(factura);
 

@@ -47,6 +47,7 @@ drop procedure M7_EliminarProyectoContacto;
 drop procedure M7_AgregarProyectoEmpleado;
 drop procedure M7_ConsultarProyectoEmpleado;
 drop procedure M7_EliminarProyectoEmpleado;
+drop procedure M7_ConsultarAcuerdoPagoMensual;
 
 drop procedure M8_AgregarFactura;
 drop procedure M8_ConsultarFactura;
