@@ -848,13 +848,13 @@ GO
 
 ---- StoredProcedure Consultar Factura ----
 CREATE PROCEDURE M8_ConsultarFactura
-	@id int
+	@id_Factura int
 
 AS
 	BEGIN
-		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
 			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
-		FROM FACTURA WHERE fac_id = @id;
+		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
 

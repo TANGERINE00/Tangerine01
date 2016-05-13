@@ -173,8 +173,8 @@ namespace DatosTangerine.M8
 
                 int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                 DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
-                int facMonto = int.Parse(row[ResourceFactura.FacMontoTotal].ToString());
-                int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                 String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                 int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());

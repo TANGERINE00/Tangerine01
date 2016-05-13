@@ -30,24 +30,22 @@
 
                     <div class="form-group"  runat ="server">
                       <label for="labelNumeroFactura_M8">Número Factura</label>
-                      <select  runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8"> 
-                        <option>1</option>
-                      </select> 
+                      <input  runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" disabled="disabled"> 
                     </div>
 
                     <div class="form-group"  runat ="server">
                       <label for="labelFecha_M8">Fecha</label>
-                      <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha">
+                      <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha" disabled="disabled">
                     </div>
 
                       <div class="form-group"  runat ="server">
                       <label for="labelCliente_M8">Cliente</label>
-                      <input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Cliente">
+                      <input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Cliente" disabled="disabled">
                     </div>
 
                         <div class="form-group"  runat ="server">
                       <label for="labelProyecto_M8">Proyecto</label>
-                      <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto">
+                      <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
                     </div>
 
                         <div class="form-group"  runat ="server">
@@ -58,11 +56,11 @@
                       
                         <div class="form-group"  runat ="server">
                       <label for="labelMonto_M8">Monto</label>
-                      <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto">
+                      <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">
                     </div>
 
                        <div class="box-footer" runat ="server">
-                    <asp:Button id="buttomModificar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar" OnClick="buttomModificarFactura_Click" ></asp:Button>
+                    <asp:Button id="buttomModificar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar" OnClick="buttomModificarFactura_Click" OnClientClick="window.location.href='ConsultarFacturaM8.aspx'; return false;" ></asp:Button>
                   </div>
 
                   </div><!-- /.box-body -->
