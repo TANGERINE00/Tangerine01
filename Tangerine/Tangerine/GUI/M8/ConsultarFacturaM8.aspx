@@ -25,10 +25,10 @@
                   <h3 class="box-title">Consulta de Datos</h3>
                   <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+                            <input name="table_search" class="form-control pull-right" id="textBuscarId" placeholder="Número Factura" type="text" runat="server">
 
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn btn-default" id="BuscadorId" runat="server" onclick="busquedaNumero_Click"><i class="fa fa-search" ></i></button>
                             </div>
                         </div>
                      </div>
