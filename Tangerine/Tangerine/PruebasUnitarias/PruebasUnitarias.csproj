@@ -45,6 +45,8 @@
     <Folder Include="M1\" />
     <Folder Include="M3\" />
     <Folder Include="M4\" />
+    <Folder Include="M6\" />
+
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -83,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M2\PruebasBDUsuario.cs" />
+    <Compile Include="M4\PruebaDatos.cs" />
     <Compile Include="M5\PruebasDatos.cs" />
     <Compile Include="M6\Pruebas.cs" />
     <Compile Include="M7\PruebasDatos.cs" />
