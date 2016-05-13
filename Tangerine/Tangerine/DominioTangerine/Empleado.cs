@@ -69,6 +69,150 @@ namespace DominioTangerine
            this.emp_activo = empActivo;
            this.fk_lug_dir_id = empLugId;
        }
+
+       public int Emp_num_ficha
+       {
+           get
+           {
+               return this.emp_num_ficha;
+           }
+           set
+           {
+               this.emp_num_ficha = value;
+           }
+       }
+
+       public int Emp_cedula
+       {
+           get
+           {
+               return this.Emp_cedula;
+           }
+           set
+           {
+               this.Emp_cedula = value;
+           }
+       }
+
+       public String Emp_genero
+       {
+           get
+           {
+               return this.emp_genero;
+           }
+           set
+           {
+               this.emp_genero = value;
+           }
+       }
+
+       public String Emp_p_nombre
+       {
+           get
+           {
+               return this.emp_p_nombre;
+           }
+           set
+           {
+               this.emp_p_nombre = value;
+           }
+       }
+
+       public String Emp_s_nombre
+       {
+           get
+           {
+               return this.emp_s_nombre;
+           }
+           set
+           {
+               this.emp_s_nombre = value;
+           }
+       }
+
+       public String Emp_p_apellido
+       {
+           get
+           {
+               return this.emp_p_apellido;
+           }
+           set
+           {
+               this.emp_p_apellido = value;
+           }
+       }
+
+       public String Emp_s_apellido
+       {
+           get
+           {
+               return this.emp_s_apellido;
+           }
+           set
+           {
+               this.emp_s_apellido = value;
+           }
+       }
+
+       public DateTime Emp_fecha_nac
+       {
+           get
+           {
+               return this.emp_fecha_nac;
+           }
+           set
+           {
+               this.emp_fecha_nac = value;
+           }
+       }
+
+       public String Emp_nivel_estudio
+       {
+           get
+           {
+               return this.emp_nivel_estudio;
+           }
+           set
+           {
+               this.emp_nivel_estudio = value;
+           }
+       }
+
+       public String Emp_email
+       {
+           get
+           {
+               return this.emp_email;
+           }
+           set
+           {
+               this.emp_email = value;
+           }
+       }
+
+       public String Emp_activo
+       {
+           get
+           {
+               return this.emp_activo;
+           }
+           set
+           {
+               this.emp_activo = value;
+           }
+       }
+
+       public int Fk_lug_dir_id
+       {
+           get
+           {
+               return this.fk_lug_dir_id;
+           }
+           set
+           {
+               this.fk_lug_dir_id = value;
+           }
+       }
   
   }
 
