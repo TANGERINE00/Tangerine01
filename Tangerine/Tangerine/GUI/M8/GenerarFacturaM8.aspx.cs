@@ -21,7 +21,7 @@ namespace Tangerine.GUI.M8
 
         protected void Page_Load( object sender, EventArgs e )
         {
-
+            textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         protected void buttomGenerarFactura_Click( object sender, EventArgs e )

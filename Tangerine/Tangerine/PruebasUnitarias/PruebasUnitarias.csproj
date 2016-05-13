@@ -43,7 +43,6 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="M10\" />
     <Folder Include="M1\" />
-    <Folder Include="M2\" />
     <Folder Include="M3\" />
     <Folder Include="M4\" />
     <Folder Include="M6\" />
@@ -85,6 +84,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M2\PruebasBDUsuario.cs" />
     <Compile Include="M5\PruebasDatos.cs" />
     <Compile Include="M7\PruebasDatos.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
