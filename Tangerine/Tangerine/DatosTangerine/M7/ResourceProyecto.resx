@@ -246,4 +246,7 @@
   <data name="ProyAcuerdoPago" xml:space="preserve">
     <value>proy_acuerdo_pago</value>
   </data>
+  <data name="ContactProyectosxAcuerdoPago" xml:space="preserve">
+    <value>M7_ConsultarAcuerdoPagoMensual</value>
+  </data>
 </root>
