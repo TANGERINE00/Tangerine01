@@ -178,6 +178,15 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M4_EliminarCompania.
+        /// </summary>
+        internal static string DeleteCompany {
+            get {
+                return ResourceManager.GetString("DeleteCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M4_InhabilitarHabilitarCompania.
         /// </summary>
         internal static string DisableAbleComany {

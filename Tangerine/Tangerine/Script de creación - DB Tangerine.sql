@@ -540,6 +540,15 @@ AS
     update COMPANIA set com_status = @status
     where com_id = @id;  
  end;
+
+GO
+--- StoredProcedure Eliminar una compañia(Para pruebas) ----
+CREATE PROCEDURE M4_EliminarCompania
+	@id int
+AS
+ BEGIN
+    DELETE FROM Compania WHERE com_id = @id;  
+ end;
 GO
 
 ------Fin Stored Procedure M4------
