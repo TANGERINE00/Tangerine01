@@ -11,7 +11,7 @@ namespace PruebasUnitarias.M8
 {
     class PruebasDatos
     {
-        //com
+        
         #region Atributos
         public Facturacion theInvoice;
         public DateTime fecha = new DateTime(2015, 2, 10);
