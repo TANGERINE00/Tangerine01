@@ -115,15 +115,6 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fk_cli_pot_id.
-        /// </summary>
-        internal static string ComIdPotentialClient {
-            get {
-                return ResourceManager.GetString("ComIdPotentialClient", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to com_nombre.
         /// </summary>
         internal static string ComNameCompany {
@@ -156,6 +147,15 @@ namespace DatosTangerine.M4 {
         internal static string ComStatusCompany {
             get {
                 return ResourceManager.GetString("ComStatusCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_telefono.
+        /// </summary>
+        internal static string ComTelephoneCompany {
+            get {
+                return ResourceManager.GetString("ComTelephoneCompany", resourceCulture);
             }
         }
         
@@ -223,15 +223,6 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @id_cliente_potencial.
-        /// </summary>
-        internal static string ParamIdClientePotencial {
-            get {
-                return ResourceManager.GetString("ParamIdClientePotencial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to @id_lugar.
         /// </summary>
         internal static string ParamIdLugar {
@@ -264,6 +255,15 @@ namespace DatosTangerine.M4 {
         internal static string ParamStatus {
             get {
                 return ResourceManager.GetString("ParamStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @telefono.
+        /// </summary>
+        internal static string ParamTelefono {
+            get {
+                return ResourceManager.GetString("ParamTelefono", resourceCulture);
             }
         }
     }

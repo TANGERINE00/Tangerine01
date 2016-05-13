@@ -70,11 +70,38 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M8_ModificarContacto.
+        ///   Looks up a localized string similar to M8_ModificarFactura.
         /// </summary>
         internal static string ChangeFactura {
             get {
                 return ResourceManager.GetString("ChangeFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_nombre.
+        /// </summary>
+        internal static string ComNameCompany {
+            get {
+                return ResourceManager.GetString("ComNameCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarCompania.
+        /// </summary>
+        internal static string ConsultCompany {
+            get {
+                return ResourceManager.GetString("ConsultCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_ConsultarFacturas.
+        /// </summary>
+        internal static string ConsultFacturas {
+            get {
+                return ResourceManager.GetString("ConsultFacturas", resourceCulture);
             }
         }
         
@@ -84,6 +111,15 @@ namespace DatosTangerine.M8 {
         internal static string ContactFactura {
             get {
                 return ResourceManager.GetString("ContactFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyecto.
+        /// </summary>
+        internal static string ContactProyecto {
+            get {
+                return ResourceManager.GetString("ContactProyecto", resourceCulture);
             }
         }
         
@@ -178,6 +214,24 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @id.
+        /// </summary>
+        internal static string ParamId {
+            get {
+                return ResourceManager.GetString("ParamId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @IdProyecto.
+        /// </summary>
+        internal static string ParamId_Proyecto {
+            get {
+                return ResourceManager.GetString("ParamId_Proyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @id_compania.
         /// </summary>
         internal static string ParamIdCompania {
@@ -187,7 +241,7 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @IdFactura.
+        ///   Looks up a localized string similar to @id_Factura.
         /// </summary>
         internal static string ParamIdFactura {
             get {
@@ -219,6 +273,33 @@ namespace DatosTangerine.M8 {
         internal static string ParamMonto_Total {
             get {
                 return ResourceManager.GetString("ParamMonto_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to proy_nombre.
+        /// </summary>
+        internal static string ProyNombre {
+            get {
+                return ResourceManager.GetString("ProyNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String {
+            get {
+                return ResourceManager.GetString("String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String2 {
+            get {
+                return ResourceManager.GetString("String2", resourceCulture);
             }
         }
     }

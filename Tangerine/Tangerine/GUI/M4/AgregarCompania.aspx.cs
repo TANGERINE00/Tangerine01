@@ -16,10 +16,10 @@ namespace Tangerine.GUI.M4
         string _acronimo = String.Empty;
         string _rif = String.Empty;
         string _email = String.Empty;
+        string _telefono = String.Empty;
         string _fecha = String.Empty;
         int _status = 1; // se crea el status activo por default.
-        int _direccionId = 0;
-        int _clientePotencialId = 0;
+        int _direccionId = 1; //hacer el combo-box de lugares, se utiliza 1 para pruebas.
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,10 +32,11 @@ namespace Tangerine.GUI.M4
             _acronimo = InputAcronimo1.Value;
             _rif = InputRIF1.Value;
             _email = InputEmail1.Value;
+            _telefono = InputTelefono1.Value;
             _fecha = InputFechaRegistro1.Value;
 
-            Compania company = new Compania(_nombre, _rif, _email, _acronimo, DateTime.Parse(_fecha),
-                                                _status, _direccionId, _clientePotencialId);
+            Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
+                                                _status, _direccionId);
             LogicaM4 companyLogic = new LogicaM4();
             companyLogic.AddNewCompany(company);
 

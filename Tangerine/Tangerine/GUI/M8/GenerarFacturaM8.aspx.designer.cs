@@ -22,15 +22,6 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlForm generar_factura;
         
         /// <summary>
-        /// textNumeroFactura_M8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText textNumeroFactura_M8;
-        
-        /// <summary>
         /// textFecha_M8 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace Tangerine.GUI.M8 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText textMonto_M8;
+        
+        /// <summary>
+        /// ContenedorBoton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ContenedorBoton;
         
         /// <summary>
         /// buttomGenerar_M8 control.

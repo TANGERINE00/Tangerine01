@@ -11,6 +11,7 @@
 *.userprefs
 *.dll
 bin
+.config
 
 # Build results
 [Dd]ebug/

@@ -8,7 +8,7 @@ using DatosTangerine.M7;
 
 namespace LogicaTangerine.M7
 {
-    class LogicaProyecto
+    public class LogicaProyecto
     {
         BDProyecto _Pro = new BDProyecto();
         BDEmpleadoProyecto _Empl = new BDEmpleadoProyecto();
@@ -30,7 +30,6 @@ namespace LogicaTangerine.M7
             {
                 return false;
             }
-
         }
 
         /// <summary>
@@ -40,10 +39,11 @@ namespace LogicaTangerine.M7
         /// <param name="Empleados"></param>
         /// <param name="Contacto"></param>
         /// <returns></returns>
-        public Boolean modificarProyecto(Proyecto P, int[] Empleados, int[] Contacto)
+        public Boolean modificarProyecto(Proyecto P)
         {
 
-            if (_Pro.ChangeProyecto(P))
+            if (_Pro.ChangeProyecto(P) && _Cont.DeleteProyectoContacto(P) &&
+                _Cont.AddProyectoContacto(P) && _Empl.DeleteProyectoEmpleado(P) && _Empl.AddProyectoEmpleado(P))
             {
                 return true;
             }
@@ -63,6 +63,17 @@ namespace LogicaTangerine.M7
             return pros;
         }
 
+        /// <summary>
+        /// Metodo que devuelve un proyecto dado el ID
+        /// </summary>
+        /// <param name="ID"> id del proyecto</param>
+        /// <returns>Un Proyecto </returns>
+        public Proyecto consultarProyecto(int ID) {
+
+            return _Pro.ContactProyecto(ID);
+
+            }
+    
     }
 
 }
