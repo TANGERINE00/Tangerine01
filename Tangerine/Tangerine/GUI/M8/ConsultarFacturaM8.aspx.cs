@@ -102,6 +102,28 @@ namespace Tangerine.GUI.M8
 
         protected void busquedaNumero_Click(object sender, EventArgs e)
         {
+            #region Limpiado de la tabla de consulta
+
+            factura += ResourceGUIM8.OpenTR;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + null + ResourceGUIM8.CloseTD;
+                //Acciones de cada contacto
+                factura += ResourceGUIM8.OpenTD;
+                factura += ResourceGUIM8.BotonModif + null + ResourceGUIM8.CloseBotonParametro +
+                           ResourceGUIM8.BotonInhab + null + ResourceGUIM8.CloseBotonParametro;
+                factura += ResourceGUIM8.CloseTD;
+
+            factura += ResourceGUIM8.CloseTR;
+
+            #endregion
+
+
+            #region Llenado de la consultar por numero factura
             LogicaM8 consulta = new LogicaM8();
             int numeroFactura = int.Parse(textBuscarId.Value);
 
@@ -111,46 +133,41 @@ namespace Tangerine.GUI.M8
                 {
                         factura += ResourceGUIM8.OpenTR;
 
-                        factura += ResourceGUIM8.OpenTD + Factura.idFactura.ToString() + ResourceGUIM8.CloseTD;
-                        Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
-                        factura += ResourceGUIM8.OpenTD + compania.NombreCompania.ToString() + ResourceGUIM8.CloseTD;
-                        Proyecto proyecto = consulta.SearchProyectoFactura(int.Parse(Factura.idProyectoFactura.ToString()));
-                        factura += ResourceGUIM8.OpenTD + proyecto.Nombre.ToString() + ResourceGUIM8.CloseTD;
-                        factura += ResourceGUIM8.OpenTD + Factura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
-                        factura += ResourceGUIM8.OpenTD + Factura.fechaFactura.ToString("dd/MM/yyyy") + ResourceGUIM8.CloseTD;
+                            factura += ResourceGUIM8.OpenTD + Factura.idFactura.ToString() + ResourceGUIM8.CloseTD;
+                            Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
+                            factura += ResourceGUIM8.OpenTD + compania.NombreCompania.ToString() + ResourceGUIM8.CloseTD;
+                            Proyecto proyecto = consulta.SearchProyectoFactura(int.Parse(Factura.idProyectoFactura.ToString()));
+                            factura += ResourceGUIM8.OpenTD + proyecto.Nombre.ToString() + ResourceGUIM8.CloseTD;
+                            factura += ResourceGUIM8.OpenTD + Factura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
+                            factura += ResourceGUIM8.OpenTD + Factura.fechaFactura.ToString("dd/MM/yyyy") + ResourceGUIM8.CloseTD;
 
-                        //Equals cero para factura "Por Pagar"
-                        if (Factura.estatusFactura.Equals(0))
-                        {
-                            factura += ResourceGUIM8.OpenTD + ResourceGUIM8.porPagar + ResourceGUIM8.CloseTD;
+                            //Equals cero para factura "Por Pagar"
+                            if (Factura.estatusFactura.Equals(0))
+                            {
+                                factura += ResourceGUIM8.OpenTD + ResourceGUIM8.porPagar + ResourceGUIM8.CloseTD;
 
-                        }
-                        //Equals uno para factura "Pagada"
-                        else if (Factura.estatusFactura.Equals(1))
-                        {
-                            factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
-                        }
-                        //Equals dos para factura "Anulada"
-                        else if (Factura.estatusFactura.Equals(2))
-                        {
-                            factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
-                        }
-
-
-                        factura += ResourceGUIM8.OpenTD + Factura.montoFactura + " $" + ResourceGUIM8.CloseTD;
-
-                        //Acciones de cada contacto
-                        factura += ResourceGUIM8.OpenTD;
-                        factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                                   ResourceGUIM8.BotonInhab + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
-                        ;
-
-                        factura += ResourceGUIM8.CloseTD;
+                            }
+                            //Equals uno para factura "Pagada"
+                            else if (Factura.estatusFactura.Equals(1))
+                            {
+                                factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
+                            }
+                            //Equals dos para factura "Anulada"
+                            else if (Factura.estatusFactura.Equals(2))
+                            {
+                                factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
+                            }
 
 
+                            factura += ResourceGUIM8.OpenTD + Factura.montoFactura + " $" + ResourceGUIM8.CloseTD;
 
-                        /* factura += ResourceGUIM8.OpenTD + ResourceGUIM8.BotonInfo + ResourceGUIM8.BotonModif + 
-                                    ResourceGUIM8.CloseTD;  */
+                            //Acciones de cada contacto
+                            factura += ResourceGUIM8.OpenTD;
+                            factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                       ResourceGUIM8.BotonInhab + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+
+                            factura += ResourceGUIM8.CloseTD;
+
 
                         factura += ResourceGUIM8.CloseTR;
 
@@ -159,6 +176,7 @@ namespace Tangerine.GUI.M8
                 {
 
                 }
+            #endregion
 
         }
 
