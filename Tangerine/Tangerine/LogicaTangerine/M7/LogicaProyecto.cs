@@ -58,7 +58,8 @@ namespace LogicaTangerine.M7
         /// Metodo para consultar todos los proyectos
         /// </summary>
         /// <returns></returns>
-        public List<Proyecto> consultarProyectos() {
+        public List<Proyecto> consultarProyectos() 
+        {
             List<Proyecto> pros =  new List<Proyecto>();
             return pros;
         }
@@ -68,12 +69,22 @@ namespace LogicaTangerine.M7
         /// </summary>
         /// <param name="ID"> id del proyecto</param>
         /// <returns>Un Proyecto </returns>
-        public Proyecto consultarProyecto(int ID) {
+        public Proyecto consultarProyecto(int ID)
+        {
 
             return _Pro.ContactProyecto(ID);
 
             }
     
+    /// <summary>
+    /// Metodo que devuelve los proyecto en desarrollo con acuerdo de pago mensual, los cuales les toca facturar hoy
+    /// </summary>
+    /// <returns>lista de proyectos</returns>
+    public List<Proyecto> consultarAcuerdoPagoMensual()
+    {
+        return _Pro.ContactProyectosxAcuerdoPago();
+    }
     }
 
+    
 }
