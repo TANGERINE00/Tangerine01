@@ -35,7 +35,7 @@
 
                     <div class="form-group" runat ="server">
                       <label for="labelFecha_M8">Fecha</label>
-                      <input type="text" runat="server"  class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy" >
+                      <input type="text" runat="server"  class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy" disabled="disabled" >
                     </div>
 
                       <div class="form-group" runat ="server">

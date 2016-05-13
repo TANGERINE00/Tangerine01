@@ -11,8 +11,6 @@ namespace Tangerine.GUI.M7
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        Boolean _verificarCreacion =  false;
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             
