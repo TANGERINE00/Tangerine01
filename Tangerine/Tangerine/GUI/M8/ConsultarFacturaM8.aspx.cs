@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M8
                         factura += ResourceGUIM8.OpenTD;
                         factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                    ResourceGUIM8.BotonInhab + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
-                        ;
+                        
 
                         factura += ResourceGUIM8.CloseTD;
 
