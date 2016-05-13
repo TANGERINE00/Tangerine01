@@ -151,29 +151,18 @@
 
 
                     <div class="form-group">
-                        <label for="input_costo">Costo del Proyecto</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-btn">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="Moneda" runat="server">
-                                        Moneda
-                                        <span class="fa fa-caret-down"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bolivar</a></li>
-                                        <li><a href="#">Dolar</a></li>
-                                        <li><a href="#">Euro</a></li>
-                                        <li><a href="#">Bitcoin</a></li>
-                                    </ul>
+                        <label for="input_horas" style="width: 100%; float: left; display: block;">Costo del Proyecto</label>
 
-                                </div>
+                        <div class="input-group input-group">
+                            <div class="input-group-btn">
+
+                                <asp:DropDownList ID="comboTipoCosto" class="btn btn-primary dropdown-toggle" runat="server">
+                                </asp:DropDownList>
+
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control" id="costo" runat="server">
-                            <%--<span class="input-group-addon">.00</span>--%>
+                            <input type="text" class="form-control">
                         </div>
-
-
 
                     </div>
 
@@ -188,6 +177,7 @@
                             <option>Otro</option>
                         </select>
                     </div>
+
 
 
 
