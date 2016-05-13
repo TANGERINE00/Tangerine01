@@ -102,6 +102,8 @@ namespace Tangerine.GUI.M8
 
         protected void busquedaNumero_Click(object sender, EventArgs e)
         {
+            tabla.Text = null; //Aqui se limpia la tabla
+
             LogicaM8 consulta = new LogicaM8();
             int numeroFactura = int.Parse(textBuscarId.Value);
 
