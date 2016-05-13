@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M6 {
     public partial class AgregarPropuesta {
         
         /// <summary>
+        /// agregar_propuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_propuesta;
+        
+        /// <summary>
         /// cliente control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText precondicion_0;
         
         /// <summary>
-        /// duracion control.
+        /// comboDuracion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl duracion;
+        protected global::System.Web.UI.WebControls.DropDownList comboDuracion;
         
         /// <summary>
         /// datepicker1 control.

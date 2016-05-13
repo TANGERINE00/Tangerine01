@@ -17,7 +17,7 @@
     <li class="active">Agregar Propuesta</li>
 </asp:Content>
 
-<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <style>
         .main-footer {
@@ -55,14 +55,14 @@
         }
     </style>
 
+    <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
 
+        <div class="col-md-6" runat="server">
 
-    <div class="col-md-6">
+            <div class="box box-primary" style="height: inherit !important" runat="server">
 
-        <div class="box box-primary" style="height: inherit !important">
+                <!-- form start -->
 
-            <!-- form start -->
-            <form role="form">
 
                 <div class="box-body">
 
@@ -106,24 +106,16 @@
                     <div class="form-group">
                         <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
 
-                        <div class="input-group input-group-sm">
+                        <div class="input-group input-group">
                             <div class="input-group-btn">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-                                        Duracion
-                    <span class="fa fa-caret-down"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" id="duracion" name="duracion" runat="server">
-                                        <li><a href="#">Meses</a></li>
-                                        <li><a href="#">Dias</a></li>
-                                        <li><a href="#">Horas</a></li>
-                                    </ul>
-                                </div>
+
+                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server">
+                                </asp:DropDownList>
+
                             </div>
                             <!-- /btn-group -->
                             <input type="text" class="form-control">
                         </div>
-
 
                     </div>
 
@@ -216,21 +208,20 @@
 
                 </div>
 
-            </form>
 
-            <div class="box-footer">
-                <asp:Button ID="btnagregar" class="btn btn-primary"
-                    OnClick="btnagregar_Click" type="submit" runat="server"
-                    Text="Agregar"></asp:Button>
+
+                <div class="box-footer" runat="server">
+                    <asp:Button ID="btnagregar" class="btn btn-primary"
+                        OnClick="btnagregar_Click" type="submit" runat="server"
+                        Text="Agregar"></asp:Button>
+
+                </div>
+
             </div>
-
         </div>
-    </div>
+    </form>
 
 
 
 
-
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 </asp:Content>

@@ -59,8 +59,8 @@ namespace DatosTangerine.M6
 
 
 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-               // List<Resultado> results = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AddNewContact, parametros);
+                //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarPropuesta y todos los parametros que recibe
+                List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarPropuesta, parametros);
 
             }
             catch (Exception ex)
