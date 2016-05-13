@@ -339,6 +339,7 @@ create table FACTURA
 	fac_monto_total numeric(12,3) not null,
 	fac_monto_restante numeric(12,3) not null,
 	fac_descripcion varchar(500) not null,
+	fac_estatus int not null,
 	fk_proy_id int not null,
 	fk_compania_id int not null,
 
@@ -808,6 +809,19 @@ AS
  end;
 GO
 
+---- StoredProcedure Consultar Proyecto por acuerdo de pago mensual ----
+CREATE PROCEDURE M7_ConsultarAcuerdoPagoMensual
+
+AS
+	BEGIN
+		SELECT proy_id AS proy_id ,proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO WHERE DAY(proy_fecha_inicio) = DAY(GETDATE()) and proy_estatus = 'Desarrollo' and proy_acuerdo_pago = 'Mensual';
+	END
+GO
+
 
 
 -----------------------------------
@@ -823,25 +837,26 @@ CREATE PROCEDURE M8_AgregarFactura
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
 	@descripcion [varchar](500),
+	@estatus int,
 	@id_proyecto int,
 	@id_compania int
 
 AS
 	BEGIN
-    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fk_proy_id, fk_compania_id) 
-		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @id_proyecto, @id_compania);  
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);  
  	END;
 GO
 
 ---- StoredProcedure Consultar Factura ----
 CREATE PROCEDURE M8_ConsultarFactura
-	@id int
+	@id_Factura int
 
 AS
 	BEGIN
-		SELECT fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
-			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
-		FROM FACTURA WHERE fac_id = @id;
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
+			fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
 
@@ -851,16 +866,17 @@ CREATE PROCEDURE M8_ConsultarFacturas
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
-			fac_descripcion AS fac_descripcion, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA;
 	END
 GO
 
 CREATE PROCEDURE M8_ConsultarNombreCompaniaFacturas
- @id int
+	@id int
+
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre
+		SELECT com_nombre AS com_nombre
 		FROM COMPANIA WHERE com_id = @id;
 	END
 GO
@@ -872,13 +888,14 @@ CREATE PROCEDURE M8_ModificarFactura
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
 	@descripcion [varchar](500),
+	@estatus int,
 	@id_proyecto int,
 	@id_compania int
 
 AS
  	BEGIN
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
-    		fac_descripcion = @descripcion, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
+    		fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id_Factura;  
  	END;
 GO

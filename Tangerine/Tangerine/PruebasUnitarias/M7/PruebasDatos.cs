@@ -222,6 +222,25 @@ namespace PruebasUnitarias.M7
 
      }
 
+
+     [Test]
+     public void TestContactProyectosXAcuerdoPago()
+     {
+         //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+         proyectos = theProyect2.ContactProyectosxAcuerdoPago();
+
+         //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+
+         for (int i = 0; i < proyectos.Count(); i++)
+         {
+
+             Assert.IsNotEmpty(proyectos[i].Nombre);
+         }
+
+      
+      
+     }
+
         
     }
 }

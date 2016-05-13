@@ -144,6 +144,9 @@
   <data name="FacDescripcion" xml:space="preserve">
     <value>fac_descripcion</value>
   </data>
+  <data name="FacEstatus" xml:space="preserve">
+    <value>fac_estatus</value>
+  </data>
   <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
     <value>@descripcion</value>
+  </data>
+  <data name="ParamEstatus" xml:space="preserve">
+    <value>@estatus</value>
   </data>
   <data name="ParamFecha_Emision" xml:space="preserve">
     <value>@fecha_emision</value>
