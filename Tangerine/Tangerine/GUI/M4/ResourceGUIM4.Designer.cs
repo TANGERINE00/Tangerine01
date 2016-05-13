@@ -61,6 +61,15 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Acrónimo:.
+        /// </summary>
+        internal static string Acronimo {
+            get {
+                return ResourceManager.GetString("Acronimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a title=&quot;Contactos&quot; class=&quot;btn btn-warning glyphicon glyphicon-list-alt&quot; &gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonContac {
@@ -133,6 +142,33 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/div&gt;.
+        /// </summary>
+        internal static string CloseDiv {
+            get {
+                return ResourceManager.GetString("CloseDiv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/h3&gt;.
+        /// </summary>
+        internal static string Closeh3 {
+            get {
+                return ResourceManager.GetString("Closeh3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/h4&gt;.
+        /// </summary>
+        internal static string Closeh4 {
+            get {
+                return ResourceManager.GetString("Closeh4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/td&gt;.
         /// </summary>
         internal static string CloseTD {
@@ -169,6 +205,24 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a E-mail:.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha:.
+        /// </summary>
+        internal static string Fecha {
+            get {
+                return ResourceManager.GetString("Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-success&quot;&gt;Habilitada&lt;/span&gt;.
         /// </summary>
         internal static string habilitado {
@@ -183,6 +237,24 @@ namespace Tangerine.GUI.M4 {
         internal static string inhabilitado {
             get {
                 return ResourceManager.GetString("inhabilitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lugar:.
+        /// </summary>
+        internal static string Lugar {
+            get {
+                return ResourceManager.GetString("Lugar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre:.
+        /// </summary>
+        internal static string Nombre {
+            get {
+                return ResourceManager.GetString("Nombre", resourceCulture);
             }
         }
         
@@ -223,6 +295,33 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;row&quot;&gt;.
+        /// </summary>
+        internal static string OpenDivRow {
+            get {
+                return ResourceManager.GetString("OpenDivRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;h3 style=&quot;bold&quot;&gt;.
+        /// </summary>
+        internal static string Openh3 {
+            get {
+                return ResourceManager.GetString("Openh3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;h4&gt;.
+        /// </summary>
+        internal static string Openh4 {
+            get {
+                return ResourceManager.GetString("Openh4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;td&gt;.
         /// </summary>
         internal static string OpenTD {
@@ -237,6 +336,33 @@ namespace Tangerine.GUI.M4 {
         internal static string OpenTR {
             get {
                 return ResourceManager.GetString("OpenTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a RIF:.
+        /// </summary>
+        internal static string Rif {
+            get {
+                return ResourceManager.GetString("Rif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Status:.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Teléfono:.
+        /// </summary>
+        internal static string Telefono {
+            get {
+                return ResourceManager.GetString("Telefono", resourceCulture);
             }
         }
     }

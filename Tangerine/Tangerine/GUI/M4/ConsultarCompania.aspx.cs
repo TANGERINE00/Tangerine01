@@ -114,8 +114,22 @@ namespace Tangerine.GUI.M4
                 foreach (Compania theCompany in listCompany)
                 {
                     if (theCompany.IdCompania.Equals(idCompany))
-                    { 
-                       
+                    {
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Nombre + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.NombreCompania.ToString() + ResourceGUIM4.Closeh4;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Acronimo + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.AcronimoCompania.ToString() + ResourceGUIM4.Closeh4;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Rif + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.RifCompania.ToString() + ResourceGUIM4.Closeh4;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Email + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.EmailCompania.ToString() + ResourceGUIM4.Closeh4;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Telefono + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.TelefonoCompania.ToString() + ResourceGUIM4.Closeh4;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Status + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.StatusCompania.ToString() + ResourceGUIM4.Closeh4;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh3 + ResourceGUIM4.Fecha + ResourceGUIM4.Closeh3;
+                        infoCompany += ResourceGUIM4.OpenDivRow + ResourceGUIM4.Openh4 + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.Closeh4;
+                   
                     }
                 }
                 

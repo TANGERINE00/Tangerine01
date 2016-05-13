@@ -177,4 +177,46 @@
   <data name="OpenBotonInhab" xml:space="preserve">
     <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left 0.2px" id="Inh</value>
   </data>
+  <data name="Acronimo" xml:space="preserve">
+    <value>Acrónimo:</value>
+  </data>
+  <data name="CloseDiv" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="Closeh3" xml:space="preserve">
+    <value>&lt;/h3&gt;</value>
+  </data>
+  <data name="Closeh4" xml:space="preserve">
+    <value>&lt;/h4&gt;</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="Lugar" xml:space="preserve">
+    <value>Lugar:</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="OpenDivRow" xml:space="preserve">
+    <value>&lt;div class="row"&gt;</value>
+  </data>
+  <data name="Openh3" xml:space="preserve">
+    <value>&lt;h3 style="bold"&gt;</value>
+  </data>
+  <data name="Openh4" xml:space="preserve">
+    <value>&lt;h4&gt;</value>
+  </data>
+  <data name="Rif" xml:space="preserve">
+    <value>RIF:</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
 </root>

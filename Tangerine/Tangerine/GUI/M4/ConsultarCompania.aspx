@@ -79,8 +79,9 @@
                 <!-- form start -->
                 
                   <div class="box-body">
-                    <asp:Literal runat="server" ID="infoCom"></asp:Literal>
-
+                    <div class="well">
+                        <asp:Literal runat="server" ID="infoCom"></asp:Literal>
+                    </div>
                   </div><!-- /.box-body -->
 
                 
