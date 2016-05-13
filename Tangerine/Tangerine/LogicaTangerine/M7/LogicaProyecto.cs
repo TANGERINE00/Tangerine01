@@ -63,6 +63,17 @@ namespace LogicaTangerine.M7
             return pros;
         }
 
+        /// <summary>
+        /// Metodo que devuelve un proyecto dado el ID
+        /// </summary>
+        /// <param name="ID"> id del proyecto</param>
+        /// <returns>Un Proyecto </returns>
+        public Proyecto consultarProyecto(int ID) {
+
+            return _Pro.ContactProyecto(ID);
+
+            }
+    
     }
 
 }
