@@ -121,6 +121,10 @@
     <value>M6_AgregarPropuesta</value>
     <comment>agrega una propuesta a la BD</comment>
   </data>
+  <data name="ConsultarPropuesta" xml:space="preserve">
+    <value>M6_ListaPropuestaProyecto</value>
+    <comment>Stored Procedure que consulta las propuestas aprobadas que aun no son proyectos</comment>
+  </data>
   <data name="ParamAcuerdoProp" xml:space="preserve">
     <value>@acuerdo</value>
     <comment>Atributo que identifica el acuerdo de pago de la propuesta</comment>

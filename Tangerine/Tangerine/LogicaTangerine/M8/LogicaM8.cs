@@ -20,7 +20,7 @@ namespace LogicaTangerine.M8
 
         }
 
-        public List<Facturacion> fillTable()
+        public List<Facturacion> getFacturas()
         {
             try
             {
@@ -32,7 +32,7 @@ namespace LogicaTangerine.M8
             }
         }
 
-        public bool AddNewFactura(Facturacion factura)
+        public bool AddNewFactura( Facturacion factura )
         {
             try
             {
@@ -44,7 +44,7 @@ namespace LogicaTangerine.M8
             }
         }
 
-        public bool ChangeExistingFactura(Facturacion factura)
+        public bool ChangeExistingFactura( Facturacion factura )
         {
             try
             {
@@ -56,7 +56,7 @@ namespace LogicaTangerine.M8
             }
         }
 
-        public Facturacion SearchFactura(int idFactura)
+        public Facturacion SearchFactura( int idFactura )
         {
             try
             {
@@ -67,5 +67,31 @@ namespace LogicaTangerine.M8
                 throw ex;
             }
         }
+
+        public Compania SearchCompaniaFactura( int idCompania )
+        {
+            try
+            {
+                return BDFactura.ConsultCompany(idCompania);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Proyecto SearchProyectoFactura(int idProyecto)
+        {
+            try
+            {
+                return BDFactura.ContactProyectoFactura( idProyecto );
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

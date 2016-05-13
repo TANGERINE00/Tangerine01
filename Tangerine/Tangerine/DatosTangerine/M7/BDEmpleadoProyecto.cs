@@ -54,6 +54,7 @@ namespace DatosTangerine.M7
                     catch (Exception ex)
                     {
                         throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                        return false;
                     }
 
                 }
@@ -107,6 +108,7 @@ namespace DatosTangerine.M7
             catch (Exception ex)
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                
             }
         }
 
@@ -136,6 +138,7 @@ namespace DatosTangerine.M7
             catch (Exception ex)
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                return false;
             }
 
             return true;
