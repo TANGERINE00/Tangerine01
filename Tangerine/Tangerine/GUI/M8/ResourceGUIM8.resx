@@ -150,11 +150,11 @@
   <data name="Coma" xml:space="preserve">
     <value>,</value>
   </data>
-  <data name="habilitado" xml:space="preserve">
-    <value>&lt;td&gt;&lt;span class="label label-success"&gt;Habilitada&lt;/span&gt;&lt;/td&gt;</value>
+  <data name="pagada" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;Pagada&lt;/span&gt;</value>
   </data>
-  <data name="inhabilitado" xml:space="preserve">
-    <value>&lt;td&gt;&lt;span class="label label-error"&gt;Inhabilitada&lt;/span&gt;&lt;/td&gt;</value>
+  <data name="porPagar" xml:space="preserve">
+    <value>&lt;span class="label label-warning"&gt;Por Pagar&lt;/span&gt;</value>
   </data>
   <data name="OpenTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
@@ -164,5 +164,8 @@
   </data>
   <data name="BotonGenerarFactura" xml:space="preserve">
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ConsultarFacturaM8.aspx</value>
+  </data>
+  <data name="anulada" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Anulada&lt;/span&gt;</value>
   </data>
 </root>

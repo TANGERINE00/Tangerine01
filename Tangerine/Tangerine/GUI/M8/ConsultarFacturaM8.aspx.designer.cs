@@ -13,6 +13,42 @@ namespace Tangerine.GUI.M8 {
     public partial class ConsultarFacturaM8 {
         
         /// <summary>
+        /// consulta_factura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm consulta_factura;
+        
+        /// <summary>
+        /// textBuscarId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText textBuscarId;
+        
+        /// <summary>
+        /// BuscadorId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton BuscadorId;
+        
+        /// <summary>
+        /// btnRun control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnRun;
+        
+        /// <summary>
         /// tabla control.
         /// </summary>
         /// <remarks>

@@ -40,6 +40,9 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
@@ -54,6 +57,103 @@ namespace DatosTangerine.M4
 
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.AddNewCompany, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo para eliminar una compañia en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Compania para borrar en bd</param>
+        /// <returns>true si fue agregado</returns>
+        public static bool DeleteCompany(Compania theCompany)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.DeleteCompany, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
+
+        /// <summary>
+        /// Metodo para habilitar una compañia en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Compania para habilitar en bd</param>
+        /// <returns>true si fue agregado</returns>
+        public static bool EnableCompany(Compania theCompany)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.IdCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, "1", false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M4_InhabilitarHabilitar y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.DisableAbleComany, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo para inhabilitar una compañia en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Compania para habilitar en bd</param>
+        /// <returns>true si fue agregado</returns>
+        public static bool DisableCompany(Compania theCompany)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.IdCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, "0", false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M4_InhabilitarHabilitar y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.DisableAbleComany, parameters);
 
             }
             catch (Exception ex)

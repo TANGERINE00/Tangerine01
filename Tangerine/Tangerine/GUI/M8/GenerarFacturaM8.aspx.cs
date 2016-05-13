@@ -35,6 +35,7 @@ namespace Tangerine.GUI.M8
             Facturacion factura = new Facturacion(_fechaEmision, _montoTotal, _montoRestante, _Descripcion, 0, 1, 1 );
             LogicaM8 facturaLogic = new LogicaM8();
             facturaLogic.AddNewFactura(factura);
+            Server.Transfer("ConsultarFacturaM8.aspx");
 
         }
     }
