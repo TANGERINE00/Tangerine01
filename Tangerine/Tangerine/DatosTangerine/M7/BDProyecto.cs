@@ -309,7 +309,7 @@ namespace DatosTangerine.M7
 
        
        /// <summary>
-       /// Metodo que devuelve los proyecto en desarrollo con acuerdo de pago mensual, los cuales les toca facturar
+       /// Metodo que consulta los proyecto en desarrollo con acuerdo de pago mensual, los cuales les toca facturar
        /// </summary>
        /// <returns> Lista de  Proyectos</returns>
        public List<Proyecto> ContactProyectosxAcuerdoPago()
