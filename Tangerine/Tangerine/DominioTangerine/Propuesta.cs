@@ -41,6 +41,8 @@ namespace DominioTangerine
 
         private List<Compania> _listaCompania;
         private List<Requerimiento> _listaRequerimiento;
+        private string conNombre;
+        private int conEstatus;
 
         #endregion
 
@@ -137,7 +139,19 @@ namespace DominioTangerine
 
         }
 
+        public Propuesta(string conNombre, int conEstatus)
+        {
+            // TODO: Complete member initialization
+            this.conNombre = conNombre;
+            this.conEstatus = conEstatus;
+        }
+
+       
+
+        
+
         #endregion
+
 
     }
 }

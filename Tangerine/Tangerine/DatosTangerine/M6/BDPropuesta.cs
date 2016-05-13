@@ -112,7 +112,7 @@ namespace DatosTangerine.M6
                     
 
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
-                    Propuesta propuesta = new Propuesta();
+                    Propuesta propuesta = new Propuesta(conNombre, conEstatus);
                     listaPropuesta.Add(propuesta);
                 }
 
