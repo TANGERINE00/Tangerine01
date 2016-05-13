@@ -60,7 +60,7 @@
                     </div>
 
                        <div class="box-footer" runat ="server">
-                    <asp:Button id="buttomModificar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar" OnClick="buttomModificarFactura_Click" OnClientClick="window.location.href='ConsultarFacturaM8.aspx'; return false;" ></asp:Button>
+                    <asp:Button id="buttomModificar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar" OnClick="buttomModificarFactura_Click"></asp:Button>
                   </div>
 
                   </div><!-- /.box-body -->
