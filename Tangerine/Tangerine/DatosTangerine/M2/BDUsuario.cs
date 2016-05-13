@@ -159,9 +159,15 @@ namespace DatosTangerine.M2
             return usuario;
         }
 
+        /// <summary>
+        /// Método que obtiene el rol y los menús que poseen opciones prohibidas para el usuario
+        /// </summary>
+        /// <param name="codigoRol"></param>
+        /// <returns></returns>
         public static Rol ObtenerRolUsuario( int codigoRol ) 
         {
             Rol rol = new Rol();
+            Menu menu;
             ListaGenerica<Menu> lista = new ListaGenerica<Menu>(); ;
 
             BDConexion laConexion = new BDConexion();
@@ -176,19 +182,21 @@ namespace DatosTangerine.M2
                                                                       and rol_id = " + codigoRol.ToString() );
                 bool rolAgregado = false;
 
-                while (resultadoConsulta.Read())
+                while ( resultadoConsulta.Read() )
                 {
                     if ( rolAgregado == false )
                     {
-                        rol.Nombre = resultadoConsulta.GetString(0);
+                        rol.Nombre = resultadoConsulta.GetString( 0 );
                         rolAgregado = true;
                     }
 
                     string nombreMenu = resultadoConsulta.GetString( 1 );
-                    Menu menu = new Menu( nombreMenu );
+
+                    ListaGenerica<Opcion> opciones = ObtenerOpciones( nombreMenu, codigoRol );
+
+                    menu = new Menu( nombreMenu, opciones );
                     
                     lista.AgregarElemento( menu );
-                    
                 }
 
             }
@@ -198,6 +206,49 @@ namespace DatosTangerine.M2
             }
 
             return rol;
+        }
+
+        /// <summary>
+        /// Método que devuelve las opciones de un menú prohibidas para un rol
+        /// </summary>
+        /// <param name="nombreMenu"></param>
+        /// <param name="codigoRol"></param>
+        /// <returns></returns>
+        public static ListaGenerica<Opcion> ObtenerOpciones( string nombreMenu, int codigoRol ) 
+        {
+            ListaGenerica<Opcion> lista = new ListaGenerica<Opcion>();
+            Opcion opcion;
+
+            BDConexion laConexion = new BDConexion();
+            SqlDataReader resultadoConsulta;
+
+            try
+            {
+                resultadoConsulta = laConexion.EjecutarQuery( @"SELECT o.opc_nombre, o.opc_url
+                                                                FROM menu m, opcion o, rol_opcion ro
+                                                                WHERE m.men_nombre = '" + nombreMenu + @"' 
+                                                                      and ro.fk_rol_id = " + codigoRol.ToString() +
+                                                                    @"and m.men_id = o.fk_men_id 
+                                                                      and o.opc_id = ro.fk_opc_id" );
+
+                while ( resultadoConsulta.Read() )
+                {
+                    string nombreOpcion = resultadoConsulta.GetString( 0 );
+
+                    string url = resultadoConsulta.GetString( 1 );
+
+                    opcion = new Opcion( nombreOpcion, url );
+
+                    lista.AgregarElemento( opcion );
+                }
+
+            }
+            catch ( Exception ex )
+            {
+
+            }
+
+            return lista;
         }
     }
 }
