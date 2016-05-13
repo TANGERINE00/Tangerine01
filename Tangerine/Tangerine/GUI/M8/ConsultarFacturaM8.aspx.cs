@@ -53,7 +53,7 @@ namespace Tangerine.GUI.M8
                         Proyecto proyecto = prueba.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
                         factura += ResourceGUIM8.OpenTD + proyecto.Nombre.ToString() + ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.OpenTD + theFactura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
-                        factura += ResourceGUIM8.OpenTD + theFactura.fechaFactura.ToString() + ResourceGUIM8.CloseTD;
+                        factura += ResourceGUIM8.OpenTD + theFactura.fechaFactura.ToString("dd/MM/yyyy") + ResourceGUIM8.CloseTD;
                         /* if (theFactura.StatusCompania.Equals(1))
                     {
                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.habilitado + ResourceGUIM8.CloseTD;
@@ -67,8 +67,13 @@ namespace Tangerine.GUI.M8
 
                         //Acciones de cada contacto
                         factura += ResourceGUIM8.OpenTD;
-                        factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                        factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                   ResourceGUIM8.BotonInhab + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
+;
+
                         factura += ResourceGUIM8.CloseTD;
+
+                      
 
                        /* factura += ResourceGUIM8.OpenTD + ResourceGUIM8.BotonInfo + ResourceGUIM8.BotonModif + 
                                    ResourceGUIM8.CloseTD;  */
