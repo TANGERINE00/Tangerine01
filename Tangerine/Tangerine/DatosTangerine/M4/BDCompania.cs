@@ -40,6 +40,9 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
