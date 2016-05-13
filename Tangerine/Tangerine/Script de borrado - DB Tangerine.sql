@@ -26,6 +26,8 @@ drop procedure M4_ConsultarCompania;
 drop procedure M4_ConsultarCompanias;
 drop procedure M4_ModificarCompania;
 drop procedure M4_InhabilitarHabilitarCompania;
+drop procedure M4_EliminarCompania;
+
 
 drop procedure M5_AgregarContacto;
 drop procedure M5_ConsultarContactoId;
