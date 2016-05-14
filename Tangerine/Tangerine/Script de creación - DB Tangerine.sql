@@ -849,7 +849,21 @@ AS
 	END;
 GO
 		
-		
+---- StoredProcedure Consultar Los proyectos que tenga un gerente ----
+CREATE PROCEDURE M7_ConsultarProyectosPorGerente
+
+     @IdGerente int
+     
+AS
+	BEGIN
+		SELECT proy_id AS proy_id ,proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO WHERE fk_gerente_id = @IdGerente ;
+	END
+GO		
+
 
 
 -----------------------------------
