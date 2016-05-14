@@ -55,13 +55,30 @@ namespace LogicaTangerine.M7
         }
 
         /// <summary>
+        /// Metodo que llena los campos de id en las listas de empleado y contacto dentro de proyecto usando las N:M
+        /// </summary>
+        /// <param name="P">proyecto</param>
+        /// <returns>booleano</returns>
+        public Boolean obtenerIDContactosyEmpleados  (Proyecto P)
+        {
+            if (_Empl.ContactProyectoEmpleado(P) && _Cont.ContactProyectoContacto(P))
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+        /// <summary>
         /// Metodo para consultar todos los proyectos
         /// </summary>
         /// <returns></returns>
         public List<Proyecto> consultarProyectos() 
         {
-            List<Proyecto> pros =  new List<Proyecto>();
-            return pros;
+            
+            return   _Pro.ContactProyectos();
+            
         }
 
         /// <summary>

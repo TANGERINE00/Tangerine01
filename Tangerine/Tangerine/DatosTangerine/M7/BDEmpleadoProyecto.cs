@@ -73,7 +73,7 @@ namespace DatosTangerine.M7
         /// Recibe un parametros:  TheProyecto que es un objeto de tipo proyecto.
         /// </summary>
         /// <returns>Lista de contactos </returns>
-        public void ContactProyectoEmpleado(Proyecto TheProyecto)
+        public Boolean ContactProyectoEmpleado(Proyecto TheProyecto)
         {
             parameters = new List<Parametro>();
             theConnection = new BDConexion();
@@ -108,8 +108,9 @@ namespace DatosTangerine.M7
             catch (Exception ex)
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                
+                return false;
             }
+            return true;
         }
 
 
