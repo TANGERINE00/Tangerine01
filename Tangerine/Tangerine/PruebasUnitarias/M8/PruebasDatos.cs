@@ -14,6 +14,8 @@ namespace PruebasUnitarias.M8
 
         #region Atributos
         public Facturacion theInvoice;
+        public Facturacion theInvoice2;
+        public Facturacion theInvoice3;
         public bool answer;
         public DateTime fecha = new DateTime(2015, 2, 10);
         #endregion
@@ -23,12 +25,7 @@ namespace PruebasUnitarias.M8
         public void init()
         {
             theInvoice = new Facturacion(DateTime.Now, 100, 50,"Hola",0,1,1);
-           /* theInvoice.fechaFactura = fecha;
-            theInvoice.montoFactura = 9000;
-            theInvoice.montoRestanteFactura = 3000;
-            theInvoice.descripcionFactura = "Hola";
-            theInvoice.idProyectoFactura = 1;
-            theInvoice.idCompaniaFactura = 1;*/
+            theInvoice2 = new Facturacion(1, DateTime.Now, 100, 50, "PruebaModificacion", 0, 1, 1);
 
 
         }
@@ -60,23 +57,25 @@ namespace PruebasUnitarias.M8
         public void TestChangeInvoice()
         {
             //Declaro test de tipo BDFactura para poder invocar el "ChangeContact(Facturacion theInvoice)"
-            theInvoice.descripcionFactura = "Factura Modificada";
-            answer = BDFactura.ChangeFactura(theInvoice);
+            
+            answer = BDFactura.ChangeFactura(theInvoice2);
 
             //answer obtiene true si se modifica la Factura, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
 
         /// <summary>
-        /// Prueba que permite verificar el eliminar de una Factura en la base de datos
+        /// Prueba que permite verificar el anular de una Factura en la base de datos
         /// </summary>
         [Test]
-        public void TestDeleteInvoice()
+        public void TestAnnularInvoice()
         {
-            //Declaro test de tipo BDFactura para poder invocar el "DeleteInvoice(Facturacion theInvoice)"
-            answer = BDFactura.DeleteFactura(theInvoice);
 
-            //answer obtiene true si se elimina la Factura, si no, deberia agarrar un excepcion
+            theInvoice3 = new Facturacion(1, DateTime.Now, 100, 50, "PruebaAnulacion", 0, 1, 1);
+            //Declaro test de tipo BDFactura para poder invocar el "AnnularInvoice(Facturacion theInvoice)"
+            answer = BDFactura.AnnularFactura(theInvoice3);
+
+            //answer obtiene true si se anula la Factura, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
     }
