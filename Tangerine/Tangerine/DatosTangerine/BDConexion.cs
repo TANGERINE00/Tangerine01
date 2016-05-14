@@ -117,7 +117,6 @@ namespace DatosTangerine
                 using (conexion)
                 {
                     comando = new SqlCommand(query, conexion);
-                    //conexion.Open();
                     SqlDataReader resultado = comando.ExecuteReader();
                     return resultado;
                 }

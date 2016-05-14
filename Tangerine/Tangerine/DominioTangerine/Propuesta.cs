@@ -39,8 +39,13 @@ namespace DominioTangerine
         private DateTime _fefinal;
         private int _costo;
 
-        private List<Compania> _listaCompania;
+        private Compania _nombrCompañia;
+
         private List<Requerimiento> _listaRequerimiento;
+        private string conNombre;
+        private int conEstatus;
+
+       
 
         #endregion
 
@@ -101,11 +106,18 @@ namespace DominioTangerine
             get { return _costo; }
             set { _costo = value; }
         }
-        public List<Compania> ListaCompania
+        public Compania NombrCompañia
         {
-            get { return _listaCompania; }
-            set { _listaCompania = value; }
+            get { return _nombrCompañia; }
+            set { _nombrCompañia = value; }
         }
+
+        public List<Requerimiento> ListaRequerimiento
+        {
+            get { return _listaRequerimiento; }
+            set { _listaRequerimiento = value; }
+        }
+      
 
 
         #endregion
@@ -118,7 +130,7 @@ namespace DominioTangerine
         }
 
         public Propuesta(String codigoP, String nombre, String descripcion, String duracion, String acuerdopago, String estatus,
-                         String moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, List<Compania> listaCompania,
+                         String moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, Compania lacompañia,
                          List<Requerimiento> listaRequerimiento)
         {
             this._codigoP = codigoP;
@@ -132,12 +144,24 @@ namespace DominioTangerine
             this._feincio = feincio;
             this._fefinal = fefinal;
             this._costo = costo;
-            this._listaCompania = listaCompania;
+            this._nombrCompañia = lacompañia;
             this._listaRequerimiento = listaRequerimiento;
 
         }
 
+        public Propuesta(string conNombre, int conEstatus)
+        {
+            // TODO: Complete member initialization
+            this.conNombre = conNombre;
+            this.conEstatus = conEstatus;
+        }
+
+       
+
+        
+
         #endregion
+
 
     }
 }
