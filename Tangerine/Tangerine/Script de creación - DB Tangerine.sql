@@ -100,7 +100,7 @@ create table USUARIO
 	usu_fecha_creacion date not null,
 	usu_activo varchar(8) not null, --Activo: Activo, Inactivo
 	fk_rol_id int not null,
-	fk_emp_num_ficha int not null,
+	fk_emp_num_ficha int,
 
 	constraint pk_usu primary key
 	(
