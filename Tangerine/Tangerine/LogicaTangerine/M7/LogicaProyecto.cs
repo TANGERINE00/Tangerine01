@@ -91,9 +91,19 @@ namespace LogicaTangerine.M7
    /// </summary>
    /// <param name="IDEmpleado"> indentificador unico de un empleado </param>
    /// <returns>lista de proyectos</returns>
-    public List<Proyecto> consultarProyectosDeYnTrabajador(int IDEmpleado)
+    public List<Proyecto> consultarProyectosDeUnTrabajador(int IDEmpleado)
     {
         return _Pro.ContactProyectoPorEmpleado(IDEmpleado);
+    }
+
+    /// <summary>
+    ///  Metodo que devuelve los proyecto en los que trabja un Gerente dado
+    /// </summary>
+    /// <param name="IDGerente"> indentificador unico de un empleado </param>
+    /// <returns>lista de proyectos</returns>
+    public List<Proyecto> consultarProyectosDeUnGerente( int IDGerente )
+    {
+        return _Pro.ContactProyectoPorGerente(IDGerente);
     }
     }
     
