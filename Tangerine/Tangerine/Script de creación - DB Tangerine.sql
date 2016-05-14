@@ -519,9 +519,19 @@ CREATE PROCEDURE M2_ObtenerDatoUsuario
 
 AS
 	BEGIN
-		SELECT usu_fecha_creacion, usu_activo, fk_rol_id, fk_emp_num_ficha
+		SELECT usu_fecha_creacion, usu_activo, fk_rol_id, isnull(fk_emp_num_ficha,0) as fk_emp_num_ficha
         FROM usuario
         WHERE usu_usuario = @usuario and usu_contrasena = @contraseña;
+	END;
+GO
+
+CREATE PROCEDURE M2_ObtenerRolUsuario
+@codigo_rol int
+AS
+	BEGIN
+		SELECT distinct rol_nombre, m.men_nombre as men_nombre
+		FROM rol, rol_opcion, opcion, menu m
+		WHERE rol_id = fk_rol_id and fk_opc_id = opc_id and fk_men_id = m.men_id and rol_id = @codigo_rol;
 	END;
 GO
 
