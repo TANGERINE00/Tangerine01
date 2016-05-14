@@ -466,7 +466,7 @@ create table ROL_OPCION
 );
 GO
 
---------Stored Procedure M4--------
+--------Stored Procedure M2--------
 CREATE PROCEDURE M2_AgregarUsuario
 	(@usuario [varchar](20),
 	@contraseña [varchar](100),
@@ -514,14 +514,14 @@ END;
 GO
 
 CREATE PROCEDURE M2_ObtenerDatoUsuario
-		@usu_nom [varchar](200),
-		@usu_contra [varchar](200)
+		@usuario [varchar](200),
+		@contraseña [varchar](200)
 
 AS
 	BEGIN
 		SELECT usu_fecha_creacion, usu_activo, fk_rol_id, fk_emp_num_ficha
         FROM usuario
-        WHERE usu_usuario = @usu_nom and usu_contrasena = @usu_contra;
+        WHERE usu_usuario = @usuario and usu_contrasena = @contraseña;
 	END;
 GO
 

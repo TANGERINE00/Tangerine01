@@ -135,7 +135,7 @@ namespace DatosTangerine.M2
         public static Usuario ObtenerDatoUsuario( Usuario usuario ) 
         {
             BDConexion laConexion = new BDConexion();
-            SqlDataReader resultadoConsulta;
+            Parametro elParametro = new Parametro();
 
             try 
             {
@@ -152,10 +152,10 @@ namespace DatosTangerine.M2
                     usuario.Activo = resultadoConsulta.GetString( 1 );
                     usuario.FichaEmpleado = resultadoConsulta.GetInt32( 3 );
                     
-                    int rolId = resultadoConsulta.GetInt32( 2 );
-                    Rol rol = ObtenerRolUsuario( rolId );
+                    //int rolId = resultadoConsulta.GetInt32( 2 );
+                    //Rol rol = ObtenerRolUsuario( rolId );
 
-                    usuario.Rol = rol;
+                    //usuario.Rol = rol;
                 }
 
             }
