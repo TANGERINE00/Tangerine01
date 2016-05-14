@@ -84,7 +84,17 @@ namespace LogicaTangerine.M7
     {
         return _Pro.ContactProyectosxAcuerdoPago();
     }
-    }
+    
 
+   /// <summary>
+   ///  Metodo que devuelve los proyecto en los que trabja un empleado dado
+   /// </summary>
+   /// <param name="IDEmpleado"> indentificador unico de un empleado </param>
+   /// <returns>lista de proyectos</returns>
+    public List<Proyecto> consultarProyectosDeYnTrabajador(int IDEmpleado)
+    {
+        return _Pro.ContactProyectoPorEmpleado(IDEmpleado);
+    }
+    }
     
 }

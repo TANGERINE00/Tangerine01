@@ -124,6 +124,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyectoTrabajaEmpleado.
+        /// </summary>
+        internal static string ContactProyectoPorEmpleado {
+            get {
+                return ResourceManager.GetString("ContactProyectoPorEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarProyectos.
         /// </summary>
         internal static string ContactProyectos {

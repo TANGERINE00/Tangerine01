@@ -832,6 +832,25 @@ AS
 GO
 
 
+---- StoredProcedure Consultar Proyectos  en los que trabaja un empleado----
+CREATE PROCEDURE M7_ConsultarProyectoTrabajaEmpleado
+@PEIdEmpleado int
+
+AS
+	BEGIN
+		SELECT proy_id AS proy_id, proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id
+			 AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO, EMPLEADO_PROYECTO 
+		WHERE PROYECTO.proy_id = EMPLEADO_PROYECTO.fk_proy_id AND EMPLEADO_PROYECTO.fk_emp_num_ficha = @PEIdEmpleado; 
+
+	END;
+GO
+		
+		
+
 
 -----------------------------------
 ------Fin Stored Procedure M7------
