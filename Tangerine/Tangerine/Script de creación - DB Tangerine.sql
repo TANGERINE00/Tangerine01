@@ -466,8 +466,64 @@ create table ROL_OPCION
 );
 GO
 
+--------Stored Procedure M4--------
+CREATE PROCEDURE M2_AgregarUsuario
+	(@usuario [varchar](20),
+	@contraseña [varchar](100),
+	@emp_num_ficha int,
+	@fecha_creacion date,
+	@rol_nombre [varchar](20))
+AS
+DECLARE
+	@id_rol int,
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT ISNULL(MAX(usu_id), 0) FROM USUARIO); 
+	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre);
+    if @emp_num_ficha < 1
+		set @emp_num_ficha = null;
+	INSERT INTO USUARIO VALUES (@id_usuario + 1, @usuario, @contraseña, @fecha_creacion, 'Activo', 
+		                        @id_rol, @emp_num_ficha);
+END;
+GO
 
+CREATE PROCEDURE M2_ModificarRolUsuario
+	(@usuario [varchar](20),
+	@rol_nombre_nuevo [varchar](20))
+AS
+DECLARE
+	@id_rol int,
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre_nuevo);
+	UPDATE USUARIO SET fk_rol_id = @id_rol where usu_id = @id_usuario;
+END;
+GO
 
+CREATE PROCEDURE M2_ModificarContraUsuario
+	(@usuario [varchar](20),
+	@contraseña_nueva [varchar](100))
+AS
+DECLARE
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	UPDATE USUARIO SET usu_contrasena = @contraseña_nueva where usu_id = @id_usuario;
+END;
+GO
+
+CREATE PROCEDURE M2_ObtenerDatoUsuario
+		@usu_nom [varchar](200),
+		@usu_contra [varchar](200)
+
+AS
+	BEGIN
+		SELECT usu_fecha_creacion, usu_activo, fk_rol_id, fk_emp_num_ficha
+        FROM usuario
+        WHERE usu_usuario = @usu_nom and usu_contrasena = @usu_contra;
+	END;
+GO
 
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----
