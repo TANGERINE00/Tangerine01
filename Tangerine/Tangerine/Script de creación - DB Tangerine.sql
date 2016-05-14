@@ -535,17 +535,7 @@ AS
 	END;
 GO
 
-CREATE PROCEDURE M2_ObtenerOpciones
-@menu_nom [varchar](200),
-@codigo_rol int
 
-AS
-BEGIN
-SELECT o.opc_nombre as opc_nombre, o.opc_url as opc_url
-    FROM menu m, opcion o, rol_opcion ro
-    WHERE m.men_nombre =@menu_nom and ro.fk_rol_id = @codigo_rol  and m.men_id = o.fk_men_id and o.opc_id = ro.fk_opc_id;
-END;
-GO
 
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----
