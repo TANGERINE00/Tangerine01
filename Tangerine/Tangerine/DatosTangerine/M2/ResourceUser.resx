@@ -173,8 +173,20 @@
   <data name="UsuFKRol" xml:space="preserve">
     <value>fk_rol_id</value>
   </data>
+  <data name="ObtenerOpciones" xml:space="preserve">
+    <value>M2_ObtenerOpciones</value>
+  </data>
   <data name="ObtenerRolUsuario" xml:space="preserve">
     <value>M2_ObtenerRolUsuario</value>
+  </data>
+  <data name="OpcNombre" xml:space="preserve">
+    <value>opc_nombre</value>
+  </data>
+  <data name="OpcUrl" xml:space="preserve">
+    <value>opc_url</value>
+  </data>
+  <data name="ParametroMenuNombre" xml:space="preserve">
+    <value>@menu_nom</value>
   </data>
   <data name="ParametroRolCodigo" xml:space="preserve">
     <value>@codigo_rol</value>

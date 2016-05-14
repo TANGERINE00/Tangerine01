@@ -120,7 +120,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
                 return false;
             }
 
@@ -144,16 +144,16 @@ namespace DatosTangerine.M2
 
                 elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
                                              false );
-                parametros.Add(elParametro);
+                parametros.Add( elParametro );
 
                 elParametro = new Parametro( ResourceUser.ParametroContrasenia, SqlDbType.VarChar, usuario.Contrasenia,
                                              false );
-                parametros.Add(elParametro);
+                parametros.Add( elParametro );
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerDatoUsuario, parametros );
 
                 //Por cada fila de la tabla voy a guardar los datos 
-                foreach (DataRow row in dt.Rows)
+                foreach ( DataRow row in dt.Rows )
                 {
                     DateTime usuFecha = DateTime.Parse( row[ResourceUser.UsuFechaCreacion].ToString() );
                     string usuAct = row[ResourceUser.UsuActivo].ToString();
@@ -171,7 +171,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
             }
 
             return usuario;
@@ -198,7 +198,7 @@ namespace DatosTangerine.M2
 
                 elParametro = new Parametro( ResourceUser.ParametroRolCodigo, SqlDbType.Int, codigoRol.ToString(),
                                              false );
-                parametros.Add(elParametro);
+                parametros.Add( elParametro );
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerRolUsuario, parametros );
 
@@ -209,24 +209,28 @@ namespace DatosTangerine.M2
                 { 
                     string rolNombre = row[ResourceUser.RolNombre].ToString();
                     string menNombre = row[ResourceUser.RolMenu].ToString();
-                    
+
+                    System.Diagnostics.Debug.WriteLine("Resultado = " + rolNombre + menNombre);
+
                     if ( rolAgregado == false )
                     {
                         rol.Nombre = rolNombre;
                         rolAgregado = true;
                     }
 
-                    //ListaGenerica<Opcion> opciones = ObtenerOpciones( menNombre, codigoRol );
+                    ListaGenerica<Opcion> opciones = ObtenerOpciones( menNombre, codigoRol );
 
-                    //menu = new Menu( menNombre, opciones );
+                    menu = new Menu( menNombre, opciones );
 
-                    //lista.AgregarElemento( menu );
+                    lista.AgregarElemento( menu );
                 }
+
+                rol.Menus = lista;
 
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
             }
 
             return rol;
@@ -244,32 +248,37 @@ namespace DatosTangerine.M2
             Opcion opcion;
 
             BDConexion laConexion = new BDConexion();
-            SqlDataReader resultadoConsulta;
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
 
             try
             {
-                resultadoConsulta = laConexion.EjecutarQuery( @"SELECT o.opc_nombre, o.opc_url
-                                                                FROM menu m, opcion o, rol_opcion ro
-                                                                WHERE m.men_nombre = '" + nombreMenu + @"' 
-                                                                      and ro.fk_rol_id = " + codigoRol.ToString() +
-                                                                    @"and m.men_id = o.fk_men_id 
-                                                                      and o.opc_id = ro.fk_opc_id" );
+                laConexion.Conectar();
 
-                while ( resultadoConsulta.Read() )
+                elParametro = new Parametro( ResourceUser.ParametroMenuNombre, SqlDbType.VarChar, nombreMenu,
+                                             false );
+                parametros.Add( elParametro );
+
+                elParametro = new Parametro( ResourceUser.ParametroRolCodigo, SqlDbType.Int, codigoRol.ToString(),
+                                             false );
+                parametros.Add( elParametro );
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerOpciones, parametros );
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
                 {
-                    string nombreOpcion = resultadoConsulta.GetString( 0 );
-
-                    string url = resultadoConsulta.GetString( 1 );
+                    string nombreOpcion = row[ResourceUser.OpcNombre].ToString();
+                    string url = row[ResourceUser.OpcUrl].ToString();
 
                     opcion = new Opcion( nombreOpcion, url );
 
                     lista.AgregarElemento( opcion );
                 }
-
             }
             catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
             }
 
             return lista;

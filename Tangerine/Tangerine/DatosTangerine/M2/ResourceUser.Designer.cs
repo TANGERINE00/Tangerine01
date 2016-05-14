@@ -255,5 +255,49 @@ namespace DatosTangerine.M2 {
                 return ResourceManager.GetString("ObtenerRolUsuario", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerOpciones.
+        /// </summary>
+        internal static string ObtenerOpciones
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerOpciones", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a @menu_nom.
+        /// </summary>
+        internal static string ParametroMenuNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("ParametroMenuNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a opc_nombre.
+        /// </summary>
+        internal static string OpcNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("OpcNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a opc_url.
+        /// </summary>
+        internal static string OpcUrl
+        {
+            get
+            {
+                return ResourceManager.GetString("OpcUrl", resourceCulture);
+            }
+        }
     }
 }

@@ -20,7 +20,7 @@
     <script type="text/javascript">
         function showContent(nick,rol) {
             
-            element2 = document.getElementById("inputEmail3");
+            element2 = document.getElementById("usuarioCambiar");
             element2.placeholder = nick;
 
         }
@@ -39,16 +39,16 @@
                 <div class="modal-body">  
                     <div class="box-body">     
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+                            <label for="usuarioCambiar" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="" disabled>
+                                <input type="email" class="form-control" id="usuarioCambiar" placeholder="" runat="server" disabled>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
                             <div class="col-sm-10">
-                                <select class="form-control">
+                                <select class="form-control" id="rolCambiar" runat="server">
                                     <option>Administrador</option>
                                     <option>Director</option>
                                     <option>Gerente</option>
@@ -58,8 +58,8 @@
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Cambiar</button>
+                        <button id="botonCancelar" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+                        <asp:button id="botonCambiar" type="button" class="btn btn-primary pull-right" data-dismiss="modal" OnClick="botonCambiar_Click">Cambiar</asp:button>
                     </div><!-- /.box-footer -->
                 </div>
             </div>
