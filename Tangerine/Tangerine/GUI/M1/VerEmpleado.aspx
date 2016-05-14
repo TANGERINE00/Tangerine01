@@ -21,10 +21,10 @@
         <!--<div class="panel-heading">Ficha de empleado</div>-->
         <div class="container-fluid">
           <br>
-          <form role="form">
+          <!--<form role="form">
             
             
-            <!-- <button type="submit" class="btn btn-default">Enviar</button>-->
+            
             
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
@@ -34,7 +34,7 @@
                 <h4>Datos de Contrato</h4>
               </div> 
             </div>
-            <!--  seccion de datos -->
+            
             <div class="row">
               <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="form-group">
@@ -149,9 +149,10 @@
             </div>
             
 
-            <!--  seccion de datos -->
+            
           
-          </form>
+          </form>-->
+            <asp:Literal runat="server" ID="FormViewEmployee"></asp:Literal>
         </div>
       </div>
 

@@ -70,6 +70,24 @@ namespace DominioTangerine
            this.fk_lug_dir_id = empLugId;
        }
 
+       public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                      string empGenero,int empCedula, DateTime empFecha, string empActivo, string empEstudio, 
+                      string empEmail,int empLugId)
+       {
+           this.emp_num_ficha = empId;
+           this.emp_cedula = empCedula;
+           this.emp_p_nombre = empPNombre;
+           this.emp_s_nombre = empSNombre;
+           this.emp_p_apellido = empPApellido;
+           this.emp_s_apellido = empSApellido;
+           this.emp_genero = empGenero;
+           this.emp_fecha_nac = empFecha;
+           this.emp_activo = empActivo;
+           this.emp_nivel_estudio = empEstudio;
+           this.emp_email = empEmail;
+           this.fk_lug_dir_id = empLugId;
+       }
+
        public int Emp_num_ficha
        {
            get
@@ -86,11 +104,11 @@ namespace DominioTangerine
        {
            get
            {
-               return this.Emp_cedula;
+               return this.emp_cedula;
            }
            set
            {
-               this.Emp_cedula = value;
+               this.emp_cedula = value;
            }
        }
 
