@@ -63,12 +63,14 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="M1\" />
-    <Folder Include="M2\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\LogicaM10.cs" />
+    <Compile Include="M2\LogicaAgregarUsuario.cs" />
+    <Compile Include="M2\LogicaModificarRol.cs" />
+    <Compile Include="M2\LogicaPrivilegios.cs" />
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M3\LogicaM3.cs" />
     <Compile Include="M6\LogicaPropuesta.cs" />

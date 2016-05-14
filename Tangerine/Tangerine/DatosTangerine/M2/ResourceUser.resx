@@ -129,6 +129,10 @@
     <value>M2_ModificarRolUsuario</value>
     <comment>Stored procedure para modificar el rol del usuario</comment>
   </data>
+  <data name="ObtenerDatoUsuario" xml:space="preserve">
+    <value>M2_ObtenerDatoUsuario</value>
+    <comment>Stored procedure que devuelve los datos de un usuario en especifico</comment>
+  </data>
   <data name="ParametroContrasenia" xml:space="preserve">
     <value>@contraseña</value>
     <comment>Parametro que representa la contraseña del usuario</comment>
@@ -156,5 +160,41 @@
   <data name="ParametroUsuario" xml:space="preserve">
     <value>@usuario</value>
     <comment>Parametro que representa el usuario a registrar</comment>
+  </data>
+  <data name="UsuActivo" xml:space="preserve">
+    <value>usu_activo</value>
+  </data>
+  <data name="UsuEmpFicha" xml:space="preserve">
+    <value>fk_emp_num_ficha</value>
+  </data>
+  <data name="UsuFechaCreacion" xml:space="preserve">
+    <value>usu_fecha_creacion</value>
+  </data>
+  <data name="UsuFKRol" xml:space="preserve">
+    <value>fk_rol_id</value>
+  </data>
+  <data name="ObtenerOpciones" xml:space="preserve">
+    <value>M2_ObtenerOpciones</value>
+  </data>
+  <data name="ObtenerRolUsuario" xml:space="preserve">
+    <value>M2_ObtenerRolUsuario</value>
+  </data>
+  <data name="OpcNombre" xml:space="preserve">
+    <value>opc_nombre</value>
+  </data>
+  <data name="OpcUrl" xml:space="preserve">
+    <value>opc_url</value>
+  </data>
+  <data name="ParametroMenuNombre" xml:space="preserve">
+    <value>@menu_nom</value>
+  </data>
+  <data name="ParametroRolCodigo" xml:space="preserve">
+    <value>@codigo_rol</value>
+  </data>
+  <data name="RolMenu" xml:space="preserve">
+    <value>men_nombre</value>
+  </data>
+  <data name="RolNombre" xml:space="preserve">
+    <value>rol_nombre</value>
   </data>
 </root>

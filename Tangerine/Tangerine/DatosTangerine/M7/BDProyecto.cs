@@ -365,5 +365,123 @@ namespace DatosTangerine.M7
             return listProyecto;
         }
       
-    }
+       /// <summary>
+       /// metodo para consultar los proyectos en los que trabaja un empleado
+       /// </summary>
+       /// <returns></returns>
+       public List<Proyecto> ContactProyectoPorEmpleado(int IdEmpleado)
+       {
+           parameters = new List<Parametro>();
+           theConnection = new BDConexion();
+
+           List<Proyecto> listProyecto = new List<Proyecto>();
+
+           try
+           {
+               theParam = new Parametro(ResourceProyecto.ParamPEIdEmpleado, SqlDbType.Int, IdEmpleado.ToString(), false);
+               parameters.Add(theParam);
+               theConnection.Conectar();
+
+
+               //Guardo la tabla que me regresa el procedimiento de consultar contactos
+               DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceProyecto.ContactProyectoPorEmpleado, parameters);
+
+               //Guardar los datos 
+               foreach (DataRow row in dt.Rows)
+               {
+
+                   int proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+                   string proyNombre = row[ResourceProyecto.ProyNombre].ToString();
+                   string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
+                   DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
+                   DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
+                   double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                   String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
+                   String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
+                   String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
+                   String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
+                   String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
+                   int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
+                   int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                   int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+
+                   //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
+                   Proyecto theProyecto = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
+                                                       proyCosto, proyDescripcion, proyRealizacion, proyEstatus, proyRazon,
+                                                       proyAcuerdoPago, proyIdPropuesta, proyIdResponsable, proyIdGerente);
+
+                   listProyecto.Add(theProyecto);
+
+               }
+
+
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+           }
+
+           return listProyecto;
+       }
+       /// <summary>
+       /// metodo para consultar los proyectos en los que trabaja un Gerente
+       /// </summary>
+       /// <param name="idGerente">int id del gerente<param>t
+       /// <returns>lista de PRoyectos</returns>
+       public List<Proyecto> ContactProyectoPorGerente ( int IdGerente )
+       {
+           parameters = new List<Parametro>();
+           theConnection = new BDConexion();
+
+           List<Proyecto> listProyecto = new List<Proyecto>();
+
+           try
+           {
+               theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, IdGerente.ToString(), false);
+               parameters.Add(theParam);
+               theConnection.Conectar();
+
+
+               //Guardo la tabla que me regresa el procedimiento de consultar contactos
+               DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceProyecto.ContactProyectoPorEmpleado, parameters);
+
+               //Guardar los datos 
+               foreach (DataRow row in dt.Rows)
+               {
+
+                   int proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+                   string proyNombre = row[ResourceProyecto.ProyNombre].ToString();
+                   string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
+                   DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
+                   DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
+                   double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                   String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
+                   String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
+                   String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
+                   String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
+                   String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
+                   int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
+                   int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                   int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+
+                   //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
+                   Proyecto theProyecto = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
+                                                       proyCosto, proyDescripcion, proyRealizacion, proyEstatus, proyRazon,
+                                                       proyAcuerdoPago, proyIdPropuesta, proyIdResponsable, proyIdGerente);
+
+                   listProyecto.Add(theProyecto);
+
+               }
+
+
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+           }
+
+           return listProyecto;
+       }  
+   }
+
 }

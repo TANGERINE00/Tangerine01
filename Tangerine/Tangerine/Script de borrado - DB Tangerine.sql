@@ -16,10 +16,17 @@ drop table cargo_empleado;
 drop table cargo;
 drop table empleado;
 drop table lugar_direccion;
-drop table rol_menu;
+drop table rol_opcion;
 drop table rol;
 drop table opcion;
 drop table menu;
+
+drop procedure M2_ObtenerOpciones;
+drop procedure M2_ObtenerRolUsuario;
+drop procedure M2_ObtenerDatoUsuario;
+drop procedure M2_ModificarContraUsuario;
+drop procedure M2_ModificarRolUsuario;
+drop procedure M2_AgregarUsuario;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
@@ -50,6 +57,8 @@ drop procedure M7_AgregarProyectoEmpleado;
 drop procedure M7_ConsultarProyectoEmpleado;
 drop procedure M7_EliminarProyectoEmpleado;
 drop procedure M7_ConsultarAcuerdoPagoMensual;
+drop procedure M7_ConsultarProyectoTrabajaEmpleado;
+drop procedure M7_COnsultarProyectosPorGerente;
 
 drop procedure M8_AgregarFactura;
 drop procedure M8_ConsultarFactura;

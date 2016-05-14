@@ -138,7 +138,7 @@
             <li class="header">Menu Principal</li>
             <li class="treeview">
               <a href="#">
-                <i></i> <span>Configuración</span>
+                <i class="fa fa-angle-left pull-right"></i> <span>Configuración</span>
               </a>
               <ul class="treeview-menu">
                 <li>

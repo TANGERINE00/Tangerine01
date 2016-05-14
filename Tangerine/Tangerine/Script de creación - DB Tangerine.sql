@@ -100,7 +100,7 @@ create table USUARIO
 	usu_fecha_creacion date not null,
 	usu_activo varchar(8) not null, --Activo: Activo, Inactivo
 	fk_rol_id int not null,
-	fk_emp_num_ficha int not null,
+	fk_emp_num_ficha int,
 
 	constraint pk_usu primary key
 	(
@@ -425,28 +425,6 @@ create table MENU
 	)
 );
 
-create table ROL_MENU
-(
-	fk_rol_id int not null,
-	fk_men_id int not null,
-
-	constraint pk_rol_men primary key
-	(
-		fk_rol_id,
-		fk_men_id
-	),
-
-	constraint fk_rol_rol_men foreign key
-	(
-		fk_rol_id
-	) references ROL(rol_id),
-
-	constraint fk_men_rol_men foreign key
-	(
-		fk_men_id
-	) references MENU(men_id)
-);
-
 create table OPCION
 (
 	opc_id int not null,
@@ -464,10 +442,111 @@ create table OPCION
 		fk_men_id
 	) references MENU(men_id)	
 );
+
+create table ROL_OPCION
+(
+	fk_rol_id int not null,
+	fk_opc_id int not null,
+
+	constraint pk_rol_opc primary key
+	(
+		fk_rol_id,
+		fk_opc_id
+	),
+
+	constraint fk_rol_rol_opc foreign key
+	(
+		fk_rol_id
+	) references ROL(rol_id),
+
+	constraint fk_opc_rol_opc foreign key
+	(
+		fk_opc_id
+	) references OPCION(opc_id)
+);
+GO
+
+--------Stored Procedure M2--------
+CREATE PROCEDURE M2_AgregarUsuario
+	(@usuario [varchar](20),
+	@contraseña [varchar](100),
+	@emp_num_ficha int,
+	@fecha_creacion date,
+	@rol_nombre [varchar](20))
+AS
+DECLARE
+	@id_rol int,
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT ISNULL(MAX(usu_id), 0) FROM USUARIO); 
+	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre);
+    if @emp_num_ficha < 1
+		set @emp_num_ficha = null;
+	INSERT INTO USUARIO VALUES (@id_usuario + 1, @usuario, @contraseña, @fecha_creacion, 'Activo', 
+		                        @id_rol, @emp_num_ficha);
+END;
+GO
+
+CREATE PROCEDURE M2_ModificarRolUsuario
+	(@usuario [varchar](20),
+	@rol_nombre_nuevo [varchar](20))
+AS
+DECLARE
+	@id_rol int,
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre_nuevo);
+	UPDATE USUARIO SET fk_rol_id = @id_rol where usu_id = @id_usuario;
+END;
+GO
+
+CREATE PROCEDURE M2_ModificarContraUsuario
+	(@usuario [varchar](20),
+	@contraseña_nueva [varchar](100))
+AS
+DECLARE
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	UPDATE USUARIO SET usu_contrasena = @contraseña_nueva where usu_id = @id_usuario;
+END;
+GO
+
+CREATE PROCEDURE M2_ObtenerDatoUsuario
+		@usuario [varchar](200),
+		@contraseña [varchar](200)
+
+AS
+	BEGIN
+		SELECT usu_fecha_creacion, usu_activo, fk_rol_id, isnull(fk_emp_num_ficha,0) as fk_emp_num_ficha
+        FROM usuario
+        WHERE usu_usuario = @usuario and usu_contrasena = @contraseña;
+	END;
+GO
+
+CREATE PROCEDURE M2_ObtenerRolUsuario
+@codigo_rol int
+AS
+	BEGIN
+		SELECT distinct rol_nombre, m.men_nombre as men_nombre
+		FROM rol, rol_opcion, opcion, menu m
+		WHERE rol_id = fk_rol_id and fk_opc_id = opc_id and fk_men_id = m.men_id and rol_id = @codigo_rol;
+	END;
 GO
 
 
+CREATE PROCEDURE M2_ObtenerOpciones
+@menu_nom [varchar](200),
+@codigo_rol int
 
+AS
+BEGIN
+SELECT o.opc_nombre as opc_nombre, o.opc_url as opc_url
+    FROM menu m, opcion o, rol_opcion ro
+    WHERE m.men_nombre =@menu_nom and ro.fk_rol_id = @codigo_rol  and m.men_id = o.fk_men_id and o.opc_id = ro.fk_opc_id;
+END;
+GO
 
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----
@@ -830,6 +909,39 @@ AS
 		FROM PROYECTO WHERE DAY(proy_fecha_inicio) = DAY(GETDATE()) and proy_estatus = 'Desarrollo' and proy_acuerdo_pago = 'Mensual';
 	END
 GO
+
+
+---- StoredProcedure Consultar Proyectos  en los que trabaja un empleado----
+CREATE PROCEDURE M7_ConsultarProyectoTrabajaEmpleado
+@PEIdEmpleado int
+
+AS
+	BEGIN
+		SELECT proy_id AS proy_id, proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id
+			 AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO, EMPLEADO_PROYECTO 
+		WHERE PROYECTO.proy_id = EMPLEADO_PROYECTO.fk_proy_id AND EMPLEADO_PROYECTO.fk_emp_num_ficha = @PEIdEmpleado; 
+
+	END;
+GO
+		
+---- StoredProcedure Consultar Los proyectos que tenga un gerente ----
+CREATE PROCEDURE M7_ConsultarProyectosPorGerente
+
+     @IdGerente int
+     
+AS
+	BEGIN
+		SELECT proy_id AS proy_id ,proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
+			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
+			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
+			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
+		FROM PROYECTO WHERE fk_gerente_id = @IdGerente ;
+	END
+GO		
 
 
 
