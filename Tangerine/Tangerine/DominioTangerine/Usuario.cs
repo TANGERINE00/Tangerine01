@@ -25,7 +25,7 @@ namespace DominioTangerine
 		}
 
         /// <summary>
-        /// Constructo de Usuario solo con usuario, contraseña
+        /// Constructor de Usuario solo con usuario, contraseña
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasenia"></param>
@@ -36,7 +36,18 @@ namespace DominioTangerine
         }
 
         /// <summary>
-        /// Constructo de Usuario solo con usuario, contraseña y activo
+        /// Constructor de Usuario solo con usuario y rol
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="rol"></param>
+        public Usuario( string usuario, Rol rol) 
+        {
+            _usuario = usuario;
+            _rol = rol;
+        }
+
+        /// <summary>
+        /// Constructor de Usuario solo con usuario, contraseña y activo
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasenia"></param>

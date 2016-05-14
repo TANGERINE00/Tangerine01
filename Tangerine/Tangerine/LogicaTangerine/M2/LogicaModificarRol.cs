@@ -10,6 +10,15 @@ namespace LogicaTangerine.M2
 {
     public class LogicaModificarRol
     {
+        public static bool ModificarRol( Usuario usuario )
+        {
+            bool resultado = false;
+
+            resultado = BDUsuario.ModificarRolUsuario( usuario );
+
+            return resultado;
+        }
+
         public static void prueba() 
         {
             Rol theRol = new Rol("Gerente");
