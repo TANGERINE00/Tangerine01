@@ -425,28 +425,6 @@ create table MENU
 	)
 );
 
-create table ROL_MENU
-(
-	fk_rol_id int not null,
-	fk_men_id int not null,
-
-	constraint pk_rol_men primary key
-	(
-		fk_rol_id,
-		fk_men_id
-	),
-
-	constraint fk_rol_rol_men foreign key
-	(
-		fk_rol_id
-	) references ROL(rol_id),
-
-	constraint fk_men_rol_men foreign key
-	(
-		fk_men_id
-	) references MENU(men_id)
-);
-
 create table OPCION
 (
 	opc_id int not null,
@@ -463,6 +441,28 @@ create table OPCION
 	(
 		fk_men_id
 	) references MENU(men_id)	
+);
+
+create table ROL_OPCION
+(
+	fk_rol_id int not null,
+	fk_opc_id int not null,
+
+	constraint pk_rol_opc primary key
+	(
+		fk_rol_id,
+		fk_opc_id
+	),
+
+	constraint fk_rol_rol_opc foreign key
+	(
+		fk_rol_id
+	) references ROL(rol_id),
+
+	constraint fk_opc_rol_opc foreign key
+	(
+		fk_opc_id
+	) references OPCION(opc_id)
 );
 GO
 

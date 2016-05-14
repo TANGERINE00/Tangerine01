@@ -15,6 +15,9 @@ namespace LogicaTangerine.M2
             Rol theRol = new Rol("Gerente");
             Usuario theUser = new Usuario("userTest", "testapp1", "Activo", theRol, 0, DateTime.Now);
 
+            //theUser = BDUsuario.ObtenerDatoUsuario( theUser );
+
+            //theUser.Rol.imprimirListaDeMenus();
             bool resultado = BDUsuario.AgregarUsuario(theUser);
 
             System.Diagnostics.Debug.WriteLine("Resultado = " + resultado.ToString());

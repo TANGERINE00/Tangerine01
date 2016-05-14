@@ -151,6 +151,11 @@ namespace DatosTangerine.M2
                     usuario.FechaCreacion = resultadoConsulta.GetDateTime( 0 );
                     usuario.Activo = resultadoConsulta.GetString( 1 );
                     usuario.FichaEmpleado = resultadoConsulta.GetInt32( 3 );
+                    
+                    int rolId = resultadoConsulta.GetInt32( 2 );
+                    Rol rol = ObtenerRolUsuario( rolId );
+
+                    usuario.Rol = rol;
                 }
 
             }
