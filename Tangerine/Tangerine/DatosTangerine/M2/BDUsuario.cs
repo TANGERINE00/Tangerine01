@@ -51,7 +51,8 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
+                return false;
             }
 
             return true;
@@ -84,7 +85,8 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
+                return false;
             }
 
             return true;
@@ -118,7 +120,8 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
+                return false;
             }
 
             return true;
@@ -153,7 +156,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
             }
 
             return usuario;
@@ -202,7 +205,7 @@ namespace DatosTangerine.M2
             }
             catch (Exception ex)
             {
-
+                System.Diagnostics.Debug.Write(ex);
             }
 
             return rol;
@@ -245,7 +248,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
             }
 
             return lista;
