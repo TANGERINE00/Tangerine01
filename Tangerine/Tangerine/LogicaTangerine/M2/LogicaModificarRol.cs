@@ -17,6 +17,13 @@ namespace LogicaTangerine.M2
 
             theUser = BDUsuario.ObtenerDatoUsuario( theUser );
 
+            theUser.Rol.imprimirListaDeMenus();
+
+            foreach(Menu m in theUser.Rol.Menus)
+            {
+                m.imprimirListaDeOpciones();
+            }
+
             //System.Diagnostics.Debug.WriteLine( "Resultado = " + resultado.ToString() );
         }
     }
