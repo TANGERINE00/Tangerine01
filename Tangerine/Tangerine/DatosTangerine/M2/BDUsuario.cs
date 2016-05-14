@@ -51,7 +51,8 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
+                return false;
             }
 
             return true;
@@ -84,7 +85,8 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
+                return false;
             }
 
             return true;
@@ -118,7 +120,8 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
+                return false;
             }
 
             return true;
@@ -132,28 +135,43 @@ namespace DatosTangerine.M2
         public static Usuario ObtenerDatoUsuario( Usuario usuario ) 
         {
             BDConexion laConexion = new BDConexion();
-            SqlDataReader resultadoConsulta;
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
 
             try 
             {
-                resultadoConsulta = laConexion.EjecutarQuery( @"SELECT usu_fecha_creacion, usu_activo, fk_rol_id,
-                                                                       fk_emp_num_ficha
-                                                                FROM usuario
-                                                                WHERE usu_usuario = '" + usuario.NombreUsuario +
-                                                               "' and usu_contrasena = '" + usuario.Contrasenia +
-                                                               "'" );
+                laConexion.Conectar();
 
-                while ( resultadoConsulta.Read() )
+                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.NombreUsuario,
+                                             false );
+                parametros.Add(elParametro);
+
+                elParametro = new Parametro( ResourceUser.ParametroContrasenia, SqlDbType.VarChar, usuario.Contrasenia,
+                                             false );
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerDatoUsuario, parametros );
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
                 {
-                    usuario.FechaCreacion = resultadoConsulta.GetDateTime( 0 );
-                    usuario.Activo = resultadoConsulta.GetString( 1 );
-                    usuario.FichaEmpleado = resultadoConsulta.GetInt32( 3 );
+                    DateTime usuFecha = DateTime.Parse( row[ResourceUser.UsuFechaCreacion].ToString() );
+                    string usuAct = row[ResourceUser.UsuActivo].ToString();
+                    int usuIdRol = int.Parse( row[ResourceUser.UsuFKRol].ToString() );
+                    int usuEmpFicha = int.Parse( row[ResourceUser.UsuEmpFicha].ToString() );
+
+                    usuario.FechaCreacion = usuFecha;
+                    usuario.Activo = usuAct;
+                    usuario.FichaEmpleado = usuEmpFicha;
+
+                    Rol rol = ObtenerRolUsuario( usuIdRol );
+                    usuario.Rol = rol;
                 }
 
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
             }
 
             return usuario;
@@ -171,38 +189,44 @@ namespace DatosTangerine.M2
             ListaGenerica<Menu> lista = new ListaGenerica<Menu>(); ;
 
             BDConexion laConexion = new BDConexion();
-            SqlDataReader resultadoConsulta;
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
 
             try
             {
-                resultadoConsulta = laConexion.EjecutarQuery( @"select distinct rol_nombre, m.men_nombre
-                                                                from rol, rol_opcion, opcion, menu m
-                                                                where rol_id = fk_rol_id and fk_opc_id = opc_id
-                                                                      and fk_men_id = m.men_id 
-                                                                      and rol_id = " + codigoRol.ToString() );
-                bool rolAgregado = false;
+                laConexion.Conectar();
 
-                while ( resultadoConsulta.Read() )
-                {
+                elParametro = new Parametro( ResourceUser.ParametroRolCodigo, SqlDbType.Int, codigoRol.ToString(),
+                                             false );
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerRolUsuario, parametros );
+
+                bool rolAgregado = false;
+                
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach ( DataRow row in dt.Rows )
+                { 
+                    string rolNombre = row[ResourceUser.RolNombre].ToString();
+                    string menNombre = row[ResourceUser.RolMenu].ToString();
+                    
                     if ( rolAgregado == false )
                     {
-                        rol.Nombre = resultadoConsulta.GetString( 0 );
+                        rol.Nombre = rolNombre;
                         rolAgregado = true;
                     }
 
-                    string nombreMenu = resultadoConsulta.GetString( 1 );
+                    //ListaGenerica<Opcion> opciones = ObtenerOpciones( menNombre, codigoRol );
 
-                    ListaGenerica<Opcion> opciones = ObtenerOpciones( nombreMenu, codigoRol );
+                    //menu = new Menu( menNombre, opciones );
 
-                    menu = new Menu( nombreMenu, opciones );
-                    
-                    lista.AgregarElemento( menu );
+                    //lista.AgregarElemento( menu );
                 }
 
             }
             catch (Exception ex)
             {
-
+                System.Diagnostics.Debug.Write(ex);
             }
 
             return rol;
@@ -245,7 +269,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-
+                System.Diagnostics.Debug.Write(ex);
             }
 
             return lista;

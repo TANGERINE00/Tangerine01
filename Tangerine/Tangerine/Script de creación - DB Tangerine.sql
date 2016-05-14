@@ -100,7 +100,7 @@ create table USUARIO
 	usu_fecha_creacion date not null,
 	usu_activo varchar(8) not null, --Activo: Activo, Inactivo
 	fk_rol_id int not null,
-	fk_emp_num_ficha int not null,
+	fk_emp_num_ficha int,
 
 	constraint pk_usu primary key
 	(
@@ -425,28 +425,6 @@ create table MENU
 	)
 );
 
-create table ROL_MENU
-(
-	fk_rol_id int not null,
-	fk_men_id int not null,
-
-	constraint pk_rol_men primary key
-	(
-		fk_rol_id,
-		fk_men_id
-	),
-
-	constraint fk_rol_rol_men foreign key
-	(
-		fk_rol_id
-	) references ROL(rol_id),
-
-	constraint fk_men_rol_men foreign key
-	(
-		fk_men_id
-	) references MENU(men_id)
-);
-
 create table OPCION
 (
 	opc_id int not null,
@@ -464,10 +442,98 @@ create table OPCION
 		fk_men_id
 	) references MENU(men_id)	
 );
+
+create table ROL_OPCION
+(
+	fk_rol_id int not null,
+	fk_opc_id int not null,
+
+	constraint pk_rol_opc primary key
+	(
+		fk_rol_id,
+		fk_opc_id
+	),
+
+	constraint fk_rol_rol_opc foreign key
+	(
+		fk_rol_id
+	) references ROL(rol_id),
+
+	constraint fk_opc_rol_opc foreign key
+	(
+		fk_opc_id
+	) references OPCION(opc_id)
+);
 GO
 
+--------Stored Procedure M2--------
+CREATE PROCEDURE M2_AgregarUsuario
+	(@usuario [varchar](20),
+	@contraseña [varchar](100),
+	@emp_num_ficha int,
+	@fecha_creacion date,
+	@rol_nombre [varchar](20))
+AS
+DECLARE
+	@id_rol int,
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT ISNULL(MAX(usu_id), 0) FROM USUARIO); 
+	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre);
+    if @emp_num_ficha < 1
+		set @emp_num_ficha = null;
+	INSERT INTO USUARIO VALUES (@id_usuario + 1, @usuario, @contraseña, @fecha_creacion, 'Activo', 
+		                        @id_rol, @emp_num_ficha);
+END;
+GO
 
+CREATE PROCEDURE M2_ModificarRolUsuario
+	(@usuario [varchar](20),
+	@rol_nombre_nuevo [varchar](20))
+AS
+DECLARE
+	@id_rol int,
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre_nuevo);
+	UPDATE USUARIO SET fk_rol_id = @id_rol where usu_id = @id_usuario;
+END;
+GO
 
+CREATE PROCEDURE M2_ModificarContraUsuario
+	(@usuario [varchar](20),
+	@contraseña_nueva [varchar](100))
+AS
+DECLARE
+	@id_usuario int
+BEGIN
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	UPDATE USUARIO SET usu_contrasena = @contraseña_nueva where usu_id = @id_usuario;
+END;
+GO
+
+CREATE PROCEDURE M2_ObtenerDatoUsuario
+		@usuario [varchar](200),
+		@contraseña [varchar](200)
+
+AS
+	BEGIN
+		SELECT usu_fecha_creacion, usu_activo, fk_rol_id, isnull(fk_emp_num_ficha,0) as fk_emp_num_ficha
+        FROM usuario
+        WHERE usu_usuario = @usuario and usu_contrasena = @contraseña;
+	END;
+GO
+
+CREATE PROCEDURE M2_ObtenerRolUsuario
+@codigo_rol int
+AS
+	BEGIN
+		SELECT distinct rol_nombre, m.men_nombre as men_nombre
+		FROM rol, rol_opcion, opcion, menu m
+		WHERE rol_id = fk_rol_id and fk_opc_id = opc_id and fk_men_id = m.men_id and rol_id = @codigo_rol;
+	END;
+GO
 
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----

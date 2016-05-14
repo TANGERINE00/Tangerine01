@@ -16,7 +16,7 @@ drop table cargo_empleado;
 drop table cargo;
 drop table empleado;
 drop table lugar_direccion;
-drop table rol_menu;
+drop table rol_opcion;
 drop table rol;
 drop table opcion;
 drop table menu;
