@@ -114,7 +114,7 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="textoDuracion" runat="server">
                         </div>
 
                     </div>
@@ -127,7 +127,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" ClientIdMode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -139,7 +139,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server">
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" ClientIdMode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -161,7 +161,7 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="textoCosto" runat="server">
                         </div>
 
                     </div>

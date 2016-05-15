@@ -15,22 +15,37 @@ namespace DominioTangerine
         /// <attr name="_codigo">Codigo unico indentificador de la propuesta</attr>
         /// <attr name="_nombre">nombre con el que se identificara a la propuesta</attr>
         /// <attr name="_descripcion">Descripcion breve sobre la propuesta</attr>
-        /// <attr name="_duracion">duracion estimada de la propuesta {Meses, Dias, Horas}</attr>
+        /// <attr name="_tipoDuracion">duracion estimada de la propuesta {Meses, Dias, Horas}</attr>
+        /// <attr name="_cantDuracion">cantidad de tiempo estimada de la propuesta</attr>
         /// <attr name="_acuerdopago">tipo de compromiso de pago al cual se va a llegar para la propuesta</attr>
+        /// <attr name="_modalidadPago">modalidad de pago para la propuesta</attr>
         /// <attr name="_estatus">Estado en el que se encuentra la propuesta {Aprobada, Pendiente, Cerrada}</attr>
         /// <attr name="_moneda">Moneda base de pago para la propuesta de proyecto</attr>
         /// <attr name="_entrega">Dependiendo del compromiso de pago se llegara a una cantidad de entregas estipuladas </attr>
         /// <attr name="_feincio">fecha estimada de inicio </attr>
         /// <attr name="_fefinal">fecha estimada de fin </attr>
         /// <attr name="costo">Costo de realizacion del 100% del proyecto</attr>
-        /// <attr name="_listaCompania">lista de las compañias de las cuales se puede generar una propuesta</attr> 
+        /// <attr name="_idCompañia">codigo de la  compañia de la  cual se puede generar una propuesta</attr> 
         /// <attr name="_listaRequerimiento">lista de requerimientos asociados a un proyecto</attr> 
         /// </summary>
 
         private String _codigoP;
         private String _nombre;
         private String _descripcion;
-        private String _duracion;
+        private String _tipoDuracion;
+
+        public String TipoDuracion
+        {
+            get { return _tipoDuracion; }
+            set { _tipoDuracion = value; }
+        }
+        private String _cantDuracion;
+
+        public String CantDuracion
+        {
+            get { return _cantDuracion; }
+            set { _cantDuracion = value; }
+        }
         private String _acuerdopago;
         private String _estatus;
         private String _moneda;
@@ -39,13 +54,13 @@ namespace DominioTangerine
         private DateTime _fefinal;
         private int _costo;
 
-        private Compania _nombrCompañia;
+        private String _idCompañia;
 
         private List<Requerimiento> _listaRequerimiento;
         private string conNombre;
         private int conEstatus;
 
-       
+
 
         #endregion
 
@@ -66,11 +81,7 @@ namespace DominioTangerine
             get { return _descripcion; }
             set { _descripcion = value; }
         }
-        public String Duracion
-        {
-            get { return _duracion; }
-            set { _duracion = value; }
-        }
+
         public String Acuerdopago
         {
             get { return _acuerdopago; }
@@ -106,18 +117,20 @@ namespace DominioTangerine
             get { return _costo; }
             set { _costo = value; }
         }
-        public Compania NombrCompañia
+
+        public String IdCompañia
         {
-            get { return _nombrCompañia; }
-            set { _nombrCompañia = value; }
+            get { return _idCompañia; }
+            set { _idCompañia = value; }
         }
+
 
         public List<Requerimiento> ListaRequerimiento
         {
             get { return _listaRequerimiento; }
             set { _listaRequerimiento = value; }
         }
-      
+
 
 
         #endregion
@@ -129,14 +142,13 @@ namespace DominioTangerine
 
         }
 
-        public Propuesta(String codigoP, String nombre, String descripcion, String duracion, String acuerdopago, String estatus,
-                         String moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, Compania lacompañia,
-                         List<Requerimiento> listaRequerimiento)
+        public Propuesta( string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
+                         string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
         {
-            this._codigoP = codigoP;
             this._nombre = nombre;
             this._descripcion = descripcion;
-            this._duracion = duracion;
+            this._tipoDuracion = _tipoDu;
+            this._cantDuracion = duracion;
             this._acuerdopago = acuerdopago;
             this._estatus = estatus;
             this._moneda = moneda;
@@ -144,7 +156,13 @@ namespace DominioTangerine
             this._feincio = feincio;
             this._fefinal = fefinal;
             this._costo = costo;
-            this._nombrCompañia = lacompañia;
+            this._idCompañia = compañia;
+
+        }
+
+        public Propuesta(string codigoP, List<Requerimiento> listaRequerimiento)
+        {
+            this._codigoP = codigoP;
             this._listaRequerimiento = listaRequerimiento;
 
         }
@@ -156,9 +174,9 @@ namespace DominioTangerine
             this.conEstatus = conEstatus;
         }
 
-       
 
-        
+
+
 
         #endregion
 

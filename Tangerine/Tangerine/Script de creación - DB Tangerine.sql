@@ -208,7 +208,7 @@ create table CONTACTO
 
       create table PROPUESTA
 (
-	prop_id int not null,
+	prop_id int IDENTITY(1,1) not null,
 	prop_nombre varchar(50),
 	prop_descripcion varchar(255),
 	prop_tipoDuracion varchar(200),
@@ -732,17 +732,20 @@ GO
 CREATE PROCEDURE M6_AgregarPropuesta
 	@nombre [varchar](50),
 	@descripcion [varchar](255),
+	@tipoDura [varchar](200),
 	@duracion [varchar](200),
 	@acuerdo [varchar](200),
 	@estatus [varchar](20),
 	@moneda [varchar](40),
 	@cantEntr int,
 	@fechai date,
-	@fechaf date
+	@fechaf date,
+	@costo int,
+	@id_compania int
 AS
  BEGIN
-    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin) 
-	VALUES(@nombre,	@descripcion, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai,@fechaf);  
+    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin,prop_costo,fk_com_id) 
+	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);  
  end;
 GO
 -----------------------------------
