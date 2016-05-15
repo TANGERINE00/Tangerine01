@@ -9,5 +9,7 @@ namespace DominioTangerine
     public class Util
     {
         public Usuario _theGlobalUser = new Usuario();
+
+        public static bool MASTER_FLAG = false;
     }
 }
