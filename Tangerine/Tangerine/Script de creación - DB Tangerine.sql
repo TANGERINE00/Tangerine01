@@ -535,7 +535,6 @@ AS
 	END;
 GO
 
-
 CREATE PROCEDURE M2_ObtenerOpciones
 @menu_nom [varchar](200),
 @codigo_rol int
@@ -546,6 +545,16 @@ SELECT o.opc_nombre as opc_nombre, o.opc_url as opc_url
     FROM menu m, opcion o, rol_opcion ro
     WHERE m.men_nombre =@menu_nom and ro.fk_rol_id = @codigo_rol  and m.men_id = o.fk_men_id and o.opc_id = ro.fk_opc_id;
 END;
+GO
+
+CREATE PROCEDURE M2_ObtenerUsuarioDeEmpleado
+@emp_num_ficha int
+AS
+	BEGIN
+		SELECT rol_nombre, usu_usuario
+		FROM rol, usuario
+		WHERE rol_id = fk_rol_id and fk_emp_num_ficha = @emp_num_ficha;
+	END;
 GO
 
 --------Stored Procedure M4--------
