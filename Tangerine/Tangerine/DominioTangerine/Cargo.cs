@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DominioTangerine
 {
-    class Cargo
+    public class Cargo
     {
         #region Atributos
         private string nombre;
@@ -24,6 +26,8 @@ namespace DominioTangerine
         #endregion
 
         #region constructores
+        public Cargo() { }
+
         public Cargo(int carId, string nombre, string descripcion)
         {
             this.car_id = carId;
@@ -165,7 +169,7 @@ namespace DominioTangerine
             }
         }
 
-        public List<Empleado> ListEmployees
+       public List<Empleado> ListEmployees
         {
             get 
             {

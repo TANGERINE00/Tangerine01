@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DominioTangerine
 {
@@ -23,8 +25,9 @@ namespace DominioTangerine
 	  public String emp_activo ;
 	  public int fk_lug_dir_id ;
 
-      //private List<Cargo> listJobTitle;
-      private List<Proyecto> listProjects;
+      private List<Cargo> listJobs = new List<Cargo>();
+      private List<Proyecto> listProjects = new List<Proyecto>();
+
       #endregion
 
       #region constructores
@@ -241,17 +244,6 @@ namespace DominioTangerine
            }
        }
 
-      /* public List<Cargo> ListJobTitle
-       {
-           get
-           {
-               return this.listJobTitle;
-           }
-           set
-           {
-               this.listJobTitle = value;
-           }
-       }*/
 
        public List<Proyecto> ListProjects
        {
@@ -259,9 +251,21 @@ namespace DominioTangerine
            {
                return this.listProjects;
            }
-           set 
+           set
            {
                this.listProjects = value;
+           }
+       }
+
+       public List<Cargo> ListJobs
+       {
+           get
+           {
+               return this.listJobs;
+           }
+           set
+           {
+               this.listJobs = value;
            }
        }
        #endregion

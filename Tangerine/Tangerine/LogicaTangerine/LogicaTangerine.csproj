@@ -62,12 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="M1\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\LogicaM10.cs" />
+    <Compile Include="M1\LogicaM1.cs" />
+    <Compile Include="M1\ResourceLogicaM1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM1.resx</DependentUpon>
+    </Compile>
     <Compile Include="M2\LogicaAgregarUsuario.cs" />
     <Compile Include="M2\LogicaModificarRol.cs" />
     <Compile Include="M2\LogicaPrivilegios.cs" />
@@ -80,6 +85,12 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="M5\LogicaM5.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
