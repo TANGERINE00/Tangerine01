@@ -112,6 +112,10 @@ namespace PruebasUnitarias.M2
             Assert.AreEqual( theRol.Nombre, "Administrador" );
         }
         
+        /// <summary>
+        /// Método para probar el disparo de una excepción el método AgregarUsuario() de la clase BDUsuario en
+        /// DatosTangerine
+        /// </summary>
         [Test]
         public void TestFailAgregarUsuario() 
         {
@@ -123,6 +127,10 @@ namespace PruebasUnitarias.M2
             Assert.Fail("Se ha disparado la excepción de la prueba de AgregarUsuario()");
         }
 
+        /// <summary>
+        /// Método para probar el disparo de una excepción el método ModificarRolUsuario() de la clase BDUsuario en
+        /// DatosTangerine
+        /// </summary>
         [Test]
         public void TestFailModificarRolUsuario() 
         {
@@ -134,6 +142,10 @@ namespace PruebasUnitarias.M2
             Assert.Fail("Se ha disparado la excepción de la prueba de ModificarRolUsuario()");
         }
 
+        /// <summary>
+        /// Método para probar el disparo de una excepción el método ModificarContraseniaUsuario() de la clase BDUsuario en
+        /// DatosTangerine
+        /// </summary>
         [Test]
         public void TestFailModificarContraseniaUsuario()
         {

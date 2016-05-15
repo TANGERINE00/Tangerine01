@@ -1,5 +1,6 @@
 ﻿using DatosTangerine.M2;
 using DominioTangerine;
+using LogicaTangerine.M2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +16,16 @@ namespace Tangerine.GUI.Master
         {
             if( Util.MASTER_FLAG )
             {
-                /*Util._theGlobalUser.NombreUsuario = "luarropa";
-                Util._theGlobalUser.Contrasenia = "1234";
-                Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario( Util._theGlobalUser );
+                Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
+                Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
+                Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario( Util._theGlobalUser ); //-----------------------
 
-                foreach ( DominioTangerine.Menu m in Util._theGlobalUser.Rol.Menus )
+                List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+
+                foreach ( string s in bloqueos )
                 {
-                    foreach (Opcion o in m.Opciones)
-                    {
-                        this.FindControl(o.Nombre).Visible = false;
-                    }
-                }*/
+                    this.FindControl( s ).Visible = false;
+                }
             }
         }
     }
