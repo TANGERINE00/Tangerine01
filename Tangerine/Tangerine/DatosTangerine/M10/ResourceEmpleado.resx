@@ -195,4 +195,16 @@
   <data name="ParamCPrueba" xml:space="preserve">
     <value>@prueba</value>
   </data>
+  <data name="DetallarEmpleado" xml:space="preserve">
+    <value>M10_DetallarEmpleado</value>
+  </data>
+  <data name="EmpGenero" xml:space="preserve">
+    <value>emp_genero</value>
+  </data>
+  <data name="EmpEstudio" xml:space="preserve">
+    <value>emp_nivel_estudio</value>
+  </data>
+  <data name="EmpEmail" xml:space="preserve">
+    <value>emp_email</value>
+  </data>
 </root>

@@ -7,22 +7,28 @@ using System.Threading.Tasks;
 namespace DominioTangerine
 {
   public   class Empleado
-    {
+  {
 
-       public int emp_num_ficha ;
-	   public int emp_cedula ;
-	   public String emp_genero ;
-	   public String emp_p_nombre ;
-	   public String emp_s_nombre ;
-	   public String emp_p_apellido ;
-	   public String emp_s_apellido ;
-	   public DateTime emp_fecha_nac ;
-	   public String emp_nivel_estudio ;
-	   public String emp_email ;
-	   public String emp_activo ;
-	   public int fk_lug_dir_id ;
+      #region Atributos
+      public int emp_num_ficha ;
+	  public int emp_cedula ;
+	  public String emp_genero ;
+	  public String emp_p_nombre ;
+	  public String emp_s_nombre ;
+	  public String emp_p_apellido ;
+	  public String emp_s_apellido ;
+	  public DateTime emp_fecha_nac ;
+	  public String emp_nivel_estudio ;
+	  public String emp_email ;
+	  public String emp_activo ;
+	  public int fk_lug_dir_id ;
 
-       public Empleado()
+      //private List<Cargo> listJobTitle;
+      private List<Proyecto> listProjects;
+      #endregion
+
+      #region constructores
+      public Empleado()
        {
            emp_num_ficha = 0;
            emp_cedula = 0;
@@ -70,6 +76,27 @@ namespace DominioTangerine
            this.fk_lug_dir_id = empLugId;
        }
 
+       public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                      string empGenero,int empCedula, DateTime empFecha, string empActivo, string empEstudio, 
+                      string empEmail,int empLugId)
+       {
+           this.emp_num_ficha = empId;
+           this.emp_cedula = empCedula;
+           this.emp_p_nombre = empPNombre;
+           this.emp_s_nombre = empSNombre;
+           this.emp_p_apellido = empPApellido;
+           this.emp_s_apellido = empSApellido;
+           this.emp_genero = empGenero;
+           this.emp_fecha_nac = empFecha;
+           this.emp_activo = empActivo;
+           this.emp_nivel_estudio = empEstudio;
+           this.emp_email = empEmail;
+           this.fk_lug_dir_id = empLugId;
+       }
+
+      #endregion
+
+      #region Get's Set's
        public int Emp_num_ficha
        {
            get
@@ -86,11 +113,11 @@ namespace DominioTangerine
        {
            get
            {
-               return this.Emp_cedula;
+               return this.emp_cedula;
            }
            set
            {
-               this.Emp_cedula = value;
+               this.emp_cedula = value;
            }
        }
 
@@ -213,7 +240,32 @@ namespace DominioTangerine
                this.fk_lug_dir_id = value;
            }
        }
-  
+
+      /* public List<Cargo> ListJobTitle
+       {
+           get
+           {
+               return this.listJobTitle;
+           }
+           set
+           {
+               this.listJobTitle = value;
+           }
+       }*/
+
+       public List<Proyecto> ListProjects
+       {
+           get
+           {
+               return this.listProjects;
+           }
+           set 
+           {
+               this.listProjects = value;
+           }
+       }
+       #endregion
+
   }
 
     

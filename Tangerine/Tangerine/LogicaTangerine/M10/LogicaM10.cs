@@ -41,6 +41,11 @@ namespace LogicaTangerine.M10
             }
         }
 
+        public Empleado GetEmployee(int employeeId)
+        {
+            return BDEmpleado.GetEmployeeById(employeeId);
+        }
+
 
     }
 }

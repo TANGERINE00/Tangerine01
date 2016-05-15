@@ -1024,6 +1024,23 @@ AS
  	END;
 GO
 
+---- StoredProcedure Anular Factura ----
+CREATE PROCEDURE M8_AnularFactura
+	@id_Factura int,
+	@fecha_emision date,
+	@monto_total numeric(12,3),
+	@monto_restante numeric(12,3),
+	@descripcion [varchar](500),
+	@estatus int,
+	@id_proyecto int,
+	@id_compania int
+AS
+	BEGIN
+		UPDATE FACTURA SET fac_estatus = 2
+    	WHERE fac_id = @id_Factura;
+	END
+GO
+
 /*Falta el campo factura*/
 /*---- StoredProcedure Cambiar Estatus de Factura ----
 CREATE PROCEDURE M8_EstatusFactura

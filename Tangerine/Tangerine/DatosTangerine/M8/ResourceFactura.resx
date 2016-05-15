@@ -120,6 +120,9 @@
   <data name="AddNewFactura" xml:space="preserve">
     <value>M8_AgregarFactura</value>
   </data>
+  <data name="AnnularFactura" xml:space="preserve">
+    <value>M8_AnularFactura</value>
+  </data>
   <data name="ChangeFactura" xml:space="preserve">
     <value>M8_ModificarFactura</value>
   </data>
@@ -197,9 +200,6 @@
   </data>
   <data name="ProyNombre" xml:space="preserve">
     <value>proy_nombre</value>
-  </data>
-  <data name="String" xml:space="preserve">
-    <value />
   </data>
   <data name="String2" xml:space="preserve">
     <value />
