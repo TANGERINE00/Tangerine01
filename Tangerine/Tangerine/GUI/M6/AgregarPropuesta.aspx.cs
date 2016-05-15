@@ -38,16 +38,16 @@ namespace Tangerine.GUI.M6
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            _nombcodigoPropuesta = cliente.Value + today.ToString("yyyyMMdd");
+           // _nombcodigoPropuesta = cliente.Value + today.ToString("yyyyMMdd");
             _descripcion = descripcion.Value;
-            _Tipoduracion = comboDuracion.SelectedIndex.ToString();
+            _Tipoduracion = comboDuracion.SelectedItem.Text;
             _duracion = textoDuracion.Value;
             
             Debug.Print(datepicker1.Value);
             _fechaI = DateTime.ParseExact(datepicker1.Value, "MM/dd/yyyy", null);
 
             _fechaF = DateTime.ParseExact(datepicker2.Value, "MM/dd/yyyy", null);
-            _moneda = comboTipoCosto.SelectedIndex.ToString();
+            _moneda = comboTipoCosto.SelectedItem.Text;
             _costo = int.Parse(textoCosto.Value);
             _acuerdo = "pruebaclable";
             _entregaCant = 2;
