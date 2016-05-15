@@ -1247,6 +1247,11 @@
     <Compile Include="GUI\M7\modificarProyecto.aspx.designer.cs">
       <DependentUpon>modificarProyecto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M7\ResourceGUIM7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM7.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M8\AnularFacturaM8.aspx.cs">
       <DependentUpon>AnularFacturaM8.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1475,6 +1480,10 @@
     <EmbeddedResource Include="GUI\M5\ResourceGUIM5.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M7\ResourceGUIM7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M8\ResourceGUIM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
