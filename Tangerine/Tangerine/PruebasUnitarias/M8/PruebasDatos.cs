@@ -16,6 +16,7 @@ namespace PruebasUnitarias.M8
         public Facturacion theInvoice;
         public Facturacion theInvoice2;
         public Facturacion theInvoice3;
+        private List<Facturacion> facturas;
         public bool answer;
         public DateTime fecha = new DateTime(2015, 2, 10);
         #endregion
@@ -78,5 +79,46 @@ namespace PruebasUnitarias.M8
             //answer obtiene true si se anula la Factura, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
+        
+
+        [Test]
+        public void TestContactInvoice()
+        {
+            //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
+            theInvoice = BDFactura.ContactFactura(1);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.IsTrue(1 == theInvoice.idFactura);
+
+            
+        }
+
+        [Test]
+        public void TestContactFacturas()
+        {
+            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+            facturas = BDFactura.ContactFacturas();
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            for (int i = 0; i < facturas.Count(); i++)
+            {
+
+                Assert.IsTrue(i + 1 == facturas[i].idFactura);
+            }
+
+        }
+
+        /*
+        [Test]
+        public void TestContactCompany()
+        {
+            //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
+            theInvoice = BDFactura.ContactFactura(1);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.IsTrue(1 == theInvoice.idFactura);
+
+
+        }*/
     }
 }

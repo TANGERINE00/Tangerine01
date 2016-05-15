@@ -117,70 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonPersonal" xml:space="preserve">
-    <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseBoton" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
+  <data name="BotonEdit" xml:space="preserve">
+    <value>&lt;a tittle="modificar" class="btn btn-default btn-xs"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>
   </data>
-  <data name="CloseTd" xml:space="preserve">
+  <data name="Closeh3" xml:space="preserve">
+    <value>&lt;/h3&gt;</value>
+  </data>
+  <data name="Closeh4" xml:space="preserve">
+    <value>&lt;/h4&gt;</value>
+  </data>
+  <data name="CloseTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
-  <data name="CloseTh" xml:space="preserve">
-    <value>&lt;/th&gt;</value>
-  </data>
-  <data name="CloseTr" xml:space="preserve">
+  <data name="CloseTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
-  </data>
-  <data name="Codigo" xml:space="preserve">
-    <value>Codigo:</value>
-  </data>
-  <data name="Estatus" xml:space="preserve">
-    <value>Estatus:</value>
-  </data>
-  <data name="FechaEstimadaCulminar" xml:space="preserve">
-    <value>FechaFin:</value>
-  </data>
-  <data name="FechaInicio" xml:space="preserve">
-    <value>FechaInicio:</value>
-  </data>
-  <data name="NombreProyecto" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
-  <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left 0.2px" data-toggle="modal" data-target="#myModal" OnClick="MostrarInfo" id="Inf"</value>
-  </data>
-  <data name="OpenBotonPersonal" xml:space="preserve">
-    <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" OnClick="MostrarPersonal" id="Personal"</value>
-  </data>
-  <data name="OpenDiv" xml:space="preserve">
-    <value>&lt;div&gt;</value>
   </data>
   <data name="OpenDivRow" xml:space="preserve">
     <value>&lt;div class="row"&gt;</value>
   </data>
-  <data name="OpenH3" xml:space="preserve">
-    <value>&lt;h3&gt;</value>
+  <data name="Openh3" xml:space="preserve">
+    <value>&lt;h3 style="bold"&gt;</value>
+  </data>
+  <data name="Openh4" xml:space="preserve">
+    <value>&lt;h4&gt;</value>
   </data>
   <data name="OpenTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
   </data>
-  <data name="OpenTh" xml:space="preserve">
-    <value>&lt;th&gt;</value>
-  </data>
-  <data name="OpenTr" xml:space="preserve">
+  <data name="OpenTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
-  </data>
-  <data name="PorcentajeDeRealizacion" xml:space="preserve">
-    <value>PorcentajeRealizado:</value>
-  </data>
-  <data name="PropuestaAprovada" xml:space="preserve">
-    <value>Propuesta:</value>
   </data>
 </root>

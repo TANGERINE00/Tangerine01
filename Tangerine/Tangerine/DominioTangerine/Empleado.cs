@@ -27,6 +27,7 @@ namespace DominioTangerine
 
       private List<Cargo> listJobs = new List<Cargo>();
       private List<Proyecto> listProjects = new List<Proyecto>();
+
       #endregion
 
       #region constructores

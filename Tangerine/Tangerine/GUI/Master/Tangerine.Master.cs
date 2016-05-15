@@ -11,7 +11,6 @@ namespace Tangerine.GUI.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
