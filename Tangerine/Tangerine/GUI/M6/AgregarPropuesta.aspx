@@ -53,6 +53,12 @@
                 float: left;
             }
         }
+
+        .dropdown .btn {
+            width: 95%;
+        }
+
+
     </style>
 
     <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
@@ -69,12 +75,20 @@
                     <div class="form-group">
 
                         <label>Cliente (compañía contratante)</label>
-                        <select class="form-control" id="cliente" runat="server">
+                        <%--  <select class="form-control" id="cliente" runat="server">
                             <option>Trascend</option>
                             <option>Tebca</option>
                             <option>Trascend</option>
                             <option>Pepsi</option>
-                        </select>
+                        </select>--%>
+
+
+                        <div class="dropdown" runat="server" id="contenedorCompañias">
+                            <asp:DropDownList ID="comboCompañia" class="btn btn-default dropdown-toggle" runat="server">
+                            </asp:DropDownList>
+                        </div>
+
+
 
 
 
@@ -127,7 +141,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" ClientIdMode="static">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -139,7 +153,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" ClientIdMode="static">
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>

@@ -94,30 +94,11 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <asp:Literal runat="server" ID="tablaempleados"></asp:Literal>
                         <tbody>
-                            <tr>
-                                <td>Luis</td>
-                                <td>Rodríguez</td>
-                                <td>luarropa</td>
-                                <td>Gerente</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('luarropa','Gerente')"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td>Carlos</td>
-                                <td>Lozano</td>
-                                <td>craloz</td>
-                                <td>Administrador</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('craloz','Gerente')"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td>Gerardo</td>
-                                <td>Astone</td>
-                                <td>gerastone</td>
-                                <td>Director</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('gerastone','Gerente')"></span></a></td>
-                            </tr>
+     
                         </tbody>
-                    </table>
+                        </table>
                     <nav>
                         <ul class="pagination">
                             <li>
