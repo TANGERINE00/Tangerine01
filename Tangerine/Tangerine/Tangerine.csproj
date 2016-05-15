@@ -1071,6 +1071,11 @@
     <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\ResourceGUIM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM2.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
       <DependentUpon>AgregarLeads.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1468,6 +1473,10 @@
     <EmbeddedResource Include="GUI\M1\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M2\ResourceGUIM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
