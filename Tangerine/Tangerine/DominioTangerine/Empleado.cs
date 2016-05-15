@@ -23,7 +23,7 @@ namespace DominioTangerine
 	  public String emp_activo ;
 	  public int fk_lug_dir_id ;
 
-      private List<Cargo> listJobTitle;
+      //private List<Cargo> listJobTitle;
       private List<Proyecto> listProjects;
       #endregion
 
@@ -241,7 +241,7 @@ namespace DominioTangerine
            }
        }
 
-       public List<Cargo> ListJobTitle
+      /* public List<Cargo> ListJobTitle
        {
            get
            {
@@ -251,7 +251,7 @@ namespace DominioTangerine
            {
                this.listJobTitle = value;
            }
-       }
+       }*/
 
        public List<Proyecto> ListProjects
        {
