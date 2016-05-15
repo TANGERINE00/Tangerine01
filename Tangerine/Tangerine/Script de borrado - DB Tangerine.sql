@@ -21,6 +21,13 @@ drop table rol;
 drop table opcion;
 drop table menu;
 
+drop procedure M2_ObtenerOpciones;
+drop procedure M2_ObtenerRolUsuario;
+drop procedure M2_ObtenerDatoUsuario;
+drop procedure M2_ModificarContraUsuario;
+drop procedure M2_ModificarRolUsuario;
+drop procedure M2_AgregarUsuario;
+
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
 drop procedure M4_ConsultarCompanias;
