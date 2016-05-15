@@ -95,6 +95,57 @@ namespace DatosTangerine.M8
         }
 
         /// <summary>
+        /// Metodo para anular una factura de la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Facturacion a eliminar en bd</param>
+        /// <returns>true si fue anulada</returns>
+        public static bool AnnularFactura(Facturacion theFactura)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M8_AnnularFactura y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceFactura.AnnularFactura, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Metodo para modificar un factura en la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para modificar en bd</param>
