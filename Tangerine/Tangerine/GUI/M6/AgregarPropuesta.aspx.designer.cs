@@ -22,13 +22,22 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_propuesta;
         
         /// <summary>
-        /// cliente control.
+        /// contenedorCompañias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect cliente;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenedorCompañias;
+        
+        /// <summary>
+        /// comboCompañia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboCompañia;
         
         /// <summary>
         /// descripcion control.
