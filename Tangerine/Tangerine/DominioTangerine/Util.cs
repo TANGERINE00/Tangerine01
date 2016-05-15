@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine
 {
-    public class Util
+    public static class Util
     {
-        public Usuario _theGlobalUser = new Usuario();
+        public static Usuario _theGlobalUser = new Usuario();
 
-        public static bool MASTER_FLAG = false;
+        public static bool MASTER_FLAG = true;
     }
 }
