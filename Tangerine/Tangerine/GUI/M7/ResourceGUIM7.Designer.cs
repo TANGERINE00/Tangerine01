@@ -59,5 +59,203 @@ namespace Tangerine.GUI.M7 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonInfo {
+            get {
+                return ResourceManager.GetString("BotonInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-info glyphicon glyphicon-user&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonPersonal {
+            get {
+                return ResourceManager.GetString("BotonPersonal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string CloseBoton {
+            get {
+                return ResourceManager.GetString("CloseBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/div&gt;.
+        /// </summary>
+        internal static string CloseDiv {
+            get {
+                return ResourceManager.GetString("CloseDiv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/td&gt;.
+        /// </summary>
+        internal static string CloseTd {
+            get {
+                return ResourceManager.GetString("CloseTd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/th&gt;.
+        /// </summary>
+        internal static string CloseTh {
+            get {
+                return ResourceManager.GetString("CloseTh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/tr&gt;.
+        /// </summary>
+        internal static string CloseTr {
+            get {
+                return ResourceManager.GetString("CloseTr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Codigo:.
+        /// </summary>
+        internal static string Codigo {
+            get {
+                return ResourceManager.GetString("Codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estatus:.
+        /// </summary>
+        internal static string Estatus {
+            get {
+                return ResourceManager.GetString("Estatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FechaFin:.
+        /// </summary>
+        internal static string FechaEstimadaCulminar {
+            get {
+                return ResourceManager.GetString("FechaEstimadaCulminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FechaInicio:.
+        /// </summary>
+        internal static string FechaInicio {
+            get {
+                return ResourceManager.GetString("FechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre:.
+        /// </summary>
+        internal static string NombreProyecto {
+            get {
+                return ResourceManager.GetString("NombreProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left 0.2px&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; OnClick=&quot;MostrarInfo&quot; id=&quot;Inf&quot;.
+        /// </summary>
+        internal static string OpenBotonInfo {
+            get {
+                return ResourceManager.GetString("OpenBotonInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-info glyphicon glyphicon-user&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; OnClick=&quot;MostrarPersonal&quot; id=&quot;Personal&quot;.
+        /// </summary>
+        internal static string OpenBotonPersonal {
+            get {
+                return ResourceManager.GetString("OpenBotonPersonal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div&gt;.
+        /// </summary>
+        internal static string OpenDiv {
+            get {
+                return ResourceManager.GetString("OpenDiv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;row&quot;&gt;.
+        /// </summary>
+        internal static string OpenDivRow {
+            get {
+                return ResourceManager.GetString("OpenDivRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;h3&gt;.
+        /// </summary>
+        internal static string OpenH3 {
+            get {
+                return ResourceManager.GetString("OpenH3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;td&gt;.
+        /// </summary>
+        internal static string OpenTD {
+            get {
+                return ResourceManager.GetString("OpenTD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;th&gt;.
+        /// </summary>
+        internal static string OpenTh {
+            get {
+                return ResourceManager.GetString("OpenTh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;tr&gt;.
+        /// </summary>
+        internal static string OpenTr {
+            get {
+                return ResourceManager.GetString("OpenTr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PorcentajeRealizado:.
+        /// </summary>
+        internal static string PorcentajeDeRealizacion {
+            get {
+                return ResourceManager.GetString("PorcentajeDeRealizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Propuesta:.
+        /// </summary>
+        internal static string PropuestaAprovada {
+            get {
+                return ResourceManager.GetString("PropuestaAprovada", resourceCulture);
+            }
+        }
     }
 }
