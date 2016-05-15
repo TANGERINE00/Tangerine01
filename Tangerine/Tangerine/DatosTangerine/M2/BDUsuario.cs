@@ -49,6 +49,11 @@ namespace DatosTangerine.M2
                 List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.AgregarUsuario, 
                                                                               parametros );
             }
+            catch ( NullReferenceException ex )
+            {
+                System.Diagnostics.Debug.Write( ex );
+                return false;
+            }
             catch ( Exception ex )
             {
                 System.Diagnostics.Debug.Write(ex);
@@ -82,6 +87,11 @@ namespace DatosTangerine.M2
 
                 List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.ModificarRolUsuario,
                                                                               parametros );
+            }
+            catch ( NullReferenceException ex )
+            {
+                System.Diagnostics.Debug.Write( ex );
+                return false;
             }
             catch ( Exception ex )
             {
