@@ -17,6 +17,7 @@ namespace PruebasUnitarias.M2
 
         public Usuario theUser;
         public Usuario theUserResultado;
+        public Usuario theUserFail;
         public Rol theRol;
         
         #endregion 
@@ -109,6 +110,39 @@ namespace PruebasUnitarias.M2
             theRol = BDUsuario.ObtenerRolUsuario( 1 );
 
             Assert.AreEqual( theRol.Nombre, "Administrador" );
+        }
+        
+        [Test]
+        public void TestFailAgregarUsuario() 
+        {
+            theUserFail = new Usuario();
+            theUserFail.NombreUsuario = "testFail";
+
+            bool resultado = BDUsuario.AgregarUsuario( theUserFail );
+
+            Assert.Fail("Se ha disparado la excepción de la prueba de AgregarUsuario()");
+        }
+
+        [Test]
+        public void TestFailModificarRolUsuario() 
+        {
+            theUserFail = new Usuario();
+            theUserFail.NombreUsuario = "testFail";
+
+            bool resultado = BDUsuario.ModificarRolUsuario(theUserFail);
+
+            Assert.Fail("Se ha disparado la excepción de la prueba de ModificarRolUsuario()");
+        }
+
+        [Test]
+        public void TestFailModificarContraseniaUsuario()
+        {
+            theUserFail = new Usuario();
+            theUserFail.NombreUsuario = "testFail";
+
+            bool resultado = BDUsuario.ModificarContraseniaUsuario(theUserFail);
+
+            Assert.Fail("Se ha disparado la excepción de la prueba de ModificarContraseniaUsuario()");
         }
     }
 }

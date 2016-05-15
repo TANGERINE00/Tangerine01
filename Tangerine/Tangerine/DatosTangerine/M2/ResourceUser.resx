@@ -197,4 +197,10 @@
   <data name="RolNombre" xml:space="preserve">
     <value>rol_nombre</value>
   </data>
+  <data name="ObtenerUsuarioDeEmpleado" xml:space="preserve">
+    <value>M2_ObtenerUsuarioDeEmpleado</value>
+  </data>
+  <data name="UsuNombre" xml:space="preserve">
+    <value>usu_usuario</value>
+  </data>
 </root>
