@@ -70,6 +70,15 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M8_AnularFactura.
+        /// </summary>
+        internal static string AnnularFactura {
+            get {
+                return ResourceManager.GetString("AnnularFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M8_ModificarFactura.
         /// </summary>
         internal static string ChangeFactura {
@@ -300,15 +309,6 @@ namespace DatosTangerine.M8 {
         internal static string ProyNombre {
             get {
                 return ResourceManager.GetString("ProyNombre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string String {
-            get {
-                return ResourceManager.GetString("String", resourceCulture);
             }
         }
         
