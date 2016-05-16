@@ -172,6 +172,7 @@ namespace Tangerine.GUI.M8
 
                 LogicaM8 consulta = new LogicaM8();
                 int numeroFactura = int.Parse(textBuscarId.Value);
+                textBuscarId.Value = null;
 
                 Facturacion Factura = consulta.SearchFactura(numeroFactura);
 
