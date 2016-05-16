@@ -34,6 +34,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, theFactura.fechaUltimoPagoFactura.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
                 parameters.Add(theParam);
 
@@ -166,6 +169,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, theFactura.fechaUltimoPagoFactura.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
                 parameters.Add(theParam);
 
@@ -230,6 +236,7 @@ namespace DatosTangerine.M8
 
                 int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                 DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
+                DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
                 double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
                 double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                 String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
@@ -238,7 +245,7 @@ namespace DatosTangerine.M8
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                Facturacion theFacturabeta = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
+                Facturacion theFacturabeta = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
                                                     facEstatus, facIdProyecto, facIdCompania);
 
                 theFactura = theFacturabeta;
@@ -273,6 +280,7 @@ namespace DatosTangerine.M8
 
                     int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                     DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
+                    DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
                     double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
                     double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
@@ -281,7 +289,7 @@ namespace DatosTangerine.M8
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                    Facturacion theFactura = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
                                                         facEstatus, facIdProyecto, facIdCompania);
                     listFactura.Add(theFactura);
 

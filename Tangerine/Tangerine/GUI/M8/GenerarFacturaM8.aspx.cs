@@ -13,6 +13,7 @@ namespace Tangerine.GUI.M8
     public partial class GenerarFacturaM8 : System.Web.UI.Page
     {
         DateTime _fechaEmision = DateTime.Now;
+        DateTime _fechaUltimoPago = DateTime.Now;
         int _montoTotal = 0;
         int _montoRestante = 0;
         string _Descripcion = String.Empty;
@@ -29,10 +30,11 @@ namespace Tangerine.GUI.M8
         {
              _montoTotal = int.Parse(textMonto_M8.Value);
             _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+            _fechaUltimoPago = DateTime.Now;
             _montoRestante = int.Parse(textMonto_M8.Value);
             _Descripcion = textDescripcion_M8.Value;
 
-            Facturacion factura = new Facturacion(_fechaEmision, _montoTotal, _montoRestante, _Descripcion, 0, 1, 1 );
+            Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _Descripcion, 0, 1, 1 );
             LogicaM8 facturaLogic = new LogicaM8();
             facturaLogic.AddNewFactura(factura);
             Server.Transfer("ConsultarFacturaM8.aspx");
