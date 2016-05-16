@@ -97,11 +97,38 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to car_nombre.
+        /// </summary>
+        internal static string EmpCargo {
+            get {
+                return ResourceManager.GetString("EmpCargo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_descripcion.
+        /// </summary>
+        internal static string EmpCargoDescripcion {
+            get {
+                return ResourceManager.GetString("EmpCargoDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to emp_cedula.
         /// </summary>
         internal static string EmpCedula {
             get {
                 return ResourceManager.GetString("EmpCedula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DireccionEmpleado.
+        /// </summary>
+        internal static string EmpDireccion {
+            get {
+                return ResourceManager.GetString("EmpDireccion", resourceCulture);
             }
         }
         
@@ -129,6 +156,24 @@ namespace DatosTangerine.M10 {
         internal static string EmpFecha {
             get {
                 return ResourceManager.GetString("EmpFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_fecha_fin.
+        /// </summary>
+        internal static string EmpFechaFin {
+            get {
+                return ResourceManager.GetString("EmpFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_fecha_cont.
+        /// </summary>
+        internal static string EmpFechaInicio {
+            get {
+                return ResourceManager.GetString("EmpFechaInicio", resourceCulture);
             }
         }
         
@@ -192,6 +237,15 @@ namespace DatosTangerine.M10 {
         internal static string EmpSNombre {
             get {
                 return ResourceManager.GetString("EmpSNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_sueldo.
+        /// </summary>
+        internal static string EmpSueldo {
+            get {
+                return ResourceManager.GetString("EmpSueldo", resourceCulture);
             }
         }
         

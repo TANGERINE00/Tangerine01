@@ -18,6 +18,9 @@ namespace DominioTangerine
         private string modalidad;
         private double sueldo;
 
+        private string fechaIni;
+        private string fechaFin;
+
         private int fk_car_id;
         private int fk_emp_num_ficha;
         private int car_id;
@@ -27,6 +30,15 @@ namespace DominioTangerine
 
         #region constructores
         public Cargo() { }
+
+
+        public Cargo(string cargo, double salary, string dateIni, string dateFin)
+        {
+            this.nombre=cargo;
+            this.fechaIni = dateIni;
+            this.fechaFin = dateFin;
+            this.sueldo = salary;
+        }
 
         public Cargo(int carId, string nombre, string descripcion)
         {
@@ -44,6 +56,7 @@ namespace DominioTangerine
             this.modalidad = mode;
             this.sueldo = salary;
         }
+
         public Cargo(int carId, string nombre, string descripcion, int fk_car_id, 
                      int fk_emp_num_ficha, DateTime dateIni, DateTime dateFin,
                      string mode, double salary)
@@ -166,6 +179,30 @@ namespace DominioTangerine
             set
             {
                 this.car_id = value;
+            }
+        }
+
+        public string FechaIni
+        {
+            get
+            {
+                return this.fechaIni;
+            }
+            set
+            {
+                this.fechaIni = value;
+            }
+        }
+
+        public string FechaFin
+        {
+            get
+            {
+                return this.fechaFin;
+            }
+            set
+            {
+                this.fechaFin = value;
             }
         }
 
