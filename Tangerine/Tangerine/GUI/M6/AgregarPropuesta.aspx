@@ -75,13 +75,6 @@
                     <div class="form-group">
 
                         <label>Cliente (compañía contratante)</label>
-                        <%--  <select class="form-control" id="cliente" runat="server">
-                            <option>Trascend</option>
-                            <option>Tebca</option>
-                            <option>Trascend</option>
-                            <option>Pepsi</option>
-                        </select>--%>
-
 
                         <div class="dropdown" runat="server" id="contenedorCompañias">
                             <asp:DropDownList ID="comboCompañia" class="btn btn-default dropdown-toggle" runat="server">
