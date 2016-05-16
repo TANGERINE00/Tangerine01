@@ -29,8 +29,8 @@ namespace PruebasUnitarias.M4
         [TearDown]
         public void clean()
         {
-            theCompany = null;
             answer1 = BDCompania.DeleteCompany(theCompany);
+            theCompany = null;
         }
         #endregion
 
