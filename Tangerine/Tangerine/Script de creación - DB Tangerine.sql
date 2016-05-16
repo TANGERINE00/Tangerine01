@@ -818,6 +818,18 @@ UPDATE REQUERIMIENTO SET req_nombre = @reqnombre WHERE fk_prop_id = @fkprop
 
 END;
 
+GO
+
+--Listar requerimientos por propuesta
+CREATE PROCEDURE ListarRequerimientos
+
+AS
+
+BEGIN
+SELECT * FROM REQUERIMIENTO, PROPUESTA WHERE fk_prop_id = prop_id 
+END;
+
+
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
