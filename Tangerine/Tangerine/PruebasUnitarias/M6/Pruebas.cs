@@ -22,6 +22,9 @@ namespace PruebasUnitarias.M6
         public Propuesta propuesta1;
         public Proyecto proyprop;
         List<Propuesta> lapropuesta = new List<Propuesta>();
+        public List<Propuesta> prueba;
+        public List<Propuesta> prueba1;
+        public bool answer;
 
         #endregion
 
@@ -30,11 +33,7 @@ namespace PruebasUnitarias.M6
         [SetUp]
         public void init()
         {
-            propuesta = new Propuesta();
-            proyprop = new Proyecto();
-            propuesta.CodigoP = "3";
-            propuesta.Nombre = "SGC propuesta Sistema Gestión de cuentas";
-            proyprop.Idpropuesta = 0;
+            
 
         }
 
@@ -43,8 +42,17 @@ namespace PruebasUnitarias.M6
         {
             propuesta = null;
         }
+
         #endregion
 
+
+        [Test]
+
+        public void TestListaPropuestaProyecto()
+        {
+           // answer = BDPropuesta.agregarPropuesta();
+
+        }
 
 
 

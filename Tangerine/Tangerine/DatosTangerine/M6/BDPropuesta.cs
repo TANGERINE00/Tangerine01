@@ -98,7 +98,7 @@ namespace DatosTangerine.M6
 
        
         
-        public static List<Propuesta> PropuestaProyecto()
+        public static List<Propuesta> PropuestaProyecto(Propuesta propuesta)
         {
             List<Parametro> parametros = new List<Parametro>();
             List<Propuesta> listaPropuesta = new List<Propuesta>();
@@ -121,8 +121,8 @@ namespace DatosTangerine.M6
                     
 
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
-                    Propuesta propuesta = new Propuesta(conNombre, conEstatus);
-                    listaPropuesta.Add(propuesta);
+                    Propuesta propuestas = new Propuesta();
+                    listaPropuesta.Add(propuestas);
                 }
 
 
