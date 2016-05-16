@@ -81,7 +81,7 @@ create table CARGO_EMPLEADO
 	) references EMPLEADO(emp_num_ficha)
 );
 
-create table ROL 
+create table ROL
 (
 	rol_id int not null,
 	rol_nombre varchar(20) not null,--Nombre de rol: Administrador, Director, Gerente, Programador
@@ -92,7 +92,7 @@ create table ROL
 	)
 );
 
-create table USUARIO 
+create table USUARIO
 (
 	usu_id int not null,
 	usu_usuario varchar(20) not null,
@@ -159,7 +159,7 @@ create table COMPANIA
 	) references LUGAR_DIRECCION(lug_dir_id),
 );
 
-create table TELEFONO 
+create table TELEFONO
 (
 	tel_id int IDENTITY(1,1) not null,
 	tel_numero int not null,
@@ -276,12 +276,12 @@ create table PROYECTO
 	(
 		fk_com_id
 	) references COMPANIA(com_id),
-	
+
 	constraint fk_propuesta_proy foreign key
 	(
 		fk_propuesta_id
 	) references PROPUESTA(prop_id),
-	
+
 	constraint fk_gerente_proy foreign key
 	(
 		fk_gerente_id
@@ -332,7 +332,7 @@ create table CONTACTO_PROYECTO
 	) references PROYECTO(proy_id)
 );
 
-create table FACTURA 
+create table FACTURA
 (
 	fac_id int IDENTITY (1,1) not null,
 	fac_fecha_emision date not null,
@@ -347,7 +347,7 @@ create table FACTURA
 	(
 		fac_id
 	),
-	
+
 	constraint fk_compania_fac foreign key
 	(
 		fk_compania_id
@@ -440,7 +440,7 @@ create table OPCION
 	constraint fk_men_opc foreign key
 	(
 		fk_men_id
-	) references MENU(men_id)	
+	) references MENU(men_id)
 );
 
 create table ROL_OPCION
@@ -478,11 +478,11 @@ DECLARE
 	@id_rol int,
 	@id_usuario int
 BEGIN
-	set @id_usuario = (SELECT ISNULL(MAX(usu_id), 0) FROM USUARIO); 
+	set @id_usuario = (SELECT ISNULL(MAX(usu_id), 0) FROM USUARIO);
 	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre);
     if @emp_num_ficha < 1
 		set @emp_num_ficha = null;
-	INSERT INTO USUARIO VALUES (@id_usuario + 1, @usuario, @contraseña, @fecha_creacion, 'Activo', 
+	INSERT INTO USUARIO VALUES (@id_usuario + 1, @usuario, @contraseña, @fecha_creacion, 'Activo',
 		                        @id_rol, @emp_num_ficha);
 END;
 GO
@@ -495,7 +495,7 @@ DECLARE
 	@id_rol int,
 	@id_usuario int
 BEGIN
-	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario);
 	set @id_rol = (SELECT rol_id FROM ROL WHERE rol_nombre = @rol_nombre_nuevo);
 	UPDATE USUARIO SET fk_rol_id = @id_rol where usu_id = @id_usuario;
 END;
@@ -508,7 +508,7 @@ AS
 DECLARE
 	@id_usuario int
 BEGIN
-	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario); 
+	set @id_usuario = (SELECT usu_id FROM USUARIO WHERE usu_usuario = @usuario);
 	UPDATE USUARIO SET usu_contrasena = @contraseña_nueva where usu_id = @id_usuario;
 END;
 GO
@@ -571,8 +571,8 @@ CREATE PROCEDURE M4_AgregarCompania
 
 AS
  BEGIN
-    INSERT INTO COMPANIA(com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id) 
-	VALUES(@nombre,	@rif, @email, @telefono, @acronimo, @fecha_registro, @status, @id_lugar);  
+    INSERT INTO COMPANIA(com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
+	VALUES(@nombre,	@rif, @email, @telefono, @acronimo, @fecha_registro, @status, @id_lugar);
  END;
 GO
 
@@ -593,7 +593,7 @@ CREATE PROCEDURE M4_ConsultarCompanias
 AS
 	BEGIN
 		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email, com_telefono as com_telefono,
-				com_acronimo as com_acronimo,com_fecha_registro as com_fecha_registro, com_status as com_status, 
+				com_acronimo as com_acronimo,com_fecha_registro as com_fecha_registro, com_status as com_status,
 				fk_lug_dir_id as fk_lug_dir_id
 		FROM COMPANIA;
 	END
@@ -615,7 +615,7 @@ AS
     update COMPANIA set com_nombre = @nombre, com_rif = @rif, com_email = @email, com_telefono = @telefono,
     com_acronimo = @acronimo, com_fecha_registro = @fecha_registro, com_status = @status,
     fk_lug_dir_id = @id_lugar
-    where com_id = @id;  
+    where com_id = @id;
  end;
 GO
 
@@ -626,16 +626,24 @@ CREATE PROCEDURE M4_InhabilitarHabilitarCompania
 AS
  BEGIN
     update COMPANIA set com_status = @status
-    where com_id = @id;  
+    where com_id = @id;
  end;
 
 GO
 --- StoredProcedure Eliminar una compañia(Para pruebas) ----
 CREATE PROCEDURE M4_EliminarCompania
-	@rif [varchar](20)
+	@id int
 AS
  BEGIN
-    DELETE FROM Compania WHERE com_rif = @rif;  
+    DELETE FROM Compania WHERE com_id = @id;
+ end;
+GO
+
+--- StoredProcedure ConsultarIdUltimaCompania(Para pruebas) ----
+CREATE PROCEDURE M4_ConsultarIdUltimaCompania
+AS
+ BEGIN
+     SELECT MAX(com_id) com_id FROM COMPANIA; 
  end;
 GO
 
@@ -659,8 +667,8 @@ CREATE PROCEDURE M5_AgregarContacto
 	@id_empresa int
 AS
  BEGIN
-    INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead) 
-	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);  
+    INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead)
+	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);
  end;
 GO
 --Consultar un contacto por su id
@@ -680,8 +688,8 @@ CREATE PROCEDURE M5_AgregarContactoProyecto
 	@id_proyecto int
 AS
  BEGIN
-    INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id) 
-	VALUES(@id_contacto,@id_proyecto);  
+    INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id)
+	VALUES(@id_contacto,@id_proyecto);
  end;
 GO
 --Eliminar a contacto_proyecto
@@ -690,7 +698,7 @@ CREATE PROCEDURE M5_EliminarContactoProyecto
 	@id_proyecto int
 AS
  BEGIN
-    DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;  
+    DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;
  end;
 GO
 --Eliminar de contacto y contacto_proyecto por id
@@ -715,7 +723,7 @@ AS
  BEGIN
     update CONTACTO set con_nombre = @nombre, con_apellido = @apellido, con_departamento = @departamento,
     con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
-    where con_id = @id;  
+    where con_id = @id;
  end;
 GO
 --Consultar contactos de una empresa
@@ -753,8 +761,8 @@ CREATE PROCEDURE M6_AgregarPropuesta
 	@id_compania int
 AS
  BEGIN
-    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin,prop_costo,fk_com_id) 
-	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);  
+    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin,prop_costo,fk_com_id)
+	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
 GO
 --Lista Propuesta que no estan en proyecto
@@ -793,8 +801,8 @@ CREATE PROCEDURE M7_AgregarProyecto
 
 AS
 	BEGIN
-    	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_acuerdo_pago,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id) 
-		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@AcuerdoPago,@IdPropuesta,@IdCompania,@IdGerente);  
+    	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_acuerdo_pago,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id)
+		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@AcuerdoPago,@IdPropuesta,@IdCompania,@IdGerente);
  	END;
 GO
 
@@ -848,7 +856,7 @@ AS
     		proy_fecha_est_fin = @FechaEstFin, proy_costo = @Costo, proy_descripcion = @Descripcion,
     		proy_realizacion = @Realizacion, proy_estatus = @Estatus, proy_razon = @Razon,
     		proy_acuerdo_pago = @AcuerdoPago,fk_propuesta_id = @IdPropuesta, fk_com_id = @IdCompania, fk_gerente_id = @IdGerente
-    	WHERE proy_id = @IdProyecto;  
+    	WHERE proy_id = @IdProyecto;
  	end;
 GO
 
@@ -859,8 +867,8 @@ CREATE PROCEDURE M7_AgregarProyectoContacto
     @IdProyecto int
 AS
 	BEGIN
-    	INSERT INTO CONTACTO_PROYECTO(	fk_con_id,fk_proy_id) 
-		VALUES(@PCIdContacto,@IdProyecto);  
+    	INSERT INTO CONTACTO_PROYECTO(	fk_con_id,fk_proy_id)
+		VALUES(@PCIdContacto,@IdProyecto);
  	END;
 GO
 
@@ -882,7 +890,7 @@ CREATE PROCEDURE M7_EliminarProyectoContacto
 	@IdProyecto int
 AS
  BEGIN
-    DELETE FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;  
+    DELETE FROM CONTACTO_PROYECTO WHERE fk_proy_id = @IdProyecto;
  end;
 GO
 
@@ -892,8 +900,8 @@ CREATE PROCEDURE M7_AgregarProyectoEmpleado
     @IdProyecto int
 AS
 	BEGIN
-    	INSERT INTO EMPLEADO_PROYECTO(	fk_emp_num_ficha,fk_proy_id) 
-		VALUES(@PEIdEmpleado,@IdProyecto);  
+    	INSERT INTO EMPLEADO_PROYECTO(	fk_emp_num_ficha,fk_proy_id)
+		VALUES(@PEIdEmpleado,@IdProyecto);
  	END;
 GO
 
@@ -914,8 +922,8 @@ CREATE PROCEDURE M7_EliminarProyectoEmpleado
 	@IdProyecto int
 AS
  BEGIN
-    DELETE FROM EMPLEADO_PROYECTO 
-     WHERE fk_proy_id = @IdProyecto;  
+    DELETE FROM EMPLEADO_PROYECTO
+     WHERE fk_proy_id = @IdProyecto;
  end;
 GO
 
@@ -944,17 +952,17 @@ AS
 			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
 			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id
 			 AS fk_com_id,fk_gerente_id AS fk_gerente_id
-		FROM PROYECTO, EMPLEADO_PROYECTO 
-		WHERE PROYECTO.proy_id = EMPLEADO_PROYECTO.fk_proy_id AND EMPLEADO_PROYECTO.fk_emp_num_ficha = @PEIdEmpleado; 
+		FROM PROYECTO, EMPLEADO_PROYECTO
+		WHERE PROYECTO.proy_id = EMPLEADO_PROYECTO.fk_proy_id AND EMPLEADO_PROYECTO.fk_emp_num_ficha = @PEIdEmpleado;
 
 	END;
 GO
-		
+
 ---- StoredProcedure Consultar Los proyectos que tenga un gerente ----
 CREATE PROCEDURE M7_ConsultarProyectosPorGerente
 
      @IdGerente int
-     
+
 AS
 	BEGIN
 		SELECT proy_id AS proy_id ,proy_nombre AS proy_nombre, proy_codigo AS proy_codigo, proy_fecha_inicio AS proy_fecha_inicio,
@@ -963,7 +971,7 @@ AS
 			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
 		FROM PROYECTO WHERE fk_gerente_id = @IdGerente ;
 	END
-GO		
+GO
 
 
 
@@ -986,8 +994,8 @@ CREATE PROCEDURE M8_AgregarFactura
 
 AS
 	BEGIN
-    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
-		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);  
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);
  	END;
 GO
 
@@ -1039,7 +1047,7 @@ AS
  	BEGIN
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
     		fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
-    	WHERE fac_id = @id_Factura;  
+    	WHERE fac_id = @id_Factura;
  	END;
 GO
 
@@ -1068,7 +1076,7 @@ CREATE PROCEDURE M8_EstatusFactura
 AS
  	BEGIN
     	UPDATE FACTURA SET fac_estatus = @estatus
-    	WHERE fac_id = @id;  
+    	WHERE fac_id = @id;
  	END;
 GO*/
 
@@ -1098,8 +1106,8 @@ CREATE PROCEDURE M10_AgregarEmpleado
 AS
  BEGIN
     INSERT INTO EMPLEADO(emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_cedula, emp_activo,
-						emp_email, emp_fecha_nac, emp_genero, emp_nivel_estudio,fk_lug_dir_id) 
-	VALUES(@p_nombre,	@s_nombre, @p_apellido, @s_apellido, @cedula, @activo, @email, @fecha_nac, @genero, @nivel_estudio,1);  
+						emp_email, emp_fecha_nac, emp_genero, emp_nivel_estudio,fk_lug_dir_id)
+	VALUES(@p_nombre,	@s_nombre, @p_apellido, @s_apellido, @cedula, @activo, @email, @fecha_nac, @genero, @nivel_estudio,1);
  end;
 GO
 
@@ -1115,6 +1123,50 @@ AS
 		FROM EMPLEADO;
 	END
 GO
+
+--Consultar Detalle empleado
+USE [BDTangerine]
+GO
+/****** Object:  StoredProcedure [dbo].[M10_DetallarEmpleado]    Script Date: 05/15/2016 16:18:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[M10_DetallarEmpleado]
+	@id int
+AS
+	BEGIN
+		SELECT Employee.emp_num_ficha AS emp_num_ficha, Employee.emp_cedula AS emp_cedula,
+			   Employee.emp_p_nombre AS emp_p_nombre, Employee.emp_s_nombre AS emp_s_nombre,
+			   Employee.emp_p_apellido AS emp_p_apellido,
+			   Employee.emp_s_apellido AS emp_s_apellido,
+			   Employee.emp_genero as emp_genero,
+			   CAST(Employee.emp_fecha_nac AS DATE )AS emp_fecha_nac,
+			   (YEAR (getdate()) - YEAR(Employee.emp_fecha_nac)) AS Edad,
+			   Employee.emp_nivel_estudio AS emp_nivel_estudio ,
+			   Employee.emp_email AS emp_email,
+			   Employee.emp_activo AS emp_activo,
+			   Employee.fk_lug_dir_id AS fk_lug_dir_id,
+			   Job.car_nombre AS car_nombre,
+			   Job.car_descripcion AS car_descripcion,
+			   CAST(EmployeeJob.car_emp_sueldo AS VARCHAR) AS car_emp_sueldo,
+			   CAST(EmployeeJob.car_emp_fecha_cont AS VARCHAR)AS car_emp_fecha_cont,
+			   ISNULL(CAST(EmployeeJob.car_emp_fecha_fin AS VARCHAR),'Actualidad') AS  car_emp_fecha_fin,
+			   (SELECT (P.lug_dir_nombre+', '+E.lug_dir_nombre+', '+
+						C.lug_dir_nombre+', '+D.lug_dir_nombre)
+			   FROM LUGAR_DIRECCION P, LUGAR_DIRECCION E, LUGAR_DIRECCION C,
+					  LUGAR_DIRECCION D, EMPLEADO Em
+			   WHERE  Em.fk_lug_dir_id = D.lug_dir_id
+					   and (D.fk_lug_dir_id=C.lug_dir_id
+							and C.fk_lug_dir_id=E.lug_dir_id
+							and E.fk_lug_dir_id=P.lug_dir_id)
+					   and Em.emp_num_ficha=@id)AS DireccionEmpleado
+		FROM EMPLEADO Employee, CARGO Job, CARGO_EMPLEADO EmployeeJob
+		WHERE Job.car_id=EmployeeJob.fk_car_id
+			  and Employee.emp_num_ficha=EmployeeJob.fk_emp_num_ficha
+			  and EmployeeJob.car_emp_fecha_fin IS NULL
+			  and Employee.emp_num_ficha=@id;
+	END
 
 -----------------------------------
 ------Fin Stored Procedure M10-----

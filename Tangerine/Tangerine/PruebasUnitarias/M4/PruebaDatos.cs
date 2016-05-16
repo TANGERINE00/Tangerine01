@@ -29,6 +29,7 @@ namespace PruebasUnitarias.M4
         [TearDown]
         public void clean()
         {
+            theCompany.IdCompania = BDCompania.ConsultLastCompanyId();
             answer1 = BDCompania.DeleteCompany(theCompany);
             theCompany = null;
         }

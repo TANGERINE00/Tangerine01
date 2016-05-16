@@ -149,10 +149,7 @@ namespace DatosTangerine.M10
             Empleado employee= new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
                                             empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
                                             empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
-                                            empFechaFin, empDireccion/*, empDireccion*/);
-
-            
-
+                                            empFechaFin, empDireccion);
             return employee;
         }
     }
