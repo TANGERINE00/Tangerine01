@@ -845,6 +845,7 @@ SELECT prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, pr
 prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA WHERE prop_nombre = @idNombre
 
 END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
