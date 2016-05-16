@@ -32,6 +32,7 @@ namespace DominioTangerine
         public Rol( string nombre ) 
         {
             _nombre = nombre;
+            _menus = new ListaGenerica<Menu>();
         }
 
         /// <summary>
