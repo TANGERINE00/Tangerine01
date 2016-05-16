@@ -26,20 +26,26 @@ namespace Tangerine.GUI.M1
         /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
+            Util _usuarioGlobal = new Util();
             _usuario = userIni.Value.ToString();
             _contrasena = passwordIni.Value.ToString();
-            if (_logicaM1.ValidarUsuario(_usuario, _contrasena))
+
+
+            if (_logicaM1.ValidarUsuario(_usuario, _contrasena, _usuarioGlobal))
             {
-                HttpContext.Current.Session["User"] = _usuario;
-                HttpContext.Current.Session["Clave"] = _contrasena;
+
+                HttpContext.Current.Session["User"] = _usuarioGlobal._theGlobalUser.NombreUsuario;
+                HttpContext.Current.Session["Clave"] = _usuarioGlobal._theGlobalUser.Contrasenia;
+                HttpContext.Current.Session["UserID"] = _usuarioGlobal._theGlobalUser.FichaEmpleado;
+                HttpContext.Current.Session["Rol"] = _usuarioGlobal._theGlobalUser.Rol.Nombre;
                 Response.Redirect("Dashboard.aspx");
             }
             else
             {
                 Response.Redirect("Login.aspx");
             }
-
-
+            
+            
 
         }
     }
