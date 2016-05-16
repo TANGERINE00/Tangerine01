@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
+using DatosTangerine.M2;
 
 namespace LogicaTangerine.M1
 {
@@ -57,12 +59,13 @@ namespace LogicaTangerine.M1
             {
                 if (this.ValidarCaracter(usuario) && this.ValidarCaracter(contrasena))
                 {
-                    this.ConsultarUsuario(usuario, contrasena);
-                    return true;
+                    if (ConsultarUsuario(usuario, contrasena))
+                        return true;
+                    else
+                        return false;
                 }
                 else
                     return false;
-                //mensajeLogin(RecursosInterfazPresentadorM1.logCaracterInvalidos, RecursosInterfazPresentadorM1.tipoErr);
             }
             return false;
         }
@@ -71,9 +74,17 @@ namespace LogicaTangerine.M1
         {
             try
             {
-                //Bool para traer datos de usuario y comparar con contraseña
-                //return BDUsuario.TraerUsuario();
-                return true;
+                Usuario theUsuario = new Usuario(nombreUsuario,clave);
+                theUsuario = BDUsuario.ObtenerDatoUsuario(theUsuario);
+
+                if (theUsuario.Activo != null)
+                {
+                    string _prueba = theUsuario.Activo;
+                    Util._theGlobalUser = theUsuario;
+                    return true;
+                }
+                else
+                    return false;
             }
             catch (Exception ex)
             {
