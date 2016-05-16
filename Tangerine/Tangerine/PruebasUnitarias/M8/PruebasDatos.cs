@@ -37,6 +37,7 @@ namespace PruebasUnitarias.M8
         }
         #endregion
 
+        #region Test
         /// <summary>
         /// Prueba que permite verificar el insertar de una Factura en la base de datos
         /// </summary>
@@ -119,5 +120,6 @@ namespace PruebasUnitarias.M8
 
 
         }*/
+        #endregion
     }
 }

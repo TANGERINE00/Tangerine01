@@ -26,6 +26,11 @@ namespace Tangerine.GUI.M8
             textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
+        /// <summary>
+        /// Evento que se dispara con el boton de generar factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttomGenerarFactura_Click( object sender, EventArgs e )
         {
              _montoTotal = int.Parse(textMonto_M8.Value);

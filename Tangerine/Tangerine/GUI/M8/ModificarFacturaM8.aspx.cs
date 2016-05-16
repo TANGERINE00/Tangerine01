@@ -45,6 +45,11 @@ namespace Tangerine.GUI.M8
             }    
         }
 
+        /// <summary>
+        /// Evento que se dispara con el boton de modificar factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttomModificarFactura_Click ( object sender , EventArgs e )
         {
             _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
