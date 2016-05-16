@@ -33,9 +33,15 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            llenarComboDuracion();
-            llenarComboTipoCosto();
-            CargarCompañias();
+            if (!IsPostBack)
+            {
+                llenarComboDuracion();
+                llenarComboTipoCosto();
+                llenarComboEstatus();
+                cargarCompañias();
+            }
+
+
         }
 
         protected void btnagregar_Click(object sender, EventArgs e)
@@ -54,12 +60,8 @@ namespace Tangerine.GUI.M6
             _acuerdo = "pruebaclable";
             _entregaCant = 2;
             _fdepago = fpago.Value;
-            _estatusW = estatus.Value;
+            _estatusW = comboEstatus.SelectedItem.Text;
             _idCompañia = comboCompañia.Items[comboCompañia.SelectedIndex].Value;
-
-            Debug.Print("este es el index " + comboCompañia.Items[comboCompañia.SelectedIndex].Value);
-
-
             Propuesta propuesta = new Propuesta(_nombcodigoPropuesta, _descripcion, _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,
                                                  _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
             LogicaPropuesta propuestaLogica = new LogicaPropuesta();
@@ -85,7 +87,15 @@ namespace Tangerine.GUI.M6
             comboTipoCosto.Items.Add("Bitcoins");
         }
 
-        private void CargarCompañias()
+        public void llenarComboEstatus()
+        {
+            comboEstatus.Items.Add("Pendiente");
+            comboEstatus.Items.Add("Aprobado");
+            comboEstatus.Items.Add("Cerrado");
+
+        }
+
+        private void cargarCompañias()
         {
             try
             {
@@ -94,6 +104,10 @@ namespace Tangerine.GUI.M6
                 ListItem itemCompa;
 
                 this.comboCompañia.Items.Clear();
+                itemCompa = new ListItem();
+                itemCompa.Text = "Seleccione un Cliente";
+                itemCompa.Value = "0";
+                this.comboCompañia.Items.Add(itemCompa);
 
                 foreach (Compania objetoCompa in companias)
                 {
