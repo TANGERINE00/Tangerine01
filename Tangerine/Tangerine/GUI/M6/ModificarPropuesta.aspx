@@ -50,7 +50,7 @@
 
     <div class="col-md-6">
 
-        <div class="box box-primary">
+        <div class="box box-primary" style="height:auto">
 
             <!-- form start -->
             <form role="form">
@@ -88,6 +88,116 @@
                 </tr>
 			</tbody>
 
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
 
             <tbody>
 				<tr>
@@ -164,7 +274,7 @@
                     </div>
                 </div>
                     <br />
-                    <div class="form-group">
+                   <%-- <div class="form-group">
                         <div class="col-sm-10 col-md-10 col-lg-10">
                             <p><b>Prioridad:</b></p>
                             <label class="radio-inline">
@@ -174,9 +284,9 @@
                             <label class="radio-inline">
                             <input type="radio" name="radioPrioridad" id="input_prioridad_alta"/>Alta</label>
                         </div>
-                    </div>
+                    </div>--%>
                     <br />
-                    <div class="form-group">
+                    <%--<div class="form-group">
                         <div class="col-sm-10 col-md-10 col-lg-10">
                             <p><b>Status:</b></p>
                             <label class="radio-inline">
@@ -186,7 +296,7 @@
                              <label class="radio-inline">
                             <input type="radio" name="radioStatus" id="input_status_enejecucion"/>En ejecucion</label>
                         </div>
-                    </div>
+                    </div>--%>
 
             </div>
             <div class="modal-footer">
