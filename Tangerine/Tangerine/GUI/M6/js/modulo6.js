@@ -32,3 +32,10 @@ function eliminarCampo(caller) {
     parent.parentElement.removeChild(parent);
 }
 
+function contarElementos() {
+    var campos = $("#div-precondiciones").find(".form-control");
+    var requerimientos = [];
+    for (var i = 0; i < campos.length; i++) {
+        requerimientos[i] = campos.eq(i).val();
+    }
+}

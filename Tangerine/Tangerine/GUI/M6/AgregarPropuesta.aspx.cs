@@ -30,6 +30,7 @@ namespace Tangerine.GUI.M6
         string _fdepago = String.Empty;
         string _estatusW;
         DateTime today = DateTime.Today;
+        public string MyProperty { get { return "your value"; } }
 
         protected void Page_Load(object sender, EventArgs e)
         {
