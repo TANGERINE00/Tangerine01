@@ -22,13 +22,22 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_propuesta;
         
         /// <summary>
-        /// cliente control.
+        /// contenedorCompañias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect cliente;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenedorCompañias;
+        
+        /// <summary>
+        /// comboCompañia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboCompañia;
         
         /// <summary>
         /// descripcion control.
@@ -112,13 +121,22 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect fpago;
         
         /// <summary>
-        /// estatus control.
+        /// contenedorEstatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect estatus;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenedorEstatus;
+        
+        /// <summary>
+        /// comboEstatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboEstatus;
         
         /// <summary>
         /// btnagregar control.
@@ -128,5 +146,14 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnagregar;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

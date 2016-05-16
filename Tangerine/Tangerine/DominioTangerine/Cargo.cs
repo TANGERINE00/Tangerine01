@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DominioTangerine
 {
-    class Cargo
+    public class Cargo
     {
         #region Atributos
         private string nombre;
@@ -16,6 +18,9 @@ namespace DominioTangerine
         private string modalidad;
         private double sueldo;
 
+        private string fechaIni;
+        private string fechaFin;
+
         private int fk_car_id;
         private int fk_emp_num_ficha;
         private int car_id;
@@ -24,6 +29,17 @@ namespace DominioTangerine
         #endregion
 
         #region constructores
+        public Cargo() { }
+
+
+        public Cargo(string cargo, double salary, string dateIni, string dateFin)
+        {
+            this.nombre=cargo;
+            this.fechaIni = dateIni;
+            this.fechaFin = dateFin;
+            this.sueldo = salary;
+        }
+
         public Cargo(int carId, string nombre, string descripcion)
         {
             this.car_id = carId;
@@ -40,6 +56,7 @@ namespace DominioTangerine
             this.modalidad = mode;
             this.sueldo = salary;
         }
+
         public Cargo(int carId, string nombre, string descripcion, int fk_car_id, 
                      int fk_emp_num_ficha, DateTime dateIni, DateTime dateFin,
                      string mode, double salary)
@@ -165,7 +182,31 @@ namespace DominioTangerine
             }
         }
 
-        public List<Empleado> ListEmployees
+        public string FechaIni
+        {
+            get
+            {
+                return this.fechaIni;
+            }
+            set
+            {
+                this.fechaIni = value;
+            }
+        }
+
+        public string FechaFin
+        {
+            get
+            {
+                return this.fechaFin;
+            }
+            set
+            {
+                this.fechaFin = value;
+            }
+        }
+
+       public List<Empleado> ListEmployees
         {
             get 
             {

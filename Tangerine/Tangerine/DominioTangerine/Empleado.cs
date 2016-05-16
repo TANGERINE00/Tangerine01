@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DominioTangerine
 {
@@ -23,8 +25,11 @@ namespace DominioTangerine
 	  public String emp_activo ;
 	  public int fk_lug_dir_id ;
 
-      //private List<Cargo> listJobTitle;
-      private List<Proyecto> listProjects;
+      private string address;
+      private Cargo job;
+      private List<Cargo> listJobs = new List<Cargo>();
+      private List<Proyecto> listProjects = new List<Proyecto>();
+
       #endregion
 
       #region constructores
@@ -92,6 +97,27 @@ namespace DominioTangerine
            this.emp_nivel_estudio = empEstudio;
            this.emp_email = empEmail;
            this.fk_lug_dir_id = empLugId;
+       }
+
+       public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                       string empGenero, int empCedula, DateTime empFecha, string empActivo, string empEstudio,
+                       string empEmail, int empLugId, string cargo, double salario, string fechaIni, string fechaFin,
+                       string address)
+       {
+           this.emp_num_ficha = empId;
+           this.emp_cedula = empCedula;
+           this.emp_p_nombre = empPNombre;
+           this.emp_s_nombre = empSNombre;
+           this.emp_p_apellido = empPApellido;
+           this.emp_s_apellido = empSApellido;
+           this.emp_genero = empGenero;
+           this.emp_fecha_nac = empFecha;
+           this.emp_activo = empActivo;
+           this.emp_nivel_estudio = empEstudio;
+           this.emp_email = empEmail;
+           this.fk_lug_dir_id = empLugId;
+           this.job = new Cargo(cargo, salario, fechaIni, fechaFin);
+           this.address = address;
        }
 
       #endregion
@@ -241,17 +267,17 @@ namespace DominioTangerine
            }
        }
 
-      /* public List<Cargo> ListJobTitle
+       public string Adrress 
        {
            get
            {
-               return this.listJobTitle;
+               return this.address;
            }
            set
            {
-               this.listJobTitle = value;
+               this.address = value;
            }
-       }*/
+       }
 
        public List<Proyecto> ListProjects
        {
@@ -259,9 +285,29 @@ namespace DominioTangerine
            {
                return this.listProjects;
            }
-           set 
+           set
            {
                this.listProjects = value;
+           }
+       }
+
+       public Cargo Job
+       {
+           get
+           {
+               return this.job;
+           }
+       }
+
+       public List<Cargo> ListJobs
+       {
+           get
+           {
+               return this.listJobs;
+           }
+           set
+           {
+               this.listJobs = value;
            }
        }
        #endregion

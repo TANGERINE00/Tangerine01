@@ -27,6 +27,7 @@ drop procedure M2_ObtenerDatoUsuario;
 drop procedure M2_ModificarContraUsuario;
 drop procedure M2_ModificarRolUsuario;
 drop procedure M2_AgregarUsuario;
+drop procedure M2_ObtenerUsuarioDeEmpleado;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
@@ -34,6 +35,7 @@ drop procedure M4_ConsultarCompanias;
 drop procedure M4_ModificarCompania;
 drop procedure M4_InhabilitarHabilitarCompania;
 drop procedure M4_EliminarCompania;
+drop procedure M4_ConsultarIdUltimaCompania;
 
 
 drop procedure M5_AgregarContacto;
@@ -45,6 +47,10 @@ drop procedure M5_ModificarContacto;
 drop procedure M5_ConsultarContactoCompania;
 
 drop procedure M6_AgregarPropuesta;
+drop procedure M6_ListaPropuestaProyecto;
+drop procedure M6_ModificarPropuesta;
+drop procedure M6_ModificarRequerimiento;
+drop procedure M6_ListarRequerimientos;
 
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;

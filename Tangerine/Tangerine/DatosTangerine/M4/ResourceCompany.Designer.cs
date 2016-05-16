@@ -178,6 +178,15 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarIdUltimaCompania.
+        /// </summary>
+        internal static string ConsultLastCompanyId {
+            get {
+                return ResourceManager.GetString("ConsultLastCompanyId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M4_EliminarCompania.
         /// </summary>
         internal static string DeleteCompany {
