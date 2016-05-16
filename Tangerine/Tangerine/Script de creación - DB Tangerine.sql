@@ -581,7 +581,7 @@ CREATE PROCEDURE M4_ConsultarCompania
 		@id int
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre, com_rif as com_rif, com_email as con_email, com_telefono as com_telefono, com_acronimo as com_acronimo,
+		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email, com_telefono as com_telefono, com_acronimo as com_acronimo,
 			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id
 		FROM COMPANIA WHERE com_id = @id;
 	END
