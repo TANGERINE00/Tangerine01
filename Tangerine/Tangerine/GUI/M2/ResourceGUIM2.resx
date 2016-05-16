@@ -117,67 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AbrirTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="BotonModif" xml:space="preserve">
+    <value>&lt;a tittle="modificar" class="btn btn-default btn-xs" id="</value>
   </data>
-  <data name="AbrirTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
-  </data>
-  <data name="as" xml:space="preserve">
-    <value />
-  </data>
-  <data name="BotonModificarEmpAbrir" xml:space="preserve">
-    <value>&lt;a href="ModificarEmpleado.aspx?EmployeeId=</value>
-  </data>
-  <data name="BotonModificarEmpCerrar" xml:space="preserve">
-    <value>" type="button" class="btn btn-default"&gt;&lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonStatusEmpAbrir" xml:space="preserve">
-    <value>&lt;a href="ModificarEmpleado.aspx</value>
-  </data>
-  <data name="BotonStatusEmpCerrar" xml:space="preserve">
-    <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove-circle"&gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonVerEmpAbrir" xml:space="preserve">
-    <value>&lt;a href="VerEmpleado.aspx?EmployeeId=</value>
-  </data>
-  <data name="BotonVerEmpCerrar" xml:space="preserve">
-    <value>" type="button" class="btn btn-primary"&gt;&lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CerrarTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
-  </data>
-  <data name="CerrarTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+  <data name="BotonReg" xml:space="preserve">
+    <value>&lt;a tittle ="registrar" class="btn btn-default btn-xs" &gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>
   </data>
-  <data name="CloseInputTextDisabled" xml:space="preserve">
-    <value>" disabled&gt;</value>
+  <data name="Closeh3" xml:space="preserve">
+    <value>&lt;/h3&gt;</value>
   </data>
-  <data name="CloseInputTextEnable" xml:space="preserve">
-    <value>"&gt;</value>
+  <data name="Closeh4" xml:space="preserve">
+    <value>&lt;/h4&gt;</value>
   </data>
-  <data name="Espacio" xml:space="preserve">
-    <value> </value>
+  <data name="CloseTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
   </data>
-  <data name="FormatoFecha" xml:space="preserve">
-    <value>dd/MM/yyyy</value>
-  </data>
-  <data name="OpenDivColDataInfo" xml:space="preserve">
-    <value>&lt;div class="col-sm-12 col-md-6 col-lg-6"&gt;</value>
+  <data name="CloseTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
   </data>
   <data name="OpenDivRow" xml:space="preserve">
     <value>&lt;div class="row"&gt;</value>
   </data>
-  <data name="OpenFormGroup" xml:space="preserve">
-    <value>&lt;div class="form-group "&gt;</value>
+  <data name="Openh3" xml:space="preserve">
+    <value>&lt;h3 style="bold"&gt;</value>
   </data>
-  <data name="OpenInputText" xml:space="preserve">
-    <value>&lt;input type="text" class="form-control" value="</value>
+  <data name="Openh4" xml:space="preserve">
+    <value>&lt;h4&gt;</value>
   </data>
-  <data name="VentanaAgregarEmpleado" xml:space="preserve">
-    <value>&lt;a href="CrearEmpleado.aspx" type="button" class="btn btn-success pull-right"&gt;&lt;span class="glyphicon glyphicon-plus"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="OpenTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
+  </data>
+  <data name="OpenTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="CloseBotonModify" xml:space="preserve">
+    <value>"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalC" onclick="ClickCambiar"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonReg" xml:space="preserve">
+    <value>"&gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseInputModif" xml:space="preserve">
+    <value>" disabled&gt;</value>
+  </data>
+  <data name="CloseLabelFor" xml:space="preserve">
+    <value>" class="col-sm-2 control-label"&gt;Usuario&lt;/label&gt;</value>
+  </data>
+  <data name="LabelFor" xml:space="preserve">
+    <value>&lt;label for="</value>
+  </data>
+  <data name="llamadoCompleto" xml:space="preserve">
+    <value>&lt;a tittle="modificar" runat ="server" class="btn btn-default btn-xs" id="geastone"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalC" onclick="ClickCambiar" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="OpenDivModif" xml:space="preserve">
+    <value>&lt;div class="col-sm-10"&gt;</value>
+  </data>
+  <data name="OpenInputModif" xml:space="preserve">
+    <value>&lt;input type="email" class="form-control" id="</value>
+  </data>
+  <data name="placeholder" xml:space="preserve">
+    <value>placeholder="</value>
   </data>
 </root>

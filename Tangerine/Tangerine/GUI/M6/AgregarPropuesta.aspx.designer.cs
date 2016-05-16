@@ -22,13 +22,22 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_propuesta;
         
         /// <summary>
-        /// cliente control.
+        /// contenedorCompañias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect cliente;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenedorCompañias;
+        
+        /// <summary>
+        /// comboCompañia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboCompañia;
         
         /// <summary>
         /// descripcion control.
@@ -58,6 +67,15 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.WebControls.DropDownList comboDuracion;
         
         /// <summary>
+        /// textoDuracion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText textoDuracion;
+        
+        /// <summary>
         /// datepicker1 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList comboTipoCosto;
+        
+        /// <summary>
+        /// textoCosto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText textoCosto;
         
         /// <summary>
         /// fpago control.

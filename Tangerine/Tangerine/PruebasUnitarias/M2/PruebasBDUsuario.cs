@@ -16,6 +16,8 @@ namespace PruebasUnitarias.M2
         #region Atributos
 
         public Usuario theUser;
+        public Usuario theUserResultado;
+        public Usuario theUserFail;
         public Rol theRol;
         
         #endregion 
@@ -30,6 +32,7 @@ namespace PruebasUnitarias.M2
         {
             theRol = new Rol( "Gerente" );
             theUser = new Usuario( "userTest", "testapp1", "Activo", theRol, 0, DateTime.Now );
+            theUserResultado = new Usuario( "userTest", "testapp1" );
         }
 
         /// <summary>
@@ -56,6 +59,17 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el método ObtenerDatoUsuario() de la clase BDUsuario en DatosTangerine
+        /// </summary>
+        [Test]
+        public void TestObtenerDatosUsuario() 
+        {
+            theUserResultado = BDUsuario.ObtenerDatoUsuario( theUserResultado );
+
+            Assert.AreEqual( theUserResultado.Rol.Nombre, "Gerente" );
+        }
+
+        /// <summary>
         /// Método para probar el método ModifcarRolUsuario() de la clase BDUsuario en DatosTangerine
         /// </summary>
         [Test]
@@ -67,7 +81,9 @@ namespace PruebasUnitarias.M2
 
             bool resultado = BDUsuario.ModificarRolUsuario( theUser );
 
-            Assert.IsTrue( resultado );
+            theUserResultado = BDUsuario.ObtenerDatoUsuario( theUser );
+
+            Assert.AreEqual( theUser.Rol.Nombre, theUserResultado.Rol.Nombre );
         }
 
         /// <summary>
@@ -80,7 +96,65 @@ namespace PruebasUnitarias.M2
 
             bool resultado = BDUsuario.ModificarContraseniaUsuario( theUser );
 
-            Assert.IsTrue( resultado );
+            theUserResultado = BDUsuario.ObtenerDatoUsuario( theUser );
+
+            Assert.AreEqual( theUser.Contrasenia, theUserResultado.Contrasenia );
+        }
+
+        /// <summary>
+        /// Método para probar el método ObtenerRolUsuario() de la clase BDUsuario en DatosTangerine
+        /// </summary>
+        [Test]
+        public void TestObtenerRolUsuario() 
+        {
+            theRol = BDUsuario.ObtenerRolUsuario( 1 );
+
+            Assert.AreEqual( theRol.Nombre, "Administrador" );
+        }
+        
+        /// <summary>
+        /// Método para probar el disparo de una excepción el método AgregarUsuario() de la clase BDUsuario en
+        /// DatosTangerine
+        /// </summary>
+        [Test]
+        public void TestFailAgregarUsuario() 
+        {
+            theUserFail = new Usuario();
+            theUserFail.NombreUsuario = "testFail";
+
+            bool resultado = BDUsuario.AgregarUsuario( theUserFail );
+
+            Assert.Fail("Se ha disparado la excepción de la prueba de AgregarUsuario()");
+        }
+
+        /// <summary>
+        /// Método para probar el disparo de una excepción el método ModificarRolUsuario() de la clase BDUsuario en
+        /// DatosTangerine
+        /// </summary>
+        [Test]
+        public void TestFailModificarRolUsuario() 
+        {
+            theUserFail = new Usuario();
+            theUserFail.NombreUsuario = "testFail";
+
+            bool resultado = BDUsuario.ModificarRolUsuario(theUserFail);
+
+            Assert.Fail("Se ha disparado la excepción de la prueba de ModificarRolUsuario()");
+        }
+
+        /// <summary>
+        /// Método para probar el disparo de una excepción el método ModificarContraseniaUsuario() de la clase BDUsuario en
+        /// DatosTangerine
+        /// </summary>
+        [Test]
+        public void TestFailModificarContraseniaUsuario()
+        {
+            theUserFail = new Usuario();
+            theUserFail.NombreUsuario = "testFail";
+
+            bool resultado = BDUsuario.ModificarContraseniaUsuario(theUserFail);
+
+            Assert.Fail("Se ha disparado la excepción de la prueba de ModificarContraseniaUsuario()");
         }
     }
 }

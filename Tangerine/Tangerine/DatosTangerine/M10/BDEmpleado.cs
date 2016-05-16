@@ -113,5 +113,39 @@ namespace DatosTangerine.M10
 
             return listEmpleado;
         }
+
+        public static Empleado GetEmployeeById(int employeeId)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion Connection = new BDConexion();
+            Parametro param = new Parametro();
+            //Empleado employee = new Empleado();
+
+            param = new Parametro("@id", SqlDbType.Int, employeeId.ToString(), false);
+            parameters.Add(param);
+
+            DataTable dataTable = Connection.EjecutarStoredProcedureTuplas(ResourceEmpleado.DetallarEmpleado, parameters);
+
+            DataRow row = dataTable.Rows[0];
+
+            int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+            String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+            String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+            String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+            String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+            String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+            int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+            DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+            String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+            int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+            String empNivelEstudio  = row[ResourceEmpleado.EmpEstudio].ToString();
+            String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
+
+            Empleado employee= new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                                            empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                                            empEmailEmployee, empLugId);
+
+            return employee;
+        }
     }
 }

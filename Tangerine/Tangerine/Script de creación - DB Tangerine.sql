@@ -208,7 +208,7 @@ create table CONTACTO
 
       create table PROPUESTA
 (
-	prop_id int not null,
+	prop_id int IDENTITY(1,1) not null,
 	prop_nombre varchar(50),
 	prop_descripcion varchar(255),
 	prop_tipoDuracion varchar(200),
@@ -535,7 +535,6 @@ AS
 	END;
 GO
 
-
 CREATE PROCEDURE M2_ObtenerOpciones
 @menu_nom [varchar](200),
 @codigo_rol int
@@ -546,6 +545,16 @@ SELECT o.opc_nombre as opc_nombre, o.opc_url as opc_url
     FROM menu m, opcion o, rol_opcion ro
     WHERE m.men_nombre =@menu_nom and ro.fk_rol_id = @codigo_rol  and m.men_id = o.fk_men_id and o.opc_id = ro.fk_opc_id;
 END;
+GO
+
+CREATE PROCEDURE M2_ObtenerUsuarioDeEmpleado
+@emp_num_ficha int
+AS
+	BEGIN
+		SELECT rol_nombre, usu_usuario
+		FROM rol, usuario
+		WHERE rol_id = fk_rol_id and fk_emp_num_ficha = @emp_num_ficha;
+	END;
 GO
 
 --------Stored Procedure M4--------
@@ -732,17 +741,20 @@ GO
 CREATE PROCEDURE M6_AgregarPropuesta
 	@nombre [varchar](50),
 	@descripcion [varchar](255),
+	@tipoDura [varchar](200),
 	@duracion [varchar](200),
 	@acuerdo [varchar](200),
 	@estatus [varchar](20),
 	@moneda [varchar](40),
 	@cantEntr int,
 	@fechai date,
-	@fechaf date
+	@fechaf date,
+	@costo int,
+	@id_compania int
 AS
  BEGIN
-    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin) 
-	VALUES(@nombre,	@descripcion, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai,@fechaf);  
+    INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin,prop_costo,fk_com_id) 
+	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);  
  end;
 GO
 -----------------------------------
@@ -1019,6 +1031,23 @@ AS
     		fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id_Factura;  
  	END;
+GO
+
+---- StoredProcedure Anular Factura ----
+CREATE PROCEDURE M8_AnularFactura
+	@id_Factura int,
+	@fecha_emision date,
+	@monto_total numeric(12,3),
+	@monto_restante numeric(12,3),
+	@descripcion [varchar](500),
+	@estatus int,
+	@id_proyecto int,
+	@id_compania int
+AS
+	BEGIN
+		UPDATE FACTURA SET fac_estatus = 2
+    	WHERE fac_id = @id_Factura;
+	END
 GO
 
 /*Falta el campo factura*/

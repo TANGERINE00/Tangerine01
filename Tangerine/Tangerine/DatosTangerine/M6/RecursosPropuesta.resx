@@ -157,6 +157,9 @@
     <value>@fechai</value>
     <comment>Atributo que identifica la fecha estimada de inicio de la propuesta</comment>
   </data>
+  <data name="ParamIdCompa" xml:space="preserve">
+    <value>@id_compania</value>
+  </data>
   <data name="ParamMonedaProp" xml:space="preserve">
     <value>@moneda</value>
     <comment>Atributo que identifica la moneda de pago de la propuesta</comment>
@@ -164,6 +167,9 @@
   <data name="ParamNombreProp" xml:space="preserve">
     <value>@nombre</value>
     <comment>Atributo que identifica el nombre de la propuesta</comment>
+  </data>
+  <data name="ParamTipoDuProp" xml:space="preserve">
+    <value>@tipoDura</value>
   </data>
   <data name="PropAcuerdo" xml:space="preserve">
     <value>prop_acuerdo_pago</value>
@@ -178,7 +184,7 @@
     <value>prop_descripcion</value>
   </data>
   <data name="PropDuracion" xml:space="preserve">
-    <value>prop_duracion</value>
+    <value>prop_Duracion</value>
   </data>
   <data name="PropEstatus" xml:space="preserve">
     <value>prop_estatus</value>
@@ -194,5 +200,8 @@
   </data>
   <data name="PropNombre" xml:space="preserve">
     <value>prop_nombre</value>
+  </data>
+  <data name="PropTipoDuracion" xml:space="preserve">
+    <value>prop_tipoDuracion</value>
   </data>
 </root>

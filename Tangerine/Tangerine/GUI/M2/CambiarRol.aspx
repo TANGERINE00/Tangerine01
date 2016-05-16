@@ -29,7 +29,7 @@
         }
     </script>
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -59,13 +59,44 @@
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <button id="botonCancelar" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                        <asp:button id="botonCambiar" type="button" class="btn btn-primary pull-right" data-dismiss="modal" OnClick="botonCambiar_Click">Cambiar</asp:button>
+                        <button id="botonCambiar" type="button" class="btn btn-primary pull-right" data-dismiss="modal" OnClick="botonCambiar_Click">Cambiar</button>
                     </div><!-- /.box-footer -->
                 </div>
             </div>
         </div>
     </div>
     
+     <!-- Modal Cambiar Rol -->
+    <div class="modal fade" id="myModalC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabelC">Selecciona el rol para el usuario</h4>
+                </div>
+
+
+                <div class="modal-body">  
+                    <div class="box-body">     
+                    <div class="well">
+                        <asp:Literal runat="server" ID="CamRol"></asp:Literal>
+                    </div>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer">
+                        <button id="botonCancelar2" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+                        <button id="botonCambiar2" type="button" class="btn btn-primary pull-right" data-dismiss="modal" OnClick="botonCambiar_Click">Cambiar</button>
+                    </div><!-- /.box-footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
     <div class="container-fluid">
         <div class="box box-info">
             <!--<div class="panel-heading">Filtrar empleados</div>-->
@@ -94,30 +125,11 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <asp:Literal runat="server" ID="tablaempleados"></asp:Literal>
                         <tbody>
-                            <tr>
-                                <td>Luis</td>
-                                <td>Rodríguez</td>
-                                <td>luarropa</td>
-                                <td>Gerente</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('luarropa','Gerente')"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td>Carlos</td>
-                                <td>Lozano</td>
-                                <td>craloz</td>
-                                <td>Administrador</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('craloz','Gerente')"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td>Gerardo</td>
-                                <td>Astone</td>
-                                <td>gerastone</td>
-                                <td>Director</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" onclick="javascript:showContent('gerastone','Gerente')"></span></a></td>
-                            </tr>
+     
                         </tbody>
-                    </table>
+                        </table>
                     <nav>
                         <ul class="pagination">
                             <li>

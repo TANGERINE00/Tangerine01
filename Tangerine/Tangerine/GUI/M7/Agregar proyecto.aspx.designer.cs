@@ -22,6 +22,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm generar_proyecto;
         
         /// <summary>
+        /// Control inputPropuesta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inputPropuesta;
+        
+        /// <summary>
         /// Control textInputNombreProyecto.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textInputPorcentaje;
         
         /// <summary>
+        /// Control btnAgregarPersonal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarPersonal;
+        
+        /// <summary>
         /// Control btnGenerar.
         /// </summary>
         /// <remarks>
@@ -85,6 +103,33 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.Button btnGenerar;
         
         /// <summary>
+        /// Control columna2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl columna2;
+        
+        /// <summary>
+        /// Control inputGerente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inputGerente;
+        
+        /// <summary>
+        /// Control inputPersonal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inputPersonal;
+        
+        /// <summary>
         /// Control btnAgregar.
         /// </summary>
         /// <remarks>
@@ -92,5 +137,14 @@ namespace Tangerine.GUI.M7 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregar;
+        
+        /// <summary>
+        /// Control inputEncargado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inputEncargado;
     }
 }

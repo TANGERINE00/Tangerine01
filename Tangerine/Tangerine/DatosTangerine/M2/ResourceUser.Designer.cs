@@ -299,5 +299,28 @@ namespace DatosTangerine.M2 {
                 return ResourceManager.GetString("OpcUrl", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerUsuarioDeEmpleado.
+        /// </summary>
+        internal static string ObtenerUsuarioDeEmpleado
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerUsuarioDeEmpleado", resourceCulture);
+            }
+        }
+
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a usu_nombre.
+        /// </summary>
+        internal static string UsuNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("UsuNombre", resourceCulture);
+            }
+        }
     }
 }

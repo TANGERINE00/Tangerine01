@@ -36,13 +36,16 @@ namespace DatosTangerine.M6
                 parametro = new Parametro(RecursosPropuesta.ParamDescriProp, SqlDbType.VarChar, laPropuesta.Descripcion, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro(RecursosPropuesta.ParamDuracProp, SqlDbType.VarChar, laPropuesta.Duracion, false);
+                parametro = new Parametro(RecursosPropuesta.ParamTipoDuProp, SqlDbType.VarChar, laPropuesta.TipoDuracion, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosPropuesta.ParamDuracProp, SqlDbType.VarChar, laPropuesta.CantDuracion, false);
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursosPropuesta.ParamFechaIProp, SqlDbType.Date, laPropuesta.Feincio.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro(RecursosPropuesta.ParamFechaFProp, SqlDbType.VarChar, laPropuesta.Fefinal.ToString(), false);
+                parametro = new Parametro(RecursosPropuesta.ParamFechaFProp, SqlDbType.Date, laPropuesta.Fefinal.ToString(), false);
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursosPropuesta.ParamEstatusProp, SqlDbType.VarChar, laPropuesta.Estatus, false);
@@ -51,10 +54,16 @@ namespace DatosTangerine.M6
                 parametro = new Parametro(RecursosPropuesta.ParamMonedaProp, SqlDbType.VarChar, laPropuesta.Moneda, false);
                 parametros.Add(parametro);
 
+                parametro = new Parametro(RecursosPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, laPropuesta.Acuerdopago, false);
+                parametros.Add(parametro);
+
                 parametro = new Parametro(RecursosPropuesta.ParamCantidaProp, SqlDbType.Int, laPropuesta.Entrega.ToString(), false);
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursosPropuesta.ParamCostoProp, SqlDbType.Int, laPropuesta.Costo.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosPropuesta.ParamIdCompa, SqlDbType.Int, laPropuesta.IdCompañia.ToString(), false);
                 parametros.Add(parametro);
 
 

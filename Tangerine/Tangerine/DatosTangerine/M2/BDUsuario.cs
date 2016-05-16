@@ -49,6 +49,11 @@ namespace DatosTangerine.M2
                 List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.AgregarUsuario, 
                                                                               parametros );
             }
+            catch ( NullReferenceException ex )
+            {
+                System.Diagnostics.Debug.Write( ex );
+                return false;
+            }
             catch ( Exception ex )
             {
                 System.Diagnostics.Debug.Write(ex);
@@ -82,6 +87,11 @@ namespace DatosTangerine.M2
 
                 List<Resultado> results = laConexion.EjecutarStoredProcedure( ResourceUser.ModificarRolUsuario,
                                                                               parametros );
+            }
+            catch ( NullReferenceException ex )
+            {
+                System.Diagnostics.Debug.Write( ex );
+                return false;
             }
             catch ( Exception ex )
             {
@@ -282,6 +292,44 @@ namespace DatosTangerine.M2
             }
 
             return lista;
+        }
+
+        public static Usuario ObtenerUsuarioDeEmpleado( Empleado empleado ) 
+        {
+            Usuario usuario = new Usuario();
+
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro( ResourceUser.ParametroNumFicha, SqlDbType.Int, 
+                                             empleado.Emp_num_ficha.ToString(), false );
+                parametros.Add( elParametro );
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, parametros );
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
+                    string rolUsuario = row[ResourceUser.RolNombre].ToString();
+
+                    Rol rol = new Rol( rolUsuario );
+                    
+                    usuario.NombreUsuario = nombreUsuario;
+                    usuario.Rol = rol;
+                }
+            }
+            catch ( Exception ex )
+            {
+                System.Diagnostics.Debug.Write( ex );
+            }
+
+            return usuario;
         }
     }
 }
