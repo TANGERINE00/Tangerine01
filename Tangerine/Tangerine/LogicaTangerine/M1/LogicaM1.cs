@@ -70,7 +70,7 @@ namespace LogicaTangerine.M1
             return false;
         }
 
-        public bool ConsultarUsuario(string nombreUsuario, string clave, Util usuarioGlobal)
+        public bool ConsultarUsuario(string nombreUsuario, string clave)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace LogicaTangerine.M1
                 if (theUsuario.Activo != null)
                 {
                     string _prueba = theUsuario.Activo;
-                    usuarioGlobal._theGlobalUser = theUsuario;
+                    Util._theGlobalUser = theUsuario;
                     return true;
                 }
                 else
