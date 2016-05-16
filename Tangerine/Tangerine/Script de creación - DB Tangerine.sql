@@ -775,6 +775,7 @@ SELECT * FROM PROPUESTA
 LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
 WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
 END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------

@@ -47,6 +47,7 @@ drop procedure M5_ModificarContacto;
 drop procedure M5_ConsultarContactoCompania;
 
 drop procedure M6_AgregarPropuesta;
+drop procedure M6_ListaPropuestaProyecto;
 
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;
