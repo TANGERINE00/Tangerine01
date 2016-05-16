@@ -32,6 +32,7 @@ namespace DominioTangerine
         public Menu( string nombre ) 
         {
             _nombre = nombre;
+            _opciones = new ListaGenerica<Opcion>();
         }
 
         /// <summary>

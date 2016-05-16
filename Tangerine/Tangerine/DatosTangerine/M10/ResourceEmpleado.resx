@@ -207,4 +207,22 @@
   <data name="EmpEmail" xml:space="preserve">
     <value>emp_email</value>
   </data>
+  <data name="EmpCargo" xml:space="preserve">
+    <value>car_nombre</value>
+  </data>
+  <data name="EmpCargoDescripcion" xml:space="preserve">
+    <value>car_descripcion</value>
+  </data>
+  <data name="EmpFechaFin" xml:space="preserve">
+    <value>car_emp_fecha_fin</value>
+  </data>
+  <data name="EmpFechaInicio" xml:space="preserve">
+    <value>car_emp_fecha_cont</value>
+  </data>
+  <data name="EmpSueldo" xml:space="preserve">
+    <value>car_emp_sueldo</value>
+  </data>
+  <data name="EmpDireccion" xml:space="preserve">
+    <value>DireccionEmpleado</value>
+  </data>
 </root>
