@@ -775,7 +775,49 @@ SELECT * FROM PROPUESTA
 LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
 WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
 END;
+
 GO
+
+--Modificar Propuesta
+CREATE PROCEDURE M6_ModificarPropuesta
+@idprop int,
+@nombreprop [varchar] (50),
+@descripcionprop [varchar] (255),
+@tipoduracionprop [varchar] (200),
+@duracionprop [varchar] (200),
+@acuerdoprop [varchar] (200),
+@estatusprop [varchar] (20),
+@monedaprop [varchar] (40),
+@cantentregasprop int,
+@fechainiprop date,
+@fechafinprop date,
+@costoprop int,
+@fkcomid int
+
+AS
+
+BEGIN
+UPDATE PROPUESTA SET prop_nombre = @nombreprop, prop_descripcion = @descripcionprop, prop_tipoDuracion = @tipoduracionprop,
+prop_duracion = @duracionprop, prop_acuerdo_pago = @acuerdoprop, prop_estatus = @estatusprop, prop_moneda = @monedaprop,
+prop_cant_entregas = @cantentregasprop, prop_fecha_inicio = @fechainiprop, prop_fecha_fin = @fechafinprop, prop_costo = @costoprop,
+fk_com_id = @fkcomid
+WHERE prop_id = @idprop
+END;
+
+GO
+-- Modificar Requerimiento
+CREATE PROCEDURE M6_ModificarRequerimiento
+
+@reqnombre [varchar] (200),
+@fkprop int
+
+AS
+
+BEGIN
+UPDATE REQUERIMIENTO SET req_nombre = @reqnombre WHERE fk_prop_id = @fkprop  
+
+END;
+
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
