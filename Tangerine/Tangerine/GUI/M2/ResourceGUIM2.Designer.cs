@@ -61,11 +61,38 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a tittle=&quot;modificar&quot; class=&quot;btn btn-default btn-xs&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; onclick=&quot;&quot; &gt;&lt;/span&gt;&lt;/a&gt;.
+        ///   Busca una cadena traducida similar a &lt;a tittle=&quot;modificar&quot; class=&quot;btn btn-default btn-xs&quot; id=&quot;.
         /// </summary>
-        internal static string BotonEdit {
+        internal static string BotonModif {
             get {
-                return ResourceManager.GetString("BotonEdit", resourceCulture);
+                return ResourceManager.GetString("BotonModif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a tittle =&quot;registrar&quot; class=&quot;btn btn-default btn-xs&quot; &gt;&lt;span class=&quot;glyphicon glyphicon-plus&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonReg {
+            get {
+                return ResourceManager.GetString("BotonReg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModalC&quot; onclick=&quot;ClickCambiar&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string CloseBotonModify {
+            get {
+                return ResourceManager.GetString("CloseBotonModify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;&lt;span class=&quot;glyphicon glyphicon-plus&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string CloseBotonReg {
+            get {
+                return ResourceManager.GetString("CloseBotonReg", resourceCulture);
             }
         }
         
@@ -97,6 +124,24 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &quot; disabled&gt;.
+        /// </summary>
+        internal static string CloseInputModif {
+            get {
+                return ResourceManager.GetString("CloseInputModif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot; class=&quot;col-sm-2 control-label&quot;&gt;Usuario&lt;/label&gt;.
+        /// </summary>
+        internal static string CloseLabelFor {
+            get {
+                return ResourceManager.GetString("CloseLabelFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/td&gt;.
         /// </summary>
         internal static string CloseTD {
@@ -111,6 +156,33 @@ namespace Tangerine.GUI.M2 {
         internal static string CloseTR {
             get {
                 return ResourceManager.GetString("CloseTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;label for=&quot;.
+        /// </summary>
+        internal static string LabelFor {
+            get {
+                return ResourceManager.GetString("LabelFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a tittle=&quot;modificar&quot; runat =&quot;server&quot; class=&quot;btn btn-default btn-xs&quot; id=&quot;geastone&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModalC&quot; onclick=&quot;ClickCambiar&quot; &gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string llamadoCompleto {
+            get {
+                return ResourceManager.GetString("llamadoCompleto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;col-sm-10&quot;&gt;.
+        /// </summary>
+        internal static string OpenDivModif {
+            get {
+                return ResourceManager.GetString("OpenDivModif", resourceCulture);
             }
         }
         
@@ -142,6 +214,15 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;.
+        /// </summary>
+        internal static string OpenInputModif {
+            get {
+                return ResourceManager.GetString("OpenInputModif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;td&gt;.
         /// </summary>
         internal static string OpenTD {
@@ -156,6 +237,15 @@ namespace Tangerine.GUI.M2 {
         internal static string OpenTR {
             get {
                 return ResourceManager.GetString("OpenTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a placeholder=&quot;.
+        /// </summary>
+        internal static string placeholder {
+            get {
+                return ResourceManager.GetString("placeholder", resourceCulture);
             }
         }
     }

@@ -632,10 +632,10 @@ AS
 GO
 --- StoredProcedure Eliminar una compañia(Para pruebas) ----
 CREATE PROCEDURE M4_EliminarCompania
-	@id int
+	@rif [varchar](20)
 AS
  BEGIN
-    DELETE FROM Compania WHERE com_id = @id;  
+    DELETE FROM Compania WHERE com_rif = @rif;  
  end;
 GO
 
