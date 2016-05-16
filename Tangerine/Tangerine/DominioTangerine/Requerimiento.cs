@@ -18,6 +18,9 @@ namespace DominioTangerine
 
         private string _codigoRG;
         private string _descripcion;
+        private int p1;
+        private string p2;
+        private string p3;
         #endregion
    
         #region Propiedades
@@ -45,6 +48,14 @@ namespace DominioTangerine
         {
             this._codigoRG = cod;
             this._descripcion = descripr;
+        }
+
+        public Requerimiento(int p1, string p2, string p3)
+        {
+            // TODO: Complete member initialization
+            this.p1 = p1;
+            this.p2 = p2;
+            this.p3 = p3;
         }
         #endregion
     
