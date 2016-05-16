@@ -24,84 +24,115 @@ namespace PruebasUnitarias.M4
         public void init()
         {
             theCompany = new Compania("Touch", "J-111111111", "asd@asd.com", "3434234", "ASD", new DateTime(2015, 2, 10), 1, 1);
+            theCompany1 = new Compania("CompaniaPrueba2", "J-111111112", "asdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 1);
+            
         }
 
         [TearDown]
         public void clean()
         {
-            theCompany = null;
+            theCompany.IdCompania = BDCompania.ConsultLastCompanyId();
             answer1 = BDCompania.DeleteCompany(theCompany);
+            theCompany = null;
         }
         #endregion
 
         /// <summary>
-        /// Prueba que permite verificar el insertar de una compañía en la base de datos
+        /// Prueba que permite verificar el insertar de una compañía en la base de datos.
         /// </summary>
         [Test]
         public void TestAddCompany()
         {
-            //Declaro test de tipo BDCompania para poder invocar el "AddCompania(Company theCompany)"
+            //Inserto una compañía.
             answer = BDCompania.AddCompany(theCompany);
-
-            //answer obtiene true si se inserta la compania, si no, deberia agarrar un excepcion
+            //Compruebo que el método de modificación finalizó correctamente.
             Assert.IsTrue(answer);
         }
 
         /// <summary>
-        /// Prueba que permite verificar el modificar de una compania en la base de datos
+        /// Prueba que permite verificar el modificar de una compañía en la base de datos.
         /// </summary>
         [Test]
         public void TestChangeCompany()
         {
-            //Inserto la compañia para poder probar el cambio
+            //Inserto una compañía para posteriormente modificarla.
             answer1 = BDCompania.AddCompany(theCompany);
-            //Declaro test de tipo BDCompany para poder invocar el "ChangeCompany(Company theCompany)"
+            //Aplico el método para modificar una compañía.
             answer = BDCompania.ChangeCompany(theCompany);
-
-            //answer obtiene true si se modifica la compania, si no, deberia agarrar un excepcion
+            //Compruebo que el método de modificación finalizó correctamente.
             Assert.IsTrue(answer);
         }
 
         /// <summary>
-        /// Prueba que permite consultar compania por su id en la base de datos
+        /// Prueba que permite consultar compañía por su id en la base de datos.
         /// </summary>
         [Test]
         public void TestConsultCompany()
         {
-            //Inserto la compañia para poder probar la consulta
+            //Inserto la compañía para poder probar la consulta.
             answer1 = BDCompania.AddCompany(theCompany);
-            //Declaro test de tipo BDCompany para poder invocar el "ChangeCompany(Company theCompany)"
-            theCompany1 = BDCompania.ConsultCompany(theCompany.IdCompania);
-            //answer obtiene true si se modifica la compania, si no, deberia agarrar un excepcion
-            Assert.AreEqual(theCompany1, theCompany);
+            //Aplico el metodo para consultar la companía agregada anteriormente.
+            theCompany1 = BDCompania.ConsultCompany(BDCompania.ConsultLastCompanyId());
+            //Comparo que el id de la companía creada coincide con el id de la compañía consultada.
+            Assert.AreEqual(BDCompania.ConsultLastCompanyId(), theCompany1.IdCompania);
         }
 
         /// <summary>
-        /// Prueba que permite verificar el inhabilitar de una compania en la base de datos
+        /// Prueba que permite verificar el consultar del último id de una companía en la base de datos.
         /// </summary>
+        [Test]
+        public void TestConsultLastCompanyId()
+        {
+            //Inserto una compañía
+            answer1 = BDCompania.AddCompany(theCompany);
+            //Consulto el ultimo id y lo almaceno.
+            int ultimoId = BDCompania.ConsultLastCompanyId();
+            //Inserto otra compañía.
+            answer1 = BDCompania.AddCompany(theCompany1);
+            //Compruebo que el id aumentó en 1.
+            Assert.AreEqual(BDCompania.ConsultLastCompanyId(), ultimoId + 1);
+        }
 
+        /// <summary>
+        /// Prueba que permite verificar el consultar de todas las compañías en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestConsultCompanies()
+        {
+            //Inserto una compañía por si la base de datos está vacía.
+            answer1 = BDCompania.AddCompany(theCompany);
+            //Consulto todas las compañías en la base de datos.
+            List<Compania> companias = BDCompania.ConsultCompanies();
+            //Recorro las compañías y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
+            foreach(Compania compania in companias){
+                Assert.IsNotNull(compania.IdCompania);
+            }
+        }
 
+        /// <summary>
+        /// Prueba que permite verificar el inhabilitar de una companía en la base de datos.
+        /// </summary>
         [Test]
         public void TestDisableCompany()
         {
-            //Inserto la compañia para poder probar la deshabilitacion
+            //Inserto la compañia para poder probar la deshabilitación.
             answer1 = BDCompania.AddCompany(theCompany);
-            //Declaro test de tipo BDContacto para poder invocar el "DisableCompany(Company theCompany)"
+            //Aplico el método sobre la compañía creada.
             answer = BDCompania.DisableCompany(theCompany);
-            //answer obtiene true si se deshabilita la compania, si no, deberia agarrar un excepcion
+            //Compruebo que el metodo de inhabilitación finalizó correctamente.
             Assert.IsTrue(answer);
         }
         /// <summary>
-        /// Prueba que permite verificar el habilitar de una compania en la base de datos
+        /// Prueba que permite verificar el habilitar de una companía en la base de datos.
         /// </summary>
         [Test]
         public void TestEnableCompany()
         {
-            //Inserto la compañia para poder probar la habilitacion
+            //Inserto la compañía para poder probar la habilitación.
             answer1 = BDCompania.AddCompany(theCompany);
-            //Declaro test de tipo BDContacto para poder invocar el "EnableCompany(Company theCompany)"
+            //Aplico el método sobre la compañía creada.
             answer = BDCompania.EnableCompany(theCompany);
-            //answer obtiene true si se deshabilita la compania, si no, deberia agarrar un excepcion
+            //Compruebo que el metodo de habilitación finalizó correctamente.
             Assert.IsTrue(answer);
         }
     }

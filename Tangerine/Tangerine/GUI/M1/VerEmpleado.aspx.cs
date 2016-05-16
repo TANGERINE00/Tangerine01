@@ -73,7 +73,7 @@ namespace Tangerine.GUI.M1
                             ResourceGUIM10.CloseDiv;
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "Venezuela Carcas Libertador La pastora" + ResourceGUIM10.CloseInputTextDisabled +
+                            employee.Adrress+ ResourceGUIM10.CloseInputTextDisabled +
                             ResourceGUIM10.CloseDiv;
 
             //cierre de col
@@ -82,22 +82,20 @@ namespace Tangerine.GUI.M1
             dataEmployee += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos contrato</h4>";
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "131" + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
+                            Convert.ToDateTime(employee.Job.FechaIni).ToString("dd/MM/yyyy") + 
+                            ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "DD/MM/YYYY" + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
+                            employee.Job.FechaFin + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "DD/MM/YYYY" + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
+                            employee.Job.Nombre + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "Cargo" + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
+                            employee.Job.Sueldo.ToString() + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "Salario" + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
-
-            dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "Activo" + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
+                            employee.Emp_activo + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
             //cierre de col
             dataEmployee += ResourceGUIM10.CloseDiv;

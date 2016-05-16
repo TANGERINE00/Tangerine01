@@ -156,6 +156,9 @@
   <data name="ConsultCompany" xml:space="preserve">
     <value>M4_ConsultarCompania</value>
   </data>
+  <data name="ConsultLastCompanyId" xml:space="preserve">
+    <value>M4_ConsultarIdUltimaCompania</value>
+  </data>
   <data name="DeleteCompany" xml:space="preserve">
     <value>M4_EliminarCompania</value>
   </data>

@@ -68,6 +68,36 @@ namespace DatosTangerine.M4
         }
 
         /// <summary>
+        /// Metodo para consultar el ultimo id de compania en la base de datos.
+        /// </summary>
+        /// <returns>el ultimo id de compania registrado</returns>
+        public static int ConsultLastCompanyId()
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+            int mayorId = 0;
+
+            try
+            {
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ConsultLastCompanyId, parameters);
+
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    mayorId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return mayorId;
+        }
+
+        /// <summary>
         /// Metodo para eliminar una compañia en la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo Compania para borrar en bd</param>
@@ -82,7 +112,7 @@ namespace DatosTangerine.M4
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.IdCompania.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe

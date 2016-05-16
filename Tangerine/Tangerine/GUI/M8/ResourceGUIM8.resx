@@ -127,7 +127,7 @@
     <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInhab" xml:space="preserve">
-    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-remove" href="AnularFacturaM8.aspx?idCont=</value>
+    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" href="AnularFacturaM8.aspx?idCont=</value>
   </data>
   <data name="BotonInvol" xml:space="preserve">
     <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
@@ -167,5 +167,8 @@
   </data>
   <data name="anulada" xml:space="preserve">
     <value>&lt;span class="label label-danger"&gt;Anulada&lt;/span&gt;</value>
+  </data>
+  <data name="signoDolar" xml:space="preserve">
+    <value> $</value>
   </data>
 </root>
