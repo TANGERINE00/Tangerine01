@@ -190,12 +190,10 @@
 
                     <div class="form-group">
                         <label>Estatus</label>
-                        <select class="form-control" id="estatus" runat="server">
-                            <option></option>
-                            <option>Aprobado</option>
-                            <option>Pendiente</option>
-                            <option>En ejecucion</option>
-                        </select>
+                           <div class="dropdown" runat="server" id="contenedorEstatus">
+                            <asp:DropDownList ID="comboEstatus" class="btn btn-default dropdown-toggle" runat="server">
+                            </asp:DropDownList>
+                        </div>
                     </div>
 
 
