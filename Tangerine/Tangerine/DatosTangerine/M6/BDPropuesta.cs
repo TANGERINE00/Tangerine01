@@ -98,7 +98,7 @@ namespace DatosTangerine.M6
 
        
         
-        public static List<Propuesta> PropuestaProyecto(Propuesta propuesta)
+        public   List<Propuesta> PropuestaProyecto()
         {
             List<Parametro> parametros = new List<Parametro>();
             List<Propuesta> listaPropuesta = new List<Propuesta>();
@@ -116,7 +116,7 @@ namespace DatosTangerine.M6
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    int conEstatus = int.Parse(row[RecursosPropuesta.PropEstatus].ToString());
+                    String conEstatus =   row[RecursosPropuesta.PropEstatus].ToString();
                     String conNombre = row[RecursosPropuesta.PropNombre].ToString();
                     
 

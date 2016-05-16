@@ -18,13 +18,8 @@ namespace PruebasUnitarias.M6
     {
         #region Atributos
 
-        public Propuesta propuesta;
-        public Propuesta propuesta1;
-        public Proyecto proyprop;
-        List<Propuesta> lapropuesta = new List<Propuesta>();
-        public List<Propuesta> prueba;
-        public List<Propuesta> prueba1;
-        public bool answer;
+        private BDPropuesta baseDeDatosPropuesta;
+        
 
         #endregion
 
@@ -33,15 +28,15 @@ namespace PruebasUnitarias.M6
         [SetUp]
         public void init()
         {
-            
+            baseDeDatosPropuesta = new BDPropuesta();
 
         }
 
-        [TearDown]
-        public void clean()
-        {
-            propuesta = null;
-        }
+        //[TearDown]
+        //public void clean()
+        //{
+        //    propuesta = null;
+        //}
 
         #endregion
 
@@ -50,7 +45,8 @@ namespace PruebasUnitarias.M6
 
         public void TestListaPropuestaProyecto()
         {
-           // answer = BDPropuesta.agregarPropuesta();
+
+            Assert.IsTrue(baseDeDatosPropuesta.PropuestaProyecto().Count>0);
 
         }
 
