@@ -22,6 +22,24 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// Control Configuracion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Configuracion;
+        
+        /// <summary>
+        /// Control Usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Usuario;
+        
+        /// <summary>
         /// Control RegistrarUsuario.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace Tangerine.GUI.Master {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Listar;
+        
+        /// <summary>
+        /// Control GestionDeCompañias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDeCompañias;
         
         /// <summary>
         /// Control RegistrarCompañía.
@@ -76,6 +103,15 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Contactos;
         
         /// <summary>
+        /// Control GestionDePropuestas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDePropuestas;
+        
+        /// <summary>
         /// Control AgregarPropuesta.
         /// </summary>
         /// <remarks>
@@ -92,6 +128,15 @@ namespace Tangerine.GUI.Master {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ConsultarPropuestas;
+        
+        /// <summary>
+        /// Control GestionDeProyectos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDeProyectos;
         
         /// <summary>
         /// Control CrearProyecto.
@@ -119,6 +164,15 @@ namespace Tangerine.GUI.Master {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ConsultarProyecto;
+        
+        /// <summary>
+        /// Control GestionDeFacturas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDeFacturas;
         
         /// <summary>
         /// Control GenerarFactura.
@@ -157,6 +211,15 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnularFactura;
         
         /// <summary>
+        /// Control GestionDePagos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDePagos;
+        
+        /// <summary>
         /// Control Cargarpago.
         /// </summary>
         /// <remarks>
@@ -164,6 +227,15 @@ namespace Tangerine.GUI.Master {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Cargarpago;
+        
+        /// <summary>
+        /// Control GestionDeEmpleados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDeEmpleados;
         
         /// <summary>
         /// Control Empleados.

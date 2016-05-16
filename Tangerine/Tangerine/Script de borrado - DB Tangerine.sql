@@ -27,6 +27,7 @@ drop procedure M2_ObtenerDatoUsuario;
 drop procedure M2_ModificarContraUsuario;
 drop procedure M2_ModificarRolUsuario;
 drop procedure M2_AgregarUsuario;
+drop procedure M2_ObtenerUsuarioDeEmpleado;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
