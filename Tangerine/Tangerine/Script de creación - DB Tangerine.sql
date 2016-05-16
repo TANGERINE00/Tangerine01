@@ -1,4 +1,4 @@
-create table LUGAR_DIRECCION
+﻿create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -639,6 +639,14 @@ AS
  end;
 GO
 
+--- StoredProcedure ConsultarIdUltimaCompania(Para pruebas) ----
+CREATE PROCEDURE M4_ConsultarIdUltimaCompania
+AS
+ BEGIN
+     SELECT MAX(com_id) com_id FROM COMPANIA; 
+ end;
+GO
+
 ------Fin Stored Procedure M4------
 
 
@@ -757,6 +765,16 @@ AS
 	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
 GO
+--Lista Propuesta que no estan en proyecto
+CREATE PROCEDURE M6_ListaPropuestaProyecto
+
+AS
+
+BEGIN
+SELECT * FROM PROPUESTA 
+LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
+WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
+END;
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
