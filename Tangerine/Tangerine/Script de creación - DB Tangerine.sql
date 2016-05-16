@@ -632,10 +632,18 @@ AS
 GO
 --- StoredProcedure Eliminar una compañia(Para pruebas) ----
 CREATE PROCEDURE M4_EliminarCompania
-	@rif [varchar](20)
+	@id int
 AS
  BEGIN
-    DELETE FROM Compania WHERE com_rif = @rif;  
+    DELETE FROM Compania WHERE com_id = @id;  
+ end;
+GO
+
+--- StoredProcedure ConsultarIdUltimaCompania(Para pruebas) ----
+CREATE PROCEDURE M4_ConsultarIdUltimaCompania
+AS
+ BEGIN
+     SELECT MAX(com_id) com_id FROM COMPANIA; 
  end;
 GO
 
