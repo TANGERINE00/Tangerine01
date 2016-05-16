@@ -57,9 +57,9 @@
         .dropdown .btn {
             width: 95%;
         }
-
-
     </style>
+    
+
 
     <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
 
@@ -190,7 +190,7 @@
 
                     <div class="form-group">
                         <label>Estatus</label>
-                           <div class="dropdown" runat="server" id="contenedorEstatus">
+                        <div class="dropdown" runat="server" id="contenedorEstatus">
                             <asp:DropDownList ID="comboEstatus" class="btn btn-default dropdown-toggle" runat="server">
                             </asp:DropDownList>
                         </div>
@@ -206,9 +206,15 @@
 
 
                 <div class="box-footer" runat="server">
-                    <asp:Button ID="btnagregar" class="btn btn-primary"
+                    <asp:Button id="btnagregar" class="btn btn-primary"
                         OnClick="btnagregar_Click" type="submit" runat="server"
                         Text="Agregar"></asp:Button>
+
+                     <asp:Button id="Button2" class="btn btn-primary"
+                        OnClientClick="javascript:contarElementos()" type="submit" runat="server"
+                        Text="prueba"></asp:Button>
+
+                     <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="contarElementos()"></button>
 
                 </div>
 
