@@ -49,7 +49,7 @@ namespace LogicaTangerine.M1
         }
 
 
-        public bool ValidarUsuario(string usuario, string contrasena,Util usuarioGlobal)
+        public bool ValidarUsuario(string usuario, string contrasena)
         {
             List<String> campos = new List<String>();
             campos.Add(usuario);
@@ -59,7 +59,7 @@ namespace LogicaTangerine.M1
             {
                 if (this.ValidarCaracter(usuario) && this.ValidarCaracter(contrasena))
                 {
-                    if (ConsultarUsuario(usuario, contrasena,usuarioGlobal))
+                    if (ConsultarUsuario(usuario, contrasena))
                         return true;
                     else
                         return false;
