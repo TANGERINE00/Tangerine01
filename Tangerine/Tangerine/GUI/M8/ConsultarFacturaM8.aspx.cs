@@ -74,12 +74,13 @@ namespace Tangerine.GUI.M8
                     }
 
 
-                    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + ResourceGUIM8.signoDolar + ResourceGUIM8.CloseTD;
+                    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
 
                     //Acciones de cada contacto
                     factura += ResourceGUIM8.OpenTD;
                     factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                               ResourceGUIM8.BotonInhab + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                               ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                               ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
 
 
                     factura += ResourceGUIM8.CloseTD;
@@ -139,12 +140,13 @@ namespace Tangerine.GUI.M8
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
                 }
 
-                factura += ResourceGUIM8.OpenTD + Factura.montoFactura + ResourceGUIM8.signoDolar + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + Factura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
 
                 //Acciones de cada contacto
                 factura += ResourceGUIM8.OpenTD;
                 factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                           ResourceGUIM8.BotonInhab + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                           ResourceGUIM8.BotonAnular + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                           ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
 
                 factura += ResourceGUIM8.CloseTD;
 

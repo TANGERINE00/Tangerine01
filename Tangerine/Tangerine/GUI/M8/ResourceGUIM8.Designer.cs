@@ -70,11 +70,11 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Contactos&quot; class=&quot;btn btn-warning glyphicon glyphicon-list-alt&quot; &gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idCont=.
         /// </summary>
-        internal static string BotonContac {
+        internal static string BotonAnular {
             get {
-                return ResourceManager.GetString("BotonContac", resourceCulture);
+                return ResourceManager.GetString("BotonAnular", resourceCulture);
             }
         }
         
@@ -106,15 +106,6 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idCont=.
-        /// </summary>
-        internal static string BotonInhab {
-            get {
-                return ResourceManager.GetString("BotonInhab", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Involucrados&quot; class=&quot;btn btn-info glyphicon glyphicon-user&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonInvol {
@@ -129,6 +120,15 @@ namespace Tangerine.GUI.M8 {
         internal static string BotonModif {
             get {
                 return ResourceManager.GetString("BotonModif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; class=&quot;btn btn-primary glyphicon glyphicon-euro&quot; .
+        /// </summary>
+        internal static string BotonPagar {
+            get {
+                return ResourceManager.GetString("BotonPagar", resourceCulture);
             }
         }
         
@@ -214,11 +214,11 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  $.
+        ///   Looks up a localized string similar to  €.
         /// </summary>
-        internal static string signoDolar {
+        internal static string signoEuro {
             get {
-                return ResourceManager.GetString("signoDolar", resourceCulture);
+                return ResourceManager.GetString("signoEuro", resourceCulture);
             }
         }
     }

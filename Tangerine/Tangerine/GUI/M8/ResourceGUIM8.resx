@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotonContac" xml:space="preserve">
-    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" &gt;&lt;/a&gt;</value>
+  <data name="BotonPagar" xml:space="preserve">
+    <value>&lt;a title="Pagar" class="btn btn-primary glyphicon glyphicon-euro" </value>
   </data>
   <data name="BotonHab" xml:space="preserve">
     <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok"&gt;&lt;/a&gt;</value>
@@ -126,7 +126,7 @@
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonInhab" xml:space="preserve">
+  <data name="BotonAnular" xml:space="preserve">
     <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" href="AnularFacturaM8.aspx?idCont=</value>
   </data>
   <data name="BotonInvol" xml:space="preserve">
@@ -168,7 +168,7 @@
   <data name="anulada" xml:space="preserve">
     <value>&lt;span class="label label-danger"&gt;Anulada&lt;/span&gt;</value>
   </data>
-  <data name="signoDolar" xml:space="preserve">
-    <value> $</value>
+  <data name="signoEuro" xml:space="preserve">
+    <value> €</value>
   </data>
 </root>
