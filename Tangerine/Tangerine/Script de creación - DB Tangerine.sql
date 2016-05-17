@@ -823,7 +823,7 @@ END;
 GO
 
 --Listar requerimientos por propuesta
-CREATE PROCEDURE ListarRequerimientos
+CREATE PROCEDURE M6_ListarRequerimientos
 
 AS
 
@@ -835,7 +835,7 @@ GO
 
 --Consultar propuesta por nombre
 
-CREATE PROCEDURE ConsultarPropuestaNombre
+CREATE PROCEDURE M6_ConsultarPropuestaNombre
 @idNombre [varchar] (50)
 
 AS

@@ -208,6 +208,90 @@ namespace DatosTangerine.M6
 
 
 
+
+
+
+
+
+        /// <summary>
+        /// Metodo para consultar propuesta por id (nombre)
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+
+
+
+        public static List<Propuesta>
+         ConsultarPropuestaporNombre(String id)
+        {
+
+            //if (id == -1)
+            //{
+            //    throw new ExcepcionesTotem.Modulo5.
+            //       ProyectoNoEncontradoException(
+            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_CODIGO,
+            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_MENSAJE,
+            //       new Exception()
+            //       );
+            //}
+
+            List<Parametro> parametros = new List<Parametro>();
+
+            List<Propuesta> listaPropuestas =
+               new List<Propuesta>();
+
+            Parametro parametro = new Parametro(
+               RecursosPropuesta.PropNombre,
+               SqlDbType.Int, id.ToString(), false);
+            parametros.Add(parametro);
+
+            try
+            {
+                BDConexion conexion = new BDConexion();
+
+                DataTable dataTablePropuestas =
+                   conexion.EjecutarStoredProcedureTuplas(
+                   RecursosPropuesta.ConsultarPropuestaNombre
+                   ,
+                   parametros);
+
+                foreach (DataRow fila in dataTablePropuestas.Rows)
+                {
+                    listaPropuestas.Add(
+                        new DominioTangerine.Propuesta(
+                           Convert.ToInt32(fila[RecursosPropuesta.ReqProp]),
+                           fila[RecursosPropuesta.PropDescripcion].ToString(),
+                           fila[RecursosPropuesta.PropDuracion].ToString(),
+                           fila[RecursosPropuesta.PropTipoDuracion].ToString(),
+                           fila[RecursosPropuesta.PropAcuerdo].ToString(),
+                           fila[RecursosPropuesta.PropEstatus].ToString(),
+                           fila[RecursosPropuesta.PropMoneda].ToString(),
+                           fila[RecursosPropuesta.PropCantidad].ToString(),
+                           fila[RecursosPropuesta.PropFechaIni].ToString(),
+                           fila[RecursosPropuesta.PropFechaFin].ToString(),
+                           fila[RecursosPropuesta.PropCosto].ToString()
+                        
+
+
+
+
+                       )
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listaPropuestas;
+        }
+
+
+
+
+
+
      
         
            
