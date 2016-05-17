@@ -16,6 +16,7 @@ namespace Tangerine.GUI.M8
     {
         int _numeroFactura = 0;
         DateTime _fechaEmision = DateTime.Now;
+        DateTime _fechaUltimoPago = DateTime.Now;
         int _montoTotal = 0;
         int _montoRestante = 0;
         string _descripcion = String.Empty;
@@ -44,10 +45,16 @@ namespace Tangerine.GUI.M8
             }    
         }
 
+        /// <summary>
+        /// Evento que se dispara con el boton de modificar factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttomModificarFactura_Click ( object sender , EventArgs e )
         {
             _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
             _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+            _fechaUltimoPago = DateTime.Now;
             _companiaId = int.Parse(theFactura.idCompaniaFactura.ToString());
             _proyectoId = int.Parse(theFactura.idProyectoFactura.ToString());
             _descripcion = textDescripcion_M8.Value;
@@ -55,7 +62,7 @@ namespace Tangerine.GUI.M8
             _montoTotal = int.Parse(textMonto_M8.Value);
             _montoRestante = int.Parse(textMonto_M8.Value);
 
-            Facturacion factura = new Facturacion( _numeroFactura , _fechaEmision , _montoTotal , _montoRestante , _descripcion , _estatus ,
+            Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _descripcion, _estatus,
                 _proyectoId , _companiaId );
             LogicaM8 facturaLogic = new LogicaM8();
             facturaLogic.ChangeExistingFactura(factura);

@@ -12,6 +12,7 @@ namespace DominioTangerine
 
         private int _idNumeroFactura;
         private DateTime _fecha;
+        private DateTime _fechaUltimoPago;
         private int _idCompania;
         private int _idProyecto;
         private String _descripcion;
@@ -41,6 +42,16 @@ namespace DominioTangerine
         {
             get { return _fecha; }
             set { _fecha = value; }
+        }
+
+        /// <summary>
+        /// Metodo para setear y obtener la fecha de ultimo pago de la factura
+        /// </summary>
+        /// <returns>Retorna la fecha de ultimo pago de la factura</returns>
+        public DateTime fechaUltimoPagoFactura
+        {
+            get { return _fechaUltimoPago; }
+            set { _fechaUltimoPago = value; }
         }
 
         /// <summary>
@@ -111,6 +122,7 @@ namespace DominioTangerine
         /// Constructor por defecto.
         /// </summary>
         /// <param name="fecha"></param>
+        /// <param name="fechaUltimoPago"></param>
         /// <param name="idCompania"></param>
         /// <param name="idProyecto"></param>
         /// <param name="descripcion"></param>
@@ -120,6 +132,7 @@ namespace DominioTangerine
         public Facturacion()
         {
             this._fecha = DateTime.Now;
+            this._fechaUltimoPago = DateTime.Now;
             this._idCompania = 0;
             this._idProyecto = 0;
             this._descripcion = String.Empty;
@@ -132,15 +145,17 @@ namespace DominioTangerine
         /// Constructor con los atributos sin el id de factura.
         /// </summary>
         /// <param name="fecha"></param>
+        /// <param name="fechaUltimoPago"></param>
         /// <param name="idCompania"></param>
         /// <param name="idProyecto"></param>
         /// <param name="descripcion"></param>
         /// <param name="estatus"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( DateTime fecha, double monto, double montoRestante, String descripcion, int estatus, int idProyecto, int idCompania)
+        public Facturacion( DateTime fecha, DateTime fechaUltimoPago, double monto, double montoRestante, String descripcion, int estatus, int idProyecto, int idCompania)
         {
             this._fecha = fecha;
+            this._fechaUltimoPago = fechaUltimoPago;
             this._idCompania = idCompania;
             this._idProyecto = idProyecto;
             this._descripcion = descripcion;
@@ -155,16 +170,18 @@ namespace DominioTangerine
         /// </summary>
         /// <param name="idNumeroFactura"></param>
         /// <param name="fecha"></param>
+        /// <param name="fechaUltimoPago"></param>
         /// <param name="idCompania"></param>
         /// <param name="idProyecto"></param>
         /// <param name="descripcion"></param>
         /// <param name="estatus"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( int idNumeroFactura, DateTime fecha, double monto, double montoRestante, String descripcion, int estatus, int idProyecto, int idCompania )
+        public Facturacion( int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto, double montoRestante, String descripcion, int estatus, int idProyecto, int idCompania )
         {
             this._idNumeroFactura = idNumeroFactura;
             this._fecha = fecha;
+            this._fechaUltimoPago = fechaUltimoPago;
             this._idCompania = idCompania;
             this._idProyecto = idProyecto;
             this._descripcion = descripcion;

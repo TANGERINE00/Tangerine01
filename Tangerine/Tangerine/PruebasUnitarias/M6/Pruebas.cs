@@ -18,10 +18,8 @@ namespace PruebasUnitarias.M6
     {
         #region Atributos
 
-        public Propuesta propuesta;
-        public Propuesta propuesta1;
-        public Proyecto proyprop;
-        List<Propuesta> lapropuesta = new List<Propuesta>();
+        private BDPropuesta baseDeDatosPropuesta;
+        
 
         #endregion
 
@@ -30,21 +28,27 @@ namespace PruebasUnitarias.M6
         [SetUp]
         public void init()
         {
-            propuesta = new Propuesta();
-            proyprop = new Proyecto();
-            propuesta.CodigoP = "3";
-            propuesta.Nombre = "SGC propuesta Sistema Gestión de cuentas";
-            proyprop.Idpropuesta = 0;
+            baseDeDatosPropuesta = new BDPropuesta();
 
         }
 
-        [TearDown]
-        public void clean()
-        {
-            propuesta = null;
-        }
+        //[TearDown]
+        //public void clean()
+        //{
+        //    propuesta = null;
+        //}
+
         #endregion
 
+
+        [Test]
+
+        public void TestListaPropuestaProyecto()
+        {
+
+            Assert.IsTrue(baseDeDatosPropuesta.PropuestaProyecto().Count>0);
+
+        }
 
 
 

@@ -51,51 +51,10 @@
                   <th>Estatus</th>
                   <th style="width:150PX; text-align:center;">Acciones</th>
               </thead>
-                <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                
               <tbody>
-             
+                <asp:Literal runat="server" ID="tabla"></asp:Literal>
               </tbody>
-              <!--<tbody>
-                <tr>
-                  <td>Edgar Rafael</td>
-                  <td>Landaeta Malave</td>
-                   <td>20097258</td>
-                  <td>Desarrollador web</td>
-                  <td style='text-align: right;'>01/03/2016</td>
-                  <td style="text-align:center;"><span class="label label-success">Activo</span></td>
-                  <td style="text-align:center;">
-                    <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
-                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Luz Marina</td>
-                  <td>Eljuri Risquez</td>
-                  <td>18604645</td>
-                  <td>Desaroolador</td>
-                  <td style="text-align:right;">15/03/2016</td>
-                  <td style="text-align:center;"><span class="label label-danger">Inactivo</span></td>
-                  <td style="text-align:center;">
-                    <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
-                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Antonio Juan</td>
-                  <td>Garcia</td>
-                  <td>20097260</td>
-                  <td>DBA</td>
-                  <td style="text-align: right;">21/04/2016</td>
-                  <td style="text-align:center;"><span class="label label-success">Activo</span></td>
-                  <td style="text-align:center;">
-                    <a href="VerEmpleado.aspx" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></a>
-                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="ModificarEmpleado.aspx" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
-                  </td>
-                </tr>
-              </tbody>-->
             </table>
             <!-- table-->
             <nav>

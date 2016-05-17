@@ -136,12 +136,12 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">Menu Principal</li>
-            <li class="treeview">
+            <li class="treeview" id="Configuracion" runat="server">
               <a href="#">
                 <i class="fa fa-angle-left pull-right"></i> <span>Configuración</span>
               </a>
               <ul class="treeview-menu">
-                <li>
+                <li id="Usuario" runat="server">
                   <a href="#"><i class="fa fa-circle-o"></i>  <i class="fa fa-angle-left pull-right"></i> Usuario</a>
                   <ul class="treeview-menu">
                     <li id="RegistrarUsuario" runat="server"><a href="../M2/RegistroUsuario.aspx"><i class="fa fa-circle-o"></i> Registrar Usuario</a></li>
@@ -155,7 +155,7 @@
                 <i></i> <span>Gestion de Leads</span> 
               </a>              
             </li>
-            <li class="treeview">
+            <li class="treeview" id="GestionDeCompañias" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Compañías</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -169,7 +169,7 @@
                 <i></i> <span>Gestion de Contactos</span> 
               </a>              
             </li>
-            <li class="treeview">
+            <li class="treeview" id="GestionDePropuestas" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Propuestas</span> <i class="fa fa-angle-left pull-right"></i>
               </a> 
@@ -179,7 +179,7 @@
                 
               </ul>             
             </li>
-            <li class="treeview">
+            <li class="treeview" id="GestionDeProyectos" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Proyectos</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -190,7 +190,7 @@
 
               </ul>            
             </li>
-              <li class="treeview">
+              <li class="treeview" id="GestionDeFacturas" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Facturas</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -202,7 +202,7 @@
 
               </ul>            
             </li>
-             <li class="treeview">
+             <li class="treeview" id="GestionDePagos" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Pagos</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -210,7 +210,7 @@
                 <li id="Cargarpago" runat="server"><a href="../M9/SeleccionCompania.aspx"><i class="fa fa-circle-o"></i>Cargar pago</a></li>
               </ul>
             </li>
-             <li class="treeview">
+             <li class="treeview" id="GestionDeEmpleados" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Empleados</span><i class="fa fa-angle-left pull-right"></i>
               </a>

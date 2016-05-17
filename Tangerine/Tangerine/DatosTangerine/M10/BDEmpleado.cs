@@ -119,7 +119,6 @@ namespace DatosTangerine.M10
             List<Parametro> parameters = new List<Parametro>();
             BDConexion Connection = new BDConexion();
             Parametro param = new Parametro();
-            //Empleado employee = new Empleado();
 
             param = new Parametro("@id", SqlDbType.Int, employeeId.ToString(), false);
             parameters.Add(param);
@@ -141,10 +140,16 @@ namespace DatosTangerine.M10
             String empNivelEstudio  = row[ResourceEmpleado.EmpEstudio].ToString();
             String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
 
+            String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+            double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+            String empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
+            String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
+            String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
+
             Empleado employee= new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
                                             empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                            empEmailEmployee, empLugId);
-
+                                            empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                                            empFechaFin, empDireccion);
             return employee;
         }
     }

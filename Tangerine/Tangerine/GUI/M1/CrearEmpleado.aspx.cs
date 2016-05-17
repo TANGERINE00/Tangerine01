@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M1
         
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _p_nombre = primer_nombre.Value;
+            /*_p_nombre = primer_nombre.Value;
             _s_nombre = segundo_nombre.Value;
             _p_apellido = primer_apellido.Value;
             _s_apellido = segundo_apellido.Value;
@@ -55,7 +55,7 @@ namespace Tangerine.GUI.M1
             Empleado empleado = new Empleado(_p_nombre, _s_nombre, _p_apellido, _s_apellido, _email,
                 _genero, DateTime.Parse(_fecha_nacimiento), _ficha, _cedula, _nivel_estudio, _activo);
             LogicaM10 empleadoLogica = new LogicaM10();
-            empleadoLogica.AddNewEmpleado(empleado);
+            empleadoLogica.AddNewEmpleado(empleado);*/
         }
     }
 }

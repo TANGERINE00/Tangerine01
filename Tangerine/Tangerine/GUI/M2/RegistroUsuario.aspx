@@ -38,14 +38,14 @@
                 <div class="modal-body">  
                     <div class="box-body">     
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Nickname</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
                                 <input type="email" class="form-control" id="inputEmail3" placeholder="usuario" runat="server">
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="inputPassword3" placeholder="contraseña">
                             </div>
