@@ -20,11 +20,23 @@ namespace Tangerine.GUI.Master
                 Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
                 Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario( Util._theGlobalUser ); //-----------------------
 
-                List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+                Uri thisPageUrl = Request.Url;
+                string pathDePaginaActal = thisPageUrl.AbsolutePath;
 
-                foreach ( string s in bloqueos )
+                bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal);
+
+                if (privilegioAcceso)
                 {
-                    this.FindControl( s ).Visible = false;
+                    List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+
+                    foreach (string s in bloqueos)
+                    {
+                        this.FindControl(s).Visible = false;
+                    }
+                }
+                else
+                {
+                    Response.Redirect("../../M1/Dashboard.aspx");
                 }
             }
         }

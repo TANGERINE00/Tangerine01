@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine;
+using DatosTangerine.M4;
+using DatosTangerine.M7;
 
 namespace DatosTangerine.M8
 {
@@ -21,7 +23,7 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public static bool AddFactura( Facturacion theFactura )
+        public static bool AddFactura(Facturacion theFactura)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -72,7 +74,7 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public static bool DeleteFactura( Facturacion theFactura )
+        public static bool DeleteFactura(Facturacion theFactura)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -118,6 +120,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, theFactura.fechaUltimoPagoFactura.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
                 parameters.Add(theParam);
 
@@ -153,7 +158,7 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para modificar en bd</param>
         /// <returns>true si fue modificado</returns>
-        public static bool ChangeFactura( Facturacion theFactura )
+        public static bool ChangeFactura(Facturacion theFactura)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -165,7 +170,7 @@ namespace DatosTangerine.M8
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
                 parameters.Add(theParam);
-                
+
                 theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
@@ -203,17 +208,11 @@ namespace DatosTangerine.M8
         }
 
         /// <summary>
-        /// Metodo para consultar una Factura específica que pertenecen a la base de datos.
-        /// Recibe dos parametros: idFactura que es el numero de factura de la misma.
-        ///                     
+        /// Funcion que permite obtener los datos de una factura en especifico
         /// </summary>
-        /// <returns>Un objeto de tipo Facturacion</returns>
-        /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idFactura que es el id de la Factura a consultar.
-        /// </summary>
-        /// <returns>Lista de facturas </returns>
-        public static Facturacion ContactFactura( int idFactura )
+        /// <param name="idFactura"></param>
+        /// <returns>Retorna la factura en cuestion</returns>
+        public static Facturacion ContactFactura(int idFactura)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -258,6 +257,11 @@ namespace DatosTangerine.M8
 
             return theFactura;
         }
+
+        /// <summary>
+        /// Funcion que permite buscar todas las facturas en la base de datos
+        /// </summary>
+        /// <returns>Retorna la lista con todas las facturas</returns>
         public static List<Facturacion> ContactFacturas()
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -305,7 +309,12 @@ namespace DatosTangerine.M8
             return listFactura;
         }
 
-        public static Compania ConsultCompany( int idCompany )
+        /// <summary>
+        /// Metodo para consultar una compañia en especifico.
+        /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
+        /// </summary>
+        /// <returns>Lista de contactos de la Empresa</returns>
+        public static Compania ConsultCompany(int idCompany)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -317,32 +326,31 @@ namespace DatosTangerine.M8
             {
                 theConnection.Conectar();
 
-                theParam = new Parametro(ResourceFactura.ParamId, SqlDbType.Int, idCompany.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, idCompany.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ConsultCompany, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ConsultCompany, parameters);
 
                 //Guardar los datos 
                 DataRow row = dt.Rows[0];
 
-
-                String comName = row[ResourceFactura.ComNameCompany].ToString();
-                int comId = 0;
-                String comRif = null;
-                String comEmail = null;
-                String comTelefono = null;
-                String comAcronym = null;
-                DateTime comRegisterDate = DateTime.Now;
-                int comStatus = 0;
-                int comIdPlace = 0;
+                int comId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
+                String comName = row[ResourceCompany.ComNameCompany].ToString();
+                String comRif = row[ResourceCompany.ComRifCompany].ToString();
+                String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
+                String comTelephone = row[ResourceCompany.ComTelephoneCompany].ToString();
+                String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
+                DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
+                int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
+                int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelefono, comAcronym,
+                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym, 
                                                     comRegisterDate, comStatus, comIdPlace);
 
                 theCompany = theCompanybeta;
-
+            
             }
             catch (Exception ex)
             {
@@ -358,12 +366,7 @@ namespace DatosTangerine.M8
         ///                     
         /// </summary>
         /// <returns>Un objeto de tipo Proyecto</returns>
-        /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idProyecto que es el id del Proyecto a consultar.
-        /// </summary>
-        /// <returns>Lista de Proyectos </returns>
-        public static Proyecto ContactProyectoFactura( int idProyecto )
+        public static Proyecto ContactProyectoFactura(int idProyecto)
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -383,20 +386,21 @@ namespace DatosTangerine.M8
                 //Guardar los datos 
                 DataRow row = dt.Rows[0];
 
-                int proyId = 0;
-                string proyNombre = row[ResourceFactura.ProyNombre].ToString();
-                string proyCodigo = null;
-                DateTime proyFechaInicio = DateTime.Now;
-                DateTime proyFechaEstFin = DateTime.Now;
-                double proyCosto = 0;
-                String proyDescripcion = null;
-                String proyRealizacion = null;
-                String proyEstatus = null;
-                String proyRazon = null;
-                String proyAcuerdoPago = null;
-                int proyIdPropuesta = 0;
-                int proyIdResponsable = 0;
-                int proyIdGerente = 0;
+                
+                int proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+                string proyNombre = row[ResourceProyecto.ProyNombre].ToString();
+                string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
+                DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
+                DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
+                double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
+                String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
+                String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
+                String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
+                String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
+                int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
+                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                 //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
                 Proyecto theProyectobeta = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,

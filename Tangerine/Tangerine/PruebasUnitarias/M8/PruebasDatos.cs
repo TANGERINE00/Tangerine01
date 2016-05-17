@@ -37,6 +37,7 @@ namespace PruebasUnitarias.M8
         }
         #endregion
 
+        #region Test
         /// <summary>
         /// Prueba que permite verificar el insertar de una Factura en la base de datos
         /// </summary>
@@ -86,7 +87,7 @@ namespace PruebasUnitarias.M8
             //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
             theInvoice = BDFactura.ContactFactura(1);
 
-            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            //answer obtiene true si se encuentra la factura en la BD, si no, deberia agarrar un excepcion
             Assert.IsTrue(1 == theInvoice.idFactura);
 
             
@@ -98,7 +99,7 @@ namespace PruebasUnitarias.M8
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
             facturas = BDFactura.ContactFacturas();
 
-            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            //answer obtiene true si se encuentra las facturas en la BD, si no, deberia agarrar un excepcion
             for (int i = 0; i < facturas.Count(); i++)
             {
 
@@ -106,18 +107,35 @@ namespace PruebasUnitarias.M8
             }
 
         }
+        #endregion
 
-        /*
+        #region Test por aclarar
         [Test]
         public void TestContactCompany()
         {
+            Compania theCompany = new Compania();
             //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
-            theInvoice = BDFactura.ContactFactura(1);
+            theCompany = BDFactura.ConsultCompany(1);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
-            Assert.IsTrue(1 == theInvoice.idFactura);
+            Assert.IsTrue(1 == theCompany.IdCompania);
 
 
-        }*/
+        }
+
+        [Test]
+        public void TestContactProyectoFactura()
+        {
+            Proyecto theProject = new Proyecto();
+            //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
+            theProject = BDFactura.ContactProyectoFactura(1);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.IsTrue(1 == theProject.Idproyecto);
+
+
+        }
+        #endregion
+
     }
 }

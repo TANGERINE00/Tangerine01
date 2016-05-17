@@ -52,6 +52,11 @@ namespace LogicaTangerine.M1
         public bool ValidarUsuario(string usuario, string contrasena)
         {
             List<String> campos = new List<String>();
+            Encriptacion encriptador = new Encriptacion();
+            string _pruebaEnc = String.Empty;
+            _pruebaEnc = encriptador.CrearHash(contrasena);
+            //campos.Add(encriptdor.CrearHash(contrasena));
+
             campos.Add(usuario);
             campos.Add(contrasena);
 
