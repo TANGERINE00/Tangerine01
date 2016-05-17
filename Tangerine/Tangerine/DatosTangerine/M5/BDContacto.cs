@@ -35,8 +35,8 @@ namespace DatosTangerine.M5
                 parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                //theParam = new Parametro(ResourceContact.ParamLName, SqlDbType.VarChar, theContact.Apellido, false);
-                //parameters.Add(theParam);
+                theParam = new Parametro(ResourceContact.ParamLName, SqlDbType.VarChar, theContact.Apellido, false);
+                parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceContact.ParamDepa, SqlDbType.VarChar, theContact.Departamento, false);
                 parameters.Add(theParam);
