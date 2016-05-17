@@ -235,8 +235,9 @@ create table CONTACTO
 
 create table REQUERIMIENTO
 (
-	req_id int not null,
-	req_nombre varchar(200) not null,
+	req_id int IDENTITY(1,1) not null,
+	req_codigo varchar(200) not null,
+	req_descripcion varchar(200) not null,
 	fk_prop_id int not null,
 
 	constraint pk_req primary key
@@ -765,6 +766,16 @@ AS
     INSERT INTO PROPUESTA(prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio,prop_fecha_fin,prop_costo,fk_com_id)
 	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
+GO
+--Agregar Requerimiento
+CREATE PROCEDURE M6_AgregarRequerimiento
+	@id_prop int
+
+AS
+	BEGIN
+		SELECT req_id as req_id, req_codigo as req_codigo, req_descripcion as req_descripcion
+		FROM REQUERIMIENTO,PROPUESTA WHERE fk_prop_id = @id_prop;
+	END
 GO
 --Lista Propuesta que no estan en proyecto
 CREATE PROCEDURE M6_ListaPropuestaProyecto

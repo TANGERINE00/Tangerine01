@@ -14,7 +14,7 @@ function agregarPrecondicion() {
     child.innerHTML = "<button type=\"button\" class=\"btn btn-danger btn-circle glyphicon glyphicon-remove\" onclick=\"eliminarCampo(this)\"></button>";
     codigo = "<div class=\"form-group\">" +
 			"    <div class=\"col-sm-11 col-md-11 col-lg-11\">" +
-			"        <input type=\"text\" placeholder=\"Requerimiento\" class=\"form-control\" id=\"precondicion_n\" name=\"precondicion_n\"/>" +
+			"        <input type=\"text\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\"/>" +
 			"    </div>" +
 			"    <div class=\"col-sm-1 col-md-1 col-lg-1\">" +
 			"        <button type=\"button\" class=\"btn btn-default btn-circle glyphicon glyphicon-plus\" onclick=\"agregarPrecondicion()\"></button>" +
@@ -38,4 +38,26 @@ function contarElementos() {
     for (var i = 0; i < campos.length; i++) {
         requerimientos[i] = campos.eq(i).val();
     }
+}
+
+
+function crearPrecondicionArr() {
+
+    var values = "";
+    // escenarios = $("[id^=precondicion_]");
+    $('.arrPrecondicion').val("");
+    $('.precondicion').each(function () {
+     //   alert($(this).val());
+        values = values + $(this).val() + ";";
+     //   $('#precondicion_arr').val($('#precondicion_arr').val() + ";" + $(this).val());
+
+    });
+    
+   // alert(values);
+    $('.arrPrecondicion').val(values);
+   /* for (i = 0; i < escenarios.length; i++) {
+        values += escenarios[i].value + ";";
+    }*/
+    //$('#precondicion_arr').val(values);
+
 }
