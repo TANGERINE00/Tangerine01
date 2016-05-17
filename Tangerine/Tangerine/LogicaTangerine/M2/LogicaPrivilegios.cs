@@ -40,17 +40,17 @@ namespace LogicaTangerine.M2
             string[] paginaSeparada = paginaAVerificar.Split('/');
             int tamanioPagina = paginaSeparada.Length;
 
-            foreach (DominioTangerine.Menu m in Util._theGlobalUser.Rol.Menus)
+            foreach ( DominioTangerine.Menu m in Util._theGlobalUser.Rol.Menus )
             {
-                foreach (Opcion o in m.Opciones)
+                foreach ( Opcion o in m.Opciones )
                 {
-                    string[] opcionSeparada = o.Url.Split('/');
+                    string[] opcionSeparada = o.Url.Split( '/' );
                     int tamanioOpcion = opcionSeparada.Length;
 
-                    if (tamanioOpcion >= 2)
+                    if ( tamanioOpcion >= 2 )
                     {
-                        if (opcionSeparada[tamanioOpcion - 1].Equals(paginaSeparada[tamanioPagina - 1])
-                            && opcionSeparada[tamanioOpcion - 2].Equals(paginaSeparada[tamanioPagina - 2]))
+                        if ( opcionSeparada[ tamanioOpcion - 1 ].Equals( paginaSeparada[ tamanioPagina - 1 ] )
+                            && opcionSeparada[ tamanioOpcion - 2 ].Equals( paginaSeparada[ tamanioPagina - 2 ] ) )
                         {
                             resultado = true;
                             return resultado;

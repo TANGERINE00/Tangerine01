@@ -27,16 +27,16 @@ namespace Tangerine.GUI.Master
 
                 if (privilegioAcceso)
                 {
+                    Response.Redirect("../M1/Dashboard.aspx");
+                }
+                else
+                {
                     List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
 
                     foreach (string s in bloqueos)
                     {
                         this.FindControl(s).Visible = false;
                     }
-                }
-                else
-                {
-                    Response.Redirect("../../M1/Dashboard.aspx");
                 }
             }
         }
