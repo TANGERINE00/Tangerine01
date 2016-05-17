@@ -767,6 +767,7 @@ AS
 	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
 GO
+
 --Agregar Requerimiento
 CREATE PROCEDURE M6_AgregarRequerimiento
 	@id_prop int
@@ -777,15 +778,16 @@ AS
 		FROM REQUERIMIENTO,PROPUESTA WHERE fk_prop_id = @id_prop;
 	END
 GO
+
 --Lista Propuesta que no estan en proyecto
 CREATE PROCEDURE M6_ListaPropuestaProyecto
 
 AS
 
 BEGIN
-SELECT * FROM PROPUESTA 
-LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
-WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
+SELECT prop_nombre, prop_estatus
+FROM PROPUESTA LEFT JOIN PROYECTO ON (fk_propuesta_id=prop_id) 
+WHERE prop_estatus = 'Aprobado' and proy_id IS NULL
 END;
 
 GO
@@ -833,7 +835,7 @@ END;
 GO
 
 --Listar requerimientos por propuesta
-CREATE PROCEDURE ListarRequerimientos
+CREATE PROCEDURE M6_ListarRequerimientos
 
 AS
 
@@ -845,7 +847,7 @@ GO
 
 --Consultar propuesta por nombre
 
-CREATE PROCEDURE ConsultarPropuestaNombre
+CREATE PROCEDURE M6_ConsultarPropuestaNombre
 @idNombre [varchar] (50)
 
 AS

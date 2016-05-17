@@ -59,6 +59,17 @@ namespace DominioTangerine
         private List<Requerimiento> _listaRequerimiento;
         private string conNombre;
         private int conEstatus;
+        private int p1;
+        private string p2;
+        private string p3;
+        private string p4;
+        private string p5;
+        private string p6;
+        private string p7;
+        private string p8;
+        private string p9;
+        private string p10;
+        private string p11;
 
 
 
@@ -172,6 +183,22 @@ namespace DominioTangerine
             // TODO: Complete member initialization
             this.conNombre = conNombre;
             this.conEstatus = conEstatus;
+        }
+
+        public Propuesta(int p1, string p2, string p3, string p4, string p5, string p6, string p7, string p8, string p9, string p10, string p11)
+        {
+            // TODO: Complete member initialization
+            this.p1 = p1;
+            this.p2 = p2;
+            this.p3 = p3;
+            this.p4 = p4;
+            this.p5 = p5;
+            this.p6 = p6;
+            this.p7 = p7;
+            this.p8 = p8;
+            this.p9 = p9;
+            this.p10 = p10;
+            this.p11 = p11;
         }
 
 
