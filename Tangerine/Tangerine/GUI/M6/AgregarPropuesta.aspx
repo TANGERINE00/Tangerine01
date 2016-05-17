@@ -99,7 +99,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-11 col-md-11 col-lg-11">
-                                        <input runat="server" type="text" placeholder="Requerimiento" class="form-control" id="precondicion_0" name="precondicion_0" />
+                                        <input runat="server" type="text" placeholder="Requerimiento" class="form-control precondicion" id="precondicion_0" name="precondicion_0" />
                                     </div>
                                     <div class="col-sm-1 col-md-1 col-lg-1">
                                         <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarPrecondicion()"></button>
@@ -107,7 +107,8 @@
                                 </div>
                             </div>
                         </div>
-
+                        <input id="arrPrecondicion" type="text" class="arrPrecondicion" runat="server"/>
+                        <button type="button" onclick="crearPrecondicionArr()">crear </button>
                     </div>
 
                     <div class="form-group">
