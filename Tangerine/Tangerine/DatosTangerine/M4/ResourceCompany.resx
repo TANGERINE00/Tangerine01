@@ -135,9 +135,6 @@
   <data name="ComIdPlace" xml:space="preserve">
     <value>fk_lug_dir_id</value>
   </data>
-  <data name="ComIdPotentialClient" xml:space="preserve">
-    <value>fk_cli_pot_id</value>
-  </data>
   <data name="ComNameCompany" xml:space="preserve">
     <value>com_nombre</value>
   </data>
@@ -150,11 +147,20 @@
   <data name="ComStatusCompany" xml:space="preserve">
     <value>com_status</value>
   </data>
-  <data name="ContactCompanies" xml:space="preserve">
+  <data name="ComTelephoneCompany" xml:space="preserve">
+    <value>com_telefono</value>
+  </data>
+  <data name="ConsultCompanies" xml:space="preserve">
     <value>M4_ConsultarCompanias</value>
   </data>
-  <data name="ContactCompany" xml:space="preserve">
+  <data name="ConsultCompany" xml:space="preserve">
     <value>M4_ConsultarCompania</value>
+  </data>
+  <data name="ConsultLastCompanyId" xml:space="preserve">
+    <value>M4_ConsultarIdUltimaCompania</value>
+  </data>
+  <data name="DeleteCompany" xml:space="preserve">
+    <value>M4_EliminarCompania</value>
   </data>
   <data name="DisableAbleComany" xml:space="preserve">
     <value>M4_InhabilitarHabilitarCompania</value>
@@ -171,9 +177,6 @@
   <data name="ParamId" xml:space="preserve">
     <value>@id</value>
   </data>
-  <data name="ParamIdClientePotencial" xml:space="preserve">
-    <value>@id_cliente_potencial</value>
-  </data>
   <data name="ParamIdLugar" xml:space="preserve">
     <value>@id_lugar</value>
   </data>
@@ -185,5 +188,8 @@
   </data>
   <data name="ParamStatus" xml:space="preserve">
     <value>@status</value>
+  </data>
+  <data name="ParamTelefono" xml:space="preserve">
+    <value>@telefono</value>
   </data>
 </root>

@@ -21,8 +21,9 @@ namespace DominioTangerine
         private string _realizacion;
         private string _estatus;
         private string _razon;
+        private string _acuerdopago;
         private int _idpropuesta;
-        private int _idresponsable;
+        private int _idcompania;
         private int _idgerente;
         private  List<Empleado> _empleados ;
         private List <Contacto> _contacto;
@@ -51,12 +52,13 @@ namespace DominioTangerine
         /// <param name="realizacion"></param>
         /// <param name="estatus"></param>
         /// <param name="razon"></param>
+        /// <param name="acuerdopago"></param>
         /// <param name="id_propuesta"></param>
         /// <param name="id_responsable"></param>
         /// <param name="id_gerente"></param>
 
         public Proyecto(int id_proyecto,string nombre,string codigo,DateTime fecha_inicio,DateTime fecha_estimada_fin,
-                 double costo,string descripcion, string realizacion,string estatus,string razon,int id_propuesta,int id_responsable,
+                 double costo,string descripcion, string realizacion,string estatus,string razon,string acuerdopago,int id_propuesta,int id_responsable,
                  int id_gerente )
         {
             this._idproyecto = id_proyecto;
@@ -69,10 +71,10 @@ namespace DominioTangerine
             this._realizacion = realizacion;
             this._estatus = estatus;
             this._razon = razon;
+            this._acuerdopago = acuerdopago;
             this._idpropuesta = id_propuesta;
-            this._idresponsable = id_responsable;
+            this._idcompania = id_responsable;
             this._idgerente = id_gerente;
-           
         }
 
 
@@ -197,6 +199,20 @@ namespace DominioTangerine
             set { _razon = value; }
         }
 
+
+        /// <summary>
+        /// Metodo para setear y obtener el acuerdo de pago del proyecto
+        /// </summary>
+        /// <returns>Retorna el id de la propuesta del proyecto</returns>
+
+
+        public string Acuerdopago
+        {
+            get { return _acuerdopago; }
+            set { _acuerdopago = value; }
+        }
+
+
         /// <summary>
         /// Metodo para setear y obtener el id de la propuesta del proyecto
         /// </summary>
@@ -216,8 +232,8 @@ namespace DominioTangerine
 
         public int Idresponsable
         {
-            get { return _idresponsable; }
-            set { _idresponsable = value; }
+            get { return _idcompania; }
+            set { _idcompania = value; }
         }
 
         /// <summary>

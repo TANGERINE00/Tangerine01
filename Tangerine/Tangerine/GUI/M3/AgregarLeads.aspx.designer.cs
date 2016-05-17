@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M3 {
     public partial class AgregarLeads {
         
         /// <summary>
+        /// agregar_lead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_lead;
+        
+        /// <summary>
         /// id_otro control.
         /// </summary>
         /// <remarks>
@@ -31,67 +40,67 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText nombre;
         
         /// <summary>
-        /// apellido control.
+        /// rif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText apellido;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText rif;
         
         /// <summary>
-        /// departamento control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText departamento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
         
         /// <summary>
-        /// cargo control.
+        /// presupuesto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cargo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText presupuesto;
         
         /// <summary>
-        /// telefono control.
+        /// llamadas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText telefono;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText llamadas;
         
         /// <summary>
-        /// telefono2 control.
+        /// Visitas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText telefono2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Visitas;
         
         /// <summary>
-        /// Correo control.
+        /// Potencial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Potencial;
         
         /// <summary>
-        /// Correo2 control.
+        /// Borrado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Correo2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Borrado;
         
         /// <summary>
         /// btnaceptar control.

@@ -120,17 +120,26 @@
   <data name="AddNewProyecto" xml:space="preserve">
     <value>M7_AgregarProyecto</value>
   </data>
+  <data name="AddNewProyectoContacto" xml:space="preserve">
+    <value>M7_AgregarProyectoContacto</value>
+  </data>
   <data name="ChangeProyecto" xml:space="preserve">
     <value>M7_ModificarProyecto</value>
   </data>
   <data name="ContactProyecto" xml:space="preserve">
     <value>M7_ConsultarProyecto</value>
   </data>
+  <data name="ContactProyectoContacto" xml:space="preserve">
+    <value>M7_ConsultarProyectoContacto</value>
+  </data>
   <data name="ContactProyectos" xml:space="preserve">
     <value>M7_ConsultarProyectos</value>
   </data>
   <data name="DeleteProyecto" xml:space="preserve">
     <value>M7_EliminarProyecto</value>
+  </data>
+  <data name="DeleteProyectoContacto" xml:space="preserve">
+    <value>M7_EliminarProyectoContacto</value>
   </data>
   <data name="ParamCodigo" xml:space="preserve">
     <value>@Codigo</value>
@@ -156,8 +165,8 @@
   <data name="ParamIdPropuesta" xml:space="preserve">
     <value>@IdPropuesta</value>
   </data>
-  <data name="ParamIdResponsable" xml:space="preserve">
-    <value>@IdResponsable</value>
+  <data name="ParamIdCompania" xml:space="preserve">
+    <value>@IdCompania</value>
   </data>
   <data name="ParamId_Proyecto" xml:space="preserve">
     <value>@IdProyecto</value>
@@ -165,11 +174,17 @@
   <data name="ParamNombre" xml:space="preserve">
     <value>@Nombre</value>
   </data>
+  <data name="ParamPCIdContacto" xml:space="preserve">
+    <value>@PCIdContacto</value>
+  </data>
   <data name="ParamRazon" xml:space="preserve">
     <value>@Razon</value>
   </data>
   <data name="ParamRealizacion" xml:space="preserve">
     <value>@Realizacion</value>
+  </data>
+  <data name="PCIdContacto" xml:space="preserve">
+    <value>fk_con_id</value>
   </data>
   <data name="ProyCodigo" xml:space="preserve">
     <value>proy_codigo</value>
@@ -198,7 +213,7 @@
   <data name="ProyIdProyecto" xml:space="preserve">
     <value>proy_id</value>
   </data>
-  <data name="ProyIdResponsable" xml:space="preserve">
+  <data name="ProyIdCompania" xml:space="preserve">
     <value>fk_com_id</value>
   </data>
   <data name="ProyNombre" xml:space="preserve">
@@ -209,5 +224,35 @@
   </data>
   <data name="ProyRealizacion" xml:space="preserve">
     <value>proy_realizacion</value>
+  </data>
+  <data name="AddProyectoEmpleado" xml:space="preserve">
+    <value>M7_AgregarProyectoEmpleado</value>
+  </data>
+  <data name="ContactProyectoEmpleado" xml:space="preserve">
+    <value>M7_ConsultarProyectoEmpleado</value>
+  </data>
+  <data name="DeleteProyectoEmpleado" xml:space="preserve">
+    <value>M7_EliminarProyectoEmpleado</value>
+  </data>
+  <data name="ParamPEIdEmpleado" xml:space="preserve">
+    <value>@PEIdEmpleado</value>
+  </data>
+  <data name="PEIdEmpleado" xml:space="preserve">
+    <value>fk_emp_num_ficha</value>
+  </data>
+  <data name="ParamAcuerdoPago" xml:space="preserve">
+    <value>@AcuerdoPago</value>
+  </data>
+  <data name="ProyAcuerdoPago" xml:space="preserve">
+    <value>proy_acuerdo_pago</value>
+  </data>
+  <data name="ContactProyectosxAcuerdoPago" xml:space="preserve">
+    <value>M7_ConsultarAcuerdoPagoMensual</value>
+  </data>
+  <data name="ContactProyectoPorEmpleado" xml:space="preserve">
+    <value>M7_ConsultarProyectoTrabajaEmpleado</value>
+  </data>
+  <data name="ContactProyectoPorGerente" xml:space="preserve">
+    <value>M7_ConsultarProyectosPorGerente</value>
   </data>
 </root>

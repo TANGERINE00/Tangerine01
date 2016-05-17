@@ -46,14 +46,11 @@
     </style>
 
 
-   
+   <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server"> 
 
     <div class="col-md-6">
 
-        
-
-
-        <div class="box box-primary">
+        <div class="box box-primary" style="height:auto">
 
             <!-- form start -->
             <form role="form">
@@ -90,6 +87,142 @@
                      </td>
                 </tr>
 			</tbody>
+
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+            <tbody>
+				<tr>
+					<td class="id">TOT_RF_1</td>
+					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
+                    <td>
+                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
+                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+                     </td>
+                </tr>
+			</tbody>
+
+
+
 		</table>
         <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -121,15 +254,50 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title" >Modificaci&oacute;n de Requerimiento</h4>
             </div>
+
             <div class="modal-body">
+
                 <div class="container-fluid">
                 <div class="form-group">
 				    <div id="div-id" class="col-sm-5 col-md-5 col-lg-5">
-					    <input type="text" name="idreq" id="idreq_input" placeholder="ID" class="form-control" disabled="disabled" value="TOT_RF_5_1"/>
+					    <input type="text" name="idreq" id="idreq_input" placeholder="ID" class="form-control" disabled="disabled" value="TOT_RF_1"/>
 				    </div>
 			    </div>
-              
                 </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">El sistema deberá </span>
+                            <textarea class="form-control" rows="3" placeholder="Funcionalidad del requerimiento" style="text-align: justify;resize:vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
+                        </div>
+                    </div>
+                </div>
+                    <br />
+                   <%-- <div class="form-group">
+                        <div class="col-sm-10 col-md-10 col-lg-10">
+                            <p><b>Prioridad:</b></p>
+                            <label class="radio-inline">
+                            <input type="radio" name="radioPrioridad" id="input_prioridad_baja"/>Baja</label>
+                            <label class="radio-inline">
+                            <input type="radio" name="radioPrioridad" checked="checked" id="input_prioridad_media"/>Media</label>
+                            <label class="radio-inline">
+                            <input type="radio" name="radioPrioridad" id="input_prioridad_alta"/>Alta</label>
+                        </div>
+                    </div>--%>
+                    <br />
+                    <%--<div class="form-group">
+                        <div class="col-sm-10 col-md-10 col-lg-10">
+                            <p><b>Status:</b></p>
+                            <label class="radio-inline">
+                            <input type="radio" name="radioStatus" checked="checked" id="input_status_aprobado"/>Aprobado</label>
+                            <label class="radio-inline">
+                            <input type="radio" name="radioStatus" id="input_status_pendiente"/>Pendiente</label>
+                             <label class="radio-inline">
+                            <input type="radio" name="radioStatus" id="input_status_enejecucion"/>En ejecucion</label>
+                        </div>
+                    </div>--%>
+
             </div>
             <div class="modal-footer">
               <button id="btn-modificarReq" disabled="disabled" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
@@ -141,39 +309,6 @@
       </div><!-- /.modal-update -->
     </div><!-- table-responsive -->
     <!-- Data tables init -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                                                                       
              <!-- form estimated date -->
@@ -207,8 +342,19 @@
                     <!-- /.box-body -->
 
                     <div class="form-group">
-                        <label for="input_horas">Duración del Proyecto</label>
-                        <input type="input_horas" class="form-control" id="horas_id" placeholder="120 h">
+                        <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
+
+                        <div class="input-group input-group">
+                            <div class="input-group-btn">
+
+                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server">
+                                </asp:DropDownList>
+
+                            </div>
+                            <!-- /btn-group -->
+                            <input type="text" class="form-control" id="textoDuracion" runat="server">
+                        </div>
+
                     </div>
 
                     
@@ -241,8 +387,7 @@
                         </select>
                     </div>
 
-
-
+                   
                     <div class="form-group">
                         <label>Estatus</label>
                         <select class="form-control">
@@ -252,25 +397,29 @@
                             <option>En ejecucion</option>
                         </select>
                     </div>
-
-
-
-
+                    
                     <div class="box-foot">
-                        <button  type="submit" class="btn btn-primary" >Modificar</button>
-                        <button type="submit" class="btn btn-default pull-right">Atras</button>
+                      <button type="submit" class="btn btn-primary">Modificar</button>
+                      <button type="submit" class="btn btn-default pull-right">Atras</button>
 
                     </div>
-
+                    
                     </div>
+               
+                
             </form>
+
+             
+
         </div>
 
     </div>
 
 
-    
+    </form>
 
 
 
 </asp:Content>
+
+

@@ -189,10 +189,16 @@
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
   </data>
-  <data name="volverRestriccionHorario" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesHorario.aspx?stat=</value>
+  <data name="FinalAgregarContacto" xml:space="preserve">
+    <value>"&gt;Nuevo Contacto&lt;/a&gt;</value>
   </data>
-  <data name="volverRestriccionHorario2" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesHorario.aspx?idPlan=</value>
+  <data name="ParametroIdComp" xml:space="preserve">
+    <value>&amp;idComp=</value>
+  </data>
+  <data name="VentanaAgregarContacto" xml:space="preserve">
+    <value>&lt;a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
+  </data>
+  <data name="BotonEliminar" xml:space="preserve">
+    <value>&lt;a style='margin-left:5px;' class='btn btn-danger glyphicon glyphicon-remove-circle' href="ConsultarContactos.aspx?idCont=</value>
   </data>
 </root>

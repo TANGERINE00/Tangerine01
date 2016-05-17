@@ -11,6 +11,7 @@
 *.userprefs
 *.dll
 bin
+.config
 
 # Build results
 [Dd]ebug/
@@ -239,3 +240,5 @@ _Pvt_Extensions
 cls
 Tangerine/Tangerine/Script de borrado - DB Tangerine.sql
 Tangerine/Tangerine/Script de borrado - DB Tangerine.sql
+Tangerine/Tangerine/PruebasUnitarias/App.config
+Tangerine/Tangerine/Web.config

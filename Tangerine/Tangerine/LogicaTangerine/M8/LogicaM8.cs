@@ -13,18 +13,18 @@ namespace LogicaTangerine.M8
         public Facturacion theFactura;
         List<Facturacion> answer;
         bool answer2;
-        BDFactura bdFactura = new BDFactura();
+        
 
         public void init()
         {
 
         }
 
-        public List<Facturacion> fillTable()
+        public List<Facturacion> getFacturas()
         {
             try
             {
-                return bdFactura.ContactFacturas();
+                return BDFactura.ContactFacturas();
             }
             catch (Exception ex)
             {
@@ -32,11 +32,11 @@ namespace LogicaTangerine.M8
             }
         }
 
-        public bool AddNewContact(Facturacion factura)
+        public bool AddNewFactura( Facturacion factura )
         {
             try
             {
-                return bdFactura.AddFactura(factura);
+                return BDFactura.AddFactura(factura);
             }
             catch (Exception ex)
             {
@@ -44,16 +44,54 @@ namespace LogicaTangerine.M8
             }
         }
 
-        public Facturacion SearchFactura(int idFactura)
+        public bool ChangeExistingFactura( Facturacion factura )
         {
             try
             {
-                return bdFactura.ContactFactura(idFactura);
+                return BDFactura.ChangeFactura(factura);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public Facturacion SearchFactura( int idFactura )
+        {
+            try
+            {
+                return BDFactura.ContactFactura(idFactura);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Compania SearchCompaniaFactura( int idCompania )
+        {
+            try
+            {
+                return BDFactura.ConsultCompany(idCompania);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Proyecto SearchProyectoFactura(int idProyecto)
+        {
+            try
+            {
+                return BDFactura.ContactProyectoFactura( idProyecto );
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

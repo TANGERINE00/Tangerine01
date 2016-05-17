@@ -75,7 +75,7 @@ namespace PruebasUnitarias.M5
         public void TestDeleteContact()
         {
             //Declaro test de tipo BDContacto para poder invocar el "DeleteContact(Contacto theContact)"
-            answer = BDContacto.DeleteContact(theContact);
+            answer = BDContacto.DeleteContact(theContact.IdContacto);
 
             //answer obtiene true si se elimina el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);

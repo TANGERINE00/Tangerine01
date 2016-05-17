@@ -38,14 +38,14 @@
                 <div class="modal-body">  
                     <div class="box-body">     
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Nickname</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="usuario">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="usuario" runat="server">
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="inputPassword3" placeholder="contraseña">
                             </div>
@@ -101,31 +101,9 @@
                                 <th></th>
                             </tr>
                         </thead>
+                        <asp:Literal runat="server" ID="tablaempleados"> </asp:Literal>
                         <tbody>
-                            <tr>
-                                <td><a href="#">OR9842</a></td>
-                                <td>Luis</td>
-                                <td>Rodríguez</td>
-                                <td>23949271</td>
-                                <td>Programador</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR1848</a></td>
-                                <td>Carlos</td>
-                                <td>Lozano</td>
-                                <td>24323233</td>
-                                <td>Programador</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"></span></a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">OR7429</a></td>
-                                <td>Gerardo</td>
-                                <td>Astone</td>
-                                <td>21223443</td>
-                                <td>Gerente</td>
-                                <td><a href="javascript::;" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"></span></a></td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                     <nav>
