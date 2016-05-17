@@ -766,15 +766,16 @@ AS
 	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
 GO
+
 --Lista Propuesta que no estan en proyecto
 CREATE PROCEDURE M6_ListaPropuestaProyecto
 
 AS
 
 BEGIN
-SELECT * FROM PROPUESTA 
-LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
-WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
+SELECT prop_nombre, prop_estatus
+FROM PROPUESTA LEFT JOIN PROYECTO ON (fk_propuesta_id=prop_id) 
+WHERE prop_estatus = 'Aprobado' and proy_id IS NULL
 END;
 
 GO
