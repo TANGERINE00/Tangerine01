@@ -51,6 +51,7 @@
     <Compile Include="ClientePotencial.cs" />
     <Compile Include="Compania.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="Encriptacion.cs" />
     <Compile Include="ListaGenerica.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="Facturacion.cs" />
