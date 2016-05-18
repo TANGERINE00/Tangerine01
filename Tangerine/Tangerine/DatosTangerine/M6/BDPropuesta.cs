@@ -93,6 +93,10 @@ namespace DatosTangerine.M6
             BDConexion theConnection = new BDConexion();
             Parametro parametro = new Parametro();
 
+            try
+            {
+            //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+            //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
                 parametro = new Parametro(RecursosPropuesta.ParamCodigoReq, SqlDbType.VarChar, elRequerimiento.CodigoRequerimiento, false);
                 parametros.Add(parametro);
 
@@ -104,8 +108,14 @@ namespace DatosTangerine.M6
                 parametros.Add(parametro);
 
 
+                //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarRequerimiento y todos los parametros que recibe
                 List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarRequerimiento, parametros);
 
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
 
             return true;
         }

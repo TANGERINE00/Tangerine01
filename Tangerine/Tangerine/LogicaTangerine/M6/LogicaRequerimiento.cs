@@ -8,6 +8,7 @@ using DominioTangerine;
 
 namespace LogicaTangerine.M6
 {
+    public class LogicaRequerimiento
     {
 
         /// <summary>
@@ -17,6 +18,14 @@ namespace LogicaTangerine.M6
         /// <returns>true si fue agregado</returns>
         public bool agregar(Requerimiento requerimiento)
         {
+            try
+            {
+                return BDPropuesta.agregarRequerimiento(requerimiento);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
       
