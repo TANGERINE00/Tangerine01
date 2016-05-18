@@ -39,6 +39,15 @@
                             <label for="InputRIF">RIF</label>
                             <input runat="server" type="text" class="form-control" id="InputRIF1" name="InputRIF1" placeholder="Introduzca RIF de la compañía">
                         </div>
+
+
+                        <div class="form-group" runat="server">
+                            <label for="InputLugar">Dirección</label>
+                            <asp:DropDownList ID="DropDownList1" runat="server" Width="336px">
+                            </asp:DropDownList>
+                        </div>
+
+
                         <div class="form-group" runat="server">
                             <label for="InputEmail">Correo Electrónico</label>
                             <input runat="server" type="text" class="form-control" id="InputEmail1" name="InputEmail1" placeholder="Introduzca correo electrónico de la compañía">

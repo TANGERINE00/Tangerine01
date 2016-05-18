@@ -31,13 +31,22 @@ namespace Tangerine.GUI.M2 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect rolCambiar;
         
         /// <summary>
-        /// Control CamRol.
+        /// Control botonCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal CamRol;
+        protected global::System.Web.UI.HtmlControls.HtmlButton botonCancelar;
+        
+        /// <summary>
+        /// Control botonCambiar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton botonCambiar;
         
         /// <summary>
         /// Control tablaempleados.

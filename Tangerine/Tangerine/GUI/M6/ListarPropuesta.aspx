@@ -16,11 +16,14 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    
+    
+   <%-- <script>
+        alert('Prueba tiene el valor de : ' + $get('<%=  %>').value);
+    </script>
+    --%>
 
-
-
-   
-
+  
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -101,6 +104,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
                     <td>TRSC012016</td>
                     <td>Trascend</td>
@@ -108,7 +112,7 @@
                     <td><span class="label label-success">Aprobado</span></td>
                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                     <th style="text-align: center;"><a class="glyphicon glyphicon-euro"></a></th>
-                    <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a><a class="btn btn-default glyphicon glyphicon-edit" href="ModificarPropuesta.aspx"></a><a class="btn btn-danger glyphicon glyphicon-remove-circle" data-target="#myModal"></a></th>
+                    <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a><a class="btn btn-default glyphicon glyphicon-edit" onclick="btn_Modifica('TRSC012016')" href="ModificarPropuesta.aspx"></a><a class="btn btn-danger glyphicon glyphicon-remove-circle" data-target="#myModal"></a></th>
                 </tr>
                 <tr>
                     <td>PPSI022016</td>

@@ -235,8 +235,9 @@ create table CONTACTO
 
 create table REQUERIMIENTO
 (
-	req_id int not null,
-	req_nombre varchar(200) not null,
+	req_id int IDENTITY(1,1) not null,
+	req_codigo varchar(200) not null,
+	req_descripcion varchar(200) not null,
 	fk_prop_id int not null,
 
 	constraint pk_req primary key
@@ -766,15 +767,27 @@ AS
 	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
 GO
+
+--Agregar Requerimiento
+CREATE PROCEDURE M6_AgregarRequerimiento
+	@id_prop int
+
+AS
+	BEGIN
+		SELECT req_id as req_id, req_codigo as req_codigo, req_descripcion as req_descripcion
+		FROM REQUERIMIENTO,PROPUESTA WHERE fk_prop_id = @id_prop;
+	END
+GO
+
 --Lista Propuesta que no estan en proyecto
 CREATE PROCEDURE M6_ListaPropuestaProyecto
 
 AS
 
 BEGIN
-SELECT * FROM PROPUESTA 
-LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
-WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
+SELECT prop_nombre, prop_estatus
+FROM PROPUESTA LEFT JOIN PROYECTO ON (fk_propuesta_id=prop_id) 
+WHERE prop_estatus = 'Aprobado' and proy_id IS NULL
 END;
 
 GO
@@ -822,7 +835,7 @@ END;
 GO
 
 --Listar requerimientos por propuesta
-CREATE PROCEDURE ListarRequerimientos
+CREATE PROCEDURE M6_ListarRequerimientos
 
 AS
 
@@ -834,7 +847,7 @@ GO
 
 --Consultar propuesta por nombre
 
-CREATE PROCEDURE ConsultarPropuestaNombre
+CREATE PROCEDURE M6_ConsultarPropuestaNombre
 @idNombre [varchar] (50)
 
 AS
@@ -1044,7 +1057,18 @@ AS
 	END
 GO
 
+--- StoredProsedure consultar nombre de una propuesta ----
+CREATE PROCEDURE M7_ConsultarNombrePropuestaID
 
+     @IdPropuesta int
+
+AS
+	BEGIN
+		SELECT prop_nombre
+		FROM PROPUESTA 
+		WHERE prop_id = @IdPropuesta;
+	END
+GO
 
 -----------------------------------
 ------Fin Stored Procedure M7------
@@ -1141,6 +1165,20 @@ AS
 	BEGIN
 		UPDATE FACTURA SET fac_estatus = 2
     	WHERE fac_id = @id_Factura;
+	END
+GO
+
+---- StoredProcedure Consultar Facturas por ID de Compañia ----
+CREATE PROCEDURE M8_ConsultarFacturasCompania
+	@id_compania int
+
+AS
+	BEGIN
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
+			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			FROM FACTURA, COMPANIA 
+			WHERE com_id = @id_compania
+			AND fk_compania_id = com_id;
 	END
 GO
 

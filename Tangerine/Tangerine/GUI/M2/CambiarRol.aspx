@@ -17,16 +17,7 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script type="text/javascript">
-        function showContent(nick,rol) {
-            
-            element2 = document.getElementById("usuarioCambiar");
-            element2.placeholder = nick;
 
-        }
-        function hideContent() {
-
-        }
     </script>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
@@ -39,11 +30,9 @@
                 <div class="modal-body">  
                     <div class="box-body">     
                         <div class="form-group">
-                            <label for="usuarioCambiar" class="col-sm-2 control-label">Usuario</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="usuarioCambiar" placeholder="" runat="server" disabled>
+                            <label class ="control-label">Usuario</label>
+                                <input type="email" Class="form-control" id="usuarioCambiar" placeholder="" runat="server" disabled/>
                             </div>
-                        </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
@@ -58,45 +47,14 @@
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
-                        <button id="botonCancelar" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                        <button id="botonCambiar" type="button" class="btn btn-primary pull-right" data-dismiss="modal" OnClick="botonCambiar_Click">Cambiar</button>
+                        <button id="botonCancelar" type="button" class="btn btn-default pull-left" data-dismiss="modal" runat="server">Cancelar</button>
+                        <button id="botonCambiar" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCambiar_Click">Cambiar</button>
                     </div><!-- /.box-footer -->
                 </div>
             </div>
         </div>
     </div>
     
-     <!-- Modal Cambiar Rol -->
-    <div class="modal fade" id="myModalC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabelC">Selecciona el rol para el usuario</h4>
-                </div>
-
-
-                <div class="modal-body">  
-                    <div class="box-body">     
-                    <div class="well">
-                        <asp:Literal runat="server" ID="CamRol"></asp:Literal>
-                    </div>
-                    </div><!-- /.box-body -->
-                    <div class="box-footer">
-                        <button id="botonCancelar2" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                        <button id="botonCambiar2" type="button" class="btn btn-primary pull-right" data-dismiss="modal" OnClick="botonCambiar_Click">Cambiar</button>
-                    </div><!-- /.box-footer -->
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-
-
-
-
-
     <div class="container-fluid">
         <div class="box box-info">
             <!--<div class="panel-heading">Filtrar empleados</div>-->
@@ -153,4 +111,34 @@
             </div>
         </div>
     </div>
+        <script type="text/javascript">
+
+            function ajaxRes() {
+                $('.table > tbody > tr > td:nth-child(4) > a')
+                    .click(function (e) {
+                        e.preventDefault();
+                        var prueba = $('.table > tbody > tr > td:nth-child(3)').text();
+                        var params = "{'Id':'" + prueba + "'}";
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "CambiarRol.aspx/GetData",
+                                        data: params,
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "json",
+                                        success: function (response) {
+                                            var local = response;
+                                            document.getElementById("ContentPlaceHolder1_usuarioCambiar").placeholder = prueba;
+                            
+
+                       
+                                    },
+                                        failure: function (response) {
+                                            alert("_");
+                                        }
+                                    });
+                        });
+                        }
+    </script>  
+
+
 </asp:Content>

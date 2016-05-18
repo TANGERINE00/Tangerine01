@@ -11,7 +11,7 @@
 *.userprefs
 *.dll
 bin
-.config
+*.config
 
 # Build results
 [Dd]ebug/
@@ -242,3 +242,8 @@ Tangerine/Tangerine/Script de borrado - DB Tangerine.sql
 Tangerine/Tangerine/Script de borrado - DB Tangerine.sql
 Tangerine/Tangerine/PruebasUnitarias/App.config
 Tangerine/Tangerine/Web.config
+*.config
+Tangerine/Tangerine/PruebasUnitarias/App.config
+*.config
+Tangerine/Tangerine/PruebasUnitarias/App.config
+*.config

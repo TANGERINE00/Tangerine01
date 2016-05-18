@@ -1,12 +1,29 @@
 INSERT INTO LUGAR_DIRECCION VALUES (1,'Venezuela','Pais',null);
 
+insert into lugar_direccion
+values (2,'Caracas','Ciudad', 1);
+
+insert into lugar_direccion
+values (3,'Maracaibo','ciudad', 1);
+
+insert into lugar_direccion
+values (4,'Valencia','Ciudad', 1);
+
 INSERT INTO CLIENTE_POTENCIAL VALUES (1,'jose','rifJose','emailJose',10,10,10,0,0);
 
-SET IDENTITY_INSERT COMPANIA ON
-GO
-insert into dbo.COMPANIA(com_id,com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-VALUES (1,'Trascend','rifTrascend','emailTrascend','123','TR',convert(VARCHAR(10),'11-10-2015',110),0,1);
-SET IDENTITY_INSERT COMPANIA OFF
+
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
+values ('pepsi', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'psi', '12/12/2016', 1, 1);
+
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
+values ('coca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'cca', '12/12/2016', 0, 1);
+
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
+values ('maguca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'mgc', '12/12/2016', 1, 1);
+
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
+values ('tangerine', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'tgn', '12/12/2016', 0, 1);
+
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
