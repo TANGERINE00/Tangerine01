@@ -107,8 +107,8 @@
                                 </div>
                             </div>
                         </div>
-                        <input id="arrPrecondicion" type="text" class="arrPrecondicion" runat="server"/>
-                        <button type="button" onclick="crearPrecondicionArr()">crear </button>
+                        <input id="arrPrecondicion" type="hidden"  class="arrPrecondicion" runat="server"/>
+                       <%-- <button type="button" onclick="crearPrecondicionArr()">crear </button>--%>
                     </div>
 
                     <div class="form-group">
@@ -208,14 +208,14 @@
 
                 <div class="box-footer" runat="server">
                     <asp:Button id="btnagregar" class="btn btn-primary"
-                        OnClick="btnagregar_Click" type="submit" runat="server"
+                        OnClick="btnagregar_Click" OnClientClick="javascript:crearPrecondicionArr()" type="submit" runat="server"
                         Text="Agregar"></asp:Button>
 
-                     <asp:Button id="Button2" class="btn btn-primary"
+                   <%--  <asp:Button id="Button2" class="btn btn-primary"
                         OnClientClick="javascript:contarElementos()" type="submit" runat="server"
                         Text="prueba"></asp:Button>
 
-                     <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="contarElementos()"></button>
+                     <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="contarElementos()"></button>--%>
 
                 </div>
 
