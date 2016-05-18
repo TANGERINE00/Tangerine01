@@ -122,6 +122,12 @@ namespace LogicaTangerine.M7
     {
         return _Pro.ContactProyectoPorGerente(IDGerente);
     }
+
+    public String ConsultarNombrePropuestaID(int id)
+    {
+        return _Pro.ContactNombrePropuestaID(id);
+    } 
     }
     
+
 }
