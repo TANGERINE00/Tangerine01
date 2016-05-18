@@ -37,6 +37,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DatosTangerine\DatosTangerine.csproj">
@@ -78,6 +79,7 @@
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M3\LogicaM3.cs" />
     <Compile Include="M6\LogicaPropuesta.cs" />
+    <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="M8\LogicaM8.cs" />
     <Compile Include="M9\LogicaM9.cs" />

@@ -171,4 +171,13 @@
   <data name="signoEuro" xml:space="preserve">
     <value> €</value>
   </data>
+  <data name="BotonAnularInhabilitado" xml:space="preserve">
+    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" disabled="disabled" href="AnularFacturaM8.aspx?idCont=</value>
+  </data>
+  <data name="BotonModifInhabilitado" xml:space="preserve">
+    <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" disabled="disabled" href="ModificarFacturaM8.aspx?idCont=</value>
+  </data>
+  <data name="BotonPagarInhabilitado" xml:space="preserve">
+    <value>&lt;a title="Pagar" disabled="disabled" class="btn btn-primary glyphicon glyphicon-euro" </value>
+  </data>
 </root>

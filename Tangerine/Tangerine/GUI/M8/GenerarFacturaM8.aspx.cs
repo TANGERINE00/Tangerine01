@@ -31,7 +31,7 @@ namespace Tangerine.GUI.M8
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void buttomGenerarFactura_Click( object sender, EventArgs e )
+        protected void buttonGenerarFactura_Click( object sender, EventArgs e )
         {
              _montoTotal = int.Parse(textMonto_M8.Value);
             _fechaEmision = DateTime.Parse(textFecha_M8.Value);

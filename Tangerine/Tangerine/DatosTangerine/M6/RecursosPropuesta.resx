@@ -121,6 +121,10 @@
     <value>M6_AgregarPropuesta</value>
     <comment>agrega una propuesta a la BD</comment>
   </data>
+  <data name="AgregarRequerimiento" xml:space="preserve">
+    <value>M6_AgregarRequerimiento</value>
+    <comment>Stored Procedure que agrega un Requerimiento</comment>
+  </data>
   <data name="ConsultarPropuesta" xml:space="preserve">
     <value>M6_ListaPropuestaProyecto</value>
     <comment>Stored Procedure que consulta las propuestas aprobadas que aun no son proyectos</comment>
@@ -149,6 +153,10 @@
     <value>@cantEntr</value>
     <comment>Atributo que identifica la cantidad de pago de la propuesta</comment>
   </data>
+  <data name="ParamCodigoReq" xml:space="preserve">
+    <value>@reqCodigo</value>
+    <comment>Atributo que identifica el codifo del requerimiento que se va a mostrar ej: TRS_RF_1</comment>
+  </data>
   <data name="ParamCostoProp" xml:space="preserve">
     <value>@costo</value>
     <comment>Atributo que identifica el costo de la propuesta</comment>
@@ -156,6 +164,10 @@
   <data name="ParamDescriProp" xml:space="preserve">
     <value>@descripcion</value>
     <comment>Atributo que identifica la descripcion de la propuesta</comment>
+  </data>
+  <data name="ParamDescriReq" xml:space="preserve">
+    <value>@reqDescripcion</value>
+    <comment>Atributo que describe el requerimiento</comment>
   </data>
   <data name="ParamDuracProp" xml:space="preserve">
     <value>@duracion</value>
@@ -179,6 +191,10 @@
   <data name="ParamIdProp" xml:space="preserve">
     <value>@prop_id</value>
     <comment>Atributo que identifica el id de la propuesta</comment>
+  </data>
+  <data name="ParamIdPropuestaReq" xml:space="preserve">
+    <value>@fk_pro_req</value>
+    <comment>Atributo que contiene la clave foranea de la Propuesta</comment>
   </data>
   <data name="ParamMonedaProp" xml:space="preserve">
     <value>@moneda</value>
@@ -229,7 +245,7 @@
     <comment>atributo paremetro del consultar propuesta por nombre</comment>
   </data>
   <data name="ReqNombre" xml:space="preserve">
-    <value>@req_nombre</value>
+    <value>@reqnombre</value>
     <comment>atributo que identifica el nombre del requerimiento</comment>
   </data>
   <data name="ReqProp" xml:space="preserve">
