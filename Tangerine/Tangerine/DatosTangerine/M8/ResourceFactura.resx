@@ -120,11 +120,29 @@
   <data name="AddNewFactura" xml:space="preserve">
     <value>M8_AgregarFactura</value>
   </data>
+  <data name="AnnularFactura" xml:space="preserve">
+    <value>M8_AnularFactura</value>
+  </data>
   <data name="ChangeFactura" xml:space="preserve">
-    <value>M8_ModificarContacto</value>
+    <value>M8_ModificarFactura</value>
+  </data>
+  <data name="ComNameCompany" xml:space="preserve">
+    <value>com_nombre</value>
+  </data>
+  <data name="ConsultCompany" xml:space="preserve">
+    <value>M4_ConsultarCompania</value>
+  </data>
+  <data name="ConsultFacturas" xml:space="preserve">
+    <value>M8_ConsultarFacturas</value>
   </data>
   <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
+  </data>
+  <data name="ContactFacturasCompania" xml:space="preserve">
+    <value>M8_ConsultarFacturasCompania</value>
+  </data>
+  <data name="ContactProyecto" xml:space="preserve">
+    <value>M7_ConsultarProyecto</value>
   </data>
   <data name="DeleteFactura" xml:space="preserve">
     <value>M8_EliminarFactura</value>
@@ -132,8 +150,14 @@
   <data name="FacDescripcion" xml:space="preserve">
     <value>fac_descripcion</value>
   </data>
+  <data name="FacEstatus" xml:space="preserve">
+    <value>fac_estatus</value>
+  </data>
   <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
+  </data>
+  <data name="FacFechaUltimoPago" xml:space="preserve">
+    <value>fac_fecha_ultimo_pago</value>
   </data>
   <data name="FacIdCompania" xml:space="preserve">
     <value>fk_compania_id</value>
@@ -151,24 +175,42 @@
     <value>fac_monto_total</value>
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
-    <value>@Descripcion</value>
+    <value>@descripcion</value>
+  </data>
+  <data name="ParamEstatus" xml:space="preserve">
+    <value>@estatus</value>
   </data>
   <data name="ParamFecha_Emision" xml:space="preserve">
-    <value>@FechaEmision</value>
+    <value>@fecha_emision</value>
+  </data>
+  <data name="ParamFecha_Ultimo_Pago" xml:space="preserve">
+    <value>@fecha_ultimo_pago</value>
+  </data>
+  <data name="ParamId" xml:space="preserve">
+    <value>@id</value>
   </data>
   <data name="ParamIdCompania" xml:space="preserve">
-    <value>@IdCompania</value>
+    <value>@id_compania</value>
   </data>
   <data name="ParamIdFactura" xml:space="preserve">
-    <value>@IdFactura</value>
+    <value>@id_Factura</value>
   </data>
   <data name="ParamIdProyecto" xml:space="preserve">
+    <value>@id_proyecto</value>
+  </data>
+  <data name="ParamId_Proyecto" xml:space="preserve">
     <value>@IdProyecto</value>
   </data>
   <data name="ParamMonto_Restante" xml:space="preserve">
-    <value>@MontoRestante</value>
+    <value>@monto_restante</value>
   </data>
   <data name="ParamMonto_Total" xml:space="preserve">
-    <value>@MontoTotal</value>
+    <value>@monto_total</value>
+  </data>
+  <data name="ProyNombre" xml:space="preserve">
+    <value>proy_nombre</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value />
   </data>
 </root>

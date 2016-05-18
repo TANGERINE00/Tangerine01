@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="EjemploM7.aspx.cs" Inherits="Tangerine.GUI.M7.EjemploM7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="GenerarFacturaM8.aspx.cs" Inherits="Tangerine.GUI.M8.GenerarFacturaM8" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -25,47 +25,47 @@
                   <h3 class="box-title">Generar Factura</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
-                  <div class="box-body">
+                <form role="form" runat ="server" method="post"  name="generar_factura" id="generar_factura" >
+                  <div class="box-body" runat ="server">
 
-                    <div class="form-group">
+                    <%--<div class="form-group" runat ="server">
                       <label for="labelNumeroFactura_M8">Número Factura</label>
-                      <input type="text" class="form-control" id="textNumeroFactura_M8" placeholder="Número Factura" disabled ="disabled" >
-                    </div>
+                      <input type="text" runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" placeholder="Número Factura"  >
+                    </div>--%>
 
-                    <div class="form-group">
+                    <div class="form-group" runat ="server">
                       <label for="labelFecha_M8">Fecha</label>
-                      <input type="date" class="form-control" id="textFecha_M8" placeholder="Fecha" disabled ="disabled">
+                      <input type="text" runat="server"  class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy" disabled="disabled" >
                     </div>
 
-                      <div class="form-group">
-                      <label for="labelCliente_M8">Cliente</label>
-                      <input type="text" class="form-control" id="textCliente_M8" placeholder="Cliente" disabled ="disabled" >
+                      <div class="form-group" runat ="server">
+                      <label for="labelCliente_M8">Compañia</label>
+                      <input type="text" runat="server"  class="form-control" id="textCompania_M8" name="textCompania_M8" placeholder="Compañia" >
                     </div>
 
-                        <div class="form-group">
+                        <div class="form-group" runat ="server">
                       <label for="labelProyecto_M8">Proyecto</label>
-                      <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled ="disabled" >
+                      <input type="text" runat="server"  class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto"  >
                     </div>
 
-                        <div class="form-group">
+                        <div class="form-group" runat ="server">
                       <label for="labelDescripcion_M8">Descripción</label>
-                      <input type="text" class="form-control" id="textDescripcion_M8" placeholder="Descripción">
+                      <input type="text" runat="server"  class="form-control" id="textDescripcion_M8" name="textDescripcion_M8" placeholder="Descripción" >
                     </div>
 
                       
-                        <div class="form-group">
+                        <div class="form-group" runat ="server">
                       <label for="labelMonto_M8">Monto</label>
-                      <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled ="disabled" >
+                      <input type="text" runat="server"  class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto"  >
                     </div>
-                      <div>
-<asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Generar"   ></asp:Button>
-                      </div>
+                      <div class="box-footer" runat="server">
+                             <asp:Button id="buttomGenerar_M8" style="margin-top:5%"  class="btn btn-primary" type="submit" runat="server" Text = "Generar" OnClick="buttomGenerarFactura_Click" ></asp:Button>
+                              </div>
                       
 
                   </div><!-- /.box-body -->
 
-                  <div class="box-footer">
+                  <div class="box-footer" runat ="server">
                     
                   </div>
                 </form>
@@ -73,7 +73,8 @@
          
             </div><!--/.col (left) -->
             <!-- right column -->
-            <div class="col-md-6">
+            <div class="col-md-6" runat ="server">
       
           </div>
+    </div>
 </asp:Content>

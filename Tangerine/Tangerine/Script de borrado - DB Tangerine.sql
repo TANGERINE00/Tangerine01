@@ -16,7 +16,73 @@ drop table cargo_empleado;
 drop table cargo;
 drop table empleado;
 drop table lugar_direccion;
-drop table rol_menu;
+drop table rol_opcion;
 drop table rol;
 drop table opcion;
 drop table menu;
+
+drop procedure M2_ObtenerOpciones;
+drop procedure M2_ObtenerRolUsuario;
+drop procedure M2_ObtenerDatoUsuario;
+drop procedure M2_ModificarContraUsuario;
+drop procedure M2_ModificarRolUsuario;
+drop procedure M2_AgregarUsuario;
+drop procedure M2_ObtenerUsuarioDeEmpleado;
+
+drop procedure M4_AgregarCompania;
+drop procedure M4_ConsultarCompania;
+drop procedure M4_ConsultarCompanias;
+drop procedure M4_ModificarCompania;
+drop procedure M4_InhabilitarHabilitarCompania;
+drop procedure M4_EliminarCompania;
+drop procedure M4_ConsultarIdUltimaCompania;
+
+
+drop procedure M5_AgregarContacto;
+drop procedure M5_ConsultarContactoId;
+drop procedure M5_AgregarContactoProyecto;
+drop procedure M5_EliminarContactoProyecto;
+drop procedure M5_EliminarContacto;
+drop procedure M5_ModificarContacto;
+drop procedure M5_ConsultarContactoCompania;
+
+drop procedure M6_AgregarPropuesta;
+drop procedure M6_ListaPropuestaProyecto;
+drop procedure M6_ModificarPropuesta;
+drop procedure M6_ModificarRequerimiento;
+drop procedure M6_ListarRequerimientos;
+drop procedure M6_AgregarRequerimiento;
+drop procedure M6_ConsultarPropuestaNombre
+
+
+drop procedure M7_AgregarProyecto;
+drop procedure M7_ConsultarProyecto;
+drop procedure M7_ConsultarProyectos;
+drop procedure M7_ModificarProyecto;
+drop procedure M7_AgregarProyectoContacto;
+drop procedure M7_ConsultarProyectoContacto;
+drop procedure M7_EliminarProyectoContacto;
+drop procedure M7_AgregarProyectoEmpleado;
+drop procedure M7_ConsultarProyectoEmpleado;
+drop procedure M7_EliminarProyectoEmpleado;
+drop procedure M7_ConsultarAcuerdoPagoMensual;
+drop procedure M7_ConsultarProyectoTrabajaEmpleado;
+drop procedure M7_COnsultarProyectosPorGerente;
+drop procedure M7_ConsultarNombrePropuestaID;
+
+drop procedure M8_AgregarFactura;
+drop procedure M8_ConsultarFactura;
+drop procedure M8_ConsultarFacturas;
+drop procedure M8_ModificarFactura;
+drop procedure M8_ConsultarNombreCompaniaFacturas;
+drop procedure M8_AnularFactura;
+
+drop procedure M10_AgregarEmpleado;
+drop procedure M10_ConsultarEmpleado;
+
+
+
+
+
+
+

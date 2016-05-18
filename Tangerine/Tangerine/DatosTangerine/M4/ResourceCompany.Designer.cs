@@ -115,15 +115,6 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to fk_cli_pot_id.
-        /// </summary>
-        internal static string ComIdPotentialClient {
-            get {
-                return ResourceManager.GetString("ComIdPotentialClient", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to com_nombre.
         /// </summary>
         internal static string ComNameCompany {
@@ -160,20 +151,47 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to com_telefono.
+        /// </summary>
+        internal static string ComTelephoneCompany {
+            get {
+                return ResourceManager.GetString("ComTelephoneCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M4_ConsultarCompanias.
         /// </summary>
-        internal static string ContactCompanies {
+        internal static string ConsultCompanies {
             get {
-                return ResourceManager.GetString("ContactCompanies", resourceCulture);
+                return ResourceManager.GetString("ConsultCompanies", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to M4_ConsultarCompania.
         /// </summary>
-        internal static string ContactCompany {
+        internal static string ConsultCompany {
             get {
-                return ResourceManager.GetString("ContactCompany", resourceCulture);
+                return ResourceManager.GetString("ConsultCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_ConsultarIdUltimaCompania.
+        /// </summary>
+        internal static string ConsultLastCompanyId {
+            get {
+                return ResourceManager.GetString("ConsultLastCompanyId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M4_EliminarCompania.
+        /// </summary>
+        internal static string DeleteCompany {
+            get {
+                return ResourceManager.GetString("DeleteCompany", resourceCulture);
             }
         }
         
@@ -223,15 +241,6 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @id_cliente_potencial.
-        /// </summary>
-        internal static string ParamIdClientePotencial {
-            get {
-                return ResourceManager.GetString("ParamIdClientePotencial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to @id_lugar.
         /// </summary>
         internal static string ParamIdLugar {
@@ -264,6 +273,15 @@ namespace DatosTangerine.M4 {
         internal static string ParamStatus {
             get {
                 return ResourceManager.GetString("ParamStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @telefono.
+        /// </summary>
+        internal static string ParamTelefono {
+            get {
+                return ResourceManager.GetString("ParamTelefono", resourceCulture);
             }
         }
     }

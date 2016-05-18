@@ -1,4 +1,6 @@
 using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DominioTangerine
 {
@@ -25,18 +27,29 @@ namespace DominioTangerine
 		}
 
         /// <summary>
-        /// Constructo de Usuario solo con usuario, contraseña
+        /// Constructor de Usuario solo con usuario, contraseña
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasenia"></param>
         public Usuario( string usuario, string contrasenia )
         {
             _usuario = usuario;
-            _contrasenia = contrasenia;
+            _contrasenia = GetMD5( contrasenia );
         }
 
         /// <summary>
-        /// Constructo de Usuario solo con usuario, contraseña y activo
+        /// Constructor de Usuario solo con usuario y rol
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="rol"></param>
+        public Usuario( string usuario, Rol rol) 
+        {
+            _usuario = usuario;
+            _rol = rol;
+        }
+
+        /// <summary>
+        /// Constructor de Usuario solo con usuario, contraseña y activo
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasenia"></param>
@@ -139,6 +152,34 @@ namespace DominioTangerine
         {
             get { return _fechaCreacion; }
             set { _fechaCreacion = value; }
+        }
+
+        #endregion
+
+        #region Métodos
+
+        /// <summary>
+        /// Método para encriptar la contraseña del usuario,se utiliza al crear el usuario y en el login para comparar
+        /// la contraseña colocada y la contraseña real
+        /// </summary>
+        /// <param name="contrasenia"></param>
+        /// <returns></returns>
+        public string GetMD5( string contrasenia )
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+
+            ASCIIEncoding encoding = new ASCIIEncoding();
+
+            StringBuilder sb = new StringBuilder();
+
+            byte[] stream = md5.ComputeHash( encoding.GetBytes( contrasenia ) );
+
+            for ( int i = 0; i < stream.Length; i++ )
+            {
+                sb.AppendFormat( "{0:x2}", stream[ i ] );
+            }
+
+            return sb.ToString();
         }
 
         #endregion

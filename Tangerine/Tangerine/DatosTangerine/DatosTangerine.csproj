@@ -37,9 +37,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="M10\BDEmpleado.cs" />
+    <Compile Include="M10\ResourceEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceEmpleado.resx</DependentUpon>
+    </Compile>
     <Compile Include="M2\BDUsuario.cs" />
     <Compile Include="M2\ResourceUser.Designer.cs" />
     <Compile Include="M3\BDClientePotencial.cs" />
@@ -68,10 +75,17 @@
     </Compile>
     <Compile Include="M7\BDEmpleadoProyecto.cs" />
     <Compile Include="M7\BDProyecto.cs" />
+    <Compile Include="M7\BDProyectoContanto.cs" />
     <Compile Include="M7\ResourceProyecto.Designer.cs">
       <DependentUpon>ResourceProyecto.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="M9\BDPagos.cs" />
+    <Compile Include="M9\ResourcePagos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourcePagos.resx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -91,6 +105,9 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -101,12 +118,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="M10\" />
     <Folder Include="M1\" />
+<<<<<<< HEAD
     <Folder Include="M9\" />
+=======
+>>>>>>> f4abba9c592220c4ea0873f0d010f3cf40f12c73
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="M10\ResourceEmpleado.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceEmpleado.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M2\ResourceUser.resx" />
     <EmbeddedResource Include="M3\ResourceClientePotencial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +142,7 @@
     <EmbeddedResource Include="M5\ResourceContact.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceContact.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="M6\RecursosPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,6 +155,10 @@
     <EmbeddedResource Include="M8\ResourceFactura.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceFactura.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M9\ResourcePagos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcePagos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RecursoGeneralBD.resx">
       <Generator>ResXFileCodeGenerator</Generator>

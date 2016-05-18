@@ -156,5 +156,171 @@ namespace DatosTangerine.M2 {
                 return ResourceManager.GetString("ModificarContraUsuario", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerDatoUsuario.
+        /// </summary>
+        internal static string ObtenerDatoUsuario
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerDatoUsuario", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a usu_fecha_creacion.
+        /// </summary>
+        internal static string UsuFechaCreacion
+        {
+            get
+            {
+                return ResourceManager.GetString("UsuFechaCreacion", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a usu_activo.
+        /// </summary>
+        internal static string UsuActivo
+        {
+            get
+            {
+                return ResourceManager.GetString("UsuActivo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a fk_rol_id.
+        /// </summary>
+        internal static string UsuFKRol
+        {
+            get
+            {
+                return ResourceManager.GetString("UsuFKRol", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a fk_emp_num_ficha.
+        /// </summary>
+        internal static string UsuEmpFicha
+        {
+            get
+            {
+                return ResourceManager.GetString("UsuEmpFicha", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a @codigo_rol.
+        /// </summary>
+        internal static string ParametroRolCodigo
+        {
+            get
+            {
+                return ResourceManager.GetString("ParametroRolCodigo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a rol_nombre.
+        /// </summary>
+        internal static string RolNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("RolNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a men_nombre.
+        /// </summary>
+        internal static string RolMenu
+        {
+            get
+            {
+                return ResourceManager.GetString("RolMenu", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerRolUsuario.
+        /// </summary>
+        internal static string ObtenerRolUsuario
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerRolUsuario", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerOpciones.
+        /// </summary>
+        internal static string ObtenerOpciones
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerOpciones", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a @menu_nom.
+        /// </summary>
+        internal static string ParametroMenuNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("ParametroMenuNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a opc_nombre.
+        /// </summary>
+        internal static string OpcNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("OpcNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a opc_url.
+        /// </summary>
+        internal static string OpcUrl
+        {
+            get
+            {
+                return ResourceManager.GetString("OpcUrl", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerUsuarioDeEmpleado.
+        /// </summary>
+        internal static string ObtenerUsuarioDeEmpleado
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerUsuarioDeEmpleado", resourceCulture);
+            }
+        }
+
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a usu_nombre.
+        /// </summary>
+        internal static string UsuNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("UsuNombre", resourceCulture);
+            }
+        }
     }
 }

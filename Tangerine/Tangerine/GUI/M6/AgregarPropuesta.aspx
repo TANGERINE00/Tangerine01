@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.AgregarPropuesta" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -17,7 +17,7 @@
     <li class="active">Agregar Propuesta</li>
 </asp:Content>
 
-<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <style>
         .main-footer {
@@ -53,28 +53,35 @@
                 float: left;
             }
         }
+
+        .dropdown .btn {
+            width: 95%;
+        }
     </style>
+    
 
 
+    <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
 
-    <div class="col-md-6">
+        <div class="col-md-6" runat="server">
 
-        <div class="box box-primary" style="height: inherit !important">
+            <div class="box box-primary" style="height: inherit !important" runat="server">
 
-            <!-- form start -->
-            <form role="form">
+                <!-- form start -->
+
 
                 <div class="box-body">
 
                     <div class="form-group">
 
                         <label>Cliente (compañía contratante)</label>
-                        <select class="form-control">
-                            <option>Trascend</option>
-                            <option>Tebca</option>
-                            <option>Trascend</option>
-                            <option>Pepsi</option>
-                        </select>
+
+                        <div class="dropdown" runat="server" id="contenedorCompañias">
+                            <asp:DropDownList ID="comboCompañia" class="btn btn-default dropdown-toggle" runat="server">
+                            </asp:DropDownList>
+                        </div>
+
+
 
 
 
@@ -82,7 +89,7 @@
 
                     <div class="form-group">
                         <label>Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..."></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"> </textarea>
                     </div>
 
                     <div class="form-group">
@@ -92,7 +99,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-11 col-md-11 col-lg-11">
-                                        <input type="text" placeholder="Requerimiento" class="form-control" id="precondicion_0" name="precondicion_0" />
+                                        <input runat="server" type="text" placeholder="Requerimiento" class="form-control precondicion" id="precondicion_0" name="precondicion_0" />
                                     </div>
                                     <div class="col-sm-1 col-md-1 col-lg-1">
                                         <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarPrecondicion()"></button>
@@ -100,30 +107,23 @@
                                 </div>
                             </div>
                         </div>
-
+                        <input id="arrPrecondicion" type="hidden"  class="arrPrecondicion" runat="server"/>
+                       <%-- <button type="button" onclick="crearPrecondicionArr()">crear </button>--%>
                     </div>
 
                     <div class="form-group">
                         <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
 
-                        <div class="input-group input-group-sm">
+                        <div class="input-group input-group">
                             <div class="input-group-btn">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Duracion
-                    <span class="fa fa-caret-down"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Meses</a></li>
-                                        <li><a href="#">Dias</a></li>
-                                        <li><a href="#">Horas</a></li>
-                                    </ul>
-                                </div>
+
+                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server">
+                                </asp:DropDownList>
+
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="textoDuracion" runat="server">
                         </div>
-
 
                     </div>
 
@@ -135,7 +135,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -147,7 +147,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text">
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -159,29 +159,18 @@
 
 
                     <div class="form-group">
-                        <label for="input_costo">Costo del Proyecto</label>
-                        <div class="input-group input-group-sm">
-                            <div class="input-group-btn">
-                                <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Moneda
-                                        <span class="fa fa-caret-down"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Bolivar</a></li>
-                                        <li><a href="#">Dolar</a></li>
-                                        <li><a href="#">Euro</a></li>
-                                        <li><a href="#">Bitcoin</a></li>
-                                    </ul>
+                        <label for="input_horas" style="width: 100%; float: left; display: block;">Costo del Proyecto</label>
 
-                                </div>
+                        <div class="input-group input-group">
+                            <div class="input-group-btn">
+
+                                <asp:DropDownList ID="comboTipoCosto" class="btn btn-primary dropdown-toggle" runat="server">
+                                </asp:DropDownList>
+
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control">
-                            <%--<span class="input-group-addon">.00</span>--%>
+                            <input type="text" class="form-control" id="textoCosto" runat="server">
                         </div>
-
-
 
                     </div>
 
@@ -189,7 +178,7 @@
 
                     <div class="form-group">
                         <label>Forma de Pago</label>
-                        <select class="form-control">
+                        <select class="form-control" id="fpago" runat="server">
                             <option></option>
                             <option data-icon="fa-heart">Deposito</option>
                             <option>Transferencia</option>
@@ -199,14 +188,13 @@
 
 
 
+
                     <div class="form-group">
                         <label>Estatus</label>
-                        <select class="form-control">
-                            <option></option>
-                            <option>Aprobado</option>
-                            <option>Pendiente</option>
-                            <option>En ejecucion</option>
-                        </select>
+                        <div class="dropdown" runat="server" id="contenedorEstatus">
+                            <asp:DropDownList ID="comboEstatus" class="btn btn-default dropdown-toggle" runat="server">
+                            </asp:DropDownList>
+                        </div>
                     </div>
 
 
@@ -216,23 +204,26 @@
 
                 </div>
 
-            </form>
 
-            <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Agregar</button>
-              </div>
 
+                <div class="box-footer" runat="server">
+                    <asp:Button id="btnagregar" class="btn btn-primary"
+                        OnClick="btnagregar_Click" OnClientClick="javascript:crearPrecondicionArr()" type="submit" runat="server"
+                        Text="Agregar"></asp:Button>
+
+                   <%--  <asp:Button id="Button2" class="btn btn-primary"
+                        OnClientClick="javascript:contarElementos()" type="submit" runat="server"
+                        Text="prueba"></asp:Button>
+
+                     <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="contarElementos()"></button>--%>
+
+                </div>
+
+            </div>
         </div>
-
-      <%--  <div class="box-foot">
-            <button type="submit" class="btn btn-primary">Agregar</button>
-        </div>--%>
-    </div>
+    </form>
 
 
 
 
-
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 </asp:Content>

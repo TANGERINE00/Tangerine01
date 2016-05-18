@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine;
+using DatosTangerine.M4;
+using DatosTangerine.M7;
 
 namespace DatosTangerine.M8
 {
@@ -21,21 +23,20 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public Boolean AddFactura(Facturacion theFactura)
+        public static bool AddFactura(Facturacion theFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
-            
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
-                parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.Date, theFactura.fechaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, theFactura.fechaUltimoPagoFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
@@ -44,13 +45,16 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.Int, theFactura.descripcionFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
@@ -70,10 +74,11 @@ namespace DatosTangerine.M8
         /// </summary>
         /// <param name="parametro">objeto de tipo Facturacion a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public Boolean DeleteFactura(Facturacion theFactura)
+        public static bool DeleteFactura(Facturacion theFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
@@ -95,23 +100,27 @@ namespace DatosTangerine.M8
         }
 
         /// <summary>
-        /// Metodo para modificar un factura en la base de datos.
+        /// Metodo para anular una factura de la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Facturacion para modificar en bd</param>
-        /// <returns>true si fue modificado</returns>
-        public Boolean ChangeFactura(Facturacion theFactura)
+        /// <param name="parametro">objeto de tipo Facturacion a eliminar en bd</param>
+        /// <returns>true si fue anulada</returns>
+        public static bool AnnularFactura(Facturacion theFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             try
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString() , false);
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.Date, theFactura.fechaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, theFactura.fechaUltimoPagoFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
@@ -120,13 +129,70 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.Int, theFactura.descripcionFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M8_AnnularFactura y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceFactura.AnnularFactura, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo para modificar un factura en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Facturacion para modificar en bd</param>
+        /// <returns>true si fue modificado</returns>
+        public static bool ChangeFactura(Facturacion theFactura)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.idFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, theFactura.fechaUltimoPagoFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M8_ModificarFactura y todos los parametros que recibe
@@ -142,20 +208,15 @@ namespace DatosTangerine.M8
         }
 
         /// <summary>
-        /// Metodo para consultar una Factura específica que pertenecen a la base de datos.
-        /// Recibe dos parametros: idFactura que es el numero de factura de la misma.
-        ///                     
+        /// Funcion que permite obtener los datos de una factura en especifico
         /// </summary>
-        /// <returns>Un objeto de tipo Facturacion</returns>
-        /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idFactura que es el id de la Factura a consultar.
-        /// </summary>
-        /// <returns>Lista de facturas </returns>
-        public Facturacion ContactFactura(int idFactura)
+        /// <param name="idFactura"></param>
+        /// <returns>Retorna la factura en cuestion</returns>
+        public static Facturacion ContactFactura(int idFactura)
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             Facturacion theFactura = new Facturacion();
 
@@ -174,15 +235,17 @@ namespace DatosTangerine.M8
 
                 int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                 DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
-                int facMonto = int.Parse(row[ResourceFactura.FacMontoTotal].ToString());
-                int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
+                double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                 String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                 int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                Facturacion theFacturabeta = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
-                                                    facIdProyecto, facIdCompania);
+                Facturacion theFacturabeta = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                                                    facEstatus, facIdProyecto, facIdCompania);
 
                 theFactura = theFacturabeta;
 
@@ -195,10 +258,15 @@ namespace DatosTangerine.M8
             return theFactura;
         }
 
-        public List<Facturacion> ContactFacturas()
+        /// <summary>
+        /// Funcion que permite buscar todas las facturas en la base de datos
+        /// </summary>
+        /// <returns>Retorna la lista con todas las facturas</returns>
+        public static List<Facturacion> ContactFacturas()
         {
-            parameters = new List<Parametro>();
-            theConnection = new BDConexion();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
 
             List<Facturacion> listFactura = new List<Facturacion>();
 
@@ -208,7 +276,7 @@ namespace DatosTangerine.M8
 
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ContactFactura, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ConsultFacturas, parameters);
 
                 //Guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -216,15 +284,17 @@ namespace DatosTangerine.M8
 
                     int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
                     DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
-                    int facMonto = int.Parse(row[ResourceFactura.FacMontoTotal].ToString());
-                    int facMontoRestante = int.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
+                    double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                    double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                    int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                    Facturacion theFactura = new Facturacion(facId, facFecha, facMonto, facMontoRestante, facDescripcion,
-                                                        facIdProyecto, facIdCompania);
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                                                        facEstatus, facIdProyecto, facIdCompania);
                     listFactura.Add(theFactura);
 
                 }
@@ -237,6 +307,167 @@ namespace DatosTangerine.M8
             }
 
             return listFactura;
+        }
+
+        /// <summary>
+        /// Funcion que permite buscar todas las facturas asociadas a una compañia
+        /// </summary>
+        /// <returns>Retorna la lista con todas las facturas</returns>
+        public static List<Facturacion> ContactFacturasCompania( int idCompania )
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Facturacion> listFactura = new List<Facturacion>();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, idCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ContactFacturasCompania, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
+                    DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
+                    DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
+                    double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                    double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                    int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
+                    int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
+                    int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
+
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                                                        facEstatus, facIdProyecto, facIdCompania);
+                    listFactura.Add(theFactura);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listFactura;
+        }
+
+        /// <summary>
+        /// Metodo para consultar una compañia en especifico.
+        /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
+        /// </summary>
+        /// <returns>Lista de contactos de la Empresa</returns>
+        public static Compania ConsultCompany(int idCompany)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            Compania theCompany = new Compania();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, idCompany.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ConsultCompany, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                int comId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
+                String comName = row[ResourceCompany.ComNameCompany].ToString();
+                String comRif = row[ResourceCompany.ComRifCompany].ToString();
+                String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
+                String comTelephone = row[ResourceCompany.ComTelephoneCompany].ToString();
+                String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
+                DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
+                int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
+                int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
+
+                //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym, 
+                                                    comRegisterDate, comStatus, comIdPlace);
+
+                theCompany = theCompanybeta;
+            
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return theCompany;
+        }
+
+        /// <summary>
+        /// Metodo para consultar un Proyecto específico que pertenecen a la base de datos.
+        /// Recibe dos parametros: idProyecto que es el numero de Proyecto del mismo.
+        ///                     
+        /// </summary>
+        /// <returns>Un objeto de tipo Proyecto</returns>
+        public static Proyecto ContactProyectoFactura(int idProyecto)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+            Proyecto TheProyecto = new Proyecto();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceFactura.ParamId_Proyecto, SqlDbType.Int, idProyecto.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ContactProyecto, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                
+                int proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+                string proyNombre = row[ResourceProyecto.ProyNombre].ToString();
+                string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
+                DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
+                DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
+                double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
+                String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
+                String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
+                String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
+                String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
+                int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
+                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+
+                //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
+                Proyecto theProyectobeta = new Proyecto(proyId, proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
+                                                    proyCosto, proyDescripcion, proyRealizacion, proyEstatus, proyRazon,
+                                                    proyAcuerdoPago, proyIdPropuesta, proyIdResponsable, proyIdGerente);
+
+                TheProyecto = theProyectobeta;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return TheProyecto;
         }
 
     }

@@ -43,7 +43,22 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\ActiproSoftware.Shared.Net20.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Logger.1.0.9.3\lib\net45\Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.0.5797.27550, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
@@ -942,7 +957,9 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="starter.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GUI\M10\AdminContrato.aspx.cs">
@@ -1043,6 +1060,11 @@
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\ResourceGUIM10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM10.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\VerEmpleado.aspx.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1070,6 +1092,11 @@
     </Compile>
     <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M2\ResourceGUIM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM2.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
       <DependentUpon>AgregarLeads.aspx</DependentUpon>
@@ -1152,6 +1179,11 @@
     </Compile>
     <Compile Include="GUI\M4\ModificarCompania.aspx.designer.cs">
       <DependentUpon>ModificarCompania.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M4\ResourceGUIM4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM4.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M5\AgregarContacto.aspx.cs">
       <DependentUpon>AgregarContacto.aspx</DependentUpon>
@@ -1242,6 +1274,11 @@
     <Compile Include="GUI\M7\modificarProyecto.aspx.designer.cs">
       <DependentUpon>modificarProyecto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M7\ResourceGUIM7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM7.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M8\AnularFacturaM8.aspx.cs">
       <DependentUpon>AnularFacturaM8.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1270,6 +1307,11 @@
     <Compile Include="GUI\M8\ModificarFacturaM8.aspx.designer.cs">
       <DependentUpon>ModificarFacturaM8.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M8\ResourceGUIM8.Designer.cs">
+      <DependentUpon>ResourceGUIM8.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="GUI\M9\EjemploM9.aspx.cs">
       <DependentUpon>EjemploM9.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1283,6 +1325,11 @@
     </Compile>
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\ResourceLogicaM9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM9.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M9\SeleccionCompania.aspx.cs">
       <DependentUpon>SeleccionCompania.aspx</DependentUpon>
@@ -1427,7 +1474,11 @@
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\Tangerine.Master" />
     <Content Include="GUI\M1\Login.Master" />
+<<<<<<< HEAD
     <Content Include="packages\NUnit.2.6.4\NUnit.2.6.4.nupkg" />
+=======
+    <Content Include="packages.config" />
+>>>>>>> f4abba9c592220c4ea0873f0d010f3cf40f12c73
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1463,9 +1514,64 @@
       <Name>LogicaTangerine</Name>
     </ProjectReference>
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\M1\ResourceGUIM10.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M2\ResourceGUIM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M4\ResourceGUIM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M5\ResourceGUIM5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M7\ResourceGUIM7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M8\ResourceGUIM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M9\ResourceLogicaM9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM9.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+>>>>>>> f4abba9c592220c4ea0873f0d010f3cf40f12c73
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

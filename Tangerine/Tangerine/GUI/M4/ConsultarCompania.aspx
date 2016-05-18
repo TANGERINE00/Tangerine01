@@ -16,6 +16,86 @@
     
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+       <!-- Modal  info-->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" style="display: height: 350px; align-content:center;" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document" style="height: 350px; align-content:center;">
+                <div class="modal-content" style="height: 350px; align-content:center;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Contacto</h4>
+                    </div>
+                    <div class="modal-body" style="height: 350px; align-content:center;">
+                       
+                        <div class="box box-primary" style="height: 272px; align-content:center;">
+                <div class="box-header with-border">
+                  
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                
+                  <div class="box-body">
+
+                    <div class="form-group">
+                      <label for="labelTelefono_M8">Teléfono</label>
+                      <input type="text" class="form-control" id="textTelefono_M8" placeholder="Teléfono" disabled="disabled">
+                    </div>
+
+                     <div class="form-group">
+                      <label for="labelEMail_M8">Correo Electrónico</label>
+                      <input type="text" class="form-control" id="textEMail_M8" placeholder="Correo Electrónico" disabled="disabled">
+                    </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    </div>
+
+                  </div><!-- /.box-body -->
+
+                
+              </div>
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+    <!-- Modal Edit-->
+
+        <div class="modal fade" id="myModalE" tabindex="-1" role="dialog" style="display: height: 350px; align-content:center;" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document" style="height: 350px; align-content:center;">
+                <div class="modal-content" style="height: 350px; align-content:center;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Contacto</h4>
+                    </div>
+                    <div class="modal-body" style="height: 350px; align-content:center;">
+                       
+                        <div class="box box-primary" style="height: 272px; align-content:center;">
+                <div class="box-header with-border">
+                  
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                
+                  <div class="box-body">
+                    <div class="well">
+                        <asp:Literal runat="server" ID="infoCom"></asp:Literal>
+                    </div>
+                  </div><!-- /.box-body -->
+
+                
+              </div>
+
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+
      <!-- Main content -->
    
           <div class="row">
@@ -38,277 +118,52 @@
                     <thead>
                       <tr>
                         <th>Nombre</th>
-                        <th>Acrónimo</th>
                         <th>RIF</th>
                         <th>Teléfono</th>
-                        <th>Fecha Registro</th>
                         <th>Status</th>
                         <th style="text-align: center;">Acciones</th>
                       </tr>
                     </thead>
+                  <asp:Literal runat="server" ID="tabla"></asp:Literal>
                     <tbody>
-                        <tr>
-                                <td>Tangerine Systems</td>
-                                <td>TGE</td>
-                                <td>J-234435634</td>
-                                <td>+584122362151</td>
-                                <td>2016/07/12</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Touch Solutions</td>
-                                <td></td>
-                                <td>J-8673254432</td>
-                                <td>+582129764901</td>
-                                <td>2005/03/30</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Universidad Católica Andrés Bello</td>
-                                <td>UCAB</td>
-                                <td>J-9832457896</td>
-                                <td>+582126659375</td>
-                                <td>2014/05/13</td>
-                                <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>International Business Machines</td>
-                                <td>IBM</td>
-                                <td>J-8764553432</td>
-                                <td>+582129774543</td>
-                                <td>2012/12/22</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                        <tr>
-                                <td>Tangerine Systems</td>
-                                <td>TGE</td>
-                                <td>J-234435634</td>
-                                <td>+584122362151</td>
-                                <td>2016/07/12</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Touch Solutions</td>
-                                <td></td>
-                                <td>J-8673254432</td>
-                                <td>+582129764901</td>
-                                <td>2005/03/30</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Universidad Católica Andrés Bello</td>
-                                <td>UCAB</td>
-                                <td>J-9832457896</td>
-                                <td>+582126659375</td>
-                                <td>2014/05/13</td>
-                                <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>International Business Machines</td>
-                                <td>IBM</td>
-                                <td>J-8764553432</td>
-                                <td>+582129774543</td>
-                                <td>2012/12/22</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                        <tr>
-                                <td>Tangerine Systems</td>
-                                <td>TGE</td>
-                                <td>J-234435634</td>
-                                <td>+584122362151</td>
-                                <td>2016/07/12</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Touch Solutions</td>
-                                <td></td>
-                                <td>J-8673254432</td>
-                                <td>+582129764901</td>
-                                <td>2005/03/30</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Universidad Católica Andrés Bello</td>
-                                <td>UCAB</td>
-                                <td>J-9832457896</td>
-                                <td>+582126659375</td>
-                                <td>2014/05/13</td>
-                                <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>International Business Machines</td>
-                                <td>IBM</td>
-                                <td>J-8764553432</td>
-                                <td>+582129774543</td>
-                                <td>2012/12/22</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                        <tr>
-                                <td>Tangerine Systems</td>
-                                <td>TGE</td>
-                                <td>J-234435634</td>
-                                <td>+584122362151</td>
-                                <td>2016/07/12</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Touch Solutions</td>
-                                <td></td>
-                                <td>J-8673254432</td>
-                                <td>+582129764901</td>
-                                <td>2005/03/30</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Universidad Católica Andrés Bello</td>
-                                <td>UCAB</td>
-                                <td>J-9832457896</td>
-                                <td>+582126659375</td>
-                                <td>2014/05/13</td>
-                                <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>International Business Machines</td>
-                                <td>IBM</td>
-                                <td>J-8764553432</td>
-                                <td>+582129774543</td>
-                                <td>2012/12/22</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-warning glyphicon glyphicon-list-alt" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr> 
+                       
+                            
                     </tbody>
                   </table>
+
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 
             </div><!-- /.col -->
           </div><!-- /.row -->
        
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $('#planillascreadas').DataTable();
+
+                var table = $('#planillascreadas').DataTable();
+                var planilla;
+                var tr;
+
+                $('#planillascreadas tbody').on('click', 'a', function () {
+                    if ($(this).parent().hasClass('selected')) {
+                        req = $(this).parent().prev().prev().prev().prev().text();
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                        $(this).parent().removeClass('selected');
+
+                    }
+                    else {
+                        req = $(this).parent().prev().prev().prev().prev().text();
+                        tr = $(this).parents('tr');//se guarda la fila seleccionada
+                        table.$('tr.selected').removeClass('selected');
+                        $(this).parent().addClass('selected');
+                    }
+                });
+
+            });
+            $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');
+        </script>
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+
 </asp:Content>
