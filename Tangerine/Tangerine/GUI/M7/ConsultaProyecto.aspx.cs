@@ -45,11 +45,12 @@ namespace Tangerine.GUI.M7
 
                         project += ResourceGUIM7.OpenTD + theProject.Nombre.ToString() + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + pruebaM7.ConsultarNombrePropuestaID(theProject.Idpropuesta) + ResourceGUIM7.CloseTd; // Acomodar debe mostrar el nombre y muestra el id
+                        //project += ResourceGUIM7.OpenTD + "" + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Codigo + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Fechainicio + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Fechaestimadafin + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Realizacion.ToString() + ResourceGUIM7.CloseTd;
-                        if (theProject.Estatus.ToString().Equals("En Desarrollo")) 
+                        if (theProject.Estatus.ToString().Equals("En desarrollo")) 
                         {
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.Desarrollo + ResourceGUIM7.CloseTd;
                         }
@@ -57,7 +58,7 @@ namespace Tangerine.GUI.M7
                         {
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.Completado + ResourceGUIM7.CloseTd;
                         }
-                        if (theProject.Estatus.ToString().Equals("Completado a destiempo"))
+                        if (theProject.Estatus.ToString().Equals("A destiempo"))
                         {
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.CompletadoAdestiempo + ResourceGUIM7.CloseTd;
                         }
