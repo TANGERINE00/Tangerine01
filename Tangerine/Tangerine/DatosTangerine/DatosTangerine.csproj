@@ -105,9 +105,6 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -169,7 +166,18 @@
     <EmbeddedResource Include="RecursoGeneralBD.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoGeneralBD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">
+      <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
+      <Name>DominioTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+      <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
+      <Name>ExcepcionesTangerine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
