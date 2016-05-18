@@ -1168,6 +1168,20 @@ AS
 	END
 GO
 
+---- StoredProcedure Consultar Facturas por ID de Compañia ----
+CREATE PROCEDURE M8_ConsultarFacturasCompania
+	@id_compania int
+
+AS
+	BEGIN
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
+			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			FROM FACTURA, COMPANIA 
+			WHERE com_id = @id_compania
+			AND fk_compania_id = com_id;
+	END
+GO
+
 /*---- StoredProcedure Cambiar Estatus de Factura ----
 CREATE PROCEDURE M8_EstatusFactura
 	@id int,
