@@ -232,6 +232,15 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @idNombre.
+        /// </summary>
+        internal static string Prop_Nombre {
+            get {
+                return ResourceManager.GetString("Prop_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to prop_acuerdo_pago.
         /// </summary>
         internal static string PropAcuerdo {

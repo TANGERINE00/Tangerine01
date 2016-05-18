@@ -221,7 +221,7 @@ namespace DatosTangerine.M6
 
 
 
-        public static List<Propuesta>
+        public static Propuesta
          ConsultarPropuestaporNombre(String id)
         {
 
@@ -237,16 +237,15 @@ namespace DatosTangerine.M6
 
             List<Parametro> parametros = new List<Parametro>();
 
-            List<Propuesta> listaPropuestas =
-               new List<Propuesta>();
+           
 
             Parametro parametro = new Parametro(
-               RecursosPropuesta.PropNombre,
-               SqlDbType.Int, id.ToString(), false);
+               RecursosPropuesta.Prop_Nombre,
+               SqlDbType.VarChar, id, false);
             parametros.Add(parametro);
 
-            try
-            {
+            //try
+            //{
                 BDConexion conexion = new BDConexion();
 
                 DataTable dataTablePropuestas =
@@ -255,36 +254,38 @@ namespace DatosTangerine.M6
                    ,
                    parametros);
 
+                 Propuesta propuesta = null;
+
                 foreach (DataRow fila in dataTablePropuestas.Rows)
                 {
-                    listaPropuestas.Add(
-                        new DominioTangerine.Propuesta(
-                           Convert.ToInt32(fila[RecursosPropuesta.ReqProp]),
+                    
+                      propuesta=  new DominioTangerine.Propuesta(
+                           
                            fila[RecursosPropuesta.PropDescripcion].ToString(),
                            fila[RecursosPropuesta.PropDuracion].ToString(),
                            fila[RecursosPropuesta.PropTipoDuracion].ToString(),
                            fila[RecursosPropuesta.PropAcuerdo].ToString(),
                            fila[RecursosPropuesta.PropEstatus].ToString(),
                            fila[RecursosPropuesta.PropMoneda].ToString(),
-                           fila[RecursosPropuesta.PropCantidad].ToString(),
-                           fila[RecursosPropuesta.PropFechaIni].ToString(),
-                           fila[RecursosPropuesta.PropFechaFin].ToString(),
-                           fila[RecursosPropuesta.PropCosto].ToString()
+                           Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]),
+                           Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
+                           Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
+                           Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
                         
 
 
 
 
-                       )
+                       
                     );
                 }
-            }
-            catch (Exception ex)
-            {
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
+            //}
+            ////catch (Exception ex)
+            ////{
+            ////    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            ////}
 
-            return listaPropuestas;
+            return propuesta;
         }
 
 

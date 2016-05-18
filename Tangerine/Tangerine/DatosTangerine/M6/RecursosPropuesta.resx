@@ -224,6 +224,10 @@
   <data name="PropTipoDuracion" xml:space="preserve">
     <value>prop_tipoDuracion</value>
   </data>
+  <data name="Prop_Nombre" xml:space="preserve">
+    <value>@idNombre</value>
+    <comment>atributo paremetro del consultar propuesta por nombre</comment>
+  </data>
   <data name="ReqNombre" xml:space="preserve">
     <value>@req_nombre</value>
     <comment>atributo que identifica el nombre del requerimiento</comment>

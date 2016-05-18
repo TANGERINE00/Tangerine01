@@ -14,7 +14,7 @@ namespace Tangerine.GUI.M6
     {
      
         
-        public List<Propuesta> Prueba; 
+       
     
       
 
@@ -23,18 +23,7 @@ namespace Tangerine.GUI.M6
             
         }
 
-        public void btn_Modifica(String idPropuesta, object sender, EventArgs e)
-        {
-
-            LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
-
-            Prueba = logicaPropuesta.TraerPropuesta(idPropuesta);
-            Console.Write("esto es una prueba" + Prueba[0].Moneda);
-            Debug.Print("esto es una prueba" );
-
-            
-           
-        }
+        
 
     }
 }

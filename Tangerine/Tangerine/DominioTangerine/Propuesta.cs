@@ -70,6 +70,12 @@ namespace DominioTangerine
         private string p9;
         private string p10;
         private string p11;
+        private int p12;
+        private string p13;
+        private string p14;
+        private int p15;
+        private DateTime dateTime1;
+        private DateTime dateTime2;
 
 
 
@@ -185,21 +191,25 @@ namespace DominioTangerine
             this.conEstatus = conEstatus;
         }
 
-        public Propuesta(int p1, string p2, string p3, string p4, string p5, string p6, string p7, string p8, string p9, string p10, string p11)
+        public Propuesta(string p3, string p4, string p5, string p6, string p7, string p8, int p12, DateTime dateTime1, DateTime dateTime2, int p15)
         {
             // TODO: Complete member initialization
-            this.p1 = p1;
-            this.p2 = p2;
-            this.p3 = p3;
-            this.p4 = p4;
-            this.p5 = p5;
-            this.p6 = p6;
-            this.p7 = p7;
-            this.p8 = p8;
-            this.p9 = p9;
-            this.p10 = p10;
-            this.p11 = p11;
+            
+            this._descripcion = p3;
+            this._cantDuracion = p4;
+            this._tipoDuracion = p5;
+            this._acuerdopago = p6;
+            this._estatus = p7;
+            this._moneda = p8;
+            this._entrega = p12;
+            this._feincio = dateTime1;
+            this._fefinal = dateTime2;
+            this._costo = p15;
         }
+
+      
+
+        
 
 
 
