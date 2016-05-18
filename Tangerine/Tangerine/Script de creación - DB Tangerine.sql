@@ -1020,7 +1020,7 @@ AS
 			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
 			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
 			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
-		FROM PROYECTO WHERE DAY(proy_fecha_inicio) = DAY(GETDATE()) and proy_estatus = 'Desarrollo' and proy_acuerdo_pago = 'Mensual';
+		FROM PROYECTO WHERE DAY(proy_fecha_inicio) = DAY(GETDATE()) and proy_estatus = 'En desarrollo' and proy_acuerdo_pago = 'Mensual';
 	END
 GO
 
