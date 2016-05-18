@@ -828,7 +828,7 @@ CREATE PROCEDURE M6_ModificarRequerimiento
 AS
 
 BEGIN
-UPDATE REQUERIMIENTO SET req_nombre = @reqnombre WHERE fk_prop_id = @fkprop  
+UPDATE REQUERIMIENTO SET req_codigo = @reqnombre WHERE fk_prop_id = @fkprop  
 
 END;
 
