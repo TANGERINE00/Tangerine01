@@ -43,7 +43,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\ActiproSoftware.Shared.Net20.dll</HintPath>
     </Reference>
+    <Reference Include="Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Logger.1.0.9.3\lib\net45\Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.0.5797.27550, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
@@ -1306,6 +1318,11 @@
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M9\ResourceLogicaM9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM9.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M9\SeleccionCompania.aspx.cs">
       <DependentUpon>SeleccionCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1446,6 +1463,7 @@
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\Tangerine.Master" />
     <Content Include="GUI\M1\Login.Master" />
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1499,6 +1517,10 @@
     <EmbeddedResource Include="GUI\M8\ResourceGUIM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M9\ResourceLogicaM9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
