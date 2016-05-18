@@ -329,6 +329,7 @@ namespace DatosTangerine.M8
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ContactFacturasCompania, parameters);
 
                 //Guardar los datos 
                 foreach (DataRow row in dt.Rows)
