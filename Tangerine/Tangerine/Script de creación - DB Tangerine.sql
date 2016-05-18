@@ -238,7 +238,8 @@ create table REQUERIMIENTO
 	req_id int IDENTITY(1,1) not null,
 	req_codigo varchar(200) not null,
 	req_descripcion varchar(200) not null,
-	fk_prop_id varchar(200) not null,
+	fk_prop_req_id varchar(200) not null,
+	fk_prop_id int
 
 	constraint pk_req primary key
 	(
@@ -772,11 +773,11 @@ GO
 CREATE PROCEDURE M6_AgregarRequerimiento
 	@reqCodigo varchar(200),
 	@reqDescripcion varchar(200),
-	@fk_pro_req int
+	@fk_pro_req varchar(200)
 
 AS
 	BEGIN
-		 INSERT INTO REQUERIMIENTO(req_codigo, req_descripcion,fk_prop_id)
+		 INSERT INTO REQUERIMIENTO(req_codigo, req_descripcion,fk_prop_req_id)
 	VALUES(@reqCodigo,@reqDescripcion,@fk_pro_req);
 	END;
 GO
