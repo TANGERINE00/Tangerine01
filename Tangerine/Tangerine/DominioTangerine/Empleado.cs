@@ -33,6 +33,20 @@ namespace DominioTangerine
       #endregion
 
       #region constructores
+      public Empleado(string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, 
+                            string genero, DateTime fechaNacimiento, string nivelEsudio, string email, string activo)
+      {
+          this.emp_p_nombre = primerNombre;
+          this.emp_s_nombre = segundoNombre;
+          this.emp_p_apellido = primerApellido;
+          this.emp_s_apellido = segundoApellido;
+          this.emp_genero = genero;
+          this.emp_fecha_nac = fechaNacimiento;
+          this.emp_nivel_estudio = nivelEsudio;
+          this.emp_email = email;
+          this.emp_activo = activo;
+      }
+
       public Empleado()
        {
            emp_num_ficha = 0;
@@ -49,6 +63,7 @@ namespace DominioTangerine
 	       fk_lug_dir_id = 0;
        }
 
+       
        public Empleado(string pNombre, string sNombre, string pApellido, string sApellido,
                string email, string genero, DateTime fechaNacimiento, int ficha, int cedula,
                string nivelEstudio, string activo)
