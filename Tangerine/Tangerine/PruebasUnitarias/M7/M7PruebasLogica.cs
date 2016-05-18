@@ -10,7 +10,7 @@ using DominioTangerine;
 namespace PruebasUnitarias.M7
 {
      [TestFixture]
-    class M7PrueasLogica
+    class M7PruebasLogica
     {
          private Proyecto _proyecto;
         private LogicaProyecto _Logi;

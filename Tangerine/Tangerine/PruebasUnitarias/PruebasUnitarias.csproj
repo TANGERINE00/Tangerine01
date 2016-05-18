@@ -85,7 +85,7 @@
     <Compile Include="M4\PruebaDatos.cs" />
     <Compile Include="M5\PruebasDatos.cs" />
     <Compile Include="M6\Pruebas.cs" />
-    <Compile Include="M7\M7PrueasLogica.cs" />
+    <Compile Include="M7\M7PruebasLogica.cs" />
     <Compile Include="M7\PruebasDatos.cs" />
     <Compile Include="M8\PruebasDatos.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

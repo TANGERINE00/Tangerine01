@@ -1063,7 +1063,7 @@ GO
 --- StoredProsedure consultar nombre de una propuesta ----
 CREATE PROCEDURE M7_ConsultarNombrePropuestaID
 
-     @IdPropuesta int
+     @IdPropuestaPrpu int
 
 AS
 	BEGIN

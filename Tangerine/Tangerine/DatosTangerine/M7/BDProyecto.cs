@@ -494,7 +494,7 @@ namespace DatosTangerine.M7
            {
                theConnection.Conectar();
 
-               theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, idPropuesta.ToString(), false);
+               theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int, idPropuesta.ToString(), false);
                parameters.Add(theParam);
 
                //Guardo la tabla que me regresa el procedimiento de consultar Proyecto

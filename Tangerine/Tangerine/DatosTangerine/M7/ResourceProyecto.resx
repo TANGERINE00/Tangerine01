@@ -261,4 +261,7 @@
   <data name="PrpuNombre" xml:space="preserve">
     <value>prop_nombre</value>
   </data>
+  <data name="ParamIdPropuestaPrpu" xml:space="preserve">
+    <value>@IdPropuestaPrpu</value>
+  </data>
 </root>
