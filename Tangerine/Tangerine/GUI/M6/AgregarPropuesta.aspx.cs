@@ -30,6 +30,7 @@ namespace Tangerine.GUI.M6
         string _fdepago = String.Empty;
         string _estatusW;
         DateTime today = DateTime.Today;
+        String[] _precondicion;
         public string MyProperty { get { return "your value"; } }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -47,7 +48,11 @@ namespace Tangerine.GUI.M6
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            // _nombcodigoPropuesta = cliente.Value + today.ToString("yyyyMMdd");
+            //string _upperText = comboCompañia.SelectedItem.Text.ToUpper();
+            //string vowels = "aeiou";
+            //_upperText = new string(_upperText.Where(c => !vowels.Contains(c)).ToArray());
+
+            //_nombcodigoPropuesta = _upperText + today.ToString("yyMMdd-ss");
             _descripcion = descripcion.Value;
             _Tipoduracion = comboDuracion.SelectedItem.Text;
             _duracion = textoDuracion.Value;
@@ -63,6 +68,11 @@ namespace Tangerine.GUI.M6
             _fdepago = fpago.Value;
             _estatusW = comboEstatus.SelectedItem.Text;
             _idCompañia = comboCompañia.Items[comboCompañia.SelectedIndex].Value;
+            _precondicion = arrPrecondicion.Value.Split(';');
+          
+            Debug.Print(_precondicion[1]);
+
+
             Propuesta propuesta = new Propuesta(_nombcodigoPropuesta, _descripcion, _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,
                                                  _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
             LogicaPropuesta propuestaLogica = new LogicaPropuesta();

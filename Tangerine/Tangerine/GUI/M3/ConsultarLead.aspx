@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultarLead.aspx.cs" Inherits="Tangerine.GUI.M3.ModificarLead" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultarLead.aspx.cs" Inherits="Tangerine.GUI.M3.ConsultarLead" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -17,55 +17,42 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<form class="form-horizontal">
-    <div class="form-group">
-        <label class="control-label col-xs-3">Nombre:</label>
-        <div class="col-xs-9">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Umbrella">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">RIF:</label>
-        <div class="col-xs-9">
-            <input type="password" class="form-control" id="inputPassword" placeholder="J213141415">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Direccion:</label>
-        <div class="col-xs-9">
-            <input type="password" class="form-control" placeholder="El Bosque, Edif Banesco ">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Telefono:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="+585674563498">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Email:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Umbrella@gmail.com">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" >Presupuesto Anual de Inversion:</label>
-        <div class="col-xs-9">
-            <input type="tel" class="form-control" placeholder="12000$">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" >Nombre de Contacto:</label>
-        <div class="col-xs-9">
-            <input type="tel" class="form-control" placeholder="Lic Sabrina Gonzales">
-        </div>
-    </div>
-     <div class="form-group">
-        <label class="control-label col-xs-3" >Telefono de Contacto:</label>
-        <div class="col-xs-9">
-            <input type="tel" class="form-control" placeholder="+584129870998">
-        </div>
-    </div>
+<form class="form-horizontal" runat="server">
+<div class="container">
+	<div class="row" style="margin-top: 5%">
+		<div class="col-md-6">
+			<div id="id_otro" runat="server" class="form-group">
+				<div class="icon-addon addon-lg">
+					
+									<input runat="server" type="text" placeholder="Nombre" class="form-control" id="nombre" name ="nombre">                    
+					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="rif" name ="rif" >  
+                                   <input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="email" name="email">                 
+                     <input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto anual de Inversion" class="form-control" id="pres_anual" name="pres_anual">
+					<input style="margin-top:5%" runat="server" type="text" placeholder="LLamadas" class="form-control" id="llamadas" name ="llamadas" >
+                    <input style="margin-top:5%" runat="server" type="text" placeholder="Visitas" class="form-control" id="visitas" name="visitas" >
+         		
+                    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
+    
+                    </div>
+
+
+
+   
+
+            
+                    
+                    <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
+                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar"   ></asp:Button>
+				</div>	
+			
+            </div>
+		</div>
+        
+	</div>
+</div>
+
+
+</form>
 
  
  

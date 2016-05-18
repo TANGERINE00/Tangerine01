@@ -29,9 +29,19 @@ namespace LogicaTangerine.M6
             }
         }
 
+        public List<Propuesta> TraerPropuesta(String id) 
+        {
+            try
+            {
+                return BDPropuesta.ConsultarPropuestaporNombre(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
+        }
 
-
-
-
+       
     }
 }

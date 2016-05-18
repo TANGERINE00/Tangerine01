@@ -51,6 +51,9 @@ drop procedure M6_ListaPropuestaProyecto;
 drop procedure M6_ModificarPropuesta;
 drop procedure M6_ModificarRequerimiento;
 drop procedure M6_ListarRequerimientos;
+drop procedure M6_AgregarRequerimiento;
+drop procedure M6_ConsultarPropuestaNombre
+
 
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;
@@ -65,6 +68,7 @@ drop procedure M7_EliminarProyectoEmpleado;
 drop procedure M7_ConsultarAcuerdoPagoMensual;
 drop procedure M7_ConsultarProyectoTrabajaEmpleado;
 drop procedure M7_COnsultarProyectosPorGerente;
+drop procedure M7_ConsultarNombrePropuestaID;
 
 drop procedure M8_AgregarFactura;
 drop procedure M8_ConsultarFactura;

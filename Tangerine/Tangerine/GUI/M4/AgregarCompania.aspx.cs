@@ -40,6 +40,7 @@ namespace Tangerine.GUI.M4
             LogicaM4 companyLogic = new LogicaM4();
             companyLogic.AddNewCompany(company);
 
+            Server.Transfer("ConsultarCompania.aspx", true);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace LogicaTangerine.M3
             objetolistaClientePotencial = datosClientePotencial.DatosListarClientePotencial();
             return objetolistaClientePotencial;
         }
-//----------------------------------------listar cliente Potencial -------------------------------------------------
+//----------------------------------------agregar cliente Potencial -------------------------------------------------
 
         
 
@@ -40,8 +40,54 @@ namespace LogicaTangerine.M3
                 throw ex;
             }
         }
+        //------------------------------------consultar un cliente en especifico-------------
+        public ClientePotencial BuscarClientePotencial(int idClientePotencial)
+        {
+            try
+            {
+                return BDClientePotencial.ConsultarClientePotencial(idClientePotencial);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+   //--------------------------------------------borrar cliente-------------------
 
-   
+
+        public bool BorrarNuevoclientePotencial(ClientePotencial elClientePotencial)
+        {
+            try
+            {
+                return BDClientePotencial.BorrarClientePotencial(elClientePotencial);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        public bool ModificarNuevoclientePotencial(ClientePotencial elClientePotencial)
+        {
+            try
+            {
+                return BDClientePotencial.ModificarClientePotencial(elClientePotencial);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
+
+      
     }
 
 
