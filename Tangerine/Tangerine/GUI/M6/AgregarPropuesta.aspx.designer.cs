@@ -64,7 +64,7 @@ namespace Tangerine.GUI.M6 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText arrPrecondicion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden arrPrecondicion;
         
         /// <summary>
         /// comboDuracion control.
@@ -155,14 +155,5 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnagregar;
-        
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

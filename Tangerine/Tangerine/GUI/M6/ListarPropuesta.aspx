@@ -17,8 +17,11 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
-    <script> alert(<%# Eval("iuser_id") %>)</script>
     
+   <%-- <script>
+        alert('Prueba tiene el valor de : ' + $get('<%=  %>').value);
+    </script>
+    --%>
 
   
         <!-- Modal -->
@@ -101,6 +104,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
                     <td>TRSC012016</td>
                     <td>Trascend</td>
