@@ -34,11 +34,7 @@
 					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="rif" name ="rif" >                   
 					<input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="email" name ="email" >                  
 					<input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto" class="form-control" id="presupuesto" name ="presupuesto" >
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="LLamadas" class="form-control" id="llamadas" name="llamadas">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Visitas" class="form-control" id="Visitas" name="telefono2">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Potencial" class="form-control" id="Potencial" name="Correo">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Borrado" class="form-control" id="Borrado" name="Correo2">
-
+                   
          		
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
     
@@ -47,97 +43,10 @@
 
 
 
-          <div class = "dropdown">
-   
-   <button type = "button" class = "btn dropdown-toggle" id = "dropdownMenu1" data-toggle = "dropdown">
-      Numero de Llamadas
-      <span class = "caret"></span>
-   </button>
-   
-   <ul class = "dropdown-menu" role = "menu" aria-labelledby = "dropdownMenu1">
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">0</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">1</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">2</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">3</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">4</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">5</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Mas de 5</a>     
-      </li>
-      
-      <li role = "presentation" class = "divider"></li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Separated link</a>
-      </li>
-   </ul>
-   
-</div>
+  
 
 
 
-       <div class = "dropdown">
-   
-   <button type = "button" class = "btn dropdown-toggle" id = "dropdownMenu1" data-toggle = "dropdown">
-      Numero de Visitas
-      <span class = "caret"></span>
-   </button>
-   
-   <ul class = "dropdown-menu" role = "menu" aria-labelledby = "dropdownMenu1">
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">0</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">1</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">2</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">3</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">4</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">5</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Mas de 5</a>     
-      </li>
-      
-      <li role = "presentation" class = "divider"></li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Separated link</a>
-      </li>
-   </ul>
-   
-</div>
 
                     
     

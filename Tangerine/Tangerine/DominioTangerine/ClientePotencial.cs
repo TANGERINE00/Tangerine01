@@ -98,7 +98,7 @@ namespace DominioTangerine
             borrado = String.Empty;
 
         }
-        
+       //con todos los atributos inclyendo el id
         public ClientePotencial(int inputId, string inputNombre, string inputRif, string inputEmail, float inputPresupuesto,
             int inputNumerollamadas, int inputNumeroVisitas, string inputPotencial, string inputBorrado)
         {
@@ -112,7 +112,7 @@ namespace DominioTangerine
             this.potencial = inputPotencial;
             this.borrado = inputBorrado;
         }
-
+//con todos los atributos sin incluir el id
         public ClientePotencial( string inputNombre, string inputRif, string inputEmail, float inputPresupuesto,
           int inputNumerollamadas, int inputNumeroVisitas, string inputPotencial, string inputBorrado)
         {
@@ -128,7 +128,36 @@ namespace DominioTangerine
         }
 
 
+        //para el agregar
+        public ClientePotencial(string inputNombre, string inputRif, string inputEmail, float inputPresupuesto)
+        {
+
+            this.nombreClientePotencial = inputNombre;
+            this.rifClientePotencial = inputRif;
+            this.emailClientePotencial = inputEmail;
+            this.presupuestoAnual_inversion = inputPresupuesto;
+      
+        }
+   
+     
+
+
+        //para el modificar y el consultar final
+        public ClientePotencial (int inputId,string inputNombre, string inputRif, string inputEmail, float inputPresupuesto,
+            int inputNumerollamadas, int inputNumeroVisitas)
+        {
+            this.idClientePotencial = inputId;
+            this.nombreClientePotencial = inputNombre;
+            this.rifClientePotencial = inputRif;
+            this.emailClientePotencial = inputEmail;
+            this.presupuestoAnual_inversion = inputPresupuesto;
+             this.numeroLlamadas = inputNumerollamadas;
+            this.numeroVisitas = inputNumeroVisitas;
+        }
+
+
         #endregion
+
 
 
     }
