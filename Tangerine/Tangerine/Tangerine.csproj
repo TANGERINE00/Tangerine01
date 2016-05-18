@@ -1474,11 +1474,8 @@
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
     <Content Include="GUI\Master\Tangerine.Master" />
     <Content Include="GUI\M1\Login.Master" />
-<<<<<<< HEAD
     <Content Include="packages\NUnit.2.6.4\NUnit.2.6.4.nupkg" />
-=======
     <Content Include="packages.config" />
->>>>>>> f4abba9c592220c4ea0873f0d010f3cf40f12c73
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1514,8 +1511,6 @@
       <Name>LogicaTangerine</Name>
     </ProjectReference>
   </ItemGroup>
-<<<<<<< HEAD
-=======
   <ItemGroup>
     <EmbeddedResource Include="GUI\M1\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1525,17 +1520,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M4\ResourceGUIM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM4.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\M5\ResourceGUIM5.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceGUIM5.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M7\ResourceGUIM7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1550,7 +1537,6 @@
       <LastGenOutput>ResourceLogicaM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
->>>>>>> f4abba9c592220c4ea0873f0d010f3cf40f12c73
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
