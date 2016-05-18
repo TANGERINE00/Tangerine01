@@ -24,19 +24,6 @@ namespace Tangerine.GUI.M2
             }
         }
 
-        public string cambio
-        {
-            get
-            {
-                return this.CamRol.Text;
-            }
-            set
-            {
-                this.CamRol.Text = value;
-            }
-        }
-
-
 
         protected void Page_Load( object sender, EventArgs e )
         {
@@ -57,6 +44,14 @@ namespace Tangerine.GUI.M2
 
         }
 
+        [System.Web.Services.WebMethod]
+        public static string GetData(string Id)
+        {
+            return Id;
+        }
+        
+
+        /*
         void ClickCambiar(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -69,7 +64,7 @@ namespace Tangerine.GUI.M2
         //    }
         
         }
-
+        */
         protected void botonCambiar_Click( object sender, EventArgs e )
         {
             /*string usuarioNombre = usuarioCambiar.Value;
