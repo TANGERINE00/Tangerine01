@@ -79,6 +79,15 @@ namespace Tangerine.GUI.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-danger&quot;&gt;Cancelado&lt;/span&gt;.
+        /// </summary>
+        internal static string Cancelado {
+            get {
+                return ResourceManager.GetString("Cancelado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &gt;&lt;/a&gt;.
         /// </summary>
         internal static string CloseBoton {
@@ -129,6 +138,33 @@ namespace Tangerine.GUI.M7 {
         internal static string Codigo {
             get {
                 return ResourceManager.GetString("Codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-success&quot;&gt;Completado&lt;/span&gt;.
+        /// </summary>
+        internal static string Completado {
+            get {
+                return ResourceManager.GetString("Completado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-warning&quot;&gt;Completado a destiempo&lt;/span&gt;.
+        /// </summary>
+        internal static string CompletadoAdestiempo {
+            get {
+                return ResourceManager.GetString("CompletadoAdestiempo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-primary&quot;&gt;En Desarrollo&lt;/span&gt;.
+        /// </summary>
+        internal static string Desarrollo {
+            get {
+                return ResourceManager.GetString("Desarrollo", resourceCulture);
             }
         }
         
