@@ -310,6 +310,57 @@ namespace DatosTangerine.M8
         }
 
         /// <summary>
+        /// Funcion que permite buscar todas las facturas asociadas a una compañia
+        /// </summary>
+        /// <returns>Retorna la lista con todas las facturas</returns>
+        public static List<Facturacion> ContactFacturasCompania( int idCompania )
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Facturacion> listFactura = new List<Facturacion>();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, idCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
+                    DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
+                    DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
+                    double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                    double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                    int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
+                    int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
+                    int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
+
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                                                        facEstatus, facIdProyecto, facIdCompania);
+                    listFactura.Add(theFactura);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listFactura;
+        }
+
+        /// <summary>
         /// Metodo para consultar una compañia en especifico.
         /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
         /// </summary>
