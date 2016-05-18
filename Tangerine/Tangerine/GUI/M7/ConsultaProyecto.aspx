@@ -45,38 +45,7 @@
                                 <th style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Proyecto A</td>
-                                <td>Sistema A</td>
-                                <td>Codigo</td>
-                                <td>yyy/mm/dd</td>
-                                <td>yyy/mm/dd</td>
-                                <td>30%</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>Proyecto B</td>
-                                <td>Sistema B</td>
-                                <td>Codigo</td>
-                                <td>yyy/mm/dd</td>
-                                <td>yyy/mm/dd</td>
-                                <td>50%</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;">
-                                    <a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-success glyphicon glyphicon-ok" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#myModal"></a>
-                                    <a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></a>
-                                </th>
-                            </tr>
-                        </tbody>
+                        <asp:Literal runat="server" ID="tabla"></asp:Literal>
                     </table>
                 </div>
                 <!-- /.box-body -->
@@ -87,5 +56,32 @@
         <!-- /.col -->
     </div>
     <!-- /.row -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#planillascreadas').DataTable();
 
+            var table = $('#planillascreadas').DataTable();
+            var planilla;
+            var tr;
+
+            $('#planillascreadas tbody').on('click', 'a', function () {
+                if ($(this).parent().hasClass('selected')) {
+                    req = $(this).parent().prev().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    $(this).parent().removeClass('selected');
+
+                }
+                else {
+                    req = $(this).parent().prev().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).parent().addClass('selected');
+                }
+            });
+
+        });
+        $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');
+    </script>
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 </asp:Content>
