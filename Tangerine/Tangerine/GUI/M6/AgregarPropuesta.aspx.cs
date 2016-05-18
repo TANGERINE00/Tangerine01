@@ -10,6 +10,7 @@ using LogicaTangerine;
 using LogicaTangerine.M6;
 using LogicaTangerine.M4;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Tangerine.GUI.M6
 {
@@ -48,11 +49,10 @@ namespace Tangerine.GUI.M6
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            //string _upperText = comboCompañia.SelectedItem.Text.ToUpper();
-            //string vowels = "aeiou";
-            //_upperText = new string(_upperText.Where(c => !vowels.Contains(c)).ToArray());
-
-            //_nombcodigoPropuesta = _upperText + today.ToString("yyMMdd-ss");
+            string _upperText = comboCompañia.SelectedItem.Text.ToUpper();
+            string novocales;
+            novocales = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU](?!$)", "");
+            _nombcodigoPropuesta = novocales + today.ToString("yyMMdd");
             _descripcion = descripcion.Value;
             _Tipoduracion = comboDuracion.SelectedItem.Text;
             _duracion = textoDuracion.Value;
@@ -71,12 +71,29 @@ namespace Tangerine.GUI.M6
             _precondicion = arrPrecondicion.Value.Split(';');
           
             Debug.Print(_precondicion[1]);
+            Debug.Print("lala"+(1-_precondicion.Length));
 
 
             Propuesta propuesta = new Propuesta(_nombcodigoPropuesta, _descripcion, _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,
                                                  _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
             LogicaPropuesta propuestaLogica = new LogicaPropuesta();
             propuestaLogica.agregar(propuesta);
+
+
+            for (int i = 0; i <= _precondicion.Length-1; i++)
+            {
+                string codReq = novocales+"_"+i.ToString();
+                Debug.Print(_precondicion[i]);
+
+                Requerimiento requerimiento = new Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
+                LogicaRequerimiento requerimientoLogica = new LogicaRequerimiento();
+
+                requerimientoLogica.agregar(requerimiento);
+
+            }
+
+
+
 
 
         }

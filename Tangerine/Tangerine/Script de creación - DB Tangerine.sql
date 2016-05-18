@@ -238,7 +238,8 @@ create table REQUERIMIENTO
 	req_id int IDENTITY(1,1) not null,
 	req_codigo varchar(200) not null,
 	req_descripcion varchar(200) not null,
-	fk_prop_id int not null,
+	fk_prop_req_id varchar(200) not null,
+	fk_prop_id int
 
 	constraint pk_req primary key
 	(
@@ -770,13 +771,15 @@ GO
 
 --Agregar Requerimiento
 CREATE PROCEDURE M6_AgregarRequerimiento
-	@id_prop int
+	@reqCodigo varchar(200),
+	@reqDescripcion varchar(200),
+	@fk_pro_req varchar(200)
 
 AS
 	BEGIN
-		SELECT req_id as req_id, req_codigo as req_codigo, req_descripcion as req_descripcion
-		FROM REQUERIMIENTO,PROPUESTA WHERE fk_prop_id = @id_prop;
-	END
+		 INSERT INTO REQUERIMIENTO(req_codigo, req_descripcion,fk_prop_req_id)
+	VALUES(@reqCodigo,@reqDescripcion,@fk_pro_req);
+	END;
 GO
 
 --Lista Propuesta que no estan en proyecto
