@@ -80,6 +80,46 @@ namespace DatosTangerine.M6
             return true;
         }
 
+        /// <summary>
+        /// Metodo para agregar un Requerimiento en la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Requerimiento para agregar en bd</param>
+        /// <returns>true si fue agregado</returns>
+
+
+        public static bool agregarRequerimiento(Requerimiento elRequerimiento)
+        {
+            List<Parametro> parametros = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro parametro = new Parametro();
+
+            try
+            {
+            //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+            //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                parametro = new Parametro(RecursosPropuesta.ParamCodigoReq, SqlDbType.VarChar, elRequerimiento.CodigoRequerimiento, false);
+                parametros.Add(parametro);
+
+                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
+                parametro = new Parametro(RecursosPropuesta.ParamDescriReq, SqlDbType.VarChar, elRequerimiento.Descripcion, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursosPropuesta.ParamIdPropuestaReq, SqlDbType.VarChar, elRequerimiento.CodigoPropuesta, false);
+                parametros.Add(parametro);
+
+
+                //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarRequerimiento y todos los parametros que recibe
+                List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarRequerimiento, parametros);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
+        }
+
 
 
 
@@ -96,9 +136,9 @@ namespace DatosTangerine.M6
 
 
 
-       
-        
-        public   List<Propuesta> PropuestaProyecto()
+
+
+        public List<Propuesta> PropuestaProyecto()
         {
             List<Parametro> parametros = new List<Parametro>();
             List<Propuesta> listaPropuesta = new List<Propuesta>();
@@ -106,7 +146,7 @@ namespace DatosTangerine.M6
             Parametro parametro = new Parametro();
 
 
-            try 
+            try
             {
                 theConnection.Conectar();
 
@@ -116,9 +156,9 @@ namespace DatosTangerine.M6
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    String conEstatus =   row[RecursosPropuesta.PropEstatus].ToString();
+                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
                     String conNombre = row[RecursosPropuesta.PropNombre].ToString();
-                    
+
 
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
                     Propuesta propuestas = new Propuesta();
@@ -130,20 +170,20 @@ namespace DatosTangerine.M6
 
             catch (Exception ex)
             {
-                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
 
 
             return listaPropuesta;
-        
-        
-        
+
+
+
         }
 
 
 
-        
+
         /// <summary>
         /// Método para listar los requerimientos por propuesta 
         /// </summary>
@@ -153,8 +193,7 @@ namespace DatosTangerine.M6
 
 
 
-        public static List<Requerimiento>
-         ConsultarRequerimientosPorPropuesta(int id)
+        public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(int id)
         {
 
             //if (id == -1)
@@ -182,10 +221,7 @@ namespace DatosTangerine.M6
                 BDConexion conexion = new BDConexion();
 
                 DataTable dataTableRequerimientos =
-                   conexion.EjecutarStoredProcedureTuplas(
-                   RecursosPropuesta.ListarRequerimiento
-                   ,
-                   parametros);
+                   conexion.EjecutarStoredProcedureTuplas(RecursosPropuesta.ListarRequerimiento,parametros);
 
                 foreach (DataRow fila in dataTableRequerimientos.Rows)
                 {
@@ -200,7 +236,7 @@ namespace DatosTangerine.M6
             }
             catch (Exception ex)
             {
-                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
             return listaRequerimientos;
@@ -221,8 +257,7 @@ namespace DatosTangerine.M6
 
 
 
-        public static List<Propuesta>
-         ConsultarPropuestaporNombre(String id)
+        public static List<Propuesta> ConsultarPropuestaporNombre(String id)
         {
 
             //if (id == -1)
@@ -270,7 +305,7 @@ namespace DatosTangerine.M6
                            fila[RecursosPropuesta.PropFechaIni].ToString(),
                            fila[RecursosPropuesta.PropFechaFin].ToString(),
                            fila[RecursosPropuesta.PropCosto].ToString()
-                        
+
 
 
 
@@ -292,11 +327,11 @@ namespace DatosTangerine.M6
 
 
 
-     
-        
-           
 
-    
+
+
+
+
 
 
     }
