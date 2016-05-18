@@ -41,7 +41,7 @@
                   </div><!-- /.box-body -->
 
                   <div class="box-footer"  runat ="server">
-                    <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Anular"   ></asp:Button>
+                    <asp:Button id="buttomGenerar_M8" style="margin-top:5%" class="btn btn-danger"  type="submit" runat="server" Text = "Anular"   ></asp:Button>
                   </div>
                 </form>
               </div><!-- /.box -->

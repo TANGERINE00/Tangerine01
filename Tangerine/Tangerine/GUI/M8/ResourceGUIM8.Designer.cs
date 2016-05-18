@@ -79,6 +79,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; disabled=&quot;disabled&quot; href=&quot;AnularFacturaM8.aspx?idCont=.
+        /// </summary>
+        internal static string BotonAnularInhabilitado {
+            get {
+                return ResourceManager.GetString("BotonAnularInhabilitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ConsultarFacturaM8.aspx.
         /// </summary>
         internal static string BotonGenerarFactura {
@@ -124,11 +133,29 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; disabled=&quot;disabled&quot; href=&quot;ModificarFacturaM8.aspx?idCont=.
+        /// </summary>
+        internal static string BotonModifInhabilitado {
+            get {
+                return ResourceManager.GetString("BotonModifInhabilitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; class=&quot;btn btn-primary glyphicon glyphicon-euro&quot; .
         /// </summary>
         internal static string BotonPagar {
             get {
                 return ResourceManager.GetString("BotonPagar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; disabled=&quot;disabled&quot; class=&quot;btn btn-primary glyphicon glyphicon-euro&quot; .
+        /// </summary>
+        internal static string BotonPagarInhabilitado {
+            get {
+                return ResourceManager.GetString("BotonPagarInhabilitado", resourceCulture);
             }
         }
         

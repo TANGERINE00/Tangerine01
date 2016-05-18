@@ -36,11 +36,9 @@ namespace Tangerine.GUI.M8
 
             LogicaM8 prueba = new LogicaM8();
             LogicaM4 pruebaM4 = new LogicaM4();
-            //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
-            //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
-            //prueba.fillTable(1,1);
             List<Facturacion> listFactura = prueba.getFacturas();
-
+            bool pagada = false;
+            bool anulada = false;
 
             try
             {
@@ -65,11 +63,13 @@ namespace Tangerine.GUI.M8
                     //Equals uno para factura "Pagada"
                     else if (theFactura.estatusFactura.Equals(1))
                     {
+                        pagada = true;
                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
                     }
                     //Equals dos para factura "Anulada"
                     else if (theFactura.estatusFactura.Equals(2))
                     {
+                        anulada = true;
                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
                     }
 
@@ -78,19 +78,27 @@ namespace Tangerine.GUI.M8
 
                     //Acciones de cada contacto
                     factura += ResourceGUIM8.OpenTD;
-                    factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                               ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                               ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
 
+                    if (pagada == true || anulada == true)
+                    {
+                        factura += ResourceGUIM8.BotonModifInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                   ResourceGUIM8.BotonAnularInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                   ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
 
-                    factura += ResourceGUIM8.CloseTD;
+                        factura += ResourceGUIM8.CloseTD;
+                        factura += ResourceGUIM8.CloseTR;
+                    }
+                    else
+                    {
+                        factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
 
-
-
-                    /* factura += ResourceGUIM8.OpenTD + ResourceGUIM8.BotonInfo + ResourceGUIM8.BotonModif + 
-                                ResourceGUIM8.CloseTD;  */
-
-                    factura += ResourceGUIM8.CloseTR;
+                        factura += ResourceGUIM8.CloseTD;
+                        factura += ResourceGUIM8.CloseTR;
+                    }
+                    anulada = false;
+                    pagada = false;
                 }
 
             }
