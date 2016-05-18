@@ -35,7 +35,7 @@
                 <!-- table start -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th>Nombre</th>
                                 <th>Acrónimo</th>
@@ -45,33 +45,10 @@
                                 <th>Status</th>
                                 <th style="text-align: center;">Información</th>
                             </tr>
-                            <tr>
-                                <td>Tangerine Systems</td>
-                                <td>TGE</td>
-                                <td>J-234435634</td>
-                                <td>tangerine00@gmail.com</td>
-                                <td>14/04/2016</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
-                            </tr>
-                            <tr>
-                                <td>Touch Solutions</td>
-                                <td></td>
-                                <td>J-8673254432</td>
-                                <td>touchs@gmail.com</td>
-                                <td>30/01/2005</td>
-                                <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
-                            </tr>
-                            <tr>
-                                <td>Universidad Católica Andrés Bello</td>
-                                <td>UCAB</td>
-                                <td>J-9832457896</td>
-                                <td>ucab@gmail.com</td>
-                                <td>13/05/2014</td>
-                                <td><span class="label label-danger">Inabilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
-                            </tr>
+                        </thead>
+                        <tbody>
+                            <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                        </tbody> 
                             <tr>
                                 <td>International Business Machines</td>
                                 <td>IBM</td>
@@ -81,7 +58,7 @@
                                 <td><span class="label label-success">Habilitada</span></td>
                                 <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
                             </tr>
-                        </tbody>
+ 
                     </table>
                 </div>
               </div><!-- /.box -->

@@ -1306,6 +1306,11 @@
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M9\ResourceLogicaM9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM9.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M9\SeleccionCompania.aspx.cs">
       <DependentUpon>SeleccionCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1499,6 +1504,10 @@
     <EmbeddedResource Include="GUI\M8\ResourceGUIM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M9\ResourceLogicaM9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

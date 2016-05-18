@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DominioTangerine;
+using DatosTangerine.M9;
+using DatosTangerine.M4;
+
+namespace LogicaTangerine.M9
+{
+    public class LogicaM9
+    {
+
+        public List<Compania> getCompanias()
+        { 
+            try
+            {
+                return BDCompania.ConsultCompanies();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+    }
+}
