@@ -147,6 +147,10 @@
     <value>BDTangerine</value>
   </data>
   <data name="StringDeConexion" xml:space="preserve">
+<<<<<<< HEAD
+    <value>Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\BaseDeDatosTGE.mdf;Integrated Security=True</value>
+=======
     <value>Data Source=ROROLFO-PC;Initial Catalog=BDTangerine;Integrated Security=True</value>
+>>>>>>> f4abba9c592220c4ea0873f0d010f3cf40f12c73
   </data>
 </root>

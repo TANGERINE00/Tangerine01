@@ -67,42 +67,6 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText presupuesto;
         
         /// <summary>
-        /// llamadas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText llamadas;
-        
-        /// <summary>
-        /// Visitas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Visitas;
-        
-        /// <summary>
-        /// Potencial control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Potencial;
-        
-        /// <summary>
-        /// Borrado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Borrado;
-        
-        /// <summary>
         /// btnaceptar control.
         /// </summary>
         /// <remarks>
