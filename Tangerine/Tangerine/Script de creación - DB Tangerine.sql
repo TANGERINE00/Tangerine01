@@ -1057,7 +1057,18 @@ AS
 	END
 GO
 
+--- StoredProsedure consultar nombre de una propuesta ----
+CREATE PROCEDURE M7_ConsultarNombrePropuestaID
 
+     @IdPropuesta int
+
+AS
+	BEGIN
+		SELECT prop_nombre
+		FROM PROPUESTA 
+		WHERE prop_id = @IdPropuesta;
+	END
+GO
 
 -----------------------------------
 ------Fin Stored Procedure M7------
