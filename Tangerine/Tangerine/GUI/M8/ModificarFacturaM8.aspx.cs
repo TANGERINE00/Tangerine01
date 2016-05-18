@@ -50,7 +50,7 @@ namespace Tangerine.GUI.M8
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void buttomModificarFactura_Click ( object sender , EventArgs e )
+        protected void buttonModificarFactura_Click ( object sender , EventArgs e )
         {
             _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
             _fechaEmision = DateTime.Parse(textFecha_M8.Value);
