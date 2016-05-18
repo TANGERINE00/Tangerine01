@@ -1,0 +1,8 @@
+2016-05-18 17:04:03,910 INFO  BDContacto - *******************************************************
+2016-05-18 17:04:03,915 INFO  BDContacto - Clase: BDContacto
+2016-05-18 17:04:03,915 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-18 17:04:03,915 INFO  BDContacto - Metodo: AddContact
+2016-05-18 17:04:05,960 INFO  BDContacto - *******************************************************
+2016-05-18 17:04:05,960 INFO  BDContacto - Clase: BDContacto
+2016-05-18 17:04:05,960 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-18 17:04:05,960 INFO  BDContacto - Metodo: AddContact
