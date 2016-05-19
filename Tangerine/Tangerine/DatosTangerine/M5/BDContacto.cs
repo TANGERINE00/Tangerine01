@@ -453,7 +453,7 @@ namespace DatosTangerine.M5
             {
                 theConnection.Conectar();
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, theProyect..ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, theProyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
