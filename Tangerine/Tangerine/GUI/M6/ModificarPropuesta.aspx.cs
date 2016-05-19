@@ -42,7 +42,7 @@ namespace Tangerine.GUI.M6
 
 
         /// <summary>
-        /// Metodo del boton modificar de la vista ListarProuestas
+        /// Metodo de la acción modificar de la vista de listar propuesta. 
         /// </summary>
         /// <param name="idPropuesta"></param>
 
@@ -58,13 +58,42 @@ namespace Tangerine.GUI.M6
 
 
 
+
+
+
         /// <summary>
-        /// Metodo para.....  
+        /// Metodo para cargar el o los requerimientos asociados a la propuesta seleccionada en la pantalla de listar. 
+        /// </summary>
+        /// <param name="idPropuesta"></param>
+
+        public void btn_ModificaReq(String idPropuesta) 
+        {
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// Metodo para modificar la propuesta completa en BD.
         /// </summary>
 
 
-        public void hola() 
+        public void ModificarTotal() 
         {
+
+
         }
 
 
