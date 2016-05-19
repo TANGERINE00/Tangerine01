@@ -44,8 +44,8 @@ namespace Tangerine.GUI.M1
             }
             else
             {
-                
-                Response.Redirect("Login.aspx");
+                mensaje.Text = "Error en el inicio de sesión";
+                //Response.Redirect("Login.aspx");
             }
             
             

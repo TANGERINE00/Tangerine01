@@ -76,6 +76,7 @@ namespace LogicaTangerine.M1
             try
             {
                 Usuario theUsuario = new Usuario(nombreUsuario,clave);
+                theUsuario.Contrasenia = theUsuario.GetMD5(clave);
                 theUsuario = BDUsuario.ObtenerDatoUsuario(theUsuario);
 
                 if (theUsuario.Activo != null)

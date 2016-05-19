@@ -40,5 +40,12 @@ namespace Tangerine.GUI.Master
                 }
             }
         }
+
+        public void CerrarSesion(object sender, EventArgs e)
+        {
+            Util._theGlobalUser = null;
+            HttpContext.Current.Session.Abandon();
+            Response.Redirect("../M1/Login.aspx");
+        }
     }
 }

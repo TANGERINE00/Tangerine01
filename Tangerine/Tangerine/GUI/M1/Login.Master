@@ -53,6 +53,7 @@
                 <a href="RecuperarContraseñaPregunta.aspx" style="color:#FFFFFF;">Recuperar contraseña</a><br>
               </div>
             </div>
+            <asp:label id="mensaje" runat="server" class="login-box-msg" style="color:#FFFFFF;"/>
           </form>
         </div>
      </div>
