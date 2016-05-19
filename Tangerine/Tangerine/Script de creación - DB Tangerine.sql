@@ -1069,7 +1069,7 @@ AS
 	BEGIN
 		SELECT prop_nombre
 		FROM PROPUESTA 
-		WHERE prop_id = @IdPropuesta;
+		WHERE prop_id = @IdPropuestaPrpu;
 	END
 GO
 
