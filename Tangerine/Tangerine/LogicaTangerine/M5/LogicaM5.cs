@@ -10,14 +10,6 @@ namespace LogicaTangerine.M5
 {
     public class LogicaM5
     {
-        public Contacto theContact;
-        List<Contacto> answer;
-        bool answer2;
-
-        public void init()
-        {
-
-        }
 
         /// <summary>
         /// Metodo para consultar contactos de una empresa, sirve para Compania y Cliente Potencial.
