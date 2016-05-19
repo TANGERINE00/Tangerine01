@@ -12,11 +12,37 @@
     <li><a href="#">Ejemplo</a></li>
     <li class="active">Página en blanco</li>
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+
+        function ajaxRes() {
+            $('.table > tbody > tr > td:nth-child(6) > a')
+                .click(function (e) {
+                    e.preventDefault();
+                    var nombre = $(this).closest("tr").find("td:nth-child(2)").text();
+                    var apellido = $(this).closest("tr").find("td:nth-child(3)").text();
+                    var empleadoF = $(this).closest("tr").find("td:nth-child(1)").text();
+                    document.getElementById("ContentPlaceHolder1_fichaEmp").value = empleadoF;
+                    var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
+                    $.ajax({
+                        type: "POST",
+                        url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
+                        data: param,
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: function (result) {
+                            var local = JSON.stringify(result);
+                            var obj = JSON.parse(local);
+                            document.getElementById("ContentPlaceHolder1_userDefault").value = obj.d;
+                        },
+                        failure: function (result) {
+                            alert("_");
+                        }
+                    });
+                });
+        }
+    </script>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -27,7 +53,14 @@
                     <h4 class="modal-title" id="myModalLabel">Creación de cuenta de usuario</h4>
                 </div>
                 <div class="modal-body">  
-                    <div class="box-body">     
+                    <div class="box-body"> 
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Ficha de empleado</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" disabled="disabled">
+                            </div>
+                        </div> 
+                        <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
@@ -38,14 +71,14 @@
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="contraseña">
+                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server">
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
                             <div class="col-sm-10">
-                                <select class="form-control">
+                                <select class="form-control" runat="server" id="rolDefault">
                                     <option>Administrador</option>
                                     <option>Director</option>
                                     <option>Gerente</option>
@@ -55,8 +88,11 @@
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                        <button id="botonCrear" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCrear_Click">Crear</button>
+                        <form runat="server" ID="form1">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+                            <!--<button id="botonCrear" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCrear_Click">Crear</button>-->
+                            <asp:Button runat="server" ID="btnCrear" class="btn btn-primary pull-right" OnClick="btnCrear_Click" Text="Crear"/>
+                        </form>
                     </div><!-- /.box-footer -->
                 </div>
             </div>
@@ -121,31 +157,5 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-
-        function ajaxRes() {
-            $('.table > tbody > tr > td:nth-child(6) > a')
-                .click(function (e) {
-                    e.preventDefault();
-                    var nombre = $(this).closest("tr").find("td:nth-child(2)").text();
-                    var apellido = $(this).closest("tr").find("td:nth-child(3)").text();
-                    var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
-                    $.ajax({
-                        type: "POST",
-                        url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
-                        data: param,
-                        contentType: 'application/json; charset=utf-8',
-                        dataType: 'json',
-                        success: function (result) {
-                            var local = JSON.stringify(result);
-                            var obj = JSON.parse(local);
-                            document.getElementById("ContentPlaceHolder1_userDefault").value = obj.d;
-                        },
-                        failure: function (result) {
-                            alert("_"); 
-                        }
-                    });
-                });
-        }
-    </script>
+    
 </asp:Content>

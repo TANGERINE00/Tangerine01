@@ -1,4 +1,5 @@
-﻿using LogicaTangerine.M2;
+﻿using DominioTangerine;
+using LogicaTangerine.M2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,10 +57,14 @@ namespace Tangerine.GUI.M2
             return resultado;
         }
 
-        [WebMethod]
-        protected void botonCrear_Click(object sender, EventArgs e)
+        protected void btnCrear_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Entro");
+            string rol = rolDefault.Value.ToString();
+            string nombreUsuario = userDefault.Value.ToString();
+            string contraseniaUsuario = passwordDefault.Value.ToString();
+            int fichaEmpleado = int.Parse(fichaEmp.Value.ToString());
+
+            
         }
     }
 }
