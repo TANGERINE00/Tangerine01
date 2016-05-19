@@ -1473,7 +1473,6 @@
     <Content Include="GUI\Master\Tangerine.Master" />
     <Content Include="GUI\M1\Login.Master" />
     <Content Include="packages\NUnit.2.6.4\NUnit.2.6.4.nupkg" />
-    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
