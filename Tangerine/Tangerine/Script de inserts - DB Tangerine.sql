@@ -124,3 +124,92 @@ insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_mo
 VALUES (4,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Analisis Final',1,1,4);
 SET IDENTITY_INSERT FACTURA OFF
 
+-----Inserts de Usuarios y Roles-------
+insert into ROL values (1, 'Administrador');
+insert into ROL values (2, 'Gerente');
+insert into ROL values (3, 'Director');
+insert into	ROL values (4, 'Programador');
+
+insert into MENU values (1, 'Configuracion');
+insert into OPCION values (1, 'RegistrarUsuario', '../M2/RegistroUsuario.aspx', 1);
+insert into OPCION values (2, 'ModificarRol', '../M2/CambiarRol.aspx', 1);
+insert into OPCION values (21, 'Usuario', 'Usuario', 1);
+
+insert into MENU values (2, 'Gestión de Leads');
+insert into OPCION values (3, 'Listar', '../M3/Listar.aspx', 2);
+
+insert into MENU values (3, 'Gestión de Compañías');
+insert into OPCION values (4, 'RegistrarCompañía', '../M4/AgregarCompania.aspx', 3);
+insert into OPCION values (5, 'ConsultarCompañía', '../M4/ConsultarCompania.aspx', 3);
+insert into OPCION values (6, 'ModificarCompañía', '../M4/ModificarCompania.aspx', 3);
+insert into OPCION values (7, 'Habilitar/Deshabilitar', '../M4/HabilitarCompania.aspx', 3);
+insert into OPCION values (22, 'GestionDeCompañias', 'Gestión de Compañías', 3);
+
+insert into MENU values (4, 'Gestión de Contactos');
+insert into OPCION values (8, 'Contactos', '../M5/ConsultarContactos.aspx', 4)
+
+insert into MENU values (5, 'Gestión de Propuestas');
+insert into OPCION values (9, 'AgregarPropuesta', '../M6/AgregarPropuesta.aspx', 5);
+insert into OPCION values (10, 'ConsultarPropuestas', '../M6/ListarPropuesta.aspx', 5);
+insert into OPCION values (23, 'GestionDePropuestas', 'Gestión de Propuestas', 5);
+
+insert into MENU values (6, 'Gestión de Proyectos');
+insert into OPCION values (11, 'CrearProyecto', '../M7/Agregar proyecto.aspx', 6);
+insert into OPCION values (12, 'ModificarProyecto', '../M7/modificarProyecto.aspx', 6);
+insert into OPCION values (13, 'ConsultarProyecto', '../M7/ConsultaProyecto.aspx', 6);
+insert into OPCION values (24, 'GestionDeProyectos', 'Gestión de Proyectos', 6);
+
+insert into MENU values (7, 'Gestión de Facturas');
+insert into OPCION values (14, 'GenerarFactura', '../M8/GenerarFacturaM8.aspx', 7);
+insert into OPCION values (15, 'ConsultarFactura', '../M8/ConsultarFacturaM8.aspx', 7);
+insert into OPCION values (16, 'ModificarFactura', '../M8/ModificarFacturaM8.aspx', 7);
+insert into OPCION values (17, 'AnularFactura', '../M8/AnularFacturaM8.aspx', 7);
+insert into OPCION values (25, 'GestionDeFacturas', 'Gestión de Facturas', 7);
+
+insert into MENU values (8, 'Gestión de Pagos');
+insert into OPCION values (18, 'Cargarpago', '../M9/SeleccionCompania.aspx', 8);
+
+insert into MENU values (9, 'Gestión de Empleados');
+insert into OPCION values (19, 'Empleados', '../M1/EmpleadosAdmin.aspx', 9);
+insert into OPCION values (20, 'Cargos', '../M10/AdminCargo.aspx', 9);
+insert into OPCION values (26, 'GestionDeEmpleados', 'Gestión de Empleados', 9);
+
+insert into ROL_OPCION values (2, 14);
+insert into ROL_OPCION values (2, 15);
+insert into ROL_OPCION values (2, 16);
+insert into ROL_OPCION values (2, 17);
+insert into ROL_OPCION values (2, 25);
+insert into ROL_OPCION values (2, 18);
+
+insert into ROL_OPCION values (3, 1);
+insert into ROL_OPCION values (3, 2);
+insert into ROL_OPCION values (3, 21);
+
+insert into ROL_OPCION values (4, 1);
+insert into ROL_OPCION values (4, 2);
+insert into ROL_OPCION values (4, 21);
+insert into ROL_OPCION values (4, 3);
+insert into ROL_OPCION values (4, 4);
+insert into ROL_OPCION values (4, 5);
+--insert into ROL_OPCION values (4, 6);
+--insert into ROL_OPCION values (4, 7);
+insert into ROL_OPCION values (4, 22);
+insert into ROL_OPCION values (4, 8);
+insert into ROL_OPCION values (4, 9);
+insert into ROL_OPCION values (4, 10);
+insert into ROL_OPCION values (4, 23);
+insert into ROL_OPCION values (4, 11);
+insert into ROL_OPCION values (4, 14);
+insert into ROL_OPCION values (4, 15);
+insert into ROL_OPCION values (4, 16);
+insert into ROL_OPCION values (4, 17);
+insert into ROL_OPCION values (4, 25);
+insert into ROL_OPCION values (4, 18);
+insert into ROL_OPCION values (4, 19);
+insert into ROL_OPCION values (4, 20);
+insert into ROL_OPCION values (4, 26);
+
+insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
+insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
+insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
+---------Fin de Inserts de Usuarios y Roles-----------
