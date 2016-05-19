@@ -97,7 +97,7 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public static Boolean DeleteContact(int IdContacto)
+        public static Boolean DeleteContact(Contacto contact)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -110,7 +110,7 @@ namespace DatosTangerine.M5
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, IdContacto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -306,7 +306,7 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public static Boolean AddContactProy(int idContact, int idProy)
+        public static Boolean AddContactProy(Contacto contact, Proyecto proyect)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -319,10 +319,10 @@ namespace DatosTangerine.M5
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, idContact.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, idProy.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -365,7 +365,7 @@ namespace DatosTangerine.M5
         /// Recibe dos parametros: idContact referente al contacto a buscar
         /// </summary>
         /// <returns>Objeto de tipo Contacto si existe</returns>
-        public static Contacto SingleContact(int idContact)
+        public static Contacto SingleContact(Contacto contact)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -379,7 +379,7 @@ namespace DatosTangerine.M5
             {
                 theConnection.Conectar();
 
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, idContact.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
