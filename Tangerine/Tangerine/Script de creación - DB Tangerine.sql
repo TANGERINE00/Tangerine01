@@ -1199,17 +1199,6 @@ AS
 	END
 GO
 
-/*---- StoredProcedure Cambiar Estatus de Factura ----
-CREATE PROCEDURE M8_EstatusFactura
-	@id int,
-	@estatus [varchar](500)
-AS
- 	BEGIN
-    	UPDATE FACTURA SET fac_estatus = @estatus
-    	WHERE fac_id = @id;
- 	END;
-GO*/
-
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
