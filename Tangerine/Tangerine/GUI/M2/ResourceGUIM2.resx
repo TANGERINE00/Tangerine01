@@ -121,7 +121,7 @@
     <value>&lt;a tittle="modificar" class="btn btn-default btn-xs" id="</value>
   </data>
   <data name="BotonReg" xml:space="preserve">
-    <value>&lt;a tittle ="registrar" class="btn btn-default btn-xs" &gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+    <value>&lt;a href="javascript:ajaxRes()" tittle ="registrar" runat ="server"  class="btn btn-default btn-xs" &gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>
@@ -169,7 +169,7 @@
     <value>&lt;label for="</value>
   </data>
   <data name="llamadoCompleto" xml:space="preserve">
-    <value>&lt;a href="javascript:ajaxRes()" tittle="modificar" runat ="server" class="btn btn-default btn-xs" id="geastone"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+    <value>&lt;a href="javascript:ajaxRes()"  tittle="modificar" runat ="server" class="btn btn-default btn-xs"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" &gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="OpenDivModif" xml:space="preserve">
     <value>&lt;div class="col-sm-10"&gt;</value>

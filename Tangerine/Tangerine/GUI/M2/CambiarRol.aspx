@@ -16,9 +16,6 @@
     
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
-    </script>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
         <div class="modal-dialog" role="document">
@@ -30,9 +27,11 @@
                 <div class="modal-body">  
                     <div class="box-body">     
                         <div class="form-group">
-                            <label class ="control-label">Usuario</label>
+                            <label class="col-sm-2 control-label">Usuario</label>
+                            <div class="col-sm-10">
                                 <input type="email" Class="form-control" id="usuarioCambiar" placeholder="" runat="server" disabled/>
                             </div>
+                        </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
@@ -113,32 +112,18 @@
     </div>
         <script type="text/javascript">
 
-            function ajaxRes() {
+            function ajaxRes()
+            {
                 $('.table > tbody > tr > td:nth-child(4) > a')
-                    .click(function (e) {
-                        e.preventDefault();
-                        var prueba = $('.table > tbody > tr > td:nth-child(3)').text();
-                        var params = "{'Id':'" + prueba + "'}";
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "CambiarRol.aspx/GetData",
-                                        data: params,
-                                        contentType: "application/json; charset=utf-8",
-                                        dataType: "json",
-                                        success: function (response) {
-                                            var local = response;
-                                            document.getElementById("ContentPlaceHolder1_usuarioCambiar").placeholder = prueba;
-                            
-
-                       
-                                    },
-                                        failure: function (response) {
-                                            alert("_");
-                                        }
-                                    });
-                        });
-                        }
-    </script>  
+                  .click(function (e)
+                  {
+                      e.preventDefault();
+                      //var prueba = $('.table > tbody > tr > td:nth-child(3)').text();
+                      var prueba2 = $(this).closest("tr").find("td:nth-child(3)").text();
+                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = prueba2;
+                  });
+            }
+        </script>  
 
 
 </asp:Content>
