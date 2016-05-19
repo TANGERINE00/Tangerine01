@@ -17,6 +17,7 @@ namespace PruebasUnitarias.M5
         public Contacto theContact;
         public Contacto theContact2;
         public bool answer;
+        public List<Contacto> listContact;
         #endregion
 
         #region SetUp and TearDown
@@ -39,6 +40,9 @@ namespace PruebasUnitarias.M5
         public void clean()
         {
             theContact = null;
+            theContact2 = null;
+            listContact = null;
+            answer = false;
         }
         #endregion
 
@@ -74,10 +78,13 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestDeleteContact()
         {
-            //Declaro test de tipo BDContacto para poder invocar el "DeleteContact(Contacto theContact)"
-            answer = BDContacto.DeleteContact(theContact.IdContacto);
-
-            //answer obtiene true si se elimina el contacto, si no, deberia agarrar un excepcion
+            //Agrego el contacto a eliminar
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1
+            listContact = BDContacto.ContactCompany(1,1);
+            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
+            answer = BDContacto.DeleteContact(listContact[listContact.Count-1].IdContacto);
+            //answer obtiene true si se elimina el contacto
             Assert.IsTrue(answer);
         }
     }
