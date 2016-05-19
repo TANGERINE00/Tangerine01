@@ -1183,6 +1183,7 @@ AS
 			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 			FROM FACTURA, COMPANIA 
 			WHERE com_id = @id_compania
+			AND fac_estatus = 0
 			AND fk_compania_id = com_id;
 	END
 GO
