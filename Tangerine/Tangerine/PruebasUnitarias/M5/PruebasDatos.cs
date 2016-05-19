@@ -58,7 +58,7 @@ namespace PruebasUnitarias.M5
             //Consulto todos los contactos de la compania 1
             listContact = BDContacto.ContactCompany(1, 1);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
-            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1].IdContacto);
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace PruebasUnitarias.M5
             //Valido el nombre del contacto con el string que le asugne
             Assert.AreEqual("Joaquin", listContact[listContact.Count - 1].Nombre);
             //Elimino ese contacto de la bd
-            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1].IdContacto);
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace PruebasUnitarias.M5
             //Consulto todos los contactos de la compania 1
             listContact = BDContacto.ContactCompany(1,1);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
-            answer = BDContacto.DeleteContact(listContact[listContact.Count-1].IdContacto);
+            answer = BDContacto.DeleteContact(listContact[listContact.Count-1]);
             //answer obtiene true si se elimina el contacto
             Assert.IsTrue(answer);
         }
@@ -113,7 +113,7 @@ namespace PruebasUnitarias.M5
             //answer obtiene true si se elimina el contacto
             Assert.IsNotNull(listContact);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
-            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1].IdContacto);
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
 
         }
     }
