@@ -235,9 +235,11 @@ create table CONTACTO
 
 create table REQUERIMIENTO
 (
-	req_id int not null,
-	req_nombre varchar(200) not null,
-	fk_prop_id int not null,
+	req_id int IDENTITY(1,1) not null,
+	req_codigo varchar(200) not null,
+	req_descripcion varchar(200) not null,
+	fk_prop_req_id varchar(200) not null,
+	fk_prop_id int
 
 	constraint pk_req primary key
 	(
@@ -336,6 +338,7 @@ create table FACTURA
 (
 	fac_id int IDENTITY (1,1) not null,
 	fac_fecha_emision date not null,
+	fac_fecha_ultimo_pago date not null,
 	fac_monto_total numeric(12,3) not null,
 	fac_monto_restante numeric(12,3) not null,
 	fac_descripcion varchar(500) not null,
@@ -581,7 +584,7 @@ CREATE PROCEDURE M4_ConsultarCompania
 		@id int
 AS
 	BEGIN
-		SELECT com_nombre as com_nombre, com_rif as com_rif, com_email as con_email, com_telefono as com_telefono, com_acronimo as com_acronimo,
+		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email, com_telefono as com_telefono, com_acronimo as com_acronimo,
 			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id
 		FROM COMPANIA WHERE com_id = @id;
 	END
@@ -738,6 +741,17 @@ AS
 		FROM CONTACTO WHERE fk_id_com_lead = @id_empresa and con_tipo_emp = @tipo_comp;
 	END
 GO
+--Consultar contactos de un proyecto
+CREATE PROCEDURE M5_ConsultarContactoProyecto
+		@id_proyecto INT
+AS
+	BEGIN
+		SELECT contacto.con_id as con_id, contacto.con_nombre as con_nombre, contacto.con_apellido as con_apellido,
+		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
+		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO, CONTACTO_PROYECTO WHERE CONTACTO_PROYECTO.fk_proy_id = @id_proyecto and CONTACTO_PROYECTO.fk_con_id = CONTACTO.con_id;
+	END
+GO
 -----------------------------------
 ------Fin Stored Procedure M5------
 -----------------------------------
@@ -765,16 +779,102 @@ AS
 	VALUES(@nombre,	@descripcion, @tipoDura, @duracion, @acuerdo, @estatus, @moneda, @cantEntr, @fechai, @fechaf, @costo, @id_compania);
  end;
 GO
+
+--Agregar Requerimiento
+CREATE PROCEDURE M6_AgregarRequerimiento
+	@reqCodigo varchar(200),
+	@reqDescripcion varchar(200),
+	@fk_pro_req varchar(200)
+
+AS
+	BEGIN
+		 INSERT INTO REQUERIMIENTO(req_codigo, req_descripcion,fk_prop_req_id)
+	VALUES(@reqCodigo,@reqDescripcion,@fk_pro_req);
+	END;
+GO
+
 --Lista Propuesta que no estan en proyecto
 CREATE PROCEDURE M6_ListaPropuestaProyecto
 
 AS
 
 BEGIN
-SELECT * FROM PROPUESTA 
-LEFT JOIN PROYECTO ON (prop_id = fk_propuesta_id) 
-WHERE prop_estatus= 'Aprobado' and fk_propuesta_id IS NULL
+SELECT prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago,
+prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin,prop_costo,
+PROPUESTA.fk_com_id
+FROM PROPUESTA LEFT JOIN PROYECTO ON (fk_propuesta_id=prop_id) 
+WHERE prop_estatus = 'Aprobado' and proy_id IS NULL
 END;
+
+GO
+
+--Modificar Propuesta
+CREATE PROCEDURE M6_ModificarPropuesta
+@idprop int,
+@nombreprop [varchar] (50),
+@descripcionprop [varchar] (255),
+@tipoduracionprop [varchar] (200),
+@duracionprop [varchar] (200),
+@acuerdoprop [varchar] (200),
+@estatusprop [varchar] (20),
+@monedaprop [varchar] (40),
+@cantentregasprop int,
+@fechainiprop date,
+@fechafinprop date,
+@costoprop int,
+@fkcomid int
+
+AS
+
+BEGIN
+UPDATE PROPUESTA SET prop_nombre = @nombreprop, prop_descripcion = @descripcionprop, prop_tipoDuracion = @tipoduracionprop,
+prop_duracion = @duracionprop, prop_acuerdo_pago = @acuerdoprop, prop_estatus = @estatusprop, prop_moneda = @monedaprop,
+prop_cant_entregas = @cantentregasprop, prop_fecha_inicio = @fechainiprop, prop_fecha_fin = @fechafinprop, prop_costo = @costoprop,
+fk_com_id = @fkcomid
+WHERE prop_id = @idprop
+END;
+
+GO
+-- Modificar Requerimiento
+CREATE PROCEDURE M6_ModificarRequerimiento
+
+@reqnombre [varchar] (200),
+@fkprop int
+
+AS
+
+BEGIN
+UPDATE REQUERIMIENTO SET req_codigo = @reqnombre WHERE fk_prop_id = @fkprop  
+
+END;
+
+GO
+
+--Listar requerimientos por propuesta
+CREATE PROCEDURE M6_ListarRequerimientos
+
+AS
+
+BEGIN
+SELECT * FROM REQUERIMIENTO, PROPUESTA WHERE fk_prop_id = prop_id 
+END;
+
+GO
+
+--Consultar propuesta por nombre
+
+CREATE PROCEDURE M6_ConsultarPropuestaNombre
+@idNombre [varchar] (50)
+
+AS
+
+BEGIN
+
+SELECT prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
+prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA WHERE prop_nombre = @idNombre
+
+END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
@@ -936,7 +1036,7 @@ AS
 			proy_fecha_est_fin AS proy_fecha_est_fin, proy_costo AS proy_costo, proy_descripcion AS proy_descripcion,
 			proy_realizacion AS proy_realizacion,proy_estatus AS proy_estatus,proy_razon AS proy_razon,
 			proy_acuerdo_pago AS proy_acuerdo_pago,fk_propuesta_id AS fk_propuesta_id,fk_com_id AS fk_com_id,fk_gerente_id AS fk_gerente_id
-		FROM PROYECTO WHERE DAY(proy_fecha_inicio) = DAY(GETDATE()) and proy_estatus = 'Desarrollo' and proy_acuerdo_pago = 'Mensual';
+		FROM PROYECTO WHERE DAY(proy_fecha_inicio) = DAY(GETDATE()) and proy_estatus = 'En desarrollo' and proy_acuerdo_pago = 'Mensual';
 	END
 GO
 
@@ -973,7 +1073,18 @@ AS
 	END
 GO
 
+--- StoredProsedure consultar nombre de una propuesta ----
+CREATE PROCEDURE M7_ConsultarNombrePropuestaID
 
+     @IdPropuestaPrpu int
+
+AS
+	BEGIN
+		SELECT prop_nombre
+		FROM PROPUESTA 
+		WHERE prop_id = @IdPropuestaPrpu;
+	END
+GO
 
 -----------------------------------
 ------Fin Stored Procedure M7------
@@ -985,6 +1096,7 @@ GO
 ---- StoredProcedure Agregar Factura ----
 CREATE PROCEDURE M8_AgregarFactura
 	@fecha_emision date,
+	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
 	@descripcion [varchar](500),
@@ -994,8 +1106,8 @@ CREATE PROCEDURE M8_AgregarFactura
 
 AS
 	BEGIN
-    	INSERT INTO FACTURA(fac_fecha_emision, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
-		VALUES(@fecha_emision, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+		VALUES(@fecha_emision, @fecha_ultimo_pago, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);
  	END;
 GO
 
@@ -1005,8 +1117,8 @@ CREATE PROCEDURE M8_ConsultarFactura
 
 AS
 	BEGIN
-		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
-			fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
+			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
@@ -1016,12 +1128,13 @@ CREATE PROCEDURE M8_ConsultarFacturas
 
 AS
 	BEGIN
-		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_monto_total AS fac_monto_total, fac_monto_restante AS fac_monto_restante,
-			fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
+			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA;
 	END
 GO
 
+---- StoredProcedure Consultar Nombre Compañia Factura ----
 CREATE PROCEDURE M8_ConsultarNombreCompaniaFacturas
 	@id int
 
@@ -1036,6 +1149,7 @@ GO
 CREATE PROCEDURE M8_ModificarFactura
 	@id_Factura int,
 	@fecha_emision date,
+	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
 	@descripcion [varchar](500),
@@ -1045,7 +1159,7 @@ CREATE PROCEDURE M8_ModificarFactura
 
 AS
  	BEGIN
-    	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
+    	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_fecha_ultimo_pago = @fecha_ultimo_pago, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
     		fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id_Factura;
  	END;
@@ -1055,12 +1169,14 @@ GO
 CREATE PROCEDURE M8_AnularFactura
 	@id_Factura int,
 	@fecha_emision date,
+	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
 	@id_compania int
+
 AS
 	BEGIN
 		UPDATE FACTURA SET fac_estatus = 2
@@ -1068,7 +1184,21 @@ AS
 	END
 GO
 
-/*Falta el campo factura*/
+---- StoredProcedure Consultar Facturas por ID de Compañia ----
+CREATE PROCEDURE M8_ConsultarFacturasCompania
+	@id_compania int
+
+AS
+	BEGIN
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
+			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			FROM FACTURA, COMPANIA 
+			WHERE com_id = @id_compania
+			AND fac_estatus = 0
+			AND fk_compania_id = com_id;
+	END
+GO
+
 /*---- StoredProcedure Cambiar Estatus de Factura ----
 CREATE PROCEDURE M8_EstatusFactura
 	@id int,
@@ -1132,7 +1262,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[M10_DetallarEmpleado]
+CREATE PROCEDURE M10_DetallarEmpleado
 	@id int
 AS
 	BEGIN

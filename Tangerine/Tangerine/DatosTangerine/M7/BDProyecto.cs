@@ -481,7 +481,39 @@ namespace DatosTangerine.M7
            }
 
            return listProyecto;
-       }  
+       }
+
+       public String ContactNombrePropuestaID (int idPropuesta)
+       {
+           parameters = new List<Parametro>();
+           theConnection = new BDConexion();
+           string PorpuNombre;
+           
+
+           try
+           {
+               theConnection.Conectar();
+
+               theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int, idPropuesta.ToString(), false);
+               parameters.Add(theParam);
+
+               //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
+               DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceProyecto.ContactNombrePropuestaID, parameters);
+
+               //Guardar los datos 
+               DataRow row = dt.Rows[0];
+               PorpuNombre = row[ResourceProyecto.PrpuNombre].ToString();
+             
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+           }
+
+           return PorpuNombre;
+       }
+   
+   
    }
 
 }

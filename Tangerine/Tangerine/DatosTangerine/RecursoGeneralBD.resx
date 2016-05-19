@@ -147,6 +147,6 @@
     <value>BDTangerine</value>
   </data>
   <data name="StringDeConexion" xml:space="preserve">
-    <value>Data Source=ROROLFO-PC;Initial Catalog=BDTangerine;Integrated Security=True</value>
+    <value>data source=RODOLFO-PC; Initial Catalog=BDTangerine; Integrated Security=True</value>
   </data>
 </root>

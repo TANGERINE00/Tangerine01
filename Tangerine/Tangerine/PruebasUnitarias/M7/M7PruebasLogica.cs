@@ -10,7 +10,7 @@ using DominioTangerine;
 namespace PruebasUnitarias.M7
 {
      [TestFixture]
-    class M7PrueasLogica
+    class M7PruebasLogica
     {
          private Proyecto _proyecto;
         private LogicaProyecto _Logi;
@@ -25,7 +25,7 @@ namespace PruebasUnitarias.M7
 
         [SetUp]
         public void setup() {
-
+            _Logi = new LogicaProyecto();
             _proyecto = new Proyecto();
             _proyecto.Idproyecto = 1;
             _proyecto.Nombre = "El proyecto nuevo";
@@ -75,6 +75,7 @@ namespace PruebasUnitarias.M7
             _proyecto = null;
             Contactos = null;
             Empleados = null;
+            _Logi = null;
 
         
         }
@@ -148,6 +149,15 @@ namespace PruebasUnitarias.M7
 
                  Assert.IsNotEmpty(_proyectos[i].Nombre);
              }
+         }
+
+         [Test]
+         public void testConsultarNombrePropuestaID()
+         {
+             String prueba = _Logi.ConsultarNombrePropuestaID(1);
+
+
+             Assert.IsTrue(prueba == "Modulo de gestion de empleados");
          }
     }
 }

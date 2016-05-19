@@ -70,11 +70,56 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M6_AgregarRequerimiento.
+        /// </summary>
+        internal static string AgregarRequerimiento {
+            get {
+                return ResourceManager.GetString("AgregarRequerimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ListaPropuestaProyecto.
         /// </summary>
         internal static string ConsultarPropuesta {
             get {
                 return ResourceManager.GetString("ConsultarPropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M6_ConsultarPropuestaNombre.
+        /// </summary>
+        internal static string ConsultarPropuestaNombre {
+            get {
+                return ResourceManager.GetString("ConsultarPropuestaNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M6_ListarRequerimientos.
+        /// </summary>
+        internal static string ListarRequerimiento {
+            get {
+                return ResourceManager.GetString("ListarRequerimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M6_ModificarPropuesta.
+        /// </summary>
+        internal static string ModificarPropuesta {
+            get {
+                return ResourceManager.GetString("ModificarPropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M6_ModificarRequerimiento.
+        /// </summary>
+        internal static string ModificarRequerimiento {
+            get {
+                return ResourceManager.GetString("ModificarRequerimiento", resourceCulture);
             }
         }
         
@@ -97,6 +142,15 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @reqCodigo.
+        /// </summary>
+        internal static string ParamCodigoReq {
+            get {
+                return ResourceManager.GetString("ParamCodigoReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @costo.
         /// </summary>
         internal static string ParamCostoProp {
@@ -111,6 +165,15 @@ namespace DatosTangerine.M6 {
         internal static string ParamDescriProp {
             get {
                 return ResourceManager.GetString("ParamDescriProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @reqDescripcion.
+        /// </summary>
+        internal static string ParamDescriReq {
+            get {
+                return ResourceManager.GetString("ParamDescriReq", resourceCulture);
             }
         }
         
@@ -160,6 +223,24 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @prop_id.
+        /// </summary>
+        internal static string ParamIdProp {
+            get {
+                return ResourceManager.GetString("ParamIdProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fk_pro_req.
+        /// </summary>
+        internal static string ParamIdPropuestaReq {
+            get {
+                return ResourceManager.GetString("ParamIdPropuestaReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @moneda.
         /// </summary>
         internal static string ParamMonedaProp {
@@ -183,6 +264,15 @@ namespace DatosTangerine.M6 {
         internal static string ParamTipoDuProp {
             get {
                 return ResourceManager.GetString("ParamTipoDuProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idNombre.
+        /// </summary>
+        internal static string Prop_Nombre {
+            get {
+                return ResourceManager.GetString("Prop_Nombre", resourceCulture);
             }
         }
         
@@ -282,6 +372,24 @@ namespace DatosTangerine.M6 {
         internal static string PropTipoDuracion {
             get {
                 return ResourceManager.GetString("PropTipoDuracion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @reqnombre.
+        /// </summary>
+        internal static string ReqNombre {
+            get {
+                return ResourceManager.GetString("ReqNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @req_id.
+        /// </summary>
+        internal static string ReqProp {
+            get {
+                return ResourceManager.GetString("ReqProp", resourceCulture);
             }
         }
     }

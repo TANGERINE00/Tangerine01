@@ -14,19 +14,48 @@ namespace Tangerine.GUI.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if( Util.MASTER_FLAG )
+            if (HttpContext.Current.Session["User"] == null)
+                Response.Redirect("../M1/Login.aspx");
+            else
             {
-                Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
-                Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
-                Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario( Util._theGlobalUser ); //-----------------------
-
-                List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
-
-                foreach ( string s in bloqueos )
+                if (Util.MASTER_FLAG)
                 {
-                    this.FindControl( s ).Visible = false;
+                    Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
+                    Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
+                    Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario(Util._theGlobalUser); //-----------------------
+
+                    Uri thisPageUrl = Request.Url;
+                    string pathDePaginaActal = thisPageUrl.AbsolutePath;
+
+                    bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal);
+
+                    if (privilegioAcceso)
+                    {
+                        Response.Redirect("../M1/Dashboard.aspx");
+                    }
+                    else
+                    {
+                        List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+
+                        foreach (string s in bloqueos)
+                        {
+                            this.FindControl(s).Visible = false;
+                        }
+                    }
                 }
             }
+
+            if (HttpContext.Current.Session["User"] != null)
+                usuarioSesion.InnerText = HttpContext.Current.Session["User"]+"";
+            else
+                usuarioSesion.InnerText = "Usuario";
+        }
+
+        public void CerrarSesion(object sender, EventArgs e)
+        {
+            Util._theGlobalUser = null;
+            HttpContext.Current.Session.Abandon();
+            Response.Redirect("../M1/Login.aspx");
         }
     }
 }

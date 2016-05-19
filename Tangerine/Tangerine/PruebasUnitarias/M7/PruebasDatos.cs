@@ -241,6 +241,20 @@ namespace PruebasUnitarias.M7
       
      }
 
+
+     [Test]
+     public void TestContactNombrePropuestaID()
+     {
+         //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+         string nombre = theProyect2.ContactNombrePropuestaID(1);
+
+         //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+
+         Assert.IsTrue(nombre == "Modulo de gestion de empleados");
+         
+
+     }
+
         
     }
 }

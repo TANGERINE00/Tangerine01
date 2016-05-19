@@ -138,6 +138,9 @@
   <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
   </data>
+  <data name="ContactFacturasCompania" xml:space="preserve">
+    <value>M8_ConsultarFacturasCompania</value>
+  </data>
   <data name="ContactProyecto" xml:space="preserve">
     <value>M7_ConsultarProyecto</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
+  </data>
+  <data name="FacFechaUltimoPago" xml:space="preserve">
+    <value>fac_fecha_ultimo_pago</value>
   </data>
   <data name="FacIdCompania" xml:space="preserve">
     <value>fk_compania_id</value>
@@ -176,6 +182,9 @@
   </data>
   <data name="ParamFecha_Emision" xml:space="preserve">
     <value>@fecha_emision</value>
+  </data>
+  <data name="ParamFecha_Ultimo_Pago" xml:space="preserve">
+    <value>@fecha_ultimo_pago</value>
   </data>
   <data name="ParamId" xml:space="preserve">
     <value>@id</value>

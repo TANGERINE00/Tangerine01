@@ -67,12 +67,12 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textMonto_M8;
         
         /// <summary>
-        /// buttomGenerar_M8 control.
+        /// buttonGenerar_M8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttomGenerar_M8;
+        protected global::System.Web.UI.WebControls.Button buttonGenerar_M8;
     }
 }

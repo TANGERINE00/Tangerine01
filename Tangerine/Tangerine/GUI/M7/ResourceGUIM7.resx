@@ -123,6 +123,9 @@
   <data name="BotonPersonal" xml:space="preserve">
     <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
   </data>
+  <data name="Cancelado" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Cancelado&lt;/span&gt;</value>
+  </data>
   <data name="CloseBoton" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
   </data>
@@ -140,6 +143,15 @@
   </data>
   <data name="Codigo" xml:space="preserve">
     <value>Codigo:</value>
+  </data>
+  <data name="Completado" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;Completado&lt;/span&gt;</value>
+  </data>
+  <data name="CompletadoAdestiempo" xml:space="preserve">
+    <value>&lt;span class="label label-warning"&gt;Completado a destiempo&lt;/span&gt;</value>
+  </data>
+  <data name="Desarrollo" xml:space="preserve">
+    <value>&lt;span class="label label-primary"&gt;En Desarrollo&lt;/span&gt;</value>
   </data>
   <data name="Estatus" xml:space="preserve">
     <value>Estatus:</value>

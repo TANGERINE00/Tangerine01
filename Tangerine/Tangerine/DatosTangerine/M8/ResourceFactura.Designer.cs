@@ -124,6 +124,15 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M8_ConsultarFacturasCompania.
+        /// </summary>
+        internal static string ContactFacturasCompania {
+            get {
+                return ResourceManager.GetString("ContactFacturasCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarProyecto.
         /// </summary>
         internal static string ContactProyecto {
@@ -165,6 +174,15 @@ namespace DatosTangerine.M8 {
         internal static string FacFechaEmision {
             get {
                 return ResourceManager.GetString("FacFechaEmision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a fac_fecha_ultimo_pago.
+        /// </summary>
+        internal static string FacFechaUltimoPago {
+            get {
+                return ResourceManager.GetString("FacFechaUltimoPago", resourceCulture);
             }
         }
         
@@ -237,6 +255,15 @@ namespace DatosTangerine.M8 {
         internal static string ParamFecha_Emision {
             get {
                 return ResourceManager.GetString("ParamFecha_Emision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @fecha_ultimo_pago.
+        /// </summary>
+        internal static string ParamFecha_Ultimo_Pago {
+            get {
+                return ResourceManager.GetString("ParamFecha_Ultimo_Pago", resourceCulture);
             }
         }
         

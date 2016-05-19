@@ -133,7 +133,7 @@ namespace DatosTangerine {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=ROROLFO-PC;Initial Catalog=BDTangerine;Integrated Security=True.
+        ///   Busca una cadena traducida similar a data source=RODOLFO-PC; Initial Catalog=BDTangerine; Integrated Security=True.
         /// </summary>
         internal static string StringDeConexion {
             get {

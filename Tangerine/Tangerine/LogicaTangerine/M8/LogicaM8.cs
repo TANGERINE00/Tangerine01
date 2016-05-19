@@ -56,6 +56,18 @@ namespace LogicaTangerine.M8
             }
         }
 
+        public bool AnnularFactura(Facturacion factura)
+        {
+            try
+            {
+                return BDFactura.AnnularFactura(factura);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Facturacion SearchFactura( int idFactura )
         {
             try
@@ -85,6 +97,18 @@ namespace LogicaTangerine.M8
             try
             {
                 return BDFactura.ContactProyectoFactura( idProyecto );
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Facturacion> SearchFacturasCompania(int idCompania)
+        {
+            try
+            {
+                return BDFactura.ContactFacturasCompania(idCompania);
             }
             catch (Exception ex)
             {
