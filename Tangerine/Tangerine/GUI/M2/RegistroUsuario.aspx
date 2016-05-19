@@ -16,16 +16,7 @@
     
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script type="text/javascript">
-        function showContent() {
-            element = document.getElementById("boxCrearUsuario");
-            element.style.display='block';
-        }
-        function hideContent() {
-            element = document.getElementById("boxCrearUsuario");
-            element.style.display='none';
-        }
-    </script>
+
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -40,7 +31,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="usuario" runat="server">
+                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server">
                             </div>
                         </div>
                         <p>&nbsp;</p>
@@ -65,7 +56,7 @@
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal">Crear</button>
+                        <button id="botonCrear" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCrear_Click">Crear</button>
                     </div><!-- /.box-footer -->
                 </div>
             </div>
@@ -129,4 +120,32 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        function ajaxRes() {
+            $('.table > tbody > tr > td:nth-child(6) > a')
+                .click(function (e) {
+                    e.preventDefault();
+                    var nombre = $(this).closest("tr").find("td:nth-child(2)").text();
+                    var apellido = $(this).closest("tr").find("td:nth-child(3)").text();
+                    var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
+                    $.ajax({
+                        type: "POST",
+                        url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
+                        data: param,
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        success: function (result) {
+                            var local = JSON.stringify(result);
+                            var obj = JSON.parse(local);
+                            document.getElementById("ContentPlaceHolder1_userDefault").value = obj.d;
+                        },
+                        failure: function (result) {
+                            alert("_"); 
+                        }
+                    });
+                });
+        }
+    </script>
 </asp:Content>
