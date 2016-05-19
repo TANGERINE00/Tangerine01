@@ -56,8 +56,10 @@ namespace Tangerine.GUI.M5
             //int idComp = int.Parse(Request.QueryString["idComp"]);
             try
             {
+                //En este try atrapo el valor del id del Contacto si existe
+                //para luego ser eliminado de los contactos de la empresa
                 int idCont = int.Parse(Request.QueryString["idCont"]);
-                if (idCont != null)
+                if (idCont > 0)
                 {
                     prueba.DeleteContact(idCont);
                 }
@@ -100,19 +102,6 @@ namespace Tangerine.GUI.M5
 
                 }
             }
-            
-        }
-
-        /// <summary>
-        /// Funcion para regresar a la ventana de Compañia o Lead, boton Volver.
-        /// CREO QUE NO VA A SER NECESARIO
-        /// </summary>
-        protected void btnaceptar_Click(object sender, EventArgs e)
-        {
-            //Hay que colocar 
-
-
-
         }
     }
 }
