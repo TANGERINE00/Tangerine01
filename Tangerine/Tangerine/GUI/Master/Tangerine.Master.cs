@@ -14,28 +14,33 @@ namespace Tangerine.GUI.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if( Util.MASTER_FLAG )
+            if (HttpContext.Current.Session["User"] == null)
+                Response.Redirect("../M1/Login.aspx");
+            else
             {
-                Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
-                Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
-                Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario( Util._theGlobalUser ); //-----------------------
-
-                Uri thisPageUrl = Request.Url;
-                string pathDePaginaActal = thisPageUrl.AbsolutePath;
-
-                bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal);
-
-                if (privilegioAcceso)
+                if (Util.MASTER_FLAG)
                 {
-                    Response.Redirect("../M1/Dashboard.aspx");
-                }
-                else
-                {
-                    List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+                    Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
+                    Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
+                    Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario(Util._theGlobalUser); //-----------------------
 
-                    foreach (string s in bloqueos)
+                    Uri thisPageUrl = Request.Url;
+                    string pathDePaginaActal = thisPageUrl.AbsolutePath;
+
+                    bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal);
+
+                    if (privilegioAcceso)
                     {
-                        this.FindControl(s).Visible = false;
+                        Response.Redirect("../M1/Dashboard.aspx");
+                    }
+                    else
+                    {
+                        List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+
+                        foreach (string s in bloqueos)
+                        {
+                            this.FindControl(s).Visible = false;
+                        }
                     }
                 }
             }
