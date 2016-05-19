@@ -236,7 +236,6 @@ namespace DatosTangerine.M5
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
-
             List<Contacto> listContact = new List<Contacto>();
 
             try
@@ -374,8 +373,6 @@ namespace DatosTangerine.M5
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
-
-            List<Contacto> listContact = new List<Contacto>();
             Contacto theContact = null;
 
             try
