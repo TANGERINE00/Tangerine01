@@ -39,6 +39,11 @@ namespace Tangerine.GUI.Master
                     }
                 }
             }
+
+            if (HttpContext.Current.Session["User"] != null)
+                usuarioSesion.InnerText = HttpContext.Current.Session["User"]+"";
+            else
+                usuarioSesion.InnerText = "Usuario";
         }
 
         public void CerrarSesion(object sender, EventArgs e)

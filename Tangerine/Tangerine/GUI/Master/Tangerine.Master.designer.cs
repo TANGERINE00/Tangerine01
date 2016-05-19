@@ -31,6 +31,15 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlForm signoutUser;
         
         /// <summary>
+        /// Control usuarioSesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usuarioSesion;
+        
+        /// <summary>
         /// Control SignOutButton.
         /// </summary>
         /// <remarks>
