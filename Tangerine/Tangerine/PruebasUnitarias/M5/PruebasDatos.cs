@@ -106,7 +106,7 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestContactCompany()
         {
-            //Agrego el contacto a eliminar
+            //Agrego un contacto para tene algo en la lista
             answer = BDContacto.AddContact(theContact);
             //Consulto todos los contactos de la compania 1
             listContact = BDContacto.ContactCompany(1, 1);
