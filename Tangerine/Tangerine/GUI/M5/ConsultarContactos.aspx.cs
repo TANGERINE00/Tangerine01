@@ -12,6 +12,7 @@ namespace Tangerine.GUI.M5
 {
     public partial class ConsultarContactos : System.Web.UI.Page
     {
+        #region Atributos
         int typeComp;
         int idComp;
         public string contact
@@ -37,13 +38,20 @@ namespace Tangerine.GUI.M5
                 this.nuevocontacto.Text = value;
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Metodo de carga de los elementos de la ventana.
+        /// </summary>
+        /// Puede recibir 3 parametros, idCont no es obligatorio.
+        /// <param name="typeComp">Entero, representa el tipo de empresa (compañia o lead)</param>
+        /// <param name="idComp">Entero, representa el id de la empresa</param>
+        /// <param name="idCont">Entero, representa el id del contacto (Para ser eliminado)</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = 2;
-            int idComp = 3;
+            int typeComp = 2;//Para borrar
+            int idComp = 3;//Para borrar
             LogicaM5 prueba = new LogicaM5();
-            //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
             //int typeComp = int.Parse(Request.QueryString["typeComp"]);
             //int idComp = int.Parse(Request.QueryString["idComp"]);
             try
@@ -56,7 +64,7 @@ namespace Tangerine.GUI.M5
             }
             catch
             {
- 
+                
             } 
 
             if (!IsPostBack)
@@ -94,9 +102,14 @@ namespace Tangerine.GUI.M5
             }
             
         }
+
+        /// <summary>
+        /// Funcion para regresar a la ventana de Compañia o Lead, boton Volver.
+        /// CREO QUE NO VA A SER NECESARIO
+        /// </summary>
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
+            //Hay que colocar 
 
 
 

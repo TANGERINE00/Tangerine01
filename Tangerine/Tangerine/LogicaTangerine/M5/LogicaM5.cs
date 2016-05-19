@@ -23,7 +23,7 @@ namespace LogicaTangerine.M5
         /// Metodo para consultar contactos de una empresa, sirve para Compania y Cliente Potencial.
         /// </summary>
         /// <param name="typeComp">entero que representa el tipo de empresa a consultar (1 para Compania, 2 para Cliente Potencial)</param>
-        /// /// <param name="idComp">entero que representa el id de la empresa a consultar</param>
+        /// <param name="idComp">entero que representa el id de la empresa a consultar</param>
         /// <returns>Retorna una lista de contactos de la empresa</returns>
         public List<Contacto> GetContacts(int typeComp, int idComp) 
         {
