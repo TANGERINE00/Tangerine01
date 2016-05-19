@@ -788,7 +788,9 @@ CREATE PROCEDURE M6_ListaPropuestaProyecto
 AS
 
 BEGIN
-SELECT prop_nombre, prop_estatus
+SELECT prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago,
+prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin,prop_costo,
+PROPUESTA.fk_com_id
 FROM PROPUESTA LEFT JOIN PROYECTO ON (fk_propuesta_id=prop_id) 
 WHERE prop_estatus = 'Aprobado' and proy_id IS NULL
 END;
@@ -1181,6 +1183,7 @@ AS
 			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 			FROM FACTURA, COMPANIA 
 			WHERE com_id = @id_compania
+			AND fac_estatus = 0
 			AND fk_compania_id = com_id;
 	END
 GO

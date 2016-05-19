@@ -76,6 +76,18 @@ namespace DominioTangerine
         private int p15;
         private DateTime dateTime1;
         private DateTime dateTime2;
+        private string conDescripcion;
+        private string contipoDuracion1;
+        private string contipoDuracion2;
+        private string conAcuerdo;
+        private string conEstatus1;
+        private string conMoneda;
+        private int conEntregas;
+        private DateTime conFechaIni;
+        private DateTime conFechaFin;
+        private int conCosto;
+        private int conFkComp;
+        private string contipoDuracion;
 
 
 
@@ -184,12 +196,7 @@ namespace DominioTangerine
 
         }
 
-        public Propuesta(string conNombre, int conEstatus)
-        {
-            // TODO: Complete member initialization
-            this.conNombre = conNombre;
-            this.conEstatus = conEstatus;
-        }
+       
 
         public Propuesta(string p3, string p4, string p5, string p6, string p7, string p8, int p12, DateTime dateTime1, DateTime dateTime2, int p15)
         {
@@ -206,6 +213,24 @@ namespace DominioTangerine
             this._fefinal = dateTime2;
             this._costo = p15;
         }
+
+        public Propuesta(string conNombre, string conDescripcion, string contipoDuracion, string conAcuerdo, string conEstatus1, string conMoneda, int conEntregas, DateTime conFechaIni, DateTime conFechaFin, int conCosto, int conFkComp)
+        {
+            // TODO: Complete member initialization
+            this.conNombre = conNombre;
+            this.conDescripcion = conDescripcion;
+            this.contipoDuracion = contipoDuracion;
+            this.conAcuerdo = conAcuerdo;
+            this.conEstatus1 = conEstatus1;
+            this.conMoneda = conMoneda;
+            this.conEntregas = conEntregas;
+            this.conFechaIni = conFechaIni;
+            this.conFechaFin = conFechaFin;
+            this.conCosto = conCosto;
+            this.conFkComp = conFkComp;
+        }
+
+       
 
       
 

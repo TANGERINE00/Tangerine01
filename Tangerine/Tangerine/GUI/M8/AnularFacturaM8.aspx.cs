@@ -46,10 +46,16 @@ namespace Tangerine.GUI.M8
 
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
         {
-            //EMPIEZA AQUI!
+            _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
+            _montoTotal = int.Parse(textMonto_M8.Value);
+            _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+            _fechaUltimoPago = DateTime.Now;
+            _montoRestante = int.Parse(textMonto_M8.Value);
+            _descripcion = textDescripcion_M8.Value;
 
-
-            //
+            theFactura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _descripcion, 0, 1, 1);
+            LogicaM8 facturaLogic = new LogicaM8();
+            facturaLogic.AnnularFactura(theFactura);
             Server.Transfer("ConsultarFacturaM8.aspx");
         }
     }
