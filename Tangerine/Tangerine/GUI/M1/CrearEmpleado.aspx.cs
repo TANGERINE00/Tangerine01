@@ -78,23 +78,38 @@ namespace Tangerine.GUI.M1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            List<LugarDireccion> direccion = new List<LugarDireccion>();
+            List<LugarDireccion> direccion = newAddress();
             
-            direccion.Add(new LugarDireccion(0, SelectedListCountry.SelectedItem.Text.ToString(),"Pais",0));
-            direccion.Add(new LugarDireccion(0, SelectedListState.SelectedItem.Text.ToString(), "Estado", 0));
-            direccion.Add(new LugarDireccion(0, CityAddress.Value,"Ciudad",0));
-            direccion.Add(new LugarDireccion(0, AddresEspecific.Value,"Direccion",0));
+            Cargo cargo = jobForEmployee();
 
-            Empleado empleado = new Empleado(0, FirstName.Value, SecondNamee.Value, FirstLastName.Value,
+            Empleado empleado = new Empleado(FirstName.Value, SecondNamee.Value, FirstLastName.Value,
                                                 SecondLastName.Value, SelectedListGender.SelectedItem.Text.ToString(),
                                                 int.Parse(Cedula.Value),
                                                 DateTime.ParseExact(DateEmployee.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, 0);
+                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value,cargo,direccion);
 
-            Cargo cargo = new Cargo(0,SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value, 0, 0,
+            
+        }
+
+        private List<LugarDireccion> newAddress()
+        {
+            List<LugarDireccion> direccion = new List<LugarDireccion>();
+
+            direccion.Add(new LugarDireccion(SelectedListCountry.SelectedItem.Text.ToString(), "Pais"));
+            direccion.Add(new LugarDireccion(SelectedListState.SelectedItem.Text.ToString(), "Estado"));
+            direccion.Add(new LugarDireccion(CityAddress.Value, "Ciudad"));
+            direccion.Add(new LugarDireccion(AddresEspecific.Value, "Direccion"));
+
+            return direccion;
+        }
+
+        private Cargo jobForEmployee()
+        {
+            return new Cargo(SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value,
                                     DateTime.ParseExact(DateJob.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                                     JobMode.Value, Double.Parse(SalaryJob.Value));
-                     
+            
         }
+
     }
 }

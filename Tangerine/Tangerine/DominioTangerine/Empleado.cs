@@ -27,8 +27,8 @@ namespace DominioTangerine
 
       private string address;
       private Cargo job;
-      private List<Cargo> listJobs = new List<Cargo>();
       private List<Proyecto> listProjects = new List<Proyecto>();
+      private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
 
       #endregion
 
@@ -114,25 +114,46 @@ namespace DominioTangerine
            this.fk_lug_dir_id = empLugId;
        }
 
-       public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
-                       string empGenero, int empCedula, DateTime empFecha, string empActivo, string empEstudio,
-                       string empEmail, int empLugId, string cargo, double salario, string fechaIni, string fechaFin,
-                       string address)
+       public Empleado( string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                        string empGenero, int empCedula, DateTime empFecha, string empActivo, string empEstudio,
+                        string empEmail,Cargo cargoEmpleado, List<LugarDireccion> address)
        {
-           this.emp_num_ficha = empId;
-           this.emp_cedula = empCedula;
            this.emp_p_nombre = empPNombre;
            this.emp_s_nombre = empSNombre;
            this.emp_p_apellido = empPApellido;
            this.emp_s_apellido = empSApellido;
            this.emp_genero = empGenero;
+           this.emp_cedula = empCedula; 
            this.emp_fecha_nac = empFecha;
            this.emp_activo = empActivo;
            this.emp_nivel_estudio = empEstudio;
            this.emp_email = empEmail;
+           this.job = cargoEmpleado;
+           List<LugarDireccion> completeAddress = new List<LugarDireccion>();
+           completeAddress = address;
+       }
+
+                                           
+
+       public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string  empSApellido,
+                       string empGenero, int empCedula, DateTime empFecha, string empActivo, string empNivelEstudio,
+                       string empEmailEmployee, int empLugId , string empCargo, double empSlario, String empFechaInicio,
+                       string empFechaFin, string empDireccion )
+       {
+           this.emp_num_ficha = empId;
+           this.emp_p_nombre = empPNombre;
+           this.emp_s_nombre = empSNombre;
+           this.emp_p_apellido = empPApellido;
+           this.emp_s_apellido = empSApellido;
+           this.emp_genero = empGenero;
+           this.emp_cedula = empCedula;
+           this.emp_fecha_nac = empFecha;
+           this.emp_activo = empActivo;
+           this.emp_nivel_estudio = empNivelEstudio;
+           this.emp_email = empEmailEmployee;
            this.fk_lug_dir_id = empLugId;
-           this.job = new Cargo(cargo, salario, fechaIni, fechaFin);
-           this.address = address;
+           this.address = empDireccion;
+           this.job = new Cargo(empCargo, empSlario, empFechaInicio, empFechaFin);
        }
 
       #endregion
@@ -314,16 +335,17 @@ namespace DominioTangerine
            }
        }
 
-       public List<Cargo> ListJobs
+       public List<LugarDireccion> AddressComplete
        {
            get
            {
-               return this.listJobs;
+               return this.addressComplete;
            }
            set
            {
-               this.listJobs = value;
+               this.addressComplete = value;
            }
+
        }
        #endregion
 

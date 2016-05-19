@@ -85,6 +85,16 @@ namespace DominioTangerine
             this.modalidad = mode;
             this.sueldo = salary;
         }
+
+        /*cargo de creacion con empleado*/
+        public Cargo(string name, string summaryJob, DateTime dateJob, string jobMode, Double Salary)
+        {
+            this.nombre = name;
+            this.descripcion = summaryJob;
+            this.fechaContratacion = dateJob;
+            this.modalidad = jobMode;
+            this.sueldo = Salary;
+        }
         #endregion
 
         # region Get's Set's
