@@ -433,5 +433,80 @@ namespace DatosTangerine.M5
 
             return theContact;
         }
+
+        /// <summary>
+        /// Metodo para consultar todos los Contactos que pertenecen a un Proyecto.
+        /// Recibe  parametro: theProyect de tipo Proyecto, para consultar con su id
+        /// </summary>
+        /// <returns>Lista de contactos del Proyecto</returns>
+        public static List<Contacto> ContactProyect(Proyecto theProyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+            List<Contacto> listContact = new List<Contacto>();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, theProyect..ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceContact.ContactProyect, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int conId = int.Parse(row[ResourceContact.ConIdContact].ToString());
+                    String conName = row[ResourceContact.ConNameContact].ToString();
+                    String conLName = row[ResourceContact.ConLastNameContact].ToString();
+                    String conDepart = row[ResourceContact.ConDepartmentContact].ToString();
+                    String conRol = row[ResourceContact.ConRolContact].ToString();
+                    String conTele = row[ResourceContact.ConPhoneContact].ToString();
+                    String conEmail = row[ResourceContact.ConEmailContact].ToString();
+                    int conTypeC = int.Parse(row[ResourceContact.ConTypeComp].ToString());
+                    int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Contacto theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                    listContact.Add(theContact);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
+                     ResourceContact.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listContact;
+        }
     }
 }

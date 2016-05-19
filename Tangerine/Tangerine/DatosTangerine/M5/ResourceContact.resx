@@ -209,4 +209,7 @@
     <value>Error de parseo</value>
     <comment>Mensaje de error cuando no puede parsear</comment>
   </data>
+  <data name="ContactProyect" xml:space="preserve">
+    <value>M5_ConsultarContactoProyecto</value>
+  </data>
 </root>
