@@ -23,10 +23,11 @@ namespace Tangerine.GUI.M5
         protected void Page_Load(object sender, EventArgs e)
         {
             int idCont = int.Parse(Request.QueryString["idCont"]);
+            theContact.IdContacto = idCont;
             if (!IsPostBack)
             {
                 LogicaM5 contactLogic = new LogicaM5();
-                theContact = contactLogic.SearchContact(idCont);
+                theContact = contactLogic.SearchContact(theContact);
 
                 this.nombre.Value = theContact.Nombre;
                 this.apellido.Value = theContact.Apellido;
