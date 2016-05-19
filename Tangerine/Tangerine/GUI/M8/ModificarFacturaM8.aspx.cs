@@ -19,6 +19,7 @@ namespace Tangerine.GUI.M8
         DateTime _fechaUltimoPago = DateTime.Now;
         int _montoTotal = 0;
         int _montoRestante = 0;
+        string _tipoMoneda = String.Empty;
         string _descripcion = String.Empty;
         int _estatus = 0;
         int _proyectoId = 0;
@@ -52,21 +53,30 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonModificarFactura_Click ( object sender , EventArgs e )
         {
-            _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
-            _fechaEmision = DateTime.Parse(textFecha_M8.Value);
-            _fechaUltimoPago = DateTime.Now;
-            _companiaId = int.Parse(theFactura.idCompaniaFactura.ToString());
-            _proyectoId = int.Parse(theFactura.idProyectoFactura.ToString());
-            _descripcion = textDescripcion_M8.Value;
-            _estatus = theFactura.estatusFactura;
-            _montoTotal = int.Parse(textMonto_M8.Value);
-            _montoRestante = int.Parse(textMonto_M8.Value);
+            if (textDescripcion_M8.Value.Equals(""))
+            {
+                string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
+            }
+            else
+            {
+                _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
+                _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+                _fechaUltimoPago = DateTime.Now;
+                _companiaId = int.Parse(theFactura.idCompaniaFactura.ToString());
+                _proyectoId = int.Parse(theFactura.idProyectoFactura.ToString());
+                _descripcion = textDescripcion_M8.Value;
+                _estatus = theFactura.estatusFactura;
+                _montoTotal = int.Parse(textMonto_M8.Value);
+                _montoRestante = int.Parse(textMonto_M8.Value);
+                _tipoMoneda = "Euros";
 
-            Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _descripcion, _estatus,
-                _proyectoId , _companiaId );
-            LogicaM8 facturaLogic = new LogicaM8();
-            facturaLogic.AnnularFactura(factura);
-            Server.Transfer("ConsultarFacturaM8.aspx");
+                Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, _estatus,
+                    _proyectoId, _companiaId);
+                LogicaM8 facturaLogic = new LogicaM8();
+                facturaLogic.ChangeExistingFactura(factura);
+                Server.Transfer("ConsultarFacturaM8.aspx");
+            }
         }
  
     }
