@@ -7,55 +7,66 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M9;
+using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M9
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        public string contact;
+
+        public string company
+        {
+            get
+            {
+                return this.tabla.Text;
+            }
+
+            set
+            {
+                this.tabla.Text = value;
+            }
+        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM9 prueba = new LogicaM9();
-            List<Compania> listCompania = prueba.getCompanias();
+            LogicaM4 prueba = new LogicaM4();
 
-            try
+            if (!IsPostBack)
             {
-                foreach (Compania compania in listCompania )
+                List<Compania> listCompany = prueba.getCompanies();
+
+                try
                 {
-                    contact += ResourceLogicaM9.AbrirTR;
-                    contact += ResourceLogicaM9.AbrirTD;
-                    contact += compania.NombreCompania.ToString();
-                    contact += ResourceLogicaM9.CerrarTD;
-                    contact += ResourceLogicaM9.AbrirTD;
-                    contact += compania.AcronimoCompania.ToString();
-                    contact += ResourceLogicaM9.CerrarTD;
-                    contact += ResourceLogicaM9.AbrirTD;
-                    contact += compania.RifCompania.ToString();
-                    contact += ResourceLogicaM9.CerrarTD;
-                    contact += ResourceLogicaM9.AbrirTD;
-                    contact += compania.EmailCompania.ToString();
-                    contact += ResourceLogicaM9.CerrarTD;
-                    contact += ResourceLogicaM9.AbrirTD;
-                    contact += compania.FechaRegistroCompania.ToString();
-                    contact += ResourceLogicaM9.CerrarTD;
-                    contact += ResourceLogicaM9.AbrirTD;
-                    contact += ResourceLogicaM9.AbrirSpan;
-                        if (compania.StatusCompania.Equals(1))
-                        {
-                            contact += ResourceLogicaM9.EtiquetaHabilitada;
-                        }
-                        if (compania.StatusCompania.Equals(0))
-                        {
-                            contact += ResourceLogicaM9.EtiquetaHabilitada;
-                        }
-                    contact += compania.RifCompania.ToString();
-                    contact += ResourceLogicaM9.CerrarTD;
-                }
-            }
-            catch (Exception ex)
-            {
+                    foreach (Compania theCompany in listCompany)
+                    {
+                        company += ResourceLogicaM9.OpenTR;
 
+                        company += ResourceLogicaM9.OpenTD + theCompany.NombreCompania.ToString() + ResourceLogicaM9.CloseTD;
+                        company += ResourceLogicaM9.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceLogicaM9.CloseTD;
+                        company += ResourceLogicaM9.OpenTD + theCompany.RifCompania + ResourceLogicaM9.CloseTD;                                    
+                        company += ResourceLogicaM9.OpenTD + theCompany.FechaRegistroCompania.ToShortDateString() + ResourceLogicaM9.CloseTD;
+                        if (theCompany.StatusCompania.Equals(1))
+                        {
+                            company += ResourceLogicaM9.OpenTD + ResourceLogicaM9.habilitado + ResourceLogicaM9.CloseTD;
+                        }
+                        else if (theCompany.StatusCompania.Equals(0))
+                        {
+                            company += ResourceLogicaM9.OpenTD + ResourceLogicaM9.inhabilitado + ResourceLogicaM9.CloseTD;
+                        }
+
+                        //Acciones de cada compania  
+
+                        company += ResourceLogicaM9.boton + theCompany.IdCompania + ResourceLogicaM9.boton_cerrar_id;                   
+
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
