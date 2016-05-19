@@ -68,10 +68,11 @@ namespace Tangerine.GUI.M6
             _fdepago = fpago.Value;
             _estatusW = comboEstatus.SelectedItem.Text;
             _idCompañia = comboCompañia.Items[comboCompañia.SelectedIndex].Value;
+           // _idCompañia = "1";
             _precondicion = arrPrecondicion.Value.Split(';');
           
-            Debug.Print(_precondicion[1]);
-            Debug.Print("lala"+(1-_precondicion.Length));
+            //Debug.Print(_precondicion[1]);
+            //Debug.Print("lala"+(1-_precondicion.Length));
 
 
             Propuesta propuesta = new Propuesta(_nombcodigoPropuesta, _descripcion, _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,
@@ -80,9 +81,10 @@ namespace Tangerine.GUI.M6
             propuestaLogica.agregar(propuesta);
 
 
-            for (int i = 0; i <= _precondicion.Length-1; i++)
+            for (int i = 0; i < _precondicion.Length-1; i++)
             {
-                string codReq = novocales+"_"+i.ToString();
+                int j = i + 1;
+                string codReq = novocales+"_RF_"+j.ToString();
                 Debug.Print(_precondicion[i]);
 
                 Requerimiento requerimiento = new Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
@@ -128,7 +130,7 @@ namespace Tangerine.GUI.M6
             try
             {
                 LogicaM4 logicaComp = new LogicaM4();
-                List<Compania> companias = logicaComp.fillTable();
+                List<Compania> companias = logicaComp.getCompanies();
                 ListItem itemCompa;
 
                 this.comboCompañia.Items.Clear();

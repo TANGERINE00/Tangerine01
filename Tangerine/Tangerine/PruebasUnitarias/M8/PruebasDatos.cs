@@ -13,15 +13,18 @@ namespace PruebasUnitarias.M8
     {
 
         #region Atributos
+
         public Facturacion theInvoice;
         public Facturacion theInvoice2;
         public Facturacion theInvoice3;
         private List<Facturacion> facturas;
         public bool answer;
         public DateTime fecha = new DateTime(2015, 2, 10);
+
         #endregion
 
         #region SetUp and TearDown
+
         [SetUp]
         public void init()
         {
@@ -35,9 +38,11 @@ namespace PruebasUnitarias.M8
         {
             theInvoice = null;
         }
+
         #endregion
 
         #region Test
+
         /// <summary>
         /// Prueba que permite verificar el insertar de una Factura en la base de datos
         /// </summary>
@@ -107,9 +112,11 @@ namespace PruebasUnitarias.M8
             }
 
         }
+
         #endregion
 
         #region Test por aclarar
+
         [Test]
         public void TestContactCompany()
         {
@@ -135,6 +142,18 @@ namespace PruebasUnitarias.M8
 
 
         }
+
+        [Test]
+        public void TestContactFacturaCompania()
+        {
+            //Declaro test de tipo BDFactura para poder invocar el "ContactFacturasCompania(int idCompania)"
+            facturas = BDFactura.ContactFacturasCompania(1);
+
+            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            Assert.AreEqual( 3 , facturas.Count() );
+
+        }
+
         #endregion
 
     }

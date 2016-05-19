@@ -34,7 +34,7 @@ namespace DominioTangerine
         public Usuario( string usuario, string contrasenia )
         {
             _usuario = usuario;
-            _contrasenia = GetMD5( contrasenia );
+            _contrasenia = contrasenia;
         }
 
         /// <summary>

@@ -27,6 +27,23 @@ namespace LogicaTangerine.M2
         }
 
         /// <summary>
+        /// Método que prepara los objetos tipo Rol y Usuario para después llamar al método AgregarUsuario()
+        /// </summary>
+        /// <param name="usuarioNombre"></param>
+        /// <param name="contraseniaUsuario"></param>
+        /// <param name="rolUsuario"></param>
+        /// <param name="fichaEmpleado"></param>
+        public static void PrepararUsuario( string usuarioNombre, string contraseniaUsuario, string rolUsuario,
+                                            int fichaEmpleado ) 
+        {
+            Rol rol = new Rol( rolUsuario );
+            Usuario usuario = new Usuario( usuarioNombre, contraseniaUsuario, "Activo", rol, fichaEmpleado, 
+                                           DateTime.Now );
+
+            AgregarUsuario( usuario );
+        }
+
+        /// <summary>
         /// Método para crear el nombre de usuario (2 primeros caracteres del nombre + 4 primeros caracteres del 
         /// apellido)
         /// </summary>

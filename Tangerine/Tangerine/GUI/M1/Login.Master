@@ -40,22 +40,21 @@
 
           <form  method="post" action="#" role="login" id="loginUser" runat="server">
             <div class="form-group has-feedback">
-              <input type="text" id="userIni" maxlength="254" runat="server" class="form-control" placeholder="Usuario">
+              <input type="text" id="userIni" maxlength="30" runat="server" class="form-control" placeholder="Usuario">
             </div>
             <div class="form-group has-feedback">
               <input type="password" maxlength="30" id="passwordIni" runat="server" class="form-control" placeholder="Contraseña">
             </div>
             <div class="row">
               <div class="col-xs-12 col-md-6 col-lg-6">
-                <!--<a href="Dashboard.aspx" type="submit" class="btn btn-default">Aceptar</a>-->
                 <button type="button"  id="LoginButton" runat="server" name="go" class="btn btn-default" onserverclick="ValidarUsuario">Aceptar</button>
               </div>
               <div class="col-xs-12 col-md-6 col-lg-6">
                 <a href="RecuperarContraseñaPregunta.aspx" style="color:#FFFFFF;">Recuperar contraseña</a><br>
               </div>
             </div>
+            <asp:label id="mensaje" runat="server" class="login-box-msg" style="color:#FFFFFF;"/>
           </form>
-          
         </div>
      </div>
 
