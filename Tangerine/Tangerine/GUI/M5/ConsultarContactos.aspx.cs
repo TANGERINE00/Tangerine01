@@ -52,6 +52,7 @@ namespace Tangerine.GUI.M5
             int typeComp = 2;//Para borrar
             int idComp = 3;//Para borrar
             LogicaM5 prueba = new LogicaM5();
+            Contacto _contact = new Contacto();
             //int typeComp = int.Parse(Request.QueryString["typeComp"]);
             //int idComp = int.Parse(Request.QueryString["idComp"]);
             try
@@ -59,9 +60,10 @@ namespace Tangerine.GUI.M5
                 //En este try atrapo el valor del id del Contacto si existe
                 //para luego ser eliminado de los contactos de la empresa
                 int idCont = int.Parse(Request.QueryString["idCont"]);
+                _contact.IdContacto = idCont;
                 if (idCont > 0)
                 {
-                    prueba.DeleteContact(idCont);
+                    prueba.DeleteContact(_contact);
                 }
             }
             catch
