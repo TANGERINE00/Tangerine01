@@ -113,9 +113,9 @@ namespace PruebasUnitarias.M8
 
         }
 
-        #endregion
+        
 
-        #region Test por aclarar
+        
 
         [Test]
         public void TestContactCompany()
@@ -134,11 +134,13 @@ namespace PruebasUnitarias.M8
         public void TestContactProyectoFactura()
         {
             Proyecto theProject = new Proyecto();
-            //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
+            //Declaro test de tipo BDFactura para poder invocar el "ContactProyectoFactura"
             theProject = BDFactura.ContactProyectoFactura(1);
 
-            //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
-            Assert.IsTrue(1 == theProject.Idproyecto);
+            //Verifico si el proyecto existe
+            //Assert.IsTrue(1 == theProject.Idproyecto);
+            Assert.IsNotNull(theProject);
+            
 
 
         }

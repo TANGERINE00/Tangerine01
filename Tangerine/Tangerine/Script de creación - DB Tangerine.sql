@@ -869,7 +869,7 @@ CREATE PROCEDURE M6_ListarRequerimientos
 AS
 
 BEGIN
-SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_id_req = @cod_Nombre 
+SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_req_id = @cod_Nombre 
 END;
 
 GO

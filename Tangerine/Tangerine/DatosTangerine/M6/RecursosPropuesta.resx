@@ -231,6 +231,10 @@
   <data name="PropFechaIni" xml:space="preserve">
     <value>prop_fecha_inicio</value>
   </data>
+  <data name="PropIdCompania" xml:space="preserve">
+    <value>fk_com_id</value>
+    <comment>atributo que identifica el fk de la compania en propuesta</comment>
+  </data>
   <data name="PropMoneda" xml:space="preserve">
     <value>prop_moneda</value>
   </data>
