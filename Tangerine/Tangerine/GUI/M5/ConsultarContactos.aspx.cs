@@ -27,6 +27,18 @@ namespace Tangerine.GUI.M5
             }
         }
 
+        public string botonVolver
+        {
+            get
+            {
+                return this.volver.Text;
+            }
+            set
+            {
+                this.volver.Text = value;
+            }
+        }
+
         public string button
         {
             get
@@ -49,12 +61,16 @@ namespace Tangerine.GUI.M5
         /// <param name="idCont">Entero, representa el id del contacto (Para ser eliminado)</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = 2;//Para borrar
-            int idComp = 3;//Para borrar
             LogicaM5 prueba = new LogicaM5();
             Contacto _contact = new Contacto();
-            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
-            //int idComp = int.Parse(Request.QueryString["idComp"]);
+            int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            int idComp = int.Parse(Request.QueryString["idComp"]);
+
+            if (typeComp == 1)
+                botonVolver = ResourceGUIM5.VolverCompania;
+            else
+                botonVolver = ResourceGUIM5.VolverCliPotencial;
+
             try
             {
                 //En este try atrapo el valor del id del Contacto si existe
