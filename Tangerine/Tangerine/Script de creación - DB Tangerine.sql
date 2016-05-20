@@ -561,6 +561,16 @@ AS
 	END;
 GO
 
+CREATE PROCEDURE M2_ObtenerRolUsuarioPorNombre
+@rol_nombre [varchar](100)
+AS
+	BEGIN
+		SELECT rol_id
+		FROM rol
+		WHERE rol_nombre = @rol_nombre;
+	END;
+GO
+
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----
 CREATE PROCEDURE M4_AgregarCompania
