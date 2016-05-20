@@ -1,4 +1,5 @@
-﻿using DatosTangerine.M2;
+﻿using DatosTangerine.M10;
+using DatosTangerine.M2;
 using DominioTangerine;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,32 @@ namespace LogicaTangerine.M2
 {
     public class LogicaAgregarUsuario
     {
+        /// <summary>
+        /// Método que se comunica con la clase BDEmpleado con el fin de conseguir la lista de empleados que
+        /// están registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public static List<Empleado> ConsultarListaDeEmpleados()
+        {
+            List<Empleado> listaDeEmpleados = BDEmpleado.ListarEmpleados();
+
+            return listaDeEmpleados;
+        }
+
+        /// <summary>
+        /// Método para verificar si un empleado ya posee usuarios
+        /// </summary>
+        /// <param name="numeroFicha"></param>
+        /// <returns></returns>
+        public static bool VerificarUsuarioDeEmpleado(int numeroFicha)
+        {
+            bool resultado = false;
+
+            resultado = BDUsuario.VerificarUsuarioPorFichaEmpleado(numeroFicha);
+
+            return resultado;
+        }
+
         /// <summary>
         /// Método que se comunica con BDUsuario para agregar el usuario a la base de datos
         /// </summary>
@@ -33,15 +60,20 @@ namespace LogicaTangerine.M2
         /// <param name="contraseniaUsuario"></param>
         /// <param name="rolUsuario"></param>
         /// <param name="fichaEmpleado"></param>
-        public static void PrepararUsuario( string usuarioNombre, string contraseniaUsuario, string rolUsuario,
-                                            int fichaEmpleado ) 
+        /// <returns></returns>
+        public static bool PrepararUsuario(string usuarioNombre, string contraseniaUsuario, string rolUsuario,
+                                            int fichaEmpleado)
         {
-            Rol rol = new Rol( rolUsuario );
-            Usuario usuario = new Usuario( usuarioNombre, contraseniaUsuario, "Activo", rol, fichaEmpleado, 
-                                           DateTime.Now );
-            usuario.Contrasenia = usuario.GetMD5( usuario.Contrasenia );
+            bool resultado = true;
 
-            AgregarUsuario( usuario );
+            Rol rol = new Rol(rolUsuario);
+            Usuario usuario = new Usuario(usuarioNombre, contraseniaUsuario, "Activo", rol, fichaEmpleado,
+                                           DateTime.Now);
+            usuario.Contrasenia = usuario.GetMD5(usuario.Contrasenia);
+
+            AgregarUsuario(usuario);
+
+            return resultado;
         }
 
         /// <summary>
@@ -60,7 +92,7 @@ namespace LogicaTangerine.M2
 
             usuarioNuevo = ObtenerCaracteres(nombre, 2);//Obtiene los dos primeros caracteres del nombre
             usuarioNuevo = usuarioNuevo + ObtenerCaracteres(apellido, 4);//Obtiene los 4 primeros caracteres del 
-                                                                         //apellido
+            //apellido
             return usuarioNuevo;
         }
 
@@ -91,6 +123,20 @@ namespace LogicaTangerine.M2
             }
 
             return caracteres;
+        }
+
+        /// <summary>
+        /// Método para verificar si el nombre de usuario pasado como arámetro existe en la base de datos
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public static bool ExisteUsuario(string usuario)
+        {
+            bool resultado = false;
+
+            resultado = BDUsuario.VerificarExistenciaDeUsuario(usuario);
+
+            return resultado;
         }
     }
 }

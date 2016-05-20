@@ -203,4 +203,16 @@
   <data name="UsuNombre" xml:space="preserve">
     <value>usu_usuario</value>
   </data>
+  <data name="ObtenerRolUsuarioPorNombre" xml:space="preserve">
+    <value>M2_ObtenerRolUsuarioPorNombre</value>
+  </data>
+  <data name="RolId" xml:space="preserve">
+    <value>rol_id</value>
+  </data>
+  <data name="VerificarExistenciaUsuario" xml:space="preserve">
+    <value>M2_VerificarExistenciaUsuario</value>
+  </data>
+  <data name="VerificarUsuarioPorFichaEmpleado" xml:space="preserve">
+    <value>M2_VerificarUsuarioPorFichaEmpleado</value>
+  </data>
 </root>

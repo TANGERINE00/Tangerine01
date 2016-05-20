@@ -166,10 +166,10 @@ namespace DatosTangerine.M2
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach ( DataRow row in dt.Rows )
                 {
-                    DateTime usuFecha = DateTime.Parse( row[ResourceUser.UsuFechaCreacion].ToString() );
-                    string usuAct = row[ResourceUser.UsuActivo].ToString();
-                    int usuIdRol = int.Parse( row[ResourceUser.UsuFKRol].ToString() );
-                    int usuEmpFicha = int.Parse( row[ResourceUser.UsuEmpFicha].ToString() );
+                    DateTime usuFecha = DateTime.Parse( row[ ResourceUser.UsuFechaCreacion ].ToString() );
+                    string usuAct = row[ ResourceUser.UsuActivo ].ToString();
+                    int usuIdRol = int.Parse( row[ ResourceUser.UsuFKRol ].ToString() );
+                    int usuEmpFicha = int.Parse( row[ ResourceUser.UsuEmpFicha ].ToString() );
 
                     usuario.FechaCreacion = usuFecha;
                     usuario.Activo = usuAct;
@@ -218,8 +218,8 @@ namespace DatosTangerine.M2
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach ( DataRow row in dt.Rows )
                 { 
-                    string rolNombre = row[ResourceUser.RolNombre].ToString();
-                    string menNombre = row[ResourceUser.RolMenu].ToString();
+                    string rolNombre = row[ ResourceUser.RolNombre ].ToString();
+                    string menNombre = row[ ResourceUser.RolMenu ].ToString();
 
                     System.Diagnostics.Debug.WriteLine("Resultado = " + rolNombre + menNombre);
 
@@ -279,8 +279,8 @@ namespace DatosTangerine.M2
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    string nombreOpcion = row[ResourceUser.OpcNombre].ToString();
-                    string url = row[ResourceUser.OpcUrl].ToString();
+                    string nombreOpcion = row[ ResourceUser.OpcNombre ].ToString();
+                    string url = row[ ResourceUser.OpcUrl ].ToString();
 
                     opcion = new Opcion( nombreOpcion, url );
 
@@ -311,13 +311,14 @@ namespace DatosTangerine.M2
                                              empleado.Emp_num_ficha.ToString(), false );
                 parametros.Add( elParametro );
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, parametros );
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, 
+                                                                         parametros );
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
-                    string rolUsuario = row[ResourceUser.RolNombre].ToString();
+                    string nombreUsuario = row[ ResourceUser.UsuNombre ].ToString();
+                    string rolUsuario = row[ ResourceUser.RolNombre ].ToString();
 
                     Rol rol = new Rol( rolUsuario );
                     
@@ -331,6 +332,119 @@ namespace DatosTangerine.M2
             }
 
             return usuario;
+        }
+
+        /// <summary>
+        /// Método que retorna el rol de un usuario con sus privilegios pasando como parámetro el nombre del rol
+        /// </summary>
+        /// <param name="nombreRol"></param>
+        /// <returns></returns>
+        public static Rol ObtenerRolUsuarioPorNombre( string nombreRol ) 
+        {
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+            Rol rol = new Rol();
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro( ResourceUser.ParametroRolNombre, SqlDbType.VarChar, nombreRol.ToString(),
+                                             false );
+                parametros.Add( elParametro );
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerRolUsuarioPorNombre,
+                                                                         parametros );
+
+                foreach ( DataRow row in dt.Rows )
+                {
+                    int idRol = int.Parse( row[ ResourceUser.RolId ].ToString() );
+
+                    rol = ObtenerRolUsuario( idRol );
+                }
+            }
+            catch ( Exception ex )
+            {
+                System.Diagnostics.Debug.Write( ex );
+            }
+
+            return rol;
+        }
+
+        /// <summary>
+        /// Método que retorna true si un usuario pertenece al empleado con el numero de ficha pasado como parametro. 
+        /// Si sucede lo contrario retorna false.
+        /// </summary>
+        /// <param name="fichaEmpleado"></param>
+        /// <returns></returns>
+        public static bool VerificarUsuarioPorFichaEmpleado(int fichaEmpleado)
+        {
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+
+            bool resultado = false;
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, fichaEmpleado.ToString(),
+                                             false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarUsuarioPorFichaEmpleado,
+                                                                         parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Write(ex);
+            }
+
+            return resultado;
+        }
+
+        /// <summary>
+        /// Método para verificar si un nombre de usuario existe
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <returns></returns>
+        public static bool VerificarExistenciaDeUsuario(string nombreUsuario)
+        {
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+
+            bool resultado = false;
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario,
+                                             false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarExistenciaUsuario,
+                                                                         parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Write(ex);
+            }
+
+            return resultado;
         }
     }
 }

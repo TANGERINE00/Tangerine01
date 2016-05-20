@@ -322,5 +322,49 @@ namespace DatosTangerine.M2 {
                 return ResourceManager.GetString("UsuNombre", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_ObtenerRolUsuarioPorNombre.
+        /// </summary>
+        internal static string ObtenerRolUsuarioPorNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("ObtenerRolUsuarioPorNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a rol_id.
+        /// </summary>
+        internal static string RolId
+        {
+            get
+            {
+                return ResourceManager.GetString("RolId", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_VerificarUsuarioPorFichaEmpleado.
+        /// </summary>
+        internal static string VerificarUsuarioPorFichaEmpleado
+        {
+            get
+            {
+                return ResourceManager.GetString("VerificarUsuarioPorFichaEmpleado", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a M2_VerificarExistenciaUsuario.
+        /// </summary>
+        internal static string VerificarExistenciaUsuario
+        {
+            get
+            {
+                return ResourceManager.GetString("VerificarExistenciaUsuario", resourceCulture);
+            }
+        }
     }
 }

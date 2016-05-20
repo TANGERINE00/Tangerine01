@@ -36,6 +36,7 @@ drop procedure M4_ModificarCompania;
 drop procedure M4_InhabilitarHabilitarCompania;
 drop procedure M4_EliminarCompania;
 drop procedure M4_ConsultarIdUltimaCompania;
+drop procedure M4_ConsultarLugar;
 
 
 drop procedure M5_AgregarContacto;
@@ -55,6 +56,7 @@ drop procedure M6_ListarRequerimientos;
 drop procedure M6_AgregarRequerimiento;
 drop procedure M6_ConsultarPropuestaNombre;
 drop procedure M6_ConsultarPropuestas;
+drop procedure M6_EliminarPropuesta;
 
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;

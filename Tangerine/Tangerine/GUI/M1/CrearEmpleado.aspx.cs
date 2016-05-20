@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,35 +17,15 @@ namespace Tangerine.GUI.M1
     {
 
         string active = "Activo";
+        Hashtable elementos = new Hashtable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            SelectedListGender.Items.Insert(0, "Seleccione Genero");
-            SelectedListGender.Items.Insert(1, "Masculino");
-            SelectedListGender.Items.Insert(2, "Femenino");
-            SelectedListGender.DataBind();
-
-            LevelListStudy.Items.Insert(0,"Seleccione Nivel de Estudio");
-            LevelListStudy.Items.Insert(1, "Universitario en proceso");
-            LevelListStudy.Items.Insert(2, "Universitario completado");
-            LevelListStudy.Items.Insert(3, "Bachiller");
-            LevelListStudy.DataBind();
-
-            SelectedListJob.Items.Insert(0, "Seleccione un Cargo");
-            SelectedListJob.Items.Insert(1,"Programador");
-            SelectedListJob.Items.Insert(2, "Analista de procesos");
-            SelectedListJob.Items.Insert(3, "Arquitecto");
-            SelectedListGender.DataBind();
-
-            SelectedListCountry.Items.Insert(0,"Seleccione un Pais");
-            SelectedListCountry.Items.Insert(1, "Venezuela");
-            SelectedListCountry.Items.Insert(2, "Brazil");
-            SelectedListGender.DataBind();
-
-            SelectedListState.Items.Insert(0,"Seleccione un Estado");
-            SelectedListGender.DataBind();
-          
+            FillSelectedListGender();
+            FillLevelListStudy();
+            FillSelectedListJob();
+            FillSelectedListCountry();
+            FillSelectedListState();
         }
 
         protected void SelectedGender_Change(object sender, EventArgs e)
@@ -55,15 +36,21 @@ namespace Tangerine.GUI.M1
 
         protected void SelectedJob_Change(object sender, EventArgs e)
         {
-            JobSummary.InnerText += "descripcion de prueba";
+            JobSummary.InnerText = "";
+            JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
         }
 
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
-            SelectedListState.Items.Insert(0, "Seleccione un Estado");
-            SelectedListState.Items.Insert(1, "Estado 1");
-            SelectedListState.Items.Insert(2, "Estado 2");
-            SelectedListState.DataBind();
+            LogicaM10 componentes = new LogicaM10();
+            int x = 1;
+            SelectedListState.Items.Insert(0, "Seleccione un estado");
+            foreach (LugarDireccion estados in componentes.ItemsForListState())
+            {
+                SelectedListState.Items.Insert(x, estados.LugNombre);
+                x++;
+            }
+
         }
 
         protected void SelectedState_Change(object sender, EventArgs e)
@@ -78,17 +65,14 @@ namespace Tangerine.GUI.M1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            List<LugarDireccion> direccion = newAddress();
-            
-            Cargo cargo = jobForEmployee();
-
             Empleado empleado = new Empleado(FirstName.Value, SecondNamee.Value, FirstLastName.Value,
                                                 SecondLastName.Value, SelectedListGender.SelectedItem.Text.ToString(),
                                                 int.Parse(Cedula.Value),
                                                 DateTime.ParseExact(DateEmployee.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value,cargo,direccion);
+                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
+                                                newAddress());
 
-            
+
         }
 
         private List<LugarDireccion> newAddress()
@@ -108,8 +92,57 @@ namespace Tangerine.GUI.M1
             return new Cargo(SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value,
                                     DateTime.ParseExact(DateJob.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                                     JobMode.Value, Double.Parse(SalaryJob.Value));
-            
+
         }
 
+        private void FillSelectedListGender()
+        {
+            SelectedListGender.Items.Insert(0, "Seleccione Genero");
+            SelectedListGender.Items.Insert(1, "Masculino");
+            SelectedListGender.Items.Insert(2, "Femenino");
+            SelectedListGender.DataBind();
+        }
+
+        private void FillLevelListStudy()
+        {
+            LevelListStudy.Items.Insert(0, "Seleccione Nivel de Estudio");
+            LevelListStudy.Items.Insert(1, "Universitario en proceso");
+            LevelListStudy.Items.Insert(2, "Universitario completado");
+            LevelListStudy.Items.Insert(3, "Bachiller");
+            LevelListStudy.DataBind();
+        }
+
+        private void FillSelectedListJob()
+        {
+            LogicaM10 componentes = new LogicaM10();
+            ;
+            int x = 1;
+            SelectedListJob.Items.Insert(0, "Seleccione un cargo");
+            foreach (Cargo cargos in componentes.ItemsForListJobs())
+            {
+                elementos.Add(cargos.Nombre, cargos.Descripcion);
+                SelectedListJob.Items.Insert(x, cargos.Nombre);
+                x++;
+            }
+
+        }
+
+        private void FillSelectedListCountry()
+        {
+            LogicaM10 componentes = new LogicaM10();
+            int x = 1;
+            SelectedListCountry.Items.Insert(0, "Seleccione un pais");
+            foreach (LugarDireccion paises in componentes.ItemsForListCountry())
+            {
+                SelectedListCountry.Items.Insert(x, paises.LugNombre);
+                x++;
+            }
+        }
+
+        private void FillSelectedListState()
+        {
+            SelectedListState.Items.Insert(0, "Seleccione un Estado");
+            SelectedListGender.DataBind();
+        }
     }
 }

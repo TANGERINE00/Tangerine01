@@ -37,9 +37,7 @@
                     <div class="box-body" runat="server">
                         <div class="form-group" runat="server">
                             <label for="inputPropuesta">Propuesta Aprobada *</label>
-                            <select class="form-control" id="inputPropuesta" name="inputPropuesta" runat="server">
-                                <option>sistema A</option>
-                                <option>sistema B</option>
+                            <select class="form-control" datatextfield="text" id="inputPropuesta" name="inputPropuesta" runat="server">
                             </select>
                         </div>
 
@@ -155,7 +153,7 @@
 
                         <div class="form-group">
                             <label for="inputEncargado">Encargado de la empresa contratante *</label>
-                            <select class="form-control" id="inputEncargado" name="inputEncargado" runat="server">
+                            <select class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
                                 <option>Pedro Perez</option>
                                 <option>Ana Rodriguez</option>
                             </select>

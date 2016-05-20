@@ -38,7 +38,7 @@ namespace Tangerine.GUI.M9
 
             if (factura != null)
             {
-                cliente += ResourceLogicaM9.AbrirNombreCliente + factura.descripcionFactura + ResourceLogicaM9.CerrarNombreCliente;
+                cliente += ResourceLogicaM9.AbrirNombreCliente + prueba.SearchCompaniaFactura((factura.idCompaniaFactura)) + "prueba" + ResourceLogicaM9.CerrarNombreCliente;
             }
         }
     }

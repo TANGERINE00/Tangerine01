@@ -153,10 +153,68 @@ namespace DatosTangerine.M10
             return employee;
         }
 
-        public List<LugarDireccion> GetElementsForSelectCountry()
+        public static List<LugarDireccion> GetElementsForSelectCountry()
         {
+            List<Parametro> parameters = new List<Parametro>();
             List<LugarDireccion> direccion = new List<LugarDireccion>();
+            BDConexion theConnection = new BDConexion();
+            Parametro param = new Parametro("@tipo", SqlDbType.Text, "Pais", false);
+            parameters.Add(param);
+
+            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectCountry, parameters);
+
+            foreach (DataRow row in dateTable.Rows)
+            {
+                int empId = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
+                String empPNombre = row[ResourceComplemento.ItemCountryText].ToString();
+
+                LugarDireccion lugar = new LugarDireccion(empId,empPNombre);
+                direccion.Add(lugar);
+            }
+
             return direccion;
+        }
+
+        public static List<LugarDireccion> GetElementsForSelectState(string lugarDireccion)
+        {
+            List<LugarDireccion> estados = new List<LugarDireccion>();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+
+            parameters.Add(new Parametro("@lugar", SqlDbType.Text, lugarDireccion, false));
+            parameters.Add(new Parametro("@tipo", SqlDbType.Text, "Estado", false));
+
+            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectState, parameters);
+
+            foreach (DataRow row in dateTable.Rows)
+            {
+                int lugId = int.Parse(row[ResourceComplemento.ItemStateValue].ToString());
+                String lugNombre = row[ResourceComplemento.ItemStateText].ToString();
+
+                estados.Add(new LugarDireccion(lugId, lugNombre));
+            }
+
+            return estados;
+        }
+
+        public static List<Cargo> GetElementsForSelectJob()
+        {
+            List<Cargo> jobs = new List<Cargo>();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            parameters.Add(new Parametro("@id", SqlDbType.Int, "1", false));
+            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectJobs, parameters);
+
+            foreach (DataRow row in dateTable.Rows)
+            {
+                int jobId = int.Parse(row[ResourceComplemento.ItemJobValue].ToString());
+                String jobNombre = row[ResourceComplemento.ItemJobText].ToString();
+                String jobDescription = row[ResourceComplemento.JobDescription].ToString();
+
+                jobs.Add(new Cargo(jobId, jobNombre, jobDescription));
+            }
+
+            return jobs;
         }
 
     }

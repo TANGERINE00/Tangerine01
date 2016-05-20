@@ -120,20 +120,20 @@ create table USUARIO
 
 create table CLIENTE_POTENCIAL
 (
-	cli_pot_id int not null,
-	cli_pot_nombre varchar(20) not null,
-	cli_pot_rif varchar(20) not null,
-	cli_pot_email varchar(50) not null,
-	cli_pot_pres_anual_inv numeric(12,3) not null,
-	cli_pot_num_llamadas int not null,
-	cli_pot_num_visitas int not null,
-	cli_pot_potencial bit default(0) not null,
-	cli_pot_borrado bit default(0) not null,
-
-	constraint pk_cli_pot primary key
-	(
-		cli_pot_id
-	)
+	 cli_pot_id int IDENTITY (1, 1) NOT NULL,
+	 cli_pot_nombre varchar(20) not null,
+	 cli_pot_rif varchar(20) not null,
+	 cli_pot_email varchar(50) not null,
+	 cli_pot_pres_anual_inv numeric(12,3) not null,
+	 cli_pot_num_llamadas int default(0) not null,
+	 cli_pot_num_visitas int default(0) not null,
+	 cli_pot_potencial bit default(1) not null,
+	 cli_pot_borrado bit default(0) not null,
+	 
+	 constraint pk_cli_pot primary key
+	 (
+	  cli_pot_id
+	 )
 );
 
 create table COMPANIA
@@ -341,6 +341,7 @@ create table FACTURA
 	fac_fecha_ultimo_pago date not null,
 	fac_monto_total numeric(12,3) not null,
 	fac_monto_restante numeric(12,3) not null,
+	fac_tipo_moneda varchar(100) not null,
 	fac_descripcion varchar(500) not null,
 	fac_estatus int not null,
 	fk_proy_id int not null,
@@ -469,7 +470,7 @@ create table ROL_OPCION
 );
 GO
 
---------Stored Procedure M2--------
+--------Stored Procedure M2---------------------------------------------------------------------------------------------------
 CREATE PROCEDURE M2_AgregarUsuario
 	(@usuario [varchar](20),
 	@contraseña [varchar](100),
@@ -560,6 +561,151 @@ AS
 	END;
 GO
 
+CREATE PROCEDURE M2_ObtenerRolUsuarioPorNombre
+@rol_nombre [varchar](100)
+AS
+	BEGIN
+		SELECT rol_id
+		FROM rol
+		WHERE rol_nombre = @rol_nombre;
+	END;
+GO
+
+CREATE PROCEDURE M2_VerificarUsuarioPorFichaEmpleado
+@emp_num_ficha [varchar](100)
+AS
+	BEGIN
+		SELECT usu_usuario
+		FROM usuario
+		WHERE fk_emp_num_ficha = @emp_num_ficha;
+	END;
+GO
+
+CREATE PROCEDURE M2_VerificarExistenciaUsuario
+@usuario [varchar](100)
+AS
+	BEGIN
+		SELECT usu_usuario
+		FROM usuario
+		WHERE usu_usuario = @usuario;
+	END;
+GO
+---------------------------------------------------------------------------------------------------------
+--------Stored Procedure M3------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+
+-------  Store Procedure agregar cliente_potencial -----------------------------------
+
+create procedure agregar_clientePotencial
+
+@nombreClientePotencial [varchar](20),
+@rifClientePotencial [varchar](20),
+@emailClientePotencial [varchar](50),
+@presupuestoAnualInversion [decimal]
+
+
+as
+ begin
+   insert into cliente_Potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv)
+                        values (@nombreClientePotencial,@rifClientePotencial,@emailClientePotencial,@presupuestoAnualInversion);
+ end;
+go
+
+
+----------- Store Procedure lista de clientes potenciales--------------------------
+CREATE procedure listar_cliente_potencial
+as
+	begin
+		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv
+		from cliente_Potencial
+                where cli_pot_borrado=0 and cli_pot_potencial=1;
+	end;
+go
+
+
+----------- Store Procedure eliminar cliente potenciale--------------------------
+CREATE PROCEDURE eliminar_cliente_potencial
+	@idClientePotencial [int]
+as
+ begin
+		UPDATE cliente_Potencial
+		SET 
+			cli_pot_borrado = 1	
+			WHERE
+			cli_pot_id  = @idClientePotencial and cli_pot_borrado=0;		
+
+ end;
+ go
+
+
+----------- Store Procedure promover cliente potencial-------------------------
+
+CREATE PROCEDURE promover_cliente_potencial
+	@idClientePotencial [int]
+as
+ begin
+		UPDATE cliente_Potencial
+		SET 
+			cli_pot_potencial = 0	
+			WHERE
+			cli_pot_id  = @idClientePotencial and cli_pot_potencial=1;		
+
+ end;
+ go
+
+
+----------- Store Procedure consulta de cliente potencial--------------------------
+
+
+CREATE procedure consultar_cliente_potencial
+   @idClientePotencial		[int]
+as
+	begin
+		select cli_pot_id , cli_pot_nombre , 
+		cli_pot_rif, cli_pot_email ,cli_pot_pres_anual_inv,cli_pot_num_llamadas,cli_pot_num_visitas
+		from cliente_Potencial
+		where cli_pot_id = @idClientePotencial;
+		
+	end;
+go
+
+
+----------- Store Procedure modificar cliente potencial--------------------------
+create procedure modificar_clientePotencialF
+
+
+
+	@idClientePotencial		[int],
+	@nombreClientePotencial  	[varchar](20),	
+	@rifClientePotencial	[varchar](20),
+	@emailClientePotencial	[varchar](50),
+	@presupuestoAnualInversion [decimal],
+        @num_llamadas[int],
+        @num_visitas[int]
+
+
+as
+ begin
+		UPDATE CLIENTE_POTENCIAL
+		SET 
+			cli_pot_nombre          = @nombreClientePotencial,
+            cli_pot_rif             = @rifClientePotencial,
+			cli_pot_email	        = @emailClientePotencial,
+	        cli_pot_pres_anual_inv  = @presupuestoAnualInversion,
+            cli_pot_num_llamadas    = @num_llamadas,
+            cli_pot_num_visitas     = @num_visitas
+	
+			WHERE
+			cli_pot_id = @idClientePotencial;	
+	
+ end;
+ go
+
+
+---------------------------------------------------------------------------------------------------------
+--------FIN Stored Procedure M3------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----
 CREATE PROCEDURE M4_AgregarCompania
@@ -649,6 +795,15 @@ AS
      SELECT MAX(com_id) com_id FROM COMPANIA; 
  end;
 GO
+
+CREATE PROCEDURE M4_ConsultarLugar
+AS
+	BEGIN
+		SELECT lug_dir_id as lug_dir_id, lug_dir_nombre as lug_dir_nombre
+		FROM Lugar_Direccion
+		WHERE lug_dir_tipo LIKE 'Ciudad';
+	end;
+GO		
 
 ------Fin Stored Procedure M4------
 
@@ -750,6 +905,25 @@ AS
 		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
 		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
 		FROM CONTACTO, CONTACTO_PROYECTO WHERE CONTACTO_PROYECTO.fk_proy_id = @id_proyecto and CONTACTO_PROYECTO.fk_con_id = CONTACTO.con_id;
+	END
+GO
+--Consultar contactos que no estan en el proyecto
+CREATE PROCEDURE M5_ConsultarContactoNoProyecto
+		@id_proyecto INT
+AS
+	BEGIN
+		SELECT contacto.con_id as con_id, contacto.con_nombre as con_nombre, contacto.con_apellido as con_apellido,
+		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
+		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO, COMPANIA, PROYECTO
+		WHERE CONTACTO.con_tipo_emp = 1
+		and CONTACTO.fk_id_com_lead = COMPANIA.com_id
+		and COMPANIA.com_id = PROYECTO.fk_com_id
+		and PROYECTO.proy_id = @id_proyecto
+		and CONTACTO.con_id NOT IN (SELECT contacto.con_id as con_id
+			FROM CONTACTO, CONTACTO_PROYECTO 
+			WHERE CONTACTO_PROYECTO.fk_proy_id = @id_proyecto 
+			and CONTACTO_PROYECTO.fk_con_id = CONTACTO.con_id)
 	END
 GO
 -----------------------------------
@@ -858,7 +1032,7 @@ CREATE PROCEDURE M6_ListarRequerimientos
 AS
 
 BEGIN
-SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_id_req = @cod_Nombre 
+SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_req_id = @cod_Nombre 
 END;
 
 GO
@@ -890,9 +1064,25 @@ prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA
 
 END;
 GO
+
+
+--Eliminar Propuesta
+CREATE PROCEDURE M6_EliminarPropuesta
+
+@propuesta_nombre varchar(20)
+
+AS
+ BEGIN
+    DELETE FROM REQUERIMIENTO WHERE fk_prop_req_id=@propuesta_nombre;
+    DELETE FROM PROPUESTA WHERE prop_nombre=@propuesta_nombre; 	
+ END;
+
+GO
+
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
+
 
 
 -----------------------------------
@@ -1114,6 +1304,7 @@ CREATE PROCEDURE M8_AgregarFactura
 	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
+	@tipo_moneda [varchar](100),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
@@ -1121,8 +1312,8 @@ CREATE PROCEDURE M8_AgregarFactura
 
 AS
 	BEGIN
-    	INSERT INTO FACTURA(fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
-		VALUES(@fecha_emision, @fecha_ultimo_pago, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+		VALUES(@fecha_emision, @fecha_ultimo_pago, @monto_total, @monto_restante, @tipo_moneda, @descripcion, @estatus, @id_proyecto, @id_compania);
  	END;
 GO
 
@@ -1133,7 +1324,7 @@ CREATE PROCEDURE M8_ConsultarFactura
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
-			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
@@ -1144,7 +1335,7 @@ CREATE PROCEDURE M8_ConsultarFacturas
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
-			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA;
 	END
 GO
@@ -1167,6 +1358,7 @@ CREATE PROCEDURE M8_ModificarFactura
 	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
+	@tipo_moneda [varchar](100),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
@@ -1175,7 +1367,7 @@ CREATE PROCEDURE M8_ModificarFactura
 AS
  	BEGIN
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_fecha_ultimo_pago = @fecha_ultimo_pago, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
-    		fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
+    		fac_tipo_moneda = @tipo_moneda, fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id_Factura;
  	END;
 GO
@@ -1187,6 +1379,7 @@ CREATE PROCEDURE M8_AnularFactura
 	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
+	@tipo_moneda [varchar](100),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
@@ -1206,7 +1399,7 @@ CREATE PROCEDURE M8_ConsultarFacturasCompania
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
-			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 			FROM FACTURA, COMPANIA 
 			WHERE com_id = @id_compania
 			AND fac_estatus = 0
@@ -1305,3 +1498,10 @@ AS
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------
+
+
+
+
+
+
+

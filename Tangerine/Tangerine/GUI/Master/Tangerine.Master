@@ -165,18 +165,13 @@
                 <li id="ConsultarCompañía" runat="server"><a href="../M4/ConsultarCompania.aspx"><i class="fa fa-circle-o"></i>Consultar Compañía</a></li>
               </ul>                
             </li>
-            <li class="treeview" id="Contactos" runat="server">
-              <a href="../M5/ConsultarContactos.aspx">
-                <i></i> <span>Gestion de Contactos</span> 
-              </a>              
-            </li>
             <li class="treeview" id="GestionDePropuestas" runat="server">
               <a href="#">
                 <i></i> <span>Gestion de Propuestas</span> <i class="fa fa-angle-left pull-right"></i>
               </a> 
                 <ul class="treeview-menu">
                 <li id="AgregarPropuesta" runat="server"><a href="../M6/AgregarPropuesta.aspx"><i class="fa fa-circle-o"></i> Agregar Propuesta</a></li>
-                <li id="ConsultarPropuestas" runat="server"><a href="../M6/ListarPropuesta.aspx"><i class="fa fa-circle-o"></i> Consultar Propuestas</a></li>
+                <li id="ConsultarPropuestas" runat="server"><a href="../M6/ConsultarPropuesta.aspx"><i class="fa fa-circle-o"></i> Consultar Propuestas</a></li>
                 
               </ul>             
             </li>

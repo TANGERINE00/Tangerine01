@@ -12,23 +12,34 @@ namespace Tangerine.GUI.M5
 {
     public partial class AgregarContacto : System.Web.UI.Page
     {
+        public string botonVolver
+        {
+            get
+            {
+                return this.volver.Text;
+            }
+            set
+            {
+                this.volver.Text = value;
+            }
+        }
         string _nombre = String.Empty;
         string _apellido = String.Empty;
         string _departamento = String.Empty;
         string _cargo = String.Empty;
         string _telefono = String.Empty;
         string _correo = String.Empty;
-        int typeComp;
-        int idComp;
+        public int typeComp;
+        public int idComp;
+        public string volverCC;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             typeComp = int.Parse(Request.QueryString["typeComp"]);
             idComp = int.Parse(Request.QueryString["idComp"]);
 
-            if (!IsPostBack)
-            {
-                
-            }
+            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
+                + ResourceGUIM5.BotonVolver3;
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
@@ -45,6 +56,8 @@ namespace Tangerine.GUI.M5
                 _cargo, _telefono, _correo, typeComp, idComp);
             LogicaM5 contactLogic = new LogicaM5();
             contactLogic.AddNewContact(contact);
+
+            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
             
         }
     }

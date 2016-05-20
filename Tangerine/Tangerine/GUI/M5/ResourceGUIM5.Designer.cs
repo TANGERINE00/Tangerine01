@@ -70,6 +70,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;td style=&quot;text-align:center;&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTD2 {
+            get {
+                return ResourceManager.GetString("AbrirTD2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;tr&gt;.
         /// </summary>
         internal static string AbrirTR {
@@ -169,11 +178,29 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?idCont=.
+        ///   Looks up a localized string similar to &quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonCerrar2 {
+            get {
+                return ResourceManager.GetString("BotonCerrar2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?typeComp=.
         /// </summary>
         internal static string BotonEliminar {
             get {
                 return ResourceManager.GetString("BotonEliminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;idCont=.
+        /// </summary>
+        internal static string BotonEliminar2 {
+            get {
+                return ResourceManager.GetString("BotonEliminar2", resourceCulture);
             }
         }
         
@@ -187,7 +214,34 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarContacto.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
+        /// </summary>
+        internal static string BotonVolver {
+            get {
+                return ResourceManager.GetString("BotonVolver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;idComp=.
+        /// </summary>
+        internal static string BotonVolver2 {
+            get {
+                return ResourceManager.GetString("BotonVolver2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;Cancelar&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonVolver3 {
+            get {
+                return ResourceManager.GetString("BotonVolver3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarContacto.aspx?typeComp=.
         /// </summary>
         internal static string ButtonModContact {
             get {
@@ -237,6 +291,24 @@ namespace Tangerine.GUI.M5 {
         internal static string FinalAgregarContacto {
             get {
                 return ResourceManager.GetString("FinalAgregarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConsultarContactos.aspx?typeComp=.
+        /// </summary>
+        internal static string hrefConsultarContacto {
+            get {
+                return ResourceManager.GetString("hrefConsultarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;.
+        /// </summary>
+        internal static string hrefConsultarContacto2 {
+            get {
+                return ResourceManager.GetString("hrefConsultarContacto2", resourceCulture);
             }
         }
         
@@ -309,6 +381,33 @@ namespace Tangerine.GUI.M5 {
         internal static string VentanaAgregarContacto {
             get {
                 return ResourceManager.GetString("VentanaAgregarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string VolverCliPotencial {
+            get {
+                return ResourceManager.GetString("VolverCliPotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string VolverCompania {
+            get {
+                return ResourceManager.GetString("VolverCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
+        /// </summary>
+        internal static string VolverConsultarCon {
+            get {
+                return ResourceManager.GetString("VolverConsultarCon", resourceCulture);
             }
         }
     }

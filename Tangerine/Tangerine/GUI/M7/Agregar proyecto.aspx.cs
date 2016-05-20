@@ -6,14 +6,31 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
+using LogicaTangerine.M5;
 
 namespace Tangerine.GUI.M7
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        LogicaProyecto LogicaM7 = new LogicaProyecto();
+        List<Propuesta> Propuestas = new List<Propuesta>();
+        LogicaM5 LogicaM5 = new LogicaM5();
+        List<Contacto> Contactos = new List<Contacto>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+           Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
+           inputPropuesta.Items.Add(Propuestas.Count.ToString());
 
+           for (int i = 0; i < Propuestas.Count;i++ )
+           {
+               inputPropuesta.Items.Add(Propuestas[i].Nombre);
+           }
+           Contactos = LogicaM5.GetContacts(1,1);
+
+           for (int i = 0; i < Contactos.Count; i++) {
+               inputEncargado.Items.Add(Contactos[i].Nombre+" "+Contactos[i].Apellido);
+           }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)

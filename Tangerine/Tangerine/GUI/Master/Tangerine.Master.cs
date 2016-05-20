@@ -20,14 +20,11 @@ namespace Tangerine.GUI.Master
             {
                 if (Util.MASTER_FLAG)
                 {
-                    Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
-                    Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
-                    Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario(Util._theGlobalUser); //-----------------------
-
                     Uri thisPageUrl = Request.Url;
                     string pathDePaginaActal = thisPageUrl.AbsolutePath;
+                    string nombreRol = HttpContext.Current.Session["Rol"].ToString();
 
-                    bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal);
+                    bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal, nombreRol);
 
                     if (privilegioAcceso)
                     {
@@ -35,7 +32,7 @@ namespace Tangerine.GUI.Master
                     }
                     else
                     {
-                        List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones();
+                        List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones(nombreRol);
 
                         foreach (string s in bloqueos)
                         {
@@ -46,7 +43,7 @@ namespace Tangerine.GUI.Master
             }
 
             if (HttpContext.Current.Session["User"] != null)
-                usuarioSesion.InnerText = HttpContext.Current.Session["User"]+"";
+                usuarioSesion.InnerText = HttpContext.Current.Session["User"] + "";
             else
                 usuarioSesion.InnerText = "Usuario";
         }

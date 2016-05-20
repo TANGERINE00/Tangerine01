@@ -27,6 +27,18 @@ namespace Tangerine.GUI.M5
             }
         }
 
+        public string botonVolver
+        {
+            get
+            {
+                return this.volver.Text;
+            }
+            set
+            {
+                this.volver.Text = value;
+            }
+        }
+
         public string button
         {
             get
@@ -49,12 +61,16 @@ namespace Tangerine.GUI.M5
         /// <param name="idCont">Entero, representa el id del contacto (Para ser eliminado)</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = 2;//Para borrar
-            int idComp = 3;//Para borrar
             LogicaM5 prueba = new LogicaM5();
             Contacto _contact = new Contacto();
-            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
-            //int idComp = int.Parse(Request.QueryString["idComp"]);
+            int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            int idComp = int.Parse(Request.QueryString["idComp"]);
+
+            if (typeComp == 1)
+                botonVolver = ResourceGUIM5.VolverCompania;
+            else
+                botonVolver = ResourceGUIM5.VolverCliPotencial;
+
             try
             {
                 //En este try atrapo el valor del id del Contacto si existe
@@ -90,9 +106,11 @@ namespace Tangerine.GUI.M5
                         contact += ResourceGUIM5.AbrirTD + theContact.Telefono.ToString() + ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.AbrirTD + theContact.Correo.ToString() + ResourceGUIM5.CerrarTD;
                         //Acciones de cada contacto
-                        contact += ResourceGUIM5.AbrirTD;
-                        contact += ResourceGUIM5.ButtonModContact + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
-                            + ResourceGUIM5.BotonEliminar + theContact.IdContacto + ResourceGUIM5.BotonCerrar ;
+                        contact += ResourceGUIM5.AbrirTD2;
+                        contact += ResourceGUIM5.ButtonModContact + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                            + ResourceGUIM5.BotonEliminar2 + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
+                            + ResourceGUIM5.BotonEliminar + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
+                            + ResourceGUIM5.BotonEliminar2 + theContact.IdContacto + ResourceGUIM5.BotonCerrar ;
                         contact += ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.CerrarTR;
                     }

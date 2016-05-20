@@ -44,8 +44,8 @@ namespace Tangerine.GUI.M7
                         project += ResourceGUIM7.OpenTr;
 
                         project += ResourceGUIM7.OpenTD + theProject.Nombre.ToString() + ResourceGUIM7.CloseTd;
-                        project += ResourceGUIM7.OpenTD + pruebaM7.ConsultarNombrePropuestaID(theProject.Idpropuesta) + ResourceGUIM7.CloseTd; // Acomodar debe mostrar el nombre y muestra el id
-                        //project += ResourceGUIM7.OpenTD + "" + ResourceGUIM7.CloseTd;
+                       // project += ResourceGUIM7.OpenTD + pruebaM7.ConsultarNombrePropuestaID(theProject.Idpropuesta).ToString() + ResourceGUIM7.CloseTd; // Acomodar debe mostrar el nombre y muestra el id
+                        project += ResourceGUIM7.OpenTD + "" + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Codigo + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Fechainicio + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Fechaestimadafin + ResourceGUIM7.CloseTd;

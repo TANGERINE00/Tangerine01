@@ -79,6 +79,15 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TGE_00_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ListaPropuestaProyecto.
         /// </summary>
         internal static string ConsultarPropuesta {
@@ -97,11 +106,38 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M6_ConsultarPropuestas.
+        /// </summary>
+        internal static string ConsultarTodasPropuestas {
+            get {
+                return ResourceManager.GetString("ConsultarTodasPropuestas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M6_EliminarPropuesta.
+        /// </summary>
+        internal static string EliminarPropuesta {
+            get {
+                return ResourceManager.GetString("EliminarPropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ListarRequerimientos.
         /// </summary>
         internal static string ListarRequerimiento {
             get {
                 return ResourceManager.GetString("ListarRequerimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
             }
         }
         
@@ -268,7 +304,7 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @idNombre.
+        ///   Looks up a localized string similar to @propuesta_nombre.
         /// </summary>
         internal static string Prop_Nombre {
             get {
@@ -349,6 +385,15 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fk_com_id.
+        /// </summary>
+        internal static string PropIdCompania {
+            get {
+                return ResourceManager.GetString("PropIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to prop_moneda.
         /// </summary>
         internal static string PropMoneda {
@@ -390,6 +435,15 @@ namespace DatosTangerine.M6 {
         internal static string ReqProp {
             get {
                 return ResourceManager.GetString("ReqProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }
