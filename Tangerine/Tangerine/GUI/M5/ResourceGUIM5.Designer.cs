@@ -286,6 +286,24 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ConsultarContactos.aspx?typeComp=.
+        /// </summary>
+        internal static string hrefConsultarContacto {
+            get {
+                return ResourceManager.GetString("hrefConsultarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;.
+        /// </summary>
+        internal static string hrefConsultarContacto2 {
+            get {
+                return ResourceManager.GetString("hrefConsultarContacto2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 8.3.
         /// </summary>
         internal static string interfazRCi {
