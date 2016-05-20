@@ -42,6 +42,21 @@ namespace LogicaTangerine.M6
             
         }
 
+        public Boolean BorrarPropuesta(String id)
+        {
+            //try
+            //{
+            return BDPropuesta.BorrarPropuesta(id);
+            //}
+            ////catch (Exception ex)
+            ////{
+            ////    throw ex;
+            ////}
+
+        }
+
+
+
        
 
        

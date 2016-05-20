@@ -122,12 +122,6 @@ namespace DatosTangerine.M6
 
 
 
-
-
-
-
-
-
         /// <summary>
         /// Metodo diseñado para M7, que devuelve la lista de propuestas con estatus aprobado y que no están en proyecto
         /// </summary>
@@ -261,7 +255,6 @@ namespace DatosTangerine.M6
 
 
 
-
         public static Propuesta ConsultarPropuestaporNombre(String id)
 
 
@@ -314,7 +307,16 @@ namespace DatosTangerine.M6
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
                            Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
-                        
+ 
+                       
+
+
+
+
+
+
+
+
                     );
                 }
             //}
@@ -327,6 +329,64 @@ namespace DatosTangerine.M6
         }
 
 
+        /// <summary>
+        /// Metodo para eliminar una Propuesta de la base de datos.
+        /// </summary>
+        /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
+        /// <returns>true si fue eliminado</returns>
+        public static Boolean BorrarPropuesta(string nombrePropuesta)
+        {
+           
+            /*
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            */
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursosPropuesta.Prop_Nombre, SqlDbType.VarChar, nombrePropuesta, false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(RecursosPropuesta.EliminarPropuesta, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+               // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(RecursosPropuesta.String1,
+                     RecursosPropuesta.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                //RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
+        }
 
 
 

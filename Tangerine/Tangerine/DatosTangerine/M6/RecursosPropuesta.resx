@@ -125,6 +125,10 @@
     <value>M6_AgregarRequerimiento</value>
     <comment>Stored Procedure que agrega un Requerimiento</comment>
   </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>TGE_00_001</value>
+    <comment>Codigo de error en el parseo</comment>
+  </data>
   <data name="ConsultarPropuesta" xml:space="preserve">
     <value>M6_ListaPropuestaProyecto</value>
     <comment>Stored Procedure que consulta las propuestas aprobadas que aun no son proyectos</comment>
@@ -133,9 +137,16 @@
     <value>M6_ConsultarPropuestaNombre</value>
     <comment>Metodo que se encarga de listar las propuestas por codigoNombre</comment>
   </data>
+  <data name="EliminarPropuesta" xml:space="preserve">
+    <value>M6_EliminarPropuesta</value>
+  </data>
   <data name="ListarRequerimiento" xml:space="preserve">
     <value>M6_ListarRequerimientos</value>
     <comment>Procedimiento que se encarga de listar los requerimientos por propuesta</comment>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
   </data>
   <data name="ModificarPropuesta" xml:space="preserve">
     <value>M6_ModificarPropuesta</value>
@@ -255,5 +266,8 @@
   <data name="ReqProp" xml:space="preserve">
     <value>@req_id</value>
     <comment>atributo que identifica el id del requerimiento</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
 </root>

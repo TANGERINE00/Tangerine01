@@ -64,6 +64,14 @@ VALUES (2,10465723,'Masculino','Jose','Manuel','Armas','De la casa',convert(VARC
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (3,18529272,'Femenino','Karla','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','bajo',2);
 
+INSERT INTO dbo.CONTACTO(con_nombre,con_apellido,con_departamento,con_cargo,con_telefono,con_correo,con_tipo_emp,fk_id_com_lead)
+VALUES('Oscar','Armas','Finanzas','Gerente','04162345678','giantufano@gmail.com',1,1);
+
+INSERT INTO dbo.CONTACTO(con_nombre,con_apellido,con_departamento,con_cargo,con_telefono,con_correo,con_tipo_emp,fk_id_com_lead)
+VALUES('Jose','Perez','Finanzas','Gerente','04162345678','giantufano@gmail.com',1,1);
+
+INSERT INTO dbo.CONTACTO(con_nombre,con_apellido,con_departamento,con_cargo,con_telefono,con_correo,con_tipo_emp,fk_id_com_lead)
+VALUES('Maria','Del Carmen','Finanzas','Gerente','04162345678','giantufano@gmail.com',1,1);
 
 SET IDENTITY_INSERT PROYECTO ON
 GO
