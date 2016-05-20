@@ -42,8 +42,9 @@
                         <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="telefono" name="telefono">
                         <label>Correo</label>
                         <input runat="server" type="text" class="form-control" id="correo" name="correo">
-                        <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary pull-right" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>
-				        <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx">Cancelar</a>
+                        <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary pull-right" OnClick="btnaceptar_Click" 
+                            type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+                        <asp:Literal runat="server" ID="volver"></asp:Literal>
                     </div>			
                 </div>
 		    </div>        
