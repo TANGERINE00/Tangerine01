@@ -18,12 +18,14 @@ namespace PruebasUnitarias.M5
         public Contacto theContact;
         public Contacto theContact2;
         public List<Contacto> listContact;
+        public Proyecto theProyect;
         #endregion
 
         #region SetUp and TearDown
         [SetUp]
         public void init()
         {
+            theProyect.Idproyecto = 1;
             theContact = new Contacto();
             theContact.IdContacto = 8;
             theContact.Nombre = "Istvan";

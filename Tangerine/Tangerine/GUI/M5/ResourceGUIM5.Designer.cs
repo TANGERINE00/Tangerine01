@@ -70,6 +70,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;td style=&quot;text-align:center;&quot;&gt;.
+        /// </summary>
+        internal static string AbrirTD2 {
+            get {
+                return ResourceManager.GetString("AbrirTD2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;tr&gt;.
         /// </summary>
         internal static string AbrirTR {
