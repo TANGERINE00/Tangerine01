@@ -87,6 +87,7 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\npm.js" />
+    <Content Include="DatosTangerine.csproj" />
     <Content Include="dist\css\AdminLTE.css" />
     <Content Include="dist\css\AdminLTE.min.css" />
     <Content Include="dist\css\skins\skin-black-light.css" />
@@ -187,6 +188,7 @@
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
     <Content Include="GUI\M6\Prueba_Datatable.aspx" />
+    <Content Include="GUI\M6\Eliminar.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\ConsultaProyecto.aspx" />
     <Content Include="GUI\M7\EjemploM7.aspx" />
@@ -1243,6 +1245,13 @@
     </Compile>
     <Compile Include="GUI\M6\Prueba_Datatable.aspx.designer.cs">
       <DependentUpon>Prueba_Datatable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\Eliminar.aspx.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\Eliminar.aspx.designer.cs">
+      <DependentUpon>Eliminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M7\Agregar proyecto.aspx.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
