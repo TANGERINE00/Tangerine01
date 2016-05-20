@@ -18,12 +18,14 @@ namespace LogicaTangerine.M5
         /// <summary>
         /// Metodo para consultar contactos de una empresa, sirve para Compania y Cliente Potencial.
         /// </summary>
-        /// <param name="typeComp">entero que representa el tipo de empresa a consultar (1 para Compania, 2 para Cliente Potencial)</param>
+        /// <param name="typeComp">entero que representa el tipo de empresa a consultar 
+        /// (1 para Compania, 2 para Cliente Potencial)</param>
         /// <param name="idComp">entero que representa el id de la empresa a consultar</param>
         /// <returns>Retorna una lista de contactos de la empresa</returns>
         public List<Contacto> GetContacts(int typeComp, int idComp) 
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
             return BDContacto.ContactCompany(typeComp,idComp); 
@@ -62,7 +64,8 @@ namespace LogicaTangerine.M5
         /// <returns>true si fue agregado</returns>
         public bool AddNewContact(Contacto contact)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.AddContact(contact);
@@ -101,7 +104,8 @@ namespace LogicaTangerine.M5
         /// <returns>true si fue eliminado</returns>
         public bool DeleteContact(Contacto contact)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.DeleteContact(contact);
@@ -140,7 +144,8 @@ namespace LogicaTangerine.M5
         /// <returns>Objeto de tipo contacto con todos sus valores</returns>
         public Contacto SearchContact(Contacto contact)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.SingleContact(contact);
@@ -179,7 +184,8 @@ namespace LogicaTangerine.M5
         /// <returns>true si fueron cambiados sus valores</returns>
         public bool ChangeContact(Contacto contact)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.ChangeContact(contact);
@@ -219,7 +225,8 @@ namespace LogicaTangerine.M5
         /// <returns>true si agrega el contacto al proyecto</returns>
         public bool AddProyectContact(Contacto contact, Proyecto proyect)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.AddContactProy(contact,proyect);
@@ -258,7 +265,8 @@ namespace LogicaTangerine.M5
         /// <returns>Lista de contactos del proyecto</returns>
         public List<Contacto> GetContactsProyect(Proyecto proyect)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.ContactProyect(proyect);
@@ -298,7 +306,8 @@ namespace LogicaTangerine.M5
         /// <returns>True si elimina el contacto del proyecto</returns>
         public bool DeleteContactProyect(Contacto contact, Proyecto proyect)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.DeleteContactProyect(contact, proyect);
@@ -338,7 +347,8 @@ namespace LogicaTangerine.M5
         /// <returns>Lista de contactos del proyecto</returns>
         public List<Contacto> GetContactsNoProyect(Proyecto proyect)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.ContactNoProyect(proyect);

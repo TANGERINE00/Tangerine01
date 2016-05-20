@@ -65,6 +65,7 @@ namespace Tangerine.GUI.M3
                 //this.tabla.Text += ResourceInterfaz.BotonEliminar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
                 this.tabla.Text += ResourceInterfaz.BotonModificar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
                 this.tabla.Text += ResourceInterfaz.BotonEliminar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
+                this.tabla.Text += ResourceInterfaz.BotonContacto + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
                 this.tabla.Text += ResourceInterfaz.CerrarTD;
                 this.tabla.Text += ResourceInterfaz.CerrarTR;
             }

@@ -30,12 +30,15 @@ namespace DatosTangerine.M5
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                //Las dos lineas siguientes tienen que repetirlas tantas veces 
+                //como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro 
+                //en su stored procedure, el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceContact.ParamName, SqlDbType.VarChar, theContact.Nombre,false);
                 parameters.Add(theParam);
 
-                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
+                //Parametro recibe (nombre del SEGUNDO parametro 
+                //en su stored procedure, el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceContact.ParamLName, SqlDbType.VarChar, theContact.Apellido, false);
                 parameters.Add(theParam);
 
@@ -51,14 +54,18 @@ namespace DatosTangerine.M5
                 theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamTComp, 
+                    SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, theContact.IdCompañia.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdComp, 
+                    SqlDbType.Int, theContact.IdCompañia.ToString(), false);
                 parameters.Add(theParam);
                 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
+                //Se manda a ejecutar en BDConexion el stored procedure 
+                //M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = 
+                    theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
 
             }
             catch (SqlException ex)
@@ -108,13 +115,18 @@ namespace DatosTangerine.M5
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, contact.IdContacto.ToString(), false);
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros 
+                //reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, 
+                //el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamId, 
+                    SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContact, parameters);
+                //Se manda a ejecutar en BDConexion el stored procedure 
+                //M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = 
+                    theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContact, parameters);
 
             }
             catch (SqlException ex)
@@ -164,9 +176,12 @@ namespace DatosTangerine.M5
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, theContact.IdContacto.ToString(), false);
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como 
+                //parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro 
+                //en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamId, 
+                    SqlDbType.Int, theContact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceContact.ParamName, SqlDbType.VarChar, theContact.Nombre, false);
@@ -187,8 +202,10 @@ namespace DatosTangerine.M5
                 theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.ChangeContact, parameters);
+                //Se manda a ejecutar en BDConexion el stored procedure 
+                //M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = 
+                    theConnection.EjecutarStoredProcedure(ResourceContact.ChangeContact, parameters);
 
             }
             catch (SqlException ex)
@@ -265,7 +282,8 @@ namespace DatosTangerine.M5
                     int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
 
                     //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                    Contacto theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                    Contacto theContact = new 
+                        Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
                     listContact.Add(theContact);
                 }
 
@@ -340,7 +358,8 @@ namespace DatosTangerine.M5
                     int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
 
                     //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                    theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                    theContact = new 
+                        Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
                 }
 
             }
@@ -392,16 +411,22 @@ namespace DatosTangerine.M5
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros 
+                //reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure,
+                //el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamIdContact, 
+                    SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, 
+                    SqlDbType.Int, proyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContactProy, parameters);
+                //Se manda a ejecutar en BDConexion el stored procedure
+                //M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = 
+                    theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContactProy, parameters);
 
             }
             catch (SqlException ex)
@@ -454,7 +479,8 @@ namespace DatosTangerine.M5
             {
                 theConnection.Conectar();
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, theProyect.Idproyecto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, 
+                    SqlDbType.Int, theProyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -474,7 +500,8 @@ namespace DatosTangerine.M5
                     int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
 
                     //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                    Contacto theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                    Contacto theContact = new 
+                        Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
                     listContact.Add(theContact);
                 }
 
@@ -527,16 +554,22 @@ namespace DatosTangerine.M5
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como 
+                //parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su 
+                //stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamIdContact, 
+                    SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, 
+                    SqlDbType.Int, proyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContactProyect, parameters);
+                //Se manda a ejecutar en BDConexion el stored procedure 
+                //M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = 
+                    theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContactProyect, parameters);
 
             }
             catch (SqlException ex)
@@ -589,11 +622,13 @@ namespace DatosTangerine.M5
             {
                 theConnection.Conectar();
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, theProyect.Idproyecto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, 
+                    SqlDbType.Int, theProyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceContact.ContactNoProyect, parameters);
+                DataTable dt =
+                    theConnection.EjecutarStoredProcedureTuplas(ResourceContact.ContactNoProyect, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -609,7 +644,8 @@ namespace DatosTangerine.M5
                     int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
 
                     //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                    Contacto theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                    Contacto theContact = new 
+                        Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
                     listContact.Add(theContact);
                 }
 
