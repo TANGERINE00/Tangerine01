@@ -71,6 +71,30 @@ namespace DominioTangerine
             this.modalidad = mode;
             this.sueldo = salary;
         }
+
+        public Cargo(int carId, string nombre, string descripcion, int fk_car_id,
+                     int fk_emp_num_ficha, DateTime dateIni,
+                     string mode, double salary)
+        {
+            this.car_id = carId;
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.fk_car_id = fk_car_id;
+            this.fk_emp_num_ficha = fk_emp_num_ficha;
+            this.fechaContratacion = dateIni;
+            this.modalidad = mode;
+            this.sueldo = salary;
+        }
+
+        /*cargo de creacion con empleado*/
+        public Cargo(string name, string summaryJob, DateTime dateJob, string jobMode, Double Salary)
+        {
+            this.nombre = name;
+            this.descripcion = summaryJob;
+            this.fechaContratacion = dateJob;
+            this.modalidad = jobMode;
+            this.sueldo = Salary;
+        }
         #endregion
 
         # region Get's Set's

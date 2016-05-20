@@ -34,22 +34,20 @@
                 </div><!-- /.box-header -->
                 <!-- table start -->
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
                                 <th>Acrónimo</th>
                                 <th>RIF</th>
-                                <th>Email</th>
                                 <th>Fecha Registro</th>
                                 <th>Status</th>
-                                <th style="text-align: center;">Información</th>
+                                <th style="text-align: center;">Facturas</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                        <asp:Literal runat="server" ID="tabla"></asp:Literal>
                         </tbody> 
-                            <tr>
+                            <!-- <tr>
                                 <td>International Business Machines</td>
                                 <td>IBM</td>
                                 <td>J-8764553432</td>
@@ -57,7 +55,7 @@
                                 <td>22/12/2012</td>
                                 <td><span class="label label-success">Habilitada</span></td>
                                 <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
-                            </tr>
+                            </tr> -->
  
                     </table>
                 </div>
@@ -65,4 +63,5 @@
          
             </div><!--/.col (left) -->
           </div>
+
 </asp:Content>

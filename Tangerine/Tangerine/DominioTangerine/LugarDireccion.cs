@@ -37,6 +37,12 @@ namespace DominioTangerine
             this.fk_lugId = fk_lugId;
             this.address = address;
         }
+
+        public LugarDireccion(string lugNombre, string lugTipo)
+        {
+            this.lugNombre = lugNombre;
+            this.lugTipo = lugTipo;
+        }
         #endregion
 
         #region Get's Set's

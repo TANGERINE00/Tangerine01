@@ -28,6 +28,11 @@ namespace LogicaTangerine.M6
             }
         }
 
+        public List<Requerimiento> TraerRequerimientoPropuesta(String id)
+        {
+            return BDPropuesta.ConsultarRequerimientosPorPropuesta(id);
+        }
+
       
 
     }

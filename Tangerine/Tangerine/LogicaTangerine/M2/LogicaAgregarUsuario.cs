@@ -39,6 +39,7 @@ namespace LogicaTangerine.M2
             Rol rol = new Rol( rolUsuario );
             Usuario usuario = new Usuario( usuarioNombre, contraseniaUsuario, "Activo", rol, fichaEmpleado, 
                                            DateTime.Now );
+            usuario.Contrasenia = usuario.GetMD5( usuario.Contrasenia );
 
             AgregarUsuario( usuario );
         }

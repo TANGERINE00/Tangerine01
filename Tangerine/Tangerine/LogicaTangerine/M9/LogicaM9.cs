@@ -12,16 +12,9 @@ namespace LogicaTangerine.M9
     public class LogicaM9
     {
 
-        public List<Compania> getCompanias()
-        { 
-            try
-            {
-                return BDCompania.ConsultCompanies();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+        public void init()
+        {
+
         }
 
 
