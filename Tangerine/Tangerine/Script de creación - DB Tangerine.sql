@@ -875,6 +875,19 @@ prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA WHERE pr
 
 END;
 GO
+
+CREATE PROCEDURE M6_ConsultarPropuestas
+
+
+AS
+
+BEGIN
+
+SELECT prop_nombre,prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
+prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA 
+
+END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
