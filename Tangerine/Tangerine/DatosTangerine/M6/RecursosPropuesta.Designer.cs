@@ -349,6 +349,15 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fk_com_id.
+        /// </summary>
+        internal static string PropIdCompania {
+            get {
+                return ResourceManager.GetString("PropIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to prop_moneda.
         /// </summary>
         internal static string PropMoneda {
