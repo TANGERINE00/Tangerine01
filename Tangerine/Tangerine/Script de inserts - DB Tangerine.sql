@@ -9,9 +9,30 @@ values (3,'Maracaibo','ciudad', 1);
 insert into lugar_direccion
 values (4,'Valencia','Ciudad', 1);
 
-INSERT INTO CLIENTE_POTENCIAL VALUES (1,'jose','rifJose','emailJose',10,10,10,0,0);
+--------Clientes Potenciales------------------------------------------------------------------------------------------------
 
+insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Skynet','J12345678','skynet@gmail.com',15120,0,0,1,0);
 
+insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,2,3,1,0);
+
+ insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+ cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,1,2,1,0);
+
+insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('TerraSave','J25674897','terrasave@gmail.com',17020,3,3,1,0);
+
+insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1,0);
+
+insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1,0);
+
+insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
+cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,0,0);
+
+------------------------------------------------------------------------------------------------------------------
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
 values ('pepsi', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'psi', '12/12/2016', 1, 1);
 
