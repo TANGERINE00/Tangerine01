@@ -97,7 +97,7 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public static Boolean DeleteContact(int IdContacto)
+        public static Boolean DeleteContact(Contacto contact)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -110,7 +110,7 @@ namespace DatosTangerine.M5
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, IdContacto.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -306,7 +306,7 @@ namespace DatosTangerine.M5
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public static Boolean AddContactProy(int idContact, int idProy)
+        public static Boolean AddContactProy(Contacto contact, Proyecto proyect)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -319,10 +319,10 @@ namespace DatosTangerine.M5
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, idContact.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, idProy.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -365,7 +365,7 @@ namespace DatosTangerine.M5
         /// Recibe dos parametros: idContact referente al contacto a buscar
         /// </summary>
         /// <returns>Objeto de tipo Contacto si existe</returns>
-        public static Contacto SingleContact(int idContact)
+        public static Contacto SingleContact(Contacto contact)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -379,7 +379,7 @@ namespace DatosTangerine.M5
             {
                 theConnection.Conectar();
 
-                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, idContact.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamId, SqlDbType.Int, contact.IdContacto.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -432,6 +432,81 @@ namespace DatosTangerine.M5
                 ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return theContact;
+        }
+
+        /// <summary>
+        /// Metodo para consultar todos los Contactos que pertenecen a un Proyecto.
+        /// Recibe  parametro: theProyect de tipo Proyecto, para consultar con su id
+        /// </summary>
+        /// <returns>Lista de contactos del Proyecto</returns>
+        public static List<Contacto> ContactProyect(Proyecto theProyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+            List<Contacto> listContact = new List<Contacto>();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, theProyect.Idproyecto.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceContact.ContactProyect, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int conId = int.Parse(row[ResourceContact.ConIdContact].ToString());
+                    String conName = row[ResourceContact.ConNameContact].ToString();
+                    String conLName = row[ResourceContact.ConLastNameContact].ToString();
+                    String conDepart = row[ResourceContact.ConDepartmentContact].ToString();
+                    String conRol = row[ResourceContact.ConRolContact].ToString();
+                    String conTele = row[ResourceContact.ConPhoneContact].ToString();
+                    String conEmail = row[ResourceContact.ConEmailContact].ToString();
+                    int conTypeC = int.Parse(row[ResourceContact.ConTypeComp].ToString());
+                    int conCompId = int.Parse(row[ResourceContact.ConIdComp].ToString());
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Contacto theContact = new Contacto(conId, conName, conLName, conDepart, conRol, conTele, conEmail, conTypeC, conCompId);
+                    listContact.Add(theContact);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
+                     ResourceContact.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listContact;
         }
     }
 }

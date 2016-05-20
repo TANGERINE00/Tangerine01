@@ -199,6 +199,24 @@
     <value>&lt;a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
   </data>
   <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a style='margin-left:5px;' class='btn btn-danger glyphicon glyphicon-remove-circle' href="ConsultarContactos.aspx?idCont=</value>
+    <value>&lt;a style='margin-left:5px;' class='btn btn-danger glyphicon glyphicon-remove-circle' href="ConsultarContactos.aspx?typeComp=</value>
+  </data>
+  <data name="BotonVolver" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
+  </data>
+  <data name="BotonVolver2" xml:space="preserve">
+    <value>&amp;idComp=</value>
+  </data>
+  <data name="BotonVolver3" xml:space="preserve">
+    <value>"&gt;Cancelar&lt;/a&gt;</value>
+  </data>
+  <data name="VolverCliPotencial" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="../M3/ConsultarLead.aspx"&gt;Volver&lt;/a&gt;</value>
+  </data>
+  <data name="VolverCompania" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="../M4/ConsultarCompania.aspx"&gt;Volver&lt;/a&gt;</value>
+  </data>
+  <data name="BotonEliminar2" xml:space="preserve">
+    <value>&amp;idCont=</value>
   </data>
 </root>

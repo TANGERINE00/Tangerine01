@@ -27,6 +27,18 @@ namespace Tangerine.GUI.M5
             }
         }
 
+        public string botonVolver
+        {
+            get
+            {
+                return this.volver.Text;
+            }
+            set
+            {
+                this.volver.Text = value;
+            }
+        }
+
         public string button
         {
             get
@@ -49,19 +61,25 @@ namespace Tangerine.GUI.M5
         /// <param name="idCont">Entero, representa el id del contacto (Para ser eliminado)</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = 2;//Para borrar
-            int idComp = 3;//Para borrar
             LogicaM5 prueba = new LogicaM5();
-            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
-            //int idComp = int.Parse(Request.QueryString["idComp"]);
+            Contacto _contact = new Contacto();
+            int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            int idComp = int.Parse(Request.QueryString["idComp"]);
+
+            if (typeComp == 1)
+                botonVolver = ResourceGUIM5.VolverCompania;
+            else
+                botonVolver = ResourceGUIM5.VolverCliPotencial;
+
             try
             {
                 //En este try atrapo el valor del id del Contacto si existe
                 //para luego ser eliminado de los contactos de la empresa
                 int idCont = int.Parse(Request.QueryString["idCont"]);
+                _contact.IdContacto = idCont;
                 if (idCont > 0)
                 {
-                    prueba.DeleteContact(idCont);
+                    prueba.DeleteContact(_contact);
                 }
             }
             catch
@@ -89,8 +107,10 @@ namespace Tangerine.GUI.M5
                         contact += ResourceGUIM5.AbrirTD + theContact.Correo.ToString() + ResourceGUIM5.CerrarTD;
                         //Acciones de cada contacto
                         contact += ResourceGUIM5.AbrirTD;
+                        //Falta mandar typeComp y idComp
                         contact += ResourceGUIM5.ButtonModContact + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
-                            + ResourceGUIM5.BotonEliminar + theContact.IdContacto + ResourceGUIM5.BotonCerrar ;
+                            + ResourceGUIM5.BotonEliminar + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
+                            + ResourceGUIM5.BotonEliminar2 + theContact.IdContacto + ResourceGUIM5.BotonCerrar ;
                         contact += ResourceGUIM5.CerrarTD;
                         contact += ResourceGUIM5.CerrarTR;
                     }

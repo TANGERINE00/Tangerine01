@@ -150,6 +150,7 @@ namespace DatosTangerine.M6
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
+                    
                     String conNombre = row[RecursosPropuesta.PropNombre].ToString();
                     String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
                     String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
@@ -161,9 +162,11 @@ namespace DatosTangerine.M6
                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
-                   int conFkComp = Convert.ToInt32(row[RecursosPropuesta.ParamIdCompa]);
+                   int conFkComp = Convert.ToInt32(row[RecursosPropuesta.PropIdCompania]
 
 
+                      );
+                      
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
                     Propuesta propuestas = new Propuesta(conNombre, conDescripcion, contipoDuracion,
                         conAcuerdo, conEstatus, conMoneda, conEntregas, conFechaIni, conFechaFin, conCosto, conFkComp);
@@ -198,18 +201,8 @@ namespace DatosTangerine.M6
 
 
 
-        public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(int id)
+        public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id)
         {
-
-            //if (id == -1)
-            //{
-            //    throw new ExcepcionesTotem.Modulo5.
-            //       ProyectoNoEncontradoException(
-            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_CODIGO,
-            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_MENSAJE,
-            //       new Exception()
-            //       );
-            //}
 
             List<Parametro> parametros = new List<Parametro>();
 
@@ -217,8 +210,8 @@ namespace DatosTangerine.M6
                new List<Requerimiento>();
 
             Parametro parametro = new Parametro(
-               RecursosPropuesta.ParamIdProp,
-               SqlDbType.Int, id.ToString(), false);
+               RecursosPropuesta.ParamNombreProp,
+               SqlDbType.VarChar, id, false);
             parametros.Add(parametro);
 
             try
@@ -232,9 +225,10 @@ namespace DatosTangerine.M6
                 {
                     listaRequerimientos.Add(
                         new DominioTangerine.Requerimiento(
-                           Convert.ToInt32(fila[RecursosPropuesta.ReqProp]),
-                           fila[RecursosPropuesta.ReqProp].ToString(),
-                           fila[RecursosPropuesta.ReqNombre].ToString()
+                          fila[RecursosPropuesta.ParamCodigoReq].ToString(),
+                          fila[RecursosPropuesta.ParamDescriReq].ToString()
+
+                          
                        )
                     );
                 }
@@ -259,6 +253,7 @@ namespace DatosTangerine.M6
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+
 
 
         public static Propuesta ConsultarPropuestaporNombre(String id)
@@ -313,13 +308,16 @@ namespace DatosTangerine.M6
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
                            Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
-                        
-            
-
-
-
-
+ 
                        
+
+
+
+
+
+
+
+
                     );
                 }
             //}

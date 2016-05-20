@@ -11,8 +11,18 @@ namespace Tangerine.GUI.M7
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        LogicaProyecto LogicaM7 = new LogicaProyecto();
+        List<Propuesta> Propuestas = new List<Propuesta>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
+           inputPropuesta.Items.Add(Propuestas.Count.ToString());
+
+           for (int i = 0; i < Propuestas.Count;i++ )
+           {
+               inputPropuesta.Items.Add(Propuestas[i].Nombre);
+           }
 
         }
 

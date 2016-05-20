@@ -46,6 +46,15 @@ namespace LogicaTangerine.M10
             return BDEmpleado.GetEmployeeById(employeeId);
         }
 
+        public List<LugarDireccion> ItemsForListCountry()
+        {
+            return BDEmpleado.GetElementsForSelectCountry();
+        }
+
+        public List<LugarDireccion> ItemsForListState()
+        {
+            return BDEmpleado.GetElementsForSelectCountry();
+        }
 
     }
 }

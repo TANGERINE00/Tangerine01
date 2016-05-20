@@ -152,5 +152,35 @@ namespace DatosTangerine.M10
                                             empFechaFin, empDireccion);
             return employee;
         }
+
+        public static List<LugarDireccion> GetElementsForSelectCountry()
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            List<LugarDireccion> direccion = new List<LugarDireccion>();
+            BDConexion theConnection = new BDConexion();
+            Parametro param = new Parametro("@tipo", SqlDbType.Text, "Pais", false);
+            parameters.Add(param);
+
+            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectCountry, parameters);
+
+            foreach (DataRow row in dateTable.Rows)
+            {
+                int empId = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
+                String empPNombre = row[ResourceComplemento.ItemCountryText].ToString();
+
+                LugarDireccion lugar = new LugarDireccion(empId,empPNombre);
+                direccion.Add(lugar);
+            }
+
+            return direccion;
+        }
+
+        public static List<LugarDireccion> GetElementsForSelectState()
+        {
+            List<LugarDireccion> estado = new List<LugarDireccion>();
+
+            return estado;
+        }
+
     }
 }

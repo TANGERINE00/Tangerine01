@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="FacturasPorPagar.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -39,102 +40,79 @@
                         <h4 class="modal-title" id="myModalLabel">Consulta</h4>
                     </div>
                     <div class="modal-body">
-                       
+
                         <div class="box box-primary">
-                <div class="box-header with-border">
-                  
-                </div><!-- /.box-header -->
-                <!-- form start -->
-                
-                  <div class="box-body">
+                            <div class="box-header with-border">
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
 
-                    <div class="form-group">
-                      <label for="labelNumeroFactura_M8">Número Factura </label>
-                      <input type="text" class="form-control" id="textNumeroFactura_M8"  disabled="disabled">
-                    </div>
+                            <div class="box-body">
 
-                    <div class="form-group">
-                      <label for="labelFecha_M8">Fecha de registro</label>
-                        <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" disabled="disabled">
-                </div>
-                     
-                    </div>
+                                <div class="form-group">
+                                    <label for="labelNumeroFactura_M8">Número Factura </label>
+                                    <input type="text" class="form-control" id="textNumeroFactura_M8" disabled="disabled">
+                                </div>
 
-                      <div class="form-group">
-                      <label for="labelCompañia_M8">Compañía</label>
-                      <input type="text" class="form-control" id="textCompañia_M8" placeholder="Compañía" disabled="disabled">
-                    </div>
+                                <div class="form-group">
+                                    <label for="labelFecha_M8">Fecha de registro</label>
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control pull-right" id="datepicker" disabled="disabled">
+                                    </div>
 
-                        <div class="form-group">
-                      <label for="labelProyecto_M8">Proyecto</label>
-                      <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
-                    </div>
+                                </div>
 
-                      
-                        <div class="form-group">
-                      <label for="labelMonto_M8">Monto</label>
-                      <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled="disabled">
-                    </div>
+                                <div class="form-group">
+                                    <label for="labelCompañia_M8">Compañía</label>
+                                    <input type="text" class="form-control" id="textCompañia_M8" placeholder="Compañía" disabled="disabled">
+                                </div>
 
-                  </div><!-- /.box-body -->
+                                <div class="form-group">
+                                    <label for="labelProyecto_M8">Proyecto</label>
+                                    <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
+                                </div>
 
-                
-              </div>
+
+                                <div class="form-group">
+                                    <label for="labelMonto_M8">Monto</label>
+                                    <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled="disabled">
+                                </div>
+
+                            </div>
+                            <!-- /.box-body -->
+
+
+                        </div>
 
 
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-            <table class="table table-hover">
-                <tbody>
+            <!--<table class="table table-hover">-->
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
                     <tr>
                         <th>N° Factura</th>
-                        <th>Cliente</th>
                         <th>Fecha Factura</th>
                         <th>Estatus Factura</th>
                         <th>Proyecto</th>
                         <th>Monto</th>
                         <th style="text-align: center;">Pagar</th>
                     </tr>
-                    <tr>
-                        <td>00000000001</td>
-                        <td>Trascend</td>
-                        <td>13-04-2016</td>
-                        <td><span class="label label-danger">No pagada</span></td>
-                        <td>Conexión de usuarios en la planta de Guarenas.</td>
-                        <th style="text-align: center;">20<a class="glyphicon glyphicon-euro"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx"></a></th>
-                    </tr>
-                    <tr>
-                        <td>00000000002</td>
-                        <td>Trascend</td>
-                        <td>13-04-2016</td>
-                        <td><span class="label label-warning">Por pagar</span></td>
-                        <td>Base de datos para el departamento A.</td>
-                        <th style="text-align: center;">40<a class="glyphicon glyphicon-usd"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx"></a></th>
-                    </tr>
-                    <tr>
-                        <td>00000000003</td>
-                        <td>Trascend</td>
-                        <td>13-04-2016</td>
-                        <td><span class="label label-warning">Por pagar</span></td>
-                        <td>Base de datos para el departamento B.</td>
-                        <th style="text-align: center;">50<a class="glyphicon glyphicon-bitcoin"></a></th>
-                        <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx"></a></th>
-                    </tr>
+                </thead>
+                <tbody>
+                    <asp:Literal runat="server" ID="tabla"></asp:Literal>
                 </tbody>
             </table>
         </div>

@@ -181,10 +181,10 @@
     <value>, </value>
   </data>
   <data name="EtiquetaDeshabilitada" xml:space="preserve">
-    <value />
+    <value>class="label label-danger"&gt; Deshabilitada </value>
   </data>
   <data name="EtiquetaHabilitada" xml:space="preserve">
-    <value>class="label label-success"&gt;</value>
+    <value>class="label label-success"&gt; Habilitada </value>
   </data>
   <data name="FinalAgregarContacto" xml:space="preserve">
     <value>"&gt;Nuevo Contacto&lt;/a&gt;</value>
@@ -212,5 +212,143 @@
   </data>
   <data name="VentanaAgregarContacto" xml:space="preserve">
     <value>&lt;a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
+  </data>
+  <data name="aja" xml:space="preserve">
+    <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"&gt;&lt;/a&gt;&lt;/th&gt;</value>
+  </data>
+  <data name="Acronimo" xml:space="preserve">
+    <value>Acrónimo:</value>
+  </data>
+  <data name="BotonContac" xml:space="preserve">
+    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" &gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonHab" xml:space="preserve">
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonInhab" xml:space="preserve">
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" &gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonInvol" xml:space="preserve">
+    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonModif" xml:space="preserve">
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalE"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBoton" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonParametro" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseDiv" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="Closeh3" xml:space="preserve">
+    <value>&lt;/h3&gt;</value>
+  </data>
+  <data name="Closeh4" xml:space="preserve">
+    <value>&lt;/h4&gt;</value>
+  </data>
+  <data name="CloseTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CloseTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="Coma1" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="Comp" xml:space="preserve">
+    <value>Comp</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="habilitado" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;Habilitada&lt;/span&gt;</value>
+  </data>
+  <data name="inhabilitado" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Inhabilitada&lt;/span&gt;</value>
+  </data>
+  <data name="Lugar" xml:space="preserve">
+    <value>Lugar:</value>
+  </data>
+  <data name="Nombre1" xml:space="preserve">
+    <value>Nombre:</value>
+  </data>
+  <data name="OpenBotonEdit" xml:space="preserve">
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left 0.2px" data-toggle="modal" data-target="#myModalE" id="Edi</value>
+  </data>
+  <data name="OpenBotonHab" xml:space="preserve">
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left 0.2px" id="Hab</value>
+  </data>
+  <data name="OpenBotonInfo" xml:space="preserve">
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left 0.2px" data-toggle="modal" data-target="#myModal" OnClick="MostrarInfo" id="Inf</value>
+  </data>
+  <data name="OpenBotonInhab" xml:space="preserve">
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left 0.2px" id="Inh</value>
+  </data>
+  <data name="OpenDivRow" xml:space="preserve">
+    <value>&lt;div class="row"&gt;</value>
+  </data>
+  <data name="Openh3" xml:space="preserve">
+    <value>&lt;h3 style="bold"&gt;</value>
+  </data>
+  <data name="Openh4" xml:space="preserve">
+    <value>&lt;h4&gt;</value>
+  </data>
+  <data name="OpenTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
+  </data>
+  <data name="OpenTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="Rif" xml:space="preserve">
+    <value>RIF:</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="boton" xml:space="preserve">
+    <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx?id=</value>
+  </data>
+  <data name="boton_cerrar_id" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
+  </data>
+  <data name="botonPagarAbrir" xml:space="preserve">
+    <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx?id=</value>
+  </data>
+  <data name="botonPagarCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
+  </data>
+  <data name="EtiquetaPorPagar" xml:space="preserve">
+    <value>&lt;td&gt;&lt;span class="label label-warning"&gt;Por pagar&lt;/span&gt;&lt;/td&gt;</value>
+  </data>
+  <data name="AbrirFecha" xml:space="preserve">
+    <value>&lt;div class="input-group"&gt;&lt;div class="input-group-addon"&gt;&lt;i class="fa fa-calendar"&gt;&lt;/i&gt;&lt;/div&gt;&lt;input type="text" class="form-control pull-right" id="reservation" placeholder="</value>
+  </data>
+  <data name="AbrirNombreCliente" xml:space="preserve">
+    <value>&lt;input type="input_cliente" class="form-control" id="cliente_id" placeholder="</value>
+  </data>
+  <data name="CerraFecha" xml:space="preserve">
+    <value>" disabled&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="CerrarNombreCliente" xml:space="preserve">
+    <value>" disabled&gt;</value>
+  </data>
+  <data name="EtiquetaCliente" xml:space="preserve">
+    <value>&lt;label for="input_cliente"&gt;Cliente (compañía contratante)&lt;/label&gt;</value>
+  </data>
+  <data name="EtiquetaFecha" xml:space="preserve">
+    <value>&lt;label&gt;Fecha factura&lt;/label&gt;</value>
   </data>
 </root>

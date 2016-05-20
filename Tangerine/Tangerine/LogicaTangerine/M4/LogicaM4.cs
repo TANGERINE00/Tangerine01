@@ -11,8 +11,6 @@ namespace LogicaTangerine.M4
     public class LogicaM4
     {
         public Compania theCompany;
-        List<Compania> answer;
-        bool answer2;
 
         public void init()
         {
@@ -29,21 +27,8 @@ namespace LogicaTangerine.M4
             {
                 throw ex;
             }
-  
         }
         
-        public List<Compania> fillTable()
-        {
-            try
-            {
-                return BDCompania.ConsultCompanies();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public bool AddNewCompany(Compania company)
         {
             try
@@ -56,11 +41,47 @@ namespace LogicaTangerine.M4
             }
         }
 
+        public bool ChangeCompany(Compania company)
+        {
+            try
+            {
+                return (BDCompania.ChangeCompany(company));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public Compania SearchCompany(int idCompany)
         {
             try
             {
                 return BDCompania.ConsultCompany(idCompany);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool EnableCompany(Compania company)
+        {
+            try
+            {
+                return(BDCompania.EnableCompany(company));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool DisableCompany(Compania company)
+        {
+            try
+            {
+                return (BDCompania.DisableCompany(company));
             }
             catch (Exception ex)
             {

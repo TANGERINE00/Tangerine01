@@ -6,3 +6,103 @@
 2016-05-18 17:04:05,960 INFO  BDContacto - Clase: BDContacto
 2016-05-18 17:04:05,960 INFO  BDContacto - Mensaje: Salida del Método
 2016-05-18 17:04:05,960 INFO  BDContacto - Metodo: AddContact
+2016-05-19 12:59:56,911 INFO  BDContacto - *******************************************************
+2016-05-19 12:59:56,916 INFO  BDContacto - Clase: BDContacto
+2016-05-19 12:59:56,917 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 12:59:56,917 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 12:59:56,925 INFO  BDContacto - *******************************************************
+2016-05-19 12:59:56,925 INFO  BDContacto - Clase: BDContacto
+2016-05-19 12:59:56,925 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 12:59:56,925 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 13:00:02,900 INFO  BDContacto - *******************************************************
+2016-05-19 13:00:02,900 INFO  BDContacto - Clase: BDContacto
+2016-05-19 13:00:02,900 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 13:00:02,900 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 13:00:02,908 INFO  BDContacto - *******************************************************
+2016-05-19 13:00:02,908 INFO  BDContacto - Clase: BDContacto
+2016-05-19 13:00:02,908 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 13:00:02,908 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:20:17,242 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:20:17,247 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:20:17,247 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:20:17,247 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-19 20:20:17,288 INFO  BDContacto - *******************************************************
+2016-05-19 20:20:17,288 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:20:17,288 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:20:17,288 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:20:17,374 INFO  BDContacto - *******************************************************
+2016-05-19 20:20:17,374 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:20:17,374 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:20:17,374 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:21:39,364 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:21:39,371 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:21:39,371 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:21:39,371 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-19 20:21:39,384 INFO  BDContacto - *******************************************************
+2016-05-19 20:21:39,384 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:21:39,384 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:21:39,384 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:21:39,438 INFO  BDContacto - *******************************************************
+2016-05-19 20:21:39,439 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:21:39,439 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:21:39,439 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:23:13,330 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:23:13,330 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:23:13,330 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:23:13,330 INFO  LogicaM5 - Metodo: AddNewContact
+2016-05-19 20:23:13,339 INFO  BDContacto - *******************************************************
+2016-05-19 20:23:13,340 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:23:13,340 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:23:13,350 INFO  BDContacto - Metodo: AddContact
+2016-05-19 20:23:13,416 INFO  BDContacto - *******************************************************
+2016-05-19 20:23:13,416 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:23:13,416 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:23:13,416 INFO  BDContacto - Metodo: AddContact
+2016-05-19 20:23:19,011 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:23:19,011 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:23:19,011 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:23:19,011 INFO  LogicaM5 - Metodo: AddNewContact
+2016-05-19 20:23:19,013 INFO  BDContacto - *******************************************************
+2016-05-19 20:23:19,013 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:23:19,013 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:23:19,013 INFO  BDContacto - Metodo: AddContact
+2016-05-19 20:23:19,035 INFO  BDContacto - *******************************************************
+2016-05-19 20:23:19,035 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:23:19,035 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:23:19,035 INFO  BDContacto - Metodo: AddContact
+2016-05-19 20:24:30,986 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:24:30,986 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:24:30,986 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:24:30,986 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-19 20:24:30,989 INFO  BDContacto - *******************************************************
+2016-05-19 20:24:30,989 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:24:30,989 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:24:30,989 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:24:31,081 INFO  BDContacto - *******************************************************
+2016-05-19 20:24:31,081 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:24:31,081 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:24:31,081 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:26:17,382 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:26:17,391 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:26:17,391 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:26:17,391 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-19 20:26:17,403 INFO  BDContacto - *******************************************************
+2016-05-19 20:26:17,404 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:26:17,404 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:26:17,404 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:26:17,445 INFO  BDContacto - *******************************************************
+2016-05-19 20:26:17,445 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:26:17,445 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:26:17,445 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:31:38,780 INFO  LogicaM5 - *******************************************************
+2016-05-19 20:31:38,793 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-19 20:31:38,793 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-19 20:31:38,793 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-19 20:31:38,810 INFO  BDContacto - *******************************************************
+2016-05-19 20:31:38,811 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:31:38,812 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-19 20:31:38,812 INFO  BDContacto - Metodo: ContactCompany
+2016-05-19 20:31:38,866 INFO  BDContacto - *******************************************************
+2016-05-19 20:31:38,866 INFO  BDContacto - Clase: BDContacto
+2016-05-19 20:31:38,866 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-19 20:31:38,866 INFO  BDContacto - Metodo: ContactCompany

@@ -17,7 +17,7 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" onload="javascript:ajaxRes()">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

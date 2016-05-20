@@ -1,4 +1,5 @@
-﻿using DatosTangerine.M2;
+﻿using DatosTangerine.M10;
+using DatosTangerine.M2;
 using DominioTangerine;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,18 @@ namespace LogicaTangerine.M2
 {
     public class LogicaAgregarUsuario
     {
+        /// <summary>
+        /// Método que se comunica con la clase BDEmpleado con el fin de conseguir la lista de empleados que
+        /// están registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public static List<Empleado> ConsultarListaDeEmpleados() 
+        {
+            List<Empleado> listaDeEmpleados = BDEmpleado.ListarEmpleados();
+
+            return listaDeEmpleados;
+        }
+
         /// <summary>
         /// Método que se comunica con BDUsuario para agregar el usuario a la base de datos
         /// </summary>
@@ -39,6 +52,7 @@ namespace LogicaTangerine.M2
             Rol rol = new Rol( rolUsuario );
             Usuario usuario = new Usuario( usuarioNombre, contraseniaUsuario, "Activo", rol, fichaEmpleado, 
                                            DateTime.Now );
+            usuario.Contrasenia = usuario.GetMD5( usuario.Contrasenia );
 
             AgregarUsuario( usuario );
         }

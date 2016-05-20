@@ -45,6 +45,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar, theFactura.tipoMoneda, false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
@@ -129,6 +132,9 @@ namespace DatosTangerine.M8
                 theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar, theFactura.tipoMoneda, false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
@@ -181,6 +187,9 @@ namespace DatosTangerine.M8
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar, theFactura.tipoMoneda, false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
@@ -238,13 +247,14 @@ namespace DatosTangerine.M8
                 DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
                 double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
                 double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                String facTipoMoneda = row[ResourceFactura.FacTipoMoneda].ToString();
                 String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                 int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                 int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                Facturacion theFacturabeta = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                Facturacion theFacturabeta = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                     facEstatus, facIdProyecto, facIdCompania);
 
                 theFactura = theFacturabeta;
@@ -287,13 +297,14 @@ namespace DatosTangerine.M8
                     DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
                     double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
                     double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    String facTipoMoneda = row[ResourceFactura.FacTipoMoneda].ToString();
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                     int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                         facEstatus, facIdProyecto, facIdCompania);
                     listFactura.Add(theFactura);
 
@@ -340,12 +351,13 @@ namespace DatosTangerine.M8
                     DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
                     double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
                     double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    String facTipoMoneda = row[ResourceFactura.FacTipoMoneda].ToString();
                     String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
                     int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
-                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facDescripcion,
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                         facEstatus, facIdProyecto, facIdCompania);
                     listFactura.Add(theFactura);
 
@@ -414,7 +426,7 @@ namespace DatosTangerine.M8
 
         /// <summary>
         /// Metodo para consultar un Proyecto específico que pertenecen a la base de datos.
-        /// Recibe dos parametros: idProyecto que es el numero de Proyecto del mismo.
+        /// Recibe UN parametro: idProyecto que es el numero de Proyecto del mismo.
         ///                     
         /// </summary>
         /// <returns>Un objeto de tipo Proyecto</returns>
