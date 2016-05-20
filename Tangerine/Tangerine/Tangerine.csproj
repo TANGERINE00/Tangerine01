@@ -175,7 +175,7 @@
     <Content Include="GUI\M3\Promover.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
-    <Content Include="GUI\M4\HabilitarCompania.aspx" />
+    <Content Include="GUI\M4\InformacionCompania.aspx" />
     <Content Include="GUI\M4\ModificarCompania.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
@@ -1164,12 +1164,12 @@
     <Compile Include="GUI\M4\ConsultarCompania.aspx.designer.cs">
       <DependentUpon>ConsultarCompania.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M4\HabilitarCompania.aspx.cs">
-      <DependentUpon>HabilitarCompania.aspx</DependentUpon>
+    <Compile Include="GUI\M4\InformacionCompania.aspx.cs">
+      <DependentUpon>InformacionCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M4\HabilitarCompania.aspx.designer.cs">
-      <DependentUpon>HabilitarCompania.aspx</DependentUpon>
+    <Compile Include="GUI\M4\InformacionCompania.aspx.designer.cs">
+      <DependentUpon>InformacionCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\ModificarCompania.aspx.cs">
       <DependentUpon>ModificarCompania.aspx</DependentUpon>

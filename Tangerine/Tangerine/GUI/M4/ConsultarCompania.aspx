@@ -162,6 +162,7 @@
 
             });
             $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');
+           
         </script>
 
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
