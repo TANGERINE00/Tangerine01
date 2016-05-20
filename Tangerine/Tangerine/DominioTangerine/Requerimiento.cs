@@ -59,12 +59,12 @@ namespace DominioTangerine
             this._codigoPropuesta = codpro;
         }
 
-        public Requerimiento(int p1, string p2, string p3)
+       
+        public Requerimiento(string p2, string p3)
         {
             // TODO: Complete member initialization
-            this.p1 = p1;
-            this.p2 = p2;
-            this.p3 = p3;
+            this._codigoRequerimiento = p2;
+            this.Descripcion = p3;
         }
         #endregion
     

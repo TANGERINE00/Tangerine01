@@ -842,10 +842,12 @@ GO
 --Listar requerimientos por propuesta
 CREATE PROCEDURE M6_ListarRequerimientos
 
+@cod_Nombre [varchar] (200)
+
 AS
 
 BEGIN
-SELECT * FROM REQUERIMIENTO, PROPUESTA WHERE fk_prop_id = prop_id 
+SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_id_req = @cod_Nombre 
 END;
 
 GO
