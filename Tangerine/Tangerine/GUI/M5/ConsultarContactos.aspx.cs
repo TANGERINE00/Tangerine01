@@ -66,6 +66,16 @@ namespace Tangerine.GUI.M5
             int typeComp = int.Parse(Request.QueryString["typeComp"]);
             int idComp = int.Parse(Request.QueryString["idComp"]);
 
+            Contacto contacto1 = new Contacto();
+            contacto1.IdContacto = 2;
+            Proyecto proyecto1 = new Proyecto();
+            proyecto1.Idproyecto = 1;
+            List<Contacto> lista1;
+
+            lista1 = prueba.GetContactsProyect(proyecto1);
+            prueba.DeleteContactProyect(contacto1, proyecto1);
+            lista1 = prueba.GetContactsProyect(proyecto1);
+
             if (typeComp == 1)
                 botonVolver = ResourceGUIM5.VolverCompania;
             else

@@ -249,5 +249,16 @@ namespace LogicaTangerine.M5
                 throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResources.Mensaje_Generico_Error, ex);
             }
         }
+
+
+
+        public List<Contacto> GetContactsProyect(Proyecto proyect)
+        {
+            return BDContacto.ContactProyect(proyect);
+        }
+        public bool DeleteContactProyect(Contacto contact, Proyecto proyect)
+        {
+            return BDContacto.DeleteContactProyect(contact, proyect);
+        }
     }
 }

@@ -302,66 +302,6 @@ namespace DatosTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para agregar un contacto a un proyecto en la base de datos.
-        /// </summary>
-        /// <param name="contact">objeto de tipo contacto a agregar al proyecto</param>
-        /// <param name="proyect">objeto de tipo proyecto a asignarle el contacto</param>
-        /// <returns>true si fue agregado</returns>
-        public static Boolean AddContactProy(Contacto contact, Proyecto proyect)
-        {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
-                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-            List<Parametro> parameters = new List<Parametro>();
-            BDConexion theConnection = new BDConexion();
-            Parametro theParam = new Parametro();
-
-            try
-            {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
-                parameters.Add(theParam);
-
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContactProy, parameters);
-
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
-                     ResourceContact.Mensaje_Error_Formato, ex);
-            }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
-                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-            return true;
-        }
-
-        /// <summary>
         /// Metodo para consultar el Contacto especifico.
         /// <param name="contact">objeto de tipo contacto a buscar en bd</param>
         /// </summary>
@@ -433,6 +373,68 @@ namespace DatosTangerine.M5
                 ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return theContact;
+        }
+
+        //Metodos para la tabla Contacto_Proyecto
+
+        /// <summary>
+        /// Metodo para agregar un contacto a un proyecto en la base de datos.
+        /// </summary>
+        /// <param name="contact">objeto de tipo contacto a agregar al proyecto</param>
+        /// <param name="proyect">objeto de tipo proyecto a asignarle el contacto</param>
+        /// <returns>true si fue agregado</returns>
+        public static Boolean AddContactProy(Contacto contact, Proyecto proyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContactProy, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
+                     ResourceContact.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
         }
 
         /// <summary>
@@ -516,7 +518,7 @@ namespace DatosTangerine.M5
         /// <param name="contact">objeto de tipo Contacto a eliminar en bd</param>
         /// <param name="proyect">objeto de tipo Proyecto a eliminar su contacto</param>
         /// <returns>true si fue eliminado</returns>
-        public static Boolean DeleteContact(Contacto contact, Proyecto proyect)
+        public static Boolean DeleteContactProyect(Contacto contact, Proyecto proyect)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
