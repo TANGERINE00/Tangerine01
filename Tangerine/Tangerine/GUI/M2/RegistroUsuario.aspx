@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server">
+                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" oninput="userDefault_Input()">
                             </div>
                         </div>
                         <p>&nbsp;</p>

@@ -61,6 +61,15 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a href=&quot;#&quot;  tittle=&quot;modificar&quot; runat =&quot;server&quot; class=&quot;btn btn-default btn-xs&quot;disabled&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot; data-toggle=&quot;&quot; data-target=&quot;&quot; &gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string Botonblock {
+            get {
+                return ResourceManager.GetString("Botonblock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;a tittle=&quot;modificar&quot; class=&quot;btn btn-default btn-xs&quot; id=&quot;.
         /// </summary>
         internal static string BotonModif {
@@ -75,6 +84,15 @@ namespace Tangerine.GUI.M2 {
         internal static string BotonReg {
             get {
                 return ResourceManager.GetString("BotonReg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a href=&quot;#&quot;  tittle=&quot;modificar&quot; runat =&quot;server&quot; class=&quot;btn btn-default btn-xs&quot;disabled&gt;&lt;span span class=&quot;glyphicon glyphicon-plus&quot; data-toggle=&quot;&quot; data-target=&quot;&quot; &gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonRegBlock {
+            get {
+                return ResourceManager.GetString("BotonRegBlock", resourceCulture);
             }
         }
         
