@@ -18,6 +18,7 @@ namespace PruebasUnitarias.M5
         public Contacto theContact;
         public Contacto theContact2;
         public List<Contacto> listContact;
+        public List<Contacto> listContact2;
         public Proyecto theProyect;
         #endregion
 
@@ -47,6 +48,7 @@ namespace PruebasUnitarias.M5
             theContact = null;
             theContact2 = null;
             listContact = null;
+            listContact2 = null;
             theProyect = null;
         }
         #endregion
@@ -77,6 +79,8 @@ namespace PruebasUnitarias.M5
             answer = BDContacto.AddContact(theContact);
             //Consulto todos los contactos de la compania 1
             listContact = BDContacto.ContactCompany(1, 1);
+            //Valido que el contacto a eliminar sea el mismo que inserte
+            Assert.AreEqual(theContact.Correo, listContact[listContact.Count - 1].Correo);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
             //answer obtiene true si se elimina el contacto
@@ -112,7 +116,7 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestContactCompany()
         {
-            //Agrego un contacto para tene algo en la lista
+            //Agrego un contacto para tener almenos uno en la lista
             answer = BDContacto.AddContact(theContact);
             //Consulto todos los contactos de la compania 1
             listContact = BDContacto.ContactCompany(1, 1);
@@ -147,10 +151,12 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestAddContactProy()
         {
-            //Agrego el contacto a eliminar
-            Assert.IsTrue(BDContacto.AddContact(theContact));
-            //Consulto todos los contactos de la compania 1
+            //Agrego el contacto a asignar al proyecto 1
+           answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1 para tener el ultimo contacto que agregue
             listContact = BDContacto.ContactCompany(1, 1);
+            //Inserto en Contacto_proyecto el id del contacto y el id del proyecto
+            Assert.IsTrue(BDContacto.AddContactProy(theContact, theProyect));
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
         }
