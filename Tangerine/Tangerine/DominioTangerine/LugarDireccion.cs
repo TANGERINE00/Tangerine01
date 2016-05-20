@@ -49,12 +49,6 @@ namespace DominioTangerine
             this.lugNombre = lugNombre;
             this.lugTipo = lugTipo;
         }
-
-        public LugarDireccion(int lugId, string lugNombre)
-        {
-            this.lugId = lugId;
-            this.lugNombre = lugNombre;
-        }
         #endregion
 
         #region Get's Set's

@@ -19,7 +19,7 @@ namespace Tangerine.GUI.M4
         string _telefono = String.Empty;
         string _fecha = String.Empty;
         int _status = 1; // se crea el status activo por default.
-        int _direccionId = 1; //hacer el combo-box de lugares, se utiliza 1 para pruebas. ARREGLAR!!
+        int _direccionId = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,13 +33,12 @@ namespace Tangerine.GUI.M4
                 {
                     foreach (LugarDireccion thePlace in listPlace)
                     {
-                       
+                        InputDireccion1.Items.Add(thePlace.LugNombre);
                     }
                 }
 
                 catch (Exception ex)
                 {
-
                 }
             }
             
@@ -53,6 +52,19 @@ namespace Tangerine.GUI.M4
             _email = InputEmail1.Value;
             _telefono = InputTelefono1.Value;
             _fecha = InputFechaRegistro1.Value;
+
+            LogicaM4 prueba = new LogicaM4();
+            List<LugarDireccion> listPlace = prueba.getPlaces();
+
+            foreach (LugarDireccion thePlace in listPlace)
+            {
+                string peoAqui = InputDireccion1.Value;
+                if (thePlace.LugNombre.Equals(InputDireccion1.Value))
+                {
+                    _direccionId = thePlace.LugId;
+                }
+            }
+            
 
             Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
                                                 _status, _direccionId);
