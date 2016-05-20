@@ -933,7 +933,7 @@ AS
     DELETE FROM PROPUESTA WHERE prop_nombre=@propuesta_nombre; 	
  END;
 
-
+GO
 
 -----------------------------------
 ------Fin Stored Procedure M6------
