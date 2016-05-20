@@ -853,10 +853,12 @@ GO
 --Listar requerimientos por propuesta
 CREATE PROCEDURE M6_ListarRequerimientos
 
+@cod_Nombre [varchar] (200)
+
 AS
 
 BEGIN
-SELECT * FROM REQUERIMIENTO, PROPUESTA WHERE fk_prop_id = prop_id 
+SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_id_req = @cod_Nombre 
 END;
 
 GO
@@ -872,6 +874,19 @@ BEGIN
 
 SELECT prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
 prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA WHERE prop_nombre = @idNombre
+
+END;
+GO
+
+CREATE PROCEDURE M6_ConsultarPropuestas
+
+
+AS
+
+BEGIN
+
+SELECT prop_nombre,prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
+prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA 
 
 END;
 GO
@@ -1198,17 +1213,6 @@ AS
 			AND fk_compania_id = com_id;
 	END
 GO
-
-/*---- StoredProcedure Cambiar Estatus de Factura ----
-CREATE PROCEDURE M8_EstatusFactura
-	@id int,
-	@estatus [varchar](500)
-AS
- 	BEGIN
-    	UPDATE FACTURA SET fac_estatus = @estatus
-    	WHERE fac_id = @id;
- 	END;
-GO*/
 
 -----------------------------------
 ------Fin Stored Procedure M8------

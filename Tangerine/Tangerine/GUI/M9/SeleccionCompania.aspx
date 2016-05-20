@@ -34,7 +34,7 @@
                 </div><!-- /.box-header -->
                 <!-- table start -->
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -63,4 +63,5 @@
          
             </div><!--/.col (left) -->
           </div>
+
 </asp:Content>

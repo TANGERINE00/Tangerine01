@@ -37,10 +37,10 @@ namespace Tangerine.GUI.M2
                 empleado += ResourceGUIM2.CloseTR;
 
                 empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "referencia #O52" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "luis" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Rodriguez" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "23617644" + ResourceGUIM2.CloseTD;
+                empleado += ResourceGUIM2.OpenTD + "1" + ResourceGUIM2.CloseTD;
+                empleado += ResourceGUIM2.OpenTD + "Armando" + ResourceGUIM2.CloseTD;
+                empleado += ResourceGUIM2.OpenTD + "Perez" + ResourceGUIM2.CloseTD;
+                empleado += ResourceGUIM2.OpenTD + "20183273" + ResourceGUIM2.CloseTD;
                 empleado += ResourceGUIM2.OpenTD + "Programador" + ResourceGUIM2.CloseTD;
                 empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
                 empleado += ResourceGUIM2.CloseTR;
@@ -59,12 +59,13 @@ namespace Tangerine.GUI.M2
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
-            string rol = rolDefault.Value.ToString();
-            string nombreUsuario = userDefault.Value.ToString();
-            string contraseniaUsuario = passwordDefault.Value.ToString();
-            int fichaEmpleado = int.Parse(fichaEmp.Value.ToString());
 
-            
+            string rol = rolDefault.Value;
+            string nombreUsuario = userDefault.Value;
+            string contraseniaUsuario = passwordDefault.Value;
+            string fichaEmpleado = fichaEmp.Value;
+
+            LogicaAgregarUsuario.PrepararUsuario( nombreUsuario, contraseniaUsuario, rol, int.Parse(fichaEmpleado) );
         }
     }
 }
