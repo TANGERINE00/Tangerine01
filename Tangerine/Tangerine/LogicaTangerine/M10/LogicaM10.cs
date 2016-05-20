@@ -48,11 +48,13 @@ namespace LogicaTangerine.M10
 
         public List<LugarDireccion> ItemsForListCountry()
         {
-            List<LugarDireccion> Countries = new List<LugarDireccion>();
-
-            return Countries;
+            return BDEmpleado.GetElementsForSelectCountry();
         }
 
+        public List<LugarDireccion> ItemsForListState()
+        {
+            return BDEmpleado.GetElementsForSelectCountry();
+        }
 
     }
 }

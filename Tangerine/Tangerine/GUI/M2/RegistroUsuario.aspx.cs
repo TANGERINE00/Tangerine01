@@ -12,7 +12,7 @@ namespace Tangerine.GUI.M2
 {
     public partial class RegistroUsuario : System.Web.UI.Page
     {
-        public string empleado
+        public string tablaEmpleado
         {
             get
             {
@@ -27,23 +27,19 @@ namespace Tangerine.GUI.M2
         {
             if (!IsPostBack)
             {
-                empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "referencia #O52" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "gerardo" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Astone" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "23617644" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Programador" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.CloseTR;
+                List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
 
-                empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "1" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Armando" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Perez" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "20183273" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Programador" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.CloseTR;
+                foreach(Empleado empleado in listaDeEmpleados)
+                {
+                    tablaEmpleado += ResourceGUIM2.OpenTR;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_num_ficha.ToString() + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_apellido + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + "CARGO" + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.CloseTR;
+                }
             }
         }
 

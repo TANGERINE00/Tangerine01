@@ -167,7 +167,7 @@ namespace DatosTangerine.M6
                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
-                   int conFkComp = Convert.ToInt32(row[RecursosPropuesta.ParamIdCompa]);
+                   int conFkComp = Convert.ToInt32(row[RecursosPropuesta.PropIdCompania]);
 
 
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
