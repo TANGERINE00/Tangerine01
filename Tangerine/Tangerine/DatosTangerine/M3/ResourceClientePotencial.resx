@@ -214,7 +214,7 @@
     <comment>Nombre del store Procedure para listar</comment>
   </data>
   <data name="SP_modificarClientePotencial" xml:space="preserve">
-    <value>modificar_clientePotencialF</value>
+    <value>modificar_clientePotencial</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
   <data name="SP_listarClientePotencial3" xml:space="preserve">
