@@ -19,6 +19,7 @@ namespace Tangerine.GUI.M8
         DateTime _fechaUltimoPago = DateTime.Now;
         int _montoTotal = 0;
         int _montoRestante = 0;
+        string _tipoMoneda = String.Empty;
         string _descripcion = String.Empty;
         int _estatus = 0;
         int _proyectoId = 0;
@@ -61,11 +62,12 @@ namespace Tangerine.GUI.M8
             _estatus = theFactura.estatusFactura;
             _montoTotal = int.Parse(textMonto_M8.Value);
             _montoRestante = int.Parse(textMonto_M8.Value);
+            _tipoMoneda = "Euros";
 
-            Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _descripcion, _estatus,
+            Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, _estatus,
                 _proyectoId , _companiaId );
             LogicaM8 facturaLogic = new LogicaM8();
-            facturaLogic.AnnularFactura(factura);
+            facturaLogic.ChangeExistingFactura(factura);
             Server.Transfer("ConsultarFacturaM8.aspx");
         }
  

@@ -232,6 +232,15 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a fac_tipo_moneda.
+        /// </summary>
+        internal static string FacTipoMoneda {
+            get {
+                return ResourceManager.GetString("FacTipoMoneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @descripcion.
         /// </summary>
         internal static string ParamDescripcion {
@@ -331,20 +340,20 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @tipo_moneda.
+        /// </summary>
+        internal static string ParamTipo_Moneda {
+            get {
+                return ResourceManager.GetString("ParamTipo_Moneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a proy_nombre.
         /// </summary>
         internal static string ProyNombre {
             get {
                 return ResourceManager.GetString("ProyNombre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string String2 {
-            get {
-                return ResourceManager.GetString("String2", resourceCulture);
             }
         }
     }

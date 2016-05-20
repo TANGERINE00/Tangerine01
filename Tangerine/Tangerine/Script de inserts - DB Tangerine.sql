@@ -102,26 +102,26 @@ VALUES(3,4);
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
-VALUES (1,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Proyecto de diseño',0,1,1);
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+VALUES (1,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Dolares','Proyecto de diseño',0,1,1);
 SET IDENTITY_INSERT FACTURA OFF
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
-VALUES (2,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Proyecto de calidad',0,1,2);
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+VALUES (2,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Bolivares','Proyecto de calidad',0,1,2);
 SET IDENTITY_INSERT FACTURA OFF
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
-VALUES (3,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Analisis Inicial',2,1,3);
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+VALUES (3,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Euros','Analisis Inicial',2,1,3);
 SET IDENTITY_INSERT FACTURA OFF
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
-VALUES (4,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Analisis Final',1,1,4);
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+VALUES (4,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Dolares','Analisis Final',1,1,4);
 SET IDENTITY_INSERT FACTURA OFF
 
 -----Inserts de Usuarios y Roles-------

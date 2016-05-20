@@ -341,6 +341,7 @@ create table FACTURA
 	fac_fecha_ultimo_pago date not null,
 	fac_monto_total numeric(12,3) not null,
 	fac_monto_restante numeric(12,3) not null,
+	fac_tipo_moneda varchar(100) not null,
 	fac_descripcion varchar(500) not null,
 	fac_estatus int not null,
 	fk_proy_id int not null,
@@ -1099,6 +1100,7 @@ CREATE PROCEDURE M8_AgregarFactura
 	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
+	@tipo_moneda [varchar](100),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
@@ -1106,8 +1108,8 @@ CREATE PROCEDURE M8_AgregarFactura
 
 AS
 	BEGIN
-    	INSERT INTO FACTURA(fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
-		VALUES(@fecha_emision, @fecha_ultimo_pago, @monto_total, @monto_restante, @descripcion, @estatus, @id_proyecto, @id_compania);
+    	INSERT INTO FACTURA(fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+		VALUES(@fecha_emision, @fecha_ultimo_pago, @monto_total, @monto_restante, @tipo_moneda, @descripcion, @estatus, @id_proyecto, @id_compania);
  	END;
 GO
 
@@ -1118,7 +1120,7 @@ CREATE PROCEDURE M8_ConsultarFactura
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
-			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
@@ -1129,7 +1131,7 @@ CREATE PROCEDURE M8_ConsultarFacturas
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
-			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 		FROM FACTURA;
 	END
 GO
@@ -1152,6 +1154,7 @@ CREATE PROCEDURE M8_ModificarFactura
 	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
+	@tipo_moneda [varchar](100),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
@@ -1160,7 +1163,7 @@ CREATE PROCEDURE M8_ModificarFactura
 AS
  	BEGIN
     	UPDATE FACTURA SET fac_fecha_emision = @fecha_emision, fac_fecha_ultimo_pago = @fecha_ultimo_pago, fac_monto_total = @monto_total, fac_monto_restante = @monto_restante,
-    		fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
+    		fac_tipo_moneda = @tipo_moneda, fac_descripcion = @descripcion, fac_estatus = @estatus, fk_proy_id = @id_proyecto, fk_compania_id = @id_compania
     	WHERE fac_id = @id_Factura;
  	END;
 GO
@@ -1172,6 +1175,7 @@ CREATE PROCEDURE M8_AnularFactura
 	@fecha_ultimo_pago date,
 	@monto_total numeric(12,3),
 	@monto_restante numeric(12,3),
+	@tipo_moneda [varchar](100),
 	@descripcion [varchar](500),
 	@estatus int,
 	@id_proyecto int,
@@ -1191,7 +1195,7 @@ CREATE PROCEDURE M8_ConsultarFacturasCompania
 AS
 	BEGIN
 		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
-			fac_monto_restante AS fac_monto_restante, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
 			FROM FACTURA, COMPANIA 
 			WHERE com_id = @id_compania
 			AND fac_estatus = 0
