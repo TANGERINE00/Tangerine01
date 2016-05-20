@@ -156,30 +156,27 @@ namespace DatosTangerine.M6
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    listaPropuesta.Add(
-                        new DominioTangerine.Propuesta(
-                    row[RecursosPropuesta.PropNombre].ToString(),
-                    row[RecursosPropuesta.PropDescripcion].ToString(),
-                    row[RecursosPropuesta.PropTipoDuracion].ToString(),
-                    row[RecursosPropuesta.PropDuracion].ToString(),
-                    row[RecursosPropuesta.PropAcuerdo].ToString(),
-                    row[RecursosPropuesta.PropEstatus].ToString(),
-                    row[RecursosPropuesta.PropMoneda].ToString(),
-                    Convert.ToInt32(row[RecursosPropuesta.PropCantidad]),
-                    Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]),
-                    Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]),
-                    Convert.ToInt32(row[RecursosPropuesta.PropCosto]),
-                    Convert.ToInt32(row[RecursosPropuesta.PropIdCompania])
-
-                   )
-                       
-                       
-                       
-                       );
-
-
                     
-                   
+                    String conNombre = row[RecursosPropuesta.PropNombre].ToString();
+                    String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
+                    String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
+                    String conDuracion = row[RecursosPropuesta.PropDuracion].ToString();
+                    String conAcuerdo = row[RecursosPropuesta.PropAcuerdo].ToString();
+                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
+                    String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
+                    int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
+                   DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
+                   DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
+                   int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
+                   int conFkComp = Convert.ToInt32(row[RecursosPropuesta.PropIdCompania]
+
+
+                      );
+                      
+                    //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
+                    Propuesta propuestas = new Propuesta(conNombre, conDescripcion, contipoDuracion,
+                        conAcuerdo, conEstatus, conMoneda, conEntregas, conFechaIni, conFechaFin, conCosto, conFkComp);
+                    listaPropuesta.Add(propuestas);
                 }
 
 
@@ -266,8 +263,7 @@ namespace DatosTangerine.M6
 
 
 
-        public static Propuesta
-         ConsultarPropuestaporNombre(String id)
+        public static Propuesta ConsultarPropuestaporNombre(String id)
 
 
 
