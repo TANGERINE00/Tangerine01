@@ -171,7 +171,7 @@
               </a> 
                 <ul class="treeview-menu">
                 <li id="AgregarPropuesta" runat="server"><a href="../M6/AgregarPropuesta.aspx"><i class="fa fa-circle-o"></i> Agregar Propuesta</a></li>
-                <li id="ConsultarPropuestas" runat="server"><a href="../M6/ListarPropuesta.aspx"><i class="fa fa-circle-o"></i> Consultar Propuestas</a></li>
+                <li id="ConsultarPropuestas" runat="server"><a href="../M6/ConsultarPropuesta.aspx"><i class="fa fa-circle-o"></i> Consultar Propuestas</a></li>
                 
               </ul>             
             </li>
