@@ -58,6 +58,7 @@ namespace PruebasUnitarias.M3
             answer = BDClientePotencial.BorrarClientePotencial(clientePot1);
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
+            BDClientePotencial.BorrarClientePotencial(clientePot1);
         }
 
         [Test]
@@ -67,20 +68,14 @@ namespace PruebasUnitarias.M3
             BDClientePotencial.AgregarClientePotencial(clientePot1);
     
             Assert.IsNotNull(BDClientePotencial.ConsultarClientePotencial(clientePot1.IdClientePotencial));
+            BDClientePotencial.BorrarClientePotencial(clientePot1);
         }
         [Test]
         public void TestModificarClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
             BDClientePotencial.AgregarClientePotencial(clientePot1);
-           
-            clientePot1.NombreClientePotencial = "Jose";
-            clientePot1.RifClientePotencial = "J-2222222";
-            clientePot1.EmailClientePotencial = "info@hp.com";
-            clientePot1.PresupuestoAnual_inversion = 12000;
-            clientePot1.NumeroLlamadas = 0;
-            clientePot1.NumeroVisitas = 0;
-            clientePot1.IdClientePotencial = 1;
+       ;
             
             answer = BDClientePotencial.ModificarClientePotencial(clientePot1);
 

@@ -18,11 +18,29 @@ namespace Tangerine.GUI.M5
         string _cargo = String.Empty;
         string _telefono = String.Empty;
         string _correo = String.Empty;
-        Contacto theContact = null;
+        Contacto theContact = new Contacto();
+        public string botonVolver
+        {
+            get
+            {
+                return this.volver.Text;
+            }
+            set
+            {
+                this.volver.Text = value;
+            }
+        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            int idComp = int.Parse(Request.QueryString["idComp"]);
             int idCont = int.Parse(Request.QueryString["idCont"]);
+
+            botonVolver = ResourceGUIM5.VolverConsultarCon + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
+                + ResourceGUIM5.BotonCerrar2;
+
             theContact.IdContacto = idCont;
             if (!IsPostBack)
             {
@@ -37,5 +55,7 @@ namespace Tangerine.GUI.M5
                 this.correo.Value = theContact.Correo;
             }
         }
+        //Para volver a ConsultarContactos luego de modificar
+        //Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
     }
 }
