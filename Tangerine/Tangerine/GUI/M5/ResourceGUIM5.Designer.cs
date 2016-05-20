@@ -338,5 +338,23 @@ namespace Tangerine.GUI.M5 {
                 return ResourceManager.GetString("VentanaAgregarContacto", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string VolverCliPotencial {
+            get {
+                return ResourceManager.GetString("VolverCliPotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string VolverCompania {
+            get {
+                return ResourceManager.GetString("VolverCompania", resourceCulture);
+            }
+        }
     }
 }

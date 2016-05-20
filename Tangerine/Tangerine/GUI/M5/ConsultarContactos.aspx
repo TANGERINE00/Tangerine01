@@ -42,6 +42,7 @@
                             </tbody>
                         </table>
                         <asp:Literal runat="server" ID="nuevocontacto"></asp:Literal>
+                        <asp:Literal runat="server" ID="volver"></asp:Literal>
                     </div>
                 </form>
             </div>
