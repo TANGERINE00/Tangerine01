@@ -470,7 +470,7 @@ create table ROL_OPCION
 );
 GO
 
---------Stored Procedure M2--------
+--------Stored Procedure M2---------------------------------------------------------------------------------------------------
 CREATE PROCEDURE M2_AgregarUsuario
 	(@usuario [varchar](20),
 	@contraseña [varchar](100),
@@ -570,6 +570,119 @@ AS
 		WHERE rol_nombre = @rol_nombre;
 	END;
 GO
+
+
+---------------------------------------------------------------------------------------------------------
+--------Stored Procedure M3------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+
+-------  Store Procedure agregar cliente_potencial -----------------------------------
+
+create procedure agregar_clientePotencial
+
+@nombreClientePotencial [varchar](20),
+@rifClientePotencial [varchar](20),
+@emailClientePotencial [varchar](50),
+@presupuestoAnualInversion [decimal]
+
+
+as
+ begin
+   insert into cliente_Potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv)
+                        values (@nombreClientePotencial,@rifClientePotencial,@emailClientePotencial,@presupuestoAnualInversion);
+ end;
+go
+
+
+----------- Store Procedure lista de clientes potenciales--------------------------
+CREATE procedure listar_cliente_potencial
+as
+	begin
+		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv
+		from cliente_Potencial
+                where cli_pot_borrado=0 and cli_pot_potencial=1;
+	end;
+go
+
+
+----------- Store Procedure eliminar cliente potenciale--------------------------
+CREATE PROCEDURE eliminar_cliente_potencial
+	@idClientePotencial [int]
+as
+ begin
+		UPDATE cliente_Potencial
+		SET 
+			cli_pot_borrado = 1	
+			WHERE
+			cli_pot_id  = @idClientePotencial and cli_pot_borrado=0;		
+
+ end;
+
+
+----------- Store Procedure promover cliente potencial-------------------------
+
+CREATE PROCEDURE promover_cliente_potencial
+	@idClientePotencial [int]
+as
+ begin
+		UPDATE cliente_Potencial
+		SET 
+			cli_pot_potencial = 0	
+			WHERE
+			cli_pot_id  = @idClientePotencial and cli_pot_potencial=1;		
+
+ end;
+
+
+----------- Store Procedure consulta de cliente potencial--------------------------
+
+
+CREATE procedure consultar_cliente_potencial
+   @idClientePotencial		[int]
+as
+	begin
+		select cli_pot_id , cli_pot_nombre , 
+		cli_pot_rif, cli_pot_email ,cli_pot_pres_anual_inv,cli_pot_num_llamadas,cli_pot_num_visitas
+		from cliente_Potencial
+		where cli_pot_id = @idClientePotencial;
+		
+	end
+
+
+----------- Store Procedure modificar cliente potencial--------------------------
+create procedure modificar_clientePotencialF
+
+
+
+	@idClientePotencial		[int],
+	@nombreClientePotencial  	[varchar](20),	
+	@rifClientePotencial	[varchar](20),
+	@emailClientePotencial	[varchar](50),
+	@presupuestoAnualInversion [decimal],
+        @num_llamadas[int],
+        @num_visitas[int]
+
+
+as
+ begin
+		UPDATE CLIENTE_POTENCIAL
+		SET 
+			cli_pot_nombre          = @nombreClientePotencial,
+            cli_pot_rif             = @rifClientePotencial,
+			cli_pot_email	        = @emailClientePotencial,
+	        cli_pot_pres_anual_inv  = @presupuestoAnualInversion,
+            cli_pot_num_llamadas    = @num_llamadas,
+            cli_pot_num_visitas     = @num_visitas
+	
+			WHERE
+			cli_pot_id = @idClientePotencial;	
+	
+ end;
+
+
+---------------------------------------------------------------------------------------------------------
+--------FIN Stored Procedure M3------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 --------Stored Procedure M4--------
 ---- StoredProcedure Agregar Compañia ----
