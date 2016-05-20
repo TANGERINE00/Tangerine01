@@ -169,11 +169,20 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?typeComp=.
         /// </summary>
         internal static string BotonEliminar {
             get {
                 return ResourceManager.GetString("BotonEliminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;idCont=.
+        /// </summary>
+        internal static string BotonEliminar2 {
+            get {
+                return ResourceManager.GetString("BotonEliminar2", resourceCulture);
             }
         }
         
