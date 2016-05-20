@@ -152,5 +152,12 @@ namespace DatosTangerine.M10
                                             empFechaFin, empDireccion);
             return employee;
         }
+
+        public List<LugarDireccion> GetElementsForSelectCountry()
+        {
+            List<LugarDireccion> direccion = new List<LugarDireccion>();
+            return direccion;
+        }
+
     }
 }

@@ -23,27 +23,18 @@
 
         <!-- form start -->
         <form role="form">
-
             <div class="box-body">
-
                 <div class="form-group">
                     <label for="input_cliente">Cliente (compañía contratante)</label>
+                    <asp:Literal runat="server" ID="seccion1"></asp:Literal>
                     <input type="input_cliente" class="form-control" id="cliente_id" placeholder="Nombre del Cliente" disabled>
                 </div>
             
 
                     <!-- Date range -->
                     <div class="form-group">
-                        <label>Fecha factura</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input type="text" class="form-control pull-right" id="reservation" placeholder="25/02/2015" disabled>
-                        </div>
-                        <!-- /.input group -->
-                    </div>
-                    <!-- /.form group -->
+                       <asp:Literal runat="server" ID="seccion2"></asp:Literal>
+                    </div>    
 
              
                 <!-- /.box-body -->
@@ -53,7 +44,6 @@
                     
                     <span class="input-group-addon">$</span>
                     <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="24.230,00" disabled>
-                    <span class="input-group-addon">.00</span>
                 </div>
                 
                 <div class="form-group">

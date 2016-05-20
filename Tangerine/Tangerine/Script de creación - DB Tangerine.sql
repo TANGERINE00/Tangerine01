@@ -741,6 +741,17 @@ AS
 		FROM CONTACTO WHERE fk_id_com_lead = @id_empresa and con_tipo_emp = @tipo_comp;
 	END
 GO
+--Consultar contactos de un proyecto
+CREATE PROCEDURE M5_ConsultarContactoProyecto
+		@id_proyecto INT
+AS
+	BEGIN
+		SELECT contacto.con_id as con_id, contacto.con_nombre as con_nombre, contacto.con_apellido as con_apellido,
+		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
+		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO, CONTACTO_PROYECTO WHERE CONTACTO_PROYECTO.fk_proy_id = @id_proyecto and CONTACTO_PROYECTO.fk_con_id = CONTACTO.con_id;
+	END
+GO
 -----------------------------------
 ------Fin Stored Procedure M5------
 -----------------------------------
@@ -1189,17 +1200,6 @@ AS
 			AND fk_compania_id = com_id;
 	END
 GO
-
-/*---- StoredProcedure Cambiar Estatus de Factura ----
-CREATE PROCEDURE M8_EstatusFactura
-	@id int,
-	@estatus [varchar](500)
-AS
- 	BEGIN
-    	UPDATE FACTURA SET fac_estatus = @estatus
-    	WHERE fac_id = @id;
- 	END;
-GO*/
 
 -----------------------------------
 ------Fin Stored Procedure M8------
