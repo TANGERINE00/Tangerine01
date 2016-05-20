@@ -231,4 +231,7 @@
   <data name="hrefConsultarContacto2" xml:space="preserve">
     <value>"</value>
   </data>
+  <data name="AbrirTD2" xml:space="preserve">
+    <value>&lt;td style="text-align:center;"&gt;</value>
+  </data>
 </root>
