@@ -25,7 +25,32 @@
                     <h3 class="box-title">Contactos Existentes</h3>
                 </div>
                 <form role="form" name="consultar" id="consultar">
+                    <script language="javascript">
+                        function doSearch() {
+                            var tableReg = document.getElementById('example2');
+                            var searchText = document.getElementById('searchTerm').value.toLowerCase();
+                            for (var i = 1; i < tableReg.rows.length; i++) {
+                                var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                                var found = false;
+                                for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                                    var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                                    if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                                        found = true;
+                                    }
+                                }
+                                if (found) {
+                                    tableReg.rows[i].style.display = '';
+                                } else {
+                                    tableReg.rows[i].style.display = 'none';
+                                }
+                            }
+                        }
+                    </script>
                     <div class="box-body table-responsive">
+                        <div style="float:right;">
+                            <a style="margin-right:10px;">Buscador</a>
+                            <input id="searchTerm" type="text" onkeyup="doSearch()"/>
+                        </div>
                         <table id="example2" class="table table-bordered table-striped dataTable" accesskey="">
                             <thead>
                                 <tr style="font-size:18px;">

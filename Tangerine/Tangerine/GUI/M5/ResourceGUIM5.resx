@@ -157,7 +157,7 @@
     <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
   </data>
   <data name="ButtonModContact" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarContacto.aspx?idCont=</value>
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarContacto.aspx?typeComp=</value>
   </data>
   <data name="CerrarSolicitud" xml:space="preserve">
     <value>"&gt;Solicitar&lt;/a&gt;</value>
@@ -218,5 +218,11 @@
   </data>
   <data name="BotonEliminar2" xml:space="preserve">
     <value>&amp;idCont=</value>
+  </data>
+  <data name="BotonCerrar2" xml:space="preserve">
+    <value>"&gt;Volver&lt;/a&gt;</value>
+  </data>
+  <data name="VolverConsultarCon" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
   </data>
 </root>
