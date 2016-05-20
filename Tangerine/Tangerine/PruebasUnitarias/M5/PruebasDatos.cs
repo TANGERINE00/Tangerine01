@@ -152,11 +152,15 @@ namespace PruebasUnitarias.M5
         public void TestAddContactProy()
         {
             //Agrego el contacto a asignar al proyecto 1
-           answer = BDContacto.AddContact(theContact);
+            answer = BDContacto.AddContact(theContact);
             //Consulto todos los contactos de la compania 1 para tener el ultimo contacto que agregue
             listContact = BDContacto.ContactCompany(1, 1);
             //Inserto en Contacto_proyecto el id del contacto y el id del proyecto
-            Assert.IsTrue(BDContacto.AddContactProy(theContact, theProyect));
+            Assert.IsTrue(BDContacto.AddContactProy(listContact[listContact.Count-1], theProyect));
+            //Traigo una lista de contactos del proyecto 1 para validar
+            listContact2 = BDContacto.ContactProyect(theProyect);
+            //Valido los correos del contacto insertado y del ultimo contacto del proyecto
+            Assert.AreEqual(theContact.Correo, listContact2[listContact2.Count - 1].Correo);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
         }
