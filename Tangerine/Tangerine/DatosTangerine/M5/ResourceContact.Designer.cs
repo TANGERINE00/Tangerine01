@@ -205,6 +205,15 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_EliminarContactoProyecto.
+        /// </summary>
+        internal static string DeleteContactProyect {
+            get {
+                return ResourceManager.GetString("DeleteContactProyect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error de parseo.
         /// </summary>
         internal static string Mensaje_Error_Formato {

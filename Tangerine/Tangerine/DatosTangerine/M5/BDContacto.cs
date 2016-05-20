@@ -17,7 +17,7 @@ namespace DatosTangerine.M5
         /// <summary>
         /// Metodo para agregar una contacto nuevo en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <param name="theContact">objeto de tipo Contacto para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
         public static bool AddContact(Contacto theContact)
         {
@@ -95,7 +95,7 @@ namespace DatosTangerine.M5
         /// <summary>
         /// Metodo para eliminar un contacto de la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
+        /// <param name="contact">objeto de tipo Contacto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
         public static Boolean DeleteContact(Contacto contact)
         {
@@ -151,7 +151,7 @@ namespace DatosTangerine.M5
         /// <summary>
         /// Metodo para modificar un contacto en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto para modificar en bd</param>
+        /// <param name="theContact">objeto de tipo Contacto para modificar en bd</param>
         /// <returns>true si fue modificado</returns>
         public static Boolean ChangeContact(Contacto theContact)
         {
@@ -224,8 +224,8 @@ namespace DatosTangerine.M5
 
         /// <summary>
         /// Metodo para consultar todos los Contactos que pertenecen a una Empresa.
-        /// Recibe dos parametros: typeCompany que es 1 si es Compania o 2 si es Cliente Potencial (Lead)
-        ///                        idCompany que es el id de la Empresa (Compania o Lead)
+        /// <param name="typeCompany">es 1 si es Compania o 2 si es Cliente Potencial (Lead)</param>
+        /// <param name="idCompany">es el id de la Empresa (Compania o Lead)
         /// </summary>
         /// <returns>Lista de contactos de la Empresa</returns>
         public static List<Contacto> ContactCompany(int typeCompany, int idCompany)
@@ -302,9 +302,10 @@ namespace DatosTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para agregar una contacto nuevo en la base de datos.
+        /// Metodo para agregar un contacto a un proyecto en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto para agregar en bd</param>
+        /// <param name="contact">objeto de tipo contacto a agregar al proyecto</param>
+        /// <param name="proyect">objeto de tipo proyecto a asignarle el contacto</param>
         /// <returns>true si fue agregado</returns>
         public static Boolean AddContactProy(Contacto contact, Proyecto proyect)
         {
@@ -361,8 +362,8 @@ namespace DatosTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para consultar el Contacto relacionado a una ID.
-        /// Recibe dos parametros: idContact referente al contacto a buscar
+        /// Metodo para consultar el Contacto especifico.
+        /// <param name="contact">objeto de tipo contacto a buscar en bd</param>
         /// </summary>
         /// <returns>Objeto de tipo Contacto si existe</returns>
         public static Contacto SingleContact(Contacto contact)
@@ -436,7 +437,7 @@ namespace DatosTangerine.M5
 
         /// <summary>
         /// Metodo para consultar todos los Contactos que pertenecen a un Proyecto.
-        /// Recibe  parametro: theProyect de tipo Proyecto, para consultar con su id
+        /// <param name="proyect">objeto de tipo Proyecto a consultar sus contactos</param>
         /// </summary>
         /// <returns>Lista de contactos del Proyecto</returns>
         public static List<Contacto> ContactProyect(Proyecto theProyect)
@@ -508,5 +509,66 @@ namespace DatosTangerine.M5
 
             return listContact;
         }
+
+        /// <summary>
+        /// Metodo para eliminar un contacto de un proyecto en la base de datos.
+        /// </summary>
+        /// <param name="contact">objeto de tipo Contacto a eliminar en bd</param>
+        /// <param name="proyect">objeto de tipo Proyecto a eliminar su contacto</param>
+        /// <returns>true si fue eliminado</returns>
+        public static Boolean DeleteContact(Contacto contact, Proyecto proyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceContact.ParamIdContact, SqlDbType.Int, contact.IdContacto.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, proyect.Idproyecto.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContactProyect, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
+                     ResourceContact.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
+        }
+        //Falta consultar contactos que no estan en un proyecto
     }
 }

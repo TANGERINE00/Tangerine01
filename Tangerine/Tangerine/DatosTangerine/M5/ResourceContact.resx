@@ -212,4 +212,7 @@
   <data name="ContactProyect" xml:space="preserve">
     <value>M5_ConsultarContactoProyecto</value>
   </data>
+  <data name="DeleteContactProyect" xml:space="preserve">
+    <value>M5_EliminarContactoProyecto</value>
+  </data>
 </root>
