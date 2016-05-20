@@ -18,6 +18,12 @@ namespace Tangerine.GUI.M7
         {
             Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
            inputPropuesta.Items.Add(Propuestas.Count.ToString());
+
+           for (int i = 0; i < Propuestas.Count;i++ )
+           {
+               inputPropuesta.Items.Add(Propuestas[i].Nombre);
+           }
+
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
