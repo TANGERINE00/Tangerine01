@@ -4,7 +4,7 @@ insert into lugar_direccion
 values (2,'Caracas','Ciudad', 1);
 
 insert into lugar_direccion
-values (3,'Maracaibo','ciudad', 1);
+values (3,'Maracaibo','Ciudad', 1);
 
 insert into lugar_direccion
 values (4,'Valencia','Ciudad', 1);

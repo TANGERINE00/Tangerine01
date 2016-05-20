@@ -48,6 +48,15 @@
                         </div>
 
 
+
+                        <div class="form-group" runat="server">
+                            <label for="InputLugar">Dirección</label>
+                            <select runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></select>
+                        </div>
+
+
+
+
                         <div class="form-group" runat="server">
                             <label for="InputEmail">Correo Electrónico</label>
                             <input runat="server" type="text" class="form-control" id="InputEmail1" name="InputEmail1" placeholder="Introduzca correo electrónico de la compañía">

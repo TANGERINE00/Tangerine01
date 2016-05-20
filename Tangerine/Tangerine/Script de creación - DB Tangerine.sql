@@ -651,6 +651,15 @@ AS
  end;
 GO
 
+CREATE PROCEDURE M4_ConsultarLugar
+AS
+	BEGIN
+		SELECT lug_dir_id as lug_dir_id, lug_dir_nombre as lug_dir_nombre
+		FROM Lugar_Direccion
+		WHERE lug_dir_tipo LIKE 'Ciudad';
+	end;
+GO		
+
 ------Fin Stored Procedure M4------
 
 
