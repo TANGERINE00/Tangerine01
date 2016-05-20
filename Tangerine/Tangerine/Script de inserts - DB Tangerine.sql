@@ -76,6 +76,13 @@ insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuraci
 VALUES (6,'Modulo de gestion de Usuarios','Se tratara de un modulo de gestion de Ususarios','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (7,'Modulo de prueba','Se tratara de un modulo de gestion de pruebas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+SET IDENTITY_INSERT PROPUESTA OFF
+
+
+
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','bajo',2);
 
@@ -252,3 +259,38 @@ insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', C
 insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
 insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
 ---------Fin de Inserts de Usuarios y Roles-----------
+
+
+--------------------------INSERTS REQUERIMIENTOS---------------------------
+INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
+           ([req_codigo]
+           ,[req_descripcion]
+           ,[fk_prop_req_id]
+           ,[fk_prop_id])
+     VALUES
+           ('prueba1',
+           'descripcion1',
+           'Modulo de prueba',
+           7);
+
+INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
+           ([req_codigo]
+           ,[req_descripcion]
+           ,[fk_prop_req_id]
+           ,[fk_prop_id])
+     VALUES
+           ('prueba2',
+           'descripcion2',
+           'Modulo de prueba',
+           7);
+INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
+           ([req_codigo]
+           ,[req_descripcion]
+           ,[fk_prop_req_id]
+           ,[fk_prop_id])
+     VALUES
+           ('prueba3',
+           'descripcion3',
+           'Modulo de prueba',
+           7);
+--------------------------FIN DE INSERTS DE REQUERIMIENTOS---------------------------

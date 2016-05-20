@@ -920,9 +920,25 @@ prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA
 
 END;
 GO
+
+
+--Eliminar Propuesta
+CREATE PROCEDURE M6_EliminarPropuesta
+
+@propuesta_nombre varchar(20)
+
+AS
+ BEGIN
+    DELETE FROM REQUERIMIENTO WHERE fk_prop_req_id=@propuesta_nombre;
+    DELETE FROM PROPUESTA WHERE prop_nombre=@propuesta_nombre; 	
+ END;
+
+
+
 -----------------------------------
 ------Fin Stored Procedure M6------
 -----------------------------------
+
 
 
 -----------------------------------
@@ -1338,3 +1354,10 @@ AS
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------
+
+
+
+
+
+
+
