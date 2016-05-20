@@ -59,8 +59,8 @@ namespace Tangerine.GUI.M4
                         company += ResourceGUIM4.OpenTD + theCompany.NombreCompania.ToString() + ResourceGUIM4.CloseTD;
                        // company += ResourceGUIM4.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceGUIM4.CloseTD;
                         company += ResourceGUIM4.OpenTD + theCompany.RifCompania + ResourceGUIM4.CloseTD;
-                        company += ResourceGUIM4.OpenTD + "040401234" + ResourceGUIM4.CloseTD;
-                    //    company += ResourceGUIM4.OpenTD + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.CloseTD;
+                        company += ResourceGUIM4.OpenTD + theCompany.TelefonoCompania + ResourceGUIM4.CloseTD;
+                       //    company += ResourceGUIM4.OpenTD + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.CloseTD;
                         if (theCompany.StatusCompania.Equals(1))
                         {
                             company += ResourceGUIM4.OpenTD + ResourceGUIM4.habilitado + ResourceGUIM4.CloseTD;
@@ -74,12 +74,16 @@ namespace Tangerine.GUI.M4
                          
                         
                         company += ResourceGUIM4.OpenTD + 
-     /*Boton Info */       ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania
-     /*Boton Edit */     + ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonEdit + theCompany.IdCompania
- /*Boton Habilitar */    + ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonHab + theCompany.IdCompania
-/*Boton Inhabilitar*/    + ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonInhab + theCompany.IdCompania
-/*Boton Contacto*/       + ResourceGUIM4.CloseBotonParametro 
-/*Boton Involucrado*/    + ResourceGUIM4.BotonContac + ResourceGUIM4.BotonInvol + ResourceGUIM4.CloseTD;  
+     /*Boton Info */      ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania +
+     /*Boton Edit */      ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonEdit + theCompany.IdCompania +
+ /*Boton Habilitar */     ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonHab + theCompany.IdCompania +
+/*Boton Inhabilitar*/     ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonInhab + theCompany.IdCompania +
+/*Boton Contacto*/        ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonContac + theCompany.IdCompania +
+                           ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania + 
+                           ResourceGUIM4.CloseBotonParametro +
+                           ResourceGUIM4.CloseTD;
+                       
+                           
                            
                         
                         company += ResourceGUIM4.CloseTR;

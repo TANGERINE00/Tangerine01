@@ -46,18 +46,21 @@
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Creación de cuenta de usuario</h4>
                 </div>
+                <form runat="server" ID="form1">
                 <div class="modal-body">  
+                    
                     <div class="box-body"> 
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Ficha de empleado</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" disabled="disabled">
+                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly="true">
                             </div>
                         </div> 
                         <p>&nbsp;</p>
@@ -88,13 +91,14 @@
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">
-                        <form runat="server" ID="form1">
+                        
                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
                             <!--<button id="botonCrear" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCrear_Click">Crear</button>-->
                             <asp:Button runat="server" ID="btnCrear" class="btn btn-primary pull-right" OnClick="btnCrear_Click" Text="Crear"/>
-                        </form>
+                        
                     </div><!-- /.box-footer -->
                 </div>
+              </form>
             </div>
         </div>
     </div>
