@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M2 {
     public partial class CambiarRol {
         
         /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// Control usuarioCambiar.
         /// </summary>
         /// <remarks>
@@ -46,7 +55,16 @@ namespace Tangerine.GUI.M2 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton botonCambiar;
+        protected global::System.Web.UI.WebControls.Button botonCambiar;
+        
+        /// <summary>
+        /// Control botonCambiar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton botonCambiar2;
         
         /// <summary>
         /// Control tablaempleados.

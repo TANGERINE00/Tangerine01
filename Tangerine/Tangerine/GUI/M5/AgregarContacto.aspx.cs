@@ -31,13 +31,15 @@ namespace Tangerine.GUI.M5
         string _correo = String.Empty;
         public int typeComp;
         public int idComp;
+        public string volverCC;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             typeComp = int.Parse(Request.QueryString["typeComp"]);
             idComp = int.Parse(Request.QueryString["idComp"]);
 
-            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp + ResourceGUIM5.BotonVolver3;
+            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
+                + ResourceGUIM5.BotonVolver3;
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
@@ -54,6 +56,8 @@ namespace Tangerine.GUI.M5
                 _cargo, _telefono, _correo, typeComp, idComp);
             LogicaM5 contactLogic = new LogicaM5();
             contactLogic.AddNewContact(contact);
+
+            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
             
         }
     }

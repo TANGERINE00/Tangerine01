@@ -241,24 +241,6 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to consultar_cliente_potencial2.
-        /// </summary>
-        internal static string SP_consultarClientePotencial2 {
-            get {
-                return ResourceManager.GetString("SP_consultarClientePotencial2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to consultar_cliente_potencial3.
-        /// </summary>
-        internal static string SP_consultarClientePotencial3 {
-            get {
-                return ResourceManager.GetString("SP_consultarClientePotencial3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to eliminar_cliente_potencial.
         /// </summary>
         internal static string SP_eliminarClientePotencial {
@@ -273,60 +255,6 @@ namespace DatosTangerine.M3 {
         internal static string SP_listarClientePotencial {
             get {
                 return ResourceManager.GetString("SP_listarClientePotencial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to listar_cliente_potencial3.
-        /// </summary>
-        internal static string SP_listarClientePotencial3 {
-            get {
-                return ResourceManager.GetString("SP_listarClientePotencial3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to modificar_clientePotencial2.
-        /// </summary>
-        internal static string SP_modificar_clientePotencial2 {
-            get {
-                return ResourceManager.GetString("SP_modificar_clientePotencial2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to modificar_clientePotencial3.
-        /// </summary>
-        internal static string SP_modificar_clientePotencial3 {
-            get {
-                return ResourceManager.GetString("SP_modificar_clientePotencial3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to modificar_clientePotencial4.
-        /// </summary>
-        internal static string SP_modificar_clientePotencial4 {
-            get {
-                return ResourceManager.GetString("SP_modificar_clientePotencial4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to modificar_clientePotencial5.
-        /// </summary>
-        internal static string SP_modificar_clientePotencial5 {
-            get {
-                return ResourceManager.GetString("SP_modificar_clientePotencial5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to modificar_clientePotencial6.
-        /// </summary>
-        internal static string SP_modificar_clientePotencial6 {
-            get {
-                return ResourceManager.GetString("SP_modificar_clientePotencial6", resourceCulture);
             }
         }
         

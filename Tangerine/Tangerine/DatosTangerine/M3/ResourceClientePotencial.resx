@@ -205,40 +205,8 @@
     <value>consultar_cliente_potencial</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
-  <data name="SP_consultarClientePotencial2" xml:space="preserve">
-    <value>consultar_cliente_potencial2</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_consultarClientePotencial3" xml:space="preserve">
-    <value>consultar_cliente_potencial3</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
   <data name="SP_modificarClientePotencial" xml:space="preserve">
     <value>modificar_clientePotencialF</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_listarClientePotencial3" xml:space="preserve">
-    <value>listar_cliente_potencial3</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_modificar_clientePotencial2" xml:space="preserve">
-    <value>modificar_clientePotencial2</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_modificar_clientePotencial3" xml:space="preserve">
-    <value>modificar_clientePotencial3</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_modificar_clientePotencial4" xml:space="preserve">
-    <value>modificar_clientePotencial4</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_modificar_clientePotencial5" xml:space="preserve">
-    <value>modificar_clientePotencial5</value>
-    <comment>Nombre del store Procedure para listar</comment>
-  </data>
-  <data name="SP_modificar_clientePotencial6" xml:space="preserve">
-    <value>modificar_clientePotencial6</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
 </root>

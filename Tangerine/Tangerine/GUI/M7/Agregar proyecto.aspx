@@ -153,7 +153,7 @@
 
                         <div class="form-group">
                             <label for="inputEncargado">Encargado de la empresa contratante *</label>
-                            <select class="form-control" id="inputEncargado" name="inputEncargado" runat="server">
+                            <select class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
                                 <option>Pedro Perez</option>
                                 <option>Ana Rodriguez</option>
                             </select>

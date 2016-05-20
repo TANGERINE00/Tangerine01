@@ -117,105 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddNewContact" xml:space="preserve">
-    <value>M5_AgregarContacto</value>
+  <data name="ConsultPlaces" xml:space="preserve">
+    <value>M4_ConsultarLugar</value>
   </data>
-  <data name="ChangeContact" xml:space="preserve">
-    <value>M5_ModificarContacto</value>
+  <data name="LugIdPlace" xml:space="preserve">
+    <value>lug_dir_id</value>
   </data>
-  <data name="ConDepartmentContact" xml:space="preserve">
-    <value>con_departamento</value>
+  <data name="LugLugIdPlace" xml:space="preserve">
+    <value>fk_lug_dir_id</value>
   </data>
-  <data name="ConEmailContact" xml:space="preserve">
-    <value>con_correo</value>
+  <data name="LugNamePlace" xml:space="preserve">
+    <value>lug_dir_nombre</value>
   </data>
-  <data name="ConIdComp" xml:space="preserve">
-    <value>fk_id_com_lead</value>
-  </data>
-  <data name="ConIdContact" xml:space="preserve">
-    <value>con_id</value>
-  </data>
-  <data name="ConLastNameContact" xml:space="preserve">
-    <value>con_apellido</value>
-  </data>
-  <data name="ConNameContact" xml:space="preserve">
-    <value>con_nombre</value>
-  </data>
-  <data name="ConPhoneContact" xml:space="preserve">
-    <value>con_telefono</value>
-  </data>
-  <data name="ConRolContact" xml:space="preserve">
-    <value>con_cargo</value>
-  </data>
-  <data name="ContactCompany" xml:space="preserve">
-    <value>M5_ConsultarContactoCompania</value>
-  </data>
-  <data name="ConTypeComp" xml:space="preserve">
-    <value>con_tipo_emp</value>
-  </data>
-  <data name="DeleteContact" xml:space="preserve">
-    <value>M5_EliminarContacto</value>
-  </data>
-  <data name="ParamDepa" xml:space="preserve">
-    <value>@departamento</value>
-  </data>
-  <data name="ParamEmail" xml:space="preserve">
-    <value>@correo</value>
-  </data>
-  <data name="ParamId" xml:space="preserve">
-    <value>@id</value>
-  </data>
-  <data name="ParamIdComp" xml:space="preserve">
-    <value>@id_empresa</value>
-  </data>
-  <data name="ParamLName" xml:space="preserve">
-    <value>@apellido</value>
-  </data>
-  <data name="ParamName" xml:space="preserve">
-    <value>@nombre</value>
-  </data>
-  <data name="ParamRol" xml:space="preserve">
-    <value>@cargo</value>
-  </data>
-  <data name="ParamTComp" xml:space="preserve">
-    <value>@tipo_comp</value>
-  </data>
-  <data name="ParamTele" xml:space="preserve">
-    <value>@telefono</value>
-  </data>
-  <data name="AddNewContactProy" xml:space="preserve">
-    <value>M5_AgregarContactoProyecto</value>
-  </data>
-  <data name="ParamIdContact" xml:space="preserve">
-    <value>@id_contacto</value>
-  </data>
-  <data name="ParamIdProy" xml:space="preserve">
-    <value>@id_proyecto</value>
-  </data>
-  <data name="SingleContact" xml:space="preserve">
-    <value>M5_ConsultarContactoId</value>
-  </data>
-  <data name="Codigo_Error_Formato" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en el parseo</comment>
-  </data>
-  <data name="MensajeFinInfoLogger" xml:space="preserve">
-    <value>Salida del Método</value>
-  </data>
-  <data name="MensajeInicioInfoLogger" xml:space="preserve">
-    <value>Entrada en el Método</value>
-  </data>
-  <data name="Mensaje_Error_Formato" xml:space="preserve">
-    <value>Error de parseo</value>
-    <comment>Mensaje de error cuando no puede parsear</comment>
-  </data>
-  <data name="ContactProyect" xml:space="preserve">
-    <value>M5_ConsultarContactoProyecto</value>
-  </data>
-  <data name="ContactNoProyect" xml:space="preserve">
-    <value>M5_ConsultarContactoNoProyecto</value>
-  </data>
-  <data name="DeleteContactProyect" xml:space="preserve">
-    <value>M5_EliminarContactoProyecto</value>
+  <data name="LugTypePlace" xml:space="preserve">
+    <value>lug_dir_tipo</value>
   </data>
 </root>

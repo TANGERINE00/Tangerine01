@@ -12,51 +12,47 @@ namespace Tangerine.GUI.Master
 {
     public partial class Tangerine : System.Web.UI.MasterPage
     {
-        protected void Page_Load( object sender, EventArgs e )
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if ( HttpContext.Current.Session[ "User" ] == null )
-                Response.Redirect( "../M1/Login.aspx" );
+            if (HttpContext.Current.Session["User"] == null)
+                Response.Redirect("../M1/Login.aspx");
             else
             {
-                if ( Util.MASTER_FLAG )
+                if (Util.MASTER_FLAG)
                 {
-                    //Util._theGlobalUser.NombreUsuario = "luarropa";                            //En teoria esto no va,
-                    //Util._theGlobalUser.Contrasenia = "1234";                                  //se haria al hacer login
-                    //Util._theGlobalUser = BDUsuario.ObtenerDatoUsuario(Util._theGlobalUser); //-----------------------
-
                     Uri thisPageUrl = Request.Url;
                     string pathDePaginaActal = thisPageUrl.AbsolutePath;
                     string nombreRol = HttpContext.Current.Session["Rol"].ToString();
 
-                    bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina( pathDePaginaActal, nombreRol );
+                    bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal, nombreRol);
 
-                    if ( privilegioAcceso )
+                    if (privilegioAcceso)
                     {
-                        Response.Redirect( "../M1/Dashboard.aspx" );
+                        Response.Redirect("../M1/Dashboard.aspx");
                     }
                     else
                     {
-                        List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones( nombreRol );
+                        List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones(nombreRol);
 
-                        foreach ( string s in bloqueos )
+                        foreach (string s in bloqueos)
                         {
-                            this.FindControl( s ).Visible = false;
+                            this.FindControl(s).Visible = false;
                         }
                     }
                 }
             }
 
-            if ( HttpContext.Current.Session[ "User" ] != null )
-                usuarioSesion.InnerText = HttpContext.Current.Session[ "User" ] + "";
+            if (HttpContext.Current.Session["User"] != null)
+                usuarioSesion.InnerText = HttpContext.Current.Session["User"] + "";
             else
                 usuarioSesion.InnerText = "Usuario";
         }
 
-        public void CerrarSesion( object sender, EventArgs e )
+        public void CerrarSesion(object sender, EventArgs e)
         {
             Util._theGlobalUser = null;
             HttpContext.Current.Session.Abandon();
-            Response.Redirect( "../M1/Login.aspx" );
+            Response.Redirect("../M1/Login.aspx");
         }
     }
 }

@@ -18,12 +18,16 @@ namespace PruebasUnitarias.M5
         public Contacto theContact;
         public Contacto theContact2;
         public List<Contacto> listContact;
+        public List<Contacto> listContact2;
+        public Proyecto theProyect;
         #endregion
 
         #region SetUp and TearDown
         [SetUp]
         public void init()
         {
+            theProyect = new Proyecto();
+            theProyect.Idproyecto = 1;
             theContact = new Contacto();
             theContact.IdContacto = 8;
             theContact.Nombre = "Istvan";
@@ -44,8 +48,12 @@ namespace PruebasUnitarias.M5
             theContact = null;
             theContact2 = null;
             listContact = null;
+            listContact2 = null;
+            theProyect = null;
         }
         #endregion
+
+        #region Pruebas Unitarias
 
         /// <summary>
         /// Prueba que permite verificar el insertar de un contacto en la base de datos
@@ -53,12 +61,30 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestAddContact()
         {
-            //Agrego el contacto a eliminar
+            //Agrego el contacto a probar
             Assert.IsTrue(BDContacto.AddContact(theContact));
-            //Consulto todos los contactos de la compania 1
+            //Consulto todos los contactos de la compania 1, donde inserte el contacto anterior
             listContact = BDContacto.ContactCompany(1, 1);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar el eliminar de un contacto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestDeleteContact()
+        {
+            //Agrego el contacto a eliminar
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1
+            listContact = BDContacto.ContactCompany(1, 1);
+            //Valido que el contacto a eliminar sea el mismo que inserte
+            Assert.AreEqual(theContact.Correo, listContact[listContact.Count - 1].Correo);
+            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
+            //answer obtiene true si se elimina el contacto
+            Assert.IsTrue(answer);
         }
 
         /// <summary>
@@ -85,28 +111,12 @@ namespace PruebasUnitarias.M5
         }
 
         /// <summary>
-        /// Prueba que permite verificar el eliminar de un contacto en la base de datos
-        /// </summary>
-        [Test]
-        public void TestDeleteContact()
-        {
-            //Agrego el contacto a eliminar
-            answer = BDContacto.AddContact(theContact);
-            //Consulto todos los contactos de la compania 1
-            listContact = BDContacto.ContactCompany(1,1);
-            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
-            answer = BDContacto.DeleteContact(listContact[listContact.Count-1]);
-            //answer obtiene true si se elimina el contacto
-            Assert.IsTrue(answer);
-        }
-
-        /// <summary>
         /// Prueba que permite verificar el consultar lista de contactos de una empresa en bd
         /// </summary>
         [Test]
         public void TestContactCompany()
         {
-            //Agrego un contacto para tene algo en la lista
+            //Agrego un contacto para tener almenos uno en la lista
             answer = BDContacto.AddContact(theContact);
             //Consulto todos los contactos de la compania 1
             listContact = BDContacto.ContactCompany(1, 1);
@@ -116,5 +126,45 @@ namespace PruebasUnitarias.M5
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
 
         }
+
+        /// <summary>
+        /// Prueba que permite verificar el consultar un contacto unico
+        /// </summary>
+        [Test]
+        public void TestSingleContact()
+        {
+            //Agrego un contacto para tene algo en la lista
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1
+            listContact = BDContacto.ContactCompany(1, 1);
+            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
+            theContact2 = BDContacto.SingleContact(listContact[listContact.Count - 1]);
+            //Valido si el contacto que inserte es igual al que trajo el metodo
+            Assert.AreEqual(theContact2.Correo, theContact.Correo);
+            //Borro el contacto de la bd
+            answer = BDContacto.DeleteContact(theContact2);
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar el agregar contacto a un proyecto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestAddContactProy()
+        {
+            //Agrego el contacto a asignar al proyecto 1
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1 para tener el ultimo contacto que agregue
+            listContact = BDContacto.ContactCompany(1, 1);
+            //Inserto en Contacto_proyecto el id del contacto y el id del proyecto
+            Assert.IsTrue(BDContacto.AddContactProy(listContact[listContact.Count-1], theProyect));
+            //Traigo una lista de contactos del proyecto 1 para validar
+            listContact2 = BDContacto.ContactProyect(theProyect);
+            //Valido los correos del contacto insertado y del ultimo contacto del proyecto
+            Assert.AreEqual(theContact.Correo, listContact2[listContact2.Count - 1].Correo);
+            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
+        }
+
+        #endregion
     }
 }
