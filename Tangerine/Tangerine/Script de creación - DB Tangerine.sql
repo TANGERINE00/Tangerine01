@@ -120,20 +120,20 @@ create table USUARIO
 
 create table CLIENTE_POTENCIAL
 (
-	cli_pot_id int not null,
-	cli_pot_nombre varchar(20) not null,
-	cli_pot_rif varchar(20) not null,
-	cli_pot_email varchar(50) not null,
-	cli_pot_pres_anual_inv numeric(12,3) not null,
-	cli_pot_num_llamadas int not null,
-	cli_pot_num_visitas int not null,
-	cli_pot_potencial bit default(0) not null,
-	cli_pot_borrado bit default(0) not null,
-
-	constraint pk_cli_pot primary key
-	(
-		cli_pot_id
-	)
+	 cli_pot_id int IDENTITY (1, 1) NOT NULL,
+	 cli_pot_nombre varchar(20) not null,
+	 cli_pot_rif varchar(20) not null,
+	 cli_pot_email varchar(50) not null,
+	 cli_pot_pres_anual_inv numeric(12,3) not null,
+	 cli_pot_num_llamadas int default(0) not null,
+	 cli_pot_num_visitas int default(0) not null,
+	 cli_pot_potencial bit default(1) not null,
+	 cli_pot_borrado bit default(0) not null,
+	 
+	 constraint pk_cli_pot primary key
+	 (
+	  cli_pot_id
+	 )
 );
 
 create table COMPANIA
