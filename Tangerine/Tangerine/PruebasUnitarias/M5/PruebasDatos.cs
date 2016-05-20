@@ -59,9 +59,9 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestAddContact()
         {
-            //Agrego el contacto a eliminar
+            //Agrego el contacto a probar
             Assert.IsTrue(BDContacto.AddContact(theContact));
-            //Consulto todos los contactos de la compania 1
+            //Consulto todos los contactos de la compania 1, donde inserte el contacto anterior
             listContact = BDContacto.ContactCompany(1, 1);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
@@ -142,6 +142,7 @@ namespace PruebasUnitarias.M5
         }
 
         /// <summary>
+        /// Prueba que permite verificar el agregar contacto a un proyecto en la base de datos
         /// </summary>
         [Test]
         public void TestAddContactProy()

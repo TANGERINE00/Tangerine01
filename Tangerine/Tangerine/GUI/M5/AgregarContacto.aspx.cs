@@ -38,7 +38,8 @@ namespace Tangerine.GUI.M5
             typeComp = int.Parse(Request.QueryString["typeComp"]);
             idComp = int.Parse(Request.QueryString["idComp"]);
 
-            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp + ResourceGUIM5.BotonVolver3;
+            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
+                + ResourceGUIM5.BotonVolver3;
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
