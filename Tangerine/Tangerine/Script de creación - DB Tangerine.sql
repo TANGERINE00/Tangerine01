@@ -617,6 +617,7 @@ as
 			cli_pot_id  = @idClientePotencial and cli_pot_borrado=0;		
 
  end;
+ go
 
 
 ----------- Store Procedure promover cliente potencial-------------------------
@@ -632,6 +633,7 @@ as
 			cli_pot_id  = @idClientePotencial and cli_pot_potencial=1;		
 
  end;
+ go
 
 
 ----------- Store Procedure consulta de cliente potencial--------------------------
@@ -646,7 +648,8 @@ as
 		from cliente_Potencial
 		where cli_pot_id = @idClientePotencial;
 		
-	end
+	end;
+go
 
 
 ----------- Store Procedure modificar cliente potencial--------------------------
@@ -678,6 +681,7 @@ as
 			cli_pot_id = @idClientePotencial;	
 	
  end;
+ go
 
 
 ---------------------------------------------------------------------------------------------------------
