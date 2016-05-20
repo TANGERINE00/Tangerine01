@@ -4,7 +4,7 @@ insert into lugar_direccion
 values (2,'Caracas','Ciudad', 1);
 
 insert into lugar_direccion
-values (3,'Maracaibo','ciudad', 1);
+values (3,'Maracaibo','Ciudad', 1);
 
 insert into lugar_direccion
 values (4,'Valencia','Ciudad', 1);
@@ -34,16 +34,16 @@ cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('WilPharma','J456
 
 ------------------------------------------------------------------------------------------------------------------
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('pepsi', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'psi', '12/12/2016', 1, 1);
+values ('pepsi', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'psi', '12/12/2016', 1, 2);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('coca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'cca', '12/12/2016', 0, 1);
+values ('coca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'cca', '12/12/2016', 0, 2);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('maguca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'mgc', '12/12/2016', 1, 1);
+values ('maguca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'mgc', '12/12/2016', 1, 3);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('tangerine', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'tgn', '12/12/2016', 0, 1);
+values ('tangerine', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'tgn', '12/12/2016', 0, 4);
 
 
 SET IDENTITY_INSERT PROPUESTA ON
