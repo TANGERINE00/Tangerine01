@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,7 @@ namespace Tangerine.GUI.M1
     {
 
         string active = "Activo";
+        Hashtable elementos = new Hashtable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,15 +36,21 @@ namespace Tangerine.GUI.M1
 
         protected void SelectedJob_Change(object sender, EventArgs e)
         {
-            JobSummary.InnerText += "descripcion de prueba";
+            JobSummary.InnerText = "";
+            JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
         }
 
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
-            SelectedListState.Items.Insert(0, "Seleccione un Estado");
-            SelectedListState.Items.Insert(1, "Estado 1");
-            SelectedListState.Items.Insert(2, "Estado 2");
-            SelectedListState.DataBind();
+            LogicaM10 componentes = new LogicaM10();
+            int x = 1;
+            SelectedListState.Items.Insert(0, "Seleccione un estado");
+            foreach (LugarDireccion estados in componentes.ItemsForListState())
+            {
+                SelectedListState.Items.Insert(x, estados.LugNombre);
+                x++;
+            }
+
         }
 
         protected void SelectedState_Change(object sender, EventArgs e)
@@ -57,17 +65,14 @@ namespace Tangerine.GUI.M1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            List<LugarDireccion> direccion = newAddress();
-            
-            Cargo cargo = jobForEmployee();
-
             Empleado empleado = new Empleado(FirstName.Value, SecondNamee.Value, FirstLastName.Value,
                                                 SecondLastName.Value, SelectedListGender.SelectedItem.Text.ToString(),
                                                 int.Parse(Cedula.Value),
                                                 DateTime.ParseExact(DateEmployee.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value,cargo,direccion);
+                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
+                                                newAddress());
 
-            
+
         }
 
         private List<LugarDireccion> newAddress()
@@ -87,7 +92,7 @@ namespace Tangerine.GUI.M1
             return new Cargo(SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value,
                                     DateTime.ParseExact(DateJob.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                                     JobMode.Value, Double.Parse(SalaryJob.Value));
-            
+
         }
 
         private void FillSelectedListGender()
@@ -109,11 +114,17 @@ namespace Tangerine.GUI.M1
 
         private void FillSelectedListJob()
         {
-            SelectedListJob.Items.Insert(0, "Seleccione un Cargo");
-            SelectedListJob.Items.Insert(1, "Programador");
-            SelectedListJob.Items.Insert(2, "Analista de procesos");
-            SelectedListJob.Items.Insert(3, "Arquitecto");
-            SelectedListGender.DataBind();
+            LogicaM10 componentes = new LogicaM10();
+            ;
+            int x = 1;
+            SelectedListJob.Items.Insert(0, "Seleccione un cargo");
+            foreach (Cargo cargos in componentes.ItemsForListJobs())
+            {
+                elementos.Add(cargos.Nombre, cargos.Descripcion);
+                SelectedListJob.Items.Insert(x, cargos.Nombre);
+                x++;
+            }
+
         }
 
         private void FillSelectedListCountry()
@@ -121,7 +132,7 @@ namespace Tangerine.GUI.M1
             LogicaM10 componentes = new LogicaM10();
             int x = 1;
             SelectedListCountry.Items.Insert(0, "Seleccione un pais");
-            foreach(LugarDireccion paises in componentes.ItemsForListCountry())
+            foreach (LugarDireccion paises in componentes.ItemsForListCountry())
             {
                 SelectedListCountry.Items.Insert(x, paises.LugNombre);
                 x++;
