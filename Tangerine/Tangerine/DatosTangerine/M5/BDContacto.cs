@@ -375,8 +375,6 @@ namespace DatosTangerine.M5
             return theContact;
         }
 
-        //Metodos para la tabla Contacto_Proyecto
-
         /// <summary>
         /// Metodo para agregar un contacto a un proyecto en la base de datos.
         /// </summary>
@@ -571,7 +569,7 @@ namespace DatosTangerine.M5
 
             return true;
         }
-        //Falta consultar contactos que no estan en un proyecto
+
         /// <summary>
         /// Metodo para consultar todos los Contactos que pertenecen a un Proyecto.
         /// <param name="proyect">objeto de tipo Proyecto a consultar sus contactos</param>
