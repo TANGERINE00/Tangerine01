@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using DatosTangerine.M7;
+using DatosTangerine.M6;
 
 namespace LogicaTangerine.M7
 {
@@ -13,7 +14,7 @@ namespace LogicaTangerine.M7
         BDProyecto _Pro = new BDProyecto();
         BDEmpleadoProyecto _Empl = new BDEmpleadoProyecto();
         BDProyectoContanto _Cont = new BDProyectoContanto();
-
+        BDPropuesta _Prop = new BDPropuesta();
         /// <summary>
         /// Metodo que agrega o crea nuevos proyectos
         /// </summary>
@@ -126,7 +127,15 @@ namespace LogicaTangerine.M7
     public String ConsultarNombrePropuestaID(int id)
     {
         return _Pro.ContactNombrePropuestaID(id);
+    }
+
+
+    public List<Propuesta> ConsultarPropuestasAprobadas()
+    {
+        return _Prop.PropuestaProyecto();
     } 
+
+
     }
     
 

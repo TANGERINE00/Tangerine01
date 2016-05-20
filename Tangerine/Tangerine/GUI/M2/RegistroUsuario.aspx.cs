@@ -12,7 +12,7 @@ namespace Tangerine.GUI.M2
 {
     public partial class RegistroUsuario : System.Web.UI.Page
     {
-        public string empleado
+        public string tablaEmpleado
         {
             get
             {
@@ -27,23 +27,19 @@ namespace Tangerine.GUI.M2
         {
             if (!IsPostBack)
             {
-                empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "referencia #O52" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "gerardo" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Astone" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "23617644" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Programador" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.CloseTR;
+                List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
 
-                empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "referencia #O52" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "luis" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Rodriguez" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "23617644" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Programador" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.CloseTR;
+                foreach(Empleado empleado in listaDeEmpleados)
+                {
+                    tablaEmpleado += ResourceGUIM2.OpenTR;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_num_ficha.ToString() + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_apellido + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + "CARGO" + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.CloseTR;
+                }
             }
         }
 
@@ -59,12 +55,13 @@ namespace Tangerine.GUI.M2
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
-            string rol = rolDefault.Value.ToString();
-            string nombreUsuario = userDefault.Value.ToString();
-            string contraseniaUsuario = passwordDefault.Value.ToString();
-            int fichaEmpleado = int.Parse(fichaEmp.Value.ToString());
 
-            
+            string rol = rolDefault.Value;
+            string nombreUsuario = userDefault.Value;
+            string contraseniaUsuario = passwordDefault.Value;
+            string fichaEmpleado = fichaEmp.Value;
+
+            LogicaAgregarUsuario.PrepararUsuario( nombreUsuario, contraseniaUsuario, rol, int.Parse(fichaEmpleado) );
         }
     }
 }
