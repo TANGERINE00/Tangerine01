@@ -13,13 +13,19 @@ namespace Tangerine.GUI.M6
     public partial class ModificarPropuesta : System.Web.UI.Page
     {
 
-        public Propuesta Prueba; 
+        public Propuesta Prueba;
+        //public List <Requerimiento> req;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             string prueba = Request.QueryString.Get("id");
+            //string str = Request.QueryString["req"];
+          
+             
+            
             btn_Modifica(prueba);
+            //btn_ModificaReq(str);
 
 
             if (!IsPostBack)
@@ -66,14 +72,15 @@ namespace Tangerine.GUI.M6
         /// </summary>
         /// <param name="idPropuesta"></param>
 
-        public void btn_ModificaReq(String idPropuesta) 
-        {
+        //public void btn_ModificaReq(String idPropuesta) 
+        //{
 
+        //    LogicaRequerimiento logreq = new LogicaRequerimiento();
 
+        //    req = logreq.TraerRequerimientoPropuesta(idPropuesta);
 
-
-
-        }
+            
+        //}
 
 
 

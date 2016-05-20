@@ -56,7 +56,6 @@ drop procedure M6_AgregarRequerimiento;
 drop procedure M6_ConsultarPropuestaNombre;
 drop procedure M6_ConsultarPropuestas;
 
-
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;
 drop procedure M7_ConsultarProyectos;

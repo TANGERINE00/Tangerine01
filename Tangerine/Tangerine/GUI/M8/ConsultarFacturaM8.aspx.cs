@@ -142,16 +142,19 @@ namespace Tangerine.GUI.M8
                 //Equals uno para factura "Pagada"
                 else if (Factura.estatusFactura.Equals(1))
                 {
+                    pagada = true;
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
                 }
                 //Equals dos para factura "Anulada"
                 else if (Factura.estatusFactura.Equals(2))
                 {
+                    anulada = true;
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
                 }
 
                 factura += ResourceGUIM8.OpenTD + Factura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
 
+                factura += ResourceGUIM8.OpenTD;
                 //Acciones de cada contacto
 
                 if (pagada == true || anulada == true)
