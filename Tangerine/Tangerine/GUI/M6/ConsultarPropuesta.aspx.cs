@@ -48,21 +48,47 @@ namespace Tangerine.GUI.M6
 
                                 propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Nombre.ToString() + RecursosGUI_M6.CerrarTD;
                                 propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Feincio.ToShortDateString() + RecursosGUI_M6.CerrarTD;
-                                propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Estatus + RecursosGUI_M6.CerrarTD;
-                                propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Costo + RecursosGUI_M6.CerrarTD;
-                                if (laPropuesta.Estatus.Equals("Aprobada"))
+                                if (laPropuesta.Estatus.Equals("Aprobado"))
                                 {
                                     propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.aprobado + RecursosGUI_M6.CerrarTD;
                                 }
-                                else if (laPropuesta.Estatus.Equals("Pendiente"))
+                                if (laPropuesta.Estatus.Equals("Pendiente"))
                                 {
                                     propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.pendiente + RecursosGUI_M6.CerrarTD;
                                 }
+                                if (laPropuesta.Estatus.Equals("Cerrado"))
+                                {
+                                    propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.cerrado + RecursosGUI_M6.CerrarTD;
+                                }
 
-                                //Acciones de cada propuesta 
 
-                                propuesta += RecursosGUI_M6.botonModificar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.boton_cerrar_id;
 
+                                if (laPropuesta.Moneda.Equals("Bolivar"))
+                                {
+                                    propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.bolivar + RecursosGUI_M6.CerrarTD;
+                                }
+                                if (laPropuesta.Moneda.Equals("Dolar"))
+                                {
+                                    propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.dolar + RecursosGUI_M6.CerrarTD;
+                                }
+                                if (laPropuesta.Moneda.Equals("Euro"))
+                                {
+                                    propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.euro + RecursosGUI_M6.CerrarTD;
+                                }
+                                if (laPropuesta.Moneda.Equals("Bitcoin"))
+                                {
+                                    propuesta += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.bitcoin + RecursosGUI_M6.CerrarTD;
+                                }
+
+                                propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Costo + RecursosGUI_M6.CerrarTD;
+
+
+
+                                propuesta += RecursosGUI_M6.AbrirTD
+                                          + RecursosGUI_M6.botonConsultar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
+                                          + RecursosGUI_M6.botonModificar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
+                                          + RecursosGUI_M6.botonEliminar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
+                                          + RecursosGUI_M6.CerrarTR;
 
                             }
 

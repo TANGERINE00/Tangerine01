@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ConsultarPropuesta" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -13,9 +14,26 @@
     <li class="active">listado de propuestas</li>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Propuestas</h3>
+                    <%-- <div class="box-tools">
+            <div class="input-group input-group-sm" style="width: 150px;">
+                <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
 
-     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>--%>
+                </div>
+                <!-- /.box-header -->
+
+
+                <!-- Modal -->
+                <%-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -78,90 +96,28 @@
             </div>
 
         </div>
-    </div>
-
-    <div class="box-body table-responsive no-padding">
-        <table id="example2" class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Codigo Propuesta</th>
-                    <th>Fecha Inicio</th>
-                    <th>Estatus</th>
-                    <th>Costo
-
-                   <%-- <th>Codigo Propuesta</th>
-                    <th>Cliente</th>
-                    <th>Fecha Inicio</th>
-                    <th>Estatus</th>
-                    <th>Moneda/Pago</th>
-                    <th>Costo</th>--%>
-
-                    <th style="text-align: center;">Acciones</th>
-                </tr>
-            </thead>
-            <asp:Literal id="tablaP" runat="server" ></asp:Literal>
-        </table>
-
-    </div>
-    <!-- /.box-body -->
-
-
-    <%--<div class="box-body table-responsive no-padding">
-        <table id="example2" class="table table-bordered table-striped dataTable">
-            <thead>
-                <tr>
-                    <th>N° Referencia</th>
-                    <th>Cliente</th>
-                    <th>Fecha Modificacion</th>
-                    <th>Estatus</th>
-                    <th>Descripcion</th>
-                    <th>Moneda/Pago</th>
-                    <th style="text-align: center;">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                    <td>TRSC012016</td>
-                    <td>Trascend</td>
-                    <td>13-04-2016</td>
-                    <td><span class="label label-success">Aprobado</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <th style="text-align: center;"><a class="glyphicon glyphicon-euro"></a></th>
-                    <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"></a><a class="btn btn-default glyphicon glyphicon-edit"  href="ModificarPropuesta.aspx?id=Modulo de gestion de empleados"></a><a class="btn btn-danger glyphicon glyphicon-remove-circle" data-target="#myModal"></a></th>
-                </tr>
-                <tr>
-                    <td>PPSI022016</td>
-                    <td>Pepsi</td>
-                    <td>13-04-2016</td>
-                    <td><span class="label label-warning">En ejecucion</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <th style="text-align: center;"><a class="glyphicon glyphicon-usd"></a></th>
-                    <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
-                </tr>
-                <tr>
-                    <td>GGLE012016</td>
-                    <td>Google</td>
-                    <td>13-04-2016</td>
-                    <td><span class="label label-warning">En ejecucion</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <th style="text-align: center;"><a class="glyphicon glyphicon-bitcoin"></a></th>
-                    <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
-                </tr>
-                <tr>
-                    <td>TBCA012016</td>
-                    <td>Tebca</td>
-                    <td>13-04-2016</td>
-                    <td><span class="label label-danger">Cerrado</span></td>
-                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    <th style="text-align: center;"><a class="glyphicon glyphicon-usd"></a></th>
-                    <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign"></a><a class="btn btn-default glyphicon glyphicon-edit" href="ModificarContacto.aspx"></a><a class="btn btn-danger glyphicon glyphicon-remove-circle"></a></th>
-                </tr>
-            </tbody>
-        </table>
     </div>--%>
-    <!-- /.box-body -->
+                <!-- Fin Modal -->
 
-    <!-- /.box -->
+                <div class="box-body table-responsive no-padding">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Codigo Propuesta</th>
+                                <th>Fecha Estimada Inicio</th>
+                                <th>Estatus</th>
+                                <th>Moneda</th>
+                                <th>Costo</th>
+                                <th style="text-align: center;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <asp:Literal ID="tablaP" runat="server"></asp:Literal>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
 
 </asp:Content>
