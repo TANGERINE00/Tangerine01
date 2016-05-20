@@ -117,6 +117,8 @@ namespace Tangerine.GUI.M8
         {
             LogicaM8 consulta = new LogicaM8();
             textBuscarId.Value = null;
+            bool pagada = false;
+            bool anulada = false;
 
             Facturacion Factura = consulta.SearchFactura(numeroFactura);
 
@@ -140,25 +142,41 @@ namespace Tangerine.GUI.M8
                 //Equals uno para factura "Pagada"
                 else if (Factura.estatusFactura.Equals(1))
                 {
+                    pagada = true;
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
                 }
                 //Equals dos para factura "Anulada"
                 else if (Factura.estatusFactura.Equals(2))
                 {
+                    anulada = true;
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
                 }
 
                 factura += ResourceGUIM8.OpenTD + Factura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
 
-                //Acciones de cada contacto
                 factura += ResourceGUIM8.OpenTD;
-                factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                           ResourceGUIM8.BotonAnular + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                           ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                //Acciones de cada contacto
 
-                factura += ResourceGUIM8.CloseTD;
+                if (pagada == true || anulada == true)
+                {
+                    factura += ResourceGUIM8.BotonModifInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                               ResourceGUIM8.BotonAnularInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                               ResourceGUIM8.BotonPagarInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
 
-                factura += ResourceGUIM8.CloseTR;
+                    factura += ResourceGUIM8.CloseTD;
+                    factura += ResourceGUIM8.CloseTR;
+                }
+                else
+                {
+                    factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                            ResourceGUIM8.BotonAnular + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                            ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+
+                    factura += ResourceGUIM8.CloseTD;
+                    factura += ResourceGUIM8.CloseTR;
+                }
+                anulada = false;
+                pagada = false;
 
             }
             catch (Exception ex)

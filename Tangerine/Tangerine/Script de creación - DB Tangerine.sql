@@ -741,6 +741,17 @@ AS
 		FROM CONTACTO WHERE fk_id_com_lead = @id_empresa and con_tipo_emp = @tipo_comp;
 	END
 GO
+--Consultar contactos de un proyecto
+CREATE PROCEDURE M5_ConsultarContactoProyecto
+		@id_proyecto INT
+AS
+	BEGIN
+		SELECT contacto.con_id as con_id, contacto.con_nombre as con_nombre, contacto.con_apellido as con_apellido,
+		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
+		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO, CONTACTO_PROYECTO WHERE CONTACTO_PROYECTO.fk_proy_id = @id_proyecto and CONTACTO_PROYECTO.fk_con_id = CONTACTO.con_id;
+	END
+GO
 -----------------------------------
 ------Fin Stored Procedure M5------
 -----------------------------------
@@ -842,10 +853,12 @@ GO
 --Listar requerimientos por propuesta
 CREATE PROCEDURE M6_ListarRequerimientos
 
+@cod_Nombre [varchar] (200)
+
 AS
 
 BEGIN
-SELECT * FROM REQUERIMIENTO, PROPUESTA WHERE fk_prop_id = prop_id 
+SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_id_req = @cod_Nombre 
 END;
 
 GO
@@ -861,6 +874,19 @@ BEGIN
 
 SELECT prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
 prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA WHERE prop_nombre = @idNombre
+
+END;
+GO
+
+CREATE PROCEDURE M6_ConsultarPropuestas
+
+
+AS
+
+BEGIN
+
+SELECT prop_nombre,prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
+prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA 
 
 END;
 GO
@@ -1188,17 +1214,6 @@ AS
 	END
 GO
 
-/*---- StoredProcedure Cambiar Estatus de Factura ----
-CREATE PROCEDURE M8_EstatusFactura
-	@id int,
-	@estatus [varchar](500)
-AS
- 	BEGIN
-    	UPDATE FACTURA SET fac_estatus = @estatus
-    	WHERE fac_id = @id;
- 	END;
-GO*/
-
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
@@ -1251,7 +1266,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[M10_DetallarEmpleado]
+CREATE PROCEDURE M10_DetallarEmpleado
 	@id int
 AS
 	BEGIN

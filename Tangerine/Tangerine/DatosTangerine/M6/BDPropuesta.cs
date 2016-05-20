@@ -204,18 +204,8 @@ namespace DatosTangerine.M6
 
 
 
-        public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(int id)
+        public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id)
         {
-
-            //if (id == -1)
-            //{
-            //    throw new ExcepcionesTotem.Modulo5.
-            //       ProyectoNoEncontradoException(
-            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_CODIGO,
-            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_MENSAJE,
-            //       new Exception()
-            //       );
-            //}
 
             List<Parametro> parametros = new List<Parametro>();
 
@@ -223,8 +213,8 @@ namespace DatosTangerine.M6
                new List<Requerimiento>();
 
             Parametro parametro = new Parametro(
-               RecursosPropuesta.ParamIdProp,
-               SqlDbType.Int, id.ToString(), false);
+               RecursosPropuesta.ParamNombreProp,
+               SqlDbType.VarChar, id, false);
             parametros.Add(parametro);
 
             try
@@ -238,9 +228,10 @@ namespace DatosTangerine.M6
                 {
                     listaRequerimientos.Add(
                         new DominioTangerine.Requerimiento(
-                           Convert.ToInt32(fila[RecursosPropuesta.ReqProp]),
-                           fila[RecursosPropuesta.ReqProp].ToString(),
-                           fila[RecursosPropuesta.ReqNombre].ToString()
+                          fila[RecursosPropuesta.ParamCodigoReq].ToString(),
+                          fila[RecursosPropuesta.ParamDescriReq].ToString()
+
+                          
                        )
                     );
                 }
@@ -323,12 +314,6 @@ namespace DatosTangerine.M6
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
                            Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
                         
-            
-
-
-
-
-                       
                     );
                 }
             //}

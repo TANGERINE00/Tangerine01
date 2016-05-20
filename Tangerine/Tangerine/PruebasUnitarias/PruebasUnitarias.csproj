@@ -35,13 +35,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="M10\" />
     <Folder Include="M1\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
@@ -80,6 +81,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M10\M10PruebasLogica.cs" />
+    <Compile Include="M10\PruebasDatos.cs" />
     <Compile Include="M2\PruebasBDUsuario.cs" />
     <Compile Include="M3\PruebaClientePotencial.cs" />
     <Compile Include="M4\PruebaDatos.cs" />
