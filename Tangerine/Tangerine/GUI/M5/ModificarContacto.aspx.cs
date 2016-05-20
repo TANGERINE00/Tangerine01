@@ -55,5 +55,7 @@ namespace Tangerine.GUI.M5
                 this.correo.Value = theContact.Correo;
             }
         }
+        //Para volver a ConsultarContactos luego de modificar
+        //Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
     }
 }
