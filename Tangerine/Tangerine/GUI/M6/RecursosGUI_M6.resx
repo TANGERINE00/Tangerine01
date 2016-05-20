@@ -141,4 +141,10 @@
   <data name="pendiente" xml:space="preserve">
     <value>&lt;span class="label label-warning"&gt;Pendiente&lt;/span&gt;</value>
   </data>
+  <data name="btn_eliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="btn_Modificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil mod_req" data-toggle="modal" data-target="#modal-update" href="#"&gt;&lt;/a&gt;</value>
+  </data>
 </root>

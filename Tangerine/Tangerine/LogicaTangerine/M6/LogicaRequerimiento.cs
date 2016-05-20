@@ -33,6 +33,14 @@ namespace LogicaTangerine.M6
             return BDPropuesta.ConsultarRequerimientosPorPropuesta(id);
         }
 
+
+
+
+        //public bool ModRequerimiento(Requerimiento requerimiento) 
+        //{
+        //    return BDPropuesta.Modificar_Requerimiento(requerimiento);
+        //}
+
       
 
     }
