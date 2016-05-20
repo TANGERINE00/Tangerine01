@@ -256,7 +256,7 @@
     <value>prop_tipoDuracion</value>
   </data>
   <data name="Prop_Nombre" xml:space="preserve">
-    <value>@idNombre</value>
+    <value>@propuesta_nombre</value>
     <comment>atributo paremetro del consultar propuesta por nombre</comment>
   </data>
   <data name="ReqNombre" xml:space="preserve">

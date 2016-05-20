@@ -295,7 +295,7 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @idNombre.
+        ///   Looks up a localized string similar to @propuesta_nombre.
         /// </summary>
         internal static string Prop_Nombre {
             get {
