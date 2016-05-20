@@ -31,17 +31,52 @@ namespace LogicaTangerine.M6
 
         public Propuesta TraerPropuesta(String id) 
         {
-            //try
-            //{
+            try
+            {
                 return BDPropuesta.ConsultarPropuestaporNombre(id);
-            //}
-            ////catch (Exception ex)
-            ////{
-            ////    throw ex;
-            ////}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             
         }
 
+        public Boolean BorrarPropuesta(String id)
+        {
+            try
+            {
+            return BDPropuesta.BorrarPropuesta(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+        
+        /// <summary>
+        /// Metodo para consultar todas laspropuestas
+        /// </summary>
+        /// <param name="propuesta">objeto de tipo Propuesta para agregar</param>
+        /// <returns>true si fue agregado</returns>
+        public List<Propuesta> ConsultarTodasPropuestas()
+        {
+            try
+            {
+                return BDPropuesta.ListarLasPropuestas();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+        
        
 
        

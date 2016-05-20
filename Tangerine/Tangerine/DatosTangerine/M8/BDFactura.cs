@@ -426,7 +426,7 @@ namespace DatosTangerine.M8
 
         /// <summary>
         /// Metodo para consultar un Proyecto específico que pertenecen a la base de datos.
-        /// Recibe dos parametros: idProyecto que es el numero de Proyecto del mismo.
+        /// Recibe UN parametro: idProyecto que es el numero de Proyecto del mismo.
         ///                     
         /// </summary>
         /// <returns>Un objeto de tipo Proyecto</returns>

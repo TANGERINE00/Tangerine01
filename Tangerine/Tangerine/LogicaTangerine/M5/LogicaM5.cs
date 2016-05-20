@@ -97,7 +97,7 @@ namespace LogicaTangerine.M5
         /// <summary>
         /// Metodo para eliminar un contacto de una empresa.
         /// </summary>
-        /// <param name="idContact">entero que representa el id del contacto a eliminar de la empresa</param>
+        /// <param name="contact">objeto que representa el contacto a eliminar de la empresa</param>
         /// <returns>true si fue eliminado</returns>
         public bool DeleteContact(Contacto contact)
         {
@@ -136,8 +136,8 @@ namespace LogicaTangerine.M5
         /// <summary>
         /// Metodo para consultar toda la informacion de un contacto.
         /// </summary>
-        /// <param name="idContact">entero que representa el id del contacto a consultar</param>
-        /// <returns>Objeto de tipo contacto con los valores</returns>
+        /// <param name="contact">objeto que representa el contacto a consultar</param>
+        /// <returns>Objeto de tipo contacto con todos sus valores</returns>
         public Contacto SearchContact(Contacto contact)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -175,8 +175,8 @@ namespace LogicaTangerine.M5
         /// <summary>
         /// Metodo para modificar la informacion de un contacto.
         /// </summary>
-        /// <param name="idContact">entero que representa el id del contacto a consultar</param>
-        /// <returns>Objeto de tipo contacto con los valores</returns>
+        /// <param name="contact">objeto que representa el contacto a modificar</param>
+        /// <returns>true si fueron cambiados sus valores</returns>
         public bool ChangeContact(Contacto contact)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -212,16 +212,136 @@ namespace LogicaTangerine.M5
         }
 
         /// <summary>
-        /// Metodo para Agregar contacto por proyecto.
+        /// Metodo para Agregar contacto a un proyecto.
         /// </summary>
-        /// <param name="idContact">entero que representa el id del contacto a consultar</param>
-        /// <returns>Objeto de tipo contacto con los valores</returns>
+        /// <param name="contact">objeto que representa el contacto a agregar a proyecto</param>
+        /// <param name="proyect">objeto que representa el proyecto a agregar contacto</param>
+        /// <returns>true si agrega el contacto al proyecto</returns>
         public bool AddProyectContact(Contacto contact, Proyecto proyect)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDContacto.AddContactProy(contact,proyect);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(LogicResources.Codigo_Error_Formato,
+                     LogicResources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResources.Mensaje_Generico_Error, ex);
+            }
+        }
+
+        /// <summary>
+        /// Metodo para traer todos los contacto de un proyecto.
+        /// </summary>
+        /// <param name="proyect">objeto por el cual se va a traer sus contactos</param>
+        /// <returns>Lista de contactos del proyecto</returns>
+        public List<Contacto> GetContactsProyect(Proyecto proyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                return BDContacto.ContactProyect(proyect);
+                }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(LogicResources.Codigo_Error_Formato,
+                     LogicResources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResources.Mensaje_Generico_Error, ex);
+            }
+        }
+
+        /// <summary>
+        /// Metodo para eliminar un contacto de un proyecto.
+        /// </summary>
+        /// <param name="contact">objeto de tipo contacto a eliminar de proyecto</param>
+        /// <param name="proyect">objeto de tipo proyecto a quitar el contacto</param>
+        /// <returns>True si elimina el contacto del proyecto</returns>
+        public bool DeleteContactProyect(Contacto contact, Proyecto proyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                return BDContacto.DeleteContactProyect(contact, proyect);
+                }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(LogicResources.Codigo_Error_Formato,
+                     LogicResources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResources.Mensaje_Generico_Error, ex);
+            }
+        }
+
+        /// <summary>
+        /// Metodo para traer todos los contacto que no estan asignados al proyecto.
+        /// Trae los que no tiene asignado y que son de la misma compania del proyecto
+        /// </summary>
+        /// <param name="proyect">objeto proyecto a consultar los contactos que no tiene asignados</param>
+        /// <returns>Lista de contactos del proyecto</returns>
+        public List<Contacto> GetContactsNoProyect(Proyecto proyect)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, LogicResources.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
+            {
+                return BDContacto.ContactNoProyect(proyect);
             }
             catch (SqlException ex)
             {

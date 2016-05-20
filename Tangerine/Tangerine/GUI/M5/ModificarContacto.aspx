@@ -35,9 +35,9 @@
                     <label>Correo</label>
                     <input runat="server" type="text" class="form-control" id="correo" name="correo">
 					
-                    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx">Cancelar</a>
+                    <asp:Literal runat="server" ID="volver"></asp:Literal>
                     <a id="btnaceptara" type="submit" style="margin-top:5%" class="btn btn-primary pull-right" runat="server" href="ConsultarContactos.aspx">Modificar</a>
-				</div>	
+				    </div>	
 			
             </div>
 		</div>

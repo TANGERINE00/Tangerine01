@@ -214,21 +214,23 @@ namespace DominioTangerine
             this._costo = p15;
         }
 
-        public Propuesta(string conNombre, string conDescripcion, string contipoDuracion, string conAcuerdo, string conEstatus1, string conMoneda, int conEntregas, DateTime conFechaIni, DateTime conFechaFin, int conCosto, int conFkComp)
-        {
-            // TODO: Complete member initialization
-            this.conNombre = conNombre;
-            this.conDescripcion = conDescripcion;
-            this.contipoDuracion = contipoDuracion;
-            this.conAcuerdo = conAcuerdo;
-            this.conEstatus1 = conEstatus1;
-            this.conMoneda = conMoneda;
-            this.conEntregas = conEntregas;
-            this.conFechaIni = conFechaIni;
-            this.conFechaFin = conFechaFin;
-            this.conCosto = conCosto;
-            this.conFkComp = conFkComp;
-        }
+        //public Propuesta(string conNombre, string conDescripcion, string contipoDuracion, string conAcuerdo, string conEstatus1, string conMoneda, int conEntregas, DateTime conFechaIni, DateTime conFechaFin, int conCosto, int conFkComp)
+        //{
+        //    // TODO: Complete member initialization
+        //    this.conNombre = conNombre;
+        //    this.conDescripcion = conDescripcion;
+        //    this.contipoDuracion = contipoDuracion;
+        //    this.conAcuerdo = conAcuerdo;
+        //    this.conEstatus1 = conEstatus1;
+        //    this.conMoneda = conMoneda;
+        //    this.conEntregas = conEntregas;
+        //    this.conFechaIni = conFechaIni;
+        //    this.conFechaFin = conFechaFin;
+        //    this.conCosto = conCosto;
+        //    this.conFkComp = conFkComp;
+        //}
+
+       
 
        
 

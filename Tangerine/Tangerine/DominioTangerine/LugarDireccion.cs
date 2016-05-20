@@ -20,6 +20,12 @@ namespace DominioTangerine
         #region Constructor
         public LugarDireccion() { }
 
+        public LugarDireccion(int lugId, string lugNombre)
+        {
+            this.lugId = lugId;
+            this.lugNombre = lugNombre;
+        }
+
         public LugarDireccion(int lugId,string lugNombre, string lugTipo, int fk_lugId) 
         {
             this.lugId = lugId;
