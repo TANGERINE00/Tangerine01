@@ -79,11 +79,29 @@ namespace Tangerine.GUI.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot;&gt;Aprobada&lt;/span&gt;.
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot;&gt;Aprobado&lt;/span&gt;.
         /// </summary>
         internal static string aprobado {
             get {
                 return ResourceManager.GetString("aprobado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-bitcoin&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string bitcoin {
+            get {
+                return ResourceManager.GetString("bitcoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;b style=&quot;color: #3c8dbc;&quot;&gt;Bf &lt;/b&gt;.
+        /// </summary>
+        internal static string bolivar {
+            get {
+                return ResourceManager.GetString("bolivar", resourceCulture);
             }
         }
         
@@ -97,7 +115,34 @@ namespace Tangerine.GUI.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;th style=&quot;text-align: center;&quot;&gt;&lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;ModificarPropuesta.aspx?id=.
+        ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string botonCerra {
+            get {
+                return ResourceManager.GetString("botonCerra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left 10px&quot;  href=&quot;ModificarPropuesta.aspx?id=.
+        /// </summary>
+        internal static string botonConsultar {
+            get {
+                return ResourceManager.GetString("botonConsultar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left 10px &quot;   href=&quot;ModificarPropuesta.aspx?id=.
+        /// </summary>
+        internal static string botonEliminar {
+            get {
+                return ResourceManager.GetString("botonEliminar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left 10px&quot;  href=&quot;ModificarPropuesta.aspx?id=.
         /// </summary>
         internal static string botonModificar {
             get {
@@ -124,6 +169,15 @@ namespace Tangerine.GUI.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Cerrado&lt;/span&gt;.
+        /// </summary>
+        internal static string cerrado {
+            get {
+                return ResourceManager.GetString("cerrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;/td&gt;.
         /// </summary>
         internal static string CerrarTD {
@@ -138,6 +192,24 @@ namespace Tangerine.GUI.M6 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-usd&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string dolar {
+            get {
+                return ResourceManager.GetString("dolar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;.
+        /// </summary>
+        internal static string euro {
+            get {
+                return ResourceManager.GetString("euro", resourceCulture);
             }
         }
         

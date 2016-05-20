@@ -10,6 +10,26 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    
+
+<html>
+    <body>
+
+        <form runat="server">
+            Enter your name:
+            <asp:TextBox id="txt1" runat="server" />
+            <asp:Button OnClick="submit" Text="Submit" runat="server" />
+            <p><asp:Label id="lbl1" runat="server" /></p>
+        </form>
+
+    </body>
+</html>
+
+
+
+
+
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
 </asp:Content>

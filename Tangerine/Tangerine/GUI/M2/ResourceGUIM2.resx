@@ -180,4 +180,10 @@
   <data name="placeholder" xml:space="preserve">
     <value>placeholder="</value>
   </data>
+  <data name="Botonblock" xml:space="preserve">
+    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-default btn-xs"disabled&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="" data-target="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonRegBlock" xml:space="preserve">
+    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-default btn-xs"disabled&gt;&lt;span span class="glyphicon glyphicon-plus" data-toggle="" data-target="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
 </root>

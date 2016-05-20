@@ -88,5 +88,17 @@ namespace LogicaTangerine.M4
                 throw ex;
             }
         }
+
+        public List<LugarDireccion> getPlaces()
+        {
+            try
+            {
+                return BDLugarDireccion.ConsultPlaces();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

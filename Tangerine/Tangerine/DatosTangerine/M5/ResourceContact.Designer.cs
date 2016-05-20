@@ -178,6 +178,15 @@ namespace DatosTangerine.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoNoProyecto.
+        /// </summary>
+        internal static string ContactNoProyect {
+            get {
+                return ResourceManager.GetString("ContactNoProyect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M5_ConsultarContactoProyecto.
         /// </summary>
         internal static string ContactProyect {
@@ -201,6 +210,15 @@ namespace DatosTangerine.M5 {
         internal static string DeleteContact {
             get {
                 return ResourceManager.GetString("DeleteContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_EliminarContactoProyecto.
+        /// </summary>
+        internal static string DeleteContactProyect {
+            get {
+                return ResourceManager.GetString("DeleteContactProyect", resourceCulture);
             }
         }
         

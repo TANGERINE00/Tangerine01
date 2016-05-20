@@ -121,7 +121,7 @@
     <value>&lt;td&gt;</value>
   </data>
   <data name="botonModificar" xml:space="preserve">
-    <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="ModificarPropuesta.aspx?id=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-pencil" type="submit" runat="server" style="margin-left 10px"  href="ModificarPropuesta.aspx?id=</value>
   </data>
   <data name="boton_cerrar_id" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
@@ -136,15 +136,45 @@
     <value>&lt;/tr&gt;</value>
   </data>
   <data name="aprobado" xml:space="preserve">
-    <value>&lt;span class="label label-success"&gt;Aprobada&lt;/span&gt;</value>
+    <value>&lt;span class="label label-success"&gt;Aprobado&lt;/span&gt;</value>
+    <comment>coloca el label Aprobado</comment>
   </data>
   <data name="pendiente" xml:space="preserve">
     <value>&lt;span class="label label-warning"&gt;Pendiente&lt;/span&gt;</value>
+    <comment>coloca el label Pendiente</comment>
+  </data>
+  <data name="bitcoin" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-bitcoin"&gt;&lt;/a&gt;</value>
+    <comment>icono de bitcoin</comment>
+  </data>
+  <data name="bolivar" xml:space="preserve">
+    <value>&lt;b style="color: #3c8dbc;"&gt;Bf &lt;/b&gt;</value>
+  </data>
+  <data name="dolar" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-usd"&gt;&lt;/a&gt;</value>
+    <comment>icono de dolar</comment>
+  </data>
+  <data name="euro" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-euro"&gt;</value>
+    <comment>icono de euro</comment>
+  </data>
+  <data name="botonConsultar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" type="submit" runat="server" style="margin-left 10px"  href="ModificarPropuesta.aspx?id=</value>
+  </data>
+  <data name="botonEliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left 10px "   href="ModificarPropuesta.aspx?id=</value>
+  </data>
+  <data name="botonCerra" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="btn_eliminar" xml:space="preserve">
     <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"&gt;&lt;/a&gt;</value>
   </data>
   <data name="btn_Modificar" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil mod_req" data-toggle="modal" data-target="#modal-update" href="#"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="cerrado" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Cerrado&lt;/span&gt;</value>
+    <comment>coloca el label Cerrado</comment>
   </data>
 </root>
