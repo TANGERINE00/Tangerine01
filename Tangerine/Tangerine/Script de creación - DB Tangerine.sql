@@ -571,7 +571,25 @@ AS
 	END;
 GO
 
+CREATE PROCEDURE M2_VerificarUsuarioPorFichaEmpleado
+@emp_num_ficha [varchar](100)
+AS
+	BEGIN
+		SELECT usu_usuario
+		FROM usuario
+		WHERE fk_emp_num_ficha = @emp_num_ficha;
+	END;
+GO
 
+CREATE PROCEDURE M2_VerificarExistenciaUsuario
+@usuario [varchar](100)
+AS
+	BEGIN
+		SELECT usu_usuario
+		FROM usuario
+		WHERE usu_usuario = @usuario;
+	END;
+GO
 ---------------------------------------------------------------------------------------------------------
 --------Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
