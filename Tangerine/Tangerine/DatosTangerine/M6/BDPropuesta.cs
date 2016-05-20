@@ -132,7 +132,7 @@ namespace DatosTangerine.M6
 
 
 
-        public List<Propuesta> PropuestaProyecto()
+        public  List<Propuesta> PropuestaProyecto()
         {
             List<Parametro> parametros = new List<Parametro>();
             List<Propuesta> listaPropuesta = new List<Propuesta>();
@@ -159,16 +159,81 @@ namespace DatosTangerine.M6
                     String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
                     String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
                     int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
-                   DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
-                   DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
-                   int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
-                   int conFkComp = Convert.ToInt32(row[RecursosPropuesta.PropIdCompania]
+                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
+                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
+                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
+                    String conFkComp = row[RecursosPropuesta.PropIdCompania].ToString();
 
 
-                      );
                       
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
-                    Propuesta propuestas = new Propuesta(conNombre, conDescripcion, contipoDuracion,
+                    Propuesta propuestas = new Propuesta(conNombre, conDescripcion, contipoDuracion, conDuracion,
+                        conAcuerdo, conEstatus, conMoneda, conEntregas, conFechaIni, conFechaFin, conCosto, conFkComp);
+                        listaPropuesta.Add(propuestas);
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+
+
+            return listaPropuesta;
+
+
+
+        }
+
+        /// <summary>
+        /// Metodo que consulta todas las propuestas
+        /// </summary>
+        ///
+        /// <returns>Retorna la lista de propuestas</returns>
+
+
+
+
+
+        public static List<Propuesta> ListarLasPropuestas()
+        {
+            List<Parametro> parametros = new List<Parametro>();
+            List<Propuesta> listaPropuesta = new List<Propuesta>();
+            BDConexion theConnection = new BDConexion();
+            Parametro parametro = new Parametro();
+
+
+            try
+            {
+                theConnection.Conectar();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar propuestas
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(RecursosPropuesta.ConsultarTodasPropuestas, parametros);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    String conNombre = row[RecursosPropuesta.PropNombre].ToString();
+                    String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
+                    String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
+                    String conDuracion = row[RecursosPropuesta.PropDuracion].ToString();
+                    String conAcuerdo = row[RecursosPropuesta.PropAcuerdo].ToString();
+                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
+                    String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
+                    int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
+                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
+                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
+                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
+                    String conFkComp = row[RecursosPropuesta.PropIdCompania].ToString();
+
+
+
+                    //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
+                    Propuesta propuestas = new Propuesta(conNombre, conDescripcion, contipoDuracion, conDuracion,
                         conAcuerdo, conEstatus, conMoneda, conEntregas, conFechaIni, conFechaFin, conCosto, conFkComp);
                     listaPropuesta.Add(propuestas);
                 }

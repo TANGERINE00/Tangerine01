@@ -120,13 +120,43 @@
   <data name="FillSelectCountry" xml:space="preserve">
     <value>M10_LLenarSelectPaises</value>
   </data>
+  <data name="FillSelectCountry1" xml:space="preserve">
+    <value>M10_LLenarSelectPaises</value>
+  </data>
+  <data name="FillSelectJobs" xml:space="preserve">
+    <value>M10_LlenarSelectCargo</value>
+  </data>
   <data name="FillSelectState" xml:space="preserve">
+    <value>M10_LLenarSelectEstados</value>
+  </data>
+  <data name="FillSelectState1" xml:space="preserve">
     <value>M10_LLenarSelectEstados</value>
   </data>
   <data name="ItemCountryText" xml:space="preserve">
     <value>lug_dir_nombre</value>
   </data>
+  <data name="ItemCountryText1" xml:space="preserve">
+    <value>lug_dir_nombre</value>
+  </data>
   <data name="ItemCountryValue" xml:space="preserve">
     <value>lug_dir_id</value>
+  </data>
+  <data name="ItemCountryValue1" xml:space="preserve">
+    <value>lug_dir_id</value>
+  </data>
+  <data name="ItemJobText" xml:space="preserve">
+    <value>car_nombre</value>
+  </data>
+  <data name="ItemJobValue" xml:space="preserve">
+    <value>car_id</value>
+  </data>
+  <data name="ItemStateText" xml:space="preserve">
+    <value>lug_dir_nombre</value>
+  </data>
+  <data name="ItemStateValue" xml:space="preserve">
+    <value>lug_dir_id</value>
+  </data>
+  <data name="JobDescription" xml:space="preserve">
+    <value>car_descripcion</value>
   </data>
 </root>

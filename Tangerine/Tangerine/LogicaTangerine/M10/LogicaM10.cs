@@ -53,7 +53,12 @@ namespace LogicaTangerine.M10
 
         public List<LugarDireccion> ItemsForListState()
         {
-            return BDEmpleado.GetElementsForSelectCountry();
+            return BDEmpleado.GetElementsForSelectState("Venezuela");
+        }
+
+        public List<Cargo> ItemsForListJobs()
+        {
+            return BDEmpleado.GetElementsForSelectJob();
         }
 
     }

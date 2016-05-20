@@ -70,11 +70,38 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M10_LLenarSelectPaises.
+        /// </summary>
+        internal static string FillSelectCountry1 {
+            get {
+                return ResourceManager.GetString("FillSelectCountry1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LlenarSelectCargo.
+        /// </summary>
+        internal static string FillSelectJobs {
+            get {
+                return ResourceManager.GetString("FillSelectJobs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M10_LLenarSelectEstados.
         /// </summary>
         internal static string FillSelectState {
             get {
                 return ResourceManager.GetString("FillSelectState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LLenarSelectEstados.
+        /// </summary>
+        internal static string FillSelectState1 {
+            get {
+                return ResourceManager.GetString("FillSelectState1", resourceCulture);
             }
         }
         
@@ -88,11 +115,74 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to lug_dir_nombre.
+        /// </summary>
+        internal static string ItemCountryText1 {
+            get {
+                return ResourceManager.GetString("ItemCountryText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to lug_dir_id.
         /// </summary>
         internal static string ItemCountryValue {
             get {
                 return ResourceManager.GetString("ItemCountryValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_id.
+        /// </summary>
+        internal static string ItemCountryValue1 {
+            get {
+                return ResourceManager.GetString("ItemCountryValue1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_nombre.
+        /// </summary>
+        internal static string ItemJobText {
+            get {
+                return ResourceManager.GetString("ItemJobText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_id.
+        /// </summary>
+        internal static string ItemJobValue {
+            get {
+                return ResourceManager.GetString("ItemJobValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_nombre.
+        /// </summary>
+        internal static string ItemStateText {
+            get {
+                return ResourceManager.GetString("ItemStateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_id.
+        /// </summary>
+        internal static string ItemStateValue {
+            get {
+                return ResourceManager.GetString("ItemStateValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_descripcion.
+        /// </summary>
+        internal static string JobDescription {
+            get {
+                return ResourceManager.GetString("JobDescription", resourceCulture);
             }
         }
     }

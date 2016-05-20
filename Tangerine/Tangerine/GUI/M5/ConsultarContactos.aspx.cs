@@ -108,7 +108,8 @@ namespace Tangerine.GUI.M5
                         //Acciones de cada contacto
                         contact += ResourceGUIM5.AbrirTD;
                         //Falta mandar typeComp y idComp
-                        contact += ResourceGUIM5.ButtonModContact + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
+                        contact += ResourceGUIM5.ButtonModContact + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                            + ResourceGUIM5.BotonEliminar2 + theContact.IdContacto + ResourceGUIM5.BotonCerrar 
                             + ResourceGUIM5.BotonEliminar + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
                             + ResourceGUIM5.BotonEliminar2 + theContact.IdContacto + ResourceGUIM5.BotonCerrar ;
                         contact += ResourceGUIM5.CerrarTD;

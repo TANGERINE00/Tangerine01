@@ -48,14 +48,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MongoDB.Bson, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MongoDB.Driver, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
-      <HintPath>packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="nunit.framework, Version=3.0.5797.27550, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
@@ -181,9 +173,9 @@
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
     <Content Include="GUI\M5\ModificarContacto.aspx" />
+    <Content Include="GUI\M6\ConsultarPropuesta.aspx" />
     <Content Include="GUI\M6\js\Modificar.js" />
     <Content Include="GUI\M6\js\modulo6.js" />
-    <Content Include="GUI\M6\ListarPropuesta.aspx" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
@@ -1211,12 +1203,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceGUIM5.resx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M6\ListarPropuesta.aspx.cs">
-      <DependentUpon>ListarPropuesta.aspx</DependentUpon>
+    <Compile Include="GUI\M6\ConsultarPropuesta.aspx.cs">
+      <DependentUpon>ConsultarPropuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M6\ListarPropuesta.aspx.designer.cs">
-      <DependentUpon>ListarPropuesta.aspx</DependentUpon>
+    <Compile Include="GUI\M6\ConsultarPropuesta.aspx.designer.cs">
+      <DependentUpon>ConsultarPropuesta.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\EjemploM6.aspx.cs">
       <DependentUpon>EjemploM6.aspx</DependentUpon>
@@ -1252,6 +1244,11 @@
     </Compile>
     <Compile Include="GUI\M6\Eliminar.aspx.designer.cs">
       <DependentUpon>Eliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\RecursosGUI_M6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosGUI_M6.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M7\Agregar proyecto.aspx.cs">
       <DependentUpon>Agregar proyecto.aspx</DependentUpon>
@@ -1529,6 +1526,10 @@
     <EmbeddedResource Include="GUI\M4\ResourceGUIM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M6\RecursosGUI_M6.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosGUI_M6.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M7\ResourceGUIM7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
