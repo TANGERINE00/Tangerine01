@@ -37,7 +37,7 @@
                     <div class="box-body" runat="server">
                         <div class="form-group" runat="server">
                             <label for="inputPropuesta">Propuesta Aprobada *</label>
-                            <select class="form-control" id="inputPropuesta" name="inputPropuesta" runat="server">
+                            <select class="form-control" datatextfield="text" id="inputPropuesta" name="inputPropuesta" runat="server">
                                 <option>sistema A</option>
                                 <option>sistema B</option>
                             </select>

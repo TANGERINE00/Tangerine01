@@ -117,24 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotonContac" xml:space="preserve">
-    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" &gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonHab" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonInhab" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" &gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonInvol" xml:space="preserve">
-    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonModif" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalE"&gt;&lt;/a&gt;</value>
-  </data>
   <data name="CloseBoton" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
   </data>
@@ -166,16 +148,16 @@
     <value>Comp</value>
   </data>
   <data name="OpenBotonEdit" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left 0.2px" data-toggle="modal" data-target="#myModalE" id="Edi</value>
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left 0.6px" id="Edi</value>
   </data>
   <data name="OpenBotonHab" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left 0.2px" id="Hab</value>
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="padding-left 0.6px" id="Hab</value>
   </data>
   <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left 0.2px" data-toggle="modal" data-target="#myModal" OnClick="MostrarInfo" id="Inf</value>
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="padding-left 0.6px" OnClick="MostrarInfo" id="Inf</value>
   </data>
   <data name="OpenBotonInhab" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left 0.2px" id="Inh</value>
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="padding-left 0.6px" id="Inh</value>
   </data>
   <data name="Acronimo" xml:space="preserve">
     <value>Acrónimo:</value>
@@ -218,5 +200,11 @@
   </data>
   <data name="Telefono" xml:space="preserve">
     <value>Teléfono:</value>
+  </data>
+  <data name="BotonContac" xml:space="preserve">
+    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="padding-left 0.6px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
+  </data>
+  <data name="BotonInvol" xml:space="preserve">
+    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="padding-left 0.6px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
 </root>

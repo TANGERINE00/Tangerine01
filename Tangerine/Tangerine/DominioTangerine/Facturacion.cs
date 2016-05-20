@@ -19,6 +19,7 @@ namespace DominioTangerine
         private int _estatus;
         private double _monto;
         private double _montoRestante;
+        private String _tipoMoneda;
 
         #endregion
 
@@ -85,6 +86,16 @@ namespace DominioTangerine
         }
 
         /// <summary>
+        /// Metodo para setear y obtener el tipo de moneda de la factura
+        /// </summary>
+        /// <returns>Retorna el tipo de moneda de la factura</returns>
+        public String tipoMoneda
+        {
+            get { return _tipoMoneda; }
+            set { _tipoMoneda = value; }
+        }
+
+        /// <summary>
         /// Metodo para setear y obtener el id proyecto de la factura
         /// </summary>
         /// <returns>Retorna el id del proyecto de la factura</returns>
@@ -129,6 +140,7 @@ namespace DominioTangerine
         /// <param name="estatus"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
+        /// <param name="tipoMoneda"></param>
         public Facturacion()
         {
             this._fecha = DateTime.Now;
@@ -139,6 +151,7 @@ namespace DominioTangerine
             this._estatus = 0;
             this._monto = 0;
             this._montoRestante = 0;
+            this._tipoMoneda = String.Empty;
         }
 
         /// <summary>
@@ -152,7 +165,8 @@ namespace DominioTangerine
         /// <param name="estatus"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( DateTime fecha, DateTime fechaUltimoPago, double monto, double montoRestante, String descripcion, int estatus, int idProyecto, int idCompania)
+        /// <param name="tipoMoneda"></param>
+        public Facturacion( DateTime fecha, DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
         {
             this._fecha = fecha;
             this._fechaUltimoPago = fechaUltimoPago;
@@ -162,6 +176,7 @@ namespace DominioTangerine
             this._estatus = estatus;
             this._monto = monto;
             this._montoRestante = montoRestante;
+            this._tipoMoneda = tipoMoneda;
         }
 
 
@@ -177,7 +192,8 @@ namespace DominioTangerine
         /// <param name="estatus"></param>
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
-        public Facturacion( int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto, double montoRestante, String descripcion, int estatus, int idProyecto, int idCompania )
+        /// <param name="tipoMoneda"></param>
+        public Facturacion( int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania )
         {
             this._idNumeroFactura = idNumeroFactura;
             this._fecha = fecha;
@@ -188,6 +204,7 @@ namespace DominioTangerine
             this._estatus = estatus;
             this._monto = monto;
             this._montoRestante = montoRestante;
+            this._tipoMoneda = tipoMoneda;
         }
 
         #endregion

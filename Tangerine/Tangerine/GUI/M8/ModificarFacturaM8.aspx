@@ -36,12 +36,12 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelFecha_M8">Fecha de facturación</label>
-                            <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha" disabled="disabled">
+                            <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha de facturación" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">
                             <label for="labelCliente_M8">Compañía</label>
-                            <input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Cliente" disabled="disabled">
+                            <input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Compañía" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">

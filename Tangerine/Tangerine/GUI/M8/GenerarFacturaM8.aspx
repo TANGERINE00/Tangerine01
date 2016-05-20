@@ -40,8 +40,8 @@
                         </div>
 
                         <div class="form-group" runat="server">
-                            <label for="labelCliente_M8">Compañia</label>
-                            <input type="text" runat="server" class="form-control" id="textCompania_M8" name="textCompania_M8" placeholder="Compañia">
+                            <label for="labelCliente_M8">Compañía</label>
+                            <input type="text" runat="server" class="form-control" id="textCompania_M8" name="textCompania_M8" placeholder="Compañía">
                         </div>
 
                         <div class="form-group" runat="server">
