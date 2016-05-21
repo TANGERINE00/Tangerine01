@@ -22,6 +22,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textNumeroFactura_M8;
         
         /// <summary>
+        /// NumeroFactura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal NumeroFactura;
+        
+        /// <summary>
         /// textFecha_M8 control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Tangerine.GUI.M8 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl textFecha_M8;
+        
+        /// <summary>
+        /// Fecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Fecha;
         
         /// <summary>
         /// textCliente_M8 control.
@@ -40,6 +58,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textCliente_M8;
         
         /// <summary>
+        /// Compania control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Compania;
+        
+        /// <summary>
         /// textProyecto_M8 control.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace Tangerine.GUI.M8 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText textProyecto_M8;
+        
+        /// <summary>
+        /// Proyecto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Proyecto;
         
         /// <summary>
         /// textDescripcion_M8 control.
@@ -58,6 +94,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textDescripcion_M8;
         
         /// <summary>
+        /// Descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Descripcion;
+        
+        /// <summary>
         /// textMonto_M8 control.
         /// </summary>
         /// <remarks>
@@ -65,6 +110,15 @@ namespace Tangerine.GUI.M8 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText textMonto_M8;
+        
+        /// <summary>
+        /// Monto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Monto;
         
         /// <summary>
         /// buttonAnular_M8 control.
