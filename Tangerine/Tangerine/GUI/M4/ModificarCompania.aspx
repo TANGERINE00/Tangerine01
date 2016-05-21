@@ -25,32 +25,51 @@
                   <h3 class="box-title">Datos de la Compañía</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                 <form role="form">
-                    <div class="box-body">
-                        <div class="form-group">
+                <form role="form" name="modificar_compania" id="modificar_compania" method="post" runat="server">
+                    <div class="box-body" runat="server">
+                        <div class="form-group" runat="server">
                             <label for="InputNombre">Nombre</label>
-                            <input type="text" class="form-control" id="InputNombre1" value="Tangerine Systems" placeholder="Introduzca nombre de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputNombre1" name="InputNombre1" 
+                                placeholder="Introduzca nombre de la compañía" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
                             <label for="InputAcronimo">Acrónimo (opcional)</label>
-                            <input type="text" class="form-control" id="InputAcronimo1" value="TGE" placeholder="Introduzca acrónimo de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputAcronimo1" name="InputAcronimo1" 
+                                placeholder="Introduzca acrónimo de la compañía">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
                             <label for="InputRIF">RIF</label>
-                            <input type="text" class="form-control" id="InputRIF1" value="J-2453254745" placeholder="Introduzca RIF de la compañía">
+                            <input runat="server" type="text" class="form-control" id="InputRIF1" name="InputRIF1" 
+                                placeholder="Introduzca RIF de la compañía.    e.g: J-23686197-6" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
+                            <label for="InputLugar">Dirección</label>
+                            <select runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></select>
+                        </div>
+                        <div class="form-group" runat="server">
                             <label for="InputEmail">Correo Electrónico</label>
-                            <input type="text" class="form-control" id="InputEmail1" value="tangerine00@gmail.com" placeholder="Introduzca correo electrónico de la compañía">
+                            <input runat="server" type="text" class="form-control"
+                                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
+                                id="InputEmail1" name="InputEmail1" 
+                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" required/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" runat="server">
+                            <label for="InputTelefono">Teléfono</label>
+                            <input runat="server" type="text" class="form-control" id="InputTelefono1" name="InputTelefono1" 
+                                placeholder="Introduzca teléfono de la compañía     e.g: 0212-9774183" required>
+                        </div>
+                        <div class="form-group" runat="server">
                             <label for="InputFechaRegistro">Fecha de Registro</label>
-                            <input type="text" class="form-control" id="InputFechaRegistro1" value="14/04/2016" placeholder="Introduzca fecha de registro de la compañía">
+                            <input runat="server" type="text" class="form-control" title="Fecha Inválida"
+                                pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" 
+                                id="InputFechaRegistro1" name="InputFechaRegistro1" 
+                                placeholder="dd/mm/aaaa" required>
                         </div>
                      </div><!-- /.box-body -->
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">Modificar</button>
+                        <asp:Button id="btnmodificar" class="btn btn-primary" OnClick="btnmodificar_Click" type="submit" 
+                            runat="server" Text = "Modificar"></asp:Button>
                         <a class="btn btn-default" href="ConsultarCompania.aspx" style="margin-left: 3px"  >Regresar</a>
 
                     </div>
