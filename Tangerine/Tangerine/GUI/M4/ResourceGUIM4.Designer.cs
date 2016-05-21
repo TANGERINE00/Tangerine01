@@ -70,7 +70,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Contactos&quot; class=&quot;btn btn-warning glyphicon glyphicon-list-alt&quot; style=&quot;padding-left 0.6px&quot;  href=&quot;../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Contactos&quot; class=&quot;btn btn-warning glyphicon glyphicon-list-alt&quot; style=&quot;margin-left: 3px&quot;  href=&quot;../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=.
         /// </summary>
         internal static string BotonContac {
             get {
@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Involucrados&quot; class=&quot;btn btn-info glyphicon glyphicon-user&quot; style=&quot;padding-left 0.6px&quot;  href=&quot;../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Involucrados&quot; class=&quot;btn btn-info glyphicon glyphicon-user&quot; style=&quot;margin-left: 3px&quot;  href=&quot;../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=.
         /// </summary>
         internal static string BotonInvol {
             get {
@@ -133,6 +133,15 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ).
+        /// </summary>
+        internal static string CloseParentesis {
+            get {
+                return ResourceManager.GetString("CloseParentesis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;Habilitada&lt;/span&gt;.
         /// </summary>
         internal static string CloseSpanHab {
@@ -165,15 +174,6 @@ namespace Tangerine.GUI.M4 {
         internal static string CloseTR {
             get {
                 return ResourceManager.GetString("CloseTR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a ,.
-        /// </summary>
-        internal static string Coma {
-            get {
-                return ResourceManager.GetString("Coma", resourceCulture);
             }
         }
         
@@ -241,7 +241,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Modificar&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; style=&quot;margin-left 0.6px&quot; id=&quot;Edi.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Modificar&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; style=&quot;margin-left:3px;&quot; href=&quot;ModificarCompania.aspx?idComp=.
         /// </summary>
         internal static string OpenBotonEdit {
             get {
@@ -250,7 +250,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Habilitar&quot;  class=&quot;btn btn-success glyphicon glyphicon-ok&quot; style=&quot;padding-left 0.6px&quot; href=&quot;ConsultarCompania.aspx?typeHab=1&amp;idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Habilitar&quot;  class=&quot;btn btn-success glyphicon glyphicon-ok&quot; style=&quot;margin-left:3px;&quot; href=&quot;ConsultarCompania.aspx?typeHab=1&amp;idComp=.
         /// </summary>
         internal static string OpenBotonHab {
             get {
@@ -259,7 +259,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;padding-left 0.6px&quot; OnClick=&quot;MostrarInfo&quot;href=&quot;InformacionCompania.aspx?idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left:3px;&quot;OnClick=&quot;MostrarInfo&quot;href=&quot;InformacionCompania.aspx?idComp=.
         /// </summary>
         internal static string OpenBotonInfo {
             get {
@@ -268,7 +268,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Inhabilitar&quot; class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; style=&quot;padding-left 0.6px&quot; href=&quot;ConsultarCompania.aspx?typeHab=0&amp;idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Inhabilitar&quot; class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; style=&quot;margin-left:3px;&quot; href=&quot;ConsultarCompania.aspx?typeHab=0&amp;idComp=.
         /// </summary>
         internal static string OpenBotonInhab {
             get {
@@ -277,7 +277,7 @@ namespace Tangerine.GUI.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;div class=&quot;row&quot;&gt;.
+        ///   Busca una cadena traducida similar a &lt;div class=&quot;center-block&quot;&gt;.
         /// </summary>
         internal static string OpenDivRow {
             get {
@@ -300,6 +300,15 @@ namespace Tangerine.GUI.M4 {
         internal static string Openh4 {
             get {
                 return ResourceManager.GetString("Openh4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a (.
+        /// </summary>
+        internal static string OpenParentesis {
+            get {
+                return ResourceManager.GetString("OpenParentesis", resourceCulture);
             }
         }
         

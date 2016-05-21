@@ -51,6 +51,8 @@
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Modificar</button>
+                        <a class="btn btn-default" href="ConsultarCompania.aspx" style="margin-left: 3px"  >Regresar</a>
+
                     </div>
                 </form>
               </div><!-- /.box -->

@@ -7,12 +7,16 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M4;
+using DatosTangerine.M4;
 
 namespace Tangerine.GUI.M4
 {
     public partial class HabilitarCompania : System.Web.UI.Page
     {
         LogicaM4 prueba = new LogicaM4();
+      
+       
+        
 
         public string Name
         {
@@ -98,27 +102,63 @@ namespace Tangerine.GUI.M4
                 this.fecha.Text = value;
             }
         }
+        public string Habilitado
+        {
+            get
+            {
+                return this.habilitado.ToString();
+            }
+
+            set
+            {
+                this.habilitado.Text = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-           Compania company = new Compania();
-           int idComp=0;
+            Compania company = new Compania();
+          
+            List<LugarDireccion> listaLugares = prueba.getPlaces();      
+
             try
             {
-                idComp =int.Parse(Request.QueryString["idComp"]);
+          
             }
             catch 
             {
             }
+            company = prueba.SearchCompany(int.Parse(Request.QueryString["idComp"]));
+  
+
+     
+            foreach (LugarDireccion lugar in listaLugares)
+            {
+                
+            if (lugar.LugId.Equals(company.IdLugar))
+                {
+                
+                    
+                    Name= company.NombreCompania;
+                    Siglas= company.AcronimoCompania;
+                    Telefono= company.TelefonoCompania;
+                    RIF= company.RifCompania;
+                    Correo= company.EmailCompania;
+                    Fecha= company.FechaRegistroCompania.ToShortDateString();
+                    Direccion = lugar.LugNombre ;
+                    if (company.StatusCompania == 1)
+                    {
+                        Habilitado = ResourceGUIM4.habilitado + ResourceGUIM4.CloseSpanHab;
+                    }
+                    if (company.StatusCompania == 0)
+                    {
+                        Habilitado = ResourceGUIM4.inhabilitado + ResourceGUIM4.CloseSpanInhab;
+                    
+                    }
+                }
             
-            company = prueba.SearchCompany(2);
-            Name= company.NombreCompania;
-            Siglas= company.AcronimoCompania;
-            Telefono= company.TelefonoCompania;
-            RIF= company.RifCompania;
-            Correo= company.EmailCompania;
-            Fecha= company.FechaRegistroCompania.ToString();
-            Direccion = company.IdLugar.ToString();
-        
+         } 
+
+
         
         }
     }

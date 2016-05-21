@@ -18,19 +18,12 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <div class="row">
             <!-- left column -->
-            <div class="col-md-12">
+            <div class="col-md-6">
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Cambio de Status de Compañías</h3>
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
-
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
+                    <h3 class="box-title">Información de Compañías</h3>
+                    <div class="box-tools">    
                      </div>
                 </div><!-- /.box-header -->
                 <!-- table start -->
@@ -65,12 +58,16 @@
                             <h3><label for="fecha">Fecha de Registro</label></h3>
                            <div><h4><asp:Literal runat="server" ID="fecha"> </asp:Literal></h4></div>
                         </div>
+                          <div class="form-group" runat="server">
+                            <h3><label for="habilitado">Status</label></h3>
+                           <div><h4><asp:Literal runat="server" ID="habilitado"> </asp:Literal></h4></div>
+                        </div>
                      </div> 
                    </div><!-- /.box-body -->
-
-
+                    
+                 
                     <div class="box-footer" runat="server">
-                  
+ <a href="ConsultarCompania.aspx" class="btn btn-default pull-left">Regresar</a>
                      </div>
 
                 </div>
