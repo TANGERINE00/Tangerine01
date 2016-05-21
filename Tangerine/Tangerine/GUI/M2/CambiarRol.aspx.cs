@@ -68,7 +68,7 @@ namespace Tangerine.GUI.M2
             string rol = rolCambiar.Value;
             System.Diagnostics.Debug.WriteLine("en;" + rol + nombreUsuario);
             LogicaModificarRol.ModificarRol(nombreUsuario, rol);
-
+            Response.Redirect("../M2/CambiarRol.aspx");
 
         }
     }
