@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using DatosTangerine.M4;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using ExcepcionesTangerine;
 
 namespace LogicaTangerine.M4
 {
@@ -21,8 +25,22 @@ namespace LogicaTangerine.M4
         { 
              try
             {
-            return BDCompania.ConsultCompanies(); 
+                return BDCompania.ConsultCompanies(); 
             }
+             catch (ArgumentNullException ex)
+             {
+                 throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                     LogicResourcesM4.Mensaje, ex);
+             }
+             catch (SqlException ex)
+             {
+                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                     LogicResourcesM4.Mensaje, ex);
+             }
+             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+             {
+                 throw ex;
+             }
             catch (Exception ex)
             {
                 throw ex;
@@ -34,6 +52,20 @@ namespace LogicaTangerine.M4
             try
             {
                 return BDCompania.AddCompany(company);
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -47,6 +79,20 @@ namespace LogicaTangerine.M4
             {
                 return (BDCompania.ChangeCompany(company));
             }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -58,6 +104,20 @@ namespace LogicaTangerine.M4
             try
             {
                 return BDCompania.ConsultCompany(idCompany);
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -71,6 +131,20 @@ namespace LogicaTangerine.M4
             {
                 return(BDCompania.EnableCompany(company));
             }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -83,6 +157,20 @@ namespace LogicaTangerine.M4
             {
                 return (BDCompania.DisableCompany(company));
             }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -94,6 +182,20 @@ namespace LogicaTangerine.M4
             try
             {
                 return BDLugarDireccion.ConsultPlaces();
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -117,6 +219,20 @@ namespace LogicaTangerine.M4
 
                 return NombreLugar;
             }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw ex;
@@ -138,6 +254,20 @@ namespace LogicaTangerine.M4
                 }
 
                 return IdLugar;
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
+                    LogicResourcesM4.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {

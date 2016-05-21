@@ -277,6 +277,15 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M10_CambiarEstatus.
+        /// </summary>
+        internal static string EstatusEmpleado {
+            get {
+                return ResourceManager.GetString("EstatusEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @activo.
         /// </summary>
         internal static string ParamActivo {

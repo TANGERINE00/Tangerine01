@@ -77,6 +77,11 @@
     <Compile Include="M2\LogicaPrivilegios.cs" />
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M3\LogicaM3.cs" />
+    <Compile Include="M4\LogicResourcesM4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicResourcesM4.resx</DependentUpon>
+    </Compile>
     <Compile Include="M5\LogicResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +90,7 @@
     <Compile Include="M6\LogicaPropuesta.cs" />
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
+    <Compile Include="M8\CorreoM8.cs" />
     <Compile Include="M8\LogicaM8.cs" />
     <Compile Include="M9\LogicaM9.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -96,6 +102,10 @@
     <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M4\LogicResourcesM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicResourcesM4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M5\LogicResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

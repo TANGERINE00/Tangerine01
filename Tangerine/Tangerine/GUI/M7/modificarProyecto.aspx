@@ -72,7 +72,7 @@
                     <!-- /.box-body -->
 
                     <div class="box-footer">
-                        <asp:Button ID="btnGuardar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnGenerar_Click" type="submit" runat="server" Text="Guardar"></asp:Button>
+                        <asp:Button ID="btnGuardar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnGenerar_Click" type="submit" runat="server" Text="Modificar"></asp:Button>
                     </div>
                     <div>
                         <label>* Todos los campos son obligatorios</label></div>
@@ -116,10 +116,10 @@
                     <hr />
                     <div class="form-group">
                         <label for="labelMonto_M7">Estatus del proyecto *</label>
-                        <select class="form-control" name="Propuesta Aprobada">
-                            <option>Desarrollo</option>
-                            <option>Finalizado a Tiempo</option>
-                            <option>Finalizado a destiempo</option>
+                        <select class="form-control" id="inputEstatus" runat="server" name="inputEstatus">
+                            <option>En desarrollo</option>
+                            <option>Completado</option>
+                            <option>Completado a destiempo</option>
                             <option>Cancelado</option>
                         </select>
                     </div>

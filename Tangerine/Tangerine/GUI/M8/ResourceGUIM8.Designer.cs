@@ -70,7 +70,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonAnular {
             get {
@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; disabled=&quot;disabled&quot; href=&quot;AnularFacturaM8.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; disabled=&quot;disabled&quot; href=&quot;AnularFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonAnularInhabilitado {
             get {
@@ -124,7 +124,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarFacturaM8.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; href=&quot;ModificarFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonModif {
             get {
@@ -133,7 +133,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; disabled=&quot;disabled&quot; href=&quot;ModificarFacturaM8.aspx?idCont=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; disabled=&quot;disabled&quot; href=&quot;ModificarFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonModifInhabilitado {
             get {
@@ -142,7 +142,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; class=&quot;btn btn-primary glyphicon glyphicon-euro&quot; .
+        ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; class=&quot;btn btn-success glyphicon glyphicon-euro&quot; href=&quot;/GUI/M9/CargarPago1.aspx?id=.
         /// </summary>
         internal static string BotonPagar {
             get {
@@ -151,7 +151,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; disabled=&quot;disabled&quot; class=&quot;btn btn-primary glyphicon glyphicon-euro&quot; .
+        ///   Looks up a localized string similar to &lt;a title=&quot;Pagar&quot; disabled=&quot;disabled&quot; class=&quot;btn btn-success glyphicon glyphicon-euro&quot; .
         /// </summary>
         internal static string BotonPagarInhabilitado {
             get {
