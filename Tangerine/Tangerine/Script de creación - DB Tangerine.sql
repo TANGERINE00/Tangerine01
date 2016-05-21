@@ -1291,6 +1291,16 @@ AS
 	END
 GO
 
+--- StoredProsedure consultar el id del ultimo proyecto agregado ----
+CREATE PROCEDURE M7_ConsultarMaxIdProyecto
+
+AS
+	BEGIN
+		SELECT max(proy_id)as proy_id
+		FROM PROYECTO;
+	END
+GO
+
 -----------------------------------
 ------Fin Stored Procedure M7------
 -----------------------------------

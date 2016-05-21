@@ -23,9 +23,18 @@ namespace LogicaTangerine.M7
         /// <param name="Contacto"></param>
         public Boolean agregarProyecto(Proyecto P)
         {
-            if (_Pro.AddProyecto(P) && _Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
+            if (_Pro.AddProyecto(P))
             {
-                return true;
+                P.Idproyecto = _Pro.ContacMaxIdProyecto();
+                if (_Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
+                {
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

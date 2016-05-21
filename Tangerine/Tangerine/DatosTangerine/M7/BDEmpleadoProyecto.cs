@@ -42,7 +42,7 @@ namespace DatosTangerine.M7
                         theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Idproyecto.ToString(), false);
                         parameters.Add(theParam);
 
-                        theParam = new Parametro(ResourceProyecto.ParamPCIdContacto, SqlDbType.Int, TheProyecto.get_empleados()[i].emp_num_ficha.ToString(), false);
+                        theParam = new Parametro(ResourceProyecto.ParamPEIdEmpleado, SqlDbType.Int, TheProyecto.get_empleados()[i].emp_num_ficha.ToString(), false);
                         parameters.Add(theParam);
 
 

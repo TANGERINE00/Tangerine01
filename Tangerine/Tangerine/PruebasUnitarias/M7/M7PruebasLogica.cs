@@ -34,8 +34,8 @@ namespace PruebasUnitarias.M7
             _proyecto.Fechaestimadafin = fechaestimadafin;
             _proyecto.Costo = 100000;
             _proyecto.Descripcion = "este es un proyecto de prueba";
-            _proyecto.Realizacion = "20%";
-            _proyecto.Estatus = "En Curso";
+            _proyecto.Realizacion = "20";
+            _proyecto.Estatus = "En desarrollo";
             _proyecto.Razon = "";
             _proyecto.Acuerdopago = "Mensual";
             _proyecto.Idpropuesta = 1;
@@ -47,7 +47,7 @@ namespace PruebasUnitarias.M7
             IdEmpleado = 1;
 
             Empleados = new List<Empleado>();
-            for (int i = 0; i < 6; i++)
+            for (int i = 4; i <= 5; i++)
             {
                 Empleado a = new Empleado();
                 a.emp_num_ficha = i;
@@ -58,7 +58,7 @@ namespace PruebasUnitarias.M7
             _proyecto.set_empleados(Empleados);
 
             Contactos = new List<Contacto>();
-            for (int i = 1; i < 7; i++)
+            for (int i = 4; i <=5; i++)
             {
                 Contacto a = new Contacto(i, "Istvan", "Bokor", "Ventas", "Gerente", "asd@asd.com", "7654321", 1, 1);
                 a.IdContacto = i;
