@@ -29,7 +29,7 @@ drop procedure M2_ModificarRolUsuario;
 drop procedure M2_AgregarUsuario;
 drop procedure M2_ObtenerUsuarioDeEmpleado;
 drop procedure M2_ObtenerRolUsuarioPorNombre;
-drop procedure M2_VerificarUsuarioPorFichaEmpleo;
+drop procedure M2_VerificarUsuarioPorFichaEmpleado;
 drop procedure M2_VerificarExistenciaUsuario;
 
 drop procedure agregar_clientePotencial;
