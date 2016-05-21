@@ -103,7 +103,7 @@ drop procedure M10_ConsultarProgramadores;
 drop procedure M10_LLenarSelectPaises;
 drop procedure M10_LLenarSelectEstados;
 drop procedure M10_LlenarSelectCargo;
-
+drop procedure M10_CambiarEstatus;
 
 
 

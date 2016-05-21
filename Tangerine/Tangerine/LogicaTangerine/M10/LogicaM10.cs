@@ -84,5 +84,17 @@ namespace LogicaTangerine.M10
                 throw ex;
             }
         }
+
+        public bool CambiarEstatus(int empleado)
+        {
+            try
+            {
+                return BDEmpleado.CambiarEstatus(empleado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
