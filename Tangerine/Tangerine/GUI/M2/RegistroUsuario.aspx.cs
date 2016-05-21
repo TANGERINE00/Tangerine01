@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M2
                     tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
                     tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_apellido + ResourceGUIM2.CloseTD;
                     tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
-                    tablaEmpleado += ResourceGUIM2.OpenTD + "CARGO" + ResourceGUIM2.CloseTD;
+                    tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Job.Nombre + ResourceGUIM2.CloseTD;
 
                     if ( !LogicaAgregarUsuario.VerificarUsuarioDeEmpleado( empleado.Emp_num_ficha ) )
                     {

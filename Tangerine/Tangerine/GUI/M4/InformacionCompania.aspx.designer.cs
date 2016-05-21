@@ -22,6 +22,15 @@ namespace Tangerine.GUI.M4 {
         protected global::System.Web.UI.WebControls.Literal Nombre;
         
         /// <summary>
+        /// Control habilitado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal habilitado;
+        
+        /// <summary>
         /// Control Acronimo.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Tangerine.GUI.M4 {
         protected global::System.Web.UI.WebControls.Literal Acronimo;
         
         /// <summary>
+        /// Control plazo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal plazo;
+        
+        /// <summary>
         /// Control Rif.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Tangerine.GUI.M4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Rif;
+        
+        /// <summary>
+        /// Control presupuesto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal presupuesto;
         
         /// <summary>
         /// Control direccion.
@@ -74,14 +101,5 @@ namespace Tangerine.GUI.M4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal fecha;
-        
-        /// <summary>
-        /// Control habilitado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal habilitado;
     }
 }
