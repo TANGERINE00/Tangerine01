@@ -1271,6 +1271,7 @@
     </Compile>
     <Compile Include="GUI\M7\InformacionProyecto.aspx.cs">
       <DependentUpon>InformacionProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M7\InformacionProyecto.aspx.designer.cs">
       <DependentUpon>InformacionProyecto.aspx</DependentUpon>

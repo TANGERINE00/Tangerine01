@@ -26,8 +26,8 @@ namespace PruebasUnitarias.M4
         [SetUp]
         public void setup()
         {
-            theCompany = new Compania("CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 1);
-            theCompany1 = new Compania("CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 1);
+            theCompany = new Compania("CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            theCompany1 = new Compania("CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
 
         }
 

@@ -32,10 +32,12 @@ namespace Tangerine.GUI.M4
             string _telefono = InputTelefono1.Value;
             string _fecha = InputFechaRegistro1.Value;
             int _status = 1; //Por defecto se crea la compania HABILITADA.
+            int _presupuesto = 1; //ARREGLAR!
+            int _plazo = 1; //ARREGLAR!
             int _direccionId = logica.MatchIdLugar(InputDireccion1.Value);
             
             Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
-                                                _status, _direccionId);
+                                                _status, _presupuesto, _plazo, _direccionId);
             logica.AddNewCompany(company);
 
             Server.Transfer("ConsultarCompania.aspx", true);

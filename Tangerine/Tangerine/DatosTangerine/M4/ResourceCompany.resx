@@ -126,6 +126,12 @@
   <data name="ComAcronymCompany" xml:space="preserve">
     <value>com_acronimo</value>
   </data>
+  <data name="ComBudgetCompany" xml:space="preserve">
+    <value>com_presupuesto</value>
+  </data>
+  <data name="ComDeadlineCompany" xml:space="preserve">
+    <value>com_plazo_pago</value>
+  </data>
   <data name="ComEmailCompany" xml:space="preserve">
     <value>com_email</value>
   </data>
@@ -182,6 +188,12 @@
   </data>
   <data name="ParamNombre" xml:space="preserve">
     <value>@nombre</value>
+  </data>
+  <data name="ParamPlazoPago" xml:space="preserve">
+    <value>@plazo_pago</value>
+  </data>
+  <data name="ParamPresupuesto" xml:space="preserve">
+    <value>@presupuesto</value>
   </data>
   <data name="ParamRif" xml:space="preserve">
     <value>@rif</value>

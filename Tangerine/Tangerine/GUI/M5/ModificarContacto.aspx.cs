@@ -19,6 +19,8 @@ namespace Tangerine.GUI.M5
         string _telefono = String.Empty;
         string _correo = String.Empty;
         Contacto theContact = new Contacto();
+        public int typeComp;
+        public int idComp;
 
         public string botonVolver
         {
@@ -35,8 +37,8 @@ namespace Tangerine.GUI.M5
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            int idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
+            typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
+            idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
             int idCont = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
 
             botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
@@ -65,15 +67,12 @@ namespace Tangerine.GUI.M5
             contact.Departamento = departamento.Value;
             contact.Cargo = cargo.Value;
             contact.Telefono = telefono.Value;
-            contact.Correo = correo.Value;
-
-            //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
-            
+            contact.Correo = correo.Value;            
             
             LogicaM5 contactLogic = new LogicaM5();
             contactLogic.ChangeContact(contact);
+
+            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp);
         }
-        //Para volver a ConsultarContactos luego de modificar
-        //Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
     }
 }

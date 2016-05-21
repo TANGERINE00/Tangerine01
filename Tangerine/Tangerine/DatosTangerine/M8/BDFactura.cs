@@ -411,7 +411,7 @@ namespace DatosTangerine.M8
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
                 Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym, 
-                                                    comRegisterDate, comStatus, comIdPlace);
+                                                    comRegisterDate, comStatus, 1, 1, comIdPlace);
 
                 theCompany = theCompanybeta;
             
