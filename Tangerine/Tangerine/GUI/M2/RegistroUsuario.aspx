@@ -59,8 +59,10 @@
 
                     if (obj.d == "Disponible") {
                         document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
+                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
                     } else {
                         document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
+                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
                     }
                 },
                 failure: function (result) {
