@@ -28,10 +28,8 @@
                 <form role="form" id="modificar_proyecto" method="post" runat="server">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="InputPropuesta">Propuetsa Aprobada *</label>
-                            <select class="form-control" name="Propuesta Aprobada" disabled="disabled">
-                                <option>sistema A</option>
-                                <option>sistema B</option>
+                            <label for="InputPropuesta">Propuesta Aprobada *</label>
+                            <select class="form-control" id="inputPropuesta" name="inputPropuesta" runat="server" disabled="disabled">
                             </select>
                         </div>
 
@@ -47,12 +45,12 @@
 
                         <div class="form-group">
                             <label for="InputFechaInicio">Fecha de inicio *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa" disabled="disabled">
+                            <input runat="server" type="datetime" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa" disabled="disabled">
                         </div>
 
                         <div class="form-group">
                             <label for="InputFechaEstimada">Fecha Estimada de culminación *</label>
-                            <input runat="server" type="date" class="form-control" id="textInputFechaEstimada" name="textInputFechaEstimada" placeholder="dd/mm/aaaa">
+                            <input runat="server" type="datetime" class="form-control" id="textInputFechaEstimada" name="textInputFechaEstimada" placeholder="dd/mm/aaaa">
                         </div>
 
 

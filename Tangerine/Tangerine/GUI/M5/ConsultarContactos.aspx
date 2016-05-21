@@ -19,10 +19,11 @@
     <div id="alerta" runat="server">
     </div>
     <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
-                <div class="box-header">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
                     <h3 class="box-title">Contactos Existentes</h3>
+                    <div class="box-tools"></div>
                 </div>
                 <form role="form" name="consultar" id="consultar">
                     <script language="javascript">
@@ -46,12 +47,12 @@
                             }
                         }
                     </script>
-                    <div class="box-body table-responsive">
-                        <div style="float:right;">
+                    <div class="box-body table-responsive no-padding">
+                        <div style="float:right; padding-top:5px;">
                             <a style="margin-right:10px;">Buscador</a>
                             <input id="searchTerm" type="text" onkeyup="doSearch()"/>
                         </div>
-                        <table id="example2" class="table table-bordered table-striped dataTable" accesskey="">
+                        <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr style="font-size:18px;">
                                     <th>Nombre</th>
@@ -66,8 +67,10 @@
                                 <asp:Literal runat="server" ID="tabla"></asp:Literal>
                             </tbody>
                         </table>
-                        <asp:Literal runat="server" ID="volver"></asp:Literal>
-                        <asp:Literal runat="server" ID="nuevocontacto"></asp:Literal>
+                        <div style="text-align:center;">
+                            <asp:Literal runat="server" ID="volver"></asp:Literal>
+                            <asp:Literal runat="server" ID="nuevocontacto"></asp:Literal>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -129,6 +129,9 @@
   <data name="CloseBoton" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
   </data>
+  <data name="CloseBotonParametro" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="OpenBotonInfo" xml:space="preserve">
     <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left 0.2px" data-toggle="modal" data-target="#myModal" OnClick="MostrarInfo" id="Inf"</value>
+  </data>
+  <data name="OpenBotonModificar" xml:space="preserve">
+    <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" href="modificarProyecto.aspx?idCont=</value>
   </data>
   <data name="OpenBotonPersonal" xml:space="preserve">
     <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" OnClick="MostrarPersonal" id="Personal"</value>

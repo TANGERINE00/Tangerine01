@@ -153,11 +153,8 @@
   <data name="BotonCerrar1" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonEliminarSolicitud" xml:space="preserve">
-    <value>&lt;a  class="btn btn-danger glyphicon glyphicon-remove-circle" href="M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=</value>
-  </data>
   <data name="ButtonModContact" xml:space="preserve">
-    <value>&lt;a  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarContacto.aspx?typeComp=</value>
+    <value>&lt;a title="Modificar Contacto" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarContacto.aspx?typeComp=</value>
   </data>
   <data name="CerrarSolicitud" xml:space="preserve">
     <value>"&gt;Solicitar&lt;/a&gt;</value>
@@ -171,21 +168,6 @@
   <data name="Coma" xml:space="preserve">
     <value>, </value>
   </data>
-  <data name="interfazRCi" xml:space="preserve">
-    <value>8.3</value>
-  </data>
-  <data name="interfazRH" xml:space="preserve">
-    <value>8.1</value>
-  </data>
-  <data name="Mod8" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="nombre" xml:space="preserve">
-    <value>nombre</value>
-  </data>
-  <data name="ReturnRestCinta" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true</value>
-  </data>
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
   </data>
@@ -196,13 +178,13 @@
     <value>&amp;idComp=</value>
   </data>
   <data name="VentanaAgregarContacto" xml:space="preserve">
-    <value>&lt;a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
+    <value>&lt;a id="btnaceptar" style="margin-top:20px" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
   </data>
   <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a style='margin-left:5px;' class='btn btn-danger glyphicon glyphicon-remove-circle' href="ConsultarContactos.aspx?typeComp=</value>
+    <value>&lt;a title="Eliminar Contacto" class="btn btn-danger glyphicon glyphicon-trash" style="margin-left:3px;" href="ConsultarContactos.aspx?typeComp=</value>
   </data>
   <data name="BotonVolver" xml:space="preserve">
-    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:20px; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
   </data>
   <data name="BotonVolver2" xml:space="preserve">
     <value>&amp;idComp=</value>
@@ -211,10 +193,10 @@
     <value>"&gt;Cancelar&lt;/a&gt;</value>
   </data>
   <data name="VolverCliPotencial" xml:space="preserve">
-    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="../M3/ConsultarLead.aspx"&gt;Volver&lt;/a&gt;</value>
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:20px; margin-right:5%; height:35px  width:120px;" class="btn btn-default" href="../M3/ConsultarLead.aspx"&gt;Volver&lt;/a&gt;</value>
   </data>
   <data name="VolverCompania" xml:space="preserve">
-    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="../M4/ConsultarCompania.aspx"&gt;Volver&lt;/a&gt;</value>
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:20px; margin-right:5%; height:35px; width:120px;" class="btn btn-default" href="../M4/ConsultarCompania.aspx"&gt;Volver&lt;/a&gt;</value>
   </data>
   <data name="BotonEliminar2" xml:space="preserve">
     <value>&amp;idCont=</value>
@@ -223,7 +205,7 @@
     <value>"&gt;Volver&lt;/a&gt;</value>
   </data>
   <data name="VolverConsultarCon" xml:space="preserve">
-    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:20px; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
   </data>
   <data name="hrefConsultarContacto" xml:space="preserve">
     <value>ConsultarContactos.aspx?typeComp=</value>
@@ -233,5 +215,14 @@
   </data>
   <data name="AbrirTD2" xml:space="preserve">
     <value>&lt;td style="text-align:center;"&gt;</value>
+  </data>
+  <data name="idComp" xml:space="preserve">
+    <value>idComp</value>
+  </data>
+  <data name="idCont" xml:space="preserve">
+    <value>idCont</value>
+  </data>
+  <data name="typeComp" xml:space="preserve">
+    <value>typeComp</value>
   </data>
 </root>

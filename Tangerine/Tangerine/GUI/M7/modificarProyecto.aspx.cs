@@ -11,9 +11,25 @@ namespace Tangerine.GUI.M7
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        int _idProyecto;
+        LogicaProyecto LogicProject = new LogicaProyecto();
+        Proyecto proyecto = new Proyecto();
         protected void Page_Load(object sender, EventArgs e)
         {
+          _idProyecto = int.Parse(Request.QueryString["idCont"]);
+          if (!IsPostBack)
+          {
+              proyecto = LogicProject.consultarProyecto(_idProyecto);
+              this.textInputNombreProyecto.Value = proyecto.Nombre.ToString();
+              this.textInputCodigo.Value = proyecto.Codigo.ToString();
+              this.textInputCosto.Value = proyecto.Costo.ToString();
+              this.textInputFechaEstimada.Value = proyecto.Fechaestimadafin.ToString("dd/MM/yyyy");
+              this.textInputFechaInicio.Value = proyecto.Fechainicio.ToString("dd/MM/yyyy");
+              this.textInputPorcentaje.Value = proyecto.Realizacion.ToString();
+              this.inputPropuesta.Items.Add(proyecto.Idproyecto.ToString());
 
+    
+          }
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)
