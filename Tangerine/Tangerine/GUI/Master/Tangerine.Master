@@ -181,7 +181,7 @@
               </a>
                    <ul class="treeview-menu">
                 <li id="CrearProyecto" runat="server"><a href="../M7/Agregar proyecto.aspx"><i class="fa fa-circle-o"></i> Crear Proyecto</a></li>
-                <li id="ModificarProyecto" runat="server"><a href="../M7/modificarProyecto.aspx"><i class="fa fa-circle-o"></i> Modificar Proyecto</a></li>
+               
                 <li id="ConsultarProyecto" runat="server"><a href="../M7/ConsultaProyecto.aspx"><i class="fa fa-circle-o"></i> Consultar Proyecto</a></li>
 
               </ul>            
