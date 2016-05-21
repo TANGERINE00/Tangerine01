@@ -18,7 +18,7 @@ namespace Tangerine.GUI.Master
                 Response.Redirect("../M1/Login.aspx");
             else
             {
-                if (Util.MASTER_FLAG)
+                if ((Util.MASTER_FLAG) && (HttpContext.Current.Session["Rol"] !=null))
                 {
                     Uri thisPageUrl = Request.Url;
                     string pathDePaginaActal = thisPageUrl.AbsolutePath;

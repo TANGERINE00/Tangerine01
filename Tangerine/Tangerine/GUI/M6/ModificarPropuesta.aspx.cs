@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M6;
+using LogicaTangerine.M4;
 using System.Diagnostics;
 
 namespace Tangerine.GUI.M6
@@ -26,6 +27,7 @@ namespace Tangerine.GUI.M6
         }
 
         public Propuesta Prueba;
+        LogicaM4 logicacompania = new LogicaM4();
         public List <Requerimiento> req;
         public bool modi;
 
@@ -33,12 +35,17 @@ namespace Tangerine.GUI.M6
         protected void Page_Load(object sender, EventArgs e)
         {
             string prueba = Request.QueryString.Get("id");
+
+         
+            
             
           
              
             
             btn_Modifica(prueba);
             btn_ModificaReq(prueba);
+
+          
            // btn_ModReq(prueba);
 
 
@@ -47,7 +54,7 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboDuracion();
                 llenarComboEstatus();
-
+              
 
 
                 foreach (Requerimiento elRequerimiento in req)
@@ -94,6 +101,11 @@ namespace Tangerine.GUI.M6
             LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
 
             Prueba = logicaPropuesta.TraerPropuesta(idPropuesta);
+
+            Compania lacompania = new Compania();
+
+             lacompania = logicacompania.SearchCompany(Int32.Parse(Prueba.IdCompañia));
+            cliente_id.Value = lacompania.NombreCompania;
            
         }
 

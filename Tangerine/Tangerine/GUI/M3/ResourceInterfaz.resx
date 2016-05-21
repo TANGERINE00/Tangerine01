@@ -127,7 +127,7 @@
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonContacto" xml:space="preserve">
-    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="padding-left 0.6px"  href="../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=</value>
+    <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=</value>
   </data>
   <data name="BotonEliminar" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-trash" href="EliminarLead.aspx?idclp=</value>

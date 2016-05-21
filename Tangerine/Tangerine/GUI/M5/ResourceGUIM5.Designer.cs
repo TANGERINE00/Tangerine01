@@ -277,6 +277,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compañía: .
+        /// </summary>
+        internal static string Compania {
+            get {
+                return ResourceManager.GetString("Compania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;Nuevo Contacto&lt;/a&gt;.
         /// </summary>
         internal static string FinalAgregarContacto {
@@ -322,6 +331,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  Lead: .
+        /// </summary>
+        internal static string Lead {
+            get {
+                return ResourceManager.GetString("Lead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;idComp=.
         /// </summary>
         internal static string ParametroIdComp {
@@ -358,7 +376,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px  width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/Listar.aspx&quot;&gt;Volver&lt;/a&gt;.
         /// </summary>
         internal static string VolverCliPotencial {
             get {
