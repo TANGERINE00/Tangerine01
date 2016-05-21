@@ -117,105 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CloseBoton" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
   </data>
-  <data name="CloseBotonParametro" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
+  <data name="LabelCostoProyecto" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Costo: &lt;/label&gt;</value>
   </data>
-  <data name="CloseTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
+  <data name="LabelDescProyecto" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Descripción:&lt;/label&gt;&lt;br&gt;</value>
   </data>
-  <data name="CloseTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+  <data name="LabelEstatus" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Estatus: &lt;/label&gt;</value>
   </data>
-  <data name="OpenParentesis" xml:space="preserve">
-    <value>(</value>
+  <data name="LabelFechaProyectoFin" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Fecha estimada de fin: &lt;/label&gt;</value>
   </data>
-  <data name="habilitado" xml:space="preserve">
-    <value>&lt;span class="label label-success" ="h</value>
-    <comment>"&gt;Habilitada&lt;/span&gt;</comment>
+  <data name="LabelFechaProyectoInicio" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Fecha de inicio: &lt;/label&gt;</value>
   </data>
-  <data name="inhabilitado" xml:space="preserve">
-    <value>&lt;span class="label label-danger" id="i</value>
-    <comment>"&gt;Inhabilitada&lt;/span&gt;</comment>
+  <data name="LabelNombreProyecto" xml:space="preserve">
+    <value>&lt;label&gt;Nombre de proyecto: &lt;/label&gt;</value>
   </data>
-  <data name="OpenTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="MensajeSinProyecto" xml:space="preserve">
+    <value>&lt;label&gt;No hay proyectos registrados a la fecha&lt;/label&gt;</value>
   </data>
-  <data name="OpenTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
+  <data name="PanelProyectoAbrir" xml:space="preserve">
+    <value>&lt;div class='container-fluid col-md-6'&gt;&lt;div class='box box-default'&gt;&lt;div class='container-fluid'&gt;&lt;br&gt;</value>
   </data>
-  <data name="Comp" xml:space="preserve">
-    <value>Comp</value>
+  <data name="PanelProyectoCerrar" xml:space="preserve">
+    <value>&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</value>
   </data>
-  <data name="OpenBotonEdit" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarCompania.aspx?idComp=</value>
+  <data name="RolAdministrador" xml:space="preserve">
+    <value>Administrador</value>
   </data>
-  <data name="OpenBotonHab" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=1&amp;idComp=</value>
+  <data name="RolGerente" xml:space="preserve">
+    <value>Gerente</value>
   </data>
-  <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px;"OnClick="MostrarInfo"href="InformacionCompania.aspx?idComp=</value>
-  </data>
-  <data name="OpenBotonInhab" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=0&amp;idComp=</value>
-  </data>
-  <data name="Acronimo" xml:space="preserve">
-    <value>Acrónimo:</value>
-  </data>
-  <data name="CloseDiv" xml:space="preserve">
-    <value>&lt;/div&gt;</value>
-  </data>
-  <data name="Closeh3" xml:space="preserve">
-    <value>&lt;/h3&gt;</value>
-  </data>
-  <data name="Closeh4" xml:space="preserve">
-    <value>&lt;/h4&gt;</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="Fecha" xml:space="preserve">
-    <value>Fecha:</value>
-  </data>
-  <data name="Lugar" xml:space="preserve">
-    <value>Lugar:</value>
-  </data>
-  <data name="Nombre" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
-  <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="center-block"&gt;</value>
-  </data>
-  <data name="Openh3" xml:space="preserve">
-    <value>&lt;h3 style="bold"&gt;</value>
-  </data>
-  <data name="Openh4" xml:space="preserve">
-    <value>&lt;h4&gt;</value>
-  </data>
-  <data name="Rif" xml:space="preserve">
-    <value>RIF:</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="Telefono" xml:space="preserve">
-    <value>Teléfono:</value>
-  </data>
-  <data name="BotonContac" xml:space="preserve">
-    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
-  </data>
-  <data name="BotonInvol" xml:space="preserve">
-    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
-  </data>
-  <data name="CloseSpanHab" xml:space="preserve">
-    <value>"&gt;Habilitada&lt;/span&gt;</value>
-  </data>
-  <data name="CloseSpanInhab" xml:space="preserve">
-    <value>"&gt;Inhabilitada&lt;/span&gt;</value>
-  </data>
-  <data name="CloseParentesis" xml:space="preserve">
-    <value>)</value>
+  <data name="RolProgramador" xml:space="preserve">
+    <value>Programador</value>
   </data>
 </root>

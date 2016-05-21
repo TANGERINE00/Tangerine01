@@ -160,6 +160,10 @@
     <value>M6_ModificarRequerimiento</value>
     <comment>Procedimiento para la modificacion de un requerimiento segun su propuesta</comment>
   </data>
+  <data name="Modificar_Requerimiento" xml:space="preserve">
+    <value>M6_ModificarRequerimiento</value>
+    <comment>Procedimiento para modificacion de requerimientos</comment>
+  </data>
   <data name="ParamAcuerdoProp" xml:space="preserve">
     <value>@acuerdo</value>
     <comment>Atributo que identifica el acuerdo de pago de la propuesta</comment>
@@ -263,6 +267,14 @@
     <value>@propuesta_nombre</value>
     <comment>atributo paremetro del consultar propuesta por nombre</comment>
   </data>
+  <data name="ReqCodigo" xml:space="preserve">
+    <value>req_codigo</value>
+    <comment>atributo tabla requerimientos</comment>
+  </data>
+  <data name="ReqDescripcion" xml:space="preserve">
+    <value>req_descripcion</value>
+    <comment>atributo tabla requerimientos</comment>
+  </data>
   <data name="ReqNombre" xml:space="preserve">
     <value>@reqnombre</value>
     <comment>atributo que identifica el nombre del requerimiento</comment>
@@ -271,7 +283,8 @@
     <value>@req_id</value>
     <comment>atributo que identifica el id del requerimiento</comment>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="ReqPropNombre" xml:space="preserve">
+    <value>@cod_Nombre</value>
+    <comment>atributo nombre reuqerimiento</comment>
   </data>
 </root>

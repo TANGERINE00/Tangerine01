@@ -571,7 +571,25 @@ AS
 	END;
 GO
 
+CREATE PROCEDURE M2_VerificarUsuarioPorFichaEmpleado
+@emp_num_ficha [varchar](100)
+AS
+	BEGIN
+		SELECT usu_usuario
+		FROM usuario
+		WHERE fk_emp_num_ficha = @emp_num_ficha;
+	END;
+GO
 
+CREATE PROCEDURE M2_VerificarExistenciaUsuario
+@usuario [varchar](100)
+AS
+	BEGIN
+		SELECT usu_usuario
+		FROM usuario
+		WHERE usu_usuario = @usuario;
+	END;
+GO
 ---------------------------------------------------------------------------------------------------------
 --------Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
@@ -992,17 +1010,17 @@ END;
 
 GO
 -- Modificar Requerimiento
-CREATE PROCEDURE M6_ModificarRequerimiento
+/*CREATE PROCEDURE M6_ModificarRequerimiento
 
-@reqnombre [varchar] (200),
-@fkprop int
+@req_descripcion [varchar] (200),
+@cod_Nombre [varchar] (50)
 
 AS
 
 BEGIN
-UPDATE REQUERIMIENTO SET req_codigo = @reqnombre WHERE fk_prop_id = @fkprop  
+UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE fk_prop_req_id = @cod_Nombre  
 
-END;
+END;*/
 
 GO
 
