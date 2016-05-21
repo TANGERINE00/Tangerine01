@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
-    Gestión de contactos
+    Gestión de Contactos
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
     Modificar Contacto
@@ -37,14 +37,15 @@
                     <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="telefono" name="telefono">
                     <label>Correo</label>
                     <input runat="server" type="text" class="form-control" id="correo" name="correo">
-					<div style="text-align:center;">
+                 </div>	
+            </div>
+                  <div id="Div1" class="box-footer" runat="server">
+				    <div style="text-align:center;">
                         <asp:Literal runat="server" ID="volver"></asp:Literal>
                         <a id="btnaceptara" type="submit" style="margin-top:20px; margin-left:10px; width:120px; float:none !important; "
                             class="btn btn-primary pull-right" runat="server" href="ConsultarContactos.aspx">Modificar</a>
                     </div>
-                 </div>	
-			
-            </div>
+                 </div>
 		</div>
         
 	</div>
