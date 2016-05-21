@@ -30,6 +30,13 @@ namespace LogicaTangerine.M5
             {
             return BDContacto.ContactCompany(typeComp,idComp); 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -69,6 +76,13 @@ namespace LogicaTangerine.M5
             try
             {
                 return BDContacto.AddContact(contact);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -110,6 +124,13 @@ namespace LogicaTangerine.M5
             {
                 return BDContacto.DeleteContact(contact);
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -150,6 +171,13 @@ namespace LogicaTangerine.M5
             {
                 return BDContacto.SingleContact(contact);
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -189,6 +217,13 @@ namespace LogicaTangerine.M5
             try
             {
                 return BDContacto.ChangeContact(contact);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -231,6 +266,13 @@ namespace LogicaTangerine.M5
             {
                 return BDContacto.AddContactProy(contact,proyect);
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -270,7 +312,14 @@ namespace LogicaTangerine.M5
             try
             {
                 return BDContacto.ContactProyect(proyect);
-                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -311,7 +360,14 @@ namespace LogicaTangerine.M5
             try
             {
                 return BDContacto.DeleteContactProyect(contact, proyect);
-                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -352,6 +408,13 @@ namespace LogicaTangerine.M5
             try
             {
                 return BDContacto.ContactNoProyect(proyect);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(LogicResources.Codigo,
+                    LogicResources.Mensaje, ex);
             }
             catch (SqlException ex)
             {
