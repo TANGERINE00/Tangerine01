@@ -123,8 +123,8 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
-  <data name="as" xml:space="preserve">
-    <value />
+  <data name="Coma" xml:space="preserve">
+    <value>,</value>
   </data>
   <data name="BotonModificarEmpAbrir" xml:space="preserve">
     <value>&lt;a href="ModificarEmpleado.aspx?EmployeeId=</value>
@@ -179,5 +179,17 @@
   </data>
   <data name="VentanaAgregarEmpleado" xml:space="preserve">
     <value>&lt;a href="CrearEmpleado.aspx" type="button" class="btn btn-success pull-right"&gt;&lt;span class="glyphicon glyphicon-plus"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="AbrirActivo" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;</value>
+  </data>
+  <data name="AbrirInactivo" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;</value>
+  </data>
+  <data name="CerrarActivo" xml:space="preserve">
+    <value>&lt;/span&gt;</value>
+  </data>
+  <data name="CerrarInactivo" xml:space="preserve">
+    <value>&lt;/span&gt;</value>
   </data>
 </root>
