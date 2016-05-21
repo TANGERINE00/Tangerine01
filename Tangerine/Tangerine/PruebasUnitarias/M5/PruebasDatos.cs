@@ -82,9 +82,7 @@ namespace PruebasUnitarias.M5
             //Valido que el contacto a eliminar sea el mismo que inserte
             Assert.AreEqual(theContact.Correo, listContact[listContact.Count - 1].Correo);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
-            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
-            //answer obtiene true si se elimina el contacto
-            Assert.IsTrue(answer);
+            Assert.IsTrue(BDContacto.DeleteContact(listContact[listContact.Count - 1]));
         }
 
         /// <summary>
@@ -161,6 +159,64 @@ namespace PruebasUnitarias.M5
             listContact2 = BDContacto.ContactProyect(theProyect);
             //Valido los correos del contacto insertado y del ultimo contacto del proyecto
             Assert.AreEqual(theContact.Correo, listContact2[listContact2.Count - 1].Correo);
+            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar el consultar contactos de un proyecto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestContactProyect()
+        {
+            //Agrego el contacto a asignar al proyecto 1
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1 para tener el ultimo contacto que agregue
+            listContact = BDContacto.ContactCompany(1, 1);
+            //Inserto en Contacto_proyecto el id del contacto y el id del proyecto
+            answer = BDContacto.AddContactProy(listContact[listContact.Count - 1], theProyect);
+            //Traigo una lista de contactos del proyecto 1 para validar
+            listContact2 = BDContacto.ContactProyect(theProyect);
+            //Valido la lista que regresa de ContactProyect
+            Assert.IsNotNull(listContact2);
+            //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar el eliminar contacto de un proyecto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestDeleteContactProyect()
+        {
+            //Agrego el contacto a asignar al proyecto 1
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1 para tener el ultimo contacto que agregue
+            listContact = BDContacto.ContactCompany(1, 1);
+            //Inserto en Contacto_proyecto el id del contacto y el id del proyecto
+            answer = BDContacto.AddContactProy(listContact[listContact.Count - 1], theProyect);
+            //Traigo una lista de contactos del proyecto 1 para validar
+            listContact2 = BDContacto.ContactProyect(theProyect);
+            //Mando a eliminar el ultimo contacto del proyecto (El contacto que inserte)
+            Assert.IsTrue(BDContacto.DeleteContactProyect(listContact2[listContact2.Count - 1],theProyect));
+            //Mando a eliminar el ultimo contacto de la lista (El contacto que inserte)
+            answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar el consultar contactos de un proyecto en la base de datos
+        /// </summary>
+        [Test]
+        public void TestContactNoProyect()
+        {
+            //Agrego el contacto a asignar al proyecto 1
+            answer = BDContacto.AddContact(theContact);
+            //Consulto todos los contactos de la compania 1 para tener el ultimo contacto que agregue
+            listContact = BDContacto.ContactCompany(1, 1);
+            //Traigo una lista de contactos del proyecto 1 para validar
+            listContact2 = BDContacto.ContactNoProyect(theProyect);
+            //Valido el ultimo contacto en la lista de ContactCompany contra la lista de ContactNoProyect
+            Assert.AreEqual(listContact[listContact.Count-1].Correo,listContact2[listContact2.Count-1].Correo);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
         }

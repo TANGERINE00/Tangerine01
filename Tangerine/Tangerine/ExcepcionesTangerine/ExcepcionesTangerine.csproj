@@ -57,7 +57,6 @@
     <Folder Include="M10\" />
     <Folder Include="M1\" />
     <Folder Include="M2\" />
-    <Folder Include="M3\" />
     <Folder Include="M4\" />
     <Folder Include="M6\" />
     <Folder Include="M7\" />
@@ -76,6 +75,7 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="M3\WrongFormatExceptionLeads.cs" />
     <Compile Include="M5\ExceptionDataBase.cs" />
     <Compile Include="M5\WrongFormatException.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

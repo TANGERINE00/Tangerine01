@@ -209,4 +209,10 @@
     <value>modificar_clientePotencialF</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>TGE_00_001</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de Formato</value>
+  </data>
 </root>

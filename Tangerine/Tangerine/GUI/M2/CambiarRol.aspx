@@ -118,13 +118,15 @@
 
             function ajaxRes()
             {
-                $('.table > tbody > tr > td:nth-child(4) > a')
+                $('.table > tbody > tr > td:nth-child(5) > a')
                   .click(function (e)
                   {
                       e.preventDefault();
                       //var prueba = $('.table > tbody > tr > td:nth-child(3)').text();
-                      var prueba2 = $(this).closest("tr").find("td:nth-child(3)").text();
-                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = prueba2;
+                      var usuario = $(this).closest("tr").find("td:nth-child(3)").text();
+                      var rol = $(this).closest("tr").find("td:nth-child(4)").text();
+                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = usuario;
+                      document.getElementById("ContentPlaceHolder1_rolCambiar").value = rol;
                   });
             }
         </script>  

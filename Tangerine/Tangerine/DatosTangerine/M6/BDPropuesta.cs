@@ -275,7 +275,7 @@ namespace DatosTangerine.M6
                new List<Requerimiento>();
 
             Parametro parametro = new Parametro(
-               RecursosPropuesta.ParamNombreProp,
+               RecursosPropuesta.ReqPropNombre,
                SqlDbType.VarChar, id, false);
             parametros.Add(parametro);
 
@@ -290,8 +290,8 @@ namespace DatosTangerine.M6
                 {
                     listaRequerimientos.Add(
                         new DominioTangerine.Requerimiento(
-                          fila[RecursosPropuesta.ParamCodigoReq].ToString(),
-                          fila[RecursosPropuesta.ParamDescriReq].ToString()
+                          fila[RecursosPropuesta.ReqCodigo].ToString(),
+                          fila[RecursosPropuesta.ReqDescripcion].ToString()
 
                           
                        )
@@ -434,7 +434,7 @@ namespace DatosTangerine.M6
             {
                 //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M5.WrongFormatException(RecursosPropuesta.String1,
+                throw new ExcepcionesTangerine.M5.WrongFormatException(RecursosPropuesta.ReqPropNombre,
                      RecursosPropuesta.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -457,6 +457,45 @@ namespace DatosTangerine.M6
 
 
 
+
+
+        //public static Boolean Modificar_Requerimiento (Requerimiento elrequerimiento) 
+        //{
+        //    List<Parametro> parameters = new List<Parametro>();
+        //    BDConexion Connection = new BDConexion();
+        //    Parametro theParam = new Parametro();
+
+        //    try
+        //    {
+        //        //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+        //        //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+
+               
+        //        theParam = new Parametro(RecursosPropuesta.ReqDescripcion, SqlDbType.VarChar, elrequerimiento.Descripcion, false);
+        //        parameters.Add(theParam);
+
+        //        theParam = new Parametro(RecursosPropuesta.ReqNombre, SqlDbType.VarChar, elrequerimiento.CodigoRequerimiento, false);
+        //        parameters.Add(theParam);
+                
+
+                
+
+        //        //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+        //        List<Resultado> results = Connection.EjecutarStoredProcedure(RecursosPropuesta.Modificar_Requerimiento, parameters);
+
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+        //        throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+        //            RecursoGeneralBD.Mensaje, ex);
+        //    }
+            
+     
+        //    return true;
+        //}
 
 
 

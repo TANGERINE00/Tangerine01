@@ -1,51 +1,39 @@
 ﻿
 $(document).ready(function () {
-    //metodos para aplicar bootstrap validator al formulario de agregar requerimientos.
-    $('#agregar_requerimientos')
-       .bootstrapValidator({
-           message: 'This value is not valid',
-           feedbackIcons: {
-               valid: 'glyphicon glyphicon-ok',
-               invalid: 'glyphicon glyphicon-remove',
-               validating: 'glyphicon glyphicon-refresh'
-           },
-           fields: {
-               requerimiento: {
-                   validators: {
-                       notEmpty: {
-                           message: 'El requerimiento no debe estar vacío'
-                       }
-                   }
-               }
-           }
-       })
-       .on('success.field.fv', function (e, data) {//en caso de que haya problema con los campos del formulario, deshabilita el boton
-           if (data.fv.getInvalidFields().length < 0) {
-               data.data.fv.disableSubmitButtons(true);
-           }
-       });
-    //metodos para aplicar bootstrap validator al formulario de modificar requerimientos.
-    $('#modificar_requerimientos')
-        .bootstrapValidator({
-            message: 'This value is not valid',
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                requerimiento: {
-                    validators: {
-                        notEmpty: {
-                            message: 'El requerimiento no debe estar vacío'
-                        }
-                    }
-                }
-            }
-        })
-        .on('success.field.fv', function (e, data) {//en caso de que haya problema con los campos del formulario, deshabilita el boton
-            if (data.fv.getInvalidFields().length > 0) {
-                data.data.fv.disableSubmitButtons(true);
-            }
-        });
+    $(".mod_req").on("click", function () {
+        var id = $(this).parents().siblings("td:nth-child(1)").html();
+        var descripcion = $(this).parents().siblings("td:nth-child(2)").html();
+        $("#idreq_input").val(id);
+        $("#input_requerimiento").val(descripcion);
+        
+    })
+
 });
+
+
+
+function GetRequerimiento(id) {
+    var html = $("#" + id).siblings("td").html();
+    $("#idreq_input").val(html);
+
+}
+
+
+///Metodo para habilitar el boton modificar cuando se escriba algo en el textArea
+//$(document).ready(function () {
+   
+//    $('input[type="submit"]').attr('disabled', 'disabled');  
+//    $('input[type="text"]').keypress(function () {       
+//        if ($(this).val() != '') {         
+//            $('input[type="submit"]').removeAttr('disabled');        
+//        }    
+//    });
+//});
+
+
+
+
+
+
+
+

@@ -168,7 +168,7 @@
     <Content Include="GUI\M3\Promover.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
-    <Content Include="GUI\M4\HabilitarCompania.aspx" />
+    <Content Include="GUI\M4\InformacionCompania.aspx" />
     <Content Include="GUI\M4\ModificarCompania.aspx" />
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
@@ -1052,6 +1052,11 @@
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M1\ResourceGUIM1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM1.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M1\ResourceGUIM10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1158,12 +1163,12 @@
     <Compile Include="GUI\M4\ConsultarCompania.aspx.designer.cs">
       <DependentUpon>ConsultarCompania.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M4\HabilitarCompania.aspx.cs">
-      <DependentUpon>HabilitarCompania.aspx</DependentUpon>
+    <Compile Include="GUI\M4\InformacionCompania.aspx.cs">
+      <DependentUpon>InformacionCompania.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M4\HabilitarCompania.aspx.designer.cs">
-      <DependentUpon>HabilitarCompania.aspx</DependentUpon>
+    <Compile Include="GUI\M4\InformacionCompania.aspx.designer.cs">
+      <DependentUpon>InformacionCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\ModificarCompania.aspx.cs">
       <DependentUpon>ModificarCompania.aspx</DependentUpon>
@@ -1487,6 +1492,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\M1\ResourceGUIM1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
