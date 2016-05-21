@@ -1,13 +1,16 @@
-INSERT INTO LUGAR_DIRECCION VALUES (1,'Venezuela','Pais',null);
+INSERT into LUGAR_DIRECCION VALUES (1,'Venezuela','Pais',NULL);
 
-insert into lugar_direccion
-values (2,'Caracas','Ciudad', 1);
+INSERT into LUGAR_DIRECCION VALUES (2,'Distrito Capital','Estado', 1);
+INSERT into LUGAR_DIRECCION VALUES (3,'Zulia','Estado', 1);
+INSERT into LUGAR_DIRECCION VALUES (4,'Carabobo','Estado', 1);
 
-insert into lugar_direccion
-values (3,'Maracaibo','Ciudad', 1);
+INSERT into LUGAR_DIRECCION VALUES (5,'Caracas','Ciudad', 2);
+INSERT into LUGAR_DIRECCION VALUES (6,'Maracaibo','Ciudad', 3);
+INSERT into LUGAR_DIRECCION VALUES (7,'Valencia','Ciudad', 4);
 
-insert into lugar_direccion
-values (4,'Valencia','Ciudad', 1);
+INSERT into LUGAR_DIRECCION VALUES (8,'Avenida Urdaneta','Direccion', 5);
+INSERT into LUGAR_DIRECCION VALUES (9,'Plaza Maracaibo','Direccion', 6);
+INSERT into LUGAR_DIRECCION VALUES (10,'Avenida Valencia','Direccion', 7);
 
 --------Clientes Potenciales------------------------------------------------------------------------------------------------
 
@@ -33,18 +36,19 @@ insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_p
 cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,0,0);
 
 ------------------------------------------------------------------------------------------------------------------
-insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('pepsi', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'psi', '12/12/2016', 1, 2);
+-- COMPANIAS --
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
+values ('Pepsi', 'J-23686197', 'giantufano@gmail.com', '04122362151', 'PSI', '12/12/2016', 1, 10000000, 30, 5);
 
-insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('coca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'cca', '12/12/2016', 0, 2);
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
+values ('Coca-Cola', 'J-9513297', 'merchan1395@gmail.com', '04122362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
 
-insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('maguca', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'mgc', '12/12/2016', 1, 3);
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
+values ('Maguca', 'J-756487568', 'prueba@gmail.com', '04122362151', 'MGC', '12/12/2016', 1, 90000000, 60, 6);
 
-insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-values ('tangerine', 'j-3452346', 'giantufano@gmail.com', '04122362151', 'tgn', '12/12/2016', 0, 4);
-
+insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
+values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
+-- FIN COMPANIAS -- 
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
@@ -84,19 +88,19 @@ SET IDENTITY_INSERT PROPUESTA OFF
 
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','Activo',2);
+VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','Activo',8);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (2,10465723,'Masculino','Jose','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',2);
+VALUES (2,10465723,'Masculino','Jose','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',8);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (3,18529272,'Femenino','Karla','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',2);
+VALUES (3,18529272,'Femenino','Karla','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',9);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (4,10465723,'Masculino','Ramon','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',2);
+VALUES (4,10465723,'Masculino','Ramon','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',10);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (5,18529272,'Femenino','Petra','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',2);
+VALUES (5,18529272,'Femenino','Petra','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',8);
 
 
 INSERT INTO dbo.CONTACTO(con_nombre,con_apellido,con_departamento,con_cargo,con_telefono,con_correo,con_tipo_emp,fk_id_com_lead)
@@ -253,7 +257,7 @@ insert into ROL_OPCION values (4, 5);
 --insert into ROL_OPCION values (4, 6);
 --insert into ROL_OPCION values (4, 7);
 insert into ROL_OPCION values (4, 22);
-insert into ROL_OPCION values (4, 8);
+--insert into ROL_OPCION values (4, 8);
 insert into ROL_OPCION values (4, 9);
 insert into ROL_OPCION values (4, 10);
 insert into ROL_OPCION values (4, 23);

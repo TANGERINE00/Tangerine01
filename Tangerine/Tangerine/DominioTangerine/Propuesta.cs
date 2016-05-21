@@ -218,7 +218,7 @@ namespace DominioTangerine
 
        
 
-        public Propuesta(string p3, string p4, string p5, string p6, string p7, string p8, int p12, DateTime dateTime1, DateTime dateTime2, int p15)
+        public Propuesta(string p3, string p4, string p5, string p6, string p7, string p8, int p12, DateTime dateTime1, DateTime dateTime2, int p15,string fkcompa)
         {
             // TODO: Complete member initialization
             
@@ -232,6 +232,7 @@ namespace DominioTangerine
             this._feincio = dateTime1;
             this._fefinal = dateTime2;
             this._costo = p15;
+            this._idCompañia = fkcompa;
         }
 
         //public Propuesta(string conNombre, string conDescripcion, string contipoDuracion, string conAcuerdo, string conEstatus1, string conMoneda, int conEntregas, DateTime conFechaIni, DateTime conFechaFin, int conCosto, int conFkComp)

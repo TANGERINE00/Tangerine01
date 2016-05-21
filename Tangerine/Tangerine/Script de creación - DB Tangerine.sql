@@ -146,6 +146,8 @@ create table COMPANIA
 	com_acronimo varchar(20) not null,
 	com_fecha_registro date not null,
 	com_status int not null,
+	com_presupuesto int not null,
+	com_plazo_pago int not null,
 	fk_lug_dir_id int not null,
 
 	constraint pk_com primary key
@@ -716,12 +718,16 @@ CREATE PROCEDURE M4_AgregarCompania
 	@acronimo [varchar](20),
 	@fecha_registro date,
 	@status int,
+	@presupuesto int,
+	@plazo_pago int,
 	@id_lugar int
 
 AS
  BEGIN
-    INSERT INTO COMPANIA(com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, fk_lug_dir_id)
-	VALUES(@nombre,	@rif, @email, @telefono, @acronimo, @fecha_registro, @status, @id_lugar);
+    INSERT INTO COMPANIA(com_nombre, com_rif, com_email, com_telefono, com_acronimo, 
+		com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
+	VALUES(@nombre,	@rif, @email, @telefono, @acronimo, @fecha_registro, @status, @presupuesto,
+		@plazo_pago, @id_lugar);
  END;
 GO
 
@@ -730,8 +736,11 @@ CREATE PROCEDURE M4_ConsultarCompania
 		@id int
 AS
 	BEGIN
-		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email, com_telefono as com_telefono, com_acronimo as com_acronimo,
-			com_fecha_registro as com_fecha_registro, com_status as com_status, fk_lug_dir_id as fk_lug_dir_id
+		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email,
+			com_telefono as com_telefono, com_acronimo as com_acronimo, 
+			com_fecha_registro as com_fecha_registro, com_status as com_status, 
+			com_presupuesto as com_presupuesto, com_plazo_pago as com_plazo_pago,
+			fk_lug_dir_id as fk_lug_dir_id
 		FROM COMPANIA WHERE com_id = @id;
 	END
 GO
@@ -741,9 +750,11 @@ CREATE PROCEDURE M4_ConsultarCompanias
 
 AS
 	BEGIN
-		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email, com_telefono as com_telefono,
-				com_acronimo as com_acronimo,com_fecha_registro as com_fecha_registro, com_status as com_status,
-				fk_lug_dir_id as fk_lug_dir_id
+		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email,
+			com_telefono as com_telefono, com_acronimo as com_acronimo,
+			com_fecha_registro as com_fecha_registro, com_status as com_status,
+			com_presupuesto as com_presupuesto, com_plazo_pago as com_plazo_pago,
+			fk_lug_dir_id as fk_lug_dir_id
 		FROM COMPANIA;
 	END
 GO
@@ -758,11 +769,14 @@ CREATE PROCEDURE M4_ModificarCompania
 	@acronimo [varchar](20),
 	@fecha_registro date,
 	@status int,
+	@presupuesto int,
+	@plazo_pago int,
 	@id_lugar int
 AS
  BEGIN
-    update COMPANIA set com_nombre = @nombre, com_rif = @rif, com_email = @email, com_telefono = @telefono,
-    com_acronimo = @acronimo, com_fecha_registro = @fecha_registro, com_status = @status,
+    update COMPANIA set com_nombre = @nombre, com_rif = @rif, com_email = @email, 
+    com_telefono = @telefono, com_acronimo = @acronimo, com_fecha_registro = @fecha_registro,
+    com_status = @status, com_presupuesto = @presupuesto, com_plazo_pago = @plazo_pago,
     fk_lug_dir_id = @id_lugar
     where com_id = @id;
  end;
@@ -796,6 +810,7 @@ AS
  end;
 GO
 
+--- StoredProcedure Consultar Lugar(Para Agregar y Modificar) ----
 CREATE PROCEDURE M4_ConsultarLugar
 AS
 	BEGIN
@@ -1427,6 +1442,18 @@ AS
 			UPDATE FACTURA SET fac_estatus = 2 WHERE fac_id = @idFactura;
 	END
 GO
+
+---- StoredProcedure Monto Restante de una Factura ----
+CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
+	@id_Factura int
+
+AS
+	BEGIN
+		SELECT fac_monto_restante AS fac_monto_restante
+		FROM FACTURA WHERE fac_id = @id_Factura;
+	END
+GO
+
 
 -----------------------------------
 ------Fin Stored Procedure M8------

@@ -71,7 +71,7 @@
 
                     <div class="form-group">
                         <label for="input_cliente">Cliente (compañía contratante)</label>
-                        <input type="input_cliente" class="form-control" id="cliente_id" placeholder="Trascend" disabled="disabled">
+                        <input type="input_cliente" class="form-control" id="cliente_id" runat ="server" disabled="disabled">
                     </div>
 
                      <div class="form-group">

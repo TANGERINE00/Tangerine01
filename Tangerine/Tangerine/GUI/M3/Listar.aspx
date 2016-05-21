@@ -26,7 +26,8 @@
      <div class="box">
        <div class="box-header">
            <h3 class="box-title">Clientes Potenciales</h3>
-           <th style="text-align:center;"><a  class="btn btn-danger glyphicon glyphicon-plus" href="AgregarLeads.aspx"></a><a class="btn btn-default glyphicon glyphicon-upload" href="Promover.aspx"></a></th> 
+           <th style="text-align:center;"><a  class="btn btn-danger glyphicon glyphicon-plus" href="AgregarLeads.aspx"></a>
+                                           <a class="btn btn-default glyphicon glyphicon-upload" href="Promover.aspx"></a></th> 
         </div><!-- /.box-header -->
       <form role="form" name="consultar" id="consultar">
          

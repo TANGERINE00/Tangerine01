@@ -52,12 +52,32 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, theCompany.PresupuestoCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, theCompany.PlazoPagoCompania.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.AddNewCompany, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -89,6 +109,20 @@ namespace DatosTangerine.M4
                     mayorId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
                 }
             }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
@@ -118,6 +152,20 @@ namespace DatosTangerine.M4
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.DeleteCompany, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -153,6 +201,20 @@ namespace DatosTangerine.M4
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.DisableAbleComany, parameters);
 
             }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
@@ -185,6 +247,20 @@ namespace DatosTangerine.M4
                 //Se manda a ejecutar en BDConexion el stored procedure M4_InhabilitarHabilitar y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.DisableAbleComany, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -234,12 +310,32 @@ namespace DatosTangerine.M4
                 theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
+                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, theCompany.PresupuestoCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, theCompany.PlazoPagoCompania.ToString(), false);
+                parameters.Add(theParam);
+
                 theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceCompany.ChangeCompany, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -284,14 +380,30 @@ namespace DatosTangerine.M4
                 String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
                 DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
                 int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
+                int comBudget = int.Parse(row[ResourceCompany.ComBudgetCompany].ToString());
+                int comDeadline = int.Parse(row[ResourceCompany.ComDeadlineCompany].ToString()); 
                 int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
                 Compania theCompanybeta = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym, 
-                                                    comRegisterDate, comStatus, comIdPlace);
+                                                    comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
 
                 theCompany = theCompanybeta;
             
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -332,13 +444,29 @@ namespace DatosTangerine.M4
                     String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
                     DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
                     int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
+                    int comBudget = int.Parse(row[ResourceCompany.ComBudgetCompany].ToString());
+                    int comDeadline = int.Parse(row[ResourceCompany.ComDeadlineCompany].ToString());
                     int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
 
                     Compania theCompany = new Compania(comId, comName, comRif, comEmail, comTelephone, comAcronym,
-                                                         comRegisterDate, comStatus, comIdPlace);
+                                                         comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
                     listCompany.Add(theCompany);
                 }
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -347,8 +475,5 @@ namespace DatosTangerine.M4
 
             return listCompany;
         }
-
     }
-
-    //Falta implementar el metodo de cambio de status (habilitar/inhabilitar)
 }
