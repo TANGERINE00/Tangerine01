@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="M10\M10PruebasLogica.cs" />
     <Compile Include="M10\PruebasDatos.cs" />
+    <Compile Include="M2\M2PruebasLogica.cs" />
     <Compile Include="M2\PruebasBDUsuario.cs" />
     <Compile Include="M3\PruebaClientePotencialLogica.cs" />
     <Compile Include="M3\PruebaClientePotencial.cs" />
