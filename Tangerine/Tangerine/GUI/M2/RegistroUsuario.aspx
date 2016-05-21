@@ -43,6 +43,26 @@
                 });
 
         }
+        function validacion()
+        {
+            var nombreuser = ContentPlaceHolder1_userDefault.value;
+            var param = "{'usuario':'" + nombreuser +"'}";
+            $.ajax({
+                type: "POST",
+                url: "RegistroUsuario.aspx/validarUsuario",
+                data: param,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (result) {
+                    var local = JSON.stringify(result);
+                    var obj = JSON.parse(local);
+                    document.getElementById("ContentPlaceHolder1_Disponibilidad").value = obj.d;
+                },
+                failure: function (result) {
+                    alert("_");
+                }
+            });
+        }
     </script>
 
     <!-- Modal -->
@@ -61,21 +81,25 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Ficha de empleado</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly="true" required>
+                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly required>
                             </div>
                         </div> 
                         <p>&nbsp;</p>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+                            <label for="userDefault" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" required>
+                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" oninput="javascript:validacion()" required>
+                            </div>
+                            <label for ="Disponibilidad" class="col-sm-2 control-label">Disponibilidad</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="Disponibilidad" placeholder="" runat="server" disabled required>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" required>
+                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion()" required>
                             </div>
                         </div>
                         <p>&nbsp;</p>
