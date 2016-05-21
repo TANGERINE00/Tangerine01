@@ -14,6 +14,7 @@ Tangerine/Tangerine/Web.config
 Tangerine/Tangerine/Log.xml
 Tangerine/Tangerine/PruebasUnitarias/App.config
 bin
+*.config
 
 # Build results
 [Dd]ebug/
