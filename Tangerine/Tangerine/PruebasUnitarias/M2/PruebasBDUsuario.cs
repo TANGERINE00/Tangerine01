@@ -156,5 +156,19 @@ namespace PruebasUnitarias.M2
 
             Assert.Fail("Se ha disparado la excepción de la prueba de ModificarContraseniaUsuario()");
         }
+        [Test]
+
+        public void TestVerificarUsuarioPorFichaEmpleado()
+        {
+            Assert.IsFalse(BDUsuario.VerificarUsuarioPorFichaEmpleado(0));
+        }
+
+        [Test]
+        public void TestVerificarExistenciaDeUsuario()
+        {
+            Assert.IsFalse(BDUsuario.VerificarExistenciaDeUsuario("elusuario"));
+            Assert.IsTrue(BDUsuario.VerificarExistenciaDeUsuario("luarropa"));
+        }
+
     }
 }
