@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
+using LogicaTangerine.M5;
+using LogicaTangerine.M10;
 
 namespace Tangerine.GUI.M7
 {
@@ -14,12 +16,19 @@ namespace Tangerine.GUI.M7
         int _idProyecto;
         LogicaProyecto LogicProject = new LogicaProyecto();
         Proyecto proyecto = new Proyecto();
+        List<Empleado> Gerentes = new List<Empleado>();
+        List<Empleado> Programadores = new List<Empleado>();
+        LogicaM5 LogicaM5 = new LogicaM5();
+        LogicaM10 LogicaM10 = new LogicaM10();
         protected void Page_Load(object sender, EventArgs e)
         {
           _idProyecto = int.Parse(Request.QueryString["idCont"]);
           if (!IsPostBack)
           {
+              Gerentes = LogicaM10.GetGerentes();
+              Programadores = LogicaM10.GetProgramadores();
               proyecto = LogicProject.consultarProyecto(_idProyecto);
+              
               this.textInputNombreProyecto.Value = proyecto.Nombre.ToString();
               this.textInputCodigo.Value = proyecto.Codigo.ToString();
               this.textInputCosto.Value = proyecto.Costo.ToString();
@@ -27,7 +36,16 @@ namespace Tangerine.GUI.M7
               this.textInputFechaInicio.Value = proyecto.Fechainicio.ToString("dd/MM/yyyy");
               this.textInputPorcentaje.Value = proyecto.Realizacion.ToString();
               this.inputPropuesta.Items.Add(proyecto.Idproyecto.ToString());
+              for (int i = 0; i < Gerentes.Count; i++)
+              {
 
+                  inputGerente.Items.Add(Gerentes[i].emp_p_nombre + " " + Gerentes[i].emp_p_apellido);
+              }
+
+              for (int i = 0; i < Programadores.Count; i++)
+              {
+                  inputPersonal.Items.Add(Programadores[i].emp_p_nombre + " " + Programadores[i].emp_p_apellido);
+              }
     
           }
         }

@@ -95,9 +95,7 @@
 
                     <div class="form-group">
                         <label for="labelGerete_M7">Gerente de proyecto *</label>
-                        <select class="form-control" name="gerenteProyecto">
-                            <option>Pedro Perez</option>
-                            <option>Ana Rodriguez</option>
+                        <select class="form-control" id="inputGerente" name="inputGerente" runat="server">
                         </select>
                     </div>
 
@@ -106,32 +104,22 @@
                     <div class="form-group">
                         <label for="labelPersonal_M7">Personal responsable *</label>
                         <select class="form-control" name="personalProyecto">
-                            <option>jose</option>
-                            <option>pedro</option>
-                            <option>maria</option>
-                            <option>ana</option>
                         </select>
                         <asp:Button ID="Button1" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="eliminar"></asp:Button>
 
                     </div>
                     <hr />
                     <div class="form-group">
-                        <label for="labelPersonal_M7">Personal disponible *</label>
-                        <select class="form-control" name="personalProyecto">
-                            <option>mario</option>
-                            <option>luis</option>
-                            <option>juana</option>
-                            <option>andrea</option>
+                        <label for="inputPersonal">Personal disponible *</label>
+                        <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
                         </select>
                         <asp:Button ID="Button2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Agregar"></asp:Button>
 
                     </div>
                     <hr />
                     <div class="form-group">
-                        <label for="labelencargado_M7">Encargado de la empresa contratante</label>
-                        <select class="form-control" name="EncargadoProyecto">
-                            <option>Pedro Perez</option>
-                            <option>Ana Rodriguez</option>
+                        <label for="inputEncargado">Encargado de la empresa contratante</label>
+                        <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
                         </select>
                     </div>
                     <hr />
