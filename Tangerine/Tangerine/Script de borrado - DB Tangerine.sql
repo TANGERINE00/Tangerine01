@@ -81,6 +81,7 @@ drop procedure M8_ModificarFactura;
 drop procedure M8_ConsultarNombreCompaniaFacturas;
 drop procedure M8_AnularFactura;
 drop procedure M8_ConsultarFacturasCompania;
+drop procedure M8_VerificarFacturasParaPagar;
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;

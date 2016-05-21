@@ -1417,6 +1417,17 @@ AS
 	END
 GO
 
+---- StoredProcedure Facturas por Pagar ----
+CREATE PROCEDURE M8_VerificarFacturasParaPagar
+	@idFactura int
+
+AS
+	BEGIN
+		IF (SELECT DATEDIFF(day,fac_fecha_ultimo_pago,CONVERT(DATE,GETDATE())) FROM FACTURA WHERE fac_id = @idFactura) >= 31
+			UPDATE FACTURA SET fac_estatus = 2 WHERE fac_id = @idFactura;
+	END
+GO
+
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
