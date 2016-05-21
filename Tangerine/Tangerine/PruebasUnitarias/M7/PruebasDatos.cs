@@ -42,8 +42,8 @@ namespace PruebasUnitarias.M7
             theProyect.Fechaestimadafin = fechaestimadafin;
             theProyect.Costo = 100000;
             theProyect.Descripcion = "este es un proyecto de prueba";
-            theProyect.Realizacion = "20%";
-            theProyect.Estatus = "En Curso";
+            theProyect.Realizacion = "20";
+            theProyect.Estatus = "En desarrollo";
             theProyect.Razon = "";
             theProyect.Acuerdopago = "Mensual";
             theProyect.Idpropuesta = 1;
