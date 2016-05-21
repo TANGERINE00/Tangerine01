@@ -123,7 +123,7 @@ namespace Tangerine.GUI.M7
             LogicaProyecto _logica =  new LogicaProyecto();
             if (_logica.agregarProyecto(_proyecto))
             {
-                Server.Transfer("Dashboard.aspx");
+                Server.Transfer("ConsultaProyecto.aspx");
                 //colocar un mensaje de creacion con exito y vaciar text.
             }
             else
