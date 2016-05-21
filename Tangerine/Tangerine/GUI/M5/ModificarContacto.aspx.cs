@@ -19,6 +19,7 @@ namespace Tangerine.GUI.M5
         string _telefono = String.Empty;
         string _correo = String.Empty;
         Contacto theContact = new Contacto();
+
         public string botonVolver
         {
             get
@@ -55,6 +56,8 @@ namespace Tangerine.GUI.M5
                 this.correo.Value = theContact.Correo;
             }
         }
+
+        
         //Para volver a ConsultarContactos luego de modificar
         //Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
     }
