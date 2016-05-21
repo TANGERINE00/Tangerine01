@@ -36,15 +36,9 @@
                     <input style="margin-top:5%" runat="server" type="text" placeholder="Llamadas" class="form-control" id="llamadas" name="llamadas">
                     <input style="margin-top:5%" runat="server" type="text" placeholder="Visitas" class="form-control" id="visitas" name="visitas">
        
-       
-         		
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
     
                     </div>
-
-
-
-      
                     
                     <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
                     <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Eliminar_Click" Text = "Eliminar"   ></asp:Button>

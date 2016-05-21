@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M3
             {
                 //crear un objeto de la capa de logica
                 LogicaM3 logicalistarClientePotencial = new LogicaM3();
-                //crear una lista de empleados 
+                //crear una lista de clientes potenciales
                 List<ClientePotencial> ListaClientepotencialLogica = new List<ClientePotencial>();
                 // logica.listarEmpleado();
                 ListaClientepotencialLogica = logicalistarClientePotencial.LogicalistarClientePotencial();
@@ -64,6 +64,7 @@ namespace Tangerine.GUI.M3
                 this.tabla.Text += ResourceInterfaz.BotonModificar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
                 this.tabla.Text += ResourceInterfaz.BotonEliminar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
                 this.tabla.Text += ResourceInterfaz.BotonContacto + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
+                this.tabla.Text += ResourceInterfaz.BotonPromover + item.IdClientePotencial + ResourceInterfaz.BotonCerrar;
                 this.tabla.Text += ResourceInterfaz.CerrarTD;
                 this.tabla.Text += ResourceInterfaz.CerrarTR;
             }

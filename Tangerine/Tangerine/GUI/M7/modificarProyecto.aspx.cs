@@ -23,6 +23,9 @@ namespace Tangerine.GUI.M7
         List<Empleado> ProgramadoresProyecto = new List<Empleado>();
         LogicaM5 LogicaM5 = new LogicaM5();
         LogicaM10 LogicaM10 = new LogicaM10();
+        List<Empleado> seleccionProgramadores = new List<Empleado>();
+        List<Contacto> seleccionContactos = new List<Contacto>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
           _idProyecto = int.Parse(Request.QueryString["idCont"]);
@@ -32,7 +35,7 @@ namespace Tangerine.GUI.M7
               Programadores = LogicaM10.GetProgramadores();
               proyecto = LogicProject.consultarProyecto(_idProyecto);
               ContactosProyecto = LogicaM5.GetContactsProyect(proyecto);
-              ProgramadoresProyecto = proyecto.get_empleados();
+              ProgramadoresProyecto = LogicProject.obtenerListaEmpleados(proyecto);
               Contactos = LogicaM5.GetContacts(proyecto.Idcompania,1);
             
               this.textInputNombreProyecto.Value = proyecto.Nombre.ToString();
@@ -46,6 +49,10 @@ namespace Tangerine.GUI.M7
               {
 
                   inputGerente.Items.Add(Gerentes[i].emp_p_nombre + " " + Gerentes[i].emp_p_apellido);
+                  if(proyecto.Idgerente.Equals(Gerentes[i].Emp_num_ficha))
+                  {
+                      inputGerente.Items[i].Selected = true;
+                  }
               }
 
               for (int i = 0; i < Programadores.Count; i++)
@@ -57,15 +64,19 @@ namespace Tangerine.GUI.M7
               {
                   inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
               }
-         
-              /*for (int i = 0; i < inputPersonal.Items.Count; i++)
+
+              for (int j = 0; j < ProgramadoresProyecto.Count; j++)
               {
-                  if (inputPersonal.Items[i].Value.ToString().Equals(ProgramadoresProyecto[j].emp_p_nombre + " " + ProgramadoresProyecto[j].emp_p_apellido))
+                  for (int i = 0; i < inputEncargado.Items.Count; i++)
                   {
-                      inputPersonal.Items[i].Selected = true;
-                      j++;
+
+                      if (inputPersonal.Items[i].Value.ToString().Equals(ProgramadoresProyecto[j].emp_p_nombre + " " + ProgramadoresProyecto[j].emp_p_apellido))
+                      {
+                          inputPersonal.Items[i].Selected = true;
+                          break;
+                      }
                   }
-              }*/
+              }
 
               for (int j = 0; j < ContactosProyecto.Count; j++)
               { 
@@ -86,12 +97,50 @@ namespace Tangerine.GUI.M7
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
-            Proyecto _proyecto = new Proyecto(0, textInputNombreProyecto.Value, textInputCodigo.Value, DateTime.Parse(textInputFechaInicio.Value),
-                                              DateTime.Parse(textInputFechaEstimada.Value), Double.Parse(textInputCosto.Value), "", "", "En curso",
-                                              "", "", 0, 0, 0);  //OSCAR EDITE AQUI EL CONSTRUCTOR... EL DATO DESPUES DE RAZON ES ACUERDO DE PAGO QUE HAY 
-            LogicaProyecto _logica = new LogicaProyecto();
-            if (_logica.modificarProyecto(_proyecto))
+            Gerentes = LogicaM10.GetGerentes();
+            Programadores = LogicaM10.GetProgramadores();
+            ContactosProyecto = LogicaM5.GetContactsProyect(proyecto);
+
+            proyecto = LogicProject.consultarProyecto(int.Parse(Request.QueryString["idCont"]));
+            proyecto.Fechaestimadafin = DateTime.Parse(textInputFechaEstimada.Value);
+            proyecto.Costo = Double.Parse(textInputCosto.Value);
+            proyecto.Realizacion = textInputPorcentaje.Value;
+            proyecto.Estatus = inputEstatus.Value;
+            Contactos = LogicaM5.GetContacts(proyecto.Idcompania, 1);
+            for (int i = 0; i < Gerentes.Count;i++ )
             {
+                if(inputGerente.Items[inputGerente.SelectedIndex].Value.Equals(Gerentes[i].Emp_p_nombre+" "+Gerentes[i].Emp_p_apellido))
+                {
+                    proyecto.Idgerente = Gerentes[i].Emp_num_ficha;
+                }
+            }
+              
+         
+            Empleado _empleado = new Empleado();
+            for (int i = 0; i < inputPersonal.Items.Count; i++)
+            {
+                if (inputPersonal.Items[i].Selected)
+                {
+                    seleccionProgramadores.Add(Programadores[i]);
+                }
+            }
+
+
+            for (int i = 0; i < inputEncargado.Items.Count; i++)
+            {
+                if (inputEncargado.Items[i].Selected)
+                {
+                    seleccionContactos.Add(Contactos[i]);
+                }
+            }
+
+            proyecto.set_contactos(seleccionContactos);
+            proyecto.set_empleados(seleccionProgramadores);
+            
+            LogicaProyecto _logica = new LogicaProyecto();
+            if (_logica.modificarProyecto(proyecto))
+            {
+                Server.Transfer("ConsultaProyecto.aspx");
                 //colocar un mensaje de creacion con exito y vaciar text.
             }
             else

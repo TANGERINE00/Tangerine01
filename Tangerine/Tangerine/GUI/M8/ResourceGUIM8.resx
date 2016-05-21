@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BotonPagar" xml:space="preserve">
-    <value>&lt;a title="Pagar" class="btn btn-primary glyphicon glyphicon-euro" </value>
+    <value>&lt;a title="Pagar" class="btn btn-success glyphicon glyphicon-euro" href="/GUI/M9/CargarPago1.aspx?id=</value>
   </data>
   <data name="BotonHab" xml:space="preserve">
     <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok"&gt;&lt;/a&gt;</value>
@@ -127,13 +127,13 @@
     <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonAnular" xml:space="preserve">
-    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" href="AnularFacturaM8.aspx?idCont=</value>
+    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" href="AnularFacturaM8.aspx?idFac=</value>
   </data>
   <data name="BotonInvol" xml:space="preserve">
     <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonModif" xml:space="preserve">
-    <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" href="ModificarFacturaM8.aspx?idCont=</value>
+    <value>&lt;a title="Modificar"  class="btn btn-primary glyphicon glyphicon-pencil" href="ModificarFacturaM8.aspx?idFac=</value>
   </data>
   <data name="CloseBoton" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
@@ -172,12 +172,12 @@
     <value> €</value>
   </data>
   <data name="BotonAnularInhabilitado" xml:space="preserve">
-    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" disabled="disabled" href="AnularFacturaM8.aspx?idCont=</value>
+    <value>&lt;a title="Anular"  class="btn btn-danger glyphicon glyphicon-ban-circle" disabled="disabled" href="AnularFacturaM8.aspx?idFac=</value>
   </data>
   <data name="BotonModifInhabilitado" xml:space="preserve">
-    <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" disabled="disabled" href="ModificarFacturaM8.aspx?idCont=</value>
+    <value>&lt;a title="Modificar"  class="btn btn-primary glyphicon glyphicon-pencil" disabled="disabled" href="ModificarFacturaM8.aspx?idFac=</value>
   </data>
   <data name="BotonPagarInhabilitado" xml:space="preserve">
-    <value>&lt;a title="Pagar" disabled="disabled" class="btn btn-primary glyphicon glyphicon-euro" </value>
+    <value>&lt;a title="Pagar" disabled="disabled" class="btn btn-success glyphicon glyphicon-euro" </value>
   </data>
 </root>
