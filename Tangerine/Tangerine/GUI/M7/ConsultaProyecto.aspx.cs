@@ -44,11 +44,11 @@ namespace Tangerine.GUI.M7
                         project += ResourceGUIM7.OpenTr;
 
                         project += ResourceGUIM7.OpenTD + theProject.Nombre.ToString() + ResourceGUIM7.CloseTd;
-                       // project += ResourceGUIM7.OpenTD + pruebaM7.ConsultarNombrePropuestaID(theProject.Idpropuesta).ToString() + ResourceGUIM7.CloseTd; // Acomodar debe mostrar el nombre y muestra el id
-                        project += ResourceGUIM7.OpenTD + "" + ResourceGUIM7.CloseTd;
+                        project += ResourceGUIM7.OpenTD + pruebaM7.ConsultarNombrePropuestaID(theProject.Idpropuesta).ToString() + ResourceGUIM7.CloseTd; // Acomodar debe mostrar el nombre y muestra el id
+                       // project += ResourceGUIM7.OpenTD + "" + ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Codigo + ResourceGUIM7.CloseTd;
-                        project += ResourceGUIM7.OpenTD + theProject.Fechainicio + ResourceGUIM7.CloseTd;
-                        project += ResourceGUIM7.OpenTD + theProject.Fechaestimadafin + ResourceGUIM7.CloseTd;
+                        project += ResourceGUIM7.OpenTD + theProject.Fechainicio.ToString("dd/MM/yyyy") +ResourceGUIM7.CloseTd;
+                        project += ResourceGUIM7.OpenTD + theProject.Fechaestimadafin.ToString("dd/MM/yyyy") +ResourceGUIM7.CloseTd;
                         project += ResourceGUIM7.OpenTD + theProject.Realizacion.ToString() + ResourceGUIM7.CloseTd;
                         if (theProject.Estatus.ToString().Equals("En desarrollo")) 
                         {
@@ -67,7 +67,8 @@ namespace Tangerine.GUI.M7
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.Cancelado + ResourceGUIM7.CloseTd;
                         }
                         project += ResourceGUIM7.OpenTD + ResourceGUIM7.OpenBotonInfo + theProject.Idproyecto + ResourceGUIM7.CloseBoton
-                                 + ResourceGUIM7.OpenBotonPersonal + theProject.Idproyecto + ResourceGUIM7.CloseBoton + ResourceGUIM7.CloseTd;
+                                 + ResourceGUIM7.OpenBotonPersonal + theProject.Idproyecto + ResourceGUIM7.CloseBoton 
+                                 + ResourceGUIM7.OpenBotonModificar + theProject.Idproyecto + ResourceGUIM7.CloseBotonParametro + ResourceGUIM7.CloseTd;
 
                         project += ResourceGUIM7.CloseTr;
                     }//Fin del Foreach

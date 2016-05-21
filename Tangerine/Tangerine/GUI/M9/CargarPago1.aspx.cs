@@ -29,9 +29,11 @@ namespace Tangerine.GUI.M9
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
             //En este try atrapo el valor del id del Contacto si existe
             //para luego ser eliminado de los contactos de la empresa
-            int identificador = int.Parse(Request.QueryString["id"]);
+            /*int identificador = int.Parse(Request.QueryString["id"]);
 
             LogicaM8 prueba = new LogicaM8();
             Facturacion factura = prueba.SearchFactura(identificador);
@@ -39,7 +41,17 @@ namespace Tangerine.GUI.M9
             if (factura != null)
             {
                 cliente += ResourceLogicaM9.AbrirNombreCliente + prueba.SearchCompaniaFactura((factura.idCompaniaFactura)) + "prueba" + ResourceLogicaM9.CerrarNombreCliente;
-            }
+            }*/
+
+
         }
+
+        protected void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            
+               
+            
+        }
+
     }
 }

@@ -61,5 +61,28 @@ namespace LogicaTangerine.M10
             return BDEmpleado.GetElementsForSelectJob();
         }
 
+        public List<Empleado> GetGerentes()
+        {
+            try
+            {
+                return BDEmpleado.ListarGerentes();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Empleado> GetProgramadores()
+        {
+            try
+            {
+                return BDEmpleado.ListarProgramadores();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
