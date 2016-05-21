@@ -1,0 +1,55 @@
+diff a/Tangerine/Tangerine/Log.xml b/Tangerine/Tangerine/Log.xml	(rejected hunks)
+@@ -165,3 +165,53 @@
+    en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 284
+ ClientConnectionId:c9f9cd73-39d8-4dd8-bf63-bdde04854279
++=======
++2016-05-19 22:08:31,279 INFO  LogicaM5 - *******************************************************
++2016-05-19 22:08:31,284 INFO  LogicaM5 - Clase: LogicaM5
++2016-05-19 22:08:31,284 INFO  LogicaM5 - Mensaje: Entrada en el Método
++2016-05-19 22:08:31,284 INFO  LogicaM5 - Metodo: GetContacts
++2016-05-19 22:08:31,294 INFO  BDContacto - *******************************************************
++2016-05-19 22:08:31,295 INFO  BDContacto - Clase: BDContacto
++2016-05-19 22:08:31,295 INFO  BDContacto - Mensaje: Entrada en el Método
++2016-05-19 22:08:31,295 INFO  BDContacto - Metodo: ContactCompany
++2016-05-19 22:08:31,338 INFO  BDContacto - *******************************************************
++2016-05-19 22:08:31,338 INFO  BDContacto - Clase: BDContacto
++2016-05-19 22:08:31,338 INFO  BDContacto - Mensaje: Salida del Método
++2016-05-19 22:08:31,338 INFO  BDContacto - Metodo: ContactCompany
++2016-05-20 10:02:54,175 INFO  LogicaM5 - *******************************************************
++2016-05-20 10:02:54,181 INFO  LogicaM5 - Clase: LogicaM5
++2016-05-20 10:02:54,181 INFO  LogicaM5 - Mensaje: Entrada en el Método
++2016-05-20 10:02:54,181 INFO  LogicaM5 - Metodo: GetContacts
++2016-05-20 10:02:54,187 INFO  BDContacto - *******************************************************
++2016-05-20 10:02:54,187 INFO  BDContacto - Clase: BDContacto
++2016-05-20 10:02:54,187 INFO  BDContacto - Mensaje: Entrada en el Método
++2016-05-20 10:02:54,187 INFO  BDContacto - Metodo: ContactCompany
++2016-05-20 10:02:54,205 INFO  BDContacto - *******************************************************
++2016-05-20 10:02:54,205 INFO  BDContacto - Clase: BDContacto
++2016-05-20 10:02:54,205 INFO  BDContacto - Mensaje: Salida del Método
++2016-05-20 10:02:54,205 INFO  BDContacto - Metodo: ContactCompany
++2016-05-20 10:49:41,301 INFO  LogicaM5 - *******************************************************
++2016-05-20 10:49:41,306 INFO  LogicaM5 - Clase: LogicaM5
++2016-05-20 10:49:41,306 INFO  LogicaM5 - Mensaje: Entrada en el Método
++2016-05-20 10:49:41,306 INFO  LogicaM5 - Metodo: GetContacts
++2016-05-20 10:49:41,319 INFO  BDContacto - *******************************************************
++2016-05-20 10:49:41,319 INFO  BDContacto - Clase: BDContacto
++2016-05-20 10:49:41,319 INFO  BDContacto - Mensaje: Entrada en el Método
++2016-05-20 10:49:41,319 INFO  BDContacto - Metodo: ContactCompany
++2016-05-20 10:49:41,522 INFO  BDContacto - *******************************************************
++2016-05-20 10:49:41,522 INFO  BDContacto - Clase: BDContacto
++2016-05-20 10:49:41,523 INFO  BDContacto - Mensaje: Salida del Método
++2016-05-20 10:49:41,523 INFO  BDContacto - Metodo: ContactCompany
++2016-05-20 10:50:33,222 INFO  LogicaM5 - *******************************************************
++2016-05-20 10:50:33,228 INFO  LogicaM5 - Clase: LogicaM5
++2016-05-20 10:50:33,228 INFO  LogicaM5 - Mensaje: Entrada en el Método
++2016-05-20 10:50:33,228 INFO  LogicaM5 - Metodo: GetContacts
++2016-05-20 10:50:33,239 INFO  BDContacto - *******************************************************
++2016-05-20 10:50:33,239 INFO  BDContacto - Clase: BDContacto
++2016-05-20 10:50:33,239 INFO  BDContacto - Mensaje: Entrada en el Método
++2016-05-20 10:50:33,239 INFO  BDContacto - Metodo: ContactCompany
++2016-05-20 10:50:33,332 INFO  BDContacto - *******************************************************
++2016-05-20 10:50:33,333 INFO  BDContacto - Clase: BDContacto
++2016-05-20 10:50:33,333 INFO  BDContacto - Mensaje: Salida del Método
++2016-05-20 10:50:33,333 INFO  BDContacto - Metodo: ContactCompany
++>>>>>>> a1b81b1ec4f29e6d2426bf9e12d58732c8074078

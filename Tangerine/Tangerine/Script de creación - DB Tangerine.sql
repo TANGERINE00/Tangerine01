@@ -1495,6 +1495,27 @@ AS
 			  and Employee.emp_num_ficha=@id;
 	END
 
+	
+CREATE PROCEDURE M10_ConsultarGerentes
+		@prueba INT
+AS
+	BEGIN
+		select * from EMPLEADO e,CARGO_EMPLEADO ce,CARGO c where
+		e.emp_activo = 'Activo' and c.car_nombre = 'Gerente' and
+		e.emp_num_ficha = ce.fk_emp_num_ficha and ce.fk_car_id = c.car_id;
+	END
+GO
+
+CREATE PROCEDURE M10_ConsultarProgramadores
+		@prueba INT
+AS
+	BEGIN
+		select * from EMPLEADO e,CARGO_EMPLEADO ce,CARGO c where
+		e.emp_activo = 'Activo' and c.car_nombre = 'Programador' and
+		e.emp_num_ficha = ce.fk_emp_num_ficha and ce.fk_car_id = c.car_id;
+	END
+GO
+
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------
