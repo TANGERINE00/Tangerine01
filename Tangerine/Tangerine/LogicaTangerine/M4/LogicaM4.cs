@@ -101,6 +101,7 @@ namespace LogicaTangerine.M4
             }
         }
 
+        //Recibe un id de un lugar y hace el match con un nombre
         public string MatchNombreLugar(int idLugar)
         {
             try
@@ -115,6 +116,28 @@ namespace LogicaTangerine.M4
                 }
 
                 return NombreLugar;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Recibe un nombre de un lugar y hace el match con su respectivo id.
+        public int MatchIdLugar(string nombreLugar)
+        {
+            try
+            {
+                int IdLugar = 0;
+                foreach (LugarDireccion lugar in BDLugarDireccion.ConsultPlaces())
+                {
+                    if (nombreLugar.Equals(lugar.LugNombre))
+                    {
+                        IdLugar = lugar.LugId;
+                    }
+                }
+
+                return IdLugar;
             }
             catch (Exception ex)
             {
