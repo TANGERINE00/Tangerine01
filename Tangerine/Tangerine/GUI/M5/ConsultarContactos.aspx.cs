@@ -13,6 +13,8 @@ namespace Tangerine.GUI.M5
     public partial class ConsultarContactos : System.Web.UI.Page
     {
         #region Atributos
+        int typeComp;
+        int idComp;
         public string contact
         {
             get
@@ -61,8 +63,8 @@ namespace Tangerine.GUI.M5
         {
             LogicaM5 prueba = new LogicaM5();
             Contacto _contact = new Contacto();
-            int typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            int idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
+            int typeComp = int.Parse(Request.QueryString["typeComp"]);
+            int idComp = int.Parse(Request.QueryString["idComp"]);
 
             if (typeComp == 1)
                 botonVolver = ResourceGUIM5.VolverCompania;
@@ -73,7 +75,7 @@ namespace Tangerine.GUI.M5
             {
                 //En este try atrapo el valor del id del Contacto si existe
                 //para luego ser eliminado de los contactos de la empresa
-                int idCont = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
+                int idCont = int.Parse(Request.QueryString["idCont"]);
                 _contact.IdContacto = idCont;
                 if (idCont > 0)
                 {

@@ -19,11 +19,10 @@
     <div id="alerta" runat="server">
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="box box-primary">
-                <div class="box-header with-border">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
                     <h3 class="box-title">Contactos Existentes</h3>
-                    <div class="box-tools"></div>
                 </div>
                 <form role="form" name="consultar" id="consultar">
                     <script language="javascript">
@@ -47,12 +46,12 @@
                             }
                         }
                     </script>
-                    <div class="box-body table-responsive no-padding">
-                        <div style="float:right; padding-top:5px;">
+                    <div class="box-body table-responsive">
+                        <div style="float:right;">
                             <a style="margin-right:10px;">Buscador</a>
                             <input id="searchTerm" type="text" onkeyup="doSearch()"/>
                         </div>
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="example2" class="table table-bordered table-striped dataTable" accesskey="">
                             <thead>
                                 <tr style="font-size:18px;">
                                     <th>Nombre</th>
@@ -67,10 +66,8 @@
                                 <asp:Literal runat="server" ID="tabla"></asp:Literal>
                             </tbody>
                         </table>
-                        <div style="text-align:center;">
-                            <asp:Literal runat="server" ID="volver"></asp:Literal>
-                            <asp:Literal runat="server" ID="nuevocontacto"></asp:Literal>
-                        </div>
+                        <asp:Literal runat="server" ID="volver"></asp:Literal>
+                        <asp:Literal runat="server" ID="nuevocontacto"></asp:Literal>
                     </div>
                 </form>
             </div>

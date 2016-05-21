@@ -187,7 +187,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Eliminar Contacto&quot; class=&quot;btn btn-danger glyphicon glyphicon-trash&quot; style=&quot;margin-left:3px;&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?typeComp=.
         /// </summary>
         internal static string BotonEliminar {
             get {
@@ -205,7 +205,16 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
+        /// </summary>
+        internal static string BotonEliminarSolicitud {
+            get {
+                return ResourceManager.GetString("BotonEliminarSolicitud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
         /// </summary>
         internal static string BotonVolver {
             get {
@@ -232,7 +241,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Contacto&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; style=&quot;margin-left:3px;&quot; href=&quot;ModificarContacto.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ModificarContacto.aspx?typeComp=.
         /// </summary>
         internal static string ButtonModContact {
             get {
@@ -304,20 +313,38 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to idComp.
+        ///   Looks up a localized string similar to 8.3.
         /// </summary>
-        internal static string idComp {
+        internal static string interfazRCi {
             get {
-                return ResourceManager.GetString("idComp", resourceCulture);
+                return ResourceManager.GetString("interfazRCi", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to idCont.
+        ///   Looks up a localized string similar to 8.1.
         /// </summary>
-        internal static string idCont {
+        internal static string interfazRH {
             get {
-                return ResourceManager.GetString("idCont", resourceCulture);
+                return ResourceManager.GetString("interfazRH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.
+        /// </summary>
+        internal static string Mod8 {
+            get {
+                return ResourceManager.GetString("Mod8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string nombre {
+            get {
+                return ResourceManager.GetString("nombre", resourceCulture);
             }
         }
         
@@ -331,6 +358,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true.
+        /// </summary>
+        internal static string ReturnRestCinta {
+            get {
+                return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert.
         /// </summary>
         internal static string tipoAlerta {
@@ -340,16 +376,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to typeComp.
-        /// </summary>
-        internal static string typeComp {
-            get {
-                return ResourceManager.GetString("typeComp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btnaceptar&quot; style=&quot;margin-top:20px&quot; class=&quot;btn btn-primary&quot;  type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;AgregarContacto.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btnaceptar&quot; style=&quot;margin-top:5%&quot; class=&quot;btn btn-primary&quot;  type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;AgregarContacto.aspx?typeComp=.
         /// </summary>
         internal static string VentanaAgregarContacto {
             get {
@@ -358,7 +385,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px  width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
         /// </summary>
         internal static string VolverCliPotencial {
             get {
@@ -367,7 +394,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px; width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
         /// </summary>
         internal static string VolverCompania {
             get {
@@ -376,7 +403,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:5%; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
         /// </summary>
         internal static string VolverConsultarCon {
             get {
