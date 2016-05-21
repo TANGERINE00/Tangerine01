@@ -40,28 +40,11 @@ namespace Tangerine.GUI.M1
         protected void Page_Load(object sender, EventArgs e)
         {
             LogicaM10 logicaM10 = new LogicaM10();
-            //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
-            //int typeComp = int.Parse(Request.QueryString["typeComp"]);
-            //int idComp = int.Parse(Request.QueryString["idComp"]);
-            /*
-            try
-            {
-                int idEmp = int.Parse(Request.QueryString["idCont"]);
-                if (idEmp != null)
-                {
-                    logicaM10.DeleteEmpleado(idEmp);
-                }
-            }
-            catch
-            {
-
-            }*/
+            
 
             if (!IsPostBack)
             {
                 //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
-                //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
-                //prueba.fillTable(1,1);
                 List<Empleado> listEmpleado = logicaM10.GetEmpleados();
 
                 try
@@ -91,8 +74,12 @@ namespace Tangerine.GUI.M1
                              theEmpleado.Job.FechaContratacion.ToString("dd/MM/yyyy") +
                              ResourceGUIM10.CerrarTD;
                         //Estatus
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_activo +
-                             ResourceGUIM10.CerrarTD;
+                        if (theEmpleado.emp_activo=="Activo")
+                            empleado += ResourceGUIM10.AbrirTD + ResourceGUIM10.AbrirActivo + theEmpleado.emp_activo +
+                                ResourceGUIM10.CerrarActivo + ResourceGUIM10.CerrarTD;
+                        else
+                            empleado += ResourceGUIM10.AbrirTD + ResourceGUIM10.AbrirInactivo + theEmpleado.emp_activo +
+                                ResourceGUIM10.CerrarInactivo + ResourceGUIM10.CerrarTD;
                         //Acciones de cada empleado
                         empleado += ResourceGUIM10.AbrirTD;
                         //Ver
