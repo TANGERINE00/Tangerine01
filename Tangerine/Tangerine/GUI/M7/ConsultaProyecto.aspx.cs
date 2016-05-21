@@ -58,7 +58,7 @@ namespace Tangerine.GUI.M7
                         {
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.Completado + ResourceGUIM7.CloseTd;
                         }
-                        if (theProject.Estatus.ToString().Equals("A destiempo"))
+                        if (theProject.Estatus.ToString().Equals("Completado a destiempo"))
                         {
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.CompletadoAdestiempo + ResourceGUIM7.CloseTd;
                         }
@@ -66,8 +66,7 @@ namespace Tangerine.GUI.M7
                         {
                             project += ResourceGUIM7.OpenTD + ResourceGUIM7.Cancelado + ResourceGUIM7.CloseTd;
                         }
-                        project += ResourceGUIM7.OpenTD + ResourceGUIM7.OpenBotonInfo + theProject.Idproyecto + ResourceGUIM7.CloseBoton
-                                 + ResourceGUIM7.OpenBotonPersonal + theProject.Idproyecto + ResourceGUIM7.CloseBoton 
+                        project += ResourceGUIM7.OpenTD + ResourceGUIM7.OpenBotonInfo + theProject.Idproyecto + ResourceGUIM7.CloseBotonParametro
                                  + ResourceGUIM7.OpenBotonModificar + theProject.Idproyecto + ResourceGUIM7.CloseBotonParametro + ResourceGUIM7.CloseTd;
 
                         project += ResourceGUIM7.CloseTr;
