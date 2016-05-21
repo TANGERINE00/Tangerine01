@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="CargarPago1.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="CargarPago1.aspx.cs" 
+    Inherits="Tangerine.GUI.M9.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -22,12 +23,16 @@
     <div class="box box-primary">
 
         <!-- form start -->
-        <form role="form">
+        <form role="form" runat="server">
             <div class="box-body">
                 <div class="form-group">
-                    <label for="input_cliente">Cliente (compañía contratante)</label>
-                    <asp:Literal runat="server" ID="seccion1"></asp:Literal>
-                    <input type="input_cliente" class="form-control" id="cliente_id" placeholder="Nombre del Cliente" disabled>
+
+                    <asp:ValidationSummary ID="ValidationSummary1" runat=server headertext="Hubo un error en la página:" />
+
+                    <label for="input_cliente">Cliente (compañía contratante)
+                    </label>
+                    &nbsp;<asp:Literal runat="server" ID="seccion1"></asp:Literal>
+                    <input type="text" class="form-control" id="cliente_id" placeholder="Nombre del Cliente" disabled>
                 </div>
             
 
@@ -58,17 +63,26 @@
 
                 <div class="form-group">
                     <label>Forma de Pago</label>
-                    <select class="form-control" disabled>
+                    <select required class="form-control" disabled>
                         <option></option>
                         <option data-icon="fa-heart">Deposito</option>
                         <option>Transferencia</option>
                         <option>Otro</option>
-                    </select>
+                       </select>
                 </div>
 
                 <div class="form-group">
+                   
                     <label for="input_cliente">Codigo de aprobacion</label>
-                    <input type="input_cliente" class="form-control"  placeholder="Codigo de aprobacion">
+                    <input type="text" id="codAprobacion" class="form-control"  placeholder="Codigo de aprobacion" runat="server"> 
+                    
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="codAprobacion" Display="Dynamic"  
+                     runat="server" ErrorMessage="Debe ingresar un código de aprobación."></asp:RequiredFieldValidator>
+
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="codAprobacion" ValidationExpression="\d{5}"
+                     Display="Dynamic" runat="server" ErrorMessage="El código de aprobración debe ser de al menos 5 dígitos.">*</asp:RegularExpressionValidator>
+
+                   
                 </div>
 
             <div class="box-foot">
@@ -79,6 +93,7 @@
     </div>
     
 </div>
+    
 
     <script>
         $(function () {
