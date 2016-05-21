@@ -97,6 +97,15 @@ namespace Tangerine.GUI.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string CloseBotonParametro {
+            get {
+                return ResourceManager.GetString("CloseBotonParametro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;/div&gt;.
         /// </summary>
         internal static string CloseDiv {
@@ -210,6 +219,15 @@ namespace Tangerine.GUI.M7 {
         internal static string OpenBotonInfo {
             get {
                 return ResourceManager.GetString("OpenBotonInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Modificar&quot;  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;modificarProyecto.aspx?idCont=.
+        /// </summary>
+        internal static string OpenBotonModificar {
+            get {
+                return ResourceManager.GetString("OpenBotonModificar", resourceCulture);
             }
         }
         
