@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M6;
+using LogicaTangerine.M4;
 using System.Diagnostics;
 
 namespace Tangerine.GUI.M6
@@ -33,6 +34,8 @@ namespace Tangerine.GUI.M6
 
                 {
                     LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
+                    LogicaM4 logicaCompania = new LogicaM4();
+
 
                     if (!IsPostBack)
                     {
@@ -44,9 +47,14 @@ namespace Tangerine.GUI.M6
 
                             foreach (Propuesta laPropuesta in listaPropuestas)
                             {
+                                
+                                Compania laCompania = logicaCompania.SearchCompany(Int32.Parse(laPropuesta.IdCompañia));
+                                
+
                                 propuesta += RecursosGUI_M6.AbrirTR;
 
                                 propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Nombre.ToString() + RecursosGUI_M6.CerrarTD;
+                                propuesta += RecursosGUI_M6.AbrirTD + laCompania.NombreCompania.ToString() +RecursosGUI_M6.CerrarTD;
                                 propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Feincio.ToShortDateString() + RecursosGUI_M6.CerrarTD;
                                 if (laPropuesta.Estatus.Equals("Aprobado"))
                                 {
@@ -82,13 +90,17 @@ namespace Tangerine.GUI.M6
 
                                 propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Costo + RecursosGUI_M6.CerrarTD;
 
+                                //Acciones de cada propuesta
 
 
-                                propuesta += RecursosGUI_M6.AbrirTD
-                                          + RecursosGUI_M6.botonConsultar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
-                                          + RecursosGUI_M6.botonModificar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
-                                          + RecursosGUI_M6.botonEliminar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
-                                          + RecursosGUI_M6.CerrarTR;
+                                propuesta += RecursosGUI_M6.AbrirTD2
+                                     + RecursosGUI_M6.botonConsultar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra
+                                     + RecursosGUI_M6.botonModificar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra;
+                                propuesta += RecursosGUI_M6.CerrarTD;
+                                propuesta += RecursosGUI_M6.CerrarTR;
+
+
+
 
                             }
 

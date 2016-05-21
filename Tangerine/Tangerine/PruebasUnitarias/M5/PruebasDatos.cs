@@ -34,7 +34,7 @@ namespace PruebasUnitarias.M5
             theContact.Apellido = "Bokor";
             theContact.Departamento = "Ventas";
             theContact.Cargo = "Gerente";
-            theContact.Correo = "asd@asd.com";
+            theContact.Correo = "asdqwe@asd.com";
             theContact.Telefono = "7654321";
             theContact.TipoCompañia = 1;
             theContact.IdCompañia = 1;
@@ -65,6 +65,8 @@ namespace PruebasUnitarias.M5
             Assert.IsTrue(BDContacto.AddContact(theContact));
             //Consulto todos los contactos de la compania 1, donde inserte el contacto anterior
             listContact = BDContacto.ContactCompany(1, 1);
+            //Valido el contacto insertado para ver si es igual al ultimo que inserte
+            Assert.AreEqual(theContact.Correo, listContact[listContact.Count - 1].Correo);
             //Mando a eliminar el id del ultimo contacto de la lista (El contacto que inserte)
             answer = BDContacto.DeleteContact(listContact[listContact.Count - 1]);
         }
