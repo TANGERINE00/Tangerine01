@@ -349,7 +349,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btnaceptar&quot; style=&quot;margin-top:20px&quot; class=&quot;btn btn-primary&quot;  type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;AgregarContacto.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btnaceptar&quot; style=&quot;margin-bottom:20px; margin-top:20px&quot; class=&quot;btn btn-primary&quot;  type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;AgregarContacto.aspx?typeComp=.
         /// </summary>
         internal static string VentanaAgregarContacto {
             get {
@@ -358,7 +358,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px  width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px  width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/ConsultarLead.aspx&quot;&gt;Volver&lt;/a&gt;.
         /// </summary>
         internal static string VolverCliPotencial {
             get {
@@ -367,7 +367,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px; width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
         /// </summary>
         internal static string VolverCompania {
             get {
