@@ -88,7 +88,7 @@ namespace Tangerine.GUI.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Contactos&quot; class=&quot;btn btn-warning glyphicon glyphicon-list-alt&quot; style=&quot;padding-left 0.6px&quot;  href=&quot;../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Administrar Contactos&quot; class=&quot;btn btn-info glyphicon glyphicon-user&quot; style=&quot;margin-left: 3px&quot;  href=&quot;../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=.
         /// </summary>
         internal static string BotonContacto {
             get {

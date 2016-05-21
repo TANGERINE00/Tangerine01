@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M5 {
     public partial class Modificar {
         
         /// <summary>
+        /// agregar_contacto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_contacto;
+        
+        /// <summary>
         /// id_otro control.
         /// </summary>
         /// <remarks>
@@ -94,12 +103,12 @@ namespace Tangerine.GUI.M5 {
         protected global::System.Web.UI.WebControls.Literal volver;
         
         /// <summary>
-        /// btnaceptara control.
+        /// btnmodificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnaceptara;
+        protected global::System.Web.UI.WebControls.Button btnmodificar;
     }
 }

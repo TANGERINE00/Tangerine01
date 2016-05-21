@@ -88,6 +88,24 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to com_presupuesto.
+        /// </summary>
+        internal static string ComBudgetCompany {
+            get {
+                return ResourceManager.GetString("ComBudgetCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to com_plazo_pago.
+        /// </summary>
+        internal static string ComDeadlineCompany {
+            get {
+                return ResourceManager.GetString("ComDeadlineCompany", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to com_email.
         /// </summary>
         internal static string ComEmailCompany {
@@ -255,6 +273,24 @@ namespace DatosTangerine.M4 {
         internal static string ParamNombre {
             get {
                 return ResourceManager.GetString("ParamNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @plazo_pago.
+        /// </summary>
+        internal static string ParamPlazoPago {
+            get {
+                return ResourceManager.GetString("ParamPlazoPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @presupuesto.
+        /// </summary>
+        internal static string ParamPresupuesto {
+            get {
+                return ResourceManager.GetString("ParamPresupuesto", resourceCulture);
             }
         }
         

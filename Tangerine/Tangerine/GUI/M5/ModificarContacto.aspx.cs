@@ -19,6 +19,9 @@ namespace Tangerine.GUI.M5
         string _telefono = String.Empty;
         string _correo = String.Empty;
         Contacto theContact = new Contacto();
+        public int typeComp;
+        public int idComp;
+
         public string botonVolver
         {
             get
@@ -34,8 +37,8 @@ namespace Tangerine.GUI.M5
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            int idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
+            typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
+            idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
             int idCont = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
 
             botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
@@ -46,7 +49,6 @@ namespace Tangerine.GUI.M5
             {
                 LogicaM5 contactLogic = new LogicaM5();
                 theContact = contactLogic.SearchContact(theContact);
-
                 this.nombre.Value = theContact.Nombre;
                 this.apellido.Value = theContact.Apellido;
                 this.departamento.Value = theContact.Departamento;
@@ -55,7 +57,22 @@ namespace Tangerine.GUI.M5
                 this.correo.Value = theContact.Correo;
             }
         }
-        //Para volver a ConsultarContactos luego de modificar
-        //Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
+
+        protected void btnmodificar_Click(object sender, EventArgs e)
+        {
+            Contacto contact = new Contacto();
+            contact.IdContacto = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
+            contact.Nombre = nombre.Value; 
+            contact.Apellido = apellido.Value;
+            contact.Departamento = departamento.Value;
+            contact.Cargo = cargo.Value;
+            contact.Telefono = telefono.Value;
+            contact.Correo = correo.Value;            
+            
+            LogicaM5 contactLogic = new LogicaM5();
+            contactLogic.ChangeContact(contact);
+
+            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp);
+        }
     }
 }
