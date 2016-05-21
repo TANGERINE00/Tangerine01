@@ -34,9 +34,9 @@ namespace Tangerine.GUI.M5
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = int.Parse(Request.QueryString["typeComp"]);
-            int idComp = int.Parse(Request.QueryString["idComp"]);
-            int idCont = int.Parse(Request.QueryString["idCont"]);
+            int typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
+            int idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
+            int idCont = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
 
             botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
                 + ResourceGUIM5.BotonVolver3;
