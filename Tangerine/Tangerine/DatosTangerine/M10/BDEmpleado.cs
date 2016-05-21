@@ -217,5 +217,118 @@ namespace DatosTangerine.M10
             return jobs;
         }
 
+        public static List<Empleado> ListarGerentes()
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Empleado> listEmpleado = new List<Empleado>();
+
+            try
+            {
+                theConnection.Conectar();
+                //PRUEBA
+                theParam = new Parametro(ResourceEmpleado.ParamCPrueba, SqlDbType.Int, "1", false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar empleados
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarGerente, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                    String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                    int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                    String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
+                    String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
+                    double empSlario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+                    string empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
+                    string empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
+                    string empDireccion = row[ResourceEmpleado.EmpLugId].ToString();
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                                                        empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                                                        empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
+                                                        empFechaFin, empDireccion);
+                    listEmpleado.Add(theEmpleado);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listEmpleado;
+        }
+
+
+        public static List<Empleado> ListarProgramadores()
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Empleado> listEmpleado = new List<Empleado>();
+
+            try
+            {
+                theConnection.Conectar();
+                //PRUEBA
+                theParam = new Parametro(ResourceEmpleado.ParamCPrueba, SqlDbType.Int, "1", false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar empleados
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarProgramadores, parameters);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                    String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                    int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                    String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
+                    String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
+                    double empSlario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+                    string empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
+                    string empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
+                    string empDireccion = row[ResourceEmpleado.EmpLugId].ToString();
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                                                        empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                                                        empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
+                                                        empFechaFin, empDireccion);
+                    listEmpleado.Add(theEmpleado);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listEmpleado;
+        }
+
     }
 }

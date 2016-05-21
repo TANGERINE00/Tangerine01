@@ -225,4 +225,10 @@
   <data name="EmpDireccion" xml:space="preserve">
     <value>DireccionEmpleado</value>
   </data>
+  <data name="ConsultarGerente" xml:space="preserve">
+    <value>M10_ConsultarGerentes</value>
+  </data>
+  <data name="ConsultarProgramadores" xml:space="preserve">
+    <value>M10_ConsultarProgramadores</value>
+  </data>
 </root>

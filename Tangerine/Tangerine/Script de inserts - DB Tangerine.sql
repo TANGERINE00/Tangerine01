@@ -294,3 +294,23 @@ INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
            'Modulo de prueba',
            7);
 --------------------------FIN DE INSERTS DE REQUERIMIENTOS---------------------------
+
+--------------------Inserts de cargos----------------
+insert into CARGO values (1,'Gerente','Responable del planeamiento y la ejecución acertada de cualquier proyecto');
+
+insert into CARGO values (2,'Programador','Responable de ejecutar las tareas de programación');
+
+
+insert into CARGO_EMPLEADO values(
+'01/02/2004',null,'Tiempo Completo',60.4,1,1
+);
+
+insert into CARGO_EMPLEADO values(
+'01/05/2009',null,'Tiempo Completo',20.1,2,2
+);
+
+insert into CARGO_EMPLEADO values(
+'01/01/2016',null,'Tiempo Completo',20.1,2,3
+);
+
+--------------------Fin de inserts de cargos---------
