@@ -52,7 +52,7 @@ namespace PruebasUnitarias.M7
 
             
             Empleados = new List<Empleado>();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 4; i <= 5; i++) {
                 Empleado a = new Empleado();
                 a.emp_num_ficha = i;
                 Empleados.Add(a);
@@ -62,7 +62,7 @@ namespace PruebasUnitarias.M7
             theProyect.set_empleados(Empleados);
 
             Contactos = new List<Contacto>();
-            for ( int i = 1 ; i < 7 ; i++ )
+            for ( int i = 4 ; i <= 5 ; i++ )
             {
                 Contacto a = new Contacto(i, "Istvan", "Bokor", "Ventas", "Gerente", "asd@asd.com", "7654321", 1, 1);
                 a.IdContacto = i;
@@ -158,6 +158,7 @@ namespace PruebasUnitarias.M7
         public void TestAddProyectoEmpleado()
         {
             //obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            
             Assert.IsTrue(_Emp.AddProyectoEmpleado(theProyect));
         }
 
@@ -199,11 +200,8 @@ namespace PruebasUnitarias.M7
      {
          theProyect.set_empleados(null);
          _Emp.ContactProyectoEmpleado(theProyect);
-         Assert.IsTrue(1 == theProyect.get_empleados()[0].emp_num_ficha);
-         Assert.IsTrue(2 == theProyect.get_empleados()[1].emp_num_ficha);
-         Assert.IsTrue(3 == theProyect.get_empleados()[2].emp_num_ficha);
-         Assert.IsTrue(4 == theProyect.get_empleados()[3].emp_num_ficha);
-
+         Assert.IsTrue(4 == theProyect.get_empleados()[0].emp_num_ficha);
+         Assert.IsTrue(5 == theProyect.get_empleados()[1].emp_num_ficha);
 
      }
      /// <summary>
@@ -214,11 +212,8 @@ namespace PruebasUnitarias.M7
      {
          theProyect.set_contactos(null);
          _Cont.ContactProyectoContacto(theProyect);
-         Assert.IsTrue( 1 == theProyect.get__contactos()[0].IdContacto );
-         Assert.IsTrue( 2 == theProyect.get__contactos()[1].IdContacto );
-         Assert.IsTrue( 3 == theProyect.get__contactos()[2].IdContacto );
-         Assert.IsTrue( 4 == theProyect.get__contactos()[3].IdContacto );
-
+         Assert.IsTrue( 4 == theProyect.get__contactos()[0].IdContacto );
+         Assert.IsTrue( 5 == theProyect.get__contactos()[1].IdContacto );
 
      }
 
@@ -252,6 +247,17 @@ namespace PruebasUnitarias.M7
 
          Assert.IsTrue(nombre == "Modulo de gestion de empleados");
          
+
+     }
+
+
+     [Test]
+     public void TestContacMaxIdProyecto()
+     {
+
+
+         Assert.IsTrue(4 == theProyect2.ContacMaxIdProyecto());
+
 
      }
 

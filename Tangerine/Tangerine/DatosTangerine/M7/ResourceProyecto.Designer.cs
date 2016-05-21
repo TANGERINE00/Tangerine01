@@ -97,6 +97,15 @@ namespace DatosTangerine.M7 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M7_ConsultarMaxIdProyecto.
+        /// </summary>
+        internal static string ContacMaxIdProyecto {
+            get {
+                return ResourceManager.GetString("ContacMaxIdProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarNombrePropuestaID.
         /// </summary>
         internal static string ContactNombrePropuestaID {
