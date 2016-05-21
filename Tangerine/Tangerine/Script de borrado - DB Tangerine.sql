@@ -84,6 +84,8 @@ drop procedure M8_ConsultarFacturasCompania;
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;
 drop procedure M10_DetallarEmpleado;
+drop procedure M10_ConsultarGerentes;
+drop procedure M10_ConsultarProgramadores;
 
 
 

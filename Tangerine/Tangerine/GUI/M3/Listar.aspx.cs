@@ -48,8 +48,6 @@ namespace Tangerine.GUI.M3
 
 
 
-
-
         public void llenar(List<ClientePotencial> list)
         { // metodo que se usa para recorrer la lista
             foreach (ClientePotencial item in list)
@@ -69,16 +67,7 @@ namespace Tangerine.GUI.M3
                 this.tabla.Text += ResourceInterfaz.CerrarTD;
                 this.tabla.Text += ResourceInterfaz.CerrarTR;
             }
-
-
-
-
-  
-
         }
-
-
-
     }
 }
   
