@@ -75,7 +75,7 @@ namespace Tangerine.GUI.M2
             Response.Redirect("../M2/RegistroUsuario.aspx");
         }
 
-        protected void userDefault_Input(object sender, EventArgs e)
+        protected void validarUsuario()
         {
             System.Diagnostics.Debug.WriteLine("Entré");
             string nombreUsuario = userDefault.Value;

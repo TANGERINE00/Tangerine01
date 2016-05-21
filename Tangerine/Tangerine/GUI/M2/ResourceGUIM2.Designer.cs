@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a href=&quot;javascript:ajaxRes()&quot; tittle =&quot;registrar&quot; runat =&quot;server&quot;  class=&quot;btn btn-default btn-xs&quot; &gt;&lt;span class=&quot;glyphicon glyphicon-plus&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        ///   Busca una cadena traducida similar a &lt;a href=&quot;javascript:ajaxRes()&quot; tittle =&quot;registrar&quot; runat =&quot;server&quot;  class=&quot; btn btn-default&quot;&gt;&lt;span class=&quot; glyphicon glyphicon-plus&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonReg {
             get {
