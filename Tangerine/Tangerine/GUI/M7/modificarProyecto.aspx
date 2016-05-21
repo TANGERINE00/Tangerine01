@@ -100,28 +100,19 @@
                     </div>
 
                     <hr />
-
-                    <div class="form-group">
-                        <label for="labelPersonal_M7">Personal responsable *</label>
-                        <select class="form-control" name="personalProyecto">
-                        </select>
-                        <asp:Button ID="Button1" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="eliminar"></asp:Button>
-
-                    </div>
                     <hr />
                     <div class="form-group">
-                        <label for="inputPersonal">Personal disponible *</label>
+                        <label for="inputPersonal">Personal *</label>
                         <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
                         </select>
-                        <asp:Button ID="Button2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Agregar"></asp:Button>
 
+                  
+                            <label for="inputEncargado">Encargado de la empresa contratante *</label>
+                            <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
+                            </select>
+                 
                     </div>
                     <hr />
-                    <div class="form-group">
-                        <label for="inputEncargado">Encargado de la empresa contratante</label>
-                        <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
-                        </select>
-                    </div>
                     <hr />
                     <div class="form-group">
                         <label for="labelMonto_M7">Estatus del proyecto *</label>
@@ -133,7 +124,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="textFallasProyecto_M7" placeholder="Razon de fallos en la entrga" disabled="disabled">
+                        <input type="text" class="form-control" id="textFallasProyecto_M7" placeholder="Razon de fallos en la entrga">
                     </div>
                     </form>
                 </div>

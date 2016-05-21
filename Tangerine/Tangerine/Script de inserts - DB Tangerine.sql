@@ -254,7 +254,7 @@ insert into ROL_OPCION values (4, 5);
 --insert into ROL_OPCION values (4, 6);
 --insert into ROL_OPCION values (4, 7);
 insert into ROL_OPCION values (4, 22);
-insert into ROL_OPCION values (4, 8);
+--insert into ROL_OPCION values (4, 8);
 insert into ROL_OPCION values (4, 9);
 insert into ROL_OPCION values (4, 10);
 insert into ROL_OPCION values (4, 23);

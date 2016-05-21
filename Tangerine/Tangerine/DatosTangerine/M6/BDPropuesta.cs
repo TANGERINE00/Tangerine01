@@ -372,7 +372,8 @@ namespace DatosTangerine.M6
                            Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
-                           Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
+                           Convert.ToInt32(fila[RecursosPropuesta.PropCosto]),
+                           fila[RecursosPropuesta.PropIdCompania].ToString()
 
 
                     );

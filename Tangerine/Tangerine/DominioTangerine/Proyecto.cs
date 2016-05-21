@@ -248,6 +248,12 @@ namespace DominioTangerine
             set { _idgerente = value; }
         }
 
+        public int Idcompania
+        {
+            get { return _idcompania; }
+            set { _idcompania = value; }
+        }
+
        /// <summary>
        /// Metodo que devuelve la lista de empleados
        /// </summary>
