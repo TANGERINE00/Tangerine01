@@ -36,6 +36,7 @@ namespace Tangerine.GUI.M7
                
             if( Propuestas.Count > 0 )
             {
+                textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[0].Nombre);
 
                 for (int i = 0; i < Propuestas.Count;i++ )
                 {
@@ -63,11 +64,6 @@ namespace Tangerine.GUI.M7
            }
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
 
@@ -86,7 +82,8 @@ namespace Tangerine.GUI.M7
                 inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
             }
 
-            textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();          
+            textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
+            textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)
@@ -98,7 +95,8 @@ namespace Tangerine.GUI.M7
             Proyecto _proyecto = new Proyecto(0,textInputNombreProyecto.Value,textInputCodigo.Value,DateTime.Parse(textInputFechaInicio.Value),
                                               DateTime.Parse(textInputFechaEstimada.Value), Double.Parse(textInputCosto.Value),
                                               Propuestas[inputPropuesta.SelectedIndex].Descripcion, "0", "En desarrollo", "",
-                                              Propuestas[inputPropuesta.SelectedIndex].Acuerdopago, 5,int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia),
+                                              Propuestas[inputPropuesta.SelectedIndex].Acuerdopago, int.Parse(Propuestas[inputPropuesta.SelectedIndex].CodigoP), 
+                                              int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia),
                                               Gerentes[inputGerente.SelectedIndex].Emp_num_ficha);
             Empleado _empleado = new Empleado();
             for (int i = 0; i < inputPersonal.Items.Count; i++)

@@ -53,7 +53,7 @@
 
                         <div class="form-group" runat="server">
                             <label for="InputFechaInicio">Fecha de inicio *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa">
+                            <input runat="server" type="date" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa">
                         </div>
 
                         <div class="form-group" runat="server">

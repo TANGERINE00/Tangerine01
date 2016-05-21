@@ -214,7 +214,7 @@ namespace Tangerine.GUI.M7 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left 0.2px&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot; OnClick=&quot;MostrarInfo&quot; id=&quot;Inf&quot;.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; href=&quot;InformacionProyecto.aspx?idCont=.
         /// </summary>
         internal static string OpenBotonInfo {
             get {
