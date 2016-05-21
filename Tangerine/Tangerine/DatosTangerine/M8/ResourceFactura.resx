@@ -135,6 +135,9 @@
   <data name="ConsultFacturas" xml:space="preserve">
     <value>M8_ConsultarFacturas</value>
   </data>
+  <data name="ConsultMontoRestanteFactura" xml:space="preserve">
+    <value>M8_ConsultarMontoRestanteFactura</value>
+  </data>
   <data name="ContactFactura" xml:space="preserve">
     <value>M8_ConsultarFactura</value>
   </data>

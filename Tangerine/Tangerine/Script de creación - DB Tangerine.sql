@@ -1445,12 +1445,12 @@ GO
 
 ---- StoredProcedure Monto Restante de una Factura ----
 CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
-	@idFactura int
+	@id_Factura int
 
 AS
 	BEGIN
 		SELECT fac_monto_restante AS fac_monto_restante
-		FROM FACTURA WHERE fac_id = @idFactura;
+		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
 
