@@ -18,6 +18,8 @@ namespace DominioTangerine
         private string acronimoCompania;
         private DateTime fechaRegistroCompania;
         private int statusCompania;
+        private int presupuestoCompania;
+        private int plazoPagoCompania;
         private int idLugar;
 
         #endregion
@@ -72,6 +74,18 @@ namespace DominioTangerine
             set { statusCompania = value; }
         }
 
+        public int PresupuestoCompania
+        {
+            get { return presupuestoCompania; }
+            set { presupuestoCompania = value; }
+        }
+
+        public int PlazoPagoCompania
+        {
+            get { return plazoPagoCompania; }
+            set { plazoPagoCompania = value; }
+        }
+
         public int IdLugar
         {
             get { return idLugar; }
@@ -98,7 +112,8 @@ namespace DominioTangerine
 
     
         public Compania(int inputId, string inputNombre, string inputRif, string inputEmail, string inputTelefono,
-                        string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputIdLugar)
+                        string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
+                        int inputPlazoPago, int inputIdLugar)
         {
             this.idCompania = inputId;
             this.nombreCompania = inputNombre;
@@ -108,11 +123,13 @@ namespace DominioTangerine
             this.acronimoCompania = inputAcronimo;
             this.fechaRegistroCompania = inputFechaRegistro;
             this.statusCompania = inputStatus;
+            this.presupuestoCompania = inputPresupuesto;
+            this.plazoPagoCompania = inputPlazoPago;
             this.idLugar = inputIdLugar;
         }
 
         public Compania(string inputNombre, string inputRif, string inputEmail, string inputTelefono, string inputAcronimo,
-                        DateTime inputFechaRegistro, int inputStatus, int inputIdLugar)
+                        DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto, int inputPlazoPago, int inputIdLugar)
         {
             this.nombreCompania = inputNombre;
             this.rifCompania = inputRif;
@@ -121,6 +138,8 @@ namespace DominioTangerine
             this.acronimoCompania = inputAcronimo;
             this.fechaRegistroCompania = inputFechaRegistro;
             this.statusCompania = inputStatus;
+            this.presupuestoCompania = inputPresupuesto;
+            this.plazoPagoCompania = inputPlazoPago;
             this.idLugar = inputIdLugar; 
         }
         #endregion

@@ -27,17 +27,17 @@
 			        <div id="id_otro" runat="server" class="form-group">
 				        <div class="icon-addon addon-lg" style="margin-left: 10px;">
 					        <label>Nombre <a style="color:rgb(255, 0, 0);">*</a></label>
-					        <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="nombre" name ="nombre" required>                    
+					        <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="nombre" name ="nombre" required>                    
 					        <label>Apellido <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="apellido" name ="apellido" required>                   
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="apellido" name ="apellido" required>                   
 					        <label>Departamento <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="departamento" name ="departamento" required>                  
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9a-zA-Z ]+$" class="form-control" id="departamento" name ="departamento" required>                  
 					        <label>Cargo <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="cargo" name ="cargo" required>
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="cargo" name ="cargo" required>
                             <label>Telefono</label>
-                            <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="telefono" name="telefono">
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9]*$" class="form-control" id="telefono" name="telefono">
                             <label>Correo</label>
-                            <input runat="server" type="text" class="form-control" id="correo" name="correo">
+                            <input runat="server" type="text" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" class="form-control" id="correo" name="correo">
                         </div>	
                     </div>
                     <div id="Div1" class="box-footer" runat="server">
