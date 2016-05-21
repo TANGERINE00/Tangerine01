@@ -49,7 +49,6 @@ namespace Tangerine.GUI.M5
             {
                 LogicaM5 contactLogic = new LogicaM5();
                 theContact = contactLogic.SearchContact(theContact);
-
                 this.nombre.Value = theContact.Nombre;
                 this.apellido.Value = theContact.Apellido;
                 this.departamento.Value = theContact.Departamento;
