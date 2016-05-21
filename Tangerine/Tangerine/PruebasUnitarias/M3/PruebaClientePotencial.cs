@@ -22,21 +22,18 @@ namespace PruebasUnitarias.M3
         [SetUp]
         public void init()
         {
-            clientePot1 = new ClientePotencial();
-            clientePot1.NombreClientePotencial = "HP";
-            clientePot1.RifClientePotencial = "J-1221212";
-            clientePot1.EmailClientePotencial = "info@hp.com";
-            clientePot1.PresupuestoAnual_inversion = 12000;
-            clientePot1.NumeroLlamadas = 0;
-            clientePot1.NumeroVisitas = 0;
-            clientePot1.IdClientePotencial = 1;
+            clientePot1 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000,0,0,0);
+
             
         }
 
         [TearDown]
         public void clean()
         {
+            BDClientePotencial.BorrarClientePotencial(clientePot1);
             clientePot1 = null;
+            clientePot2 = null;
+
         }
 
         #endregion
@@ -45,7 +42,6 @@ namespace PruebasUnitarias.M3
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
             answer = BDClientePotencial.AgregarClientePotencial(clientePot1);
-
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
@@ -54,28 +50,23 @@ namespace PruebasUnitarias.M3
         public void TestDeleteClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            BDClientePotencial.AgregarClientePotencial(clientePot1);
             answer = BDClientePotencial.BorrarClientePotencial(clientePot1);
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
-            BDClientePotencial.BorrarClientePotencial(clientePot1);
         }
 
         [Test]
         public void TestConsultClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            BDClientePotencial.AgregarClientePotencial(clientePot1);
     
             Assert.IsNotNull(BDClientePotencial.ConsultarClientePotencial(clientePot1.IdClientePotencial));
-            BDClientePotencial.BorrarClientePotencial(clientePot1);
         }
         [Test]
         public void TestModificarClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            BDClientePotencial.AgregarClientePotencial(clientePot1);
-       ;
+       
             
             answer = BDClientePotencial.ModificarClientePotencial(clientePot1);
 

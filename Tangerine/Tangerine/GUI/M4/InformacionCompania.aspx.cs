@@ -114,6 +114,30 @@ namespace Tangerine.GUI.M4
                 this.habilitado.Text = value;
             }
         }
+        public string Plazo
+        {
+            get
+            {
+                return this.plazo.ToString();
+            }
+
+            set
+            {
+                this.plazo.Text = value;
+            }
+        }
+        public string Presupuesto
+        {
+            get
+            {
+                return this.presupuesto.ToString();
+            }
+
+            set
+            {
+                this.presupuesto.Text = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             Compania company = new Compania();
@@ -122,12 +146,12 @@ namespace Tangerine.GUI.M4
 
             try
             {
-          
+                company = prueba.SearchCompany(int.Parse(Request.QueryString["idComp"]));
             }
             catch 
             {
             }
-            company = prueba.SearchCompany(int.Parse(Request.QueryString["idComp"]));
+           
   
 
      
@@ -145,6 +169,8 @@ namespace Tangerine.GUI.M4
                     Correo= company.EmailCompania;
                     Fecha= company.FechaRegistroCompania.ToShortDateString();
                     Direccion = lugar.LugNombre ;
+                    Plazo = company.PlazoPagoCompania.ToString() + ResourceGUIM4.Dias;
+                    Presupuesto = company.PresupuestoCompania.ToString();
                     if (company.StatusCompania == 1)
                     {
                         Habilitado = ResourceGUIM4.habilitado + ResourceGUIM4.CloseSpanHab;

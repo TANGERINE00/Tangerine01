@@ -117,111 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CloseBoton" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
+  <data name="Codigo" xml:space="preserve">
+    <value>TGE_00_001</value>
+    <comment>Codigo de error en la conexion con la BD</comment>
   </data>
-  <data name="CloseBotonParametro" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>TGE_00_001</value>
+    <comment>Codigo de error en el parseo</comment>
   </data>
-  <data name="CloseTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
+  <data name="Mensaje" xml:space="preserve">
+    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
+    <comment>Mensaje al dar error en la conexion con la BD</comment>
   </data>
-  <data name="CloseTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
   </data>
-  <data name="OpenParentesis" xml:space="preserve">
-    <value>(</value>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
   </data>
-  <data name="habilitado" xml:space="preserve">
-    <value>&lt;span class="label label-success" ="h</value>
-    <comment>"&gt;Habilitada&lt;/span&gt;</comment>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
   </data>
-  <data name="inhabilitado" xml:space="preserve">
-    <value>&lt;span class="label label-danger" id="i</value>
-    <comment>"&gt;Inhabilitada&lt;/span&gt;</comment>
-  </data>
-  <data name="OpenTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
-  </data>
-  <data name="OpenTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
-  </data>
-  <data name="Comp" xml:space="preserve">
-    <value>Comp</value>
-  </data>
-  <data name="OpenBotonEdit" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarCompania.aspx?idComp=</value>
-  </data>
-  <data name="OpenBotonHab" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=1&amp;idComp=</value>
-  </data>
-  <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px;"OnClick="MostrarInfo"href="InformacionCompania.aspx?idComp=</value>
-  </data>
-  <data name="OpenBotonInhab" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=0&amp;idComp=</value>
-  </data>
-  <data name="Acronimo" xml:space="preserve">
-    <value>Acrónimo:</value>
-  </data>
-  <data name="CloseDiv" xml:space="preserve">
-    <value>&lt;/div&gt;</value>
-  </data>
-  <data name="Closeh3" xml:space="preserve">
-    <value>&lt;/h3&gt;</value>
-  </data>
-  <data name="Closeh4" xml:space="preserve">
-    <value>&lt;/h4&gt;</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>E-mail:</value>
-  </data>
-  <data name="Fecha" xml:space="preserve">
-    <value>Fecha:</value>
-  </data>
-  <data name="Lugar" xml:space="preserve">
-    <value>Lugar:</value>
-  </data>
-  <data name="Nombre" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
-  <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="center-block"&gt;</value>
-  </data>
-  <data name="Openh3" xml:space="preserve">
-    <value>&lt;h3 style="bold"&gt;</value>
-  </data>
-  <data name="Openh4" xml:space="preserve">
-    <value>&lt;h4&gt;</value>
-  </data>
-  <data name="Rif" xml:space="preserve">
-    <value>RIF:</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="Dias" xml:space="preserve">
-    <value> dìas.</value>
-  </data>
-  <data name="BotonContac" xml:space="preserve">
-    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
-  </data>
-  <data name="BotonInvol" xml:space="preserve">
-    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
-  </data>
-  <data name="CloseSpanHab" xml:space="preserve">
-    <value>"&gt;Habilitada&lt;/span&gt;</value>
-  </data>
-  <data name="CloseSpanInhab" xml:space="preserve">
-    <value>"&gt;Inhabilitada&lt;/span&gt;</value>
-  </data>
-  <data name="CloseParentesis" xml:space="preserve">
-    <value>)</value>
-  </data>
-  <data name="PlazoPago" xml:space="preserve">
-    <value>Plazo de Pagos:</value>
-  </data>
-  <data name="Presupuesto" xml:space="preserve">
-    <value>Presupuesto Actual:</value>
+  <data name="Mensaje_Generico_Error" xml:space="preserve">
+    <value>No se pudo completar la operacion</value>
   </data>
 </root>

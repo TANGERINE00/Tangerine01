@@ -81,19 +81,11 @@ namespace DatosTangerine.M3
 
                 theParam = new Parametro(ResourceClientePotencial.ApresupuestoAnualInversion, SqlDbType.Decimal, elClientePotencial.PresupuestoAnual_inversion.ToString(), false);
                 parameters.Add(theParam);
-/*
-                theParam = new Parametro(ResourceClientePotencial.AnumLlamadas, SqlDbType.Int, elClientePotencial.NumeroLlamadas.ToString(), false);
+
+                theParam = new Parametro(ResourceClientePotencial.Astatus, SqlDbType.Decimal, elClientePotencial.Status.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceClientePotencial.AnumVisitas, SqlDbType.Int, elClientePotencial.NumeroVisitas.ToString(), false);
-                parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceClientePotencial.Apotencial, SqlDbType.Bit, elClientePotencial.Potencial.ToString(), false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceClientePotencial.Aborrado, SqlDbType.Bit, elClientePotencial.Borrado.ToString(), false);
-                parameters.Add(theParam);
-*/
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_agregar_clientePotencial, parameters);
 

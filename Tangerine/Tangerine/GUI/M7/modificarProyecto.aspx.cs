@@ -97,55 +97,70 @@ namespace Tangerine.GUI.M7
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
-            Gerentes = LogicaM10.GetGerentes();
-            Programadores = LogicaM10.GetProgramadores();
-            ContactosProyecto = LogicaM5.GetContactsProyect(proyecto);
-
             proyecto = LogicProject.consultarProyecto(int.Parse(Request.QueryString["idCont"]));
-            proyecto.Fechaestimadafin = DateTime.Parse(textInputFechaEstimada.Value);
-            proyecto.Costo = Double.Parse(textInputCosto.Value);
-            proyecto.Realizacion = textInputPorcentaje.Value;
-            proyecto.Estatus = inputEstatus.Value;
-            Contactos = LogicaM5.GetContacts(proyecto.Idcompania, 1);
-            for (int i = 0; i < Gerentes.Count;i++ )
+            String _realizado = proyecto.Realizacion;
+
+            if (int.Parse(textInputPorcentaje.Value) >= int.Parse(_realizado))
             {
-                if(inputGerente.Items[inputGerente.SelectedIndex].Value.Equals(Gerentes[i].Emp_p_nombre+" "+Gerentes[i].Emp_p_apellido))
+                Gerentes = LogicaM10.GetGerentes();
+                Programadores = LogicaM10.GetProgramadores();
+                ContactosProyecto = LogicaM5.GetContactsProyect(proyecto);
+                proyecto.Fechaestimadafin = DateTime.Parse(textInputFechaEstimada.Value);
+                proyecto.Costo = Double.Parse(textInputCosto.Value);
+                if (int.Parse(textInputPorcentaje.Value) > int.Parse(_realizado))
+                    proyecto.Realizacion = textInputPorcentaje.Value;
+                proyecto.Estatus = inputEstatus.Value;
+                Contactos = LogicaM5.GetContacts(proyecto.Idcompania, 1);
+                for (int i = 0; i < Gerentes.Count; i++)
                 {
-                    proyecto.Idgerente = Gerentes[i].Emp_num_ficha;
+                    if (inputGerente.Items[inputGerente.SelectedIndex].Value.Equals(Gerentes[i].Emp_p_nombre + " " + Gerentes[i].Emp_p_apellido))
+                    {
+                        proyecto.Idgerente = Gerentes[i].Emp_num_ficha;
+                    }
                 }
-            }
-              
-         
-            Empleado _empleado = new Empleado();
-            for (int i = 0; i < inputPersonal.Items.Count; i++)
-            {
-                if (inputPersonal.Items[i].Selected)
-                {
-                    seleccionProgramadores.Add(Programadores[i]);
-                }
-            }
 
 
-            for (int i = 0; i < inputEncargado.Items.Count; i++)
-            {
-                if (inputEncargado.Items[i].Selected)
+                Empleado _empleado = new Empleado();
+                for (int i = 0; i < inputPersonal.Items.Count; i++)
                 {
-                    seleccionContactos.Add(Contactos[i]);
+                    if (inputPersonal.Items[i].Selected)
+                    {
+                        seleccionProgramadores.Add(Programadores[i]);
+                    }
+                }
+
+
+                for (int i = 0; i < inputEncargado.Items.Count; i++)
+                {
+                    if (inputEncargado.Items[i].Selected)
+                    {
+                        seleccionContactos.Add(Contactos[i]);
+                    }
+                }
+
+                proyecto.set_contactos(seleccionContactos);
+                proyecto.set_empleados(seleccionProgramadores);
+
+                LogicaProyecto _logica = new LogicaProyecto();
+
+                if (_logica.modificarProyecto(proyecto))
+                {
+                    if (int.Parse(textInputPorcentaje.Value) > int.Parse(_realizado))
+                    {
+                        Server.Transfer("/GUI/M8/GenerarFacturaM8.aspx?IdCompania=" + proyecto.Idcompania + "&IdProyecto=" + proyecto.Idproyecto + "&Monto="
+                            + LogicProject.calcularPago(int.Parse(_realizado), int.Parse(textInputPorcentaje.Value), double.Parse(textInputCosto.Value)));
+                    }
+                    Server.Transfer("ConsultaProyecto.aspx");
+                    //colocar un mensaje de creacion con exito y vaciar text.
+                }
+                else
+                {
+                    //colocar  un mensaje de error en la creacion
                 }
             }
-
-            proyecto.set_contactos(seleccionContactos);
-            proyecto.set_empleados(seleccionProgramadores);
-            
-            LogicaProyecto _logica = new LogicaProyecto();
-            if (_logica.modificarProyecto(proyecto))
-            {
-                Server.Transfer("ConsultaProyecto.aspx");
-                //colocar un mensaje de creacion con exito y vaciar text.
-            }
-            else
-            {
-                //colocar  un mensaje de error en la creacion
+            else {
+                Server.Transfer("modificarProyecto.aspx?idCont="+proyecto.Idproyecto);
+               
             }
         } 
     }

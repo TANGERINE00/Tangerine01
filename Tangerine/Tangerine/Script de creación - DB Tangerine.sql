@@ -1445,12 +1445,12 @@ GO
 
 ---- StoredProcedure Monto Restante de una Factura ----
 CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
-	@idFactura int
+	@id_Factura int
 
 AS
 	BEGIN
 		SELECT fac_monto_restante AS fac_monto_restante
-		FROM FACTURA WHERE fac_id = @idFactura;
+		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
 
@@ -1636,6 +1636,20 @@ AS
 			FROM EMPLEADO Employee, CARGO_EMPLEADO JobEmployee, CARGO job
 		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha 
 			  and JobEmployee.fk_car_id=Job.car_id
+	END
+GO
+
+CREATE PROCEDURE M10_CambiarEstatus
+		@ficha INT
+AS
+	BEGIN
+		update EMPLEADO 
+		set emp_activo = case 
+							when emp_activo = 'Activo' then 'Inactivo'
+							else 'Activo'
+						 end
+	    where emp_num_ficha = @ficha;
+		
 	END
 GO
 -----------------------------------
