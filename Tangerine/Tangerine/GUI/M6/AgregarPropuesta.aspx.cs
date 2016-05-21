@@ -111,10 +111,10 @@ namespace Tangerine.GUI.M6
 
         public void llenarComboTipoCosto()
         {
-            comboTipoCosto.Items.Add("Bolivares");
-            comboTipoCosto.Items.Add("Dolares");
-            comboTipoCosto.Items.Add("Euros");
-            comboTipoCosto.Items.Add("Bitcoins");
+            comboTipoCosto.Items.Add("Bolivar");
+            comboTipoCosto.Items.Add("Dolar");
+            comboTipoCosto.Items.Add("Euro");
+            comboTipoCosto.Items.Add("Bitcoin");
         }
 
         public void llenarComboEstatus()
