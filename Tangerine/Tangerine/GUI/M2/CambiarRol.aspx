@@ -8,9 +8,10 @@
    
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-    <li><a href="#">Ejemplo</a></li>
-    <li class="active">Página en blanco</li>
+    <li><a href="#"><i class="fa fa-home"></i> Inicio</a></li>
+    <li><a href="#">Configuración</a></li>
+    <li><a href="#">Usuario</a></li>
+    <li class="active">Modificar Rol</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     
@@ -57,9 +58,9 @@
           </div>
         </div>
    
-    
-    <div class="container-fluid">
-        <div class="box box-info">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="box box-primary">
             <!--<div class="panel-heading">Filtrar empleados</div>-->
             <div class="box-header with-border">
                 <h3 class="box-title">Lista de empleados sin cuenta de usuario</h3>
@@ -74,9 +75,9 @@
             </div>
 
             </div><!-- /.box-header -->
-            <div class="box-body">
-                <div class="table-responsive">
-                    <table class="table no-margin">
+            <div class="box-body  table-responsive no-padding">
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Nombres</th>
@@ -91,40 +92,24 @@
      
                         </tbody>
                         </table>
-                    <nav>
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next" >
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div><!-- /.table-responsive -->
             </div>
         </div>
+    </div>
     </div>
         <script type="text/javascript">
 
             function ajaxRes()
             {
-                $('.table > tbody > tr > td:nth-child(4) > a')
+                $('.table > tbody > tr > td:nth-child(5) > a')
                   .click(function (e)
                   {
                       e.preventDefault();
                       //var prueba = $('.table > tbody > tr > td:nth-child(3)').text();
-                      var prueba2 = $(this).closest("tr").find("td:nth-child(3)").text();
-                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = prueba2;
+                      var usuario = $(this).closest("tr").find("td:nth-child(3)").text();
+                      var rol = $(this).closest("tr").find("td:nth-child(4)").text();
+                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = usuario;
+                      document.getElementById("ContentPlaceHolder1_rolCambiar").value = rol;
                   });
             }
         </script>  

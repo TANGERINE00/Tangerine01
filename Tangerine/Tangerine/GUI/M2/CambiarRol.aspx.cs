@@ -42,11 +42,13 @@ namespace Tangerine.GUI.M2
                     if (user.NombreUsuario != null)
                     {  
                     empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
+                    empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
                     empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
                     empleado += ResourceGUIM2.CloseTR;
                     }
                     else 
                     {
+                        empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.CloseTR;
