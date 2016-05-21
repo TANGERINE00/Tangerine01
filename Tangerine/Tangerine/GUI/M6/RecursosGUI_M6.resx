@@ -121,7 +121,7 @@
     <value>&lt;td&gt;</value>
   </data>
   <data name="botonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-pencil" type="submit" runat="server" style="margin-left 10px"  href="ModificarPropuesta.aspx?id=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-pencil" type="submit" runat="server" style="margin-left:3px;"  href="ModificarPropuesta.aspx?id=</value>
   </data>
   <data name="boton_cerrar_id" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
@@ -159,10 +159,10 @@
     <comment>icono de euro</comment>
   </data>
   <data name="botonConsultar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" type="submit" runat="server" style="margin-left 10px"  href="ModificarPropuesta.aspx?id=</value>
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" type="submit" runat="server" style="margin-left:3px;"  href="ModificarPropuesta.aspx?id=</value>
   </data>
   <data name="botonEliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left 10px "   href="ModificarPropuesta.aspx?id=</value>
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left:3px;"   href="ModificarPropuesta.aspx?id=</value>
   </data>
   <data name="botonCerra" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
@@ -176,5 +176,8 @@
   <data name="cerrado" xml:space="preserve">
     <value>&lt;span class="label label-danger"&gt;Cerrado&lt;/span&gt;</value>
     <comment>coloca el label Cerrado</comment>
+  </data>
+  <data name="AbrirTD2" xml:space="preserve">
+    <value>&lt;td style="text-align:center;"&gt;</value>
   </data>
 </root>
