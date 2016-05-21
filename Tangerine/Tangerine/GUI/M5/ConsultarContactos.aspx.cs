@@ -7,12 +7,17 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M5;
+using LogicaTangerine.M3;
+using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M5
 {
     public partial class ConsultarContactos : System.Web.UI.Page
     {
         #region Atributos
+        public ClientePotencial cliPotencial;
+        public Compania compania;
+
         public string contact
         {
             get
@@ -48,6 +53,18 @@ namespace Tangerine.GUI.M5
                 this.nuevocontacto.Text = value;
             }
         }
+
+        public string nombreEmpresa
+        {
+            get
+            {
+                return this.empresa.Text;
+            }
+            set
+            {
+                this.empresa.Text = value;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -59,15 +76,25 @@ namespace Tangerine.GUI.M5
         /// <param name="idCont">Entero, representa el id del contacto (Para ser eliminado)</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM5 prueba = new LogicaM5();
+            LogicaM3 logicM3 = new LogicaM3();
+            LogicaM4 logicM4 = new LogicaM4();
+            LogicaM5 logicM5 = new LogicaM5();
             Contacto _contact = new Contacto();
             int typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
             int idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
 
             if (typeComp == 1)
+            {
+                compania = logicM4.SearchCompany(idComp);
                 botonVolver = ResourceGUIM5.VolverCompania;
+                nombreEmpresa = ResourceGUIM5.Compania + compania.NombreCompania  ;
+            }
             else
+            {
+                cliPotencial = logicM3.BuscarClientePotencial(idComp);
                 botonVolver = ResourceGUIM5.VolverCliPotencial;
+                nombreEmpresa = ResourceGUIM5.Lead + cliPotencial.NombreClientePotencial ;
+            }
 
             try
             {
@@ -77,7 +104,7 @@ namespace Tangerine.GUI.M5
                 _contact.IdContacto = idCont;
                 if (idCont > 0)
                 {
-                    prueba.DeleteContact(_contact);
+                    logicM5.DeleteContact(_contact);
                 }
             }
             catch
@@ -90,7 +117,7 @@ namespace Tangerine.GUI.M5
                 //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
                 //los parametros son tipo de empresa 1 (Compania), id de la empresa 1.
                 //prueba.fillTable(1,1);
-                List<Contacto> listContact = prueba.GetContacts(typeComp, idComp);
+                List<Contacto> listContact = logicM5.GetContacts(typeComp, idComp);
 
                 try
                 {

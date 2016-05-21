@@ -7,81 +7,81 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M2 {
+namespace Tangerine.GUI.M7 {
     
     
-    public partial class RegistroUsuario {
+    public partial class InformacionProyecto {
         
         /// <summary>
-        /// Control form1.
+        /// Control NombrePropuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal NombrePropuesta;
         
         /// <summary>
-        /// Control fichaEmp.
+        /// Control NombreProyecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fichaEmp;
+        protected global::System.Web.UI.WebControls.Literal NombreProyecto;
         
         /// <summary>
-        /// Control userDefault.
+        /// Control CodigoProyecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userDefault;
+        protected global::System.Web.UI.WebControls.Literal CodigoProyecto;
         
         /// <summary>
-        /// Control passwordDefault.
+        /// Control FechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordDefault;
+        protected global::System.Web.UI.WebControls.Literal FechaInicio;
         
         /// <summary>
-        /// Control rolDefault.
+        /// Control FechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect rolDefault;
+        protected global::System.Web.UI.WebControls.Literal FechaFin;
         
         /// <summary>
-        /// Control botonCrear.
+        /// Control Costo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton botonCrear;
+        protected global::System.Web.UI.WebControls.Literal Costo;
         
         /// <summary>
-        /// Control btnCrear.
+        /// Control Porcentaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
+        protected global::System.Web.UI.WebControls.Literal Porcentaje;
         
         /// <summary>
-        /// Control tablaempleados.
+        /// Control Estatus.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal tablaempleados;
+        protected global::System.Web.UI.WebControls.Literal Estatus;
     }
 }

@@ -52,7 +52,7 @@ namespace PruebasUnitarias.M7
 
             
             Empleados = new List<Empleado>();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 4; i <= 5; i++) {
                 Empleado a = new Empleado();
                 a.emp_num_ficha = i;
                 Empleados.Add(a);
@@ -62,7 +62,7 @@ namespace PruebasUnitarias.M7
             theProyect.set_empleados(Empleados);
 
             Contactos = new List<Contacto>();
-            for ( int i = 1 ; i < 7 ; i++ )
+            for ( int i = 4 ; i <= 5 ; i++ )
             {
                 Contacto a = new Contacto(i, "Istvan", "Bokor", "Ventas", "Gerente", "asd@asd.com", "7654321", 1, 1);
                 a.IdContacto = i;
@@ -92,7 +92,7 @@ namespace PruebasUnitarias.M7
         [Test]
         public void TestAddProyecto()
         {
-            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+
             answer = theProyect2.AddProyecto(theProyect);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
@@ -106,7 +106,7 @@ namespace PruebasUnitarias.M7
         [Test]
         public void TestChangeProyecto()
         {
-            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+
             answer = theProyect2.ChangeProyecto(theProyect);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
@@ -121,7 +121,7 @@ namespace PruebasUnitarias.M7
         [Test]
         public void TestContactProyecto()
         {
-            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+
             theProyect = theProyect2.ContactProyecto(1);
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
@@ -137,7 +137,7 @@ namespace PruebasUnitarias.M7
         [Test]
         public void TestContactProyectos()
         {
-            //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+
             proyectos = theProyect2.ContactProyectos();
 
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
@@ -158,6 +158,7 @@ namespace PruebasUnitarias.M7
         public void TestAddProyectoEmpleado()
         {
             //obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            theProyect.Idproyecto = theProyect2.ContacMaxIdProyecto();
             Assert.IsTrue(_Emp.AddProyectoEmpleado(theProyect));
         }
 
@@ -168,6 +169,7 @@ namespace PruebasUnitarias.M7
         public void TestAddProyectoContato()
         {
             //obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            theProyect.Idproyecto = theProyect2.ContacMaxIdProyecto();
             Assert.IsTrue(_Cont.AddProyectoContacto(theProyect));
         }
 
@@ -178,6 +180,7 @@ namespace PruebasUnitarias.M7
         public void TestDeleteProyectoEmpleado()
         {
             //obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            theProyect.Idproyecto = theProyect2.ContacMaxIdProyecto();
             Assert.IsTrue(_Emp.DeleteProyectoEmpleado(theProyect));
         }
 
@@ -188,6 +191,7 @@ namespace PruebasUnitarias.M7
         public void TestDeleteProyectoContato()
         {
             //obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
+            theProyect.Idproyecto = theProyect2.ContacMaxIdProyecto();
             Assert.IsTrue(_Cont.DeleteProyectoContacto(theProyect));
         }
 
@@ -198,12 +202,10 @@ namespace PruebasUnitarias.M7
      public void TestContactProyectoEmpleado()
      {
          theProyect.set_empleados(null);
+         theProyect.Idproyecto = theProyect2.ContacMaxIdProyecto();
          _Emp.ContactProyectoEmpleado(theProyect);
-         Assert.IsTrue(1 == theProyect.get_empleados()[0].emp_num_ficha);
-         Assert.IsTrue(2 == theProyect.get_empleados()[1].emp_num_ficha);
-         Assert.IsTrue(3 == theProyect.get_empleados()[2].emp_num_ficha);
-         Assert.IsTrue(4 == theProyect.get_empleados()[3].emp_num_ficha);
-
+         Assert.IsTrue(4 == theProyect.get_empleados()[0].emp_num_ficha);
+         Assert.IsTrue(5 == theProyect.get_empleados()[1].emp_num_ficha);
 
      }
      /// <summary>
@@ -213,20 +215,22 @@ namespace PruebasUnitarias.M7
      public void TestContactProyectoContatos()
      {
          theProyect.set_contactos(null);
+         theProyect.Idproyecto = theProyect2.ContacMaxIdProyecto();
          _Cont.ContactProyectoContacto(theProyect);
-         Assert.IsTrue( 1 == theProyect.get__contactos()[0].IdContacto );
-         Assert.IsTrue( 2 == theProyect.get__contactos()[1].IdContacto );
-         Assert.IsTrue( 3 == theProyect.get__contactos()[2].IdContacto );
-         Assert.IsTrue( 4 == theProyect.get__contactos()[3].IdContacto );
-
+         Assert.IsTrue( 4 == theProyect.get__contactos()[0].IdContacto );
+         Assert.IsTrue( 5 == theProyect.get__contactos()[1].IdContacto );
 
      }
 
 
+     /// <summary>
+     /// Prueba el metodo que trae todos los proyectos de acuerdo mensual que tengan que ser cancelados el dia de hoy
+     /// </summary>
+
      [Test]
      public void TestContactProyectosXAcuerdoPago()
      {
-         //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+
          proyectos = theProyect2.ContactProyectosxAcuerdoPago();
 
          //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
@@ -241,17 +245,33 @@ namespace PruebasUnitarias.M7
       
      }
 
+     /// <summary>
+     /// Prueba el metodo que recupera el nombre de una propuesta dada su id
+     /// </summary>
 
      [Test]
      public void TestContactNombrePropuestaID()
      {
-         //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+ 
          string nombre = theProyect2.ContactNombrePropuestaID(1);
 
          //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
 
          Assert.IsTrue(nombre == "Modulo de gestion de empleados");
          
+
+     }
+
+     /// <summary>
+     /// Prueba el metodo que recupera el id mayor de todos los proyectos de la base de datos
+     /// </summary>
+     [Test]
+     public void TestContacMaxIdProyecto()
+     {
+
+
+         Assert.IsTrue(5 == theProyect2.ContacMaxIdProyecto());
+
 
      }
 

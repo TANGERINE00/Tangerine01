@@ -12,7 +12,7 @@ namespace DominioTangerine
 
         /// <summary>
         /// Clase propuesta
-        /// <attr name="_codigo">Codigo unico indentificador de la propuesta</attr>
+        /// <attr name="_codigoP">Codigo unico indentificador de la propuesta</attr>
         /// <attr name="_nombre">nombre con el que se identificara a la propuesta</attr>
         /// <attr name="_descripcion">Descripcion breve sobre la propuesta</attr>
         /// <attr name="_tipoDuracion">duracion estimada de la propuesta {Meses, Dias, Horas}</attr>
@@ -189,6 +189,26 @@ namespace DominioTangerine
 
         }
 
+        //constructor para M7
+        public Propuesta(string codigo, string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
+                        string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
+        {
+            this._codigoP = codigo;
+            this._nombre = nombre;
+            this._descripcion = descripcion;
+            this._tipoDuracion = _tipoDu;
+            this._cantDuracion = duracion;
+            this._acuerdopago = acuerdopago;
+            this._estatus = estatus;
+            this._moneda = moneda;
+            this._entrega = entrega;
+            this._feincio = feincio;
+            this._fefinal = fefinal;
+            this._costo = costo;
+            this._idCompañia = compañia;
+
+        }
+
         public Propuesta(string codigoP, List<Requerimiento> listaRequerimiento)
         {
             this._codigoP = codigoP;
@@ -198,7 +218,7 @@ namespace DominioTangerine
 
        
 
-        public Propuesta(string p3, string p4, string p5, string p6, string p7, string p8, int p12, DateTime dateTime1, DateTime dateTime2, int p15)
+        public Propuesta(string p3, string p4, string p5, string p6, string p7, string p8, int p12, DateTime dateTime1, DateTime dateTime2, int p15,string fkcompa)
         {
             // TODO: Complete member initialization
             
@@ -212,6 +232,7 @@ namespace DominioTangerine
             this._feincio = dateTime1;
             this._fefinal = dateTime2;
             this._costo = p15;
+            this._idCompañia = fkcompa;
         }
 
         //public Propuesta(string conNombre, string conDescripcion, string contipoDuracion, string conAcuerdo, string conEstatus1, string conMoneda, int conEntregas, DateTime conFechaIni, DateTime conFechaFin, int conCosto, int conFkComp)

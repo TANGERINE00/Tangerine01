@@ -13,7 +13,6 @@
     <li class="active">Modificar</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -64,6 +63,16 @@
                                 pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" 
                                 id="InputFechaRegistro1" name="InputFechaRegistro1" 
                                 placeholder="dd/mm/aaaa" required>
+                        </div>
+                        <div class="form-group" runat="server">
+                            <label for="InputPresupuesto">Presupuesto Anual</label>
+                            <input runat="server" type="number" class="form-control" id="InputPresupuesto1" name="InputPresupuesto1" 
+                                placeholder="Introduzca el presupuesto anual de la Compañía" required>
+                        </div>
+                        <div class="form-group" runat="server">
+                            <label for="InputPlazoPago">Plazo de Pagos (días)</label>
+                            <input runat="server" type="text" class="form-control" id="InputPlazoPago1" name="InputPlazoPago1" 
+                                placeholder="Introduzca el plazo para los pagos de la compañía" required>
                         </div>
                      </div><!-- /.box-body -->
 

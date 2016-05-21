@@ -512,6 +512,37 @@ namespace DatosTangerine.M7
 
            return PorpuNombre;
        }
+
+       public int ContacMaxIdProyecto ()
+       {
+           parameters = new List<Parametro>();
+           theConnection = new BDConexion();
+
+           int proyId;
+
+           try
+           {
+               theConnection.Conectar();
+
+
+               //Guardo la tabla que me regresa el procedimiento de consultar contactos
+               DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceProyecto.ContacMaxIdProyecto, parameters);
+
+               //Guardar los datos 
+               DataRow row = dt.Rows[0];
+               proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+
+               
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+           }
+
+           return proyId;
+       }
+          
+       
    
    
    }

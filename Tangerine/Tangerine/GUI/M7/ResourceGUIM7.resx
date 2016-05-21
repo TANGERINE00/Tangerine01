@@ -169,7 +169,7 @@
     <value>Nombre:</value>
   </data>
   <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left 0.2px" data-toggle="modal" data-target="#myModal" OnClick="MostrarInfo" id="Inf"</value>
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" href="InformacionProyecto.aspx?idCont=</value>
   </data>
   <data name="OpenBotonModificar" xml:space="preserve">
     <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" href="modificarProyecto.aspx?idCont=</value>

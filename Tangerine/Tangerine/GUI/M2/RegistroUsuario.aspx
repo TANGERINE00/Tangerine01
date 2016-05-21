@@ -56,7 +56,14 @@
                 success: function (result) {
                     var local = JSON.stringify(result);
                     var obj = JSON.parse(local);
-                    document.getElementById("ContentPlaceHolder1_Disponibilidad").value = obj.d;
+
+                    if (obj.d == "Disponible") {
+                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
+                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
+                    } else {
+                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
+                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
+                    }
                 },
                 failure: function (result) {
                     alert("_");
@@ -89,10 +96,6 @@
                             <label for="userDefault" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" oninput="javascript:validacion()" required>
-                            </div>
-                            <label for ="Disponibilidad" class="col-sm-2 control-label">Disponibilidad</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Disponibilidad" placeholder="" runat="server" disabled required>
                             </div>
                         </div>
                         <p>&nbsp;</p>
@@ -127,8 +130,9 @@
             </div>
         </div>
     </div>
-    
-    <div class="container-fluid">
+
+    <div class="row">
+    <div class="col-md-12">
         <div class="box box-primary">
             <!--<div class="panel-heading">Filtrar empleados</div>-->
             <div class="box-header with-border">
@@ -166,6 +170,6 @@
             </div>
         </div>
     </div>
-
+    </div>
     
 </asp:Content>

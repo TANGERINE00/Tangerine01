@@ -150,7 +150,7 @@ namespace DatosTangerine.M6
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    
+                    String codigonumP = row[RecursosPropuesta.PropCodigo].ToString();
                     String conNombre = row[RecursosPropuesta.PropNombre].ToString();
                     String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
                     String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
@@ -167,7 +167,7 @@ namespace DatosTangerine.M6
 
                       
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
-                    Propuesta propuestas = new Propuesta(conNombre, conDescripcion, contipoDuracion, conDuracion,
+                    Propuesta propuestas = new Propuesta(codigonumP,conNombre, conDescripcion, contipoDuracion, conDuracion,
                         conAcuerdo, conEstatus, conMoneda, conEntregas, conFechaIni, conFechaFin, conCosto, conFkComp);
                         listaPropuesta.Add(propuestas);
                 }
@@ -372,7 +372,8 @@ namespace DatosTangerine.M6
                            Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
-                           Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
+                           Convert.ToInt32(fila[RecursosPropuesta.PropCosto]),
+                           fila[RecursosPropuesta.PropIdCompania].ToString()
 
 
                     );

@@ -10,7 +10,11 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 *.dll
+Tangerine/Tangerine/Web.config
+Tangerine/Tangerine/Log.xml
+Tangerine/Tangerine/PruebasUnitarias/App.config
 bin
+*.config
 
 # Build results
 [Dd]ebug/
@@ -237,6 +241,9 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 cls
+Tangerine/Tangerine/Web.config
+Tangerine/Tangerine/Log.xml
+Tangerine/Tangerine/PruebasUnitarias/App.config
 Tangerine/Tangerine/Script de borrado - DB Tangerine.sql
 Tangerine/Tangerine/Script de borrado - DB Tangerine.sql
 Tangerine/Tangerine/PruebasUnitarias/App.config
@@ -244,4 +251,7 @@ Tangerine/Tangerine/Web.config
 Tangerine/Tangerine/PruebasUnitarias/App.config
 Tangerine/Tangerine/Web.config
 Tangerine/Tangerine/PruebasUnitarias/App.config
+Tangerine/Tangerine/PruebasUnitarias/App.config
+Tangerine/Tangerine/Web.config
+Tangerine/Tangerine/Log.xml
 Tangerine/Tangerine/PruebasUnitarias/App.config

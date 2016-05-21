@@ -37,7 +37,7 @@
                     <div class="box-body" runat="server">
                         <div class="form-group" runat="server">
                             <label for="inputPropuesta">Propuesta Aprobada *</label>
-                            <asp:DropDownList  class="form-control" datatextfield="text" id="inputPropuesta" name="inputPropuesta" OnSelectedIndexChanged="comboPropuesta_Click" AutoPostBack="True" runat="server">
+                            <asp:DropDownList class="form-control" DataTextField="text" ID="inputPropuesta" name="inputPropuesta" OnSelectedIndexChanged="comboPropuesta_Click" AutoPostBack="True" runat="server">
                             </asp:DropDownList>
                         </div>
 
@@ -53,33 +53,90 @@
 
                         <div class="form-group" runat="server">
                             <label for="InputFechaInicio">Fecha de inicio *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa">
+                            <input runat="server" type="date" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa">
                         </div>
 
                         <div class="form-group" runat="server">
                             <label for="InputFechaEstimada">Fecha Estimada de culminación *</label>
                             <input runat="server" type="date" class="form-control" id="textInputFechaEstimada" name="textInputFechaEstimada" placeholder="dd/mm/aaaa">
                         </div>
-
-
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputCosto" name="textInputCosto" placeholder="0 Bs">
+                            <input runat="server" type="text" class="form-control" id="textInputCosto" name="textInputCosto" placeholder="0 Bs" Disabled="disabled">
                         </div>
                         <div class="form-group" runat="server">
-                            <label for="InputPorcentaje">Porcentaje de realizacion *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputPorcentaje" name="textInputPorcentaje" placeholder="0 %">
+                            <asp:Button ID="btnAgregarPersonal" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnAgregarPersonal_Click" type="submit" runat="server" Text="Agregar Personal"></asp:Button>
                         </div>
-                        <div class="form-group" runat="server">
-                        <asp:Button ID="btnAgregarPersonal" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnAgregarPersonal_Click" type="submit" runat="server" Text="Agregar Personal"></asp:Button>
-                    </div>
                         <hr />
                     </div>
                     <div class="box-footer">
-
-                        <asp:Button ID="btnGenerar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnGenerar_Click" type="submit" runat="server" Text="Generar" enabled="false"></asp:Button>
-
+                        <asp:Button ID="btnGenerar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnGenerar_Click" type="submit" runat="server" Text="Generar" Enabled="false"></asp:Button>
                     </div>
+                    <div>
+                        <style>
+                            table.lamp {
+                                width: 100%;
+                                border: 1px solid #d4d4d4;
+                            }
+
+                                table.lamp th, td {
+                                    padding: 10px;
+                                }
+
+                                table.lamp th {
+                                    width: 40px;
+                                }
+                        </style>
+                        <table class="lamp">
+                            <tr>
+                                <th>
+                                    <img src="../../lamp.jpg" alt="Note" style="height: 32px; width: 32px">
+                                </th>
+                                <td>Todos los campos con * son obligatorios.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- /.box -->
+
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6" id="columna2" name="columna2" runat="server" visible="False">
+
+                <div class="box box-primary">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Personal del Proyecto </h3>
+                    </div>
+
+                    <!-- /.box-header -->
+                    <!-- form start -->
+
+                    <div class="box-body">
+
+                        <div class="form-group" runat="server">
+                            <label for="inputGerente">Gerente de proyecto *</label>
+                            <select class="form-control" id="inputGerente" name="inputGerente" runat="server">
+                            </select>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label for="inputPersonal">Personal Responsable *</label>
+                            <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEncargado">Encargado de la empresa contratante *</label>
+                            <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
+                            </select>
+                        </div>
+                        <hr />
+                       </div>
                     <div>
                         <head>
                             <style>
@@ -103,64 +160,12 @@
                                     <th>
                                         <img src="../../lamp.jpg" alt="Note" style="height: 32px; width: 32px">
                                     </th>
-                                    <td>Todos los campos con * son obligatorios.
+                                    <td>Para seleccionar mas de un contacto o programador deje pisado Ctrl o Shitf.
                                     </td>
                                 </tr>
                             </table>
                         </body>
                     </div>
-
-                </div>
-                <!-- /.box -->
-
-            </div>
-            <!--/.col (left) -->
-            <!-- right column -->
-            <div class="col-md-6" id="columna2" name="columna2" runat="server"  visible ="False">
-
-                <div class="box box-primary">
-
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Personal del Proyecto </h3>
-                    </div>
-
-                    <!-- /.box-header -->
-                    <!-- form start -->
-
-                    <div class="box-body">
-
-                        <div class="form-group" runat="server">
-                            <label for="inputGerente">Gerente de proyecto *</label>
-                            <select class="form-control" id="inputGerente" name="inputGerente" runat="server">
-                                <option>Pedro Perez</option>
-                                <option>Ana Rodriguez</option>
-                            </select>
-                        </div>
-
-                        <hr />
-
-                        <div class="form-group">
-                            <label for="inputPersonal">Personal Responsable *</label>
-                            <select class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
-                                <option>jose</option>
-                                <option>pedro</option>
-                                <option>maria</option>
-                                <option>ana</option>
-                            </select>
-                            <asp:Button ID="btnAgregar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnAgregar_Click" type="submit" runat="server" Text="Agregar"></asp:Button>
-                        </div>
-                        <hr />
-
-                        <div class="form-group">
-                            <label for="inputEncargado">Encargado de la empresa contratante *</label>
-                            <select class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
-                                <option>Pedro Perez</option>
-                                <option>Ana Rodriguez</option>
-                            </select>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </form>

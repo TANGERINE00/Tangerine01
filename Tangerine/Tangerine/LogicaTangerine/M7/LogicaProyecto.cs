@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DominioTangerine;
 using DatosTangerine.M7;
 using DatosTangerine.M6;
+using DatosTangerine.M5;
+using LogicaTangerine.M10;
 
 namespace LogicaTangerine.M7
 {
@@ -15,6 +17,7 @@ namespace LogicaTangerine.M7
         BDEmpleadoProyecto _Empl = new BDEmpleadoProyecto();
         BDProyectoContanto _Cont = new BDProyectoContanto();
         BDPropuesta _Prop = new BDPropuesta();
+        LogicaM10 logicaM10 = new LogicaM10();
         /// <summary>
         /// Metodo que agrega o crea nuevos proyectos
         /// </summary>
@@ -23,9 +26,18 @@ namespace LogicaTangerine.M7
         /// <param name="Contacto"></param>
         public Boolean agregarProyecto(Proyecto P)
         {
-            if (_Pro.AddProyecto(P) && _Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
+            if (_Pro.AddProyecto(P))
             {
-                return true;
+                P.Idproyecto = _Pro.ContacMaxIdProyecto();
+                if (_Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
+                {
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
@@ -56,6 +68,36 @@ namespace LogicaTangerine.M7
         }
 
         /// <summary>
+        /// Metodo para devolver una lista de empleados
+        /// </summary>
+
+        /// <returns></returns>
+        public List<Empleado> obtenerListaEmpleados(Proyecto P)
+        {
+            if (_Empl.ContactProyectoEmpleado(P))
+            {
+                for (int i = 0; i < P.get_empleados().Count;i++ )
+                {
+                   P.get_empleados()[i] = logicaM10.GetEmployee(P.get_empleados()[i].Emp_num_ficha);
+                }
+
+            }
+
+            return P.get_empleados();
+        }
+
+        /// <summary>
+        /// Metodo para devolver el monto a cobrar por entrega
+        /// </summary>
+
+        /// <returns></returns>
+        public double calcularPago(double por_viejo,double por_nuevo, double monto)
+        {
+            double por_cobro = por_nuevo - por_viejo;
+            return monto * (por_cobro / 100);
+        }
+
+        /// <summary>
         /// Metodo que llena los campos de id en las listas de empleado y contacto dentro de proyecto usando las N:M
         /// </summary>
         /// <param name="P">proyecto</param>
@@ -64,6 +106,7 @@ namespace LogicaTangerine.M7
         {
             if (_Empl.ContactProyectoEmpleado(P) && _Cont.ContactProyectoContacto(P))
             {
+
                 return true;
             }
             else

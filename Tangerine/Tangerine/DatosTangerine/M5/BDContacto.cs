@@ -34,7 +34,7 @@ namespace DatosTangerine.M5
                 //como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro 
                 //en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceContact.ParamName, SqlDbType.VarChar, theContact.Nombre,false);
+                theParam = new Parametro(ResourceContact.ParamName, SqlDbType.VarChar, theContact.Nombre, false);
                 parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro 
@@ -54,19 +54,26 @@ namespace DatosTangerine.M5
                 theParam = new Parametro(ResourceContact.ParamEmail, SqlDbType.VarChar, theContact.Correo, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamTComp, 
+                theParam = new Parametro(ResourceContact.ParamTComp,
                     SqlDbType.Int, theContact.TipoCompañia.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdComp, 
+                theParam = new Parametro(ResourceContact.ParamIdComp,
                     SqlDbType.Int, theContact.IdCompañia.ToString(), false);
                 parameters.Add(theParam);
-                
+
                 //Se manda a ejecutar en BDConexion el stored procedure 
                 //M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = 
+                List<Resultado> results =
                     theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContact, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -128,6 +135,13 @@ namespace DatosTangerine.M5
                 List<Resultado> results = 
                     theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContact, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -207,6 +221,13 @@ namespace DatosTangerine.M5
                 List<Resultado> results = 
                     theConnection.EjecutarStoredProcedure(ResourceContact.ChangeContact, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -288,6 +309,13 @@ namespace DatosTangerine.M5
                 }
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -363,6 +391,13 @@ namespace DatosTangerine.M5
                 }
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -428,6 +463,13 @@ namespace DatosTangerine.M5
                 List<Resultado> results = 
                     theConnection.EjecutarStoredProcedure(ResourceContact.AddNewContactProy, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -506,6 +548,13 @@ namespace DatosTangerine.M5
                 }
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -571,6 +620,13 @@ namespace DatosTangerine.M5
                 List<Resultado> results = 
                     theConnection.EjecutarStoredProcedure(ResourceContact.DeleteContactProyect, parameters);
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
@@ -649,6 +705,13 @@ namespace DatosTangerine.M5
                     listContact.Add(theContact);
                 }
 
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
