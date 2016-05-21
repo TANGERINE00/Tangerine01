@@ -1494,7 +1494,7 @@ AS
 			  and EmployeeJob.car_emp_fecha_fin IS NULL
 			  and Employee.emp_num_ficha=@id;
 	END
-
+go
 	
 CREATE PROCEDURE M10_ConsultarGerentes
 		@prueba INT
