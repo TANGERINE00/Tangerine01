@@ -42,9 +42,11 @@
                         <input style="margin-bottom:3%" runat="server" type="text" class="form-control" id="telefono" name="telefono">
                         <label>Correo</label>
                         <input runat="server" type="text" class="form-control" id="correo" name="correo">
-                        <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary pull-right" OnClick="btnaceptar_Click" 
-                            type="submit" runat="server" Text = "Agregar"   ></asp:Button>
-                        <asp:Literal runat="server" ID="volver"></asp:Literal>
+                        <div style="text-align:center;">
+                            <asp:Literal runat="server" ID="volver"></asp:Literal>
+                            <asp:Button id="btnaceptar" style="margin-top:20px; margin-left:10px; width:120px; float:none !important; " class="btn btn-primary pull-right" OnClick="btnaceptar_Click" 
+                                type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+                        </div>
                     </div>			
                 </div>
 		    </div>        
