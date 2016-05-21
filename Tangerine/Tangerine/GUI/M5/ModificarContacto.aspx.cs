@@ -38,8 +38,8 @@ namespace Tangerine.GUI.M5
             int idComp = int.Parse(Request.QueryString["idComp"]);
             int idCont = int.Parse(Request.QueryString["idCont"]);
 
-            botonVolver = ResourceGUIM5.VolverConsultarCon + typeComp + ResourceGUIM5.BotonVolver2 + idComp 
-                + ResourceGUIM5.BotonCerrar2;
+            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                + ResourceGUIM5.BotonVolver3;
 
             theContact.IdContacto = idCont;
             if (!IsPostBack)

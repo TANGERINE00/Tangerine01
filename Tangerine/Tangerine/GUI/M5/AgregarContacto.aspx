@@ -8,9 +8,6 @@
     Agregar Contacto
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-    <li><a href="#">Gestión de Contactos</a></li>
-    <li class="active">Agregar Contacto</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     
@@ -43,8 +40,8 @@
                             <input runat="server" type="text" class="form-control" id="correo" name="correo">
                             <div style="text-align:center;">
                                 <asp:Literal runat="server" ID="volver"></asp:Literal>
-                                <asp:Button id="btnaceptar" style="margin-top:20px; margin-left:10px; width:120px; float:none !important; " class="btn btn-primary pull-right" OnClick="btnaceptar_Click" 
-                                    type="submit" runat="server" Text = "Agregar"   ></asp:Button>
+                                <asp:Button id="btnaceptar" style="margin-top:20px; margin-left:10px; width:120px; float:none !important; " 
+                                    class="btn btn-primary pull-right" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"></asp:Button>
                             </div>
                         </div>			
                     </div>
