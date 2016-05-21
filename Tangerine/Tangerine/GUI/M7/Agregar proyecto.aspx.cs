@@ -20,27 +20,57 @@ namespace Tangerine.GUI.M7
         protected void Page_Load(object sender, EventArgs e)
         {
            Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
-           inputPropuesta.Items.Add(Propuestas.Count.ToString());
 
-           for (int i = 0; i < Propuestas.Count;i++ )
+           if (!IsPostBack)
            {
-               inputPropuesta.Items.Add(Propuestas[i].Nombre);
-           }
-           Contactos = LogicaM5.GetContacts(1,1);
+               
+            if( Propuestas.Count > 0 )
+            {
 
-           for (int i = 0; i < Contactos.Count; i++) {
-               inputEncargado.Items.Add(Contactos[i].Nombre+" "+Contactos[i].Apellido);
+                for (int i = 0; i < Propuestas.Count;i++ )
+                {
+                    inputPropuesta.Items.Add(Propuestas[i].Nombre);
+                }
+
+                Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[0].IdCompañia),1); 
+
+                for (int i = 0; i < Contactos.Count; i++) 
+                {
+                   inputEncargado.Items.Add(Contactos[i].Nombre+" "+Contactos[i].Apellido);
+                }
+           
+            } 
+            
            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            inputEncargado.Items.Clear();
             btnGenerar.Enabled = true;
         }
 
-        protected void btnAgregarPersonal_Click(object sender, EventArgs e)
+        protected void 
+            
+            btnAgregarPersonal_Click(object sender, EventArgs e)
         {
+
             columna2.Visible = true;
+        }
+
+        protected void comboPropuesta_Click(object sender, EventArgs e)
+        {
+
+            
+                inputEncargado.Items.Clear();
+
+                Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
+
+                for (int i = 0; i < Contactos.Count; i++)
+                {
+                    inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
+                }
+
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)

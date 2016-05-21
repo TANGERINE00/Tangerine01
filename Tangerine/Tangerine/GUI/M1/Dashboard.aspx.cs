@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
+using LogicaTangerine.M10;
 
 namespace Tangerine.GUI.M1
 {
@@ -26,7 +27,6 @@ namespace Tangerine.GUI.M1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             List<Proyecto> listaProyectos;
             if (!IsPostBack)
             {
@@ -46,7 +46,7 @@ namespace Tangerine.GUI.M1
         public string LlenarProyectos(List<Proyecto> listaProyectos)
         {
             string _proyectos = String.Empty;
-
+            
             foreach (Proyecto proyecto in listaProyectos)
             {
                 //Proyecto

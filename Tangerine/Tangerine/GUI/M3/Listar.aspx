@@ -45,12 +45,6 @@
             <tbody> 
               <asp:Literal runat="server" ID="tabla"></asp:Literal>
              </tbody>
-            
-
-
-
-
-         
         </table>
        </div>
       </form>
