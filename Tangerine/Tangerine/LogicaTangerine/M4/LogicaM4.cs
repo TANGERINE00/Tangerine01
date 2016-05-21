@@ -100,5 +100,26 @@ namespace LogicaTangerine.M4
                 throw ex;
             }
         }
+
+        public string MatchNombreLugar(int idLugar)
+        {
+            try
+            {
+                string NombreLugar = "";
+                foreach (LugarDireccion lugar in BDLugarDireccion.ConsultPlaces())
+                {
+                    if (idLugar.Equals(lugar.LugId))
+                    {
+                        NombreLugar = lugar.LugNombre;
+                    }
+                }
+
+                return NombreLugar;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
