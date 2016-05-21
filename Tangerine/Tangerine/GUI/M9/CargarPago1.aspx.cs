@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaTangerine.M8;
 using LogicaTangerine.M9;
+using LogicaTangerine.M4;
 using DominioTangerine;
 
 
@@ -27,30 +28,65 @@ namespace Tangerine.GUI.M9
             }
         }
 
+
+        public string proyecto
+        {
+            get
+            {
+                return this.seccion2.Text;
+            }
+
+            set
+            {
+                this.seccion2.Text = value;
+            }
+        }
+
+        public string monto
+        {
+            get
+            {
+                return this.seccion3.Text;
+            }
+
+            set
+            {
+                this.seccion3.Text = value;
+            }
+        }
+
+
+        public void llenarTablaPorID(int numeroFactura)
+        {
+            LogicaM8 consulta = new LogicaM8();
+
+            Facturacion Factura = consulta.SearchFactura(numeroFactura);
+
+            try
+            {
+                Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
+                cliente += ResourceLogicaM9.AbrirNombreCliente + compania.NombreCompania + ResourceLogicaM9.CerrarNombreCliente;
+                proyecto += ResourceLogicaM9.AbrirNombreCliente + Factura.descripcionFactura + ResourceLogicaM9.CerrarNombreCliente;
+                monto += ResourceLogicaM9.AbrirNombreCliente + Factura.montoFactura + " " + Factura.tipoMoneda + ResourceLogicaM9.CerrarNombreCliente;
+            }
+            catch
+            {
+
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            
-            //En este try atrapo el valor del id del Contacto si existe
-            //para luego ser eliminado de los contactos de la empresa
-            /*int identificador = int.Parse(Request.QueryString["id"]);
-
-            LogicaM8 prueba = new LogicaM8();
-            Facturacion factura = prueba.SearchFactura(identificador);
-
-            if (factura != null)
-            {
-                cliente += ResourceLogicaM9.AbrirNombreCliente + prueba.SearchCompaniaFactura((factura.idCompaniaFactura)) + "prueba" + ResourceLogicaM9.CerrarNombreCliente;
-            }*/
-
+            int identificador = int.Parse(Request.QueryString["id"]);
+            llenarTablaPorID(identificador);
 
         }
 
         protected void buttonSubmit_Click(object sender, EventArgs e)
         {
-            
-               
-            
+
+
+
         }
 
     }

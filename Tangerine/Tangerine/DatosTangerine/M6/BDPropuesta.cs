@@ -373,14 +373,6 @@ namespace DatosTangerine.M6
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
                            Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
                            Convert.ToInt32(fila[RecursosPropuesta.PropCosto])
- 
-                       
-
-
-
-
-
-
 
 
                     );

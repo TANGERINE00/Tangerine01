@@ -40,6 +40,15 @@ namespace Tangerine.GUI.M9 {
         protected global::System.Web.UI.WebControls.Literal seccion2;
         
         /// <summary>
+        /// seccion3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal seccion3;
+        
+        /// <summary>
         /// codAprobacion control.
         /// </summary>
         /// <remarks>
