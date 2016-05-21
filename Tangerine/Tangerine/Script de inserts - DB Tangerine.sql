@@ -122,7 +122,7 @@ SET IDENTITY_INSERT PROYECTO OFF
 SET IDENTITY_INSERT PROYECTO ON
 GO
 insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
-VALUES (4,'ProyectoLIS','CodigoLIS',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de listas','60','A destiempo','','Por Entregas',4,1,1);
+VALUES (4,'ProyectoLIS','CodigoLIS',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de listas','60','Completado a destiempo','','Por Entregas',4,1,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 

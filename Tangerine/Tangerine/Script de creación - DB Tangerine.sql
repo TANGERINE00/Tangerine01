@@ -262,7 +262,7 @@ create table PROYECTO
 	proy_costo numeric(12,3) not null,
 	proy_descripcion varchar(255) not null,
 	proy_realizacion varchar(100) not null,
-	proy_estatus varchar(20) not null,
+	proy_estatus varchar(255) not null,
 	proy_razon varchar(100) not null,
 	proy_acuerdo_pago varchar(100) not null,
 	fk_propuesta_id int not null,
@@ -1106,7 +1106,7 @@ CREATE PROCEDURE M7_AgregarProyecto
 
 AS
 	BEGIN
-    	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_acuerdo_pago,proy_razon,fk_propuesta_id,fk_com_id,fk_gerente_id)
+    	INSERT INTO PROYECTO(proy_nombre,proy_codigo,proy_fecha_inicio,proy_fecha_est_fin,proy_costo,proy_descripcion,proy_realizacion,proy_estatus,proy_razon,proy_acuerdo_pago,fk_propuesta_id,fk_com_id,fk_gerente_id)
 		VALUES(@Nombre,@Codigo,@FechaInicio,@FechaEstFin,@Costo,@Descripcion,@Realizacion,@Estatus,@Razon,@AcuerdoPago,@IdPropuesta,@IdCompania,@IdGerente);
  	END;
 GO
