@@ -28,6 +28,19 @@ namespace Tangerine.GUI.M9
             }
         }
 
+        public string numero
+        {
+            get
+            {
+                return this.seccion4.Text;
+            }
+
+            set
+            {
+                this.seccion4.Text = value;
+            }
+        }
+
 
         public string proyecto
         {
@@ -68,6 +81,7 @@ namespace Tangerine.GUI.M9
                 cliente += ResourceLogicaM9.AbrirNombreCliente + compania.NombreCompania + ResourceLogicaM9.CerrarNombreCliente;
                 proyecto += ResourceLogicaM9.AbrirNombreCliente + Factura.descripcionFactura + ResourceLogicaM9.CerrarNombreCliente;
                 monto += ResourceLogicaM9.AbrirNombreCliente + Factura.montoFactura + " " + Factura.tipoMoneda + ResourceLogicaM9.CerrarNombreCliente;
+                numero += ResourceLogicaM9.AbrirNombreCliente + Factura.idFactura + ResourceLogicaM9.CerrarNombreCliente;
             }
             catch
             {

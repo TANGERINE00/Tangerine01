@@ -33,25 +33,34 @@
      ShowSummary="true"                        
      HeaderText="Ha habido un error:"
      runat="server"/>
-                 
 
+                 <div>
+                    <label for="input_cliente">Numero de Factura</label>
+                    &nbsp;<asp:Literal runat="server" ID="seccion4"></asp:Literal>
+                     &nbsp;
+                </div>
+
+                <div>
+                    &nbsp;
                     <label for="input_cliente">Cliente (compañía contratante)</label>
                     &nbsp;<asp:Literal runat="server" ID="seccion1"></asp:Literal>
+                    &nbsp;
                 </div>
             
 
                     <div class="form-group">
+                        &nbsp;
                        <label for="input_cliente">Proyecto</label>
                        <asp:Literal runat="server" ID="seccion2"></asp:Literal>
                     </div>    
 
              
                 <!-- /.box-body -->
-
+                &nbsp;
                <label for="input_costo">Total Factura</label>
                 <div class="input-group">
-                    
                     <asp:Literal runat="server" ID="seccion3"></asp:Literal>
+                    &nbsp;
                 </div>
                 
 
