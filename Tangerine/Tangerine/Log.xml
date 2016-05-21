@@ -106,3 +106,61 @@
 2016-05-19 20:31:38,866 INFO  BDContacto - Clase: BDContacto
 2016-05-19 20:31:38,866 INFO  BDContacto - Mensaje: Salida del Método
 2016-05-19 20:31:38,866 INFO  BDContacto - Metodo: ContactCompany
+2016-05-20 16:19:20,972 INFO  LogicaM5 - *******************************************************
+2016-05-20 16:19:21,004 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-20 16:19:21,004 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-20 16:19:21,004 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-20 16:19:21,188 INFO  BDContacto - *******************************************************
+2016-05-20 16:19:21,188 INFO  BDContacto - Clase: BDContacto
+2016-05-20 16:19:21,188 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-20 16:19:21,188 INFO  BDContacto - Metodo: ContactCompany
+2016-05-20 16:19:21,509 ERROR BDContacto - *******************************************************
+2016-05-20 16:19:21,509 ERROR BDContacto - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-05-20 16:19:21,510 ERROR BDContacto - Origen: DatosTangerine
+2016-05-20 16:19:21,511 ERROR BDContacto - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-05-20 16:19:21,511 ERROR BDContacto - StackTrace:    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 296
+   en DatosTangerine.M5.BDContacto.ContactCompany(Int32 typeCompany, Int32 idCompany) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M5\BDContacto.cs:línea 269
+2016-05-20 16:19:21,575 ERROR BDContacto - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M5_ConsultarContactoCompania'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 284
+ClientConnectionId:c9f9cd73-39d8-4dd8-bf63-bdde04854279
+2016-05-20 16:19:21,593 ERROR LogicaM5 - *******************************************************
+2016-05-20 16:19:21,593 ERROR LogicaM5 - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-05-20 16:19:21,593 ERROR LogicaM5 - Origen: DatosTangerine
+2016-05-20 16:19:21,593 ERROR LogicaM5 - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-05-20 16:19:21,594 ERROR LogicaM5 - StackTrace:    en DatosTangerine.M5.BDContacto.ContactCompany(Int32 typeCompany, Int32 idCompany) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M5\BDContacto.cs:línea 309
+   en LogicaTangerine.M5.LogicaM5.GetContacts(Int32 typeComp, Int32 idComp) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M5\LogicaM5.cs:línea 29
+2016-05-20 16:19:21,594 ERROR LogicaM5 - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M5_ConsultarContactoCompania'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 284
+ClientConnectionId:c9f9cd73-39d8-4dd8-bf63-bdde04854279
