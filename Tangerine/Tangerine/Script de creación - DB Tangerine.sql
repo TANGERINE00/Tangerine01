@@ -1040,7 +1040,7 @@ GO
 --Consultar propuesta por nombre
 
 CREATE PROCEDURE M6_ConsultarPropuestaNombre
-@idNombre [varchar] (50)
+@propuesta_nombre [varchar] (50)
 
 AS
 
