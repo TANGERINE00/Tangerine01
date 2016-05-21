@@ -87,6 +87,17 @@ namespace LogicaTangerine.M7
         }
 
         /// <summary>
+        /// Metodo para devolver el monto a cobrar por entrega
+        /// </summary>
+
+        /// <returns></returns>
+        public double calcularPago(double por_viejo,double por_nuevo, double monto)
+        {
+            double por_cobro = por_nuevo - por_viejo;
+            return monto * (por_cobro / 100);
+        }
+
+        /// <summary>
         /// Metodo que llena los campos de id en las listas de empleado y contacto dentro de proyecto usando las N:M
         /// </summary>
         /// <param name="P">proyecto</param>

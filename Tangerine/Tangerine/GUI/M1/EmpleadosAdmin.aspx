@@ -22,9 +22,10 @@
                       
                         </div>
                 </div><!-- /.box-header -->
-                <form role="form" name="consultar" id="consultar"> 
+                
+                <div class="box-body table-responsive no-padding">
+                    <form role="form" name="consultar" id="consultar"> 
                     
-                    <div class="box-body table-responsive no-padding">
                         <div style="float:right; padding-top:5px; padding-right:5px;">
                           <a style="margin-right:10px;">Agregar nuevo empleado</a>
                           <asp:Literal runat="server" ID="nuevoempleado"></asp:Literal>
@@ -35,7 +36,7 @@
                             <input id="searchTerm" type="text" onkeyup="doSearch()"/>
                         </div>
                         <!--table-->
-                        <table id="tablaempleados" class="table table-bordered table-hover" accesskey="">
+                        <table id="example2" class="table table-bordered table-hover">
                           <thead>
                               <tr>
                                   <th>Nombres</th>
@@ -54,8 +55,9 @@
                         </table>
                         <!-- table-->
             
-                    </div>
+                    
                 </form>
+              </div>
             </div>
         </div>
     </div>
