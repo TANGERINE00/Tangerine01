@@ -27,7 +27,13 @@
             <div class="box-body">
                 <div class="form-group">
 
-                    <asp:ValidationSummary ID="ValidationSummary1" runat=server headertext="Hubo un error en la página:" />
+                    <asp:ValidationSummary 
+     id="ValSum" 
+     DisplayMode="BulletList" 
+     ShowSummary="true"                        
+     HeaderText="Ha habido un error:"
+     runat="server"/>
+                 
 
                     <label for="input_cliente">Cliente (compañía contratante)
                     </label>
@@ -63,7 +69,7 @@
 
                 <div class="form-group">
                     <label>Forma de Pago</label>
-                    <select required class="form-control" disabled>
+                    <select required class="form-control">
                         <option></option>
                         <option data-icon="fa-heart">Deposito</option>
                         <option>Transferencia</option>
@@ -74,15 +80,16 @@
                 <div class="form-group">
                    
                     <label for="input_cliente">Codigo de aprobacion</label>
-                    <input type="text" id="codAprobacion" class="form-control"  placeholder="Codigo de aprobacion" runat="server"> 
+                    <input type="text" id="codAprobacion" class="form-control"  placeholder="Codigo de aprobacion" runat="server" required>
+
                     
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="codAprobacion" Display="Dynamic"  
-                     runat="server" ErrorMessage="Debe ingresar un código de aprobación."></asp:RequiredFieldValidator>
-
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="codAprobacion" ValidationExpression="\d{5}"
-                     Display="Dynamic" runat="server" ErrorMessage="El código de aprobración debe ser de al menos 5 dígitos.">*</asp:RegularExpressionValidator>
-
-                   
+                   <asp:RegularExpressionValidator id="RegularExpressionValidator1" 
+                     ControlToValidate="codAprobacion"
+                     ValidationExpression="\d{5}"
+                     Display="Dynamic"
+                     ErrorMessage="El código de aprobación debe ser min de 5 caracteres númericos."
+                     ForeColor="red"
+                     runat="server" ValidationGroup="AllValidations" />
                 </div>
 
             <div class="box-foot">
