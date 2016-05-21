@@ -203,6 +203,8 @@ namespace DatosTangerine.M2
             List<Parametro> parametros = new List<Parametro>();
             Parametro elParametro = new Parametro();
 
+            bool esAdministrador = true;
+
             try
             {
                 laConexion.Conectar();
@@ -234,8 +236,14 @@ namespace DatosTangerine.M2
                     menu = new Menu( menNombre, opciones );
 
                     lista.AgregarElemento( menu );
+
+                    esAdministrador = false;
                 }
 
+                if( esAdministrador )
+                {
+                    rol.Nombre = "Administrador";
+                }
                 rol.Menus = lista;
 
             }
