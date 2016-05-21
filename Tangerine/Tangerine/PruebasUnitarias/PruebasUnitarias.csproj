@@ -88,6 +88,7 @@
     <Compile Include="M3\PruebaClientePotencial.cs" />
     <Compile Include="M4\PruebaDatos.cs" />
     <Compile Include="M4\PruebaLogica.cs" />
+    <Compile Include="M5\PruebaLogica.cs" />
     <Compile Include="M5\PruebasDatos.cs" />
     <Compile Include="M6\Pruebas.cs" />
     <Compile Include="M7\M7PruebasLogica.cs" />
