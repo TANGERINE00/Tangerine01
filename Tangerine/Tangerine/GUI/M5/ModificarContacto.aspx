@@ -44,7 +44,7 @@
 				        <div style="text-align:center;">
                             <asp:Literal runat="server" ID="volver"></asp:Literal>
                             <asp:Button id="btnmodificar" style="margin-top:20px; margin-left:10px; width:120px; float:none !important; " 
-                                class="btn btn-primary pull-right" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Modificar"></asp:Button>
+                                class="btn btn-primary pull-right" OnClick="btnmodificar_Click" type="submit" runat="server" Text = "Modificar"></asp:Button>
                         </div>
                     </div>
                 </form>

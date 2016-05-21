@@ -57,7 +57,23 @@ namespace Tangerine.GUI.M5
             }
         }
 
-        
+        protected void btnmodificar_Click(object sender, EventArgs e)
+        {
+            Contacto contact = new Contacto();
+            contact.IdContacto = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
+            contact.Nombre = nombre.Value; 
+            contact.Apellido = apellido.Value;
+            contact.Departamento = departamento.Value;
+            contact.Cargo = cargo.Value;
+            contact.Telefono = telefono.Value;
+            contact.Correo = correo.Value;
+
+            //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
+            
+            
+            LogicaM5 contactLogic = new LogicaM5();
+            contactLogic.ChangeContact(contact);
+        }
         //Para volver a ConsultarContactos luego de modificar
         //Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp );
     }
