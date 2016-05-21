@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using DatosTangerine.M5;
 using DominioTangerine;
 
-
 namespace PruebasUnitarias.M5
 {
     [TestFixture]
