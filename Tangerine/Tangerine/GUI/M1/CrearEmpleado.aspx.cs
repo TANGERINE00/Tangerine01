@@ -31,7 +31,7 @@ namespace Tangerine.GUI.M1
         protected void SelectedGender_Change(object sender, EventArgs e)
         {
 
-            
+
         }
 
         protected void SelectedJob_Change(object sender, EventArgs e)
@@ -44,8 +44,10 @@ namespace Tangerine.GUI.M1
         {
             LogicaM10 componentes = new LogicaM10();
             int x = 1;
+            string country = SelectedListCountry.SelectedItem.Text;
+            //SelectedListState.Items.Clear();
             SelectedListState.Items.Insert(0, "Seleccione un estado");
-            foreach (LugarDireccion estados in componentes.ItemsForListState())
+            foreach (LugarDireccion estados in componentes.ItemsForListState(country))
             {
                 SelectedListState.Items.Insert(x, estados.LugNombre);
                 x++;
@@ -54,25 +56,25 @@ namespace Tangerine.GUI.M1
         }
 
         protected void SelectedState_Change(object sender, EventArgs e)
-        { 
-        
+        {
+
         }
 
         protected void SelectedStudy_Change(object sender, EventArgs e)
         {
- 
+
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            Empleado empleado = new Empleado(FirstName.Value, SecondNamee.Value, FirstLastName.Value,
+            LogicaM10 logicEmployee = new LogicaM10();
+            Empleado empleado = new Empleado(0, FirstName.Value, SecondNamee.Value, FirstLastName.Value,
                                                 SecondLastName.Value, SelectedListGender.SelectedItem.Text.ToString(),
                                                 int.Parse(Cedula.Value),
                                                 DateTime.ParseExact(DateEmployee.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                                                 active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
                                                 newAddress());
-
-
+            logicEmployee.AddNewEmpleado(empleado);
         }
 
         private List<LugarDireccion> newAddress()

@@ -56,10 +56,28 @@ namespace Tangerine.GUI.M2
         public static string ObtenerUsuarioDefault(string nombreUsuario, string apellidoUsuario)
         {
             string resultado = "";
-
+            System.Diagnostics.Debug.WriteLine("Entré22");
             resultado = LogicaAgregarUsuario.CrearUsuarioDefault(nombreUsuario, apellidoUsuario);
 
             return resultado;
+        }
+
+        [WebMethod]
+        public static string validarUsuario(string usuario)
+        {
+            System.Diagnostics.Debug.WriteLine("Entré");
+            string nombreUsuario = usuario;
+            bool respuesta = false;
+
+
+            respuesta = LogicaAgregarUsuario.ExisteUsuario(nombreUsuario);
+
+            if (respuesta)
+            {
+                System.Diagnostics.Debug.WriteLine("Usuario existe");
+                return "Usuario Existe!";
+            }
+            return "Disponible!";
         }
 
         protected void btnCrear_Click(object sender, EventArgs e)
@@ -75,19 +93,6 @@ namespace Tangerine.GUI.M2
             Response.Redirect("../M2/RegistroUsuario.aspx");
         }
 
-        protected void validarUsuario()
-        {
-            System.Diagnostics.Debug.WriteLine("Entré");
-            string nombreUsuario = userDefault.Value;
-            bool respuesta = false;
-            
-            respuesta = LogicaAgregarUsuario.ExisteUsuario( nombreUsuario );
-
-            if ( respuesta ) 
-            {
-                userDefault.Value = "Usuario existe";
-                System.Diagnostics.Debug.WriteLine("Usuario existe");
-            }
-        }
+      
     }
 }

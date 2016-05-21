@@ -72,6 +72,7 @@ drop procedure M7_ConsultarAcuerdoPagoMensual;
 drop procedure M7_ConsultarProyectoTrabajaEmpleado;
 drop procedure M7_COnsultarProyectosPorGerente;
 drop procedure M7_ConsultarNombrePropuestaID;
+drop procedure M7_ConsultarMaxIdProyecto;
 
 drop procedure M8_AgregarFactura;
 drop procedure M8_ConsultarFactura;
@@ -86,6 +87,9 @@ drop procedure M10_ConsultarEmpleado;
 drop procedure M10_DetallarEmpleado;
 drop procedure M10_ConsultarGerentes;
 drop procedure M10_ConsultarProgramadores;
+drop procedure M10_LLenarSelectPaises;
+drop procedure M10_LLenarSelectEstados;
+drop procedure M10_LlenarSelectCargo;
 
 
 

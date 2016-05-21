@@ -232,6 +232,9 @@
   <data name="PropCantidad" xml:space="preserve">
     <value>prop_cant_entregas</value>
   </data>
+  <data name="PropCodigo" xml:space="preserve">
+    <value>prop_id</value>
+  </data>
   <data name="PropCosto" xml:space="preserve">
     <value>prop_costo</value>
   </data>

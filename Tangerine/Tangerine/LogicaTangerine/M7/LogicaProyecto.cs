@@ -23,9 +23,18 @@ namespace LogicaTangerine.M7
         /// <param name="Contacto"></param>
         public Boolean agregarProyecto(Proyecto P)
         {
-            if (_Pro.AddProyecto(P) && _Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
+            if (_Pro.AddProyecto(P))
             {
-                return true;
+                P.Idproyecto = _Pro.ContacMaxIdProyecto();
+                if (_Empl.AddProyectoEmpleado(P) && _Cont.AddProyectoContacto(P))
+                {
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
@@ -60,13 +69,13 @@ namespace LogicaTangerine.M7
         /// </summary>
         /// <param name="P">proyecto</param>
         /// <returns>booleano</returns>
-        public Boolean obtenerIDContactosyEmpleados  (Proyecto P)
+        public Boolean obtenerIDContactosyEmpleados(Proyecto P)
         {
             if (_Empl.ContactProyectoEmpleado(P) && _Cont.ContactProyectoContacto(P))
             {
                 return true;
             }
-            else 
+            else
             {
                 return false;
             }
@@ -75,11 +84,11 @@ namespace LogicaTangerine.M7
         /// Metodo para consultar todos los proyectos
         /// </summary>
         /// <returns></returns>
-        public List<Proyecto> consultarProyectos() 
+        public List<Proyecto> consultarProyectos()
         {
-            
-            return   _Pro.ContactProyectos();
-            
+
+            return _Pro.ContactProyectos();
+
         }
 
         /// <summary>
@@ -92,51 +101,60 @@ namespace LogicaTangerine.M7
 
             return _Pro.ContactProyecto(ID);
 
-            }
-    
-    /// <summary>
-    /// Metodo que devuelve los proyecto en desarrollo con acuerdo de pago mensual, los cuales les toca facturar hoy
-    /// </summary>
-    /// <returns>lista de proyectos</returns>
-    public List<Proyecto> consultarAcuerdoPagoMensual()
-    {
-        return _Pro.ContactProyectosxAcuerdoPago();
+        }
+
+        /// <summary>
+        /// Metodo que devuelve los proyecto en desarrollo con acuerdo de pago mensual, los cuales les toca facturar hoy
+        /// </summary>
+        /// <returns>lista de proyectos</returns>
+        public List<Proyecto> consultarAcuerdoPagoMensual()
+        {
+            return _Pro.ContactProyectosxAcuerdoPago();
+        }
+
+
+        /// <summary>
+        ///  Metodo que devuelve los proyecto en los que trabja un empleado dado
+        /// </summary>
+        /// <param name="IDEmpleado"> indentificador unico de un empleado </param>
+        /// <returns>lista de proyectos</returns>
+        public List<Proyecto> consultarProyectosDeUnTrabajador(int IDEmpleado)
+        {
+            return _Pro.ContactProyectoPorEmpleado(IDEmpleado);
+        }
+
+        /// <summary>
+        ///  Metodo que devuelve los proyecto en los que trabja un Gerente dado
+        /// </summary>
+        /// <param name="IDGerente"> indentificador unico de un empleado </param>
+        /// <returns>lista de proyectos</returns>
+        public List<Proyecto> consultarProyectosDeUnGerente(int IDGerente)
+        {
+            return _Pro.ContactProyectoPorGerente(IDGerente);
+        }
+
+        /// <summary>
+        /// Metodo que dado el id de una propuesta devuelve el nombre de la propuesta
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>nuembre de una propuesta</returns>
+        public String ConsultarNombrePropuestaID(int id)
+        {
+            return _Pro.ContactNombrePropuestaID(id);
+        }
+
+
+        public List<Propuesta> ConsultarPropuestasAprobadas()
+        {
+            return _Prop.PropuestaProyecto();
+        }
+
+
+
+        public String generarCodigoProyecto(String nombre)
+        {
+            return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
+        }
     }
-    
-
-   /// <summary>
-   ///  Metodo que devuelve los proyecto en los que trabja un empleado dado
-   /// </summary>
-   /// <param name="IDEmpleado"> indentificador unico de un empleado </param>
-   /// <returns>lista de proyectos</returns>
-    public List<Proyecto> consultarProyectosDeUnTrabajador(int IDEmpleado)
-    {
-        return _Pro.ContactProyectoPorEmpleado(IDEmpleado);
-    }
-
-    /// <summary>
-    ///  Metodo que devuelve los proyecto en los que trabja un Gerente dado
-    /// </summary>
-    /// <param name="IDGerente"> indentificador unico de un empleado </param>
-    /// <returns>lista de proyectos</returns>
-    public List<Proyecto> consultarProyectosDeUnGerente( int IDGerente )
-    {
-        return _Pro.ContactProyectoPorGerente(IDGerente);
-    }
-
-    public String ConsultarNombrePropuestaID(int id)
-    {
-        return _Pro.ContactNombrePropuestaID(id);
-    }
-
-
-    public List<Propuesta> ConsultarPropuestasAprobadas()
-    {
-        return _Prop.PropuestaProyecto();
-    } 
-
-
-    }
-    
 
 }

@@ -22,6 +22,15 @@ namespace Tangerine.GUI.M9 {
         protected global::System.Web.UI.WebControls.ValidationSummary ValSum;
         
         /// <summary>
+        /// seccion4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal seccion4;
+        
+        /// <summary>
         /// seccion1 control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Tangerine.GUI.M9 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal seccion2;
+        
+        /// <summary>
+        /// seccion3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal seccion3;
         
         /// <summary>
         /// codAprobacion control.

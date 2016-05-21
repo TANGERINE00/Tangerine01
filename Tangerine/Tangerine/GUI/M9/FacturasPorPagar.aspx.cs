@@ -35,32 +35,38 @@ namespace Tangerine.GUI.M9
             //En este try atrapo el valor del id del Contacto si existe
             //para luego ser eliminado de los contactos de la empresa
             int identificador = int.Parse(Request.QueryString["id"]);
-
-            if (!IsPostBack)
+            try
             {
-                List<Facturacion> listFacturas = prueba.SearchFacturasCompania(identificador);
+                if (!IsPostBack)
+                {
+                    List<Facturacion> listFacturas = prueba.SearchFacturasCompania(identificador);
 
-                if (listFacturas.Count() < 1)
-                {
-                    factura += ResourceLogicaM9.AbrirTD + "No hay facturas asociadas" + ResourceLogicaM9.CerrarTD;
-                }
-                else
-                {
-                    
-                    foreach (Facturacion theFactura in listFacturas)
+                    if (listFacturas.Count() < 1)
                     {
-                        factura += ResourceLogicaM9.AbrirTR;
-                        factura += ResourceLogicaM9.AbrirTD + theFactura.idFactura + ResourceLogicaM9.CerrarTD;
-                        factura += ResourceLogicaM9.AbrirTD + theFactura.fechaFactura.ToShortDateString() + ResourceLogicaM9.CerrarTD;
-                        factura += ResourceLogicaM9.EtiquetaPorPagar;
-                        factura += ResourceLogicaM9.AbrirTD + theFactura.descripcionFactura + ResourceLogicaM9.CerrarTD;
-                        factura += ResourceLogicaM9.AbrirTD + theFactura.montoFactura + ResourceLogicaM9.CerrarTD;
-
-                        //Boton para cargar el pago
-                        factura += ResourceLogicaM9.botonPagarAbrir + theFactura.idFactura + ResourceLogicaM9.botonPagarCerrar;
+                        factura += ResourceLogicaM9.AbrirTD + "No hay facturas asociadas" + ResourceLogicaM9.CerrarTD;
                     }
-                }
+                    else
+                    {
 
+                        foreach (Facturacion theFactura in listFacturas)
+                        {
+                            factura += ResourceLogicaM9.AbrirTR;
+                            factura += ResourceLogicaM9.AbrirTD + theFactura.idFactura + ResourceLogicaM9.CerrarTD;
+                            factura += ResourceLogicaM9.AbrirTD + theFactura.fechaFactura.ToShortDateString() + ResourceLogicaM9.CerrarTD;
+                            factura += ResourceLogicaM9.EtiquetaPorPagar;
+                            factura += ResourceLogicaM9.AbrirTD + theFactura.descripcionFactura + ResourceLogicaM9.CerrarTD;
+                            factura += ResourceLogicaM9.AbrirTD + theFactura.montoFactura + " " + theFactura.tipoMoneda + ResourceLogicaM9.CerrarTD;
+
+                            //Boton para cargar el pago
+                            factura += ResourceLogicaM9.botonPagarAbrir + theFactura.idFactura + ResourceLogicaM9.botonPagarCerrar;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            { 
+            
             }
 
         }

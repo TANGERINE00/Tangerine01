@@ -33,39 +33,36 @@
      ShowSummary="true"                        
      HeaderText="Ha habido un error:"
      runat="server"/>
-                 
 
-                    <label for="input_cliente">Cliente (compañía contratante)
-                    </label>
+                 <div>
+                    <label for="input_cliente">Numero de Factura</label>
+                    &nbsp;<asp:Literal runat="server" ID="seccion4"></asp:Literal>
+                     &nbsp;
+                </div>
+
+                <div>
+                    &nbsp;
+                    <label for="input_cliente">Cliente (compañía contratante)</label>
                     &nbsp;<asp:Literal runat="server" ID="seccion1"></asp:Literal>
-                    <input type="text" class="form-control" id="cliente_id" placeholder="Nombre del Cliente" disabled>
+                    &nbsp;
                 </div>
             
 
-                    <!-- Date range -->
                     <div class="form-group">
+                        &nbsp;
+                       <label for="input_cliente">Proyecto</label>
                        <asp:Literal runat="server" ID="seccion2"></asp:Literal>
                     </div>    
 
              
                 <!-- /.box-body -->
-
+                &nbsp;
                <label for="input_costo">Total Factura</label>
                 <div class="input-group">
-                    
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="24.230,00" disabled>
+                    <asp:Literal runat="server" ID="seccion3"></asp:Literal>
+                    &nbsp;
                 </div>
                 
-                <div class="form-group">
-                    <label>Moneda</label>
-                    <select class="form-control">
-                        <option></option>
-                        <option>Dolares</option>
-                        <option>Bolivares</option>
-                        <option>Bitcoin</option>
-                    </select>
-                </div>
 
                 <div class="form-group">
                     <label>Forma de Pago</label>

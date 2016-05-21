@@ -264,4 +264,7 @@
   <data name="ParamIdPropuestaPrpu" xml:space="preserve">
     <value>@IdPropuestaPrpu</value>
   </data>
+  <data name="ContacMaxIdProyecto" xml:space="preserve">
+    <value>M7_ConsultarMaxIdProyecto</value>
+  </data>
 </root>

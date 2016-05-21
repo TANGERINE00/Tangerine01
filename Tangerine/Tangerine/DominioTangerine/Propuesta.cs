@@ -12,7 +12,7 @@ namespace DominioTangerine
 
         /// <summary>
         /// Clase propuesta
-        /// <attr name="_codigo">Codigo unico indentificador de la propuesta</attr>
+        /// <attr name="_codigoP">Codigo unico indentificador de la propuesta</attr>
         /// <attr name="_nombre">nombre con el que se identificara a la propuesta</attr>
         /// <attr name="_descripcion">Descripcion breve sobre la propuesta</attr>
         /// <attr name="_tipoDuracion">duracion estimada de la propuesta {Meses, Dias, Horas}</attr>
@@ -174,6 +174,26 @@ namespace DominioTangerine
         public Propuesta( string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
                          string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
         {
+            this._nombre = nombre;
+            this._descripcion = descripcion;
+            this._tipoDuracion = _tipoDu;
+            this._cantDuracion = duracion;
+            this._acuerdopago = acuerdopago;
+            this._estatus = estatus;
+            this._moneda = moneda;
+            this._entrega = entrega;
+            this._feincio = feincio;
+            this._fefinal = fefinal;
+            this._costo = costo;
+            this._idCompañia = compañia;
+
+        }
+
+        //constructor para M7
+        public Propuesta(string codigo, string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
+                        string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
+        {
+            this._codigoP = codigo;
             this._nombre = nombre;
             this._descripcion = descripcion;
             this._tipoDuracion = _tipoDu;

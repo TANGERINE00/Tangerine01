@@ -47,7 +47,8 @@
                   <th>Apellidos</th>
                   <th>Cedula</th>
                   <th>Cargo</th>
-                  <th>Fecha</th>
+                  <th>Sueldo base</th>
+                  <th>Fecha de Ingreso</th>
                   <th>Estatus</th>
                   <th style="width:150PX; text-align:center;">Acciones</th>
               </thead>
