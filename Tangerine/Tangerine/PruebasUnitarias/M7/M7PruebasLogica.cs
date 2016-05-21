@@ -159,5 +159,11 @@ namespace PruebasUnitarias.M7
 
              Assert.IsTrue(prueba == "Modulo de gestion de empleados");
          }
+
+     [Test]
+         public void TestgenerarCodigoProyecto()
+     {
+         Assert.AreEqual("Proy-Arbo2016", _Logi.generarCodigoProyecto("Arbol de la vida"));
+     }
     }
 }
