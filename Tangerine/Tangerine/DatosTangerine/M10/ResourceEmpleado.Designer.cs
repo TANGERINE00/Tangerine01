@@ -142,7 +142,7 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a DireccionEmpleado.
+        ///   Busca una cadena traducida similar a EmpDireccion.
         /// </summary>
         internal static string EmpDireccion {
             get {
@@ -219,6 +219,15 @@ namespace DatosTangerine.M10 {
         internal static string EmpLugId {
             get {
                 return ResourceManager.GetString("EmpLugId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a car_emp_modalidad.
+        /// </summary>
+        internal static string EmpModalidad {
+            get {
+                return ResourceManager.GetString("EmpModalidad", resourceCulture);
             }
         }
         

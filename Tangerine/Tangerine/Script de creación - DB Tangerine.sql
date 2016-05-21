@@ -1415,41 +1415,59 @@ GO
 --------Stored Procedure M10--------
 -----------------------------------
 ---- StoredProcedure Agregar Empleado ----
-CREATE PROCEDURE M10_AgregarEmpleado
-	@activo [varchar](50),
+CREATE PROCEDURE [dbo].[M10_AgregarEmpleado]
+	@pNombre [varchar](150),
+	@sNombre [varchar](150),
+	@pApellido [varchar](150),
+	@sApellido [varchar](150),
+	@genero[varchar](50),
 	@cedula int,
-	@direccion [varchar](50),
-	@email [varchar](50),
-	@estado [varchar](50),
-	@fecha_nac date,
-	@ficha int,
-	@genero [varchar](50),
-	@nivel_estudio [varchar](50),
-	@pais [varchar](50),
-	@p_apellido [varchar](50),
-	@p_nombre [varchar](50),
-	@s_apellido [varchar](50),
-	@s_nombre [varchar](50)
+	@fechaNacimiento Date,
+	@activo [varchar](50),
+	@nivelEstudio [varchar](50),
+	@correo[varchar](150),
+	-----------------------empleado
+	@cargo [varchar](150),
+	-----------------------cargo
+	@fechContrato Date,
+	@modalidad [varchar](150),
+	@sueldo numeric(6,3),
+	---------------------------cargo empleado
+	@estado [varchar](150),
+	@ciudad [varchar](150),
+	@direccion[varchar](150)
+	---------------------------lugar direccion
 AS
  BEGIN
-    INSERT INTO EMPLEADO(emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_cedula, emp_activo,
-						emp_email, emp_fecha_nac, emp_genero, emp_nivel_estudio,fk_lug_dir_id)
-	VALUES(@p_nombre,	@s_nombre, @p_apellido, @s_apellido, @cedula, @activo, @email, @fecha_nac, @genero, @nivel_estudio,1);
- end;
-GO
-
---Consultar empleados
-CREATE PROCEDURE M10_ConsultarEmpleado
-		@prueba INT
-AS
-	BEGIN
-		SELECT emp_num_ficha as emp_num_ficha, emp_p_nombre as emp_p_nombre,emp_s_nombre as emp_s_nombre,
-		emp_p_apellido as emp_p_apellido, emp_s_apellido as emp_s_apellido,
-		emp_cedula as emp_cedula, emp_fecha_nac as emp_fecha_nac,
-		emp_activo as emp_activo, fk_lug_dir_id as fk_lug_dir_id
-		FROM EMPLEADO;
-	END
-GO
+	DECLARE @IdLugarPadre int;
+	DECLARE @maxIdLugar int;
+	DECLARE @maxIdEmplado int;
+	DECLARE @cargoId int;
+	
+	SET @IdLugarPadre = (SELECT lug_dir_id
+					  FROM LUGAR_DIRECCION
+					  WHERE lug_dir_nombre =@estado);
+	
+	SET @maxIdLugar =(SELECT MAX(lug_dir_id)+1
+				 FROM LUGAR_DIRECCION);
+					  
+    INSERT INTO LUGAR_DIRECCION VALUES (@maxIdLugar, @ciudad,'Ciudad',@IdLugarPadre);
+    INSERT INTO LUGAR_DIRECCION VALUES ((@maxIdLugar+1), @direccion,'Direccion',@maxIdLugar);
+    
+    SET @maxIdEmplado =(SELECT MAX(emp_num_ficha)+1
+				 FROM EMPLEADO);
+	
+	INSERT INTO EMPLEADO VALUES (@maxIdEmplado,@cedula,@genero,@pNombre,@sNombre,@pApellido,@sApellido,
+								 @fechaNacimiento, @nivelEstudio, @correo, @activo, @maxIdLugar);
+	
+	SET @cargoId = (SELECT car_id
+					FROM CARGO
+					WHERE car_nombre=@cargo);
+					
+	INSERT INTO CARGO_EMPLEADO VALUES (@fechContrato,null,@modalidad,@sueldo,@cargoId,@maxIdEmplado);
+ 
+ END;
+ GO
 
 --Consultar Detalle empleado
 USE [BDTangerine]
@@ -1468,10 +1486,10 @@ AS
 			   Employee.emp_p_apellido AS emp_p_apellido,
 			   Employee.emp_s_apellido AS emp_s_apellido,
 			   Employee.emp_genero as emp_genero,
-			   CAST(Employee.emp_fecha_nac AS DATE )AS emp_fecha_nac,
+			   CAST(Employee.emp_fecha_nac AS DATE )AS emp_fecha_nac, 
 			   (YEAR (getdate()) - YEAR(Employee.emp_fecha_nac)) AS Edad,
-			   Employee.emp_nivel_estudio AS emp_nivel_estudio ,
-			   Employee.emp_email AS emp_email,
+			   Employee.emp_nivel_estudio AS emp_nivel_estudio , 
+			   Employee.emp_email AS emp_email, 
 			   Employee.emp_activo AS emp_activo,
 			   Employee.fk_lug_dir_id AS fk_lug_dir_id,
 			   Job.car_nombre AS car_nombre,
@@ -1480,16 +1498,16 @@ AS
 			   CAST(EmployeeJob.car_emp_fecha_cont AS VARCHAR)AS car_emp_fecha_cont,
 			   ISNULL(CAST(EmployeeJob.car_emp_fecha_fin AS VARCHAR),'Actualidad') AS  car_emp_fecha_fin,
 			   (SELECT (P.lug_dir_nombre+', '+E.lug_dir_nombre+', '+
-						C.lug_dir_nombre+', '+D.lug_dir_nombre)
-			   FROM LUGAR_DIRECCION P, LUGAR_DIRECCION E, LUGAR_DIRECCION C,
+						C.lug_dir_nombre+', '+D.lug_dir_nombre) AS EmpDireccion
+			   FROM LUGAR_DIRECCION P, LUGAR_DIRECCION E, LUGAR_DIRECCION C, 
 					  LUGAR_DIRECCION D, EMPLEADO Em
-			   WHERE  Em.fk_lug_dir_id = D.lug_dir_id
-					   and (D.fk_lug_dir_id=C.lug_dir_id
+			   WHERE  Em.fk_lug_dir_id = D.lug_dir_id 
+					   and (D.fk_lug_dir_id=C.lug_dir_id 
 							and C.fk_lug_dir_id=E.lug_dir_id
 							and E.fk_lug_dir_id=P.lug_dir_id)
-					   and Em.emp_num_ficha=@id)AS DireccionEmpleado
+					   and Em.emp_num_ficha=@id) AS EmpDireccion
 		FROM EMPLEADO Employee, CARGO Job, CARGO_EMPLEADO EmployeeJob
-		WHERE Job.car_id=EmployeeJob.fk_car_id
+		WHERE Job.car_id=EmployeeJob.fk_car_id 
 			  and Employee.emp_num_ficha=EmployeeJob.fk_emp_num_ficha
 			  and EmployeeJob.car_emp_fecha_fin IS NULL
 			  and Employee.emp_num_ficha=@id;
@@ -1516,6 +1534,62 @@ AS
 	END
 GO
 
+CREATE PROCEDURE M10_LLenarSelectPaises
+		@tipo [varchar](50)
+AS
+	BEGIN
+		SELECT Pais.lug_dir_id as lug_dir_id ,
+			   pais.lug_dir_nombre as lug_dir_nombre
+		FROM LUGAR_DIRECCION Pais
+		WHERE pais.lug_dir_tipo=@tipo;
+	END
+GO
+
+CREATE PROCEDURE M10_LLenarSelectEstados
+	@lugar [varchar](100),
+	@tipo [varchar](100)
+AS
+ BEGIN
+    SELECT Estado.lug_dir_id as lug_dir_id , 
+	   Estado.lug_dir_nombre as lug_dir_nombre   
+	FROM LUGAR_DIRECCION Estado, LUGAR_DIRECCION Pais
+	WHERE Pais.lug_dir_id=Estado.fk_lug_dir_id 
+			and Estado.lug_dir_tipo=@tipo
+			and Estado.fk_lug_dir_id =(	SELECT lug_dir_id
+										FROM LUGAR_DIRECCION
+										WHERE lug_dir_nombre=@lugar);
+ END
+GO
+
+CREATE PROCEDURE M10_LlenarSelectCargo
+@id int
+AS
+BEGIN
+	SELECT c.car_id as car_id, c.car_nombre as car_nombre, 
+	   c.car_descripcion as car_descripcion
+	FROM CARGO c
+END
+GO
+
+CREATE PROCEDURE M10_ConsultarEmpleado
+		@param INT
+AS
+	BEGIN
+		SELECT  Employee.emp_num_ficha as emp_num_ficha, Employee.emp_p_nombre as emp_p_nombre,
+				Employee.emp_s_nombre as emp_s_nombre,Employee.emp_p_apellido as emp_p_apellido, 
+				Employee.emp_s_apellido as emp_s_apellido,Employee.emp_cedula as emp_cedula, 
+				Employee.emp_fecha_nac as emp_fecha_nac,Employee.emp_activo as emp_activo,
+				Employee.emp_email as emp_email, Employee.emp_genero as emp_genero, 
+				Employee.emp_nivel_estudio as emp_nivel_estudio,
+				Job.car_nombre as car_nombre, Job.car_descripcion as car_descripcion,
+				JobEmployee.car_emp_fecha_cont as car_emp_fecha_cont, 
+				JobEmployee.car_emp_modalidad as car_emp_modalidad,
+				JobEmployee.car_emp_sueldo as car_emp_sueldo     
+			FROM EMPLEADO Employee, CARGO_EMPLEADO JobEmployee, CARGO job
+		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha 
+			  and JobEmployee.fk_car_id=Job.car_id
+	END
+GO
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------

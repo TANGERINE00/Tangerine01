@@ -39,8 +39,6 @@ namespace Tangerine.GUI.M1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int typeComp = 2;
-            int idComp = 3;
             LogicaM10 logicaM10 = new LogicaM10();
             //Aqui debe recibir typeComp y idComp de MOD3 y MOD4
             //int typeComp = int.Parse(Request.QueryString["typeComp"]);
@@ -72,22 +70,25 @@ namespace Tangerine.GUI.M1
                     {
                         //Nombres
                         empleado += ResourceGUIM10.AbrirTR;
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_p_nombre.ToString() + 
+                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_p_nombre.ToString() +
                             ResourceGUIM10.Espacio +
                             theEmpleado.emp_s_nombre.ToString() + ResourceGUIM10.CerrarTD;
                         //Apellidos
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_p_apellido.ToString() + 
+                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_p_apellido.ToString() +
                             ResourceGUIM10.Espacio +
                             theEmpleado.emp_s_apellido.ToString() + ResourceGUIM10.CerrarTD;
                         //Cedula
                         empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_cedula.ToString() +
                             ResourceGUIM10.CerrarTD;
                         //Cargo
-                        empleado += ResourceGUIM10.AbrirTD + "AQUI VA CARGO" +
+                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.Job.Nombre +
                             ResourceGUIM10.CerrarTD;
-                        //Fecha de nacimiento??
-                        empleado += ResourceGUIM10.AbrirTD + 
-                             theEmpleado.emp_fecha_nac.ToString(ResourceGUIM10.FormatoFecha.ToString()) +
+                        //Sueldo base
+                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.Job.Sueldo +
+                            ResourceGUIM10.CerrarTD;
+                        //Fecha de contratacion
+                        empleado += ResourceGUIM10.AbrirTD +
+                             theEmpleado.Job.FechaContratacion.ToString("dd/MM/yyyy") +
                              ResourceGUIM10.CerrarTD;
                         //Estatus
                         empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_activo +

@@ -223,12 +223,15 @@
     <value>car_emp_sueldo</value>
   </data>
   <data name="EmpDireccion" xml:space="preserve">
-    <value>DireccionEmpleado</value>
+    <value>EmpDireccion</value>
   </data>
   <data name="ConsultarGerente" xml:space="preserve">
     <value>M10_ConsultarGerentes</value>
   </data>
   <data name="ConsultarProgramadores" xml:space="preserve">
     <value>M10_ConsultarProgramadores</value>
+  </data>
+  <data name="EmpModalidad" xml:space="preserve">
+    <value>car_emp_modalidad</value>
   </data>
 </root>

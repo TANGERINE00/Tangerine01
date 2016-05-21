@@ -86,6 +86,9 @@ drop procedure M10_ConsultarEmpleado;
 drop procedure M10_DetallarEmpleado;
 drop procedure M10_ConsultarGerentes;
 drop procedure M10_ConsultarProgramadores;
+drop procedure M10_LLenarSelectPaises;
+drop procedure M10_LLenarSelectEstados;
+drop procedure M10_LlenarSelectCargo;
 
 
 

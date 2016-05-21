@@ -14,6 +14,8 @@ namespace Tangerine.GUI.M1
     {
         LogicaProyecto logicaM7 = new LogicaProyecto();
         int _empleadoId;
+        List<Proyecto> listaProyectos = new List<Proyecto>();
+
         private String dataProyecto
         {
             get
@@ -27,18 +29,19 @@ namespace Tangerine.GUI.M1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Proyecto> listaProyectos;
             if (!IsPostBack)
             {
                 if ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolAdministrador)) ||
                         ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolGerente))))
                     listaProyectos = logicaM7.consultarProyectos();
                 else
-                    _empleadoId = Int32.Parse(HttpContext.Current.Session["UserID"] + "");
-                    listaProyectos = logicaM7.consultarProyectosDeUnTrabajador(_empleadoId);
-                
-                listaProyectos = logicaM7.consultarProyectos();
-
+                {
+                    if (HttpContext.Current.Session["Rol"] + "" == "Programador")
+                    {
+                        _empleadoId = Int32.Parse(HttpContext.Current.Session["UserID"] + "");
+                        listaProyectos = logicaM7.consultarProyectosDeUnTrabajador(_empleadoId);
+                    }
+                }
                 dataProyecto = LlenarProyectos(listaProyectos);
             }
         }

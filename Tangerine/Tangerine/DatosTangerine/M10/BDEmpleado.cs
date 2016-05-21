@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,34 +22,28 @@ namespace DatosTangerine.M10
         {
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
-            Parametro theParam = new Parametro();
-
+            Hashtable elementos = new Hashtable();
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar, theEmpleado.emp_num_ficha.ToString(), false);
-                parameters.Add(theParam);
+                elementos = listElementos(theEmpleado);
+                parameters.Add(new Parametro("@pNombre", SqlDbType.VarChar, theEmpleado.Emp_p_nombre, false));
+                parameters.Add(new Parametro("@sNombre", SqlDbType.VarChar, theEmpleado.Emp_s_nombre, false));
+                parameters.Add(new Parametro("@pApellido", SqlDbType.VarChar, theEmpleado.Emp_p_apellido, false));
+                parameters.Add(new Parametro("@sApellido", SqlDbType.VarChar, theEmpleado.Emp_s_apellido, false));
+                parameters.Add(new Parametro("@genero", SqlDbType.VarChar, theEmpleado.Emp_genero, false));
+                parameters.Add(new Parametro("@cedula", SqlDbType.Int, theEmpleado.Emp_cedula.ToString(), false));
+                parameters.Add(new Parametro("@fechaNacimiento", SqlDbType.DateTime, theEmpleado.Emp_fecha_nac.ToString("dd/MM/yyyy"), false));
+                parameters.Add(new Parametro("@activo", SqlDbType.VarChar, theEmpleado.Emp_activo, false));
+                parameters.Add(new Parametro("@nivelEstudio", SqlDbType.VarChar, theEmpleado.Emp_nivel_estudio, false));
+                parameters.Add(new Parametro("@correo", SqlDbType.VarChar, theEmpleado.Emp_email, false));
+                parameters.Add(new Parametro("@cargo", SqlDbType.VarChar, theEmpleado.Job.Nombre, false));
+                parameters.Add(new Parametro("@fechContrato", SqlDbType.DateTime, theEmpleado.Job.FechaContratacion.ToString("dd/MM/yyyy"), false));
+                parameters.Add(new Parametro("@modalidad", SqlDbType.VarChar, theEmpleado.Job.Modalidad, false));
+                parameters.Add(new Parametro("@sueldo", SqlDbType.Int, "234", false));
 
-                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceEmpleado.ParamCedula, SqlDbType.VarChar, theEmpleado.emp_cedula.ToString(), false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceEmpleado.ParamGenero, SqlDbType.VarChar, theEmpleado.emp_genero, false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceEmpleado.ParamPNombre, SqlDbType.VarChar, theEmpleado.emp_p_nombre, false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceEmpleado.ParamSNombre, SqlDbType.VarChar, theEmpleado.emp_s_nombre, false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceEmpleado.ParamPApellido, SqlDbType.VarChar, theEmpleado.emp_p_apellido, false);
-                parameters.Add(theParam);
-
-                theParam = new Parametro(ResourceEmpleado.ParamSApellido, SqlDbType.Int, theEmpleado.emp_s_apellido, false);
-                parameters.Add(theParam);
-
+                parameters.Add(new Parametro("@estado", SqlDbType.VarChar, elementos["Estado"].ToString(), false));
+                parameters.Add(new Parametro("@ciudad", SqlDbType.VarChar, elementos["Ciudad"].ToString(), false));
+                parameters.Add(new Parametro("@direccion", SqlDbType.VarChar, elementos["Direccion"].ToString(), false));
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceEmpleado.AddNewEmpleado, parameters);
 
@@ -79,7 +74,7 @@ namespace DatosTangerine.M10
             {
                 theConnection.Conectar();
                 //PRUEBA
-                theParam = new Parametro(ResourceEmpleado.ParamCPrueba, SqlDbType.Int, "1", false);
+                theParam = new Parametro("@param", SqlDbType.Int, "1", false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -94,15 +89,25 @@ namespace DatosTangerine.M10
                     String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
                     String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
                     int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
-                    //String empCargo = row[ResourceEmpleado.ConEmailContact].ToString();
                     DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
                     String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
-                    int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                    String empEmail = row[ResourceEmpleado.EmpEmail].ToString();
+                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                    String empEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
 
+                    String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                    String empCargoDescripcion = row[ResourceEmpleado.EmpCargoDescripcion].ToString();
+                    DateTime empContratacion = DateTime.Parse(row[ResourceEmpleado.EmpFechaInicio].ToString());
+                    String empModalidad = row[ResourceEmpleado.EmpModalidad].ToString();
+                    double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
                     //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                    Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
-                                                        empCedula, empFecha, empActivo, empLugId);
-                    listEmpleado.Add(theEmpleado);
+
+                    Cargo cargoEmpleado = new Cargo(empCargo, empCargoDescripcion, empContratacion, empModalidad, empSalario);
+
+                    Empleado empleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido, empGenero,
+                                                empCedula, empFecha, empActivo, empEstudio, empEmail, cargoEmpleado, null);
+
+                    listEmpleado.Add(empleado);
                 }
 
             }
@@ -137,7 +142,7 @@ namespace DatosTangerine.M10
             DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
             String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
             int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
-            String empNivelEstudio  = row[ResourceEmpleado.EmpEstudio].ToString();
+            String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
             String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
 
             String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
@@ -146,7 +151,7 @@ namespace DatosTangerine.M10
             String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
             String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
-            Empleado employee= new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+            Empleado employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
                                             empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
                                             empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
                                             empFechaFin, empDireccion);
@@ -168,7 +173,7 @@ namespace DatosTangerine.M10
                 int empId = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
                 String empPNombre = row[ResourceComplemento.ItemCountryText].ToString();
 
-                LugarDireccion lugar = new LugarDireccion(empId,empPNombre);
+                LugarDireccion lugar = new LugarDireccion(empId, empPNombre);
                 direccion.Add(lugar);
             }
 
@@ -328,6 +333,17 @@ namespace DatosTangerine.M10
             }
 
             return listEmpleado;
+        }
+
+        private static Hashtable listElementos(Empleado list)
+        {
+            Hashtable elementos = new Hashtable();
+            foreach (LugarDireccion elemento in list.AddressComplete)
+            {
+                elementos.Add(elemento.LugTipo, elemento.LugNombre);
+            }
+
+            return elementos;
         }
 
     }
