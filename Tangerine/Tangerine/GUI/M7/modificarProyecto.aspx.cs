@@ -147,7 +147,7 @@ namespace Tangerine.GUI.M7
                 {
                     if (int.Parse(textInputPorcentaje.Value) > int.Parse(_realizado))
                     {
-                        Server.Transfer("/GUI/M8/GenerarFacturaM8.aspx?IdPropuesta=" + proyecto.Idpropuesta + "&IdProyecto=" + proyecto.Idproyecto + "&Monto="
+                        Server.Transfer("/GUI/M8/GenerarFacturaM8.aspx?IdCompania=" + proyecto.Idcompania + "&IdProyecto=" + proyecto.Idproyecto + "&Monto="
                             + LogicProject.calcularPago(int.Parse(_realizado), int.Parse(textInputPorcentaje.Value), double.Parse(textInputCosto.Value)));
                     }
                     Server.Transfer("ConsultaProyecto.aspx");
