@@ -150,10 +150,6 @@
   <data name="bolivar" xml:space="preserve">
     <value>&lt;b style="color: #3c8dbc;"&gt;Bf &lt;/b&gt;</value>
   </data>
-  <data name="cerrado" xml:space="preserve">
-    <value>&lt;span class="label label-danger"&gt;Cerrado&lt;/span&gt;</value>
-    <comment>coloca el label Cerrado</comment>
-  </data>
   <data name="dolar" xml:space="preserve">
     <value>&lt;a class="glyphicon glyphicon-usd"&gt;&lt;/a&gt;</value>
     <comment>icono de dolar</comment>
@@ -170,5 +166,15 @@
   </data>
   <data name="botonCerra" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="btn_eliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="btn_Modificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil mod_req" data-toggle="modal" data-target="#modal-update" href="#"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="cerrado" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Cerrado&lt;/span&gt;</value>
+    <comment>coloca el label Cerrado</comment>
   </data>
 </root>

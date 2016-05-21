@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ModificarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ModificarPropuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
+       <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/Modificar.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de Propuestas
@@ -89,16 +90,9 @@
 					<th>Acciones</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td class="id">TOT_RF_1</td>
-					<td>El sistema deberá permitir agregar, modificar y eliminar requerimientos, solo cuando valide que el proyecto se encuentra activo.</td>
-                    <td>
-                        <a class="btn btn-default glyphicon glyphicon-pencil" data-toggle="modal" data-target="#modal-update" href="#"></a>
-                        <a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"></a>
-                     </td>
-                </tr>
-			</tbody>     
+			            
+            <asp:Literal id="tablaR" runat="server" ></asp:Literal>
+             
 
 		</table>
 
@@ -141,7 +135,7 @@
                 <div class="container-fluid">
                 <div class="form-group">
 				    <div id="div-id" class="col-sm-5 col-md-5 col-lg-5">
-					    <input type="text" name="idreq" id="idreq_input" placeholder="ID" class="form-control" disabled="disabled" value="TOT_RF_1"/>
+					    <input type="text" name="idreq" id="idreq_input" runat="server" placeholder="ID" class="form-control" disabled="disabled" value="TOT_RF_1"/>
 				    </div>
 			    </div>
                 </div>
@@ -150,7 +144,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="input-group">
                             <span class="input-group-addon">El sistema deberá </span>
-                            <textarea class="form-control" rows="3" placeholder="Funcionalidad del requerimiento" style="text-align: justify;resize:vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
+                            <textarea class="form-control" rows="3" placeholder="Funcionalidad del requerimiento" runat="server" style="text-align: justify;resize:vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
                         </div>
                     </div>
                 </div>
@@ -160,7 +154,7 @@
 
             </div>
             <div class="modal-footer">
-              <button id="btn-modificarReq" disabled="disabled" class="btn btn-primary" type="submit" onclick="return checkform();">Modificar</button>
+              <button id="btn-modificarReq" disabled="disabled" class="btn btn-primary" type="submit">Modificar</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </div>
           </div><!-- /.modal-update-content -->
@@ -179,7 +173,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input class="form-control pull-right" id="datepicker1" value ="<%=Prueba.Feincio %>" type="text">
+                  <input class="form-control pull-right" id="datepicker1" value ="<%=Prueba.Feincio%>" type="text">
                 </div>
                 <!-- /.input group -->
               </div>
@@ -284,7 +278,7 @@
     </form>
 
 
-     <script src="js/Modificar.js"></script>
+    <%-- <script src="js/Modificar.js"></script>
 	<script type="text/javascript">
 	    $(document).ready(function () {
 	        $('#table-requerimientos').DataTable();
@@ -325,7 +319,7 @@
             function fillCodigoTextField() {
                 var idTextField = document.getElementById("idreq_input");
             }
-    </script>
+    </script>--%>
 
 
 </asp:Content>
