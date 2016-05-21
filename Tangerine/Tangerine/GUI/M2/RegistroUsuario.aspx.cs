@@ -65,19 +65,18 @@ namespace Tangerine.GUI.M2
         [WebMethod]
         public static string validarUsuario(string usuario)
         {
-            System.Diagnostics.Debug.WriteLine("Entré");
             string nombreUsuario = usuario;
             bool respuesta = false;
-
-
             respuesta = LogicaAgregarUsuario.ExisteUsuario(nombreUsuario);
+
+            string retorno = "Disponible";
 
             if (respuesta)
             {
-                System.Diagnostics.Debug.WriteLine("Usuario existe");
-                return "Usuario Existe!";
+                retorno = "Usuario Existe!";
             }
-            return "Disponible!";
+
+            return retorno;
         }
 
         protected void btnCrear_Click(object sender, EventArgs e)
@@ -92,7 +91,5 @@ namespace Tangerine.GUI.M2
 
             Response.Redirect("../M2/RegistroUsuario.aspx");
         }
-
-      
     }
 }
