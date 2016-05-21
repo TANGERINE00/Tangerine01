@@ -18,8 +18,7 @@ namespace DominioTangerine
         private float presupuestoAnual_inversion;
         private int numeroLlamadas;
         private int numeroVisitas;
-        private string potencial;
-        private string borrado;
+        private int status;
 
 
         #endregion
@@ -68,19 +67,15 @@ namespace DominioTangerine
             set { numeroVisitas = value; }
 
         }
-        //public string Potencial
-        public string Potencial
+
+        public int Status
         {
-            get { return potencial; }
-            set { potencial = value; }
+            get { return status; }
+            set { status = value;  }
+
 
         }
-        public string Borrado
-        {
-            get { return borrado; }
-            set { borrado = value; }
 
-        }
 
         #endregion
 
@@ -94,13 +89,11 @@ namespace DominioTangerine
             presupuestoAnual_inversion = 0;
             numeroLlamadas = 0;
             numeroVisitas = 0;
-            potencial = String.Empty;
-            borrado = String.Empty;
-
+            status = 0;
         }
        //con todos los atributos inclyendo el id
         public ClientePotencial(int inputId, string inputNombre, string inputRif, string inputEmail, float inputPresupuesto,
-            int inputNumerollamadas, int inputNumeroVisitas, string inputPotencial, string inputBorrado)
+            int inputNumerollamadas, int inputNumeroVisitas, int inputStatus)
         {
             this.idClientePotencial = inputId;
             this.nombreClientePotencial = inputNombre;
@@ -109,12 +102,11 @@ namespace DominioTangerine
             this.presupuestoAnual_inversion = inputPresupuesto;
             this.numeroLlamadas = inputNumerollamadas;
             this.numeroVisitas = inputNumeroVisitas;
-            this.potencial = inputPotencial;
-            this.borrado = inputBorrado;
+            this.status = inputStatus;
         }
 //con todos los atributos sin incluir el id
         public ClientePotencial( string inputNombre, string inputRif, string inputEmail, float inputPresupuesto,
-          int inputNumerollamadas, int inputNumeroVisitas, string inputPotencial, string inputBorrado)
+          int inputNumerollamadas, int inputNumeroVisitas, int inputStatus)
         {
             
             this.nombreClientePotencial = inputNombre;
@@ -123,19 +115,20 @@ namespace DominioTangerine
             this.presupuestoAnual_inversion = inputPresupuesto;
             this.numeroLlamadas = inputNumerollamadas;
             this.numeroVisitas = inputNumeroVisitas;
-            this.potencial = inputPotencial;
-            this.borrado = inputBorrado;
+            this.status = inputStatus;
         }
 
 
         //para el agregar
-        public ClientePotencial(string inputNombre, string inputRif, string inputEmail, float inputPresupuesto)
+        public ClientePotencial(string inputNombre, string inputRif, string inputEmail, float inputPresupuesto,
+            int inputStatus)
         {
 
             this.nombreClientePotencial = inputNombre;
             this.rifClientePotencial = inputRif;
             this.emailClientePotencial = inputEmail;
             this.presupuestoAnual_inversion = inputPresupuesto;
+            this.status = inputStatus;
       
         }
    

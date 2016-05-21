@@ -40,7 +40,16 @@ namespace Tangerine.GUI.M1
         protected void Page_Load(object sender, EventArgs e)
         {
             LogicaM10 logicaM10 = new LogicaM10();
-            
+            int idEmpleado;
+            try
+            {
+                idEmpleado = int.Parse(Request.QueryString["id"]);
+                logicaM10.CambiarEstatus(idEmpleado);
+            }
+            catch
+            {
+
+            }
 
             if (!IsPostBack)
             {

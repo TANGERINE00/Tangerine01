@@ -1638,6 +1638,20 @@ AS
 			  and JobEmployee.fk_car_id=Job.car_id
 	END
 GO
+
+CREATE PROCEDURE M10_CambiarEstatus
+		@ficha INT
+AS
+	BEGIN
+		update EMPLEADO 
+		set emp_activo = case 
+							when emp_activo = 'Activo' then 'Inactivo'
+							else 'Activo'
+						 end
+	    where emp_num_ficha = @ficha;
+		
+	END
+GO
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------

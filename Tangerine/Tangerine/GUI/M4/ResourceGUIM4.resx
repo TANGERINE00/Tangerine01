@@ -200,14 +200,14 @@
   <data name="Status" xml:space="preserve">
     <value>Status:</value>
   </data>
-  <data name="Telefono" xml:space="preserve">
-    <value>Teléfono:</value>
+  <data name="Dias" xml:space="preserve">
+    <value> dìas.</value>
   </data>
   <data name="BotonContac" xml:space="preserve">
     <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
   <data name="BotonInvol" xml:space="preserve">
-    <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
+    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
   <data name="CloseSpanHab" xml:space="preserve">
     <value>"&gt;Habilitada&lt;/span&gt;</value>
@@ -217,5 +217,11 @@
   </data>
   <data name="CloseParentesis" xml:space="preserve">
     <value>)</value>
+  </data>
+  <data name="PlazoPago" xml:space="preserve">
+    <value>Plazo de Pagos:</value>
+  </data>
+  <data name="Presupuesto" xml:space="preserve">
+    <value>Presupuesto Actual:</value>
   </data>
 </root>

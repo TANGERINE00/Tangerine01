@@ -43,7 +43,7 @@ namespace Tangerine.GUI.M3
           //  _borrado = Borrado.Value;
             //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
             // ((_nombre, _rif, _email, _presupuesto, _lla) en esa parte esta usando lo del constructor sin id
-            ClientePotencial clientePotencial = new ClientePotencial(_nombre, _rif, _email, _presupuesto);//, _llamadas, _visitas, _potencial, _borrado);
+            ClientePotencial clientePotencial = new ClientePotencial(_nombre, _rif, _email, _presupuesto,1);//, _llamadas, _visitas, _potencial, _borrado);
             LogicaM3 clientePotencialLogica = new LogicaM3();
             clientePotencialLogica. AgregarNuevoclientePotencial(clientePotencial);
             
