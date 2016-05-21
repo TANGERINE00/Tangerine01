@@ -205,7 +205,7 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
+        ///   Looks up a localized string similar to &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-top:20px; margin-right:5%; height:35px; width:120px; margin-left:-60px;&quot; class=&quot;btn btn-default&quot; href=&quot;ConsultarContactos.aspx?typeComp=.
         /// </summary>
         internal static string BotonVolver {
             get {

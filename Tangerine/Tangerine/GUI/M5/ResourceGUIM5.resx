@@ -184,7 +184,7 @@
     <value>&lt;a title="Eliminar Contacto" class="btn btn-danger glyphicon glyphicon-trash" style="margin-left:3px;" href="ConsultarContactos.aspx?typeComp=</value>
   </data>
   <data name="BotonVolver" xml:space="preserve">
-    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:20px; margin-right:5%; height:35px" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-top:20px; margin-right:5%; height:35px; width:120px; margin-left:-60px;" class="btn btn-default" href="ConsultarContactos.aspx?typeComp=</value>
   </data>
   <data name="BotonVolver2" xml:space="preserve">
     <value>&amp;idComp=</value>
