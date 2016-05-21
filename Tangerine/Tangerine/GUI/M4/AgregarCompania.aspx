@@ -64,6 +64,16 @@
                                 id="InputFechaRegistro1" name="InputFechaRegistro1" 
                                 placeholder="dd/mm/aaaa" required>
                         </div>
+                        <div class="form-group" runat="server">
+                            <label for="InputPresupuesto">Presupuesto Anual</label>
+                            <input runat="server" type="number" class="form-control" id="InputPresupuesto1" name="InputPresupuesto1" 
+                                placeholder="Introduzca el presupuesto anual de la Compañía" required>
+                        </div>
+                        <div class="form-group" runat="server">
+                            <label for="InputPlazoPago">Plazo de Pagos (días)</label>
+                            <input runat="server" type="text" class="form-control" id="InputPlazoPago1" name="InputPlazoPago1" 
+                                placeholder="Introduzca el plazo para los pagos de la compañía" required>
+                        </div>
                      </div><!-- /.box-body -->
 
                     <div class="box-footer" runat="server">

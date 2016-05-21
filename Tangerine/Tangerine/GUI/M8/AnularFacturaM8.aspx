@@ -32,28 +32,43 @@
                         <div class="form-group" runat="server">
 
                             <div class="form-group" runat="server">
-                                <label for="labelNumeroFactura_M8">Número Factura</label>
-                                <input runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" disabled="disabled">
+                                <h4>
+                                    <label for="labelNumeroFactura_M8">Número Factura</label></h4>
+                                <!-- <input runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" disabled="disabled">-->
+                               <div> <h4>
+                                    <asp:Literal runat="server" ID="NumeroFactura"> </asp:Literal></h4> </div>
                             </div>
 
                             <div class="form-group" runat="server">
-                                <label for="labelFecha_M8">Fecha de facturación</label>
-                                <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha" disabled="disabled">
+                                <h4>
+                                    <label for="labelFecha_M8">Fecha de facturación</label></h4>
+                                <!--<input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha" disabled="disabled">-->
+                               <div> <h4>
+                                    <asp:Literal runat="server" ID="Fecha"> </asp:Literal></h4> </div>
                             </div>
 
                             <div class="form-group" runat="server">
-                                <label for="labelCliente_M8">Compañía</label>
-                                <input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Cliente" disabled="disabled">
+                                <h4>
+                                    <label for="labelCliente_M8">Compañía</label></h4>
+                                <!--<input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Cliente" disabled="disabled">-->
+                              <div>  <h4>
+                                    <asp:Literal runat="server" ID="Compania"> </asp:Literal></h4> </div>
                             </div>
 
                             <div class="form-group" runat="server">
-                                <label for="labelProyecto_M8">Proyecto</label>
-                                <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
+                                <h4>
+                                    <label for="labelProyecto_M8">Proyecto</label></h4>
+                                <!--  <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled="disabled">-->
+                             <div>   <h4>
+                                    <asp:Literal runat="server" ID="Proyecto"> </asp:Literal></h4> </div>
                             </div>
 
                             <div class="form-group" runat="server">
-                                <label for="labelDescripcion_M8">Descripción</label>
-                                <input type="text" runat="server" class="form-control" id="textDescripcion_M8" name="textDescripcion_M8" placeholder="Descripción" disabled="disabled">
+                                <h4>
+                                    <label for="labelDescripcion_M8">Descripción</label></h4>
+                                <!--<input type="text" runat="server" class="form-control" id="textDescripcion_M8" name="textDescripcion_M8" placeholder="Descripción" disabled="disabled">-->
+                              <div>  <h4>
+                                    <asp:Literal runat="server" ID="Descripcion"> </asp:Literal></h4> </div>
                             </div>
 
                             <%--    <div class="form-group" runat="server">
@@ -66,8 +81,11 @@
                     </div> --%>
 
                             <div class="form-group" runat="server">
-                                <label for="labelMonto_M8">Monto</label>
-                                <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">
+                                <h4>
+                                    <label for="labelMonto_M8">Monto</label></h4>
+                                <!--<input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">-->
+                              <div>  <h4>
+                                    <asp:Literal runat="server" ID="Monto"> </asp:Literal></h4> </div>
                             </div>
 
                             <div class="form-group" runat="server">
@@ -86,8 +104,8 @@
             <!-- /.box -->
 
         </div>
-        <!--/.col (left) -->
-        <!-- right column -->
-        <div class="col-md-6" runat="server">
-        </div>
+    <!--/.col (left) -->
+    <!-- right column -->
+    <div class="col-md-6" runat="server">
+    </div>
 </asp:Content>
