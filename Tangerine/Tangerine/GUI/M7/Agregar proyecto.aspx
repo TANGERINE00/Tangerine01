@@ -37,8 +37,8 @@
                     <div class="box-body" runat="server">
                         <div class="form-group" runat="server">
                             <label for="inputPropuesta">Propuesta Aprobada *</label>
-                            <select class="form-control" datatextfield="text" id="inputPropuesta" name="inputPropuesta" runat="server">
-                            </select>
+                            <asp:DropDownList  class="form-control" datatextfield="text" id="inputPropuesta" name="inputPropuesta" OnSelectedIndexChanged="comboPropuesta_Click" AutoPostBack="True" runat="server">
+                            </asp:DropDownList>
                         </div>
 
                         <div class="form-group" runat="server">
