@@ -24,12 +24,13 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Selecciona el rol para el usuario</h4>
                 </div>
+                <form runat="server" ID="form1">
                 <div class="modal-body">  
                     <div class="box-body">     
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="email" Class="form-control" id="usuarioCambiar" placeholder="" runat="server" disabled/>
+                                <input type="email" Class="form-control" id="usuarioCambiar" placeholder="" runat="server" readonly/>
                             </div>
                         </div>
                         <p>&nbsp;</p>
@@ -47,12 +48,15 @@
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <button id="botonCancelar" type="button" class="btn btn-default pull-left" data-dismiss="modal" runat="server">Cancelar</button>
-                        <button id="botonCambiar" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCambiar_Click">Cambiar</button>
+                         <asp:Button runat="server" ID="botonCambiar" class="btn btn-primary pull-right" OnClick="botonCambiar_Click" Text="Cambiar"/>
+                       <!-- <button id="botonCambiar2" type="button" class="btn btn-primary pull-right" runat="server" OnClick="botonCambiar_Click">Cambiar</button>-->
                     </div><!-- /.box-footer -->
                 </div>
+                </form>
             </div>
+          </div>
         </div>
-    </div>
+   
     
     <div class="container-fluid">
         <div class="box box-info">
@@ -100,7 +104,7 @@
                             <li><a href="#">4</a></li>
                             <li><a href="#">5</a></li>
                             <li>
-                                <a href="#" aria-label="Next">
+                                <a href="#" aria-label="Next" >
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
@@ -114,13 +118,15 @@
 
             function ajaxRes()
             {
-                $('.table > tbody > tr > td:nth-child(4) > a')
+                $('.table > tbody > tr > td:nth-child(5) > a')
                   .click(function (e)
                   {
                       e.preventDefault();
                       //var prueba = $('.table > tbody > tr > td:nth-child(3)').text();
-                      var prueba2 = $(this).closest("tr").find("td:nth-child(3)").text();
-                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = prueba2;
+                      var usuario = $(this).closest("tr").find("td:nth-child(3)").text();
+                      var rol = $(this).closest("tr").find("td:nth-child(4)").text();
+                      document.getElementById("ContentPlaceHolder1_usuarioCambiar").value = usuario;
+                      document.getElementById("ContentPlaceHolder1_rolCambiar").value = rol;
                   });
             }
         </script>  

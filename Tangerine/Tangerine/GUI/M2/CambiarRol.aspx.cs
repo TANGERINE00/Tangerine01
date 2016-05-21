@@ -30,37 +30,46 @@ namespace Tangerine.GUI.M2
 
             if (!IsPostBack)
             {
-                string nombre = "geastone";
-                empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "Gerardo" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "Astone" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + nombre + ResourceGUIM2.CloseTD;
-               // empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonModif +nombre +ResourceGUIM2.CloseBotonModify;
-                empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.CloseTR;
+                List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
 
-                empleado += ResourceGUIM2.OpenTR;
-                empleado += ResourceGUIM2.OpenTD + "luis" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "rodriguez" + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.OpenTD + "lurodr" + ResourceGUIM2.CloseTD;
-                // empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonModif +nombre +ResourceGUIM2.CloseBotonModify;
-                empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
-                empleado += ResourceGUIM2.CloseTR;
+                foreach (Empleado  empleador in listaDeEmpleados)
+                {
+                    Usuario user = LogicaModificarRol.ObtenerUsuario(empleador);
+                  
+                    empleado += ResourceGUIM2.OpenTR;
+                    empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
+                    empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
+                    if (user.NombreUsuario != null)
+                    {  
+                    empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
+                    empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
+                    empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
+                    empleado += ResourceGUIM2.CloseTR;
+                    }
+                    else 
+                    {
+                        empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.CloseTR;
+                    }
 
-            }
+                }
 
-        }
+              }
         
-        protected void botonCambiar_Click( object sender, EventArgs e )
+    }
+
+
+        protected void botonCambiar_Click(object sender, EventArgs e)
         {
-            /*string usuarioNombre = usuarioCambiar.Value;
-            Rol rol = new Rol( rolCambiar.Value );
 
-            Usuario usuario = new Usuario(usuarioNombre, rol);
+            string nombreUsuario = usuarioCambiar.Value;
+            string rol = rolCambiar.Value;
+            System.Diagnostics.Debug.WriteLine("en;" + rol + nombreUsuario);
+            LogicaModificarRol.ModificarRol(nombreUsuario, rol);
 
-            LogicaModificarRol.ModificarRol( usuario );*/
+
         }
-
-
     }
 }

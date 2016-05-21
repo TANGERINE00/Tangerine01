@@ -41,6 +41,7 @@
                         }
                     });
                 });
+
         }
     </script>
 
@@ -60,28 +61,28 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Ficha de empleado</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly="true">
+                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly="true" required>
                             </div>
                         </div> 
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server">
+                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" required>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server">
+                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" required>
                             </div>
                         </div>
                         <p>&nbsp;</p>
                         <div class="form-group">
                             <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
                             <div class="col-sm-10">
-                                <select class="form-control" runat="server" id="rolDefault">
+                                <select class="form-control" runat="server" id="rolDefault" required>
                                     <option>Administrador</option>
                                     <option>Director</option>
                                     <option>Gerente</option>
@@ -104,7 +105,7 @@
     </div>
     
     <div class="container-fluid">
-        <div class="box box-info">
+        <div class="box box-primary">
             <!--<div class="panel-heading">Filtrar empleados</div>-->
             <div class="box-header with-border">
                 <h3 class="box-title">Lista de empleados sin cuenta de usuario</h3>
@@ -119,9 +120,9 @@
             </div>
 
             </div><!-- /.box-header -->
-            <div class="box-body">
-                <div class="table-responsive">
-                    <table class="table no-margin">
+            <div class="box-body table-responsive no-padding">
+                <div class="box-body table-responsive ">
+                    <table id="example2" class="table table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>N° Empleado</th>
@@ -137,26 +138,7 @@
                            
                         </tbody>
                     </table>
-                    <nav>
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
             </div>
         </div>
     </div>

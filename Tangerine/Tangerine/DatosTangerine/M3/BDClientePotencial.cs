@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine;
+using ExcepcionesTangerine;
 
 
 namespace DatosTangerine.M3
@@ -97,6 +98,13 @@ namespace DatosTangerine.M3
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_agregar_clientePotencial, parameters);
 
             }
+
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                    ResourceClientePotencial.Mensaje_Error_Formato,ex);
+            }
             catch (Exception ex)
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
@@ -124,6 +132,12 @@ namespace DatosTangerine.M3
                     //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                     List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_eliminarClientePotencial, parameters);
 
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                        ResourceClientePotencial.Mensaje_Error_Formato, ex);
                 }
                 catch (Exception ex)
                 {
@@ -178,6 +192,12 @@ namespace DatosTangerine.M3
                     }
 
                 }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                        ResourceClientePotencial.Mensaje_Error_Formato, ex);
+                }
                 catch (Exception ex)
                 {
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
@@ -228,6 +248,12 @@ namespace DatosTangerine.M3
                     //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                     List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_modificarClientePotencial, parameters);
 
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                        ResourceClientePotencial.Mensaje_Error_Formato, ex);
                 }
                 catch (Exception ex)
                 {

@@ -371,5 +371,80 @@ namespace DatosTangerine.M2
 
             return rol;
         }
+
+        /// <summary>
+        /// Método que retorna true si un usuario pertenece al empleado con el numero de ficha pasado como parametro. 
+        /// Si sucede lo contrario retorna false.
+        /// </summary>
+        /// <param name="fichaEmpleado"></param>
+        /// <returns></returns>
+        public static bool VerificarUsuarioPorFichaEmpleado(int fichaEmpleado)
+        {
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+
+            bool resultado = false;
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, fichaEmpleado.ToString(),
+                                             false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarUsuarioPorFichaEmpleado,
+                                                                         parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Write(ex);
+            }
+
+            return resultado;
+        }
+
+        /// <summary>
+        /// Método para verificar si un nombre de usuario existe
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <returns></returns>
+        public static bool VerificarExistenciaDeUsuario(string nombreUsuario)
+        {
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+
+            bool resultado = false;
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario,
+                                             false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarExistenciaUsuario,
+                                                                         parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Write(ex);
+            }
+
+            return resultado;
+        }
     }
 }

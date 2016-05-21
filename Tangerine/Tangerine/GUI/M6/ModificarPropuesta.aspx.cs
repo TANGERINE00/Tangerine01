@@ -12,20 +12,34 @@ namespace Tangerine.GUI.M6
 {
     public partial class ModificarPropuesta : System.Web.UI.Page
     {
+        public string requerimiento
+        {
+            get
+            {
+                return this.tablaR.Text;
+            }
+
+            set
+            {
+                this.tablaR.Text = value;
+            }
+        }
 
         public Propuesta Prueba;
-        //public List <Requerimiento> req;
+        public List <Requerimiento> req;
+        public bool modi;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             string prueba = Request.QueryString.Get("id");
-            //string str = Request.QueryString["req"];
+            
           
              
             
             btn_Modifica(prueba);
-            //btn_ModificaReq(str);
+            btn_ModificaReq(prueba);
+           // btn_ModReq(prueba);
 
 
             if (!IsPostBack)
@@ -33,6 +47,27 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboDuracion();
                 llenarComboEstatus();
+
+
+
+                foreach (Requerimiento elRequerimiento in req)
+                {
+                    requerimiento += RecursosGUI_M6.AbrirTR;
+
+                    requerimiento += RecursosGUI_M6.AbrirTD + elRequerimiento.CodigoRequerimiento.ToString() + RecursosGUI_M6.CerrarTD;
+                    requerimiento += RecursosGUI_M6.AbrirTD + elRequerimiento.Descripcion.ToString() + RecursosGUI_M6.CerrarTD;
+
+
+                    requerimiento += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.btn_Modificar + RecursosGUI_M6.CerrarTD;
+                    requerimiento += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.btn_eliminar + RecursosGUI_M6.CerrarTD;
+                                     
+                    requerimiento += RecursosGUI_M6.CerrarTR;
+
+
+                }
+
+
+
                 
             }
 
@@ -72,18 +107,26 @@ namespace Tangerine.GUI.M6
         /// </summary>
         /// <param name="idPropuesta"></param>
 
-        //public void btn_ModificaReq(String idPropuesta) 
+        public void btn_ModificaReq(String idPropuesta)
+        {
+
+            LogicaRequerimiento logreq = new LogicaRequerimiento();
+
+            req = logreq.TraerRequerimientoPropuesta(idPropuesta);
+
+
+        }
+
+
+        //public void btn_ModReq(String idRequerimiento, String descripcion) 
         //{
-
-        //    LogicaRequerimiento logreq = new LogicaRequerimiento();
-
-        //    req = logreq.TraerRequerimientoPropuesta(idPropuesta);
-
-            
+        //    Requerimiento vistaReq = new Requerimiento();
+        //    LogicaRequerimiento logica = new LogicaRequerimiento();
+        //    vistaReq.Descripcion = descripcion;
+        //    vistaReq.CodigoRequerimiento = idRequerimiento;
+        //    modi = logica.ModRequerimiento(vistaReq);
+        
         //}
-
-
-
 
 
 

@@ -7,72 +7,81 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M2 {
+namespace Tangerine.GUI.M4 {
     
     
-    public partial class CambiarRol {
+    public partial class HabilitarCompania {
         
         /// <summary>
-        /// Control form1.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Literal Nombre;
         
         /// <summary>
-        /// Control usuarioCambiar.
+        /// Control Acronimo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl usuarioCambiar;
+        protected global::System.Web.UI.WebControls.Literal Acronimo;
         
         /// <summary>
-        /// Control rolCambiar.
+        /// Control Rif.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect rolCambiar;
+        protected global::System.Web.UI.WebControls.Literal Rif;
         
         /// <summary>
-        /// Control botonCancelar.
+        /// Control direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton botonCancelar;
+        protected global::System.Web.UI.WebControls.Literal direccion;
         
         /// <summary>
-        /// Control botonCambiar.
+        /// Control correo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button botonCambiar;
+        protected global::System.Web.UI.WebControls.Literal correo;
         
         /// <summary>
-        /// Control botonCambiar2.
+        /// Control telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton botonCambiar2;
+        protected global::System.Web.UI.WebControls.Literal telefono;
         
         /// <summary>
-        /// Control tablaempleados.
+        /// Control fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal tablaempleados;
+        protected global::System.Web.UI.WebControls.Literal fecha;
+        
+        /// <summary>
+        /// Control habilitado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal habilitado;
     }
 }

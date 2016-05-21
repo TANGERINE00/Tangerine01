@@ -129,14 +129,16 @@
   <data name="CloseTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
   </data>
-  <data name="Coma" xml:space="preserve">
-    <value>,</value>
+  <data name="OpenParentesis" xml:space="preserve">
+    <value>(</value>
   </data>
   <data name="habilitado" xml:space="preserve">
-    <value>&lt;span class="label label-success"&gt;Habilitada&lt;/span&gt;</value>
+    <value>&lt;span class="label label-success" ="h</value>
+    <comment>"&gt;Habilitada&lt;/span&gt;</comment>
   </data>
   <data name="inhabilitado" xml:space="preserve">
-    <value>&lt;span class="label label-danger"&gt;Inhabilitada&lt;/span&gt;</value>
+    <value>&lt;span class="label label-danger" id="i</value>
+    <comment>"&gt;Inhabilitada&lt;/span&gt;</comment>
   </data>
   <data name="OpenTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
@@ -148,16 +150,16 @@
     <value>Comp</value>
   </data>
   <data name="OpenBotonEdit" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left 0.6px" id="Edi</value>
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarCompania.aspx?idComp=</value>
   </data>
   <data name="OpenBotonHab" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="padding-left 0.6px" id="Hab</value>
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=1&amp;idComp=</value>
   </data>
   <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="padding-left 0.6px" OnClick="MostrarInfo" id="Inf</value>
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px;"OnClick="MostrarInfo"href="InformacionCompania.aspx?idComp=</value>
   </data>
   <data name="OpenBotonInhab" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="padding-left 0.6px" id="Inh</value>
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=0&amp;idComp=</value>
   </data>
   <data name="Acronimo" xml:space="preserve">
     <value>Acrónimo:</value>
@@ -184,7 +186,7 @@
     <value>Nombre:</value>
   </data>
   <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="row"&gt;</value>
+    <value>&lt;div class="center-block"&gt;</value>
   </data>
   <data name="Openh3" xml:space="preserve">
     <value>&lt;h3 style="bold"&gt;</value>
@@ -202,9 +204,18 @@
     <value>Teléfono:</value>
   </data>
   <data name="BotonContac" xml:space="preserve">
-    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="padding-left 0.6px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
+    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
   <data name="BotonInvol" xml:space="preserve">
-    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="padding-left 0.6px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
+    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
+  </data>
+  <data name="CloseSpanHab" xml:space="preserve">
+    <value>"&gt;Habilitada&lt;/span&gt;</value>
+  </data>
+  <data name="CloseSpanInhab" xml:space="preserve">
+    <value>"&gt;Inhabilitada&lt;/span&gt;</value>
+  </data>
+  <data name="CloseParentesis" xml:space="preserve">
+    <value>)</value>
   </data>
 </root>
