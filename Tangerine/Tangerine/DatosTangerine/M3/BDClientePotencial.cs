@@ -16,7 +16,7 @@ namespace DatosTangerine.M3
     public class BDClientePotencial
     {
   //     -----------------------------Listar Clientes Potencial ---------------------------------------------
-       public List<ClientePotencial> DatosListarClientePotencial()
+       public static List<ClientePotencial> DatosListarClientePotencial()
         {
             List<ClientePotencial> objetolistaClientePotencial = new List<ClientePotencial>();
 
@@ -261,7 +261,41 @@ namespace DatosTangerine.M3
             }
 
 
+            public static Boolean EliminarClientePotDef(ClientePotencial ClientPot)
+            {
+               
+                List<Parametro> parameters = new List<Parametro>();
+                BDConexion theConnection = new BDConexion();
+                Parametro theParam = new Parametro();
 
+                try
+                {
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros 
+                    //reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, 
+                    //el tipo de dato, el valor, false)
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial,
+                        SqlDbType.Int, ClientPot.IdClientePotencial.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure 
+                    //M5_AgregarContacto y todos los parametros que recibe
+                    List<Resultado> results =
+                        theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_eliminarClientePotencialDef, parameters);
+
+                }
+                
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                
+
+                return true;
+            }
 
 
 

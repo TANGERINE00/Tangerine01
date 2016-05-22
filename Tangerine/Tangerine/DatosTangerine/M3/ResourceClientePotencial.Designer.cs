@@ -241,6 +241,15 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to eliminar_cliente_potencial_def.
+        /// </summary>
+        internal static string SP_eliminarClientePotencialDef {
+            get {
+                return ResourceManager.GetString("SP_eliminarClientePotencialDef", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to listar_cliente_potencial.
         /// </summary>
         internal static string SP_listarClientePotencial {
