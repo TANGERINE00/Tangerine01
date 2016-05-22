@@ -52,7 +52,7 @@
                         </div>
                    </div>
                    <div class="form-group">
-                        <asp:DropDownList runat="server" CssClass="form-control" ID="LevelListStudy" OnTextChanged="SelectedStudy_Change" AutoPostBack="true">
+                        <asp:DropDownList runat="server" CssClass="form-control" ID="LevelListStudy">
                         </asp:DropDownList> 
                    </div>
 
@@ -90,9 +90,6 @@
                   <div class="form-group ">
                     <input type="text" runat="server" id="SalaryJob" class="form-control" placeholder="0.00">
                   </div>
-                  <div class="form-group ">
-                    <input type="text" runat="server" id="Email" class="form-control" placeholder="correo@dominio.com">
-                  </div>
                 </div>
             </div><!-- row -->
             <!--fila 2-->
@@ -107,7 +104,7 @@
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group ">
-                                <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListState" OnTextChanged="SelectedState_Change" AutoPostBack="true">
+                                <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListState">
                                 </asp:DropDownList>
                             </div>
                         </ContentTemplate>
