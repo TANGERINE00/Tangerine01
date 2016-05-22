@@ -29,6 +29,9 @@ namespace Tangerine.GUI.M1
             if (_logicaM1.ValidarCorreoUsuario( _correo, _usuario))
             {
                 //mensaje.Text = "Correcto";
+                string nueva = _logicaM1.GenerarNuevaContrasena(_correo, _usuario);
+
+                mensaje.Text = nueva;
             }
             else
             {

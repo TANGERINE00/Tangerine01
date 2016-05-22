@@ -133,7 +133,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idCompania=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idFac=.
         /// </summary>
         internal static string BotonMail {
             get {
@@ -142,7 +142,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idCompania=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idFac=.
         /// </summary>
         internal static string BotonMail1 {
             get {

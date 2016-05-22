@@ -24,6 +24,7 @@ namespace PruebasUnitarias.M3
         public void init()
         {
             clientePot1 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000,0,0,3);
+            clientePot2 = new ClientePotencial();
 
             
         }
@@ -62,8 +63,10 @@ namespace PruebasUnitarias.M3
         public void TestConsultClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-    
-            Assert.IsNotNull(BDClientePotencial.ConsultarClientePotencial(clientePot1.IdClientePotencial));
+            listaClientPot = BDClientePotencial.DatosListarClientePotencial();
+            
+            Assert.IsNotNull(BDClientePotencial.ConsultarClientePotencial(listaClientPot[listaClientPot.Count - 1].IdClientePotencial));
+
         }
         [Test]
         public void TestModificarClientePotencial()

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.M2;
 using LogicaTangerine.M2;
+using ExcepcionesTangerine.M2;
 
 namespace PruebasUnitarias.M2
 {
@@ -34,8 +35,8 @@ namespace PruebasUnitarias.M2
         [SetUp]
         public void Init() 
         {
-            theRol = new Rol( "Gerente" );
-            theUser = new Usuario( "userTest", "testapp1", "Activo", theRol, 0, DateTime.Now );
+            theRol = new Rol( "Administrador" );
+            theUser = new Usuario("userTest", "81dc9bdb52d04dc20036dbd8313ed055", "Activo", theRol, 0, DateTime.Now);
             theUserResultado = new Usuario( "userTest", "testapp1" );
             theEmpleado = new Empleado();
             usuarioDefault = "caloza";
@@ -68,7 +69,7 @@ namespace PruebasUnitarias.M2
         public void TestExisteUsuario()
         {
             BDUsuario.AgregarUsuario(theUser);
-            Assert.IsTrue(LogicaAgregarUsuario.ExisteUsuario("userTest"));
+            Assert.IsTrue(LogicaAgregarUsuario.ExisteUsuario("luarropa"));
             Assert.IsFalse(LogicaAgregarUsuario.ExisteUsuario(""));
         }
         /// <summary>
@@ -110,9 +111,7 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestModificarRol()
         {
-            BDUsuario.AgregarUsuario(theUser);
-            System.Diagnostics.Debug.WriteLine(theUser.NombreUsuario);
-            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Gerente"));
+            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Programador"));
 
         }
 
@@ -132,9 +131,9 @@ namespace PruebasUnitarias.M2
         {
 
             Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Gerente"));
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Programador"));
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Director"));
+           // Assert.IsNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
+            //Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Programador"));
+            //Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Director"));
         }
 
         [Test]
@@ -153,76 +152,73 @@ namespace PruebasUnitarias.M2
         }
 
         [Test]
+        
+       
         public void TestFailVerificarAccesoAOpciones()
         {
-            LogicaPrivilegios.VerificarAccesoAOpciones(null);
-            Assert.Fail("se ha disparado la excepcion");
+
+            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAOpciones(null));
         }
 
         [Test]
 
         public void TestFailVerificarAccesoAPagina()
         {
-            LogicaPrivilegios.VerificarAccesoAPagina("RegistroUsuario.aspx", "Programador");
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAPagina("RegistroUsuario.aspx", "Programador"));
         }
 
 
         [Test]
         public void TestFailModificarRol()
         {
-            LogicaModificarRol.ModificarRol(null, null);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<NullReferenceException>(() => LogicaModificarRol.ModificarRol(null, null));
 
         }
 
         [Test]
         public void TestFailAgregarUsuario()
         {
-            LogicaAgregarUsuario.AgregarUsuario(null);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.AgregarUsuario(null));
         }
 
         [Test]
         public void TestFailConsultarListaDeEmpleados()
         {
-            LogicaAgregarUsuario.ConsultarListaDeEmpleados();
-            Assert.Fail("se ha disparado la excepcion");
+
+            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ConsultarListaDeEmpleados());
         }
 
         [Test]
         public void TestFailCrearUsuarioDefault()
         {
-            LogicaAgregarUsuario.CrearUsuarioDefault(null,null);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.CrearUsuarioDefault(null,null));
+         
         }
 
         [Test]
         public void TestFailExisteUsuario()
         {
-            LogicaAgregarUsuario.ExisteUsuario(null);
-            Assert.Fail("se ha disparado la excepcion");
+            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ExisteUsuario("")); 
+            
         }
 
         [Test]
         public void TestFailObtenerCaracteres()
         {
-            LogicaAgregarUsuario.ObtenerCaracteres(null,2);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ObtenerCaracteres(null,2));
+            
         }
 
         [Test]
         public void TestFailPrepararUsuario()
         {
-            LogicaAgregarUsuario.PrepararUsuario(null,null,null,1);
-            Assert.Fail("se ha disparado la excepcion");
-        }
-
-        [Test]
-        public void TestFailVerificarUsuarioDeEmpleado()
-        {
-            LogicaAgregarUsuario.VerificarUsuarioDeEmpleado(1);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.PrepararUsuario(null,null,null,1));
         }
 
        

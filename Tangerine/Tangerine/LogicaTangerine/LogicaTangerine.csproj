@@ -72,6 +72,7 @@
       <DependentUpon>LogicaM10Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="M1\LogicaM1.cs" />
+    <Compile Include="M1\NuevaContrasena.cs" />
     <Compile Include="M1\ResourceLogicaM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
