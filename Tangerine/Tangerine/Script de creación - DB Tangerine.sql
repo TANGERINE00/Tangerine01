@@ -999,33 +999,30 @@ GO
 
 --Modificar Propuesta
 CREATE PROCEDURE M6_ModificarPropuesta
-@idprop int,
-@nombreprop [varchar] (50),
-@descripcionprop [varchar] (255),
-@tipoduracionprop [varchar] (200),
-@duracionprop [varchar] (200),
-@acuerdoprop [varchar] (200),
-@estatusprop [varchar] (20),
-@monedaprop [varchar] (40),
-@cantentregasprop int,
-@fechainiprop date,
-@fechafinprop date,
-@costoprop int,
-@fkcomid int
+@cod_Nombre [varchar] (50),
+@descripcion [varchar] (255),
+@tipoDura [varchar] (200),
+@duracion [varchar] (200),
+@acuerdo [varchar] (200),
+@estatus [varchar] (20),
+@moneda [varchar] (40),
+@fechai date,
+@fechaf date,
+@costo int
+
 
 AS
 
 BEGIN
-UPDATE PROPUESTA SET prop_nombre = @nombreprop, prop_descripcion = @descripcionprop, prop_tipoDuracion = @tipoduracionprop,
-prop_duracion = @duracionprop, prop_acuerdo_pago = @acuerdoprop, prop_estatus = @estatusprop, prop_moneda = @monedaprop,
-prop_cant_entregas = @cantentregasprop, prop_fecha_inicio = @fechainiprop, prop_fecha_fin = @fechafinprop, prop_costo = @costoprop,
-fk_com_id = @fkcomid
-WHERE prop_id = @idprop
+UPDATE PROPUESTA SET prop_descripcion = @descripcion, prop_tipoDuracion = @tipoDura,
+prop_duracion = @duracion, prop_acuerdo_pago = @acuerdo, prop_estatus = @estatus, prop_moneda = @moneda, prop_fecha_inicio = @fechai, prop_fecha_fin = @fechaf, prop_costo = @costo
+
+WHERE prop_nombre = @cod_Nombre
 END;
 
 GO
 -- Modificar Requerimiento
-/*CREATE PROCEDURE M6_ModificarRequerimiento
+CREATE PROCEDURE M6_ModificarRequerimiento
 
 @req_descripcion [varchar] (200),
 @cod_Nombre [varchar] (50)
@@ -1033,9 +1030,9 @@ GO
 AS
 
 BEGIN
-UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE fk_prop_req_id = @cod_Nombre  
+UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE req_id = @cod_Nombre  
 
-END;*/
+END;
 
 GO
 

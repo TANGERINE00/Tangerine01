@@ -142,6 +142,15 @@ namespace DatosTangerine.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M6_ModificarPropuesta.
+        /// </summary>
+        internal static string Modificar_Propuesta {
+            get {
+                return ResourceManager.GetString("Modificar_Propuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ModificarRequerimiento.
         /// </summary>
         internal static string Modificar_Requerimiento {
@@ -300,6 +309,15 @@ namespace DatosTangerine.M6 {
         internal static string ParamNombreProp {
             get {
                 return ResourceManager.GetString("ParamNombreProp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cod_Nombre.
+        /// </summary>
+        internal static string ParamPropnombre {
+            get {
+                return ResourceManager.GetString("ParamPropnombre", resourceCulture);
             }
         }
         
