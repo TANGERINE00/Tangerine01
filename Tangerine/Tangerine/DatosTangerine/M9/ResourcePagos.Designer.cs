@@ -63,9 +63,18 @@ namespace DatosTangerine.M9 {
         /// <summary>
         ///   Looks up a localized string similar to M9_AgregarPago.
         /// </summary>
-        internal static string AddPago {
+        internal static string AgregarPago {
             get {
-                return ResourceManager.GetString("AddPago", resourceCulture);
+                return ResourceManager.GetString("AgregarPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_CambioStatus.
+        /// </summary>
+        internal static string CambiarStatus {
+            get {
+                return ResourceManager.GetString("CambiarStatus", resourceCulture);
             }
         }
         
@@ -106,11 +115,29 @@ namespace DatosTangerine.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @moneda.
+        /// </summary>
+        internal static string ParamMoneda {
+            get {
+                return ResourceManager.GetString("ParamMoneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @monto.
         /// </summary>
         internal static string ParamMonto {
             get {
                 return ResourceManager.GetString("ParamMonto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
             }
         }
     }

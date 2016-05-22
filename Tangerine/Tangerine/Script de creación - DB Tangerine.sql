@@ -366,8 +366,11 @@ create table FACTURA
 
 create table PAGO
 (
-	pag_id int not null,
+	pag_id int IDENTITY(1,1) not null,
+	pag_moneda varchar(50) not null,
 	pag_monto numeric(12,3) not null,
+	pag_forma varchar(20) not null,
+	pag_cod numeric (12,0) not null,
 	pag_fecha date not null,
 	fk_fac_id int not null,
 
@@ -382,42 +385,7 @@ create table PAGO
 	) references FACTURA(fac_id)
 );
 
-create table TIPO_PAGO
-(
-	tip_id int not null,
-	tip_nombre varchar(50) not null,
-	tip_descripcion varchar(200) not null,
-	fk_pag_id int not null,
 
-	constraint pk_tip_pag primary key
-	(
-		tip_id
-	),
-
-	constraint fk_pag_tip foreign key
-	(
-		fk_pag_id
-	) references PAGO(pag_id)
-);
-
-create table DETALLE_PAGO
-(
-	det_pag_id int not null,
-	det_pag_nombre varchar(40) not null,
-	det_pag_descripcion varchar(200) not null,
-	det_pag_encriptado varchar(200) not null,
-	fk_pag_id int not null,
-
-	constraint pk_det_pag primary key
-	(
-		det_pag_id
-	),
-
-	constraint fk_pag_det_pag foreign key
-	(
-		fk_pag_id
-	) references PAGO(pag_id)
-);
 
 create table MENU
 (
@@ -597,7 +565,7 @@ GO
 
 -------  Store Procedure agregar cliente_potencial -----------------------------------
 
-create procedure agregar_clientePotencial
+create procedure M3_agregar_clientePotencial
 
 @nombreClientePotencial [varchar](20),
 @rifClientePotencial [varchar](20),
@@ -615,7 +583,7 @@ go
 
 
 ----------- Store Procedure lista de clientes potenciales--------------------------
-CREATE procedure listar_cliente_potencial
+CREATE procedure M3_listar_cliente_potencial
 as
 	begin
 		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_status
@@ -627,7 +595,7 @@ go
 
 
 ----------- Store Procedure eliminar cliente potencial--------------------------
-CREATE PROCEDURE eliminar_cliente_potencial
+CREATE PROCEDURE M3_eliminar_cliente_potencial
 	@idClientePotencial [int]
 as
  begin
@@ -641,7 +609,7 @@ as
  go
 ----------Store Procedure Activar cliente potencial----------------------------
 
-CREATE PROCEDURE activar_cliente_potencial
+CREATE PROCEDURE M3_activar_cliente_potencial
 	@idClientePotencial [int]
 as
  begin
@@ -658,7 +626,7 @@ as
 
 ----------- Store Procedure promover cliente potencial-------------------------
 
-CREATE PROCEDURE promover_cliente_potencial
+CREATE PROCEDURE M3_promover_cliente_potencial
 	@idClientePotencial [int]
 as
  begin
@@ -675,7 +643,7 @@ as
 ----------- Store Procedure consulta de cliente potencial--------------------------
 
 
-CREATE procedure consultar_cliente_potencial
+CREATE procedure M3_consultar_cliente_potencial
    @idClientePotencial		[int]
 as
 	begin
@@ -689,7 +657,7 @@ go
 
 
 ----------- Store Procedure modificar cliente potencial--------------------------
-create procedure modificar_clientePotencialF
+create procedure M3_modificar_clientePotencialF
 
 
 
@@ -722,7 +690,7 @@ as
  
  --------------Eliminar cliente definitivo---------
  
- create procedure eliminar_cliente_potencial_def
+ create procedure M3_eliminar_cliente_potencial_def
  	@idClientePotencial int
 AS
  BEGIN
@@ -1481,6 +1449,45 @@ GO
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
+
+
+-----------------------------------
+--------Stored Procedure M9--------
+-----------------------------------
+
+---- StoredProcedure Agregar Pago ----
+
+CREATE PROCEDURE M9_AgregarPago
+    @moneda [varchar] (50),
+	@monto int,
+	@forma [varchar](20),
+	@cod int,
+	--@fecha date,
+	@id_factura int
+
+AS
+ BEGIN
+    INSERT INTO PAGO(pag_monto, pag_moneda,pag_forma, pag_cod, pag_fecha, fk_fac_id)
+	VALUES(@monto, @moneda, @forma, @cod, GETDATE(), @id_factura);
+ END;
+ GO
+ 
+---- StoredProcedure cambiar status factura ----
+CREATE PROCEDURE M9_CambioStatus
+	@id_factura int,
+	@status int
+AS
+ BEGIN
+    update factura set fac_estatus = @status
+    where fac_id = @id_factura;
+ end;
+
+GO 
+ 
+-----------------------------------
+------Fin Stored Procedure M9------
+-----------------------------------
+ 
 
 -----------------------------------
 --------Stored Procedure M10--------

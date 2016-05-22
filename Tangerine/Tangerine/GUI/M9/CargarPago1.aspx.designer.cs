@@ -28,7 +28,7 @@ namespace Tangerine.GUI.M9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal seccion4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion4;
         
         /// <summary>
         /// seccion1 control.
@@ -37,7 +37,7 @@ namespace Tangerine.GUI.M9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal seccion1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion1;
         
         /// <summary>
         /// seccion2 control.
@@ -46,7 +46,16 @@ namespace Tangerine.GUI.M9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal seccion2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion2;
+        
+        /// <summary>
+        /// monedaPago control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText monedaPago;
         
         /// <summary>
         /// seccion3 control.
@@ -55,7 +64,7 @@ namespace Tangerine.GUI.M9 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal seccion3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion3;
         
         /// <summary>
         /// seccion5 control.
