@@ -618,7 +618,7 @@ go
 CREATE procedure listar_cliente_potencial
 as
 	begin
-		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv
+		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_status
 		from cliente_Potencial
 		where cli_pot_status != 3;
                 

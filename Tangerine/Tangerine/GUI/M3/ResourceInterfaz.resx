@@ -124,7 +124,7 @@
     <value>&lt;tr&gt;</value>
   </data>
   <data name="Activo" xml:space="preserve">
-    <value>&lt;span class="label label-success" ="h</value>
+    <value>&lt;span class="label label-success" id="a</value>
   </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
