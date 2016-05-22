@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddPago" xml:space="preserve">
+  <data name="AgregarPago" xml:space="preserve">
     <value>M9_AgregarPago</value>
+  </data>
+  <data name="CambiarStatus" xml:space="preserve">
+    <value>M9_CambioStatus</value>
   </data>
   <data name="ParamCod" xml:space="preserve">
     <value>@cod</value>
@@ -132,7 +135,13 @@
   <data name="ParamIdFactura" xml:space="preserve">
     <value>@id_factura</value>
   </data>
+  <data name="ParamMoneda" xml:space="preserve">
+    <value>@moneda</value>
+  </data>
   <data name="ParamMonto" xml:space="preserve">
     <value>@monto</value>
+  </data>
+  <data name="ParamStatus" xml:space="preserve">
+    <value>@status</value>
   </data>
 </root>
