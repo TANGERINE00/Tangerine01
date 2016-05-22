@@ -40,7 +40,7 @@ namespace Tangerine.GUI.M4
                 {
                     typeHab = int.Parse(Request.QueryString["typeHab"]);
                     idComp = int.Parse(Request.QueryString["idComp"]);
-                    laCompania = prueba.SearchCompany(idComp);
+                    laCompania = prueba.ConsultCompany(idComp);
                     if (typeHab == 1)
                     {
                         prueba.EnableCompany(laCompania);
@@ -55,7 +55,7 @@ namespace Tangerine.GUI.M4
                   {
                       
                   }
-                List<Compania> listCompany = prueba.getCompanies();
+                List<Compania> listCompany = prueba.ConsultCompanies();
                     try
                     {
                         foreach (Compania theCompany in listCompany)

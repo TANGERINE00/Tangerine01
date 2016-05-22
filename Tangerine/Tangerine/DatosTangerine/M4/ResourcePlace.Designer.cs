@@ -63,9 +63,9 @@ namespace DatosTangerine.M4 {
         /// <summary>
         ///   Looks up a localized string similar to M4_ConsultarLugar.
         /// </summary>
-        internal static string ConsultPlaces {
+        internal static string ConsultCityPlaces {
             get {
-                return ResourceManager.GetString("ConsultPlaces", resourceCulture);
+                return ResourceManager.GetString("ConsultCityPlaces", resourceCulture);
             }
         }
         

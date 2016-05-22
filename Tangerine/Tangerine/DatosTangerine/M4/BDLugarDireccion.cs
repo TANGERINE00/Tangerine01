@@ -21,7 +21,7 @@ namespace DatosTangerine.M4
         /// Método para consultar todos los lugares tipo 'Ciudad' registradas en la base de datos.
         /// </summary>
         /// <returns>Lista de lugares registrados.</returns>
-        public static List<LugarDireccion> ConsultPlaces()
+        public static List<LugarDireccion> ConsultCityPlaces()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -34,7 +34,7 @@ namespace DatosTangerine.M4
                 theConnection.Conectar();
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourcePlace.ConsultPlaces, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourcePlace.ConsultCityPlaces, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
