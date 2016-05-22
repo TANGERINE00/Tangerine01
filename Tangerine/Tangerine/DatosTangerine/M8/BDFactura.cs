@@ -321,6 +321,51 @@ namespace DatosTangerine.M8
         }
 
         /// <summary>
+        /// Metodo que permite buscar si ya existe una factura para una fecha, proyecto y compañia dada
+        /// </summary>
+        /// <param name="fechaEmision"></param>
+        /// <param name="idProyecto"></param>
+        /// <param name="idCompania"></param>
+        /// <returns>Retorna un valor booleano para saber si ya existe la factura especifica</returns>
+        public static bool CheckExistingInvoice(DateTime fechaEmision, int idProyecto, int idCompania)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            bool resultado = false;
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.Date, fechaEmision.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, idProyecto.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, idCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.VerifyExistingInvoice, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return resultado;
+        }
+
+        /// <summary>
         /// Funcion que permite buscar todas las facturas asociadas a una compañia
         /// </summary>
         /// <returns>Retorna la lista con todas las facturas</returns>

@@ -18,6 +18,8 @@ namespace Tangerine.GUI.M1
         string _usuario = String.Empty;
         string _contrasena = String.Empty;
         LogicaProyecto proyectoLogic = new LogicaProyecto();
+        bool facturaExistente = false;
+        int montoFactura = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,14 +45,28 @@ namespace Tangerine.GUI.M1
                 HttpContext.Current.Session["UserID"] = Util._theGlobalUser.FichaEmpleado;
                 HttpContext.Current.Session["Rol"] = Util._theGlobalUser.Rol.Nombre;
 
-               /* List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
+                #region Generación de facturas mensuales
+                // AQUI EMPIEZA EL CODIGO PARA GENERAR LAS FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
+
+                List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
                 foreach (Proyecto theProyecto in listProyecto)
                 {
-                    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, theProyecto.Costo, theProyecto.Costo, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);
+                    montoFactura = int.Parse(proyectoLogic.calcularPagoMesual(theProyecto).ToString());
+                    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);                    
                     LogicaM8 facturaLogic = new LogicaM8();
-                    facturaLogic.AddNewFactura(factura);
-                }*/
-                
+                    facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now,theProyecto.Idproyecto,theProyecto.Idresponsable);
+                    if (facturaExistente == false)
+                    {
+                        facturaLogic.AddNewFactura(factura);
+                    }
+                    facturaExistente = false;
+                }
+
+                // AQUI TERMINA EL CODIGO PARA GENERAR LA FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
+                // HECHO POR EL MÓDULO 7 Y MÓDULO 8
+                #endregion
+
+
                 Response.Redirect("Dashboard.aspx");
             }
             else

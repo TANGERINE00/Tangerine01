@@ -94,6 +94,7 @@ drop procedure M8_AnularFactura;
 drop procedure M8_ConsultarFacturasCompania;
 drop procedure M8_VerificarFacturasParaPagar;
 drop procedure M8_ConsultarMontoRestanteFactura;
+drop procedure M8_VerificarFacturaExistente;
 
 drop procedure M9_AgregarPago;
 
@@ -106,6 +107,7 @@ drop procedure M10_LLenarSelectPaises;
 drop procedure M10_LLenarSelectEstados;
 drop procedure M10_LlenarSelectCargo;
 drop procedure M10_CambiarEstatus;
+drop procedure M1_ObtenerCorreoUsuario;
 
 
 

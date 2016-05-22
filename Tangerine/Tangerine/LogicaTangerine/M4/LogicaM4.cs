@@ -27,7 +27,7 @@ namespace LogicaTangerine.M4
         public List<Compania> getCompanies()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-    LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
              try
             {
                 return BDCompania.ConsultCompanies(); 
@@ -43,6 +43,13 @@ namespace LogicaTangerine.M4
                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                  throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                      LogicResourcesM4.Mensaje, ex);
+             }
+             catch (FormatException ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                 throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                      LogicResourcesM4.Mensaje_Error_Formato, ex);
              }
              catch (ExcepcionesTangerine.ExceptionTGConBD ex)
              {
@@ -62,7 +69,7 @@ namespace LogicaTangerine.M4
         public bool AddNewCompany(Compania company)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDCompania.AddCompany(company);
@@ -78,6 +85,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -98,7 +112,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public bool ChangeCompany(Compania company)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return (BDCompania.ChangeCompany(company));
@@ -114,6 +128,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -134,7 +155,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public Compania SearchCompany(int idCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDCompania.ConsultCompany(idCompany);
@@ -150,6 +171,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -171,7 +199,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public bool EnableCompany(Compania company)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return(BDCompania.EnableCompany(company));
@@ -187,6 +215,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -208,7 +243,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public bool DisableCompany(Compania company)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return (BDCompania.DisableCompany(company));
@@ -224,6 +259,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -243,7 +285,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public List<LugarDireccion> getPlaces()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 return BDLugarDireccion.ConsultPlaces();
@@ -259,6 +301,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -280,7 +329,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public string MatchNombreLugar(int idLugar)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 string NombreLugar = "";
@@ -306,6 +355,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -326,7 +382,7 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
         public int MatchIdLugar(string nombreLugar)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
                 int IdLugar = 0;
@@ -351,6 +407,13 @@ LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurren
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM4.Codigo,
                     LogicResourcesM4.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M4.WrongFormatException(LogicResourcesM4.Codigo_Error_Formato,
+                     LogicResourcesM4.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
