@@ -565,7 +565,7 @@ GO
 
 -------  Store Procedure agregar cliente_potencial -----------------------------------
 
-create procedure agregar_clientePotencial
+create procedure M3_agregar_clientePotencial
 
 @nombreClientePotencial [varchar](20),
 @rifClientePotencial [varchar](20),
@@ -583,7 +583,7 @@ go
 
 
 ----------- Store Procedure lista de clientes potenciales--------------------------
-CREATE procedure listar_cliente_potencial
+CREATE procedure M3_listar_cliente_potencial
 as
 	begin
 		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_status
@@ -595,7 +595,7 @@ go
 
 
 ----------- Store Procedure eliminar cliente potencial--------------------------
-CREATE PROCEDURE eliminar_cliente_potencial
+CREATE PROCEDURE M3_eliminar_cliente_potencial
 	@idClientePotencial [int]
 as
  begin
@@ -609,7 +609,7 @@ as
  go
 ----------Store Procedure Activar cliente potencial----------------------------
 
-CREATE PROCEDURE activar_cliente_potencial
+CREATE PROCEDURE M3_activar_cliente_potencial
 	@idClientePotencial [int]
 as
  begin
@@ -626,7 +626,7 @@ as
 
 ----------- Store Procedure promover cliente potencial-------------------------
 
-CREATE PROCEDURE promover_cliente_potencial
+CREATE PROCEDURE M3_promover_cliente_potencial
 	@idClientePotencial [int]
 as
  begin
@@ -643,7 +643,7 @@ as
 ----------- Store Procedure consulta de cliente potencial--------------------------
 
 
-CREATE procedure consultar_cliente_potencial
+CREATE procedure M3_consultar_cliente_potencial
    @idClientePotencial		[int]
 as
 	begin
@@ -657,7 +657,7 @@ go
 
 
 ----------- Store Procedure modificar cliente potencial--------------------------
-create procedure modificar_clientePotencialF
+create procedure M3_modificar_clientePotencialF
 
 
 
@@ -690,7 +690,7 @@ as
  
  --------------Eliminar cliente definitivo---------
  
- create procedure eliminar_cliente_potencial_def
+ create procedure M3_eliminar_cliente_potencial_def
  	@idClientePotencial int
 AS
  BEGIN
