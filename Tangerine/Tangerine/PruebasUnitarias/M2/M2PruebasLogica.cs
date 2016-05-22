@@ -35,8 +35,8 @@ namespace PruebasUnitarias.M2
         [SetUp]
         public void Init() 
         {
-            theRol = new Rol( "Gerente" );
-            theUser = new Usuario( "userTest", "testapp1", "Activo", theRol, 0, DateTime.Now );
+            theRol = new Rol( "Administrador" );
+            theUser = new Usuario("userTest", "81dc9bdb52d04dc20036dbd8313ed055", "Activo", theRol, 0, DateTime.Now);
             theUserResultado = new Usuario( "userTest", "testapp1" );
             theEmpleado = new Empleado();
             usuarioDefault = "caloza";
@@ -69,7 +69,7 @@ namespace PruebasUnitarias.M2
         public void TestExisteUsuario()
         {
             BDUsuario.AgregarUsuario(theUser);
-            Assert.IsTrue(LogicaAgregarUsuario.ExisteUsuario("userTest"));
+            Assert.IsTrue(LogicaAgregarUsuario.ExisteUsuario("luarropa"));
             Assert.IsFalse(LogicaAgregarUsuario.ExisteUsuario(""));
         }
         /// <summary>
@@ -111,9 +111,7 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestModificarRol()
         {
-            BDUsuario.AgregarUsuario(theUser);
-            System.Diagnostics.Debug.WriteLine(theUser.NombreUsuario);
-            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Gerente"));
+            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Programador"));
 
         }
 
@@ -133,7 +131,7 @@ namespace PruebasUnitarias.M2
         {
 
             Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Gerente"));
-           // Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
+           // Assert.IsNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
             //Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Programador"));
             //Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Director"));
         }
