@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="M2\ExcepcionRegistro.cs" />
     <Compile Include="M2\ExcepcionPrivilegios.cs" />
     <Compile Include="M3\ExceptionDataBaseLeads.cs" />
     <Compile Include="M3\NullArgumentExceptionLeads.cs" />
