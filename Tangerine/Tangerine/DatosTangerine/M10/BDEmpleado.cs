@@ -335,7 +335,7 @@ namespace DatosTangerine.M10
             return listEmpleado;
         }
 
-        private static Hashtable listElementos(Empleado list)
+        public static Hashtable listElementos(Empleado list)
         {
             Hashtable elementos = new Hashtable();
             foreach (LugarDireccion elemento in list.AddressComplete)
