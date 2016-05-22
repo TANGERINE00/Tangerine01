@@ -69,7 +69,6 @@ namespace Tangerine.GUI.M9
             }
         }
 
-
         public void llenarTablaPorID(int numeroFactura)
         {
             LogicaM8 consulta = new LogicaM8();
@@ -100,8 +99,8 @@ namespace Tangerine.GUI.M9
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             //int _idFactura = int.Parse(seccion4.ToString());
-            int _monto = int.Parse(seccion3.ToString());
-            string _forma =  seccion5.Value;
+            int _monto = int.Parse(seccion3.Text.ToString()); 
+            string _forma =  seccion5.Value.ToString();
             int _codApro = int.Parse(codAprobacion.Value);
             string _fecha = "01/08/2008";
             DateTime _dt = Convert.ToDateTime(_fecha);
