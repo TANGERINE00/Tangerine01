@@ -70,6 +70,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string asd {
+            get {
+                return ResourceManager.GetString("asd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonAnular {
@@ -120,6 +129,24 @@ namespace Tangerine.GUI.M8 {
         internal static string BotonInvol {
             get {
                 return ResourceManager.GetString("BotonInvol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idCompania=.
+        /// </summary>
+        internal static string BotonMail {
+            get {
+                return ResourceManager.GetString("BotonMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idCompania=.
+        /// </summary>
+        internal static string BotonMail1 {
+            get {
+                return ResourceManager.GetString("BotonMail1", resourceCulture);
             }
         }
         
@@ -237,15 +264,6 @@ namespace Tangerine.GUI.M8 {
         internal static string porPagar {
             get {
                 return ResourceManager.GetString("porPagar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to  €.
-        /// </summary>
-        internal static string signoEuro {
-            get {
-                return ResourceManager.GetString("signoEuro", resourceCulture);
             }
         }
     }
