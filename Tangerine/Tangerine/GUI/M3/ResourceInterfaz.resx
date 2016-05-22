@@ -123,6 +123,9 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="Activo" xml:space="preserve">
+    <value>&lt;span class="label label-success" ="h</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
@@ -130,16 +133,16 @@
     <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=</value>
   </data>
   <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-trash" href="EliminarLead.aspx?idclp=</value>
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="EliminarLead.aspx?idclp=</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-search"  href="ConsultarLead.aspx?idclp=</value>
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px" href="ConsultarLead.aspx"?idclp=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="ModificarLead.aspx?idclp=</value>
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarLead.aspx?idclp=</value>
   </data>
   <data name="BotonPromover" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-upload"  href="Promover.aspx?idclp=</value>
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-upload"  style="margin-left:3px" href="Promover.aspx?idclp=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
@@ -147,7 +150,22 @@
   <data name="CerrarTR" xml:space="preserve">
     <value />
   </data>
+  <data name="CloseSpanAct" xml:space="preserve">
+    <value>"&gt;Activa&lt;/span&gt;</value>
+  </data>
+  <data name="CloseSpanInact" xml:space="preserve">
+    <value>"&gt;Inactiva&lt;/span&gt;</value>
+  </data>
   <data name="idclp" xml:space="preserve">
     <value>idclp</value>
+  </data>
+  <data name="Inactivo" xml:space="preserve">
+    <value>&lt;span class="label label-danger" id="i</value>
+  </data>
+  <data name="CloseDiv" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="OpenDivRow" xml:space="preserve">
+    <value>&lt;div class="center-block"&gt;</value>
   </data>
 </root>

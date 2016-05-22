@@ -17,69 +17,72 @@
     
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+     <!-- Main content -->
+   
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Consulta de Datos</h3>
+                  <div class="box-tools">
+                      
+                     </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>RIF</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Presupuesto Anual</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                  <asp:Literal runat="server" ID="Lista"></asp:Literal>
+                    <tbody>
+                       
+                            
+                    </tbody>
+                  </table>
 
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
 
-<div id="Div1" runat="server">
-    </div>
-  <div class="row">
-   <div class="col-xs-12">
-     <div class="box">
-       <div class="box-header">
-           <h3 class="box-title">Clientes Potenciales</h3>
-           <th style="text-align:center;"><a  class="btn btn-danger glyphicon glyphicon-plus" href="AgregarLeads.aspx"></a>
-                                           <a class="btn btn-default glyphicon glyphicon-upload" href="Promover.aspx"></a></th> 
-        </div><!-- /.box-header -->
-      <form role="form" name="consultar" id="consultar">
-         
-          <div class="box-body table-responsive">
-             
-          <table id="planillascreadas" class="table table-bordered table-striped dataTable" accesskey="">
-           <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>RIF</th>
-                <th>Email</th>
-                <th>PresupuestoAnual</th>
-                <th style="text-align:center;">Acciones</th>
-            </tr>
-          </thead>
-            <tbody> 
-              <asp:Literal runat="server" ID="tabla"></asp:Literal>
-             </tbody>
-        </table>
-       </div>
-      </form>
-    </div>
-	</div>
-  </div>
-      
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+       
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#planillascreadas').DataTable();
 
-    <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Activaci&oacute;n/Desactivaci&oacute;n de Personal Seleccionado</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>¿Está seguro que desea cambiar el status de la planilla?</p>
-                    <p id="comp"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" >Aceptar</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-           </div>
-          </div>
-        </div>
-      </div>
-            
+            var table = $('#planillascreadas').DataTable();
+            var planilla;
+            var tr;
 
+            $('#planillascreadas tbody').on('click', 'a', function () {
+                if ($(this).parent().hasClass('selected')) {
+                    req = $(this).parent().prev().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    $(this).parent().removeClass('selected');
 
+                }
+                else {
+                    req = $(this).parent().prev().prev().prev().prev().text();
+                    tr = $(this).parents('tr');//se guarda la fila seleccionada
+                    table.$('tr.selected').removeClass('selected');
+                    $(this).parent().addClass('selected');
+                }
+            });
 
+        });
+        $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');
+
+        </script>
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>
 
