@@ -51,7 +51,9 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelDescripcion_M8">Descripción</label>
-                            <input type="text" runat="server" class="form-control" id="textDescripcion_M8" name="textDescripcion_M8" placeholder="Descripción">
+                            <input type="text" runat="server" class="form-control" 
+                                   id="textDescripcion_M8" name="textDescripcion_M8" 
+                                   placeholder="Descripción" maxlength="50">
                         </div>
 
                         <%--    <div class="form-group" runat="server">
