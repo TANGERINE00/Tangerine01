@@ -173,17 +173,16 @@ namespace PruebasUnitarias.M7
      }
      
      [Test]
-        public void TestObtenerListadeEmpleados()
+     public void TestcalcularPago()
         {
-            if (_Logi.obtenerListaEmpleados(_proyecto).Count > 0)
-            {   
-                Assert.IsTrue(true);
-            }
-            else
-            {
-                Assert.IsFalse(false);
-            }
+
+            Assert.AreEqual(50000,_Logi.calcularPago(10,60,100000));
         }
+
+     [Test]
+     public void TestobtenerIDContactosyEmpleados() {
+         Assert.IsTrue(_Logi.obtenerIDContactosyEmpleados(_proyecto));
+      }
      }
 
 }
