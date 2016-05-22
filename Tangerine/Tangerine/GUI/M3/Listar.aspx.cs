@@ -84,6 +84,7 @@ namespace Tangerine.GUI.M3
                    ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonModificar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonEliminar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                   ResourceInterfaz.BotonActiv + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonContacto + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonPromover + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.CloseDiv + ResourceInterfaz.CerrarTD;

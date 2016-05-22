@@ -216,4 +216,7 @@
   <data name="SP_eliminarClientePotencialDef" xml:space="preserve">
     <value>eliminar_cliente_potencial_def</value>
   </data>
+  <data name="SP_ActivarClientePotencial" xml:space="preserve">
+    <value>activar_cliente_potencial</value>
+  </data>
 </root>

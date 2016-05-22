@@ -168,4 +168,7 @@
   <data name="OpenDivRow" xml:space="preserve">
     <value>&lt;div class="center-block"&gt;</value>
   </data>
+  <data name="BotonActiv" xml:space="preserve">
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ActivarLead.aspx?idclp=</value>
+  </data>
 </root>

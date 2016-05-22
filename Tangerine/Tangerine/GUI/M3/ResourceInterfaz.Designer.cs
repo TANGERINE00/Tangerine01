@@ -88,6 +88,15 @@ namespace Tangerine.GUI.M3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Habilitar&quot;  class=&quot;btn btn-success glyphicon glyphicon-ok&quot; style=&quot;margin-left:3px;&quot; href=&quot;ActivarLead.aspx?idclp=.
+        /// </summary>
+        internal static string BotonActiv {
+            get {
+                return ResourceManager.GetString("BotonActiv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {

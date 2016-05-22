@@ -75,7 +75,12 @@ namespace PruebasUnitarias.M3
 
             Assert.IsTrue(answer);
         }
-
+        [Test]
+        public void TestActivarClientePotencial()
+        {
+            answer = BDClientePotencial.ActivarClientePotencial(clientePot1);
+            Assert.IsTrue(answer);
+        }
 
     }
 }
