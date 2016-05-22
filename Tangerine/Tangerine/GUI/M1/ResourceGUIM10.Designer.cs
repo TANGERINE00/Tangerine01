@@ -97,7 +97,7 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a href=&quot;ModificarEmpleado.aspx?EmployeeId=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Modificar&quot; href=&quot;ModificarEmpleado.aspx?EmployeeId=.
         /// </summary>
         internal static string BotonModificarEmpAbrir {
             get {
@@ -115,7 +115,7 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a href=&quot;EmpleadosAdmin.aspx?id=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Activar/Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?id=.
         /// </summary>
         internal static string BotonStatusEmpAbrir {
             get {
@@ -133,7 +133,7 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a href=&quot;VerEmpleado.aspx?EmployeeId=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Información&quot; href=&quot;VerEmpleado.aspx?EmployeeId=.
         /// </summary>
         internal static string BotonVerEmpAbrir {
             get {
