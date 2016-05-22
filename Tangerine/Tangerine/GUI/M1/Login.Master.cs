@@ -51,7 +51,7 @@ namespace Tangerine.GUI.M1
                 List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
                 foreach (Proyecto theProyecto in listProyecto)
                 {
-                    montoFactura = int.Parse(proyectoLogic.calcularPagoMesual(theProyecto).ToString());
+                    montoFactura = Convert.ToInt32(proyectoLogic.calcularPagoMesual(theProyecto));
                     Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);                    
                     LogicaM8 facturaLogic = new LogicaM8();
                     facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now,theProyecto.Idproyecto,theProyecto.Idresponsable);
