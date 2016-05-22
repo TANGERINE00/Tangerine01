@@ -262,6 +262,7 @@
 2016-05-21 10:02:46,547 INFO  BDContacto - Clase: BDContacto
 2016-05-21 10:02:46,547 INFO  BDContacto - Mensaje: Salida del Método
 2016-05-21 10:02:46,547 INFO  BDContacto - Metodo: ContactCompany
+<<<<<<< HEAD
 2016-05-21 17:39:43,597 INFO  LogicaM5 - *******************************************************
 2016-05-21 17:39:43,611 INFO  LogicaM5 - Clase: LogicaM5
 2016-05-21 17:39:43,611 INFO  LogicaM5 - Mensaje: Entrada en el Método
@@ -406,3 +407,196 @@
 2016-05-22 18:30:58,818 INFO  BDClientePotencial - Clase: BDClientePotencial
 2016-05-22 18:30:58,818 INFO  BDClientePotencial - Mensaje: Fin Método
 2016-05-22 18:30:58,818 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+=======
+2016-05-22 18:04:54,050 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:04:54,056 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:04:54,056 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:04:54,056 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:04:54,065 INFO  BDCompania - *******************************************************
+2016-05-22 18:04:54,066 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:04:54,066 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:04:54,066 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:05:10,761 ERROR BDCompania - *******************************************************
+2016-05-22 18:05:10,761 ERROR BDCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-05-22 18:05:10,781 ERROR BDCompania - Origen: DatosTangerine
+2016-05-22 18:05:10,781 ERROR BDCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-05-22 18:05:10,782 ERROR BDCompania - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 527
+2016-05-22 18:05:10,782 ERROR BDCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-05-22 18:06:15,686 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:06:15,692 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:06:15,692 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:06:15,692 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:06:15,710 INFO  BDCompania - *******************************************************
+2016-05-22 18:06:15,710 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:06:15,710 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:06:15,710 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:06:15,882 ERROR BDCompania - *******************************************************
+2016-05-22 18:06:15,882 ERROR BDCompania - Mensaje: Column 'com_presupuesto' does not belong to table .
+2016-05-22 18:06:15,887 ERROR BDCompania - Origen: System.Data
+2016-05-22 18:06:15,887 ERROR BDCompania - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-05-22 18:06:15,887 ERROR BDCompania - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:06:15,887 ERROR BDCompania - InnerException: 
+2016-05-22 18:06:15,897 ERROR LogicaM4 - *******************************************************
+2016-05-22 18:06:15,897 ERROR LogicaM4 - Mensaje: No se pudo completar la operacion
+2016-05-22 18:06:15,901 ERROR LogicaM4 - Origen: DatosTangerine
+2016-05-22 18:06:15,901 ERROR LogicaM4 - Metodo: System.Collections.Generic.List`1[DominioTangerine.Compania] ConsultCompanies()
+2016-05-22 18:06:15,901 ERROR LogicaM4 - StackTrace:    at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 577
+   at LogicaTangerine.M4.LogicaM4.getCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M4\LogicaM4.cs:line 33
+2016-05-22 18:06:15,901 ERROR LogicaM4 - InnerException: System.ArgumentException: Column 'com_presupuesto' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:06:32,100 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:06:32,100 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:06:32,100 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:06:32,100 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:06:32,117 INFO  BDCompania - *******************************************************
+2016-05-22 18:06:32,117 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:06:32,117 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:06:32,117 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:06:32,135 ERROR BDCompania - *******************************************************
+2016-05-22 18:06:32,135 ERROR BDCompania - Mensaje: Column 'com_presupuesto' does not belong to table .
+2016-05-22 18:06:32,135 ERROR BDCompania - Origen: System.Data
+2016-05-22 18:06:32,135 ERROR BDCompania - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-05-22 18:06:32,135 ERROR BDCompania - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:06:32,135 ERROR BDCompania - InnerException: 
+2016-05-22 18:06:32,149 ERROR LogicaM4 - *******************************************************
+2016-05-22 18:06:32,149 ERROR LogicaM4 - Mensaje: No se pudo completar la operacion
+2016-05-22 18:06:32,149 ERROR LogicaM4 - Origen: DatosTangerine
+2016-05-22 18:06:32,150 ERROR LogicaM4 - Metodo: System.Collections.Generic.List`1[DominioTangerine.Compania] ConsultCompanies()
+2016-05-22 18:06:32,150 ERROR LogicaM4 - StackTrace:    at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 577
+   at LogicaTangerine.M4.LogicaM4.getCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M4\LogicaM4.cs:line 33
+2016-05-22 18:06:32,150 ERROR LogicaM4 - InnerException: System.ArgumentException: Column 'com_presupuesto' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:08:40,516 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:08:40,516 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:08:40,516 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:08:40,516 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:08:40,533 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:40,533 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:40,533 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:08:40,533 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:08:40,553 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:40,553 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:40,553 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:08:40,553 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:08:50,739 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:08:50,739 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:08:50,739 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:08:50,739 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:08:50,750 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:50,750 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:50,750 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:08:50,750 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:08:50,759 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:50,759 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:50,759 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:08:50,759 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:09:19,341 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:09:19,341 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:09:19,341 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:09:19,341 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:09:19,347 INFO  BDCompania - *******************************************************
+2016-05-22 18:09:19,347 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:09:19,347 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:09:19,347 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:09:19,352 INFO  BDCompania - *******************************************************
+2016-05-22 18:09:19,352 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:09:19,352 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:09:19,352 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:14:52,165 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:14:52,172 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:14:52,172 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:14:52,172 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:14:52,183 INFO  BDCompania - *******************************************************
+2016-05-22 18:14:52,184 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:14:52,184 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:14:52,184 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:14:52,191 INFO  BDCompania - *******************************************************
+2016-05-22 18:14:52,191 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:14:52,191 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:14:52,191 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:25:35,322 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:25:35,336 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:25:35,336 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:25:35,336 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:25:35,366 INFO  BDCompania - *******************************************************
+2016-05-22 18:25:35,366 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:25:35,366 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:25:35,366 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:25:35,392 INFO  BDCompania - *******************************************************
+2016-05-22 18:25:35,392 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:25:35,392 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:25:35,392 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:26:54,495 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:26:54,495 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:26:54,495 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:26:54,495 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:26:54,505 INFO  BDCompania - *******************************************************
+2016-05-22 18:26:54,505 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:26:54,505 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:26:54,505 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:26:54,513 INFO  BDCompania - *******************************************************
+2016-05-22 18:26:54,513 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:26:54,513 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:26:54,513 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:24,126 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:28:24,132 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:28:24,132 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:28:24,132 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:28:24,147 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:24,147 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:24,147 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:28:24,147 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:24,164 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:24,164 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:24,164 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:28:24,164 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:33,735 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:28:33,735 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:28:33,735 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:28:33,735 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:28:33,742 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:33,742 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:33,742 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:28:33,742 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:33,751 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:33,751 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:33,751 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:28:33,751 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:29:11,938 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:29:11,939 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:29:11,939 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:29:11,939 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:29:11,948 INFO  BDCompania - *******************************************************
+2016-05-22 18:29:11,948 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:29:11,948 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:29:11,948 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:29:11,961 INFO  BDCompania - *******************************************************
+2016-05-22 18:29:11,962 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:29:11,962 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:29:11,962 INFO  BDCompania - Metodo: ConsultCompanies
+>>>>>>> e3a1a46f83f4c6edeb61a0c8395ed85086e5f894
