@@ -207,4 +207,7 @@
   <data name="Mensaje_Error_Formato" xml:space="preserve">
     <value>Error de Formato</value>
   </data>
+  <data name="SP_eliminarClientePotencialDef" xml:space="preserve">
+    <value>eliminar_cliente_potencial_def</value>
+  </data>
 </root>

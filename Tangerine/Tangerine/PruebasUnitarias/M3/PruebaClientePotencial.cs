@@ -16,13 +16,14 @@ namespace PruebasUnitarias.M3
         public ClientePotencial clientePot1;
         public ClientePotencial clientePot2;
         public bool answer;
+        public List<ClientePotencial> listaClientPot;
         #endregion
 
         #region SetUp and TearDown
         [SetUp]
         public void init()
         {
-            clientePot1 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000,0,0,0);
+            clientePot1 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000,0,0,3);
 
             
         }
@@ -30,9 +31,10 @@ namespace PruebasUnitarias.M3
         [TearDown]
         public void clean()
         {
-            BDClientePotencial.BorrarClientePotencial(clientePot1);
             clientePot1 = null;
             clientePot2 = null;
+            answer = false;
+            listaClientPot = null;
 
         }
 
@@ -44,6 +46,8 @@ namespace PruebasUnitarias.M3
             answer = BDClientePotencial.AgregarClientePotencial(clientePot1);
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
+            listaClientPot = BDClientePotencial.DatosListarClientePotencial();
+            answer = BDClientePotencial.EliminarClientePotDef(listaClientPot[listaClientPot.Count-1]);
         }
 
         [Test]
