@@ -52,7 +52,14 @@ namespace LogicaTangerine.M1
             return true;
         }
 
-
+        ///<sumary>
+        ///Metodo que valida que las credenciales de inicio de sesion
+        ///esten en el formato correcto y que coinciden con un Usuario dentro
+        ///de la base de datos
+        ///</sumary>
+        ///<param name="usuario">String de nombre de Usuario</param>
+        ///<param name="contrasena">String de contraseña de Usuario</param>
+        ///<returns>true, si los datos estan en el formato correcto y el usuario existe</returns>
         public bool ValidarUsuario(string usuario, string contrasena)
         {
             List<String> campos = new List<String>();
@@ -75,6 +82,13 @@ namespace LogicaTangerine.M1
             return false;
         }
 
+        ///<sumary>
+        ///Metodo que valida que las credenciales de login coincidan con
+        ///un Usuario dentro de la base de datos
+        ///</sumary>
+        ///<param name="nombreUsuario">String de nombre de Usuario</param>
+        ///<param name="clave">String de contraseña de Usuario</param>
+        ///<returns>true, si el usuario existe</returns>
         public bool ConsultarUsuario(string nombreUsuario, string clave)
         {
             try

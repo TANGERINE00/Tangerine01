@@ -17,7 +17,8 @@ namespace Tangerine.GUI.M1
         string _contrasena = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.Session["User"]+"" != "")
+                HttpContext.Current.Session.Abandon();
         }
         /// <summary>
         /// Metodo resultante de accionar el acceder, realiza la conexion con LogicaTangerine para validar las entradas
