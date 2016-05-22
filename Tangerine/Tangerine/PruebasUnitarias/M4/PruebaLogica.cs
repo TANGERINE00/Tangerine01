@@ -143,5 +143,24 @@ namespace PruebasUnitarias.M4
                 Assert.IsNotNull(lugar.LugId);
             }
         }
+        /// <summary>
+        /// Prueba que permite verificar la busqueda de un Id por un nombre de Lugar en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestMatchIdLugar()
+        {
+            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
+            Assert.AreEqual(5, Logica.MatchIdLugar("Caracas"));
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar la busqueda de un nombre de lugar por su id de Lugar en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestMatchNombreLugar()
+        {
+            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
+            Assert.AreEqual("Caracas", Logica.MatchNombreLugar(5));
+        }
     }
 }
