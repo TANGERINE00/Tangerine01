@@ -85,7 +85,7 @@ namespace Tangerine.GUI.M5
 
             if (typeComp == 1)
             {
-                compania = logicM4.SearchCompany(idComp);
+                compania = logicM4.ConsultCompany(idComp);
                 botonVolver = ResourceGUIM5.VolverCompania;
                 nombreEmpresa = ResourceGUIM5.Compania + compania.NombreCompania  ;
             }
