@@ -286,6 +286,15 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @activo.
         /// </summary>
         internal static string ParamActivo {

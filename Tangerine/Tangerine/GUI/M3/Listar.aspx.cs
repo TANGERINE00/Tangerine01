@@ -66,12 +66,12 @@ namespace Tangerine.GUI.M3
                ClientePotencial += ResourceInterfaz.AbrirTD + item.NombreClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
                ClientePotencial += ResourceInterfaz.AbrirTD + item.RifClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
                ClientePotencial += ResourceInterfaz.AbrirTD + item.EmailClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
-               if (item.Status.Equals(1))
+               if (item.Status == 1)
                {
                    ClientePotencial += ResourceInterfaz.AbrirTD + ResourceInterfaz.Activo + item.IdClientePotencial +
                        ResourceInterfaz.CloseSpanAct + ResourceInterfaz.CerrarTD;
                }
-               if (item.Status.Equals(0))
+               if (item.Status == 0)
                {
                    ClientePotencial += ResourceInterfaz.AbrirTD + ResourceInterfaz.Inactivo + item.IdClientePotencial +
                        ResourceInterfaz.CloseSpanInact + ResourceInterfaz.CerrarTD;

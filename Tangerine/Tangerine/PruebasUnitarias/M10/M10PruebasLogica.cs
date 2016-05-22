@@ -135,7 +135,7 @@ namespace PruebasUnitarias.M10
         [Test]
         public void TestListaCargos()
         {
-            //Declaro test de tipo LogicaM10 para poder invocar el metodo "GetEmployee()"
+            //Declaro test de tipo LogicaM10 para poder invocar el metodo "ItemsForListJobs()"
             theCargos = logicaM10.ItemsForListJobs();
 
             //La prueba pasa el metodo retorna al menos 1 pais

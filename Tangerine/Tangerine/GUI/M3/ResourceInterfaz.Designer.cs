@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot; =&quot;h.
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot; id=&quot;a.
         /// </summary>
         internal static string Activo {
             get {

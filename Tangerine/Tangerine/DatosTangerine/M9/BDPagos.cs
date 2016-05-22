@@ -15,8 +15,7 @@ namespace DatosTangerine.M9
 {
     public class BDPagos
     {
-        BDConexion theConnection;
-        List<Parametro> parameters;
+        
         Parametro theParam = new Parametro();
 
         //public static bool CargarPago(int idFactura, DateTime fechaPago, int numeroConfirmacion)

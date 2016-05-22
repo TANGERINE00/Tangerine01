@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using DatosTangerine.M2;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using ExcepcionesTangerine;
 
 namespace LogicaTangerine.M1
 {

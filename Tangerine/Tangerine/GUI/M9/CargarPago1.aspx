@@ -28,11 +28,11 @@
                 <div class="form-group">
 
                     <asp:ValidationSummary 
-     id="ValSum" 
-     DisplayMode="BulletList" 
-     ShowSummary="true"                        
-     HeaderText="Ha habido un error:"
-     runat="server"/>
+                         id="ValSum" 
+                         DisplayMode="BulletList" 
+                         ShowSummary="true"                        
+                         HeaderText="Ha habido un error:"
+                         runat="server"/>
 
                  <div>
                     <label for="input_cliente">Numero de Factura</label>

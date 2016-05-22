@@ -48,7 +48,7 @@ namespace DatosTangerine.M3
                     clientePotencial.RifClientePotencial = row[ResourceClientePotencial.rifClientePotencial].ToString();
                     clientePotencial.EmailClientePotencial = row[ResourceClientePotencial.emailClientePotencial].ToString();
                     clientePotencial.PresupuestoAnual_inversion = float.Parse(row[ResourceClientePotencial.presupuestoAnual_inversion].ToString());
-
+                    clientePotencial.Status = Int32.Parse(row[ResourceClientePotencial.status].ToString());
 
 
                     objetolistaClientePotencial.Add(clientePotencial);
