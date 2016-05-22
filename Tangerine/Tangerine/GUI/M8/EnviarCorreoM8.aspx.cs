@@ -13,7 +13,6 @@ namespace Tangerine.GUI.M8
 {
     public partial class EnviarCorreoM8 : System.Web.UI.Page
     {
-
         public static Facturacion theFactura = null;
         string _destinatario = String.Empty;
         string _asunto = String.Empty;
