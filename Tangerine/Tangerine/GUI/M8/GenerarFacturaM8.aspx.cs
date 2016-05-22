@@ -51,13 +51,13 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
-            if (textDescripcion_M8.Value.Equals(""))
+           /* if (textDescripcion_M8.Value.Equals(""))
             {
                 string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
             }
             else
-            {
+            {*/
 
                 _Descripcion = textDescripcion_M8.Value;
                 _tipoMoneda = "Bolivares";
@@ -70,7 +70,7 @@ namespace Tangerine.GUI.M8
                 LogicaM8 facturaLogic = new LogicaM8();
                 facturaLogic.AddNewFactura(factura);
                 Server.Transfer("ConsultarFacturaM8.aspx");
-            }
+            //}
 
 
         }
