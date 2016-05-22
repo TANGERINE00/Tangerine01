@@ -237,4 +237,7 @@
   <data name="EstatusEmpleado" xml:space="preserve">
     <value>M10_CambiarEstatus</value>
   </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
 </root>

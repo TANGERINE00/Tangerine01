@@ -177,10 +177,7 @@
                         </div>
                     </div>
 					
-					
-					
-					
-					
+	
 					
 					 <div class="form-group" >
                         <label>Cantidad Cuotas</label>
