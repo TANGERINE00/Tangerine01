@@ -366,7 +366,7 @@ create table FACTURA
 
 create table PAGO
 (
-	pag_id int not null,
+	pag_id int IDENTITY(1,1) not null,
 	pag_moneda varchar(50) not null,
 	pag_monto numeric(12,3) not null,
 	pag_forma varchar(20) not null,
@@ -1478,15 +1478,27 @@ CREATE PROCEDURE M9_AgregarPago
 	@monto int,
 	@forma [varchar](20),
 	@cod int,
-	@fecha date,
-	@id_pago int
+	--@fecha date,
+	@id_factura int
 
 AS
  BEGIN
     INSERT INTO PAGO(pag_monto, pag_moneda,pag_forma, pag_cod, pag_fecha, fk_fac_id)
-	VALUES(@monto, @moneda, @forma, @cod, @fecha, @id_pago);
+	VALUES(@monto, @moneda, @forma, @cod, GETDATE(), @id_factura);
  END;
  GO
+ 
+---- StoredProcedure cambiar status factura ----
+CREATE PROCEDURE M9_CambioStatus
+	@id_factura int,
+	@status int
+AS
+ BEGIN
+    update factura set fac_estatus = @status
+    where fac_id = @id_factura;
+ end;
+
+GO 
  
 -----------------------------------
 ------Fin Stored Procedure M9------
