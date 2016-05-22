@@ -59,8 +59,6 @@ namespace DominioTangerine
         private List<Requerimiento> _listaRequerimiento;
         private string conNombre;
         private int conEstatus;
-        private int p1;
-        private string p2;
         private string p3;
         private string p4;
         private string p5;

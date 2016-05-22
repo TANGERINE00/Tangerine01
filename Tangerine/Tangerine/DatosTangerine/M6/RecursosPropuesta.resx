@@ -148,9 +148,18 @@
     <value>M6_ListarRequerimientos</value>
     <comment>Procedimiento que se encarga de listar los requerimientos por propuesta</comment>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
   <data name="Mensaje_Error_Formato" xml:space="preserve">
     <value>Error de parseo</value>
     <comment>Mensaje de error cuando no puede parsear</comment>
+  </data>
+  <data name="Mensaje_Error_Formato1" xml:space="preserve">
+    <value>Error de parseo</value>
   </data>
   <data name="ModificarPropuesta" xml:space="preserve">
     <value>M6_ModificarPropuesta</value>

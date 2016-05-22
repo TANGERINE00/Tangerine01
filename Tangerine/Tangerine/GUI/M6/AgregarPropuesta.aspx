@@ -121,7 +121,7 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control" id="textoDuracion" runat="server">
+                            <input type="text" class="form-control"  id="textoDuracion" runat="server">
                         </div>
 
                     </div>
