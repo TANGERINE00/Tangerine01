@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ModificarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ModificarPropuesta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ModificarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ModificarPropuesta"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-       <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/Modificar.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -74,10 +75,10 @@
                         <input type="input_cliente" class="form-control" id="cliente_id" runat ="server" disabled="disabled">
                     </div>
 
-                     <div class="form-group">
-                        <label>Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..."><%=Prueba.Descripcion%></textarea>
-                    </div>
+                      <div class="form-group">
+                       <label>Objeto del proyecto</label>
+                       <textarea class="form-control" rows="3" placeholder="Escribir ..."><%=Prueba.Descripcion%></textarea>
+                   </div>
              <!-- form end -->
 
 
@@ -135,7 +136,7 @@
                 <div class="container-fluid">
                 <div class="form-group">
 				    <div id="div-id" class="col-sm-5 col-md-5 col-lg-5">
-					    <input type="text" name="idreq" id="idreq_input" runat="server" placeholder="ID" class="form-control" disabled="disabled" value="TOT_RF_1"/>
+					    <input type="text" name="idreq" id="idreq_input" runat="server" placeholder="ID" class="form-control idreq_input" disabled="disabled" value="TOT_RF_1"/>
 				    </div>
 			    </div>
                 </div>
@@ -144,7 +145,7 @@
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="input-group">
                             <span class="input-group-addon">El sistema deberá </span>
-                            <textarea class="form-control" rows="3" placeholder="Funcionalidad del requerimiento" runat="server" style="text-align: justify;resize:vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
+                            <textarea class="form-control input_requerimiento" rows="3" placeholder="Funcionalidad del requerimiento" runat="server" style="text-align: justify;resize:vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
                         </div>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
 
             </div>
             <div class="modal-footer">
-              <button id="btn-modificarReq" disabled="disabled" class="btn btn-primary" type="submit">Modificar</button>
+              <button id="btn-modificarReq" class="btn btn-primary" type="submit" onclick=<%btn_ModReq(idreq_input.Value, input_requerimiento.Value);%>> Modificar</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
             </div>
           </div><!-- /.modal-update-content -->
@@ -173,7 +174,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input class="form-control pull-right" id="datepicker1" value ="<%=Prueba.Feincio%>" type="text">
+                  <input class="form-control pull-right" id="datepicker1" value ="<%=Prueba.Feincio%>" type="text" >
                 </div>
                 <!-- /.input group -->
               </div>
@@ -187,7 +188,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input class="form-control pull-right" id="datepicker2" value="<%=Prueba.Fefinal %> " type="text">
+                  <input class="form-control pull-right" id="datepicker2" value="<%=Prueba.Fefinal %> " type="text" >
                 </div>
                 <!-- /.input group -->
               </div>
@@ -231,10 +232,10 @@
 
 
 
-                    <div class="form-group">
+                     <div class="form-group">
                         <label>Forma de Pago</label>
-                        <select class="form-control">
-                            <option>Transferencia</option>
+                        <select class="form-control" id="fpago" runat="server">
+                            <option></option>
                             <option data-icon="fa-heart">Deposito</option>
                             <option>Transferencia</option>
                             <option>Otro</option>

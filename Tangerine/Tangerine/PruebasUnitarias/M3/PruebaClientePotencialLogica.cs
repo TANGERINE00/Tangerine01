@@ -24,15 +24,8 @@ namespace PruebasUnitarias.M3
         [SetUp]
         public void init()
         {
-            clientePot3 = new ClientePotencial();
+            clientePot3 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000, 0, 0, 3);
             logicaM3 = new LogicaM3();
-            clientePot3.NombreClientePotencial = "HP";
-            clientePot3.RifClientePotencial = "J-1221212";
-            clientePot3.EmailClientePotencial = "info@hp.com";
-            clientePot3.PresupuestoAnual_inversion = 12000;
-            clientePot3.NumeroLlamadas = 0;
-            clientePot3.NumeroVisitas = 0;
-            clientePot3.IdClientePotencial = 1;
 
         }
 

@@ -164,6 +164,8 @@ namespace DominioTangerine
 
         #endregion
 
+
+
         #region Constructor
 
         public Propuesta()
@@ -250,17 +252,6 @@ namespace DominioTangerine
         //    this.conCosto = conCosto;
         //    this.conFkComp = conFkComp;
         //}
-
-       
-
-       
-
-      
-
-        
-
-
-
 
 
         #endregion

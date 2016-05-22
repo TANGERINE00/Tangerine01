@@ -450,45 +450,122 @@ namespace DatosTangerine.M6
 
 
 
+        /// <summary>
+        /// Metodo para modificar un requerimiento
+        /// </summary>
+        /// <param name="elrequerimiento"></param>
+        /// <returns></returns>
+
+        public static Boolean Modificar_Requerimiento(Requerimiento elrequerimiento)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion Connection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
 
-        //public static Boolean Modificar_Requerimiento (Requerimiento elrequerimiento) 
-        //{
-        //    List<Parametro> parameters = new List<Parametro>();
-        //    BDConexion Connection = new BDConexion();
-        //    Parametro theParam = new Parametro();
 
-        //    try
-        //    {
-        //        //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-        //        //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursosPropuesta.ReqDescripcion, SqlDbType.VarChar, elrequerimiento.Descripcion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ReqPropNombre, SqlDbType.VarChar, elrequerimiento.CodigoRequerimiento, false);
+                parameters.Add(theParam);
 
 
-               
-        //        theParam = new Parametro(RecursosPropuesta.ReqDescripcion, SqlDbType.VarChar, elrequerimiento.Descripcion, false);
-        //        parameters.Add(theParam);
 
-        //        theParam = new Parametro(RecursosPropuesta.ReqNombre, SqlDbType.VarChar, elrequerimiento.CodigoRequerimiento, false);
-        //        parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = Connection.EjecutarStoredProcedure(RecursosPropuesta.Modificar_Requerimiento, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+
+            return true;
+        }
+
+
+        /// <summary>
+        /// Metodo que permite modificar una propuesta en la BD
+        /// </summary>
+        /// <param name="propuesta"></param>
+        /// <returns></returns>
+
+
+        public static Boolean Modificar_Propuesta(Propuesta propuesta)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion Connection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+                theParam = new Parametro(RecursosPropuesta.ParamPropnombre, SqlDbType.VarChar, propuesta.Nombre, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamDescriProp, SqlDbType.VarChar, propuesta.Descripcion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamTipoDuProp, SqlDbType.VarChar, propuesta.TipoDuracion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamDuracProp, SqlDbType.VarChar, propuesta.CantDuracion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, propuesta.Acuerdopago, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamEstatusProp, SqlDbType.VarChar, propuesta.Estatus, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamMonedaProp, SqlDbType.VarChar, propuesta.Moneda, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamFechaIProp, SqlDbType.Date, propuesta.Feincio.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamFechaFProp, SqlDbType.Date, propuesta.Fefinal.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false);
+                parameters.Add(theParam);
+
                 
 
-                
 
-        //        //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-        //        List<Resultado> results = Connection.EjecutarStoredProcedure(RecursosPropuesta.Modificar_Requerimiento, parameters);
 
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-        //        throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-        //            RecursoGeneralBD.Mensaje, ex);
-        //    }
-            
-     
-        //    return true;
-        //}
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = Connection.EjecutarStoredProcedure(RecursosPropuesta.Modificar_Propuesta, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+
+            return true;
+        }
+
+
 
 
 

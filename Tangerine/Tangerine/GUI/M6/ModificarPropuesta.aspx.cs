@@ -32,21 +32,15 @@ namespace Tangerine.GUI.M6
         public bool modi;
 
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string prueba = Request.QueryString.Get("id");
-
-         
-            
-            
-          
-             
-            
+                       
             btn_Modifica(prueba);
             btn_ModificaReq(prueba);
 
-          
-           // btn_ModReq(prueba);
+            
 
 
             if (!IsPostBack)
@@ -54,9 +48,9 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboDuracion();
                 llenarComboEstatus();
-              
 
-
+                
+ 
                 foreach (Requerimiento elRequerimiento in req)
                 {
                     requerimiento += RecursosGUI_M6.AbrirTR;
@@ -70,11 +64,7 @@ namespace Tangerine.GUI.M6
                                      
                     requerimiento += RecursosGUI_M6.CerrarTR;
 
-
                 }
-
-
-
                 
             }
 
@@ -85,6 +75,8 @@ namespace Tangerine.GUI.M6
             comboEstatus.SelectedValue = Prueba.Estatus;
 
         }
+
+
 
 
 
@@ -104,7 +96,7 @@ namespace Tangerine.GUI.M6
 
             Compania lacompania = new Compania();
 
-             lacompania = logicacompania.SearchCompany(Int32.Parse(Prueba.IdCompañia));
+            lacompania = logicacompania.SearchCompany(Int32.Parse(Prueba.IdCompañia));
             cliente_id.Value = lacompania.NombreCompania;
            
         }
@@ -126,22 +118,25 @@ namespace Tangerine.GUI.M6
 
             req = logreq.TraerRequerimientoPropuesta(idPropuesta);
 
-
         }
 
 
-        //public void btn_ModReq(String idRequerimiento, String descripcion) 
-        //{
-        //    Requerimiento vistaReq = new Requerimiento();
-        //    LogicaRequerimiento logica = new LogicaRequerimiento();
-        //    vistaReq.Descripcion = descripcion;
-        //    vistaReq.CodigoRequerimiento = idRequerimiento;
-        //    modi = logica.ModRequerimiento(vistaReq);
-        
-        //}
 
+        /// <summary>
+        /// Metodo para modificar el requerimiento desde el modal
+        /// </summary>
+        /// <param name="idRequerimiento"></param>
+        /// <param name="descripcion"></param>
 
+        public void btn_ModReq(String idRequerimiento, String descripcion)
+        {
+            Requerimiento vistaReq = new Requerimiento();
+            LogicaRequerimiento logica = new LogicaRequerimiento();
+            vistaReq.Descripcion = descripcion;
+            vistaReq.CodigoRequerimiento = idRequerimiento;
+            modi = logica.ModRequerimiento(vistaReq);
 
+        }
 
 
 
@@ -152,11 +147,23 @@ namespace Tangerine.GUI.M6
         /// </summary>
 
 
-        public void ModificarTotal() 
-        {
+        //public void ModificarTotal()
+        //{
+        //    Propuesta propuestas = new Propuesta();
+
+        //    propuestas.Descripcion = descripcion.Value;
+        //    propuestas.TipoDuracion = comboDuracion.SelectedValue;
+        //    propuestas.Acuerdopago = fpago.Value;
+        //    propuestas.Estatus = comboEstatus.SelectedValue;
+        //    propuestas.Moneda = comboTipoCosto.SelectedValue;
+        //    propuestas.Feincio = DateTime.ParseExact(datepicker1.Value, "MM/dd/yyyy", null);
+        //    propuestas.Fefinal = DateTime.ParseExact(datepicker2.Value, "MM/dd/yyyy", null);
+        //    propuestas.Costo = int.Parse(textoCosto.Value);
 
 
-        }
+        //    LogicaPropuesta propuesta = new LogicaPropuesta();
+        //    propuesta.ModificarPropuesta(propuestas);
+        //}
 
 
         public void llenarComboDuracion()

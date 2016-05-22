@@ -169,6 +169,24 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fin Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to cli_pot_nombre.
         /// </summary>
         internal static string nombreClientePotencial {
@@ -237,6 +255,15 @@ namespace DatosTangerine.M3 {
         internal static string SP_eliminarClientePotencial {
             get {
                 return ResourceManager.GetString("SP_eliminarClientePotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to eliminar_cliente_potencial_def.
+        /// </summary>
+        internal static string SP_eliminarClientePotencialDef {
+            get {
+                return ResourceManager.GetString("SP_eliminarClientePotencialDef", resourceCulture);
             }
         }
         

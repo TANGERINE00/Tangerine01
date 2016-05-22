@@ -4,6 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestion de Propuesta
@@ -58,7 +60,7 @@
             width: 95%;
         }
     </style>
-    
+
 
 
     <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
@@ -80,9 +82,6 @@
                             <asp:DropDownList ID="comboCompañia" class="btn btn-default dropdown-toggle" runat="server">
                             </asp:DropDownList>
                         </div>
-
-
-
 
 
                     </div>
@@ -107,8 +106,8 @@
                                 </div>
                             </div>
                         </div>
-                        <input id="arrPrecondicion" type="hidden"  class="arrPrecondicion" runat="server"/>
-                       <%-- <button type="button" onclick="crearPrecondicionArr()">crear </button>--%>
+                        <input id="arrPrecondicion" type="hidden" class="arrPrecondicion" runat="server" />
+                        <%-- <button type="button" onclick="crearPrecondicionArr()">crear </button>--%>
                     </div>
 
                     <div class="form-group">
@@ -151,10 +150,6 @@
                         </div>
                         <!-- /.input group -->
                     </div>
-                    <!-- /.form group -->
-
-
-                    <!-- /.box-body -->
 
 
 
@@ -174,20 +169,25 @@
 
                     </div>
 
-
-
-                    <div class="form-group">
+                    <%-- acuerdo de pago--%>
+                    <div class="form-group"  >
                         <label>Forma de Pago</label>
-                        <select class="form-control" id="fpago" runat="server">
-                            <option></option>
-                            <option data-icon="fa-heart">Deposito</option>
-                            <option>Transferencia</option>
-                            <option>Otro</option>
-                        </select>
+                        <div class="dropdown" runat="server" id="fpago">
+                            <asp:DropDownList ID="formaPago" class="btn btn-default dropdown-toggle" runat="server">
+                            </asp:DropDownList>
+                        </div>
                     </div>
 
+                     <%-- cuota--%>
+                    <div class="form-group" >
+                        <label>Cantidad Cuotas</label>
+                        <div class="dropdown" runat="server" id="cuota">
+                            <asp:DropDownList ID="comboCuota" class="btn btn-default dropdown-toggle" runat="server">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
 
-
+                  
 
                     <div class="form-group">
                         <label>Estatus</label>
@@ -196,31 +196,17 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-
-
-
-
-
-
                 </div>
 
-
-
                 <div class="box-footer" runat="server">
-                    <asp:Button id="btnagregar" class="btn btn-primary"
+                    <asp:Button ID="btnagregar" class="btn btn-primary"
                         OnClick="btnagregar_Click" OnClientClick="javascript:crearPrecondicionArr()" type="submit" runat="server"
                         Text="Agregar"></asp:Button>
-
-                   <%--  <asp:Button id="Button2" class="btn btn-primary"
-                        OnClientClick="javascript:contarElementos()" type="submit" runat="server"
-                        Text="prueba"></asp:Button>
-
-                     <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="contarElementos()"></button>--%>
-
                 </div>
 
             </div>
         </div>
+
     </form>
 
 

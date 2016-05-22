@@ -75,6 +75,11 @@
     <Compile Include="M2\LogicaAgregarUsuario.cs" />
     <Compile Include="M2\LogicaModificarRol.cs" />
     <Compile Include="M2\LogicaPrivilegios.cs" />
+    <Compile Include="M3\LogicaM3Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicaM3Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M3\LogicaM3.cs" />
     <Compile Include="M4\LogicResourcesM4.Designer.cs">
@@ -107,6 +112,10 @@
     <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M3\LogicaM3Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicaM3Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M4\LogicResourcesM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
