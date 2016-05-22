@@ -88,8 +88,7 @@ namespace Tangerine.GUI.M4
                                 /*Boton Edit */      ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonEdit + theCompany.IdCompania +
                                 /*Boton Habilitar */     ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonHab + theCompany.IdCompania +
                                 /*Boton Inhabilitar*/     ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonInhab + theCompany.IdCompania +
-                                /*Boton Contacto*/        ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonContac + theCompany.IdCompania +
-                               ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania +
+                                /*Boton Contacto*/        ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania +
                                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.CloseDiv +
                                ResourceGUIM4.CloseTD;
 

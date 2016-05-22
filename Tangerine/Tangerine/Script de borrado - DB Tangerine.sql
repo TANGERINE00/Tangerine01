@@ -38,6 +38,8 @@ drop procedure eliminar_cliente_potencial;
 drop procedure promover_cliente_potencial;
 drop procedure consultar_cliente_potencial;
 drop procedure modificar_clientePotencialF;
+drop procedure activar_cliente_potencial;
+drop procedure eliminar_cliente_potencial_def;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
