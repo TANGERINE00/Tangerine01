@@ -24,7 +24,7 @@ namespace LogicaTangerine.M4
         /// Método para consultar todas las compañías en la base de datos.
         /// </summary>
         /// <returns>Lista de compañías</returns>
-        public List<Compania> getCompanies()
+        public List<Compania> ConsultCompanies()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -152,7 +152,7 @@ namespace LogicaTangerine.M4
         /// </summary>
         /// <param name="idCompany">Entero que contiene al id de la compañía a modificar.</param>
         /// <returns>Objeto tipo Compania que contiene a la empresa consultada.</returns>
-        public Compania SearchCompany(int idCompany)
+        public Compania ConsultCompany(int idCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -288,7 +288,7 @@ namespace LogicaTangerine.M4
             LogicResourcesM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                return BDLugarDireccion.ConsultPlaces();
+                return BDLugarDireccion.ConsultCityPlaces();
             }
             catch (ArgumentNullException ex)
             {
@@ -333,7 +333,7 @@ namespace LogicaTangerine.M4
             try
             {
                 string NombreLugar = "";
-                foreach (LugarDireccion lugar in BDLugarDireccion.ConsultPlaces())
+                foreach (LugarDireccion lugar in BDLugarDireccion.ConsultCityPlaces())
                 {
                     if (idLugar.Equals(lugar.LugId))
                     {
@@ -386,7 +386,7 @@ namespace LogicaTangerine.M4
             try
             {
                 int IdLugar = 0;
-                foreach (LugarDireccion lugar in BDLugarDireccion.ConsultPlaces())
+                foreach (LugarDireccion lugar in BDLugarDireccion.ConsultCityPlaces())
                 {
                     if (nombreLugar.Equals(lugar.LugNombre))
                     {
