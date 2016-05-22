@@ -58,6 +58,15 @@ namespace Tangerine.GUI.M9 {
         protected global::System.Web.UI.WebControls.Literal seccion3;
         
         /// <summary>
+        /// seccion5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect seccion5;
+        
+        /// <summary>
         /// codAprobacion control.
         /// </summary>
         /// <remarks>
@@ -74,5 +83,14 @@ namespace Tangerine.GUI.M9 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
+        /// btnagregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnagregar;
     }
 }
