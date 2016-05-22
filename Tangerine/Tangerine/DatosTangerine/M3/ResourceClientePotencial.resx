@@ -219,4 +219,7 @@
   <data name="SP_ActivarClientePotencial" xml:space="preserve">
     <value>M3_activar_cliente_potencial</value>
   </data>
+  <data name="SP_promoverClientePotencial" xml:space="preserve">
+    <value>M3_promover_cliente_potencial</value>
+  </data>
 </root>
