@@ -124,7 +124,7 @@ namespace Tangerine.GUI.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left:3px&quot; href=&quot;ConsultarLead.aspx?idclp=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left:3px&quot; href=&quot;ConsultarLead.aspx&quot;?idclp=.
         /// </summary>
         internal static string BotonInfo {
             get {
@@ -196,15 +196,6 @@ namespace Tangerine.GUI.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;&gt;Promovido&lt;/span&gt;.
-        /// </summary>
-        internal static string CloseSpanProm {
-            get {
-                return ResourceManager.GetString("CloseSpanProm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to idclp.
         /// </summary>
         internal static string idclp {
@@ -228,15 +219,6 @@ namespace Tangerine.GUI.M3 {
         internal static string OpenDivRow {
             get {
                 return ResourceManager.GetString("OpenDivRow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;span class=&quot;label label-warning&quot; id=&quot;p.
-        /// </summary>
-        internal static string Promovido {
-            get {
-                return ResourceManager.GetString("Promovido", resourceCulture);
             }
         }
     }

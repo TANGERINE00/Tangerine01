@@ -9,7 +9,6 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using ExcepcionesTangerine;
-using DatosTangerine.M10;
 
 namespace LogicaTangerine.M1
 {
@@ -102,33 +101,6 @@ namespace LogicaTangerine.M1
                 {
                     string _prueba = theUsuario.Activo;
                     Util._theGlobalUser = theUsuario;
-                    return true;
-                }
-                else
-                    return false;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        ///<sumary>
-        ///Metodo que valida que las credenciales de login coincidan con
-        ///un Usuario dentro de la base de datos
-        ///</sumary>
-        ///<param name="nombreUsuario">String de nombre de Usuario</param>
-        ///<param name="clave">String de contraseña de Usuario</param>
-        ///<returns>true, si el usuario existe</returns>
-        public bool ValidarCorreoUsuario(string correo, string nombreUsuario)
-        {
-            try
-            {
-                Usuario theUsuario = new Usuario(nombreUsuario, correo);
-                theUsuario = BDEmpleado.ObtenerCorreoUsuario(theUsuario);
-
-                if (theUsuario.Activo != null)
-                {
                     return true;
                 }
                 else

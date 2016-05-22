@@ -79,15 +79,6 @@ namespace DatosTangerine.M4 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TGE_00_001.
-        /// </summary>
-        internal static string Codigo_Error_Formato {
-            get {
-                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to com_acronimo.
         /// </summary>
         internal static string ComAcronymCompany {

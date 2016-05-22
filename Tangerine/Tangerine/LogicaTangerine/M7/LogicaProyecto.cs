@@ -70,8 +70,8 @@ namespace LogicaTangerine.M7
         /// <summary>
         /// Metodo para devolver una lista de empleados
         /// </summary>
-        /// <param name="P">Proyecto</param>
-        /// <returns>lista de los empleados</returns>
+
+        /// <returns></returns>
         public List<Empleado> obtenerListaEmpleados(Proyecto P)
         {
             if (_Empl.ContactProyectoEmpleado(P))
@@ -204,15 +204,9 @@ namespace LogicaTangerine.M7
        /// <returns>Doeuble con el monto</returns>
         public Double calcularPagoMesual (Proyecto P)
         {
-           int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
-           if (dias > 31)
-           {
-               return (P.Costo / dias) * 30;
-           }
-           else
-           {
-               return P.Costo;
-            }
+
+
+            return (P.Costo / Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString())) * 28;
         }
     }
 

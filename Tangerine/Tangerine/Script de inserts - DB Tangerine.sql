@@ -30,10 +30,10 @@ insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_p
 cli_pot_num_visitas,cli_pot_status) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1);
+cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,2);
+cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,1);
 
 ------------------------------------------------------------------------------------------------------------------
 -- COMPANIAS --
@@ -143,12 +143,6 @@ SET IDENTITY_INSERT PROYECTO ON
 GO
 insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
 VALUES (4,'ProyectoLIS','CodigoLIS',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de listas','60','Completado a destiempo','','Por Entregas',4,1,1);
-SET IDENTITY_INSERT PROYECTO OFF
-
-SET IDENTITY_INSERT PROYECTO ON
-GO
-insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
-VALUES (5,'ProyectoNFL','CodigoNFL',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'12-08-2016',110),10000,'Se tratara de un modulo de gestion de la NFL','60','En desarrollo','','Mensual',4,2,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 

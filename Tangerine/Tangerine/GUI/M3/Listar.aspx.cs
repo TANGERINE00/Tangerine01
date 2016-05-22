@@ -76,11 +76,6 @@ namespace Tangerine.GUI.M3
                    ClientePotencial += ResourceInterfaz.AbrirTD + ResourceInterfaz.Inactivo + item.IdClientePotencial +
                        ResourceInterfaz.CloseSpanInact + ResourceInterfaz.CerrarTD;
                }
-                if (item.Status == 2)
-                {
-                    ClientePotencial += ResourceInterfaz.AbrirTD + ResourceInterfaz.Promovido + item.IdClientePotencial +
-                        ResourceInterfaz.CloseSpanProm + ResourceInterfaz.CerrarTD;
-                }
 
                ClientePotencial += ResourceInterfaz.AbrirTD + item.PresupuestoAnual_inversion.ToString() + 
                ResourceInterfaz.CerrarTD;

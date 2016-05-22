@@ -365,14 +365,5 @@ namespace DatosTangerine.M8 {
                 return ResourceManager.GetString("ProyNombre", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a M8_VerificarFacturaExistente.
-        /// </summary>
-        internal static string VerifyExistingInvoice {
-            get {
-                return ResourceManager.GetString("VerifyExistingInvoice", resourceCulture);
-            }
-        }
     }
 }

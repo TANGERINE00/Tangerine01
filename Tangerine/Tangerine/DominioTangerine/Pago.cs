@@ -12,6 +12,7 @@ namespace DominioTangerine
 
         private int _idPago;
         private int _montoPago;
+        private string _monedaPago;
         private string _formaPago;
         private int _codPago;
         private DateTime _fechaPago;
@@ -21,18 +22,21 @@ namespace DominioTangerine
 
         #region Constructores
 
-        public Pago(int _idPago, int _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
+        public Pago(int _idPago, int _montoPago, string _monedaPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
         {
             this._idPago = _idPago;
             this._montoPago = _montoPago;
+            this._monedaPago = _monedaPago;
             this._formaPago = _formaPago;
             this._codPago = _codPago;
             this._fechaPago = _fechaPago;
             this._idFactura = _idFactura;
         }
 
-        public Pago(int _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
+        public Pago(string _monedaPago, int _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
         {
+
+            this._monedaPago = _monedaPago;
             this._montoPago = _montoPago;
             this._formaPago = _formaPago;
             this._codPago = _codPago;
@@ -57,6 +61,12 @@ namespace DominioTangerine
         {
             get { return _montoPago; }
             set { _montoPago = value; }
+        }
+
+        public string monedaPago
+        {
+            get { return _monedaPago; }
+            set { _monedaPago = value; }
         }
 
         public string formaPago
