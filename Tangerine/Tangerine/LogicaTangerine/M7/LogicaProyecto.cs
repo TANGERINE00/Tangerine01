@@ -196,6 +196,18 @@ namespace LogicaTangerine.M7
         {
             return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
         }
+   
+       /// <summary>
+       /// Metodo que calcula el monto a cobrar en proyectos los cuales el acuerdo de pago es mensual
+       /// </summary>
+       /// <param name="P">Proyecto</param>
+       /// <returns>Doeuble con el monto</returns>
+        public Double calcularPagoMesual (Proyecto P)
+        {
+
+
+            return (P.Costo / Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString())) * 28;
+        }
     }
 
 }

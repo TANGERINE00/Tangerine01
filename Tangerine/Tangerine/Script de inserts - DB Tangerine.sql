@@ -249,6 +249,7 @@ insert into ROL_OPCION values (2, 18);
 
 insert into ROL_OPCION values (3, 1);
 insert into ROL_OPCION values (3, 2);
+insert into ROL_OPCION values (3, 4);
 insert into ROL_OPCION values (3, 21);
 
 insert into ROL_OPCION values (4, 1);

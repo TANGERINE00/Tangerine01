@@ -83,7 +83,8 @@ namespace Tangerine.GUI.M8
                     {
                         factura += ResourceGUIM8.BotonModifInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                    ResourceGUIM8.BotonAnularInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                                   ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                                   ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                    ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
                         factura += ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.CloseTR;
@@ -92,8 +93,9 @@ namespace Tangerine.GUI.M8
                     {
                         factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                 ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                                ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
-
+                                ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
+                       
                         factura += ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.CloseTR;
                     }
@@ -161,7 +163,8 @@ namespace Tangerine.GUI.M8
                 {
                     factura += ResourceGUIM8.BotonModifInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                ResourceGUIM8.BotonAnularInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                               ResourceGUIM8.BotonPagarInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                               ResourceGUIM8.BotonPagarInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                               ResourceGUIM8.BotonMail + Factura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
                     factura += ResourceGUIM8.CloseTD;
                     factura += ResourceGUIM8.CloseTR;
@@ -170,7 +173,8 @@ namespace Tangerine.GUI.M8
                 {
                     factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
                             ResourceGUIM8.BotonAnular + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                            ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                            ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                            ResourceGUIM8.BotonMail + Factura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
                     factura += ResourceGUIM8.CloseTD;
                     factura += ResourceGUIM8.CloseTR;
