@@ -96,7 +96,7 @@ namespace Tangerine.GUI.M6
 
             Compania lacompania = new Compania();
 
-            lacompania = logicacompania.SearchCompany(Int32.Parse(Prueba.IdCompañia));
+            lacompania = logicacompania.ConsultCompany(Int32.Parse(Prueba.IdCompañia));
             cliente_id.Value = lacompania.NombreCompania;
            
         }

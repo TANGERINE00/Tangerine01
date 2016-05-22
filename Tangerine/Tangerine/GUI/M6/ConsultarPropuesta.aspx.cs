@@ -48,7 +48,7 @@ namespace Tangerine.GUI.M6
                             foreach (Propuesta laPropuesta in listaPropuestas)
                             {
                                 
-                                Compania laCompania = logicaCompania.SearchCompany(Int32.Parse(laPropuesta.IdCompañia));
+                                Compania laCompania = logicaCompania.ConsultCompany(Int32.Parse(laPropuesta.IdCompañia));
                                 
 
                                 propuesta += RecursosGUI_M6.AbrirTR;

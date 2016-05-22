@@ -146,7 +146,7 @@ namespace Tangerine.GUI.M4
 
             try
             {
-                company = prueba.SearchCompany(int.Parse(Request.QueryString["idComp"]));
+                company = prueba.ConsultCompany(int.Parse(Request.QueryString["idComp"]));
             }
             catch 
             {
