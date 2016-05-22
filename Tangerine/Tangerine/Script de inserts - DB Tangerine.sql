@@ -52,38 +52,41 @@ values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (1,'Modulo de gestion de empleados','Se tratara de un modulo de gestion de empleados','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (1,'Modulo de gestion de empleados','Se tratara de un modulo de gestion de empleados','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (2,'Modulo de gestion de empresas','Se tratara de un modulo de gestion de empresas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (2,'Modulo de gestion de empresas','Se tratara de un modulo de gestion de empresas','Meses','4','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (3,'Modulo de gestion de contactos','Se tratara de un modulo de gestion de contactos','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (3,'Modulo de gestion de contactos','Se tratara de un modulo de gestion de contactos','Meses','4','Mensual','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (4,'Modulo de gestion de listas','Se tratara de un modulo de gestion de listas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (4,'Modulo de gestion de listas','Se tratara de un modulo de gestion de listas','Meses','4','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (5,'Modulo de gestion de Roles','Se tratara de un modulo de gestion de Roles','Alta','Mensual','Por entregas','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (5,'Modulo de gestion de Roles','Se tratara de un modulo de gestion de Roles','Dias','4','Por cuotas','Aprobado','Euro',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (6,'Modulo de gestion de Usuarios','Se tratara de un modulo de gestion de Ususarios','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (6,'Modulo de gestion de Usuarios','Se tratara de un modulo de gestion de Ususarios','Dias','5','Por cuotas','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (7,'Modulo de prueba','Se tratara de un modulo de gestion de pruebas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (7,'Modulo de prueba','Se tratara de un modulo de gestion de pruebas','Dias','8','Por cuotas','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
+
+
+
 
 
 
@@ -213,7 +216,7 @@ insert into OPCION values (8, 'Contactos', '../M5/ConsultarContactos.aspx', 4)
 
 insert into MENU values (5, 'Gestión de Propuestas');
 insert into OPCION values (9, 'AgregarPropuesta', '../M6/AgregarPropuesta.aspx', 5);
-insert into OPCION values (10, 'ConsultarPropuestas', '../M6/ListarPropuesta.aspx', 5);
+insert into OPCION values (10, 'ConsultarPropuestas', '../M6/ConsultarPropuesta.aspx', 5);
 insert into OPCION values (23, 'GestionDePropuestas', 'Gestión de Propuestas', 5);
 
 insert into MENU values (6, 'Gestión de Proyectos');

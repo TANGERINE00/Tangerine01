@@ -1041,7 +1041,7 @@ CREATE PROCEDURE M6_ModificarRequerimiento
 AS
 
 BEGIN
-UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE req_id = @cod_Nombre  
+UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE req_codigo = @cod_Nombre  
 
 END;
 

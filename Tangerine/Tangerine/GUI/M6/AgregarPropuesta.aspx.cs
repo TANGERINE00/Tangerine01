@@ -44,8 +44,8 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboEstatus();
                 cargarCompañias();
-                //llenarComboCuota();
-                //llenarComboFpago();
+                llenarComboCuota();
+                llenarComboFpago();
 
             }
 
