@@ -34,7 +34,7 @@
         </div>
 
         <div class="login-box-body " style=" background: black; box-shadow:  0px 0px 40px #000000;">
-          <p class="login-box-msg" style="color:#FFFFFF">Introduzca su correo personal</p>
+          <p class="login-box-msg" style="color:#FFFFFF">Introduzca su correo personal y usuario</p>
 
           <form method="post" style="text-align: center;" id="enviarEmail" runat="server">
             <div class="form-group has-feedback">

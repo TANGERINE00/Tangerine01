@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M1;
+using LogicaTangerine.M8;
 
 namespace Tangerine.GUI.M1
 {
@@ -26,9 +27,15 @@ namespace Tangerine.GUI.M1
             _correo = correo.Value.ToString();
             _usuario = usuario.Value.ToString();
 
-            if (_logicaM1.ValidarCorreoUsuario( _correo, _usuario))
+            if (_logicaM1.ValidarCorreoUsuario(_correo, _usuario))
             {
                 //mensaje.Text = "Correcto";
+                string nueva = _logicaM1.GenerarNuevaContrasena(_correo, _usuario);
+                CorreoM8 correoEnvio = new CorreoM8();
+
+                correoEnvio.enviarCorreoGmail("Cambio contraseña tangerine", _correo, nueva);
+
+                mensaje.Text = nueva;
             }
             else
             {
