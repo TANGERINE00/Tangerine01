@@ -25,7 +25,7 @@ namespace DatosTangerine.M4
         public static bool AddCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-    ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -80,6 +80,12 @@ namespace DatosTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -91,7 +97,7 @@ namespace DatosTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-    ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }
@@ -103,7 +109,7 @@ namespace DatosTangerine.M4
         public static int ConsultLastCompanyId()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -132,6 +138,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -143,7 +155,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return mayorId;
         }
 
@@ -155,7 +167,7 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         public static bool DeleteCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -183,6 +195,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -194,7 +212,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
@@ -207,7 +225,7 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         public static bool EnableCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -238,6 +256,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -249,7 +273,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
@@ -261,7 +285,7 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         public static bool DisableCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -292,6 +316,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -303,7 +333,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
@@ -316,7 +346,7 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         public static Boolean ChangeCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -374,6 +404,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -385,7 +421,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
@@ -398,7 +434,7 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         public static Compania ConsultCompany(int idCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -449,6 +485,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -460,7 +502,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return theCompany;
         }
 
@@ -472,7 +514,7 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         public static List<Compania> ConsultCompanies()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             List<Compania> listCompany = new List<Compania>();
@@ -518,6 +560,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -529,7 +577,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listCompany;
         }
     }
