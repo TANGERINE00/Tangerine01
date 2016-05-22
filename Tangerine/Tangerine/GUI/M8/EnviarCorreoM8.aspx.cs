@@ -67,7 +67,7 @@ namespace Tangerine.GUI.M8
                 LogicaM4 companiaLogic = new LogicaM4();
                 theFactura = facturaLogic.SearchFactura(idFac);
 
-                Compania compania = companiaLogic.SearchCompany(int.Parse(theFactura.idCompaniaFactura.ToString()));
+                Compania compania = companiaLogic.ConsultCompany(int.Parse(theFactura.idCompaniaFactura.ToString()));
                 Destinatario = compania.EmailCompania;
                 Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
                 Asunto = "Recordatorio de Pago - Proyecto: " + proyecto.Nombre + "";
