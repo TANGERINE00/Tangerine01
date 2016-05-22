@@ -232,7 +232,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to activar_cliente_potencial.
+        ///   Looks up a localized string similar to M3_activar_cliente_potencial.
         /// </summary>
         internal static string SP_ActivarClientePotencial {
             get {
@@ -241,7 +241,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to agregar_clientePotencial.
+        ///   Looks up a localized string similar to M3_agregar_clientePotencial.
         /// </summary>
         internal static string SP_agregar_clientePotencial {
             get {
@@ -250,7 +250,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to consultar_cliente_potencial.
+        ///   Looks up a localized string similar to M3_consultar_cliente_potencial.
         /// </summary>
         internal static string SP_consultarClientePotencial {
             get {
@@ -259,7 +259,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to eliminar_cliente_potencial.
+        ///   Looks up a localized string similar to M3_eliminar_cliente_potencial.
         /// </summary>
         internal static string SP_eliminarClientePotencial {
             get {
@@ -268,7 +268,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to eliminar_cliente_potencial_def.
+        ///   Looks up a localized string similar to M3_eliminar_cliente_potencial_def.
         /// </summary>
         internal static string SP_eliminarClientePotencialDef {
             get {
@@ -277,7 +277,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to listar_cliente_potencial.
+        ///   Looks up a localized string similar to M3_listar_cliente_potencial.
         /// </summary>
         internal static string SP_listarClientePotencial {
             get {
@@ -286,7 +286,7 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to modificar_clientePotencialF.
+        ///   Looks up a localized string similar to M3_modificar_clientePotencialF.
         /// </summary>
         internal static string SP_modificarClientePotencial {
             get {
