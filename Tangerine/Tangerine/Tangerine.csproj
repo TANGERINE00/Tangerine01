@@ -159,6 +159,7 @@
     <Content Include="GUI\M2\CambiarRol.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
+    <Content Include="GUI\M3\ActivarLead.aspx" />
     <Content Include="GUI\M3\AgregarLeads.aspx" />
     <Content Include="GUI\M3\ConsultarLead.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
@@ -1094,6 +1095,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceGUIM2.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\ActivarLead.aspx.cs">
+      <DependentUpon>ActivarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\ActivarLead.aspx.designer.cs">
+      <DependentUpon>ActivarLead.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
       <DependentUpon>AgregarLeads.aspx</DependentUpon>

@@ -626,7 +626,7 @@ as
 go
 
 
------------ Store Procedure eliminar cliente potenciale--------------------------
+----------- Store Procedure eliminar cliente potencial--------------------------
 CREATE PROCEDURE eliminar_cliente_potencial
 	@idClientePotencial [int]
 as
@@ -639,6 +639,21 @@ as
 
  end;
  go
+----------Store Procedure Activar cliente potencial----------------------------
+
+CREATE PROCEDURE activar_cliente_potencial
+	@idClientePotencial [int]
+as
+ begin
+		UPDATE cliente_Potencial
+		SET 
+			cli_pot_status = 1
+			WHERE
+			cli_pot_id  = @idClientePotencial;		
+
+ end;
+ go
+
 
 
 ----------- Store Procedure promover cliente potencial-------------------------

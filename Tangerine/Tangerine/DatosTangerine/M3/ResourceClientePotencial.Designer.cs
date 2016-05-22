@@ -232,6 +232,15 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to activar_cliente_potencial.
+        /// </summary>
+        internal static string SP_ActivarClientePotencial {
+            get {
+                return ResourceManager.GetString("SP_ActivarClientePotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to agregar_clientePotencial.
         /// </summary>
         internal static string SP_agregar_clientePotencial {
