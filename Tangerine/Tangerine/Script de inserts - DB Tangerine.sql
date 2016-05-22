@@ -1,50 +1,53 @@
-INSERT INTO LUGAR_DIRECCION VALUES (1,'Venezuela','Pais',null);
+INSERT into LUGAR_DIRECCION VALUES (1,'Venezuela','Pais',NULL);
 
-insert into lugar_direccion
-values (2,'Caracas','Ciudad', 1);
+INSERT into LUGAR_DIRECCION VALUES (2,'Distrito Capital','Estado', 1);
+INSERT into LUGAR_DIRECCION VALUES (3,'Zulia','Estado', 1);
+INSERT into LUGAR_DIRECCION VALUES (4,'Carabobo','Estado', 1);
 
-insert into lugar_direccion
-values (3,'Maracaibo','Ciudad', 1);
+INSERT into LUGAR_DIRECCION VALUES (5,'Caracas','Ciudad', 2);
+INSERT into LUGAR_DIRECCION VALUES (6,'Maracaibo','Ciudad', 3);
+INSERT into LUGAR_DIRECCION VALUES (7,'Valencia','Ciudad', 4);
 
-insert into lugar_direccion
-values (4,'Valencia','Ciudad', 1);
+INSERT into LUGAR_DIRECCION VALUES (8,'Avenida Urdaneta','Direccion', 5);
+INSERT into LUGAR_DIRECCION VALUES (9,'Plaza Maracaibo','Direccion', 6);
+INSERT into LUGAR_DIRECCION VALUES (10,'Avenida Valencia','Direccion', 7);
 
 --------Clientes Potenciales------------------------------------------------------------------------------------------------
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Skynet','J12345678','skynet@gmail.com',15120,0,0,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('Skynet','J12345678','skynet@gmail.com',15120,0,0,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,2,3,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,2,3,1);
 
  insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
- cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,1,2,1,0);
+ cli_pot_num_visitas,cli_pot_status) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,1,2,0);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('TerraSave','J25674897','terrasave@gmail.com',17020,3,3,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('TerraSave','J25674897','terrasave@gmail.com',17020,3,3,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,0,0);
+cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,1);
 
 ------------------------------------------------------------------------------------------------------------------
 -- COMPANIAS --
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Pepsi', 'J-23686197', 'giantufano@gmail.com', '04122362151', 'PSI', '12/12/2016', 1, 10000000, 30, 2);
+values ('Pepsi', 'J-23686197', 'giantufano@gmail.com', '04122362151', 'PSI', '12/12/2016', 1, 10000000, 30, 5);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Coca-Cola', 'J-9513297', 'merchan1395@gmail.com', '04122362151', 'CC', '12/12/2016', 0, 20000000, 40, 2);
+values ('Coca-Cola', 'J-9513297', 'merchan1395@gmail.com', '04122362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Maguca', 'J-756487568', 'prueba@gmail.com', '04122362151', 'MGC', '12/12/2016', 1, 90000000, 60, 3);
+values ('Maguca', 'J-756487568', 'prueba@gmail.com', '04122362151', 'MGC', '12/12/2016', 1, 90000000, 60, 6);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN', '12/12/2016', 0, 10000000, 120, 4);
+values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
 -- FIN COMPANIAS -- 
 
 SET IDENTITY_INSERT PROPUESTA ON
@@ -85,19 +88,19 @@ SET IDENTITY_INSERT PROPUESTA OFF
 
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','Activo',2);
+VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','Activo',8);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (2,10465723,'Masculino','Jose','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',2);
+VALUES (2,10465723,'Masculino','Jose','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',8);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (3,18529272,'Femenino','Karla','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',2);
+VALUES (3,18529272,'Femenino','Karla','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',9);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (4,10465723,'Masculino','Ramon','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',2);
+VALUES (4,10465723,'Masculino','Ramon','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',10);
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-VALUES (5,18529272,'Femenino','Petra','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',2);
+VALUES (5,18529272,'Femenino','Petra','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',8);
 
 
 INSERT INTO dbo.CONTACTO(con_nombre,con_apellido,con_departamento,con_cargo,con_telefono,con_correo,con_tipo_emp,fk_id_com_lead)
@@ -326,5 +329,9 @@ insert into CARGO_EMPLEADO values(
 insert into CARGO_EMPLEADO values(
 '01/01/2016',null,'Tiempo Completo',20.1,2,3
 );
+
+insert into cargo_empleado values ('12/06/2013', null, 'Medio Tiempo',20.1,2,4);
+insert into cargo_empleado values ('01/04/2012', null, 'Medio Tiempo',50,1,5);
+
 
 --------------------Fin de inserts de cargos---------

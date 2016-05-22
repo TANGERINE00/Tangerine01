@@ -25,35 +25,123 @@ namespace Tangerine.GUI.M8
         int _companiaId = 0;
         public static Facturacion theFactura = null;
 
+
+        public string Numero
+        {
+            get
+            {
+                return this.NumeroFactura.Text;
+            }
+
+            set
+            {
+                this.NumeroFactura.Text = value;
+            }
+        }
+
+        public string FechaFactura
+        {
+            get
+            {
+                return this.Fecha.Text;
+            }
+
+            set
+            {
+                this.Fecha.Text = value;
+            }
+        }
+
+        public string CompaniaFactura
+        {
+            get
+            {
+                return this.Compania.Text;
+            }
+
+            set
+            {
+                this.Compania.Text = value;
+            }
+        }
+
+        public string DescripcionFactura
+        {
+            get
+            {
+                return this.Descripcion.Text;
+            }
+
+            set
+            {
+                this.Descripcion.Text = value;
+            }
+        }
+
+        public string ProyectoFactura
+        {
+            get
+            {
+                return this.Proyecto.Text;
+            }
+
+            set
+            {
+                this.Proyecto.Text = value;
+            }
+        }
+
+        public string MontoFactura
+        {
+            get
+            {
+                return this.Monto.Text;
+            }
+
+            set
+            {
+                this.Monto.Text = value;
+            }
+        }
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idFac = int.Parse(Request.QueryString["idCont"]);
+            int idFac = int.Parse(Request.QueryString["idFac"]);
             if (!IsPostBack)
             {
                 LogicaM8 facturaLogic = new LogicaM8();
                 theFactura = facturaLogic.SearchFactura(idFac);
 
-                this.textNumeroFactura_M8.Value = theFactura.idFactura.ToString();
-                this.textFecha_M8.Value = theFactura.fechaFactura.ToString("dd/MM/yyyy");
-                this.textDescripcion_M8.Value = theFactura.descripcionFactura;
+                Numero = theFactura.idFactura.ToString();
+                //this.textNumeroFactura_M8.Value = theFactura.idFactura.ToString();
+                FechaFactura = theFactura.fechaFactura.ToString("dd/MM/yyyy");
+                //this.textFecha_M8.Value = theFactura.fechaFactura.ToString("dd/MM/yyyy");
+                DescripcionFactura = theFactura.descripcionFactura;
+                //this.textDescripcion_M8.Value = theFactura.descripcionFactura;
                 Compania compania = facturaLogic.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                this.textCliente_M8.Value = compania.NombreCompania;
+                CompaniaFactura = compania.NombreCompania;
+                //this.textCliente_M8.Value = compania.NombreCompania;
                 Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
-                this.textProyecto_M8.Value = proyecto.Nombre;
-                this.textMonto_M8.Value = theFactura.montoFactura.ToString();
+                ProyectoFactura = proyecto.Nombre;
+                //this.textProyecto_M8.Value = proyecto.Nombre;
+                MontoFactura = theFactura.montoFactura.ToString();
+                //this.textMonto_M8.Value = theFactura.montoFactura.ToString();
                 //this._montoRestante.Value = theFactura.montoRestanteFactura.ToString();
             }  
         }
 
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
         {
-            _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
-            _montoTotal = int.Parse(textMonto_M8.Value);
-            _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+            _numeroFactura = int.Parse(Numero);
+            _montoTotal = int.Parse(MontoFactura);
+            _fechaEmision = DateTime.Parse(FechaFactura);
             _fechaUltimoPago = DateTime.Now;
-            _montoRestante = int.Parse(textMonto_M8.Value);
+            _montoRestante = int.Parse(MontoFactura);
             _tipoMoneda = "Bolivares";
-            _descripcion = textDescripcion_M8.Value;
+            _descripcion = DescripcionFactura;
 
             theFactura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, 0, 1, 1);
             LogicaM8 facturaLogic = new LogicaM8();

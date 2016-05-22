@@ -28,7 +28,7 @@ namespace Tangerine.GUI.M8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idFac = int.Parse(Request.QueryString["idCont"]);
+            int idFac = int.Parse(Request.QueryString["idFac"]);
             if (!IsPostBack)
             {
                 LogicaM8 facturaLogic = new LogicaM8();

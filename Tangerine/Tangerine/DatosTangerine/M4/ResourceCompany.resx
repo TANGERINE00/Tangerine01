@@ -171,6 +171,15 @@
   <data name="DisableAbleComany" xml:space="preserve">
     <value>M4_InhabilitarHabilitarCompania</value>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+  </data>
   <data name="ParamAcronimo" xml:space="preserve">
     <value>@acronimo</value>
   </data>

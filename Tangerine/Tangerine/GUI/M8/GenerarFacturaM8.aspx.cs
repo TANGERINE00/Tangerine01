@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M8;
+using LogicaTangerine.M4;
+using LogicaTangerine.M7;
 
 
 namespace Tangerine.GUI.M8
@@ -15,18 +17,31 @@ namespace Tangerine.GUI.M8
     {
         DateTime _fechaEmision = DateTime.Now;
         DateTime _fechaUltimoPago = DateTime.Now;
-        int _montoTotal = 0;
+        static int _montoTotal = 0;
         int _montoRestante = 0;
         string _tipoMoneda = String.Empty;
         string _Descripcion = String.Empty;
         int _estatus = 0;
-        int _proyectoId = 0;
-        int _companiaId = 0;
+        static int _proyectoId = 0;
+        static int _companiaId = 0;
+        LogicaM4 logicaCompania = new LogicaM4();
+        LogicaProyecto logicaProyecto = new LogicaProyecto();
+        Proyecto proyecto = new Proyecto();
+        Compania compania = new Compania();
 
-        protected void Page_Load( object sender, EventArgs e )
+        protected void Page_Load(object sender, EventArgs e)
         {
-            textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
-            textDescripcion_M8.Value = null;
+           
+                int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
+                int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
+                textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
+                textMonto_M8.Value = int.Parse(Request.QueryString["Monto"]).ToString();
+                compania = logicaCompania.SearchCompany(_companiaId);
+                textCompania_M8.Value = compania.NombreCompania;
+                proyecto = logicaProyecto.consultarProyecto(_proyectoId);
+                textProyecto_M8.Value = proyecto.Nombre;
+            
+
         }
 
         /// <summary>
@@ -34,7 +49,7 @@ namespace Tangerine.GUI.M8
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void buttonGenerarFactura_Click( object sender, EventArgs e )
+        protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
             if (textDescripcion_M8.Value.Equals(""))
             {
@@ -43,19 +58,20 @@ namespace Tangerine.GUI.M8
             }
             else
             {
-                _montoTotal = int.Parse(textMonto_M8.Value);
-                _fechaEmision = DateTime.Parse(textFecha_M8.Value);
-                _fechaUltimoPago = DateTime.Now;
-                _montoRestante = int.Parse(textMonto_M8.Value);
+
                 _Descripcion = textDescripcion_M8.Value;
                 _tipoMoneda = "Bolivares";
+                _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+                _fechaUltimoPago = DateTime.Parse(textFecha_M8.Value);
+                int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
+                int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
 
-                Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _Descripcion, 0, 1, 1);
+                Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, int.Parse(Request.QueryString["Monto"]), int.Parse(Request.QueryString["Monto"]), _tipoMoneda, _Descripcion, 0, _proyectoId, _companiaId);
                 LogicaM8 facturaLogic = new LogicaM8();
                 facturaLogic.AddNewFactura(factura);
                 Server.Transfer("ConsultarFacturaM8.aspx");
             }
-  
+
 
         }
     }

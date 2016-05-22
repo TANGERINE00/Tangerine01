@@ -89,7 +89,6 @@ namespace LogicaTangerine.M7
         /// <summary>
         /// Metodo para devolver el monto a cobrar por entrega
         /// </summary>
-
         /// <returns></returns>
         public double calcularPago(double por_viejo,double por_nuevo, double monto)
         {
@@ -114,6 +113,7 @@ namespace LogicaTangerine.M7
                 return false;
             }
         }
+       
         /// <summary>
         /// Metodo para consultar todos los proyectos
         /// </summary>
@@ -177,14 +177,21 @@ namespace LogicaTangerine.M7
             return _Pro.ContactNombrePropuestaID(id);
         }
 
-
+        /// <summary>
+        /// Metodo que devuelve todas las propuestas  aprobadas
+        /// </summary>
+        /// <returns>lista que contiene propuestas aprobadas</returns>
         public List<Propuesta> ConsultarPropuestasAprobadas()
         {
             return _Prop.PropuestaProyecto();
         }
 
 
-
+        /// <summary>
+        /// Metodo que genera el codigo predeterminado de un proyecto
+        /// </summary>
+        /// <param name="nombre">nombre completo del proyecto</param>
+        /// <returns>String con el nombre</returns>
         public String generarCodigoProyecto(String nombre)
         {
             return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;

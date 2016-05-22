@@ -127,8 +127,7 @@ create table CLIENTE_POTENCIAL
 	 cli_pot_pres_anual_inv numeric(12,3) not null,
 	 cli_pot_num_llamadas int default(0) not null,
 	 cli_pot_num_visitas int default(0) not null,
-	 cli_pot_potencial bit default(1) not null,
-	 cli_pot_borrado bit default(0) not null,
+	 cli_pot_status int not null,
 	 
 	 constraint pk_cli_pot primary key
 	 (
@@ -603,13 +602,14 @@ create procedure agregar_clientePotencial
 @nombreClientePotencial [varchar](20),
 @rifClientePotencial [varchar](20),
 @emailClientePotencial [varchar](50),
-@presupuestoAnualInversion [decimal]
+@presupuestoAnualInversion [decimal],
+@status [decimal]
 
 
 as
  begin
-   insert into cliente_Potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv)
-                        values (@nombreClientePotencial,@rifClientePotencial,@emailClientePotencial,@presupuestoAnualInversion);
+   insert into cliente_Potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_status)
+                        values (@nombreClientePotencial,@rifClientePotencial,@emailClientePotencial,@presupuestoAnualInversion,@status);
  end;
 go
 
@@ -620,7 +620,8 @@ as
 	begin
 		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv
 		from cliente_Potencial
-                where cli_pot_borrado=0 and cli_pot_potencial=1;
+		where cli_pot_status != 3;
+                
 	end;
 go
 
@@ -632,9 +633,9 @@ as
  begin
 		UPDATE cliente_Potencial
 		SET 
-			cli_pot_borrado = 1	
+			cli_pot_status = 0	
 			WHERE
-			cli_pot_id  = @idClientePotencial and cli_pot_borrado=0;		
+			cli_pot_id  = @idClientePotencial;		
 
  end;
  go
@@ -648,9 +649,9 @@ as
  begin
 		UPDATE cliente_Potencial
 		SET 
-			cli_pot_potencial = 0	
+			cli_pot_status = 2	
 			WHERE
-			cli_pot_id  = @idClientePotencial and cli_pot_potencial=1;		
+			cli_pot_id  = @idClientePotencial;		
 
  end;
  go
@@ -664,7 +665,7 @@ CREATE procedure consultar_cliente_potencial
 as
 	begin
 		select cli_pot_id , cli_pot_nombre , 
-		cli_pot_rif, cli_pot_email ,cli_pot_pres_anual_inv,cli_pot_num_llamadas,cli_pot_num_visitas
+		cli_pot_rif, cli_pot_email ,cli_pot_pres_anual_inv,cli_pot_num_llamadas,cli_pot_num_visitas,cli_pot_status
 		from cliente_Potencial
 		where cli_pot_id = @idClientePotencial;
 		
@@ -703,6 +704,16 @@ as
  end;
  go
 
+ 
+ --------------Eliminar cliente definitivo---------
+ 
+ create procedure eliminar_cliente_potencial_def
+ 	@idClientePotencial int
+AS
+ BEGIN
+    DELETE FROM CLIENTE_POTENCIAL WHERE cli_pot_id = @idClientePotencial;
+ end;
+GO
 
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
@@ -1443,6 +1454,18 @@ AS
 	END
 GO
 
+---- StoredProcedure Monto Restante de una Factura ----
+CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
+	@idFactura int
+
+AS
+	BEGIN
+		SELECT fac_monto_restante AS fac_monto_restante
+		FROM FACTURA WHERE fac_id = @idFactura;
+	END
+GO
+
+
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
@@ -1624,6 +1647,20 @@ AS
 			FROM EMPLEADO Employee, CARGO_EMPLEADO JobEmployee, CARGO job
 		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha 
 			  and JobEmployee.fk_car_id=Job.car_id
+	END
+GO
+
+CREATE PROCEDURE M10_CambiarEstatus
+		@ficha INT
+AS
+	BEGIN
+		update EMPLEADO 
+		set emp_activo = case 
+							when emp_activo = 'Activo' then 'Inactivo'
+							else 'Activo'
+						 end
+	    where emp_num_ficha = @ficha;
+		
 	END
 GO
 -----------------------------------

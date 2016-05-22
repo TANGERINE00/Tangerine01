@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
 using DominioTangerine;
 using DatosTangerine.M3;
-
-
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 
 
@@ -20,10 +19,36 @@ namespace LogicaTangerine.M3
         //----------------------------------  listar cliente potencial------------------------------------------------
         public List<ClientePotencial> LogicalistarClientePotencial()
         {
-            BDClientePotencial datosClientePotencial = new BDClientePotencial();
-            List<ClientePotencial> objetolistaClientePotencial = new List<ClientePotencial>();
-            objetolistaClientePotencial = datosClientePotencial.DatosListarClientePotencial();
-            return objetolistaClientePotencial;
+            try
+            {
+                return BDClientePotencial.DatosListarClientePotencial();
+            }
+            catch (ArgumentNullException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(LogicaM3Resources.Codigo_Error_Formato,
+                     LogicaM3Resources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicaM3Resources.Mensaje_Generico_Error, ex);
+            }
         }
 //----------------------------------------agregar cliente Potencial -------------------------------------------------
 
@@ -35,9 +60,31 @@ namespace LogicaTangerine.M3
             {
                 return BDClientePotencial.AgregarClientePotencial(elClientePotencial);
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(LogicaM3Resources.Codigo_Error_Formato,
+                     LogicaM3Resources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicaM3Resources.Mensaje_Generico_Error, ex);
             }
         }
         //------------------------------------consultar un cliente en especifico-------------
@@ -47,9 +94,31 @@ namespace LogicaTangerine.M3
             {
                 return BDClientePotencial.ConsultarClientePotencial(idClientePotencial);
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(LogicaM3Resources.Codigo_Error_Formato,
+                     LogicaM3Resources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicaM3Resources.Mensaje_Generico_Error, ex);
             }
         }
    //--------------------------------------------borrar cliente-------------------
@@ -61,9 +130,31 @@ namespace LogicaTangerine.M3
             {
                 return BDClientePotencial.BorrarClientePotencial(elClientePotencial);
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(LogicaM3Resources.Codigo_Error_Formato,
+                     LogicaM3Resources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicaM3Resources.Mensaje_Generico_Error, ex);
             }
         }
 
@@ -75,22 +166,32 @@ namespace LogicaTangerine.M3
             {
                 return BDClientePotencial.ModificarClientePotencial(elClientePotencial);
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicaM3Resources.Codigo,
+                    LogicaM3Resources.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(LogicaM3Resources.Codigo_Error_Formato,
+                     LogicaM3Resources.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 throw ex;
             }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(LogicaM3Resources.Mensaje_Generico_Error, ex);
+            }
         }
-
-
-
-
-
-
-
-      
     }
-
-
-
-
 }

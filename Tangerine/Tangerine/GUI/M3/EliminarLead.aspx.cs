@@ -33,11 +33,7 @@ namespace Tangerine.GUI.M3
                   this.nombre.Value = elClientePotencial.NombreClientePotencial;
                   this.rif.Value = elClientePotencial.RifClientePotencial;
                   this.email.Value = elClientePotencial.EmailClientePotencial;
-
-
-
-
-                
+      
                   this.pres_anual.Value = elClientePotencial.PresupuestoAnual_inversion.ToString();
                   this.llamadas.Value = elClientePotencial.NumeroLlamadas.ToString();
                   this.visitas.Value = elClientePotencial.NumeroVisitas.ToString();
@@ -60,22 +56,7 @@ namespace Tangerine.GUI.M3
 
             logica.BorrarNuevoclientePotencial(logica.BuscarClientePotencial(idClip));
 
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
 
