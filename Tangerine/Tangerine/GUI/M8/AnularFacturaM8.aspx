@@ -89,7 +89,7 @@
                             </div>
 
                             <div class="form-group" runat="server">
-                                <asp:Button ID="buttonAnular_M8" Style="margin-top: 5%" class="btn btn-danger" type="submit" runat="server" Text="Anular" OnClick="buttonAnularFactura_Click"></asp:Button>
+                                <asp:Button ID="buttonAnular_M8" Style="margin-top: 5%" class="btn btn-danger" type="submit" runat="server" Text="Anular" OnClientClick="return confirm('¿Seguro que desea anular esta factura?');" OnClick="buttonAnularFactura_Click"></asp:Button>
                             </div>
                         </div>
 
