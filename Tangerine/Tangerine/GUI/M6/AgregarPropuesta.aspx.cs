@@ -44,8 +44,8 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboEstatus();
                 cargarCompañias();
-                llenarComboCuota();
-                llenarComboFpago();
+                //llenarComboCuota();
+                //llenarComboFpago();
 
             }
 
@@ -69,6 +69,7 @@ namespace Tangerine.GUI.M6
             _moneda = comboTipoCosto.SelectedItem.Text;
             _costo = int.Parse(textoCosto.Value);
             _acuerdo = formaPago.SelectedItem.Text;
+            //_acuerdo = "f";
             try
             {
                 _entregaCant = Int32.Parse(comboCuota.SelectedItem.Text);
@@ -77,7 +78,8 @@ namespace Tangerine.GUI.M6
             {
                 _entregaCant = 0;
             }
-          
+
+            _entregaCant = 0;
 
             _estatusW = comboEstatus.SelectedItem.Text;
             _idCompañia = comboCompañia.Items[comboCompañia.SelectedIndex].Value;
