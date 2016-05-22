@@ -80,7 +80,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -137,7 +137,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -220,7 +220,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -303,7 +303,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -380,7 +380,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -458,7 +458,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -530,7 +530,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -609,7 +609,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -686,7 +686,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -771,7 +771,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -833,7 +833,7 @@ namespace DatosTangerine.M8
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
                      ResourceCompany.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
