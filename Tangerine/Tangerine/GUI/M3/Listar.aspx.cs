@@ -80,8 +80,8 @@ namespace Tangerine.GUI.M3
                ClientePotencial += ResourceInterfaz.AbrirTD + item.PresupuestoAnual_inversion.ToString() + 
                ResourceInterfaz.CerrarTD;
 
-               ClientePotencial += ResourceInterfaz.AbrirTD + ResourceInterfaz.OpenDivRow + ResourceInterfaz.BotonInfo + item.IdClientePotencial +
-                   ResourceInterfaz.BotonCerrar +
+               ClientePotencial += ResourceInterfaz.AbrirTD + ResourceInterfaz.OpenDivRow + ResourceInterfaz.BotonInfo + 
+                   item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonModificar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonEliminar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                    ResourceInterfaz.BotonActiv + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
@@ -91,7 +91,6 @@ namespace Tangerine.GUI.M3
 
                ClientePotencial += ResourceInterfaz.CerrarTR;
  
-
 
             }
         }

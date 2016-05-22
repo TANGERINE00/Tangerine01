@@ -41,7 +41,7 @@
                     </div>
                     
                     <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
-                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Eliminar_Click" Text = "Eliminar"   ></asp:Button>
+                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Promover_Click" Text = "Promover"   ></asp:Button>
 				</div>	
             </div>
 		</div>
