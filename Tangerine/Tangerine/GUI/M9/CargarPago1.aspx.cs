@@ -14,6 +14,7 @@ namespace Tangerine.GUI.M9
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        LogicaM9 logica = new LogicaM9();
 
         public string cliente
         {
@@ -96,11 +97,24 @@ namespace Tangerine.GUI.M9
 
         }
 
-        protected void buttonSubmit_Click(object sender, EventArgs e)
+        protected void btnagregar_Click(object sender, EventArgs e)
         {
+            //int _idFactura = int.Parse(seccion4.ToString());
+            int _monto = int.Parse(seccion3.ToString());
+            string _forma =  seccion5.Value;
+            int _codApro = int.Parse(codAprobacion.Value);
+            string _fecha = "01/08/2008";
+            DateTime _dt = Convert.ToDateTime(_fecha);
 
+            Pago pago = new Pago(_monto,_forma,_codApro,_dt,1);
 
+            logica.AgregarPago(pago);
 
+           // Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
+             //                                   _status, _presupuesto, _plazo, _direccionId);
+            //logica.AddNewCompany(company);
+
+            Server.Transfer("SeleccionCompania.aspx", true);
         }
 
     }

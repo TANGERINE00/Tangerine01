@@ -10,49 +10,81 @@ namespace DominioTangerine
     {
         #region Atributos
 
-        private int _idFactura;
+        private int _idPago;
+        private int _montoPago;
+        private string _formaPago;
+        private int _codPago;
         private DateTime _fechaPago;
-        private int _numeroConfirmacion;
-        private string _tipoPago;
+        private int _idFactura;
 
         #endregion
 
         #region Constructores
 
-        public Pago (int idFactura, DateTime fechaPago, int numeroConfirmacion)
+        public Pago(int _idPago, int _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
         {
-            this._idFactura = idFactura;
-            this._fechaPago = fechaPago;
-            this._numeroConfirmacion = numeroConfirmacion;
+            this._idPago = _idPago;
+            this._montoPago = _montoPago;
+            this._formaPago = _formaPago;
+            this._codPago = _codPago;
+            this._fechaPago = _fechaPago;
+            this._idFactura = _idFactura;
+        }
+
+        public Pago(int _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
+        {
+            this._montoPago = _montoPago;
+            this._formaPago = _formaPago;
+            this._codPago = _codPago;
+            this._fechaPago = _fechaPago;
+            this._idFactura = _idFactura;
         }
 
         #endregion
 
         #region Get's y Set's
 
-        public int Idfactura
+
+
+
+        public int IdPago
         {
-            get { return _idFactura; }
-            set { _idFactura = value; }
+            get { return _idPago; }
+            set { _idPago = value; }
         }
 
-        public DateTime Fechapago
+        public int montoPago
+        {
+            get { return _montoPago; }
+            set { _montoPago = value; }
+        }
+
+        public string formaPago
+        {
+            get { return _formaPago; }
+            set { _formaPago = value; }
+        }
+
+        public int codPago
+        {
+            get { return _codPago; }
+            set { _codPago = value; }
+        }
+
+        public DateTime fechaPago
         {
             get { return _fechaPago; }
             set { _fechaPago = value; }
         }
 
-        public int NumeroConfirmacion
+        public int idFactura
         {
-            get { return _numeroConfirmacion; }
-            set { _numeroConfirmacion = value; }
+            get { return _idFactura; }
+            set { _idFactura = value; }
         }
+      
 
-        public string TipoPago
-        {
-            get { return _tipoPago; }
-            set { _tipoPago = value; }
-        }
+
         #endregion
     }
 }
