@@ -43,7 +43,7 @@ namespace Tangerine.GUI.M9
 
                     if (listFacturas.Count() < 1)
                     {
-                        factura += ResourceLogicaM9.AbrirTD + "No hay facturas asociadas" + ResourceLogicaM9.CerrarTD;
+                       // factura += ResourceLogicaM9.AbrirTD + "No hay facturas asociadas" + ResourceLogicaM9.CerrarTD;
                     }
                     else
                     {
