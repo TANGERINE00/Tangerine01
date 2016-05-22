@@ -63,8 +63,10 @@
                         <div class="form-group" runat="server">
                             <label for="InputTelefono">Teléfono</label>
                             <input runat="server" type="text" class="form-control" 
-                                pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" id="InputTelefono1" name="InputTelefono1" 
-                                placeholder="Introduzca teléfono de la compañía     e.g: 0212-9774183" maxlength="12"required>
+                                id="InputTelefono1" name="InputTelefono1"
+                                pattern="^([0-9]{4}\-[0-9]{7})?(\+[0-9]{1,2}\ [0-9]{3}\-[0-9]{7})?$" 
+                                placeholder="Introduzca teléfono de la compañía     e.g: 0212-9774183" 
+                                maxlength="15" required>
                         </div>
                         <!--Fecha Registro-->
                         <div class="form-group" runat="server">
@@ -72,19 +74,20 @@
                             <input runat="server" type="text" class="form-control" title="Fecha Inválida"
                                 pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" 
                                 id="InputFechaRegistro1" name="InputFechaRegistro1" 
-                                placeholder="dd/mm/aaaa" maxlength="10"required>
+                                placeholder="dd/mm/aaaa" maxlength="10" required>
                         </div>
                         <!--Presupuesto-->
                         <div class="form-group" runat="server">
                             <label for="InputPresupuesto">Presupuesto Anual</label>
-                            <input runat="server" type="number" class="form-control" id="InputPresupuesto1" name="InputPresupuesto1" 
-                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10"required>
+                            <input runat="server" type="number" class="form-control" 
+                                id="InputPresupuesto1" name="InputPresupuesto1" 
+                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
                         </div>
                         <!--Plazo de Pagos-->
                         <div class="form-group" runat="server">
                             <label for="InputPlazoPago">Plazo de Pagos (días)</label>
                             <input runat="server" type="text" class="form-control" id="InputPlazoPago1" name="InputPlazoPago1" 
-                                placeholder="Introduzca el plazo para los pagos de la compañía" maxlength="4"required>
+                                placeholder="Introduzca el plazo para los pagos de la compañía" maxlength="4" required>
                         </div>
                      </div><!-- /.box-body -->
 

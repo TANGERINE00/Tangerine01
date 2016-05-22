@@ -67,6 +67,42 @@ namespace Tangerine.GUI.M4 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText InputEmail1;
         
         /// <summary>
+        /// InputTelefono1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText InputTelefono1;
+        
+        /// <summary>
+        /// InputFechaRegistro1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText InputFechaRegistro1;
+        
+        /// <summary>
+        /// InputPresupuesto1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl InputPresupuesto1;
+        
+        /// <summary>
+        /// InputPlazoPago1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText InputPlazoPago1;
+        
+        /// <summary>
         /// btnagregar control.
         /// </summary>
         /// <remarks>
