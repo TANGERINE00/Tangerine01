@@ -234,4 +234,7 @@
   <data name="EmpModalidad" xml:space="preserve">
     <value>car_emp_modalidad</value>
   </data>
+  <data name="EstatusEmpleado" xml:space="preserve">
+    <value>M10_CambiarEstatus</value>
+  </data>
 </root>
