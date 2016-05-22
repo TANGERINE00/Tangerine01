@@ -73,6 +73,8 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="M3\ExceptionDataBaseLeads.cs" />
+    <Compile Include="M3\NullArgumentExceptionLeads.cs" />
     <Compile Include="M3\WrongFormatExceptionLeads.cs" />
     <Compile Include="M4\ExceptionDataBase.cs" />
     <Compile Include="M4\NullArgumentException.cs" />
