@@ -151,10 +151,14 @@
                 </li>
               </ul>
             </li>
-            <li class="treeview" id="Listar" runat="server">
-              <a href="../M3/Listar.aspx">
-                <i></i> <span>Gestion de Leads</span> 
-              </a>              
+            <li class="treeview" id="GestionDeLeads" runat="server">
+              <a href="#">
+                <i></i> <span>Gestion de Leads</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar Lead</a></li>
+                <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Consultar Lead</a></li>
+              </ul>                
             </li>
             <li class="treeview" id="GestionDeCompañias" runat="server">
               <a href="#">
