@@ -28,9 +28,9 @@
                     <div class="box-body" runat="server">
                         <!--Nombre-->
                         <div class="form-group" runat="server">
-                            <label for="InputNombre">Nombre</label>
+                            <label for="InputNombre">Nombre </label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" id="InputNombre1" name="InputNombre1" 
-                                placeholder="Introduzca nombre de la compañía" maxlength="50" required>
+                                placeholder="Introduzca nombre de la compañía" maxlength="50" required> 
                         </div>
                         <!--Acronimo-->
                         <div class="form-group" runat="server">
@@ -40,20 +40,20 @@
                         </div>
                         <!--RIF-->
                         <div class="form-group" runat="server">
-                            <label for="InputRIF">RIF</label>
+                            <label for="InputRIF">RIF</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" 
                                 pattern="^(\J\-[0-9]{9,13})$"
                                 id="InputRIF1" name="InputRIF1" 
-                                placeholder="Introduzca RIF de la compañía.    e.g: J-23686197-6" required>
+                                placeholder="Introduzca RIF de la compañía.    e.g: J-236861976" required>
                         </div>
                         <!--Direccion-->
-                        <div class="form-group" runat="server">
-                            <label for="InputLugar">Dirección</label>
+                        <div class="form-group" runat="server"> 
+                            <label for="InputLugar">Dirección</label> <label for="Requerido" style="color: red;">*</label>
                             <select runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></select>
                         </div>
                         <!--Email-->
-                        <div class="form-group" runat="server">
-                            <label for="InputEmail">Correo Electrónico</label>
+                        <div class="form-group" runat="server"> 
+                            <label for="InputEmail">Correo Electrónico</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control"
                                 pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
                                 id="InputEmail1" name="InputEmail1" 
@@ -61,31 +61,34 @@
                         </div>
                         <!--Telefono-->
                         <div class="form-group" runat="server">
-                            <label for="InputTelefono">Teléfono</label>
+                            <label for="InputTelefono">Teléfono</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" 
                                 id="InputTelefono1" name="InputTelefono1"
                                 pattern="^([0-9]{4}\-[0-9]{7})?(\+[0-9]{1,2}\ [0-9]{3}\-[0-9]{7})?$" 
                                 placeholder="Introduzca teléfono de la compañía     e.g: 0212-9774183" 
                                 maxlength="15" required>
                         </div>
-                        <!--Fecha Registro-->
-                        <div class="form-group" runat="server">
-                            <label for="InputFechaRegistro">Fecha de Registro</label>
-                            <input runat="server" type="text" class="form-control" title="Fecha Inválida"
-                                pattern="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" 
-                                id="InputFechaRegistro1" name="InputFechaRegistro1" 
-                                placeholder="dd/mm/aaaa" maxlength="10" required>
+                         <!--Fecha Registro-->
+                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
+                            <label for="InputFechaRegistro">Fecha de Registro</label> <label for="Requerido" style="color: red;">*</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                                    clientidmode="static" required>
+                            </div>
                         </div>
                         <!--Presupuesto-->
                         <div class="form-group" runat="server">
-                            <label for="InputPresupuesto">Presupuesto Anual</label>
+                            <label for="InputPresupuesto">Presupuesto Anual</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="number" class="form-control" 
                                 id="InputPresupuesto1" name="InputPresupuesto1" 
                                 placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
                         </div>
                         <!--Plazo de Pagos-->
                         <div class="form-group" runat="server">
-                            <label for="InputPlazoPago">Plazo de Pagos (días)</label>
+                            <label for="InputPlazoPago">Plazo de Pagos (días)</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" id="InputPlazoPago1" name="InputPlazoPago1" 
                                 placeholder="Introduzca el plazo para los pagos de la compañía" maxlength="4" required>
                         </div>

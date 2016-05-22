@@ -39,7 +39,7 @@ namespace Tangerine.GUI.M4
                     InputDireccion1.Value = logica.MatchNombreLugar(laCompania.IdLugar);
                     InputEmail1.Value = laCompania.EmailCompania;
                     InputTelefono1.Value = laCompania.TelefonoCompania;
-                    InputFechaRegistro1.Value = laCompania.FechaRegistroCompania.ToShortDateString();
+                    datepicker1.Value = laCompania.FechaRegistroCompania.ToShortDateString();
                     InputPresupuesto1.Value = laCompania.PresupuestoCompania.ToString();
                     InputPlazoPago1.Value = laCompania.PlazoPagoCompania.ToString();
                 }
@@ -56,14 +56,15 @@ namespace Tangerine.GUI.M4
             string _rif = InputRIF1.Value;
             string _email = InputEmail1.Value;
             string _telefono = InputTelefono1.Value;
-            string _fecha = InputFechaRegistro1.Value;
+            string _fecha = datepicker1.Value;
             int _status = logica.ConsultCompany(IdCompania).StatusCompania;
             int _presupuesto = int.Parse(InputPresupuesto1.Value);
             int _plazo = int.Parse(InputPlazoPago1.Value.ToString());
             int _direccionId = logica.MatchIdLugar(InputDireccion1.Value);
 
-            Compania company = new Compania(IdCompania, _nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
-                                                _status, _presupuesto, _plazo, _direccionId);
+            Compania company = new Compania(IdCompania, _nombre, _rif, _email, _telefono, _acronimo,
+                                             DateTime.ParseExact(_fecha, "MM/dd/yyyy", null), _status, _presupuesto, _plazo, 
+                                             _direccionId);
             logica.ChangeCompany(company);
 
             Server.Transfer("ConsultarCompania.aspx", true);

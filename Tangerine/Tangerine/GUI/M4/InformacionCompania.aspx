@@ -42,7 +42,7 @@
                            </div>
                            <div class="row">
                           <div class="form-group col-md-6" runat="server">
-                         <h3><label for="Acronimo">Acrónimo (opcional):</label></h3>
+                         <h3><label for="Acronimo">Acrónimo:</label></h3>
                        <div><h4><asp:Literal runat="server" ID="Acronimo"> </asp:Literal></h4></div>
                         </div>
                             <div class="form-group col-md-6" runat="server">
