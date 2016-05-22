@@ -48,14 +48,45 @@ namespace DatosTangerine.M10
                 parameters.Add(new Parametro("@estado", SqlDbType.VarChar, elementos["Estado"].ToString(), false));
                 parameters.Add(new Parametro("@ciudad", SqlDbType.VarChar, elementos["Ciudad"].ToString(), false));
                 parameters.Add(new Parametro("@direccion", SqlDbType.VarChar, elementos["Direccion"].ToString(), false));
-                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                
+                //Se manda a ejecutar en BDConexion el stored procedure M10_AgregarEmpleado y todos los parametros que recibe
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceEmpleado.AddNewEmpleado, parameters);
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }
@@ -116,10 +147,40 @@ namespace DatosTangerine.M10
                 }
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listEmpleado;
         }
@@ -137,37 +198,76 @@ namespace DatosTangerine.M10
             List<Parametro> parameters = new List<Parametro>();
             BDConexion Connection = new BDConexion();
             Parametro param = new Parametro();
+            Empleado employee;
+            try
+            {
+                Connection.Conectar();
+                param = new Parametro("@id", SqlDbType.Int, employeeId.ToString(), false);
+                parameters.Add(param);
 
-            param = new Parametro("@id", SqlDbType.Int, employeeId.ToString(), false);
-            parameters.Add(param);
+                DataTable dataTable = Connection.EjecutarStoredProcedureTuplas(ResourceEmpleado.DetallarEmpleado, parameters);
 
-            DataTable dataTable = Connection.EjecutarStoredProcedureTuplas(ResourceEmpleado.DetallarEmpleado, parameters);
+                DataRow row = dataTable.Rows[0];
 
-            DataRow row = dataTable.Rows[0];
+                int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
+                String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
 
-            int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
-            String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
-            String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
-            String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
-            String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
-            String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
-            int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
-            DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
-            String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
-            int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
-            String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
-            String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
+                String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+                String empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
+                String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
+                String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
-            String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
-            double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
-            String empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
-            String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
-            String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
+                employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                                                empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                                                empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                                                empFechaFin, empDireccion);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            Empleado employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
-                                            empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                            empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
-                                            empFechaFin, empDireccion);
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return employee;
         }
 
@@ -183,19 +283,58 @@ namespace DatosTangerine.M10
             List<Parametro> parameters = new List<Parametro>();
             List<LugarDireccion> direccion = new List<LugarDireccion>();
             BDConexion theConnection = new BDConexion();
-            Parametro param = new Parametro("@tipo", SqlDbType.Text, "Pais", false);
-            parameters.Add(param);
 
-            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectCountry, parameters);
-
-            foreach (DataRow row in dateTable.Rows)
+            try
             {
-                int empId = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
-                String empPNombre = row[ResourceComplemento.ItemCountryText].ToString();
+                theConnection.Conectar();
+                Parametro param = new Parametro("@tipo", SqlDbType.Text, "Pais", false);
+                parameters.Add(param);
 
-                LugarDireccion lugar = new LugarDireccion(empId, empPNombre);
-                direccion.Add(lugar);
+                DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectCountry, parameters);
+
+                foreach (DataRow row in dateTable.Rows)
+                {
+                    int empId = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
+                    String empPNombre = row[ResourceComplemento.ItemCountryText].ToString();
+
+                    LugarDireccion lugar = new LugarDireccion(empId, empPNombre);
+                    direccion.Add(lugar);
+                }
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return direccion;
         }
@@ -214,18 +353,57 @@ namespace DatosTangerine.M10
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
 
-            parameters.Add(new Parametro("@lugar", SqlDbType.Text, lugarDireccion, false));
-            parameters.Add(new Parametro("@tipo", SqlDbType.Text, "Estado", false));
-
-            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectState, parameters);
-
-            foreach (DataRow row in dateTable.Rows)
+            try
             {
-                int lugId = int.Parse(row[ResourceComplemento.ItemStateValue].ToString());
-                String lugNombre = row[ResourceComplemento.ItemStateText].ToString();
+                theConnection.Conectar();
 
-                estados.Add(new LugarDireccion(lugId, lugNombre));
+                parameters.Add(new Parametro("@lugar", SqlDbType.Text, lugarDireccion, false));
+                parameters.Add(new Parametro("@tipo", SqlDbType.Text, "Estado", false));
+
+                DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectState, parameters);
+
+                foreach (DataRow row in dateTable.Rows)
+                {
+                    int lugId = int.Parse(row[ResourceComplemento.ItemStateValue].ToString());
+                    String lugNombre = row[ResourceComplemento.ItemStateText].ToString();
+
+                    estados.Add(new LugarDireccion(lugId, lugNombre));
+                }
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return estados;
         }
@@ -242,17 +420,56 @@ namespace DatosTangerine.M10
             List<Cargo> jobs = new List<Cargo>();
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
-            parameters.Add(new Parametro("@id", SqlDbType.Int, "1", false));
-            DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectJobs, parameters);
 
-            foreach (DataRow row in dateTable.Rows)
+            try
             {
-                int jobId = int.Parse(row[ResourceComplemento.ItemJobValue].ToString());
-                String jobNombre = row[ResourceComplemento.ItemJobText].ToString();
-                String jobDescription = row[ResourceComplemento.JobDescription].ToString();
+                theConnection.Conectar();
+                parameters.Add(new Parametro("@id", SqlDbType.Int, "1", false));
+                DataTable dateTable = theConnection.EjecutarStoredProcedureTuplas(ResourceComplemento.FillSelectJobs, parameters);
 
-                jobs.Add(new Cargo(jobId, jobNombre, jobDescription));
+                foreach (DataRow row in dateTable.Rows)
+                {
+                    int jobId = int.Parse(row[ResourceComplemento.ItemJobValue].ToString());
+                    String jobNombre = row[ResourceComplemento.ItemJobText].ToString();
+                    String jobDescription = row[ResourceComplemento.JobDescription].ToString();
+
+                    jobs.Add(new Cargo(jobId, jobNombre, jobDescription));
+                }
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return jobs;
         }
@@ -275,7 +492,6 @@ namespace DatosTangerine.M10
             try
             {
                 theConnection.Conectar();
-                //PRUEBA
                 theParam = new Parametro(ResourceEmpleado.ParamCPrueba, SqlDbType.Int, "1", false);
                 parameters.Add(theParam);
 
@@ -303,7 +519,7 @@ namespace DatosTangerine.M10
                     string empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                     string empDireccion = row[ResourceEmpleado.EmpLugId].ToString();
 
-                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    //Creo un objeto de tipo Empleado con los datos de la fila y lo guardo en una lista de empleados
                     Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
                                                         empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
                                                         empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
@@ -312,10 +528,40 @@ namespace DatosTangerine.M10
                 }
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listEmpleado;
         }
@@ -338,7 +584,6 @@ namespace DatosTangerine.M10
             try
             {
                 theConnection.Conectar();
-                //PRUEBA
                 theParam = new Parametro(ResourceEmpleado.ParamCPrueba, SqlDbType.Int, "1", false);
                 parameters.Add(theParam);
 
@@ -366,7 +611,7 @@ namespace DatosTangerine.M10
                     string empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                     string empDireccion = row[ResourceEmpleado.EmpLugId].ToString();
 
-                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    //Creo un objeto de tipo Empleado con los datos de la fila y lo guardo en una lista de empleados
                     Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
                                                         empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
                                                         empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
@@ -375,10 +620,40 @@ namespace DatosTangerine.M10
                 }
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listEmpleado;
         }
@@ -394,10 +669,47 @@ namespace DatosTangerine.M10
                 ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             Hashtable elementos = new Hashtable();
-            foreach (LugarDireccion elemento in list.AddressComplete)
+            try
             {
-                elementos.Add(elemento.LugTipo, elemento.LugNombre);
+                foreach (LugarDireccion elemento in list.AddressComplete)
+                {
+                    elementos.Add(elemento.LugTipo, elemento.LugNombre);
+                }
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return elementos;
         }
@@ -417,15 +729,46 @@ namespace DatosTangerine.M10
             BDConexion theConnection = new BDConexion();
             try
             {
+                theConnection.Conectar();
                 parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar, empleadoId.ToString(), false));
                 
                 List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }

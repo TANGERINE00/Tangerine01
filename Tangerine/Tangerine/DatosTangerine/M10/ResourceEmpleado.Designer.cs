@@ -70,6 +70,15 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a TGE_00_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M10_ConsultarEmpleado.
         /// </summary>
         internal static string ConsultarEmpleado {
@@ -282,6 +291,24 @@ namespace DatosTangerine.M10 {
         internal static string EstatusEmpleado {
             get {
                 return ResourceManager.GetString("EstatusEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error de parseo de datos.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
             }
         }
         
