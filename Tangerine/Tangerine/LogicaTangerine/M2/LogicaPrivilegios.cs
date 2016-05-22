@@ -15,6 +15,7 @@ namespace LogicaTangerine.M2
         /// <summary>
         /// Método que retorna las opciones a las cuales el usuario que ha ingresado no puede acceder
         /// </summary>
+        /// <param name="nombreRol"></param>
         /// <returns></returns>
         public static List<string> VerificarAccesoAOpciones( string nombreRol )
         {
@@ -31,11 +32,6 @@ namespace LogicaTangerine.M2
                         lista.Add( o.Nombre );
                     }
                 }
-            }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Parametro invalido [nombreRol es null]", ex );
             }
             catch ( SqlException ex )
             {

@@ -30,18 +30,6 @@ namespace LogicaTangerine.M2
 
                 resultado = BDUsuario.ModificarRolUsuario( usuario );
             }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol( "Parametro invalido [usuario es null]", ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar ConsultarListaDeEmpleados()",
-                                                                 ex );
-            }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
