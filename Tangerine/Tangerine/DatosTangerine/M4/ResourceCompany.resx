@@ -123,9 +123,6 @@
   <data name="ChangeCompany" xml:space="preserve">
     <value>M4_ModificarCompania</value>
   </data>
-  <data name="Codigo_Error_Formato" xml:space="preserve">
-    <value>TGE_00_001</value>
-  </data>
   <data name="ComAcronymCompany" xml:space="preserve">
     <value>com_acronimo</value>
   </data>

@@ -88,6 +88,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string Alert {
+            get {
+                return ResourceManager.GetString("Alert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
         internal static string alertaError {
@@ -133,11 +142,11 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to class.
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
-        internal static string alertClase1 {
+        internal static string AlertDanger {
             get {
-                return ResourceManager.GetString("alertClase1", resourceCulture);
+                return ResourceManager.GetString("AlertDanger", resourceCulture);
             }
         }
         
@@ -151,11 +160,29 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to role.
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
         /// </summary>
-        internal static string alertRole1 {
+        internal static string AlertShowSu1 {
             get {
-                return ResourceManager.GetString("alertRole1", resourceCulture);
+                return ResourceManager.GetString("AlertShowSu1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertShowSu2 {
+            get {
+                return ResourceManager.GetString("AlertShowSu2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string AlertSuccess {
+            get {
+                return ResourceManager.GetString("AlertSuccess", resourceCulture);
             }
         }
         
@@ -232,6 +259,15 @@ namespace Tangerine.GUI.M5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;status=.
+        /// </summary>
+        internal static string BotonVolver4 {
+            get {
+                return ResourceManager.GetString("BotonVolver4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Contacto&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; style=&quot;margin-left:3px;&quot; href=&quot;ModificarContacto.aspx?typeComp=.
         /// </summary>
         internal static string ButtonModContact {
@@ -282,6 +318,33 @@ namespace Tangerine.GUI.M5 {
         internal static string Compania {
             get {
                 return ResourceManager.GetString("Compania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El contacto ha sido creado correctamente.
+        /// </summary>
+        internal static string ContactoAgregado {
+            get {
+                return ResourceManager.GetString("ContactoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El contacto ha sido eliminado correctamente.
+        /// </summary>
+        internal static string ContactoEliminado {
+            get {
+                return ResourceManager.GetString("ContactoEliminado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El contacto ha sido modificado correctamente.
+        /// </summary>
+        internal static string ContactoModificado {
+            get {
+                return ResourceManager.GetString("ContactoModificado", resourceCulture);
             }
         }
         
@@ -345,6 +408,42 @@ namespace Tangerine.GUI.M5 {
         internal static string ParametroIdComp {
             get {
                 return ResourceManager.GetString("ParametroIdComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to status.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string StatusAgregado {
+            get {
+                return ResourceManager.GetString("StatusAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string StatusEliminado {
+            get {
+                return ResourceManager.GetString("StatusEliminado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string StatusModificado {
+            get {
+                return ResourceManager.GetString("StatusModificado", resourceCulture);
             }
         }
         
