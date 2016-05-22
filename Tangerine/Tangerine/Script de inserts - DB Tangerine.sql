@@ -15,25 +15,25 @@ INSERT into LUGAR_DIRECCION VALUES (10,'Avenida Valencia','Direccion', 7);
 --------Clientes Potenciales------------------------------------------------------------------------------------------------
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Skynet','J12345678','skynet@gmail.com',15120,0,0,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('Skynet','J12345678','skynet@gmail.com',15120,0,0,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,2,3,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,2,3,1);
 
  insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
- cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,1,2,1,0);
+ cli_pot_num_visitas,cli_pot_status) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,1,2,0);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('TerraSave','J25674897','terrasave@gmail.com',17020,3,3,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('TerraSave','J25674897','terrasave@gmail.com',17020,3,3,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1,0);
+cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1);
 
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-cli_pot_num_visitas,cli_pot_potencial,cli_pot_borrado) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,0,0);
+cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,1);
 
 ------------------------------------------------------------------------------------------------------------------
 -- COMPANIAS --

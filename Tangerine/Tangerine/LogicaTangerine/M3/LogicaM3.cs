@@ -15,10 +15,8 @@ namespace LogicaTangerine.M3
         //----------------------------------  listar cliente potencial------------------------------------------------
         public List<ClientePotencial> LogicalistarClientePotencial()
         {
-            BDClientePotencial datosClientePotencial = new BDClientePotencial();
-            List<ClientePotencial> objetolistaClientePotencial = new List<ClientePotencial>();
-            objetolistaClientePotencial = datosClientePotencial.DatosListarClientePotencial();
-            return objetolistaClientePotencial;
+
+            return BDClientePotencial.DatosListarClientePotencial();
         }
 //----------------------------------------agregar cliente Potencial -------------------------------------------------
 

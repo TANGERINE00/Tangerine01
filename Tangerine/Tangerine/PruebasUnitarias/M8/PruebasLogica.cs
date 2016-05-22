@@ -19,6 +19,7 @@ namespace PruebasUnitarias.M8
         public Facturacion theInvoice2;
         public Facturacion theInvoice3;
         private List<Facturacion> facturas;
+        public double monto;
         public bool answer;
         public DateTime fecha = new DateTime(2015, 2, 10);
 
@@ -52,112 +53,120 @@ namespace PruebasUnitarias.M8
         [Test]
         public void TestAddNewFactura()
         {
-            //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
             answer = Logica.AddNewFactura(theInvoice);
 
             //answer obtiene true si se inserta la Factura, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
-        
-                /// <summary>
-                /// Prueba que permite verificar el modificar de una Factura en la base de datos
-                /// </summary>
-                [Test]
+
+        /// <summary>
+        /// Prueba que permite verificar el modificar de una Factura en la base de datos
+        /// </summary>        
+        [Test]
         public void TestChangeExistingFactura()
-                {
-                    //Declaro test de tipo BDFactura para poder invocar el "ChangeContact(Facturacion theInvoice)"
+        {
+             answer = Logica.ChangeExistingFactura(theInvoice2);
 
-                    answer = Logica.ChangeExistingFactura(theInvoice2);
+             //answer obtiene true si se modifica la Factura, si no, deberia agarrar un excepcion
+             Assert.IsTrue(answer);
+        }
 
-                    //answer obtiene true si se modifica la Factura, si no, deberia agarrar un excepcion
-                    Assert.IsTrue(answer);
-                }
-        
-                /// <summary>
-                /// Prueba que permite verificar el anular de una Factura en la base de datos
-                /// </summary>
-                [Test]
-                public void TestAnnularInvoice()
-                {
+        /// <summary>
+        /// Prueba que permite verificar el anular de una Factura en la base de datos
+        /// </summary>
+        [Test]
+        public void TestAnnularInvoice()
+        {
+            theInvoice3 = new Facturacion(1, DateTime.Now, DateTime.Now, 100, 50, "Bolivares", "PruebaAnulacion", 0, 1, 1);
+            answer = Logica.AnnularFactura(theInvoice3);
 
-                    theInvoice3 = new Facturacion(1, DateTime.Now, DateTime.Now, 100, 50, "Bolivares", "PruebaAnulacion", 0, 1, 1);
-                    //Declaro test de tipo BDFactura para poder invocar el "AnnularInvoice(Facturacion theInvoice)"
-                    answer = Logica.AnnularFactura(theInvoice3);
+            //answer obtiene true si se anula la Factura, si no, deberia agarrar un excepcion
+            Assert.IsTrue(answer);
+        }
 
-                    //answer obtiene true si se anula la Factura, si no, deberia agarrar un excepcion
-                    Assert.IsTrue(answer);
-                }
-        
+        /// <summary>
+        /// Prueba que permite verificar si existe la Factura con id 1  en la base de datos
+        /// </summary>
+        [Test]
+        public void TestSearchFactura()
+        {
+            theInvoice = Logica.SearchFactura(1);
 
-                [Test]
-                public void TestSearchFactura()
-                {
-                    //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
-                    theInvoice = Logica.SearchFactura(1);
-
-                    //answer obtiene true si se encuentra la factura en la BD, si no, deberia agarrar un excepcion
-                    Assert.IsTrue(1 == theInvoice.idFactura);
+            //answer obtiene true si se encuentra la factura en la BD, si no, deberia agarrar un excepcion
+            Assert.IsTrue(1 == theInvoice.idFactura);
 
 
-                }
-        
-                [Test]
-                public void TestgetFacturas()
-                {
-                    //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-                    facturas = Logica.getFacturas();
+        }
 
-                    //answer obtiene true si se encuentra las facturas en la BD, si no, deberia agarrar un excepcion
-                    for (int i = 0; i < facturas.Count(); i++)
-                    {
+        /// <summary>
+        /// Prueba que permite verificar el metodo para obtener todas las facturas en la base de datos
+        /// </summary>
+        [Test]
+        public void TestgetFacturas()
+        {
+            facturas = Logica.getFacturas();
 
-                        Assert.IsTrue(i + 1 == facturas[i].idFactura);
-                    }
+            //answer obtiene true si se encuentra las facturas en la BD, si no, deberia agarrar un excepcion
+            for (int i = 0; i < facturas.Count(); i++)
+            {
 
-                }
+                Assert.IsTrue(i + 1 == facturas[i].idFactura);
+            }
 
-        
+        }
+
+        // <summary>
+        /// Prueba que permite verificar el metodo para obtener una compañia en especifico en la base de datos
+        /// </summary>
+        [Test]
+        public void TestSearchCompaniaFactura()
+        {
+            Compania theCompany = new Compania();
+            theCompany = Logica.SearchCompaniaFactura(1);
+
+            Assert.IsTrue(1 == theCompany.IdCompania);
 
 
+        }
 
-                [Test]
-                public void TestSearchCompaniaFactura()
-                {
-                    Compania theCompany = new Compania();
-                    //Declaro test de tipo BDFactura para poder invocar el "AddInvoice(Facturacion theInvoice)"
-                    theCompany = Logica.SearchCompaniaFactura(1);
+        /// <summary>
+        /// Prueba que permite verificar el metodo para buscar todas las facturas asociadas a una compañia en la base de datos
+        /// </summary>
+        [Test]
+        public void TestSearchProyectoFactura()
+        {
+            Proyecto theProject = new Proyecto();
+            theProject = Logica.SearchProyectoFactura(1);
 
-                    //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
-                    Assert.IsTrue(1 == theCompany.IdCompania);
-
-
-                }
-        
-                [Test]
-                public void TestSearchProyectoFactura()
-                {
-                    Proyecto theProject = new Proyecto();
-                    //Declaro test de tipo BDFactura para poder invocar el "ContactProyectoFactura"
-                    theProject = Logica.SearchProyectoFactura(1);
-
-                    //Verifico si el proyecto existe
-                    //Assert.IsTrue(1 == theProject.Idproyecto);
-                    Assert.IsNotNull(theProject);
+            Assert.IsNotNull(theProject);
 
 
 
-                }
-        
-                [Test]
-                public void TestSearchFacturasCompania()
-                {
-                    //Declaro test de tipo BDFactura para poder invocar el "ContactFacturasCompania(int idCompania)"
-                    facturas = Logica.SearchFacturasCompania(1);
+        }
 
-                    //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
-                    Assert.AreEqual(6, facturas.Count());
+        /// <summary>
+        /// Prueba que permite verificar el metodo para obtener un Proyecto específico que pertenecen a la base de datos
+        /// </summary>    
+        [Test]
+        public void TestSearchFacturasCompania()
+        {
+            facturas = Logica.SearchFacturasCompania(1);
 
-                }
+            Assert.AreEqual(6, facturas.Count());
+
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar el metodo para obtener un Proyecto específico que pertenecen a la base de datos
+        /// </summary>
+        [Test]
+        public void TestContactMontoRestanteFactura()
+        {
+            monto = Logica.SearchMontoRestanteFactura(1);
+
+            Assert.NotNull(monto);
+
+        }
                 
         #endregion
 
