@@ -330,4 +330,8 @@ insert into CARGO_EMPLEADO values(
 '01/01/2016',null,'Tiempo Completo',20.1,2,3
 );
 
+insert into cargo_empleado values ('12/06/2013', null, 'Medio Tiempo',20.1,2,4);
+insert into cargo_empleado values ('01/04/2012', null, 'Medio Tiempo',50,1,5);
+
+
 --------------------Fin de inserts de cargos---------
