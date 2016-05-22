@@ -57,7 +57,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
                 return false;
             }
 
@@ -96,7 +96,7 @@ namespace DatosTangerine.M2
             }
             catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
                 return false;
             }
 
@@ -303,6 +303,11 @@ namespace DatosTangerine.M2
             return lista;
         }
 
+        /// <summary>
+        /// Método que retorna el usuario y rol de un empleado
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
         public static Usuario ObtenerUsuarioDeEmpleado( Empleado empleado ) 
         {
             Usuario usuario = new Usuario();
@@ -386,7 +391,7 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="fichaEmpleado"></param>
         /// <returns></returns>
-        public static bool VerificarUsuarioPorFichaEmpleado(int fichaEmpleado)
+        public static bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado )
         {
             BDConexion laConexion = new BDConexion();
             List<Parametro> parametros = new List<Parametro>();
@@ -398,21 +403,21 @@ namespace DatosTangerine.M2
             {
                 laConexion.Conectar();
 
-                elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, fichaEmpleado.ToString(),
-                                             false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroNumFicha, SqlDbType.Int, fichaEmpleado.ToString(),
+                                             false );
+                parametros.Add( elParametro );
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarUsuarioPorFichaEmpleado,
-                                                                         parametros);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.VerificarUsuarioPorFichaEmpleado,
+                                                                         parametros );
 
-                foreach (DataRow row in dt.Rows)
+                foreach ( DataRow row in dt.Rows )
                 {
                     resultado = true;
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
             }
 
             return resultado;
@@ -423,7 +428,7 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="nombreUsuario"></param>
         /// <returns></returns>
-        public static bool VerificarExistenciaDeUsuario(string nombreUsuario)
+        public static bool VerificarExistenciaDeUsuario( string nombreUsuario )
         {
             BDConexion laConexion = new BDConexion();
             List<Parametro> parametros = new List<Parametro>();
@@ -435,21 +440,21 @@ namespace DatosTangerine.M2
             {
                 laConexion.Conectar();
 
-                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario,
-                                             false);
-                parametros.Add(elParametro);
+                elParametro = new Parametro( ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario,
+                                             false );
+                parametros.Add( elParametro );
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarExistenciaUsuario,
-                                                                         parametros);
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.VerificarExistenciaUsuario,
+                                                                         parametros );
 
-                foreach (DataRow row in dt.Rows)
+                foreach ( DataRow row in dt.Rows )
                 {
                     resultado = true;
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                System.Diagnostics.Debug.Write(ex);
+                System.Diagnostics.Debug.Write( ex );
             }
 
             return resultado;
