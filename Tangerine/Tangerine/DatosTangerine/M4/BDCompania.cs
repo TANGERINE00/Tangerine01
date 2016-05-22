@@ -18,10 +18,10 @@ namespace DatosTangerine.M4
         Parametro theParam = new Parametro();
 
         /// <summary>
-        /// Metodo para agregar una compañia nueva en la base de datos.
+        /// Método para agregar una compañia nueva en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para agregar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para agregar en la base de datos.</param>
+        /// <returns>True si fue agregada exitosamente.</returns>
         public static bool AddCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -97,9 +97,9 @@ namespace DatosTangerine.M4
         }
 
         /// <summary>
-        /// Metodo para consultar el ultimo id de compania en la base de datos.
+        /// Método para consultar el último id de compañía en la base de datos.
         /// </summary>
-        /// <returns>el ultimo id de compania registrado</returns>
+        /// <returns>Último id de compania registrada.</returns>
         public static int ConsultLastCompanyId()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -148,10 +148,10 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         }
 
         /// <summary>
-        /// Metodo para eliminar una compañia en la base de datos.
+        /// Método para eliminar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para borrar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para borrar en la base de datos.</param>
+        /// <returns>True si fue borrada exitosamente.</returns>
         public static bool DeleteCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -200,10 +200,10 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
 
 
         /// <summary>
-        /// Metodo para habilitar una compañia en la base de datos.
+        /// Método para habilitar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para habilitar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para habilitar en la base de datos.</param>
+        /// <returns>True si fue habilitada exitosamente.</returns>
         public static bool EnableCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -254,10 +254,10 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
         }
 
         /// <summary>
-        /// Metodo para inhabilitar una compañia en la base de datos.
+        /// Método para inhabilitar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para habilitar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para deshabilitar en la base de datos.</param>
+        /// <returns>True si fue deshabilitada exitosamente.</returns>
         public static bool DisableCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -309,10 +309,10 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
 
        
         /// <summary>
-        /// Metodo para modificar una compañia en la base de datos.
+        /// Método para modificar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para modificar en bd</param>
-        /// <returns>true si fue modificado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para modificar en la base de datos.</param>
+        /// <returns>True si fue modificada exitosamente.</returns>
         public static Boolean ChangeCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -391,10 +391,10 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
 
        
         /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
+        /// Método para consultar una compañía en específico.
         /// </summary>
-        /// <returns>Lista de contactos de la Empresa</returns>
+        /// <param name="idCompany">Entero que es igual al id de la compañía a consultar.</param>
+        /// <returns>Objeto Compania correspondiente a la empresa consultada.</returns>
         public static Compania ConsultCompany(int idCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -466,10 +466,9 @@ ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMet
 
         
         /// <summary>
-        /// Metodo para consultar todas las Compañias registradas en la BD.
-        /// Recibe cero parametros.
+        /// Método para consultar todas las compañías registradas en la base de datos.
         /// </summary>
-        /// <returns>Lista de Companias registradas</returns>
+        /// <returns>Lista de compañías registradas.</returns>
         public static List<Compania> ConsultCompanies()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
