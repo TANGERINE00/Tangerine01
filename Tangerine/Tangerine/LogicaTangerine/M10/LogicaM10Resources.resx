@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Codigo" xml:space="preserve">
+    <value>TGE_00_001</value>
+  </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>TGE_00_001</value>
+  </data>
+  <data name="Mensaje" xml:space="preserve">
+    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
+  </data>
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo de dato</value>
+  </data>
+  <data name="Mensaje_Generico_Error" xml:space="preserve">
+    <value>No se pudo completar la operación</value>
   </data>
 </root>

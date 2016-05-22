@@ -61,6 +61,51 @@ namespace LogicaTangerine.M10 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a TGE_00_001.
+        /// </summary>
+        internal static string Codigo {
+            get {
+                return ResourceManager.GetString("Codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a TGE_00_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error con la Conexion en la Base de Datos, no se pudo abrir la conexion.
+        /// </summary>
+        internal static string Mensaje {
+            get {
+                return ResourceManager.GetString("Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error de parseo de dato.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No se pudo completar la operación.
+        /// </summary>
+        internal static string Mensaje_Generico_Error {
+            get {
+                return ResourceManager.GetString("Mensaje_Generico_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Entrada en el Método.
         /// </summary>
         internal static string MensajeInicioInfoLogger {
