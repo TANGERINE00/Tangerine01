@@ -193,15 +193,10 @@ namespace DatosTangerine.M7
 
         /// <summary>
         /// Metodo para consultar un Proyecto específico que pertenecen a la base de datos.
-        /// Recibe dos parametros: idProyecto que es el numero de Proyecto del mismo.
-        ///                     
+        /// Recibe dos parametros: idProyecto que es el numero de Proyecto del mismo.               
         /// </summary>
         /// <returns>Un objeto de tipo Proyecto</returns>
-        /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idProyecto que es el id del Proyecto a consultar.
-        /// </summary>
-        /// <returns>Lista de Proyectos </returns>
+        
         public Proyecto ContactProyecto(int idProyecto)
         {
             parameters = new List<Parametro>();
@@ -254,7 +249,12 @@ namespace DatosTangerine.M7
         }
 
 
-        public List<Proyecto> ContactProyectos()
+        /// <summary>
+        /// Metodo para consultar todos los Proyectos  que pertenecen a la base de datos.              
+        /// </summary>
+        /// <returns>Un objeto de tipo Proyecto</returns>
+         
+       public List<Proyecto> ContactProyectos()
         {
             parameters = new List<Parametro>();
             theConnection = new BDConexion();
@@ -483,6 +483,11 @@ namespace DatosTangerine.M7
            return listProyecto;
        }
 
+       /// <summary>
+       /// busca en la base de datos el nombre de una propuesta 
+       /// </summary>
+       /// <param name="idPropuesta">identificador unico de la propuesta en la base de datos</param>
+       /// <returns>Strig nombre</returns>
        public String ContactNombrePropuestaID (int idPropuesta)
        {
            parameters = new List<Parametro>();
@@ -513,6 +518,10 @@ namespace DatosTangerine.M7
            return PorpuNombre;
        }
 
+       /// <summary>
+       /// devuelve id maximo de los proyectos en la base de datos
+       /// </summary>
+       /// <returns>int </returns>
        public int ContacMaxIdProyecto ()
        {
            parameters = new List<Parametro>();

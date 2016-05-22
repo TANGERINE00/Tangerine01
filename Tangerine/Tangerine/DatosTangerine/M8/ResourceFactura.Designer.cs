@@ -115,6 +115,15 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M8_ConsultarMontoRestanteFactura.
+        /// </summary>
+        internal static string ConsultMontoRestanteFactura {
+            get {
+                return ResourceManager.GetString("ConsultMontoRestanteFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M8_ConsultarFactura.
         /// </summary>
         internal static string ContactFactura {

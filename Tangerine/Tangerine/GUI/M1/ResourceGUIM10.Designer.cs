@@ -115,7 +115,7 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a href=&quot;ModificarEmpleado.aspx.
+        ///   Busca una cadena traducida similar a &lt;a href=&quot;EmpleadosAdmin.aspx?id=.
         /// </summary>
         internal static string BotonStatusEmpAbrir {
             get {

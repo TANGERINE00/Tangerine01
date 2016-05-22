@@ -16,7 +16,7 @@ namespace PruebasUnitarias.M3
     {
         #region Atributos
         public ClientePotencial clientePot3;
-        public LogicaM3 clientePot4;
+        public LogicaM3 logicaM3;
         public bool answer;
         #endregion
 
@@ -24,15 +24,8 @@ namespace PruebasUnitarias.M3
         [SetUp]
         public void init()
         {
-            clientePot3 = new ClientePotencial();
-            clientePot4 = new LogicaM3();
-            clientePot3.NombreClientePotencial = "HP";
-            clientePot3.RifClientePotencial = "J-1221212";
-            clientePot3.EmailClientePotencial = "info@hp.com";
-            clientePot3.PresupuestoAnual_inversion = 12000;
-            clientePot3.NumeroLlamadas = 0;
-            clientePot3.NumeroVisitas = 0;
-            clientePot3.IdClientePotencial = 1;
+            clientePot3 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000, 0, 0, 3);
+            logicaM3 = new LogicaM3();
 
         }
 
@@ -40,7 +33,7 @@ namespace PruebasUnitarias.M3
         public void clean()
         {
             clientePot3 = null;
-            clientePot4 = null;
+            logicaM3 = null;
         }
         #endregion
 
@@ -49,7 +42,7 @@ namespace PruebasUnitarias.M3
         public void TestAgregarClientePotencial()
         {
             //Declaro test de tipo Logico para poder invocar el "agregar de logica"
-            answer = clientePot4.AgregarNuevoclientePotencial(clientePot3);
+            answer = logicaM3.AgregarNuevoclientePotencial(clientePot3);
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
         }
@@ -59,19 +52,18 @@ namespace PruebasUnitarias.M3
         public void TestBorrarClientePotencial()
         {
 
-            clientePot4.AgregarNuevoclientePotencial(clientePot3);
-            answer = clientePot4.BorrarNuevoclientePotencial(clientePot3);
+            answer = logicaM3.BorrarNuevoclientePotencial(clientePot3);
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
+
         }
 
         [Test]
         public void TestConsultarClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            clientePot4.AgregarNuevoclientePotencial(clientePot3);
 
-            Assert.IsNotNull(clientePot4.BuscarClientePotencial(clientePot3.IdClientePotencial));
+            Assert.IsNotNull(logicaM3.BuscarClientePotencial(clientePot3.IdClientePotencial));
         }
 
 
@@ -79,17 +71,9 @@ namespace PruebasUnitarias.M3
         public void TestModificarClientePotencial()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
-            clientePot4.AgregarNuevoclientePotencial(clientePot3);
 
-            clientePot3.NombreClientePotencial = "Jose";
-            clientePot3.RifClientePotencial = "J-2222222";
-            clientePot3.EmailClientePotencial = "info@hp.com";
-            clientePot3.PresupuestoAnual_inversion = 12000;
-            clientePot3.NumeroLlamadas = 0;
-            clientePot3.NumeroVisitas = 0;
-            clientePot3.IdClientePotencial = 1;
 
-            answer = clientePot4.ModificarNuevoclientePotencial(clientePot3);
+            answer = logicaM3.ModificarNuevoclientePotencial(clientePot3);
 
             Assert.IsTrue(answer);
         }

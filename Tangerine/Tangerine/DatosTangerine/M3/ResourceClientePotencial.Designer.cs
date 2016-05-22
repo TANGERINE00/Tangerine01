@@ -61,15 +61,6 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @borrado.
-        /// </summary>
-        internal static string Aborrado {
-            get {
-                return ResourceManager.GetString("Aborrado", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to @emailClientePotencial.
         /// </summary>
         internal static string AemailClientePotencial {
@@ -115,15 +106,6 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @potencial.
-        /// </summary>
-        internal static string Apotencial {
-            get {
-                return ResourceManager.GetString("Apotencial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to @presupuestoAnualInversion.
         /// </summary>
         internal static string ApresupuestoAnualInversion {
@@ -142,11 +124,11 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cli_pot_borrado.
+        ///   Looks up a localized string similar to @status.
         /// </summary>
-        internal static string borrado {
+        internal static string Astatus {
             get {
-                return ResourceManager.GetString("borrado", resourceCulture);
+                return ResourceManager.GetString("Astatus", resourceCulture);
             }
         }
         
@@ -187,6 +169,24 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fin Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to cli_pot_nombre.
         /// </summary>
         internal static string nombreClientePotencial {
@@ -210,15 +210,6 @@ namespace DatosTangerine.M3 {
         internal static string numeroVisitas {
             get {
                 return ResourceManager.GetString("numeroVisitas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to cli_pot_potencial.
-        /// </summary>
-        internal static string potencial {
-            get {
-                return ResourceManager.GetString("potencial", resourceCulture);
             }
         }
         
@@ -268,6 +259,15 @@ namespace DatosTangerine.M3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to eliminar_cliente_potencial_def.
+        /// </summary>
+        internal static string SP_eliminarClientePotencialDef {
+            get {
+                return ResourceManager.GetString("SP_eliminarClientePotencialDef", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to listar_cliente_potencial.
         /// </summary>
         internal static string SP_listarClientePotencial {
@@ -282,6 +282,15 @@ namespace DatosTangerine.M3 {
         internal static string SP_modificarClientePotencial {
             get {
                 return ResourceManager.GetString("SP_modificarClientePotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cli_pot_status.
+        /// </summary>
+        internal static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
             }
         }
     }

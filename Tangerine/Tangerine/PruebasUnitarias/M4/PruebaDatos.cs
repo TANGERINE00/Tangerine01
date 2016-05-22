@@ -135,6 +135,21 @@ namespace PruebasUnitarias.M4
             //Compruebo que el metodo de habilitación finalizó correctamente.
             Assert.IsTrue(answer);
         }
+
+        /// <summary>
+        /// Prueba que permite verificar el consultar de lugares en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestConsultPlaces()
+        {
+            //Consulto los lugares que son Ciudad que se hallan en la base de datos.
+            List<LugarDireccion> lugares = BDLugarDireccion.ConsultPlaces();
+            //Recorro los lugares y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
+            foreach (LugarDireccion lugar in lugares)
+            {
+                Assert.IsNotNull(lugar.LugId);
+            }
+        }
     }
 }
 

@@ -13,16 +13,22 @@ namespace Tangerine.GUI.M4
     public partial class ModificarCompania : System.Web.UI.Page
     {
         LogicaM4 logica = new LogicaM4();
+        int _idComp;
+
+        public int IdCompania
+        {
+            get { return _idComp; }
+            set { _idComp = value; }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Compania laCompania;
-            int idComp;
 
             try
             {
-                idComp = int.Parse(Request.QueryString["idComp"]);
-                laCompania = logica.SearchCompany(idComp);
+                IdCompania = int.Parse(Request.QueryString["idComp"]);
+                laCompania = logica.SearchCompany(IdCompania);
 
                 if (!IsPostBack)
                 {
@@ -34,8 +40,8 @@ namespace Tangerine.GUI.M4
                     InputEmail1.Value = laCompania.EmailCompania;
                     InputTelefono1.Value = laCompania.TelefonoCompania;
                     InputFechaRegistro1.Value = laCompania.FechaRegistroCompania.ToShortDateString();
-                    // InputPresupuesto1.Value = laCompania.PresupuestoCompania;
-                    // InputPlazoPago1.Value = laCompania.PlazoPagoCompania;
+                    InputPresupuesto1.Value = laCompania.PresupuestoCompania.ToString();
+                    InputPlazoPago1.Value = laCompania.PlazoPagoCompania.ToString();
                 }
             }
             catch (Exception ex)
@@ -51,14 +57,14 @@ namespace Tangerine.GUI.M4
             string _email = InputEmail1.Value;
             string _telefono = InputTelefono1.Value;
             string _fecha = InputFechaRegistro1.Value;
-            int _status = 1; //ARREGLAR ESTO, hacer un constructor que modifique todo MENOS status.
-            int _presupuesto = 1; //ARREGLAR!
-            int _plazo = 1; //ARREGLAR!
+            int _status = logica.SearchCompany(IdCompania).StatusCompania;
+            int _presupuesto = int.Parse(InputPresupuesto1.Value);
+            int _plazo = int.Parse(InputPlazoPago1.Value.ToString());
             int _direccionId = logica.MatchIdLugar(InputDireccion1.Value);
 
-            Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
+            Compania company = new Compania(IdCompania, _nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
                                                 _status, _presupuesto, _plazo, _direccionId);
-            logica.AddNewCompany(company);
+            logica.ChangeCompany(company);
 
             Server.Transfer("ConsultarCompania.aspx", true);
         }

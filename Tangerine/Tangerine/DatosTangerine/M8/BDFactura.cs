@@ -482,5 +482,40 @@ namespace DatosTangerine.M8
             return TheProyecto;
         }
 
+        /// <summary>
+        /// Metodo para consultar el monto restante de una factura por id
+        /// </summary>
+        /// <param name="idFactura"></param>
+        /// <returns>Devuelve el monto restante de una factura por id</returns>
+        public static double ContactMontoRestanteFactura(int idFactura)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+            double montoRestante = 0;
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, idFactura.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar el monto restante de la factura
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ConsultMontoRestanteFactura, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                montoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+ 
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return montoRestante;
+        }
     }
 }

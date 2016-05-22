@@ -138,6 +138,9 @@
   <data name="BotonModificar" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="ModificarLead.aspx?idclp=</value>
   </data>
+  <data name="BotonPromover" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-upload"  href="Promover.aspx?idclp=</value>
+  </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>

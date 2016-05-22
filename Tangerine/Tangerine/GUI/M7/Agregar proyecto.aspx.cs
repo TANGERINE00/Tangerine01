@@ -23,7 +23,6 @@ namespace Tangerine.GUI.M7
         List<Contacto> Contactos = new List<Contacto>();
         List<Empleado> seleccionProgramadores = new List<Empleado>();
         List<Contacto> seleccionContactos = new List<Contacto>();
-        int _Gerente;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -81,7 +80,7 @@ namespace Tangerine.GUI.M7
             {
                 inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
             }
-
+            
             textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
             textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
         }
@@ -106,7 +105,8 @@ namespace Tangerine.GUI.M7
                     seleccionProgramadores.Add(Programadores[i]);
                 }
             }
-
+            
+                
             for (int i = 0; i < inputEncargado.Items.Count; i++)
             {
                 if (inputEncargado.Items[i].Selected)
