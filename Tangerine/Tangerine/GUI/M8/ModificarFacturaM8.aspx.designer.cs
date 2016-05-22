@@ -67,6 +67,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textMonto_M8;
         
         /// <summary>
+        /// Control textTipoMoneda_M8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText textTipoMoneda_M8;
+        
+        /// <summary>
         /// Control buttonModificar_M8.
         /// </summary>
         /// <remarks>
