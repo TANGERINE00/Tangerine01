@@ -7,10 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicaTangerine.M2
-{
+namespace LogicaTangerine.M2{
+
+
     public class LogicaModificarRol
     {
+        /// <summary>
+        /// Metodo que indica si se cambio o no exitosamente el rol de un usuario.
+        /// </summary>
+        /// <param name="elusuario"></param>
+        /// <param name="elrol"></param>
+        /// <returns></returns>
         public static bool ModificarRol(string elusuario, string elrol)
         {
             bool resultado = false;
@@ -23,7 +30,10 @@ namespace LogicaTangerine.M2
         }
 
 
-
+        /// <summary>
+        /// Metodo que retorna una lista de todos los usuarios que hay en el sistema
+        /// </summary>
+        /// <returns></returns>
         public static List<Usuario> ConsultarListaDeUsuarios()
         {
             List<Usuario> listaDeUsuarios = new List<Usuario>();
@@ -37,6 +47,11 @@ namespace LogicaTangerine.M2
 
             return listaDeUsuarios;
         }
+        /// <summary>
+        /// Metodo que retorna el usuario de un empleado en particular
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
         public static Usuario ObtenerUsuario(Empleado empleado)
         {
 
@@ -63,4 +78,5 @@ namespace LogicaTangerine.M2
             }
         }
     }
-}
+    }
+
