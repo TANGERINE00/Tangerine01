@@ -143,6 +143,8 @@ namespace Tangerine.GUI.M8
             _tipoMoneda = "Bolivares";
             _descripcion = DescripcionFactura;
 
+
+
             theFactura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, 0, 1, 1);
             LogicaM8 facturaLogic = new LogicaM8();
             facturaLogic.AnnularFactura(theFactura);
