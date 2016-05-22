@@ -24,7 +24,7 @@ namespace DatosTangerine.M4
         public static List<LugarDireccion> ConsultPlaces()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             List<LugarDireccion> listPlace = new List<LugarDireccion>();
@@ -60,12 +60,6 @@ namespace DatosTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
-            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -77,7 +71,7 @@ namespace DatosTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listPlace;
         }
 

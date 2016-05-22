@@ -366,7 +366,7 @@ create table FACTURA
 
 create table PAGO
 (
-	pag_id int not null,
+	pag_id int IDENTITY(1,1) not null,
 	pag_moneda varchar(50) not null,
 	pag_monto numeric(12,3) not null,
 	pag_forma varchar(20) not null,
@@ -1445,22 +1445,6 @@ AS
 	END
 GO
 
----- StoredProcedure Verificar si ya existe una Factura de una Fecha, Proyecto y Compañia ----
-CREATE PROCEDURE M8_VerificarFacturaExistente
-	@fecha_emision date,
-	@id_proyecto int,
-	@id_compania int
-
-AS
-	BEGIN
-		SELECT fac_fecha_emision AS fac_fecha_emision, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
-		FROM FACTURA 
-		WHERE fac_fecha_emision = @fecha_emision
-		AND fk_proy_id = @id_proyecto
-		AND fk_compania_id = @id_compania;
-	END;
-GO
-
 
 -----------------------------------
 ------Fin Stored Procedure M8------
@@ -1478,15 +1462,27 @@ CREATE PROCEDURE M9_AgregarPago
 	@monto int,
 	@forma [varchar](20),
 	@cod int,
-	@fecha date,
-	@id_pago int
+	--@fecha date,
+	@id_factura int
 
 AS
  BEGIN
     INSERT INTO PAGO(pag_monto, pag_moneda,pag_forma, pag_cod, pag_fecha, fk_fac_id)
-	VALUES(@monto, @moneda, @forma, @cod, @fecha, @id_pago);
+	VALUES(@monto, @moneda, @forma, @cod, GETDATE(), @id_factura);
  END;
  GO
+ 
+---- StoredProcedure cambiar status factura ----
+CREATE PROCEDURE M9_CambioStatus
+	@id_factura int,
+	@status int
+AS
+ BEGIN
+    update factura set fac_estatus = @status
+    where fac_id = @id_factura;
+ end;
+
+GO 
  
 -----------------------------------
 ------Fin Stored Procedure M9------
@@ -1684,18 +1680,6 @@ AS
 						 end
 	    where emp_num_ficha = @ficha;
 		
-	END
-GO
-
-CREATE PROCEDURE M1_ObtenerCorreoUsuario
-		@usuario [varchar](100),
-		@correo [varchar](100)
-AS
-	BEGIN
-		select u.usu_usuario as usuario, u.usu_activo as usu_activo, e.emp_email as emp_email,u.usu_id as usu_id
-		from USUARIO u, EMPLEADO e
-		where u.fk_emp_num_ficha = e.emp_num_ficha and
-		@usuario = u.usu_usuario and e.emp_email = @correo
 	END
 GO
 -----------------------------------

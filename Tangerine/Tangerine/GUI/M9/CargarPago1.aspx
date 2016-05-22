@@ -36,14 +36,14 @@
 
                  <div>
                     <label for="input_cliente">Numero de Factura</label>
-                    <asp:literal  runat="server" ID="seccion4"></asp:literal>
+                     <input runat="server" type="text" class="form-control" id="seccion4" readonly="True"/>
                     
                 </div>
 
                 <div>
                     &nbsp;
                     <label for="input_cliente">Cliente (compañía contratante)</label>
-                    &nbsp;<asp:Literal runat="server" ID="seccion1"></asp:Literal>
+                     <input runat="server" type="text" class="form-control" id="seccion1" readonly="True"/>
                     &nbsp;
                 </div>
             
@@ -51,15 +51,19 @@
                     <div class="form-group">
                         &nbsp;
                        <label for="input_cliente">Proyecto</label>
-                       <asp:Literal runat="server" ID="seccion2"></asp:Literal>
+                     <input runat="server" type="text" class="form-control" id="seccion2" readonly="True"/>
                     </div>    
 
              
                 <!-- /.box-body -->
-                &nbsp;
-               <label for="input_costo">Total Factura</label>
+                <label for="input_costo">Moneda Factura</label>
                 <div class="input-group">
-                    <asp:Literal runat="server" ID="seccion3"></asp:Literal>
+                     <input runat="server" type="text" class="form-control" id="monedaPago" readonly="True"/>
+                    &nbsp;
+                </div>
+               <label for="input_costo">Monto Factura</label>
+                <div class="input-group">
+                     <input runat="server" type="text" class="form-control" id="seccion3" readonly="True"/>
                     &nbsp;
                 </div>
                 

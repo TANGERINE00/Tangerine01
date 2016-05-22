@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.M2;
 using LogicaTangerine.M2;
-using ExcepcionesTangerine.M2;
 
 namespace PruebasUnitarias.M2
 {
@@ -133,9 +132,9 @@ namespace PruebasUnitarias.M2
         {
 
             Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Gerente"));
-           // Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
-            //Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Programador"));
-            //Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Director"));
+            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
+            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Programador"));
+            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Director"));
         }
 
         [Test]
@@ -154,73 +153,76 @@ namespace PruebasUnitarias.M2
         }
 
         [Test]
-        
-       
         public void TestFailVerificarAccesoAOpciones()
         {
-
-            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAOpciones(null));
+            LogicaPrivilegios.VerificarAccesoAOpciones(null);
+            Assert.Fail("se ha disparado la excepcion");
         }
 
         [Test]
 
         public void TestFailVerificarAccesoAPagina()
         {
-            
-            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAPagina("RegistroUsuario.aspx", "Programador"));
+            LogicaPrivilegios.VerificarAccesoAPagina("RegistroUsuario.aspx", "Programador");
+            Assert.Fail("se ha disparado la excepcion");
         }
 
 
         [Test]
         public void TestFailModificarRol()
         {
-            
-            Assert.Throws<NullReferenceException>(() => LogicaModificarRol.ModificarRol(null, null));
+            LogicaModificarRol.ModificarRol(null, null);
+            Assert.Fail("se ha disparado la excepcion");
 
         }
 
         [Test]
         public void TestFailAgregarUsuario()
         {
-            
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.AgregarUsuario(null));
+            LogicaAgregarUsuario.AgregarUsuario(null);
+            Assert.Fail("se ha disparado la excepcion");
         }
 
         [Test]
         public void TestFailConsultarListaDeEmpleados()
         {
-
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ConsultarListaDeEmpleados());
+            LogicaAgregarUsuario.ConsultarListaDeEmpleados();
+            Assert.Fail("se ha disparado la excepcion");
         }
 
         [Test]
         public void TestFailCrearUsuarioDefault()
         {
-            
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.CrearUsuarioDefault(null,null));
-         
+            LogicaAgregarUsuario.CrearUsuarioDefault(null,null);
+            Assert.Fail("se ha disparado la excepcion");
         }
 
         [Test]
         public void TestFailExisteUsuario()
         {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ExisteUsuario("")); 
-            
+            LogicaAgregarUsuario.ExisteUsuario(null);
+            Assert.Fail("se ha disparado la excepcion");
         }
 
         [Test]
         public void TestFailObtenerCaracteres()
         {
-            
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ObtenerCaracteres(null,2));
-            
+            LogicaAgregarUsuario.ObtenerCaracteres(null,2);
+            Assert.Fail("se ha disparado la excepcion");
         }
 
         [Test]
         public void TestFailPrepararUsuario()
         {
-            
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.PrepararUsuario(null,null,null,1));
+            LogicaAgregarUsuario.PrepararUsuario(null,null,null,1);
+            Assert.Fail("se ha disparado la excepcion");
+        }
+
+        [Test]
+        public void TestFailVerificarUsuarioDeEmpleado()
+        {
+            LogicaAgregarUsuario.VerificarUsuarioDeEmpleado(1);
+            Assert.Fail("se ha disparado la excepcion");
         }
 
        

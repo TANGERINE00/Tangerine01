@@ -322,15 +322,6 @@ namespace DatosTangerine.M10 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M1_ObtenerCorreoUsuario.
-        /// </summary>
-        internal static string ObtenerCorreoUsuario {
-            get {
-                return ResourceManager.GetString("ObtenerCorreoUsuario", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a @activo.
         /// </summary>
         internal static string ParamActivo {
@@ -462,42 +453,6 @@ namespace DatosTangerine.M10 {
         internal static string ParamSNombre {
             get {
                 return ResourceManager.GetString("ParamSNombre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a usu_activo.
-        /// </summary>
-        internal static string UsuActivo {
-            get {
-                return ResourceManager.GetString("UsuActivo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a fk_emp_num_ficha.
-        /// </summary>
-        internal static string UsuEmpFicha {
-            get {
-                return ResourceManager.GetString("UsuEmpFicha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a ResourceEmpleado.
-        /// </summary>
-        internal static string UsuFechaCreacion {
-            get {
-                return ResourceManager.GetString("UsuFechaCreacion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a fk_rol_id.
-        /// </summary>
-        internal static string UsuFKRol {
-            get {
-                return ResourceManager.GetString("UsuFKRol", resourceCulture);
             }
         }
     }
