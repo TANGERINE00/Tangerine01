@@ -32,58 +32,58 @@
                      <div class="box-body" runat="server">
                        <div class="row">
                           <div class="form-group col-md-6" runat="server">
-                          <h3><label for="Nombre">Nombre:</label></h3>
-                       <div><h4><asp:Literal runat="server" ID="Nombre"> </asp:Literal></h4></div>
+                          <h4><label for="Nombre">Nombre:</label></h4>
+                       <div><h5><asp:Literal runat="server" ID="Nombre"> </asp:Literal></h5></div>
                        </div> 
                         <div class="form-group col-md-6" runat="server">
-                            <h3><label for="habilitado">Status:</label></h3>
-                           <div><h4><asp:Literal runat="server" ID="habilitado"> </asp:Literal></h4></div>
+                            <h4><label for="habilitado">Status:</label></h4>
+                           <div><h5><asp:Literal runat="server" ID="habilitado"> </asp:Literal></h5></div>
                         </div>    
                            </div>
                            <div class="row">
                           <div class="form-group col-md-6" runat="server">
-                         <h3><label for="Acronimo">Acrónimo (opcional):</label></h3>
-                       <div><h4><asp:Literal runat="server" ID="Acronimo"> </asp:Literal></h4></div>
+                         <h4><label for="Acronimo">Acrónimo:</label></h4>
+                       <div><h5><asp:Literal runat="server" ID="Acronimo"> </asp:Literal></h5></div>
                         </div>
                             <div class="form-group col-md-6" runat="server">
-                            <h3><label for="plazo">Plazo para pagos:</label></h3>
-                           <div><h4><asp:Literal runat="server" ID="plazo"> </asp:Literal></h4></div>
+                            <h4><label for="plazo">Plazo para pagos:</label></h4>
+                           <div><h5><asp:Literal runat="server" ID="plazo"> </asp:Literal></h5></div>
                         </div>
                         </div>
                          
                           <div class="row">
                           <div class="form-group col-md-6" runat="server">
-                            <h3><label for="Rif">RIF:</label></h3>
-                            <div><h4><asp:Literal runat="server" ID="Rif"> </asp:Literal></h4></div>
+                            <h4><label for="Rif">RIF:</label></h4>
+                            <div><h5><asp:Literal runat="server" ID="Rif"> </asp:Literal></h5></div>
                         </div>
                               <div class="form-group col-md-6" runat="server">
-                            <h3><label for="presupuesto">Presupuesto Actual:</label></h3>
-                           <div><h4><asp:Literal runat="server" ID="presupuesto"> </asp:Literal></h4></div>
+                            <h4><label for="presupuesto">Presupuesto Actual:</label></h4>
+                           <div><h5><asp:Literal runat="server" ID="presupuesto"> </asp:Literal></h5></div>
                         </div>
                           </div>
                         <div class="form-group" runat="server">
-                            <h3><label for="direccion">Dirección:</label></h3>
-                      <div><h4><asp:Literal runat="server" ID="direccion"> </asp:Literal></h4></div>
+                            <h4><label for="direccion">Dirección:</label></h4>
+                      <div><h5><asp:Literal runat="server" ID="direccion"> </asp:Literal></h5></div>
                         </div>
                         <div class="form-group" runat="server">
-                            <h3><label for="correo">Correo Electrónico:</label></h3>
-                      <div><h4><asp:Literal runat="server" ID="correo"> </asp:Literal></h4></div>
+                            <h4><label for="correo">Correo Electrónico:</label></h4>
+                      <div><h5><asp:Literal runat="server" ID="correo"> </asp:Literal></h5></div>
                         </div>
                         <div class="form-group" runat="server">
-                            <h3><label for="telefono">Teléfono:</label></h3>
-                            <div><h4><asp:Literal runat="server" ID="telefono"> </asp:Literal></h4></div>
+                            <h4><label for="telefono">Teléfono:</label></h4>
+                            <div><h5><asp:Literal runat="server" ID="telefono"> </asp:Literal></h5></div>
                        </div>
                         <div class="form-group" runat="server">
-                            <h3><label for="fecha">Fecha de Registro:</label></h3>
-                           <div><h4><asp:Literal runat="server" ID="fecha"> </asp:Literal></h4></div>
+                            <h4><label for="fecha">Fecha de Registro:</label></h4>
+                           <div><h5><asp:Literal runat="server" ID="fecha"> </asp:Literal></h5></div>
                         </div>                        
                      </div> 
                    </div><!-- /.box-body -->
                     
                  
                     <div class="box-footer" runat="server">
- <a href="ConsultarCompania.aspx" class="btn btn-default pull-left">Regresar</a>
-                     </div>
+                        <a href="ConsultarCompania.aspx" class="btn btn-default pull-left">Regresar</a>
+                    </div>
 
                 </div>
               </div><!-- /.box -->
