@@ -28,7 +28,7 @@ namespace Tangerine.GUI.M4
             try
             {
                 IdCompania = int.Parse(Request.QueryString["idComp"]);
-                laCompania = logica.SearchCompany(IdCompania);
+                laCompania = logica.ConsultCompany(IdCompania);
 
                 if (!IsPostBack)
                 {
@@ -57,7 +57,7 @@ namespace Tangerine.GUI.M4
             string _email = InputEmail1.Value;
             string _telefono = InputTelefono1.Value;
             string _fecha = InputFechaRegistro1.Value;
-            int _status = logica.SearchCompany(IdCompania).StatusCompania;
+            int _status = logica.ConsultCompany(IdCompania).StatusCompania;
             int _presupuesto = int.Parse(InputPresupuesto1.Value);
             int _plazo = int.Parse(InputPlazoPago1.Value.ToString());
             int _direccionId = logica.MatchIdLugar(InputDireccion1.Value);

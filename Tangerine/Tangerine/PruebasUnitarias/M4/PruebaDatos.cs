@@ -143,7 +143,7 @@ namespace PruebasUnitarias.M4
         public void TestConsultPlaces()
         {
             //Consulto los lugares que son Ciudad que se hallan en la base de datos.
-            List<LugarDireccion> lugares = BDLugarDireccion.ConsultPlaces();
+            List<LugarDireccion> lugares = BDLugarDireccion.ConsultCityPlaces();
             //Recorro los lugares y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
             foreach (LugarDireccion lugar in lugares)
             {

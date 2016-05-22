@@ -160,7 +160,7 @@ namespace Tangerine.GUI.M6
             try
             {
                 LogicaM4 logicaComp = new LogicaM4();
-                List<Compania> companias = logicaComp.getCompanies();
+                List<Compania> companias = logicaComp.ConsultCompanies();
                 ListItem itemCompa;
 
                 this.comboCompañia.Items.Clear();
