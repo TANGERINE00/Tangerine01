@@ -74,7 +74,7 @@ namespace Tangerine.GUI.M8
                     }
 
 
-                    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
+                    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " "+ theFactura.tipoMoneda + ResourceGUIM8.CloseTD;
 
                     //Acciones de cada contacto
                     factura += ResourceGUIM8.OpenTD;
@@ -152,7 +152,7 @@ namespace Tangerine.GUI.M8
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
                 }
 
-                factura += ResourceGUIM8.OpenTD + Factura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + Factura.montoFactura + " " + Factura.tipoMoneda + ResourceGUIM8.CloseTD;
 
                 factura += ResourceGUIM8.OpenTD;
                 //Acciones de cada contacto

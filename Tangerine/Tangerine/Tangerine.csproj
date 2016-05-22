@@ -188,6 +188,7 @@
     <Content Include="GUI\M7\modificarProyecto.aspx" />
     <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
+    <Content Include="GUI\M8\EnviarCorreoM8.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
@@ -1309,6 +1310,13 @@
     </Compile>
     <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
       <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\EnviarCorreoM8.aspx.cs">
+      <DependentUpon>EnviarCorreoM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\EnviarCorreoM8.aspx.designer.cs">
+      <DependentUpon>EnviarCorreoM8.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>

@@ -27,9 +27,7 @@ namespace Tangerine.GUI.M1
         /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
-            //Util _usuarioGlobal = new Util();
             Usuario nuevoUsuario = new Usuario(); 
-            //Util._theGlobalUser = nuevoUsuario;
             _usuario = userIni.Value.ToString();
             _contrasena = passwordIni.Value.ToString();
 
@@ -38,7 +36,6 @@ namespace Tangerine.GUI.M1
             {
 
                 HttpContext.Current.Session["User"] = Util._theGlobalUser.NombreUsuario;
-                HttpContext.Current.Session["Clave"] = Util._theGlobalUser.Contrasenia;
                 HttpContext.Current.Session["UserID"] = Util._theGlobalUser.FichaEmpleado;
                 HttpContext.Current.Session["Rol"] = Util._theGlobalUser.Rol.Nombre;
                 Response.Redirect("Dashboard.aspx");
