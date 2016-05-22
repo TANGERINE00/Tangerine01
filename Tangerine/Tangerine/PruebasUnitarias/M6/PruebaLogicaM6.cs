@@ -23,7 +23,8 @@ namespace PruebasUnitarias.M6
         private DateTime Date1,Date2;
         private LogicaPropuesta logicaM6;
         private Boolean agregoPropuesta, borroPropuesta;
-        
+        private List<Propuesta> listaPropuestas;
+        private int tamañoLista1, tamañoLista2;
         #endregion
 
 
@@ -39,7 +40,7 @@ namespace PruebasUnitarias.M6
             laPropuesta.TipoDuracion = "Meses";
             laPropuesta.CantDuracion = "2";
             laPropuesta.Acuerdopago = "acuerdo";
-            laPropuesta.Estatus = "Pendiente";
+            laPropuesta.Estatus = "Pendiente prueba";
             laPropuesta.Moneda = "Dolar";
             laPropuesta.Entrega=1;
             Date1 = new DateTime(2016, 6, 4);
@@ -48,6 +49,8 @@ namespace PruebasUnitarias.M6
             laPropuesta.Feincio = Date2;
             laPropuesta.Costo = 100;
             laPropuesta.IdCompañia = "1";
+            tamañoLista1 = 0;
+            tamañoLista2=0;
 
             logicaM6 = new LogicaPropuesta();
             
@@ -57,8 +60,11 @@ namespace PruebasUnitarias.M6
         #endregion
 
 
+        // <summary>
+        //Prueba que pueda agrega una propuesta
+        // </summary>
         [Test]
-        public void AgregarPropuesta()
+        public void TestAgregarPropuesta()
         {
             //Agregar una prueba
 
@@ -70,8 +76,11 @@ namespace PruebasUnitarias.M6
                     
         }
 
-       [Test]
-        public void TraerPropuesta()
+        // <summary>
+        //Prueba que efectivamente traigo una propuesta
+        // </summary>
+        [Test]
+        public void TestTraerPropuesta()
         {
             //Agrego una propuesta de prueba
             
@@ -81,15 +90,73 @@ namespace PruebasUnitarias.M6
             {
                 //Traer propuesta que acabo de agregar
                 laPropuesta2 = new Propuesta();
-                laPropuesta2 = logicaM6.TraerPropuesta("Nombre prueba");
-
-                Assert.AreEqual(laPropuesta2.Nombre, "Nombre prueba");
- 
+                laPropuesta2 = logicaM6.TraerPropuesta("Nombre prueba");                
+                Assert.AreEqual("Pendiente prueba", laPropuesta2.Estatus);
+                
+                //Elimino la propuesta de prueba
+                borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");
+            
             }
         }
 
+        // <summary>
+       //Prueba que la lista no este vacia
+       // </summary>
+       [Test]
+       public void TestConsultarTodasPropuestas() 
+       {
+           //Agrego una propuesta de prueba
+           agregoPropuesta = logicaM6.agregar(laPropuesta);
 
+           if (agregoPropuesta == true)
+           {
+               listaPropuestas=logicaM6.ConsultarTodasPropuestas();               
+               Assert.IsNotEmpty(listaPropuestas);
+               //Elimino la propuesta de prueba
+               borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");
+           }
+
+       }
+       
+       // <summary>
+       //Prueba que borra una propuesta
+       // </summary>
+       [Test]
+       public void TestBorrarPropuestas() 
+       {
+
+           listaPropuestas = logicaM6.ConsultarTodasPropuestas();
+           tamañoLista1 = listaPropuestas.Capacity;
+
+           Console.WriteLine("tam3: " + tamañoLista1);
+           
+           listaPropuestas = null;
+           tamañoLista1 = 0;
+           
+           //Agrego primera propuesta de prueba
+           agregoPropuesta = logicaM6.agregar(laPropuesta);
+
+           if (agregoPropuesta == true)
+           {               
+               listaPropuestas=logicaM6.ConsultarTodasPropuestas();
+               tamañoLista1=listaPropuestas.Capacity;
+
+               Console.WriteLine("tam1: " + tamañoLista1);
+               //Elimino la propuesta de prueba
+               borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");               
+               
+               listaPropuestas=logicaM6.ConsultarTodasPropuestas();
+               tamañoLista2=listaPropuestas.Capacity;
+               Console.WriteLine("tam2: " + tamañoLista2);
+               Assert.Greater(tamañoLista1,tamañoLista2);
+               
+           }
+
+       }
 
 
     }
-}
+
+
+    }
+

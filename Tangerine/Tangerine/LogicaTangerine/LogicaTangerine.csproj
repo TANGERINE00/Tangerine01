@@ -66,6 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\LogicaM10.cs" />
+    <Compile Include="M10\LogicaM10Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicaM10Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="M1\LogicaM1.cs" />
     <Compile Include="M1\ResourceLogicaM1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +114,10 @@
     <Compile Include="M5\LogicaM5.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="M10\LogicaM10Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicaM10Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
