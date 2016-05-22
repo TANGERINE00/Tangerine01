@@ -117,55 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AbrirTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="Codigo" xml:space="preserve">
+    <value>TGE_00_001</value>
+    <comment>Codigo de error en la conexion con la BD</comment>
   </data>
-  <data name="AbrirTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>TGE_00_001</value>
+    <comment>Codigo de error en el parseo</comment>
   </data>
-  <data name="Activo" xml:space="preserve">
-    <value>&lt;span class="label label-success" ="h</value>
+  <data name="Mensaje" xml:space="preserve">
+    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
+    <comment>Mensaje al dar error en la conexion con la BD</comment>
   </data>
-  <data name="BotonCerrar" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
   </data>
-  <data name="BotonContacto" xml:space="preserve">
-    <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=</value>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
   </data>
-  <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="EliminarLead.aspx?idclp=</value>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mensaje de error cuando no puede parsear</comment>
   </data>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px" href="ConsultarLead.aspx"?idclp=</value>
-  </data>
-  <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarLead.aspx?idclp=</value>
-  </data>
-  <data name="BotonPromover" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-upload"  style="margin-left:3px" href="Promover.aspx?idclp=</value>
-  </data>
-  <data name="CerrarTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
-  </data>
-  <data name="CerrarTR" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CloseSpanAct" xml:space="preserve">
-    <value>"&gt;Activa&lt;/span&gt;</value>
-  </data>
-  <data name="CloseSpanInact" xml:space="preserve">
-    <value>"&gt;Inactiva&lt;/span&gt;</value>
-  </data>
-  <data name="idclp" xml:space="preserve">
-    <value>idclp</value>
-  </data>
-  <data name="Inactivo" xml:space="preserve">
-    <value>&lt;span class="label label-danger" id="i</value>
-  </data>
-  <data name="CloseDiv" xml:space="preserve">
-    <value>&lt;/div&gt;</value>
-  </data>
-  <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="center-block"&gt;</value>
+  <data name="Mensaje_Generico_Error" xml:space="preserve">
+    <value>No se pudo completar la operacion</value>
   </data>
 </root>

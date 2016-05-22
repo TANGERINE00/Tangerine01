@@ -118,15 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddPago" xml:space="preserve">
-    <value>M9_Agregar_Pago</value>
+    <value>M9_AgregarPago</value>
   </data>
-  <data name="ParamCodigoConfirmacion" xml:space="preserve">
-    <value>@codigo_Confirmacion</value>
+  <data name="ParamCod" xml:space="preserve">
+    <value>@cod</value>
   </data>
-  <data name="ParamFechaPago" xml:space="preserve">
-    <value>@fecha_Pago</value>
+  <data name="ParamFecha" xml:space="preserve">
+    <value>@fecha</value>
+  </data>
+  <data name="ParamForma" xml:space="preserve">
+    <value>@forma</value>
   </data>
   <data name="ParamIdFactura" xml:space="preserve">
-    <value>@id_Factura</value>
+    <value>@id_factura</value>
+  </data>
+  <data name="ParamMonto" xml:space="preserve">
+    <value>@monto</value>
   </data>
 </root>
