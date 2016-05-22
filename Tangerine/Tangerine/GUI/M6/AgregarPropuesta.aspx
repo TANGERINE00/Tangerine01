@@ -169,17 +169,20 @@
 
                     </div>
 
-                    <%-- acuerdo de pago--%>
-                    <div class="form-group"  >
+                   <div class="form-group"  >
                         <label>Forma de Pago</label>
                         <div class="dropdown" runat="server" id="fpago">
                             <asp:DropDownList ID="formaPago" class="btn btn-default dropdown-toggle" runat="server">
                             </asp:DropDownList>
                         </div>
                     </div>
-
-                     <%-- cuota--%>
-                    <div class="form-group" >
+					
+					
+					
+					
+					
+					
+					 <div class="form-group" >
                         <label>Cantidad Cuotas</label>
                         <div class="dropdown" runat="server" id="cuota">
                             <asp:DropDownList ID="comboCuota" class="btn btn-default dropdown-toggle" runat="server">
