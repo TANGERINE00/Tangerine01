@@ -21,7 +21,7 @@ namespace PruebasUnitarias.M8
         private List<Facturacion> facturas;
         public double monto;
         public bool answer;
-        public DateTime fecha = new DateTime(2015, 10, 11);
+        public DateTime fecha = new DateTime(2015, 2, 10);
 
         #endregion
 
@@ -150,7 +150,7 @@ namespace PruebasUnitarias.M8
         [Test]
         public void TestSearchFacturasCompania()
         {
-            facturas = Logica.SearchFacturasCompania(2);
+            facturas = Logica.SearchFacturasCompania(1);
 
             Assert.AreEqual(6, facturas.Count());
 
@@ -165,18 +165,6 @@ namespace PruebasUnitarias.M8
             monto = Logica.SearchMontoRestanteFactura(1);
 
             Assert.NotNull(monto);
-
-        }
-
-        /// <summary>
-        /// Prueba que permite verificar el metodo para saber si ya existe la factura especifica a la base de datos
-        /// </summary>
-        [Test]
-        public void TestSearchExistingBill()
-        {
-            answer = Logica.SearchExistingBill(fecha, 1, 2);
-
-            Assert.IsTrue(answer);
 
         }
                 
