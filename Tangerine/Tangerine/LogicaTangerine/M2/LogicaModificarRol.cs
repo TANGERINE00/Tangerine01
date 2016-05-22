@@ -1,15 +1,16 @@
 ﻿using DatosTangerine.M10;
 using DatosTangerine.M2;
 using DominioTangerine;
+using ExcepcionesTangerine;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LogicaTangerine.M2{
-
-
+namespace LogicaTangerine.M2
+{
     public class LogicaModificarRol
     {
         /// <summary>
@@ -18,17 +19,32 @@ namespace LogicaTangerine.M2{
         /// <param name="elusuario"></param>
         /// <param name="elrol"></param>
         /// <returns></returns>
-        public static bool ModificarRol(string elusuario, string elrol)
+        public static bool ModificarRol( string elusuario, string elrol )
         {
             bool resultado = false;
-            Rol rol = new Rol(elrol);
-            Usuario usuario = new Usuario(elusuario, rol);
 
-            resultado = BDUsuario.ModificarRolUsuario(usuario);
+            try
+            {
+                Rol rol = new Rol( elrol );
+                Usuario usuario = new Usuario( elusuario, rol );
+
+                resultado = BDUsuario.ModificarRolUsuario( usuario );
+            }
+            catch ( NullReferenceException ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol( "Parametro invalido [usuario es null]", ex );
+            }
+            catch ( SqlException ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
+                                                                 "Error al ejecutar ConsultarListaDeEmpleados()",
+                                                                 ex );
+            }
 
             return resultado;
         }
-
 
         /// <summary>
         /// Metodo que retorna una lista de todos los usuarios que hay en el sistema
@@ -47,36 +63,29 @@ namespace LogicaTangerine.M2{
 
             return listaDeUsuarios;
         }
+
         /// <summary>
         /// Metodo que retorna el usuario de un empleado en particular
         /// </summary>
         /// <param name="empleado"></param>
         /// <returns></returns>
-        public static Usuario ObtenerUsuario(Empleado empleado)
+        public static Usuario ObtenerUsuario( Empleado empleado )
         {
+            Usuario usuario;
 
-            Usuario usuario = BDUsuario.ObtenerUsuarioDeEmpleado(empleado);
-
+            try
+            {
+                usuario = BDUsuario.ObtenerUsuarioDeEmpleado( empleado );
+            }
+            catch ( SqlException ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
+                                                                 "Error al ejecutar ConsultarListaDeEmpleados()",
+                                                                 ex );
+            }
             return usuario;
         }
-        public static void prueba()
-        {
-            Rol theRol = new Rol("Gerente");
-            Usuario theUser = new Usuario("userTest", "testapp1", "Activo", theRol, 0, DateTime.Now);
-
-            bool resultado = BDUsuario.AgregarUsuario(theUser);
-
-            System.Diagnostics.Debug.WriteLine("Resultado = " + resultado.ToString());
-
-            theUser = BDUsuario.ObtenerDatoUsuario(theUser);
-
-            theUser.Rol.imprimirListaDeMenus();
-
-            foreach (Menu m in theUser.Rol.Menus)
-            {
-                m.imprimirListaDeOpciones();
-            }
-        }
     }
-    }
+}
 

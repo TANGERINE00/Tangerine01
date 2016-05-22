@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesTangerine.M2
 {
-    public class ExcepcionRegistro : ExceptionsTangerine
+    public class ExcepcionModificarRol : ExceptionsTangerine
     {
-        public ExcepcionRegistro()
+        public ExcepcionModificarRol()
         {
 
         }
-        public ExcepcionRegistro( string message )
+        public ExcepcionModificarRol( string message )
             : base ( message )
         {
 
         }
 
-        public ExcepcionRegistro( string message, Exception inner)
+        public ExcepcionModificarRol( string message, Exception inner)
             : base( message, inner )
         {
 
         }
-        public ExcepcionRegistro( string codigo, string message, Exception inner )
+        public ExcepcionModificarRol(string codigo, string message, Exception inner)
             : base(codigo, message, inner)
         {
 
         }
         public override string ToString()
         {
-            return string.Format("[ExcepcionRegistro: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion);
+            return string.Format("[ExcepcionModificarRol: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion);
         }
     }
 }
