@@ -1445,22 +1445,6 @@ AS
 	END
 GO
 
----- StoredProcedure Verificar si ya existe una Factura de una Fecha, Proyecto y Compañia ----
-CREATE PROCEDURE M8_VerificarFacturaExistente
-	@fecha_emision date,
-	@id_proyecto int,
-	@id_compania int
-
-AS
-	BEGIN
-		SELECT fac_fecha_emision AS fac_fecha_emision, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
-		FROM FACTURA 
-		WHERE fac_fecha_emision = @fecha_emision
-		AND fk_proy_id = @id_proyecto
-		AND fk_compania_id = @id_compania;
-	END;
-GO
-
 
 -----------------------------------
 ------Fin Stored Procedure M8------
@@ -1696,18 +1680,6 @@ AS
 						 end
 	    where emp_num_ficha = @ficha;
 		
-	END
-GO
-
-CREATE PROCEDURE M1_ObtenerCorreoUsuario
-		@usuario [varchar](100),
-		@correo [varchar](100)
-AS
-	BEGIN
-		select u.usu_usuario as usuario, u.usu_activo as usu_activo, e.emp_email as emp_email,u.usu_id as usu_id
-		from USUARIO u, EMPLEADO e
-		where u.fk_emp_num_ficha = e.emp_num_ficha and
-		@usuario = u.usu_usuario and e.emp_email = @correo
 	END
 GO
 -----------------------------------

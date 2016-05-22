@@ -18,8 +18,8 @@ namespace PruebasUnitarias.M7
         int id;
         int IdGerente;
         int IdEmpleado;
-        public DateTime fechainicio = new DateTime(2016, 10, 03);
-        public DateTime fechaestimadafin = new DateTime(2016, 10, 08);
+        public DateTime fechainicio = new DateTime(2015, 2, 10);
+        public DateTime fechaestimadafin = new DateTime(2015, 4, 10);
         public List<Contacto> Contactos;
         public List<Empleado> Empleados;
 
@@ -32,7 +32,7 @@ namespace PruebasUnitarias.M7
             _proyecto.Codigo = "elpr1234";
             _proyecto.Fechainicio = fechainicio;
             _proyecto.Fechaestimadafin = fechaestimadafin;
-            _proyecto.Costo = 10000;
+            _proyecto.Costo = 100000;
             _proyecto.Descripcion = "este es un proyecto de prueba";
             _proyecto.Realizacion = "20";
             _proyecto.Estatus = "En desarrollo";
@@ -169,21 +169,10 @@ namespace PruebasUnitarias.M7
      [Test]
      public void TestcalcularPagoMesual()
      {
-         Assert.AreEqual( _proyecto.Costo, _Logi.calcularPagoMesual(_proyecto));
+         Assert.AreEqual(_proyecto.Costo/2 , _Logi.calcularPagoMesual(_proyecto));
      }
      
-     [Test]
-        public void TestObtenerListadeEmpleados()
-        {
-            if (_Logi.obtenerListaEmpleados(_proyecto).Count > 0)
-            {   
-                Assert.IsTrue(true);
-            }
-            else
-            {
-                Assert.IsFalse(false);
-            }
-        }
      }
+
 
 }

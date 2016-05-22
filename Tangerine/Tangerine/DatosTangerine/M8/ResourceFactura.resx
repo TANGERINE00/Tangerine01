@@ -219,7 +219,4 @@
   <data name="ProyNombre" xml:space="preserve">
     <value>proy_nombre</value>
   </data>
-  <data name="VerifyExistingInvoice" xml:space="preserve">
-    <value>M8_VerificarFacturaExistente</value>
-  </data>
 </root>
