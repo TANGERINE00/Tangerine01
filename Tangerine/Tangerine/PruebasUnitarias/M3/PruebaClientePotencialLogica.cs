@@ -18,6 +18,7 @@ namespace PruebasUnitarias.M3
         public ClientePotencial clientePot3;
         public LogicaM3 logicaM3;
         public bool answer;
+        List<ClientePotencial> listClientePotencial;
         #endregion
 
         #region SetUp and TearDown
@@ -62,8 +63,10 @@ namespace PruebasUnitarias.M3
         public void TestConsultarClientePotencialLogica()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
+            listClientePotencial = logicaM3.LogicalistarClientePotencial();
+           
 
-            Assert.IsNotNull(logicaM3.BuscarClientePotencial(clientePot3.IdClientePotencial));
+            Assert.IsNotNull(logicaM3.BuscarClientePotencial(listClientePotencial[listClientePotencial.Count -1].IdClientePotencial));
         }
 
 
