@@ -55,7 +55,6 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="M10\" />
     <Folder Include="M1\" />
-    <Folder Include="M2\" />
     <Folder Include="M6\" />
     <Folder Include="M7\" />
     <Folder Include="M8\" />
@@ -73,6 +72,9 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="M2\ExcepcionPrivilegios.cs" />
+    <Compile Include="M3\ExceptionDataBaseLeads.cs" />
+    <Compile Include="M3\NullArgumentExceptionLeads.cs" />
     <Compile Include="M3\WrongFormatExceptionLeads.cs" />
     <Compile Include="M4\ExceptionDataBase.cs" />
     <Compile Include="M4\NullArgumentException.cs" />

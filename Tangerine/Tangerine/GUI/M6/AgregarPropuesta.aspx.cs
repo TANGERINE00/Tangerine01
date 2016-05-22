@@ -32,16 +32,21 @@ namespace Tangerine.GUI.M6
         string _estatusW;
         DateTime today = DateTime.Today;
         String[] _precondicion;
-        public string MyProperty { get { return "your value"; } }
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
+
                 llenarComboDuracion();
                 llenarComboTipoCosto();
                 llenarComboEstatus();
                 cargarCompañias();
+                //llenarComboCuota();
+                //llenarComboFpago();
+
             }
 
 
@@ -63,16 +68,24 @@ namespace Tangerine.GUI.M6
             _fechaF = DateTime.ParseExact(datepicker2.Value, "MM/dd/yyyy", null);
             _moneda = comboTipoCosto.SelectedItem.Text;
             _costo = int.Parse(textoCosto.Value);
-            _acuerdo = "pruebaclable";
-            _entregaCant = 2;
-            _fdepago = fpago.Value;
+            _acuerdo = formaPago.SelectedItem.Text;
+            //_acuerdo = "f";
+            try
+            {
+                _entregaCant = Int32.Parse(comboCuota.SelectedItem.Text);
+            }
+            catch (Exception)
+            {
+                _entregaCant = 0;
+            }
+
+            _entregaCant = 0;
+
             _estatusW = comboEstatus.SelectedItem.Text;
             _idCompañia = comboCompañia.Items[comboCompañia.SelectedIndex].Value;
-           // _idCompañia = "1";
+
             _precondicion = arrPrecondicion.Value.Split(';');
-          
-            //Debug.Print(_precondicion[1]);
-            //Debug.Print("lala"+(1-_precondicion.Length));
+
 
 
             Propuesta propuesta = new Propuesta(_nombcodigoPropuesta, _descripcion, _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,
@@ -81,10 +94,10 @@ namespace Tangerine.GUI.M6
             propuestaLogica.agregar(propuesta);
 
 
-            for (int i = 0; i < _precondicion.Length-1; i++)
+            for (int i = 0; i < _precondicion.Length - 1; i++)
             {
                 int j = i + 1;
-                string codReq = novocales+"_RF_"+j.ToString();
+                string codReq = novocales + "_RF_" + j.ToString();
                 Debug.Print(_precondicion[i]);
 
                 Requerimiento requerimiento = new Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
@@ -93,8 +106,6 @@ namespace Tangerine.GUI.M6
                 requerimientoLogica.agregar(requerimiento);
 
             }
-
-
 
 
 
@@ -124,6 +135,25 @@ namespace Tangerine.GUI.M6
             comboEstatus.Items.Add("Cerrado");
 
         }
+        public void llenarComboCuota()
+        {
+            comboCuota.Items.Add("");
+            comboCuota.Items.Add("1");
+            comboCuota.Items.Add("2");
+            comboCuota.Items.Add("3");
+            comboCuota.Items.Add("4");
+
+        }
+
+        public void llenarComboFpago()
+        {
+            formaPago.Items.Add("Mensual");
+            formaPago.Items.Add("Por cuotas");
+
+
+        }
+
+
 
         private void cargarCompañias()
         {
@@ -156,6 +186,8 @@ namespace Tangerine.GUI.M6
             }
 
         }
+
+        
 
 
     }

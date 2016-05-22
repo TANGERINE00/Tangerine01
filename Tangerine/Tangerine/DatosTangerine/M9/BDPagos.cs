@@ -13,13 +13,13 @@ using DatosTangerine.M4;
 
 namespace DatosTangerine.M9
 {
-    class BDPagos
+    public class BDPagos
     {
-        BDConexion theConnection;
-        List<Parametro> parameters;
+        
         Parametro theParam = new Parametro();
 
         //public static bool CargarPago(int idFactura, DateTime fechaPago, int numeroConfirmacion)
+
         public static bool CargarPago(Pago NuevoPago)
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -30,13 +30,20 @@ namespace DatosTangerine.M9
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourcePagos.ParamIdFactura, SqlDbType.Int, NuevoPago.Idfactura.ToString(), false);
+
+                theParam = new Parametro(ResourcePagos.ParamMonto, SqlDbType.Int, NuevoPago.montoPago.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourcePagos.ParamFechaPago, SqlDbType.Date, NuevoPago.Fechapago.ToString(), false);
+                theParam = new Parametro(ResourcePagos.ParamForma, SqlDbType.VarChar, NuevoPago.formaPago, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourcePagos.ParamCodigoConfirmacion, SqlDbType.Int, NuevoPago.NumeroConfirmacion.ToString(), false);
+                theParam = new Parametro(ResourcePagos.ParamCod, SqlDbType.Int, NuevoPago.codPago.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourcePagos.ParamFecha, SqlDbType.Date, NuevoPago.fechaPago.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourcePagos.ParamIdFactura, SqlDbType.Int, NuevoPago.codPago.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M9_agregar_pago y todos los parametros que recibe

@@ -335,7 +335,7 @@ namespace DatosTangerine.M10
             return listEmpleado;
         }
 
-        private static Hashtable listElementos(Empleado list)
+        public static Hashtable listElementos(Empleado list)
         {
             Hashtable elementos = new Hashtable();
             foreach (LugarDireccion elemento in list.AddressComplete)
@@ -344,6 +344,25 @@ namespace DatosTangerine.M10
             }
 
             return elementos;
+        }
+
+        public static bool CambiarEstatus(int empleadoId)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            try
+            {
+                parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar, empleadoId.ToString(), false));
+                
+                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
         }
 
     }

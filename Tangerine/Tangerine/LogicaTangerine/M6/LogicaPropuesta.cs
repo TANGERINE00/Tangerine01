@@ -75,6 +75,20 @@ namespace LogicaTangerine.M6
         }
 
 
+        public Boolean ModificarPropuesta(Propuesta laPropuesta)
+        {
+            try
+            {
+                return BDPropuesta.Modificar_Propuesta(laPropuesta);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
 
         
        

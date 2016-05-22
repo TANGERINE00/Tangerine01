@@ -129,5 +129,38 @@ namespace PruebasUnitarias.M4
         }
         #endregion
 
+        /// <summary>
+        /// Prueba que permite verificar el consultar de lugares en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestConsultPlaces()
+        {
+            //Consulto los lugares que son Ciudad que se hallan en la base de datos.
+            List<LugarDireccion> lugares = Logica.getPlaces();
+            //Recorro los lugares y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
+            foreach (LugarDireccion lugar in lugares)
+            {
+                Assert.IsNotNull(lugar.LugId);
+            }
+        }
+        /// <summary>
+        /// Prueba que permite verificar la busqueda de un Id por un nombre de Lugar en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestMatchIdLugar()
+        {
+            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
+            Assert.AreEqual(5, Logica.MatchIdLugar("Caracas"));
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar la busqueda de un nombre de lugar por su id de Lugar en la base de datos.
+        /// </summary>
+        [Test]
+        public void TestMatchNombreLugar()
+        {
+            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
+            Assert.AreEqual("Caracas", Logica.MatchNombreLugar(5));
+        }
     }
 }

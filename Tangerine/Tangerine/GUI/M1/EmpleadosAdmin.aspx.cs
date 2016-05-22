@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M10;
+using System.Globalization;
 
 namespace Tangerine.GUI.M1
 {
@@ -39,8 +40,18 @@ namespace Tangerine.GUI.M1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM10 logicaM10 = new LogicaM10();
             
+            LogicaM10 logicaM10 = new LogicaM10();
+            int idEmpleado;
+            try
+            {
+                idEmpleado = int.Parse(Request.QueryString["id"]);
+                logicaM10.CambiarEstatus(idEmpleado);
+            }
+            catch
+            {
+
+            }
 
             if (!IsPostBack)
             {

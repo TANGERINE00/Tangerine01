@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ConsultarPropuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+ 
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">

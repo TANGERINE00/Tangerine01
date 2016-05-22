@@ -127,8 +127,7 @@ create table CLIENTE_POTENCIAL
 	 cli_pot_pres_anual_inv numeric(12,3) not null,
 	 cli_pot_num_llamadas int default(0) not null,
 	 cli_pot_num_visitas int default(0) not null,
-	 cli_pot_potencial bit default(1) not null,
-	 cli_pot_borrado bit default(0) not null,
+	 cli_pot_status int not null,
 	 
 	 constraint pk_cli_pot primary key
 	 (
@@ -603,13 +602,14 @@ create procedure agregar_clientePotencial
 @nombreClientePotencial [varchar](20),
 @rifClientePotencial [varchar](20),
 @emailClientePotencial [varchar](50),
-@presupuestoAnualInversion [decimal]
+@presupuestoAnualInversion [decimal],
+@status [decimal]
 
 
 as
  begin
-   insert into cliente_Potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv)
-                        values (@nombreClientePotencial,@rifClientePotencial,@emailClientePotencial,@presupuestoAnualInversion);
+   insert into cliente_Potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_status)
+                        values (@nombreClientePotencial,@rifClientePotencial,@emailClientePotencial,@presupuestoAnualInversion,@status);
  end;
 go
 
@@ -618,9 +618,10 @@ go
 CREATE procedure listar_cliente_potencial
 as
 	begin
-		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv
+		select cli_pot_id,cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_status
 		from cliente_Potencial
-                where cli_pot_borrado=0 and cli_pot_potencial=1;
+		where cli_pot_status != 3;
+                
 	end;
 go
 
@@ -632,9 +633,9 @@ as
  begin
 		UPDATE cliente_Potencial
 		SET 
-			cli_pot_borrado = 1	
+			cli_pot_status = 0	
 			WHERE
-			cli_pot_id  = @idClientePotencial and cli_pot_borrado=0;		
+			cli_pot_id  = @idClientePotencial;		
 
  end;
  go
@@ -648,9 +649,9 @@ as
  begin
 		UPDATE cliente_Potencial
 		SET 
-			cli_pot_potencial = 0	
+			cli_pot_status = 2	
 			WHERE
-			cli_pot_id  = @idClientePotencial and cli_pot_potencial=1;		
+			cli_pot_id  = @idClientePotencial;		
 
  end;
  go
@@ -664,7 +665,7 @@ CREATE procedure consultar_cliente_potencial
 as
 	begin
 		select cli_pot_id , cli_pot_nombre , 
-		cli_pot_rif, cli_pot_email ,cli_pot_pres_anual_inv,cli_pot_num_llamadas,cli_pot_num_visitas
+		cli_pot_rif, cli_pot_email ,cli_pot_pres_anual_inv,cli_pot_num_llamadas,cli_pot_num_visitas,cli_pot_status
 		from cliente_Potencial
 		where cli_pot_id = @idClientePotencial;
 		
@@ -703,6 +704,16 @@ as
  end;
  go
 
+ 
+ --------------Eliminar cliente definitivo---------
+ 
+ create procedure eliminar_cliente_potencial_def
+ 	@idClientePotencial int
+AS
+ BEGIN
+    DELETE FROM CLIENTE_POTENCIAL WHERE cli_pot_id = @idClientePotencial;
+ end;
+GO
 
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
@@ -999,33 +1010,30 @@ GO
 
 --Modificar Propuesta
 CREATE PROCEDURE M6_ModificarPropuesta
-@idprop int,
-@nombreprop [varchar] (50),
-@descripcionprop [varchar] (255),
-@tipoduracionprop [varchar] (200),
-@duracionprop [varchar] (200),
-@acuerdoprop [varchar] (200),
-@estatusprop [varchar] (20),
-@monedaprop [varchar] (40),
-@cantentregasprop int,
-@fechainiprop date,
-@fechafinprop date,
-@costoprop int,
-@fkcomid int
+@cod_Nombre [varchar] (50),
+@descripcion [varchar] (255),
+@tipoDura [varchar] (200),
+@duracion [varchar] (200),
+@acuerdo [varchar] (200),
+@estatus [varchar] (20),
+@moneda [varchar] (40),
+@fechai date,
+@fechaf date,
+@costo int
+
 
 AS
 
 BEGIN
-UPDATE PROPUESTA SET prop_nombre = @nombreprop, prop_descripcion = @descripcionprop, prop_tipoDuracion = @tipoduracionprop,
-prop_duracion = @duracionprop, prop_acuerdo_pago = @acuerdoprop, prop_estatus = @estatusprop, prop_moneda = @monedaprop,
-prop_cant_entregas = @cantentregasprop, prop_fecha_inicio = @fechainiprop, prop_fecha_fin = @fechafinprop, prop_costo = @costoprop,
-fk_com_id = @fkcomid
-WHERE prop_id = @idprop
+UPDATE PROPUESTA SET prop_descripcion = @descripcion, prop_tipoDuracion = @tipoDura,
+prop_duracion = @duracion, prop_acuerdo_pago = @acuerdo, prop_estatus = @estatus, prop_moneda = @moneda, prop_fecha_inicio = @fechai, prop_fecha_fin = @fechaf, prop_costo = @costo
+
+WHERE prop_nombre = @cod_Nombre
 END;
 
 GO
 -- Modificar Requerimiento
-/*CREATE PROCEDURE M6_ModificarRequerimiento
+CREATE PROCEDURE M6_ModificarRequerimiento
 
 @req_descripcion [varchar] (200),
 @cod_Nombre [varchar] (50)
@@ -1033,9 +1041,9 @@ GO
 AS
 
 BEGIN
-UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE fk_prop_req_id = @cod_Nombre  
+UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE req_id = @cod_Nombre  
 
-END;*/
+END;
 
 GO
 
@@ -1445,12 +1453,12 @@ GO
 
 ---- StoredProcedure Monto Restante de una Factura ----
 CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
-	@id_Factura int
+	@idFactura int
 
 AS
 	BEGIN
 		SELECT fac_monto_restante AS fac_monto_restante
-		FROM FACTURA WHERE fac_id = @id_Factura;
+		FROM FACTURA WHERE fac_id = @idFactura;
 	END
 GO
 
@@ -1636,6 +1644,20 @@ AS
 			FROM EMPLEADO Employee, CARGO_EMPLEADO JobEmployee, CARGO job
 		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha 
 			  and JobEmployee.fk_car_id=Job.car_id
+	END
+GO
+
+CREATE PROCEDURE M10_CambiarEstatus
+		@ficha INT
+AS
+	BEGIN
+		update EMPLEADO 
+		set emp_activo = case 
+							when emp_activo = 'Activo' then 'Inactivo'
+							else 'Activo'
+						 end
+	    where emp_num_ficha = @ficha;
+		
 	END
 GO
 -----------------------------------

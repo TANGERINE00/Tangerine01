@@ -492,7 +492,7 @@ namespace DatosTangerine.M8
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
-            double montoRestante;
+            double montoRestante = 0;
 
             try
             {

@@ -36,10 +36,10 @@ namespace LogicaTangerine.M6
 
 
 
-        //public bool ModRequerimiento(Requerimiento requerimiento) 
-        //{
-        //    return BDPropuesta.Modificar_Requerimiento(requerimiento);
-        //}
+        public bool ModRequerimiento(Requerimiento requerimiento)
+        {
+            return BDPropuesta.Modificar_Requerimiento(requerimiento);
+        }
 
       
 

@@ -28,16 +28,16 @@
                 <div class="form-group">
 
                     <asp:ValidationSummary 
-     id="ValSum" 
-     DisplayMode="BulletList" 
-     ShowSummary="true"                        
-     HeaderText="Ha habido un error:"
-     runat="server"/>
+                         id="ValSum" 
+                         DisplayMode="BulletList" 
+                         ShowSummary="true"                        
+                         HeaderText="Ha habido un error:"
+                         runat="server"/>
 
                  <div>
                     <label for="input_cliente">Numero de Factura</label>
-                    &nbsp;<asp:Literal runat="server" ID="seccion4"></asp:Literal>
-                     &nbsp;
+                    <asp:literal  runat="server" ID="seccion4"></asp:literal>
+                    
                 </div>
 
                 <div>
@@ -66,7 +66,8 @@
 
                 <div class="form-group">
                     <label>Forma de Pago</label>
-                    <select required class="form-control">
+                    
+                    <select required runat="server" class="form-control" id="seccion5" name="seccion">
                         <option></option>
                         <option data-icon="fa-heart">Deposito</option>
                         <option>Transferencia</option>
@@ -90,7 +91,9 @@
                 </div>
 
             <div class="box-foot">
-                <button type="submit" class="btn btn-primary" >Agregar</button>
+                <asp:Button id="btnagregar" class="btn btn-primary" OnClick="btnagregar_Click" type="submit" runat="server" Text = "Agregar"></asp:Button>
+                    
+               
             </div>
 
         </form>

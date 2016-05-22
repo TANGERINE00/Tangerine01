@@ -75,6 +75,11 @@
     <Compile Include="M2\LogicaAgregarUsuario.cs" />
     <Compile Include="M2\LogicaModificarRol.cs" />
     <Compile Include="M2\LogicaPrivilegios.cs" />
+    <Compile Include="M3\LogicaM3Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicaM3Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M3\LogicaM3.cs" />
     <Compile Include="M4\LogicResourcesM4.Designer.cs">
@@ -90,8 +95,14 @@
     <Compile Include="M6\LogicaPropuesta.cs" />
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
+    <Compile Include="M8\CorreoM8.cs" />
     <Compile Include="M8\LogicaM8.cs" />
     <Compile Include="M9\LogicaM9.cs" />
+    <Compile Include="M9\LogicResourcesM9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicResourcesM9.resx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -102,6 +113,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="M3\LogicaM3Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicaM3Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M4\LogicResourcesM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicResourcesM4.Designer.cs</LastGenOutput>
@@ -109,6 +124,10 @@
     <EmbeddedResource Include="M5\LogicResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M9\LogicResourcesM9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicResourcesM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
