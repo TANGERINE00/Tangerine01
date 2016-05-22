@@ -1675,6 +1675,18 @@ AS
 		
 	END
 GO
+
+CREATE PROCEDURE M1_ObtenerCorreoUsuario
+		@usuario [varchar](100),
+		@correo [varchar](100)
+AS
+	BEGIN
+		select u.usu_usuario as usuario, u.usu_activo as usu_activo, e.emp_email as emp_email,u.usu_id as usu_id
+		from USUARIO u, EMPLEADO e
+		where u.fk_emp_num_ficha = e.emp_num_ficha and
+		@usuario = u.usu_usuario and e.emp_email = @correo
+	END
+GO
 -----------------------------------
 ------Fin Stored Procedure M10-----
 -----------------------------------
