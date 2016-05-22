@@ -89,6 +89,14 @@
                             </div>
 
                             <div class="form-group" runat="server">
+                                <h4>
+                                    <label for="labelTipoMoneda_M8">Tipo de Moneda</label></h4>
+                                <!--<input type="text" runat="server" class="form-control" id="textTipoMoneda_M8" name="textTipoMoneda_M8" placeholder="Tipo de Moneda" disabled="disabled">-->
+                              <div>  <h4>
+                                    <asp:Literal runat="server" ID="TipoMoneda"> </asp:Literal></h4> </div>
+                            </div>
+
+                            <div class="form-group" runat="server">
                                 <asp:Button ID="buttonAnular_M8" Style="margin-top: 5%" class="btn btn-danger" type="submit" runat="server" Text="Anular" OnClientClick="return confirm('¿Seguro que desea anular la factura?');" OnClick="buttonAnularFactura_Click"></asp:Button>
                             </div>
                         </div>

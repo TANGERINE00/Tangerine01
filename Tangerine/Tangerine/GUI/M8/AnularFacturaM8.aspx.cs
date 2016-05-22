@@ -104,6 +104,18 @@ namespace Tangerine.GUI.M8
             }
         }
 
+        public string Moneda
+        {
+            get
+            {
+                return this.TipoMoneda.Text;
+            }
+
+            set
+            {
+                this.TipoMoneda.Text = value;
+            }
+        }
 
 
 
@@ -128,6 +140,7 @@ namespace Tangerine.GUI.M8
                 ProyectoFactura = proyecto.Nombre;
                 //this.textProyecto_M8.Value = proyecto.Nombre;
                 MontoFactura = theFactura.montoFactura.ToString();
+                Moneda = theFactura.tipoMoneda;
                 //this.textMonto_M8.Value = theFactura.montoFactura.ToString();
                 //this._montoRestante.Value = theFactura.montoRestanteFactura.ToString();
             }  
