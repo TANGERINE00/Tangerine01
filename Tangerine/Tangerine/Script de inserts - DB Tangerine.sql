@@ -200,7 +200,6 @@ insert into MENU values (1, 'Configuracion');
 insert into OPCION values (1, 'RegistrarUsuario', '../M2/RegistroUsuario.aspx', 1);
 insert into OPCION values (2, 'ModificarRol', '../M2/CambiarRol.aspx', 1);
 insert into OPCION values (21, 'Usuario', 'Usuario', 1);
-insert into OPCION values (27, 'Configuracion', 'Configuración', 1);
 
 insert into MENU values (2, 'Gestión de Leads');
 insert into OPCION values (3, 'Listar', '../M3/Listar.aspx', 2);
@@ -235,7 +234,6 @@ insert into OPCION values (25, 'GestionDeFacturas', 'Gestión de Facturas', 7);
 
 insert into MENU values (8, 'Gestión de Pagos');
 insert into OPCION values (18, 'Cargarpago', '../M9/SeleccionCompania.aspx', 8);
-insert into OPCION values (28, 'GestionDePagos', 'Gestión de Pagos', 8);
 
 insert into MENU values (9, 'Gestión de Empleados');
 insert into OPCION values (19, 'Empleados', '../M1/EmpleadosAdmin.aspx', 9);
@@ -248,24 +246,21 @@ insert into ROL_OPCION values (2, 16);
 insert into ROL_OPCION values (2, 17);
 insert into ROL_OPCION values (2, 25);
 insert into ROL_OPCION values (2, 18);
-insert into ROL_OPCION values (2, 28);
 
 insert into ROL_OPCION values (3, 1);
 insert into ROL_OPCION values (3, 2);
 insert into ROL_OPCION values (3, 4);
 insert into ROL_OPCION values (3, 21);
-insert into ROL_OPCION values (3, 27);
 
 insert into ROL_OPCION values (4, 1);
 insert into ROL_OPCION values (4, 2);
 insert into ROL_OPCION values (4, 21);
-insert into ROL_OPCION values (4, 27);
 insert into ROL_OPCION values (4, 3);
 insert into ROL_OPCION values (4, 4);
---insert into ROL_OPCION values (4, 5);
+insert into ROL_OPCION values (4, 5);
 --insert into ROL_OPCION values (4, 6);
 --insert into ROL_OPCION values (4, 7);
---insert into ROL_OPCION values (4, 22);
+insert into ROL_OPCION values (4, 22);
 --insert into ROL_OPCION values (4, 8);
 insert into ROL_OPCION values (4, 9);
 insert into ROL_OPCION values (4, 10);
@@ -279,7 +274,6 @@ insert into ROL_OPCION values (4, 25);
 insert into ROL_OPCION values (4, 18);
 insert into ROL_OPCION values (4, 19);
 insert into ROL_OPCION values (4, 20);
-insert into ROL_OPCION values (4, 28);
 insert into ROL_OPCION values (4, 26);
 
 insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
