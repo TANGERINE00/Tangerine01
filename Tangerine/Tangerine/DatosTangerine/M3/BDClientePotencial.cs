@@ -19,7 +19,7 @@ namespace DatosTangerine.M3
        public static List<ClientePotencial> DatosListarClientePotencial()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-     ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<ClientePotencial> objetolistaClientePotencial = new List<ClientePotencial>();
 

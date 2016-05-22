@@ -34,7 +34,7 @@ namespace Tangerine.GUI.M9
 
             if (!IsPostBack)
             {
-                List<Compania> listCompany = prueba.ConsultCompanies();
+                List<Compania> listCompany = prueba.getCompanies();
 
                 try
                 {
