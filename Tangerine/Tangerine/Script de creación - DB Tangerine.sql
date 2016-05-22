@@ -367,7 +367,10 @@ create table FACTURA
 create table PAGO
 (
 	pag_id int not null,
+	pag_moneda varchar(50) not null,
 	pag_monto numeric(12,3) not null,
+	pag_forma varchar(20) not null,
+	pag_cod numeric (12,0) not null,
 	pag_fecha date not null,
 	fk_fac_id int not null,
 
@@ -382,42 +385,7 @@ create table PAGO
 	) references FACTURA(fac_id)
 );
 
-create table TIPO_PAGO
-(
-	tip_id int not null,
-	tip_nombre varchar(50) not null,
-	tip_descripcion varchar(200) not null,
-	fk_pag_id int not null,
 
-	constraint pk_tip_pag primary key
-	(
-		tip_id
-	),
-
-	constraint fk_pag_tip foreign key
-	(
-		fk_pag_id
-	) references PAGO(pag_id)
-);
-
-create table DETALLE_PAGO
-(
-	det_pag_id int not null,
-	det_pag_nombre varchar(40) not null,
-	det_pag_descripcion varchar(200) not null,
-	det_pag_encriptado varchar(200) not null,
-	fk_pag_id int not null,
-
-	constraint pk_det_pag primary key
-	(
-		det_pag_id
-	),
-
-	constraint fk_pag_det_pag foreign key
-	(
-		fk_pag_id
-	) references PAGO(pag_id)
-);
 
 create table MENU
 (
@@ -1481,6 +1449,33 @@ GO
 -----------------------------------
 ------Fin Stored Procedure M8------
 -----------------------------------
+
+
+-----------------------------------
+--------Stored Procedure M9--------
+-----------------------------------
+
+---- StoredProcedure Agregar Pago ----
+
+CREATE PROCEDURE M9_AgregarPago
+    @moneda [varchar] (50),
+	@monto int,
+	@forma [varchar](20),
+	@cod int,
+	@fecha date,
+	@id_pago int
+
+AS
+ BEGIN
+    INSERT INTO PAGO(pag_monto, pag_moneda,pag_forma, pag_cod, pag_fecha, fk_fac_id)
+	VALUES(@monto, @moneda, @forma, @cod, @fecha, @id_pago);
+ END;
+ GO
+ 
+-----------------------------------
+------Fin Stored Procedure M9------
+-----------------------------------
+ 
 
 -----------------------------------
 --------Stored Procedure M10--------

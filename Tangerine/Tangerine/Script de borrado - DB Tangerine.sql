@@ -1,5 +1,3 @@
-drop table detalle_pago;
-drop table tipo_pago;
 drop table pago;
 drop table factura;
 drop table contacto_proyecto;
@@ -96,6 +94,8 @@ drop procedure M8_AnularFactura;
 drop procedure M8_ConsultarFacturasCompania;
 drop procedure M8_VerificarFacturasParaPagar;
 drop procedure M8_ConsultarMontoRestanteFactura;
+
+drop procedure M9_AgregarPago;
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;
