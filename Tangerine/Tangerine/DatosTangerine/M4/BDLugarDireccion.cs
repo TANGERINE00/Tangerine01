@@ -21,10 +21,10 @@ namespace DatosTangerine.M4
         /// Método para consultar todos los lugares tipo 'Ciudad' registradas en la base de datos.
         /// </summary>
         /// <returns>Lista de lugares registrados.</returns>
-        public static List<LugarDireccion> ConsultPlaces()
+        public static List<LugarDireccion> ConsultCityPlaces()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             List<LugarDireccion> listPlace = new List<LugarDireccion>();
@@ -34,7 +34,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 theConnection.Conectar();
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourcePlace.ConsultPlaces, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourcePlace.ConsultCityPlaces, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -60,6 +60,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -71,7 +77,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listPlace;
         }
 

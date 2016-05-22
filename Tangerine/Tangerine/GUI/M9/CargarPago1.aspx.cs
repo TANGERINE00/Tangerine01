@@ -20,12 +20,12 @@ namespace Tangerine.GUI.M9
         {
             get
             {
-                return this.seccion1.Text;
+                return this.seccion1.Value;
             }
 
             set
             {
-                this.seccion1.Text = value;
+                this.seccion1.Value = value;
             }
         }
 
@@ -33,12 +33,12 @@ namespace Tangerine.GUI.M9
         {
             get
             {
-                return this.seccion4.Text;
+                return this.seccion4.Value;
             }
 
             set
             {
-                this.seccion4.Text = value;
+                this.seccion4.Value = value;
             }
         }
 
@@ -47,12 +47,12 @@ namespace Tangerine.GUI.M9
         {
             get
             {
-                return this.seccion2.Text;
+                return this.seccion2.Value;
             }
 
             set
             {
-                this.seccion2.Text = value;
+                this.seccion2.Value = value;
             }
         }
 
@@ -60,12 +60,25 @@ namespace Tangerine.GUI.M9
         {
             get
             {
-                return this.seccion3.Text;
+                return this.seccion3.Value;
             }
 
             set
             {
-                this.seccion3.Text = value;
+                this.seccion3.Value = value;
+            }
+        }
+
+        public string moneda
+        {
+            get
+            {
+                return this.monedaPago.Value;
+            }
+
+            set
+            {
+                this.monedaPago.Value = value;
             }
         }
 
@@ -78,10 +91,11 @@ namespace Tangerine.GUI.M9
             try
             {
                 Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
-                cliente += ResourceLogicaM9.AbrirNombreCliente + compania.NombreCompania + ResourceLogicaM9.CerrarNombreCliente;
-                proyecto += ResourceLogicaM9.AbrirNombreCliente + Factura.descripcionFactura + ResourceLogicaM9.CerrarNombreCliente;
-                monto += ResourceLogicaM9.AbrirNombreCliente + Factura.montoFactura + " " + Factura.tipoMoneda + ResourceLogicaM9.CerrarNombreCliente;
-                numero += ResourceLogicaM9.AbrirNombreCliente + Factura.idFactura + ResourceLogicaM9.CerrarNombreCliente;
+                cliente = compania.NombreCompania;
+                proyecto = Factura.descripcionFactura ;
+                monto = Factura.montoFactura.ToString() ;
+                moneda = Factura.tipoMoneda;
+                numero = Factura.idFactura.ToString() ;
             }
             catch
             {
@@ -98,20 +112,19 @@ namespace Tangerine.GUI.M9
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            //int _idFactura = int.Parse(seccion4.ToString());
-            int _monto = int.Parse(seccion3.Text.ToString()); 
+            int _idFactura = int.Parse(seccion4.Value.ToString());
+            int _monto = int.Parse(seccion3.Value.ToString());
+            string _moneda = monedaPago.Value.ToString();
             string _forma =  seccion5.Value.ToString();
             int _codApro = int.Parse(codAprobacion.Value);
             string _fecha = "01/08/2008";
-            DateTime _dt = Convert.ToDateTime(_fecha);
 
-            Pago pago = new Pago(_monto,_forma,_codApro,_dt,1);
+            Pago pago = new Pago(_moneda, _monto, _forma, _codApro, DateTime.Parse(_fecha), _idFactura);
 
             logica.AgregarPago(pago);
+            //logica.CambiarStatusFactura(pago.idFactura, 1);
+            //codAprobacion.Value = _idFactura.ToString();
 
-           // Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
-             //                                   _status, _presupuesto, _plazo, _direccionId);
-            //logica.AddNewCompany(company);
 
             Server.Transfer("SeleccionCompania.aspx", true);
         }

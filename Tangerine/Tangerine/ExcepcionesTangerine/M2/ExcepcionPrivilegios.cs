@@ -29,7 +29,7 @@ namespace ExcepcionesTangerine.M2
 
         public override string ToString()
         {
-            return string.Format( "[ExcepcionDivision: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion );
+            return string.Format( "[ExcepcionPrivilegios: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion );
         }
     }
 }

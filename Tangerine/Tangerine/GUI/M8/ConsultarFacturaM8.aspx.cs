@@ -74,7 +74,7 @@ namespace Tangerine.GUI.M8
                     }
 
 
-                    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
+                    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " "+ theFactura.tipoMoneda + ResourceGUIM8.CloseTD;
 
                     //Acciones de cada contacto
                     factura += ResourceGUIM8.OpenTD;
@@ -83,7 +83,8 @@ namespace Tangerine.GUI.M8
                     {
                         factura += ResourceGUIM8.BotonModifInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                    ResourceGUIM8.BotonAnularInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                                   ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                                   ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                    ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
                         factura += ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.CloseTR;
@@ -92,8 +93,9 @@ namespace Tangerine.GUI.M8
                     {
                         factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                 ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                                ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro;
-
+                                ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
+                       
                         factura += ResourceGUIM8.CloseTD;
                         factura += ResourceGUIM8.CloseTR;
                     }
@@ -152,7 +154,7 @@ namespace Tangerine.GUI.M8
                     factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
                 }
 
-                factura += ResourceGUIM8.OpenTD + Factura.montoFactura + ResourceGUIM8.signoEuro + ResourceGUIM8.CloseTD;
+                factura += ResourceGUIM8.OpenTD + Factura.montoFactura + " " + Factura.tipoMoneda + ResourceGUIM8.CloseTD;
 
                 factura += ResourceGUIM8.OpenTD;
                 //Acciones de cada contacto
@@ -161,7 +163,8 @@ namespace Tangerine.GUI.M8
                 {
                     factura += ResourceGUIM8.BotonModifInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
                                ResourceGUIM8.BotonAnularInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                               ResourceGUIM8.BotonPagarInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                               ResourceGUIM8.BotonPagarInhabilitado + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                               ResourceGUIM8.BotonMail + Factura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
                     factura += ResourceGUIM8.CloseTD;
                     factura += ResourceGUIM8.CloseTR;
@@ -170,7 +173,8 @@ namespace Tangerine.GUI.M8
                 {
                     factura += ResourceGUIM8.BotonModif + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
                             ResourceGUIM8.BotonAnular + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                            ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro;
+                            ResourceGUIM8.BotonPagar + Factura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                            ResourceGUIM8.BotonMail + Factura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
                     factura += ResourceGUIM8.CloseTD;
                     factura += ResourceGUIM8.CloseTR;

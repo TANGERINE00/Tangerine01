@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using ExcepcionesTangerine;
+using DatosTangerine.M10;
 
 namespace LogicaTangerine.M1
 {
@@ -52,7 +53,14 @@ namespace LogicaTangerine.M1
             return true;
         }
 
-
+        ///<sumary>
+        ///Metodo que valida que las credenciales de inicio de sesion
+        ///esten en el formato correcto y que coinciden con un Usuario dentro
+        ///de la base de datos
+        ///</sumary>
+        ///<param name="usuario">String de nombre de Usuario</param>
+        ///<param name="contrasena">String de contraseña de Usuario</param>
+        ///<returns>true, si los datos estan en el formato correcto y el usuario existe</returns>
         public bool ValidarUsuario(string usuario, string contrasena)
         {
             List<String> campos = new List<String>();
@@ -75,6 +83,13 @@ namespace LogicaTangerine.M1
             return false;
         }
 
+        ///<sumary>
+        ///Metodo que valida que las credenciales de login coincidan con
+        ///un Usuario dentro de la base de datos
+        ///</sumary>
+        ///<param name="nombreUsuario">String de nombre de Usuario</param>
+        ///<param name="clave">String de contraseña de Usuario</param>
+        ///<returns>true, si el usuario existe</returns>
         public bool ConsultarUsuario(string nombreUsuario, string clave)
         {
             try
@@ -95,6 +110,127 @@ namespace LogicaTangerine.M1
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        ///<sumary>
+        ///Metodo que valida que las credenciales de login coincidan con
+        ///un Usuario dentro de la base de datos
+        ///</sumary>
+        ///<param name="nombreUsuario">String de nombre de Usuario</param>
+        ///<param name="clave">String de contraseña de Usuario</param>
+        ///<returns>true, si el usuario existe</returns>
+        public bool ValidarCorreoUsuario(string correo, string nombreUsuario)
+        {
+            try
+            {
+                Usuario theUsuario = new Usuario(nombreUsuario, correo);
+                theUsuario = BDEmpleado.ObtenerCorreoUsuario(theUsuario);
+
+                if (theUsuario.Activo != null)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        ///<sumary>
+        ///Metodo que valida que las credenciales de login coincidan con
+        ///un Usuario dentro de la base de datos
+        ///</sumary>
+        ///<param name="nombreUsuario">String de nombre de Usuario</param>
+        ///<param name="clave">String de contraseña de Usuario</param>
+        ///<returns>true, si el usuario existe</returns>
+        public string GenerarNuevaContrasena(string correo, string nombreUsuario)
+        {
+            try
+            {
+
+                Usuario theUsuario = new Usuario(nombreUsuario, correo);
+                NuevaContrasena aleatorio = new NuevaContrasena();
+                string nueva;
+                nueva = aleatorio.NuevaContrasenaGenerar();
+                theUsuario.Contrasenia = theUsuario.GetMD5(nueva);
+
+                bool _answer = BDUsuario.ModificarContraseniaUsuario(theUsuario);
+
+                if (_answer)
+                {
+                    //this.EnviarCorreo(correo, nueva);
+                    return nueva;
+                }
+                else
+                    return "Error";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void EnviarCorreo(string correoDestino, string contenido)
+        {
+            /*-------------------------MENSAJE DE CORREO----------------------*/
+
+            //Creamos un nuevo Objeto de mensaje
+            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
+
+            //Direccion de correo electronico a la que queremos enviar el mensaje
+            mmsg.To.Add(correoDestino);
+
+            //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
+
+            //Asunto
+            mmsg.Subject = "Tangerine - Cambio de contraseña";
+            mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            //Direccion de correo electronico que queremos que reciba una copia del mensaje
+            //mmsg.Bcc.Add("destinatariocopia@servidordominio.com"); //Opcional
+
+            //Cuerpo del Mensaje
+            mmsg.Body = "Le informamos que su nueva contraseña provisional es: " + contenido +
+                " por favor ingrese al sistema para cambiarla por su propia contraseña.";
+            mmsg.BodyEncoding = System.Text.Encoding.UTF8;
+            mmsg.IsBodyHtml = false; //Si no queremos que se envíe como HTML
+
+            //Correo electronico desde la que enviamos el mensaje
+            mmsg.From = new System.Net.Mail.MailAddress("tangerine.dev.00@gmail.com");
+
+
+            /*-------------------------CLIENTE DE CORREO----------------------*/
+
+            //Creamos un objeto de cliente de correo
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+
+            //Hay que crear las credenciales del correo emisor
+            cliente.Credentials =
+                new System.Net.NetworkCredential("tangerine.dev.00@gmail.com", "$Tangerine00");
+
+            //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
+
+            cliente.Port = 587;
+            cliente.EnableSsl = true;
+
+
+            cliente.Host = "smtp.gmail.com"; //Para Gmail "smtp.gmail.com";
+
+
+            /*-------------------------ENVIO DE CORREO----------------------*/
+
+            try
+            {
+                //Enviamos el mensaje      
+                cliente.Send(mmsg);
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                //Aquí gestionamos los errores al intentar enviar el correo
             }
         }
     }

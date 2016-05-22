@@ -40,7 +40,7 @@
                     <input type="text" runat="server" id="SecondLastName" class="form-control" placeholder="Segundo Apellido">
                   </div>
                   <div class="form-group ">
-                    <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListGender" OnTextChanged="SelectedGender_Change" AutoPostBack="true">
+                    <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListGender">
                     </asp:DropDownList>
                   </div>
                    <div class="form-group">

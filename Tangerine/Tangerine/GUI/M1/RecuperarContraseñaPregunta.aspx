@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Log in</title>
+    <title>Recuperación de Contraseña | Tangerine</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -34,19 +34,33 @@
         </div>
 
         <div class="login-box-body " style=" background: black; box-shadow:  0px 0px 40px #000000;">
-          <p class="login-box-msg" style="color:#FFFFFF">Responda las siguientes preguntas</p>
+          <p class="login-box-msg" style="color:#FFFFFF">Introduzca su correo personal y usuario</p>
 
-          <form action="../../index2.html" method="post" style="text-align: center;">
+          <form method="post" style="text-align: center;" id="enviarEmail" runat="server">
             <div class="form-group has-feedback">
-              <input type="email" class="form-control" placeholder="Correo personal">
-            </div>
-            <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Código de seguridad">
-            </div>
+              <input type="email" id="correo" runat="server" maxlength="30" class="form-control" placeholder="Correo personal">
+                <asp:RegularExpressionValidator 
+                    ID="regexEmailValid" 
+                    runat="server" 
+                    ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                    ControlToValidate="correo" 
+                    ErrorMessage="Formato de correo invalido" 
+                    ForeColor="White">
+                </asp:RegularExpressionValidator>
+            
+              <input type="text" id="usuario" runat="server" maxlength="30" class="form-control" placeholder="Nombre de Usuario">
+            <br />
             <div class="row">
-              <div class="col-xs-12 col-md-12 col-lg-12">
-                <a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>
+              <div class="col-xs-6 col-md-6 col-lg-6">
+                <!--<a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>-->
+                <button type="button" id="correoButton" runat="server" class="btn btn-default" onserverclick="Validar_Correo">Enviar</button>
+                
               </div>
+              <div class="col-xs-6 col-md-6 col-lg-6">
+                <a href="../M1/Login.aspx" type="button" class="btn btn-default">Volver</a>
+              </div>
+              <asp:label id="mensaje" runat="server" class="login-box-msg" style="color:#FFFFFF;"/>
+            </div>
             </div>
           </form>
           <!-- /.social-auth-links -->

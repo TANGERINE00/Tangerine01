@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="M1\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -71,7 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="nunit.framework">
+    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="M10\M10PruebasLogica.cs" />
     <Compile Include="M10\PruebasDatos.cs" />
+    <Compile Include="M1\M1PruebasLogica.cs" />
     <Compile Include="M2\M2PruebasLogica.cs" />
     <Compile Include="M2\PruebasBDUsuario.cs" />
     <Compile Include="M3\PruebaClientePotencialLogica.cs" />

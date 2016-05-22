@@ -70,8 +70,8 @@ namespace LogicaTangerine.M7
         /// <summary>
         /// Metodo para devolver una lista de empleados
         /// </summary>
-
-        /// <returns></returns>
+        /// <param name="P">Proyecto</param>
+        /// <returns>lista de los empleados</returns>
         public List<Empleado> obtenerListaEmpleados(Proyecto P)
         {
             if (_Empl.ContactProyectoEmpleado(P))
@@ -195,6 +195,24 @@ namespace LogicaTangerine.M7
         public String generarCodigoProyecto(String nombre)
         {
             return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
+        }
+   
+       /// <summary>
+       /// Metodo que calcula el monto a cobrar en proyectos los cuales el acuerdo de pago es mensual
+       /// </summary>
+       /// <param name="P">Proyecto</param>
+       /// <returns>Doeuble con el monto</returns>
+        public Double calcularPagoMesual (Proyecto P)
+        {
+           int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
+           if (dias > 31)
+           {
+               return (P.Costo / dias) * 30;
+           }
+           else
+           {
+               return P.Costo;
+            }
         }
     }
 

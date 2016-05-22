@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M8
                 int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
                 textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
                 textMonto_M8.Value = int.Parse(Request.QueryString["Monto"]).ToString();
-                compania = logicaCompania.SearchCompany(_companiaId);
+                compania = logicaCompania.ConsultCompany(_companiaId);
                 textCompania_M8.Value = compania.NombreCompania;
                 proyecto = logicaProyecto.consultarProyecto(_proyectoId);
                 textProyecto_M8.Value = proyecto.Nombre;
@@ -51,13 +51,13 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
-            if (textDescripcion_M8.Value.Equals(""))
+           /* if (textDescripcion_M8.Value.Equals(""))
             {
                 string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
             }
             else
-            {
+            {*/
 
                 _Descripcion = textDescripcion_M8.Value;
                 _tipoMoneda = "Bolivares";
@@ -70,7 +70,7 @@ namespace Tangerine.GUI.M8
                 LogicaM8 facturaLogic = new LogicaM8();
                 facturaLogic.AddNewFactura(factura);
                 Server.Transfer("ConsultarFacturaM8.aspx");
-            }
+            //}
 
 
         }

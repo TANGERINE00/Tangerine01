@@ -56,7 +56,6 @@
     <Folder Include="M1\" />
     <Folder Include="M6\" />
     <Folder Include="M7\" />
-    <Folder Include="M8\" />
     <Folder Include="M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -74,6 +73,7 @@
     <Compile Include="M10\ExceptionDatabase.cs" />
     <Compile Include="M10\NullArgumentException.cs" />
     <Compile Include="M10\WrongFormatException.cs" />
+    <Compile Include="M2\ExcepcionModificarRol.cs" />
     <Compile Include="M2\ExcepcionRegistro.cs" />
     <Compile Include="M2\ExcepcionPrivilegios.cs" />
     <Compile Include="M3\ExceptionDataBaseLeads.cs" />
@@ -85,6 +85,9 @@
     <Compile Include="M5\ExceptionDataBase.cs" />
     <Compile Include="M5\NullArgumentException.cs" />
     <Compile Include="M5\WrongFormatException.cs" />
+    <Compile Include="M8\ExceptionDataBase.cs" />
+    <Compile Include="M8\NotArgumentException.cs" />
+    <Compile Include="M8\WrongFormatException.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
