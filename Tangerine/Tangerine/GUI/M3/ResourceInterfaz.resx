@@ -136,7 +136,7 @@
     <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="EliminarLead.aspx?idclp=</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px" href="ConsultarLead.aspx"?idclp=</value>
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px" href="ConsultarLead.aspx?idclp=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
     <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarLead.aspx?idclp=</value>
@@ -170,5 +170,11 @@
   </data>
   <data name="BotonActiv" xml:space="preserve">
     <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ActivarLead.aspx?idclp=</value>
+  </data>
+  <data name="CloseSpanProm" xml:space="preserve">
+    <value>"&gt;Promovido&lt;/span&gt;</value>
+  </data>
+  <data name="Promovido" xml:space="preserve">
+    <value>&lt;span class="label label-warning" id="p</value>
   </data>
 </root>

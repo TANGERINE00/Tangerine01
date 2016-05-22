@@ -31,18 +31,18 @@
                         <!--Destinatario-->
                         <div class="form-group" runat="server">
                             <label for="labelDestinatario_M8">Para</label>
-                            <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8" placeholder="Ingrese el Correo">
+                            <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8" disabled="disabled">
                         </div>
                         <!--Asunto-->
                         <div class="form-group" runat="server">
                             <label for="labelAsunto_M8">Asunto</label>
-                            <input type="text" runat="server" class="form-control" id="textAsunto_M8" name="textAsunto_M8" placeholder="Ingrese el Asunto">
+                            <input type="text" runat="server" class="form-control" id="textAsunto_M8" name="textAsunto_M8" disabled="disabled">
                         </div>
                         <!--Mensaje-->
                         <div class="form-group" runat="server">
                             <label for="labelMensaje_M8">Mensaje</label>
                             <%--<input type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" placeholder="Ingrese el Mensaje">--%>
-                            <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" rows="4" cols="50">
+                            <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" placeholder="Ingrese su Mensaje" rows="4" cols="50">
                             </textarea>
                         </div>
 
@@ -74,7 +74,7 @@
                         </div> --%>
 
                         <div class="form-group" runat="server">
-                            <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo"></asp:Button>
+                            <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo" OnClick="buttonEnviarCorreo_Click"></asp:Button>
                         </div>
 
                     </div>
