@@ -29,16 +29,21 @@ namespace Tangerine.GUI.M9
             }
         }
 
+        /// <summary>
+        /// Metodo de carga de los elementos de la ventana.
+        /// </summary>
+        /// recibe un solo parametro, id de la compania para consultar todas las facturas asociadas, este parametro se recibe via URL
+        /// <param name="id">Entero, representa el id de la empresa seleccionada</param>
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //En este try atrapo el valor del id del Contacto si existe
-            //para luego ser eliminado de los contactos de la empresa
+            //capturo el id de la compania que se esta enviando por el URL
             int identificador = int.Parse(Request.QueryString["id"]);
             try
             {
                 if (!IsPostBack)
                 {
+                    //con el id capturado utilizao el metodo SearchFacturas para mostrar todas las facturas asociadas a esa compania
                     List<Facturacion> listFacturas = prueba.SearchFacturasCompania(identificador);
 
                     if (listFacturas.Count() < 1)
@@ -57,7 +62,7 @@ namespace Tangerine.GUI.M9
                             factura += ResourceLogicaM9.AbrirTD + theFactura.descripcionFactura + ResourceLogicaM9.CerrarTD;
                             factura += ResourceLogicaM9.AbrirTD + theFactura.montoFactura + " " + theFactura.tipoMoneda + ResourceLogicaM9.CerrarTD;
 
-                            //Boton para cargar el pago
+                            //Boton para cargar el pago de una factura especifica
                             factura += ResourceLogicaM9.botonPagarAbrir + theFactura.idFactura + ResourceLogicaM9.botonPagarCerrar;
                         }
                     }
