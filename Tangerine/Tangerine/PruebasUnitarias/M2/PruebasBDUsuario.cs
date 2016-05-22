@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.M2;
+using ExcepcionesTangerine;
 
 namespace PruebasUnitarias.M2
 {
@@ -122,9 +123,9 @@ namespace PruebasUnitarias.M2
             theUserFail = new Usuario();
             theUserFail.NombreUsuario = "testFail";
 
-            bool resultado = BDUsuario.AgregarUsuario(theUserFail);
 
-            Assert.Fail("Se ha disparado la excepción de la prueba de AgregarUsuario()");
+
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.AgregarUsuario(theUserFail));
         }
 
         /// <summary>
@@ -137,9 +138,9 @@ namespace PruebasUnitarias.M2
             theUserFail = new Usuario();
             theUserFail.NombreUsuario = "testFail";
 
-            bool resultado = BDUsuario.ModificarRolUsuario(theUserFail);
+            
 
-            Assert.Fail("Se ha disparado la excepción de la prueba de ModificarRolUsuario()");
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ModificarRolUsuario(theUserFail));
         }
 
         /// <summary>
@@ -151,10 +152,7 @@ namespace PruebasUnitarias.M2
         {
             theUserFail = new Usuario();
             theUserFail.NombreUsuario = "testFail";
-
-            bool resultado = BDUsuario.ModificarContraseniaUsuario(theUserFail);
-
-            Assert.Fail("Se ha disparado la excepción de la prueba de ModificarContraseniaUsuario()");
+            Assert.Throws<ExceptionsTangerine>(() =>BDUsuario.ModificarContraseniaUsuario(null));
         }
         [Test]
 
@@ -173,55 +171,50 @@ namespace PruebasUnitarias.M2
         [Test]
 
         public void TestFailObtenerRolUsuarioPorNombre()
-        {
-
-            String s = "";
-            BDUsuario.ObtenerRolUsuarioPorNombre(s);
-            Assert.Fail("se ha disparado la excepcion");
+        {    
+            
         }
 
         [Test]
         public void TestFailObtenerUsuarioDeEmpleado()
         {
-            BDUsuario.ObtenerUsuarioDeEmpleado(null);
-            Assert.Fail("se ha disparado la excepcion");
+           Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerUsuarioDeEmpleado(null));
+            
         }
 
         [Test]
         public void TestFailObtenerDatoUsuario()
         {
-            BDUsuario.ObtenerDatoUsuario(null);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerDatoUsuario(null));
         }
 
         [Test]
         public void TestFailObtenerOpciones()
         {
-            BDUsuario.ObtenerOpciones(null, 1);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerOpciones("", -1));
         }
 
         [Test]
         public void TestFailObtenerRolUsuario()
-        {
-            int i = 0;
-            BDUsuario.ObtenerRolUsuario(i);
-            Assert.Fail("se ha disparado la excepcion");
+        {   
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerRolUsuario(-5));
         }
 
 
         [Test]
         public void TestFailVerificarExistenciaDeUsuario()
         {
-            BDUsuario.VerificarExistenciaDeUsuario(null);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.VerificarExistenciaDeUsuario(""));
         }
 
         [Test]
         public void TestFailVerificarUsuarioPorFichaEmpleado()
         {
-            BDUsuario.VerificarUsuarioPorFichaEmpleado(0);
-            Assert.Fail("se ha disparado la excepcion");
+            
+            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.VerificarUsuarioPorFichaEmpleado(0));
         }
 
 
