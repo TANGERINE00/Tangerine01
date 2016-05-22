@@ -18,6 +18,7 @@ namespace Tangerine.GUI.M1
         string _usuario = String.Empty;
         string _contrasena = String.Empty;
         LogicaProyecto proyectoLogic = new LogicaProyecto();
+        bool facturaExistente = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,13 +44,18 @@ namespace Tangerine.GUI.M1
                 HttpContext.Current.Session["UserID"] = Util._theGlobalUser.FichaEmpleado;
                 HttpContext.Current.Session["Rol"] = Util._theGlobalUser.Rol.Nombre;
 
-               /* List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
+                List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
                 foreach (Proyecto theProyecto in listProyecto)
                 {
-                    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, theProyecto.Costo, theProyecto.Costo, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);
+                    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, theProyecto.Costo, theProyecto.Costo, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);                    
                     LogicaM8 facturaLogic = new LogicaM8();
-                    facturaLogic.AddNewFactura(factura);
-                }*/
+                    facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now,theProyecto.Idproyecto,theProyecto.Idresponsable);
+                    if (facturaExistente == false)
+                    {
+                        facturaLogic.AddNewFactura(factura);
+                    }
+                    facturaExistente = false;
+                }
                 
                 Response.Redirect("Dashboard.aspx");
             }
