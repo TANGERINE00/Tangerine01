@@ -51,9 +51,10 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelDescripcion_M8">Descripción</label>
-                            <input type="text" runat="server" class="form-control" 
+                            <input type="text" runat="server" class="form-control"
+                                   pattern="^[0-9a-zñA-ZÑ.- ]+$"
                                    id="textDescripcion_M8" name="textDescripcion_M8" 
-                                   placeholder="Descripción" maxlength="50">
+                                   placeholder="Descripción" maxlength="50" required>
                         </div>
 
                         <%--    <div class="form-group" runat="server">

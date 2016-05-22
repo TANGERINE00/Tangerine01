@@ -46,8 +46,7 @@ namespace PruebasUnitarias.M3
             answer = BDClientePotencial.AgregarClientePotencial(clientePot1);
             //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
             Assert.IsTrue(answer);
-            listaClientPot = BDClientePotencial.DatosListarClientePotencial();
-            answer = BDClientePotencial.EliminarClientePotDef(listaClientPot[listaClientPot.Count-1]);
+
         }
 
         [Test]
