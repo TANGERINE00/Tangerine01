@@ -19,7 +19,7 @@ namespace PruebasUnitarias.M7
         int IdGerente;
         int IdEmpleado;
         public DateTime fechainicio = new DateTime(2015, 2, 10);
-        public DateTime fechaestimadafin = new DateTime(2015, 2, 10);
+        public DateTime fechaestimadafin = new DateTime(2015, 4, 10);
         public List<Contacto> Contactos;
         public List<Empleado> Empleados;
 
@@ -165,5 +165,14 @@ namespace PruebasUnitarias.M7
      {
          Assert.AreEqual("Proy-Arbo2016", _Logi.generarCodigoProyecto("Arbol de la vida"));
      }
-    }
+
+     [Test]
+     public void TestcalcularPagoMesual()
+     {
+         Assert.AreEqual(_proyecto.Costo/2 , _Logi.calcularPagoMesual(_proyecto));
+     }
+     
+     }
+
+
 }
