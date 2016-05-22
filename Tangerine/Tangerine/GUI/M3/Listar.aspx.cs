@@ -48,7 +48,7 @@ namespace Tangerine.GUI.M3
                 LogicaM3 logicalistarClientePotencial = new LogicaM3();
                 //crear una lista de clientes potenciales
                 List<ClientePotencial> ListaClientepotencialLogica = new List<ClientePotencial>();
-                // logica.listarEmpleado();
+                // llena la lista de clientes potenciales creada
                 ListaClientepotencialLogica = logicalistarClientePotencial.LogicalistarClientePotencial();
                 //foreach es para recorrer listas y arreglos 
                 llenar(ListaClientepotencialLogica); //el llamado al metodo
