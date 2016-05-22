@@ -20,7 +20,7 @@ namespace PruebasUnitarias.M8
         public double monto;
         private List<Facturacion> facturas;
         public bool answer;
-        public DateTime fecha = new DateTime(2015, 2, 10);
+        public DateTime fecha = new DateTime(2015, 10, 11);
 
         #endregion
 
@@ -152,7 +152,7 @@ namespace PruebasUnitarias.M8
         {
             facturas = BDFactura.ContactFacturasCompania(1);
 
-            Assert.AreEqual( 3 , facturas.Count() );
+            Assert.AreEqual( 2 , facturas.Count() );
 
         }
 
@@ -172,6 +172,17 @@ namespace PruebasUnitarias.M8
 
         }
 
+        /// <summary>
+        /// Prueba que permite verificar el metodo para saber si ya existe la factura especifica en la base de datos
+        /// </summary>
+        [Test]
+        public void TestCheckExistingInvoice()
+        {
+            answer = BDFactura.CheckExistingInvoice(fecha,1,2);
+
+            Assert.IsTrue(answer);
+
+        }
         #endregion
 
     }
