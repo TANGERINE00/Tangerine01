@@ -92,6 +92,7 @@
     <Compile Include="M5\PruebaLogica.cs" />
     <Compile Include="M5\PruebasDatos.cs" />
     <Compile Include="M6\PruebaDatosMM6.cs" />
+    <Compile Include="M6\PruebaLogicaRequerimientoM6.cs" />
     <Compile Include="M6\PruebaLogicaM6.cs" />
     <Compile Include="M6\Pruebas.cs" />
     <Compile Include="M7\M7PruebasLogica.cs" />
