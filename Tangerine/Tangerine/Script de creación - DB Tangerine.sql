@@ -1,4 +1,4 @@
-﻿create table LUGAR_DIRECCION
+create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -1419,6 +1419,21 @@ AS
 			FROM FACTURA, COMPANIA 
 			WHERE com_id = @id_compania
 			AND fac_estatus = 0
+			AND fk_compania_id = com_id;
+	END
+GO
+
+---- StoredProcedure Consultar Facturas Pagadas por ID de Compañia ----
+CREATE PROCEDURE M8_ConsultarFacturasPagadasCompania
+	@id_compania int
+
+AS
+	BEGIN
+		SELECT fac_id as fac_id, fac_fecha_emision AS fac_fecha_emision, fac_fecha_ultimo_pago AS fac_fecha_ultimo_pago, fac_monto_total AS fac_monto_total,
+			fac_monto_restante AS fac_monto_restante, fac_tipo_moneda AS fac_tipo_moneda, fac_descripcion AS fac_descripcion, fac_estatus AS fac_estatus, fk_proy_id AS fk_proy_id, fk_compania_id AS fk_compania_id
+			FROM FACTURA, COMPANIA 
+			WHERE com_id = @id_compania
+			AND fac_estatus = 1
 			AND fk_compania_id = com_id;
 	END
 GO

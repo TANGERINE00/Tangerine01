@@ -116,6 +116,18 @@ namespace LogicaTangerine.M8
             }
         }
 
+        public List<Facturacion> SearchFacturasPagadasCompania(int idCompania)
+        {
+            try
+            {
+                return BDFactura.ContactFacturasPagadasCompania(idCompania);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public double SearchMontoRestanteFactura(int idFactura)
         {
             try

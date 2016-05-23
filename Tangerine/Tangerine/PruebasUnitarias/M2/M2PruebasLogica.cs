@@ -127,8 +127,8 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestModificarRol()
         {
-            System.Diagnostics.Debug.WriteLine(theUser.NombreUsuario);
-            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Programador"));
+            
+            Assert.IsTrue(LogicaModificarRol.ModificarRol("craloz", "gerente"));
 
         }
        
@@ -211,16 +211,7 @@ namespace PruebasUnitarias.M2
             Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.AgregarUsuario(null));
         }
 
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método ConsultarListaDeEmpleados() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
-        /// </summary>
-        [Test]
-        public void TestFailConsultarListaDeEmpleados()
-        {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ConsultarListaDeEmpleados());
-
-        }
+        
 
         /// <summary>
         /// Método para probar el disparo de una excepción el método CrearUsuarioDefault() de la clase LogicaAgregarUsuario en
@@ -232,15 +223,6 @@ namespace PruebasUnitarias.M2
             Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.CrearUsuarioDefault(null, null));
         }
 
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método ExisteUsuario() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
-        /// </summary>
-        [Test]
-        public void TestFailExisteUsuario()
-        {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ExisteUsuario(null)); 
-        }
 
         /// <summary>
         /// Método para probar el disparo de una excepción el método ObtenerCaracteres() de la clase LogicaAgregarUsuario en
@@ -261,18 +243,6 @@ namespace PruebasUnitarias.M2
         {
             Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.PrepararUsuario(null, null, null, 1));
         }
-
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarUsuarioDeEmpleado() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
-        /// </summary>
-        [Test]
-        public void TestFailVerificarUsuarioDeEmpleado()
-        {
-            
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.VerificarUsuarioDeEmpleado(1));
-        }
-
        
     }
 }

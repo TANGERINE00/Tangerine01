@@ -148,7 +148,7 @@ SET IDENTITY_INSERT PROYECTO OFF
 SET IDENTITY_INSERT PROYECTO ON
 GO
 insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
-VALUES (5,'ProyectoNFL','CodigoNFL',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'12-08-2016',110),10000,'Se tratara de un modulo de gestion de la NFL','60','En desarrollo','','Mensual',4,2,1);
+VALUES (5,'ProyectoNFL','CodigoNFL',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de la NFL','60','En desarrollo','','Mensual',4,2,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 
@@ -288,9 +288,10 @@ insert into ROL_OPCION values (4, 20);
 insert into ROL_OPCION values (4, 28);
 insert into ROL_OPCION values (4, 26);
 
-insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, 2);
-insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, 3);
-insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, 1);
+insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 1, null);
+insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
+insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 3, null);
+insert into USUARIO values (4, 'jams', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 4, null);
 ---------Fin de Inserts de Usuarios y Roles-----------
 
 

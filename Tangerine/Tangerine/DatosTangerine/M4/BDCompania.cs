@@ -34,34 +34,44 @@ namespace DatosTangerine.M4
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, theCompany.NombreCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, 
+                    theCompany.NombreCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, 
+                    theCompany.RifCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, 
+                    theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, 
+                    theCompany.TelefonoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, 
+                    theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, theCompany.FechaRegistroCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, 
+                    theCompany.FechaRegistroCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, 
+                    theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, theCompany.PresupuestoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, 
+                    theCompany.PresupuestoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, theCompany.PlazoPagoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, 
+                    theCompany.PlazoPagoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, 
+                    theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
@@ -355,37 +365,48 @@ namespace DatosTangerine.M4
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.IdCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, 
+                    theCompany.IdCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, theCompany.NombreCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, 
+                    theCompany.NombreCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, 
+                    theCompany.RifCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, 
+                    theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, 
+                    theCompany.TelefonoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, 
+                    theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, theCompany.FechaRegistroCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, 
+                    theCompany.FechaRegistroCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, 
+                    theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, theCompany.PresupuestoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, 
+                    theCompany.PresupuestoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, theCompany.PlazoPagoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, 
+                    theCompany.PlazoPagoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, 
+                    theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
