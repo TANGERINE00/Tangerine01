@@ -351,4 +351,10 @@
   <data name="EtiquetaFecha" xml:space="preserve">
     <value>&lt;label&gt;Fecha factura&lt;/label&gt;</value>
   </data>
+  <data name="EtiquetaPagada" xml:space="preserve">
+    <value>&lt;td&gt;&lt;span class="label label-success"&gt;Pagada&lt;/span&gt;&lt;/td&gt;</value>
+  </data>
+  <data name="boton2" xml:space="preserve">
+    <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPagadas.aspx?id=</value>
+  </data>
 </root>
