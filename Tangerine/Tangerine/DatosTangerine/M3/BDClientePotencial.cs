@@ -278,11 +278,12 @@ namespace DatosTangerine.M3
                         //String PresupuestoAnual_inversion = row[ResourceClientePotencial.emailClientePotencial].ToString();
                         int NumeroLlamadas = int.Parse(row[ResourceClientePotencial.numeroLlamadas].ToString());
                         int NumeroVisitas = int.Parse(row[ResourceClientePotencial.numeroVisitas].ToString());
-                       
+                        int Status = int.Parse(row[ResourceClientePotencial.status].ToString());
                         //  int conCompId = int.Parse(row[ResourceClientePotencial.ConIdComp].ToString());
 
                         //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                        elClientePotencial = new ClientePotencial(IdClientePotencial, NombreClientePotencial, RifClientePotencial, EmailClientePotencial, PresupuestoAnual_inversion, NumeroLlamadas, NumeroVisitas);
+                        elClientePotencial = new ClientePotencial(IdClientePotencial, NombreClientePotencial, RifClientePotencial, 
+                            EmailClientePotencial, PresupuestoAnual_inversion, NumeroLlamadas, NumeroVisitas,Status);
                       
                     }
 
@@ -552,6 +553,7 @@ namespace DatosTangerine.M3
                 BDConexion theConnection = new BDConexion();
                 Parametro theParam = new Parametro();
 
+
                 try
                 {
                     //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
@@ -562,7 +564,21 @@ namespace DatosTangerine.M3
 
                     //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                     List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_promoverClientePotencial, parameters);
+                   
+                    ClientePotencial clientePotencial = new ClientePotencial();
+                    
+                    Compania compania = new Compania();
 
+                    compania.NombreCompania = ResourceClientePotencial.nombreClientePotencial.ToString();
+                    compania.RifCompania = ResourceClientePotencial.rifClientePotencial.ToString();
+                    compania.EmailCompania = ResourceClientePotencial.emailClientePotencial.ToString();
+                    compania.PresupuestoCompania = Int32.Parse(ResourceClientePotencial.presupuestoAnual_inversion.ToString());
+
+                    
+
+
+                    //clientePotencial.PresupuestoAnual_inversion = float.Parse(row[ResourceClientePotencial.presupuestoAnual_inversion].ToString());
+                    //clientePotencial.Status = Int32.Parse(row[ResourceClientePotencial.status].ToString());
                 }
                 catch (ArgumentNullException ex)
                 {

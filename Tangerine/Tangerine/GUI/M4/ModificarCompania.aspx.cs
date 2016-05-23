@@ -21,6 +21,12 @@ namespace Tangerine.GUI.M4
             set { _idComp = value; }
         }
 
+
+        /// <summary>
+        /// Método de carga de página en el cual carga los campos con los datos de la compañía.
+        /// </summary>
+        /// <param name="idComp">id de la compañía a modificar</param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             Compania laCompania;
@@ -49,6 +55,11 @@ namespace Tangerine.GUI.M4
             }
         }
 
+        /// <summary>
+        /// Método para concretar la modificación luego de que se haga click en "modificar"
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void btnmodificar_Click(object sender, EventArgs e)
         {
             string _nombre = InputNombre1.Value;
@@ -70,6 +81,11 @@ namespace Tangerine.GUI.M4
             Server.Transfer("ConsultarCompania.aspx", true);
         }
 
+        /// <summary>
+        /// Método de carga de lugares tipo ciudad en el combobox de dirección.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void llenarComboBoxLugar()
         {
             List<LugarDireccion> listPlace = logica.getPlaces();

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicaTangerine.M8 {
+namespace LogicaTangerine.M6 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace LogicaTangerine.M8 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ResourceLogicaM8 {
+    internal class LogicaRecursos {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ResourceLogicaM8() {
+        internal LogicaRecursos() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace LogicaTangerine.M8 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaTangerine.M8.ResourceLogicaM8", typeof(ResourceLogicaM8).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaTangerine.M6.LogicaRecursos", typeof(LogicaRecursos).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

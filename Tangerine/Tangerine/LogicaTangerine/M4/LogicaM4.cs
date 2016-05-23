@@ -18,8 +18,8 @@ namespace LogicaTangerine.M4
 
         public void init()
         {
-
         }
+
         /// <summary>
         /// Método para consultar todas las compañías en la base de datos.
         /// </summary>
@@ -61,6 +61,7 @@ namespace LogicaTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResourcesM4.Mensaje_Generico_Error, ex);
             }
         }
+
         /// <summary>
         /// Método para insertar una nueva compañía en la base de datos.
         /// </summary>
@@ -104,6 +105,7 @@ namespace LogicaTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResourcesM4.Mensaje_Generico_Error, ex);
             }
         }
+        
         /// <summary>
         /// Método para modificar la informacion de un compania en la base de datos.
         /// </summary>
@@ -147,6 +149,7 @@ namespace LogicaTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResourcesM4.Mensaje_Generico_Error, ex);
             }
         }
+        
         /// <summary>
         /// Método para consultar una compañía en específico en la base de datos.
         /// </summary>
@@ -278,6 +281,7 @@ namespace LogicaTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(LogicResourcesM4.Mensaje_Generico_Error, ex);
             }
         }
+        
         /// <summary>
         /// Método para consultar todas las ciudades en la base de datos.
         /// </summary>

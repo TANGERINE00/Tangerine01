@@ -45,6 +45,7 @@ namespace Tangerine.GUI.M7
               this.textInputFechaInicio.Value = proyecto.Fechainicio.ToString("dd/MM/yyyy");
               this.textInputPorcentaje.Value = proyecto.Realizacion.ToString();
               this.inputPropuesta.Items.Add(LogicProject.ConsultarNombrePropuestaID(proyecto.Idproyecto));
+              this.text10.Value = proyecto.Razon;
               for (int i = 0; i < Gerentes.Count; i++)
               {
 
@@ -60,6 +61,7 @@ namespace Tangerine.GUI.M7
                   inputPersonal.Items.Add(Programadores[i].emp_p_nombre + " " + Programadores[i].emp_p_apellido);
               }
 
+        
               for (int i = 0; i < Contactos.Count; i++)
               {
                   inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
@@ -91,7 +93,15 @@ namespace Tangerine.GUI.M7
                   }
               }
 
+              for (int i = 0; i < inputEstatus.Items.Count; i++)
+              {
 
+                  if (inputEstatus.Items[i].Value.Equals(proyecto.Estatus))
+                  {
+                      inputEstatus.Items[i].Selected = true;
+                      break;
+                  }
+              }
           }
         }
 
@@ -109,7 +119,7 @@ namespace Tangerine.GUI.M7
                 proyecto.Costo = Double.Parse(textInputCosto.Value);
                 if (int.Parse(textInputPorcentaje.Value) > int.Parse(_realizado))
                     proyecto.Realizacion = textInputPorcentaje.Value;
-                proyecto.Estatus = inputEstatus.Value;
+                proyecto.Estatus = inputEstatus.Items[inputEstatus.SelectedIndex].Value;
                 Contactos = LogicaM5.GetContacts(proyecto.Idcompania, 1);
                 for (int i = 0; i < Gerentes.Count; i++)
                 {
@@ -140,8 +150,11 @@ namespace Tangerine.GUI.M7
 
                 proyecto.set_contactos(seleccionContactos);
                 proyecto.set_empleados(seleccionProgramadores);
-
-                LogicaProyecto _logica = new LogicaProyecto();
+                if (inputEstatus.Items[inputEstatus.SelectedIndex].Value.Equals("Completado a destiempo"))
+                {
+                    proyecto.Razon = text10.Value;
+                }
+                    LogicaProyecto _logica = new LogicaProyecto();
 
                 if (_logica.modificarProyecto(proyecto))
                 {
