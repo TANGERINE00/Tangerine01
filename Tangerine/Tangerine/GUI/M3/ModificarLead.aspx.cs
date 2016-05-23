@@ -68,6 +68,7 @@ namespace Tangerine.GUI.M3
             LogicaM3 logica = new LogicaM3();
             //logica.ModificarNuevoclientePotencial(logica.BuscarClientePotencial(idClip));
             logica.ModificarNuevoclientePotencial( nuevoCliente );
+            Response.Redirect("Listar.aspx");
 
 
            
