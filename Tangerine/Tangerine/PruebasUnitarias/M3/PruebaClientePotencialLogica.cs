@@ -86,8 +86,15 @@ namespace PruebasUnitarias.M3
             Assert.IsTrue(answer);
 
         }
+    
+        [Test]
+        public void TestPromoverClientePotencialLogica()
+        {
+            answer = logicaM3.PromoverclientePotencial(clientePot3);
 
+            Assert.IsTrue(answer);
 
+        }
     }
 }
 
