@@ -1,5 +1,3 @@
-drop table detalle_pago;
-drop table tipo_pago;
 drop table pago;
 drop table factura;
 drop table contacto_proyecto;
@@ -32,12 +30,14 @@ drop procedure M2_ObtenerRolUsuarioPorNombre;
 drop procedure M2_VerificarUsuarioPorFichaEmpleado;
 drop procedure M2_VerificarExistenciaUsuario;
 
-drop procedure agregar_clientePotencial;
-drop procedure listar_cliente_potencial;
-drop procedure eliminar_cliente_potencial;
-drop procedure promover_cliente_potencial;
-drop procedure consultar_cliente_potencial;
-drop procedure modificar_clientePotencialF;
+drop procedure M3_agregar_clientePotencial;
+drop procedure M3_listar_cliente_potencial;
+drop procedure M3_eliminar_cliente_potencial;
+drop procedure M3_promover_cliente_potencial;
+drop procedure M3_consultar_cliente_potencial;
+drop procedure M3_modificar_clientePotencialF;
+drop procedure M3_activar_cliente_potencial;
+drop procedure M3_eliminar_cliente_potencial_def;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
@@ -94,6 +94,12 @@ drop procedure M8_AnularFactura;
 drop procedure M8_ConsultarFacturasCompania;
 drop procedure M8_VerificarFacturasParaPagar;
 drop procedure M8_ConsultarMontoRestanteFactura;
+drop procedure M8_VerificarFacturaExistente;
+drop procedure M8_ConsultarFacturasPagadasCompania;
+
+drop procedure M9_AgregarPago;
+drop procedure M9_CambioStatus;
+drop Procedure M9_ConsultarPago;
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;
@@ -104,6 +110,7 @@ drop procedure M10_LLenarSelectPaises;
 drop procedure M10_LLenarSelectEstados;
 drop procedure M10_LlenarSelectCargo;
 drop procedure M10_CambiarEstatus;
+drop procedure M1_ObtenerCorreoUsuario;
 
 
 

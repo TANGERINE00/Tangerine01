@@ -44,8 +44,8 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboEstatus();
                 cargarCompañias();
-                //llenarComboCuota();
-                //llenarComboFpago();
+                llenarComboCuota();
+                llenarComboFpago();
 
             }
 
@@ -78,8 +78,6 @@ namespace Tangerine.GUI.M6
             {
                 _entregaCant = 0;
             }
-
-            _entregaCant = 0;
 
             _estatusW = comboEstatus.SelectedItem.Text;
             _idCompañia = comboCompañia.Items[comboCompañia.SelectedIndex].Value;
@@ -160,7 +158,7 @@ namespace Tangerine.GUI.M6
             try
             {
                 LogicaM4 logicaComp = new LogicaM4();
-                List<Compania> companias = logicaComp.getCompanies();
+                List<Compania> companias = logicaComp.ConsultCompanies();
                 ListItem itemCompa;
 
                 this.comboCompañia.Items.Clear();

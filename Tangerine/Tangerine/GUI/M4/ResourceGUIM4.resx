@@ -207,7 +207,7 @@
     <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
   <data name="BotonInvol" xml:space="preserve">
-    <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
+    <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
   <data name="CloseSpanHab" xml:space="preserve">
     <value>"&gt;Habilitada&lt;/span&gt;</value>

@@ -11,7 +11,7 @@ using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M9
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm5 : System.Web.UI.Page
     {
 
         public string company
@@ -27,14 +27,17 @@ namespace Tangerine.GUI.M9
             }
         }
 
-
+        /// <summary>
+        /// Metodo de carga de los elementos de la ventana.
+        /// </summary>
+        /// No recibe ningun parametro, solo muestra el listado de las companias que tiene proyectos.
         protected void Page_Load(object sender, EventArgs e)
         {
             LogicaM4 prueba = new LogicaM4();
 
             if (!IsPostBack)
             {
-                List<Compania> listCompany = prueba.getCompanies();
+                List<Compania> listCompany = prueba.ConsultCompanies();
 
                 try
                 {
@@ -55,11 +58,9 @@ namespace Tangerine.GUI.M9
                             company += ResourceLogicaM9.OpenTD + ResourceLogicaM9.inhabilitado + ResourceLogicaM9.CloseTD;
                         }
 
-                        //Acciones de cada compania  
+                        //Boton para cargar las facturas asociadas a cada compañia
 
                         company += ResourceLogicaM9.boton + theCompany.IdCompania + ResourceLogicaM9.boton_cerrar_id;                   
-
-
                     }
 
                 }

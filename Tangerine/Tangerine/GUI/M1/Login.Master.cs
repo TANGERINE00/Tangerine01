@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M1;
+using LogicaTangerine.M8;
+using LogicaTangerine.M7;
 
 namespace Tangerine.GUI.M1
 {
@@ -15,9 +17,14 @@ namespace Tangerine.GUI.M1
         LogicaM1 _logicaM1 = new LogicaM1();
         string _usuario = String.Empty;
         string _contrasena = String.Empty;
+        LogicaProyecto proyectoLogic = new LogicaProyecto();
+        bool facturaExistente = false;
+        int montoFactura = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.Session["User"]+"" != "")
+                HttpContext.Current.Session.Abandon();
         }
         /// <summary>
         /// Metodo resultante de accionar el acceder, realiza la conexion con LogicaTangerine para validar las entradas
@@ -26,9 +33,7 @@ namespace Tangerine.GUI.M1
         /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
-            //Util _usuarioGlobal = new Util();
             Usuario nuevoUsuario = new Usuario(); 
-            //Util._theGlobalUser = nuevoUsuario;
             _usuario = userIni.Value.ToString();
             _contrasena = passwordIni.Value.ToString();
 
@@ -37,9 +42,32 @@ namespace Tangerine.GUI.M1
             {
 
                 HttpContext.Current.Session["User"] = Util._theGlobalUser.NombreUsuario;
-                HttpContext.Current.Session["Clave"] = Util._theGlobalUser.Contrasenia;
                 HttpContext.Current.Session["UserID"] = Util._theGlobalUser.FichaEmpleado;
                 HttpContext.Current.Session["Rol"] = Util._theGlobalUser.Rol.Nombre;
+                HttpContext.Current.Session["Date"] = Util._theGlobalUser.FechaCreacion;
+
+                #region Generación de facturas mensuales
+                // AQUI EMPIEZA EL CODIGO PARA GENERAR LAS FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
+
+                List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
+                foreach (Proyecto theProyecto in listProyecto)
+                {
+                    montoFactura = Convert.ToInt32(proyectoLogic.calcularPagoMesual(theProyecto));
+                    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);                    
+                    LogicaM8 facturaLogic = new LogicaM8();
+                    facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now,theProyecto.Idproyecto,theProyecto.Idresponsable);
+                    if (facturaExistente == false)
+                    {
+                        facturaLogic.AddNewFactura(factura);
+                    }
+                    facturaExistente = false;
+                }
+
+                // AQUI TERMINA EL CODIGO PARA GENERAR LA FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
+                // HECHO POR EL MÓDULO 7 Y MÓDULO 8
+                #endregion
+
+
                 Response.Redirect("Dashboard.aspx");
             }
             else

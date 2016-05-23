@@ -66,7 +66,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\LogicaM10.cs" />
+    <Compile Include="M10\LogicaM10Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicaM10Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="M1\LogicaM1.cs" />
+    <Compile Include="M1\NuevaContrasena.cs" />
     <Compile Include="M1\ResourceLogicaM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,10 +99,20 @@
       <DependentUpon>LogicResources.resx</DependentUpon>
     </Compile>
     <Compile Include="M6\LogicaPropuesta.cs" />
+    <Compile Include="M6\LogicaRecursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicaRecursos.resx</DependentUpon>
+    </Compile>
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="M8\CorreoM8.cs" />
     <Compile Include="M8\LogicaM8.cs" />
+    <Compile Include="M8\ResourceLogicaM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="M9\LogicaM9.cs" />
     <Compile Include="M9\LogicResourcesM9.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +125,10 @@
     <Compile Include="M5\LogicaM5.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="M10\LogicaM10Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicaM10Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
@@ -124,6 +144,14 @@
     <EmbeddedResource Include="M5\LogicResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M6\LogicaRecursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicaRecursos.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+    <EmbeddedResource Include="M8\ResourceLogicaM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M9\LogicResourcesM9.resx">
       <Generator>ResXFileCodeGenerator</Generator>

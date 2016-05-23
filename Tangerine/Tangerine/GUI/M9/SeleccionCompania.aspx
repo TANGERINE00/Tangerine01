@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="SeleccionCompania.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="SeleccionCompania.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -22,18 +22,36 @@
               <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Compañias</h3>
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+                    <div class="box-tools"></div>
+                </div>
+                  <form role="form" name="consultar" id="consultar">
+                    <script language="javascript">
+                        function doSearch() {
+                            var tableReg = document.getElementById('example2');
+                            var searchText = document.getElementById('searchTerm').value.toLowerCase();
+                            for (var i = 1; i < tableReg.rows.length; i++) {
+                                var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                                var found = false;
+                                for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                                    var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                                    if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                                        found = true;
+                                    }
+                                }
+                                if (found) {
+                                    tableReg.rows[i].style.display = '';
+                                } else {
+                                    tableReg.rows[i].style.display = 'none';
+                                }
+                            }
+                        }
+                    </script>
 
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default" ><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                     </div>
-                </div><!-- /.box-header -->
-                <!-- table start -->
                 <div class="box-body table-responsive no-padding">
+                    <div style="float:right; padding-top:5px;">
+                            <a style="margin-right:10px;">Buscador</a>
+                            <input id="searchTerm" type="text" onkeyup="doSearch()"/>
+                    </div>
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
@@ -63,5 +81,7 @@
          
             </div><!--/.col (left) -->
           </div>
+
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>

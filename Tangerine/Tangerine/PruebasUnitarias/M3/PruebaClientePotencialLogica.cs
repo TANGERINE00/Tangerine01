@@ -39,7 +39,7 @@ namespace PruebasUnitarias.M3
 
         [Test]
 
-        public void TestAgregarClientePotencial()
+        public void TestAgregarClientePotencialLogica()
         {
             //Declaro test de tipo Logico para poder invocar el "agregar de logica"
             answer = logicaM3.AgregarNuevoclientePotencial(clientePot3);
@@ -49,7 +49,7 @@ namespace PruebasUnitarias.M3
 
 
         [Test]
-        public void TestBorrarClientePotencial()
+        public void TestBorrarClientePotencialLogica()
         {
 
             answer = logicaM3.BorrarNuevoclientePotencial(clientePot3);
@@ -59,7 +59,7 @@ namespace PruebasUnitarias.M3
         }
 
         [Test]
-        public void TestConsultarClientePotencial()
+        public void TestConsultarClientePotencialLogica()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
 
@@ -68,7 +68,7 @@ namespace PruebasUnitarias.M3
 
 
         [Test]
-        public void TestModificarClientePotencial()
+        public void TestModificarClientePotencialLogica()
         {
             //Declaro test de tipo BDContacto para poder invocar el "AddContact(Contacto theContact)"
 
@@ -78,7 +78,14 @@ namespace PruebasUnitarias.M3
             Assert.IsTrue(answer);
         }
 
+        [Test]
+        public void TestActivarClientePotencialLogica()
+        {
+            answer = logicaM3.ActivarclientePotencial(clientePot3);
 
+            Assert.IsTrue(answer);
+
+        }
 
 
     }

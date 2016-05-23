@@ -16,47 +16,76 @@
     
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-<form class="form-horizontal" runat="server">
-<div class="container">
-	<div class="row" style="margin-top: 5%">
-		<div class="col-md-6">
-			<div id="id_otro" runat="server" class="form-group">
-				<div class="icon-addon addon-lg">
+   <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Información de Compañías</h3>
+                    <div class="box-tools">    
+                     </div>
+                </div><!-- /.box-header -->
+                <!-- table start -->
 					
-									<input runat="server" type="text" placeholder="Nombre" class="form-control" id="nombre" name ="nombre">                    
-					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="rif" name ="rif" >  
-                                   <input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="email" name="email">                 
-                     <input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto anual de Inversion" class="form-control" id="pres_anual" name="pres_anual">
-					<input style="margin-top:5%" runat="server" type="text" placeholder="LLamadas" class="form-control" id="llamadas" name ="llamadas" >
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Visitas" class="form-control" id="visitas" name="visitas" >
-         		
-                    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-    
+ <div class="box-body table-responsive no-padding">
+                    
+                     <div class="box-body" runat="server">
+                       <div class="row">
+                          <div class="form-group col-md-6" runat="server">
+                          <h4><label for="Nombre">Nombre:</label></h4>
+                       <div><h5><asp:Literal runat="server" ID="Nombre"> </asp:Literal></h5></div>
+                       </div> 
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="habilitado">Status:</label></h4>
+                           <div><h5><asp:Literal runat="server" ID="status"> </asp:Literal></h5></div>
+                        </div>    
+                           </div>
+                                                 
+                          <div class="row">
+                          <div class="form-group col-md-6" runat="server">
+                            <h4><label for="Rif">RIF:</label></h4>
+                            <div><h5><asp:Literal runat="server" ID="Rif"> </asp:Literal></h5></div>
+                        </div>
+                              <div class="form-group col-md-6" runat="server">
+                            <h4><label for="presupuesto">Presupuesto Inicial:</label></h4>
+                           <div><h5><asp:Literal runat="server" ID="presupuesto"> </asp:Literal></h5></div>
+                        </div>
+                          </div>
+                        <div class="form-group" runat="server">
+                            <h4><label for="correo">Correo Electrónico:</label></h4>
+                      <div><h5><asp:Literal runat="server" ID="correo"> </asp:Literal></h5></div>
+                        </div>
+                                                 <div class="form-group" runat="server">
+                            <h4><label for="llamadas">Num. Llamadas:</label></h4>
+                      <div><h5><asp:Literal runat="server" ID="llamadas"> </asp:Literal></h5></div>
+                        </div>
+                                                 <div class="form-group" runat="server">
+                            <h4><label for="visitas">Num. Visitas:</label></h4>
+                      <div><h5><asp:Literal runat="server" ID="visitas"> </asp:Literal></h5></div>
+                        </div>
+
+                       
+                     </div> 
+                   </div><!-- /.box-body -->
+                  <div class="box-footer" runat="server">
+                        <a href="Listar.aspx" class="btn btn-default pull-left">Regresar</a>
                     </div>
-
-
 
    
 
             
                     
-                    <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
-                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar"   ></asp:Button>
 				</div>	
 			
             </div>
 		</div>
         
-	</div>
-</div>
 
-
-</form>
 
  
  
-    <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
+    
 
 
 </asp:Content>

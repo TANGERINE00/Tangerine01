@@ -24,27 +24,30 @@ namespace Tangerine.GUI.M2
             }
         }
 
-
+        /// <summary>
+        /// Método que se ejecuta al cargar la página, se carga la tabla de empleados con sus respectivos usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
-
-            if (!IsPostBack)
+            if ( !IsPostBack )
             {
                 List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
 
-                foreach (Empleado  empleador in listaDeEmpleados)
+                foreach ( Empleado  empleador in listaDeEmpleados )
                 {
-                    Usuario user = LogicaModificarRol.ObtenerUsuario(empleador);
+                    Usuario user = LogicaModificarRol.ObtenerUsuario( empleador );
                   
                     empleado += ResourceGUIM2.OpenTR;
                     empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
                     empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
-                    if (user.NombreUsuario != null)
+                    if ( user.NombreUsuario != null )
                     {  
-                    empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
-                    empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
-                    empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
-                    empleado += ResourceGUIM2.CloseTR;
+                        empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.CloseTR;
                     }
                     else 
                     {
@@ -53,23 +56,24 @@ namespace Tangerine.GUI.M2
                         empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.CloseTR;
                     }
-
                 }
+            } 
+        }
 
-              }
-        
-    }
-
-
-        protected void botonCambiar_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Método que utiliza para conectar la interfaz con la logica, para modificar el rol. Se ejecuta al presionar
+        /// el boton Cambiar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void botonCambiar_Click( object sender, EventArgs e )
         {
-
             string nombreUsuario = usuarioCambiar.Value;
-            string rol = rolCambiar.Value;
-            System.Diagnostics.Debug.WriteLine("en;" + rol + nombreUsuario);
-            LogicaModificarRol.ModificarRol(nombreUsuario, rol);
-            Response.Redirect("../M2/CambiarRol.aspx");
+            string rol = rolCambiar.Value; 
 
+            LogicaModificarRol.ModificarRol( nombreUsuario, rol );
+
+            Response.Redirect( "../M2/CambiarRol.aspx" );
         }
     }
 }

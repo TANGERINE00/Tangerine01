@@ -64,7 +64,7 @@ namespace Tangerine.GUI.M3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText presupuesto;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl presupuesto;
         
         /// <summary>
         /// btnaceptar control.

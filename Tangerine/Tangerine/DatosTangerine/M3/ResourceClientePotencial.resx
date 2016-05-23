@@ -178,15 +178,15 @@
     <comment>variable usada en las rutinas</comment>
   </data>
   <data name="SP_agregar_clientePotencial" xml:space="preserve">
-    <value>agregar_clientePotencial</value>
+    <value>M3_agregar_clientePotencial</value>
     <comment>Nombre del store Procedure para agregar</comment>
   </data>
   <data name="SP_eliminarClientePotencial" xml:space="preserve">
-    <value>eliminar_cliente_potencial</value>
+    <value>M3_eliminar_cliente_potencial</value>
     <comment>Nombre del store Procedure para eliminar</comment>
   </data>
   <data name="SP_listarClientePotencial" xml:space="preserve">
-    <value>listar_cliente_potencial</value>
+    <value>M3_listar_cliente_potencial</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
   <data name="AidClientePotencial" xml:space="preserve">
@@ -194,11 +194,11 @@
     <comment>nom del atributo en el store procedure y en las rutinas</comment>
   </data>
   <data name="SP_consultarClientePotencial" xml:space="preserve">
-    <value>consultar_cliente_potencial</value>
+    <value>M3_consultar_cliente_potencial</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
   <data name="SP_modificarClientePotencial" xml:space="preserve">
-    <value>modificar_clientePotencialF</value>
+    <value>M3_modificar_clientePotencialF</value>
     <comment>Nombre del store Procedure para listar</comment>
   </data>
   <data name="Codigo_Error_Formato" xml:space="preserve">
@@ -214,6 +214,12 @@
     <value>Entrada Método</value>
   </data>
   <data name="SP_eliminarClientePotencialDef" xml:space="preserve">
-    <value>eliminar_cliente_potencial_def</value>
+    <value>M3_eliminar_cliente_potencial_def</value>
+  </data>
+  <data name="SP_ActivarClientePotencial" xml:space="preserve">
+    <value>M3_activar_cliente_potencial</value>
+  </data>
+  <data name="SP_promoverClientePotencial" xml:space="preserve">
+    <value>M3_promover_cliente_potencial</value>
   </data>
 </root>

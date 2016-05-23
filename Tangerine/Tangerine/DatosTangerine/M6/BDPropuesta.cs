@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine;
+using ExcepcionesTangerine;
 
 namespace DatosTangerine.M6
 {
@@ -16,11 +17,17 @@ namespace DatosTangerine.M6
         /// <summary>
         /// Metodo para agregar una propuesta en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Propuesta para agregar en bd</param>
+        ///  <param name="parametro">objeto de tipo Propuesta para agregar en BD</param>
+        ///  <param name="theConnection">Objeto de tipo BDConexion para la conexion a la BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
         /// <returns>true si fue agregado</returns>
 
         public static bool agregarPropuesta(Propuesta laPropuesta)
         {
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             List<Parametro> parametros = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro parametro = new Parametro();
@@ -72,10 +79,34 @@ namespace DatosTangerine.M6
                 List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarPropuesta, parametros);
 
             }
+            //catch (Exception ex)
+            //{
+            //    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            //}
+
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+           
+            
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }
@@ -89,6 +120,11 @@ namespace DatosTangerine.M6
 
         public static bool agregarRequerimiento(Requerimiento elRequerimiento)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
             List<Parametro> parametros = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro parametro = new Parametro();
@@ -117,23 +153,28 @@ namespace DatosTangerine.M6
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
+             
+
             return true;
         }
+
+
 
 
 
         /// <summary>
         /// Metodo diseñado para M7, que devuelve la lista de propuestas con estatus aprobado y que no están en proyecto
         /// </summary>
-        /// <param name="propid">Parametro de entrada de tipo propuesta</param>
         /// <returns>Retorna la lista de propuestas con estatus= Aprobado y que no se encuentran aún en Proyecto</returns>
-
-
 
 
 
         public  List<Propuesta> PropuestaProyecto()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
             List<Parametro> parametros = new List<Parametro>();
             List<Propuesta> listaPropuesta = new List<Propuesta>();
             BDConexion theConnection = new BDConexion();
@@ -175,11 +216,33 @@ namespace DatosTangerine.M6
 
             }
 
+            //catch (Exception ex)
+            //{
+            //    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            //}
+
+             
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+          
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
             return listaPropuesta;
@@ -197,9 +260,11 @@ namespace DatosTangerine.M6
 
 
 
-
         public static List<Propuesta> ListarLasPropuestas()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             List<Parametro> parametros = new List<Parametro>();
             List<Propuesta> listaPropuesta = new List<Propuesta>();
             BDConexion theConnection = new BDConexion();
@@ -241,10 +306,33 @@ namespace DatosTangerine.M6
 
             }
 
+            //catch (Exception ex)
+            //{
+            //    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            //}
+
+          
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
 
@@ -268,6 +356,9 @@ namespace DatosTangerine.M6
 
         public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parametros = new List<Parametro>();
 
@@ -327,65 +418,56 @@ namespace DatosTangerine.M6
 
         {
 
-            //if (id == -1)
-            //{
-            //    throw new ExcepcionesTotem.Modulo5.
-            //       ProyectoNoEncontradoException(
-            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_CODIGO,
-            //       RecursosBDModulo5.EXCEPCION_PRO_NO_ENC_MENSAJE,
-            //       new Exception()
-            //       );
-            //}
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parametros = new List<Parametro>();
 
            
 
-            Parametro parametro = new Parametro(
-               RecursosPropuesta.Prop_Nombre,
-               SqlDbType.VarChar, id, false);
+            Parametro parametro = new Parametro( RecursosPropuesta.Prop_Nombre,SqlDbType.VarChar, id, false);
             parametros.Add(parametro);
 
             //try
             //{
                 BDConexion conexion = new BDConexion();
 
-                DataTable dataTablePropuestas =
-                   conexion.EjecutarStoredProcedureTuplas(
-                   RecursosPropuesta.ConsultarPropuestaNombre
-                   ,
-                   parametros);
+                DataTable dataTablePropuestas = conexion.EjecutarStoredProcedureTuplas(RecursosPropuesta.ConsultarPropuestaNombre, parametros);
 
-                 Propuesta propuesta = null;
+                Propuesta propuesta = null;
 
                 foreach (DataRow fila in dataTablePropuestas.Rows)
                 {
-                    
-                      propuesta=  new DominioTangerine.Propuesta(
-                           
-                           fila[RecursosPropuesta.PropDescripcion].ToString(),
-                           fila[RecursosPropuesta.PropDuracion].ToString(),
-                           fila[RecursosPropuesta.PropTipoDuracion].ToString(),
-                           fila[RecursosPropuesta.PropAcuerdo].ToString(),
-                           fila[RecursosPropuesta.PropEstatus].ToString(),
-                           fila[RecursosPropuesta.PropMoneda].ToString(),
-                           Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]),
-                           Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
-                           Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
-                           Convert.ToInt32(fila[RecursosPropuesta.PropCosto]),
-                           fila[RecursosPropuesta.PropIdCompania].ToString()
+
+                    propuesta = new DominioTangerine.Propuesta(
+
+                         fila[RecursosPropuesta.PropDescripcion].ToString(),
+                         fila[RecursosPropuesta.PropDuracion].ToString(),
+                         fila[RecursosPropuesta.PropTipoDuracion].ToString(),
+                         fila[RecursosPropuesta.PropAcuerdo].ToString(),
+                         fila[RecursosPropuesta.PropEstatus].ToString(),
+                         fila[RecursosPropuesta.PropMoneda].ToString(),
+                         Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]),
+                         Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]),
+                         Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]),
+                         Convert.ToInt32(fila[RecursosPropuesta.PropCosto]),
+                         fila[RecursosPropuesta.PropIdCompania].ToString()
 
 
-                    );
+                  );
                 }
             //}
-            ////catch (Exception ex)
-            ////{
-            ////    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            ////}
+
+            //catch (Exception ex)
+            //{
+            //    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            //}
 
             return propuesta;
         }
+
+
+
 
 
         /// <summary>
@@ -395,11 +477,11 @@ namespace DatosTangerine.M6
         /// <returns>true si fue eliminado</returns>
         public static Boolean BorrarPropuesta(string nombrePropuesta)
         {
+
            
-            /*
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            */
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            
 
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -418,31 +500,31 @@ namespace DatosTangerine.M6
             }
             catch (SqlException ex)
             {
-               // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw new ExcepcionesTangerine.M5.WrongFormatException(RecursosPropuesta.ReqPropNombre,
                      RecursosPropuesta.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                //RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+               Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+               RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }
@@ -458,6 +540,11 @@ namespace DatosTangerine.M6
 
         public static Boolean Modificar_Requerimiento(Requerimiento elrequerimiento)
         {
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
             List<Parametro> parameters = new List<Parametro>();
             BDConexion Connection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -484,7 +571,7 @@ namespace DatosTangerine.M6
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -504,6 +591,10 @@ namespace DatosTangerine.M6
 
         public static Boolean Modificar_Propuesta(Propuesta propuesta)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
             List<Parametro> parameters = new List<Parametro>();
             BDConexion Connection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -543,11 +634,6 @@ namespace DatosTangerine.M6
                 theParam = new Parametro(RecursosPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false);
                 parameters.Add(theParam);
 
-                
-
-
-
-
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results = Connection.EjecutarStoredProcedure(RecursosPropuesta.Modificar_Propuesta, parameters);
@@ -555,7 +641,7 @@ namespace DatosTangerine.M6
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);

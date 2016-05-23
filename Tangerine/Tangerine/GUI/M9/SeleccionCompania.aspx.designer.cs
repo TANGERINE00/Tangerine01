@@ -10,7 +10,7 @@
 namespace Tangerine.GUI.M9 {
     
     
-    public partial class WebForm2 {
+    public partial class WebForm5 {
         
         /// <summary>
         /// tabla control.

@@ -52,38 +52,41 @@ values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (1,'Modulo de gestion de empleados','Se tratara de un modulo de gestion de empleados','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (1,'Modulo de gestion de empleados','Se tratara de un modulo de gestion de empleados','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (2,'Modulo de gestion de empresas','Se tratara de un modulo de gestion de empresas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (2,'Modulo de gestion de empresas','Se tratara de un modulo de gestion de empresas','Meses','4','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (3,'Modulo de gestion de contactos','Se tratara de un modulo de gestion de contactos','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (3,'Modulo de gestion de contactos','Se tratara de un modulo de gestion de contactos','Meses','4','Mensual','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (4,'Modulo de gestion de listas','Se tratara de un modulo de gestion de listas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (4,'Modulo de gestion de listas','Se tratara de un modulo de gestion de listas','Meses','4','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (5,'Modulo de gestion de Roles','Se tratara de un modulo de gestion de Roles','Alta','Mensual','Por entregas','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (5,'Modulo de gestion de Roles','Se tratara de un modulo de gestion de Roles','Dias','4','Por cuotas','Aprobado','Euro',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (6,'Modulo de gestion de Usuarios','Se tratara de un modulo de gestion de Ususarios','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (6,'Modulo de gestion de Usuarios','Se tratara de un modulo de gestion de Ususarios','Dias','5','Por cuotas','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (7,'Modulo de prueba','Se tratara de un modulo de gestion de pruebas','Alta','Mensual','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (7,'Modulo de prueba','Se tratara de un modulo de gestion de pruebas','Dias','8','Por cuotas','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
+
+
+
 
 
 
@@ -142,6 +145,12 @@ insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, p
 VALUES (4,'ProyectoLIS','CodigoLIS',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de listas','60','Completado a destiempo','','Por Entregas',4,1,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
+SET IDENTITY_INSERT PROYECTO ON
+GO
+insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
+VALUES (5,'ProyectoNFL','CodigoNFL',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de la NFL','60','En desarrollo','','Mensual',4,2,1);
+SET IDENTITY_INSERT PROYECTO OFF
+
 
 INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
 VALUES(2,1);
@@ -197,9 +206,12 @@ insert into MENU values (1, 'Configuracion');
 insert into OPCION values (1, 'RegistrarUsuario', '../M2/RegistroUsuario.aspx', 1);
 insert into OPCION values (2, 'ModificarRol', '../M2/CambiarRol.aspx', 1);
 insert into OPCION values (21, 'Usuario', 'Usuario', 1);
+insert into OPCION values (27, 'Configuracion', 'Configuración', 1);
 
 insert into MENU values (2, 'Gestión de Leads');
-insert into OPCION values (3, 'Listar', '../M3/Listar.aspx', 2);
+insert into OPCION values (3, 'ConsultarLead', '../M3/Listar.aspx', 2);
+insert into OPCION values (29, 'RegistrarLead', '../M3/AgregarLeads.aspx', 2);
+insert into OPCION values (30, 'GestionDeLeads', 'Gestión de Leads', 2);
 
 insert into MENU values (3, 'Gestión de Compañías');
 insert into OPCION values (4, 'RegistrarCompañía', '../M4/AgregarCompania.aspx', 3);
@@ -213,7 +225,7 @@ insert into OPCION values (8, 'Contactos', '../M5/ConsultarContactos.aspx', 4)
 
 insert into MENU values (5, 'Gestión de Propuestas');
 insert into OPCION values (9, 'AgregarPropuesta', '../M6/AgregarPropuesta.aspx', 5);
-insert into OPCION values (10, 'ConsultarPropuestas', '../M6/ListarPropuesta.aspx', 5);
+insert into OPCION values (10, 'ConsultarPropuestas', '../M6/ConsultarPropuesta.aspx', 5);
 insert into OPCION values (23, 'GestionDePropuestas', 'Gestión de Propuestas', 5);
 
 insert into MENU values (6, 'Gestión de Proyectos');
@@ -231,6 +243,7 @@ insert into OPCION values (25, 'GestionDeFacturas', 'Gestión de Facturas', 7);
 
 insert into MENU values (8, 'Gestión de Pagos');
 insert into OPCION values (18, 'Cargarpago', '../M9/SeleccionCompania.aspx', 8);
+insert into OPCION values (28, 'GestionDePagos', 'Gestión de Pagos', 8);
 
 insert into MENU values (9, 'Gestión de Empleados');
 insert into OPCION values (19, 'Empleados', '../M1/EmpleadosAdmin.aspx', 9);
@@ -243,20 +256,24 @@ insert into ROL_OPCION values (2, 16);
 insert into ROL_OPCION values (2, 17);
 insert into ROL_OPCION values (2, 25);
 insert into ROL_OPCION values (2, 18);
+insert into ROL_OPCION values (2, 28);
 
 insert into ROL_OPCION values (3, 1);
 insert into ROL_OPCION values (3, 2);
+insert into ROL_OPCION values (3, 4);
 insert into ROL_OPCION values (3, 21);
+insert into ROL_OPCION values (3, 27);
 
 insert into ROL_OPCION values (4, 1);
 insert into ROL_OPCION values (4, 2);
 insert into ROL_OPCION values (4, 21);
+insert into ROL_OPCION values (4, 27);
 insert into ROL_OPCION values (4, 3);
 insert into ROL_OPCION values (4, 4);
-insert into ROL_OPCION values (4, 5);
+--insert into ROL_OPCION values (4, 5);
 --insert into ROL_OPCION values (4, 6);
 --insert into ROL_OPCION values (4, 7);
-insert into ROL_OPCION values (4, 22);
+--insert into ROL_OPCION values (4, 22);
 --insert into ROL_OPCION values (4, 8);
 insert into ROL_OPCION values (4, 9);
 insert into ROL_OPCION values (4, 10);
@@ -270,11 +287,15 @@ insert into ROL_OPCION values (4, 25);
 insert into ROL_OPCION values (4, 18);
 insert into ROL_OPCION values (4, 19);
 insert into ROL_OPCION values (4, 20);
+insert into ROL_OPCION values (4, 28);
 insert into ROL_OPCION values (4, 26);
+insert into ROL_OPCION values (4, 29);
+insert into ROL_OPCION values (4, 30);
 
-insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
+insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 1, null);
 insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
-insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
+insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 3, null);
+insert into USUARIO values (4, 'jams', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 4, null);
 ---------Fin de Inserts de Usuarios y Roles-----------
 
 

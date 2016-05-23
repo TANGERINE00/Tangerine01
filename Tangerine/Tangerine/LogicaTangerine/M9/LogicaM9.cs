@@ -20,6 +20,12 @@ namespace LogicaTangerine.M9
 
         }
 
+        /// <summary>
+        /// Metodo para agregar un pago a una factura con status por pagar
+        /// </summary>
+        /// <param name="pago">Objeto de tipo Pago
+        /// <returns>Retorna true o false cuando realiza el pago</returns>
+
         public bool AgregarPago(Pago pago)
         {
             try
@@ -45,7 +51,6 @@ namespace LogicaTangerine.M9
                 throw ex;
             }
         }
-
 
     }
 }

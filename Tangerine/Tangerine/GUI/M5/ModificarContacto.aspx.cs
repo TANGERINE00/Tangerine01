@@ -72,7 +72,8 @@ namespace Tangerine.GUI.M5
             LogicaM5 contactLogic = new LogicaM5();
             contactLogic.ChangeContact(contact);
 
-            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp);
+            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusModificado);
         }
     }
 }

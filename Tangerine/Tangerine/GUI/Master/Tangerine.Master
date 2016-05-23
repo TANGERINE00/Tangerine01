@@ -74,8 +74,8 @@
                   <li class="user-header">
                     <<!--img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
                     <p>
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      <span id="UsuarioDetalle" runat="server"></span>
+                      <small>Usuario desde: <span id="fechaUsuario" runat="server"></span></small>
                     </p>
                   </li>
                   <!-- Menu Body -->
@@ -92,11 +92,8 @@
                   </li>-->
                   <!-- Menu Footer-->
                   <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Datos</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="../M1/Login.aspx" class="btn btn-default btn-flat">Sign out</a>
+                    <div class="pull-center">
+                      <a href="../M1/Login.aspx" class="btn btn-default btn-flat">Cerrar Sesión</a>
                     </div>
                   </li>
                 </ul>
@@ -151,10 +148,14 @@
                 </li>
               </ul>
             </li>
-            <li class="treeview" id="Listar" runat="server">
-              <a href="../M3/Listar.aspx">
-                <i></i> <span>Gestion de Leads</span> 
-              </a>              
+            <li class="treeview" id="GestionDeLeads" runat="server">
+              <a href="#">
+                <i></i> <span>Gestion de Leads</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar Lead</a></li>
+                <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Consultar Lead</a></li>
+              </ul>                
             </li>
             <li class="treeview" id="GestionDeCompañias" runat="server">
               <a href="#">
@@ -191,7 +192,7 @@
                 <i></i> <span>Gestion de Facturas</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
                    <ul class="treeview-menu">
-                <li id="GenerarFactura" runat="server"><a href="../M8/GenerarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Generar Factura</a></li>
+               <!-- <li id="GenerarFactura" runat="server"><a href="../M8/GenerarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Generar Factura</a></li>-->
                 <li id="ConsultarFactura" runat="server"><a href="../M8/ConsultarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Consultar Factura</a></li>
                <!-- <li id="ModificarFactura" runat="server"><a href="../M8/ModificarFacturaM8.aspx"><i class="fa fa-circle-o"></i> Modificar Factura</a></li>
                 <li id="AnularFactura" runat="server"><a href="../M8/AnularFacturaM8.aspx"><i class="fa fa-circle-o"></i> Anular Factura</a></li>-->
@@ -204,6 +205,7 @@
               </a>
               <ul class="treeview-menu">
                 <li id="Cargarpago" runat="server"><a href="../M9/SeleccionCompania.aspx"><i class="fa fa-circle-o"></i>Cargar pago</a></li>
+                <li id="Li1" runat="server"><a href="../M9/SeleccionCompaniaPagadas.aspx"><i class="fa fa-circle-o"></i>Consultar pago</a></li>
               </ul>
             </li>
              <li class="treeview" id="GestionDeEmpleados" runat="server">
@@ -212,7 +214,7 @@
               </a>
               <ul class="treeview-menu">
                 <li id="Empleados" runat="server"><a href="../M1/EmpleadosAdmin.aspx" ><i class="fa fa-circle-o"></i> Empleados</a></li>
-                <li id="Cargos" runat="server"><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>
+                <!--<li id="Cargos" runat="server"><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>-->
               </ul>
             </li>
             <!--<li class="header">LABELS</li>

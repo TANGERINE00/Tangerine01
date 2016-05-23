@@ -59,8 +59,6 @@ namespace DominioTangerine
         private List<Requerimiento> _listaRequerimiento;
         private string conNombre;
         private int conEstatus;
-        private int p1;
-        private string p2;
         private string p3;
         private string p4;
         private string p5;
@@ -173,6 +171,22 @@ namespace DominioTangerine
 
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="descripcion"></param>
+        /// <param name="_tipoDu"></param>
+        /// <param name="duracion"></param>
+        /// <param name="acuerdopago"></param>
+        /// <param name="estatus"></param>
+        /// <param name="moneda"></param>
+        /// <param name="entrega"></param>
+        /// <param name="feincio"></param>
+        /// <param name="fefinal"></param>
+        /// <param name="costo"></param>
+        /// <param name="compañia"></param>
+
         public Propuesta( string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
                          string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
         {
@@ -191,7 +205,22 @@ namespace DominioTangerine
 
         }
 
-        //constructor para M7
+        /// <summary>
+        /// Constructos metodo PropuestaProyecto disenado para el Modulo_7
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <param name="nombre"></param>
+        /// <param name="descripcion"></param>
+        /// <param name="_tipoDu"></param>
+        /// <param name="duracion"></param>
+        /// <param name="acuerdopago"></param>
+        /// <param name="estatus"></param>
+        /// <param name="moneda"></param>
+        /// <param name="entrega"></param>
+        /// <param name="feincio"></param>
+        /// <param name="fefinal"></param>
+        /// <param name="costo"></param>
+        /// <param name="compañia"></param>
         public Propuesta(string codigo, string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
                         string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
         {
@@ -237,22 +266,7 @@ namespace DominioTangerine
             this._idCompañia = fkcompa;
         }
 
-        //public Propuesta(string conNombre, string conDescripcion, string contipoDuracion, string conAcuerdo, string conEstatus1, string conMoneda, int conEntregas, DateTime conFechaIni, DateTime conFechaFin, int conCosto, int conFkComp)
-        //{
-        //    // TODO: Complete member initialization
-        //    this.conNombre = conNombre;
-        //    this.conDescripcion = conDescripcion;
-        //    this.contipoDuracion = contipoDuracion;
-        //    this.conAcuerdo = conAcuerdo;
-        //    this.conEstatus1 = conEstatus1;
-        //    this.conMoneda = conMoneda;
-        //    this.conEntregas = conEntregas;
-        //    this.conFechaIni = conFechaIni;
-        //    this.conFechaFin = conFechaFin;
-        //    this.conCosto = conCosto;
-        //    this.conFkComp = conFkComp;
-        //}
-
+       
 
         #endregion
 

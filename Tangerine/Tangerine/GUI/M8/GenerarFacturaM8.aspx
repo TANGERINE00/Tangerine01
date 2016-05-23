@@ -41,29 +41,39 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelCliente_M8">Compañía</label>
-                            <input type="text" runat="server" class="form-control" id="textCompania_M8" name="textCompania_M8" placeholder="Compañía" disabled ="disabled">
+                            <input type="text" runat="server" class="form-control" id="textCompania_M8" name="textCompania_M8" placeholder="Compañía" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">
                             <label for="labelProyecto_M8">Proyecto</label>
-                            <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled ="disabled">
+                            <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">
                             <label for="labelDescripcion_M8">Descripción</label>
                             <input type="text" runat="server" class="form-control"
-                                   pattern="^[0-9a-zñA-ZÑ.- ]+$"
-                                   id="textDescripcion_M8" name="textDescripcion_M8" 
-                                   placeholder="Descripción" maxlength="50" required>
+                                pattern="^[0-9a-zñA-ZÑ.- ]+$"
+                                id="textDescripcion_M8" name="textDescripcion_M8"
+                                placeholder="Descripción" maxlength="50" required>
                         </div>
 
 
                         <div class="form-group" runat="server">
                             <label for="labelMonto_M8">Monto</label>
-                            <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled ="disabled">
+                            <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">
                         </div>
+
+                        <div class="form-group" runat="server">
+                            <label for="labelEstatus_M8">Tipo Moneda</label>
+                            <select runat="server" class="form-control" id="textTipoMoneda_M8" name="textTipoMoneda_M8" placeholder="Tipo Moneda">
+                                <option>Bolivares</option>
+                                <option>Dolares</option>
+                                <option>Euros</option>
+                            </select>
+                        </div>
+
                         <div class="box-footer" runat="server">
-                            <asp:Button ID="buttonGenerar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Generar" OnClick="buttonGenerarFactura_Click"></asp:Button>
+                            <asp:Button ID="buttonGenerar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Generar" OnClientClick="return confirm('¿Seguro que desea generar esta factura?');" OnClick="buttonGenerarFactura_Click"></asp:Button>
                         </div>
 
 

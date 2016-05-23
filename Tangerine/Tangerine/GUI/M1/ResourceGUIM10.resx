@@ -127,19 +127,19 @@
     <value>,</value>
   </data>
   <data name="BotonModificarEmpAbrir" xml:space="preserve">
-    <value>&lt;a href="ModificarEmpleado.aspx?EmployeeId=</value>
+    <value>&lt;a title="Modificar" href="ModificarEmpleado.aspx?EmployeeId=</value>
   </data>
   <data name="BotonModificarEmpCerrar" xml:space="preserve">
     <value>" type="button" class="btn btn-default"&gt;&lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonStatusEmpAbrir" xml:space="preserve">
-    <value>&lt;a href="EmpleadosAdmin.aspx?id=</value>
+    <value>&lt;a title="Activar/Inactivar" href="EmpleadosAdmin.aspx?id=</value>
   </data>
   <data name="BotonStatusEmpCerrar" xml:space="preserve">
     <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove-circle"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonVerEmpAbrir" xml:space="preserve">
-    <value>&lt;a href="VerEmpleado.aspx?EmployeeId=</value>
+    <value>&lt;a title="Información" href="VerEmpleado.aspx?EmployeeId=</value>
   </data>
   <data name="BotonVerEmpCerrar" xml:space="preserve">
     <value>" type="button" class="btn btn-primary"&gt;&lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;&lt;/a&gt;</value>

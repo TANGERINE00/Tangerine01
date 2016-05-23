@@ -30,11 +30,42 @@
 			<div id="id_otro" runat="server" class="form-group">
 				<div class="icon-addon addon-lg">
 					
-					<input runat="server" type="text" placeholder="Nombre" class="form-control" id="nombre" name ="nombre">                    
-					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="rif" name ="rif" >                   
-					<input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="email" name ="email" >                  
-					<input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto" class="form-control" id="presupuesto" name ="presupuesto" >
-                   
+					 <!--Nombre-->
+                        <div class="form-group" runat="server">
+                            <label for="InputNombre">Nombre</label>
+                            <input runat="server" type="text" class="form-control" id="nombre" name="nombre" 
+                                placeholder="Introduzca nombre de la compañía" maxlength="50" required>
+                        </div>
+                    
+                    
+                     <!--RIF-->
+                        <div class="form-group" runat="server">
+                            <label for="InputRIF">RIF</label>
+                            <input runat="server" type="text" class="form-control" 
+
+                                pattern="^[J]+[-]+([0-9-]{9,11})+[-]+([0-9]{1,1})$"
+                                id="rif" name="rif" 
+                                placeholder="Introduzca RIF de la compañía.    e.g: J-236861967-6" required>
+                        </div>
+                  
+                     <!--Email-->
+                        <div class="form-group" runat="server">
+                            <label for="InputEmail">Correo Electrónico</label>
+                            <input runat="server" type="text" class="form-control"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                id="email" name="email" 
+                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required/>
+                        </div>
+                                      
+				                <!--Presupuesto-->
+                        <div class="form-group" runat="server">
+                            <label for="InputPresupuesto">Presupuesto Inicial de Inversion</label>
+                            <input runat="server" type="number" class="form-control" 
+                                id="presupuesto" name="presupuesto" 
+                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
+                        </div>  
+					
+					
          		
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
     

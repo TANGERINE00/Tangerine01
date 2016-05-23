@@ -142,6 +142,15 @@ namespace DatosTangerine.M8 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M8_ConsultarFacturasPagadasCompania.
+        /// </summary>
+        internal static string ContactFacturasPagadasCompania {
+            get {
+                return ResourceManager.GetString("ContactFacturasPagadasCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M7_ConsultarProyecto.
         /// </summary>
         internal static string ContactProyecto {
@@ -363,6 +372,15 @@ namespace DatosTangerine.M8 {
         internal static string ProyNombre {
             get {
                 return ResourceManager.GetString("ProyNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a M8_VerificarFacturaExistente.
+        /// </summary>
+        internal static string VerifyExistingInvoice {
+            get {
+                return ResourceManager.GetString("VerifyExistingInvoice", resourceCulture);
             }
         }
     }
