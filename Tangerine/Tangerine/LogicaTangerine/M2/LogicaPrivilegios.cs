@@ -55,7 +55,7 @@ namespace LogicaTangerine.M2
             int tamanioPagina = paginaSeparada.Length;
             try
             {
-                Rol rol = BDUsuario.ObtenerRolUsuarioPorNombre( nombreRol);
+                Rol rol = BDUsuario.ObtenerRolUsuarioPorNombre( nombreRol );
 
                 foreach ( DominioTangerine.Menu m in rol.Menus )
                 {

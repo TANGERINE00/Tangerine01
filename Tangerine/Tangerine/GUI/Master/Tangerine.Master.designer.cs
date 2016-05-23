@@ -31,6 +31,24 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl usuarioSesion;
         
         /// <summary>
+        /// UsuarioDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UsuarioDetalle;
+        
+        /// <summary>
+        /// fechaUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaUsuario;
+        
+        /// <summary>
         /// Configuracion control.
         /// </summary>
         /// <remarks>

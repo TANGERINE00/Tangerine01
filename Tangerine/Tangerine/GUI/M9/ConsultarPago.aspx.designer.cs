@@ -7,90 +7,99 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M3 {
+namespace Tangerine.GUI.M9 {
     
     
-    public partial class EliminarLead {
+    public partial class WebForm7 {
         
         /// <summary>
-        /// Nombre control.
+        /// ValSum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Nombre;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValSum;
         
         /// <summary>
-        /// status control.
+        /// seccion4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal status;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion4;
         
         /// <summary>
-        /// Rif control.
+        /// seccion1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Rif;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion1;
         
         /// <summary>
-        /// presupuesto control.
+        /// seccion2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal presupuesto;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion2;
         
         /// <summary>
-        /// correo control.
+        /// monedaPago control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal correo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText monedaPago;
         
         /// <summary>
-        /// llamadas control.
+        /// seccion3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal llamadas;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion3;
         
         /// <summary>
-        /// visitas control.
+        /// seccion5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal visitas;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect seccion5;
         
         /// <summary>
-        /// eliminar_lead control.
+        /// codAprobacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm eliminar_lead;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText codAprobacion;
         
         /// <summary>
-        /// btnaceptar control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaceptar;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
+        /// btnagregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnagregar;
     }
 }

@@ -25,6 +25,7 @@ namespace PruebasUnitarias.M3
         {
             clientePot1 = new ClientePotencial("HP", "J-1221212", "info@hp.com", 12000,0,0,3);
 
+
             
         }
 
@@ -79,6 +80,12 @@ namespace PruebasUnitarias.M3
         public void TestActivarClientePotencial()
         {
             answer = BDClientePotencial.ActivarClientePotencial(clientePot1);
+            Assert.IsTrue(answer);
+        }
+    [Test]
+        public void TestPromoverClientePotencial()
+        {
+            answer = BDClientePotencial.PromoverClientePotencial(clientePot1);
             Assert.IsTrue(answer);
         }
 

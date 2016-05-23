@@ -23,13 +23,19 @@ namespace Tangerine.GUI.M2
                 this.tablaempleados.Text = value;
             }
         }
-        protected void Page_Load(object sender, EventArgs e)
+
+        /// <summary>
+        /// Método que se ejecuta al cargar la página, se carga la tabla de empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Page_Load( object sender, EventArgs e )
         {
             if (!IsPostBack)
             {
                 List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
 
-                foreach(Empleado empleado in listaDeEmpleados)
+                foreach( Empleado empleado in listaDeEmpleados )
                 {
                     tablaEmpleado += ResourceGUIM2.OpenTR;
                     tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_num_ficha.ToString() + ResourceGUIM2.CloseTD;
@@ -52,26 +58,37 @@ namespace Tangerine.GUI.M2
             }
         }
 
+        /// <summary>
+        /// Método para crear el usuario por defecto
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <param name="apellidoUsuario"></param>
+        /// <returns></returns>
         [WebMethod] 
-        public static string ObtenerUsuarioDefault(string nombreUsuario, string apellidoUsuario)
+        public static string ObtenerUsuarioDefault(  string nombreUsuario, string apellidoUsuario )
         {
             string resultado = "";
-            System.Diagnostics.Debug.WriteLine("Entré22");
-            resultado = LogicaAgregarUsuario.CrearUsuarioDefault(nombreUsuario, apellidoUsuario);
+
+            resultado = LogicaAgregarUsuario.CrearUsuarioDefault( nombreUsuario, apellidoUsuario );
 
             return resultado;
         }
 
+        /// <summary>
+        /// Método para validar si el usuario escrito existe o no.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [WebMethod]
-        public static string validarUsuario(string usuario)
+        public static string validarUsuario( string usuario )
         {
             string nombreUsuario = usuario;
             bool respuesta = false;
-            respuesta = LogicaAgregarUsuario.ExisteUsuario(nombreUsuario);
+            respuesta = LogicaAgregarUsuario.ExisteUsuario( nombreUsuario );
 
             string retorno = "Disponible";
 
-            if (respuesta)
+            if ( respuesta )
             {
                 retorno = "Usuario Existe!";
             }
@@ -79,7 +96,12 @@ namespace Tangerine.GUI.M2
             return retorno;
         }
 
-        protected void btnCrear_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Método para crear el usuario, se ejecuta al presionar el boton Crear
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void btnCrear_Click( object sender, EventArgs e )
         {
 
             string rol = rolDefault.Value;
@@ -89,7 +111,7 @@ namespace Tangerine.GUI.M2
 
             LogicaAgregarUsuario.PrepararUsuario( nombreUsuario, contraseniaUsuario, rol, int.Parse(fichaEmpleado) );
 
-            Response.Redirect("../M2/RegistroUsuario.aspx");
+            Response.Redirect( "../M2/RegistroUsuario.aspx" );
         }
     }
 }

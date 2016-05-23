@@ -52,5 +52,32 @@ namespace LogicaTangerine.M9
             }
         }
 
+        public bool CambiarStatusFactura(int factura, int status)
+        {
+            try
+            {
+                return BDPagos.CargarStatus(factura, status);
+            }
+            catch (ArgumentNullException ex)
+            {
+                throw new ExcepcionesTangerine.M4.NullArgumentException(LogicResourcesM9.Codigo,
+                    LogicResourcesM9.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionTGConBD(LogicResourcesM9.Codigo,
+                    LogicResourcesM9.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

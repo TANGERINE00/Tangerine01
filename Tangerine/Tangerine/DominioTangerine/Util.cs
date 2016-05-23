@@ -10,6 +10,6 @@ namespace DominioTangerine
     {
         public static Usuario _theGlobalUser = new Usuario();
 
-        public static bool MASTER_FLAG = false;
+        public static bool MASTER_FLAG = true;
     }
 }
