@@ -1,4 +1,4 @@
-create table LUGAR_DIRECCION
+﻿create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -142,7 +142,7 @@ create table COMPANIA
 	com_rif varchar(20) not null,
 	com_email varchar(50) not null,
 	com_telefono varchar(30) not null,
-	com_acronimo varchar(20) not null,
+	com_acronimo varchar(20),
 	com_fecha_registro date not null,
 	com_status int not null,
 	com_presupuesto int not null,
@@ -1518,7 +1518,32 @@ GO
 -----------------------------------
 ------Fin Stored Procedure M9------
 -----------------------------------
+
+
+
  
+-----------------------------------
+--------Stored Procedure M9--------
+-----------------------------------
+
+
+---- StoredProcedure CONSULTAR Pago ----
+
+CREATE PROCEDURE [dbo].[M9_ConsultarPago] 
+	@id_Factura int
+
+AS
+	BEGIN
+		SELECT pag_monto as pag_monto, pag_fecha AS pag_fecha, pag_forma AS pag_forma, pag_cod AS pag_cod,
+			pag_moneda AS pag_moneda
+		FROM PAGO WHERE fk_fac_id = @id_Factura;
+	END
+
+-----------------------------------
+------Fin Stored Procedure M9------
+-----------------------------------
+
+
 
 -----------------------------------
 --------Stored Procedure M10--------

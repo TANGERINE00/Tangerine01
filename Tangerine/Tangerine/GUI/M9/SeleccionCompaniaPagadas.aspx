@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="SeleccionCompania.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm5" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="SeleccionCompaniaPagadas.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -63,7 +63,7 @@
                                 <th style="text-align: center;">Facturas</th>
                             </tr>
                         </thead>
-                        <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                        <asp:Literal runat="server" ID="tablaPagadas"></asp:Literal>
                         </tbody> 
                             <!-- <tr>
                                 <td>International Business Machines</td>

@@ -1279,3 +1279,774 @@ Error Number:-1,State:0,Class:20
 2016-05-22 19:57:49,558 INFO  BDCompania - Mensaje: Salida del Método
 2016-05-22 19:57:49,558 INFO  BDCompania - Metodo: ConsultCompanies
 >>>>>>> dc78ee8547eeee39fe81a79025be02954852748f
+<<<<<<< HEAD
+2016-05-22 21:15:36,563 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:15:36,602 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:15:36,602 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:15:36,602 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:15:36,997 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:15:36,997 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:15:36,997 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:15:36,997 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:16:04,135 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:16:04,135 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:16:04,135 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:16:04,135 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:16:04,176 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:16:04,176 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:16:04,176 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:16:04,176 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:34:56,501 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:34:56,508 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:34:56,508 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:34:56,508 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:34:57,032 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:34:57,032 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:34:57,032 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:34:57,032 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:35:10,077 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:35:10,077 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:35:10,077 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:35:10,077 INFO  LogicaM4 - Metodo: getPlaces
+2016-05-22 21:35:10,082 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 21:35:10,082 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 21:35:10,082 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 21:35:10,082 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 21:35:10,102 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 21:35:10,102 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 21:35:10,103 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 21:35:10,103 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 21:37:12,881 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:37:12,881 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:37:12,881 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:37:12,881 INFO  LogicaM4 - Metodo: MatchIdLugar
+2016-05-22 21:37:12,882 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 21:37:12,882 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 21:37:12,883 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 21:37:12,883 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 21:37:12,941 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 21:37:12,941 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 21:37:12,941 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 21:37:12,941 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 21:37:12,947 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:37:12,947 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:37:12,947 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:37:12,947 INFO  LogicaM4 - Metodo: AddNewCompany
+2016-05-22 21:37:12,958 INFO  BDCompania - *******************************************************
+2016-05-22 21:37:12,958 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:37:12,958 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:37:12,958 INFO  BDCompania - Metodo: AddCompany
+2016-05-22 21:37:13,212 INFO  BDCompania - *******************************************************
+2016-05-22 21:37:13,212 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:37:13,212 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:37:13,212 INFO  BDCompania - Metodo: AddCompany
+2016-05-22 21:37:13,359 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:37:13,359 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:37:13,359 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:37:13,359 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 21:37:13,364 INFO  BDCompania - *******************************************************
+2016-05-22 21:37:13,364 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:37:13,364 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:37:13,364 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:37:13,385 INFO  BDCompania - *******************************************************
+2016-05-22 21:37:13,385 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:37:13,385 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:37:13,385 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:42:04,527 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:42:04,533 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:42:04,533 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:42:04,533 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:42:04,648 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:42:04,649 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:42:04,649 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:42:04,649 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:42:16,864 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:42:16,864 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:42:16,864 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:42:16,864 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:42:16,896 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:42:16,896 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:42:16,896 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:42:16,896 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:42:20,084 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:42:20,084 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:42:20,101 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:42:20,114 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 21:42:20,238 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:42:20,238 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:42:20,238 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:42:20,238 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 21:45:23,125 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:23,125 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:23,125 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:45:23,125 INFO  BDClientePotencial - Metodo: ModificarClientePotencial
+2016-05-22 21:45:23,290 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:23,290 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:23,290 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:45:23,290 INFO  BDClientePotencial - Metodo: ModificarClientePotencial
+2016-05-22 21:45:32,903 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:32,904 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:32,904 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:45:32,904 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:45:32,932 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:32,932 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:32,932 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:45:32,932 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:45:36,268 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:36,268 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:36,269 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:45:36,269 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 21:45:36,302 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:36,302 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:36,302 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:45:36,302 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 21:45:55,682 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:55,682 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:55,682 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:45:55,682 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:45:55,715 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:45:55,715 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:45:55,715 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:45:55,715 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:46:00,581 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:46:00,582 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:46:00,582 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:46:00,582 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 21:46:00,619 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:46:00,619 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:46:00,619 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:46:00,619 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 21:46:05,958 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:46:05,958 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:46:05,958 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:46:05,958 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:46:05,976 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:46:05,976 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:46:05,976 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:46:05,976 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:47:31,798 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:47:31,808 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:47:31,808 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:47:31,808 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:47:31,949 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:47:31,949 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:47:31,949 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:47:31,949 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:47:48,534 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:47:48,534 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:47:48,534 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:47:48,534 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 21:47:48,541 INFO  BDCompania - *******************************************************
+2016-05-22 21:47:48,541 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:47:48,541 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:47:48,541 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:47:48,568 INFO  BDCompania - *******************************************************
+2016-05-22 21:47:48,568 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:47:48,568 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:47:48,568 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:51:07,274 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:51:07,316 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:51:07,316 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:51:07,316 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:51:08,174 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:51:08,174 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:51:08,174 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:51:08,174 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:51:29,531 INFO  BDPropuesta - *******************************************************
+2016-05-22 21:51:29,531 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 21:51:29,531 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,531 INFO  BDPropuesta - Metodo: ListarLasPropuestas
+2016-05-22 21:51:29,582 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,582 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,582 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,582 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,587 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,587 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,587 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,587 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,636 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,636 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,636 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,636 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,641 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,641 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,641 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,641 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,648 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,648 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,648 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,648 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,667 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,667 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,667 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,667 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,669 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,669 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,669 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,669 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,670 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,670 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,670 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,670 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,686 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,686 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,686 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,686 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,688 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,688 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,688 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,688 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,690 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,690 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,690 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,690 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,705 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,705 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,705 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,705 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,707 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,707 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,707 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,707 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,709 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,709 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,709 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,709 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,728 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,729 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,729 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,729 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,731 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,731 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,731 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,731 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,733 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,733 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,733 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,733 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,749 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,749 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,749 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,749 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,751 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:29,751 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:29,751 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,751 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:29,754 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,754 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,754 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:29,754 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:29,781 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:29,781 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:29,781 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:29,781 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:42,033 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:42,033 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:42,033 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:42,033 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 21:51:42,036 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:42,036 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:42,036 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:42,036 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:51:42,059 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:42,059 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:42,059 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:42,059 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:51:49,270 INFO  BDPropuesta - *******************************************************
+2016-05-22 21:51:49,270 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 21:51:49,270 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,270 INFO  BDPropuesta - Metodo: ListarLasPropuestas
+2016-05-22 21:51:49,301 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,301 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,301 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,301 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,303 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,303 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,303 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,303 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,320 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,320 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,320 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,320 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,322 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,322 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,322 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,322 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,325 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,325 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,325 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,325 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,341 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,341 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,341 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,341 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,344 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,344 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,344 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,344 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,346 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,346 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,346 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,346 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,362 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,362 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,362 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,362 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,364 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,364 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,364 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,364 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,387 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,387 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,387 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,387 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,401 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,401 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,401 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,401 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,403 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,403 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,403 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,403 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,404 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,404 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,404 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,404 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,420 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,421 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,421 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,421 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,423 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,423 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,423 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,423 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,424 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,425 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,425 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,425 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,440 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,440 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,440 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,440 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,441 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:51:49,441 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:51:49,442 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,442 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:51:49,443 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,443 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,443 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:51:49,443 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:49,460 INFO  BDCompania - *******************************************************
+2016-05-22 21:51:49,460 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:51:49,460 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:51:49,460 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:51:55,401 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,402 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,402 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,402 INFO  BDFactura - Metodo: ContactFacturas
+2016-05-22 21:51:55,428 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,428 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,428 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,428 INFO  BDFactura - Metodo: ConsultCompany
+2016-05-22 21:51:55,460 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,461 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,461 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,461 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-05-22 21:51:55,480 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,480 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,480 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,480 INFO  BDFactura - Metodo: ConsultCompany
+2016-05-22 21:51:55,496 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,496 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,496 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,496 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-05-22 21:51:55,513 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,513 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,513 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,513 INFO  BDFactura - Metodo: ConsultCompany
+2016-05-22 21:51:55,529 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,529 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,529 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,529 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-05-22 21:51:55,546 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,547 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,547 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,547 INFO  BDFactura - Metodo: ConsultCompany
+2016-05-22 21:51:55,566 INFO  BDFactura - *******************************************************
+2016-05-22 21:51:55,566 INFO  BDFactura - Clase: BDFactura
+2016-05-22 21:51:55,566 INFO  BDFactura - Mensaje: Salida del Método
+2016-05-22 21:51:55,566 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-05-22 21:52:18,444 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:52:18,444 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:52:18,444 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:52:18,444 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 21:52:18,451 INFO  BDCompania - *******************************************************
+2016-05-22 21:52:18,451 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:52:18,451 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:52:18,451 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:52:18,469 INFO  BDCompania - *******************************************************
+2016-05-22 21:52:18,469 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:52:18,469 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:52:18,469 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:53:47,578 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:53:47,587 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:53:47,588 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:53:47,588 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:53:47,721 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:53:47,721 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:53:47,722 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:53:47,722 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:56:11,542 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:11,542 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:11,542 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:11,542 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 21:56:11,567 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:11,567 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:11,567 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:11,567 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:56:11,676 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:11,676 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:11,676 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:11,676 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 21:56:18,309 INFO  BDPropuesta - *******************************************************
+2016-05-22 21:56:18,309 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 21:56:18,309 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,309 INFO  BDPropuesta - Metodo: ListarLasPropuestas
+2016-05-22 21:56:18,339 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,339 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,339 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,339 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,342 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,342 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,342 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,342 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,382 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,382 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,382 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,382 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,388 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,388 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,388 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,388 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,390 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,390 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,390 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,390 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,412 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,412 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,412 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,412 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,414 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,414 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,414 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,414 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,416 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,417 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,417 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,417 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,432 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,432 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,432 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,432 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,434 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,434 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,434 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,434 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,436 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,436 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,436 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,436 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,452 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,452 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,452 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,452 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,454 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,454 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,455 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,455 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,459 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,459 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,459 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,459 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,474 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,474 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,474 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,474 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,476 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,476 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,476 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,476 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,478 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,478 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,478 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,478 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,493 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,493 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,493 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,493 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,495 INFO  LogicaM4 - *******************************************************
+2016-05-22 21:56:18,495 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 21:56:18,495 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,495 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 21:56:18,496 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,496 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,496 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 21:56:18,496 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:56:18,512 INFO  BDCompania - *******************************************************
+2016-05-22 21:56:18,512 INFO  BDCompania - Clase: BDCompania
+2016-05-22 21:56:18,512 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 21:56:18,512 INFO  BDCompania - Metodo: ConsultCompany
+=======
+>>>>>>> 905db56a6ca52776322b57ad2fe36c331ffc0dc7
+2016-05-22 22:00:45,652 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:00:45,658 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:00:45,658 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:00:45,658 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:00:45,781 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:00:45,782 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:00:45,782 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:00:45,782 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:00:59,344 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:00:59,344 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:00:59,344 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:00:59,344 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:00:59,363 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:00:59,363 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:00:59,363 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:00:59,363 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:06:05,936 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:06:05,967 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:06:05,967 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:06:05,967 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:06:06,428 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:06:06,428 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:06:06,428 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:06:06,429 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:06:51,512 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:51,512 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:51,512 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:51,512 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 22:06:51,516 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:51,516 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:51,516 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:51,516 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 22:06:51,565 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:51,565 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:51,565 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:51,565 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 22:06:55,934 INFO  BDPropuesta - *******************************************************
+2016-05-22 22:06:55,934 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 22:06:55,934 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 22:06:55,934 INFO  BDPropuesta - Metodo: ListarLasPropuestas
+2016-05-22 22:06:55,976 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:55,976 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:55,976 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:55,976 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:55,980 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:55,980 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:55,980 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:55,980 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,000 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,000 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,000 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,000 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,006 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:56,006 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:56,006 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,006 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:56,008 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,008 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,008 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,008 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,022 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,022 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,022 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,022 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,024 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:56,024 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:56,024 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,024 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:56,026 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,026 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,026 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,026 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,043 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,043 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,043 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,043 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,046 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:56,046 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:56,046 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,046 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:56,047 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,047 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,047 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,047 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,061 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,061 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,061 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,061 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,063 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:56,063 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:56,063 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,063 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:56,064 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,064 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,064 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,064 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,097 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,097 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,097 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,097 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,099 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:56,099 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:56,099 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,099 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:56,101 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,101 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,101 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,101 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,115 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,115 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,115 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,115 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,117 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:06:56,117 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:06:56,117 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,117 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:06:56,118 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,118 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,118 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:06:56,118 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:06:56,134 INFO  BDCompania - *******************************************************
+2016-05-22 22:06:56,134 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:06:56,134 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:06:56,134 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:12:16,311 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:12:16,319 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:12:16,319 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:12:16,319 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:12:16,436 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:12:16,436 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:12:16,436 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:12:16,436 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:12:26,209 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:12:26,209 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:12:26,209 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:12:26,209 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:12:26,235 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:12:26,235 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:12:26,235 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:12:26,235 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:17:44,462 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:17:44,469 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:17:44,469 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:17:44,469 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:17:44,597 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:17:44,597 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:17:44,597 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:17:44,597 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:17:53,655 INFO  BDPropuesta - *******************************************************
+2016-05-22 22:17:53,655 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 22:17:53,655 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,655 INFO  BDPropuesta - Metodo: ListarLasPropuestas
+2016-05-22 22:17:53,700 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,701 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,701 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,701 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,708 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,708 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,708 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,708 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,729 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,729 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,730 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,730 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,741 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,741 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,741 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,741 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,742 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,742 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,742 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,742 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,758 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,758 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,758 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,758 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,760 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,760 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,760 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,760 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,762 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,762 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,762 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,762 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,791 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,792 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,792 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,792 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,794 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,795 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,795 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,795 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,796 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,796 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,796 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,797 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,824 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,824 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,824 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,825 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,828 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,828 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,828 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,828 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,831 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,831 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,831 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,831 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,849 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,849 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,849 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,849 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,851 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,851 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,852 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,855 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,857 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,857 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,857 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,857 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,901 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,901 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,901 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,901 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,905 INFO  LogicaM4 - *******************************************************
+2016-05-22 22:17:53,905 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 22:17:53,905 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,905 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 22:17:53,908 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,908 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,908 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 22:17:53,908 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:17:53,930 INFO  BDCompania - *******************************************************
+2016-05-22 22:17:53,930 INFO  BDCompania - Clase: BDCompania
+2016-05-22 22:17:53,930 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 22:17:53,930 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 22:20:58,291 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:20:58,298 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:20:58,298 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:20:58,298 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:20:58,376 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:20:58,376 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:20:58,376 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:20:58,376 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:21:11,325 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:21:11,325 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:21:11,325 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 22:21:11,325 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 22:21:11,344 INFO  BDClientePotencial - *******************************************************
+2016-05-22 22:21:11,344 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 22:21:11,344 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 22:21:11,344 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial

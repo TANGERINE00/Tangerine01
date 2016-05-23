@@ -106,11 +106,11 @@
                         <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
                         </select>
 
-                  
-                            <label for="inputEncargado">Encargado de la empresa contratante *</label>
-                            <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
-                            </select>
-                 
+
+                        <label for="inputEncargado">Encargado de la empresa contratante *</label>
+                        <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
+                        </select>
+
                     </div>
                     <hr />
                     <hr />
@@ -124,8 +124,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="textFallasProyecto_M7" placeholder="Razon de fallos en la entrga">
-                    </div>
+                        <input runat="server" type="text" class="form-control" id="text10" name="textFallasProyecto_M7" placeholder="Razon de fallos en la entrga">                    
+                      </div>
                     </form>
                 </div>
             </div>
