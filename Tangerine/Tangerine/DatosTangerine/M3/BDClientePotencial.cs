@@ -552,6 +552,7 @@ namespace DatosTangerine.M3
                 BDConexion theConnection = new BDConexion();
                 Parametro theParam = new Parametro();
 
+
                 try
                 {
                     //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
