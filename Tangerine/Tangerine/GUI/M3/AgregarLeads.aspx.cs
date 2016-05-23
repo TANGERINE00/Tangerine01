@@ -46,7 +46,8 @@ namespace Tangerine.GUI.M3
             ClientePotencial clientePotencial = new ClientePotencial(_nombre, _rif, _email, _presupuesto,1);//, _llamadas, _visitas, _potencial, _borrado);
             LogicaM3 clientePotencialLogica = new LogicaM3();
             clientePotencialLogica. AgregarNuevoclientePotencial(clientePotencial);
-            
+            Response.Redirect("Listar.aspx");
+
 
         }
     }

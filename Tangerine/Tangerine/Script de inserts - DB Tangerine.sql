@@ -374,5 +374,10 @@ insert into CARGO_EMPLEADO values(
 insert into cargo_empleado values ('12/06/2013', null, 'Medio Tiempo',20.1,2,4);
 insert into cargo_empleado values ('01/04/2012', null, 'Medio Tiempo',50,1,5);
 
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
+VALUES (10,1221212,'Masculino','Antonio','Juan','Garcia','Gobea',convert(VARCHAR(10),'09-10-1992',110),'alto','antonio11346@gmail.com','Activo',8);
+
+
+insert into USUARIO values (5, 'toniojua', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 4, 10);
 
 --------------------Fin de inserts de cargos---------

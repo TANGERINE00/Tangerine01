@@ -144,14 +144,14 @@ namespace DominioTangerine
         }
 
 
-        public Compania(string inputNombre, string inputRif, string inputEmail, int inputStatus, int inputPresupuesto)
+        /*public Compania(string inputNombre, string inputRif, string inputEmail, int inputStatus, int inputPresupuesto)
         {
             this.nombreCompania = inputNombre;
             this.rifCompania = inputRif;
             this.emailCompania = inputEmail;
             this.statusCompania = inputStatus;
             this.presupuestoCompania = inputPresupuesto;
-        }
+        }*/
 
         #endregion
     }

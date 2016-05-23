@@ -271,24 +271,20 @@
                         </asp:DropDownList>
                     </div>
                 </div>
-
-
-
-
-                <div class="box-footer" runat="server">
+                
+                <Br></Br>
+                <Br></Br>
+                
+                
+                <div class="box-footer" runat="server">                   
                     
-                     <%--<asp:Button ID="btnagregar" class="btn btn-primary"
-                        OnClick="btnagregar_Click" OnClientClick="javascript:crearPrecondicionArr()" type="submit" runat="server"
-                        Text="Modificar"></asp:Button>--%>
 
                     <asp:Button ID="botonModificarPro" class="btn btn-primary"
                         type="submit" runat="server"
                         Text="Modificar" OnClick="botonModificarPro_Click"></asp:Button>
-                    <button type="submit" id="volver" runat="server"  class="btn btn-default pull-right" >Atras</button>
+                 
+                        <a href="ConsultarPropuesta.aspx" class="btn btn-default pull-right">Regresar</a>               
                     
-                    
-
-
 
                 </div>
 
@@ -296,50 +292,8 @@
 
             </div>
     </form>
-
-
-    <%-- <script src="js/Modificar.js"></script>
-	<script type="text/javascript">
-	    $(document).ready(function () {
-	        $('#table-requerimientos').DataTable();
-	        var table = $('#table-requerimientos').DataTable();
-	        var req;
-	        var tr;
-
-	        $('#table-requerimientos tbody').on('click', 'a', function () {
-	            if ($(this).parent().hasClass('selected')) {
-	                req = $(this).parent().prev().prev().prev().prev().text();
-	                tr = $(this).parents('tr');//se guarda la fila seleccionada
-	                $(this).parent().removeClass('selected');
-
-	            }
-	            else {
-	                req = $(this).parent().prev().prev().prev().prev().text();
-	                tr = $(this).parents('tr');//se guarda la fila seleccionada
-	                table.$('tr.selected').removeClass('selected');
-	                $(this).parent().addClass('selected');
-	            }
-	        });
-	        $('#modal-delete').on('show.bs.modal', function (event) {
-	            var modal = $(this)
-	            modal.find('.modal-title').text('Eliminar requerimiento:  ' + req)
-	            modal.find('#req').text(req)
-	        })
-	        $('#btn-eliminar').on('click', function () {
-	            table.row(tr).remove().draw();//se elimina la fila de la tabla
-	            $('#modal-delete').modal('hide');//se esconde el modal
-	        });
-	        $('#modal-update').on('show.bs.modal', function (event) {
-	            var modal = $(this)
-	            modal.find('.modal-title').text('Modificar requerimiento')
-	        });
-	    });
-	</script>
-    <script>
-            function fillCodigoTextField() {
-                var idTextField = document.getElementById("idreq_input");
-            }
-    </script>--%>
+    
+   
 </asp:Content>
 
 
