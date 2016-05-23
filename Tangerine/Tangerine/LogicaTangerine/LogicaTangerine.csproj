@@ -99,6 +99,11 @@
       <DependentUpon>LogicResources.resx</DependentUpon>
     </Compile>
     <Compile Include="M6\LogicaPropuesta.cs" />
+    <Compile Include="M6\LogicaRecursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogicaRecursos.resx</DependentUpon>
+    </Compile>
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="M8\CorreoM8.cs" />
@@ -140,6 +145,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="M6\LogicaRecursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogicaRecursos.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
     <EmbeddedResource Include="M8\ResourceLogicaM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
