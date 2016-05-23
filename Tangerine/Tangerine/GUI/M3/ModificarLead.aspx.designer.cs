@@ -58,13 +58,13 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText email;
         
         /// <summary>
-        /// pres_anual control.
+        /// presupuesto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText pres_anual;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl presupuesto;
         
         /// <summary>
         /// llamadas control.
@@ -73,7 +73,7 @@ namespace Tangerine.GUI.M3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText llamadas;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl llamadas;
         
         /// <summary>
         /// visitas control.
@@ -82,15 +82,15 @@ namespace Tangerine.GUI.M3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText visitas;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl visitas;
         
         /// <summary>
-        /// btnaceptar control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnaceptar;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

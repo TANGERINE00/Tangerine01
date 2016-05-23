@@ -15,6 +15,7 @@ namespace LogicaTangerine.M2
         /// <summary>
         /// Método que retorna las opciones a las cuales el usuario que ha ingresado no puede acceder
         /// </summary>
+        /// <param name="nombreRol"></param>
         /// <returns></returns>
         public static List<string> VerificarAccesoAOpciones( string nombreRol )
         {
@@ -31,18 +32,6 @@ namespace LogicaTangerine.M2
                         lista.Add( o.Nombre );
                     }
                 }
-            }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Parametro invalido [nombreRol es null]", ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar VerificarAccesoAOpciones()",
-                                                                 ex );
             }
             catch ( Exception ex )
             {
@@ -93,13 +82,6 @@ namespace LogicaTangerine.M2
                 throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Error al ejecutar " +
                                                                         "VerificarAccesoAPagina()" +
                                                                         " [Pagina Errónea]", ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar VerificarAccesoAPagina()",
-                                                                 ex );
             }
             catch ( Exception ex )
             {

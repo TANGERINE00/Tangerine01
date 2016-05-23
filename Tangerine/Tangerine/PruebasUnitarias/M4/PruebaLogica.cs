@@ -50,7 +50,7 @@ namespace PruebasUnitarias.M4
             //Inserto una compañía por si la base de datos está vacía.
             answer1 = Logica.AddNewCompany(theCompany);
             //Consulto todas las compañías en la base de datos.
-            List<Compania> companias = Logica.getCompanies();
+            List<Compania> companias = Logica.ConsultCompanies();
             //Recorro las compañías y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
             foreach (Compania compania in companias)
             {
@@ -95,7 +95,7 @@ namespace PruebasUnitarias.M4
             //Inserto la compañía para poder probar la consulta.
             answer1 = Logica.AddNewCompany(theCompany);
             //Aplico el metodo para consultar la companía agregada anteriormente.
-            theCompany1 = Logica.SearchCompany(BDCompania.ConsultLastCompanyId());
+            theCompany1 = Logica.ConsultCompany(BDCompania.ConsultLastCompanyId());
             //Comparo que el id de la companía creada coincide con el id de la compañía consultada.
             Assert.AreEqual(BDCompania.ConsultLastCompanyId(), theCompany1.IdCompania);
         }

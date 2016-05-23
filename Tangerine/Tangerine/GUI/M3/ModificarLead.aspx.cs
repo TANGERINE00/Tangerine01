@@ -39,7 +39,7 @@ namespace Tangerine.GUI.M3
                   this.rif.Value = elClientePotencial.RifClientePotencial;
                   this.email.Value = elClientePotencial.EmailClientePotencial;
 
-                  this.pres_anual.Value = elClientePotencial.PresupuestoAnual_inversion.ToString();
+                  this.presupuesto.Value = elClientePotencial.PresupuestoAnual_inversion.ToString();
                   this.llamadas.Value = elClientePotencial.NumeroLlamadas.ToString();
                   this.visitas.Value = elClientePotencial.NumeroVisitas.ToString();
                       
@@ -60,7 +60,7 @@ namespace Tangerine.GUI.M3
             String rif = this.rif.Value;
             String email = this.email.Value;
 
-            float presupuesto = float.Parse(this.pres_anual.Value.ToString());
+            float presupuesto = float.Parse(this.presupuesto.Value.ToString());
             int llamadas = int.Parse(this.llamadas.Value.ToString());
             int visitas = int.Parse(this.visitas.Value.ToString());
             ClientePotencial nuevoCliente = new ClientePotencial(idClip,nombre,rif,email,presupuesto,llamadas,visitas);

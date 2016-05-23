@@ -49,19 +49,26 @@ namespace Tangerine.GUI.M1
         public string LlenarProyectos(List<Proyecto> listaProyectos)
         {
             string _proyectos = String.Empty;
+            int cantidad=0;
+            List<Proyecto> listaProyectosOrdenada = listaProyectos.OrderByDescending(o => o.Fechainicio).ToList();
             
-            foreach (Proyecto proyecto in listaProyectos)
+            foreach (Proyecto proyecto in listaProyectosOrdenada)
             {
                 //Proyecto
-                _proyectos += ResourceGUIM1.PanelProyectoAbrir +
-                  ResourceGUIM1.LabelNombreProyecto + proyecto.Nombre +
-                  ResourceGUIM1.LabelDescProyecto + proyecto.Descripcion +
-                  ResourceGUIM1.LabelFechaProyectoInicio +
-                    proyecto.Fechainicio.ToString(ResourceGUIM1.FormatoFecha) +
-                  ResourceGUIM1.LabelFechaProyectoFin +
-                    proyecto.Fechaestimadafin.ToString(ResourceGUIM1.FormatoFecha) +
-                  ResourceGUIM1.LabelCostoProyecto + proyecto.Costo +
-                  ResourceGUIM1.PanelProyectoCerrar;
+                if (cantidad < int.Parse(ResourceGUIM1.MaxProyectos))
+                {
+                    _proyectos += ResourceGUIM1.PanelProyectoAbrir +
+                      ResourceGUIM1.LabelNombreProyecto + proyecto.Idproyecto +
+                      ResourceGUIM1.LabelNombreProyectoCerrar + proyecto.Nombre +
+                      ResourceGUIM1.LabelNombreProyectoCerrar2 +
+                      ResourceGUIM1.LabelDescProyecto + proyecto.Descripcion +
+                      ResourceGUIM1.LabelFechaProyectoInicio +
+                        proyecto.Fechainicio.ToString(ResourceGUIM1.FormatoFecha) +
+                      ResourceGUIM1.LabelFechaProyectoFin +
+                        proyecto.Fechaestimadafin.ToString(ResourceGUIM1.FormatoFecha) +
+                      ResourceGUIM1.PanelProyectoCerrar;
+                    cantidad++;
+                }
             }
 
             if (listaProyectos.Count == 0)

@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M8
                 int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
                 textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
                 textMonto_M8.Value = int.Parse(Request.QueryString["Monto"]).ToString();
-                compania = logicaCompania.SearchCompany(_companiaId);
+                compania = logicaCompania.ConsultCompany(_companiaId);
                 textCompania_M8.Value = compania.NombreCompania;
                 proyecto = logicaProyecto.consultarProyecto(_proyectoId);
                 textProyecto_M8.Value = proyecto.Nombre;
@@ -51,26 +51,25 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
-            if (textDescripcion_M8.Value.Equals(""))
+           /* if (textDescripcion_M8.Value.Equals(""))
             {
                 string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
             }
             else
-            {
+            {*/
 
                 _Descripcion = textDescripcion_M8.Value;
-                _tipoMoneda = "Bolivares";
                 _fechaEmision = DateTime.Parse(textFecha_M8.Value);
                 _fechaUltimoPago = DateTime.Parse(textFecha_M8.Value);
                 int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
                 int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
-
+                _tipoMoneda = textTipoMoneda_M8.Value;
                 Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, int.Parse(Request.QueryString["Monto"]), int.Parse(Request.QueryString["Monto"]), _tipoMoneda, _Descripcion, 0, _proyectoId, _companiaId);
                 LogicaM8 facturaLogic = new LogicaM8();
                 facturaLogic.AddNewFactura(factura);
                 Server.Transfer("ConsultarFacturaM8.aspx");
-            }
+            //}
 
 
         }

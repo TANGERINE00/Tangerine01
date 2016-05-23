@@ -18,14 +18,14 @@ namespace DatosTangerine.M4
         Parametro theParam = new Parametro();
 
         /// <summary>
-        /// Metodo para agregar una compañia nueva en la base de datos.
+        /// Método para agregar una compañia nueva en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para agregar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para agregar en la base de datos.</param>
+        /// <returns>True si fue agregada exitosamente.</returns>
         public static bool AddCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-    ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -34,34 +34,44 @@ namespace DatosTangerine.M4
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, theCompany.NombreCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, 
+                    theCompany.NombreCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, 
+                    theCompany.RifCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, 
+                    theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, 
+                    theCompany.TelefonoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, 
+                    theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, theCompany.FechaRegistroCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, 
+                    theCompany.FechaRegistroCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, 
+                    theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, theCompany.PresupuestoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, 
+                    theCompany.PresupuestoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, theCompany.PlazoPagoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, 
+                    theCompany.PlazoPagoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, 
+                    theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
@@ -80,6 +90,12 @@ namespace DatosTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -91,19 +107,19 @@ namespace DatosTangerine.M4
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-    ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }
 
         /// <summary>
-        /// Metodo para consultar el ultimo id de compania en la base de datos.
+        /// Método para consultar el último id de compañía en la base de datos.
         /// </summary>
-        /// <returns>el ultimo id de compania registrado</returns>
+        /// <returns>Último id de compania registrada.</returns>
         public static int ConsultLastCompanyId()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -132,6 +148,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -143,19 +165,19 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return mayorId;
         }
 
         /// <summary>
-        /// Metodo para eliminar una compañia en la base de datos.
+        /// Método para eliminar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para borrar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para borrar en la base de datos.</param>
+        /// <returns>True si fue borrada exitosamente.</returns>
         public static bool DeleteCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -183,6 +205,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -194,20 +222,20 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
 
         /// <summary>
-        /// Metodo para habilitar una compañia en la base de datos.
+        /// Método para habilitar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para habilitar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para habilitar en la base de datos.</param>
+        /// <returns>True si fue habilitada exitosamente.</returns>
         public static bool EnableCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -238,6 +266,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -249,19 +283,19 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
         /// <summary>
-        /// Metodo para inhabilitar una compañia en la base de datos.
+        /// Método para inhabilitar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para habilitar en bd</param>
-        /// <returns>true si fue agregado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para deshabilitar en la base de datos.</param>
+        /// <returns>True si fue deshabilitada exitosamente.</returns>
         public static bool DisableCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -292,6 +326,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -303,20 +343,20 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
        
         /// <summary>
-        /// Metodo para modificar una compañia en la base de datos.
+        /// Método para modificar una compañía en la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Compania para modificar en bd</param>
-        /// <returns>true si fue modificado</returns>
+        /// <param name="theCompany">Objeto de tipo Compania para modificar en la base de datos.</param>
+        /// <returns>True si fue modificada exitosamente.</returns>
         public static Boolean ChangeCompany(Compania theCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -325,37 +365,48 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.IdCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, 
+                    theCompany.IdCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, theCompany.NombreCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamNombre, SqlDbType.VarChar, 
+                    theCompany.NombreCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, theCompany.RifCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamRif, SqlDbType.VarChar, 
+                    theCompany.RifCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, theCompany.EmailCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamEmail, SqlDbType.VarChar, 
+                    theCompany.EmailCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, theCompany.TelefonoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamTelefono, SqlDbType.VarChar, 
+                    theCompany.TelefonoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, theCompany.AcronimoCompania, false);
+                theParam = new Parametro(ResourceCompany.ParamAcronimo, SqlDbType.VarChar, 
+                    theCompany.AcronimoCompania, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, theCompany.FechaRegistroCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamFechaRegistro, SqlDbType.Date, 
+                    theCompany.FechaRegistroCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, theCompany.StatusCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamStatus, SqlDbType.Int, 
+                    theCompany.StatusCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, theCompany.PresupuestoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPresupuesto, SqlDbType.Int, 
+                    theCompany.PresupuestoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, theCompany.PlazoPagoCompania.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamPlazoPago, SqlDbType.Int, 
+                    theCompany.PlazoPagoCompania.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, theCompany.IdLugar.ToString(), false);
+                theParam = new Parametro(ResourceCompany.ParamIdLugar, SqlDbType.Int, 
+                    theCompany.IdLugar.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -374,6 +425,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -385,20 +442,20 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
        
         /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
+        /// Método para consultar una compañía en específico.
         /// </summary>
-        /// <returns>Lista de contactos de la Empresa</returns>
+        /// <param name="idCompany">Entero que es igual al id de la compañía a consultar.</param>
+        /// <returns>Objeto Compania correspondiente a la empresa consultada.</returns>
         public static Compania ConsultCompany(int idCompany)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
@@ -449,6 +506,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -460,20 +523,19 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return theCompany;
         }
 
         
         /// <summary>
-        /// Metodo para consultar todas las Compañias registradas en la BD.
-        /// Recibe cero parametros.
+        /// Método para consultar todas las compañías registradas en la base de datos.
         /// </summary>
-        /// <returns>Lista de Companias registradas</returns>
+        /// <returns>Lista de compañías registradas.</returns>
         public static List<Compania> ConsultCompanies()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             List<Compania> listCompany = new List<Compania>();
@@ -519,6 +581,12 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -530,7 +598,7 @@ ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrent
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listCompany;
         }
     }

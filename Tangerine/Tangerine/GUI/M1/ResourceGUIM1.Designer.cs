@@ -115,11 +115,38 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;label&gt;Nombre de proyecto: &lt;/label&gt;.
+        ///   Busca una cadena traducida similar a &lt;label&gt;Nombre de proyecto: &lt;/label&gt;&lt;a href=&quot;../M7/InformacionProyecto.aspx?idCont=.
         /// </summary>
         internal static string LabelNombreProyecto {
             get {
                 return ResourceManager.GetString("LabelNombreProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot;&gt;.
+        /// </summary>
+        internal static string LabelNombreProyectoCerrar {
+            get {
+                return ResourceManager.GetString("LabelNombreProyectoCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/a&gt;.
+        /// </summary>
+        internal static string LabelNombreProyectoCerrar2 {
+            get {
+                return ResourceManager.GetString("LabelNombreProyectoCerrar2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 4.
+        /// </summary>
+        internal static string MaxProyectos {
+            get {
+                return ResourceManager.GetString("MaxProyectos", resourceCulture);
             }
         }
         

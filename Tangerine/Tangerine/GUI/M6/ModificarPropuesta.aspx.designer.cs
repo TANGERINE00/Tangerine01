@@ -13,13 +13,13 @@ namespace Tangerine.GUI.M6 {
     public partial class ModificarPropuesta {
         
         /// <summary>
-        /// agregar_propuesta control.
+        /// modificar_propuesta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_propuesta;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_propuesta;
         
         /// <summary>
         /// cliente_id control.
@@ -29,6 +29,15 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cliente_id;
+        
+        /// <summary>
+        /// descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea descripcion;
         
         /// <summary>
         /// tablaR control.
@@ -56,6 +65,24 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea input_requerimiento;
+        
+        /// <summary>
+        /// datepicker1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker1;
+        
+        /// <summary>
+        /// datepicker2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker2;
         
         /// <summary>
         /// comboDuracion control.
@@ -94,13 +121,40 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textoCosto;
         
         /// <summary>
-        /// fpago control.
+        /// fpago2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect fpago;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fpago2;
+        
+        /// <summary>
+        /// formaPago control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList formaPago;
+        
+        /// <summary>
+        /// cuota control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cuota;
+        
+        /// <summary>
+        /// comboCuota control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList comboCuota;
         
         /// <summary>
         /// contenedorEstatus control.
@@ -119,5 +173,23 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList comboEstatus;
+        
+        /// <summary>
+        /// botonModificarPro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button botonModificarPro;
+        
+        /// <summary>
+        /// volver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton volver;
     }
 }

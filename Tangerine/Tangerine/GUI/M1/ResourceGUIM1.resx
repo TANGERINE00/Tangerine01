@@ -136,7 +136,16 @@
     <value>&lt;br&gt;&lt;label&gt;Fecha de inicio: &lt;/label&gt;</value>
   </data>
   <data name="LabelNombreProyecto" xml:space="preserve">
-    <value>&lt;label&gt;Nombre de proyecto: &lt;/label&gt;</value>
+    <value>&lt;label&gt;Nombre de proyecto: &lt;/label&gt;&lt;a href="../M7/InformacionProyecto.aspx?idCont=</value>
+  </data>
+  <data name="LabelNombreProyectoCerrar" xml:space="preserve">
+    <value>"&gt;</value>
+  </data>
+  <data name="LabelNombreProyectoCerrar2" xml:space="preserve">
+    <value>&lt;/a&gt;</value>
+  </data>
+  <data name="MaxProyectos" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="MensajeSinProyecto" xml:space="preserve">
     <value>&lt;label&gt;No hay proyectos registrados a la fecha&lt;/label&gt;</value>

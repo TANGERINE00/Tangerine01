@@ -262,3 +262,1020 @@
 2016-05-21 10:02:46,547 INFO  BDContacto - Clase: BDContacto
 2016-05-21 10:02:46,547 INFO  BDContacto - Mensaje: Salida del Método
 2016-05-21 10:02:46,547 INFO  BDContacto - Metodo: ContactCompany
+<<<<<<< HEAD
+2016-05-21 17:39:43,597 INFO  LogicaM5 - *******************************************************
+2016-05-21 17:39:43,611 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-21 17:39:43,611 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-21 17:39:43,611 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-21 17:39:43,632 INFO  BDContacto - *******************************************************
+2016-05-21 17:39:43,632 INFO  BDContacto - Clase: BDContacto
+2016-05-21 17:39:43,632 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-21 17:39:43,632 INFO  BDContacto - Metodo: ContactCompany
+2016-05-21 17:39:43,701 INFO  BDContacto - *******************************************************
+2016-05-21 17:39:43,701 INFO  BDContacto - Clase: BDContacto
+2016-05-21 17:39:43,701 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-21 17:39:43,701 INFO  BDContacto - Metodo: ContactCompany
+2016-05-22 15:03:19,258 INFO  BDClientePotencial - *******************************************************
+2016-05-22 15:03:19,264 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 15:03:19,264 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 15:03:19,264 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 15:03:23,776 ERROR BDClientePotencial - *******************************************************
+2016-05-22 15:03:23,776 ERROR BDClientePotencial - Mensaje: La columna 'cli_pot_status' no pertenece a la tabla .
+2016-05-22 15:03:24,256 ERROR BDClientePotencial - Origen: System.Data
+2016-05-22 15:03:24,256 ERROR BDClientePotencial - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-05-22 15:03:24,256 ERROR BDClientePotencial - StackTrace:    en System.Data.DataRow.GetDataColumn(String columnName)
+   en System.Data.DataRow.get_Item(String columnName)
+   en DatosTangerine.M3.BDClientePotencial.DatosListarClientePotencial() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M3\BDClientePotencial.cs:línea 51
+2016-05-22 15:03:24,256 ERROR BDClientePotencial - InnerException: 
+2016-05-22 15:59:31,214 INFO  BDClientePotencial - *******************************************************
+2016-05-22 15:59:31,220 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 15:59:31,220 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 15:59:31,220 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 15:59:31,463 INFO  BDClientePotencial - *******************************************************
+2016-05-22 15:59:31,463 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 15:59:31,464 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 15:59:31,464 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 15:59:54,609 INFO  BDClientePotencial - *******************************************************
+2016-05-22 15:59:54,609 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 15:59:54,609 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 15:59:54,609 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 15:59:54,635 INFO  BDClientePotencial - *******************************************************
+2016-05-22 15:59:54,635 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 15:59:54,635 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 15:59:54,635 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:12:29,652 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:12:29,657 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:12:29,657 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:12:29,657 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:15:33,827 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:15:33,837 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:15:33,837 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:15:33,837 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:16:19,532 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:16:19,540 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:16:19,540 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:16:19,540 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:25:14,273 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:25:14,283 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:25:14,283 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:25:14,283 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:30:22,011 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:30:22,018 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:30:22,019 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:30:22,019 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:30:22,131 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:30:22,131 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:30:22,131 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 17:30:22,131 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:37:51,866 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:37:51,866 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:37:51,867 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:37:51,867 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:37:51,922 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:37:51,922 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:37:51,922 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 17:37:51,922 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:37:59,976 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:37:59,976 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:37:59,976 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:37:59,976 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:37:59,994 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:37:59,994 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:37:59,995 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 17:37:59,995 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:38:35,735 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:38:35,741 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:38:35,741 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:38:35,741 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:38:35,883 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:38:35,884 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:38:35,884 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 17:38:35,884 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:38:47,725 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:38:47,725 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:38:47,726 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 17:38:47,726 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 17:38:47,765 INFO  BDClientePotencial - *******************************************************
+2016-05-22 17:38:47,765 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 17:38:47,765 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 17:38:47,765 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:14:49,015 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:14:49,025 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:14:49,025 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:14:49,025 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:14:49,173 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:14:49,173 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:14:49,173 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:14:49,173 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:15:30,636 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:15:30,636 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:15:30,636 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:15:30,636 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:15:30,676 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:15:30,677 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:15:30,677 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:15:30,677 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:20:33,329 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:20:33,335 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:20:33,335 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:20:33,335 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:20:33,454 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:20:33,454 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:20:33,454 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:20:33,454 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:20:58,660 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:20:58,660 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:20:58,660 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:20:58,660 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:20:58,755 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:20:58,755 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:20:58,755 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:20:58,755 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:29:52,608 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:29:52,614 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:29:52,614 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:29:52,614 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:29:53,085 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:29:53,085 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:29:53,085 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:29:53,085 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:30:58,793 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:30:58,793 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:30:58,794 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:30:58,794 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:30:58,818 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:30:58,818 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:30:58,818 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:30:58,818 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+=======
+2016-05-22 18:04:54,050 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:04:54,056 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:04:54,056 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:04:54,056 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:04:54,065 INFO  BDCompania - *******************************************************
+2016-05-22 18:04:54,066 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:04:54,066 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:04:54,066 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:05:10,761 ERROR BDCompania - *******************************************************
+2016-05-22 18:05:10,761 ERROR BDCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-05-22 18:05:10,781 ERROR BDCompania - Origen: DatosTangerine
+2016-05-22 18:05:10,781 ERROR BDCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-05-22 18:05:10,782 ERROR BDCompania - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 527
+2016-05-22 18:05:10,782 ERROR BDCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-05-22 18:06:15,686 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:06:15,692 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:06:15,692 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:06:15,692 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:06:15,710 INFO  BDCompania - *******************************************************
+2016-05-22 18:06:15,710 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:06:15,710 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:06:15,710 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:06:15,882 ERROR BDCompania - *******************************************************
+2016-05-22 18:06:15,882 ERROR BDCompania - Mensaje: Column 'com_presupuesto' does not belong to table .
+2016-05-22 18:06:15,887 ERROR BDCompania - Origen: System.Data
+2016-05-22 18:06:15,887 ERROR BDCompania - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-05-22 18:06:15,887 ERROR BDCompania - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:06:15,887 ERROR BDCompania - InnerException: 
+2016-05-22 18:06:15,897 ERROR LogicaM4 - *******************************************************
+2016-05-22 18:06:15,897 ERROR LogicaM4 - Mensaje: No se pudo completar la operacion
+2016-05-22 18:06:15,901 ERROR LogicaM4 - Origen: DatosTangerine
+2016-05-22 18:06:15,901 ERROR LogicaM4 - Metodo: System.Collections.Generic.List`1[DominioTangerine.Compania] ConsultCompanies()
+2016-05-22 18:06:15,901 ERROR LogicaM4 - StackTrace:    at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 577
+   at LogicaTangerine.M4.LogicaM4.getCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M4\LogicaM4.cs:line 33
+2016-05-22 18:06:15,901 ERROR LogicaM4 - InnerException: System.ArgumentException: Column 'com_presupuesto' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:06:32,100 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:06:32,100 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:06:32,100 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:06:32,100 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:06:32,117 INFO  BDCompania - *******************************************************
+2016-05-22 18:06:32,117 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:06:32,117 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:06:32,117 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:06:32,135 ERROR BDCompania - *******************************************************
+2016-05-22 18:06:32,135 ERROR BDCompania - Mensaje: Column 'com_presupuesto' does not belong to table .
+2016-05-22 18:06:32,135 ERROR BDCompania - Origen: System.Data
+2016-05-22 18:06:32,135 ERROR BDCompania - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-05-22 18:06:32,135 ERROR BDCompania - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:06:32,135 ERROR BDCompania - InnerException: 
+2016-05-22 18:06:32,149 ERROR LogicaM4 - *******************************************************
+2016-05-22 18:06:32,149 ERROR LogicaM4 - Mensaje: No se pudo completar la operacion
+2016-05-22 18:06:32,149 ERROR LogicaM4 - Origen: DatosTangerine
+2016-05-22 18:06:32,150 ERROR LogicaM4 - Metodo: System.Collections.Generic.List`1[DominioTangerine.Compania] ConsultCompanies()
+2016-05-22 18:06:32,150 ERROR LogicaM4 - StackTrace:    at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 577
+   at LogicaTangerine.M4.LogicaM4.getCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M4\LogicaM4.cs:line 33
+2016-05-22 18:06:32,150 ERROR LogicaM4 - InnerException: System.ArgumentException: Column 'com_presupuesto' does not belong to table .
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosTangerine.M4.BDCompania.ConsultCompanies() in c:\Users\Paul\Documents\Desarrollo\Proyecto\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:line 541
+2016-05-22 18:08:40,516 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:08:40,516 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:08:40,516 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:08:40,516 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:08:40,533 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:40,533 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:40,533 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:08:40,533 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:08:40,553 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:40,553 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:40,553 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:08:40,553 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:08:50,739 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:08:50,739 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:08:50,739 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:08:50,739 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:08:50,750 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:50,750 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:50,750 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:08:50,750 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:08:50,759 INFO  BDCompania - *******************************************************
+2016-05-22 18:08:50,759 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:08:50,759 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:08:50,759 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:09:19,341 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:09:19,341 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:09:19,341 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:09:19,341 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:09:19,347 INFO  BDCompania - *******************************************************
+2016-05-22 18:09:19,347 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:09:19,347 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:09:19,347 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:09:19,352 INFO  BDCompania - *******************************************************
+2016-05-22 18:09:19,352 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:09:19,352 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:09:19,352 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:14:52,165 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:14:52,172 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:14:52,172 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:14:52,172 INFO  LogicaM4 - Metodo: getCompanies
+2016-05-22 18:14:52,183 INFO  BDCompania - *******************************************************
+2016-05-22 18:14:52,184 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:14:52,184 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:14:52,184 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:14:52,191 INFO  BDCompania - *******************************************************
+2016-05-22 18:14:52,191 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:14:52,191 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:14:52,191 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:25:35,322 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:25:35,336 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:25:35,336 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:25:35,336 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:25:35,366 INFO  BDCompania - *******************************************************
+2016-05-22 18:25:35,366 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:25:35,366 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:25:35,366 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:25:35,392 INFO  BDCompania - *******************************************************
+2016-05-22 18:25:35,392 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:25:35,392 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:25:35,392 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:26:54,495 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:26:54,495 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:26:54,495 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:26:54,495 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:26:54,505 INFO  BDCompania - *******************************************************
+2016-05-22 18:26:54,505 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:26:54,505 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:26:54,505 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:26:54,513 INFO  BDCompania - *******************************************************
+2016-05-22 18:26:54,513 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:26:54,513 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:26:54,513 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:24,126 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:28:24,132 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:28:24,132 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:28:24,132 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:28:24,147 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:24,147 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:24,147 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:28:24,147 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:24,164 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:24,164 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:24,164 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:28:24,164 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:33,735 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:28:33,735 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:28:33,735 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:28:33,735 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:28:33,742 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:33,742 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:33,742 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:28:33,742 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:28:33,751 INFO  BDCompania - *******************************************************
+2016-05-22 18:28:33,751 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:28:33,751 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:28:33,751 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:29:11,938 INFO  LogicaM4 - *******************************************************
+2016-05-22 18:29:11,939 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 18:29:11,939 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 18:29:11,939 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 18:29:11,948 INFO  BDCompania - *******************************************************
+2016-05-22 18:29:11,948 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:29:11,948 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 18:29:11,948 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 18:29:11,961 INFO  BDCompania - *******************************************************
+2016-05-22 18:29:11,962 INFO  BDCompania - Clase: BDCompania
+2016-05-22 18:29:11,962 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 18:29:11,962 INFO  BDCompania - Metodo: ConsultCompanies
+>>>>>>> e3a1a46f83f4c6edeb61a0c8395ed85086e5f894
+2016-05-22 18:56:07,525 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:07,531 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:07,531 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:56:07,531 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:56:07,913 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:07,913 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:07,913 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:56:07,913 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:56:21,496 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:21,496 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:21,496 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:56:21,496 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:56:21,513 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:21,513 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:21,513 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:56:21,513 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:56:42,244 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:42,244 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:42,244 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:56:42,244 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 18:56:42,297 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:42,297 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:42,297 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:56:42,297 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 18:56:45,978 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:45,978 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:45,978 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:56:45,979 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 18:56:46,066 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:46,067 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:46,067 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:56:46,067 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 18:56:46,080 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:46,081 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:46,081 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:56:46,081 INFO  BDClientePotencial - Metodo: BorrarClientePotencial
+2016-05-22 18:56:46,147 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:46,147 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:46,147 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:56:46,147 INFO  BDClientePotencial - Metodo: BorrarClientePotencial
+2016-05-22 18:56:50,296 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:50,297 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:50,297 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 18:56:50,297 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 18:56:50,351 INFO  BDClientePotencial - *******************************************************
+2016-05-22 18:56:50,351 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 18:56:50,351 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 18:56:50,351 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:20:35,620 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:20:35,628 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:20:35,628 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:20:35,628 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:20:35,760 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:20:35,761 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:20:35,761 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:20:35,761 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:21:25,587 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:25,595 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:25,595 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:21:25,595 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:21:25,742 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:25,743 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:25,743 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:21:25,743 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:21:35,066 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:35,066 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:35,066 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:21:35,066 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:21:35,321 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:35,321 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:35,321 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:21:35,321 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:21:44,589 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:44,589 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:44,589 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:21:44,589 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 19:21:44,614 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:44,614 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:44,614 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:21:44,614 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 19:21:47,556 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:47,556 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:47,556 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:21:47,556 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 19:21:47,574 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:47,574 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:47,574 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:21:47,574 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 19:21:47,578 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:47,578 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:47,578 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:21:47,578 INFO  BDClientePotencial - Metodo: PromoverClientePotencial
+2016-05-22 19:21:47,600 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:47,600 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:47,600 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:21:47,600 INFO  BDClientePotencial - Metodo: PromoverClientePotencial
+2016-05-22 19:21:49,937 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:49,937 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:49,937 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:21:49,937 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:21:49,952 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:21:49,952 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:21:49,952 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:21:49,952 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+<<<<<<< HEAD
+2016-05-22 19:24:48,283 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:24:48,293 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:24:48,293 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:24:48,293 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:24:48,419 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:24:48,419 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:24:48,419 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:24:48,419 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:25:05,715 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:25:05,715 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:25:05,717 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:25:05,717 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:25:05,877 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:25:05,877 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:25:05,877 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:25:05,877 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:27:23,169 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:27:23,177 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:27:23,177 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:27:23,177 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:27:23,255 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:27:23,255 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:27:23,255 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:27:23,255 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:27:34,407 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:27:34,407 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:27:34,407 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:27:34,407 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:27:34,428 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:27:34,428 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:27:34,428 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:27:34,428 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:33:23,844 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:33:23,850 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:33:23,850 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:33:23,850 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:33:23,924 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:33:23,924 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:33:23,924 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:33:23,924 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:33:37,313 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:33:37,313 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:33:37,313 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:33:37,313 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:33:37,342 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:33:37,342 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:33:37,342 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:33:37,342 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:46:58,988 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:46:58,995 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:46:58,995 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:46:58,995 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:46:59,134 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:46:59,134 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:46:59,135 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:46:59,135 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:48:00,278 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:48:00,284 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:48:00,284 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:48:00,284 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:48:01,126 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:48:01,126 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:48:01,126 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:48:01,126 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:48:17,937 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:48:17,937 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:48:17,937 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:48:17,937 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 19:48:17,942 INFO  BDCompania - *******************************************************
+2016-05-22 19:48:17,942 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:48:17,942 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:48:17,942 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:48:17,975 INFO  BDCompania - *******************************************************
+2016-05-22 19:48:17,975 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:48:17,975 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:48:17,975 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:48:31,350 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:48:31,350 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:48:31,350 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:48:31,350 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 19:48:31,354 INFO  BDCompania - *******************************************************
+2016-05-22 19:48:31,354 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:48:31,354 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:48:31,354 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 19:48:31,555 INFO  BDCompania - *******************************************************
+2016-05-22 19:48:31,555 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:48:31,555 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:48:31,555 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 19:48:31,603 INFO  LogicaM5 - *******************************************************
+2016-05-22 19:48:31,603 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-22 19:48:31,603 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-22 19:48:31,603 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-22 19:48:31,669 INFO  BDContacto - *******************************************************
+2016-05-22 19:48:31,669 INFO  BDContacto - Clase: BDContacto
+2016-05-22 19:48:31,669 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-22 19:48:31,669 INFO  BDContacto - Metodo: ContactCompany
+2016-05-22 19:48:31,771 INFO  BDContacto - *******************************************************
+2016-05-22 19:48:31,771 INFO  BDContacto - Clase: BDContacto
+2016-05-22 19:48:31,771 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-22 19:48:31,771 INFO  BDContacto - Metodo: ContactCompany
+2016-05-22 19:48:41,467 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:48:41,467 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:48:41,467 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:48:41,467 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 19:48:41,469 INFO  BDCompania - *******************************************************
+2016-05-22 19:48:41,469 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:48:41,469 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:48:41,469 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:48:41,493 INFO  BDCompania - *******************************************************
+2016-05-22 19:48:41,493 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:48:41,493 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:48:41,493 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:50:07,319 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:50:07,325 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:50:07,325 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:50:07,325 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:50:07,403 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:50:07,403 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:50:07,403 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:50:07,403 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:50:23,240 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:50:23,240 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:50:23,240 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 19:50:23,240 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 19:50:23,306 INFO  BDClientePotencial - *******************************************************
+2016-05-22 19:50:23,306 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 19:50:23,306 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 19:50:23,306 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:08:03,823 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:08:03,834 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:08:03,834 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:08:03,834 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:08:04,511 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:08:04,511 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:08:04,511 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:08:04,511 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:11:04,014 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:11:04,024 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:11:04,024 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:11:04,024 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:11:04,233 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:11:04,233 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:11:04,233 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:11:04,233 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:11:42,947 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:11:42,947 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:11:42,947 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:11:42,947 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:11:42,966 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:11:42,966 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:11:42,966 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:11:42,966 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:11:48,198 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:11:48,198 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:11:48,198 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:11:48,199 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 20:11:48,427 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:11:48,427 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:11:48,427 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:11:48,427 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 20:17:51,070 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:17:51,076 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:17:51,076 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:17:51,076 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:17:51,320 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:17:51,320 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:17:51,320 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:17:51,320 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:18:03,361 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:18:03,361 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:18:03,362 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:18:03,362 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:18:03,413 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:18:03,413 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:18:03,413 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:18:03,413 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:18:07,010 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:18:07,011 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:18:07,011 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:18:07,011 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 20:18:07,382 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:18:07,382 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:18:07,382 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:18:07,382 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 20:18:25,117 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:25,117 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:25,117 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:25,117 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 20:18:25,124 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:25,124 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:25,124 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:25,124 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 20:18:25,155 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:25,155 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:25,155 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:25,155 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 20:18:26,974 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:26,974 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:26,974 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:26,974 INFO  LogicaM4 - Metodo: getPlaces
+2016-05-22 20:18:26,986 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:18:26,986 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:18:26,986 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 20:18:26,986 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:18:27,070 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:18:27,070 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:18:27,070 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 20:18:27,071 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:18:27,073 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:27,073 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:27,073 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:27,073 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:27,077 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:27,077 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:27,077 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:27,077 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:27,112 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:27,112 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:27,112 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:27,112 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:36,189 INFO  BDPropuesta - *******************************************************
+2016-05-22 20:18:36,189 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 20:18:36,189 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 20:18:36,189 INFO  BDPropuesta - Metodo: ListarLasPropuestas
+2016-05-22 20:18:37,731 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,731 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,731 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,731 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,734 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,734 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,734 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,734 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,757 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,757 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,757 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,757 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,764 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,764 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,764 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,764 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,767 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,767 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,767 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,767 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,791 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,791 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,791 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,791 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,793 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,793 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,793 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,793 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,796 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,796 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,796 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,796 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,820 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,820 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,820 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,820 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,823 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,824 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,824 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,824 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,827 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,827 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,827 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,827 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,852 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,852 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,852 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,852 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,855 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,855 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,855 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,855 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,856 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,856 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,856 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,856 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,884 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,884 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,884 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,884 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,887 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,887 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,887 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,887 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,888 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,888 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,888 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,888 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,916 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,916 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,916 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,916 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,918 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:37,918 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:37,918 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,918 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:37,919 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,919 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,919 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:37,919 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:37,941 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:37,941 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:37,941 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:37,941 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:41,422 INFO  BDPropuesta - *******************************************************
+2016-05-22 20:18:41,422 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 20:18:41,422 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 20:18:41,422 INFO  BDPropuesta - Metodo: ConsultarPropuestaporNombre
+2016-05-22 20:18:41,472 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:18:41,473 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:18:41,473 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:18:41,474 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:18:41,475 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:41,475 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:41,475 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:18:41,475 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:41,493 INFO  BDCompania - *******************************************************
+2016-05-22 20:18:41,493 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:18:41,493 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:18:41,493 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:18:41,496 INFO  BDPropuesta - *******************************************************
+2016-05-22 20:18:41,496 INFO  BDPropuesta - Clase: BDPropuesta
+2016-05-22 20:18:41,496 INFO  BDPropuesta - Mensaje: Entrada en el Método
+2016-05-22 20:18:41,496 INFO  BDPropuesta - Metodo: ConsultarRequerimientosPorPropuesta
+2016-05-22 20:19:07,597 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:19:07,597 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:19:07,597 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:19:07,597 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 20:19:07,599 INFO  BDCompania - *******************************************************
+2016-05-22 20:19:07,599 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:19:07,599 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:19:07,599 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 20:19:07,627 INFO  BDCompania - *******************************************************
+2016-05-22 20:19:07,627 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:19:07,627 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:19:07,628 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 20:19:10,729 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:19:10,729 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:19:10,730 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:19:10,730 INFO  LogicaM4 - Metodo: getPlaces
+2016-05-22 20:19:10,736 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:19:10,737 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:19:10,737 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 20:19:10,744 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:19:11,044 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:19:11,044 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:19:11,044 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 20:19:11,044 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:19:11,061 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:19:11,061 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:19:11,061 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:19:11,061 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:19:11,068 INFO  BDCompania - *******************************************************
+2016-05-22 20:19:11,068 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:19:11,068 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:19:11,069 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:19:11,334 INFO  BDCompania - *******************************************************
+2016-05-22 20:19:11,334 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:19:11,334 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:19:11,334 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:21:38,116 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:21:38,122 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:21:38,122 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:21:38,122 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:21:38,333 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:21:38,333 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:21:38,333 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:21:38,333 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:21:50,652 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:21:50,652 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:21:50,652 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:21:50,652 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:21:50,663 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:21:50,663 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:21:50,663 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:21:50,663 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:30:52,575 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:30:52,582 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:30:52,582 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:30:52,582 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:30:52,809 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:30:52,809 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:30:52,809 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:30:52,809 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:31:50,420 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:31:50,420 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:31:50,420 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:31:50,420 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:31:50,646 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:31:50,646 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:31:50,646 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:31:50,646 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:34:39,781 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:34:39,792 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:34:39,792 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:34:39,792 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:34:40,067 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:34:40,067 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:34:40,067 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:34:40,067 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:35:13,871 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:35:13,877 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:35:13,877 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:35:13,877 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:35:13,896 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:35:13,896 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:35:13,896 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:35:13,896 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:35:18,651 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:35:18,651 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:35:18,651 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:35:18,651 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 20:35:18,681 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:35:18,681 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:35:18,681 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:35:18,681 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-05-22 20:35:18,739 INFO  LogicaM5 - *******************************************************
+2016-05-22 20:35:18,739 INFO  LogicaM5 - Clase: LogicaM5
+2016-05-22 20:35:18,739 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-05-22 20:35:18,739 INFO  LogicaM5 - Metodo: GetContacts
+2016-05-22 20:35:18,745 INFO  BDContacto - *******************************************************
+2016-05-22 20:35:18,746 INFO  BDContacto - Clase: BDContacto
+2016-05-22 20:35:18,746 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-05-22 20:35:18,746 INFO  BDContacto - Metodo: ContactCompany
+2016-05-22 20:35:18,765 INFO  BDContacto - *******************************************************
+2016-05-22 20:35:18,765 INFO  BDContacto - Clase: BDContacto
+2016-05-22 20:35:18,765 INFO  BDContacto - Mensaje: Salida del Método
+2016-05-22 20:35:18,765 INFO  BDContacto - Metodo: ContactCompany
+2016-05-22 20:44:57,744 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:44:57,751 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:44:57,751 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 20:44:57,751 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:44:57,864 INFO  BDClientePotencial - *******************************************************
+2016-05-22 20:44:57,865 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 20:44:57,865 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 20:44:57,865 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 20:45:13,284 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:45:13,284 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:45:13,284 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:45:13,284 INFO  LogicaM4 - Metodo: getPlaces
+2016-05-22 20:45:13,292 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:45:13,292 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:45:13,292 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 20:45:13,292 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:45:13,322 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:45:13,322 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:45:13,323 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 20:45:13,324 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:45:57,310 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:45:57,311 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:45:57,311 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:45:57,311 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 20:45:57,314 INFO  BDCompania - *******************************************************
+2016-05-22 20:45:57,315 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:45:57,315 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:45:57,315 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 20:45:57,377 INFO  BDCompania - *******************************************************
+2016-05-22 20:45:57,377 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:45:57,377 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:45:57,377 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 20:46:06,533 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:46:06,533 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:46:06,533 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:46:06,533 INFO  LogicaM4 - Metodo: getPlaces
+2016-05-22 20:46:06,535 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:46:06,535 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:46:06,535 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 20:46:06,535 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:46:06,617 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 20:46:06,617 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 20:46:06,617 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 20:46:06,617 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 20:46:06,619 INFO  LogicaM4 - *******************************************************
+2016-05-22 20:46:06,619 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 20:46:06,619 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 20:46:06,619 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 20:46:06,623 INFO  BDCompania - *******************************************************
+2016-05-22 20:46:06,623 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:46:06,623 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 20:46:06,623 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 20:46:06,639 INFO  BDCompania - *******************************************************
+2016-05-22 20:46:06,639 INFO  BDCompania - Clase: BDCompania
+2016-05-22 20:46:06,639 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 20:46:06,639 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 21:00:22,237 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:00:22,243 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:00:22,243 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:00:22,243 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:00:22,445 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:00:22,445 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:00:22,445 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:00:22,445 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:06:38,018 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:06:38,024 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:06:38,024 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:06:38,024 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:06:46,267 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:06:46,267 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:06:46,267 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:06:46,267 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:08:00,015 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:08:00,015 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:08:00,015 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-05-22 21:08:00,015 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-05-22 21:08:00,045 INFO  BDClientePotencial - *******************************************************
+2016-05-22 21:08:00,045 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-05-22 21:08:00,045 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-05-22 21:08:00,045 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+=======
+2016-05-22 19:57:20,161 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:57:20,166 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:57:20,166 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:57:20,166 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 19:57:20,189 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:20,189 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:20,189 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:57:20,189 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:57:20,278 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:20,278 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:20,278 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:57:20,278 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:57:27,577 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:57:27,577 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:57:27,577 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:57:27,577 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 19:57:27,585 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:27,585 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:27,585 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:57:27,585 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:57:27,592 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:27,592 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:27,592 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:57:27,592 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:57:29,717 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:57:29,717 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:57:29,717 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:57:29,717 INFO  LogicaM4 - Metodo: getPlaces
+2016-05-22 19:57:29,724 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 19:57:29,724 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 19:57:29,724 INFO  BDLugarDireccion - Mensaje: Entrada en el Método
+2016-05-22 19:57:29,724 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 19:57:29,730 INFO  BDLugarDireccion - *******************************************************
+2016-05-22 19:57:29,730 INFO  BDLugarDireccion - Clase: BDLugarDireccion
+2016-05-22 19:57:29,730 INFO  BDLugarDireccion - Mensaje: Salida del Método
+2016-05-22 19:57:29,730 INFO  BDLugarDireccion - Metodo: ConsultCityPlaces
+2016-05-22 19:57:29,732 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:57:29,732 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:57:29,732 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:57:29,732 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-05-22 19:57:29,739 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:29,739 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:29,739 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:57:29,739 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 19:57:29,750 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:29,750 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:29,750 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:57:29,750 INFO  BDCompania - Metodo: ConsultCompany
+2016-05-22 19:57:49,519 INFO  LogicaM4 - *******************************************************
+2016-05-22 19:57:49,519 INFO  LogicaM4 - Clase: LogicaM4
+2016-05-22 19:57:49,519 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-05-22 19:57:49,519 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-05-22 19:57:49,548 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:49,548 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:49,548 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-05-22 19:57:49,548 INFO  BDCompania - Metodo: ConsultCompanies
+2016-05-22 19:57:49,557 INFO  BDCompania - *******************************************************
+2016-05-22 19:57:49,558 INFO  BDCompania - Clase: BDCompania
+2016-05-22 19:57:49,558 INFO  BDCompania - Mensaje: Salida del Método
+2016-05-22 19:57:49,558 INFO  BDCompania - Metodo: ConsultCompanies
+>>>>>>> dc78ee8547eeee39fe81a79025be02954852748f

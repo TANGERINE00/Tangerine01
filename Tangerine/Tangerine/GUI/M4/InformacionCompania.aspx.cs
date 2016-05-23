@@ -15,9 +15,6 @@ namespace Tangerine.GUI.M4
     {
         LogicaM4 prueba = new LogicaM4();
       
-       
-        
-
         public string Name
         {
             get
@@ -30,6 +27,7 @@ namespace Tangerine.GUI.M4
                 this.Nombre.Text = value;
             }
         }
+
         public string Siglas
         {
             get
@@ -42,6 +40,7 @@ namespace Tangerine.GUI.M4
                 this.Acronimo.Text = value;
             }
         }
+
         public string Telefono
         {
             get
@@ -54,6 +53,7 @@ namespace Tangerine.GUI.M4
                 this.telefono.Text = value;
             }
         }
+
         public string RIF
         {
             get
@@ -66,6 +66,7 @@ namespace Tangerine.GUI.M4
                 this.Rif.Text = value;
             }
         }
+
         public string Direccion
         {
             get
@@ -78,6 +79,7 @@ namespace Tangerine.GUI.M4
                 this.direccion.Text = value;
             }
         }
+
         public string Correo
         {
             get
@@ -90,6 +92,7 @@ namespace Tangerine.GUI.M4
                 this.correo.Text = value;
             }
         }
+
         public string Fecha
         {
             get
@@ -102,6 +105,7 @@ namespace Tangerine.GUI.M4
                 this.fecha.Text = value;
             }
         }
+
         public string Habilitado
         {
             get
@@ -114,6 +118,7 @@ namespace Tangerine.GUI.M4
                 this.habilitado.Text = value;
             }
         }
+
         public string Plazo
         {
             get
@@ -126,6 +131,7 @@ namespace Tangerine.GUI.M4
                 this.plazo.Text = value;
             }
         }
+
         public string Presupuesto
         {
             get
@@ -138,6 +144,12 @@ namespace Tangerine.GUI.M4
                 this.presupuesto.Text = value;
             }
         }
+
+        /// <summary>
+        /// Método de carga de página en el cual carga los datos de la compañía.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             Compania company = new Compania();
@@ -146,22 +158,17 @@ namespace Tangerine.GUI.M4
 
             try
             {
-                company = prueba.SearchCompany(int.Parse(Request.QueryString["idComp"]));
+                company = prueba.ConsultCompany(int.Parse(Request.QueryString["idComp"]));
             }
             catch 
             {
             }
-           
-  
-
-     
+          
             foreach (LugarDireccion lugar in listaLugares)
             {
                 
-            if (lugar.LugId.Equals(company.IdLugar))
-                {
-                
-                    
+                if (lugar.LugId.Equals(company.IdLugar))
+                {  
                     Name= company.NombreCompania;
                     Siglas= company.AcronimoCompania;
                     Telefono= company.TelefonoCompania;
@@ -171,10 +178,12 @@ namespace Tangerine.GUI.M4
                     Direccion = lugar.LugNombre ;
                     Plazo = company.PlazoPagoCompania.ToString() + ResourceGUIM4.Dias;
                     Presupuesto = company.PresupuestoCompania.ToString();
+                
                     if (company.StatusCompania == 1)
                     {
                         Habilitado = ResourceGUIM4.habilitado + ResourceGUIM4.CloseSpanHab;
                     }
+
                     if (company.StatusCompania == 0)
                     {
                         Habilitado = ResourceGUIM4.inhabilitado + ResourceGUIM4.CloseSpanInhab;
@@ -182,10 +191,8 @@ namespace Tangerine.GUI.M4
                     }
                 }
             
-         } 
+            } 
 
-
-        
         }
     }
 }

@@ -20,7 +20,7 @@ namespace LogicaTangerine.M8
 
                 mnsj.To.Add(new MailAddress(destinatario));
 
-                mnsj.From = new MailAddress("tangerine.dev.00@gmail.com", "Sistema Tangerine");
+                mnsj.From = new MailAddress("sistematangerine.dev@gmail.com", "Sistema Tangerine");
 
                 /* Si deseamos Adjuntar algún archivo*/
                 //mnsj.Attachments.Add(new Attachment("C:\\archivo.pdf"));
@@ -58,7 +58,7 @@ namespace LogicaTangerine.M8
              * Direccion de Correo (Gmail o Hotmail)
              * y Contrasena correspondiente
              */
-            server.Credentials = new System.Net.NetworkCredential("tangerine.dev.00@gmail.com", "$Tangerine00");
+            server.Credentials = new System.Net.NetworkCredential("sistematangerine.dev@gmail.com", "123456tg");
             server.EnableSsl = true;
         }
 

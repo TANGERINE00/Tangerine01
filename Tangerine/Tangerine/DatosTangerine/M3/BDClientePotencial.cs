@@ -19,7 +19,7 @@ namespace DatosTangerine.M3
        public static List<ClientePotencial> DatosListarClientePotencial()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-     ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<ClientePotencial> objetolistaClientePotencial = new List<ClientePotencial>();
 
@@ -113,20 +113,25 @@ namespace DatosTangerine.M3
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceClientePotencial.AnombreClientePotencial, SqlDbType.VarChar, elClientePotencial.NombreClientePotencial, false);
+                theParam = new Parametro(ResourceClientePotencial.AnombreClientePotencial, SqlDbType.VarChar, 
+                elClientePotencial.NombreClientePotencial, false);
                 parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceClientePotencial.ArifClientePotencial, SqlDbType.VarChar, elClientePotencial.RifClientePotencial, false);
+                theParam = new Parametro(ResourceClientePotencial.ArifClientePotencial, SqlDbType.VarChar, 
+                elClientePotencial.RifClientePotencial, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceClientePotencial.AemailClientePotencial, SqlDbType.VarChar, elClientePotencial.EmailClientePotencial, false);
+                theParam = new Parametro(ResourceClientePotencial.AemailClientePotencial, SqlDbType.VarChar, 
+                elClientePotencial.EmailClientePotencial, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceClientePotencial.ApresupuestoAnualInversion, SqlDbType.Decimal, elClientePotencial.PresupuestoAnual_inversion.ToString(), false);
+                theParam = new Parametro(ResourceClientePotencial.ApresupuestoAnualInversion, SqlDbType.Decimal, 
+                elClientePotencial.PresupuestoAnual_inversion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceClientePotencial.Astatus, SqlDbType.Decimal, elClientePotencial.Status.ToString(), false);
+                theParam = new Parametro(ResourceClientePotencial.Astatus, SqlDbType.Decimal, 
+                elClientePotencial.Status.ToString(), false);
                 parameters.Add(theParam);
 
 
@@ -175,8 +180,7 @@ namespace DatosTangerine.M3
         }
 
         //----------------------------------------borrar el cliente potencial-----------------------
-        //intento1
-      //  /*
+     
             public static Boolean BorrarClientePotencial(ClientePotencial elClientePotencial)
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -190,7 +194,8 @@ namespace DatosTangerine.M3
                 {
                     //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                     //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int, elClientePotencial.IdClientePotencial.ToString(), false);
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int, 
+                    elClientePotencial.IdClientePotencial.ToString(), false);
                     parameters.Add(theParam);
 
                     //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -254,7 +259,8 @@ namespace DatosTangerine.M3
                 {
                     theConnection.Conectar();
 
-                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int, idClientePotencial.ToString(), false);
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int, 
+                    idClientePotencial.ToString(), false);
                     parameters.Add(theParam);
 
                     //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -272,12 +278,12 @@ namespace DatosTangerine.M3
                         //String PresupuestoAnual_inversion = row[ResourceClientePotencial.emailClientePotencial].ToString();
                         int NumeroLlamadas = int.Parse(row[ResourceClientePotencial.numeroLlamadas].ToString());
                         int NumeroVisitas = int.Parse(row[ResourceClientePotencial.numeroVisitas].ToString());
-                       //int Potencial = int.Parse(row[ResourceClientePotencial.potencial].ToString());
-                       // String Borrado = row[ResourceClientePotencial.borrado].ToString();
-                      //  int conCompId = int.Parse(row[ResourceClientePotencial.ConIdComp].ToString());
+                        int Status = int.Parse(row[ResourceClientePotencial.status].ToString());
+                        //  int conCompId = int.Parse(row[ResourceClientePotencial.ConIdComp].ToString());
 
                         //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                        elClientePotencial = new ClientePotencial(IdClientePotencial, NombreClientePotencial, RifClientePotencial, EmailClientePotencial, PresupuestoAnual_inversion, NumeroLlamadas, NumeroVisitas);
+                        elClientePotencial = new ClientePotencial(IdClientePotencial, NombreClientePotencial, RifClientePotencial, 
+                            EmailClientePotencial, PresupuestoAnual_inversion, NumeroLlamadas, NumeroVisitas,Status);
                       
                     }
 
@@ -333,32 +339,33 @@ namespace DatosTangerine.M3
                 {
                     //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                     //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int, elClientePotencial.IdClientePotencial.ToString(), false);
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int, 
+                    elClientePotencial.IdClientePotencial.ToString(), false);
                     parameters.Add(theParam);
 
-                    theParam = new Parametro(ResourceClientePotencial.AnombreClientePotencial, SqlDbType.VarChar, elClientePotencial.NombreClientePotencial, false);
+                    theParam = new Parametro(ResourceClientePotencial.AnombreClientePotencial, SqlDbType.VarChar, 
+                    elClientePotencial.NombreClientePotencial, false);
                     parameters.Add(theParam);
 
-                    theParam = new Parametro(ResourceClientePotencial.ArifClientePotencial, SqlDbType.VarChar, elClientePotencial.RifClientePotencial, false);
+                    theParam = new Parametro(ResourceClientePotencial.ArifClientePotencial, SqlDbType.VarChar, 
+                    elClientePotencial.RifClientePotencial, false);
                     parameters.Add(theParam);
 
-                    theParam = new Parametro(ResourceClientePotencial.AemailClientePotencial, SqlDbType.VarChar, elClientePotencial.EmailClientePotencial, false);
+                    theParam = new Parametro(ResourceClientePotencial.AemailClientePotencial, SqlDbType.VarChar, 
+                    elClientePotencial.EmailClientePotencial, false);
                     parameters.Add(theParam);
 
-                  theParam = new Parametro(ResourceClientePotencial.ApresupuestoAnualInversion, SqlDbType.Decimal, elClientePotencial.PresupuestoAnual_inversion.ToString(), false);
-                   parameters.Add(theParam);
-
-                    theParam = new Parametro(ResourceClientePotencial.AnumLlamadas, SqlDbType.Int, elClientePotencial.NumeroLlamadas.ToString(), false);
+                    theParam = new Parametro(ResourceClientePotencial.ApresupuestoAnualInversion, SqlDbType.Decimal, 
+                    elClientePotencial.PresupuestoAnual_inversion.ToString(), false);
                     parameters.Add(theParam);
 
-                    theParam = new Parametro(ResourceClientePotencial.AnumVisitas, SqlDbType.Int, elClientePotencial.NumeroVisitas.ToString(), false);
+                    theParam = new Parametro(ResourceClientePotencial.AnumLlamadas, SqlDbType.Int, 
+                    elClientePotencial.NumeroLlamadas.ToString(), false);
                     parameters.Add(theParam);
 
-                   // theParam = new Parametro(ResourceClientePotencial.Apotencial, SqlDbType.Bit, elClientePotencial.Potencial.ToString(), false);
-                  //  parameters.Add(theParam);
-
-                   // theParam = new Parametro(ResourceClientePotencial.Aborrado, SqlDbType.Bit, elClientePotencial.Borrado.ToString(), false);
-                   // parameters.Add(theParam);
+                    theParam = new Parametro(ResourceClientePotencial.AnumVisitas, SqlDbType.Int, 
+                    elClientePotencial.NumeroVisitas.ToString(), false);
+                    parameters.Add(theParam);
 
 
                     //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
@@ -400,10 +407,6 @@ namespace DatosTangerine.M3
                     ResourceClientePotencial.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
-
-
-
-
 
             }
 
@@ -476,19 +479,132 @@ namespace DatosTangerine.M3
 
 
 
+            public static Boolean ActivarClientePotencial(ClientePotencial ClientPot)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                List<Parametro> parameters = new List<Parametro>();
+                BDConexion theConnection = new BDConexion();
+                Parametro theParam = new Parametro();
+
+                try
+                {
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros 
+                    //reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, 
+                    //el tipo de dato, el valor, false)
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial,
+                        SqlDbType.Int, ClientPot.IdClientePotencial.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure 
+                    //M5_AgregarContacto y todos los parametros que recibe
+                    List<Resultado> results =
+                        theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_ActivarClientePotencial, parameters);
+
+                }
+
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                        ResourceClientePotencial.Mensaje_Error_Formato, ex);
+                }
+                catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw ex;
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    ResourceClientePotencial.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                return true;
+            }
 
 
+            public static Boolean PromoverClientePotencial(ClientePotencial elClientePotencial)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                List<Parametro> parameters = new List<Parametro>();
+                BDConexion theConnection = new BDConexion();
+                Parametro theParam = new Parametro();
 
 
+                try
+                {
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
+                    elClientePotencial.IdClientePotencial.ToString(), false);
+                    parameters.Add(theParam);
 
+                    //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                    List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_promoverClientePotencial, parameters);
 
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                    throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                    throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                        ResourceClientePotencial.Mensaje_Error_Formato, ex);
+                }
+                catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    ResourceClientePotencial.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+                return true;
+            }
 
-
-
-
+    
+    
+    
     }
 }

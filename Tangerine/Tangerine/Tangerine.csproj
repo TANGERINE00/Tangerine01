@@ -159,6 +159,7 @@
     <Content Include="GUI\M2\CambiarRol.aspx" />
     <Content Include="GUI\M2\EjemploM2.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
+    <Content Include="GUI\M3\ActivarLead.aspx" />
     <Content Include="GUI\M3\AgregarLeads.aspx" />
     <Content Include="GUI\M3\ConsultarLead.aspx" />
     <Content Include="GUI\M3\EjemploM3.aspx" />
@@ -187,6 +188,7 @@
     <Content Include="GUI\M7\modificarProyecto.aspx" />
     <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
+    <Content Include="GUI\M8\EnviarCorreoM8.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
@@ -1095,6 +1097,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceGUIM2.resx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M3\ActivarLead.aspx.cs">
+      <DependentUpon>ActivarLead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\ActivarLead.aspx.designer.cs">
+      <DependentUpon>ActivarLead.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
       <DependentUpon>AgregarLeads.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1301,6 +1310,13 @@
     </Compile>
     <Compile Include="GUI\M8\ConsultarFacturaM8.aspx.designer.cs">
       <DependentUpon>ConsultarFacturaM8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M8\EnviarCorreoM8.aspx.cs">
+      <DependentUpon>EnviarCorreoM8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\EnviarCorreoM8.aspx.designer.cs">
+      <DependentUpon>EnviarCorreoM8.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>

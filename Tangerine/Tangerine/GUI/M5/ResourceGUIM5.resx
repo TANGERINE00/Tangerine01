@@ -138,13 +138,7 @@
   <data name="alertClase" xml:space="preserve">
     <value>class</value>
   </data>
-  <data name="alertClase1" xml:space="preserve">
-    <value>class</value>
-  </data>
   <data name="alertRole" xml:space="preserve">
-    <value>role</value>
-  </data>
-  <data name="alertRole1" xml:space="preserve">
     <value>role</value>
   </data>
   <data name="BotonCerrar" xml:space="preserve">
@@ -230,5 +224,44 @@
   </data>
   <data name="Lead" xml:space="preserve">
     <value> Lead: </value>
+  </data>
+  <data name="BotonVolver4" xml:space="preserve">
+    <value>&amp;status=</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>status</value>
+  </data>
+  <data name="StatusAgregado" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Alert" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="AlertDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertShowSu1" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertShowSu2" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="AlertSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="ContactoAgregado" xml:space="preserve">
+    <value>El contacto ha sido creado correctamente</value>
+  </data>
+  <data name="ContactoEliminado" xml:space="preserve">
+    <value>El contacto ha sido eliminado correctamente</value>
+  </data>
+  <data name="ContactoModificado" xml:space="preserve">
+    <value>El contacto ha sido modificado correctamente</value>
+  </data>
+  <data name="StatusEliminado" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="StatusModificado" xml:space="preserve">
+    <value>2</value>
   </data>
 </root>

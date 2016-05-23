@@ -36,8 +36,16 @@ namespace Tangerine.GUI.M1
 
         protected void SelectedJob_Change(object sender, EventArgs e)
         {
-            JobSummary.InnerText = "";
-            JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
+            try
+            {
+                JobSummary.InnerText = "";
+                JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
+            }
+            catch (Exception ex)
+            {
+                JobSummary.InnerText = "";
+            }
+
         }
 
         protected void SelectedCountry_Change(object sender, EventArgs e)
@@ -46,9 +54,10 @@ namespace Tangerine.GUI.M1
             int x = 1;
             string country = SelectedListCountry.SelectedItem.Text;
             //SelectedListState.Items.Clear();
-            SelectedListState.Items.Insert(0, "Seleccione un estado");
             foreach (LugarDireccion estados in componentes.ItemsForListState(country))
             {
+                if (x==1)
+                    SelectedListState.Items.Insert(0, "Seleccione un estado");
                 SelectedListState.Items.Insert(x, estados.LugNombre);
                 x++;
             }
@@ -75,6 +84,7 @@ namespace Tangerine.GUI.M1
                                                 active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
                                                 newAddress());
             logicEmployee.AddNewEmpleado(empleado);
+            Response.Redirect("../M1/EmpleadosAdmin.aspx");
         }
 
         private List<LugarDireccion> newAddress()

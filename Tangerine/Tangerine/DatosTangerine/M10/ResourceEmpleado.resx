@@ -234,10 +234,34 @@
   <data name="EmpModalidad" xml:space="preserve">
     <value>car_emp_modalidad</value>
   </data>
+  <data name="Codigo_Error_Formato" xml:space="preserve">
+    <value>TGE_00_001</value>
+  </data>
   <data name="EstatusEmpleado" xml:space="preserve">
     <value>M10_CambiarEstatus</value>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
+  </data>
+  <data name="Mensaje_Error_Formato" xml:space="preserve">
+    <value>Error de parseo de datos</value>
+  </data>
+  <data name="ObtenerCorreoUsuario" xml:space="preserve">
+    <value>M1_ObtenerCorreoUsuario</value>
+  </data>
+  <data name="UsuActivo" xml:space="preserve">
+    <value>usu_activo</value>
+  </data>
+  <data name="UsuEmpFicha" xml:space="preserve">
+    <value>fk_emp_num_ficha</value>
+  </data>
+  <data name="UsuFechaCreacion" xml:space="preserve">
+    <value>ResourceEmpleado</value>
+  </data>
+  <data name="UsuFKRol" xml:space="preserve">
+    <value>fk_rol_id</value>
   </data>
 </root>

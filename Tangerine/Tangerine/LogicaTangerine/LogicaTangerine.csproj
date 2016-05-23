@@ -72,6 +72,7 @@
       <DependentUpon>LogicaM10Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="M1\LogicaM1.cs" />
+    <Compile Include="M1\NuevaContrasena.cs" />
     <Compile Include="M1\ResourceLogicaM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +108,11 @@
     <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="M8\CorreoM8.cs" />
     <Compile Include="M8\LogicaM8.cs" />
+    <Compile Include="M8\ResourceLogicaM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="M9\LogicaM9.cs" />
     <Compile Include="M9\LogicResourcesM9.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +148,10 @@
     <EmbeddedResource Include="M6\LogicaRecursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicaRecursos.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+    <EmbeddedResource Include="M8\ResourceLogicaM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M9\LogicResourcesM9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
