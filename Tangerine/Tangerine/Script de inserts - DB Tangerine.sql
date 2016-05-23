@@ -89,6 +89,26 @@ SET IDENTITY_INSERT PROPUESTA OFF
 
 
 
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (8,'Sistema gestion de cuentas','Se tratara de un modulo de gestion de transacciones','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+SET IDENTITY_INSERT PROPUESTA OFF
+
+
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (10,'Modulo tarjetas Innominadas','Se trata de creacion de tarjetas' ,'Dias','24','Mensual','Pendiente','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),15000,3);
+SET IDENTITY_INSERT PROPUESTA OFF
+
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (11,'Modulo centro de contacto','Modulo de gestion de usuarios','Meses','8','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),2000,4);
+SET IDENTITY_INSERT PROPUESTA OFF
+
+
+
+
+
 
 INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','Activo',8);
