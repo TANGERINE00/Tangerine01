@@ -11,6 +11,101 @@ namespace Tangerine.GUI.M3
 {
     public partial class ActivarLead : System.Web.UI.Page
     {
+        public string Name
+        {
+            get
+            {
+                return this.Nombre.Text;
+            }
+
+            set
+            {
+                this.Nombre.Text = value;
+            }
+        }
+
+        public string RIF
+        {
+            get
+            {
+                return this.Rif.Text;
+            }
+
+            set
+            {
+                this.Rif.Text = value;
+            }
+        }
+
+        public string Correo
+        {
+            get
+            {
+                return this.correo.Text;
+            }
+
+            set
+            {
+                this.correo.Text = value;
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                return this.status.ToString();
+            }
+
+            set
+            {
+                this.status.Text = value;
+            }
+        }
+
+        public string Presupuesto
+        {
+            get
+            {
+                return this.presupuesto.ToString();
+            }
+
+            set
+            {
+                this.presupuesto.Text = value;
+            }
+        }
+
+        public string Llamadas
+        {
+            get
+            {
+                return this.llamadas.ToString();
+            }
+
+            set
+            {
+                this.llamadas.Text = value;
+            }
+        }
+        public string Visitas
+        {
+            get
+            {
+                return this.visitas.ToString();
+            }
+
+            set
+            {
+                this.visitas.Text = value;
+            }
+
+
+        }
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LogicaM3 prueba = new LogicaM3();
@@ -22,14 +117,27 @@ namespace Tangerine.GUI.M3
                 try
                 {
 
-                    this.nombre.Value = elClientePotencial.NombreClientePotencial;
-                    this.rif.Value = elClientePotencial.RifClientePotencial;
-                    this.email.Value = elClientePotencial.EmailClientePotencial;
-                    this.pres_anual.Value = elClientePotencial.PresupuestoAnual_inversion.ToString();
-                    this.llamadas.Value = elClientePotencial.NumeroLlamadas.ToString(); ;
-                    this.visitas.Value = elClientePotencial.NumeroVisitas.ToString(); ;
-                    // this.potencial.Value = elClientePotencial.Potencial;
-                    //this.borrado.Value = elClientePotencial.Borrado;
+
+                    Name = elClientePotencial.NombreClientePotencial;
+                    RIF = elClientePotencial.RifClientePotencial;
+                    Correo = elClientePotencial.EmailClientePotencial;
+                    Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
+                    Llamadas = elClientePotencial.NumeroLlamadas.ToString();
+                    Visitas = elClientePotencial.NumeroVisitas.ToString();
+                    if (elClientePotencial.Status == 0)
+                    {
+                        Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
+
+                    }
+                    if (elClientePotencial.Status == 1)
+                    {
+                        Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
+                    }
+                    if (elClientePotencial.Status == 2)
+                    {
+                        Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
+                    }
+
 
 
                 }
@@ -53,7 +161,7 @@ namespace Tangerine.GUI.M3
             LogicaM3 logica = new LogicaM3();
 
             logica.ActivarclientePotencial(logica.BuscarClientePotencial(idClip));
-
+            Response.Redirect("Listar.aspx");
         }
 
     }
