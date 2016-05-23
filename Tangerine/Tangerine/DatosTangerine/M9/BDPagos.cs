@@ -58,6 +58,7 @@ namespace DatosTangerine.M9
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+            CargarStatus(NuevoPago.idFactura, 1);
 
             return true;
         }

@@ -54,7 +54,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="M1\" />
-    <Folder Include="M6\" />
     <Folder Include="M7\" />
 <<<<<<< HEAD
     <Folder Include="M8\" />
@@ -90,10 +89,17 @@
     <Compile Include="M5\NullArgumentException.cs" />
     <Compile Include="M5\WrongFormatException.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="M9\ExceptionDataBase.cs" />
     <Compile Include="M9\NullArgumentException.cs" />
     <Compile Include="M9\WrongFormatException.cs" />
 =======
+=======
+    <Compile Include="M6\BasedeDatosException.cs" />
+    <Compile Include="M6\FormatoIncorrectoException.cs" />
+    <Compile Include="M6\ListaSinPropuestaException.cs" />
+    <Compile Include="M6\PropuestaSinCodigoException.cs" />
+>>>>>>> 181bc1d761c5388326bb0b745a1a987f94ea3746
     <Compile Include="M8\ExceptionDataBase.cs" />
     <Compile Include="M8\NotArgumentException.cs" />
     <Compile Include="M8\WrongFormatException.cs" />

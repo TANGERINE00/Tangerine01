@@ -48,9 +48,6 @@ namespace DominioTangerine
 
         #region Get's y Set's
 
-
-
-
         public int IdPago
         {
             get { return _idPago; }
@@ -92,8 +89,6 @@ namespace DominioTangerine
             get { return _idFactura; }
             set { _idFactura = value; }
         }
-      
-
 
         #endregion
     }
