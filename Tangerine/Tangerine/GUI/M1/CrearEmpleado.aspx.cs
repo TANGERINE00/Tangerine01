@@ -84,6 +84,7 @@ namespace Tangerine.GUI.M1
                                                 active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
                                                 newAddress());
             logicEmployee.AddNewEmpleado(empleado);
+            Response.Redirect("../M1/EmpleadosAdmin.aspx");
         }
 
         private List<LugarDireccion> newAddress()

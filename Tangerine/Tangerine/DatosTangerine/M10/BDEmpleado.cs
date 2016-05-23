@@ -43,7 +43,7 @@ namespace DatosTangerine.M10
                 parameters.Add(new Parametro("@cargo", SqlDbType.VarChar, theEmpleado.Job.Nombre, false));
                 parameters.Add(new Parametro("@fechContrato", SqlDbType.DateTime, theEmpleado.Job.FechaContratacion.ToString("dd/MM/yyyy"), false));
                 parameters.Add(new Parametro("@modalidad", SqlDbType.VarChar, theEmpleado.Job.Modalidad, false));
-                parameters.Add(new Parametro("@sueldo", SqlDbType.Int, "234", false));
+                parameters.Add(new Parametro("@sueldo", SqlDbType.Int, theEmpleado.Job.Sueldo.ToString(), false));
 
                 parameters.Add(new Parametro("@estado", SqlDbType.VarChar, elementos["Estado"].ToString(), false));
                 parameters.Add(new Parametro("@ciudad", SqlDbType.VarChar, elementos["Ciudad"].ToString(), false));
