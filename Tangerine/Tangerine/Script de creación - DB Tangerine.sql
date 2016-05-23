@@ -1518,7 +1518,32 @@ GO
 -----------------------------------
 ------Fin Stored Procedure M9------
 -----------------------------------
+
+
+
  
+-----------------------------------
+--------Stored Procedure M9--------
+-----------------------------------
+
+
+---- StoredProcedure CONSULTAR Pago ----
+
+CREATE PROCEDURE [dbo].[M9_ConsultarPago] 
+	@id_Factura int
+
+AS
+	BEGIN
+		SELECT pag_monto as pag_monto, pag_fecha AS pag_fecha, pag_forma AS pag_forma, pag_cod AS pag_cod,
+			pag_moneda AS pag_moneda
+		FROM PAGO WHERE fk_fac_id = @id_Factura;
+	END
+
+-----------------------------------
+------Fin Stored Procedure M9------
+-----------------------------------
+
+
 
 -----------------------------------
 --------Stored Procedure M10--------

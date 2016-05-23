@@ -205,6 +205,7 @@
               </a>
               <ul class="treeview-menu">
                 <li id="Cargarpago" runat="server"><a href="../M9/SeleccionCompania.aspx"><i class="fa fa-circle-o"></i>Cargar pago</a></li>
+                <li id="Li1" runat="server"><a href="../M9/SeleccionCompaniaPagadas.aspx"><i class="fa fa-circle-o"></i>Consultar pago</a></li>
               </ul>
             </li>
              <li class="treeview" id="GestionDeEmpleados" runat="server">

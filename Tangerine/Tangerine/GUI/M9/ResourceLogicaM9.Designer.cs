@@ -214,6 +214,15 @@ namespace Tangerine.GUI.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;th style=&quot;text-align: center;&quot;&gt;&lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;FacturasPagadas.aspx?id=.
+        /// </summary>
+        internal static string boton2 {
+            get {
+                return ResourceManager.GetString("boton2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -516,6 +525,15 @@ namespace Tangerine.GUI.M9 {
         internal static string EtiquetaHabilitada {
             get {
                 return ResourceManager.GetString("EtiquetaHabilitada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;td&gt;&lt;span class=&quot;label label-success&quot;&gt;Pagada&lt;/span&gt;&lt;/td&gt;.
+        /// </summary>
+        internal static string EtiquetaPagada {
+            get {
+                return ResourceManager.GetString("EtiquetaPagada", resourceCulture);
             }
         }
         

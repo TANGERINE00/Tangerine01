@@ -257,6 +257,16 @@ namespace Tangerine.GUI.Master {
         
         /// <summary>
         /// Control GestionDeEmpleados.
+        /// Li1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li1;
+        
+        /// <summary>
+        /// GestionDeEmpleados control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
