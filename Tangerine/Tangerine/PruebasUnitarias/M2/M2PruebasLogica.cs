@@ -61,8 +61,9 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestConsultarListaDeEmpleados() 
         {
-            Assert.IsNotNull(LogicaAgregarUsuario.ConsultarListaDeEmpleados());
+            Assert.IsNotNull( LogicaAgregarUsuario.ConsultarListaDeEmpleados() );
         }
+
         /// <summary>
         /// Metodo para probar el metodo ExisteUsuario de la clase LogicaAgregarUsuario en
         /// LogicaTangerine
@@ -70,10 +71,11 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestExisteUsuario()
         {
-            BDUsuario.AgregarUsuario(theUser);
-            Assert.IsTrue(LogicaAgregarUsuario.ExisteUsuario("userTest"));
-            Assert.IsFalse(LogicaAgregarUsuario.ExisteUsuario(""));
+            BDUsuario.AgregarUsuario( theUser );
+            Assert.IsTrue( LogicaAgregarUsuario.ExisteUsuario( "userTest" ) );
+            Assert.IsFalse( LogicaAgregarUsuario.ExisteUsuario( "" ) );
         }
+
         /// <summary>
         /// Metodo para probar el metodo CrearUsuarioDefault de la clase LogicaAgregarUsuario en
         /// LogicaTangerine
@@ -81,8 +83,8 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestCrearUsuarioDefault()
         {
-            Assert.AreEqual(usuarioDefault,LogicaAgregarUsuario.CrearUsuarioDefault("carlos","lozano"));
-            Assert.IsEmpty(LogicaAgregarUsuario.CrearUsuarioDefault("",""));
+            Assert.AreEqual( usuarioDefault, LogicaAgregarUsuario.CrearUsuarioDefault( "carlos", "lozano" ) );
+            Assert.IsEmpty( LogicaAgregarUsuario.CrearUsuarioDefault( "", "" ) );
         }
 
 
@@ -94,8 +96,8 @@ namespace PruebasUnitarias.M2
         public void TestObtenerCaracteres()
         {
             String prueba = "prueba";
-            Assert.AreEqual("pr", LogicaAgregarUsuario.ObtenerCaracteres(prueba, 2));
-            Assert.IsEmpty("",LogicaAgregarUsuario.ObtenerCaracteres("",2));
+            Assert.AreEqual( "pr", LogicaAgregarUsuario.ObtenerCaracteres( prueba, 2 ) );
+            Assert.IsEmpty( "", LogicaAgregarUsuario.ObtenerCaracteres( "", 2 ) );
         }
 
         /// <summary>
@@ -105,7 +107,8 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestPrepararUsuario()
         {
-            Assert.IsTrue(LogicaAgregarUsuario.PrepararUsuario("usuarionuevo", "contrasenanueva", "Gerente",1234));
+            Assert.IsTrue( LogicaAgregarUsuario.PrepararUsuario( "usuarionuevo", "contrasenanueva", "Gerente", 
+                                                                 1234 ) );
         }
 
 
@@ -117,7 +120,7 @@ namespace PruebasUnitarias.M2
         public void TestObtenerUsuario()
         {
             
-            Assert.IsNotNull(LogicaModificarRol.ObtenerUsuario(theEmpleado));
+            Assert.IsNotNull( LogicaModificarRol.ObtenerUsuario( theEmpleado ) );
         }
 
         /// <summary>
@@ -128,7 +131,7 @@ namespace PruebasUnitarias.M2
         public void TestModificarRol()
         {
             
-            Assert.IsTrue(LogicaModificarRol.ModificarRol("craloz", "gerente"));
+            Assert.IsTrue( LogicaModificarRol.ModificarRol( "craloz", "gerente" ) );
 
         }
        
@@ -140,10 +143,10 @@ namespace PruebasUnitarias.M2
         public void TestVerificarAccesoAOpciones()
         {
 
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Gerente"));
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Administrador"));
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Programador"));
-            Assert.IsNotNull(LogicaPrivilegios.VerificarAccesoAOpciones("Director"));
+            Assert.IsNotNull( LogicaPrivilegios.VerificarAccesoAOpciones( "Gerente" ) );
+            Assert.IsNotNull( LogicaPrivilegios.VerificarAccesoAOpciones( "Administrador" ) );
+            Assert.IsNotNull( LogicaPrivilegios.VerificarAccesoAOpciones( "Programador" ) );
+            Assert.IsNotNull( LogicaPrivilegios.VerificarAccesoAOpciones( "Director" ) );
         }
 
         /// <summary>
@@ -154,7 +157,7 @@ namespace PruebasUnitarias.M2
 
         public void TestVerificarUsuarioDeEmpleado() 
         {
-            Assert.IsFalse(LogicaAgregarUsuario.VerificarUsuarioDeEmpleado(0));
+            Assert.IsFalse( LogicaAgregarUsuario.VerificarUsuarioDeEmpleado( 0 ) );
         }
 
         /// <summary>
@@ -165,29 +168,33 @@ namespace PruebasUnitarias.M2
 
         public void TestVerificarAccesoAPaginas()
         {
-            Assert.IsTrue(LogicaPrivilegios.VerificarAccesoAPagina("../../GUI/M2/RegistroUsuario.aspx", "Programador"));
-            Assert.IsFalse(LogicaPrivilegios.VerificarAccesoAPagina("../../GUI/M1/Dashboard.aspx","Programador"));
+            Assert.IsTrue( LogicaPrivilegios.VerificarAccesoAPagina( "../../GUI/M2/RegistroUsuario.aspx",  
+                                                                     "Programador" ) );
+            Assert.IsFalse( LogicaPrivilegios.VerificarAccesoAPagina( "../../GUI/M1/Dashboard.aspx",
+                                                                      "Programador" ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarAccesoAOpciones() de la clase LogicaPrivilegios en
-        /// LogicaTangerine
+        /// Método para probar el disparo de una excepción el método VerificarAccesoAOpciones() de la clase
+        /// LogicaPrivilegios en LogicaTangerine
         /// </summary>
         [Test]
         public void TestFailVerificarAccesoAOpciones()
         {
-            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAOpciones(null));
+            Assert.Throws<ExcepcionPrivilegios>( () => LogicaPrivilegios.VerificarAccesoAOpciones( null ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarAccesoAPagina() de la clase LogicaPrivilegios en
-        /// LogicaTangerine
+        /// Método para probar el disparo de una excepción el método VerificarAccesoAPagina() de la clase 
+        /// LogicaPrivilegios en LogicaTangerine
         /// </summary>
         [Test]
         public void TestFailVerificarAccesoAPagina()
         {
-            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAPagina("RegistroUsuario.aspx", "Programador"));
-            Assert.Throws<ExcepcionPrivilegios>(() => LogicaPrivilegios.VerificarAccesoAPagina("", ""));
+            Assert.Throws<ExcepcionPrivilegios>( () => LogicaPrivilegios.VerificarAccesoAPagina( "Registro" + 
+                                                                                                 "Usuario.aspx",
+                                                                                                 "Programador" ) );
+            Assert.Throws<ExcepcionPrivilegios>( () => LogicaPrivilegios.VerificarAccesoAPagina( "", "" ) );
         }
 
         /// <summary>
@@ -197,51 +204,51 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestFailModificarRol()
         {
-            Assert.Throws<NullReferenceException>(() => LogicaModificarRol.ModificarRol(null, null));
+            Assert.Throws<NullReferenceException>( () => LogicaModificarRol.ModificarRol( null, null ) );
 
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método AgregarUsuario() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
+        /// Método para probar el disparo de una excepción el método AgregarUsuario() de la clase LogicaAgregarUsuario
+        /// en LogicaTangerine
         /// </summary>
         [Test]
         public void TestFailAgregarUsuario()
         {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.AgregarUsuario(null));
+            Assert.Throws<ExcepcionRegistro>( () => LogicaAgregarUsuario.AgregarUsuario( null ) );
         }
 
         
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método CrearUsuarioDefault() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
+        /// Método para probar el disparo de una excepción el método CrearUsuarioDefault() de la clase 
+        /// LogicaAgregarUsuario en LogicaTangerine
         /// </summary>
         [Test]
         public void TestFailCrearUsuarioDefault()
         {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.CrearUsuarioDefault(null, null));
+            Assert.Throws<ExcepcionRegistro>( () => LogicaAgregarUsuario.CrearUsuarioDefault( null, null ) );
         }
 
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método ObtenerCaracteres() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
+        /// Método para probar el disparo de una excepción el método ObtenerCaracteres() de la clase 
+        /// LogicaAgregarUsuario en LogicaTangerine
         /// </summary>
         [Test]
         public void TestFailObtenerCaracteres()
         {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.ObtenerCaracteres(null, 2));
+            Assert.Throws<ExcepcionRegistro>( () => LogicaAgregarUsuario.ObtenerCaracteres( null, 2 ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método PrepararUsuario() de la clase LogicaAgregarUsuario en
-        /// LogicaTangerine
+        /// Método para probar el disparo de una excepción el método PrepararUsuario() de la clase 
+        /// LogicaAgregarUsuario en LogicaTangerine
         /// </summary>
         [Test]
         public void TestFailPrepararUsuario()
         {
-            Assert.Throws<ExcepcionRegistro>(() => LogicaAgregarUsuario.PrepararUsuario(null, null, null, 1));
+            Assert.Throws<ExcepcionRegistro>( () => LogicaAgregarUsuario.PrepararUsuario( null, null, null, 1 ) );
         }
        
     }
