@@ -28,12 +28,18 @@ namespace Tangerine.GUI.M1
   
             int employeeCode;
             LogicaM10 logicEmployee = new LogicaM10();
-
-            employeeCode = int.Parse(Request.QueryString["EmployeeId"]);
-
+            try
+            {
+                employeeCode = int.Parse(Request.QueryString["EmployeeId"]);
+            }
+            catch
+            {
+                employeeCode = 1;
+            }
             Empleado employee = logicEmployee.GetEmployee(employeeCode);
 
             dataEmployee = ViewFormEmployee(employee);
+
         }
 
         private string EmployeeAge(string year)
@@ -50,7 +56,7 @@ namespace Tangerine.GUI.M1
             dataEmployee += ResourceGUIM10.OpenDivRow;
            
             dataEmployee += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos personales</h4>" ;
-           
+            dataEmployee += ResourceGUIM10.OpenLabel + "Nombre" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Emp_cedula.ToString() + ResourceGUIM10.CloseInputTextDisabled +
                             ResourceGUIM10.CloseDiv + ResourceGUIM10.OpenFormGroup +
@@ -59,19 +65,22 @@ namespace Tangerine.GUI.M1
                             ResourceGUIM10.Espacio + employee.Emp_p_apellido.ToString() +
                             ResourceGUIM10.Espacio + employee.Emp_s_apellido.ToString() +
                             ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
-            
+            dataEmployee += ResourceGUIM10.OpenLabel + "Genero" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Emp_genero.ToString() + ResourceGUIM10.CloseInputTextDisabled +
                             ResourceGUIM10.CloseDiv;
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Fecha de nacimiento" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Emp_fecha_nac.ToString("dd/MM/yyyy") +
                             ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Edad" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             EmployeeAge(employee.Emp_fecha_nac.ToString("yyyy")).ToString() + ResourceGUIM10.CloseInputTextDisabled +
                             ResourceGUIM10.CloseDiv;
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Direccion" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Adrress+ ResourceGUIM10.CloseInputTextDisabled +
                             ResourceGUIM10.CloseDiv;
@@ -81,6 +90,7 @@ namespace Tangerine.GUI.M1
 
             dataEmployee += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos contrato</h4>";
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Fecha contratacion" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             Convert.ToDateTime(employee.Job.FechaIni).ToString("dd/MM/yyyy") + 
                             ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
@@ -88,12 +98,15 @@ namespace Tangerine.GUI.M1
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Job.FechaFin + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Cargo" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Job.Nombre + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Sueldo Base" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Job.Sueldo.ToString() + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
+            dataEmployee += ResourceGUIM10.OpenLabel + "Estatus" + ResourceGUIM10.CloseLabel;
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Emp_activo + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
@@ -109,10 +122,6 @@ namespace Tangerine.GUI.M1
 
             dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                             employee.Emp_email.ToString() + ResourceGUIM10.CloseInputTextDisabled +
-                            ResourceGUIM10.CloseDiv;
-
-            dataEmployee += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                            "04168098294" + ResourceGUIM10.CloseInputTextDisabled +
                             ResourceGUIM10.CloseDiv;
 
             //cierre de row
