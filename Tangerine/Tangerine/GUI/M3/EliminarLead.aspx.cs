@@ -11,35 +11,145 @@ namespace Tangerine.GUI.M3
 {
     public partial class EliminarLead : System.Web.UI.Page
     {
-        string _nombre = String.Empty;
-        string _rif = String.Empty;
-        string _email = String.Empty;
-        float _presupuesto = 0;
-        int _llamadas = 0;
-        int _visitas = 0;
 
-          ClientePotencial elClientePotencial = null;
-          protected void Page_Load(object sender, EventArgs e)
-          {
+        public string Name
+        {
+            get
+            {
+                return this.Nombre.Text;
+            }
+
+            set
+            {
+                this.Nombre.Text = value;
+            }
+        }
+
+        public string RIF
+        {
+            get
+            {
+                return this.Rif.Text;
+            }
+
+            set
+            {
+                this.Rif.Text = value;
+            }
+        }
+
+        public string Correo
+        {
+            get
+            {
+                return this.correo.Text;
+            }
+
+            set
+            {
+                this.correo.Text = value;
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                return this.status.ToString();
+            }
+
+            set
+            {
+                this.status.Text = value;
+            }
+        }
+     
+        public string Presupuesto
+        {
+            get
+            {
+                return this.presupuesto.ToString();
+            }
+
+            set
+            {
+                this.presupuesto.Text = value;
+            }
+        }
+
+        public string Llamadas
+        {
+            get
+            {
+                return this.llamadas.ToString();
+            }
+
+            set
+            {
+                this.llamadas.Text = value;
+            }
+        }
+        public string Visitas
+        {
+            get
+            {
+                return this.visitas.ToString();
+            }
+
+            set
+            {
+                this.visitas.Text = value;
+            }
 
 
-              int idClip = int.Parse(Request.QueryString["idclp"]);
-              if (!IsPostBack)
-              {
-                  LogicaM3 clientePotencialLogic = new LogicaM3();
-                  elClientePotencial = clientePotencialLogic.BuscarClientePotencial(idClip);
+        }
 
-                  this.nombre.Value = elClientePotencial.NombreClientePotencial;
-                  this.rif.Value = elClientePotencial.RifClientePotencial;
-                  this.email.Value = elClientePotencial.EmailClientePotencial;
-      
-                  this.pres_anual.Value = elClientePotencial.PresupuestoAnual_inversion.ToString();
-                  this.llamadas.Value = elClientePotencial.NumeroLlamadas.ToString();
-                  this.visitas.Value = elClientePotencial.NumeroVisitas.ToString();
-             
 
-              }
-          }
+
+        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            LogicaM3 prueba = new LogicaM3();
+            int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            if (!IsPostBack)
+            {
+                ClientePotencial elClientePotencial = prueba.BuscarClientePotencial(idClientePotencial);
+
+                try
+                {
+
+
+                    Name = elClientePotencial.NombreClientePotencial;
+                    RIF = elClientePotencial.RifClientePotencial;
+                    Correo = elClientePotencial.EmailClientePotencial;
+                    Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
+                    Llamadas = elClientePotencial.NumeroLlamadas.ToString();
+                    Visitas = elClientePotencial.NumeroVisitas.ToString();
+                    if (elClientePotencial.Status == 0)
+                    {
+                        Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
+
+                    }
+                    if (elClientePotencial.Status == 1)
+                    {
+                        Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
+                    }
+                    if (elClientePotencial.Status == 2)
+                    {
+                        Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+            }
+        }
+    
             
           
         protected void Eliminar_Click(object sender, EventArgs e)
@@ -54,6 +164,7 @@ namespace Tangerine.GUI.M3
             LogicaM3 logica = new LogicaM3();
 
             logica.BorrarNuevoclientePotencial(logica.BuscarClientePotencial(idClip));
+            Response.Redirect("Listar.aspx");
 
         }
     }
