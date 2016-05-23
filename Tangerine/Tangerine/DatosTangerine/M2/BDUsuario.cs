@@ -57,18 +57,6 @@ namespace DatosTangerine.M2
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
                                                                     RecursoGeneralBD.Mensaje, ex );
             }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -109,18 +97,7 @@ namespace DatosTangerine.M2
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
                                                                     RecursoGeneralBD.Mensaje, ex );
             }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
-            }
+
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -161,18 +138,6 @@ namespace DatosTangerine.M2
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
                                                                     RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
             }
             catch ( Exception ex )
             {
@@ -230,18 +195,6 @@ namespace DatosTangerine.M2
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
                                                                     RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
             }
             catch ( Exception ex )
             {
@@ -310,24 +263,6 @@ namespace DatosTangerine.M2
                 rol.Menus = lista;
 
             }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -375,24 +310,6 @@ namespace DatosTangerine.M2
 
                     lista.AgregarElemento( opcion );
                 }
-            }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
             }
             catch ( Exception ex )
             {
@@ -444,18 +361,6 @@ namespace DatosTangerine.M2
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
                                                                     RecursoGeneralBD.Mensaje, ex );
             }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -500,18 +405,6 @@ namespace DatosTangerine.M2
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
                                                                     RecursoGeneralBD.Mensaje, ex );
             }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -550,24 +443,6 @@ namespace DatosTangerine.M2
                     resultado = true;
                 }
             }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -605,24 +480,6 @@ namespace DatosTangerine.M2
                 {
                     resultado = true;
                 }
-            }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Codigo,
-                                                                    RecursoGeneralBD.Mensaje, ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoGeneralBD.Codigo,
-                                                                 RecursoGeneralBD.Mensaje, ex );
             }
             catch ( Exception ex )
             {

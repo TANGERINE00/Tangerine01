@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ModificarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ModificarPropuesta"%>
+﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ModificarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.ModificarPropuesta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de Propuestas
 </asp:Content>
- 
+
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
     Modificar Propuesta
 </asp:Content>
@@ -23,9 +23,9 @@
 
     <style>
         .main-footer {
-            float:left;
-            position:relative; 
-            width:100%;
+            float: left;
+            position: relative;
+            width: 100%;
         }
 
         .content-wrapper {
@@ -33,7 +33,7 @@
         }
 
         .input-group, .form-control {
-            width:95%;
+            width: 95%;
         }
 
         .date {
@@ -49,190 +49,189 @@
         }
 
 
-         .dropdown .btn {
+        .dropdown .btn {
             width: 95%;
         }
-
-
     </style>
 
 
-   
 
-   <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server"> 
 
-    <div class="col-md-6">
+    <form role="form" name="modificar_propuesta" id="modificar_propuesta" method="post" runat="server">
 
-        <div class="box box-primary" style="height:auto">
+        <div class="col-md-6">
 
-            <!-- form start -->
-            <form role="form">
+            <div class="box box-primary" style="height: auto">
 
                 <div class="box-body">
 
                     <div class="form-group">
                         <label for="input_cliente">Cliente (compañía contratante)</label>
-                        <input type="input_cliente" class="form-control" id="cliente_id" runat ="server" disabled="disabled">
+                        <input type="input_cliente" class="form-control" id="cliente_id" runat="server" disabled="disabled">
                     </div>
-
-                      <div class="form-group">
-                       <label>Objeto del proyecto</label>
-                       <textarea class="form-control" rows="3" placeholder="Escribir ..."><%=Prueba.Descripcion%></textarea>
-                   </div>
-             <!-- form end -->
-
-
-        <div class="table-responsive">
-	    <table id="table-requerimientos" class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th style="width: 530px">Requerimiento</th>
-					<th>Acciones</th>
-				</tr>
-			</thead>
-			            
-            <asp:Literal id="tablaR" runat="server" ></asp:Literal>
-             
-
-		</table>
-
-
-
-
-        <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Eliminaci&oacute;n de Requerimiento</h4>
-            </div>
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row">
-                    <p>Seguro que desea eliminar el requerimiento:</p>
-                    <p id="req"></p>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">  
-                <a id="btn-eliminar" type="button" class="btn btn-primary" onclick="EliminarRequerimiento()" href="ListarRequerimientos.aspx?success=3">Eliminar</a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-           </div>
-          </div><!-- /.modal-delete-content -->
-        </div><!-- /.modal-delete-dialog -->
-      </div><!-- /.modal-delete -->
-      <div id="modal-update" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-        <form id="modificar_requerimientos" class="form-horizontal" method="post" action="Reportes.aspx?success=2">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" >Modificaci&oacute;n de Requerimiento</h4>
-            </div>
-
-            <div class="modal-body">
-
-                <div class="container-fluid">
-                <div class="form-group">
-				    <div id="div-id" class="col-sm-5 col-md-5 col-lg-5">
-					    <input type="text" name="idreq" id="idreq_input" runat="server" placeholder="ID" class="form-control idreq_input" disabled="disabled" value="TOT_RF_1"/>
-				    </div>
-			    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="input-group">
-                            <span class="input-group-addon">El sistema deberá </span>
-                            <textarea class="form-control input_requerimiento" rows="3" placeholder="Funcionalidad del requerimiento" runat="server" style="text-align: justify;resize:vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
-                        </div>
-                    </div>
-                </div>
-                    <br />
-                
-
-
-            </div>
-            <div class="modal-footer">
-              <button id="btn-modificarReq" class="btn btn-primary" type="submit" onclick=<%btn_ModReq(idreq_input.Value, input_requerimiento.Value);%>> Modificar</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            </div>
-          </div><!-- /.modal-update-content -->
-        </div><!-- /.modal-update-dialog -->
-        </form>
-      </div><!-- /.modal-update -->
-    </div><!-- table-responsive -->
-    <!-- Data tables init -->
-
-                                                                      
-             <!-- form estimated date -->
-                     <div class="form-group date">
-                <label>Fecha estimada Incio:</label>
-
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input class="form-control pull-right" id="datepicker1" value ="<%=Prueba.Feincio%>" type="text" >
-                </div>
-                <!-- /.input group -->
-              </div>
-
-
-
-                    <div class="form-group date">
-                <label>Fecha estimada Final:</label>
-
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input class="form-control pull-right" id="datepicker2" value="<%=Prueba.Fefinal %> " type="text" >
-                </div>
-                <!-- /.input group -->
-              </div>
-
-
-                    <!-- /.box-body -->
 
                     <div class="form-group">
-                        <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
-
-                        <div class="input-group input-group">
-                            <div class="input-group-btn">
-
-                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle Comboduracion" runat="server">
-                                    
-                                </asp:DropDownList>
-
-                            </div>
-                            <!-- /btn-group -->
-                            <input type="text" class="form-control" id="textoDuracion"  runat="server">
-                        </div>
-
+                        <label>Objeto del proyecto</label>
+                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"> </textarea>
                     </div>
+                  
 
+                    <div class="table-responsive">
+                        <table id="table-requerimientos" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th style="width: 530px">Requerimiento</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
 
-                     <div class="input-group input-group">
-                        <label for="input_horas" style="width: 100%; float: left; display: block;">Costo del Proyecto</label>
-
-                        <div class="input-group input-group">
-                            <div class="input-group-btn">
-
-                                <asp:DropDownList ID="comboTipoCosto" class="btn btn-primary dropdown-toggle Combotipocosto" runat="server">
-                                </asp:DropDownList>
-
-                            </div>
-                            <!-- /btn-group -->
-                            <input type="text" class="form-control" id="textoCosto" runat="server">
-                        </div>
-
+                            <asp:Literal ID="tablaR" runat="server"></asp:Literal>
+                        </table>
                     </div>
 
 
 
-                     <div class="form-group">
+
+                    <div id="modal-delete" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Eliminaci&oacute;n de Requerimiento</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <p>Seguro que desea eliminar el requerimiento:</p>
+                                            <p id="req"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a id="btn-eliminar" type="button" class="btn btn-primary" onclick="EliminarRequerimiento()" href="ListarRequerimientos.aspx?success=3">Eliminar</a>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-delete-content -->
+                        </div>
+                        <!-- /.modal-delete-dialog -->
+                    </div>
+                    <!-- /.modal-delete -->
+                    <div id="modal-update" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+                        <form id="modificar_requerimientos" class="form-horizontal" method="post" action="Reportes.aspx?success=2">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">Modificaci&oacute;n de Requerimiento</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <div class="container-fluid">
+                                            <div class="form-group">
+                                                <div id="div-id" class="col-sm-5 col-md-5 col-lg-5">
+                                                    <input type="text" name="idreq" id="idreq_input" runat="server" placeholder="ID" class="form-control idreq_input" disabled="disabled" value="TOT_RF_1" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">El sistema deberá </span>
+                                                    <textarea class="form-control input_requerimiento" rows="3" placeholder="Funcionalidad del requerimiento" runat="server" style="text-align: justify; resize: vertical;" name="requerimiento" id="input_requerimiento">El sistema deberá permitir la modificación de los campos de descripción y prioridad de los requerimientos funcionales y no funcionales previamente asociados a un proyecto dado.</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn-modificarReq" class="btn btn-primary" type="submit" <%--onclick="<%btn_ModReq(idreq_input.Value, input_requerimiento.Value);%>"--%>>Modificar</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-update-content -->
+                            </div>
+                            <!-- /.modal-update-dialog -->
+                        </form>
+                    </div>
+                    <!-- /.modal-update -->
+                </div>
+                <!-- table-responsive -->
+                <!-- Data tables init -->
+
+
+                <!-- form estimated date -->
+                <div class="form-group date">
+                    <label>Fecha estimada Incio:</label>
+
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input class="form-control pull-right" id="datepicker1" runat="server" type="text">
+                    </div>
+                    <!-- /.input group -->
+                </div>
+
+
+
+                <div class="form-group date">
+                    <label>Fecha estimada Final:</label>
+
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input class="form-control pull-right" id="datepicker2" runat="server" type="text">
+                    </div>
+                    <!-- /.input group -->
+                </div>
+
+
+                <!-- /.box-body -->
+
+                <div class="form-group">
+                    <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
+
+                    <div class="input-group input-group">
+                        <div class="input-group-btn">
+
+                            <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle Comboduracion" runat="server">
+                            </asp:DropDownList>
+
+                        </div>
+                        <!-- /btn-group -->
+                        <input type="text" class="form-control" id="textoDuracion" runat="server">
+                    </div>
+
+                </div>
+
+
+                <div class="input-group input-group">
+                    <label for="input_horas" style="width: 100%; float: left; display: block;">Costo del Proyecto</label>
+
+                    <div class="input-group input-group">
+                        <div class="input-group-btn">
+
+                            <asp:DropDownList ID="comboTipoCosto" class="btn btn-primary dropdown-toggle Combotipocosto" runat="server">
+                            </asp:DropDownList>
+
+                        </div>
+                        <!-- /btn-group -->
+                        <input type="text" class="form-control" id="textoCosto" runat="server">
+                    </div>
+
+                </div>
+
+
+
+                <%--                     <div class="form-group">
                         <label>Forma de Pago</label>
                         <select class="form-control" id="fpago" runat="server">
                             <option></option>
@@ -240,42 +239,62 @@
                             <option>Transferencia</option>
                             <option>Otro</option>
                         </select>
+                    </div>--%>
+
+                <%-- Forma de pago combo--%>
+
+                <div class="form-group">
+                    <label>Forma de Pago</label>
+                    <div class="dropdown" runat="server" id="fpago2">
+                        <asp:DropDownList ID="formaPago" class="btn btn-default dropdown-toggle" runat="server">
+                        </asp:DropDownList>
                     </div>
+                </div>
 
+                <%-- Cuota combo--%>
 
-                    <div class="input-group input-group">
-                        <label for="input_horas" style="width: 100%; float: left; display: block;">Estatus</label>
-
-                        
-
-                        <div class="dropdown" runat="server" id="contenedorEstatus">
-                            
-                            <asp:DropDownList ID="comboEstatus" class="btn btn-default dropdown-toggle Comboestatus" runat="server">
-                            </asp:DropDownList>
-                        </div>
+                <div class="form-group">
+                    <label>Cantidad Cuotas</label>
+                    <div class="dropdown" runat="server" id="cuota">
+                        <asp:DropDownList ID="comboCuota" class="btn btn-default dropdown-toggle" runat="server">
+                        </asp:DropDownList>
                     </div>
+                </div>
 
-                   
-                   
+
+
+                <%-- Estatus combo--%>
+                <div class="input-group input-group">
+                    <label for="input_horas" style="width: 100%; float: left; display: block;">Estatus</label>
+                    <div class="dropdown" runat="server" id="contenedorEstatus">
+                        <asp:DropDownList ID="comboEstatus" class="btn btn-default dropdown-toggle Comboestatus" runat="server">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
+
+
+
+                <div class="box-footer" runat="server">
                     
-                    <div class="box-foot">
-                      <button type="submit" class="btn btn-primary">Modificar</button>
-                      <button type="submit" class="btn btn-default pull-right">Atras</button>
+                     <%--<asp:Button ID="btnagregar" class="btn btn-primary"
+                        OnClick="btnagregar_Click" OnClientClick="javascript:crearPrecondicionArr()" type="submit" runat="server"
+                        Text="Modificar"></asp:Button>--%>
 
-                    </div>
+                    <asp:Button ID="botonModificarPro" class="btn btn-primary"
+                        type="submit" runat="server"
+                        Text="Modificar" OnClick="botonModificarPro_Click"></asp:Button>
+                    <button type="submit" id="volver" runat="server"  class="btn btn-default pull-right" >Atras</button>
                     
-                    </div>
-               
-                
-            </form>
-
-             
-
-        </div>
-
-    </div>
+                    
 
 
+
+                </div>
+
+            </div>
+
+            </div>
     </form>
 
 
@@ -321,8 +340,6 @@
                 var idTextField = document.getElementById("idreq_input");
             }
     </script>--%>
-
-
 </asp:Content>
 
 

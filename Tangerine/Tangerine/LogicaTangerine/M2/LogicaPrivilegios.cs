@@ -33,13 +33,6 @@ namespace LogicaTangerine.M2
                     }
                 }
             }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar VerificarAccesoAOpciones()",
-                                                                 ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -89,13 +82,6 @@ namespace LogicaTangerine.M2
                 throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Error al ejecutar " +
                                                                         "VerificarAccesoAPagina()" +
                                                                         " [Pagina Errónea]", ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar VerificarAccesoAPagina()",
-                                                                 ex );
             }
             catch ( Exception ex )
             {

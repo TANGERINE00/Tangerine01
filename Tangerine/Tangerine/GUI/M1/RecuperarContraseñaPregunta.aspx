@@ -38,7 +38,7 @@
 
           <form method="post" style="text-align: center;" id="enviarEmail" runat="server">
             <div class="form-group has-feedback">
-              <input type="email" id="correo" runat="server" class="form-control" placeholder="Correo personal">
+              <input type="email" id="correo" runat="server" maxlength="30" class="form-control" placeholder="Correo personal">
                 <asp:RegularExpressionValidator 
                     ID="regexEmailValid" 
                     runat="server" 
@@ -48,14 +48,18 @@
                     ForeColor="White">
                 </asp:RegularExpressionValidator>
             
-              <input type="text" id="usuario" runat="server" class="form-control" placeholder="Nombre de Usuario">
+              <input type="text" id="usuario" runat="server" maxlength="30" class="form-control" placeholder="Nombre de Usuario">
             <br />
             <div class="row">
-              <div class="col-xs-12 col-md-12 col-lg-12">
+              <div class="col-xs-6 col-md-6 col-lg-6">
                 <!--<a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>-->
                 <button type="button" id="correoButton" runat="server" class="btn btn-default" onserverclick="Validar_Correo">Enviar</button>
-                <asp:label id="mensaje" runat="server" class="login-box-msg" style="color:#FFFFFF;"/>
+                
               </div>
+              <div class="col-xs-6 col-md-6 col-lg-6">
+                <a href="../M1/Login.aspx" type="button" class="btn btn-default">Volver</a>
+              </div>
+              <asp:label id="mensaje" runat="server" class="login-box-msg" style="color:#FFFFFF;"/>
             </div>
             </div>
           </form>

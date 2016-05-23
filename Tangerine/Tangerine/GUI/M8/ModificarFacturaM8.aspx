@@ -72,6 +72,11 @@
                         </div>
 
                         <div class="form-group" runat="server">
+                            <label for="labelTipoMoneda_M8">Tipo de Moneda</label>
+                            <input type="text" runat="server" class="form-control" id="textTipoMoneda_M8" name="textTipoMoneda_M8" placeholder="Tipo de Moneda" disabled="disabled">
+                        </div>
+
+                        <div class="form-group" runat="server">
                             <asp:Button ID="buttonModificar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Modificar" OnClick="buttonModificarFactura_Click"></asp:Button>
                         </div>
 

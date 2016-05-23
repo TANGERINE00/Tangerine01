@@ -17,8 +17,7 @@ namespace Tangerine.GUI.M3
         float _presupuesto = 0;
         int _llamadas = 0;
         int _visitas = 0;
-        string _potencial = String.Empty;
-        string _borrado = String.Empty;
+
           ClientePotencial elClientePotencial = null;
           protected void Page_Load(object sender, EventArgs e)
           {

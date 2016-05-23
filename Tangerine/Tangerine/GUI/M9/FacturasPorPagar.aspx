@@ -19,104 +19,54 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Consulta de facturas</h3>
-
-            <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input name="table_search" class="form-control pull-right" placeholder="# Factura" type="text">
-
-                    <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
+            <div class="box-tools"></div>
+        </div>
+        <form role="form" name="consultar" id="consultar">
+            <script language="javascript">
+                function doSearch() {
+                    var tableReg = document.getElementById('example2');
+                    var searchText = document.getElementById('searchTerm').value.toLowerCase();
+                    for (var i = 1; i < tableReg.rows.length; i++) {
+                        var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                        var found = false;
+                        for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                            var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                            if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                                found = true;
+                            }
+                        }
+                        if (found) {
+                            tableReg.rows[i].style.display = '';
+                        } else {
+                            tableReg.rows[i].style.display = 'none';
+                        }
+                    }
+                }
+            </script>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <div style="float: right; padding-top: 5px;">
+                    <a style="margin-right: 10px;">Buscador</a>
+                    <input id="searchTerm" type="text" onkeyup="doSearch()" />
                 </div>
+                <!--<table class="table table-hover">-->
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>N° Factura</th>
+                            <th>Fecha Factura</th>
+                            <th>Estatus Factura</th>
+                            <th>Proyecto</th>
+                            <th>Monto</th>
+                            <th style="text-align: center;">Pagar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                    </tbody>
+                </table>
             </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Consulta</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="box box-primary">
-                            <div class="box-header with-border">
-                            </div>
-                            <!-- /.box-header -->
-                            <!-- form start -->
-
-                            <div class="box-body">
-
-                                <div class="form-group">
-                                    <label for="labelNumeroFactura_M8">Número Factura </label>
-                                    <input type="text" class="form-control" id="textNumeroFactura_M8" disabled="disabled">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="labelFecha_M8">Fecha de registro</label>
-                                    <div class="input-group date">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </div>
-                                        <input type="text" class="form-control pull-right" id="datepicker" disabled="disabled">
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="labelCompañia_M8">Compañía</label>
-                                    <input type="text" class="form-control" id="textCompañia_M8" placeholder="Compañía" disabled="disabled">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="labelProyecto_M8">Proyecto</label>
-                                    <input type="text" class="form-control" id="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="labelMonto_M8">Monto</label>
-                                    <input type="text" class="form-control" id="textMonto_M8" placeholder="Monto" disabled="disabled">
-                                </div>
-
-                            </div>
-                            <!-- /.box-body -->
-
-
-                        </div>
-
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
-            <!--<table class="table table-hover">-->
-            <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>N° Factura</th>
-                        <th>Fecha Factura</th>
-                        <th>Estatus Factura</th>
-                        <th>Proyecto</th>
-                        <th>Monto</th>
-                        <th style="text-align: center;">Pagar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <asp:Literal runat="server" ID="tabla"></asp:Literal>
-                </tbody>
-            </table>
-        </div>
-        <!-- /.box-body -->
+            <!-- /.box-body -->
     </div>
     <!-- /.box -->
 </asp:Content>
