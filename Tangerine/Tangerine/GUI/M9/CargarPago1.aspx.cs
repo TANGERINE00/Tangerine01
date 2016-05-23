@@ -122,7 +122,7 @@ namespace Tangerine.GUI.M9
             Pago pago = new Pago(_moneda, _monto, _forma, _codApro, DateTime.Parse(_fecha), _idFactura);
 
             logica.AgregarPago(pago);
-            //logica.CambiarStatusFactura(pago.idFactura, 1);
+            logica.CambiarStatusFactura(pago.idFactura, 1);
             //codAprobacion.Value = _idFactura.ToString();
 
 

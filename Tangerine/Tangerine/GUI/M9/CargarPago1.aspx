@@ -87,9 +87,9 @@
                     
                    <asp:RegularExpressionValidator id="RegularExpressionValidator1" 
                      ControlToValidate="codAprobacion"
-                     ValidationExpression="\d{5}"
+                     ValidationExpression="\d{10}"
                      Display="Dynamic"
-                     ErrorMessage="El código de aprobación debe ser min de 5 caracteres númericos."
+                     ErrorMessage="El código de aprobación debe ser de 10 caracteres numéricos."
                      ForeColor="red"
                      runat="server" ValidationGroup="AllValidations" />
                 </div>
