@@ -55,7 +55,7 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="M1\" />
     <Folder Include="M7\" />
-<<<<<<< HEAD
+
     <Folder Include="M8\" />
 =======
     <Folder Include="M9\" />
@@ -88,8 +88,8 @@
     <Compile Include="M5\ExceptionDataBase.cs" />
     <Compile Include="M5\NullArgumentException.cs" />
     <Compile Include="M5\WrongFormatException.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
     <Compile Include="M9\ExceptionDataBase.cs" />
     <Compile Include="M9\NullArgumentException.cs" />
     <Compile Include="M9\WrongFormatException.cs" />
