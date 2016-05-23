@@ -64,57 +64,7 @@ namespace DatosTangerine.M9
         }
 
 
-        /// <summary>
-        /// Método para consultar el último id de compañía en la base de datos.
-        /// </summary>
-        /// <returns>Último id de compania registrada.</returns>
-        public static int ultimoIdPago()
-        {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            List<Parametro> parameters = new List<Parametro>();
-            BDConexion theConnection = new BDConexion();
-            Parametro theParam = new Parametro();
-            int mayorId = 0;
-
-            try
-            {
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceCompany.ConsultLastCompanyId, parameters);
-
-
-                //Por cada fila de la tabla voy a guardar los datos 
-                foreach (DataRow row in dt.Rows)
-                {
-                    mayorId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
-                }
-            }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            return mayorId;
-        }
-
+   
 
         public static bool CargarStatus(int factura, int status)
         {

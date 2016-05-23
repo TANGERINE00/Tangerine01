@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="CargarPago1.aspx.cs" 
-    Inherits="Tangerine.GUI.M9.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultarPago.aspx.cs" 
+    Inherits="Tangerine.GUI.M9.WebForm7" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -87,9 +87,9 @@
                     
                    <asp:RegularExpressionValidator id="RegularExpressionValidator1" 
                      ControlToValidate="codAprobacion"
-                     ValidationExpression="\d{10}"
+                     ValidationExpression="\d{5}"
                      Display="Dynamic"
-                     ErrorMessage="El código de aprobación debe ser de 10 caracteres numéricos."
+                     ErrorMessage="El código de aprobación debe ser min de 5 caracteres númericos."
                      ForeColor="red"
                      runat="server" ValidationGroup="AllValidations" />
                 </div>

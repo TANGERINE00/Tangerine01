@@ -38,16 +38,16 @@ cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmai
 ------------------------------------------------------------------------------------------------------------------
 -- COMPANIAS --
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Pepsi', 'J-23686197', 'giantufano@gmail.com', '04122362151', 'PSI', '12/12/2016', 1, 10000000, 30, 5);
+values ('GianFran CO', 'J-236861976', 'giantufano@gmail.com', '0412-2362151', 'GFC', '12/12/2016', 1, 10000000, 30, 5);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Coca-Cola', 'J-9513297', 'merchan1395@gmail.com', '04122362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
+values ('Coca-Cola', 'J-951329766', 'merchan1395@gmail.com', '0412-2362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Maguca', 'J-756487568', 'prueba@gmail.com', '04122362151', 'MGC', '12/12/2016', 1, 90000000, 60, 6);
+values ('Prueba', 'J-756487568', 'prueba@gmail.com', '0412-2362151', 'TEST', '12/12/2016', 1, 90000000, 60, 6);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
+values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
 -- FIN COMPANIAS -- 
 
 SET IDENTITY_INSERT PROPUESTA ON
