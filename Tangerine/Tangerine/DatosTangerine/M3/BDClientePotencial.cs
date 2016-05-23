@@ -564,9 +564,7 @@ namespace DatosTangerine.M3
 
                     //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
                     List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_promoverClientePotencial, parameters);
-                   
-                    ClientePotencial clientePotencial = new ClientePotencial();
-                    
+       
                     Compania compania = new Compania();
 
                     compania.NombreCompania = ResourceClientePotencial.nombreClientePotencial.ToString();
