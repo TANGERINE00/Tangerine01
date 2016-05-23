@@ -214,6 +214,15 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/label&gt;.
+        /// </summary>
+        internal static string CloseLabel {
+            get {
+                return ResourceManager.GetString("CloseLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ,.
         /// </summary>
         internal static string Coma {
@@ -273,6 +282,15 @@ namespace Tangerine.GUI.M1 {
         internal static string OpenInputText {
             get {
                 return ResourceManager.GetString("OpenInputText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;label&gt;.
+        /// </summary>
+        internal static string OpenLabel {
+            get {
+                return ResourceManager.GetString("OpenLabel", resourceCulture);
             }
         }
         

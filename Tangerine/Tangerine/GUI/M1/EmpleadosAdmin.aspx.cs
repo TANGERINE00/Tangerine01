@@ -95,16 +95,18 @@ namespace Tangerine.GUI.M1
                         empleado += ResourceGUIM10.AbrirTD;
                         //Ver
                         empleado += ResourceGUIM10.BotonVerEmpAbrir + theEmpleado.emp_num_ficha +
-                            ResourceGUIM10.BotonVerEmpCerrar;
+                            ResourceGUIM10.BotonVerEmpCerrar;/*
                         //Modificar
                         empleado += ResourceGUIM10.BotonModificarEmpAbrir + theEmpleado.emp_num_ficha +
-                            ResourceGUIM10.BotonModificarEmpCerrar;
+                            ResourceGUIM10.BotonModificarEmpCerrar;*/
+                        if (HttpContext.Current.Session["Rol"]+"" !="Programador")
                         empleado += ResourceGUIM10.BotonStatusEmpAbrir + theEmpleado.emp_num_ficha +
                             ResourceGUIM10.BotonStatusEmpCerrar;
 
                         empleado += ResourceGUIM10.CerrarTD;
                         empleado += ResourceGUIM10.CerrarTR;
                     }
+                    if (HttpContext.Current.Session["Rol"]+"" != "Programador")
                     button += ResourceGUIM10.VentanaAgregarEmpleado;
                 }
                 catch (Exception ex)
