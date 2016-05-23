@@ -49,7 +49,7 @@ namespace DominioTangerine
             return _listaGenerica.Remove(elemento);
         }
 
-        #endregion
+        
 
         /// <summary>
         /// Método para obtener el enumerador de la lista
@@ -68,5 +68,7 @@ namespace DominioTangerine
         {
             return GetEnumerator();
         }
+        
+        #endregion
     }
 }

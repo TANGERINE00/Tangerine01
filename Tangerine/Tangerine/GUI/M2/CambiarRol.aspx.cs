@@ -24,6 +24,11 @@ namespace Tangerine.GUI.M2
             }
         }
 
+        /// <summary>
+        /// Método que se ejecuta al cargar la página, se carga la tabla de empleados con sus respectivos usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
             if ( !IsPostBack )
@@ -55,6 +60,12 @@ namespace Tangerine.GUI.M2
             } 
         }
 
+        /// <summary>
+        /// Método que utiliza para conectar la interfaz con la logica, para modificar el rol. Se ejecuta al presionar
+        /// el boton Cambiar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void botonCambiar_Click( object sender, EventArgs e )
         {
             string nombreUsuario = usuarioCambiar.Value;

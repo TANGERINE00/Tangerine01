@@ -12,7 +12,7 @@ using DominioTangerine;
 
 namespace Tangerine.GUI.M9
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class WebForm7 : System.Web.UI.Page
     {
         #region Atributos
         LogicaM9 logica = new LogicaM9();
@@ -90,12 +90,14 @@ namespace Tangerine.GUI.M9
         /// </summary>
         /// recibe un solo parametro, id de la factura para consultar los detalles asociados, este parametro se recibe via URL
         /// <param name="id">Entero, representa el id de factura</param>
-    
-        public void llenarTablaPorID(int numeroFactura)
+
+        public void llenarTabla(int numeroFactura)
         {
             LogicaM8 consulta = new LogicaM8();
+            LogicaM9 consulta2 = new LogicaM9();
 
             Facturacion Factura = consulta.SearchFactura(numeroFactura);
+            Pago pago = consulta2.ConsultarPago(numeroFactura);
 
             try
             {
@@ -120,8 +122,9 @@ namespace Tangerine.GUI.M9
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             int identificador = int.Parse(Request.QueryString["id"]);
-            llenarTablaPorID(identificador);
+            llenarTabla(identificador);
 
         }
 
@@ -139,7 +142,7 @@ namespace Tangerine.GUI.M9
             Pago pago = new Pago(_moneda, _monto, _forma, _codApro, DateTime.Parse(_fecha), _idFactura);
 
             logica.AgregarPago(pago);
-            logica.CambiarStatusFactura(pago.idFactura, 1);
+            //logica.CambiarStatusFactura(pago.idFactura, 1);
             //codAprobacion.Value = _idFactura.ToString();
 
 

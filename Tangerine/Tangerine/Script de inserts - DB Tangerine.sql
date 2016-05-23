@@ -38,16 +38,16 @@ cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmai
 ------------------------------------------------------------------------------------------------------------------
 -- COMPANIAS --
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Pepsi', 'J-23686197', 'giantufano@gmail.com', '04122362151', 'PSI', '12/12/2016', 1, 10000000, 30, 5);
+values ('GianFran CO', 'J-236861976', 'giantufano@gmail.com', '0412-2362151', 'GFC', '12/12/2016', 1, 10000000, 30, 5);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Coca-Cola', 'J-9513297', 'merchan1395@gmail.com', '04122362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
+values ('Coca-Cola', 'J-951329766', 'merchan1395@gmail.com', '0412-2362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Maguca', 'J-756487568', 'prueba@gmail.com', '04122362151', 'MGC', '12/12/2016', 1, 90000000, 60, 6);
+values ('Prueba', 'J-756487568', 'prueba@gmail.com', '0412-2362151', 'TEST', '12/12/2016', 1, 90000000, 60, 6);
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '04122362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
+values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
 -- FIN COMPANIAS -- 
 
 SET IDENTITY_INSERT PROPUESTA ON
@@ -209,7 +209,9 @@ insert into OPCION values (21, 'Usuario', 'Usuario', 1);
 insert into OPCION values (27, 'Configuracion', 'Configuración', 1);
 
 insert into MENU values (2, 'Gestión de Leads');
-insert into OPCION values (3, 'Listar', '../M3/Listar.aspx', 2);
+insert into OPCION values (3, 'ConsultarLead', '../M3/Listar.aspx', 2);
+insert into OPCION values (29, 'RegistrarLead', '../M3/AgregarLeads.aspx', 2);
+insert into OPCION values (30, 'GestionDeLeads', 'Gestión de Leads', 2);
 
 insert into MENU values (3, 'Gestión de Compañías');
 insert into OPCION values (4, 'RegistrarCompañía', '../M4/AgregarCompania.aspx', 3);
@@ -287,6 +289,8 @@ insert into ROL_OPCION values (4, 19);
 insert into ROL_OPCION values (4, 20);
 insert into ROL_OPCION values (4, 28);
 insert into ROL_OPCION values (4, 26);
+insert into ROL_OPCION values (4, 29);
+insert into ROL_OPCION values (4, 30);
 
 insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 1, null);
 insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);
