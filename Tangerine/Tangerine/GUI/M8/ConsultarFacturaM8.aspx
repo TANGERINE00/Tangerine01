@@ -47,7 +47,7 @@
                                     <th>Proyecto</th>
                                     <th>Descripción</th>
                                     <th>Fecha Registro</th>
-                                    <th>Status</th>
+                                    <th>Estatus</th>
                                     <th>Monto</th>
                                     <th style="text-align: center;">Acciones</th>
                                 </tr>

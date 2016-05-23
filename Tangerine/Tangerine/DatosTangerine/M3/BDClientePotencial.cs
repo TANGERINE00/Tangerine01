@@ -180,8 +180,7 @@ namespace DatosTangerine.M3
         }
 
         //----------------------------------------borrar el cliente potencial-----------------------
-        //intento1
-      //  /*
+     
             public static Boolean BorrarClientePotencial(ClientePotencial elClientePotencial)
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -279,11 +278,12 @@ namespace DatosTangerine.M3
                         //String PresupuestoAnual_inversion = row[ResourceClientePotencial.emailClientePotencial].ToString();
                         int NumeroLlamadas = int.Parse(row[ResourceClientePotencial.numeroLlamadas].ToString());
                         int NumeroVisitas = int.Parse(row[ResourceClientePotencial.numeroVisitas].ToString());
-                       
+                        int Status = int.Parse(row[ResourceClientePotencial.status].ToString());
                         //  int conCompId = int.Parse(row[ResourceClientePotencial.ConIdComp].ToString());
 
                         //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
-                        elClientePotencial = new ClientePotencial(IdClientePotencial, NombreClientePotencial, RifClientePotencial, EmailClientePotencial, PresupuestoAnual_inversion, NumeroLlamadas, NumeroVisitas);
+                        elClientePotencial = new ClientePotencial(IdClientePotencial, NombreClientePotencial, RifClientePotencial, 
+                            EmailClientePotencial, PresupuestoAnual_inversion, NumeroLlamadas, NumeroVisitas,Status);
                       
                     }
 
@@ -542,5 +542,83 @@ namespace DatosTangerine.M3
 
                 return true;
             }
+
+
+            public static Boolean PromoverClientePotencial(ClientePotencial elClientePotencial)
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                List<Parametro> parameters = new List<Parametro>();
+                BDConexion theConnection = new BDConexion();
+                Parametro theParam = new Parametro();
+
+
+                try
+                {
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                    theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
+                    elClientePotencial.IdClientePotencial.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                    List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_promoverClientePotencial, parameters);
+                   
+                    ClientePotencial clientePotencial = new ClientePotencial();
+                    
+                    Compania compania = new Compania();
+
+                    compania.NombreCompania = ResourceClientePotencial.nombreClientePotencial.ToString();
+                    compania.RifCompania = ResourceClientePotencial.rifClientePotencial.ToString();
+                    compania.EmailCompania = ResourceClientePotencial.emailClientePotencial.ToString();
+                    compania.PresupuestoCompania = Int32.Parse(ResourceClientePotencial.presupuestoAnual_inversion.ToString());
+
+                    
+
+
+                    //clientePotencial.PresupuestoAnual_inversion = float.Parse(row[ResourceClientePotencial.presupuestoAnual_inversion].ToString());
+                    //clientePotencial.Status = Int32.Parse(row[ResourceClientePotencial.status].ToString());
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                        ResourceClientePotencial.Mensaje_Error_Formato, ex);
+                }
+                catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    ResourceClientePotencial.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                return true;
+            }
+
+    
+    
+    
     }
 }

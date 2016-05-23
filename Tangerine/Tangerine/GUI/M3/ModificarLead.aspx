@@ -30,13 +30,63 @@
 			<div id="id_otro" runat="server" class="form-group">
 				<div class="icon-addon addon-lg">
 					
-                    <input runat="server" type="text" placeholder="Nombre" class="form-control" id="nombre" name ="nombre">                    
-					<input style="margin-top:5%" runat="server" type="text" placeholder="RIF" class="form-control" id="rif" name ="rif" >          
-                      <input style="margin-top:5%" runat="server" type="text" placeholder="Email" class="form-control" id="email" name="email">  
-                      <input style="margin-top:5%" runat="server" type="text" placeholder="Presupuesto" class="form-control" id="pres_anual" name="pres_anual">  
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="LLamadas" class="form-control" id="llamadas" name="llamadas">
-                    <input style="margin-top:5%" runat="server" type="text" placeholder="Visitas" class="form-control" id="visitas" name="visitas">
+                    <!--Nombre-->
+                        <div class="form-group" runat="server">
+                            <label for="InputNombre">Nombre</label>
+                            <input runat="server" type="text" class="form-control" id="nombre" name="nombre" 
+                                placeholder="Introduzca nombre de la compañía" maxlength="50" required>
+                        </div>
                     
+                    
+                     <!--RIF-->
+                        <div class="form-group" runat="server">
+                            <label for="InputRIF">RIF</label>
+                            <input runat="server" type="text" class="form-control" 
+
+                                pattern="^[J]+[-]+([0-9-]{9,11})+[-]+([0-9]{1,1})$"
+                                id="rif" name="rif" 
+                                placeholder="Introduzca RIF de la compañía.    e.g: J-23686197-6" required
+                                title="e.g: J-23686197-6 ">
+                        </div>
+                  
+                     <!--Email-->
+                        <div class="form-group" runat="server">
+                            <label for="InputEmail">Correo Electrónico</label>
+                            <input runat="server" type="text" class="form-control"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                id="email" name="email" 
+                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required/>
+                        </div>
+                      
+
+                                <!--Presupuesto-->
+                        <div class="form-group" runat="server">
+                            <label for="InputPresupuesto">Presupuesto Inicial de Inversion</label>
+                            <input runat="server" type="number" class="form-control" 
+                                id="presupuesto" name="presupuesto" 
+                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
+                        </div> 
+
+
+                            <!--Numero de llamadas-->
+                        <div class="form-group" runat="server">
+                            <label for="InputLlamadas">Numero de llamadas</label>
+                            <input runat="server" type="number" class="form-control" 
+                                id="llamadas" name="llamadas" 
+                                placeholder="Introduzca el numero de llamadas realizadas a la Compañía" maxlength="10" required>
+                        </div>  
+					
+                         <!--Numero de visitas-->
+                        <div class="form-group" runat="server">
+                            <label for="InputPresupuesto">Numero de visitas</label>
+                            <input runat="server" type="number" class="form-control" 
+                                id="visitas" name="visitas" 
+                                placeholder="Introduzca el numero de visitas realizadas a la Compañía" maxlength="10" required>
+                        </div>  
+					
+                     
+                   
+                   
                    
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
     
@@ -44,102 +94,10 @@
 
 
 
-          <div class = "dropdown">
-   
-   <button type = "button" class = "btn dropdown-toggle" id = "dropdownMenu1" data-toggle = "dropdown">
-      Numero de Llamadas
-      <span class = "caret"></span>
-   </button>
-   
-   <ul class = "dropdown-menu" role = "menu" aria-labelledby = "dropdownMenu1">
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">0</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">1</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">2</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">3</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">4</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">5</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Mas de 5</a>     
-      </li>
-      
-      <li role = "presentation" class = "divider"></li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Separated link</a>
-      </li>
-   </ul>
-   
-</div>
-
-
-
-       <div class = "dropdown">
-   
-   <button type = "button" class = "btn dropdown-toggle" id = "dropdownMenu1" data-toggle = "dropdown">
-      Numero de Visitas
-      <span class = "caret"></span>
-   </button>
-   
-   <ul class = "dropdown-menu" role = "menu" aria-labelledby = "dropdownMenu1">
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">0</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">1</a>
-      </li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">2</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">3</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">4</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">5</a>     
-      </li>
-
-        <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Mas de 5</a>     
-      </li>
-      
-      <li role = "presentation" class = "divider"></li>
-      
-      <li role = "presentation">
-         <a role = "menuitem" tabindex = "-1" href = "#">Separated link</a>
-      </li>
-   </ul>
-   
-</div>
-
             
                     
                     <th style="text-align:center;"><a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="Listar.aspx"="#">Regresar></a></th> 
-                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  OnClick="Modificar_Click" type="submit" runat="server" Text = "Modificar"   ></asp:Button>
+                    <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary"  OnClick="Modificar_Click" type="submit" runat="server" Text = "Modificar"   ></asp:Button>
 				</div>	
 			
             </div>
@@ -147,6 +105,12 @@
         
 	</div>
 </div>
+
+
+ 
+
+            
+                 
 
 
 </form>   

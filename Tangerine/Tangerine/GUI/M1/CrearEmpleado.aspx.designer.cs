@@ -31,6 +31,15 @@ namespace Tangerine.GUI.M1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Cedula;
         
         /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// Control FirstName.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Tangerine.GUI.M1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText DateEmployee;
         
         /// <summary>
+        /// Control dateValidator.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator dateValidator;
+        
+        /// <summary>
         /// Control LevelListStudy.
         /// </summary>
         /// <remarks>
@@ -101,6 +119,15 @@ namespace Tangerine.GUI.M1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText DateJob;
+        
+        /// <summary>
+        /// Control CompareValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
         
         /// <summary>
         /// Control MainScriptManager.
@@ -157,15 +184,6 @@ namespace Tangerine.GUI.M1 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText SalaryJob;
         
         /// <summary>
-        /// Control Email.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Email;
-        
-        /// <summary>
         /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
@@ -218,6 +236,15 @@ namespace Tangerine.GUI.M1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText EmailPerson;
+        
+        /// <summary>
+        /// Control regexEmailValid.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
         
         /// <summary>
         /// Control PhonePerson.

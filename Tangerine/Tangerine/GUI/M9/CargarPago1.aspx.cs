@@ -14,6 +14,7 @@ namespace Tangerine.GUI.M9
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        #region Atributos
         LogicaM9 logica = new LogicaM9();
 
         public string cliente
@@ -81,7 +82,15 @@ namespace Tangerine.GUI.M9
                 this.monedaPago.Value = value;
             }
         }
+        #endregion
 
+
+        /// <summary>
+        /// Metodo de carga la tabla de la ventana.
+        /// </summary>
+        /// recibe un solo parametro, id de la factura para consultar los detalles asociados, este parametro se recibe via URL
+        /// <param name="id">Entero, representa el id de factura</param>
+    
         public void llenarTablaPorID(int numeroFactura)
         {
             LogicaM8 consulta = new LogicaM8();
@@ -103,6 +112,12 @@ namespace Tangerine.GUI.M9
             }
         }
 
+        /// <summary>
+        /// Metodo de carga de los elementos de la ventana.
+        /// </summary>
+        /// recibe un solo parametro, id de la compania para consultar todas las facturas asociadas, este parametro se recibe via URL
+        /// recibe un solo parametro, id de la factura para consultar los detalles asociados, este parametro se recibe via URL
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int identificador = int.Parse(Request.QueryString["id"]);
@@ -110,6 +125,8 @@ namespace Tangerine.GUI.M9
 
         }
 
+        /// <summary>
+        /// Metodo para tomar los valores de la vista y guardarlos en BD luego de apretar el boton agregar.
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             int _idFactura = int.Parse(seccion4.Value.ToString());

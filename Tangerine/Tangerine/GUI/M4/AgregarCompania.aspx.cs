@@ -14,6 +14,11 @@ namespace Tangerine.GUI.M4
     {
         LogicaM4 logica = new LogicaM4();
 
+        /// <summary>
+        /// Método de carga de página en el cual carga los lugares tipo ciudad en un combobox.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,6 +28,11 @@ namespace Tangerine.GUI.M4
             
         }
 
+        /// <summary>
+        /// Método que concreta la agregación de una nueva compañía luego de ser presionado el botón agregar.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             string _nombre = InputNombre1.Value;
@@ -30,7 +40,7 @@ namespace Tangerine.GUI.M4
             string _rif = InputRIF1.Value;
             string _email = InputEmail1.Value;
             string _telefono = InputTelefono1.Value;
-            string _fecha = InputFechaRegistro1.Value;
+            string _fecha = datepicker1.Value;
 
             //Por defecto se crea la compania HABILITADA.
             int _status = 1;  
@@ -38,14 +48,20 @@ namespace Tangerine.GUI.M4
             int _presupuesto = int.Parse(InputPresupuesto1.Value);
             int _plazo = int.Parse(InputPlazoPago1.Value.ToString());
             int _direccionId = logica.MatchIdLugar(InputDireccion1.Value);
-            
-            Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, DateTime.Parse(_fecha),
-                                                _status, _presupuesto, _plazo, _direccionId);
+
+            Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, 
+                                            DateTime.ParseExact(_fecha, "MM/dd/yyyy", null), _status, _presupuesto, 
+                                            _plazo, _direccionId);
             logica.AddNewCompany(company);
 
             Server.Transfer("ConsultarCompania.aspx", true);
         }
 
+        /// <summary>
+        /// Método de carga de lugares tipo ciudad en un combobox.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void llenarComboBoxLugar()
         {
             List<LugarDireccion> listPlace = logica.getPlaces();
