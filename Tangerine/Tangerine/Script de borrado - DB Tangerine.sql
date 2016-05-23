@@ -95,6 +95,7 @@ drop procedure M8_ConsultarFacturasCompania;
 drop procedure M8_VerificarFacturasParaPagar;
 drop procedure M8_ConsultarMontoRestanteFactura;
 drop procedure M8_VerificarFacturaExistente;
+drop procedure M8_ConsultarFacturasPagadasCompania;
 
 drop procedure M9_AgregarPago;
 drop procedure M9_CambioStatus;

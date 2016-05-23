@@ -552,6 +552,7 @@ namespace DatosTangerine.M8
         /// <summary>
         /// Funcion que permite buscar todas las facturas asociadas a una compañia
         /// </summary>
+        /// <param name="idCompania"></param>
         /// <returns>Retorna la lista con todas las facturas</returns>
         public static List<Facturacion> ContactFacturasCompania( int idCompania )
         {
@@ -625,6 +626,86 @@ namespace DatosTangerine.M8
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
          
+            return listFactura;
+        }
+
+        /// <summary>
+        /// Funcion que permite buscar todas las facturas pagadas asociadas a una compañia
+        /// </summary>
+        /// <param name="idCompania"></param>
+        /// <returns>Retorna la lista con todas las facturas</returns>
+        public static List<Facturacion> ContactFacturasPagadasCompania(int idCompania)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<Facturacion> listFactura = new List<Facturacion>();
+
+            try
+            {
+                theConnection.Conectar();
+
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, idCompania.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceFactura.ContactFacturasPagadasCompania, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    int facId = int.Parse(row[ResourceFactura.FacIdFactura].ToString());
+                    DateTime facFecha = DateTime.Parse(row[ResourceFactura.FacFechaEmision].ToString());
+                    DateTime facFechaUltimoPago = DateTime.Parse(row[ResourceFactura.FacFechaUltimoPago].ToString());
+                    double facMonto = double.Parse(row[ResourceFactura.FacMontoTotal].ToString());
+                    double facMontoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
+                    String facTipoMoneda = row[ResourceFactura.FacTipoMoneda].ToString();
+                    String facDescripcion = row[ResourceFactura.FacDescripcion].ToString();
+                    int facEstatus = int.Parse(row[ResourceFactura.FacEstatus].ToString());
+                    int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
+                    int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
+
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
+                                                        facEstatus, facIdProyecto, facIdCompania);
+                    listFactura.Add(theFactura);
+
+                }
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return listFactura;
         }
 

@@ -53,13 +53,6 @@ namespace LogicaTangerine.M2
             {
                 usuario = BDUsuario.ObtenerUsuarioDeEmpleado( empleado );
             }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar ConsultarListaDeEmpleados()",
-                                                                 ex );
-            }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
