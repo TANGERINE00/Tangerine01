@@ -158,7 +158,7 @@ namespace PruebasUnitarias.M8
 
         
 
-    
+    /*
 
         /// <summary>
         /// Prueba que permite verificar el metodo para obtener un Proyecto específico que pertenecen a la base de datos
@@ -170,7 +170,7 @@ namespace PruebasUnitarias.M8
 
             Assert.NotNull(monto);
 
-        }
+        }*/
 
         /// <summary>
         /// Prueba que permite verificar el metodo para saber si ya existe la factura especifica en la base de datos

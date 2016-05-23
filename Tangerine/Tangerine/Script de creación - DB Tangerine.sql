@@ -1538,7 +1538,8 @@ AS
 			pag_moneda AS pag_moneda
 		FROM PAGO WHERE fk_fac_id = @id_Factura;
 	END;
-GO	
+
+GO
 
 -----------------------------------
 ------Fin Stored Procedure M9------
