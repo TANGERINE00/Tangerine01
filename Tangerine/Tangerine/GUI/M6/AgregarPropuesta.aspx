@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -71,7 +71,6 @@
 
                 <!-- form start -->
 
-
                 <div class="box-body">
 
                     <div class="form-group">
@@ -83,12 +82,18 @@
                             </asp:DropDownList>
                         </div>
 
-
                     </div>
+
+
 
                     <div class="form-group">
                         <label>Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"> </textarea>
+                        
+                        <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z]+$"  class="form-control" id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" oninput="setCustomValidity('')"></textarea>
+					     
+                      <%--  <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="nombre" name ="nombre" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">
+                    --%>
+                    
                     </div>
 
                     <div class="form-group">
@@ -98,7 +103,8 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-11 col-md-11 col-lg-11">
-                                        <input runat="server" type="text" placeholder="Requerimiento" class="form-control precondicion" id="precondicion_0" name="precondicion_0" />
+                                        
+                                        <input runat="server" placeholder="Requerimiento" type="text" pattern="^[A-z]+$" class="form-control precondicion" id="precondicion_0" name="precondicion_0" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')" />
                                     </div>
                                     <div class="col-sm-1 col-md-1 col-lg-1">
                                         <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarPrecondicion()"></button>
@@ -121,7 +127,8 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control"  id="textoDuracion" runat="server">
+                            
+                            <input type="text" class="form-control" id="textoDuracion" name="duracion" runat="server" pattern="^[0-50]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" oninput="setCustomValidity('')">
                         </div>
 
                     </div>
@@ -146,7 +153,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static">
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" >
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -164,22 +171,22 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control" id="textoCosto" runat="server">
+                            <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" pattern="^[0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" oninput="setCustomValidity('')">
                         </div>
 
                     </div>
 
-                   <div class="form-group"  >
+                    <div class="form-group">
                         <label>Forma de Pago</label>
                         <div class="dropdown" runat="server" id="fpago">
                             <asp:DropDownList ID="formaPago" class="btn btn-default dropdown-toggle" runat="server">
                             </asp:DropDownList>
                         </div>
                     </div>
-					
-	
-					
-					 <div class="form-group" >
+
+
+
+                    <div class="form-group">
                         <label>Cantidad Cuotas</label>
                         <div class="dropdown" runat="server" id="cuota">
                             <asp:DropDownList ID="comboCuota" class="btn btn-default dropdown-toggle" runat="server">
@@ -187,7 +194,7 @@
                         </div>
                     </div>
 
-                  
+
 
                     <div class="form-group">
                         <label>Estatus</label>

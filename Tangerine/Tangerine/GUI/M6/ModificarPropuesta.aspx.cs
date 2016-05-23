@@ -43,7 +43,7 @@ namespace Tangerine.GUI.M6
             btn_ConsultaReq(prueba);
 
 
-            volver.Attributes.Add("href", "ConsultarPropuesta.aspx");
+          //  volver.Attributes.Add("href", "ConsultarPropuesta.aspx");
 
 
 
