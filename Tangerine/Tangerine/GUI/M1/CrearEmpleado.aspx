@@ -64,13 +64,18 @@
                               <span class="glyphicon glyphicon-th"></span>
                           </div>
                         </div>
+                       <asp:RegularExpressionValidator 
+                           runat="server" ControlToValidate="DateEmployee" 
+                           ValidationExpression="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d$"
+                           ErrorMessage="Invalid date format." />
+                       <!--
                        <asp:CompareValidator
                             id="dateValidator" runat="server" 
                             Type="Date"
                             Operator="DataTypeCheck"
                             ControlToValidate="DateEmployee" 
                             ErrorMessage="Por favor introduzca una fecha válida.">
-                        </asp:CompareValidator>
+                        </asp:CompareValidator>-->
                    </div>
                    <div class="form-group">
                     <label for="LevelListStudy">Nivel de estudio</label> <label for="Requerido" style="color: red;">*</label>
@@ -91,13 +96,10 @@
                               <span class="glyphicon glyphicon-th"></span>
                           </div>
                         </div>
-                       <asp:CompareValidator
-                            id="CompareValidator2" runat="server" 
-                            Type="Date"
-                            Operator="DataTypeCheck"
-                            ControlToValidate="DateJob" 
-                            ErrorMessage="Por favor introduzca una fecha válida.">
-                        </asp:CompareValidator>
+                       <asp:RegularExpressionValidator 
+                           runat="server" ControlToValidate="DateEmployee" 
+                           ValidationExpression="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d$"
+                           ErrorMessage="Invalid date format." />
                   </div>
                   
                  <asp:ScriptManager ID="MainScriptManager" runat="server" />

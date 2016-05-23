@@ -192,4 +192,10 @@
   <data name="CerrarInactivo" xml:space="preserve">
     <value>&lt;/span&gt;</value>
   </data>
+  <data name="CloseLabel" xml:space="preserve">
+    <value>&lt;/label&gt;</value>
+  </data>
+  <data name="OpenLabel" xml:space="preserve">
+    <value>&lt;label&gt;</value>
+  </data>
 </root>
