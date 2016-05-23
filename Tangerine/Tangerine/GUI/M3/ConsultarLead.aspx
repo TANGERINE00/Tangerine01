@@ -28,7 +28,7 @@
                 </div><!-- /.box-header -->
                 <!-- table start -->
 					
- <div class="box-body table-responsive no-padding">
+ 
                     
                      <div class="box-body" runat="server">
                        <div class="row">
@@ -67,7 +67,7 @@
 
                        
                      </div> 
-                   </div><!-- /.box-body -->
+                   <!-- /.box-body -->
                   <div class="box-footer" runat="server">
                         <a href="Listar.aspx" class="btn btn-default pull-left">Regresar</a>
                     </div>

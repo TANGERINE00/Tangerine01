@@ -133,7 +133,7 @@
     <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=</value>
   </data>
   <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="EliminarLead.aspx?idclp=</value>
+    <value>&lt;a title="Inactiva" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="EliminarLead.aspx?idclp=</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px" href="ConsultarLead.aspx?idclp=</value>
@@ -169,7 +169,7 @@
     <value>&lt;div class="center-block"&gt;</value>
   </data>
   <data name="BotonActiv" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ActivarLead.aspx?idclp=</value>
+    <value>&lt;a title="Activa"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ActivarLead.aspx?idclp=</value>
   </data>
   <data name="CloseSpanProm" xml:space="preserve">
     <value>"&gt;Promovido&lt;/span&gt;</value>

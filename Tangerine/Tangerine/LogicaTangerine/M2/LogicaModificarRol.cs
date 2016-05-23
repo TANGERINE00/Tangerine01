@@ -19,7 +19,7 @@ namespace LogicaTangerine.M2
         /// <param name="elusuario"></param>
         /// <param name="elrol"></param>
         /// <returns></returns>
-        public static bool ModificarRol(string elusuario, string elrol)
+        public static bool ModificarRol( string elusuario, string elrol )
         {
             bool resultado = false;
 
@@ -30,11 +30,11 @@ namespace LogicaTangerine.M2
 
                 resultado = BDUsuario.ModificarRolUsuario( usuario );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
-                                                                     "ModificarRol()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol( "Error al ejecutar " +
+                                                                         "ModificarRol()", ex );
             }
 
             return resultado;
@@ -53,12 +53,13 @@ namespace LogicaTangerine.M2
             {
                 usuario = BDUsuario.ObtenerUsuarioDeEmpleado( empleado );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
-                                                                     "ObtenerUsuario()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol( "Error al ejecutar " +
+                                                                         "ObtenerUsuario()", ex );
             }
+
             return usuario;
         }
     }

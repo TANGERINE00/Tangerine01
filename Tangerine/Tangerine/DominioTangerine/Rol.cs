@@ -78,9 +78,9 @@ namespace DominioTangerine
         /// </summary>
         public void imprimirListaDeMenus()
         {
-            foreach (Menu m in _menus)
+            foreach ( Menu m in _menus )
             {
-                System.Diagnostics.Debug.WriteLine("Menú: " + m.Nombre);
+                System.Diagnostics.Debug.WriteLine( "Menú: " + m.Nombre );
             }
         }
 

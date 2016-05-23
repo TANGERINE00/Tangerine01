@@ -239,8 +239,6 @@ namespace DatosTangerine.M2
                     string rolNombre = row[ ResourceUser.RolNombre ].ToString();
                     string menNombre = row[ ResourceUser.RolMenu ].ToString();
 
-                    System.Diagnostics.Debug.WriteLine("Resultado = " + rolNombre + menNombre);
-
                     if ( rolAgregado == false )
                     {
                         rol.Nombre = rolNombre;
