@@ -26,8 +26,12 @@ namespace Tangerine.GUI.M4
                 this.tabla.Text = value;
             }
         }
-   
-      
+
+        /// <summary>
+        /// Método de carga de página en el cual carga una tabla con los datos básicos de las compañías.
+        /// </summary>
+        /// <param name="typeHab, idComp">parametro que indica si la compañía está habilitada y su id</param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -57,6 +61,11 @@ namespace Tangerine.GUI.M4
             }
         }
 
+        /// <summary>
+        /// Imprime la tabla de datos.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         public void imprimirTabla()
         {
             List<Compania> listCompany = prueba.ConsultCompanies();
@@ -91,6 +100,11 @@ namespace Tangerine.GUI.M4
             }
         }
 
+        /// <summary>
+        /// Imprime botones de accion en la última columna de la tabla.
+        /// </summary>
+        /// <param name="theCompany">Objeto de tipo compañía</param>
+        /// <returns></returns>
         public void imprimirBotonesAccion(Compania theCompany)
         {
             if (HttpContext.Current.Session["Rol"].Equals("Administrador") ||
