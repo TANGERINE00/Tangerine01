@@ -27,84 +27,98 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- table start -->
-                <div class="box-body table-responsive no-padding">
+                <form role="form" id="modificar_proyecto" method="post" runat="server">
+                    <div class="box-body table-responsive no-padding">
+                        <div class="box-body" runat="server">
+                            <div class="row">
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="NombrePropuesta1">Nombre de la Propuesta: </label>
+                                    </h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="NombrePropuesta"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="NombreProyecto1">Nombre del Proyecto</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="NombreProyecto"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="CodigoProyecto1">Codigo del Proyecto</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="CodigoProyecto"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="FechaInicio1">Fecha de Inicio del Proyecto</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="FechaInicio"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="FechaFin1">Fecha Estimada de culminacion</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="FechaFin"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="Costo1">Costo del Proyecto</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="Costo"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="Porcentaje1">Porcentaje de realizacion</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="Porcentaje"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="Estatus1">Estatus</label></h4>
+                                    <div>
+                                        <h5>
+                                            <asp:Literal runat="server" ID="Estatus"> </asp:Literal></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" runat="server">
+                                    <h4>
+                                        <label for="inputPersonal">Personal</label></h4>
 
-                    <div class="box-body" runat="server">
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="NombrePropuesta1">Nombre de la Propuesta</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="NombrePropuesta"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="NombreProyecto1">Nombre del Proyecto</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="NombreProyecto"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="CodigoProyecto1">Codigo del Proyecto</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="CodigoProyecto"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="FechaInicio1">Fecha de Inicio del Proyecto</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="FechaInicio"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="FechaFin1">Fecha Estimada de culminacion</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="FechaFin"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="Costo1">Costo del Proyecto</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="Costo"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="Porcentaje1">Porcentaje de realizacion</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="Porcentaje"> </asp:Literal></h4>
-                            </div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h3>
-                                <label for="Estatus1">Estatus</label></h3>
-                            <div>
-                                <h4>
-                                    <asp:Literal runat="server" ID="Estatus"> </asp:Literal></h4>
+                                    <h5>
+                                        <select class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
+                                        </select></h5>
+
+                                    <h4>
+                                        <label for="inputEncargado">Encargado de la empresa contratante</label></h4>
+                                    <h5>
+                                        <select class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
+                                        </select></h5>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.box-body -->
-
-
-                <div class="box-footer" runat="server">
-                    <a href="ConsultaProyecto.aspx" class="btn btn-default pull-left">Regresar</a>
-                </div>
-
+                </form>
             </div>
         </div>
+
+    </div>
+    </div>
         <!-- /.box -->
 
     </div>
