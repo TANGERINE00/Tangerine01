@@ -12,7 +12,8 @@ namespace Tangerine.GUI.M4
 {
     public partial class ConsultarCompania : System.Web.UI.Page
     {
-
+        LogicaM4 prueba = new LogicaM4();
+       
         public string company
         {
             get 
@@ -26,12 +27,9 @@ namespace Tangerine.GUI.M4
             }
         }
    
-        
-        
+      
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM4 prueba = new LogicaM4();
-            
             if (!IsPostBack)
             {
                 Compania laCompania;
@@ -52,75 +50,74 @@ namespace Tangerine.GUI.M4
                     }
                 }
                 catch
-                  {
-                      
-                  }
-                List<Compania> listCompany = prueba.ConsultCompanies();
-                    try
-                    {
-                        foreach (Compania theCompany in listCompany)
-                        {
-
-                           
-                            company += ResourceGUIM4.OpenTR;
-
-                            company += ResourceGUIM4.OpenTD + theCompany.NombreCompania.ToString() + ResourceGUIM4.CloseTD;
-                            // company += ResourceGUIM4.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceGUIM4.CloseTD;
-                            company += ResourceGUIM4.OpenTD + theCompany.RifCompania + ResourceGUIM4.CloseTD;
-                            company += ResourceGUIM4.OpenTD + theCompany.TelefonoCompania + ResourceGUIM4.CloseTD;
-                            //    company += ResourceGUIM4.OpenTD + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.CloseTD;
-                        
-                            if (theCompany.StatusCompania.Equals(1))
-                            {                                
-                                company += ResourceGUIM4.OpenTD + ResourceGUIM4.habilitado + theCompany.IdCompania + ResourceGUIM4.CloseSpanHab + ResourceGUIM4.CloseTD;
-                            }
-                            else if (theCompany.StatusCompania.Equals(0))
-                            {                              
-                                company += ResourceGUIM4.OpenTD + ResourceGUIM4.inhabilitado + theCompany.IdCompania + ResourceGUIM4.CloseSpanInhab + ResourceGUIM4.CloseTD;
-                            }
-                          
-                          
-                            //Acciones de cada compania  
-
-
-                            company += ResourceGUIM4.OpenTD + ResourceGUIM4.OpenDivRow +
-                                /*Boton Info */      ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania +
-                                /*Boton Edit */      ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonEdit + theCompany.IdCompania +
-                                /*Boton Habilitar */     ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonHab + theCompany.IdCompania +
-                                /*Boton Inhabilitar*/     ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonInhab + theCompany.IdCompania +
-                                /*Boton Contacto*/        ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania +
-                               ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.CloseDiv +
-                               ResourceGUIM4.CloseTD;
-
-
-
-
-                            company += ResourceGUIM4.CloseTR;
-
-
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-            
-               
-
-                 
+                {
                 }
+
+                imprimirTabla();     
             }
-            
-            
         }
 
-      
-        
+        public void imprimirTabla()
+        {
+            List<Compania> listCompany = prueba.ConsultCompanies();
+            try
+            {
+                foreach (Compania theCompany in listCompany)
+                {
+                    company += ResourceGUIM4.OpenTR;
+                    company += ResourceGUIM4.OpenTD + theCompany.NombreCompania.ToString() + ResourceGUIM4.CloseTD;
+                    //company += ResourceGUIM4.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceGUIM4.CloseTD;
+                    company += ResourceGUIM4.OpenTD + theCompany.RifCompania + ResourceGUIM4.CloseTD;
+                    company += ResourceGUIM4.OpenTD + theCompany.TelefonoCompania + ResourceGUIM4.CloseTD;
+                    //company += ResourceGUIM4.OpenTD + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.CloseTD;
 
+                    if (theCompany.StatusCompania.Equals(1))
+                    {
+                        company += ResourceGUIM4.OpenTD + ResourceGUIM4.habilitado + theCompany.IdCompania +
+                            ResourceGUIM4.CloseSpanHab + ResourceGUIM4.CloseTD;
+                    }
+                    else if (theCompany.StatusCompania.Equals(0))
+                    {
+                        company += ResourceGUIM4.OpenTD + ResourceGUIM4.inhabilitado + theCompany.IdCompania +
+                            ResourceGUIM4.CloseSpanInhab + ResourceGUIM4.CloseTD;
+                    }
 
-     
+                    //Acciones de cada compania  
+                    imprimirBotonesAccion(theCompany);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
 
+        public void imprimirBotonesAccion(Compania theCompany)
+        {
+            if (HttpContext.Current.Session["Rol"].Equals("Administrador") ||
+                        HttpContext.Current.Session["Rol"].Equals("Gerente"))
+            {
+                company += ResourceGUIM4.OpenTD + ResourceGUIM4.OpenDivRow +
+                ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania + /*Boton Info */
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonEdit + theCompany.IdCompania + /*Boton Edit */
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonHab + theCompany.IdCompania + /*Boton Habilitar */
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonInhab + theCompany.IdCompania + /*Boton Inhabilitar*/
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania + /*Boton Contacto*/
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.CloseDiv +
+                ResourceGUIM4.CloseTD;
 
-    
+                company += ResourceGUIM4.CloseTR;
+            }
+            else if (HttpContext.Current.Session["Rol"].Equals("Programador") ||
+                     HttpContext.Current.Session["Rol"].Equals("Director"))
+            {
+                company += ResourceGUIM4.OpenTD + ResourceGUIM4.OpenDivRow +
+                ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania + /*Boton Info */
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania + /*Boton Contacto*/
+                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.CloseDiv +
+                ResourceGUIM4.CloseTD;
+
+                company += ResourceGUIM4.CloseTR;
+            }
+        }
+    }
 }
