@@ -48,17 +48,17 @@ namespace Tangerine.GUI.Master
                 }
             }
 
-<<<<<<< HEAD
+
             if ( HttpContext.Current.Session[ "User" ] != null )
                 usuarioSesion.InnerText = HttpContext.Current.Session[ "User" ] + "";
-=======
+
             if (HttpContext.Current.Session["User"] != null)
             {
                 usuarioSesion.InnerText = HttpContext.Current.Session["User"] + "";
                 UsuarioDetalle.InnerText = HttpContext.Current.Session["Rol"] + "";
                 fechaUsuario.InnerText = HttpContext.Current.Session["Date"] + "";
             }
->>>>>>> ceb7a10c2c6425d1a1fd2011c53803b2f151907c
+
             else
                 usuarioSesion.InnerText = "Usuario";
         }
