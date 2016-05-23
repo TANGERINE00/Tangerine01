@@ -43,7 +43,11 @@ namespace Tangerine.GUI.Master
             }
 
             if (HttpContext.Current.Session["User"] != null)
+            {
                 usuarioSesion.InnerText = HttpContext.Current.Session["User"] + "";
+                UsuarioDetalle.InnerText = HttpContext.Current.Session["Rol"] + "";
+                fechaUsuario.InnerText = HttpContext.Current.Session["Date"] + "";
+            }
             else
                 usuarioSesion.InnerText = "Usuario";
         }
