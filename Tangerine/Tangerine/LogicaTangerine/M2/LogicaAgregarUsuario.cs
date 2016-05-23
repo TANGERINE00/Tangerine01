@@ -83,18 +83,6 @@ namespace LogicaTangerine.M2
                 resultado = BDUsuario.AgregarUsuario( usuario );
 
             }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido [usuario es null]", ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar AgregarUsuario()",
-                                                                 ex );
-            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -125,11 +113,7 @@ namespace LogicaTangerine.M2
                 usuario.Contrasenia = usuario.GetMD5( usuario.Contrasenia );
                 AgregarUsuario( usuario );
             }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido", ex );
-            }
+
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -226,18 +210,6 @@ namespace LogicaTangerine.M2
             try 
             { 
                 resultado = BDUsuario.VerificarExistenciaDeUsuario( usuario );
-            }
-            catch( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido [usuario es null]", ex );
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( "TGE_00_001",
-                                                                 "Error al ejecutar ExisteUsuario()",
-                                                                 ex );
             }
             catch ( Exception ex )
             {

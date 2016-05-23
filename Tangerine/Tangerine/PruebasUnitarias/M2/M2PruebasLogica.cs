@@ -128,7 +128,7 @@ namespace PruebasUnitarias.M2
         public void TestModificarRol()
         {
             System.Diagnostics.Debug.WriteLine(theUser.NombreUsuario);
-            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Programador"));
+            Assert.IsTrue(LogicaModificarRol.ModificarRol(theUser.NombreUsuario, "Gerente"));
 
         }
        
