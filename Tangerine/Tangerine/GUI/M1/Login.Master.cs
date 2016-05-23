@@ -44,6 +44,7 @@ namespace Tangerine.GUI.M1
                 HttpContext.Current.Session["User"] = Util._theGlobalUser.NombreUsuario;
                 HttpContext.Current.Session["UserID"] = Util._theGlobalUser.FichaEmpleado;
                 HttpContext.Current.Session["Rol"] = Util._theGlobalUser.Rol.Nombre;
+                HttpContext.Current.Session["Date"] = Util._theGlobalUser.FechaCreacion;
 
                 #region Generación de facturas mensuales
                 // AQUI EMPIEZA EL CODIGO PARA GENERAR LAS FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
