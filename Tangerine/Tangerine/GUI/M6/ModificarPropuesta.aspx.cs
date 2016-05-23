@@ -26,21 +26,25 @@ namespace Tangerine.GUI.M6
             }
         }
 
+
+
         public Propuesta Prueba;
         LogicaM4 logicacompania = new LogicaM4();
-        public List <Requerimiento> req;
+        public List<Requerimiento> req;
         public bool modi;
-
+        string prueba;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string prueba = Request.QueryString.Get("id");
-                       
-            btn_Modifica(prueba);
-            btn_ModificaReq(prueba);
+            prueba = Request.QueryString.Get("id");
 
-            
+            btn_ConsultaP(prueba);
+            btn_ConsultaReq(prueba);
+
+
+            volver.Attributes.Add("href", "ConsultarPropuesta.aspx");
+
 
 
             if (!IsPostBack)
@@ -48,9 +52,11 @@ namespace Tangerine.GUI.M6
                 llenarComboTipoCosto();
                 llenarComboDuracion();
                 llenarComboEstatus();
+                llenarComboCuota();
+                llenarComboFpago();
 
-                
- 
+
+
                 foreach (Requerimiento elRequerimiento in req)
                 {
                     requerimiento += RecursosGUI_M6.AbrirTR;
@@ -61,18 +67,25 @@ namespace Tangerine.GUI.M6
 
                     requerimiento += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.btn_Modificar + RecursosGUI_M6.CerrarTD;
                     requerimiento += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.btn_eliminar + RecursosGUI_M6.CerrarTD;
-                                     
+
                     requerimiento += RecursosGUI_M6.CerrarTR;
 
                 }
-                
+
+                descripcion.Value = Prueba.Descripcion;
+                textoDuracion.Value = Prueba.CantDuracion;
+                comboDuracion.SelectedValue = Prueba.TipoDuracion;
+                comboTipoCosto.SelectedValue = Prueba.Moneda;
+                textoCosto.Value = Prueba.Costo.ToString();
+                comboEstatus.SelectedValue = Prueba.Estatus;
+                datepicker1.Value = Prueba.Feincio.ToString("MM/dd/yyyy");
+                datepicker2.Value = Prueba.Fefinal.ToString("MM/dd/yyyy");
+                formaPago.SelectedValue = Prueba.Acuerdopago;
+                comboCuota.SelectedValue = Prueba.Entrega.ToString();
+
             }
 
-            textoDuracion.Value = Prueba.CantDuracion;
-            comboDuracion.SelectedValue = Prueba.TipoDuracion;
-            comboTipoCosto.SelectedValue = Prueba.Moneda;
-            textoCosto.Value = Prueba.Costo.ToString();
-            comboEstatus.SelectedValue = Prueba.Estatus;
+          
 
         }
 
@@ -87,7 +100,7 @@ namespace Tangerine.GUI.M6
         /// <param name="idPropuesta"></param>
 
 
-        public void btn_Modifica(String idPropuesta)
+        public void btn_ConsultaP(String idPropuesta)
         {
 
             LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
@@ -98,7 +111,7 @@ namespace Tangerine.GUI.M6
 
             lacompania = logicacompania.ConsultCompany(Int32.Parse(Prueba.IdCompañia));
             cliente_id.Value = lacompania.NombreCompania;
-           
+
         }
 
 
@@ -111,7 +124,7 @@ namespace Tangerine.GUI.M6
         /// </summary>
         /// <param name="idPropuesta"></param>
 
-        public void btn_ModificaReq(String idPropuesta)
+        public void btn_ConsultaReq(String idPropuesta)
         {
 
             LogicaRequerimiento logreq = new LogicaRequerimiento();
@@ -141,31 +154,6 @@ namespace Tangerine.GUI.M6
 
 
 
-
-        /// <summary>
-        /// Metodo para modificar la propuesta completa en BD.
-        /// </summary>
-
-
-        //public void ModificarTotal()
-        //{
-        //    Propuesta propuestas = new Propuesta();
-
-        //    propuestas.Descripcion = descripcion.Value;
-        //    propuestas.TipoDuracion = comboDuracion.SelectedValue;
-        //    propuestas.Acuerdopago = fpago.Value;
-        //    propuestas.Estatus = comboEstatus.SelectedValue;
-        //    propuestas.Moneda = comboTipoCosto.SelectedValue;
-        //    propuestas.Feincio = DateTime.ParseExact(datepicker1.Value, "MM/dd/yyyy", null);
-        //    propuestas.Fefinal = DateTime.ParseExact(datepicker2.Value, "MM/dd/yyyy", null);
-        //    propuestas.Costo = int.Parse(textoCosto.Value);
-
-
-        //    LogicaPropuesta propuesta = new LogicaPropuesta();
-        //    propuesta.ModificarPropuesta(propuestas);
-        //}
-
-
         public void llenarComboDuracion()
         {
             comboDuracion.Items.Add("Meses");
@@ -176,10 +164,10 @@ namespace Tangerine.GUI.M6
 
         public void llenarComboTipoCosto()
         {
-            comboTipoCosto.Items.Add("Bolivares");
-            comboTipoCosto.Items.Add("Dolares");
-            comboTipoCosto.Items.Add("Euros");
-            comboTipoCosto.Items.Add("Bitcoins");
+            comboTipoCosto.Items.Add("Bolivar");
+            comboTipoCosto.Items.Add("Dolar");
+            comboTipoCosto.Items.Add("Euro");
+            comboTipoCosto.Items.Add("Bitcoin");
         }
 
 
@@ -190,6 +178,47 @@ namespace Tangerine.GUI.M6
             comboEstatus.Items.Add("Cerrado");
 
         }
+
+        public void llenarComboCuota()
+        {
+            comboCuota.Items.Add("");
+            comboCuota.Items.Add("1");
+            comboCuota.Items.Add("2");
+            comboCuota.Items.Add("3");
+            comboCuota.Items.Add("4");
+
+        }
+
+        public void llenarComboFpago()
+        {
+            formaPago.Items.Add("Mensual");
+            formaPago.Items.Add("Por cuotas");
+
+
+        }
+
+        protected void botonModificarPro_Click(object sender, EventArgs e)
+        {
+            Propuesta propuestas = new Propuesta();
+
+            propuestas.Nombre = prueba;
+            propuestas.Descripcion = descripcion.Value;
+            propuestas.TipoDuracion = comboDuracion.SelectedValue;
+            propuestas.Acuerdopago = formaPago.SelectedValue;
+            propuestas.CantDuracion = comboCuota.SelectedValue;
+            propuestas.Estatus = comboEstatus.SelectedValue;
+            propuestas.Moneda = comboTipoCosto.SelectedValue;
+            propuestas.Feincio = DateTime.ParseExact(datepicker1.Value, "MM/dd/yyyy", null);
+            propuestas.Fefinal = DateTime.ParseExact(datepicker2.Value, "MM/dd/yyyy", null);
+            propuestas.Costo = int.Parse(textoCosto.Value);
+
+
+            LogicaPropuesta propuesta = new LogicaPropuesta();
+            propuesta.ModificarPropuesta(propuestas);
+            Server.Transfer("ConsultarPropuesta.aspx", true);
+        }
+
+      
 
 
 

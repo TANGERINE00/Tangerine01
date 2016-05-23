@@ -152,7 +152,7 @@ namespace PruebasUnitarias.M8
         {
             facturas = BDFactura.ContactFacturasCompania(1);
 
-            Assert.AreEqual( 3 , facturas.Count() );
+            Assert.AreEqual( 2 , facturas.Count() );
 
         }
 
