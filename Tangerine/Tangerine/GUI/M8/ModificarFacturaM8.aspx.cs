@@ -43,6 +43,7 @@ namespace Tangerine.GUI.M8
                         this.textProyecto_M8.Value = proyecto.Nombre;
                     this.textMonto_M8.Value = theFactura.montoFactura.ToString();
                     _tipoMoneda = theFactura.tipoMoneda;
+                    this.textTipoMoneda_M8.Value = _tipoMoneda;
                     _montoRestante = int.Parse(theFactura.montoRestanteFactura.ToString());
             }    
         }
