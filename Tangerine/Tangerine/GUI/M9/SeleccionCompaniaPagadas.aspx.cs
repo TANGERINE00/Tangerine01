@@ -11,19 +11,19 @@ using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M9
 {
-    public partial class WebForm5 : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
 
-        public string company
+        public string company2
         {
             get
             {
-                return this.tabla.Text;
+                return this.tablaPagadas.Text;
             }
 
             set
             {
-                this.tabla.Text = value;
+                this.tablaPagadas.Text = value;
             }
         }
 
@@ -43,26 +43,25 @@ namespace Tangerine.GUI.M9
                 {
                     foreach (Compania theCompany in listCompany)
                     {
-                        company += ResourceLogicaM9.OpenTR;
+                        company2 += ResourceLogicaM9.OpenTR;
 
-                        company += ResourceLogicaM9.OpenTD + theCompany.NombreCompania.ToString() + ResourceLogicaM9.CloseTD;
-                        company += ResourceLogicaM9.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceLogicaM9.CloseTD;
-                        company += ResourceLogicaM9.OpenTD + theCompany.RifCompania + ResourceLogicaM9.CloseTD;                                    
-                        company += ResourceLogicaM9.OpenTD + theCompany.FechaRegistroCompania.ToShortDateString() + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + theCompany.NombreCompania.ToString() + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + theCompany.RifCompania + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + theCompany.FechaRegistroCompania.ToShortDateString() + ResourceLogicaM9.CloseTD;
                         if (theCompany.StatusCompania.Equals(1))
                         {
-                            company += ResourceLogicaM9.OpenTD + ResourceLogicaM9.habilitado + ResourceLogicaM9.CloseTD;
+                            company2 += ResourceLogicaM9.OpenTD + ResourceLogicaM9.habilitado + ResourceLogicaM9.CloseTD;
                         }
                         else if (theCompany.StatusCompania.Equals(0))
                         {
-                            company += ResourceLogicaM9.OpenTD + ResourceLogicaM9.inhabilitado + ResourceLogicaM9.CloseTD;
+                            company2 += ResourceLogicaM9.OpenTD + ResourceLogicaM9.inhabilitado + ResourceLogicaM9.CloseTD;
                         }
 
                         //Boton para cargar las facturas asociadas a cada compañia
 
-                        company += ResourceLogicaM9.boton + theCompany.IdCompania + ResourceLogicaM9.boton_cerrar_id;                   
+                        company2 += ResourceLogicaM9.boton2 + theCompany.IdCompania + ResourceLogicaM9.boton_cerrar_id;                   
                     }
-
                 }
                 catch (Exception ex)
                 {
