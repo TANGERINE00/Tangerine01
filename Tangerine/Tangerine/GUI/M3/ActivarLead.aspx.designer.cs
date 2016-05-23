@@ -13,49 +13,49 @@ namespace Tangerine.GUI.M3 {
     public partial class ActivarLead {
         
         /// <summary>
-        /// id_otro control.
+        /// Nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_otro;
+        protected global::System.Web.UI.WebControls.Literal Nombre;
         
         /// <summary>
-        /// nombre control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nombre;
+        protected global::System.Web.UI.WebControls.Literal status;
         
         /// <summary>
-        /// rif control.
+        /// Rif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText rif;
+        protected global::System.Web.UI.WebControls.Literal Rif;
         
         /// <summary>
-        /// email control.
+        /// presupuesto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
+        protected global::System.Web.UI.WebControls.Literal presupuesto;
         
         /// <summary>
-        /// pres_anual control.
+        /// correo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText pres_anual;
+        protected global::System.Web.UI.WebControls.Literal correo;
         
         /// <summary>
         /// llamadas control.
@@ -64,7 +64,7 @@ namespace Tangerine.GUI.M3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText llamadas;
+        protected global::System.Web.UI.WebControls.Literal llamadas;
         
         /// <summary>
         /// visitas control.
@@ -73,7 +73,16 @@ namespace Tangerine.GUI.M3 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText visitas;
+        protected global::System.Web.UI.WebControls.Literal visitas;
+        
+        /// <summary>
+        /// eliminar_lead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm eliminar_lead;
         
         /// <summary>
         /// btnaceptar control.
