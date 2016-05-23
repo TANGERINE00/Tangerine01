@@ -156,7 +156,6 @@ namespace PruebasUnitarias.M2
         /// DatosTangerine
         /// </summary>
         [Test]
-
         public void TestVerificarUsuarioPorFichaEmpleado()
         {
             Assert.IsFalse(BDUsuario.VerificarUsuarioPorFichaEmpleado(0));
@@ -203,48 +202,5 @@ namespace PruebasUnitarias.M2
         {
             Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerDatoUsuario(null));
         }
-
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método ObtenerOpciones() de la clase BDUsuario en
-        /// DatosTangerine
-        /// </summary>
-        [Test]
-        public void TestFailObtenerOpciones()
-        {
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerOpciones(null, -1));
-        }
-
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método ObtenerRolUsuario() de la clase BDUsuario en
-        /// DatosTangerine
-        /// </summary>
-        [Test]
-        public void TestFailObtenerRolUsuario()
-        {
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerRolUsuario(-5));
-        }
-
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarExistenciaDeUsuario() de la clase BDUsuario en
-        /// DatosTangerine
-        /// </summary>
-        [Test]
-        public void TestFailVerificarExistenciaDeUsuario()
-        {
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.VerificarExistenciaDeUsuario(""));
-        }
-
-        /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarUsuarioPorFichaEmpleado() de la clase BDUsuario en
-        /// DatosTangerine
-        /// </summary>
-        [Test]
-        public void TestFailVerificarUsuarioPorFichaEmpleado()
-        {
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.VerificarUsuarioPorFichaEmpleado(0));
-        }
-
-
-
     }
 }
