@@ -57,36 +57,6 @@ namespace DominioTangerine
         private String _idCompañia;
 
         private List<Requerimiento> _listaRequerimiento;
-        private string conNombre;
-        private int conEstatus;
-        private string p3;
-        private string p4;
-        private string p5;
-        private string p6;
-        private string p7;
-        private string p8;
-        private string p9;
-        private string p10;
-        private string p11;
-        private int p12;
-        private string p13;
-        private string p14;
-        private int p15;
-        private DateTime dateTime1;
-        private DateTime dateTime2;
-        private string conDescripcion;
-        private string contipoDuracion1;
-        private string contipoDuracion2;
-        private string conAcuerdo;
-        private string conEstatus1;
-        private string conMoneda;
-        private int conEntregas;
-        private DateTime conFechaIni;
-        private DateTime conFechaFin;
-        private int conCosto;
-        private int conFkComp;
-        private string contipoDuracion;
-
 
 
         #endregion
