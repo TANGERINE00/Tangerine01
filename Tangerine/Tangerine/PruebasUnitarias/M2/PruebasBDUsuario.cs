@@ -54,9 +54,9 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestAgregarUsuario()
         {
-            bool resultado = BDUsuario.AgregarUsuario(theUser);
+            bool resultado = BDUsuario.AgregarUsuario( theUser );
 
-            Assert.IsTrue(resultado);
+            Assert.IsTrue( resultado );
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestObtenerDatosUsuario()
         {
-            theUserResultado = BDUsuario.ObtenerDatoUsuario(theUserResultado);
+            theUserResultado = BDUsuario.ObtenerDatoUsuario( theUserResultado );
 
-            Assert.AreEqual(theUserResultado.Rol.Nombre, "Gerente");
+            Assert.AreEqual( theUserResultado.Rol.Nombre, "Gerente" );
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace PruebasUnitarias.M2
 
             theUser.Rol = theRol;
 
-            bool resultado = BDUsuario.ModificarRolUsuario(theUser);
+            bool resultado = BDUsuario.ModificarRolUsuario( theUser );
 
-            theUserResultado = BDUsuario.ObtenerDatoUsuario(theUser);
+            theUserResultado = BDUsuario.ObtenerDatoUsuario( theUser );
 
-            Assert.AreEqual(theUser.Rol.Nombre, theUserResultado.Rol.Nombre);
+            Assert.AreEqual( theUser.Rol.Nombre, theUserResultado.Rol.Nombre );
         }
 
         /// <summary>
@@ -95,11 +95,11 @@ namespace PruebasUnitarias.M2
         {
             theUser.Contrasenia = "modificacion1";
 
-            bool resultado = BDUsuario.ModificarContraseniaUsuario(theUser);
+            bool resultado = BDUsuario.ModificarContraseniaUsuario( theUser );
 
-            theUserResultado = BDUsuario.ObtenerDatoUsuario(theUser);
+            theUserResultado = BDUsuario.ObtenerDatoUsuario( theUser );
 
-            Assert.AreEqual(theUser.Contrasenia, theUserResultado.Contrasenia);
+            Assert.AreEqual( theUser.Contrasenia, theUserResultado.Contrasenia );
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace PruebasUnitarias.M2
         {
             theRol = BDUsuario.ObtenerRolUsuario(1);
 
-            Assert.AreEqual(theRol.Nombre, "Administrador");
+            Assert.AreEqual( theRol.Nombre, "Administrador" );
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace PruebasUnitarias.M2
             theUserFail = new Usuario();
             theUserFail.NombreUsuario = "testFail";
 
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.AgregarUsuario(theUserFail));
+            Assert.Throws<ExceptionsTangerine>( () => BDUsuario.AgregarUsuario( theUserFail ) );
         }
 
         /// <summary>
@@ -136,71 +136,71 @@ namespace PruebasUnitarias.M2
             theUserFail = new Usuario();
             theUserFail.NombreUsuario = "testFail";
 
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ModificarRolUsuario(theUserFail));
+            Assert.Throws<ExceptionsTangerine>( () => BDUsuario.ModificarRolUsuario( theUserFail ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método ModificarContraseniaUsuario() de la clase BDUsuario en
-        /// DatosTangerine
+        /// Método para probar el disparo de una excepción el método ModificarContraseniaUsuario() de la clase 
+        /// BDUsuario en DatosTangerine
         /// </summary>
         [Test]
         public void TestFailModificarContraseniaUsuario()
         {
             theUserFail = new Usuario();
             theUserFail.NombreUsuario = "testFail";
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ModificarContraseniaUsuario(null));
+            Assert.Throws<ExceptionsTangerine>( () => BDUsuario.ModificarContraseniaUsuario( null ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarUsuarioPorFichaEmplead() de la clase BDUsuario en
-        /// DatosTangerine
+        /// Método para probar el disparo de una excepción el método VerificarUsuarioPorFichaEmplead() de la clase
+        /// BDUsuario en DatosTangerine
         /// </summary>
         [Test]
         public void TestVerificarUsuarioPorFichaEmpleado()
         {
-            Assert.IsFalse(BDUsuario.VerificarUsuarioPorFichaEmpleado(0));
+            Assert.IsFalse( BDUsuario.VerificarUsuarioPorFichaEmpleado( 0 ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método VerificarExistenciaDeUsuario() de la clase BDUsuario en
-        /// DatosTangerine
+        /// Método para probar el disparo de una excepción el método VerificarExistenciaDeUsuario() de la clase 
+        /// BDUsuario en DatosTangerine
         /// </summary>
         [Test]
         public void TestVerificarExistenciaDeUsuario()
         {
-            Assert.IsFalse(BDUsuario.VerificarExistenciaDeUsuario("elusuario"));
-            Assert.IsTrue(BDUsuario.VerificarExistenciaDeUsuario("luarropa"));
+            Assert.IsFalse( BDUsuario.VerificarExistenciaDeUsuario( "elusuario" ) );
+            Assert.IsTrue( BDUsuario.VerificarExistenciaDeUsuario( "luarropa" ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método ObtenerRolUsuarioPorNombre() de la clase BDUsuario en
-        /// DatosTangerine
+        /// Método para probar el disparo de una excepción el método ObtenerRolUsuarioPorNombre() de la clase
+        /// BDUsuario en DatosTangerine
         /// </summary>
         [Test]
         public void TestFailObtenerRolUsuarioPorNombre()
         {
 
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerRolUsuarioPorNombre(null));
+            Assert.Throws<ExceptionsTangerine>( () => BDUsuario.ObtenerRolUsuarioPorNombre( null ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método ObtenerUsuarioDeEmpleado() de la clase BDUsuario en
-        /// DatosTangerine
+        /// Método para probar el disparo de una excepción el método ObtenerUsuarioDeEmpleado() de la clase 
+        /// BDUsuario en DatosTangerine
         /// </summary>
         [Test]
         public void TestFailObtenerUsuarioDeEmpleado()
         {
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerUsuarioDeEmpleado(null));
+            Assert.Throws<ExceptionsTangerine>( () => BDUsuario.ObtenerUsuarioDeEmpleado( null ) );
         }
 
         /// <summary>
-        /// Método para probar el disparo de una excepción el método ObtenerDatoUsuario() de la clase BDUsuario en
-        /// DatosTangerine
+        /// Método para probar el disparo de una excepción el método ObtenerDatoUsuario() de la clase 
+        /// BDUsuario en DatosTangerine
         /// </summary>
         [Test]
         public void TestFailObtenerDatoUsuario()
         {
-            Assert.Throws<ExceptionsTangerine>(() => BDUsuario.ObtenerDatoUsuario(null));
+            Assert.Throws<ExceptionsTangerine>( () => BDUsuario.ObtenerDatoUsuario( null ) );
         }
     }
 }

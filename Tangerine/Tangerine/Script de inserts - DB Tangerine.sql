@@ -209,7 +209,9 @@ insert into OPCION values (21, 'Usuario', 'Usuario', 1);
 insert into OPCION values (27, 'Configuracion', 'Configuración', 1);
 
 insert into MENU values (2, 'Gestión de Leads');
-insert into OPCION values (3, 'Listar', '../M3/Listar.aspx', 2);
+insert into OPCION values (3, 'ConsultarLead', '../M3/Listar.aspx', 2);
+insert into OPCION values (29, 'RegistrarLead', '../M3/AgregarLeads.aspx', 2);
+insert into OPCION values (30, 'GestionDeLeads', 'Gestión de Leads', 2);
 
 insert into MENU values (3, 'Gestión de Compañías');
 insert into OPCION values (4, 'RegistrarCompañía', '../M4/AgregarCompania.aspx', 3);
@@ -287,6 +289,8 @@ insert into ROL_OPCION values (4, 19);
 insert into ROL_OPCION values (4, 20);
 insert into ROL_OPCION values (4, 28);
 insert into ROL_OPCION values (4, 26);
+insert into ROL_OPCION values (4, 29);
+insert into ROL_OPCION values (4, 30);
 
 insert into USUARIO values (1, 'luarropa', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 1, null);
 insert into USUARIO values (2, 'geastone', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 2, null);

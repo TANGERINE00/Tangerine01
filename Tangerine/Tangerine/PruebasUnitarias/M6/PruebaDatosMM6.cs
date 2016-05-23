@@ -18,11 +18,11 @@ namespace PruebasUnitarias.M6
         private DateTime Date1,Date2;
         private LogicaPropuesta logicaM6;
         private BDPropuesta datosM6;
-        private Boolean agregoPropuesta, agregoRequerimiento,agregoRequerimiento2, borroPropuesta, esAprobado;
+        private Boolean agregoPropuesta, agregoRequerimiento, agregoRequerimiento2, borroPropuesta, esAprobado, modifico;
         private List<Propuesta> listaPropuestas;
         private List<Requerimiento> listaRequerimientos;
         private int tamañoLista1, tamañoLista2;
-        private Requerimiento elRequerimiento, elRequerimiento2;
+        private Requerimiento elRequerimiento, elRequerimiento2, elRequerimiento3;
         #endregion
 
 
@@ -52,16 +52,37 @@ namespace PruebasUnitarias.M6
             
             elRequerimiento = new Requerimiento();
             elRequerimiento2 = new Requerimiento();
+            elRequerimiento3 = new Requerimiento();
             elRequerimiento.Descripcion = "desc prueba";
-            elRequerimiento.CodigoRequerimiento = "codigo prueba";
+            elRequerimiento.CodigoRequerimiento = "codigo123";
             elRequerimiento.CodigoPropuesta = "Nombre prueba";
 
             elRequerimiento2.Descripcion = "desc prueba";
-            elRequerimiento2.CodigoRequerimiento = "codigo prueba2";
+            elRequerimiento2.CodigoRequerimiento = "codigo123";
             elRequerimiento2.CodigoPropuesta = "Nombre prueba";
+
+            elRequerimiento3.Descripcion = "desc prueba3";
+            elRequerimiento3.CodigoRequerimiento = "codigo1234";
+            elRequerimiento3.CodigoPropuesta = "Nombre prueba";
             
             logicaM6 = new LogicaPropuesta();
             datosM6 = new BDPropuesta();
+
+            laPropuesta2.CodigoP = "123";
+            laPropuesta2.Nombre = "Nombre prueba";
+            laPropuesta2.Descripcion = "Desc prueba2";
+            laPropuesta2.TipoDuracion = "Meses";
+            laPropuesta2.CantDuracion = "2";
+            laPropuesta2.Acuerdopago = "acuerdo";
+            laPropuesta2.Estatus = "Pendiente prueba";
+            laPropuesta2.Moneda = "Dolar";
+            laPropuesta2.Entrega = 1;
+            Date1 = new DateTime(2016, 6, 4);
+            Date2 = new DateTime(2016, 7, 4);
+            laPropuesta2.Feincio = Date1;
+            laPropuesta2.Feincio = Date2;
+            laPropuesta2.Costo = 100;
+            laPropuesta2.IdCompañia = "1";
         }
 
     
@@ -72,7 +93,7 @@ namespace PruebasUnitarias.M6
         //Prueba que pueda agrega una propuesta
         // </summary>
         [Test]
-        public void TestAgregarPropuesta()
+        public void TestDatosAgregarPropuesta()
         {
             //Agregar una prueba
           
@@ -88,7 +109,7 @@ namespace PruebasUnitarias.M6
         //Prueba que efectivamente consulte una propuesta
         // </summary>
         [Test]
-        public void TestConsultarPropuesta()
+        public void TestDatosConsultarPropuesta()
         {
             //Agrego una propuesta de prueba
             
@@ -100,6 +121,8 @@ namespace PruebasUnitarias.M6
                 laPropuesta2 = new Propuesta();
                 
                 laPropuesta2 = BDPropuesta.ConsultarPropuestaporNombre("Nombre prueba");                
+               
+                //Confirmo que la propuesta es la que tiene status pendiente prueba
                 Assert.AreEqual("Pendiente prueba", laPropuesta2.Estatus);
                 
                 //Elimino la propuesta de prueba
@@ -112,7 +135,7 @@ namespace PruebasUnitarias.M6
        //Prueba que se listen las propuestas, insertando una propuesta y comprobando que la lista no este vacia
        // </summary>
        [Test]
-       public void TestListarLasPropuestas() 
+        public void TesDatostListarLasPropuestas() 
        {
            //Agrego una propuesta de prueba
            agregoPropuesta = BDPropuesta.agregarPropuesta(laPropuesta);
@@ -131,7 +154,7 @@ namespace PruebasUnitarias.M6
        //Prueba que el metodo no devuelva una lista vacia, y que todas las propuestas tienen estatus Aprobado
        // </summary>
        [Test]
-       public void TestPropuestaProyecto()
+       public void TestDatosPropuestaProyecto()
        {
            //Agrego una propuesta de prueba
            agregoPropuesta = BDPropuesta.agregarPropuesta(laPropuesta);
@@ -142,14 +165,15 @@ namespace PruebasUnitarias.M6
                Assert.IsNotEmpty(listaPropuestas);
 
                //Recorro toda la lista y para validar que todos sus estatos son aprobados
-               listaPropuestas.ForEach(delegate(Propuesta valor)
+               foreach(Propuesta valor in listaPropuestas)
                {
+                  
                    if (valor.Estatus == "Aprobado")
                        esAprobado = true;
                    else
                        esAprobado = false;
 
-               });
+               };
 
                //Si esAprobado es falso es porque existe al menos un estatus que no es Aprobado
                Assert.IsTrue(esAprobado);
@@ -165,7 +189,7 @@ namespace PruebasUnitarias.M6
        //Prueba que se agrega un requerimiento
        // </summary>
        [Test]
-        public void TestAgregarRequerimiento()
+       public void TestDatosAgregarRequerimiento()
        {
            //Agrego una propuesta de prueba
            agregoPropuesta = BDPropuesta.agregarPropuesta(laPropuesta);
@@ -190,7 +214,7 @@ namespace PruebasUnitarias.M6
        //de la lista pertenecen a la propuesta solicitada
        // </summary>
        [Test]
-        public void TestConsultarRequerimientosPorPropuesta()
+       public void TestDatosConsultarRequerimientosPorPropuesta()
        {
          
            //Agrego una propuesta de prueba
@@ -229,48 +253,122 @@ namespace PruebasUnitarias.M6
                //Elimino la propuesta de prueba y sus requerimientos
                borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");
 
+           }     
+
+       }
+
+       // <summary>
+       //Prueba que borra una propuesta
+       // </summary>
+       [Test]
+       public void TestDatosBorrarPropuestas()
+       {
+           //Agrego primera propuesta de prueba
+           agregoPropuesta = logicaM6.agregar(laPropuesta);
+
+           if (agregoPropuesta == true)
+           {
+               listaPropuestas = logicaM6.ConsultarTodasPropuestas();
+               tamañoLista1 = listaPropuestas.Count;
+
+               //Elimino la propuesta de prueba
+               borroPropuesta = BDPropuesta.BorrarPropuesta("Nombre prueba"); 
+               listaPropuestas = logicaM6.ConsultarTodasPropuestas();
+               tamañoLista2 = listaPropuestas.Count;
+               Assert.Greater(tamañoLista1, tamañoLista2);
+
            }
-          
+
+       }
+
+
+       // <summary>
+       //Prueba que modifica una propuesta
+       // </summary>
+       [Test]
+       public void TestDatosModificar_Propuesta()
+       {
+           //Agrego una propuesta de prueba
+           agregoPropuesta = logicaM6.agregar(laPropuesta);
+
+           if (agregoPropuesta == true)
+           {
+
+               modifico = BDPropuesta.Modificar_Propuesta(laPropuesta2);
+               Assert.IsTrue(modifico);
+
+               listaPropuestas = logicaM6.ConsultarTodasPropuestas();
+
+               //Recorro toda la lista y para validar que esta la propuesta con descripcion= desc prueba2
+               //que acabo de cambiar
+               foreach (Propuesta valor in listaPropuestas)
+               {
+
+                   if (valor.Descripcion == "Desc prueba2")
+
+                       modifico = true;
+
+                   else
+                       modifico = false;
+
+               };
+
+               //Si modifico es falso es porque no existe y por ende no hubo modificacion
+               Assert.IsTrue(modifico);
+               
+               //Elimino la propuesta de prueba
+               borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");
+           }
 
        }
 
 
 
-       
-
-       
        // <summary>
-       //Prueba que borra una propuesta
+       //Prueba que modifica una Requerimiento
        // </summary>
-       [Test]
-       public void TestBorrarPropuestas() 
+        [Test]
+       public void TestDatosModificarRequerimiento()
        {
 
-           listaPropuestas = logicaM6.ConsultarTodasPropuestas();
-           tamañoLista1 = listaPropuestas.Capacity;
+           //Agrego una propuesta de prueba
+           agregoPropuesta = BDPropuesta.agregarPropuesta(laPropuesta);
 
-           Console.WriteLine("tam3: " + tamañoLista1);
-           
-           listaPropuestas = null;
-           tamañoLista1 = 0;
-           
-           //Agrego primera propuesta de prueba
-           agregoPropuesta = logicaM6.agregar(laPropuesta);
+           //Agrego dos requerimientos a la propuesta
+           agregoRequerimiento = BDPropuesta.agregarRequerimiento(elRequerimiento);
+           agregoRequerimiento2 = BDPropuesta.agregarRequerimiento(elRequerimiento3);
 
-           if (agregoPropuesta == true)
-           {               
-               listaPropuestas=logicaM6.ConsultarTodasPropuestas();
-               tamañoLista1=listaPropuestas.Capacity;
 
-               Console.WriteLine("tam1: " + tamañoLista1);
-               //Elimino la propuesta de prueba
-               borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");               
-               
-               listaPropuestas=logicaM6.ConsultarTodasPropuestas();
-               tamañoLista2=listaPropuestas.Capacity;
-               Console.WriteLine("tam2: " + tamañoLista2);
-               Assert.Greater(tamañoLista1,tamañoLista2);
-               
+           if (agregoPropuesta == true && agregoRequerimiento == true && agregoRequerimiento2 == true)
+           {
+
+               listaRequerimientos = BDPropuesta.ConsultarRequerimientosPorPropuesta("Nombre prueba");
+
+               modifico=BDPropuesta.Modificar_Requerimiento(elRequerimiento2);
+
+               Assert.IsTrue(modifico);
+
+               //Recorro toda la lista y para buscar el requerimiento que acabo de modificar
+               foreach (Requerimiento valor in listaRequerimientos)
+               {
+
+                   if (valor.Descripcion == "desc prueba3")
+                   {
+                       esAprobado = true;
+                       break;
+                   }
+
+                   else
+                       esAprobado = false;
+
+               };
+
+               //Si esAprobado es falso es porque no encontró el nuevo requerimiento que acaba de modificar
+               Assert.IsTrue(esAprobado);
+
+               //Elimino la propuesta de prueba y sus requerimientos asociados
+               borroPropuesta = logicaM6.BorrarPropuesta("Nombre prueba");
+
            }
 
        }
