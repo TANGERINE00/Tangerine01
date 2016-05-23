@@ -52,7 +52,6 @@ namespace LogicaTangerine.M9
             }
         }
 
-<<<<<<< HEAD
         public bool CambiarStatusFactura(int factura, int status)
         {
             try
@@ -80,7 +79,5 @@ namespace LogicaTangerine.M9
         }
 
 
-=======
->>>>>>> 181bc1d761c5388326bb0b745a1a987f94ea3746
     }
 }
