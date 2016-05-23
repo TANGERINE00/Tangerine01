@@ -1,4 +1,4 @@
-create table LUGAR_DIRECCION
+﻿create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -142,7 +142,7 @@ create table COMPANIA
 	com_rif varchar(20) not null,
 	com_email varchar(50) not null,
 	com_telefono varchar(30) not null,
-	com_acronimo varchar(20) not null,
+	com_acronimo varchar(20),
 	com_fecha_registro date not null,
 	com_status int not null,
 	com_presupuesto int not null,

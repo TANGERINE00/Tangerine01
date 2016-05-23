@@ -14,6 +14,11 @@ namespace Tangerine.GUI.M4
     {
         LogicaM4 logica = new LogicaM4();
 
+        /// <summary>
+        /// Método de carga de página en el cual carga los lugares tipo ciudad en un combobox.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,6 +28,11 @@ namespace Tangerine.GUI.M4
             
         }
 
+        /// <summary>
+        /// Método que concreta la agregación de una nueva compañía luego de ser presionado el botón agregar.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             string _nombre = InputNombre1.Value;
@@ -47,6 +57,11 @@ namespace Tangerine.GUI.M4
             Server.Transfer("ConsultarCompania.aspx", true);
         }
 
+        /// <summary>
+        /// Método de carga de lugares tipo ciudad en un combobox.
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
         protected void llenarComboBoxLugar()
         {
             List<LugarDireccion> listPlace = logica.getPlaces();
