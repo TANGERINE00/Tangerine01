@@ -67,13 +67,31 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ModificarRol;
         
         /// <summary>
-        /// Listar control.
+        /// GestionDeLeads control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Listar;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GestionDeLeads;
+        
+        /// <summary>
+        /// RegistrarLead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl RegistrarLead;
+        
+        /// <summary>
+        /// ConsultarLead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ConsultarLead;
         
         /// <summary>
         /// GestionDeCompañias control.
