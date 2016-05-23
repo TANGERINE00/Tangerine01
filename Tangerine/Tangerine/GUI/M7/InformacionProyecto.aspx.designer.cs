@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M7 {
     public partial class InformacionProyecto {
         
         /// <summary>
+        /// Control modificar_proyecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_proyecto;
+        
+        /// <summary>
         /// Control NombrePropuesta.
         /// </summary>
         /// <remarks>
@@ -83,5 +92,23 @@ namespace Tangerine.GUI.M7 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Estatus;
+        
+        /// <summary>
+        /// Control inputPersonal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inputPersonal;
+        
+        /// <summary>
+        /// Control inputEncargado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect inputEncargado;
     }
 }
