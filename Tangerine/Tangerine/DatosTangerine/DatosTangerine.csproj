@@ -40,6 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
+    <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\RecursoGeneralDAO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoGeneralDAO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
+    <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="M10\BDEmpleado.cs" />
     <Compile Include="M10\ResourceComplemento.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -135,10 +143,34 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+    <Folder Include="DAO\M10\" />
+    <Folder Include="DAO\M1\" />
+    <Folder Include="DAO\M2\" />
+    <Folder Include="DAO\M3\" />
+    <Folder Include="DAO\M4\" />
+    <Folder Include="DAO\M5\" />
+    <Folder Include="DAO\M6\" />
+    <Folder Include="DAO\M7\" />
+    <Folder Include="DAO\M8\" />
+    <Folder Include="DAO\M9\" />
+    <Folder Include="InterfazDAO\M10\" />
+    <Folder Include="InterfazDAO\M1\" />
+    <Folder Include="InterfazDAO\M2\" />
+    <Folder Include="InterfazDAO\M3\" />
+    <Folder Include="InterfazDAO\M4\" />
+    <Folder Include="InterfazDAO\M5\" />
+    <Folder Include="InterfazDAO\M6\" />
+    <Folder Include="InterfazDAO\M7\" />
+    <Folder Include="InterfazDAO\M8\" />
+    <Folder Include="InterfazDAO\M9\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoGeneralDAO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M10\ResourceComplemento.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceComplemento.Designer.cs</LastGenOutput>

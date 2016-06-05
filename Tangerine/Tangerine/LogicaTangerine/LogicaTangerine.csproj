@@ -62,9 +62,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+    <Folder Include="Comandos\M10\" />
+    <Folder Include="Comandos\M1\" />
+    <Folder Include="Comandos\M2\" />
+    <Folder Include="Comandos\M3\" />
+    <Folder Include="Comandos\M4\" />
+    <Folder Include="Comandos\M5\" />
+    <Folder Include="Comandos\M6\" />
+    <Folder Include="Comandos\M7\" />
+    <Folder Include="Comandos\M8\" />
+    <Folder Include="Comandos\M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comando.cs" />
+    <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
     <Compile Include="M10\LogicaM10Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -148,7 +160,7 @@
     <EmbeddedResource Include="M6\LogicaRecursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicaRecursos.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="M8\ResourceLogicaM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>

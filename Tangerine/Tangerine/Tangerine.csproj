@@ -79,7 +79,6 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\npm.js" />
-    <Content Include="DatosTangerine.csproj" />
     <Content Include="dist\css\AdminLTE.css" />
     <Content Include="dist\css\AdminLTE.min.css" />
     <Content Include="dist\css\skins\skin-black-light.css" />
@@ -1516,6 +1515,7 @@
     <Content Include="GUI\Master\Tangerine.Master" />
     <Content Include="GUI\M1\Login.Master" />
     <Content Include="packages\NUnit.2.6.4\NUnit.2.6.4.nupkg" />
+    <None Include="Properties\PublishProfiles\JUHYGTF.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
