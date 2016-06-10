@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M9;
 namespace DatosTangerine.DAO.M9
 {
-    class DAOPago: DAOGeneral, IDAOPago
+    class DAOPago
     {
     }
 }
