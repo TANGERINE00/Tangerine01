@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44D488A4-EBEE-4DFE-826F-21DFC09D0049}</ProjectGuid>
+    <ProjectGuid>{9F9E2132-7A2F-4F67-9B94-A82E2B50669E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tangerine_Contratos</RootNamespace>
@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DominioTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DominioTangerine\bin\Debug\DominioTangerine.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcepcionesTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExcepcionesTangerine\bin\Debug\ExcepcionesTangerine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M1\IContratoInicio.cs" />
-    <Compile Include="M1\IContratoRestablecer.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

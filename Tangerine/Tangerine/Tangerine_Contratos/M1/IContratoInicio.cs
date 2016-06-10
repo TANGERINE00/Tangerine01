@@ -29,6 +29,5 @@ namespace Tangerine_Contratos.M1
         String SuccessLogText { get; set; }
 
         String RestablecerCorreoEtq { get; set; }
-
     }
 }
