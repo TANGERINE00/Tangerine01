@@ -47,6 +47,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDaoLogin.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\M9\DAOPago.cs" />
+    <Compile Include="DAO\M9\RecursoDAOPago.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoDAOPago.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\RecursoGeneralDAO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -54,6 +60,7 @@
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
+    <Compile Include="InterfazDAO\M9\IDAOPago.cs" />
     <Compile Include="M10\BDEmpleado.cs" />
     <Compile Include="M10\ResourceComplemento.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -157,7 +164,6 @@
     <Folder Include="DAO\M6\" />
     <Folder Include="DAO\M7\" />
     <Folder Include="DAO\M8\" />
-    <Folder Include="DAO\M9\" />
     <Folder Include="InterfazDAO\M10\" />
     <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M2\" />
@@ -167,7 +173,6 @@
     <Folder Include="InterfazDAO\M6\" />
     <Folder Include="InterfazDAO\M7\" />
     <Folder Include="InterfazDAO\M8\" />
-    <Folder Include="InterfazDAO\M9\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -175,6 +180,10 @@
     <EmbeddedResource Include="DAO\M1\RecursosDaoLogin.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDaoLogin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M9\RecursoDAOPago.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoDAOPago.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
       <Generator>ResXFileCodeGenerator</Generator>
