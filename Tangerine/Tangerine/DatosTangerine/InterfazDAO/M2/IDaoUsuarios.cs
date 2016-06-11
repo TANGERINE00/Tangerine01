@@ -14,14 +14,14 @@ namespace DatosTangerine.InterfazDAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Devuelve true si existe, si no, false</returns>
-        bool VerificarUsuarioPorFichaEmpleado (int fichaEmpleado);
+        bool VerificarUsuarioPorFichaEmpleado ( int fichaEmpleado );
 
         /// <summary>
         /// Encabezado de verificación si un usuario existe
         /// </summary>
         /// <param name="nombreUsuario"></param>
         /// <returns>Devuelve true si existe, si no, false</returns>
-        bool VerificarExistenciaDeUsuario(string nombreUsuario);
+        bool VerificarExistenciaDeUsuario( string nombreUsuario );
 
     }
 }
