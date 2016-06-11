@@ -15,6 +15,12 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 2
 
+                                                                         DateTime inputFechaCreacion, string inputActivo, Rol inputRol, 
+                                                                         int inputfFichaEmpleado)
+        {
+            return new DominioTangerine.Entidades.M2.Usuario(inputUsuario, inputContrasena, inputFechaCreacion, inputActivo, inputRol,
+                                                             inputfFichaEmpleado);
+
         #endregion
 
         #region Modulo 3
