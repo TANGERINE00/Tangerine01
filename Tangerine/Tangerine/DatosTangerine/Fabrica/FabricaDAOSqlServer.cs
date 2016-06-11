@@ -23,6 +23,15 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 4
+        static public DAO.M4.DaoCompania crearDaoCompania()
+        {
+            return new DAO.M4.DaoCompania();
+        }
+
+        static public DAO.M4.DaoLugarDireccion crearDaoLugarDireccion()
+        {
+            return new DAO.M4.DaoLugarDireccion();
+        }
 
         #endregion
 
