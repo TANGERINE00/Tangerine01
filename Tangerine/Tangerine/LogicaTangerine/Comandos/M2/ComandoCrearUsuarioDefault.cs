@@ -7,7 +7,7 @@ using ExcepcionesTangerine;
 
 namespace LogicaTangerine.Comandos.M2
 {
-    public class CrearUsuarioDefault : Comando<String>
+    public class ComandoCrearUsuarioDefault : Comando<String>
     {
         String _nombre, _apellido;
 
@@ -16,7 +16,7 @@ namespace LogicaTangerine.Comandos.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
-        public CrearUsuarioDefault(String nombre, String apellido)
+        public ComandoCrearUsuarioDefault(String nombre, String apellido)
         {
             _nombre = nombre;
             _apellido = apellido;

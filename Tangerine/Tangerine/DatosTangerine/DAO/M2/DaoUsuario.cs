@@ -7,6 +7,7 @@ using DatosTangerine.InterfazDAO.M2;
 using DominioTangerine;
 using DatosTangerine.M10;
 using ExcepcionesTangerine;
+using System.Data;
 
 namespace DatosTangerine.DAO.M2
 {
@@ -32,6 +33,10 @@ namespace DatosTangerine.DAO.M2
             return true;
         }
 
+        /// <summary>
+        /// Método usado para devolver todos los empleados sin usuario
+        /// </summary>
+        /// <returns>Retorna la lista de empleados</returns>
         public static List<Empleado> ConsultarListaDeEmpleados()
         {
             List<Empleado> listaDeEmpleados = new List<Empleado>();
@@ -47,6 +52,43 @@ namespace DatosTangerine.DAO.M2
                                                                      "ConsultarListaDeEmpleados()", ex);
             }
             return listaDeEmpleados;
+        }
+
+        /// <summary>
+        /// Método usado para verificar si el usuario existe en el sistema
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <returns>Retorna una valor booleano indicando la disponibilidad del usuario</returns>
+        public static bool VerificarExistenciaUsuario(string nombreUsuario)
+        {
+            BDConexion laConexion = new BDConexion();
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro elParametro = new Parametro();
+
+            bool resultado = false;
+
+            try
+            {
+                laConexion.Conectar();
+
+                elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario,
+                                             false);
+                parametros.Add(elParametro);
+
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas(ResourceUser.VerificarExistenciaUsuario, parametros);
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                return false;
+            }
+
+            return resultado;
         }
     }
 }

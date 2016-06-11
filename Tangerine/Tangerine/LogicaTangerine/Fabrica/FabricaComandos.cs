@@ -25,14 +25,24 @@ namespace LogicaTangerine.Fabrica
         }
 
         /// <summary>
-        /// Método utilizado para devolver una instancia del Comando Usuario Default
+        /// Método utilizado para devolver una instancia del ComandoUsuarioDefault
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
-        /// <returns></returns>
-        public static Comandos.M2.CrearUsuarioDefault crearUsuario(String nombre, String apellido)
+        /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
+        public static Comandos.M2.ComandoCrearUsuarioDefault crearUsuario(String nombre, String apellido)
         {
-            return new Comandos.M2.CrearUsuarioDefault(nombre, apellido);
+            return new Comandos.M2.ComandoCrearUsuarioDefault(nombre, apellido);
+        }
+        
+        /// <summary>
+        /// Método utilizado para devolver una instancia del ComandoValidarUsuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
+        public static Comandos.M2.ComandoValidarUsuario validarUsuario(String usuario)
+        {
+            return new Comandos.M2.ComandoValidarUsuario(usuario);
         }
 
         #endregion
