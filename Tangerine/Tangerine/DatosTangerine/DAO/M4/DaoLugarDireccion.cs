@@ -14,5 +14,25 @@ namespace DatosTangerine.DAO.M4
         {
             return new List<LugarDireccionM4>();
         }
+
+       public bool Agregar(LugarDireccionM4 parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public bool Modificar(LugarDireccionM4 parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public LugarDireccionM4 ConsultarXId(LugarDireccionM4 parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public List<LugarDireccionM4> ConsultarTodos()
+       {
+           throw new NotImplementedException();
+       }
     }
 }
