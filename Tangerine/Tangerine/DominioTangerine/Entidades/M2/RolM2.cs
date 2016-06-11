@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class Rol
+    public class RolM2
     {
         #region Atributos
 
@@ -20,7 +20,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor vacío de la clase Rol
         /// </summary>
-        public Rol()
+        public RolM2()
         {
         }
 
@@ -28,7 +28,7 @@ namespace DominioTangerine.Entidades.M2
         /// Constructor de la clase Rol con nombre
         /// </summary>
         /// <param name="nombre"></param>
-        public Rol(string nombre)
+        public RolM2(string nombre)
         {
             _nombre = nombre;
             _menu = new ListaGenerica<Menu>();
@@ -39,7 +39,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="menus"></param>
-        public Rol(string nombre, ListaGenerica<Menu> menu)
+        public RolM2(string nombre, ListaGenerica<Menu> menu)
             :this(nombre)
         {
             _menu = menu;
