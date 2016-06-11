@@ -14,7 +14,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Si existe True, si no, False</returns>
-        public bool VerificarUsuarioPorFichaEmpleado(int fichaEmpleado)
+        public bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado )
         {
             return true;
         }
@@ -25,7 +25,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="nombreUsuario"></param>
         /// <returns>Si existe True, si no, False</returns>
-        public bool VerificarExistenciaDeUsuario(string nombreUsuario)
+        public bool VerificarExistenciaDeUsuario( string nombreUsuario )
         {
             return true;
         }
