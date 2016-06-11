@@ -69,13 +69,13 @@
     <Folder Include="Comandos\M6\" />
     <Folder Include="Comandos\M7\" />
     <Folder Include="Comandos\M8\" />
-    <Folder Include="Comandos\M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
+    <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
     <Compile Include="M10\LogicaM10Resources.Designer.cs">
