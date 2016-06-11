@@ -53,6 +53,7 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\M2\Rol.cs" />
     <Compile Include="Entidades\M2\Usuario.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
