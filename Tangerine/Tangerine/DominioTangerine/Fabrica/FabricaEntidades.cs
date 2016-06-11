@@ -15,13 +15,18 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 2
 
-        /*static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuario(string inputUsuario, string inputContrasena,
-                                                                             DateTime inputFechaCreacion, string inputActivo, Rol inputRol,
-                                                                             int inputfFichaEmpleado)
+        /*public static DominioTangerine.Entidades.M2.UsuarioM2 crearUsuario(string usuario, string contrasena,
+                                                                             DateTime fechaCreacion, string activo, Rol rol,
+                                                                             int fichaEmpleado)
         {
-            return new DominioTangerine.Entidades.M2.UsuarioM2(inputUsuario, inputContrasena, inputFechaCreacion, inputActivo, inputRol,
-                                                             inputfFichaEmpleado);
+            return new DominioTangerine.Entidades.M2.UsuarioM2(usuario, contrasena, fechaCreacion, activo, rol,
+                                                             fichaEmpleado);
         }*/
+
+        public static DominioTangerine.Entidades.M2.RolM2 modificarRol_M2(string nombre, ListaGenerica<Menu> menu)
+        {
+            return new DominioTangerine.Entidades.M2.RolM2(nombre, menu);
+        }
 
         #endregion
 
