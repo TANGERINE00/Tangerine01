@@ -53,6 +53,8 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\M4\CompaniaM4.cs" />
+    <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
     <Compile Include="Entidades\M9\Pago.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="ListaGenerica.cs" />
@@ -78,7 +80,6 @@
     <Folder Include="Entidades\M1\" />
     <Folder Include="Entidades\M2\" />
     <Folder Include="Entidades\M3\" />
-    <Folder Include="Entidades\M4\" />
     <Folder Include="Entidades\M5\" />
     <Folder Include="Entidades\M6\" />
     <Folder Include="Entidades\M7\" />

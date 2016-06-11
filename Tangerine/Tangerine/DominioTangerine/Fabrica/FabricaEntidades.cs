@@ -22,6 +22,59 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 4
+        static public DominioTangerine.Entidades.M4.CompaniaM4 crearCompaniaVacia()
+        {
+            return new DominioTangerine.Entidades.M4.CompaniaM4();
+        }
+
+        static public DominioTangerine.Entidades.M4.CompaniaM4 crearCompaniaConId(int inputId, string inputNombre, string inputRif, string inputEmail, string inputTelefono,
+                                                                                string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
+                                                                                int inputPlazoPago, int inputIdLugar)
+        {
+            return new DominioTangerine.Entidades.M4.CompaniaM4( inputId, inputNombre , inputRif , inputEmail ,
+                                                               inputTelefono , inputAcronimo , inputFechaRegistro , 
+                                                               inputStatus , inputPresupuesto , inputPlazoPago ,
+                                                               inputIdLugar );
+        }
+
+        static public DominioTangerine.Entidades.M4.CompaniaM4 crearCompaniaSinId(string inputNombre, string inputRif, string inputEmail, string inputTelefono, 
+                                                                                string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, 
+                                                                                int inputPresupuesto, int inputPlazoPago, int inputIdLugar)
+        {
+            return new DominioTangerine.Entidades.M4.CompaniaM4( inputNombre , inputRif , inputEmail , inputTelefono ,
+                                                               inputAcronimo , inputFechaRegistro , inputStatus ,
+                                                               inputPresupuesto , inputPlazoPago , inputIdLugar );
+        }
+
+        static public DominioTangerine.Entidades.M4.LugarDireccionM4 crearLugarDireccionVacio()
+        {
+            return new DominioTangerine.Entidades.M4.LugarDireccionM4();
+        }
+
+        static public DominioTangerine.Entidades.M4.LugarDireccionM4 crearLugarDireccionConLugar(int lugId, string lugNombre)
+        {
+            return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre );
+        }
+
+        static public DominioTangerine.Entidades.M4.LugarDireccionM4 crearLugarDireccionCuatroParametros(int lugId, string lugNombre, string lugTipo, int fk_lugId)
+        {
+            return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre , lugTipo , fk_lugId );
+        }
+
+        static public DominioTangerine.Entidades.M4.LugarDireccionM4 crearLugarDireccionCompleto(int lugId, string lugNombre, string lugTipo, int fk_lugId,
+                                                                                               List<DominioTangerine.Entidades.M4.LugarDireccionM4> address)
+        {
+            return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre , lugTipo , fk_lugId , 
+                                                                     address);
+        }
+
+        static public DominioTangerine.Entidades.M4.LugarDireccionM4 crearLugarDireccionConLugarTipo(string lugNombre, string lugTipo)
+        {
+            return new DominioTangerine.Entidades.M4.LugarDireccionM4(lugNombre, lugTipo );
+        }
+
+
+
 
         #endregion
 
