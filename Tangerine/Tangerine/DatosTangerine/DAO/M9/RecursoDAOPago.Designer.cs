@@ -59,5 +59,86 @@ namespace DatosTangerine.DAO.M9 {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_AgregarPago.
+        /// </summary>
+        internal static string AgregarPago {
+            get {
+                return ResourceManager.GetString("AgregarPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_CambioStatus.
+        /// </summary>
+        internal static string CambiarStatus {
+            get {
+                return ResourceManager.GetString("CambiarStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cod.
+        /// </summary>
+        internal static string ParamCod {
+            get {
+                return ResourceManager.GetString("ParamCod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fecha.
+        /// </summary>
+        internal static string ParamFecha {
+            get {
+                return ResourceManager.GetString("ParamFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @forma.
+        /// </summary>
+        internal static string ParamForma {
+            get {
+                return ResourceManager.GetString("ParamForma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_factura.
+        /// </summary>
+        internal static string ParamIdFactura {
+            get {
+                return ResourceManager.GetString("ParamIdFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @moneda.
+        /// </summary>
+        internal static string ParamMoneda {
+            get {
+                return ResourceManager.GetString("ParamMoneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @monto.
+        /// </summary>
+        internal static string ParamMonto {
+            get {
+                return ResourceManager.GetString("ParamMonto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
+            }
+        }
     }
 }
