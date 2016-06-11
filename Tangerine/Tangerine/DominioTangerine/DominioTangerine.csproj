@@ -54,6 +54,7 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\M9\Pago.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="ListaGenerica.cs" />
     <Compile Include="Contacto.cs" />
@@ -83,7 +84,6 @@
     <Folder Include="Entidades\M6\" />
     <Folder Include="Entidades\M7\" />
     <Folder Include="Entidades\M8\" />
-    <Folder Include="Entidades\M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
