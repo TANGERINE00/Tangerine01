@@ -24,6 +24,17 @@ namespace LogicaTangerine.Fabrica
             return new Comandos.M2.ComandoAgregarUsuario();
         }
 
+        /// <summary>
+        /// Método utilizado para devolver una instancia del Comando Usuario Default
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <returns></returns>
+        public static Comandos.M2.CrearUsuarioDefault crearUsuario(String nombre, String apellido)
+        {
+            return new Comandos.M2.CrearUsuarioDefault(nombre, apellido);
+        }
+
         #endregion
 
         #region Modulo 3

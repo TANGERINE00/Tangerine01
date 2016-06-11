@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandoObtenerCaracteres.cs" />
+    <Compile Include="Comandos\M2\CrearUsuarioDefault.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
