@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class Usuario
+    public class UsuarioM2
     {
         #region Atributos
 
@@ -15,7 +15,7 @@ namespace DominioTangerine.Entidades.M2
         private string _contrasena;
         private DateTime _fechaCreacion;
         private string _activo;
-        private Rol _rol;
+        private RolM2 _rol;
         private int _fichaEmpleado;
 
         #endregion  
@@ -25,7 +25,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor vacío de la clase Usuario
         /// </summary>
-        public Usuario()
+        public UsuarioM2()
         {
         }
 
@@ -34,7 +34,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasena"></param>
-        public Usuario(string usuario, string contrasena)
+        public UsuarioM2(string usuario, string contrasena)
         {
             _usuario = usuario;
             _contrasena = contrasena;
@@ -45,7 +45,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="rol"></param>
-        public Usuario(string usuario, Rol rol)
+        public UsuarioM2(string usuario, RolM2 rol)
         {
             _usuario = usuario;
             _rol = rol;
@@ -57,7 +57,7 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="usuario"></param>
         /// <param name="contrasena"></param>
         /// <param name="activo"></param>
-        public Usuario(string usuario, string contrasena, string activo)
+        public UsuarioM2(string usuario, string contrasena, string activo)
             :this(usuario, contrasena)
         {
             _activo = activo;
@@ -70,7 +70,7 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="contrasena"></param>
         /// <param name="activo"></param>
         /// <param name="rol"></param>
-        public Usuario(string usuario, string contrasena, string activo, Rol rol)
+        public UsuarioM2(string usuario, string contrasena, string activo, RolM2 rol)
             :this(usuario, contrasena, activo)
         {
             _rol = rol;
@@ -85,7 +85,7 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="activo"></param>
         /// <param name="rol"></param>
         /// <param name="fichaEmpleado"></param>
-        public Usuario(string usuario, string contrasena, DateTime fechaCreacion, string activo, Rol rol, int fichaEmpleado)
+        public UsuarioM2(string usuario, string contrasena, DateTime fechaCreacion, string activo, RolM2 rol, int fichaEmpleado)
             :this(usuario, contrasena, activo, rol)
         {
             _fechaCreacion = fechaCreacion;
@@ -140,7 +140,7 @@ namespace DominioTangerine.Entidades.M2
         /// Get y Set del atributo _rol
         /// </summary>
         /// <returns>Rol del usuario</returns>
-        public Rol rol
+        public RolM2 rol
         {
             get { return _rol; }
             set { _rol = value; }
