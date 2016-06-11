@@ -138,8 +138,8 @@ create table CLIENTE_POTENCIAL
 create table COMPANIA
 (
 	com_id int IDENTITY(1,1) not null,
-	com_nombre varchar(50) not null,
-	com_rif varchar(20) not null,
+	com_nombre varchar(50) not null unique,
+	com_rif varchar(20) not null unique,
 	com_email varchar(50) not null,
 	com_telefono varchar(30) not null,
 	com_acronimo varchar(20),
