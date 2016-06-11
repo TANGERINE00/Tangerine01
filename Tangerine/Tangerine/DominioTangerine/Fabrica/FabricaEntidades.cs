@@ -188,51 +188,51 @@ namespace DominioTangerine.Fabrica
         #region Modulo 7
 
             #region Metodos para instanciar Propuesta 
-        public static Entidad ObtenerPropuesta() 
-        {
-            return new DominioTangerine.Entidades.M7.Propuesta();
-        }
-        #endregion
+            public static Entidad ObtenerPropuesta() 
+            {
+                return new DominioTangerine.Entidades.M7.Propuesta();
+            }
+            #endregion
 
             #region Metodos para instaciar Requerimiento
-        public static new Entidad ObtenerRequerimiento()
-        {
-            return new DominioTangerine.Entidades.M7.Requerimiento();
-        }
-        #endregion
+            public static new Entidad ObtenerRequerimiento()
+            {
+                return new DominioTangerine.Entidades.M7.Requerimiento();
+            }
+            #endregion
 
             #region Metodos para instanciar Cargo
-        public static Entidad ObtenerCargo()
-        {
-            return new DominioTangerine.Entidades.M7.Cargo();
-        }
+            public static Entidad ObtenerCargo()
+            {
+                return new DominioTangerine.Entidades.M7.Cargo();
+            }
 
-        public static Entidad ObtenerCargo2(string cargo, double salary, string dateIni, string dateFin)
-        {
-            return new DominioTangerine.Entidades.M7.Cargo(cargo, salary, dateIni, dateFin);
-        }
-        #endregion
+            public static Entidad ObtenerCargo2(string cargo, double salary, string dateIni, string dateFin)
+            {
+                return new DominioTangerine.Entidades.M7.Cargo(cargo, salary, dateIni, dateFin);
+            }
+            #endregion
 
             #region Metodos para instaciar Lugar Direccion
-        public static Entidad ObtenerLugarDireccion() 
-        {
-            return new DominioTangerine.Entidades.M7.LugarDireccion();
-        }
-        #endregion
+            public static Entidad ObtenerLugarDireccion() 
+            {
+                return new DominioTangerine.Entidades.M7.LugarDireccion();
+            }
+            #endregion
 
             #region Metodos para instanciar ObtenerContacto
-        public static Entidad ObtenerContacto() 
-        {
-            return new DominioTangerine.Entidades.M7.Contacto();
-        }
-        #endregion
+            public static Entidad ObtenerContacto() 
+            {
+                return new DominioTangerine.Entidades.M7.Contacto();
+            }
+            #endregion
 
             #region Metodos para instanciar Obtener Empleados
-        public static Entidad ObtenerEmpleado()
-        {
-            return new DominioTangerine.Entidades.M7.Empleado();
-        }
-        #endregion
+            public static Entidad ObtenerEmpleado()
+            {
+                return new DominioTangerine.Entidades.M7.Empleado();
+            }
+            #endregion
 
         #endregion
 
