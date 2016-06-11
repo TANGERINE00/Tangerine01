@@ -16,6 +16,15 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 2
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Usuario
+        /// </summary>
+        /// <returns>Retorna la instancia a la clase DaoUsuario</returns>
+        static public DAO.M2.DaoUsuario crearDaoUsuario()
+        {
+            return new DAO.M2.DaoUsuario();
+        }
+
         #endregion
 
         #region Modulo 3
@@ -23,6 +32,15 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 4
+        static public DAO.M4.DaoCompania crearDaoCompania()
+        {
+            return new DAO.M4.DaoCompania();
+        }
+
+        static public DAO.M4.DaoLugarDireccion crearDaoLugarDireccion()
+        {
+            return new DAO.M4.DaoLugarDireccion();
+        }
 
         #endregion
 
@@ -43,6 +61,11 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 9
+
+        public static DAO.M9.DAOPago CrearDAOPago()
+        {
+            return new DAO.M9.DAOPago();
+        }
 
         #endregion
 

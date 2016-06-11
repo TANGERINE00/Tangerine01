@@ -64,18 +64,21 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="Comandos\M10\" />
     <Folder Include="Comandos\M1\" />
-    <Folder Include="Comandos\M2\" />
     <Folder Include="Comandos\M3\" />
-    <Folder Include="Comandos\M4\" />
     <Folder Include="Comandos\M5\" />
     <Folder Include="Comandos\M6\" />
     <Folder Include="Comandos\M7\" />
     <Folder Include="Comandos\M8\" />
-    <Folder Include="Comandos\M9\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandoObtenerCaracteres.cs" />
+    <Compile Include="Comandos\M2\ComandoValidarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandoCrearUsuarioDefault.cs" />
+    <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
+    <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
     <Compile Include="M10\LogicaM10Resources.Designer.cs">

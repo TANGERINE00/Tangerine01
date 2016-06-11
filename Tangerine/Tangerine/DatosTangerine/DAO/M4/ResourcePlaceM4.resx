@@ -117,31 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AgregarPago" xml:space="preserve">
-    <value>M9_AgregarPago</value>
+  <data name="ConsultCityPlaces" xml:space="preserve">
+    <value>M4_ConsultarLugar</value>
   </data>
-  <data name="CambiarStatus" xml:space="preserve">
-    <value>M9_CambioStatus</value>
+  <data name="LugIdPlace" xml:space="preserve">
+    <value>lug_dir_id</value>
   </data>
-  <data name="ParamCod" xml:space="preserve">
-    <value>@cod</value>
+  <data name="LugLugIdPlace" xml:space="preserve">
+    <value>fk_lug_dir_id</value>
   </data>
-  <data name="ParamFecha" xml:space="preserve">
-    <value>@fecha</value>
+  <data name="LugNamePlace" xml:space="preserve">
+    <value>lug_dir_nombre</value>
   </data>
-  <data name="ParamForma" xml:space="preserve">
-    <value>@forma</value>
-  </data>
-  <data name="ParamIdFactura" xml:space="preserve">
-    <value>@id_factura</value>
-  </data>
-  <data name="ParamMoneda" xml:space="preserve">
-    <value>@moneda</value>
-  </data>
-  <data name="ParamMonto" xml:space="preserve">
-    <value>@monto</value>
-  </data>
-  <data name="ParamStatus" xml:space="preserve">
-    <value>@status</value>
+  <data name="LugTypePlace" xml:space="preserve">
+    <value>lug_dir_tipo</value>
   </data>
 </root>
