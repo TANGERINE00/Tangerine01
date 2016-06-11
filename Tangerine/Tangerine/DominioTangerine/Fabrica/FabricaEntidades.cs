@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
+using DominioTangerine.Entidades.M2;
 
 namespace DominioTangerine.Fabrica
 {
