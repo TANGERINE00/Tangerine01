@@ -64,7 +64,6 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="Comandos\M10\" />
     <Folder Include="Comandos\M1\" />
-    <Folder Include="Comandos\M2\" />
     <Folder Include="Comandos\M3\" />
     <Folder Include="Comandos\M5\" />
     <Folder Include="Comandos\M6\" />
@@ -75,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
