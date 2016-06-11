@@ -61,6 +61,11 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 9
 
+        public static DAO.M9.DAOPago CrearDAOPago()
+        {
+            return new DAO.M9.DAOPago();
+        }
+
         #endregion
 
         #region Modulo 10
