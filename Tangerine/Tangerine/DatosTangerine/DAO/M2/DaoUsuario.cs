@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M2;
+using DominioTangerine;
+using DatosTangerine.M10;
+using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M2
 {
@@ -19,7 +22,6 @@ namespace DatosTangerine.DAO.M2
             return true;
         }
 
-
         /// <summary>
         /// Verificación si un usuario existe
         /// </summary>
@@ -28,6 +30,23 @@ namespace DatosTangerine.DAO.M2
         public bool VerificarExistenciaDeUsuario( string nombreUsuario )
         {
             return true;
+        }
+
+        public static List<Empleado> ConsultarListaDeEmpleados()
+        {
+            List<Empleado> listaDeEmpleados = new List<Empleado>();
+            try
+            {
+                //Hablar con mod10 para que cambien el metodo ListaEmpleados() de lugar.
+                listaDeEmpleados = BDEmpleado.ListarEmpleados();
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " +
+                                                                     "ConsultarListaDeEmpleados()", ex);
+            }
+            return listaDeEmpleados;
         }
     }
 }
