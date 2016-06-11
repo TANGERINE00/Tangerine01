@@ -47,6 +47,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDaoLogin.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\M4\DaoCompania.cs" />
+    <Compile Include="DAO\M4\DaoLugarDireccion.cs" />
+    <Compile Include="DAO\M4\ResourceCompanyM4.Designer.cs">
+      <DependentUpon>ResourceCompanyM4.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DAO\M4\ResourcePlaceM4.Designer.cs">
+      <DependentUpon>ResourcePlaceM4.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DAO\M9\DAOPago.cs" />
     <Compile Include="DAO\M9\RecursoDAOPago.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -60,7 +72,8 @@
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
-    <Compile Include="InterfazDAO\M4\IDAOCompania.cs" />
+    <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
+    <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
     <Compile Include="InterfazDAO\M9\IDAOPago.cs" />
     <Compile Include="M10\BDEmpleado.cs" />
     <Compile Include="M10\ResourceComplemento.Designer.cs">
@@ -160,7 +173,6 @@
     <Folder Include="DAO\M10\" />
     <Folder Include="DAO\M2\" />
     <Folder Include="DAO\M3\" />
-    <Folder Include="DAO\M4\" />
     <Folder Include="DAO\M5\" />
     <Folder Include="DAO\M6\" />
     <Folder Include="DAO\M7\" />
@@ -180,6 +192,14 @@
     <EmbeddedResource Include="DAO\M1\RecursosDaoLogin.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDaoLogin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M4\ResourceCompanyM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCompanyM4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M4\ResourcePlaceM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourcePlaceM4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\M9\RecursoDAOPago.resx">
       <Generator>ResXFileCodeGenerator</Generator>
