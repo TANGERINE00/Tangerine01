@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DominioTangerine;
+using DominioTangerine.Entidades.M9;
 
 namespace DatosTangerine.InterfazDAO.M9
 {
-    interface IDAOPago
+   public interface IDAOPago
     {
+
+        bool CargarPago (Pago pago);
+
+        bool CargarStatus(int factura, int status);
+    
+    
     }
 }
