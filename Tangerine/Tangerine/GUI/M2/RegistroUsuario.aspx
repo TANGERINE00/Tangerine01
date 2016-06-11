@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="RegistroUsuario.aspx.cs" Inherits="Tangerine.GUI.M2.RegistroUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -8,7 +9,7 @@
     Empleados sin cuenta de usuario asignada
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Ejemplo</a></li>
     <li class="active">Página en blanco</li>
 </asp:Content>
@@ -43,10 +44,9 @@
                 });
 
         }
-        function validacion()
-        {
+        function validacion() {
             var nombreuser = ContentPlaceHolder1_userDefault.value;
-            var param = "{'usuario':'" + nombreuser +"'}";
+            var param = "{'usuario':'" + nombreuser + "'}";
             $.ajax({
                 type: "POST",
                 url: "RegistroUsuario.aspx/validarUsuario",
@@ -81,95 +81,98 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Creación de cuenta de usuario</h4>
                 </div>
-                <form runat="server" ID="form1">
-                <div class="modal-body">  
-                    
-                    <div class="box-body"> 
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Ficha de empleado</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly required>
+                <form runat="server" id="form1">
+                    <div class="modal-body">
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Ficha de empleado</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="fichaEmp" placeholder="" runat="server" readonly required>
+                                </div>
                             </div>
-                        </div> 
-                        <p>&nbsp;</p>
-                        <div class="form-group">
-                            <label for="userDefault" class="col-sm-2 control-label">Usuario</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" oninput="javascript:validacion()" required>
+                            <p>&nbsp;</p>
+                            <div class="form-group">
+                                <label for="userDefault" class="col-sm-2 control-label">Usuario</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="userDefault" placeholder="" runat="server" oninput="javascript:validacion()" required>
+                                </div>
+                            </div>
+                            <p>&nbsp;</p>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion()" required>
+                                </div>
+                            </div>
+                            <p>&nbsp;</p>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" runat="server" id="rolDefault" required>
+                                        <option>Administrador</option>
+                                        <option>Director</option>
+                                        <option>Gerente</option>
+                                        <option>Programador</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <p>&nbsp;</p>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion()" required>
-                            </div>
-                        </div>
-                        <p>&nbsp;</p>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1" class="col-sm-2 control-label">Rol</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" runat="server" id="rolDefault" required>
-                                    <option>Administrador</option>
-                                    <option>Director</option>
-                                    <option>Gerente</option>
-                                    <option>Programador</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div><!-- /.box-body -->
-                    <div class="box-footer">
-                        
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+
                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
                             <!--<button id="botonCrear" type="button" class="btn btn-primary pull-right" data-dismiss="modal" runat="server" OnClick="botonCrear_Click">Crear</button>-->
-                            <asp:Button runat="server" ID="btnCrear" class="btn btn-primary pull-right" OnClick="btnCrear_Click" Text="Crear"/>
-                        
-                    </div><!-- /.box-footer -->
-                </div>
-              </form>
+                            <asp:Button runat="server" ID="btnCrear" class="btn btn-primary pull-right" OnClick="btnCrear_Click" Text="Crear" />
+
+                        </div>
+                        <!-- /.box-footer -->
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
     <div class="row">
-    <div class="col-md-12">
-        <div class="box box-primary">
-            <!--<div class="panel-heading">Filtrar empleados</div>-->
-            <div class="box-header with-border">
-                <h3 class="box-title">Lista de empleados sin cuenta de usuario</h3>
-                <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <!--<div class="panel-heading">Filtrar empleados</div>-->
+                <div class="box-header with-border">
+                    <h3 class="box-title">Lista de empleados sin cuenta de usuario</h3>
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
 
-                    <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            </div><!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-                <div class="box-body table-responsive ">
-                    <table id="example2" class="table table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>N° Empleado</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Cédula</th>
-                                <th>Cargo</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <asp:Literal runat="server" ID="tablaempleados"> </asp:Literal>
-                        <tbody>
-                           
-                        </tbody>
-                    </table>
-                </div><!-- /.box-body -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <div class="box-body table-responsive ">
+                        <table id="example2" class="table table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>N° Empleado</th>
+                                    <th>Nombres</th>
+                                    <th>Apellidos</th>
+                                    <th>Cédula</th>
+                                    <th>Cargo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <asp:Literal runat="server" ID="tablaempleados"> </asp:Literal>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    
+
 </asp:Content>
