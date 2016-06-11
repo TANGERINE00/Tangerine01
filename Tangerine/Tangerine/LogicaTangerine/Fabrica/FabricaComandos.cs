@@ -15,6 +15,15 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 2
 
+        /// <summary>
+        /// Método utilizado para devolver una instancia de la clase ComandoAgregarUsuario
+        /// </summary>
+        /// <returns>Retorna una instancia a ComandoAgregarUsuario</returns>
+        public static Comandos.M2.ComandoAgregarUsuario agregarUsuario()
+        {
+            return new Comandos.M2.ComandoAgregarUsuario();
+        }
+
         #endregion
 
         #region Modulo 3
