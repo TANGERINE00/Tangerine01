@@ -7,7 +7,7 @@ using DominioTangerine.Entidades.M4;
 
 namespace DatosTangerine.InterfazDAO.M4
 {
-    public interface IDaoCompania // : IDao<Parametro, Resultado, Resultado>
+    public interface IDaoCompania : IDao<CompaniaM4, Boolean , CompaniaM4>
     {
          int ConsultLastCompanyId();
          bool DeleteCompany(CompaniaM4 theCompany);

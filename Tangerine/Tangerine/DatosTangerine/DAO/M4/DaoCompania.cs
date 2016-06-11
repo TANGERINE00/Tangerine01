@@ -10,22 +10,67 @@ namespace DatosTangerine.DAO.M4
 {
     public class DaoCompania : DAOGeneral, IDaoCompania
     {
-       public int ConsultLastCompanyId()
-        {
-            return 0;
-        }
+       
 
-       public bool DeleteCompany(CompaniaM4 theCompany)
+
+       int IDaoCompania.ConsultLastCompanyId()
        {
-           return true;
+           throw new NotImplementedException();
        }
-       public bool EnableCompany(CompaniaM4 theCompany)
+
+       bool IDaoCompania.DeleteCompany(CompaniaM4 theCompany)
        {
-           return true;
+           throw new NotImplementedException();
        }
-       public bool DisableCompany(CompaniaM4 theCompany)
+
+       bool IDaoCompania.EnableCompany(CompaniaM4 theCompany)
        {
-           return true;
+           throw new NotImplementedException();
+       }
+
+       bool IDaoCompania.DisableCompany(CompaniaM4 theCompany)
+       {
+           throw new NotImplementedException();
+       }
+
+       public Resultado Agregar(Parametro TheCompany)
+       {
+           throw new NotImplementedException();
+       }
+
+       public Resultado Modificar(Parametro parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public Resultado ConsultarXId(Parametro parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public List<Resultado> ConsultarTodos()
+       {
+           throw new NotImplementedException();
+       }
+
+       public bool Agregar(CompaniaM4 parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public bool Modificar(CompaniaM4 parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       public CompaniaM4 ConsultarXId(CompaniaM4 parametro)
+       {
+           throw new NotImplementedException();
+       }
+
+       List<CompaniaM4> InterfazDAO.IDao<CompaniaM4, bool, CompaniaM4>.ConsultarTodos()
+       {
+           throw new NotImplementedException();
        }
     }
 }
