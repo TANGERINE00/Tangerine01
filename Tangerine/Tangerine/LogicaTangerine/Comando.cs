@@ -9,12 +9,12 @@ namespace LogicaTangerine
 {
     public abstract class Comando<Resultado>
     {
-        private Entidad laEntidad;
+        private Entidad _laEntidad;
 
         public Entidad LaEntidad
         {
-            get { return laEntidad; }
-            set { laEntidad = value; }
+            get { return _laEntidad; }
+            set { _laEntidad = value; }
         }
         public abstract Resultado Ejecutar();
     }
