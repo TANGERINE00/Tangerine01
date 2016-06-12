@@ -10,6 +10,7 @@ namespace LogicaTangerine.Comandos.M2
     public class ComandoCrearUsuarioDefault : Comando<String>
     {
         String _nombre, _apellido;
+
         public ComandoCrearUsuarioDefault() { }
         /// <summary>
         /// Constructor que recibe los parametros nombre y apellido
