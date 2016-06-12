@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class RolM2
+    public class RolM2 : Entidad
     {
         #region Atributos
 
