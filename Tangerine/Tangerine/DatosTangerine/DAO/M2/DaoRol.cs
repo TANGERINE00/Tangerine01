@@ -17,7 +17,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theRol"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Agregar(RolM2 theRol)
+        public bool Agregar( RolM2 theRol )
         {
             return true;
         }
@@ -27,7 +27,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theRol"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Modificar(RolM2 theRol)
+        public bool Modificar( RolM2 theRol )
         {
             return true;
         }
@@ -37,7 +37,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theRol"></param>
         /// <returns>Retorna la consulta</returns>
-        public RolM2 ConsultarXId(RolM2 theRol)
+        public RolM2 ConsultarXId( RolM2 theRol )
         {
             return theRol;
         }
@@ -57,7 +57,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns>Retorna true cuando el rol del usuario se modifico exitosamente</returns>
-        public bool ModificarRolUsuario(UsuarioM2 usuario)
+        public bool ModificarRolUsuario( UsuarioM2 usuario )
         {
             List<Parametro> parametros = new List<Parametro>();
             BDConexion laConexion = new BDConexion();

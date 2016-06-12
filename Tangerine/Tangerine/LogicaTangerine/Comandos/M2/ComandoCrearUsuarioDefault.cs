@@ -16,7 +16,7 @@ namespace LogicaTangerine.Comandos.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
-        public ComandoCrearUsuarioDefault(String nombre, String apellido)
+        public ComandoCrearUsuarioDefault( String nombre, String apellido )
         {
             _nombre = nombre;
             _apellido = apellido;

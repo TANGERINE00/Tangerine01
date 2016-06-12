@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2
         /// </summary>
         /// <param name="cadena"></param>
         /// <param name="cantidad"></param>
-        public ComandoObtenerCaracteres(String cadena, int cantidad)
+        public ComandoObtenerCaracteres( String cadena, int cantidad )
         {
             _cadena = cadena;
             _cantidad = cantidad;

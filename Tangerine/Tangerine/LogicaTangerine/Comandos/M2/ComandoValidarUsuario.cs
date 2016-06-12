@@ -16,7 +16,7 @@ namespace LogicaTangerine.Comandos.M2
         /// Constructor que recibe el parametro usuario
         /// </summary>
         /// <param name="_usuario"></param>
-        public ComandoValidarUsuario(String usuario)
+        public ComandoValidarUsuario( String usuario )
         {
             _usuario = usuario;
         }
