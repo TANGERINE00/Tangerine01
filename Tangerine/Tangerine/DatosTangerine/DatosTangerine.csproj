@@ -65,6 +65,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="DAO\M7\DaoProyecto.cs" />
+    <Compile Include="DAO\M7\DaoProyectoContacto.cs" />
     <Compile Include="DAO\M9\DAOPago.cs" />
     <Compile Include="DAO\M9\RecursoDAOPago.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,6 +83,9 @@
     <Compile Include="InterfazDAO\M2\IDaoUsuarios.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
+    <Compile Include="InterfazDAO\M7\IdaoContactoProyecto.cs" />
+    <Compile Include="InterfazDAO\M7\IdaoEmpleadoProyecto.cs" />
+    <Compile Include="InterfazDAO\M7\IdaoProyecto.cs" />
     <Compile Include="InterfazDAO\M9\IDAOPago.cs" />
     <Compile Include="M10\BDEmpleado.cs" />
     <Compile Include="M10\ResourceComplemento.Designer.cs">
@@ -181,14 +186,12 @@
     <Folder Include="DAO\M3\" />
     <Folder Include="DAO\M5\" />
     <Folder Include="DAO\M6\" />
-    <Folder Include="DAO\M7\" />
     <Folder Include="DAO\M8\" />
     <Folder Include="InterfazDAO\M10\" />
     <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M3\" />
     <Folder Include="InterfazDAO\M5\" />
     <Folder Include="InterfazDAO\M6\" />
-    <Folder Include="InterfazDAO\M7\" />
     <Folder Include="InterfazDAO\M8\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />
