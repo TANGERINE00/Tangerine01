@@ -300,7 +300,7 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instaciar Requerimiento
-            public static new Entidad ObtenerRequerimiento()
+            public static Entidad ObtenerRequerimiento()
             {
                 return new DominioTangerine.Entidades.M7.Requerimiento();
             }
@@ -336,6 +336,13 @@ namespace DominioTangerine.Fabrica
             public static Entidad ObtenerEmpleado()
             {
                 return new DominioTangerine.Entidades.M7.Empleado();
+            }
+            #endregion
+
+            #region Metodos para instanciar Proyecto
+            public static Entidad ObtenerProyecto()
+            {
+                return new DominioTangerine.Entidades.M7.Proyecto();
             }
             #endregion
 

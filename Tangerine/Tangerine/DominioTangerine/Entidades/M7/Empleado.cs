@@ -331,6 +331,10 @@ namespace DominioTangerine.Entidades.M7
             {
                 return this.job;
             }
+            set
+            {
+                this.Job = value;
+            }
         }
 
         public List<Entidad> AddressComplete
