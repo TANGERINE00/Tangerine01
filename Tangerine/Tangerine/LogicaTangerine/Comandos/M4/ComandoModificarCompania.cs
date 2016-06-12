@@ -10,28 +10,24 @@ using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
 
-
-
 namespace LogicaTangerine.Comandos.M4
 {
-    class ComandoAgregarCompania : Comando<Boolean>
+    class ComandoModificarCompania : Comando <bool>
     {
-      
-
-        public ComandoAgregarCompania(Entidad Company) {
+        public ComandoModificarCompania (Entidad Company)
+        {
              _laEntidad = Company;
         }
 
        /// <summary>
-       /// Comando que permite insertar una compania a la base de dato
+       /// Comando que permite desabilitar una compania
        /// </summary>
-       /// <returns>booleano true or false</returns>
-        public override Boolean Ejecutar()
+       /// <returns>boolean true or false </returns>
+        public override bool Ejecutar()
         {
 
             DaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
-            return C.Agregar(_laEntidad);
+            return C.Modificar(_laEntidad);
         }
     }
-
 }

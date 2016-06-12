@@ -79,6 +79,11 @@
     <Compile Include="Comandos\M2\ComandoCrearUsuarioDefault.cs" />
     <Compile Include="Comandos\M2\ComandoModificarRol.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
+    <Compile Include="Comandos\M4\ComandoInhabilitarCompania.cs" />
+    <Compile Include="Comandos\M4\ComandoModificarCompania.cs" />
+    <Compile Include="Comandos\M4\ComanodHabilitarCompania.cs" />
+    <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
+    <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
     <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />

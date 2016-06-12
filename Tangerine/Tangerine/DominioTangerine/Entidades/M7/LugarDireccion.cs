@@ -9,7 +9,6 @@ namespace DominioTangerine.Entidades.M7
     public class LugarDireccion : Entidad
     {
         #region Atributos
-        private int lugId;
         private string lugNombre;
         private string lugTipo;
         private int fk_lugId;
@@ -20,24 +19,21 @@ namespace DominioTangerine.Entidades.M7
         #region Constructor
         public LugarDireccion() { }
 
-        public LugarDireccion(int lugId, string lugNombre)
+        public LugarDireccion(string lugNombre)
         {
-            this.lugId = lugId;
             this.lugNombre = lugNombre;
         }
 
-        public LugarDireccion(int lugId, string lugNombre, string lugTipo, int fk_lugId)
+        public LugarDireccion(string lugNombre, string lugTipo, int fk_lugId)
         {
-            this.lugId = lugId;
             this.lugNombre = lugNombre;
             this.lugTipo = lugTipo;
             this.fk_lugId = fk_lugId;
         }
 
-        public LugarDireccion(int lugId, string lugNombre, string lugTipo, int fk_lugId,
+        public LugarDireccion(string lugNombre, string lugTipo, int fk_lugId,
                               List<Entidad> address)
         {
-            this.lugId = lugId;
             this.lugNombre = lugNombre;
             this.lugTipo = lugTipo;
             this.fk_lugId = fk_lugId;
@@ -52,18 +48,7 @@ namespace DominioTangerine.Entidades.M7
         #endregion
 
         #region Get's Set's
-        public int LugId
-        {
-            get
-            {
-                return this.lugId;
-            }
-            set
-            {
-                this.lugId = value;
-            }
-        }
-
+ 
         public string LugNombre
         {
             get

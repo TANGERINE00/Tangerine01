@@ -12,5 +12,9 @@ namespace DatosTangerine.InterfazDAO.M7
         bool ContactProyectoEmpleado(Entidad proyecto);
 
         bool DeleteProyectoEmpleado(Entidad proyecto);
+
+        List<Entidad> ConsultarTodosProgramadores();
+
+        bool ObtenerListaEmpleados(Entidad proyecto);
     }
 }
