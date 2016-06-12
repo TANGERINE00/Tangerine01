@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.DAO;
 using DatosTangerine.InterfazDAO;
+using DatosTangerine.InterfazDAO.M7;
 
 namespace DatosTangerine.Fabrica
 {
@@ -61,6 +62,20 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 7
 
+        public static IDaoProyecto ObetenerIdaoProyecto()
+        {
+            return new DAO.M7.DaoProyecto();
+        }
+
+        public static IDaoProyectoContacto ObetenerIdaoContacto()
+        {
+            return new DAO.M7.DaoProyectoContacto();
+        }
+
+        public static IDaoProyectoEmpleado ObetenerIdaoProyectoEmpleado()
+        {
+            return new DAO.M7.DaoProyectoEmpleado();
+        }
         #endregion
 
         #region Modulo 8

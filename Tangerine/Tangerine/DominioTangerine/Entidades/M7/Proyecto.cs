@@ -9,7 +9,6 @@ namespace DominioTangerine.Entidades.M7
     public class Proyecto : Entidad
     {
         #region Atributos
-        private int _idproyecto;
         private string _nombre;
         private string _codigo;
         private DateTime _fechainicio;
@@ -23,8 +22,8 @@ namespace DominioTangerine.Entidades.M7
         private int _idpropuesta;
         private int _idcompania;
         private int _idgerente;
-        private List<Empleado> _empleados;
-        private List<Contacto> _contacto;
+        private List<Entidad> _empleados;
+        private List<Entidad> _contacto;
 
         #endregion
 
@@ -41,7 +40,6 @@ namespace DominioTangerine.Entidades.M7
         /// <summary>
         /// Constructor con los atributos.
         /// </summary>
-        /// <param name="id_proyecto"></param>
         /// <param name="nombre"></param>
         /// <param name="codigo"></param>
         /// <param name="fecha_inicio"></param>
@@ -55,11 +53,10 @@ namespace DominioTangerine.Entidades.M7
         /// <param name="id_responsable"></param>
         /// <param name="id_gerente"></param>
 
-        public Proyecto(int id_proyecto, string nombre, string codigo, DateTime fecha_inicio, DateTime fecha_estimada_fin,
+        public Proyecto(string nombre, string codigo, DateTime fecha_inicio, DateTime fecha_estimada_fin,
                  double costo, string descripcion, string realizacion, string estatus, string razon, string acuerdopago, int id_propuesta, int id_responsable,
                  int id_gerente)
         {
-            this._idproyecto = id_proyecto;
             this._nombre = nombre;
             this._codigo = codigo;
             this._fechainicio = fecha_inicio;
@@ -79,16 +76,6 @@ namespace DominioTangerine.Entidades.M7
         #endregion
 
         #region Get's Set's
-
-        /// <summary>
-        /// Metodo para setear y obtener el ID del proyecto
-        /// </summary>
-        /// <returns>Retorna el id del proyecto</returns>
-        public int Idproyecto
-        {
-            get { return _idproyecto; }
-            set { _idproyecto = value; }
-        }
 
         /// <summary>
         /// Metodo para setear y obtener el nombre del proyecto
@@ -256,7 +243,7 @@ namespace DominioTangerine.Entidades.M7
         /// Metodo que devuelve la lista de empleados
         /// </summary>
         /// <returns>Lista de empleados</returns>
-        public List<Empleado> get_empleados()
+        public List<Entidad> get_empleados()
         {
             return _empleados;
 
@@ -266,7 +253,7 @@ namespace DominioTangerine.Entidades.M7
         /// medtodo que define la lista de empleado
         /// </summary>
         /// <param name="e"></param>
-        public void set_empleados(List<Empleado> e)
+        public void set_empleados(List<Entidad> e)
         {
 
             _empleados = e;
@@ -277,7 +264,7 @@ namespace DominioTangerine.Entidades.M7
         /// Metodo que devuelve la lista de empleados
         /// </summary>
         /// <returns>Lista de empleados</returns>
-        public List<Contacto> get__contactos()
+        public List<Entidad> get__contactos()
         {
             return _contacto;
 
@@ -287,7 +274,7 @@ namespace DominioTangerine.Entidades.M7
         /// medtodo que define la lista de contacto
         /// </summary>
         /// <param name="e"></param>
-        public void set_contactos(List<Contacto> e)
+        public void set_contactos(List<Entidad> e)
         {
 
             _contacto = e;

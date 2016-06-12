@@ -12,5 +12,7 @@ namespace DatosTangerine.InterfazDAO.M7
         bool ContactProyectoContacto(Entidad proyecto);
 
         bool DeleteProyectoContacto(Entidad proyecto);
+
+        List<Entidad> ContactCompany(Entidad contacto);
     }
 }

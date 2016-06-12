@@ -10,7 +10,6 @@ namespace DominioTangerine.Entidades.M7
     {
         #region Atributos
 
-        private int idContacto;
         private String nombre;
         private String apellido;
         private String telefono;
@@ -23,11 +22,6 @@ namespace DominioTangerine.Entidades.M7
         #endregion
 
         #region Get's Set's
-        public int IdContacto
-        {
-            get { return idContacto; }
-            set { idContacto = value; }
-        }
 
         public String Nombre
         {
@@ -82,7 +76,6 @@ namespace DominioTangerine.Entidades.M7
         #region Constructores
         public Contacto()
         {
-            idContacto = 0;
             nombre = String.Empty;
             apellido = String.Empty;
             telefono = String.Empty;
@@ -91,20 +84,6 @@ namespace DominioTangerine.Entidades.M7
             cargo = String.Empty;
             tipoCompañia = 0;
             idCompañia = 0;
-        }
-
-        public Contacto(int inputId, string inputNombre, string inputApellido, string inputDepartamento,
-            string inputCargo, string inputTelefono, string inputCorreo, int inputTipoE, int inputIdEmpresa)
-        {
-            this.idContacto = inputId;
-            this.nombre = inputNombre;
-            this.apellido = inputApellido;
-            this.telefono = inputTelefono;
-            this.correo = inputCorreo;
-            this.departamento = inputDepartamento;
-            this.cargo = inputCargo;
-            this.tipoCompañia = inputTipoE;
-            this.idCompañia = inputIdEmpresa;
         }
 
         public Contacto(string inputNombre, string inputApellido, string inputDepartamento,
@@ -119,6 +98,19 @@ namespace DominioTangerine.Entidades.M7
             this.tipoCompañia = inputTipoE;
             this.idCompañia = inputIdEmpresa;
         }
+
+      //public Contacto(string inputNombre, string inputApellido, string inputDepartamento,
+      //      string inputCargo, string inputTelefono, string inputCorreo, int inputTipoE, int inputIdEmpresa)
+      //  {
+      //      this.nombre = inputNombre;
+      //      this.apellido = inputApellido;
+      //      this.telefono = inputTelefono;
+      //      this.correo = inputCorreo;
+      //      this.departamento = inputDepartamento;
+      //      this.cargo = inputCargo;
+      //      this.tipoCompañia = inputTipoE;
+      //      this.idCompañia = inputIdEmpresa;
+      //  }
         #endregion
     }
 }

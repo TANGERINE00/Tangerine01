@@ -20,5 +20,6 @@ namespace DatosTangerine.InterfazDAO.M7
         Entidad ContactNombrePropuestaId(Entidad proupesta);
 
         int ContactMaxIdProyecto();
+
     }
 }
