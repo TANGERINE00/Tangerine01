@@ -49,7 +49,14 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 6
-
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Propuesta
+        /// </summary>
+        /// <returns>La instancia</returns>
+        public static DAO.M6.DAOPropuesta CrearDAOPropuesta()
+        {
+            return new DAO.M6.DAOPropuesta();
+        }
         #endregion
 
         #region Modulo 7
