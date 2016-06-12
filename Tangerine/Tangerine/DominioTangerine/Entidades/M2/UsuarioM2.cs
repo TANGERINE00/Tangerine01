@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class UsuarioM2
+    public class UsuarioM2 : Entidad
     {
         #region Atributos
 
