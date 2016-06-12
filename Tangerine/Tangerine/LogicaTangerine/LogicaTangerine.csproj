@@ -77,6 +77,7 @@
     <Compile Include="Comandos\M2\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandoCrearUsuarioDefault.cs" />
+    <Compile Include="Comandos\M2\ComandoModificarRol.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
