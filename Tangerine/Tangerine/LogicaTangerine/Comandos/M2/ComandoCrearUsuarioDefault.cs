@@ -11,12 +11,13 @@ namespace LogicaTangerine.Comandos.M2
     {
         String _nombre, _apellido;
 
+        public ComandoCrearUsuarioDefault() { }
         /// <summary>
         /// Constructor que recibe los parametros nombre y apellido
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
-        public ComandoCrearUsuarioDefault(String nombre, String apellido)
+        public ComandoCrearUsuarioDefault( String nombre, String apellido )
         {
             _nombre = nombre;
             _apellido = apellido;

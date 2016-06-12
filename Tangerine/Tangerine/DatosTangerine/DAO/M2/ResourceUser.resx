@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ModificarRolUsuario" xml:space="preserve">
+    <value>M2_ModificarRolUsuario</value>
+  </data>
+  <data name="ParametroRolUsuario" xml:space="preserve">
+    <value>@rol_nombre_nuevo</value>
+  </data>
   <data name="ParametroUsuario" xml:space="preserve">
     <value>@usuario</value>
   </data>

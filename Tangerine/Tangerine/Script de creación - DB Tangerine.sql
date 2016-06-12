@@ -1,4 +1,4 @@
-﻿create table LUGAR_DIRECCION
+﻿ create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -752,6 +752,22 @@ AS
 		FROM COMPANIA;
 	END
 GO
+
+
+---- StoredProcedure Consultar Compañia activas ----
+CREATE PROCEDURE M4_ConsultarCompaniasActivas
+		@id int
+AS
+	BEGIN
+		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email,
+			com_telefono as com_telefono, com_acronimo as com_acronimo, 
+			com_fecha_registro as com_fecha_registro, com_status as com_status, 
+			com_presupuesto as com_presupuesto, com_plazo_pago as com_plazo_pago,
+			fk_lug_dir_id as fk_lug_dir_id
+		FROM COMPANIA WHERE com_status = 1;
+	END
+GO
+
 
 ---- StoredProcedure Modificar Compañia ----
 CREATE PROCEDURE M4_ModificarCompania
