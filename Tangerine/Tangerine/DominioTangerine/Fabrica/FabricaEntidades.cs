@@ -21,7 +21,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia sin atributos
             /// </summary>
-            /// <returns></returns>
+            /// <returns>Retorna una instacion de Usuario sin atributos</returns>
             static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioVacio()
             {
                 return new DominioTangerine.Entidades.M2.UsuarioM2();
@@ -30,7 +30,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario y contraseña
             /// </summary>
-            /// <returns></returns>
+            /// <returns>Retorna una instacion de Usuario con usuario y contraseña</returns>
             static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioYContrasena(string usuario, string contrasena)
             {
                 return new DominioTangerine.Entidades.M2.UsuarioM2(usuario, contrasena);
@@ -39,7 +39,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario y rol
             /// </summary>
-            /// <returns></returns>
+            /// <returns>Retorna una instacion de Usuario con usuario y rol</returns>
             static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioRol(string usuario, RolM2 rol)
             {
                 return new DominioTangerine.Entidades.M2.UsuarioM2(usuario, rol);
@@ -48,7 +48,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario, contrasena y activo
             /// </summary>
-            /// <returns></returns>
+            /// <returns>Retorna una instacion de Usuario con usuario, contraseña y activo</returns>
             static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioContrasenaActivo(string usuario, string contrasena, string activo)
             {
                 return new DominioTangerine.Entidades.M2.UsuarioM2(usuario, contrasena, activo);
@@ -57,7 +57,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario, contrasena, activo y Rol
             /// </summary>
-            /// <returns></returns>
+            /// <returns>Retorna una instacion de Usuario con usuario, contraseña, activo y rol</returns>
             static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioContrasenaActivoRol(string usuario, string contrasena, string activo, RolM2 rol)
             {
                 return new DominioTangerine.Entidades.M2.UsuarioM2(usuario, contrasena, activo, rol);
@@ -72,7 +72,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputActivo"></param>
             /// <param name="inputRol"></param>
             /// <param name="inputfFichaEmpleado"></param>
-            /// <returns></returns>
+            /// <returns>Retorna una instacion de Usuario con todos los atributos</returns>
 
             static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioCompleto(string inputUsuario, string inputContrasena,
                                                                                         DateTime inputFechaCreacion, string inputActivo, RolM2 inputRol,
@@ -88,7 +88,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia sin atributos de rol
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase</returns>
+            /// <returns>Devuelve la instancia de la clase Rol sin atributos</returns>
             static public DominioTangerine.Entidades.M2.RolM2 crearRolVacio()
             {
                 return new DominioTangerine.Entidades.M2.RolM2();
@@ -97,7 +97,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de rol con nombre
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase</returns>
+            /// <returns>Devuelve la instancia de la clase Rol con el nombre</returns>
             static public DominioTangerine.Entidades.M2.RolM2 crearRolNombre(string nombre)
             {
                 return new DominioTangerine.Entidades.M2.RolM2(nombre);
@@ -106,15 +106,13 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de rol con todos sus atributos
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase</returns>
+            /// <returns>Devuelve la instancia de la clase con el nombre y el menu</returns>
             static public DominioTangerine.Entidades.M2.RolM2 crearRolCompleto(string nombre, ListaGenerica<Menu> menu)
             {
                 return new DominioTangerine.Entidades.M2.RolM2(nombre, menu);
             }
 
-
             #endregion
-
 
         #endregion
 
@@ -188,6 +186,53 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 7
+
+            #region Metodos para instanciar Propuesta 
+            public static Entidad ObtenerPropuesta() 
+            {
+                return new DominioTangerine.Entidades.M7.Propuesta();
+            }
+            #endregion
+
+            #region Metodos para instaciar Requerimiento
+            public static new Entidad ObtenerRequerimiento()
+            {
+                return new DominioTangerine.Entidades.M7.Requerimiento();
+            }
+            #endregion
+
+            #region Metodos para instanciar Cargo
+            public static Entidad ObtenerCargo()
+            {
+                return new DominioTangerine.Entidades.M7.Cargo();
+            }
+
+            public static Entidad ObtenerCargo2(string cargo, double salary, string dateIni, string dateFin)
+            {
+                return new DominioTangerine.Entidades.M7.Cargo(cargo, salary, dateIni, dateFin);
+            }
+            #endregion
+
+            #region Metodos para instaciar Lugar Direccion
+            public static Entidad ObtenerLugarDireccion() 
+            {
+                return new DominioTangerine.Entidades.M7.LugarDireccion();
+            }
+            #endregion
+
+            #region Metodos para instanciar ObtenerContacto
+            public static Entidad ObtenerContacto() 
+            {
+                return new DominioTangerine.Entidades.M7.Contacto();
+            }
+            #endregion
+
+            #region Metodos para instanciar Obtener Empleados
+            public static Entidad ObtenerEmpleado()
+            {
+                return new DominioTangerine.Entidades.M7.Empleado();
+            }
+            #endregion
 
         #endregion
 

@@ -57,6 +57,13 @@
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
+    <Compile Include="Entidades\M7\Cargo.cs" />
+    <Compile Include="Entidades\M7\Contacto.cs" />
+    <Compile Include="Entidades\M7\Empleado.cs" />
+    <Compile Include="Entidades\M7\LugarDireccion.cs" />
+    <Compile Include="Entidades\M7\Propuesta.cs" />
+    <Compile Include="Entidades\M7\Proyecto.cs" />
+    <Compile Include="Entidades\M7\Requerimiento.cs" />
     <Compile Include="Entidades\M9\Pago.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="ListaGenerica.cs" />
@@ -83,7 +90,6 @@
     <Folder Include="Entidades\M3\" />
     <Folder Include="Entidades\M5\" />
     <Folder Include="Entidades\M6\" />
-    <Folder Include="Entidades\M7\" />
     <Folder Include="Entidades\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

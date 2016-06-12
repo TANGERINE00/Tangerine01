@@ -19,11 +19,12 @@ namespace DatosTangerine.Fabrica
         /// <summary>
         /// Metodo que crea la instancia de DAO Usuario
         /// </summary>
-        /// <returns>La instancia</returns>
+        /// <returns>Retorna la instancia a la clase DaoUsuario</returns>
         static public DAO.M2.DaoUsuario crearDaoUsuario()
         {
             return new DAO.M2.DaoUsuario();
         }
+
         #endregion
 
         #region Modulo 3

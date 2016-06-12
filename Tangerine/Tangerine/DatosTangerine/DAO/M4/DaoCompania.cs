@@ -13,46 +13,25 @@ namespace DatosTangerine.DAO.M4
        
 
 
-       int IDaoCompania.ConsultLastCompanyId()
+       public int ConsultLastCompanyId()
        {
            throw new NotImplementedException();
        }
 
-       bool IDaoCompania.DeleteCompany(CompaniaM4 theCompany)
+       public bool DeleteCompany(CompaniaM4 theCompany)
        {
            throw new NotImplementedException();
        }
 
-       bool IDaoCompania.EnableCompany(CompaniaM4 theCompany)
+       public bool EnableCompany(CompaniaM4 theCompany)
        {
            throw new NotImplementedException();
        }
 
-       bool IDaoCompania.DisableCompany(CompaniaM4 theCompany)
+       public bool DisableCompany(CompaniaM4 theCompany)
        {
            throw new NotImplementedException();
        }
-
-       public Resultado Agregar(Parametro TheCompany)
-       {
-           throw new NotImplementedException();
-       }
-
-       public Resultado Modificar(Parametro parametro)
-       {
-           throw new NotImplementedException();
-       }
-
-       public Resultado ConsultarXId(Parametro parametro)
-       {
-           throw new NotImplementedException();
-       }
-
-       public List<Resultado> ConsultarTodos()
-       {
-           throw new NotImplementedException();
-       }
-
        public bool Agregar(CompaniaM4 parametro)
        {
            throw new NotImplementedException();
@@ -68,7 +47,7 @@ namespace DatosTangerine.DAO.M4
            throw new NotImplementedException();
        }
 
-       List<CompaniaM4> InterfazDAO.IDao<CompaniaM4, bool, CompaniaM4>.ConsultarTodos()
+       public List<CompaniaM4> ConsultarTodos()
        {
            throw new NotImplementedException();
        }

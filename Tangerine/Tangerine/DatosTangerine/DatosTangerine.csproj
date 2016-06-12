@@ -48,6 +48,11 @@
       <DependentUpon>RecursosDaoLogin.resx</DependentUpon>
     </Compile>
     <Compile Include="DAO\M2\DaoUsuario.cs" />
+    <Compile Include="DAO\M2\ResourceUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceUser.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\M4\DaoCompania.cs" />
     <Compile Include="DAO\M4\DaoLugarDireccion.cs" />
     <Compile Include="DAO\M4\ResourceCompanyM4.Designer.cs">
@@ -192,6 +197,10 @@
     <EmbeddedResource Include="DAO\M1\RecursosDaoLogin.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDaoLogin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M2\ResourceUser.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceUser.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\M4\ResourceCompanyM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
