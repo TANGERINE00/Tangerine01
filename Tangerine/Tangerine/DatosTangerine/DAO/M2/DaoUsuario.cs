@@ -39,7 +39,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Retorna la consulta</returns>
-        public UsuarioM2 ConsultarXId(UsuarioM2 theUsuario)
+        public UsuarioM2 ConsultarXId( UsuarioM2 theUsuario )
         {
             return theUsuario;
         }
@@ -90,7 +90,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="nombreUsuario"></param>
         /// <returns>Retorna una valor booleano indicando la disponibilidad del usuario</returns>
-        public bool VerificarExistenciaUsuario(string nombreUsuario)
+        public bool VerificarExistenciaUsuario( string nombreUsuario )
         {
             BDConexion laConexion = new BDConexion();
             List<Parametro> parametros = new List<Parametro>();
