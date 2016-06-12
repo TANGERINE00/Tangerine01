@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\M10\DAOEmpleado.cs" />
     <Compile Include="DAO\M1\DAOLogin.cs" />
     <Compile Include="DAO\M1\RecursosDaoLogin.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +89,7 @@
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
+    <Compile Include="InterfazDAO\M10\IDAOEmpleado.cs" />
     <Compile Include="InterfazDAO\M2\IDaoRol.cs" />
     <Compile Include="InterfazDAO\M2\IDaoUsuarios.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
@@ -192,11 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="DAO\M10\" />
     <Folder Include="DAO\M3\" />
     <Folder Include="DAO\M5\" />
     <Folder Include="DAO\M8\" />
-    <Folder Include="InterfazDAO\M10\" />
     <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M3\" />
     <Folder Include="InterfazDAO\M5\" />

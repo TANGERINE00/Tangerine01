@@ -98,6 +98,16 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 10
 
+        /// <summary>
+        /// Metodo que crea la instacia de DAO Empleado
+        /// </summary>
+        /// <returns></returns>
+
+        public static DAO.M10.DAOEmpleado CrearDAOEmpleado()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
+
         #endregion
     }
 }
