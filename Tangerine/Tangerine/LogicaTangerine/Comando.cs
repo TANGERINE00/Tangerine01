@@ -11,15 +11,6 @@ namespace LogicaTangerine
     {
        protected Entidad _laEntidad;
 
-       public Comando() { }
-
-       public Comando(Entidad Entidad) {
-          this._laEntidad = Entidad;
-       
-       }
-       
-
-
         public Entidad LaEntidad
         {
             get { return _laEntidad; }
