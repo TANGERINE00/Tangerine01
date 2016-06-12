@@ -9,7 +9,16 @@ namespace LogicaTangerine
 {
     public abstract class Comando<Resultado>
     {
-        private Entidad _laEntidad;
+       protected Entidad _laEntidad;
+
+       public Comando() { }
+
+       public Comando(Entidad Entidad) {
+          this._laEntidad = Entidad;
+       
+       }
+       
+
 
         public Entidad LaEntidad
         {

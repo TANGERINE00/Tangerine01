@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using DominioTangerine.Entidades.M2;
+using DominioTangerine.Entidades.M4
+;
 
 namespace DominioTangerine.Fabrica
 {
@@ -182,7 +184,9 @@ namespace DominioTangerine.Fabrica
                                                                    inputPresupuesto , inputPlazoPago , inputIdLugar );
             }
             #endregion
-
+        public static CompaniaM4 CrearEntidadCompaniaM4 (){
+             return new CompaniaM4 ();
+        }
 
             #region instancias de la clase LugarDireccionM4
 
