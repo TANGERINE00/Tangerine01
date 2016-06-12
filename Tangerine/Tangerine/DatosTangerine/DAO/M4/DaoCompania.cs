@@ -10,42 +10,93 @@ namespace DatosTangerine.DAO.M4
 {
     public class DaoCompania : DAOGeneral, IDaoCompania
     {
-       
 
 
+        /// <summary>
+        /// Método para consultar el último id de compañía en la base de datos.
+        /// </summary>
+        /// <returns>Último id de compania registrada.</returns>
+        
        public int ConsultLastCompanyId()
        {
            throw new NotImplementedException();
        }
+
+
+       /// <summary>
+       /// Método para eliminar una compañía en la base de datos.
+       /// </summary>
+       /// <param name="theCompany">Objeto de tipo CompaniaM4 para borrar en la base de datos.</param>
+       /// <returns>True si fue borrada exitosamente.</returns>
 
        public bool DeleteCompany(CompaniaM4 theCompany)
        {
            throw new NotImplementedException();
        }
 
+
+       /// <summary>
+       /// Método para habilitar una compañía en la base de datos.
+       /// </summary>
+       /// <param name="theCompany">Objeto de tipo CompaniaM4 para habilitar en la base de datos.</param>
+       /// <returns>True si fue habilitada exitosamente.</returns>
+
        public bool EnableCompany(CompaniaM4 theCompany)
        {
            throw new NotImplementedException();
        }
 
+
+       /// <summary>
+       /// Método para inhabilitar una compañía en la base de datos.
+       /// </summary>
+       /// <param name="theCompany">Objeto de tipo CompaniaM4 para deshabilitar en la base de datos.</param>
+       /// <returns>True si fue deshabilitada exitosamente.</returns>
+
        public bool DisableCompany(CompaniaM4 theCompany)
        {
            throw new NotImplementedException();
        }
+
+       /// <summary>
+       /// Método para agregar una compañia nueva en la base de datos.
+       /// </summary>
+       /// <param name="parameto">Objeto de tipo CompaniaM4 para agregar en la base de datos.</param>
+       /// <returns>True si fue agregada exitosamente.</returns>
+       
        public bool Agregar(CompaniaM4 parametro)
        {
            throw new NotImplementedException();
        }
+
+
+       /// <summary>
+       /// Método para modificar una compañía en la base de datos.
+       /// </summary>
+       /// <param name="theCompany">Objeto de tipo CompaniaM4 para modificar en la base de datos.</param>
+       /// <returns>True si fue modificada exitosamente.</returns>
 
        public bool Modificar(CompaniaM4 parametro)
        {
            throw new NotImplementedException();
        }
 
+       /// <summary>
+       /// Método para consultar una compañía en específico.
+       /// </summary>
+       /// <param name="idCompany">Entero que es igual al id de la compañía a consultar.</param>
+       /// <returns>Objeto CompaniaM4 correspondiente a la empresa consultada.</returns>
+
        public CompaniaM4 ConsultarXId(CompaniaM4 parametro)
        {
            throw new NotImplementedException();
        }
+
+
+       /// <summary>
+       /// Método para consultar todas las compañías registradas en la base de datos.
+       /// </summary>
+       /// <returns>Lista de compañías registradas.</returns>
 
        public List<CompaniaM4> ConsultarTodos()
        {

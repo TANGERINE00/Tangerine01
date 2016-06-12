@@ -32,10 +32,21 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 4
+
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Compania
+        /// </summary>
+        /// <returns>Retorna la instancia a la clase DaoCompania</returns>
+
         static public DAO.M4.DaoCompania crearDaoCompania()
         {
             return new DAO.M4.DaoCompania();
         }
+
+        /// <summary>
+        /// Metodo que crea la instancia de DAO LugarDireccion
+        /// </summary>
+        /// <returns>Retorna la instancia a la clase DaoLugarDireccion</returns>
 
         static public DAO.M4.DaoLugarDireccion crearDaoLugarDireccion()
         {
