@@ -127,10 +127,10 @@ namespace DatosTangerine.DAO.M2
             throw new NotImplementedException();
         }
 
-        bool IDaoUsuarios.VerificarExistenciaDeUsuario(string nombreUsuario)
+        /*bool IDaoUsuarios.VerificarExistenciaDeUsuario(string nombreUsuario)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         bool InterfazDAO.IDao<DominioTangerine.Entidades.M2.UsuarioM2, bool, DominioTangerine.Entidades.M2.UsuarioM2>.Agregar(DominioTangerine.Entidades.M2.UsuarioM2 parametro)
         {
