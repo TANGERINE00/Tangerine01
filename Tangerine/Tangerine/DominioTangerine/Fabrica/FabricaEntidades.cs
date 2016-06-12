@@ -369,6 +369,69 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 10
 
+        /// <summary>
+        /// Metodo para instanciar empleados sin atributos
+        /// </summary>
+        /// <returns></returns>
+
+        public static Entidad ObtenerEmpleadoE() 
+        {
+            return new DominioTangerine.Entidades.M10.Empleado();
+        }
+
+        
+        /// <summary>
+        /// Metodo para instanciar a los empleados con todos sus atributos
+        /// </summary>
+        /// <param name="empId"></param>
+        /// <param name="empPNombre"></param>
+        /// <param name="empSNombre"></param>
+        /// <param name="empPApellido"></param>
+        /// <param name="empSApellido"></param>
+        /// <param name="empGenero"></param>
+        /// <param name="empCedula"></param>
+        /// <param name="empFecha"></param>
+        /// <param name="empActivo"></param>
+        /// <param name="empEstudio"></param>
+        /// <param name="empEmail"></param>
+        /// <param name="empLugId"></param>
+        /// <returns></returns>
+        public static Entidad ObtenerEmpleadoCompleto(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                       string empGenero, int empCedula, DateTime empFecha, string empActivo, string empEstudio,
+                       string empEmail, int empLugId) 
+        {
+            return new DominioTangerine.Entidades.M10.Empleado( empId,  empPNombre,  empSNombre,  empPApellido,  empSApellido,
+                        empGenero,  empCedula,  empFecha,  empActivo,  empEstudio,
+                        empEmail,  empLugId);
+        }
+
+
+        /// <summary>
+        /// Metodo para instanciar empleados con todos los atributos menos el id 
+        /// </summary>
+        /// <param name="pNombre"></param>
+        /// <param name="sNombre"></param>
+        /// <param name="pApellido"></param>
+        /// <param name="sApellido"></param>
+        /// <param name="email"></param>
+        /// <param name="genero"></param>
+        /// <param name="fechaNacimiento"></param>
+        /// <param name="ficha"></param>
+        /// <param name="cedula"></param>
+        /// <param name="nivelEstudio"></param>
+        /// <param name="activo"></param>
+        /// <returns></returns>
+        public static Entidad ObtenerEmpleadoSinId(string pNombre, string sNombre, string pApellido, string sApellido,
+                string email, string genero, DateTime fechaNacimiento, int ficha, int cedula,
+                string nivelEstudio, string activo) 
+        {
+            return new DominioTangerine.Entidades.M10.Empleado( pNombre,  sNombre,  pApellido,  sApellido,
+                 email,  genero,  fechaNacimiento,  ficha,  cedula,
+                 nivelEstudio,  activo);
+        }
+
+        
+       
         #endregion
     }
 }
