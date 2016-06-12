@@ -7,7 +7,7 @@ using DominioTangerine.Entidades.M2;
 
 namespace DatosTangerine.InterfazDAO.M2
 {
-    public interface IDaoUsuarios // : IDao<Parametro, Resultado, Resultado>
+    public interface IDaoUsuarios  : IDao<UsuarioM2, bool, UsuarioM2>
     {
         /// <summary>
         /// Encabezado de verificar si el usuario por su ficha
