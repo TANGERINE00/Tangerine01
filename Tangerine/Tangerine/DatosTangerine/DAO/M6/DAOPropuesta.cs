@@ -17,7 +17,7 @@ namespace DatosTangerine.DAO.M6
         ///  <param name="theConnection">Objeto de tipo BDConexion para la conexion a la BD</param>
         ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
         /// <returns>true si fue agregado</returns>
-        public static bool agregarPropuesta(Propuesta laPropuesta)
+        public bool AgregarPropuesta(Propuesta laPropuesta)
         {
             return true;
         }
@@ -28,7 +28,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="parametro">objeto de tipo Requerimiento para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-        public static bool agregarRequerimiento(Requerimiento elRequerimiento)
+        public bool AgregarRequerimiento(Requerimiento elRequerimiento)
         {
             return true;
         }
@@ -51,7 +51,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         ///
         /// <returns>Retorna la lista de propuestas</returns>
-        public static List<Propuesta> ListarLasPropuestas()
+        public List<Propuesta> ListarLasPropuestas()
         {
             List<Propuesta> listaPropuesta = new List<Propuesta>();
 
@@ -64,7 +64,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id)
+        public List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id)
         {
             List<Requerimiento> listaRequerimientos = new List<Requerimiento>();
             return listaRequerimientos;
@@ -76,7 +76,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static Propuesta ConsultarPropuestaporNombre(String id)
+        public Propuesta ConsultarPropuestaporNombre(String id)
         {
             Propuesta propuesta = null;
 
@@ -89,7 +89,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
-        public static Boolean BorrarPropuesta(string nombrePropuesta)
+        public Boolean BorrarPropuesta(string nombrePropuesta)
         {
             return true;
         }
@@ -100,7 +100,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="elrequerimiento"></param>
         /// <returns></returns>
-        public static Boolean Modificar_Requerimiento(Requerimiento elrequerimiento)
+        public Boolean Modificar_Requerimiento(Requerimiento elrequerimiento)
         {
             return true;
         }
@@ -111,7 +111,7 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="propuesta"></param>
         /// <returns></returns>
-        public static Boolean Modificar_Propuesta(Propuesta propuesta)
+        public Boolean Modificar_Propuesta(Propuesta propuesta)
         {
             return true;
         }

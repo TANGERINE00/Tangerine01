@@ -9,22 +9,22 @@ namespace DatosTangerine.InterfazDAO.M6
 {
     public interface IDAOPropuesta
     {
-        //bool agregarPropuesta(Propuesta laPropuesta);
+        bool AgregarPropuesta(Propuesta laPropuesta);
 
-        //bool agregarRequerimiento(Requerimiento elRequerimiento);
+        bool AgregarRequerimiento(Requerimiento elRequerimiento);
 
-        //List<Propuesta> PropuestaProyecto();
+        List<Propuesta> PropuestaProyecto();
 
-        //List<Propuesta> ListarLasPropuestas();
+        List<Propuesta> ListarLasPropuestas();
 
-        //List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id);
+        List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id);
 
-        //Propuesta ConsultarPropuestaporNombre(String id);
+        Propuesta ConsultarPropuestaporNombre(String id);
 
-        //Boolean BorrarPropuesta(string nombrePropuesta);
+        Boolean BorrarPropuesta(string nombrePropuesta);
 
-        //Boolean Modificar_Requerimiento(Requerimiento elrequerimiento);
+        Boolean Modificar_Requerimiento(Requerimiento elrequerimiento);
 
-        //Boolean Modificar_Propuesta(Propuesta propuesta);
+        Boolean Modificar_Propuesta(Propuesta propuesta);
     }
 }
