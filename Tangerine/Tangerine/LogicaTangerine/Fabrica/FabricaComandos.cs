@@ -63,6 +63,18 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 6
 
+        #region Instancia Propuesta
+
+       
+
+        #endregion
+
+        #region Instancia Requerimiento
+
+        
+
+        #endregion
+
         #endregion
 
         #region Modulo 7
