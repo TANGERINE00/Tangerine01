@@ -10,9 +10,15 @@ namespace DatosTangerine.InterfazDAO.M4
     public interface IDaoCompania : IDao<Entidad, Boolean , Entidad>
     {
          int ConsultLastCompanyId();
+
          bool DeleteCompany(Entidad theCompany);
+
          bool EnableCompany(Entidad theCompany);
+
          bool DisableCompany(Entidad theCompany);
+
+         List<Entidad> ConsultarCompaniasActivas();
+
 
     }
 }

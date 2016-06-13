@@ -49,7 +49,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoCompania</returns>
 
-        static public DAO.M4.DaoCompania crearDaoCompania()
+        static public DAO.DAOGeneral crearDaoCompania()
         {
             return new DAO.M4.DaoCompania();
         }
@@ -59,7 +59,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoLugarDireccion</returns>
 
-        static public DAO.M4.DaoLugarDireccion crearDaoLugarDireccion()
+        static public DAO.DAOGeneral crearDaoLugarDireccion()
         {
             return new DAO.M4.DaoLugarDireccion();
         }

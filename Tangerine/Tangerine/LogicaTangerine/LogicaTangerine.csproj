@@ -80,6 +80,7 @@
     <Compile Include="Comandos\M2\ComandoCrearUsuarioDefault.cs" />
     <Compile Include="Comandos\M2\ComandoModificarRol.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
+    <Compile Include="Comandos\M4\comandoCosultarCompaniasActivas.cs" />
     <Compile Include="Comandos\M4\ComandoInhabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoModificarCompania.cs" />
     <Compile Include="Comandos\M4\ComanodHabilitarCompania.cs" />
