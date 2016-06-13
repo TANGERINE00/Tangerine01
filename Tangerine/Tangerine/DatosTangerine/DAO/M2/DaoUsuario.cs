@@ -19,7 +19,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Agregar ( UsuarioM2 theUsuario )
+        public bool Agregar( UsuarioM2 theUsuario )
         {
             return true;
         }
@@ -29,7 +29,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Modificar ( UsuarioM2 theUsuario )
+        public bool Modificar( UsuarioM2 theUsuario )
         {
             return true;
         }
@@ -122,34 +122,5 @@ namespace DatosTangerine.DAO.M2
             return resultado;
         }
 
-        bool IDaoUsuarios.VerificarUsuarioPorFichaEmpleado(int fichaEmpleado)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*bool IDaoUsuarios.VerificarExistenciaDeUsuario(string nombreUsuario)
-        {
-            throw new NotImplementedException();
-        }*/
-
-        bool InterfazDAO.IDao<DominioTangerine.Entidades.M2.UsuarioM2, bool, DominioTangerine.Entidades.M2.UsuarioM2>.Agregar(DominioTangerine.Entidades.M2.UsuarioM2 parametro)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool InterfazDAO.IDao<DominioTangerine.Entidades.M2.UsuarioM2, bool, DominioTangerine.Entidades.M2.UsuarioM2>.Modificar(DominioTangerine.Entidades.M2.UsuarioM2 parametro)
-        {
-            throw new NotImplementedException();
-        }
-
-        DominioTangerine.Entidades.M2.UsuarioM2 InterfazDAO.IDao<DominioTangerine.Entidades.M2.UsuarioM2, bool, DominioTangerine.Entidades.M2.UsuarioM2>.ConsultarXId(DominioTangerine.Entidades.M2.UsuarioM2 parametro)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<DominioTangerine.Entidades.M2.UsuarioM2> InterfazDAO.IDao<DominioTangerine.Entidades.M2.UsuarioM2, bool, DominioTangerine.Entidades.M2.UsuarioM2>.ConsultarTodos()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
