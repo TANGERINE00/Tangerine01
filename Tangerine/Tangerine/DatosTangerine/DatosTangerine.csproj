@@ -48,8 +48,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDaoLogin.resx</DependentUpon>
     </Compile>
-    <Compile Include="DAO\M2\DaoRol.cs" />
-    <Compile Include="DAO\M2\DaoUsuario.cs" />
+    <Compile Include="DAO\M2\DAORol.cs" />
+    <Compile Include="DAO\M2\DAOUsuario.cs" />
     <Compile Include="DAO\M2\ResourceUser.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,8 +91,8 @@
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\M10\IDAOEmpleado.cs" />
-    <Compile Include="InterfazDAO\M2\IDaoRol.cs" />
-    <Compile Include="InterfazDAO\M2\IDaoUsuarios.cs" />
+    <Compile Include="InterfazDAO\M2\IDAORol.cs" />
+    <Compile Include="InterfazDAO\M2\IDAOUsuarios.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
     <Compile Include="InterfazDAO\M6\IDAOPropuesta.cs" />

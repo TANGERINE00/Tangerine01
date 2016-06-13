@@ -21,18 +21,18 @@ namespace DatosTangerine.Fabrica
         /// Método que crea la instancia de DAO Usuario
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoUsuario</returns>
-        static public DAO.M2.DaoUsuario crearDaoUsuario()
+        static public DAO.M2.DAOUsuario crearDaoUsuario()
         {
-            return new DAO.M2.DaoUsuario();
+            return new DAO.M2.DAOUsuario();
         }
 
         /// <summary>
         /// Método que crea la instancia de DAO Rol
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoRol</returns>
-        static public DAO.M2.DaoRol crearDaoRol()
+        static public DAO.M2.DAORol crearDaoRol()
         {
-            return new DAO.M2.DaoRol();
+            return new DAO.M2.DAORol();
         }
 
         #endregion

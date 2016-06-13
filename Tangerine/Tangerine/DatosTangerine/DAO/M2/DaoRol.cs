@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 using ExcepcionesTangerine;
 using System.Data;
 using DominioTangerine.Entidades.M2;
+using DominioTangerine;
 using DatosTangerine.InterfazDAO.M2;
 
 namespace DatosTangerine.DAO.M2
 {
-    public class DaoRol : DAOGeneral, IDaoRol
+    public class DAORol : DAOGeneral, IDAORol
     {
         /// <summary>
         /// Método para agregar un rol
         /// </summary>
         /// <param name="theRol"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Agregar( RolM2 theRol )
+        public bool Agregar( Entidad theRol )
         {
             return true;
         }
@@ -27,7 +28,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theRol"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Modificar( RolM2 theRol )
+        public bool Modificar( Entidad theRol )
         {
             return true;
         }
@@ -37,7 +38,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theRol"></param>
         /// <returns>Retorna la consulta</returns>
-        public RolM2 ConsultarXId( RolM2 theRol )
+        public Entidad ConsultarXId(Entidad theRol)
         {
             return theRol;
         }
@@ -46,9 +47,9 @@ namespace DatosTangerine.DAO.M2
         /// Método para consultar todos los roles
         /// </summary>
         /// <returns>Retorna todos los roles</returns>
-        public List<RolM2> ConsultarTodos()
+        public List<Entidad> ConsultarTodos()
         {
-            List<RolM2> listaRol = new List<RolM2>();
+            List<Entidad> listaRol = new List<Entidad>();
             return listaRol; 
         }
 

@@ -12,14 +12,14 @@ using DominioTangerine.Entidades.M2;
 
 namespace DatosTangerine.DAO.M2
 {
-    public class DaoUsuario : DAOGeneral, IDaoUsuarios
+    public class DAOUsuario : DAOGeneral, IDAOUsuarios
     {
         /// <summary>
         /// Método para agregar un usuario
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Agregar( UsuarioM2 theUsuario )
+        public bool Agregar(Entidad theUsuario)
         {
             return true;
         }
@@ -29,7 +29,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Retorna el objeto en la base de datos</returns>
-        public bool Modificar( UsuarioM2 theUsuario )
+        public bool Modificar(Entidad theUsuario)
         {
             return true;
         }
@@ -39,7 +39,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="theUsuario"></param>
         /// <returns>Retorna la consulta</returns>
-        public UsuarioM2 ConsultarXId( UsuarioM2 theUsuario )
+        public Entidad ConsultarXId(Entidad theUsuario)
         {
             return theUsuario;
         }
@@ -48,9 +48,9 @@ namespace DatosTangerine.DAO.M2
         /// Método para consultar todos los usuarios
         /// </summary>
         /// <returns>Retorna todos los usuarios</returns>
-        public List<UsuarioM2> ConsultarTodos()
+        public List<Entidad> ConsultarTodos()
         {
-            List<UsuarioM2> listaUser = new List<UsuarioM2>();
+            List<Entidad> listaUser = new List<Entidad>();
             return listaUser; 
         }
 

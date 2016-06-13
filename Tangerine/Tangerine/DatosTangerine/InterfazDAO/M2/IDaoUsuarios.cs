@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M2
 {
-    public interface IDaoUsuarios : IDao<Entidad, bool, Entidad>
+    public interface IDAOUsuarios : IDao<Entidad, bool, Entidad>
     {
         /*  /// <summary>
         /// Método para agregar un usuario
@@ -48,7 +48,7 @@ namespace DatosTangerine.InterfazDAO.M2
         /// Método usado para devolver todos los empleados sin usuario
         /// </summary>
         /// <returns>Retorna la lista de empleados</returns>
-        List<Entidad> ConsultarListaDeEmpleados();
+        List<Empleado> ConsultarListaDeEmpleados();
 
         /// <summary>
         /// Método usado para verificar si el usuario existe en el sistema
