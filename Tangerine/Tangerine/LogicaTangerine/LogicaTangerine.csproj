@@ -65,7 +65,6 @@
     <Folder Include="Comandos\M1\" />
     <Folder Include="Comandos\M3\" />
     <Folder Include="Comandos\M5\" />
-    <Folder Include="Comandos\M6\" />
     <Folder Include="Comandos\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -86,6 +85,17 @@
     <Compile Include="Comandos\M4\ComanodHabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
+    <Compile Include="Comandos\M6\ComandoAgregarPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoAgregarRequerimiento.cs" />
+    <Compile Include="Comandos\M6\ComandoBorrarPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarPropuestaXProyecto.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarRequerimientoXPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarTodosPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarTodosRequerimiento.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarXIdRequerimiento.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultatXIdPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoModificarPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoModificarRequerimiento.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />
