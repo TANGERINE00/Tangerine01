@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.DAO;
 using DatosTangerine.Fabrica;
+using DatosTangerine.InterfazDAO.M2;
 
 namespace LogicaTangerine.Comandos.M2
 {
@@ -16,7 +17,7 @@ namespace LogicaTangerine.Comandos.M2
         /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override Boolean Ejecutar()
         {
-            DAOGeneral Usuario = FabricaDAOSqlServer.crearDaoUsuario();
+            IDAOUsuarios Usuario = FabricaDAOSqlServer.crearDaoUsuario();
             return true;
         }
     }

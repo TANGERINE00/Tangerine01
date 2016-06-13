@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosTangerine.DAO;
 using DatosTangerine.InterfazDAO;
 using DatosTangerine.InterfazDAO.M7;
+using DatosTangerine.InterfazDAO.M2;
 
 namespace DatosTangerine.Fabrica
 {
@@ -21,7 +22,7 @@ namespace DatosTangerine.Fabrica
         /// Método que crea la instancia de DAO Usuario
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoUsuario</returns>
-        static public DAO.M2.DAOUsuario crearDaoUsuario()
+        static public IDAOUsuarios crearDaoUsuario()
         {
             return new DAO.M2.DAOUsuario();
         }
@@ -30,7 +31,7 @@ namespace DatosTangerine.Fabrica
         /// Método que crea la instancia de DAO Rol
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoRol</returns>
-        static public DAO.M2.DAORol crearDaoRol()
+        static public IDAORol crearDaoRol()
         {
             return new DAO.M2.DAORol();
         }
