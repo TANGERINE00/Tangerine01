@@ -66,7 +66,6 @@
     <Folder Include="Comandos\M3\" />
     <Folder Include="Comandos\M5\" />
     <Folder Include="Comandos\M6\" />
-    <Folder Include="Comandos\M7\" />
     <Folder Include="Comandos\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -84,6 +83,9 @@
     <Compile Include="Comandos\M4\ComanodHabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />
     <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />

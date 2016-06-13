@@ -93,17 +93,17 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 7
 
-        public static IDaoProyecto ObetenerIdaoProyecto()
+        public static IDaoProyecto ObetenerDaoProyecto()
         {
             return new DAO.M7.DaoProyecto();
         }
 
-        public static IDaoProyectoContacto ObetenerIdaoContacto()
+        public static IDaoProyectoContacto ObetenerDaoContacto()
         {
             return new DAO.M7.DaoProyectoContacto();
         }
 
-        public static IDaoProyectoEmpleado ObetenerIdaoProyectoEmpleado()
+        public static IDaoProyectoEmpleado ObetenerDaoProyectoEmpleado()
         {
             return new DAO.M7.DaoProyectoEmpleado();
         }

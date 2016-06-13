@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
+using LogicaTangerine.Comandos.M7;
 
 namespace LogicaTangerine.Fabrica
 {
@@ -64,7 +65,15 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 7
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProyectos()
+        {
+            return new ComandoConsultarTodosProyectos();
+        }
 
+        public static Comando<Entidad> ObtenerComandoConsultarXIdProyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarXIdProyecto(proyecto);
+        }
         #endregion
 
         #region Modulo 8
