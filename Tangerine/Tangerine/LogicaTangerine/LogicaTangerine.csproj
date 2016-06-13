@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Comandos\M10\" />
     <Folder Include="Comandos\M1\" />
     <Folder Include="Comandos\M3\" />
     <Folder Include="Comandos\M5\" />
@@ -73,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\M10\ComandoAgregarEmpleado.cs" />
     <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandoValidarUsuario.cs" />
