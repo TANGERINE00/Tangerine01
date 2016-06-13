@@ -24,45 +24,45 @@ namespace DominioTangerine.Fabrica
             /// Se crea la instancia sin atributos
             /// </summary>
             /// <returns>Retorna una instacion de Usuario sin atributos</returns>
-            static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioVacio()
+            static public Entidad crearUsuarioVacio()
             {
-                return new DominioTangerine.Entidades.M2.UsuarioM2();
+                return new UsuarioM2();
             }
 
             /// <summary>
             /// Se crea la instancia con usuario y contraseña
             /// </summary>
             /// <returns>Retorna una instacion de Usuario con usuario y contraseña</returns>
-            static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioYContrasena( string usuario, string contrasena )
+            static public Entidad crearUsuarioConUsuarioYContrasena(string usuario, string contrasena)
             {
-                return new DominioTangerine.Entidades.M2.UsuarioM2( usuario, contrasena );
+                return new UsuarioM2( usuario, contrasena );
             }
 
             /// <summary>
             /// Se crea la instancia con usuario y rol
             /// </summary>
             /// <returns>Retorna una instacion de Usuario con usuario y rol</returns>
-            static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioRol( string usuario, RolM2 rol )
+            static public Entidad crearUsuarioConUsuarioRol(string usuario, RolM2 rol)
             {
-                return new DominioTangerine.Entidades.M2.UsuarioM2( usuario, rol );
+                return new UsuarioM2( usuario, rol );
             }
 
             /// <summary>
             /// Se crea la instancia con usuario, contrasena y activo
             /// </summary>
             /// <returns>Retorna una instacion de Usuario con usuario, contraseña y activo</returns>
-            static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioContrasenaActivo( string usuario, string contrasena, string activo )
+            static public Entidad crearUsuarioConUsuarioContrasenaActivo(string usuario, string contrasena, string activo)
             {
-                return new DominioTangerine.Entidades.M2.UsuarioM2( usuario, contrasena, activo );
+                return new UsuarioM2( usuario, contrasena, activo );
             }
 
             /// <summary>
             /// Se crea la instancia con usuario, contrasena, activo y Rol
             /// </summary>
             /// <returns>Retorna una instacion de Usuario con usuario, contraseña, activo y rol</returns>
-            static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioConUsuarioContrasenaActivoRol( string usuario, string contrasena, string activo, RolM2 rol )
+            static public Entidad crearUsuarioConUsuarioContrasenaActivoRol(string usuario, string contrasena, string activo, RolM2 rol)
             {
-                return new DominioTangerine.Entidades.M2.UsuarioM2( usuario, contrasena, activo, rol);
+                return new UsuarioM2( usuario, contrasena, activo, rol);
             }
 
             /// <summary>
@@ -76,11 +76,11 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputfFichaEmpleado"></param>
             /// <returns>Retorna una instacion de Usuario con todos los atributos</returns>
 
-            static public DominioTangerine.Entidades.M2.UsuarioM2 crearUsuarioCompleto( string inputUsuario, string inputContrasena,
+            static public Entidad crearUsuarioCompleto(string inputUsuario, string inputContrasena,
                                                                                         DateTime inputFechaCreacion, string inputActivo,
                                                                                         RolM2 inputRol, int inputfFichaEmpleado )
             {
-                return new DominioTangerine.Entidades.M2.UsuarioM2( inputUsuario, inputContrasena, inputFechaCreacion,
+                return new UsuarioM2( inputUsuario, inputContrasena, inputFechaCreacion,
                                                                     inputActivo, inputRol, inputfFichaEmpleado );
             }
             #endregion
@@ -91,27 +91,27 @@ namespace DominioTangerine.Fabrica
             /// Se crea la instancia sin atributos de rol
             /// </summary>
             /// <returns>Devuelve la instancia de la clase Rol sin atributos</returns>
-            static public DominioTangerine.Entidades.M2.RolM2 crearRolVacio()
+            static public Entidad crearRolVacio()
             {
-                return new DominioTangerine.Entidades.M2.RolM2();
+                return new RolM2();
             }
 
             /// <summary>
             /// Se crea la instancia de rol con nombre
             /// </summary>
             /// <returns>Devuelve la instancia de la clase Rol con el nombre</returns>
-            static public DominioTangerine.Entidades.M2.RolM2 crearRolNombre( string nombre )
+            static public Entidad crearRolNombre(string nombre)
             {
-                return new DominioTangerine.Entidades.M2.RolM2( nombre );
+                return new RolM2( nombre );
             }
 
             /// <summary>
             /// Se crea la instancia de rol con todos sus atributos
             /// </summary>
             /// <returns>Devuelve la instancia de la clase con el nombre y el menu</returns>
-            static public DominioTangerine.Entidades.M2.RolM2 crearRolCompleto( string nombre, ListaGenerica<Menu> menu )
+            static public Entidad crearRolCompleto(string nombre, ListaGenerica<Menu> menu)
             {
-                return new DominioTangerine.Entidades.M2.RolM2( nombre, menu );
+                return new RolM2( nombre, menu );
             }
 
             #endregion
