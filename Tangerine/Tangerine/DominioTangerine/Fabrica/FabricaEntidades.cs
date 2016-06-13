@@ -265,34 +265,47 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 6
-        static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
-                         string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
-        {
-            return new DominioTangerine.Entidades.M6.Propuesta(nombre, descripcion, _tipoDu, duracion, acuerdopago, estatus,
-                         moneda, entrega, feincio, fefinal, costo, compañia);
-        }
 
-        static public Entidad ObtenerPropuesta(string codigo, string nombre, string descripcion, string _tipoDu, string duracion, string acuerdopago, string estatus,
-                        string moneda, int entrega, DateTime feincio, DateTime fefinal, int costo, string compañia)
-        {
-            return new DominioTangerine.Entidades.M6.Propuesta(codigo, nombre, descripcion, _tipoDu, duracion, acuerdopago, estatus,
-                        moneda, entrega, feincio, fefinal, costo, compañia);
-        }
+            #region Instancia Propuesta
 
-        static public Entidad ObtenerPropuesta(string codigoP, List<DominioTangerine.Entidades.M6.Requerimiento> listaRequerimiento)
-        {
-            return new DominioTangerine.Entidades.M6.Propuesta(codigoP, listaRequerimiento);
-        }
+            static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, 
+                string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, DateTime fefinal, 
+                int costo, string compañia)
+            {
+                return new DominioTangerine.Entidades.M6.Propuesta(nombre, descripcion, _tipoDu, duracion, acuerdopago, 
+                       estatus, moneda, entrega, feincio, fefinal, costo, compañia);
+            }
 
-        static public Entidad ObtenerRequerimiento(string codreq, string descripr, string codpro)
-        {
-            return new DominioTangerine.Entidades.M6.Requerimiento(codreq, descripr, codpro);
-        }
+            static public Entidad ObtenerPropuesta(string codigo, string nombre, string descripcion, string _tipoDu, 
+                string duracion, string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, 
+                DateTime fefinal, int costo, string compañia)
+            {
+                return new DominioTangerine.Entidades.M6.Propuesta(codigo, nombre, descripcion, _tipoDu, duracion, 
+                    acuerdopago, estatus, moneda, entrega, feincio, fefinal, costo, compañia);
+            }
+
+            static public Entidad ObtenerPropuesta(string codigoP, 
+                List<DominioTangerine.Entidades.M6.Requerimiento> listaRequerimiento)
+            {
+                return new DominioTangerine.Entidades.M6.Propuesta(codigoP, listaRequerimiento);
+            }
+
+            #endregion
+
+            #region Instancia Requerimiento
+
+            static public Entidad ObtenerRequerimiento(string codreq, string descripr, string codpro)
+            {
+                return new DominioTangerine.Entidades.M6.Requerimiento(codreq, descripr, codpro);
+            }
+
+            #endregion
+
         #endregion
 
         #region Modulo 7
 
-            #region Metodos para instanciar Propuesta 
+            #region Metodos para instanciar Propuesta
             public static Entidad ObtenerPropuesta() 
             {
                 return new DominioTangerine.Entidades.M7.Propuesta();
