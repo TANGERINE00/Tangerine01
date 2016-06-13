@@ -75,7 +75,7 @@ namespace DatosTangerine.Fabrica
         /// Metodo que crea la instancia de DAO Propuesta
         /// </summary>
         /// <returns>La instancia</returns>
-        public static DAO.M6.DAOPropuesta CrearDAOPropuesta()
+        public static InterfazDAO.M6.IDAOPropuesta CrearDAOPropuesta()
         {
             return new DAO.M6.DAOPropuesta();
         }
@@ -84,7 +84,7 @@ namespace DatosTangerine.Fabrica
         /// Metodo que crea la instancia de DAO Requerimiento
         /// </summary>
         /// <returns>La instancia</returns>
-        public static DAO.M6.DAORequerimiento CrearDAORequerimiento()
+        public static InterfazDAO.M6.IDAORequerimiento CrearDAORequerimiento()
         {
             return new DAO.M6.DAORequerimiento();
         }
