@@ -10,7 +10,7 @@ using DominioTangerine.Entidades.M6;
 
 namespace DatosTangerine.DAO.M6
 {
-    public class DAOPropuesta : DAOGeneral, IDAOPropuesta
+    public class DAORequerimiento : DAOGeneral, IDAORequerimiento
     {
 
         #region IDAO
@@ -63,33 +63,23 @@ namespace DatosTangerine.DAO.M6
 
             return listaPropuesta;
         }
-        
+
         #endregion
 
 
-        #region IDAOPropuesta
+        #region IDAORequerimiento
 
         /// <summary>
-        /// Metodo para eliminar una Propuesta de la base de datos.
+        /// Método para listar los requerimientos por propuesta 
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
-        /// <returns>true si fue eliminado</returns>
-        public Boolean BorrarPropuesta(string nombrePropuesta)
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public List<Entidad> ConsultarRequerimientosXPropuesta(String id)
         {
-            return true;
+            List<Entidad> listaRequerimientos = new List<Entidad>();
+            return listaRequerimientos;
         }
-
-
-        /// <summary>
-        /// Metodo diseñado para M7, que devuelve la lista de propuestas con estatus aprobado y que no están en proyecto
-        /// </summary>
-        /// <returns>Retorna la lista de propuestas con estatus= Aprobado y que no se encuentran aún en Proyecto</returns>
-        public List<Entidad> PropuestaProyecto()
-        {
-            List<Entidad> listaPropuesta = new List<Entidad>();
-
-            return listaPropuesta;
-        }
+        
         #endregion
 
     }

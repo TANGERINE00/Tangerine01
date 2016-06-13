@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="DAO\M6\DAOPropuesta.cs" />
+    <Compile Include="DAO\M6\DAORequerimiento.cs" />
     <Compile Include="DAO\M6\RecursoDAOPropuesta.Designer.cs">
       <DependentUpon>RecursoDAOPropuesta.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -95,6 +96,7 @@
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
     <Compile Include="InterfazDAO\M6\IDAOPropuesta.cs" />
+    <Compile Include="InterfazDAO\M6\IDAORequerimiento.cs" />
     <Compile Include="InterfazDAO\M7\IDaoProyecto.cs" />
     <Compile Include="InterfazDAO\M7\IDaoProyectoContacto.cs" />
     <Compile Include="InterfazDAO\M7\IDaoProyectoEmpleado.cs" />
