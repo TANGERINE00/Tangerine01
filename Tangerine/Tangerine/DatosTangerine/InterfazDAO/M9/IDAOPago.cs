@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M9
 {
-   public interface IDAOPago
+   public interface IDAOPago 
     {
 
         bool CargarPago (Entidad pagoParam);

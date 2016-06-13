@@ -17,7 +17,6 @@ namespace DominioTangerine.Entidades.M9
         private int _codPago;
         private DateTime _fechaPago;
         private int _idFactura;
-
         #endregion
 
         #region Constructores
@@ -46,50 +45,34 @@ namespace DominioTangerine.Entidades.M9
 
         #endregion
 
-        #region Get's y Set's
 
-        public int IdPago
+        public int idPago
         {
             get { return _idPago; }
-            set { _idPago = value; }
         }
-
         public int montoPago
         {
             get { return _montoPago; }
-            set { _montoPago = value; }
         }
-
-        public string monedaPago
+        public String monedaPago
         {
             get { return _monedaPago; }
-            set { _monedaPago = value; }
         }
-
-        public string formaPago
+        public String formaPago
         {
             get { return _formaPago; }
-            set { _formaPago = value; }
         }
-
         public int codPago
         {
             get { return _codPago; }
-            set { _codPago = value; }
         }
-
         public DateTime fechaPago
         {
             get { return _fechaPago; }
-            set { _fechaPago = value; }
         }
-
         public int idFactura
         {
             get { return _idFactura; }
-            set { _idFactura = value; }
         }
-
-        #endregion
     }
 }
