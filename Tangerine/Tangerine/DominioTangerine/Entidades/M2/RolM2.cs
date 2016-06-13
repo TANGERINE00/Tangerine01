@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class RolM2
+    public class RolM2 : Entidad
     {
         #region Atributos
 
@@ -28,7 +28,7 @@ namespace DominioTangerine.Entidades.M2
         /// Constructor de la clase Rol con nombre
         /// </summary>
         /// <param name="nombre"></param>
-        public RolM2(string nombre)
+        public RolM2( string nombre )
         {
             _nombre = nombre;
             _menu = new ListaGenerica<Menu>();
@@ -39,7 +39,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="menus"></param>
-        public RolM2(string nombre, ListaGenerica<Menu> menu)
+        public RolM2( string nombre, ListaGenerica<Menu> menu )
             :this(nombre)
         {
             _menu = menu;
@@ -78,9 +78,9 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         public void imprimirListaDeMenu()
         {
-            foreach (Menu m in _menu)
+            foreach ( Menu m in _menu )
             {
-                System.Diagnostics.Debug.WriteLine("Menú: " + m.Nombre);
+                System.Diagnostics.Debug.WriteLine( "Menú: " + m.Nombre );
             }
         }
 

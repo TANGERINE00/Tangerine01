@@ -8,11 +8,52 @@ using DominioTangerine;
 using DatosTangerine.M10;
 using ExcepcionesTangerine;
 using System.Data;
+using DominioTangerine.Entidades.M2;
 
 namespace DatosTangerine.DAO.M2
 {
     public class DaoUsuario : DAOGeneral, IDaoUsuarios
     {
+        /// <summary>
+        /// Método para agregar un usuario
+        /// </summary>
+        /// <param name="theUsuario"></param>
+        /// <returns>Retorna el objeto en la base de datos</returns>
+        public bool Agregar( UsuarioM2 theUsuario )
+        {
+            return true;
+        }
+        
+        /// <summary>
+        /// Método para modificar un usuario
+        /// </summary>
+        /// <param name="theUsuario"></param>
+        /// <returns>Retorna el objeto en la base de datos</returns>
+        public bool Modificar( UsuarioM2 theUsuario )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Método para consultar un usuario por id
+        /// </summary>
+        /// <param name="theUsuario"></param>
+        /// <returns>Retorna la consulta</returns>
+        public UsuarioM2 ConsultarXId( UsuarioM2 theUsuario )
+        {
+            return theUsuario;
+        }
+
+        /// <summary>
+        /// Método para consultar todos los usuarios
+        /// </summary>
+        /// <returns>Retorna todos los usuarios</returns>
+        public List<UsuarioM2> ConsultarTodos()
+        {
+            List<UsuarioM2> listaUser = new List<UsuarioM2>();
+            return listaUser; 
+        }
+
         /// <summary>
         /// Verificar si el usuario por su ficha
         /// </summary>
@@ -24,20 +65,10 @@ namespace DatosTangerine.DAO.M2
         }
 
         /// <summary>
-        /// Verificación si un usuario existe
-        /// </summary>
-        /// <param name="nombreUsuario"></param>
-        /// <returns>Si existe True, si no, False</returns>
-        public bool VerificarExistenciaDeUsuario( string nombreUsuario )
-        {
-            return true;
-        }
-
-        /// <summary>
         /// Método usado para devolver todos los empleados sin usuario
         /// </summary>
         /// <returns>Retorna la lista de empleados</returns>
-        public static List<Empleado> ConsultarListaDeEmpleados()
+        public List<Empleado> ConsultarListaDeEmpleados()
         {
             List<Empleado> listaDeEmpleados = new List<Empleado>();
             try
@@ -59,7 +90,7 @@ namespace DatosTangerine.DAO.M2
         /// </summary>
         /// <param name="nombreUsuario"></param>
         /// <returns>Retorna una valor booleano indicando la disponibilidad del usuario</returns>
-        public static bool VerificarExistenciaUsuario(string nombreUsuario)
+        public bool VerificarExistenciaUsuario( string nombreUsuario )
         {
             BDConexion laConexion = new BDConexion();
             List<Parametro> parametros = new List<Parametro>();
@@ -90,5 +121,6 @@ namespace DatosTangerine.DAO.M2
 
             return resultado;
         }
+
     }
 }

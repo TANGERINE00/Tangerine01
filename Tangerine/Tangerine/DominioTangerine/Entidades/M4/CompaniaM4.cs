@@ -28,61 +28,61 @@ namespace DominioTangerine.Entidades.M4
         public string NombreCompania
         {
             get { return nombreCompania; }
-            set { nombreCompania = value; }
+           
         }
 
         public string RifCompania
         {
             get { return rifCompania; }
-            set { rifCompania = value; }
+            
         }
 
         public string EmailCompania
         {
             get { return emailCompania; }
-            set { emailCompania = value; }
+            
         }
 
         public string TelefonoCompania
         {
             get { return telefonoCompania; }
-            set { telefonoCompania = value; }
+           
         }
 
         public string AcronimoCompania
         {
             get { return acronimoCompania; }
-            set { acronimoCompania = value; }
+            
         }
 
         public DateTime FechaRegistroCompania
         {
             get { return fechaRegistroCompania; }
-            set { fechaRegistroCompania = value; }
+            
         }
 
         public int StatusCompania
         {
             get { return statusCompania; }
-            set { statusCompania = value; }
+           
         }
 
         public int PresupuestoCompania
         {
             get { return presupuestoCompania; }
-            set { presupuestoCompania = value; }
+            
         }
 
         public int PlazoPagoCompania
         {
             get { return plazoPagoCompania; }
-            set { plazoPagoCompania = value; }
+          
         }
 
         public int IdLugar
         {
             get { return idLugar; }
-            set { idLugar = value; }
+            
         }
 
 

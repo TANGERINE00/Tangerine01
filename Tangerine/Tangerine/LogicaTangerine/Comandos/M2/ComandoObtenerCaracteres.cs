@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2
         /// </summary>
         /// <param name="cadena"></param>
         /// <param name="cantidad"></param>
-        public ComandoObtenerCaracteres(String cadena, int cantidad)
+        public ComandoObtenerCaracteres( String cadena, int cantidad )
         {
             _cadena = cadena;
             _cantidad = cantidad;
@@ -35,15 +35,15 @@ namespace LogicaTangerine.Comandos.M2
             {
                 char[] cadenaSeparada = new char[_cadena.Length];
 
-                using (StringReader reader = new StringReader(_cadena))
+                using (StringReader reader = new StringReader( _cadena ))
                 {
-                    reader.ReadAsync(cadenaSeparada, 0, _cadena.Length);
+                    reader.ReadAsync( cadenaSeparada, 0, _cadena.Length );
                 }
 
                 for (int i = 0; i < _cadena.Length; i++)
                 {
                     caracteres = caracteres + cadenaSeparada[i];
-                    if (i == (_cantidad - 1))
+                    if (i == ( _cantidad - 1 ))
                     {
                         break;
                     }
@@ -52,13 +52,13 @@ namespace LogicaTangerine.Comandos.M2
             catch (NullReferenceException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Parametro invalido", ex);
+                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido", ex );
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " +
-                                                                     "ObtenerCaracteres()", ex);
+                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                                                                     "ObtenerCaracteres()", ex );
             }
 
             return caracteres;

@@ -41,12 +41,14 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\M10\DAOEmpleado.cs" />
     <Compile Include="DAO\M1\DAOLogin.cs" />
     <Compile Include="DAO\M1\RecursosDaoLogin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDaoLogin.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\M2\DaoRol.cs" />
     <Compile Include="DAO\M2\DaoUsuario.cs" />
     <Compile Include="DAO\M2\ResourceUser.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +67,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="DAO\M6\DAOPropuesta.cs" />
+    <Compile Include="DAO\M6\DAORequerimiento.cs" />
+    <Compile Include="DAO\M6\RecursoDAOPropuesta.Designer.cs">
+      <DependentUpon>RecursoDAOPropuesta.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DAO\M7\DaoProyecto.cs" />
+    <Compile Include="DAO\M7\DaoProyectoContacto.cs" />
+    <Compile Include="DAO\M7\DaoProyectoEmpleado.cs" />
     <Compile Include="DAO\M9\DAOPago.cs" />
     <Compile Include="DAO\M9\RecursoDAOPago.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -78,9 +90,16 @@
     </Compile>
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
+    <Compile Include="InterfazDAO\M10\IDAOEmpleado.cs" />
+    <Compile Include="InterfazDAO\M2\IDaoRol.cs" />
     <Compile Include="InterfazDAO\M2\IDaoUsuarios.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
+    <Compile Include="InterfazDAO\M6\IDAOPropuesta.cs" />
+    <Compile Include="InterfazDAO\M6\IDAORequerimiento.cs" />
+    <Compile Include="InterfazDAO\M7\IDaoProyecto.cs" />
+    <Compile Include="InterfazDAO\M7\IDaoProyectoContacto.cs" />
+    <Compile Include="InterfazDAO\M7\IDaoProyectoEmpleado.cs" />
     <Compile Include="InterfazDAO\M9\IDAOPago.cs" />
     <Compile Include="M10\BDEmpleado.cs" />
     <Compile Include="M10\ResourceComplemento.Designer.cs">
@@ -177,18 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="DAO\M10\" />
     <Folder Include="DAO\M3\" />
     <Folder Include="DAO\M5\" />
-    <Folder Include="DAO\M6\" />
-    <Folder Include="DAO\M7\" />
     <Folder Include="DAO\M8\" />
-    <Folder Include="InterfazDAO\M10\" />
     <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M3\" />
     <Folder Include="InterfazDAO\M5\" />
-    <Folder Include="InterfazDAO\M6\" />
-    <Folder Include="InterfazDAO\M7\" />
     <Folder Include="InterfazDAO\M8\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />
@@ -209,6 +222,10 @@
     <EmbeddedResource Include="DAO\M4\ResourcePlaceM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourcePlaceM4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M6\RecursoDAOPropuesta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoDAOPropuesta.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\M9\RecursoDAOPago.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -275,6 +292,11 @@
       <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
       <Name>ExcepcionesTangerine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLQuery2.sql" />
+    <Content Include="SQLQuery3.sql" />
+    <Content Include="SQLQuery4.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
