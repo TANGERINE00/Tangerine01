@@ -114,7 +114,10 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 9
-
+        /// <summary>
+        /// Metodo que instancia al objeto DAOPago
+        /// </summary>
+        /// <returns>Retorna el objeto DAOPago</returns>
         public static DAO.M9.DAOPago CrearDAOPago()
         {
             return new DAO.M9.DAOPago();
