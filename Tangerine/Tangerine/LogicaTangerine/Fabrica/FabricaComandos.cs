@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using LogicaTangerine.Comandos.M7;
+using LogicaTangerine.Comandos.M4;
+
 
 namespace LogicaTangerine.Fabrica
 {
@@ -53,7 +55,6 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 4
-
         #endregion
 
         #region Modulo 5
@@ -61,6 +62,18 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 6
+
+        #region Instancia Propuesta
+
+
+
+        #endregion
+
+        #region Instancia Requerimiento
+
+
+
+        #endregion
 
         #endregion
 
@@ -116,7 +129,10 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-
+        // public static Comandos.M10.ComandoAgregarEmpleado agregarEmpleado()
+        //{
+        //    return new Comandos.M10.ComandoAgregarEmpleado();
+        //}
         #endregion
     }
 }

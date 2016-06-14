@@ -106,6 +106,15 @@ namespace DatosTangerine.DAO.M4
            throw new NotImplementedException();
        }
 
-      
+
+
+        /// <summary>
+        /// Metodo que busca en la base de datos todas aquellas que tienen como estatus Activo
+        /// </summary>
+        /// <returns></returns>
+       public List<Entidad> ConsultarCompaniasActivas()
+       {
+           throw new NotImplementedException();
+       }
     }
 }
