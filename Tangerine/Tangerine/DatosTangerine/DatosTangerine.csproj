@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="DAO\M5\DAOContacto.cs" />
+    <Compile Include="DAO\M5\RecursosDAOContacto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOContacto.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\M6\DAOPropuesta.cs" />
     <Compile Include="DAO\M6\DAORequerimiento.cs" />
     <Compile Include="DAO\M6\RecursoDAORequerimiento.Designer.cs">
@@ -227,6 +232,10 @@
     <EmbeddedResource Include="DAO\M4\ResourcePlaceM4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourcePlaceM4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M5\RecursosDAOContacto.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOContacto.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\M6\RecursoDAORequerimiento.resx">
       <Generator>ResXFileCodeGenerator</Generator>
