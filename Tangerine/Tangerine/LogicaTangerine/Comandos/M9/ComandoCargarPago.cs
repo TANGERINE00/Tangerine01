@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DatosTangerine.DAO;
+using DatosTangerine.DAO.M9;
 using DatosTangerine.Fabrica;
 
 namespace LogicaTangerine.Comandos.M9
@@ -16,7 +16,7 @@ namespace LogicaTangerine.Comandos.M9
         /// <returns></returns>
         public override Boolean Ejecutar()
         {
-            DAOGeneral Pago = FabricaDAOSqlServer.CrearDAOPago();
+            DAOPago Pago = FabricaDAOSqlServer.CrearDAOPago();
             return true;
 
         }
