@@ -34,7 +34,6 @@ namespace DatosTangerine.DAO.M6
             DominioTangerine.Entidades.M6.Requerimiento requerimiento = (DominioTangerine.Entidades.M6.Requerimiento)elRequerimiento;
 
             List<Parametro> parametros = new List<Parametro>();
-            BDConexion theConnection = new BDConexion();
             Parametro parametro = new Parametro();
 
             try
@@ -53,7 +52,7 @@ namespace DatosTangerine.DAO.M6
 
 
                 //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarRequerimiento y todos los parametros que recibe
-                List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarRequerimiento, parametros);
+                List<Resultado> resultado = EjecutarStoredProcedure(RecursosPropuesta.AgregarRequerimiento, parametros);
 
             }
             catch (Exception ex)

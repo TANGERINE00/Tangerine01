@@ -34,7 +34,6 @@ namespace DatosTangerine.DAO.M6
             DominioTangerine.Entidades.M6.Propuesta propuesta = (DominioTangerine.Entidades.M6.Propuesta)laPropuesta;
 
             List<Parametro> parametros = new List<Parametro>();
-            BDConexion theConnection = new BDConexion();
             Parametro parametro = new Parametro();
 
             try
@@ -79,7 +78,7 @@ namespace DatosTangerine.DAO.M6
                 parametros.Add(parametro);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarPropuesta y todos los parametros que recibe
-                List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarPropuesta, parametros);
+                List<Resultado> resultado = EjecutarStoredProcedure(RecursosPropuesta.AgregarPropuesta, parametros);
             }
             catch (SqlException ex)
             {
@@ -114,8 +113,64 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="propuesta"></param>
         /// <returns></returns>
-        public Boolean Modificar(Entidad propuesta)
+        public Boolean Modificar(Entidad laPropuesta)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            DominioTangerine.Entidades.M6.Propuesta propuesta = (DominioTangerine.Entidades.M6.Propuesta)laPropuesta;
+
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+                theParam = new Parametro(RecursosPropuesta.ParamPropnombre, SqlDbType.VarChar, propuesta.Nombre, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamDescriProp, SqlDbType.VarChar, propuesta.Descripcion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamTipoDuProp, SqlDbType.VarChar, propuesta.TipoDuracion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamDuracProp, SqlDbType.VarChar, propuesta.CantDuracion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, propuesta.Acuerdopago, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamEstatusProp, SqlDbType.VarChar, propuesta.Estatus, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamMonedaProp, SqlDbType.VarChar, propuesta.Moneda, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamFechaIProp, SqlDbType.Date, propuesta.Feincio.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamFechaFProp, SqlDbType.Date, propuesta.Fefinal.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false);
+                parameters.Add(theParam);
+
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = EjecutarStoredProcedure(RecursosPropuesta.Modificar_Propuesta, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
             return true;
         }
 
@@ -127,7 +182,42 @@ namespace DatosTangerine.DAO.M6
         /// <returns></returns>
         public Entidad ConsultarXId(Entidad id)
         {
-            Entidad propuesta = null;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+           
+            List<Parametro> parametros = new List<Parametro>();
+            
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();
+
+            try
+            {
+                Parametro parametro = new Parametro(RecursosPropuesta.Prop_Nombre, SqlDbType.VarChar, 
+                    ((DominioTangerine.Entidades.M6.Propuesta)id).Id.ToString(), false);
+                parametros.Add(parametro);
+
+                DataTable dataTablePropuestas = EjecutarStoredProcedureTuplas(RecursosPropuesta.ConsultarPropuestaNombre, 
+                    parametros);
+
+                DataRow fila = dataTablePropuestas.Rows[0];
+
+                propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                    ((DominioTangerine.Entidades.M6.Propuesta)id).Id.ToString(),
+                    fila[RecursosPropuesta.PropDescripcion].ToString(), 
+                    fila[RecursosPropuesta.PropDuracion].ToString(), 
+                    fila[RecursosPropuesta.PropTipoDuracion].ToString(), 
+                    fila[RecursosPropuesta.PropAcuerdo].ToString(), 
+                    fila[RecursosPropuesta.PropEstatus].ToString(), 
+                    fila[RecursosPropuesta.PropMoneda].ToString(), 
+                    Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]), 
+                    Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]), 
+                    Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]), 
+                    Convert.ToInt32(fila[RecursosPropuesta.PropCosto]), 
+                    fila[RecursosPropuesta.PropIdCompania].ToString() );
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
 
             return propuesta;
         }
