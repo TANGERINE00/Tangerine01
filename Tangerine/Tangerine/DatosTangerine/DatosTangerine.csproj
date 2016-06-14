@@ -97,6 +97,7 @@
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\M10\IDAOEmpleado.cs" />
+    <Compile Include="InterfazDAO\M1\IDaoLogin.cs" />
     <Compile Include="InterfazDAO\M2\IDAORol.cs" />
     <Compile Include="InterfazDAO\M2\IDAOUsuarios.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
@@ -204,7 +205,6 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="DAO\M3\" />
     <Folder Include="DAO\M8\" />
-    <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M3\" />
     <Folder Include="InterfazDAO\M5\" />
     <Folder Include="InterfazDAO\M8\" />

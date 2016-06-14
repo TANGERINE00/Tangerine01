@@ -55,6 +55,7 @@
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
     <Compile Include="Entidades\M10\Empleado.cs" />
+    <Compile Include="Entidades\M1\Cuenta.cs" />
     <Compile Include="Entidades\M2\RolM2.cs" />
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
@@ -91,7 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Entidades\M1\" />
     <Folder Include="Entidades\M3\" />
     <Folder Include="Entidades\M8\" />
     <Folder Include="obj\Debug\TempPE\" />

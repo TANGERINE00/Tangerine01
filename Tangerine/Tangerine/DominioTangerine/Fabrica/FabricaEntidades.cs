@@ -15,6 +15,15 @@ namespace DominioTangerine.Fabrica
     {
         #region Modulo 1
        
+        public Entidad ObtenerCuenta()
+        {
+            return new Entidades.M1.Cuenta();
+        }
+        public Entidad ObtenerCuenta_M1(String elNombreUsuario, String laContrasena,
+            List<Entidades.M2.RolM2> listaRoles)
+        {
+            return new Entidades.M1.Cuenta(elNombreUsuario, laContrasena, listaRoles);
+        }
         #endregion
 
         #region Modulo 2
