@@ -7,6 +7,7 @@ using DominioTangerine;
 using DominioTangerine.Entidades.M2;
 using DominioTangerine.Entidades.M4
 ;
+using DominioTangerine.Entidades.M5;
 
 namespace DominioTangerine.Fabrica
 {
@@ -261,7 +262,26 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 5
+            public static Entidad crearCobtactoVacio()
+            {
+                return new ContactoM5();
+            }
 
+            public static Entidad crearContactoSinId( string nombre, string apellido, string departamento,
+                                                      string cargo, string telefono, string correo, int tipoCompañia,
+                                                      int idCompañia )
+            {
+                return new ContactoM5( nombre, apellido, departamento, cargo, telefono, correo, tipoCompañia, 
+                                       idCompañia );
+            }
+
+            public static Entidad crearContactoConId( int idContacto, string nombre, string apellido, 
+                                                      string departamento, string cargo, string telefono, 
+                                                      string correo, int tipoCompañia, int idCompañia ) 
+            {
+                return new ContactoM5( idContacto, nombre, apellido, departamento, cargo, telefono, correo, 
+                                       tipoCompañia, idCompañia );
+            }
         #endregion
 
         #region Modulo 6
