@@ -81,7 +81,6 @@ namespace DatosTangerine.DAO.M6
                 //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarPropuesta y todos los parametros que recibe
                 List<Resultado> resultado = theConnection.EjecutarStoredProcedure(RecursosPropuesta.AgregarPropuesta, parametros);
             }
-           
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
