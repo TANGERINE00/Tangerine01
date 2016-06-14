@@ -9,12 +9,13 @@ using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
 using System.Threading.Tasks;
+using DatosTangerine.InterfazDAO.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
     class comandoCosultarCompaniasActivas : Comando<List<Entidad>>
     {
-        List<Entidad> mock; 
+        
 
         public comandoCosultarCompaniasActivas (Entidad Company)
         {
@@ -28,8 +29,8 @@ namespace LogicaTangerine.Comandos.M4
         public override List<Entidad> Ejecutar()
         {
 
-            DAOGeneral C = FabricaDAOSqlServer.crearDaoCompania();
-            return mock; // C.EnableCompany(_laEntidad);
+             IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+            return C.ConsultarCompaniasActivas();
         }
     }
 }
