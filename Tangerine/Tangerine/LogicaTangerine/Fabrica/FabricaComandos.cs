@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using LogicaTangerine.Comandos.M7;
+using LogicaTangerine.Comandos.M4;
 
 
 namespace LogicaTangerine.Fabrica
@@ -54,7 +55,6 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 4
-
         #endregion
 
         #region Modulo 5
@@ -65,13 +65,13 @@ namespace LogicaTangerine.Fabrica
 
         #region Instancia Propuesta
 
-       
+
 
         #endregion
 
         #region Instancia Requerimiento
 
-        
+
 
         #endregion
 
