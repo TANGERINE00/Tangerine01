@@ -34,9 +34,31 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
-        public Entidad ContactNombrePropuestaId(Entidad proupesta)
+        public Entidad ContactNombrePropuestaId(Entidad parametro)
         {
-            throw new NotImplementedException();
+
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                Parametro theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Propuesta)parametro).Id.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
+                DataTable dt = EjecutarStoredProcedureTuplas(ResourceProyecto.ContactNombrePropuestaID, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+                ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre = row[ResourceProyecto.PrpuNombre].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return propuesta;
         }
 
         public int ContactMaxIdProyecto()

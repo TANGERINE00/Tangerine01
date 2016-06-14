@@ -7,6 +7,7 @@ using DatosTangerine.DAO;
 using DatosTangerine.InterfazDAO;
 using DatosTangerine.InterfazDAO.M7;
 using DatosTangerine.InterfazDAO.M2;
+using DatosTangerine.InterfazDAO.M5;
 
 namespace DatosTangerine.Fabrica
 {
@@ -67,7 +68,10 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 5
-
+        public static IDAOContacto crearDAOContacto() 
+        {
+            return new DAO.M5.DAOContacto();
+        }
         #endregion
 
         #region Modulo 6

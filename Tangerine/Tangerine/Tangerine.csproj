@@ -1546,6 +1546,14 @@
       <Project>{e0a749b2-762b-41a8-b134-064a6a4dfb07}</Project>
       <Name>LogicaTangerine</Name>
     </ProjectReference>
+    <ProjectReference Include="Tangerine_Contratos\Tangerine_Contratos.csproj">
+      <Project>{9f9e2132-7a2f-4f67-9b94-a82e2b50669e}</Project>
+      <Name>Tangerine_Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="Tangerine_Presentador\Tangerine_Presentador.csproj">
+      <Project>{fd1b8ade-2c12-46eb-bf46-f8016eb1f85b}</Project>
+      <Name>Tangerine_Presentador</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUI\M1\ResourceGUIM10.resx">
