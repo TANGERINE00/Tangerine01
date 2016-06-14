@@ -60,6 +60,7 @@
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
     <Compile Include="Entidades\M5\Contacto.cs" />
+    <Compile Include="Entidades\M5\ContactoM5.cs" />
     <Compile Include="Entidades\M6\Propuesta.cs" />
     <Compile Include="Entidades\M6\Requerimiento.cs" />
     <Compile Include="Entidades\M7\Cargo.cs" />

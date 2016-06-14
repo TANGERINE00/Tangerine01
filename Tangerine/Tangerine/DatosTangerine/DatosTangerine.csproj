@@ -67,6 +67,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="DAO\M5\DAOContacto.cs" />
     <Compile Include="DAO\M6\DAOPropuesta.cs" />
     <Compile Include="DAO\M6\DAORequerimiento.cs" />
     <Compile Include="DAO\M6\RecursoDAORequerimiento.Designer.cs">
@@ -202,7 +203,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="DAO\M3\" />
-    <Folder Include="DAO\M5\" />
     <Folder Include="DAO\M8\" />
     <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M3\" />

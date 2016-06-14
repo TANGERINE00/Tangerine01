@@ -22,61 +22,51 @@ namespace DominioTangerine.Entidades.M5
 
         #endregion
 
-        #region Get's Set's
+        #region Get's
         public int IdContacto
         {
             get { return _idContacto; }
-            set { _idContacto = value; }
         }
 
-        public String Nombre
+        public string Nombre
         {
             get { return _nombre; }
-            set { _nombre = value; }
         }
 
-        public String Apellido
+        public string Apellido
         {
             get { return _apellido; }
-            set { _apellido = value; }
         }
 
-        public String Telefono
+        public string Telefono
         {
             get { return _telefono; }
-            set { _telefono = value; }
         }
 
-        public String Correo
+        public string Correo
         {
             get { return _correo; }
-            set { _correo = value; }
         }
 
-        public String Departamento
+        public string Departamento
         {
             get { return _departamento; }
-            set { _departamento = value; }
         }
 
-        public String Cargo
+        public string Cargo
         {
             get { return _cargo; }
-            set { _cargo = value; }
         }
 
         public int TipoCompañia
         {
             get { return _tipoCompañia; }
-            set { _tipoCompañia = value; }
         }
 
         public int IdCompañia
         {
             get { return _idCompañia; }
-            set { _idCompañia = value; }
         }
-
         #endregion
 
         #region Constructores
@@ -85,8 +75,8 @@ namespace DominioTangerine.Entidades.M5
 
         }
 
-        public ContactoM5(string nombre, string apellido, string departamento,
-            string cargo, string telefono, string correo, int tipoCompañia, int idCompañia)
+        public ContactoM5( string nombre, string apellido, string departamento,
+                           string cargo, string telefono, string correo, int tipoCompañia, int idCompañia )
         {
             this._nombre = nombre;
             this._apellido = apellido;
@@ -98,13 +88,9 @@ namespace DominioTangerine.Entidades.M5
             this._idCompañia = idCompañia;
         }
 
-        public ContactoM5(int idContacto, string nombre, string apellido, string departamento,
-            string cargo, string telefono, string correo, int tipoCompañia, int idCompañia)
-            : this(nombre, apellido,
-                   departamento, cargo,
-                   telefono, correo,
-                   tipoCompañia,
-                   idCompañia)
+        public ContactoM5( int idContacto, string nombre, string apellido, string departamento,
+                           string cargo, string telefono, string correo, int tipoCompañia, int idCompañia )
+                   : this( nombre, apellido, departamento, cargo, telefono, correo, tipoCompañia, idCompañia )
         {
             this._idContacto = idContacto;
         }
