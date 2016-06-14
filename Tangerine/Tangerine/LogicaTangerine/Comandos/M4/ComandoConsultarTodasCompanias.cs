@@ -15,10 +15,7 @@ namespace LogicaTangerine.Comandos.M4
 {
     class ComandoConsultarTodasCompanias : Comando <List<Entidad>>
 
-    {  public ComandoConsultarTodasCompanias(Entidad Company)
-        {
-             _laEntidad = Company;
-        }
+    { 
     
     
        /// <summary>
