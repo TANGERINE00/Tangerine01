@@ -45,7 +45,7 @@ namespace DominioTangerine.Entidades.M9
 
         #endregion
 
-
+        #region Get's
         public int idPago
         {
             get { return _idPago; }
@@ -74,5 +74,6 @@ namespace DominioTangerine.Entidades.M9
         {
             get { return _idFactura; }
         }
+        #endregion
     }
 }
