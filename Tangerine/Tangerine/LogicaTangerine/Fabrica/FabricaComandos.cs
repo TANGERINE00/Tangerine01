@@ -87,6 +87,32 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarXIdProyecto(proyecto);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarContactosXIdProyecto(Entidad contacto)
+        {
+            return new ComandoConsultarContactosXIdProyecto(contacto);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosGerentes()
+        {
+            return new ComandoConsultarTodosGerentes();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProgramadores()
+        {
+            return new ComandoConsultarTodosProgramadores();
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarXIdProyecto(proyecto);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdProyectoContacto(Entidad comando)
+        {
+            return new ComandoConsultarXIdProyectoContacto(comando);
+        }
+
         #endregion
 
         #region Modulo 8
@@ -95,9 +121,9 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 9
 
-        public static Comandos.M9.ComandoCargarPago cargarPago()
+        public static Comandos.M9.ComandoAgregarPago cargarPago()
         {
-            return new Comandos.M9.ComandoCargarPago();
+            return new Comandos.M9.ComandoAgregarPago();
         }
 
         #endregion

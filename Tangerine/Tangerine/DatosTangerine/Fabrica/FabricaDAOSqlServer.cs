@@ -99,7 +99,7 @@ namespace DatosTangerine.Fabrica
             return new DAO.M7.DaoProyecto();
         }
 
-        public static IDaoProyectoContacto ObetenerDaoContacto()
+        public static IDaoProyectoContacto ObetenerDaoProyectoContacto()
         {
             return new DAO.M7.DaoProyectoContacto();
         }
