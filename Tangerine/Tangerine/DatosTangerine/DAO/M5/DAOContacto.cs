@@ -30,6 +30,11 @@ namespace DatosTangerine.DAO.M5
             return contacto;
         }
 
+        public List<Entidad> ConsultarTodos()
+        {
+            return new List<Entidad>();
+        }
+
         public List<Entidad> ContactosPorCompania(Entidad compania)
         {
             return new List<Entidad>();
