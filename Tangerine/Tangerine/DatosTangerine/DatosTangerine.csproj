@@ -101,6 +101,7 @@
     <Compile Include="InterfazDAO\M2\IDAOUsuarios.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
+    <Compile Include="InterfazDAO\M5\IDAOContacto.cs" />
     <Compile Include="InterfazDAO\M6\IDAOPropuesta.cs" />
     <Compile Include="InterfazDAO\M6\IDAORequerimiento.cs" />
     <Compile Include="InterfazDAO\M7\IDaoProyecto.cs" />
@@ -206,7 +207,6 @@
     <Folder Include="DAO\M8\" />
     <Folder Include="InterfazDAO\M1\" />
     <Folder Include="InterfazDAO\M3\" />
-    <Folder Include="InterfazDAO\M5\" />
     <Folder Include="InterfazDAO\M8\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />
