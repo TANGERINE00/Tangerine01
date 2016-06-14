@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosTangerine.Fabrica;
 using DatosTangerine.DAO;
 using DatosTangerine.DAO.M4;
+using DatosTangerine.InterfazDAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
@@ -28,9 +29,8 @@ namespace LogicaTangerine.Comandos.M4
        /// <returns>booleano true or false</returns>
         public override Boolean Ejecutar()
         {
-
-            DAOGeneral DaoComp = FabricaDAOSqlServer.crearDaoCompania();
-            return true;//DaoComp.Agregar();
+            IDaoCompania DaoComp = FabricaDAOSqlServer.crearDaoCompania();
+            return DaoComp.Agregar(_laEntidad);
         }
     }
 

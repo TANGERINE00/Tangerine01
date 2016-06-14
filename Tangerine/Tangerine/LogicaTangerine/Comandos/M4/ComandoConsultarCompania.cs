@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DatosTangerine.InterfazDAO.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
@@ -24,8 +24,8 @@ namespace LogicaTangerine.Comandos.M4
         public override Entidad Ejecutar()
         {
 
-            DAOGeneral C = FabricaDAOSqlServer.crearDaoCompania();
-            return _laEntidad;//C.ConsultarXId(_laEntidad);
+            IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+            return C.ConsultarXId(_laEntidad);
         }
     }
 }
