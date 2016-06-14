@@ -74,6 +74,32 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarXIdProyecto(proyecto);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarContactosXIdProyecto(Entidad contacto)
+        {
+            return new ComandoConsultarContactosXIdProyecto(contacto);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosGerentes()
+        {
+            return new ComandoConsultarTodosGerentes();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProgramadores()
+        {
+            return new ComandoConsultarTodosProgramadores();
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarXIdProyecto(proyecto);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdProyectoContacto(Entidad comando)
+        {
+            return new ComandoConsultarXIdProyectoContacto(comando);
+        }
+
         #endregion
 
         #region Modulo 8

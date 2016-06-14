@@ -83,6 +83,10 @@
     <Compile Include="Comandos\M4\ComanodHabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarContactosXIdProyecto.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarEmpleadosXIdProyecto.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarTodosGerentes.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarTodosProgramadores.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />

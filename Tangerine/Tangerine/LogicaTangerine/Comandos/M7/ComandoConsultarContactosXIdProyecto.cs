@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LogicaTangerine.Comandos.M7
 {
-    public class ComandoConsultarXIdProyectoContacto : Comando<Entidad>
+    class ComandoConsultarContactosXIdProyecto : Comando<List<Entidad>>
     {
         private Entidad contacto;
 
@@ -18,17 +18,17 @@ namespace LogicaTangerine.Comandos.M7
             set { contacto = value; }
         }
 
-        public ComandoConsultarXIdProyectoContacto(Entidad contacto)
+        public ComandoConsultarContactosXIdProyecto(Entidad contacto)
         {
             this.contacto = contacto;
         }
 
-        public override Entidad Ejecutar()
+        public override List<Entidad> Ejecutar()
         {
             try
             {
                 IDaoProyectoContacto daoProyectoContacto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoContacto();
-                Entidad contactoResult = daoProyectoContacto.ConsultarXId(Contacto);
+                List<Entidad> contactoResult = daoProyectoContacto.ContactCompany(Contacto);
                 return contactoResult;
             }
             catch (Exception e)
