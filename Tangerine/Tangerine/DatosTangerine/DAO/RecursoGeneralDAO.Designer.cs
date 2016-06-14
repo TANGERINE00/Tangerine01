@@ -133,7 +133,7 @@ namespace DatosTangerine.DAO {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to data source=Cesar-PC; Initial Catalog=BDTangerine; Integrated Security=True.
+        ///   Looks up a localized string similar to data source=PAULMERAND; Initial Catalog=BDTangerine; Integrated Security=True.
         /// </summary>
         internal static string StringDeConexion {
             get {

@@ -69,7 +69,7 @@ namespace Tangerine.GUI.M9
 
                 }
             }
-        }
+            }
 
+        }
     }
-}

@@ -117,36 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BotonInfo" xml:space="preserve">
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonPersonal" xml:space="preserve">
+    <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Cancelado" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Cancelado&lt;/span&gt;</value>
+  </data>
+  <data name="CloseBoton" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonParametro" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseDiv" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="CloseTd" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CloseTh" xml:space="preserve">
+    <value>&lt;/th&gt;</value>
+  </data>
+  <data name="CloseTr" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
   <data name="Codigo" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en la conexion con la BD</comment>
+    <value>Codigo:</value>
   </data>
-  <data name="Codigo_Error_Desconexion" xml:space="preserve">
-    <value>TGE_00_003</value>
-    <comment>Codigo de error al cerrar sesion de la BD</comment>
+  <data name="Completado" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;Completado&lt;/span&gt;</value>
   </data>
-  <data name="Codigo_Parametro_Errado" xml:space="preserve">
-    <value>TGE_00_02</value>
-    <comment>Codigo de error cuando se coloca un parametro errado</comment>
+  <data name="CompletadoAdestiempo" xml:space="preserve">
+    <value>&lt;span class="label label-warning"&gt;Completado a destiempo&lt;/span&gt;</value>
   </data>
-  <data name="Mensaje" xml:space="preserve">
-    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
-    <comment>Mensaje al dar error en la conexion con la BD</comment>
+  <data name="Desarrollo" xml:space="preserve">
+    <value>&lt;span class="label label-primary"&gt;En Desarrollo&lt;/span&gt;</value>
   </data>
-  <data name="Mensaje_Error_Desconexion" xml:space="preserve">
-    <value>Error al Desconectarse de la Base de Datos</value>
+  <data name="Estatus" xml:space="preserve">
+    <value>Estatus:</value>
   </data>
-  <data name="Mensaje_Generico_Error" xml:space="preserve">
-    <value>No se pudo completar la operacion</value>
+  <data name="FechaEstimadaCulminar" xml:space="preserve">
+    <value>FechaFin:</value>
   </data>
-  <data name="Mensaje_Parametro_Errado" xml:space="preserve">
-    <value>Error en un parametro del stored procedure</value>
-    <comment>Mensajer de error cuando se coloca un parametro errado</comment>
+  <data name="FechaInicio" xml:space="preserve">
+    <value>FechaInicio:</value>
   </data>
-  <data name="NombreBD" xml:space="preserve">
-    <value>BDTangerine</value>
+  <data name="NombreProyecto" xml:space="preserve">
+    <value>Nombre:</value>
   </data>
-  <data name="StringDeConexion" xml:space="preserve">
-    <value>data source=PAULMERAND; Initial Catalog=BDTangerine; Integrated Security=True</value>
+  <data name="OpenBotonInfo" xml:space="preserve">
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" href="InformacionProyecto.aspx?idCont=</value>
+  </data>
+  <data name="OpenBotonModificar" xml:space="preserve">
+    <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" href="modificarProyecto.aspx?idCont=</value>
+  </data>
+  <data name="OpenBotonPersonal" xml:space="preserve">
+    <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" OnClick="MostrarPersonal" id="Personal"</value>
+  </data>
+  <data name="OpenDiv" xml:space="preserve">
+    <value>&lt;div&gt;</value>
+  </data>
+  <data name="OpenDivRow" xml:space="preserve">
+    <value>&lt;div class="row"&gt;</value>
+  </data>
+  <data name="OpenH3" xml:space="preserve">
+    <value>&lt;h3&gt;</value>
+  </data>
+  <data name="OpenTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
+  </data>
+  <data name="OpenTh" xml:space="preserve">
+    <value>&lt;th&gt;</value>
+  </data>
+  <data name="OpenTr" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="PorcentajeDeRealizacion" xml:space="preserve">
+    <value>PorcentajeRealizado:</value>
+  </data>
+  <data name="PropuestaAprovada" xml:space="preserve">
+    <value>Propuesta:</value>
   </data>
 </root>

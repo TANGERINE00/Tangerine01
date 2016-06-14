@@ -113,6 +113,11 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarXIdProyectoContacto(comando);
         }
 
+        public static Comando<Entidad> ObtenerComandoContactNombrePropuestaId(Entidad proyecto) 
+        {
+            return new ComandoConsultarContactoNombrePropuestaId(proyecto);
+        }
+
         #endregion
 
         #region Modulo 8
