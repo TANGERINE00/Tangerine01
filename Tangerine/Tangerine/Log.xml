@@ -2522,3 +2522,211 @@ ClientConnectionId:91b81fb3-b07b-41d6-8136-ec183171472b
 2016-05-23 00:12:31,295 INFO  BDClientePotencial - Clase: BDClientePotencial
 2016-05-23 00:12:31,295 INFO  BDClientePotencial - Mensaje: Fin Método
 2016-05-23 00:12:31,295 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-11 18:26:14,344 INFO  LogicaM4 - *******************************************************
+2016-06-11 18:26:14,368 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-11 18:26:14,368 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-11 18:26:14,368 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-11 18:26:14,376 INFO  BDCompania - *******************************************************
+2016-06-11 18:26:14,376 INFO  BDCompania - Clase: BDCompania
+2016-06-11 18:26:14,376 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-11 18:26:14,376 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-11 18:26:32,149 ERROR BDCompania - *******************************************************
+2016-06-11 18:26:32,149 ERROR BDCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-11 18:26:32,550 ERROR BDCompania - Origen: DatosTangerine
+2016-06-11 18:26:32,550 ERROR BDCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-11 18:26:32,550 ERROR BDCompania - StackTrace:    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 296
+   en DatosTangerine.M4.BDCompania.ConsultCompanies() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:línea 548
+2016-06-11 18:26:32,551 ERROR BDCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2016-06-11 18:30:42,881 INFO  LogicaM4 - *******************************************************
+2016-06-11 18:30:42,889 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-11 18:30:42,889 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-11 18:30:42,889 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-11 18:30:43,014 INFO  BDCompania - *******************************************************
+2016-06-11 18:30:43,014 INFO  BDCompania - Clase: BDCompania
+2016-06-11 18:30:43,014 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-11 18:30:43,014 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-11 18:30:45,270 INFO  BDCompania - *******************************************************
+2016-06-11 18:30:45,270 INFO  BDCompania - Clase: BDCompania
+2016-06-11 18:30:45,270 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-11 18:30:45,270 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 11:18:44,763 INFO  LogicaM4 - *******************************************************
+2016-06-13 11:18:44,769 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-13 11:18:44,769 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-13 11:18:44,769 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-13 11:18:44,883 INFO  BDCompania - *******************************************************
+2016-06-13 11:18:44,883 INFO  BDCompania - Clase: BDCompania
+2016-06-13 11:18:44,883 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-13 11:18:44,883 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 11:18:45,455 INFO  BDCompania - *******************************************************
+2016-06-13 11:18:45,455 INFO  BDCompania - Clase: BDCompania
+2016-06-13 11:18:45,455 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-13 11:18:45,455 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 11:53:11,447 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:53:11,456 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:53:11,456 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-13 11:53:11,457 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 11:54:33,723 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:54:33,732 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:54:33,733 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-13 11:54:33,733 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 11:54:34,366 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:54:34,366 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:54:34,366 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-13 11:54:34,366 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 11:56:06,100 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:56:06,109 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:56:06,109 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-13 11:56:06,109 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 11:56:06,266 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:56:06,266 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:56:06,266 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-13 11:56:06,266 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 11:56:20,699 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:56:20,699 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:56:20,699 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-13 11:56:20,699 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 11:56:20,791 INFO  BDClientePotencial - *******************************************************
+2016-06-13 11:56:20,791 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 11:56:20,791 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-13 11:56:20,791 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 12:00:50,094 INFO  BDClientePotencial - *******************************************************
+2016-06-13 12:00:50,100 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 12:00:50,100 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-13 12:00:50,101 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 12:00:50,221 INFO  BDClientePotencial - *******************************************************
+2016-06-13 12:00:50,221 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-13 12:00:50,221 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-13 12:00:50,221 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-13 12:01:12,161 INFO  LogicaM4 - *******************************************************
+2016-06-13 12:01:12,161 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-13 12:01:12,161 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-13 12:01:12,161 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-13 12:01:12,167 INFO  BDCompania - *******************************************************
+2016-06-13 12:01:12,167 INFO  BDCompania - Clase: BDCompania
+2016-06-13 12:01:12,167 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-13 12:01:12,167 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 12:01:12,219 INFO  BDCompania - *******************************************************
+2016-06-13 12:01:12,219 INFO  BDCompania - Clase: BDCompania
+2016-06-13 12:01:12,219 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-13 12:01:12,219 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 12:01:17,852 INFO  BDFactura - *******************************************************
+2016-06-13 12:01:17,852 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:01:17,852 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:01:17,852 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:01:54,828 INFO  BDFactura - *******************************************************
+2016-06-13 12:01:54,828 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:01:54,828 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:01:54,828 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:02:06,375 INFO  BDFactura - *******************************************************
+2016-06-13 12:02:06,375 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:02:06,375 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:02:06,375 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:02:13,049 INFO  BDFactura - *******************************************************
+2016-06-13 12:02:13,049 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:02:13,049 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:02:13,049 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:02:20,099 INFO  BDFactura - *******************************************************
+2016-06-13 12:02:20,099 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:02:20,099 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:02:20,099 INFO  BDFactura - Metodo: ContactFactura
+2016-06-13 12:02:20,118 INFO  BDFactura - *******************************************************
+2016-06-13 12:02:20,118 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:02:20,118 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:02:20,118 INFO  BDFactura - Metodo: ConsultCompany
+2016-06-13 12:02:47,767 INFO  BDFactura - *******************************************************
+2016-06-13 12:02:47,767 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:02:47,767 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:02:47,767 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:02:52,493 INFO  BDFactura - *******************************************************
+2016-06-13 12:02:52,493 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:02:52,493 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:02:52,493 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:03:02,275 INFO  BDFactura - *******************************************************
+2016-06-13 12:03:02,275 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:03:02,275 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:03:02,275 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:03:14,623 INFO  BDFactura - *******************************************************
+2016-06-13 12:03:14,623 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:03:14,623 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:03:14,623 INFO  BDFactura - Metodo: ContactFacturasCompania
+2016-06-13 12:03:23,947 INFO  LogicaM4 - *******************************************************
+2016-06-13 12:03:23,947 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-13 12:03:23,947 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-13 12:03:23,947 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-13 12:03:23,948 INFO  BDCompania - *******************************************************
+2016-06-13 12:03:23,948 INFO  BDCompania - Clase: BDCompania
+2016-06-13 12:03:23,948 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-13 12:03:23,948 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 12:03:23,967 INFO  BDCompania - *******************************************************
+2016-06-13 12:03:23,968 INFO  BDCompania - Clase: BDCompania
+2016-06-13 12:03:23,968 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-13 12:03:23,968 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 12:04:00,436 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,437 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,437 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,437 INFO  BDFactura - Metodo: ContactFacturas
+2016-06-13 12:04:00,473 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,473 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,475 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,475 INFO  BDFactura - Metodo: ConsultCompany
+2016-06-13 12:04:00,520 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,520 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,520 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,520 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-06-13 12:04:00,539 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,539 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,539 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,539 INFO  BDFactura - Metodo: ConsultCompany
+2016-06-13 12:04:00,555 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,555 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,555 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,555 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-06-13 12:04:00,568 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,568 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,568 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,568 INFO  BDFactura - Metodo: ConsultCompany
+2016-06-13 12:04:00,580 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,581 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,581 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,581 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-06-13 12:04:00,591 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:00,591 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:00,592 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:00,592 INFO  BDFactura - Metodo: ConsultCompany
+2016-06-13 12:04:01,975 INFO  BDFactura - *******************************************************
+2016-06-13 12:04:01,975 INFO  BDFactura - Clase: BDFactura
+2016-06-13 12:04:01,975 INFO  BDFactura - Mensaje: Salida del Método
+2016-06-13 12:04:01,975 INFO  BDFactura - Metodo: ContactProyectoFactura
+2016-06-13 12:04:17,939 INFO  LogicaM4 - *******************************************************
+2016-06-13 12:04:17,940 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-13 12:04:17,940 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-13 12:04:17,940 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-13 12:04:17,946 INFO  BDCompania - *******************************************************
+2016-06-13 12:04:17,947 INFO  BDCompania - Clase: BDCompania
+2016-06-13 12:04:17,947 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-13 12:04:17,947 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-13 12:04:17,965 INFO  BDCompania - *******************************************************
+2016-06-13 12:04:17,965 INFO  BDCompania - Clase: BDCompania
+2016-06-13 12:04:17,965 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-13 12:04:17,965 INFO  BDCompania - Metodo: ConsultCompanies
