@@ -29,8 +29,8 @@ namespace LogicaTangerine.Comandos.M4
         public override Boolean Ejecutar()
         {
 
-            DaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
-            return C.Agregar(_laEntidad);
+            DAOGeneral DaoComp = FabricaDAOSqlServer.crearDaoCompania();
+            return true;//DaoComp.Agregar();
         }
     }
 

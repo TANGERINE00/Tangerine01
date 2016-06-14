@@ -8,10 +8,10 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M9
 {
-   public interface IDAOPago 
+   public interface IDAOPago : IDao<Entidad, bool, Entidad>
     {
 
-        bool CargarPago (Entidad pagoParam);
+       // bool CargarPago (Entidad pagoParam);
 
         bool CargarStatus(int factura, int status);
     

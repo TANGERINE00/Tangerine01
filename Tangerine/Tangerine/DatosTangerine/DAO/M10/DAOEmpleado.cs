@@ -36,6 +36,7 @@ namespace DatosTangerine.DAO.M10
 
         public bool Agregar(Entidad parametro)
         {
+
             throw new NotImplementedException();
         }
 

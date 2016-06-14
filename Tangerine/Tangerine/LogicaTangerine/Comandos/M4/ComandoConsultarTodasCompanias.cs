@@ -16,7 +16,8 @@ namespace LogicaTangerine.Comandos.M4
     class ComandoConsultarTodasCompanias : Comando <List<Entidad>>
 
     {
-   
+        List<Entidad> mock;
+    
        /// <summary>
        /// Comando que permite Consultar todas la s companias
        /// </summary>
@@ -24,8 +25,8 @@ namespace LogicaTangerine.Comandos.M4
         public override List<Entidad> Ejecutar()
         {
 
-            DaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
-            return C.ConsultarTodos();
+            DAOGeneral C = FabricaDAOSqlServer.crearDaoCompania();
+            return mock; //C.ConsultarTodos();
         }    
     }
 }

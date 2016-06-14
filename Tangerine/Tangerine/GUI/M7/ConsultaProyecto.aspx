@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultaProyecto.aspx.cs" Inherits="Tangerine.GUI.M7.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="ConsultaProyecto.aspx.cs" Inherits="Tangerine.GUI.M7.ConsultaProyecto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -32,7 +32,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                    <table id="example2" class="table table-bordered table-hover">
+                    <table id="id" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -45,7 +45,7 @@
                                 <th style="text-align: center;">Acciones</th>
                             </tr>
                         </thead>
-                        <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                        <asp:Literal runat="server" ID="tablaProyectos"></asp:Literal>
                     </table>
                 </div>
                 <!-- /.box-body -->

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
+using LogicaTangerine.Comandos.M7;
+using LogicaTangerine.Comandos.M4;
+
 
 namespace LogicaTangerine.Fabrica
 {
@@ -52,7 +55,6 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 4
-
         #endregion
 
         #region Modulo 5
@@ -61,9 +63,60 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 6
 
+        #region Instancia Propuesta
+
+
+
+        #endregion
+
+        #region Instancia Requerimiento
+
+
+
+        #endregion
+
         #endregion
 
         #region Modulo 7
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProyectos()
+        {
+            return new ComandoConsultarTodosProyectos();
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdProyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarXIdProyecto(proyecto);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarContactosXIdProyecto(Entidad contacto)
+        {
+            return new ComandoConsultarContactosXIdProyecto(contacto);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosGerentes()
+        {
+            return new ComandoConsultarTodosGerentes();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProgramadores()
+        {
+            return new ComandoConsultarTodosProgramadores();
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarXIdProyecto(proyecto);
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarXIdProyectoContacto(Entidad comando)
+        {
+            return new ComandoConsultarXIdProyectoContacto(comando);
+        }
+
+        public static Comando<Entidad> ObtenerComandoContactNombrePropuestaId(Entidad proyecto) 
+        {
+            return new ComandoConsultarContactoNombrePropuestaId(proyecto);
+        }
 
         #endregion
 
@@ -73,15 +126,18 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 9
 
-        public static Comandos.M9.ComandoCargarPago cargarPago()
+        public static Comandos.M9.ComandoAgregarPago cargarPago()
         {
-            return new Comandos.M9.ComandoCargarPago();
+            return new Comandos.M9.ComandoAgregarPago();
         }
 
         #endregion
 
         #region Modulo 10
-
+        // public static Comandos.M10.ComandoAgregarEmpleado agregarEmpleado()
+        //{
+        //    return new Comandos.M10.ComandoAgregarEmpleado();
+        //}
         #endregion
     }
 }

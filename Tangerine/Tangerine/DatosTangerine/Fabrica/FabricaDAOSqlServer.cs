@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DatosTangerine.DAO;
 using DatosTangerine.InterfazDAO;
 using DatosTangerine.InterfazDAO.M7;
+using DatosTangerine.InterfazDAO.M2;
+using DatosTangerine.InterfazDAO.M5;
 
 namespace DatosTangerine.Fabrica
 {
@@ -21,18 +23,18 @@ namespace DatosTangerine.Fabrica
         /// Método que crea la instancia de DAO Usuario
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoUsuario</returns>
-        static public DAO.M2.DaoUsuario crearDaoUsuario()
+        static public IDAOUsuarios crearDaoUsuario()
         {
-            return new DAO.M2.DaoUsuario();
+            return new DAO.M2.DAOUsuario();
         }
 
         /// <summary>
         /// Método que crea la instancia de DAO Rol
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoRol</returns>
-        static public DAO.M2.DaoRol crearDaoRol()
+        static public IDAORol crearDaoRol()
         {
-            return new DAO.M2.DaoRol();
+            return new DAO.M2.DAORol();
         }
 
         #endregion
@@ -48,7 +50,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoCompania</returns>
 
-        static public DAO.M4.DaoCompania crearDaoCompania()
+        static public DAO.DAOGeneral crearDaoCompania()
         {
             return new DAO.M4.DaoCompania();
         }
@@ -58,7 +60,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoLugarDireccion</returns>
 
-        static public DAO.M4.DaoLugarDireccion crearDaoLugarDireccion()
+        static public DAO.DAOGeneral crearDaoLugarDireccion()
         {
             return new DAO.M4.DaoLugarDireccion();
         }
@@ -66,7 +68,10 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 5
-
+        public static IDAOContacto crearDAOContacto() 
+        {
+            return new DAO.M5.DAOContacto();
+        }
         #endregion
 
         #region Modulo 6
@@ -75,7 +80,7 @@ namespace DatosTangerine.Fabrica
         /// Metodo que crea la instancia de DAO Propuesta
         /// </summary>
         /// <returns>La instancia</returns>
-        public static DAO.M6.DAOPropuesta CrearDAOPropuesta()
+        public static InterfazDAO.M6.IDAOPropuesta CrearDAOPropuesta()
         {
             return new DAO.M6.DAOPropuesta();
         }
@@ -84,7 +89,7 @@ namespace DatosTangerine.Fabrica
         /// Metodo que crea la instancia de DAO Requerimiento
         /// </summary>
         /// <returns>La instancia</returns>
-        public static DAO.M6.DAORequerimiento CrearDAORequerimiento()
+        public static InterfazDAO.M6.IDAORequerimiento CrearDAORequerimiento()
         {
             return new DAO.M6.DAORequerimiento();
         }
@@ -93,17 +98,17 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 7
 
-        public static IDaoProyecto ObetenerIdaoProyecto()
+        public static IDaoProyecto ObetenerDaoProyecto()
         {
             return new DAO.M7.DaoProyecto();
         }
 
-        public static IDaoProyectoContacto ObetenerIdaoContacto()
+        public static IDaoProyectoContacto ObetenerDaoProyectoContacto()
         {
             return new DAO.M7.DaoProyectoContacto();
         }
 
-        public static IDaoProyectoEmpleado ObetenerIdaoProyectoEmpleado()
+        public static IDaoProyectoEmpleado ObetenerDaoProyectoEmpleado()
         {
             return new DAO.M7.DaoProyectoEmpleado();
         }

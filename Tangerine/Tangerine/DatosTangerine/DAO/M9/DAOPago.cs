@@ -13,7 +13,7 @@ namespace DatosTangerine.DAO.M9
     public class DAOPago : DAOGeneral , IDAOPago
     {
     
-        public bool CargarPago (Entidad pagoParam)
+        public bool Agregar (Entidad pagoParam)
         {
             DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
             List<Parametro> parametros = new List<Parametro>();
@@ -49,5 +49,25 @@ namespace DatosTangerine.DAO.M9
         {
             return true;
         }
+    
+        public Boolean Modificar (Entidad e)
+        {
+          throw new NotImplementedException();
+        }
+
+        public Entidad ConsultarXId(Entidad id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Entidad> ConsultarTodos()
+        {
+            throw new NotImplementedException();
+        }
+    
+    
+    
     }
+
+
 }

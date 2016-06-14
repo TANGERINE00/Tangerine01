@@ -8,34 +8,8 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M2
 {
-    public interface IDaoUsuarios : IDao<UsuarioM2, bool, UsuarioM2>
+    public interface IDAOUsuarios : IDao<Entidad, bool, Entidad>
     {
-        /// <summary>
-        /// Método para agregar un usuario
-        /// </summary>
-        /// <param name="theUsuario"></param>
-        /// <returns>Retorna el objeto en la base de datos</returns>
-        bool Agregar ( UsuarioM2 theUsuario );
-
-        /// <summary>
-        /// Método para modificar un usuario
-        /// </summary>
-        /// <param name="theUsuario"></param>
-        /// <returns>Retorna el objeto en la base de datos</returns>
-        bool Modificar ( UsuarioM2 theUsuario );
-
-        /// <summary>
-        /// Método para consultar un usuario por id
-        /// </summary>
-        /// <param name="theUsuario"></param>
-        /// <returns>Retorna la consulta</returns>
-        UsuarioM2 ConsultarXId( UsuarioM2 theUsuario );
-
-        /// <summary>
-        /// Método para consultar todos los usuarios
-        /// </summary>
-        /// <returns>Retorna todos los usuarios</returns>
-        List<UsuarioM2> ConsultarTodos ();
 
         /// <summary>
         /// Encabezado de verificar si el usuario por su ficha
