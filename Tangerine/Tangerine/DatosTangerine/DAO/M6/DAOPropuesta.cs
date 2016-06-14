@@ -230,7 +230,71 @@ namespace DatosTangerine.DAO.M6
         /// <returns>Retorna la lista de propuestas</returns>
         public List<Entidad> ConsultarTodos()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parametros = new List<Parametro>();
             List<Entidad> listaPropuesta = new List<Entidad>();
+
+            try
+            {
+                Conectar();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar propuestas
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosPropuesta.ConsultarTodasPropuestas, parametros);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    String conNombre = row[RecursosPropuesta.PropNombre].ToString();
+                    String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
+                    String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
+                    String conDuracion = row[RecursosPropuesta.PropDuracion].ToString();
+                    String conAcuerdo = row[RecursosPropuesta.PropAcuerdo].ToString();
+                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
+                    String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
+                    int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
+                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
+                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
+                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
+                    String conFkComp = row[RecursosPropuesta.PropIdCompania].ToString();
+
+                    //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
+                    Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(conNombre, 
+                        conDescripcion, contipoDuracion, conDuracion, conAcuerdo, conEstatus, conMoneda, conEntregas, 
+                        conFechaIni, conFechaFin, conCosto, conFkComp);
+
+                    listaPropuesta.Add(propuesta);
+                }
+            }
+
+            //catch (Exception ex)
+            //{
+            //    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            //}
+
+
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listaPropuesta;
         }
