@@ -8,7 +8,7 @@ using DatosTangerine.Fabrica;
 
 namespace LogicaTangerine.Comandos.M9
 {
-    public class ComandoCargarPago : Comando<Boolean>
+    public class ComandoAgregarPago : Comando<Boolean>
     {
         /// <summary>
         /// 
