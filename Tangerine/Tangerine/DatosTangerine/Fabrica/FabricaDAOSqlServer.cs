@@ -9,6 +9,7 @@ using DatosTangerine.InterfazDAO.M7;
 using DatosTangerine.InterfazDAO.M2;
 using DatosTangerine.InterfazDAO.M5;
 using DatosTangerine.InterfazDAO.M4;
+using DatosTangerine.InterfazDAO.M10;
 
 
 namespace DatosTangerine.Fabrica
@@ -140,7 +141,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns></returns>
 
-        public static DAO.M10.DAOEmpleado ConsultarDAOEmpleado()
+        public static IDAOEmpleado  ConsultarDAOEmpleado()
         {
             return new DAO.M10.DAOEmpleado();
         }
