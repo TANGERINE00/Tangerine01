@@ -21,7 +21,6 @@ namespace DatosTangerine.M6
         ///  <param name="theConnection">Objeto de tipo BDConexion para la conexion a la BD</param>
         ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
         /// <returns>true si fue agregado</returns>
-
         public static bool agregarPropuesta(Propuesta laPropuesta)
         {
 
@@ -111,13 +110,12 @@ namespace DatosTangerine.M6
             return true;
         }
 
+
         /// <summary>
         /// Metodo para agregar un Requerimiento en la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo Requerimiento para agregar en bd</param>
         /// <returns>true si fue agregado</returns>
-
-
         public static bool agregarRequerimiento(Requerimiento elRequerimiento)
         {
 
@@ -159,16 +157,10 @@ namespace DatosTangerine.M6
         }
 
 
-
-
-
         /// <summary>
         /// Metodo diseñado para M7, que devuelve la lista de propuestas con estatus aprobado y que no están en proyecto
         /// </summary>
         /// <returns>Retorna la lista de propuestas con estatus= Aprobado y que no se encuentran aún en Proyecto</returns>
-
-
-
         public  List<Propuesta> PropuestaProyecto()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -251,15 +243,12 @@ namespace DatosTangerine.M6
 
         }
 
+
         /// <summary>
         /// Metodo que consulta todas las propuestas
         /// </summary>
         ///
         /// <returns>Retorna la lista de propuestas</returns>
-
-
-
-
         public static List<Propuesta> ListarLasPropuestas()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -343,17 +332,11 @@ namespace DatosTangerine.M6
         }
 
 
-
-
         /// <summary>
         /// Método para listar los requerimientos por propuesta 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-
-
-
-
         public static List<Requerimiento> ConsultarRequerimientosPorPropuesta(String id)
         {
 
@@ -398,20 +381,11 @@ namespace DatosTangerine.M6
         }
 
 
-
-
-
-
-
-
         /// <summary>
         /// Metodo para consultar propuesta por id (nombre)
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-
-
-
         public static Propuesta ConsultarPropuestaporNombre(String id)
 
 
@@ -465,9 +439,6 @@ namespace DatosTangerine.M6
 
             return propuesta;
         }
-
-
-
 
 
         /// <summary>
@@ -530,14 +501,11 @@ namespace DatosTangerine.M6
         }
 
 
-
-
         /// <summary>
         /// Metodo para modificar un requerimiento
         /// </summary>
         /// <param name="elrequerimiento"></param>
         /// <returns></returns>
-
         public static Boolean Modificar_Requerimiento(Requerimiento elrequerimiento)
         {
 
@@ -587,8 +555,6 @@ namespace DatosTangerine.M6
         /// </summary>
         /// <param name="propuesta"></param>
         /// <returns></returns>
-
-
         public static Boolean Modificar_Propuesta(Propuesta propuesta)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -650,13 +616,6 @@ namespace DatosTangerine.M6
 
             return true;
         }
-
-
-
-
-
-
-
 
 
     }

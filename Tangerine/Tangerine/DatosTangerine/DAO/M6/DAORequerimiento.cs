@@ -50,7 +50,6 @@ namespace DatosTangerine.DAO.M6
                 parametro = new Parametro(RecursosPropuesta.ParamIdPropuestaReq, SqlDbType.VarChar, requerimiento.CodigoPropuesta, false);
                 parametros.Add(parametro);
 
-
                 //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarRequerimiento y todos los parametros que recibe
                 List<Resultado> resultado = EjecutarStoredProcedure(RecursosPropuesta.AgregarRequerimiento, parametros);
 
@@ -59,8 +58,6 @@ namespace DatosTangerine.DAO.M6
             {
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-
-
 
             return true;
         }
@@ -71,8 +68,36 @@ namespace DatosTangerine.DAO.M6
         /// </summary>
         /// <param name="propuesta"></param>
         /// <returns></returns>
-        public Boolean Modificar(Entidad requerimiento)
+        public Boolean Modificar(Entidad elRequerimiento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            DominioTangerine.Entidades.M6.Requerimiento requerimiento = (DominioTangerine.Entidades.M6.Requerimiento)elRequerimiento;
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursosPropuesta.ReqDescripcion, SqlDbType.VarChar, requerimiento.Descripcion, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(RecursosPropuesta.ReqPropNombre, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false);
+                parameters.Add(theParam);
+
+                List<Resultado> results = EjecutarStoredProcedure(RecursosPropuesta.Modificar_Requerimiento, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
             return true;
         }
 
@@ -114,7 +139,33 @@ namespace DatosTangerine.DAO.M6
         /// <returns></returns>
         public List<Entidad> ConsultarRequerimientosXPropuesta(String id)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parametros = new List<Parametro>();
+
             List<Entidad> listaRequerimientos = new List<Entidad>();
+
+            Parametro parametro = new Parametro(RecursosPropuesta.ReqPropNombre, SqlDbType.VarChar, id, false);
+            parametros.Add(parametro);
+
+            try
+            {
+                DataTable dataTableRequerimientos = EjecutarStoredProcedureTuplas(RecursosPropuesta.ListarRequerimiento, parametros);
+
+                foreach (DataRow fila in dataTableRequerimientos.Rows)
+                {
+                    listaRequerimientos.Add(DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                        id,
+                        fila[RecursosPropuesta.ReqCodigo].ToString(),
+                        fila[RecursosPropuesta.ReqDescripcion].ToString()));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
             return listaRequerimientos;
         }
         
