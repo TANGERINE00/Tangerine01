@@ -15,6 +15,8 @@ namespace DatosTangerine.DAO.M9
     
         public bool Agregar (Entidad pagoParam)
         {
+            //Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9();
+            
             DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
             List<Parametro> parametros = new List<Parametro>();
 
@@ -24,10 +26,10 @@ namespace DatosTangerine.DAO.M9
             parametro = new Parametro(RecursoDAOPago.ParamMonto, SqlDbType.Int, pago.montoPago.ToString(), false);
             parametros.Add(parametro);
 
-            parametro = new Parametro(RecursoDAOPago.ParamMoneda, SqlDbType.Int, pago.monedaPago, false);
+            parametro = new Parametro(RecursoDAOPago.ParamMoneda, SqlDbType.VarChar, pago.monedaPago, false);
             parametros.Add(parametro);
 
-            parametro = new Parametro(RecursoDAOPago.ParamForma, SqlDbType.Int, pago.formaPago, false);
+            parametro = new Parametro(RecursoDAOPago.ParamForma, SqlDbType.VarChar, pago.formaPago, false);
             parametros.Add(parametro);
 
             parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, pago.idFactura.ToString(), false);
@@ -37,6 +39,7 @@ namespace DatosTangerine.DAO.M9
             
             if (resultados!=null)
             {
+                CargarStatus(pago.idFactura, 1);
                 return true;
             }
             else
@@ -47,7 +50,22 @@ namespace DatosTangerine.DAO.M9
     
         public bool CargarStatus (int factura, int status)
         {
-            return true;
+            List<Parametro> parametros = new List<Parametro>();
+
+            Parametro parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, factura.ToString(),false);
+            parametros.Add(parametro);
+            parametro = new Parametro(RecursoDAOPago.ParamStatus, SqlDbType.Int, status.ToString(),false);
+            parametros.Add(parametro);
+
+            List<Resultado> resultados =  EjecutarStoredProcedure(RecursoDAOPago.CambiarStatus, parametros);
+            if (resultados!=null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     
         public Boolean Modificar (Entidad e)

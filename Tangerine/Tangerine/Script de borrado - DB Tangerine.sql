@@ -42,6 +42,7 @@ drop procedure M3_eliminar_cliente_potencial_def;
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
 drop procedure M4_ConsultarCompanias;
+drop procedure M4_ConsultarCompaniasActivas;
 drop procedure M4_ModificarCompania;
 drop procedure M4_InhabilitarHabilitarCompania;
 drop procedure M4_EliminarCompania;
