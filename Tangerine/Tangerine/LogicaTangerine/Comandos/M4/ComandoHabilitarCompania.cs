@@ -9,12 +9,13 @@ using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
 using System.Threading.Tasks;
+using DatosTangerine.InterfazDAO.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
-    class ComanodHabilitarCompania : Comando <bool>
+    class ComandoHabilitarCompania : Comando <bool>
     {
-        public ComanodHabilitarCompania(Entidad Company)
+        public ComandoHabilitarCompania(Entidad Company)
         {
              _laEntidad = Company;
         }
@@ -26,8 +27,8 @@ namespace LogicaTangerine.Comandos.M4
         public override bool Ejecutar()
         {
 
-            DAOGeneral C = FabricaDAOSqlServer.crearDaoCompania();
-            return true; // C.EnableCompany(_laEntidad);
+            IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+            return  C.EnableCompany(_laEntidad);
         }
     }
 }

@@ -311,6 +311,51 @@ namespace DatosTangerine.DAO.M6
         /// <returns>true si fue eliminado</returns>
         public Boolean BorrarPropuesta(string nombrePropuesta)
         {
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
+               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursosPropuesta.Prop_Nombre, SqlDbType.VarChar, nombrePropuesta, false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
+                List<Resultado> results = EjecutarStoredProcedure(RecursosPropuesta.EliminarPropuesta, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M5.WrongFormatException(RecursosPropuesta.ReqPropNombre,
+                     RecursosPropuesta.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return true;
         }
 
@@ -321,7 +366,62 @@ namespace DatosTangerine.DAO.M6
         /// <returns>Retorna la lista de propuestas con estatus= Aprobado y que no se encuentran aún en Proyecto</returns>
         public List<Entidad> PropuestaProyecto()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parametros = new List<Parametro>();
             List<Entidad> listaPropuesta = new List<Entidad>();
+
+            try
+            {
+                Conectar();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar propuestas
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosPropuesta.ConsultarPropuesta, parametros);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    String codigonumP = row[RecursosPropuesta.PropCodigo].ToString();
+                    String conNombre = row[RecursosPropuesta.PropNombre].ToString();
+                    String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
+                    String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
+                    String conDuracion = row[RecursosPropuesta.PropDuracion].ToString();
+                    String conAcuerdo = row[RecursosPropuesta.PropAcuerdo].ToString();
+                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
+                    String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
+                    int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
+                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
+                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
+                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
+                    String conFkComp = row[RecursosPropuesta.PropIdCompania].ToString();
+
+                    //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
+                    Entidad propuestas = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(codigonumP, conNombre, conDescripcion, contipoDuracion, conDuracion,
+                        conAcuerdo, conEstatus, conMoneda, conEntregas, conFechaIni, conFechaFin, conCosto, conFkComp);
+                    listaPropuesta.Add(propuestas);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listaPropuesta;
         }

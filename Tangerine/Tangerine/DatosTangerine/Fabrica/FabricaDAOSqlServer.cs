@@ -8,6 +8,8 @@ using DatosTangerine.InterfazDAO;
 using DatosTangerine.InterfazDAO.M7;
 using DatosTangerine.InterfazDAO.M2;
 using DatosTangerine.InterfazDAO.M5;
+using DatosTangerine.InterfazDAO.M4;
+
 
 namespace DatosTangerine.Fabrica
 {
@@ -50,7 +52,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoCompania</returns>
 
-        static public DAO.DAOGeneral crearDaoCompania()
+        static public IDaoCompania crearDaoCompania()
         {
             return new DAO.M4.DaoCompania();
         }
@@ -60,10 +62,11 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoLugarDireccion</returns>
 
-        static public DAO.DAOGeneral crearDaoLugarDireccion()
+        static public IDaoLugarDireccion crearDaoLugarDireccion()
         {
             return new DAO.M4.DaoLugarDireccion();
         }
+
 
         #endregion
 

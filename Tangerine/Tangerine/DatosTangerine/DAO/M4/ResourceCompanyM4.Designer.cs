@@ -205,6 +205,15 @@ namespace DatosTangerine.DAO.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarCompaniasActivas.
+        /// </summary>
+        internal static string ConsultEnableCompanies {
+            get {
+                return ResourceManager.GetString("ConsultEnableCompanies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M4_ConsultarIdUltimaCompania.
         /// </summary>
         internal static string ConsultLastCompanyId {

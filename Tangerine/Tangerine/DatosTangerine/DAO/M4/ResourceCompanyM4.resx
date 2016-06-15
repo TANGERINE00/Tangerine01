@@ -165,6 +165,9 @@
   <data name="ConsultCompany" xml:space="preserve">
     <value>M4_ConsultarCompania</value>
   </data>
+  <data name="ConsultEnableCompanies" xml:space="preserve">
+    <value>M4_ConsultarCompaniasActivas</value>
+  </data>
   <data name="ConsultLastCompanyId" xml:space="preserve">
     <value>M4_ConsultarIdUltimaCompania</value>
   </data>

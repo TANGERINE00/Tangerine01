@@ -36,14 +36,14 @@
 
                  <div>
                     <label for="input_cliente">Numero de Factura</label>
-                     <input runat="server" type="text" class="form-control" id="seccion4" readonly="True"/>
+                     <input runat="server" type="text" class="form-control" id="numFactura" readonly="True"/>
                     
                 </div>
 
                 <div>
                     &nbsp;
                     <label for="input_cliente">Cliente (compañía contratante)</label>
-                     <input runat="server" type="text" class="form-control" id="seccion1" readonly="True"/>
+                     <input runat="server" type="text" class="form-control" id="compCliente" readonly="True"/>
                     &nbsp;
                 </div>
             
@@ -51,7 +51,7 @@
                     <div class="form-group">
                         &nbsp;
                        <label for="input_cliente">Proyecto</label>
-                     <input runat="server" type="text" class="form-control" id="seccion2" readonly="True"/>
+                     <input runat="server" type="text" class="form-control" id="proyectoNombre" readonly="True"/>
                     </div>    
 
              
@@ -63,7 +63,7 @@
                 </div>
                <label for="input_costo">Monto Factura</label>
                 <div class="input-group">
-                     <input runat="server" type="text" class="form-control" id="seccion3" readonly="True"/>
+                     <input runat="server" type="text" class="form-control" id="montoFactura" readonly="True"/>
                     &nbsp;
                 </div>
                 
@@ -71,7 +71,7 @@
                 <div class="form-group">
                     <label>Forma de Pago</label>
                     
-                    <select required runat="server" class="form-control" id="seccion5" name="seccion">
+                    <select required runat="server" class="form-control" id="formaPago" name="seccion">
                         <option></option>
                         <option data-icon="fa-heart">Deposito</option>
                         <option>Transferencia</option>

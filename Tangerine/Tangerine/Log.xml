@@ -3311,6 +3311,7 @@ Error Number:-1,State:0,Class:20
 2016-06-14 00:13:05,497 INFO  BDCompania - Mensaje: Salida del Método
 2016-06-14 00:13:05,497 INFO  BDCompania - Metodo: ConsultCompanies
 >>>>>>> 7fccb2cdc8beb8037082a191e7f8888c02a557c4
+<<<<<<< HEAD
 2016-06-14 18:26:57,379 INFO  BDClientePotencial - *******************************************************
 2016-06-14 18:26:57,448 INFO  BDClientePotencial - Clase: BDClientePotencial
 2016-06-14 18:26:57,448 INFO  BDClientePotencial - Mensaje: Entrada Método
@@ -3355,3 +3356,55 @@ Error Number:-1,State:0,Class:20
 2016-06-14 19:09:17,017 INFO  BDClientePotencial - Clase: BDClientePotencial
 2016-06-14 19:09:17,017 INFO  BDClientePotencial - Mensaje: Fin Método
 2016-06-14 19:09:17,017 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+=======
+2016-06-14 19:12:56,166 INFO  BDEmpleado - *******************************************************
+2016-06-14 19:12:56,188 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-14 19:12:56,188 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-14 19:12:56,188 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-14 19:13:13,991 ERROR BDEmpleado - *******************************************************
+2016-06-14 19:13:13,991 ERROR BDEmpleado - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-14 19:13:14,290 ERROR BDEmpleado - Origen: DatosTangerine
+2016-06-14 19:13:14,290 ERROR BDEmpleado - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-14 19:13:14,291 ERROR BDEmpleado - StackTrace:    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 296
+   en DatosTangerine.M10.BDEmpleado.ListarEmpleados() en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:línea 117
+2016-06-14 19:13:14,292 ERROR BDEmpleado - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-14 19:13:14,359 ERROR LogicaAgregarUsuario - *******************************************************
+2016-06-14 19:13:14,359 ERROR LogicaAgregarUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-14 19:13:14,359 ERROR LogicaAgregarUsuario - Origen: DatosTangerine
+2016-06-14 19:13:14,359 ERROR LogicaAgregarUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-14 19:13:14,361 ERROR LogicaAgregarUsuario - StackTrace:    en DatosTangerine.M10.BDEmpleado.ListarEmpleados() en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:línea 175
+   en LogicaTangerine.M2.LogicaAgregarUsuario.ConsultarListaDeEmpleados() en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M2\LogicaAgregarUsuario.cs:línea 28
+2016-06-14 19:13:14,361 ERROR LogicaAgregarUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+>>>>>>> a3974a73411aa70d6194918bf2769bbfb8a0a7a4

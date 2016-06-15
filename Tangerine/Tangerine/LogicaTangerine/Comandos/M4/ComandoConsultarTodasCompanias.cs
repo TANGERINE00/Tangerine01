@@ -9,14 +9,14 @@ using DatosTangerine.DAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
-
+using DatosTangerine.InterfazDAO.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
     class ComandoConsultarTodasCompanias : Comando <List<Entidad>>
 
-    {
-        List<Entidad> mock;
+    { 
+    
     
        /// <summary>
        /// Comando que permite Consultar todas la s companias
@@ -25,8 +25,8 @@ namespace LogicaTangerine.Comandos.M4
         public override List<Entidad> Ejecutar()
         {
 
-            DAOGeneral C = FabricaDAOSqlServer.crearDaoCompania();
-            return mock; //C.ConsultarTodos();
+          IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+            return C.ConsultarTodos();
         }    
     }
 }

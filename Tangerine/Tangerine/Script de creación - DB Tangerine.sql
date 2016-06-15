@@ -756,7 +756,6 @@ GO
 
 ---- StoredProcedure Consultar Compañia activas ----
 CREATE PROCEDURE M4_ConsultarCompaniasActivas
-		@id int
 AS
 	BEGIN
 		SELECT com_id as com_id, com_nombre as com_nombre, com_rif as com_rif, com_email as com_email,
