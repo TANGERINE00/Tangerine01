@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
+using LogicaTangerine.Comandos;
 using LogicaTangerine.Comandos.M7;
 using LogicaTangerine.Comandos.M4;
 using LogicaTangerine.Comandos.M10;
@@ -141,15 +142,71 @@ namespace LogicaTangerine.Fabrica
         #region Modulo 6
 
         #region Instancia Propuesta
+        public static Comando<bool> ComandoAgregarPropuesta(Entidad propuesta)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoAgregarPropuesta(propuesta);
+        }
 
 
+        public static Comando<bool> ComandoBorrarPropuesta(Entidad propuesta)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoBorrarPropuesta(propuesta);
+        }
 
+
+        public static Comando<List<Entidad>> ComandoConsultarPropuestaXProyecto()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarPropuestaXProyecto();
+        }
+
+
+        public static Comando<List<Entidad>> ComandoConsultarTodosPropuesta()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarTodosPropuesta();
+        }
+
+
+        public static Comando<Entidad> ComandoConsultarXIdPropuesta(Entidad propuesta)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarXIdPropuesta(propuesta);
+        }
+
+
+        public static Comando<bool> ComandoModificarPropuesta(Entidad propuesta)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoModificarPropuesta(propuesta);
+        }
         #endregion
 
         #region Instancia Requerimiento
+        public static Comando<bool> ComandoAgregarRequerimiento(Entidad requerimiento)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoAgregarRequerimiento(requerimiento);
+        }
 
 
+        public static Comando<List<Entidad>> ComandoConsultarRequerimientoXPropuesta(Entidad propuesta)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarRequerimientoXPropuesta(propuesta);
+        }
 
+
+        public static Comando<List<Entidad>> ComandoConsultarTodosRequerimiento()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarTodosRequerimiento();
+        }
+
+
+        public static Comando<Entidad> ComandoConsultarXIdRequerimiento(Entidad requerimiento)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarXIdRequerimiento(requerimiento);
+        }
+
+
+        public static Comando<bool> ComandoModificarRequerimiento(Entidad requerimiento)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoModificarRequerimiento(requerimiento);
+        }
         #endregion
 
         #endregion
