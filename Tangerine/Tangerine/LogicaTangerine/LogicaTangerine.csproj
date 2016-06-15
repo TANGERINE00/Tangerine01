@@ -99,7 +99,7 @@
     <Compile Include="Comandos\M6\ComandoConsultarTodosPropuesta.cs" />
     <Compile Include="Comandos\M6\ComandoConsultarTodosRequerimiento.cs" />
     <Compile Include="Comandos\M6\ComandoConsultarXIdRequerimiento.cs" />
-    <Compile Include="Comandos\M6\ComandoConsultatXIdPropuesta.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarXIdPropuesta.cs" />
     <Compile Include="Comandos\M6\ComandoModificarPropuesta.cs" />
     <Compile Include="Comandos\M6\ComandoModificarRequerimiento.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />

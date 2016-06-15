@@ -8,19 +8,19 @@ using DominioTangerine;
 
 namespace LogicaTangerine.Comandos.M6
 {
-    public class ComandoConsultarTodosRequerimiento : Comando<List<Entidad>>
+    class ComandoConsultarXIdPropuesta : Comando<Entidad>
     {
-        public ComandoConsultarTodosRequerimiento()
+        public ComandoConsultarXIdPropuesta(Entidad laPropuesta)
         {
-
+            _laEntidad = laPropuesta;
         }
 
-        public override List<Entidad> Ejecutar()
+        public override Entidad Ejecutar()
         {
             try
             {
-                IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
-                return daoRequerimiento.ConsultarTodos();
+                IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
+                return daoPropuesta.ConsultarXId(_laEntidad);
             }
             catch (Exception e)
             {
