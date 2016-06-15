@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M10\PresentadorConsultaEmpleado.cs" />
     <Compile Include="M1\PresentadorInicio.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />
     <Compile Include="M7\RecursoPresentadorM7.Designer.cs">
@@ -78,7 +79,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M10\" />
     <Folder Include="M2\" />
     <Folder Include="M3\" />
     <Folder Include="M4\" />
