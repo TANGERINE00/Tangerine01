@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M6;
 using DominioTangerine;
+
 namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoConsultarPropuestaXProyecto : Comando<List<Entidad>>
