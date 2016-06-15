@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DominioTangerine;
 using LogicaTangerine.Comandos.M7;
 using LogicaTangerine.Comandos.M4;
+using LogicaTangerine.Comandos.M10;
 
 
 namespace LogicaTangerine.Fabrica
@@ -210,10 +211,10 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-        // public static Comandos.M10.ComandoAgregarEmpleado agregarEmpleado()
-        //{
-        //    return new Comandos.M10.ComandoAgregarEmpleado();
-        //}
+        public static Comando<List<Entidad>> ConsultarEmpleados(Entidad Empleado)
+        {
+            return new ComandoConsultarEmpleado(Empleado);
+        }
         #endregion
     }
 }

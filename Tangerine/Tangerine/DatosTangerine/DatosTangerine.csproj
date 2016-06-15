@@ -102,6 +102,16 @@
     <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\M10\IDAOEmpleado.cs" />
+    <Compile Include="DAO\M10\ResourceComplemento.Designer.cs">
+      <DependentUpon>ResourceComplemento.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DAO\M10\ResourceEmpleado.Designer.cs">
+      <DependentUpon>ResourceEmpleado.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="InterfazDAO\M1\IDaoLogin.cs" />
     <Compile Include="InterfazDAO\M2\IDAORol.cs" />
     <Compile Include="InterfazDAO\M2\IDAOUsuarios.cs" />
@@ -252,6 +262,14 @@
     <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoGeneralDAO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M10\ResourceComplemento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceComplemento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M10\ResourceEmpleado.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceEmpleado.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M10\ResourceComplemento.resx">
       <Generator>ResXFileCodeGenerator</Generator>

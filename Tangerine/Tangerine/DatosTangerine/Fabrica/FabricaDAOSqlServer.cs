@@ -140,7 +140,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns></returns>
 
-        public static DAO.M10.DAOEmpleado CrearDAOEmpleado()
+        public static DAO.M10.DAOEmpleado ConsultarDAOEmpleado()
         {
             return new DAO.M10.DAOEmpleado();
         }

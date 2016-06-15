@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DatosTangerine.DAO.M10;
+using DatosTangerine.InterfazDAO.M10;
+using DominioTangerine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +9,28 @@ using System.Threading.Tasks;
 
 namespace LogicaTangerine.Comandos.M10
 {
-    class ComandoConsultarEmpleado
+    public class ComandoConsultarEmpleado : Comando<List<Entidad>>
     {
+        private Entidad empleado;
+
+        public ComandoConsultarEmpleado(Entidad empleado)
+        {
+            // TODO: Complete member initialization
+            this.empleado = empleado;
+        }
+        public override List<Entidad> Ejecutar()
+        {
+            try
+            {
+                IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
+                List<Entidad> empleados = daoEmpleado.ConsultarTodos();
+                return empleados;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
     }
 }
