@@ -192,7 +192,7 @@ namespace DatosTangerine.DAO.M6
             try
             {
                 Parametro parametro = new Parametro(RecursosPropuesta.Prop_Nombre, SqlDbType.VarChar, 
-                    ((DominioTangerine.Entidades.M6.Propuesta)id).Id.ToString(), false);
+                    ((DominioTangerine.Entidades.M6.Propuesta)id).Nombre, false);
                 parametros.Add(parametro);
 
                 DataTable dataTablePropuestas = EjecutarStoredProcedureTuplas(RecursosPropuesta.ConsultarPropuestaNombre, 
@@ -201,7 +201,7 @@ namespace DatosTangerine.DAO.M6
                 DataRow fila = dataTablePropuestas.Rows[0];
 
                 propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
-                    ((DominioTangerine.Entidades.M6.Propuesta)id).Id.ToString(),
+                    ((DominioTangerine.Entidades.M6.Propuesta)id).Nombre,
                     fila[RecursosPropuesta.PropDescripcion].ToString(), 
                     fila[RecursosPropuesta.PropDuracion].ToString(), 
                     fila[RecursosPropuesta.PropTipoDuracion].ToString(), 
