@@ -13,9 +13,9 @@ using DatosTangerine.InterfazDAO.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
-    class ComanodHabilitarCompania : Comando <bool>
+    class ComandoHabilitarCompania : Comando <bool>
     {
-        public ComanodHabilitarCompania(Entidad Company)
+        public ComandoHabilitarCompania(Entidad Company)
         {
              _laEntidad = Company;
         }

@@ -55,6 +55,82 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 4
+
+        /// <summary>
+        /// metodo para crear comando que permite agregar una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearAgregarCompania(Entidad compania) 
+        {
+            return new ComandoAgregarCompania(compania);
+        
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarCompania(Entidad compania)
+        {
+            return new ComandoConsultarCompania(compania);
+
+        }
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas companias
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarTodasCompania()
+        {
+            return new ComandoConsultarTodasCompanias();
+
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las companias activas
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarCompaniasActivas()
+        {
+            return new comandoCosultarCompaniasActivas();
+
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite Deshabilitar una compania
+        /// </summary>
+        /// <param name="compania"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearDeshabilitarCompania(Entidad compania)
+        {
+            return new ComandoDeshabilitarCompania(compania);
+
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite modificar una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearModificarCompania(Entidad compania)
+        {
+            return new ComandoModificarCompania(compania);
+
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite habilitar una compania
+        /// </summary>
+        /// <param name="compania"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearHabilitarCompania(Entidad compania)
+        {
+            return new ComandoHabilitarCompania(compania);
+
+        }
+
         #endregion
 
         #region Modulo 5

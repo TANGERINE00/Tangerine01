@@ -17,10 +17,7 @@ namespace LogicaTangerine.Comandos.M4
     {
         
 
-        public comandoCosultarCompaniasActivas (Entidad Company)
-        {
-             _laEntidad = Company;
-        }
+        
 
        /// <summary>
        /// Comando que permite desabilitar una compania
