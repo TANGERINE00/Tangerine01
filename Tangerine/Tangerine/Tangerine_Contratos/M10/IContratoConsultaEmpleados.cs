@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine_Contratos.M10
 {
-    class IContratoConsultaEmpleados
+    public interface IContratoConsultaEmpleados
     {
         Literal Tabla { get; set; }
     }
