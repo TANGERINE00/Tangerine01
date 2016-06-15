@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M10\IContratoConsultaEmpleados.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
     <Compile Include="M7\IContratoConsultaProyecto.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
@@ -55,7 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M10\" />
     <Folder Include="M2\" />
     <Folder Include="M3\" />
     <Folder Include="M4\" />
