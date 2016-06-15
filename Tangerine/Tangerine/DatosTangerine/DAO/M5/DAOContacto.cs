@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.DAO.M5
 {
-    class DAOContacto : DAOGeneral, IDAOContacto
+    public class DAOContacto : DAOGeneral, IDAOContacto
     {
         /// <summary>
         /// Método para registrar un nuevo contacto en la base de datos
