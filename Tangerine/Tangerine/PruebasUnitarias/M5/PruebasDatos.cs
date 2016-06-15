@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.M5;
 using DominioTangerine;
+using DominioTangerine.Fabrica;
+using DatosTangerine.InterfazDAO.M5;
+using DatosTangerine.Fabrica;
+
 
 namespace PruebasUnitarias.M5
 {
@@ -60,6 +64,26 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestAddContact()
         {
+            Entidad cont = FabricaEntidades.crearCobtactoVacio();
+            cont.Id = 4;
+            IDAOContacto d = FabricaDAOSqlServer.crearDAOContacto();
+            cont = d.ConsultarXId(cont);
+            DominioTangerine.Entidades.M5.ContactoM5 cnot2 = (DominioTangerine.Entidades.M5.ContactoM5)cont;
+            Assert.AreEqual(cnot2.Nombre, "Ramon");
+
+            
+
+            Entidad pro = FabricaEntidades.ObtenerProyecto();
+            pro.Id = 1;
+
+            List<Entidad> lista = d.ContactosNoPertenecenAProyecto(pro);
+            int c = 0;
+            foreach (Entidad e in lista)
+            {
+                c++;
+            }
+            Assert.AreEqual(c, 4);
+
             //Agrego el contacto a probar
             Assert.IsTrue(BDContacto.AddContact(theContact));
             //Consulto todos los contactos de la compania 1, donde inserte el contacto anterior
