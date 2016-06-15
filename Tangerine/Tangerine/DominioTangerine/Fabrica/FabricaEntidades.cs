@@ -398,6 +398,11 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 9
+
+        public static Entidad ObtenerPago_M9 ()
+            {
+                return new DominioTangerine.Entidades.M9.Pago();
+            }
         public static Entidad ObtenerPago_M9(int idPago, int montoPago, string monedaPago, string formaPago,
            int codPago, DateTime fechaPago, int idFactura)
         {

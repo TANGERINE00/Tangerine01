@@ -22,31 +22,31 @@ namespace Tangerine.GUI.M9 {
         protected global::System.Web.UI.WebControls.ValidationSummary ValSum;
         
         /// <summary>
-        /// seccion4 control.
+        /// numFactura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText numFactura;
         
         /// <summary>
-        /// seccion1 control.
+        /// compCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText compCliente;
         
         /// <summary>
-        /// seccion2 control.
+        /// proyectoNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText proyectoNombre;
         
         /// <summary>
         /// monedaPago control.
@@ -58,22 +58,22 @@ namespace Tangerine.GUI.M9 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText monedaPago;
         
         /// <summary>
-        /// seccion3 control.
+        /// montoFactura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText seccion3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText montoFactura;
         
         /// <summary>
-        /// seccion5 control.
+        /// formaPago control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect seccion5;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect formaPago;
         
         /// <summary>
         /// codAprobacion control.
