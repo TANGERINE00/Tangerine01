@@ -9,6 +9,7 @@ using DatosTangerine.DAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
+using DatosTangerine.InterfazDAO.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
@@ -26,8 +27,8 @@ namespace LogicaTangerine.Comandos.M4
         public override bool Ejecutar()
         {
 
-            DAOGeneral C = FabricaDAOSqlServer.crearDaoCompania();
-            return true;//C.Modificar(_laEntidad);
+            IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+            return C.Modificar(_laEntidad);
         }
     }
 }
