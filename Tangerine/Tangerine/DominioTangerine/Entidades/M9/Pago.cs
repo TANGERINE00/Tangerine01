@@ -20,6 +20,10 @@ namespace DominioTangerine.Entidades.M9
         #endregion
 
         #region Constructores
+        public Pago ()
+        {
+            
+        }
 
         public Pago(int _idPago, int _montoPago, string _monedaPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
         {

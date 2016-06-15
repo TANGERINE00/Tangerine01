@@ -105,7 +105,7 @@
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />
-    <Compile Include="Comandos\M9\ComandoCargarPago.cs" />
+    <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
     <Compile Include="M10\LogicaM10Resources.Designer.cs">

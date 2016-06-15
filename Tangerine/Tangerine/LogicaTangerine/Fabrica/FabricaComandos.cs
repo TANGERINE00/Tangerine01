@@ -202,9 +202,9 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 9
 
-        public static Comandos.M9.ComandoAgregarPago cargarPago()
+        public static Comandos.M9.ComandoAgregarPago cargarPago(Entidad entidad)
         {
-            return new Comandos.M9.ComandoAgregarPago();
+            return new Comandos.M9.ComandoAgregarPago(entidad);
         }
 
         #endregion
