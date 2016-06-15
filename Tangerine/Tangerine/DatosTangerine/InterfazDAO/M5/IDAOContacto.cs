@@ -9,16 +9,16 @@ namespace DatosTangerine.InterfazDAO.M5
 {
     public interface IDAOContacto : IDao<Entidad, bool, Entidad>
     {
-        bool Eliminar(Entidad contacto);
+        bool Eliminar( Entidad contactoEliminar );
 
-        List<Entidad> ContactosPorCompania(int tipoCompania, int idCompania);
+        List<Entidad> ContactosPorCompania( int tipoCompania, int idCompania );
 
-        bool AgregarContactoAProyecto(Entidad contacto, Entidad proyecto);
+        bool AgregarContactoAProyecto( Entidad contactoAgregar, Entidad proyectoAgregar );
 
-        List<Entidad> ContactosPorProyecto(Entidad proyecto);
+        List<Entidad> ContactosPorProyecto( Entidad proyecto );
 
-        bool EliminarContactoDeProyecto(Entidad contacto, Entidad proyecto);
+        bool EliminarContactoDeProyecto( Entidad contactoEliminar, Entidad proyectoEliminar );
 
-        List<Entidad> ContactosNoPertenecenAProyecto(Entidad proyecto);
+        List<Entidad> ContactosNoPertenecenAProyecto( Entidad proyecto );
     }
 }
