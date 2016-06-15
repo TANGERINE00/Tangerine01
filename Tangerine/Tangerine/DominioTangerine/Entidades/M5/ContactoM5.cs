@@ -23,10 +23,10 @@ namespace DominioTangerine.Entidades.M5
         #endregion
 
         #region Get's
-        public int IdContacto
+        /*public int IdContacto
         {
             get { return _idContacto; }
-        }
+        }*/
 
         public string Nombre
         {
@@ -92,7 +92,7 @@ namespace DominioTangerine.Entidades.M5
                            string cargo, string telefono, string correo, int tipoCompañia, int idCompañia )
                    : this( nombre, apellido, departamento, cargo, telefono, correo, tipoCompañia, idCompañia )
         {
-            this._idContacto = idContacto;
+            this.Id = idContacto;
         }
         #endregion
     }
