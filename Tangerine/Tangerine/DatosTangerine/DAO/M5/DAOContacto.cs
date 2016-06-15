@@ -249,13 +249,114 @@ namespace DatosTangerine.DAO.M5
             return new List<Entidad>();
         }
 
-        public List<Entidad> ContactosPorCompania(Entidad compania)
+        /// <summary>
+        /// Método para consultar todos contacto de una comañía en la base de datos
+        /// </summary>
+        /// <param name="tipoCompania"></param>
+        /// <param name="idCompania"></param>
+        /// <returns></returns>
+        public List<Entidad> ContactosPorCompania(int tipoCompania, int idCompania)
         {
-            return new List<Entidad>();
+            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursosDAOContacto.MensajeInicioInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
+
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro();
+            List<Entidad> lista = new List<Entidad>();
+
+            try
+            {
+                //Se agregan los parámetro que recibe el stored procedure
+                parametro = new Parametro( RecursosDAOContacto.ParametroTipoCompania, SqlDbType.Int,
+                                           tipoCompania.ToString(), false );
+                parametros.Add( parametro );
+
+                parametro = new Parametro( RecursosDAOContacto.ParametroIdCompania, SqlDbType.Int,
+                                           idCompania.ToString(), false );
+                parametros.Add( parametro );
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = EjecutarStoredProcedureTuplas( RecursosDAOContacto.ConsultarContactoCompania, parametros );
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach ( DataRow row in dt.Rows )
+                {
+                    int conId = int.Parse( row[ RecursosDAOContacto.ConIdContacto ].ToString() );
+                    string conName = row[ RecursosDAOContacto.ConNombreContacto ].ToString();
+                    string conLName = row[ RecursosDAOContacto.ConApellidoContacto ].ToString();
+                    string conDepart = row[ RecursosDAOContacto.ConDepartamentoContacto ].ToString();
+                    string conRol = row[ RecursosDAOContacto.ConCargoContacto ].ToString();
+                    string conTele = row[ RecursosDAOContacto.ConTelefono ].ToString();
+                    string conEmail = row[ RecursosDAOContacto.ConCorreo ].ToString();
+                    int conTypeC = int.Parse( row[ RecursosDAOContacto.ConTipoCompania ].ToString() );
+                    int conCompId = int.Parse( row[ RecursosDAOContacto.ConIdCompania ].ToString() );
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Entidad nuevoContacto = FabricaEntidades.crearContactoConId( conId, conName, conLName, conDepart,
+                                                                                 conRol, conTele, conEmail, conTypeC,
+                                                                                 conCompId );
+                    lista.Add( nuevoContacto );
+                }
+
+            }
+            catch ( Exception ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+            }
+
+            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursosDAOContacto.MensajeFinInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
+
+            return lista;
         }
 
-        public bool AgregarContactoAProyecto(Entidad contacto, Entidad proyecto)
+        /// <summary>
+        /// Método para unir un proyecto y un contacto de la base de datos
+        /// </summary>
+        /// <param name="contactoAgregar"></param>
+        /// <param name="proyectoAgregar"></param>
+        /// <returns></returns>
+        public bool AgregarContactoAProyecto( Entidad contactoAgregar, Entidad proyectoAgregar )
         {
+            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursosDAOContacto.MensajeInicioInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
+
+            List<Parametro> parametros = new List<Parametro>();
+            Parametro parametro = new Parametro();
+
+            ContactoM5 contacto = ( ContactoM5 ) contactoAgregar;
+            DominioTangerine.Entidades.M7.Proyecto proyecto = ( DominioTangerine.Entidades.M7.Proyecto ) 
+                                                              proyectoAgregar;
+
+            try
+            {
+                //Se agregan los parámetro que recibe el stored procedure
+                parametro = new Parametro( RecursosDAOContacto.ParametroIdContacto, SqlDbType.Int,
+                                           contacto.Id.ToString(), false );
+                parametros.Add( parametro );
+
+                parametro = new Parametro( RecursosDAOContacto.ParametroIdCompania, SqlDbType.Int,
+                                           proyecto.Id.ToString(), false );
+                parametros.Add( parametro );
+
+                List<Resultado> results = EjecutarStoredProcedure( RecursosDAOContacto.AgregarContactoProyecto, 
+                                          parametros );
+                
+            }
+            catch ( Exception ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+            }
+
+            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursosDAOContacto.MensajeFinInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
+
             return true;
         }
 
