@@ -11,7 +11,7 @@ namespace DatosTangerine.InterfazDAO.M5
     {
         bool Eliminar(Entidad contacto);
 
-        List<Entidad> ContactosPorCompania(Entidad compania);
+        List<Entidad> ContactosPorCompania(int tipoCompania, int idCompania);
 
         bool AgregarContactoAProyecto(Entidad contacto, Entidad proyecto);
 
