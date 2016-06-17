@@ -11,14 +11,14 @@ namespace DominioTangerine.Entidades.M2
         #region Atributos
 
         private string _nombre;
-        private ListaGenerica<Opcion> _opciones;
+        private ListaGenericaM2<OpcionM2> _opciones;
 
         #endregion
 
         #region Constructores
 
         /// <summary>
-        /// Constructor por defecto de la clase Menu
+        /// Constructor por defecto de la clase MenuM2
         /// </summary>
         public MenuM2()
         {
@@ -31,7 +31,7 @@ namespace DominioTangerine.Entidades.M2
         public MenuM2( string nombre )
         {
             _nombre = nombre;
-            _opciones = new ListaGenerica<Opcion>();
+            _opciones = new ListaGenericaM2<OpcionM2>();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="opciones"></param>
-        public MenuM2( string nombre, ListaGenerica<Opcion> opciones )
+        public MenuM2( string nombre, ListaGenericaM2<OpcionM2> opciones )
                :this ( nombre ) 
         {
             _opciones = opciones;
@@ -63,7 +63,7 @@ namespace DominioTangerine.Entidades.M2
         /// Get y Set de las opciones del menu
         /// </summary>
         /// <return>Retorna las opciones que posee el menu</return>
-        public ListaGenerica<Opcion> opciones
+        public ListaGenericaM2<OpcionM2> opciones
         {
             get { return _opciones; }
             set { _opciones = value; }
@@ -78,10 +78,10 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         public void imprimirListaDeOpciones()
         {
-            foreach (Opcion o in _opciones)
+            foreach (OpcionM2 o in _opciones)
             {
-                System.Diagnostics.Debug.WriteLine("Opcion: " + o.Nombre);
-                System.Diagnostics.Debug.WriteLine("Url: " + o.Url);
+                System.Diagnostics.Debug.WriteLine("Opcion: " + o.nombre);
+                System.Diagnostics.Debug.WriteLine("Url: " + o.url);
             }
         }
 

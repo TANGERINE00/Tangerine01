@@ -18,14 +18,14 @@ namespace DominioTangerine.Entidades.M2
         #region Constructores
 
         /// <summary>
-        /// Constructor vacío de la clase Rol
+        /// Constructor vacío de la clase RolM2
         /// </summary>
         public RolM2()
         {
         }
 
         /// <summary>
-        /// Constructor de la clase Rol con nombre
+        /// Constructor de la clase RolM2 con nombre
         /// </summary>
         /// <param name="nombre"></param>
         public RolM2( string nombre )
@@ -35,7 +35,7 @@ namespace DominioTangerine.Entidades.M2
         }
 
         /// <summary>
-        /// Constructor de la clase Rol con todos sus atributos
+        /// Constructor de la clase RolM2 con todos sus atributos
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="menus"></param>

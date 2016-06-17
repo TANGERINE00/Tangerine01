@@ -57,7 +57,9 @@
     <Compile Include="Entidades\M10\Cargo.cs" />
     <Compile Include="Entidades\M10\Empleado.cs" />
     <Compile Include="Entidades\M1\Cuenta.cs" />
+    <Compile Include="Entidades\M2\ListaGenericaM2.cs" />
     <Compile Include="Entidades\M2\MenuM2.cs" />
+    <Compile Include="Entidades\M2\OpcionM2.cs" />
     <Compile Include="Entidades\M2\RolM2.cs" />
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
