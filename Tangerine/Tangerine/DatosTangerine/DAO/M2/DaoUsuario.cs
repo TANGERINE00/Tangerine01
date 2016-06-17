@@ -213,7 +213,7 @@ namespace DatosTangerine.DAO.M2
             /// Método que retorna el usuario y rol de un empleado
             /// </summary>
             /// <param name="empleado"></param>
-            /// <returns></returns>
+            /// <returns>Retorna el usuario de un empleado</returns>
             public Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado )
             {
                 DominioTangerine.Entidades.M10.Empleado empleado = (DominioTangerine.Entidades.M10.Empleado) theEmpleado;
