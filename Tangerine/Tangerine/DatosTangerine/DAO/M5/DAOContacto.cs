@@ -241,7 +241,7 @@ namespace DatosTangerine.DAO.M5
                                  RecursosDAOContacto.MensajeFinInfoLogger,
                                  System.Reflection.MethodBase.GetCurrentMethod().Name );
 
-            return FabricaEntidades.crearCobtactoVacio();
+            return FabricaEntidades.crearContactoVacio();
         }
 
         public List<Entidad> ConsultarTodos()

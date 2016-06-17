@@ -355,7 +355,7 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 5
-            public static Entidad crearCobtactoVacio()
+            public static Entidad crearContactoVacio()
             {
                 return new ContactoM5();
             }
