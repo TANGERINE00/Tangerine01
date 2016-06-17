@@ -133,6 +133,49 @@ namespace LogicaTangerine.Fabrica
 
         }
 
+       /// <summary>
+       /// metodo que crea comando para consultar los luegare
+       /// </summary>
+       /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarLugar()
+        {
+            return new ComandoConsultarTodosLugares();
+
+        }
+
+        /// <summary>
+        /// metodo que crea comando para modificar los luegare
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<bool> CrearConsultarLugar(Entidad parametro)
+        {
+            return new ComandoModificarLugar(parametro);
+
+        }
+
+        
+
+
+         /// <summary>
+        /// metodo que crea comando para consultar un  luegar
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarLugarXID(Entidad parametro)
+        {
+            return new ComandoConsultarLugarXID(parametro);
+
+        }
+
+        /// <summary>
+        /// metodo que crea comando para consultar un  luegar
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<bool> CrearAgregarLugar(Entidad parametro)
+        {
+            return new ComandoAgregarLugar(parametro);
+
+        }
+
         #endregion
 
         #region Modulo 5
