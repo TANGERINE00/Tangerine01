@@ -19,20 +19,20 @@ namespace DatosTangerine.InterfazDAO.M2
         bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado );
 
         /// <summary>
-        /// Método usado para devolver todos los empleados sin usuario
+        /// Encabezado de metodo para devolver todos los empleados sin usuario
         /// </summary>
         /// <returns>Retorna la lista de empleados</returns>
         List<Empleado> ConsultarListaDeEmpleados();
 
         /// <summary>
-        /// Método usado para verificar si el usuario existe en el sistema
+        /// Encabezado de metodo usado para verificar si el usuario existe en el sistema
         /// </summary>
         /// <param name="nombreUsuario"></param>
         /// <returns>Retorna una valor booleano indicando la disponibilidad del usuario</returns>
         bool VerificarExistenciaUsuario( string nombreUsuario );
 
         /// <summary>
-        /// Método que retorna el usuario y rol de un empleado
+        /// Encabezado de metodo que retorna el usuario y rol de un empleado
         /// </summary>
         /// <param name="theEmpleado"></param>
         /// <returns>Retorna el usuario de un empleado</returns>
