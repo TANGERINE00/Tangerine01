@@ -26,7 +26,7 @@ namespace DominioTangerine
 	  public int fk_lug_dir_id ;
 
       private string address;
-      private Cargo job;
+      public Cargo job;
       private List<Proyecto> listProjects = new List<Proyecto>();
       private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
 
