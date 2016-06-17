@@ -84,7 +84,7 @@
     <EmbeddedResource Include="M10\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
-
+</EmbeddedResource>
     <EmbeddedResource Include="M6\RecursosPresentadorPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPresentadorPropuesta.Designer.cs</LastGenOutput>
