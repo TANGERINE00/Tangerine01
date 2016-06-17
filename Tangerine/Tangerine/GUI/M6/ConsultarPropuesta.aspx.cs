@@ -8,13 +8,48 @@ using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M6;
 using LogicaTangerine.M4;
+using Tangerine_Contratos.M6;
+using Tangerine_Presentador.M6;
 using System.Diagnostics;
 
 namespace Tangerine.GUI.M6
 {
-    public partial class ConsultarPropuesta : System.Web.UI.Page
+    public partial class ConsultarPropuesta : System.Web.UI.Page, IContratoConsultarPropuesta
     {
+        PresentadorConsultarPropuesta presentadorConsultar;
 
+        public ConsultarPropuesta()
+        {
+            this.presentadorConsultar = new PresentadorConsultarPropuesta(this);
+        }
+
+
+        public Literal Tabla
+        {
+            get
+            {
+                return tablaP;
+            }
+            set
+            {
+                tablaP = value;
+            }
+        }
+
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                presentadorConsultar.consultarPropuestas();
+            }
+        }
+        
+      
+        /// <summary>
+        /// PARTE VIEJA
+        /// </summary>
+        /* sorry not sorry  
         public string propuesta
         {
             get
@@ -27,15 +62,15 @@ namespace Tangerine.GUI.M6
                 this.tablaP.Text = value;
             }
         }
+
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
                 {
                     LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
                     LogicaM4 logicaCompania = new LogicaM4();
-
 
                     if (!IsPostBack)
                     {
@@ -43,14 +78,10 @@ namespace Tangerine.GUI.M6
 
                         try
                         {
-
-
                             foreach (Propuesta laPropuesta in listaPropuestas)
                             {
-                                
                                 Compania laCompania = logicaCompania.ConsultCompany(Int32.Parse(laPropuesta.IdCompañia));
                                 
-
                                 propuesta += RecursosGUI_M6.AbrirTR;
 
                                 propuesta += RecursosGUI_M6.AbrirTD + laPropuesta.Nombre.ToString() + RecursosGUI_M6.CerrarTD;
@@ -98,24 +129,17 @@ namespace Tangerine.GUI.M6
                                      + RecursosGUI_M6.botonModificar + laPropuesta.Nombre.ToString() + RecursosGUI_M6.botonCerra;
                                 propuesta += RecursosGUI_M6.CerrarTD;
                                 propuesta += RecursosGUI_M6.CerrarTR;
-
-
-
-
                             }
-
                         }
                         catch (Exception ex)
                         {
 
                         }
                     }
-
                 }
-
             }
-
         }
+
 
         public void btn_Elimina(String idPropuesta)
         {
@@ -126,7 +150,7 @@ namespace Tangerine.GUI.M6
             siBorro = logicaPropuesta.BorrarPropuesta(idPropuesta);
 
         }
-
+        */
 
     }
 }
