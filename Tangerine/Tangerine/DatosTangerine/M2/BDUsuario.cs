@@ -105,7 +105,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que arma la lista de los parametros del Stored Procedure para modificar la contraseña 
@@ -267,7 +267,7 @@ namespace DatosTangerine.M2
             }
 
             return rol;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que devuelve las opciones de un menú prohibidas para un rol
@@ -315,7 +315,7 @@ namespace DatosTangerine.M2
             }
 
             return lista;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna el usuario y rol de un empleado
