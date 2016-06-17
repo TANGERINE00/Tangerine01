@@ -64,7 +64,6 @@
     <Folder Include="bin\Debug\" />
     <Folder Include="Comandos\M1\" />
     <Folder Include="Comandos\M3\" />
-    <Folder Include="Comandos\M5\" />
     <Folder Include="Comandos\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -90,6 +89,15 @@
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
     <Compile Include="Comandos\M4\ComandoModificarLugat.cs" />
+    <Compile Include="Comandos\M5\ComandoAgregarContacto.cs" />
+    <Compile Include="Comandos\M5\ComandoAgregarContactoAProyecto.cs" />
+    <Compile Include="Comandos\M5\ComandoConsultarContacto.cs" />
+    <Compile Include="Comandos\M5\ComandoConsultarContactosNoPertenecenAProyecto.cs" />
+    <Compile Include="Comandos\M5\ComandoConsultarContactosPorCompania.cs" />
+    <Compile Include="Comandos\M5\ComandoConsultarContactosPorProyecto.cs" />
+    <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
+    <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
+    <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarEmpleadosXIdProyecto.cs" />
