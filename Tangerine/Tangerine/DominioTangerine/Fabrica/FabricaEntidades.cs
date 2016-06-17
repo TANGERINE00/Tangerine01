@@ -429,6 +429,23 @@ namespace DominioTangerine.Fabrica
             return new DominioTangerine.Entidades.M10.Empleado();
         }
 
+        //public static Entidad ObtenerCargo()
+        //{
+        //    return new DominioTangerine.Entidades.M10.Cargo();
+        //}
+
+      
+        public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion, string empModalidad, double empSalario)
+        {
+            return new DominioTangerine.Entidades.M10.Cargo(empCargo, empCargoDescripcion, empContratacion, empModalidad, empSalario);
+        }
+
         #endregion
+
+        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero,
+                                                 int empCedula, DateTime empFecha, string empActivo, string empEstudio, string empEmail, Entidad cargoEmpleado)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
