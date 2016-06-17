@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DominioTangerine.Entidades.M4;
+using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M4
 {
-    public interface IDaoLugarDireccion : IDao<LugarDireccionM4, Boolean, LugarDireccionM4>
+    public interface IDaoLugarDireccion : IDao<Entidad, Boolean, Entidad>
     {
-         List<LugarDireccionM4> ConsultCityPlaces();
+         
 
     }
 }

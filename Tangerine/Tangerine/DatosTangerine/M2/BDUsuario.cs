@@ -64,7 +64,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que arma la lista de los parametros del Stored Procedure para modificar el rol del usuario 
@@ -105,7 +105,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que arma la lista de los parametros del Stored Procedure para modificar la contraseña 
@@ -267,7 +267,7 @@ namespace DatosTangerine.M2
             }
 
             return rol;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que devuelve las opciones de un menú prohibidas para un rol
@@ -315,7 +315,7 @@ namespace DatosTangerine.M2
             }
 
             return lista;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna el usuario y rol de un empleado
@@ -365,7 +365,7 @@ namespace DatosTangerine.M2
             }
 
             return usuario;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna el rol de un usuario con sus privilegios pasando como parámetro el nombre del rol
@@ -448,7 +448,7 @@ namespace DatosTangerine.M2
             }
 
             return resultado;
-        }
+        } //Listo
 
         /// <summary>
         /// Método para verificar si un nombre de usuario existe
@@ -486,6 +486,6 @@ namespace DatosTangerine.M2
             }
 
             return resultado;
-        }
+        } //Listo
     }
 }
