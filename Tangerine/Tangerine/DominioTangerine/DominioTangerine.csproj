@@ -71,6 +71,7 @@
     <Compile Include="Entidades\M7\Propuesta.cs" />
     <Compile Include="Entidades\M7\Proyecto.cs" />
     <Compile Include="Entidades\M7\Requerimiento.cs" />
+    <Compile Include="Entidades\M8\Facturacion.cs" />
     <Compile Include="Entidades\M9\Pago.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="ListaGenerica.cs" />
@@ -93,7 +94,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="Entidades\M3\" />
-    <Folder Include="Entidades\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
