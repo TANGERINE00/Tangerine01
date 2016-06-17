@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class OpcionM2
+    public class OpcionM2 : Entidad
     {
         #region Atributos
 

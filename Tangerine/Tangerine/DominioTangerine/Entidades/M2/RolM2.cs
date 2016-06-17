@@ -11,7 +11,7 @@ namespace DominioTangerine.Entidades.M2
         #region Atributos
 
         private string _nombre;
-        private ListaGenerica<Menu> _menu;
+        private ListaGenericaM2<MenuM2> _menu;
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace DominioTangerine.Entidades.M2
         public RolM2( string nombre )
         {
             _nombre = nombre;
-            _menu = new ListaGenerica<Menu>();
+            _menu = new ListaGenericaM2<MenuM2>();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="menus"></param>
-        public RolM2( string nombre, ListaGenerica<Menu> menu )
+        public RolM2( string nombre, ListaGenericaM2<MenuM2> menu )
             :this(nombre)
         {
             _menu = menu;
@@ -63,7 +63,7 @@ namespace DominioTangerine.Entidades.M2
         /// Get y Set de la lista de menu
         /// </summary>
         /// <returns>Lista de los menus que continen las opciones a las que no puede acceder el rol</returns>
-        public ListaGenerica<Menu> menu
+        public ListaGenericaM2<MenuM2> menu
         {
             get { return _menu; }
             set { _menu = value; }
@@ -78,9 +78,9 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         public void imprimirListaDeMenu()
         {
-            foreach ( Menu m in _menu )
+            foreach ( MenuM2 m in _menu )
             {
-                System.Diagnostics.Debug.WriteLine( "Menú: " + m.Nombre );
+                System.Diagnostics.Debug.WriteLine( "Menú: " + m.nombre );
             }
         }
 

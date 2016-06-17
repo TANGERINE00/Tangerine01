@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DominioTangerine.Entidades.M2
 {
-    public class ListaGenericaM2<T> : IEnumerable<T>
+    public class ListaGenericaM2<T> : Entidad , IEnumerable<T> 
     {
         #region Atributos
 
