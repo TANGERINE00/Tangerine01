@@ -365,7 +365,7 @@ namespace DatosTangerine.M2
             }
 
             return usuario;
-        }
+        } //Listp
 
         /// <summary>
         /// Método que retorna el rol de un usuario con sus privilegios pasando como parámetro el nombre del rol
