@@ -54,6 +54,7 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\M10\Cargo.cs" />
     <Compile Include="Entidades\M10\Empleado.cs" />
     <Compile Include="Entidades\M1\Cuenta.cs" />
     <Compile Include="Entidades\M2\RolM2.cs" />

@@ -26,6 +26,18 @@ namespace DominioTangerine.Entidades.M10
         private Entidad job; 
         private List<Entidad> listProjects = new List<Entidad>();
         private List<Entidad> addressComplete = new List<Entidad>();
+        private int empId;
+        private string empPNombre;
+        private string empSNombre;
+        private string empPApellido;
+        private string empSApellido;
+        private string empGenero;
+        private int empCedula;
+        private DateTime empFecha;
+        private string empActivo;
+        private string empEstudio;
+        private string empEmail;
+        private DominioTangerine.Cargo cargoEmpleado;
 
         #endregion
 
@@ -152,6 +164,23 @@ namespace DominioTangerine.Entidades.M10
             this.fk_lug_dir_id = empLugId;
             this.address = empDireccion;
             this.job = Fabrica.FabricaEntidades.ObtenerCargo2(empCargo, empSlario, empFechaInicio, empFechaFin);
+        }
+
+        public Empleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero, int empCedula, DateTime empFecha, string empActivo, string empEstudio, string empEmail, DominioTangerine.Cargo cargoEmpleado)
+        {
+            // TODO: Complete member initialization
+            this.empId = empId;
+            this.empPNombre = empPNombre;
+            this.empSNombre = empSNombre;
+            this.empPApellido = empPApellido;
+            this.empSApellido = empSApellido;
+            this.empGenero = empGenero;
+            this.empCedula = empCedula;
+            this.empFecha = empFecha;
+            this.empActivo = empActivo;
+            this.empEstudio = empEstudio;
+            this.empEmail = empEmail;
+            this.cargoEmpleado = cargoEmpleado;
         }
 
         #endregion
