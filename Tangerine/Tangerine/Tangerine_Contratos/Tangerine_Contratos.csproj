@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DominioTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DominioTangerine\bin\Debug\DominioTangerine.dll</HintPath>
-    </Reference>
-    <Reference Include="ExcepcionesTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ExcepcionesTangerine\bin\Debug\ExcepcionesTangerine.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -62,6 +54,16 @@
     <Folder Include="M5\" />
     <Folder Include="M6\" />
     <Folder Include="M8\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">
+      <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
+      <Name>DominioTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+      <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
+      <Name>ExcepcionesTangerine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
