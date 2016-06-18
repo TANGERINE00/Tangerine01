@@ -11,7 +11,11 @@ namespace Tangerine.GUI.M2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int numFicha = int.Parse(Request.QueryString["idFicha"]);
+        }
 
+        protected void btnCrear_Click(object sender, EventArgs e)
+        {
         }
     }
 }

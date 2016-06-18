@@ -35,17 +35,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="userDefault" class="col-sm-2 control-label">Usuario</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion()" required>
-                            </div>
+                            <label for="labelUsuario_M2">Usuario</label>
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion()" required>
                         </div>
-                        <p>&nbsp;</p>
+
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion()" required>
-                            </div>
+                            <label for="labelContraseña_M2">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion()" required>
                         </div>
 
                         <div class="form-group" runat="server">
@@ -59,8 +55,7 @@
                         </div>
 
                         <div class="box-footer" runat="server">
-                            <!-- <asp:Button ID="buttonAsignar_M2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Asignar" OnClientClick="return confirm('¿Seguro que desea este rol al usuario?');" OnClick="buttonAsignar_Click"></asp:Button>-->
-                            <asp:Button ID="btnCrear" runat="server" Style="margin-top: 5%" type="submit" class="btn btn-primary" Text="Crear" OnClientClick="return confirm('¿Seguro que desea crear este usuario?');" OnClick="btnCrear_Click" />
+                            <asp:Button ID="btnCrear" runat="server" Style="margin-top: 5%" type="submit" class="btn btn-primary" Text="Crear" OnClientClick="return confirm('¿Seguro que desea crear este usuario?');" OnClick="btnCrear_Click"></asp:Button>
                         </div>
 
 

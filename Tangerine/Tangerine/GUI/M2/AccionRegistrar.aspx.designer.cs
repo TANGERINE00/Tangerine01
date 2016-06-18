@@ -58,15 +58,6 @@ namespace Tangerine.GUI.M2 {
         protected global::System.Web.UI.HtmlControls.HtmlSelect textRol_M2;
         
         /// <summary>
-        /// buttonAsignar_M2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonAsignar_M2;
-        
-        /// <summary>
         /// btnCrear control.
         /// </summary>
         /// <remarks>
