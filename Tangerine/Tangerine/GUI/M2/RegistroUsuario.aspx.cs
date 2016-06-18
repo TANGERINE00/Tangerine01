@@ -46,7 +46,7 @@ namespace Tangerine.GUI.M2
 
                     if ( !LogicaAgregarUsuario.VerificarUsuarioDeEmpleado( empleado.Emp_num_ficha ) )
                     {
-                        tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonReg + ResourceGUIM2.CloseTD;
+                        tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegNuevaVentana + empleado.emp_num_ficha + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                     }
                     else
                     {

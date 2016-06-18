@@ -15,8 +15,8 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <script type="text/javascript">
-
         function ajaxRes() {
             $('.table > tbody > tr > td:nth-child(6) > a')
                 .click(function (e) {
@@ -132,6 +132,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-md-12">
