@@ -59,6 +59,7 @@
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="M5\PresentadorAgregarContacto.cs" />
+    <Compile Include="M5\PresentadorConsultarContactos.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
     <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
