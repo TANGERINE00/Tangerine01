@@ -59,21 +59,5 @@ namespace Tangerine.GUI.M2
                 }
             } 
         }
-
-        /// <summary>
-        /// Método que utiliza para conectar la interfaz con la logica, para modificar el rol. Se ejecuta al presionar
-        /// el boton Cambiar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void botonCambiar_Click( object sender, EventArgs e )
-        {
-            string nombreUsuario = usuarioCambiar.Value;
-            string rol = rolCambiar.Value; 
-
-            LogicaModificarRol.ModificarRol( nombreUsuario, rol );
-
-            Response.Redirect( "../M2/CambiarRol.aspx" );
-        }
     }
 }
