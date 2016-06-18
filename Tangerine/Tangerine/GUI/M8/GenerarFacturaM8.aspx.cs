@@ -59,17 +59,17 @@ namespace Tangerine.GUI.M8
             else
             {*/
 
-                _Descripcion = textDescripcion_M8.Value;
-                _fechaEmision = DateTime.Parse(textFecha_M8.Value);
-                _fechaUltimoPago = DateTime.Parse(textFecha_M8.Value);
-                int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
-                int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
-                _tipoMoneda = textTipoMoneda_M8.Value;
-                Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, int.Parse(Request.QueryString["Monto"]), int.Parse(Request.QueryString["Monto"]), _tipoMoneda, _Descripcion, 0, _proyectoId, _companiaId);
-                LogicaM8 facturaLogic = new LogicaM8();
-                facturaLogic.AddNewFactura(factura);
-                Server.Transfer("ConsultarFacturaM8.aspx");
-            //}
+            //    _Descripcion = textDescripcion_M8.Value;
+            //    _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+            //    _fechaUltimoPago = DateTime.Parse(textFecha_M8.Value);
+            //    int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
+            //    int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
+            //    _tipoMoneda = textTipoMoneda_M8.Value;
+            //    Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, int.Parse(Request.QueryString["Monto"]), int.Parse(Request.QueryString["Monto"]), _tipoMoneda, _Descripcion, 0, _proyectoId, _companiaId);
+            //    LogicaM8 facturaLogic = new LogicaM8();
+            //    facturaLogic.AddNewFactura(factura);
+            //    Server.Transfer("ConsultarFacturaM8.aspx");
+            ////}
 
 
         }

@@ -8,6 +8,7 @@ using LogicaTangerine.Comandos;
 using LogicaTangerine.Comandos.M7;
 using LogicaTangerine.Comandos.M4;
 using LogicaTangerine.Comandos.M10;
+using LogicaTangerine.Comandos.M8;
 
 
 namespace LogicaTangerine.Fabrica
@@ -298,6 +299,125 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 8
+
+        /// <summary>
+        /// metodo para crear comando que permite agregar una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearAgregarFactura(Entidad factura)
+        {
+            return new ComandoAgregarFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite anular una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearAnularFactura(Entidad factura)
+        {
+            return new ComandoAnularFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar monto restante de una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<double> CrearBuscarMontoRestanteFactura(Entidad factura)
+        {
+            return new ComandoBuscarMontoRestanteFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar una compania dada una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarCompaniaFactura(Entidad factura)
+        {
+            return new ComandoConsultarCompaniaFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las facturas de una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarFacturasCompania(Entidad compania)
+        {
+            return new ComandoConsultarFacturasCompania(compania);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las facturas pagadas de una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarFacturasPagadasCompania(Entidad compania)
+        {
+            return new ComandoConsultarFacturasPagadasCompania(compania);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar el proyecto de una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarProyectoFactura(Entidad factura)
+        {
+            return new ComandoConsultarProyectoFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las facturas
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarTodosFactura()
+        {
+            return new ComandoConsultarTodosFactura();
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar los datos de una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarXIdFactura(Entidad factura)
+        {
+            return new ComandoConsultarXIdFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite eliminar una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearEliminarFactura(Entidad factura)
+        {
+            return new ComandoEliminarFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite modificar una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearModificarFactura(Entidad factura)
+        {
+            return new ComandoModificarFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite verificar si existe una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearSearchExistingBill(Entidad factura)
+        {
+            return new ComandoSearchExistingBill(factura);
+        }
 
         #endregion
 
