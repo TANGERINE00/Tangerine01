@@ -219,7 +219,7 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna el usuario de un empleado</returns>
             public Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado )
             {
-                DominioTangerine.Entidades.M10.Empleado empleado = (DominioTangerine.Entidades.M10.Empleado) theEmpleado;
+                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10) theEmpleado;
                 Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
 
                 DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
