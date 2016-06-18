@@ -79,9 +79,19 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="theEmpleado"></param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerUsuario(DominioTangerine.Entidad theEmpleado)
+            public static Comando<DominioTangerine.Entidad> obtenerUsuario( DominioTangerine.Entidad theEmpleado )
             {
                 return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultarPorID
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioPorID( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarPorID( usuario );
             }
 
             #endregion
