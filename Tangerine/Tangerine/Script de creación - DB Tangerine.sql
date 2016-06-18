@@ -908,6 +908,16 @@ AS
     where con_id = @id;
  end;
 GO
+--Consultar todos los contactos
+CREATE PROCEDURE M5_ConsultarTodosContactos
+AS
+	BEGIN
+		SELECT contacto.con_id as con_id, contacto.con_nombre as con_nombre, contacto.con_apellido as con_apellido,
+		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
+		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO
+	END
+GO
 --Consultar contactos de una empresa
 CREATE PROCEDURE M5_ConsultarContactoCompania
 		@tipo_comp INT,
