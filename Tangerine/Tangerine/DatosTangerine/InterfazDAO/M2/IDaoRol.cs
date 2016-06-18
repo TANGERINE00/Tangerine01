@@ -31,5 +31,13 @@ namespace DatosTangerine.InterfazDAO.M2
         /// <param name="codigoRol"></param>
         /// <returns>Una lista con las opciones</returns>
         Entidad ObtenerOpciones(string nombreMenu, int codigoRol);
+
+        /// <summary>
+        /// Metodo que devuelve el rol del usuario
+        /// </summary>
+        /// <param name="nombreRol"></param>
+        /// <returns>Devuelve el rol del usuario por nombre</returns>
+        Entidad ObtenerRolUsuarioPorNombre(string nombreRol);
+
     }
 }

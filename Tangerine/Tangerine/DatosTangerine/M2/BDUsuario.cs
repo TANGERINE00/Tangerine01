@@ -146,7 +146,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
@@ -202,7 +202,7 @@ namespace DatosTangerine.M2
             }
 
             return usuario;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que obtiene el rol y los menús que poseen opciones prohibidas para el usuario
@@ -409,7 +409,7 @@ namespace DatosTangerine.M2
             }
 
             return rol;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna true si un usuario pertenece al empleado con el numero de ficha pasado como parametro. 
