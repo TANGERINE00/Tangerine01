@@ -54,6 +54,7 @@
     <Compile Include="M7\IContratoInformacionProyecto.cs" />
     <Compile Include="M7\IContratoAgregarProyecto.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
+    <Compile Include="M9\IContratoFacturasPorPagar.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

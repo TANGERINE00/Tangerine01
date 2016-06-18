@@ -74,6 +74,7 @@
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
     <Compile Include="M9\PresentadorCargarPago.cs" />
+    <Compile Include="M9\PresentadorFacturasPorPagar.cs" />
     <Compile Include="M9\RecursoPresentadorM9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
