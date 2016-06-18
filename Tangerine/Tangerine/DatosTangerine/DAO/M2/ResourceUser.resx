@@ -218,4 +218,13 @@
   <data name="VerificarUsuarioPorFichaEmpleado" xml:space="preserve">
     <value>M2_VerificarUsuarioPorFichaEmpleado</value>
   </data>
+  <data name="ComIDUser" xml:space="preserve">
+    <value>usu_id</value>
+  </data>
+  <data name="ConsultLastUserID" xml:space="preserve">
+    <value>M2_ConsultarIdUltimoUsuario</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
 </root>
