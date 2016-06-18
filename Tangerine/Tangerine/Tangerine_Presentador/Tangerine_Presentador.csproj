@@ -50,7 +50,7 @@
     <Compile Include="M1\PresentadorInicio.cs" />
     <Compile Include="M2\PresentacionCambioRol.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
-    <Compile Include="M3\PresentadorListarLeads.cs" />
+    <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

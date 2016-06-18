@@ -29,19 +29,19 @@ namespace DominioTangerine.Entidades.M6
         public string CodigoRequerimiento
         {
             get { return _codigoRequerimiento; }
-            set { _codigoRequerimiento = value; }
+            //set { _codigoRequerimiento = value; }
         }
 
         public string Descripcion
         {
             get { return _descripcion; }
-            set { _descripcion = value; }
+            //set { _descripcion = value; }
         }
 
         public string CodigoPropuesta
         {
             get { return _codigoPropuesta; }
-            set { _codigoPropuesta = value; }
+            //set { _codigoPropuesta = value; }
         }
 
         #endregion
