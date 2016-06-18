@@ -64,7 +64,7 @@ namespace PruebasUnitarias.M5
         [Test]
         public void TestAddContact()
         {
-            Entidad cont = FabricaEntidades.crearCobtactoVacio();
+            Entidad cont = FabricaEntidades.crearContactoVacio();
             cont.Id = 4;
             IDAOContacto d = FabricaDAOSqlServer.crearDAOContacto();
             cont = d.ConsultarXId(cont);
