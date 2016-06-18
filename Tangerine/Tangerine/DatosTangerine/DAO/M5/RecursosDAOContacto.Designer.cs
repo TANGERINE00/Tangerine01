@@ -187,6 +187,15 @@ namespace DatosTangerine.DAO.M5 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M5_ConsultarTodosContactos.
+        /// </summary>
+        internal static string ConsultarTodosContactos {
+            get {
+                return ResourceManager.GetString("ConsultarTodosContactos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a con_telefono.
         /// </summary>
         internal static string ConTelefono {
