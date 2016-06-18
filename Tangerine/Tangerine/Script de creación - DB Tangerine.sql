@@ -563,7 +563,7 @@ GO
 CREATE PROCEDURE M2_ConsultarIdUltimoUsuario
 AS
  BEGIN
-     SELECT MAX(usu_id) com_id FROM USUARIO; 
+     SELECT MAX(usu_id) usu_id FROM USUARIO; 
  end;
 GO
 ---------------------------------------------------------------------------------------------------------
