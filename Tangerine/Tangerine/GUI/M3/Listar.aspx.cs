@@ -8,30 +8,31 @@ using DominioTangerine;
 using DatosTangerine.M3;
 using LogicaTangerine.M3;
 using Tangerine.GUI.M3;
+using Tangerine_Contratos.M3;
+using Tangerine_Presentador.M3;
 
-
-
-
-
-
-
-
-//--------------------------------------------------------------------------------
 
 namespace Tangerine.GUI.M3
 {
-    public partial class Listar : System.Web.UI.Page
+    public partial class Listar : System.Web.UI.Page, IContratoListarLeads
     {
-        public string ClientePotencial
+        PresentadorListarLeads presentador;
+
+        public Listar()
+        {
+            this.presentador = new PresentadorListarLeads(this);
+        }
+        
+        public Literal ClientePotencial
         {
             get
             {
-                return this.Lista.Text;
+                return Lista;
             }
 
             set
             {
-                this.Lista.Text = value;
+                Lista = value;
             }
         }
 
@@ -51,14 +52,14 @@ namespace Tangerine.GUI.M3
                 // llena la lista de clientes potenciales creada
                 ListaClientepotencialLogica = logicalistarClientePotencial.LogicalistarClientePotencial();
                 //foreach es para recorrer listas y arreglos 
-                llenar(ListaClientepotencialLogica); //el llamado al metodo
+                presentador.Llenar(ListaClientepotencialLogica);
             }
 
         }
 
 
-
-        public void llenar(List<ClientePotencial> list)
+        
+        /*public void llenar(List<ClientePotencial> list)
         { // metodo que se usa para recorrer la lista
             foreach (ClientePotencial item in list)
             {
@@ -98,7 +99,7 @@ namespace Tangerine.GUI.M3
  
 
             }
-        }
+        }*/
     }
 }
   
