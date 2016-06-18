@@ -10,11 +10,11 @@ using DominioTangerine;
 
 namespace LogicaTangerine.Comandos.M2
 {
-    public class ComandoConsultarListaDeEmpleados : Comando<List<Empleado>>
+    public class ComandoConsultarListaDeEmpleados : Comando<List<DominioTangerine.Entidad>>
     {
-        public List<Empleado> _listaEmpleados;
+        public List<DominioTangerine.Entidad> _listaEmpleados;
 
-        public override List<Empleado> Ejecutar()
+        public override List<DominioTangerine.Entidad> Ejecutar()
         {
             IDAOUsuarios ConsultarLista = FabricaDAOSqlServer.crearDaoUsuario();
             _listaEmpleados = ConsultarLista.ConsultarListaDeEmpleados();
