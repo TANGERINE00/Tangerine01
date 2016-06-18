@@ -45,13 +45,13 @@ namespace LogicaTangerine.M2
         /// </summary>
         /// <param name="empleado"></param>
         /// <returns></returns>
-        public static Usuario ObtenerUsuario( Empleado empleado )
+        public static Usuario ObtenerUsuario( int num_empleado )
         {
             Usuario usuario;
 
             try
             {
-                usuario = BDUsuario.ObtenerUsuarioDeEmpleado( empleado );
+                usuario = BDUsuario.ObtenerUsuarioDeEmpleado( num_empleado );
             }
             catch ( Exception ex )
             {

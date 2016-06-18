@@ -181,9 +181,18 @@
     <value>placeholder="</value>
   </data>
   <data name="Botonblock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-primary btn-xs"disabled&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="" data-target="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
   </data>
   <data name="BotonRegBlock" xml:space="preserve">
     <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-success btn-xs"disabled&gt;&lt;span span class="glyphicon glyphicon-plus" data-toggle="" data-target="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="llamadoNuevaPagina" xml:space="preserve">
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
+  </data>
+  <data name="CloseBotonParametro" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonParametroDesactivado" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
   </data>
 </root>

@@ -187,11 +187,11 @@ namespace PruebasUnitarias.M2
         /// Método para probar el disparo de una excepción el método ObtenerUsuarioDeEmpleado() de la clase 
         /// BDUsuario en DatosTangerine
         /// </summary>
-        [Test]
+      /*  [Test]
         public void TestFailObtenerUsuarioDeEmpleado()
         {
             Assert.Throws<ExceptionsTangerine>( () => BDUsuario.ObtenerUsuarioDeEmpleado( null ) );
-        }
+        } */
 
         /// <summary>
         /// Método para probar el disparo de una excepción el método ObtenerDatoUsuario() de la clase 
