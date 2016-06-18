@@ -25,6 +25,9 @@ namespace PruebasUnitarias.M5
         #endregion
 
         #region SetUp and TearDown
+        /// <summary>
+        /// Método para inicializar atributos
+        /// </summary>
         [SetUp]
         public void init()
         {
@@ -40,6 +43,9 @@ namespace PruebasUnitarias.M5
             _contadorContactos = 0;
         }
 
+        /// <summary>
+        /// Método para reiniciar atributos
+        /// </summary>
         [TearDown]
         public void clean()
         {

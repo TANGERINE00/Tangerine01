@@ -13,12 +13,21 @@ namespace LogicaTangerine.Comandos.M5
     {
         private Entidad _proyecto;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <param name="proyecto"></param>
         public ComandoAgregarContactoAProyecto( Entidad contacto, Entidad proyecto ) 
         {
             _laEntidad = contacto;
             _proyecto = proyecto;
         }
 
+        /// <summary>
+        /// Método para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override bool Ejecutar()
         {
             bool respuesta = false;

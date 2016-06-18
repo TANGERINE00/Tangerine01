@@ -13,12 +13,22 @@ namespace LogicaTangerine.Comandos.M5
     public class ComandoConsultarContactosPorCompania : Comando<List<Entidad>>
     {
         private int _tipoCompania;
+
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="compania"></param>
+        /// <param name="tipoCompania"></param>
         public ComandoConsultarContactosPorCompania( Entidad compania, int tipoCompania ) 
         {
             _laEntidad = compania;
             _tipoCompania = tipoCompania;
         }
 
+        /// <summary>
+        /// Método para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override List<Entidad> Ejecutar()
         {
             List<Entidad> listaContactos = new List<Entidad>();

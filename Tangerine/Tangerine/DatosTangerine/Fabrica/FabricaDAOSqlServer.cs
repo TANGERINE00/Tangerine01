@@ -81,6 +81,10 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 5
+        /// <summary>
+        /// Método para instancear DAOContacto
+        /// </summary>
+        /// <returns></returns>
         public static IDAOContacto crearDAOContacto() 
         {
             return new DAO.M5.DAOContacto();
