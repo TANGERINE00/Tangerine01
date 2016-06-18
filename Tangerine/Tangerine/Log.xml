@@ -4302,4 +4302,163 @@ Error Number:-1,State:0,Class:20
 2016-06-17 22:31:00,580 INFO  BDCompania - Clase: BDCompania
 2016-06-17 22:31:00,580 INFO  BDCompania - Mensaje: Salida del Método
 2016-06-17 22:31:00,580 INFO  BDCompania - Metodo: ConsultCompanies
+<<<<<<< HEAD
 >>>>>>> 8b1d9b7d56b5ad3ab0a775153c15197c5acd2dc9
+=======
+2016-06-18 16:01:10,647 INFO  LogicaM4 - *******************************************************
+2016-06-18 16:01:10,682 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-18 16:01:10,682 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-18 16:01:10,682 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-18 16:01:10,778 INFO  BDCompania - *******************************************************
+2016-06-18 16:01:10,778 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:01:10,778 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-18 16:01:10,778 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:01:11,370 INFO  BDCompania - *******************************************************
+2016-06-18 16:01:11,370 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:01:11,370 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-18 16:01:11,370 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:01:57,879 INFO  LogicaM4 - *******************************************************
+2016-06-18 16:01:57,882 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-18 16:01:57,882 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-18 16:01:57,882 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-06-18 16:01:57,922 INFO  BDCompania - *******************************************************
+2016-06-18 16:01:57,922 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:01:57,922 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-18 16:01:57,922 INFO  BDCompania - Metodo: ConsultCompany
+2016-06-18 16:01:58,194 INFO  BDCompania - *******************************************************
+2016-06-18 16:01:58,194 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:01:58,194 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-18 16:01:58,194 INFO  BDCompania - Metodo: ConsultCompany
+2016-06-18 16:01:58,261 INFO  LogicaM5 - *******************************************************
+2016-06-18 16:01:58,261 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 16:01:58,261 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 16:01:58,261 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 16:01:58,267 INFO  BDContacto - *******************************************************
+2016-06-18 16:01:58,267 INFO  BDContacto - Clase: BDContacto
+2016-06-18 16:01:58,267 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 16:01:58,267 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 16:01:58,385 INFO  BDContacto - *******************************************************
+2016-06-18 16:01:58,385 INFO  BDContacto - Clase: BDContacto
+2016-06-18 16:01:58,385 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 16:01:58,385 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 16:02:26,505 INFO  LogicaM5 - *******************************************************
+2016-06-18 16:02:26,506 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 16:02:26,507 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 16:02:26,507 INFO  LogicaM5 - Metodo: AddNewContact
+2016-06-18 16:02:26,519 INFO  BDContacto - *******************************************************
+2016-06-18 16:02:26,520 INFO  BDContacto - Clase: BDContacto
+2016-06-18 16:02:26,520 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 16:02:26,520 INFO  BDContacto - Metodo: AddContact
+2016-06-18 16:02:26,862 INFO  BDContacto - *******************************************************
+2016-06-18 16:02:26,862 INFO  BDContacto - Clase: BDContacto
+2016-06-18 16:02:26,862 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 16:02:26,862 INFO  BDContacto - Metodo: AddContact
+2016-06-18 16:02:40,169 INFO  LogicaM4 - *******************************************************
+2016-06-18 16:02:40,169 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-18 16:02:40,170 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-18 16:02:40,170 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-18 16:02:40,173 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:40,173 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:40,173 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-18 16:02:40,173 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:02:40,299 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:40,299 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:40,299 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-18 16:02:40,299 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:02:40,869 INFO  LogicaM4 - *******************************************************
+2016-06-18 16:02:40,869 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-18 16:02:40,869 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-18 16:02:40,869 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-18 16:02:40,872 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:40,872 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:40,872 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-18 16:02:40,872 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:02:41,009 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:41,011 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:41,011 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-18 16:02:41,011 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:02:43,574 INFO  LogicaM4 - *******************************************************
+2016-06-18 16:02:43,574 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-18 16:02:43,574 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-18 16:02:43,574 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-18 16:02:43,576 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:43,576 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:43,576 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-18 16:02:43,576 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:02:44,618 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:44,626 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:44,626 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-18 16:02:44,626 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-18 16:02:46,322 INFO  LogicaM4 - *******************************************************
+2016-06-18 16:02:46,323 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-18 16:02:46,323 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-18 16:02:46,323 INFO  LogicaM4 - Metodo: ConsultCompany
+2016-06-18 16:02:46,327 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:46,327 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:46,327 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-18 16:02:46,328 INFO  BDCompania - Metodo: ConsultCompany
+2016-06-18 16:02:47,172 INFO  BDCompania - *******************************************************
+2016-06-18 16:02:47,172 INFO  BDCompania - Clase: BDCompania
+2016-06-18 16:02:47,172 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-18 16:02:47,173 INFO  BDCompania - Metodo: ConsultCompany
+2016-06-18 16:02:48,314 INFO  LogicaM5 - *******************************************************
+2016-06-18 16:02:48,315 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 16:02:48,315 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 16:02:48,315 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 16:02:48,323 INFO  BDContacto - *******************************************************
+2016-06-18 16:02:48,326 INFO  BDContacto - Clase: BDContacto
+2016-06-18 16:02:48,326 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 16:02:48,326 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 16:02:48,358 INFO  BDContacto - *******************************************************
+2016-06-18 16:02:48,359 INFO  BDContacto - Clase: BDContacto
+2016-06-18 16:02:48,359 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 16:02:48,359 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 16:02:50,483 INFO  DaoClientePotencial - *******************************************************
+2016-06-18 16:02:50,483 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-18 16:02:50,483 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-18 16:02:50,483 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-18 16:02:51,171 INFO  DaoClientePotencial - *******************************************************
+2016-06-18 16:02:51,171 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-18 16:02:51,171 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-18 16:02:51,171 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-18 18:06:05,688 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:06:05,700 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:06:05,701 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:06:05,701 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:06:06,274 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:06:06,274 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:06:06,274 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:06:06,274 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:12,496 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:12,504 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:12,504 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:07:12,504 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:12,652 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:12,652 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:12,652 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:07:12,652 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:19,720 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:19,720 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:19,720 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:07:19,720 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:19,774 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:19,774 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:19,774 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:07:19,774 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:49,647 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:49,656 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:49,656 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:08:49,656 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:49,822 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:49,822 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:49,822 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:08:49,822 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:56,987 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:56,987 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:56,987 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:08:56,987 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:57,048 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:57,049 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:57,049 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:08:57,049 INFO  BDEmpleado - Metodo: ListarEmpleados
+>>>>>>> 371e7ed2ca2d09b95e0943c89c6bdffd62c67fc5

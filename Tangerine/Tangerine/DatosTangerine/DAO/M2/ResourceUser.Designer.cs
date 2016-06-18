@@ -88,6 +88,15 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M2_ConsultarUsuario.
+        /// </summary>
+        internal static string ConsultUser {
+            get {
+                return ResourceManager.GetString("ConsultUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Entrada en el Método.
         /// </summary>
         internal static string MensajeInicioInfoLogger {
@@ -205,6 +214,15 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a @id.
+        /// </summary>
+        internal static string ParametroID {
+            get {
+                return ResourceManager.GetString("ParametroID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a @menu_nom.
         /// </summary>
         internal static string ParametroMenuNombre {
@@ -286,20 +304,20 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a usu_activo.
         /// </summary>
         internal static string UsuActivo {
             get {
                 return ResourceManager.GetString("UsuActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a usu_contrasena.
+        /// </summary>
+        internal static string UsuContrasena {
+            get {
+                return ResourceManager.GetString("UsuContrasena", resourceCulture);
             }
         }
         

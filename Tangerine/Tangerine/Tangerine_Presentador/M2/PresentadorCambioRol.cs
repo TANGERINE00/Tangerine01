@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tangerine_Contratos.M6
+namespace Tangerine_Presentador.M2
 {
-    public interface IContratoEliminarPropuesta
+    public class PresentadorCambioRol
     {
     }
 }

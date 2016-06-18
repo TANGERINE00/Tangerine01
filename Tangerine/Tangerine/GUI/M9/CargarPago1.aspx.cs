@@ -95,6 +95,9 @@ namespace Tangerine.GUI.M9
         {
             //LogicaM8 consulta = new LogicaM8();
 
+            
+
+          
 
             //Facturacion Factura = consulta.SearchFactura(numeroFactura);
 

@@ -181,10 +181,10 @@
     <value>placeholder="</value>
   </data>
   <data name="Botonblock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
+    <value>&lt;a href="#"  tittle="Modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
   </data>
   <data name="BotonRegBlock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-success btn-xs"disabled&gt;&lt;span span class="glyphicon glyphicon-plus" data-toggle="" data-target="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" disabled</value>
   </data>
   <data name="llamadoNuevaPagina" xml:space="preserve">
     <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
@@ -194,5 +194,17 @@
   </data>
   <data name="CloseBotonParametroDesactivado" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonRegNuevaVentana" xml:space="preserve">
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" href="AccionRegistrar.aspx?idFicha=</value>
+  </data>
+  <data name="ApellidoEmpleado" xml:space="preserve">
+    <value>&amp;Apellido=</value>
+  </data>
+  <data name="comillas" xml:space="preserve">
+    <value>"</value>
+  </data>
+  <data name="NombreEmpleado" xml:space="preserve">
+    <value>&amp;Nombre=</value>
   </data>
 </root>

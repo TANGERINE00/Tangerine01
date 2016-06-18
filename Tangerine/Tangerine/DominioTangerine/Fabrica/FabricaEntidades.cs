@@ -103,6 +103,26 @@ namespace DominioTangerine.Fabrica
             {
                 return new UsuarioM2( inputUsuario , inputContrasena , inputFechaCreacion , inputActivo , inputRol , inputfFichaEmpleado );
             }
+
+            /// <summary>
+            /// Se crea la instancia del usuario con todos sus atributos y el id
+            /// </summary>
+            /// <param name="inputID"></param>
+            /// <param name="inputUsuario"></param>
+            /// <param name="inputContrasena"></param>
+            /// <param name="inputFechaCreacion"></param>
+            /// <param name="inputActivo"></param>
+            /// <param name="inputRol"></param>
+            /// <param name="inputfFichaEmpleado"></param>
+            /// <returns>Retorna una instacion de Usuario con todos los atributos y el id</returns>
+            static public Entidad crearUsuarioCompletoConID( int inputID , string inputUsuario , string inputContrasena , 
+                                                             DateTime inputFechaCreacion , string inputActivo , RolM2 inputRol , 
+                                                             int inputfFichaEmpleado )
+            {
+                return new UsuarioM2( inputID , inputUsuario , inputContrasena , inputFechaCreacion , inputActivo , 
+                                      inputRol , inputfFichaEmpleado );
+            }
+               
             #endregion
 
             #region Métodos para instancias de RolM2
@@ -114,6 +134,11 @@ namespace DominioTangerine.Fabrica
             static public Entidad crearRolVacio()
             {
                 return new RolM2();
+            }
+
+            static public Entidad crearRolConID( int ID )
+            {
+                return new RolM2( ID );
             }
 
             /// <summary>
