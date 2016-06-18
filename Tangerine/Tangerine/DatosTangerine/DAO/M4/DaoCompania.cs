@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine;
-
+using ExcepcionesTangerine;
 
 
 namespace DatosTangerine.DAO.M4
@@ -24,7 +24,8 @@ namespace DatosTangerine.DAO.M4
         
        public int ConsultLastCompanyId()
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            int mayorId = 0;
            try
            {
@@ -40,6 +41,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -55,7 +57,8 @@ namespace DatosTangerine.DAO.M4
 
        public bool DeleteCompany(Entidad theCompany)
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            Parametro theParam = new Parametro();
            try
            {
@@ -74,6 +77,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -89,7 +93,8 @@ namespace DatosTangerine.DAO.M4
 
        public bool EnableCompany(Entidad theCompany)
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            Parametro theParam = new Parametro();
            try
            {
@@ -109,6 +114,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -124,7 +130,8 @@ namespace DatosTangerine.DAO.M4
 
        public bool DisableCompany(Entidad theCompany)
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            Parametro theParam = new Parametro();
            try
            {
@@ -144,6 +151,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -158,7 +166,8 @@ namespace DatosTangerine.DAO.M4
 
        public bool Agregar(Entidad theCompany)
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            Parametro theParam = new Parametro();
            try
            {
@@ -212,6 +221,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -227,7 +237,8 @@ namespace DatosTangerine.DAO.M4
 
        public bool Modificar(Entidad theCompany)
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            Parametro theParam = new Parametro();
            try
            {
@@ -285,6 +296,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -300,7 +312,8 @@ namespace DatosTangerine.DAO.M4
 
        public Entidad ConsultarXId(Entidad theCompany)
        {
-           // AQUI VA EL LOGGER!
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            Entidad compania;
            try
            {
@@ -332,6 +345,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -346,6 +360,8 @@ namespace DatosTangerine.DAO.M4
 
        public List<Entidad> ConsultarTodos()
        {
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            List<Parametro> parameters = new List<Parametro>();
            List<Entidad> listCompany = new List<Entidad>();
 
@@ -381,6 +397,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
@@ -395,6 +412,8 @@ namespace DatosTangerine.DAO.M4
         /// <returns></returns>
        public List<Entidad> ConsultarCompaniasActivas()
        {
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            List<Parametro> parameters = new List<Parametro>();
            List<Entidad> listCompany = new List<Entidad>();
 
@@ -427,13 +446,15 @@ namespace DatosTangerine.DAO.M4
                }
 
 
+               return listCompany;
+
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 
-           return listCompany;
        }
     }
 }
