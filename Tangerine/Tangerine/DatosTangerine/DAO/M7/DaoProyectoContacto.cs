@@ -34,12 +34,20 @@ namespace DatosTangerine.DAO.M7
 
             try
             {
-                List<Parametro> parameters = new List<Parametro>();
+                string parametro1 = "1";
+                /*List<Parametro> parameters = new List<Parametro>();
                 Parametro theParam  = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Contacto)contacto).TipoCompañia.ToString(), false);
+                parameters.Add(theParam);*/
+
+                List<Parametro> parameters = new List<Parametro>();
+                Parametro theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, parametro1, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Contacto)contacto).IdCompañia.ToString(), false);
+                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)contacto).Id.ToString(), false);
                 parameters.Add(theParam);
+
+                /*theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, parametro2, false);
+                parameters.Add(theParam);*/
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
                 DataTable dt = EjecutarStoredProcedureTuplas(ResourceContact.ContactCompany, parameters);
