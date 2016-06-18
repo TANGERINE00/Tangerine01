@@ -12,9 +12,11 @@ namespace LogicaTangerine.Comandos.M5
 {
     public class ComandoConsultarContactosPorCompania : Comando<List<Entidad>>
     {
-        public ComandoConsultarContactosPorCompania( Entidad compania ) 
+        private int _tipoCompania;
+        public ComandoConsultarContactosPorCompania( Entidad compania, int tipoCompania ) 
         {
             _laEntidad = compania;
+            _tipoCompania = tipoCompania;
         }
 
         public override List<Entidad> Ejecutar()
@@ -24,7 +26,7 @@ namespace LogicaTangerine.Comandos.M5
             try
             {
                 IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-                listaContactos = daoContacto.ContactosPorCompania( 1, _laEntidad.Id );
+                listaContactos = daoContacto.ContactosPorCompania( _tipoCompania, _laEntidad.Id );
             }
             catch ( Exception ex )
             {
