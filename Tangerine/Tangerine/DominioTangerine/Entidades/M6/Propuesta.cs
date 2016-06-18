@@ -37,14 +37,12 @@ namespace DominioTangerine.Entidades.M6
         public String TipoDuracion
         {
             get { return _tipoDuracion; }
-            set { _tipoDuracion = value; }
         }
         private String _cantDuracion;
 
         public String CantDuracion
         {
             get { return _cantDuracion; }
-            set { _cantDuracion = value; }
         }
         private String _acuerdopago;
         private String _estatus;
@@ -66,66 +64,59 @@ namespace DominioTangerine.Entidades.M6
         public String CodigoP
         {
             get { return _codigoP; }
-            set { _codigoP = value; }
         }
         public String Nombre
         {
             get { return _nombre; }
-            set { _nombre = value; }
         }
         public String Descripcion
         {
             get { return _descripcion; }
-            set { _descripcion = value; }
         }
 
         public String Acuerdopago
         {
             get { return _acuerdopago; }
-            set { _acuerdopago = value; }
-        }
+         }
         public String Estatus
         {
             get { return _estatus; }
-            set { _estatus = value; }
+
         }
         public String Moneda
         {
             get { return _moneda; }
-            set { _moneda = value; }
+
         }
         public int Entrega
         {
             get { return _entrega; }
-            set { _entrega = value; }
+
         }
         public DateTime Feincio
         {
             get { return _feincio; }
-            set { _feincio = value; }
+
         }
         public DateTime Fefinal
         {
             get { return _fefinal; }
-            set { _fefinal = value; }
+
         }
         public int Costo
         {
             get { return _costo; }
-            set { _costo = value; }
         }
 
         public String IdCompañia
         {
             get { return _idCompañia; }
-            set { _idCompañia = value; }
         }
 
 
         public List<Requerimiento> ListaRequerimiento
         {
             get { return _listaRequerimiento; }
-            set { _listaRequerimiento = value; }
         }
 
 
