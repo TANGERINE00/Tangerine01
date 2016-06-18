@@ -63,7 +63,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="Comandos\M1\" />
-    <Folder Include="Comandos\M2\ComandosDAORol\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +71,7 @@
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />

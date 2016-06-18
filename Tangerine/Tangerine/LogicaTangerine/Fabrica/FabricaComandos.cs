@@ -86,6 +86,21 @@ namespace LogicaTangerine.Fabrica
 
         #endregion
 
+            #region Comandos Rol
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoObtenerRolUsuario
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una una instancia a ObtenerRolUsuario</returns>
+            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuario (int codigoRol)
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuario(codigoRol);
+            }
+                
+
+            #endregion
+        
         #endregion
 
         #region Modulo 3
