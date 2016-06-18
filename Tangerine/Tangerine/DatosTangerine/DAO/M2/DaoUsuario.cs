@@ -35,6 +35,7 @@ namespace DatosTangerine.DAO.M2
                 DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
                 try
                 {
+                    Conectar();
 
                     elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.nombreUsuario, false);
                     parametros.Add(elParametro);
@@ -48,7 +49,7 @@ namespace DatosTangerine.DAO.M2
                     elParametro = new Parametro(ResourceUser.ParametroFechaCreacion, SqlDbType.Date, usuario.fechaCreacion.ToString(), false);
                     parametros.Add(elParametro);
 
-                    elParametro = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, usuario.rol.nombre.ToString(), false);
+                    elParametro = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, usuario.rol.nombre, false);
                     parametros.Add(elParametro);
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.AgregarUsuario, parametros);

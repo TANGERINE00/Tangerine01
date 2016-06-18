@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tangerine_Presentador.M2
+namespace Tangerine_Contratos.M2
 {
-    public class PresentadorRegistroUsuario
+    public interface IContratoAccionRegistrar
     {
     }
 }
