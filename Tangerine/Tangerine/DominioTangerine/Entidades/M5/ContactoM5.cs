@@ -10,7 +10,6 @@ namespace DominioTangerine.Entidades.M5
     {
         #region Atributos
 
-        private int _idContacto;
         private string _nombre;
         private string _apellido;
         private string _telefono;
@@ -23,10 +22,6 @@ namespace DominioTangerine.Entidades.M5
         #endregion
 
         #region Get's
-        /*public int IdContacto
-        {
-            get { return _idContacto; }
-        }*/
 
         public string Nombre
         {
@@ -70,11 +65,25 @@ namespace DominioTangerine.Entidades.M5
         #endregion
 
         #region Constructores
+        /// <summary>
+        /// Constructor por defecto de la clase
+        /// </summary>
         public ContactoM5()
         {
 
         }
 
+        /// <summary>
+        /// Constructor sin id de la clase
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="departamento"></param>
+        /// <param name="cargo"></param>
+        /// <param name="telefono"></param>
+        /// <param name="correo"></param>
+        /// <param name="tipoCompañia"></param>
+        /// <param name="idCompañia"></param>
         public ContactoM5( string nombre, string apellido, string departamento,
                            string cargo, string telefono, string correo, int tipoCompañia, int idCompañia )
         {
@@ -88,6 +97,18 @@ namespace DominioTangerine.Entidades.M5
             this._idCompañia = idCompañia;
         }
 
+        /// <summary>
+        /// Constructor con todos los atributos de la clase
+        /// </summary>
+        /// <param name="idContacto"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="departamento"></param>
+        /// <param name="cargo"></param>
+        /// <param name="telefono"></param>
+        /// <param name="correo"></param>
+        /// <param name="tipoCompañia"></param>
+        /// <param name="idCompañia"></param>
         public ContactoM5( int idContacto, string nombre, string apellido, string departamento,
                            string cargo, string telefono, string correo, int tipoCompañia, int idCompañia )
                    : this( nombre, apellido, departamento, cargo, telefono, correo, tipoCompañia, idCompañia )

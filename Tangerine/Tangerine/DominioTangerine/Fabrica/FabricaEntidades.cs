@@ -361,11 +361,27 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 5
+            /// <summary>
+            /// Método para instancear la clase ContactoM5 vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad crearContactoVacio()
             {
                 return new ContactoM5();
             }
 
+            /// <summary>
+            /// Método para instancear la clase ContactoM5 sin el id
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <param name="apellido"></param>
+            /// <param name="departamento"></param>
+            /// <param name="cargo"></param>
+            /// <param name="telefono"></param>
+            /// <param name="correo"></param>
+            /// <param name="tipoCompañia"></param>
+            /// <param name="idCompañia"></param>
+            /// <returns></returns>
             public static Entidad crearContactoSinId( string nombre, string apellido, string departamento,
                                                       string cargo, string telefono, string correo, int tipoCompañia,
                                                       int idCompañia )
@@ -373,7 +389,20 @@ namespace DominioTangerine.Fabrica
                 return new ContactoM5( nombre, apellido, departamento, cargo, telefono, correo, tipoCompañia, 
                                        idCompañia );
             }
-
+            
+            /// <summary>
+            /// Método para instancear la clase ContactoM5 con todos sus atributos
+            /// </summary>
+            /// <param name="idContacto"></param>
+            /// <param name="nombre"></param>
+            /// <param name="apellido"></param>
+            /// <param name="departamento"></param>
+            /// <param name="cargo"></param>
+            /// <param name="telefono"></param>
+            /// <param name="correo"></param>
+            /// <param name="tipoCompañia"></param>
+            /// <param name="idCompañia"></param>
+            /// <returns></returns>
             public static Entidad crearContactoConId( int idContacto, string nombre, string apellido, 
                                                       string departamento, string cargo, string telefono, 
                                                       string correo, int tipoCompañia, int idCompañia ) 
