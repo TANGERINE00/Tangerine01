@@ -48,7 +48,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="M1\PresentadorInicio.cs" />
-    <Compile Include="M2\PresentacionCambioRol.cs" />
+    <Compile Include="M2\PresentadorAsignarRol.cs" />
+    <Compile Include="M2\PresentadorCambioRol.cs" />
+    <Compile Include="M2\PresentadorAccionRegistrar.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">

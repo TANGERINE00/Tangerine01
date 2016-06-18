@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tangerine_Contratos.M2
 {
-    public interface IContratoRol
+    public interface IContratoAsignarRol
     {
     }
 }
