@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine;
+using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M4
 {
@@ -34,8 +35,16 @@ namespace DatosTangerine.DAO.M4
            throw new NotImplementedException();
        }
 
+
+       /// <summary>
+       /// Método para consultar los lugares con sus nombres y sus id.
+       /// </summary>
+       /// <returns>Lista de lugares.</returns>
+
        public List<Entidad> ConsultCityPlaces()
        {
+           Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+           ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            List<Parametro> parameters = new List<Parametro>();
            List<Entidad> listPlace = new List<Entidad>();
 
@@ -60,6 +69,7 @@ namespace DatosTangerine.DAO.M4
            }
            catch (Exception ex)
            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
                    RecursoGeneralBD.Mensaje, ex);
            }

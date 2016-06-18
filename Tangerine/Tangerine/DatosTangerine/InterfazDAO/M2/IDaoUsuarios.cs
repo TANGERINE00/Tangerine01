@@ -22,7 +22,7 @@ namespace DatosTangerine.InterfazDAO.M2
         /// Encabezado de metodo para devolver todos los empleados sin usuario
         /// </summary>
         /// <returns>Retorna la lista de empleados</returns>
-        List<Empleado> ConsultarListaDeEmpleados();
+        List<Entidad> ConsultarListaDeEmpleados();
 
         /// <summary>
         /// Encabezado de metodo usado para verificar si el usuario existe en el sistema
@@ -37,6 +37,20 @@ namespace DatosTangerine.InterfazDAO.M2
         /// <param name="theEmpleado"></param>
         /// <returns>Retorna el usuario de un empleado</returns>
         Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado );
+
+        /// <summary>
+        /// Encabezado del metodo para reotnrar los datos del usuario
+        /// </summary>
+        /// <param name="theUsuario"></param>
+        /// <returns>Retorna los datos del ususario</returns>
+        Entidad ObtenerDatoUsuario(Entidad theUsuario);
+
+        /// <summary>
+        /// Modifica la contraseña de un usuario
+        /// </summary>
+        /// <param name="theUsuario"></param>
+        /// <returns>Retorna true si cambia la contraseña exitosamente</returns>
+        bool ModificarContraseniaUsuario(Entidad theUsuario);
 
     }
 }
