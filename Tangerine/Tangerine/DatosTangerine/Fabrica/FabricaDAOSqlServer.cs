@@ -10,6 +10,7 @@ using DatosTangerine.InterfazDAO.M2;
 using DatosTangerine.InterfazDAO.M5;
 using DatosTangerine.InterfazDAO.M4;
 using DatosTangerine.InterfazDAO.M10;
+using DatosTangerine.InterfazDAO.M8;
 using DatosTangerine.InterfazDAO.M3;
 
 
@@ -127,6 +128,11 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 8
+
+        public static IDaoFactura ObtenerDAOFactura()
+        {
+            return new DAO.M8.DAOFactura();
+        }
 
         #endregion
 
