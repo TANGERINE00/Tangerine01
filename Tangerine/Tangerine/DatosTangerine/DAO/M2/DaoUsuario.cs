@@ -219,7 +219,7 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna el usuario de un empleado</returns>
             public Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado )
             {
-                DominioTangerine.Entidades.M10.Empleado empleado = (DominioTangerine.Entidades.M10.Empleado) theEmpleado;
+                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10) theEmpleado;
                 Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
 
                 DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
@@ -355,6 +355,36 @@ namespace DatosTangerine.DAO.M2
                 }
 
                 return true;
+            }
+
+            /// <summary>
+            /// Método que permite consultar el ID del ultimo usuario en la base de datos
+            /// </summary>
+            /// <returns>Retorne el ultimo ID</returns>
+            public int ConsultLastUserID()
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceUser.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                int ultimoID = 0;
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+
+                    //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
+                    DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ConsultLastUserID, parameters);
+                    //Guardar los datos 
+                    DataRow row = dt.Rows[0];
+
+                    ultimoID = int.Parse(row[ResourceUser.ComIDUser].ToString());
+
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+
+                return ultimoID;
             }
 
         #endregion

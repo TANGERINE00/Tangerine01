@@ -37,8 +37,8 @@ namespace Tangerine.GUI.M2
 
                 foreach ( Empleado  empleador in listaDeEmpleados )
                 {
-                    Usuario user = LogicaModificarRol.ObtenerUsuario( empleador );
-                  
+                    Usuario user = LogicaModificarRol.ObtenerUsuario( empleador.emp_num_ficha );
+                    
                     empleado += ResourceGUIM2.OpenTR;
                     empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
                     empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
@@ -46,14 +46,14 @@ namespace Tangerine.GUI.M2
                     {  
                         empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoCompleto + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.CloseTR;
                     }
                     else 
                     {
                         empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.CloseTR;
                     }
                 }

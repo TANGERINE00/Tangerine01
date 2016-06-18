@@ -8,12 +8,16 @@ using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M10;
 using System.Globalization;
+using Tangerine_Contratos.M10;
+using Tangerine_Presentador.M10;
+
 
 namespace Tangerine.GUI.M1
 {
-    public partial class EmpleadosAdmin : System.Web.UI.Page
+    public partial class EmpleadosAdmin : System.Web.UI.Page, IContratoConsultaEmpleados
     {
-        string fecha;
+        private PresentadorConsultaEmpleado presentador;
+
         public string empleado
         {
             get
@@ -23,6 +27,18 @@ namespace Tangerine.GUI.M1
             set
             {
                 this.tabla.Text = value;
+            }
+        }
+
+        public Literal Tabla
+        {
+            get
+            {
+                return tabla;
+            }
+            set
+            {
+                tabla = value;
             }
         }
 
@@ -38,83 +54,29 @@ namespace Tangerine.GUI.M1
             }
         }
 
+         public EmpleadosAdmin()
+        {
+            this.presentador = new PresentadorConsultaEmpleado(this); 
+        }
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            LogicaM10 logicaM10 = new LogicaM10();
-            int idEmpleado;
-            try
-            {
-                idEmpleado = int.Parse(Request.QueryString["id"]);
-                logicaM10.CambiarEstatus(idEmpleado);
-            }
-            catch
-            {
-
-            }
 
             if (!IsPostBack)
             {
-                //Aqui ejecuto el filltable de la clase creada en logica para probar la conexion a la bd
-                List<Empleado> listEmpleado = logicaM10.GetEmpleados();
-
-                try
-                {
-                    foreach (Empleado theEmpleado in listEmpleado)
-                    {
-                        //Nombres
-                        empleado += ResourceGUIM10.AbrirTR;
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_p_nombre.ToString() +
-                            ResourceGUIM10.Espacio +
-                            theEmpleado.emp_s_nombre.ToString() + ResourceGUIM10.CerrarTD;
-                        //Apellidos
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_p_apellido.ToString() +
-                            ResourceGUIM10.Espacio +
-                            theEmpleado.emp_s_apellido.ToString() + ResourceGUIM10.CerrarTD;
-                        //Cedula
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.emp_cedula.ToString() +
-                            ResourceGUIM10.CerrarTD;
-                        //Cargo
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.Job.Nombre +
-                            ResourceGUIM10.CerrarTD;
-                        //Sueldo base
-                        empleado += ResourceGUIM10.AbrirTD + theEmpleado.Job.Sueldo +
-                            ResourceGUIM10.CerrarTD;
-                        //Fecha de contratacion
-                        empleado += ResourceGUIM10.AbrirTD +
-                             theEmpleado.Job.FechaContratacion.ToString("dd/MM/yyyy") +
-                             ResourceGUIM10.CerrarTD;
-                        //Estatus
-                        if (theEmpleado.emp_activo=="Activo")
-                            empleado += ResourceGUIM10.AbrirTD + ResourceGUIM10.AbrirActivo + theEmpleado.emp_activo +
-                                ResourceGUIM10.CerrarActivo + ResourceGUIM10.CerrarTD;
-                        else
-                            empleado += ResourceGUIM10.AbrirTD + ResourceGUIM10.AbrirInactivo + theEmpleado.emp_activo +
-                                ResourceGUIM10.CerrarInactivo + ResourceGUIM10.CerrarTD;
-                        //Acciones de cada empleado
-                        empleado += ResourceGUIM10.AbrirTD;
-                        //Ver
-                        empleado += ResourceGUIM10.BotonVerEmpAbrir + theEmpleado.emp_num_ficha +
-                            ResourceGUIM10.BotonVerEmpCerrar;/*
-                        //Modificar
-                        empleado += ResourceGUIM10.BotonModificarEmpAbrir + theEmpleado.emp_num_ficha +
-                            ResourceGUIM10.BotonModificarEmpCerrar;*/
-                        if (HttpContext.Current.Session["Rol"]+"" !="Programador")
-                        empleado += ResourceGUIM10.BotonStatusEmpAbrir + theEmpleado.emp_num_ficha +
-                            ResourceGUIM10.BotonStatusEmpCerrar;
-
-                        empleado += ResourceGUIM10.CerrarTD;
-                        empleado += ResourceGUIM10.CerrarTR;
-                    }
-                    if (HttpContext.Current.Session["Rol"]+"" != "Programador")
-                    button += ResourceGUIM10.VentanaAgregarEmpleado;
-                }
-                catch (Exception ex)
-                {
-
-                }
+                presentador.cargarConsultarEmpleados();
+                
             }
 
         }
+
+
+
+
+
+
+       
     }
 }
