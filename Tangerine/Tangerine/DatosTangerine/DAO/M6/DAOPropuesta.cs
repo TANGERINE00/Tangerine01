@@ -305,6 +305,37 @@ namespace DatosTangerine.DAO.M6
         #region IDAOPropuesta
 
         /// <summary>
+        /// Método para consultar el último id de propuesta en la base de datos.
+        /// </summary>
+        /// <returns>Último id de propuesta registrada.</returns>
+
+        public int ConsultarIdUltimaPropuesta()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int mayorId = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAOPropuesta.ConsultarIdUltimaPropuesta, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                mayorId = int.Parse(row[RecursoDAOPropuesta.PropCodigo].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return mayorId;
+        }
+
+        /// <summary>
         /// Metodo para eliminar una Propuesta de la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>

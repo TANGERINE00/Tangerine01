@@ -133,6 +133,38 @@ namespace DatosTangerine.DAO.M6
         #region IDAORequerimiento
 
         /// <summary>
+        /// Método para consultar el último id de requerimiento en la base de datos.
+        /// </summary>
+        /// <returns>Último id de requerimiento registrado.</returns>
+
+        public int ConsultarIdUltimoRequerimiento()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int mayorId = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id requerimiento
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAORequerimiento.ConsultarIdUltimoRequerimiento, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                mayorId = int.Parse(row[RecursoDAORequerimiento.ReqProp].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return mayorId;
+        }
+
+
+        /// <summary>
         /// Método para listar los requerimientos por propuesta 
         /// </summary>
         /// <param name="id"></param>
