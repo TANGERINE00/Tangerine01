@@ -195,4 +195,7 @@
   <data name="CloseBotonParametroDesactivado" xml:space="preserve">
     <value>&gt;&lt;/a&gt;</value>
   </data>
+  <data name="BotonRegVentana" xml:space="preserve">
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idFicha=</value>
+  </data>
 </root>

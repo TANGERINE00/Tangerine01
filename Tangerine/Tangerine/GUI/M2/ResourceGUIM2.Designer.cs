@@ -97,6 +97,15 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a  tittle=&quot;Asignar&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; href=&quot;AsignarRol.aspx?idFicha=.
+        /// </summary>
+        internal static string BotonRegVentana {
+            get {
+                return ResourceManager.GetString("BotonRegVentana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;span class=&quot;glyphicon glyphicon-pencil&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModalC&quot; onclick=&quot;ClickCambiar&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
         /// </summary>
         internal static string CloseBotonModify {
