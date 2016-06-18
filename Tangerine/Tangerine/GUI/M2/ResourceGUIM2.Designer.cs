@@ -61,6 +61,15 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;Apellido=.
+        /// </summary>
+        internal static string ApellidoEmpleado {
+            get {
+                return ResourceManager.GetString("ApellidoEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a href=&quot;#&quot;  tittle=&quot;modificar&quot; runat =&quot;server&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; disabled.
         /// </summary>
         internal static string Botonblock {
@@ -205,6 +214,15 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;.
+        /// </summary>
+        internal static string comillas {
+            get {
+                return ResourceManager.GetString("comillas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;label for=&quot;.
         /// </summary>
         internal static string LabelFor {
@@ -228,6 +246,15 @@ namespace Tangerine.GUI.M2 {
         internal static string llamadoNuevaPagina {
             get {
                 return ResourceManager.GetString("llamadoNuevaPagina", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Nombre=.
+        /// </summary>
+        internal static string NombreEmpleado {
+            get {
+                return ResourceManager.GetString("NombreEmpleado", resourceCulture);
             }
         }
         

@@ -83,8 +83,8 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" runat="server" method="post" name="asignar_rol" id="asignar_rol">
-                    <div class="box-body" runat="server">
+                <form role="form" runat="server" method="post" name="asignar_rol" id="asignar_rol" >
+                    <div class="box-body" runat="server" >
 
                         <div class="form-group" runat="server">
                             <label for="labelFicha_M2">Ficha Usuario</label>

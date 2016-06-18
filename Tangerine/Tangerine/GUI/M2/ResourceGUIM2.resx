@@ -198,4 +198,13 @@
   <data name="BotonRegNuevaVentana" xml:space="preserve">
     <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" href="AccionRegistrar.aspx?idFicha=</value>
   </data>
+  <data name="ApellidoEmpleado" xml:space="preserve">
+    <value>&amp;Apellido=</value>
+  </data>
+  <data name="comillas" xml:space="preserve">
+    <value>"</value>
+  </data>
+  <data name="NombreEmpleado" xml:space="preserve">
+    <value>&amp;Nombre=</value>
+  </data>
 </root>
