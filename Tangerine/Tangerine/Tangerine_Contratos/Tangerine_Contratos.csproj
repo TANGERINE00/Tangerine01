@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="M10\IContratoConsultaEmpleados.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
+    <Compile Include="M5\IContratoAgregarContacto.cs" />
     <Compile Include="M6\IContratoAgregarPropuesta.cs" />
     <Compile Include="M6\IContratoEliminarPropuesta.cs" />
     <Compile Include="M6\IContratoModificarPropuesta.cs" />
@@ -55,7 +56,6 @@
     <Folder Include="M2\" />
     <Folder Include="M3\" />
     <Folder Include="M4\" />
-    <Folder Include="M5\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
