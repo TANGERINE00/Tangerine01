@@ -9,11 +9,15 @@ using LogicaTangerine;
 using LogicaTangerine.M5;
 using LogicaTangerine.M3;
 using LogicaTangerine.M4;
+using Tangerine_Contratos.M5;
+using Tangerine_Presentador.M5;
 
 namespace Tangerine.GUI.M5
 {
-    public partial class ConsultarContactos : System.Web.UI.Page
+    public partial class ConsultarContactos : System.Web.UI.Page, IContratoConsultarContactos
     {
+        private PresentadorConsultarContactos presentador;
+
         #region Atributos
         public ClientePotencial cliPotencial;
         public Compania compania;
@@ -85,81 +89,78 @@ namespace Tangerine.GUI.M5
                 this.empresa.Text = value;
             }
         }
-        #endregion
 
-        /// <summary>
-        /// Metodo de carga de los elementos de la ventana.
-        /// </summary>
-        /// Puede recibir 3 parametros, idCont no es obligatorio.
-        /// <param name="typeComp">Entero, representa el tipo de empresa (compañia o lead)</param>
-        /// <param name="idComp">Entero, representa el id de la empresa</param>
-        /// <param name="idCont">Entero, representa el id del contacto (Para ser eliminado, no es obligatorio)</param>
-        protected void Page_Load(object sender, EventArgs e)
+        public int GetTypeComp
         {
-            int typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            int idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
-
-            CargarBotonVolver(typeComp, idComp);
-            
-            //En esta seccion se maneja el eliminar contacto con el idCont
-            try
+            get
             {
-                //En este try atrapo el valor del id del Contacto (si existe)
-                //para luego ser eliminado de los contactos de la empresa
-                int idCont = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
-                _theContact.IdContacto = idCont;
-
-                _logicM5.DeleteContact(_theContact);
+                return int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
             }
-            catch (Exception ex)
+        }
+        public int GetIdComp
+        {
+            get
             {
-                //No se hace nada,  ya que el idCont no es un parametro obligatorio
-            }
-
-            //En esta seccion se manejan los mensajes que se reciben por acciones del usuario
-            try
-            {
-                int status = int.Parse(Request.QueryString[ResourceGUIM5.Status]);
-
-                switch (status)
-                {
-                    case 1:
-                        Alerta(ResourceGUIM5.ContactoAgregado,int.Parse(ResourceGUIM5.StatusAgregado));
-                        break;
-                    case 2:
-                        Alerta(ResourceGUIM5.ContactoModificado, int.Parse(ResourceGUIM5.StatusAgregado));
-                        break;
-                    case 3:
-                        Alerta(ResourceGUIM5.ContactoEliminado, int.Parse(ResourceGUIM5.StatusAgregado));
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                //No se hace nada,  ya que el status no es un parametro obligatorio
-            } 
-
-            try
-            {
-                _listContact = _logicM5.GetContacts(typeComp, idComp);
-                foreach (Contacto _theContact2 in _listContact)
-                {
-                    LlenarTabla(_theContact2, typeComp, idComp);
-                }
-                button += ResourceGUIM5.VentanaAgregarContacto + typeComp.ToString()
-                    + ResourceGUIM5.ParametroIdComp + idComp.ToString() + ResourceGUIM5.FinalAgregarContacto;
-            }
-            catch (Exception ex)
-            {
-                Alerta(ex.Message,int.Parse(ResourceGUIM5.StatusModificado));
+                return int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
             }
         }
 
-        /// <summary>
-        /// Funcion para manipular los memsajes que van a interfaz (Errores del programa o Acciones del usuario).
-        /// </summary>
-        /// <param name="msj">string que contiene el mensaje a mostrar</param>
-        /// <param name="typeMsg">Tipo de mensaje (1 para acciones del usuario, 2 para errores del programa</param>
+        public string botonVolverCompania()
+        {
+            return ResourceGUIM5.VolverCompania;
+        }
+
+        public string botonVolverLead()
+        {
+            return ResourceGUIM5.VolverCliPotencial;
+        }
+
+        public string empresaGen()
+        {
+            return ResourceGUIM5.Compania;
+        }
+
+        public string leadGen()
+        {
+            return ResourceGUIM5.Lead;
+        }
+
+        public int idCont()
+        {
+            return int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
+        }
+
+        public int statusAccion()
+        {
+            return int.Parse(Request.QueryString[ResourceGUIM5.Status]);
+        }
+
+        public int statusAgregado()
+        {
+            return int.Parse(ResourceGUIM5.StatusAgregado);
+        }
+
+        public string ContactoAgregadoMsj()
+        {
+            return ResourceGUIM5.ContactoAgregado;
+        }
+
+        public string ContadoModificadoMsj()
+        {
+            return ResourceGUIM5.ContactoModificado;
+        }
+
+        public string ContactoEliminadoMsj()
+        {
+            return ResourceGUIM5.ContactoEliminado;
+        }
+
+        public string CargarBotonNuevoContacto(int typeComp, int idComp)
+        {
+            return this.button += ResourceGUIM5.VentanaAgregarContacto + typeComp.ToString()
+                    + ResourceGUIM5.ParametroIdComp + idComp.ToString() + ResourceGUIM5.FinalAgregarContacto;
+        }
+
         public void Alerta(string msj, int typeMsg)
         {
             if (typeMsg == 1)
@@ -171,33 +172,6 @@ namespace Tangerine.GUI.M5
             alerta = ResourceGUIM5.AlertShowSu1 + msj + ResourceGUIM5.AlertShowSu2;
         }
 
-        /// <summary>
-        /// Funcion para cargar el boton de regreso a Compania o Cliente Potencial.
-        /// </summary>
-        /// <param name="typeComp">Entero, representa el tipo de empresa (1 compañia o 2 lead)</param>
-        /// <param name="idComp">Entero, representa el id de la empresa</param>
-        public void CargarBotonVolver(int typeComp, int idComp)
-        {
-            if (typeComp == 1)
-            {
-                compania = _logicM4.ConsultCompany(idComp);
-                botonVolver = ResourceGUIM5.VolverCompania;
-                nombreEmpresa = ResourceGUIM5.Compania + compania.NombreCompania;
-            }
-            else
-            {
-                cliPotencial = _logicM3.BuscarClientePotencial(idComp);
-                botonVolver = ResourceGUIM5.VolverCliPotencial;
-                nombreEmpresa = ResourceGUIM5.Lead + cliPotencial.NombreClientePotencial;
-            }
-        }
-
-        /// <summary>
-        /// Funcion para llenar una fila de la tabla a mostrar en interfaz con los contactos.
-        /// </summary>
-        /// <param name="_theContact2">Contacto, para crear su fila</param>
-        /// <param name="typeComp">Entero, representa el tipo de empresa</param>
-        /// <param name="idComp">Entero, representa el id de la empresa</param>
         public void LlenarTabla(Contacto _theContact2, int typeComp, int idComp)
         {
             contact += ResourceGUIM5.AbrirTR;
@@ -216,6 +190,24 @@ namespace Tangerine.GUI.M5
                 + ResourceGUIM5.StatusEliminado + ResourceGUIM5.BotonCerrar;
             contact += ResourceGUIM5.CerrarTD;
             contact += ResourceGUIM5.CerrarTR;
+        }
+        public string StatusModificado()
+        {
+            return ResourceGUIM5.StatusModificado;
+        }
+        #endregion
+
+
+        /// <summary>
+        /// Metodo de carga de los elementos de la ventana.
+        /// </summary>
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presentador = new PresentadorConsultarContactos(this);
+            presentador.cargar_pagina();
+
+
         }
     }
 }
