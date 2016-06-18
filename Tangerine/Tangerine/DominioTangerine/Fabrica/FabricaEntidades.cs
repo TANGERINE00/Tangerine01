@@ -211,8 +211,8 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-            #region Metodos para instanciar Lead
-            public static Entidad ObtenerLead()
+            #region Metodos para instanciar Cliente Potencial
+            public static Entidad ObtenerClientePotencial()
             {
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
             }

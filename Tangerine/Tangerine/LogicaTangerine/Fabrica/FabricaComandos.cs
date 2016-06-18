@@ -135,9 +135,9 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosLeads()
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosClientePotencial()
         {
-            return new ComandoListarTodosLeads();
+            return new ComandoListarTodosClientesPotenciales();
         }
         #endregion
 

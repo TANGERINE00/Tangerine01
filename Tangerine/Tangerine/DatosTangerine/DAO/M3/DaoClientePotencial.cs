@@ -12,9 +12,9 @@ using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M3
 {
-    public class DaoLead : DAOGeneral, IDAOLead
+    public class DaoClientePotencial : DAOGeneral, IDAOClientePotencial
     {
-        #region IDAOLead
+        #region IDAOClientePotencial
         #endregion
 
         #region DAO General
@@ -53,23 +53,19 @@ namespace DatosTangerine.DAO.M3
             {
                 foreach (DataRow row in data.Rows)
                 {
+                    Entidad clientePotencial = DominioTangerine.Fabrica.FabricaEntidades.ObtenerClientePotencial();
 
-                    //Empleado empleado = new Empleado();
-                    //ClientePotencial clientePotencial = new ClientePotencial();
-
-                    Entidad lead = DominioTangerine.Fabrica.FabricaEntidades.ObtenerLead();
-
-                    ((DominioTangerine.Entidades.M3.ClientePotencial)lead).IdClientePotencial = Int32.Parse(row[ResourceClientePotencial.idClientePotencial].ToString());
-                    ((DominioTangerine.Entidades.M3.ClientePotencial)lead).NombreClientePotencial = row[ResourceClientePotencial.nombreClientePotencial].ToString();
+                    ((DominioTangerine.Entidades.M3.ClientePotencial)clientePotencial).IdClientePotencial = Int32.Parse(row[ResourceClientePotencial.idClientePotencial].ToString());
+                    ((DominioTangerine.Entidades.M3.ClientePotencial)clientePotencial).NombreClientePotencial = row[ResourceClientePotencial.nombreClientePotencial].ToString();
                     //ese nombre en mayuscula es el del set y el get de la capa de dominio
 
-                    ((DominioTangerine.Entidades.M3.ClientePotencial)lead).RifClientePotencial = row[ResourceClientePotencial.rifClientePotencial].ToString();
-                    ((DominioTangerine.Entidades.M3.ClientePotencial)lead).EmailClientePotencial = row[ResourceClientePotencial.emailClientePotencial].ToString();
-                    ((DominioTangerine.Entidades.M3.ClientePotencial)lead).PresupuestoAnual_inversion = float.Parse(row[ResourceClientePotencial.presupuestoAnual_inversion].ToString());
-                    ((DominioTangerine.Entidades.M3.ClientePotencial)lead).Status = Int32.Parse(row[ResourceClientePotencial.status].ToString());
+                    ((DominioTangerine.Entidades.M3.ClientePotencial)clientePotencial).RifClientePotencial = row[ResourceClientePotencial.rifClientePotencial].ToString();
+                    ((DominioTangerine.Entidades.M3.ClientePotencial)clientePotencial).EmailClientePotencial = row[ResourceClientePotencial.emailClientePotencial].ToString();
+                    ((DominioTangerine.Entidades.M3.ClientePotencial)clientePotencial).PresupuestoAnual_inversion = float.Parse(row[ResourceClientePotencial.presupuestoAnual_inversion].ToString());
+                    ((DominioTangerine.Entidades.M3.ClientePotencial)clientePotencial).Status = Int32.Parse(row[ResourceClientePotencial.status].ToString());
 
 
-                    objetolistaClientePotencial.Add(lead);
+                    objetolistaClientePotencial.Add(clientePotencial);
 
                 }
             }
