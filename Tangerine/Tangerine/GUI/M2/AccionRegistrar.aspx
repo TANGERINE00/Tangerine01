@@ -29,7 +29,7 @@
                         var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
                         $.ajax({
                             type: "POST",
-                            url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
+                            url: "AccionRegistrar.aspx/ObtenerUsuarioDefault2",
                             data: param,
                             contentType: 'application/json; charset=utf-8',
                             dataType: 'json',
@@ -50,7 +50,7 @@
                 var param = "{'usuario':'" + nombreuser + "'}";
                 $.ajax({
                     type: "POST",
-                    url: "RegistroUsuario.aspx/validarUsuario",
+                    url: "AccionRegistrar.aspx/validarUsuario",
                     data: param,
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
