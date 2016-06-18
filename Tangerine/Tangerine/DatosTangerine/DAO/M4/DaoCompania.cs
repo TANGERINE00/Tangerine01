@@ -153,7 +153,7 @@ namespace DatosTangerine.DAO.M4
        /// <summary>
        /// Método para agregar una compañia nueva en la base de datos.
        /// </summary>
-       /// <param name="parameto">Objeto de tipo CompaniaM4 para agregar en la base de datos.</param>
+       /// <param name="theCompany">Objeto de tipo CompaniaM4 para agregar en la base de datos.</param>
        /// <returns>True si fue agregada exitosamente.</returns>
 
        public bool Agregar(Entidad theCompany)
