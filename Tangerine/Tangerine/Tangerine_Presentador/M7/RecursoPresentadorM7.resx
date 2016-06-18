@@ -165,6 +165,9 @@
   <data name="FechaInicio" xml:space="preserve">
     <value>FechaInicio:</value>
   </data>
+  <data name="Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
   <data name="NombreProyecto" xml:space="preserve">
     <value>Nombre:</value>
   </data>
@@ -200,5 +203,8 @@
   </data>
   <data name="PropuestaAprovada" xml:space="preserve">
     <value>Propuesta:</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
   </data>
 </root>

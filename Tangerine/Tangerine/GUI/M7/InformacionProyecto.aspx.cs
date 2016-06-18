@@ -8,44 +8,158 @@ using DominioTangerine;
 using LogicaTangerine.M7;
 using LogicaTangerine.M10;
 using LogicaTangerine.M5;
+using Tangerine_Presentador.M7;
+using Tangerine_Contratos.M7;
 
 namespace Tangerine.GUI.M7
 {
-    public partial class InformacionProyecto : System.Web.UI.Page
+    public partial class InformacionProyecto : System.Web.UI.Page, IContratoInformacionProyecto
+
     {
-        int Proyectoid;
-        List<Contacto> ContactosProyecto = new List<Contacto>();
-        List<Empleado> ProgramadoresProyecto = new List<Empleado>();
-        LogicaM5 LogicaM5 = new LogicaM5();
-        LogicaM10 LogicaM10 = new LogicaM10();
+        PresentadorInformacionProyecto presentador;
+
+        public InformacionProyecto()
+        {
+           this.presentador = new PresentadorInformacionProyecto(this);
+        }
+
+        #region Contrato
+        public Label NombrePropuesta
+        {
+            get
+            {
+                return nombrePropuesta;
+            }
+            set
+            {
+                nombrePropuesta = value;
+            }
+        }
+
+        public Label NombreProyecto
+        {
+            get
+            {
+                return nombreProyecto;
+            }
+            set
+            {
+                nombreProyecto = value;
+            }
+        }
+
+        public Label CodigoProyecto
+        {
+            get
+            {
+                return codigoProyecto;
+            }
+            set
+            {
+                codigoProyecto = value;
+            }
+        }
+
+        public Label FechaInicio
+        {
+            get
+            {
+                return fechaInicio;
+            }
+            set
+            {
+                fechaInicio = value;
+            }
+        }
+
+        public Label FechaFin
+        {
+            get
+            {
+                return fechaFin;
+            }
+            set
+            {
+                fechaFin = value;
+            }
+        }
+
+        public Label Costo
+        {
+            get
+            {
+                return costo;
+            }
+            set
+            {
+                costo = value;
+            }
+        }
+
+        public Label Porcentaje
+        {
+            get
+            {
+                return porcentaje;
+            }
+            set
+            {
+                porcentaje = value;
+            }
+        }
+
+        public Label Estatus
+        {
+            get
+            {
+                return estatus;
+            }
+            set
+            {
+                estatus = value;
+            }
+        }
+
+        public DropDownList inputPersonal
+        {
+            get
+            {
+                return inputPersonal1;
+            }
+            set
+            {
+                inputPersonal1 = value;
+            }
+        }
+
+        public DropDownList inputEncargado
+        {
+            get
+            {
+                return inputEncargado1;
+            }
+            set
+            {
+                inputEncargado1 = value;
+            }
+        }
+
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            int Proyectoid = int.Parse(Request.QueryString["idCont"]);
 
-            Proyectoid = int.Parse(Request.QueryString["idCont"]);
-           
-            Proyecto Proyecto = new Proyecto();
-            LogicaProyecto LogicaM7 = new LogicaProyecto();
-            Proyecto = LogicaM7.consultarProyecto(Proyectoid);
-            ContactosProyecto = LogicaM5.GetContactsProyect(Proyecto);
-            ProgramadoresProyecto = LogicaM7.obtenerListaEmpleados(Proyecto);
-            NombrePropuesta.Text = LogicaM7.ConsultarNombrePropuestaID(Proyecto.Idpropuesta);
-            NombreProyecto.Text = Proyecto.Nombre;
-            CodigoProyecto.Text = Proyecto.Codigo;
-            FechaInicio.Text = Proyecto.Fechainicio.ToString("dd/MM/yyyy");
-            FechaFin.Text = Proyecto.Fechaestimadafin.ToString("dd/MM/yyyy");
-            Costo.Text = Proyecto.Costo.ToString();
-            Porcentaje.Text= Proyecto.Realizacion;
-            Estatus.Text = Proyecto.Estatus;
-            for (int i = 0; i < ProgramadoresProyecto.Count; i++)
+            if (!IsPostBack)
             {
-                inputPersonal.Items.Add(ProgramadoresProyecto[i].emp_p_nombre + " " + ProgramadoresProyecto[i].emp_p_apellido);
+                presentador.CargarInformacionProyecto(Proyectoid);
             }
-
-            for (int i = 0; i < ContactosProyecto.Count; i++)
-            {
-                inputEncargado.Items.Add(ContactosProyecto[i].Nombre + " " + ContactosProyecto[i].Apellido);
-            }
-
         }
+
+
+
+
+
+
     }
-    }
+}

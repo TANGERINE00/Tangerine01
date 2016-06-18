@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
 using DominioTangerine.Entidades.M2;
-using DominioTangerine.Entidades.M4
-;
+using DominioTangerine.Entidades.M4;
 using DominioTangerine.Entidades.M5;
+using DominioTangerine.Entidades.M10;
+using DominioTangerine.Entidades.M8;
+
 
 namespace DominioTangerine.Fabrica
 {
@@ -28,12 +30,12 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 2
 
-            #region Metodos para instancias de Usuario
+            #region Métodos para instancias de UsuarioM2
 
             /// <summary>
             /// Se crea la instancia sin atributos
             /// </summary>
-            /// <returns>Retorna una instacion de Usuario sin atributos</returns>
+            /// <returns>Retorna una instacion de UsuarioM2 sin atributos</returns>
             static public Entidad crearUsuarioVacio()
             {
                 return new UsuarioM2();
@@ -42,37 +44,48 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario y contraseña
             /// </summary>
+            /// <param name="usuario"></param>
+            /// <param name="contrasena"></param>
             /// <returns>Retorna una instacion de Usuario con usuario y contraseña</returns>
-            static public Entidad crearUsuarioConUsuarioYContrasena(string usuario, string contrasena)
+            static public Entidad crearUsuarioConUsuarioYContrasena( string usuario , string contrasena )
             {
-                return new UsuarioM2( usuario, contrasena );
+                return new UsuarioM2( usuario , contrasena );
             }
 
             /// <summary>
             /// Se crea la instancia con usuario y rol
             /// </summary>
+            /// <param name="usuario"></param>
+            /// <param name="rol"></param>
             /// <returns>Retorna una instacion de Usuario con usuario y rol</returns>
-            static public Entidad crearUsuarioConUsuarioRol(string usuario, RolM2 rol)
+            static public Entidad crearUsuarioConUsuarioRol( string usuario , RolM2 rol )
             {
-                return new UsuarioM2( usuario, rol );
+                return new UsuarioM2( usuario , rol );
             }
 
             /// <summary>
             /// Se crea la instancia con usuario, contrasena y activo
             /// </summary>
+            /// <param name="usuario"></param>
+            /// <param name="contrasena"></param>
+            /// <param name="activo"></param>
             /// <returns>Retorna una instacion de Usuario con usuario, contraseña y activo</returns>
-            static public Entidad crearUsuarioConUsuarioContrasenaActivo(string usuario, string contrasena, string activo)
+            static public Entidad crearUsuarioConUsuarioContrasenaActivo( string usuario , string contrasena , string activo )
             {
-                return new UsuarioM2( usuario, contrasena, activo );
+                return new UsuarioM2( usuario , contrasena , activo );
             }
 
             /// <summary>
             /// Se crea la instancia con usuario, contrasena, activo y Rol
             /// </summary>
+            /// <param name="usuario"></param>
+            /// <param name="contrasena"></param>
+            /// <param name="activo"></param>
+            /// <param name="rol"></param>
             /// <returns>Retorna una instacion de Usuario con usuario, contraseña, activo y rol</returns>
-            static public Entidad crearUsuarioConUsuarioContrasenaActivoRol(string usuario, string contrasena, string activo, RolM2 rol)
+            static public Entidad crearUsuarioConUsuarioContrasenaActivoRol( string usuario , string contrasena , string activo , RolM2 rol )
             {
-                return new UsuarioM2( usuario, contrasena, activo, rol);
+                return new UsuarioM2( usuario , contrasena , activo , rol);
             }
 
             /// <summary>
@@ -85,51 +98,127 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputRol"></param>
             /// <param name="inputfFichaEmpleado"></param>
             /// <returns>Retorna una instacion de Usuario con todos los atributos</returns>
-
-            static public Entidad crearUsuarioCompleto(string inputUsuario, string inputContrasena,
-                                                                                        DateTime inputFechaCreacion, string inputActivo,
-                                                                                        RolM2 inputRol, int inputfFichaEmpleado )
+            static public Entidad crearUsuarioCompleto( string inputUsuario , string inputContrasena , DateTime inputFechaCreacion , 
+                                                        string inputActivo , RolM2 inputRol , int inputfFichaEmpleado )
             {
-                return new UsuarioM2( inputUsuario, inputContrasena, inputFechaCreacion,
-                                                                    inputActivo, inputRol, inputfFichaEmpleado );
+                return new UsuarioM2( inputUsuario , inputContrasena , inputFechaCreacion , inputActivo , inputRol , inputfFichaEmpleado );
             }
             #endregion
 
-            #region Metodos para instancias de Rol
+            #region Métodos para instancias de RolM2
 
             /// <summary>
-            /// Se crea la instancia sin atributos de rol
+            /// Se crea la instancia sin atributos de RolM2
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase Rol sin atributos</returns>
+            /// <returns>Devuelve la instancia de la clase RolM2 sin atributos</returns>
             static public Entidad crearRolVacio()
             {
                 return new RolM2();
             }
 
             /// <summary>
-            /// Se crea la instancia de rol con nombre
+            /// Se crea la instancia de RolM2 con nombre
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase Rol con el nombre</returns>
-            static public Entidad crearRolNombre(string nombre)
+            /// <param name="nombre"></param>
+            /// <returns>Devuelve la instancia de la clase RolM2 con el nombre</returns>
+            static public Entidad crearRolNombre( string nombre )
             {
                 return new RolM2( nombre );
             }
 
             /// <summary>
-            /// Se crea la instancia de rol con todos sus atributos
+            /// Se crea la instancia de RolM2 con todos sus atributos
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase con el nombre y el menu</returns>
-            static public Entidad crearRolCompleto(string nombre, ListaGenerica<Menu> menu)
+            /// <param name="nombre"></param>
+            /// <param name="menu"></param>
+            /// <returns>Devuelve la instancia de la clase RolM2 con el nombre y el menu</returns>
+            static public Entidad crearRolCompleto( string nombre , ListaGenericaM2<MenuM2> menu)
             {
-                return new RolM2( nombre, menu );
+                return new RolM2( nombre , menu );
             }
 
             #endregion
 
+            #region Métodos para instancias de OpcionM2
+            
+            /// <summary>
+            /// Se crea la instancia sin atributos de OpcionM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase OpcionM2 sin atributos</returns>
+            static public Entidad crearOpcionVacia()
+            {
+                return new OpcionM2();
+            }
+            
+            /// <summary>
+            /// Se crea la instancia de OpcionM2 con todos sus atributos
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <param name="url"></param>
+            /// <returns>Devuelve la instancia de la clase OpcionM2 con el nombre y el url</returns>
+            static public Entidad crearOpcionCompleta( string nombre , string url )
+            {
+                return new OpcionM2( nombre , url );
+            }
+
+            #endregion
+
+            #region Métodos para instancias de MenuM2
+            
+            /// <summary>
+            /// Se crea la instancia sin atributos de MenuM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase MenuM2 sin atributos</returns>
+            static public Entidad crearMenuVacio()
+            {
+                return new MenuM2();
+            }
+            
+            /// <summary>
+            /// Se crea la instancia de MenuM2 con nombre
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <returns>Devuelve la instancia de la clase MenuM2 con el nombre</returns>
+            static public Entidad crearMenuNombre( string nombre )
+            {
+                return new MenuM2( nombre );
+            }
+            
+            /// <summary>
+            /// Se crea la instancia de MenuM2 con todos sus atributos
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <param name="opciones"></param>
+            /// <returns>Devuelve la instancia de la clase MenuM2 con el nombre y las opciones</returns>
+            static public Entidad crearMenuCompleto( string nombre , ListaGenericaM2<OpcionM2> opciones )
+            {
+                return new MenuM2( nombre , opciones );
+            }
+
+            #endregion
+
+            #region Métodos para instancias de ListaGenericaM2
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            static public Entidad crearListaGenericaVacia()
+            {
+                return new ListaGenericaM2<Entidad>();
+            }
+
+            #endregion
+            
         #endregion
 
         #region Modulo 3
-
+            #region Metodos para instanciar Cliente Potencial
+            public static Entidad ObtenerClientePotencial()
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial();
+            }
+            #endregion
         #endregion
 
         #region Modulo 4
@@ -274,11 +363,27 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 5
-            public static Entidad crearCobtactoVacio()
+            /// <summary>
+            /// Método para instancear la clase ContactoM5 vacia
+            /// </summary>
+            /// <returns></returns>
+            public static Entidad crearContactoVacio()
             {
                 return new ContactoM5();
             }
 
+            /// <summary>
+            /// Método para instancear la clase ContactoM5 sin el id
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <param name="apellido"></param>
+            /// <param name="departamento"></param>
+            /// <param name="cargo"></param>
+            /// <param name="telefono"></param>
+            /// <param name="correo"></param>
+            /// <param name="tipoCompañia"></param>
+            /// <param name="idCompañia"></param>
+            /// <returns></returns>
             public static Entidad crearContactoSinId( string nombre, string apellido, string departamento,
                                                       string cargo, string telefono, string correo, int tipoCompañia,
                                                       int idCompañia )
@@ -286,7 +391,20 @@ namespace DominioTangerine.Fabrica
                 return new ContactoM5( nombre, apellido, departamento, cargo, telefono, correo, tipoCompañia, 
                                        idCompañia );
             }
-
+            
+            /// <summary>
+            /// Método para instancear la clase ContactoM5 con todos sus atributos
+            /// </summary>
+            /// <param name="idContacto"></param>
+            /// <param name="nombre"></param>
+            /// <param name="apellido"></param>
+            /// <param name="departamento"></param>
+            /// <param name="cargo"></param>
+            /// <param name="telefono"></param>
+            /// <param name="correo"></param>
+            /// <param name="tipoCompañia"></param>
+            /// <param name="idCompañia"></param>
+            /// <returns></returns>
             public static Entidad crearContactoConId( int idContacto, string nombre, string apellido, 
                                                       string departamento, string cargo, string telefono, 
                                                       string correo, int tipoCompañia, int idCompañia ) 
@@ -395,6 +513,25 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 8
 
+        public static Entidad ObtenerFacturacion()
+        {
+            return new Facturacion();
+        }
+
+        public static Entidad Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
+            double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
+        {
+            return new Facturacion(fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
+                descripcion, estatus, idProyecto, idCompania);
+        }
+
+        public static Entidad Facturacion(int id, int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto,
+            double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
+        {
+            return new Facturacion(id, fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
+                descripcion, estatus, idProyecto, idCompania);
+        }
+
         #endregion
 
         #region Modulo 9
@@ -424,64 +561,31 @@ namespace DominioTangerine.Fabrica
         /// </summary>
         /// <returns></returns>
 
-        public static Entidad ObtenerEmpleadoE() 
+        public static Entidad ConsultarEmpleados() 
         {
-            return new DominioTangerine.Entidades.M10.Empleado();
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
+
+        //public static Entidad ObtenerCargo()
+        //{
+        //    return new DominioTangerine.Entidades.M10.Cargo();
+        //}
 
         
-        /// <summary>
-        /// Metodo para instanciar a los empleados con todos sus atributos
-        /// </summary>
-        /// <param name="empId"></param>
-        /// <param name="empPNombre"></param>
-        /// <param name="empSNombre"></param>
-        /// <param name="empPApellido"></param>
-        /// <param name="empSApellido"></param>
-        /// <param name="empGenero"></param>
-        /// <param name="empCedula"></param>
-        /// <param name="empFecha"></param>
-        /// <param name="empActivo"></param>
-        /// <param name="empEstudio"></param>
-        /// <param name="empEmail"></param>
-        /// <param name="empLugId"></param>
-        /// <returns></returns>
-        public static Entidad ObtenerEmpleadoCompleto(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
-                       string empGenero, int empCedula, DateTime empFecha, string empActivo, string empEstudio,
-                       string empEmail, int empLugId) 
+        public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
         {
-            return new DominioTangerine.Entidades.M10.Empleado( empId,  empPNombre,  empSNombre,  empPApellido,  empSApellido,
-                        empGenero,  empCedula,  empFecha,  empActivo,  empEstudio,
-                        empEmail,  empLugId);
+            return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
         }
 
-
-        /// <summary>
-        /// Metodo para instanciar empleados con todos los atributos menos el id 
-        /// </summary>
-        /// <param name="pNombre"></param>
-        /// <param name="sNombre"></param>
-        /// <param name="pApellido"></param>
-        /// <param name="sApellido"></param>
-        /// <param name="email"></param>
-        /// <param name="genero"></param>
-        /// <param name="fechaNacimiento"></param>
-        /// <param name="ficha"></param>
-        /// <param name="cedula"></param>
-        /// <param name="nivelEstudio"></param>
-        /// <param name="activo"></param>
-        /// <returns></returns>
-        public static Entidad ObtenerEmpleadoSinId(string pNombre, string sNombre, string pApellido, string sApellido,
-                string email, string genero, DateTime fechaNacimiento, int ficha, int cedula,
-                string nivelEstudio, string activo) 
+        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido, 
+                                                 string empSApellido, int empCedula, DateTime empFecha, string empActivo, 
+                                                 string empEmail, string empGenero, string empEstudio, string empModalidad, 
+                                                 double empSalario, Entidad cargo)
         {
-            return new DominioTangerine.Entidades.M10.Empleado( pNombre,  sNombre,  pApellido,  sApellido,
-                 email,  genero,  fechaNacimiento,  ficha,  cedula,
-                 nivelEstudio,  activo);
+                        return (new DominioTangerine.Entidades.M10.EmpleadoM10 ( empId,empPNombre,empSNombre,empPApellido, 
+                                empSApellido, empCedula,empFecha,empActivo,empEmail,empGenero,empEstudio,empModalidad,empSalario,cargo));
         }
 
-        
-       
         #endregion
     }
 }

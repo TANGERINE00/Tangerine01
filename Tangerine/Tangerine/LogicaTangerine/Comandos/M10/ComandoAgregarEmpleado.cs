@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DatosTangerine.Fabrica;
 using DatosTangerine.DAO;
 using DatosTangerine.DAO.M10;
-using DominioTangerine.Entidades.M10;
+using DominioTangerine.Entidades.M7;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
 

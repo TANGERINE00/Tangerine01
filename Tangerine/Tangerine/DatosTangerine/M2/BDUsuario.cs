@@ -64,7 +64,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que arma la lista de los parametros del Stored Procedure para modificar el rol del usuario 
@@ -105,7 +105,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que arma la lista de los parametros del Stored Procedure para modificar la contraseña 
@@ -146,7 +146,7 @@ namespace DatosTangerine.M2
             }
 
             return true;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
@@ -202,7 +202,7 @@ namespace DatosTangerine.M2
             }
 
             return usuario;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que obtiene el rol y los menús que poseen opciones prohibidas para el usuario
@@ -267,7 +267,7 @@ namespace DatosTangerine.M2
             }
 
             return rol;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que devuelve las opciones de un menú prohibidas para un rol
@@ -315,14 +315,14 @@ namespace DatosTangerine.M2
             }
 
             return lista;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna el usuario y rol de un empleado
         /// </summary>
         /// <param name="empleado"></param>
         /// <returns></returns>
-        public static Usuario ObtenerUsuarioDeEmpleado( Empleado empleado ) 
+        public static Usuario ObtenerUsuarioDeEmpleado( int num_empleado ) 
         {
             Usuario usuario = new Usuario();
 
@@ -334,12 +334,10 @@ namespace DatosTangerine.M2
             {
                 laConexion.Conectar();
 
-                elParametro = new Parametro( ResourceUser.ParametroNumFicha, SqlDbType.Int, 
-                                             empleado.Emp_num_ficha.ToString(), false );
+                elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                 parametros.Add( elParametro );
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, 
-                                                                         parametros );
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, parametros );
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -365,7 +363,7 @@ namespace DatosTangerine.M2
             }
 
             return usuario;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna el rol de un usuario con sus privilegios pasando como parámetro el nombre del rol
@@ -409,7 +407,7 @@ namespace DatosTangerine.M2
             }
 
             return rol;
-        }
+        } //Listo
 
         /// <summary>
         /// Método que retorna true si un usuario pertenece al empleado con el numero de ficha pasado como parametro. 
@@ -448,7 +446,7 @@ namespace DatosTangerine.M2
             }
 
             return resultado;
-        }
+        } //Listo
 
         /// <summary>
         /// Método para verificar si un nombre de usuario existe
@@ -486,6 +484,6 @@ namespace DatosTangerine.M2
             }
 
             return resultado;
-        }
+        } //Listo
     }
 }

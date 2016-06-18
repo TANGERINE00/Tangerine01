@@ -14,7 +14,7 @@ namespace Tangerine.GUI.M9
     public partial class WebForm1 : System.Web.UI.Page
     {
 
-        LogicaM8 prueba = new LogicaM8();
+        //LogicaM8 prueba = new LogicaM8();
 
         public string factura
         {
@@ -43,29 +43,29 @@ namespace Tangerine.GUI.M9
             {
                 if (!IsPostBack)
                 {
-                    //con el id capturado utilizao el metodo SearchFacturas para mostrar todas las facturas asociadas a esa compania
-                    List<Facturacion> listFacturas = prueba.SearchFacturasCompania(identificador);
+                    ////con el id capturado utilizao el metodo SearchFacturas para mostrar todas las facturas asociadas a esa compania
+                    //List<Facturacion> listFacturas = prueba.SearchFacturasCompania(identificador);
 
-                    if (listFacturas.Count() < 1)
-                    {
-                       // factura += ResourceLogicaM9.AbrirTD + "No hay facturas asociadas" + ResourceLogicaM9.CerrarTD;
-                    }
-                    else
-                    {
+                    //if (listFacturas.Count() < 1)
+                    //{
+                    //   // factura += ResourceLogicaM9.AbrirTD + "No hay facturas asociadas" + ResourceLogicaM9.CerrarTD;
+                    //}
+                    //else
+                    //{
 
-                        foreach (Facturacion theFactura in listFacturas)
-                        {
-                            factura += ResourceLogicaM9.AbrirTR;
-                            factura += ResourceLogicaM9.AbrirTD + theFactura.idFactura + ResourceLogicaM9.CerrarTD;
-                            factura += ResourceLogicaM9.AbrirTD + theFactura.fechaFactura.ToShortDateString() + ResourceLogicaM9.CerrarTD;
-                            factura += ResourceLogicaM9.EtiquetaPorPagar;
-                            factura += ResourceLogicaM9.AbrirTD + theFactura.descripcionFactura + ResourceLogicaM9.CerrarTD;
-                            factura += ResourceLogicaM9.AbrirTD + theFactura.montoFactura + " " + theFactura.tipoMoneda + ResourceLogicaM9.CerrarTD;
+                    //    foreach (Facturacion theFactura in listFacturas)
+                    //    {
+                    //        factura += ResourceLogicaM9.AbrirTR;
+                    //        factura += ResourceLogicaM9.AbrirTD + theFactura.idFactura + ResourceLogicaM9.CerrarTD;
+                    //        factura += ResourceLogicaM9.AbrirTD + theFactura.fechaFactura.ToShortDateString() + ResourceLogicaM9.CerrarTD;
+                    //        factura += ResourceLogicaM9.EtiquetaPorPagar;
+                    //        factura += ResourceLogicaM9.AbrirTD + theFactura.descripcionFactura + ResourceLogicaM9.CerrarTD;
+                    //        factura += ResourceLogicaM9.AbrirTD + theFactura.montoFactura + " " + theFactura.tipoMoneda + ResourceLogicaM9.CerrarTD;
 
-                            //Boton para cargar el pago de una factura especifica
-                            factura += ResourceLogicaM9.botonPagarAbrir + theFactura.idFactura + ResourceLogicaM9.botonPagarCerrar;
-                        }
-                    }
+                    //        //Boton para cargar el pago de una factura especifica
+                    //        factura += ResourceLogicaM9.botonPagarAbrir + theFactura.idFactura + ResourceLogicaM9.botonPagarCerrar;
+                    //    }
+                    //}
 
                 }
             }

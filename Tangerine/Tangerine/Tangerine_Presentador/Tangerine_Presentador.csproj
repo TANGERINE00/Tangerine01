@@ -30,22 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DatosTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DatosTangerine\bin\Debug\DatosTangerine.dll</HintPath>
-    </Reference>
-    <Reference Include="DominioTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DominioTangerine\bin\Debug\DominioTangerine.dll</HintPath>
-    </Reference>
-    <Reference Include="ExcepcionesTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ExcepcionesTangerine\bin\Debug\ExcepcionesTangerine.dll</HintPath>
-    </Reference>
-    <Reference Include="LogicaTangerine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LogicaTangerine\bin\Debug\LogicaTangerine.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,13 +39,34 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tangerine_Contratos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Tangerine_Contratos\bin\Debug\Tangerine_Contratos.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M10\PresentadorConsultaEmpleado.cs" />
+    <Compile Include="M10\ResourceGUIM10.Designer.cs">
+      <DependentUpon>ResourceGUIM10.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="M1\PresentadorInicio.cs" />
+    <Compile Include="M2\PresentacionCambioRol.cs" />
+    <Compile Include="M2\PresentadorRegistroUsuario.cs" />
+    <Compile Include="M3\PresentadorListarClientePotencial.cs" />
+    <Compile Include="M3\ResourceInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="M5\PresentadorAgregarContacto.cs" />
+    <Compile Include="M6\PresentadorModificarPropuesta.cs" />
+    <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
+    <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
+    <Compile Include="M6\PresentadorConsultarPropuesta.cs" />
+    <Compile Include="M6\RecursosPresentadorPropuesta.Designer.cs">
+      <DependentUpon>RecursosPresentadorPropuesta.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="M7\PresentadorInformacionProyecto.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />
     <Compile Include="M7\RecursoPresentadorM7.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -78,20 +83,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M10\" />
-    <Folder Include="M2\" />
-    <Folder Include="M3\" />
     <Folder Include="M4\" />
-    <Folder Include="M5\" />
-    <Folder Include="M6\M10\" />
-    <Folder Include="M6\M1\" />
-    <Folder Include="M6\M2\" />
-    <Folder Include="M6\M3\" />
-    <Folder Include="M6\M4\" />
-    <Folder Include="M6\M5\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="M10\ResourceGUIM10.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M3\ResourceInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M6\RecursosPresentadorPropuesta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosPresentadorPropuesta.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M7\RecursoPresentadorM7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoPresentadorM7.Designer.cs</LastGenOutput>
@@ -100,6 +107,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoPresentadorM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatosTangerine\DatosTangerine.csproj">
+      <Project>{aade4db2-ab86-432e-8d4d-31bc301e0dcf}</Project>
+      <Name>DatosTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">
+      <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
+      <Name>DominioTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+      <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
+      <Name>ExcepcionesTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicaTangerine\LogicaTangerine.csproj">
+      <Project>{e0a749b2-762b-41a8-b134-064a6a4dfb07}</Project>
+      <Name>LogicaTangerine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tangerine_Contratos\Tangerine_Contratos.csproj">
+      <Project>{9f9e2132-7a2f-4f67-9b94-a82e2b50669e}</Project>
+      <Name>Tangerine_Contratos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

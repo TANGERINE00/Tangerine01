@@ -23,7 +23,7 @@ namespace DominioTangerine.Entidades.M2
         #region Constructores
 
         /// <summary>
-        /// Constructor vacío de la clase Usuario
+        /// Constructor vacío de la clase UsuarioM2
         /// </summary>
         public UsuarioM2()
         {

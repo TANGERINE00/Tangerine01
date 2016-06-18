@@ -9,6 +9,9 @@ using DatosTangerine.InterfazDAO.M7;
 using DatosTangerine.InterfazDAO.M2;
 using DatosTangerine.InterfazDAO.M5;
 using DatosTangerine.InterfazDAO.M4;
+using DatosTangerine.InterfazDAO.M10;
+using DatosTangerine.InterfazDAO.M8;
+using DatosTangerine.InterfazDAO.M3;
 
 
 namespace DatosTangerine.Fabrica
@@ -42,7 +45,14 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-
+        /// <summary>
+        /// Método que crea la instancia de DAO Lead
+        /// </summary>
+        /// <returns>Retorna la instancia a la clase DaoLead</returns>
+        static public IDAOClientePotencial CrearDaoClientePotencial()
+        {
+            return new DAO.M3.DaoClientePotencial();
+        }
         #endregion
 
         #region Modulo 4
@@ -71,6 +81,10 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 5
+        /// <summary>
+        /// Método para instancear DAOContacto
+        /// </summary>
+        /// <returns></returns>
         public static IDAOContacto crearDAOContacto() 
         {
             return new DAO.M5.DAOContacto();
@@ -119,6 +133,11 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 8
 
+        public static IDaoFactura ObtenerDAOFactura()
+        {
+            return new DAO.M8.DAOFactura();
+        }
+
         #endregion
 
         #region Modulo 9
@@ -140,7 +159,7 @@ namespace DatosTangerine.Fabrica
         /// </summary>
         /// <returns></returns>
 
-        public static DAO.M10.DAOEmpleado CrearDAOEmpleado()
+        public static IDAOEmpleado  ConsultarDAOEmpleado()
         {
             return new DAO.M10.DAOEmpleado();
         }

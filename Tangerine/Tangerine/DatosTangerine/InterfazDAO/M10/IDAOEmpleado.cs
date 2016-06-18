@@ -11,9 +11,14 @@ namespace DatosTangerine.InterfazDAO.M10
     public interface IDAOEmpleado : IDao<Entidad, Boolean , Entidad>
     {
 
-        bool AddEmpleado(Empleado theEmpleado);
+
+        
+        bool AgregarEmpleado(Empleado elEmpleado);
+        
         List<Empleado> ListarEmpleados();
-        Empleado GetEmployeeById(int employeeId);
+
+        List<Entidad> ConsultarTodos();
+        
         bool CambiarEstatus(int empleadoId);
 
 

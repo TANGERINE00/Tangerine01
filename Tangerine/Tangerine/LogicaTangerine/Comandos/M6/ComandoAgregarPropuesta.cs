@@ -10,8 +10,8 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoAgregarPropuesta : Comando<bool>
     {
-
-        public ComandoAgregarPropuesta(Entidad laPropuesta) {
+        public ComandoAgregarPropuesta(Entidad laPropuesta) 
+        {
              _laEntidad = laPropuesta;
         }
 
