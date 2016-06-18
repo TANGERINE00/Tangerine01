@@ -22,66 +22,70 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 2
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia de la clase ComandoAgregarUsuario
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
-        public static Comandos.M2.ComandoAgregarUsuario agregarUsuario( DominioTangerine.Entidad usuario )
-        {
-            return new Comandos.M2.ComandoAgregarUsuario( usuario );
-        }
+            #region Comandos Usuarios
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia de la clase ComandoVerificarUsuario
-        /// </summary>
-        /// <param name="fichaEmpleado"></param>
-        /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
-        public static Comandos.M2.ComandoVerificarUsuario verificarUsuario( int fichaEmpleado )
-        {
-            return new Comandos.M2.ComandoVerificarUsuario( fichaEmpleado );
-        }
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoAgregarUsuario
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
+            public static Comandos.M2.ComandoAgregarUsuario agregarUsuario( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandoAgregarUsuario( usuario );
+            }
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia de la clase ComandoConsultarListaDeEmpleados
-        /// </summary>
-        /// <returns>Retorna una una instancia a ComandoConsultarListaDeEmpleados</returns>
-        public static Comandos.M2.ComandoConsultarListaDeEmpleados listaEmpleados()
-        {
-            return new Comandos.M2.ComandoConsultarListaDeEmpleados();
-        }
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoVerificarUsuario
+            /// </summary>
+            /// <param name="fichaEmpleado"></param>
+            /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
+            public static Comandos.M2.ComandoVerificarUsuario verificarUsuario( int fichaEmpleado )
+            {
+                return new Comandos.M2.ComandoVerificarUsuario( fichaEmpleado );
+            }
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia del ComandoValidarUsuario
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
-        public static Comandos.M2.ComandoValidarUsuario validarUsuario( string usuario )
-        {
-            return new Comandos.M2.ComandoValidarUsuario( usuario );
-        }
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoConsultarListaDeEmpleados
+            /// </summary>
+            /// <returns>Retorna una una instancia a ComandoConsultarListaDeEmpleados</returns>
+            public static Comandos.M2.ComandoConsultarListaDeEmpleados listaEmpleados()
+            {
+                return new Comandos.M2.ComandoConsultarListaDeEmpleados();
+            }
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia del ComandoUsuarioDefault
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-        public static Comandos.M2.ComandoCrearUsuarioDefault crearUsuario( string nombre , string apellido )
-        {
-            return new Comandos.M2.ComandoCrearUsuarioDefault( nombre, apellido );
-        }
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoValidarUsuario
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
+            public static Comandos.M2.ComandoValidarUsuario validarUsuario( string usuario )
+            {
+                return new Comandos.M2.ComandoValidarUsuario( usuario );
+            }
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia del ComandoObtenerUsuario
-        /// </summary>
-        /// <param name="theEmpleado"></param>
-        /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-        public static Comandos.M2.ComandoObtenerUsuario obtenerUsuario( DominioTangerine.Entidad theEmpleado )
-        {
-            return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
-        }
-        
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoUsuarioDefault
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <param name="apellido"></param>
+            /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
+            public static Comandos.M2.ComandoCrearUsuarioDefault crearUsuario( string nombre , string apellido )
+            {
+                return new Comandos.M2.ComandoCrearUsuarioDefault( nombre, apellido );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoObtenerUsuario
+            /// </summary>
+            /// <param name="theEmpleado"></param>
+            /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
+            public static Comandos.M2.ComandoObtenerUsuario obtenerUsuario( DominioTangerine.Entidad theEmpleado )
+            {
+                return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
+            }
+
+        #endregion
+
         #endregion
 
         #region Modulo 3

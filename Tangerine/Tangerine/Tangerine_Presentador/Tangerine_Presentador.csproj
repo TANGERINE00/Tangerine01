@@ -48,6 +48,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="M1\PresentadorInicio.cs" />
+    <Compile Include="M2\PresentacionCambioRol.cs" />
+    <Compile Include="M2\PresentadorRegistroUsuario.cs" />
     <Compile Include="M3\PresentadorListarLeads.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,7 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M2\" />
     <Folder Include="M4\" />
     <Folder Include="M8\" />
   </ItemGroup>
