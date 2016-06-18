@@ -19,6 +19,7 @@ namespace DatosTangerine.DAO.M2
     {
 
         #region IDAO
+
             /// <summary>
             /// Método para agregar un usuario
             /// </summary>
@@ -83,7 +84,7 @@ namespace DatosTangerine.DAO.M2
                   RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name); */
 
                 return true;
-            }
+            } // DONE COMANDO
 
             /// <summary>
             /// Método para modificar un usuario
@@ -92,7 +93,7 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna el objeto en la base de datos</returns>
             public bool Modificar( Entidad theUsuario )
             {
-                return true;
+                throw new NotImplementedException();
             }
 
             /// <summary>
@@ -102,7 +103,7 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna la consulta</returns>
             public Entidad ConsultarXId( Entidad theUsuario )
             {
-                return theUsuario;
+                throw new NotImplementedException();
             }
 
             /// <summary>
@@ -111,8 +112,7 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna todos los usuarios</returns>
             public List<Entidad> ConsultarTodos()
             {
-                List<Entidad> listaUser = new List<Entidad>();
-                return listaUser; 
+                throw new NotImplementedException();
             }
         #endregion
 
@@ -151,20 +151,23 @@ namespace DatosTangerine.DAO.M2
                 }
 
                 return resultado;
-            }
+            } //DONE COMMAND
 
             /// <summary>
             /// Método usado para devolver todos los empleados sin usuario
             /// </summary>
             /// <returns>Retorna la lista de empleados</returns>
-            public List<Empleado> ConsultarListaDeEmpleados()
+            public List<Entidad> ConsultarListaDeEmpleados()
             {
-                List<Empleado> listaDeEmpleados = new List<Empleado>();
+                List<Entidad> listaDeEmpleados = new List<Entidad>();
+                //List<DominioTangerine.Entidades.M10.Empleado> listaEmpleado = (List<DominioTangerine.Entidades.M10.Empleado>)theListaDeEmpleados;
+
                 
                 try
                 {
                     //Hablar con mod10 para que cambien el metodo ListaEmpleados() de lugar.
-                    listaDeEmpleados = BDEmpleado.ListarEmpleados();
+                    DatosTangerine.InterfazDAO.M10.IDAOEmpleado empleadoConexion = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
+                    //listaDeEmpleados = empleadoConexion.ListarEmpleados();
                 }
                 catch (Exception ex)
                 {
@@ -172,7 +175,7 @@ namespace DatosTangerine.DAO.M2
                     throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " + "ConsultarListaDeEmpleados()", ex);
                 }
                 return listaDeEmpleados;
-            } //OJOOOOOOOOOOOOO
+            } //OJOOOOOOOOOOOOO HABLAR CON M10
 
             /// <summary>
             /// Método usado para verificar si el usuario existe en el sistema
@@ -258,6 +261,100 @@ namespace DatosTangerine.DAO.M2
                 }
 
                 return usuario;
+            }
+
+            /// <summary>
+            /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Los datos del usuario</returns>
+            public Entidad ObtenerDatoUsuario( Entidad theUsuario )
+            {
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro elParametro = new Parametro();
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
+
+                try
+                {
+                    Conectar(); //Conexion a la BD
+
+                    elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.nombreUsuario, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(ResourceUser.ParametroContrasenia, SqlDbType.VarChar, usuario.contrasena, false);
+                    parametros.Add(elParametro);
+
+                    DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerDatoUsuario, parametros);
+
+                    //Por cada fila de la tabla voy a guardar los datos 
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        DateTime usuFecha = DateTime.Parse(row[ResourceUser.UsuFechaCreacion].ToString());
+                        string usuAct = row[ResourceUser.UsuActivo].ToString();
+                        int usuIdRol = int.Parse(row[ResourceUser.UsuFKRol].ToString());
+                        int usuEmpFicha = int.Parse(row[ResourceUser.UsuEmpFicha].ToString());
+
+                        usuario.fechaCreacion = usuFecha;
+                        usuario.activo = usuAct;
+                        usuario.fichaEmpleado = usuEmpFicha;
+
+                        DatosTangerine.InterfazDAO.M2.IDAORol DAORol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+                        Entidad theRol = DAORol.ObtenerRolUsuario( usuIdRol );
+                        DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol; 
+                        usuario.rol = rol;
+                    }
+
+                }
+                catch (NullReferenceException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                                                                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                }
+
+                return usuario;
+            }
+
+            /// <summary>
+            /// Método que arma la lista de los parametros del Stored Procedure para modificar la contraseña 
+            /// del usuario y llama al método que ejecuta el Stored Procedure (El objeto usuario debe tener 
+            /// agregada la contraseña nueva).
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>true se es exitoso y false si es fallido</returns>
+            public bool ModificarContraseniaUsuario(Entidad theUsuario)
+            {
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro elParametro;
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
+
+                try
+                {
+                    elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.nombreUsuario,false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(ResourceUser.ParametroContraseniaNueva, SqlDbType.VarChar,usuario.contrasena, false);
+                    parametros.Add(elParametro);
+
+                    List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarContraUsuario, parametros);
+                }
+                catch (NullReferenceException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                                                                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    return false;
+                }
+
+                return true;
             }
 
         #endregion

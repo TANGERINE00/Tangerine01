@@ -22,7 +22,7 @@ namespace DatosTangerine.DAO.M2
         /// <returns>Retorna el objeto en la base de datos</returns>
         public bool Agregar( Entidad theRol )
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace DatosTangerine.DAO.M2
         /// <returns>Retorna el objeto en la base de datos</returns>
         public bool Modificar( Entidad theRol )
         {
-            return true;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace DatosTangerine.DAO.M2
         /// <returns>Retorna la consulta</returns>
         public Entidad ConsultarXId( Entidad theRol )
         {
-            return theRol;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -51,8 +51,7 @@ namespace DatosTangerine.DAO.M2
         /// <returns>Retorna todos los roles</returns>
         public List<Entidad> ConsultarTodos()
         {
-            List<Entidad> listaRol = new List<Entidad>();
-            return listaRol;
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -209,6 +208,48 @@ namespace DatosTangerine.DAO.M2
                 }
 
                 return lista;
+            }
+
+            /// <summary>
+            /// Método que retorna el rol de un usuario con sus privilegios pasando como parámetro el nombre del rol
+            /// </summary>
+            /// <param name="nombreRol"></param>
+            /// <returns>El rol del usuario por nombre</returns>
+            public Entidad ObtenerRolUsuarioPorNombre( string nombreRol )
+            {
+
+                List<Parametro> parametros = new List<Parametro>();
+                Parametro elParametro = new Parametro();
+                Entidad rol = DominioTangerine.Fabrica.FabricaEntidades.crearRolVacio();
+                //DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
+
+                try
+                {
+                    Conectar(); //Conexion a BD
+
+                    elParametro = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, nombreRol.ToString(),false);
+                    parametros.Add(elParametro);
+
+                    DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerRolUsuarioPorNombre, parametros);
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        int idRol = int.Parse(row[ResourceUser.RolId].ToString());
+                        rol = ObtenerRolUsuario(idRol);
+                    }
+                }
+                catch (NullReferenceException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                                                                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                }
+
+                return rol;
             }
 
         #endregion
