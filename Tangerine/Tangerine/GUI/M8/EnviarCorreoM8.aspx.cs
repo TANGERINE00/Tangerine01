@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
-using DatosTangerine.M8;
+//using DatosTangerine.M8;
 using LogicaTangerine.M8;
 using LogicaTangerine.M4;
 
@@ -13,7 +13,7 @@ namespace Tangerine.GUI.M8
 {
     public partial class EnviarCorreoM8 : System.Web.UI.Page
     {
-        public static Facturacion theFactura = null;
+        //public static Facturacion theFactura = null;
         string _destinatario = String.Empty;
         string _asunto = String.Empty;
         string _mensaje = String.Empty;
@@ -62,17 +62,17 @@ namespace Tangerine.GUI.M8
             int idFac = int.Parse(Request.QueryString["idFac"]);
             if (!IsPostBack)
             {
-                LogicaM8 facturaLogic = new LogicaM8();
-                LogicaM4 companiaLogic = new LogicaM4();
-                theFactura = facturaLogic.SearchFactura(idFac);
+                //LogicaM8 facturaLogic = new LogicaM8();
+                //LogicaM4 companiaLogic = new LogicaM4();
+                //theFactura = facturaLogic.SearchFactura(idFac);
 
-                Compania compania = companiaLogic.ConsultCompany(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                Destinatario = compania.EmailCompania;
-                Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
-                Asunto = "Recordatorio de Pago - Proyecto: " + proyecto.Nombre + "";
-                Mensaje += "Saludos Cordiales, Compañia: " + compania.NombreCompania + ".\n";
-                Mensaje += "Se le recuerda que tiene una factura por pagar, por un monto de: " + theFactura.montoFactura.ToString() + " "
-                            + theFactura.tipoMoneda + ".";
+                //Compania compania = companiaLogic.ConsultCompany(int.Parse(theFactura.idCompaniaFactura.ToString()));
+                //Destinatario = compania.EmailCompania;
+                //Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
+                //Asunto = "Recordatorio de Pago - Proyecto: " + proyecto.Nombre + "";
+                //Mensaje += "Saludos Cordiales, Compañia: " + compania.NombreCompania + ".\n";
+                //Mensaje += "Se le recuerda que tiene una factura por pagar, por un monto de: " + theFactura.montoFactura.ToString() + " "
+                //            + theFactura.tipoMoneda + ".";
             }
         }
 

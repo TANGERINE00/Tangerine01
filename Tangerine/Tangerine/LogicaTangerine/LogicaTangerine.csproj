@@ -63,8 +63,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="Comandos\M1\" />
-    <Folder Include="Comandos\M3\" />
-    <Folder Include="Comandos\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -73,11 +71,20 @@
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
-    <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
-    <Compile Include="Comandos\M2\ComandoObtenerCaracteres.cs" />
-    <Compile Include="Comandos\M2\ComandoValidarUsuario.cs" />
-    <Compile Include="Comandos\M2\ComandoCrearUsuarioDefault.cs" />
-    <Compile Include="Comandos\M2\ComandoModificarRol.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRolUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerOpciones.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuarioPorNombre.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoValidarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoCrearUsuarioDefault.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
+    <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
+    <Compile Include="Comandos\M3\ComandoListarTodosLeads.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarLugarXID.cs" />
@@ -117,6 +124,23 @@
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />
+    <Compile Include="Comandos\M8\ComandoConsultarProyectoFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoAgregarFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoAnularFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoBuscarMontoRestanteFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoConsultarCompaniaFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoConsultarFacturasCompania.cs" />
+    <Compile Include="Comandos\M8\ComandoConsultarFacturasPagadasCompania.cs" />
+    <Compile Include="Comandos\M8\ComandoConsultarTodosFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoConsultarXIdFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoEliminarFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoModificarFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoSearchExistingBill.cs" />
+    <Compile Include="Comandos\M8\ResourceLogicaM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
@@ -161,12 +185,6 @@
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="M8\CorreoM8.cs" />
-    <Compile Include="M8\LogicaM8.cs" />
-    <Compile Include="M8\ResourceLogicaM8.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
-    </Compile>
     <Compile Include="M9\LogicaM9.cs" />
     <Compile Include="M9\LogicResourcesM9.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -179,6 +197,10 @@
     <Compile Include="M5\LogicaM5.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\M8\ResourceLogicaM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M10\LogicaM10Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicaM10Resources.Designer.cs</LastGenOutput>
@@ -202,10 +224,6 @@
     <EmbeddedResource Include="M6\LogicaRecursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicaRecursos.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M8\ResourceLogicaM8.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M9\LogicResourcesM9.resx">
       <Generator>ResXFileCodeGenerator</Generator>

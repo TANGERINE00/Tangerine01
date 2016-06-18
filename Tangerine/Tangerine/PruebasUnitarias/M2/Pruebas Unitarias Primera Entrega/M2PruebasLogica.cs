@@ -112,7 +112,7 @@ namespace PruebasUnitarias.M2
         }
 
 
-        /// <summary>
+      /*  /// <summary>
         /// Metodo para probar el metodo ObtenerUsuario() de la clase LogicaAgregarUsuario en
         /// LogicaTangerine
         /// </summary>
@@ -121,7 +121,7 @@ namespace PruebasUnitarias.M2
         {
             
             Assert.IsNotNull( LogicaModificarRol.ObtenerUsuario( theEmpleado ) );
-        }
+        }*/
 
         /// <summary>
         /// Metodo para probar el metodo ModificarRol de la clase LogicaModificarRol en

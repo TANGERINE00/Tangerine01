@@ -93,19 +93,19 @@ namespace Tangerine.GUI.M9
     
         public void llenarTablaPorID(int numeroFactura)
         {
-            LogicaM8 consulta = new LogicaM8();
+            //LogicaM8 consulta = new LogicaM8();
 
 
-            Facturacion Factura = consulta.SearchFactura(numeroFactura);
+            //Facturacion Factura = consulta.SearchFactura(numeroFactura);
 
             try
             {
-                Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
-                cliente = compania.NombreCompania;
-                proyecto = Factura.descripcionFactura ;
-                monto = Factura.montoFactura.ToString() ;
-                moneda = Factura.tipoMoneda;
-                numero = Factura.idFactura.ToString() ;
+                //Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
+                //cliente = compania.NombreCompania;
+                //proyecto = Factura.descripcionFactura ;
+                //monto = Factura.montoFactura.ToString() ;
+                //moneda = Factura.tipoMoneda;
+                //numero = Factura.idFactura.ToString() ;
             }
             catch
             {

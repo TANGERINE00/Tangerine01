@@ -42,20 +42,22 @@
   <ItemGroup>
     <Compile Include="M10\IContratoConsultaEmpleados.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
+    <Compile Include="M2\IContratoRol.cs" />
+    <Compile Include="M2\IContratoRegistroUsuario.cs" />
+    <Compile Include="M3\IContratoListarLeads.cs" />
+    <Compile Include="M5\IContratoAgregarContacto.cs" />
     <Compile Include="M6\IContratoAgregarPropuesta.cs" />
     <Compile Include="M6\IContratoEliminarPropuesta.cs" />
     <Compile Include="M6\IContratoModificarPropuesta.cs" />
     <Compile Include="M6\IContratoConsultaPropuesta.cs" />
     <Compile Include="M7\IContratoConsultaProyecto.cs" />
+    <Compile Include="M7\IContratoInformacionProyecto.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M2\" />
-    <Folder Include="M3\" />
     <Folder Include="M4\" />
-    <Folder Include="M5\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>

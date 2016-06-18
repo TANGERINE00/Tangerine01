@@ -130,8 +130,6 @@ namespace DominioTangerine.Entidades.M7
 
         #endregion
 
-
-
         #region Constructor
 
         public Propuesta()

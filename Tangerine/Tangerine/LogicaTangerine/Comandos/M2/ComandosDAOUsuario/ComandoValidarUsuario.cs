@@ -5,18 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using ExcepcionesTangerine;
 using DatosTangerine.Fabrica;
+using DatosTangerine.InterfazDAO.M2;
+using DominioTangerine;
 
 namespace LogicaTangerine.Comandos.M2
 {
     public class ComandoValidarUsuario : Comando<Boolean>
     {
-        String _usuario;
+        public string _usuario;
 
         /// <summary>
         /// Constructor que recibe el parametro usuario
         /// </summary>
         /// <param name="_usuario"></param>
-        public ComandoValidarUsuario( String usuario )
+        public ComandoValidarUsuario( string usuario )
         {
             _usuario = usuario;
         }
@@ -30,9 +32,8 @@ namespace LogicaTangerine.Comandos.M2
             bool resultado = false;
             try
             {
-                //Revisar instanciacion
-                /*FabricaDAOSqlServer factoryDAO = new FabricaDAOSqlServer();
-                resultado = factoryDAO.VerificarExistenciaUsuario(_usuario);*/
+                IDAOUsuarios ExistUsuario = FabricaDAOSqlServer.crearDaoUsuario();
+                resultado = ExistUsuario.VerificarExistenciaUsuario( _usuario );
             }
             catch (Exception ex)
             {

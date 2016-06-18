@@ -216,4 +216,7 @@
   <data name="ParametroTipoCompania" xml:space="preserve">
     <value>@tipo_comp</value>
   </data>
+  <data name="ConsultarTodosContactos" xml:space="preserve">
+    <value>M5_ConsultarTodosContactos</value>
+  </data>
 </root>

@@ -29,6 +29,7 @@ drop procedure M2_ObtenerUsuarioDeEmpleado;
 drop procedure M2_ObtenerRolUsuarioPorNombre;
 drop procedure M2_VerificarUsuarioPorFichaEmpleado;
 drop procedure M2_VerificarExistenciaUsuario;
+drop procedure M2_ConsultarIdUltimoUsuario;
 
 drop procedure M3_agregar_clientePotencial;
 drop procedure M3_listar_cliente_potencial;
@@ -59,6 +60,7 @@ drop procedure M5_ModificarContacto;
 drop procedure M5_ConsultarContactoCompania;
 drop procedure M5_ConsultarContactoProyecto;
 drop procedure M5_ConsultarContactoNoProyecto;
+drop procedure M5_ConsultarTodosContactos;
 
 drop procedure M6_AgregarPropuesta;
 drop procedure M6_ListaPropuestaProyecto;

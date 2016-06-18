@@ -244,9 +244,57 @@ namespace DatosTangerine.DAO.M5
             return FabricaEntidades.crearContactoVacio();
         }
 
+        /// <summary>
+        /// Método para consultar todos los contactos de la base de datos
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
-            return new List<Entidad>();
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursosDAOContacto.MensajeInicioInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parametros = new List<Parametro>();
+            List<Entidad> lista = new List<Entidad>();
+
+            try
+            {
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAOContacto.ConsultarTodosContactos,
+                                                              parametros);
+
+                //Por cada fila de la tabla voy a guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    int conId = int.Parse(row[RecursosDAOContacto.ConIdContacto].ToString());
+                    string conName = row[RecursosDAOContacto.ConNombreContacto].ToString();
+                    string conLName = row[RecursosDAOContacto.ConApellidoContacto].ToString();
+                    string conDepart = row[RecursosDAOContacto.ConDepartamentoContacto].ToString();
+                    string conRol = row[RecursosDAOContacto.ConCargoContacto].ToString();
+                    string conTele = row[RecursosDAOContacto.ConTelefono].ToString();
+                    string conEmail = row[RecursosDAOContacto.ConCorreo].ToString();
+                    int conTypeC = int.Parse(row[RecursosDAOContacto.ConTipoCompania].ToString());
+                    int conCompId = int.Parse(row[RecursosDAOContacto.ConIdCompania].ToString());
+
+                    //Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+                    Entidad nuevoContacto = FabricaEntidades.crearContactoConId(conId, conName, conLName, conDepart,
+                                                                                 conRol, conTele, conEmail, conTypeC,
+                                                                                 conCompId);
+                    lista.Add(nuevoContacto);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursosDAOContacto.MensajeFinInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return lista;
         }
 
         /// <summary>

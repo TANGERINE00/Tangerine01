@@ -11,11 +11,19 @@ namespace LogicaTangerine.Comandos.M5
 {
     public class ComandoEliminarContacto : Comando<bool>
     {
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="contacto"></param>
         public ComandoEliminarContacto( Entidad contacto ) 
         {
             _laEntidad = contacto;
         }
 
+        /// <summary>
+        /// Método para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override bool Ejecutar()
         {
             bool respuesta = false;

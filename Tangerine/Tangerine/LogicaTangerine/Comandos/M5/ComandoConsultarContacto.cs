@@ -11,11 +11,19 @@ namespace LogicaTangerine.Comandos.M5
 {
     public class ComandoConsultarContacto : Comando<Entidad>
     {
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="contacto"></param>
         public ComandoConsultarContacto( Entidad contacto ) 
         {
             _laEntidad = contacto;
         }
 
+        /// <summary>
+        /// Método para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override Entidad Ejecutar()
         {
             try 

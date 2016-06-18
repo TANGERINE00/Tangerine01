@@ -9,7 +9,8 @@ namespace DatosTangerine.InterfazDAO.M4
 {
     public interface IDaoLugarDireccion : IDao<Entidad, Boolean, Entidad>
     {
-         
+
+        List<Entidad> ConsultCityPlaces();
 
     }
 }

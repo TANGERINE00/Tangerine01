@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LogicaTangerine.M8 {
+namespace LogicaTangerine.Comandos.M8 {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace LogicaTangerine.M8 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaTangerine.M8.ResourceLogicaM8", typeof(ResourceLogicaM8).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LogicaTangerine.Comandos.M8.ResourceLogicaM8", typeof(ResourceLogicaM8).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

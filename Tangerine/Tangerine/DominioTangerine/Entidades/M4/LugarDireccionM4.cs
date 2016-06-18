@@ -58,10 +58,6 @@ namespace DominioTangerine.Entidades.M4
             {
                 return this.lugId;
             }
-            set
-            {
-                this.lugId = value;
-            }
         }
 
         public string LugNombre
@@ -69,10 +65,6 @@ namespace DominioTangerine.Entidades.M4
             get
             {
                 return this.lugNombre;
-            }
-            set
-            {
-                this.lugNombre = value;
             }
         }
 
@@ -82,10 +74,6 @@ namespace DominioTangerine.Entidades.M4
             {
                 return this.lugTipo;
             }
-            set
-            {
-                this.lugTipo = value;
-            }
         }
 
         public int Fk_lugId
@@ -94,10 +82,6 @@ namespace DominioTangerine.Entidades.M4
             {
                 return this.fk_lugId;
             }
-            set
-            {
-                this.fk_lugId = value;
-            }
         }
 
         public List<LugarDireccionM4> Address
@@ -105,10 +89,6 @@ namespace DominioTangerine.Entidades.M4
             get
             {
                 return this.address;
-            }
-            set
-            {
-                this.address = value;
             }
         }
 
