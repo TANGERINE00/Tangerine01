@@ -63,7 +63,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="Comandos\M1\" />
-    <Folder Include="Comandos\M8\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +72,13 @@
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
     <Compile Include="Comandos\M2\ComandoAgregarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandoObtenerCaracteres.cs" />
+    <Compile Include="Comandos\M2\ComandoObtenerUsuario.cs" />
     <Compile Include="Comandos\M2\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandoCrearUsuarioDefault.cs" />
     <Compile Include="Comandos\M2\ComandoModificarRol.cs" />
+    <Compile Include="Comandos\M2\ComandoVerificarUsuario.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosLeads.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
