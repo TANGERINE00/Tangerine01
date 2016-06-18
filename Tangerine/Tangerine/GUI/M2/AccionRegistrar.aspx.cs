@@ -69,6 +69,11 @@ namespace Tangerine.GUI.M2
             return retorno;
         }
 
+        /// <summary>
+        /// Crear el usuario de un empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             string rol = textRol_M2.Value;
