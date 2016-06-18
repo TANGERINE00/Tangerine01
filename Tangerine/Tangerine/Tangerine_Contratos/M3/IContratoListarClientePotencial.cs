@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine_Contratos.M3
 {
-    public interface IContratoListarLeads
+    public interface IContratoListarClientePotencial
     {
         Literal ClientePotencial { get; set; }
     }

@@ -7,7 +7,9 @@ using DominioTangerine;
 using DominioTangerine.Entidades.M2;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Entidades.M5;
+using DominioTangerine.Entidades.M10;
 using DominioTangerine.Entidades.M8;
+
 
 namespace DominioTangerine.Fabrica
 {
@@ -211,8 +213,8 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-            #region Metodos para instanciar Lead
-            public static Entidad ObtenerLead()
+            #region Metodos para instanciar Cliente Potencial
+            public static Entidad ObtenerClientePotencial()
             {
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
             }
@@ -561,7 +563,7 @@ namespace DominioTangerine.Fabrica
 
         public static Entidad ConsultarEmpleados() 
         {
-            return new DominioTangerine.Entidades.M10.Empleado();
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
 
         //public static Entidad ObtenerCargo()
@@ -569,18 +571,21 @@ namespace DominioTangerine.Fabrica
         //    return new DominioTangerine.Entidades.M10.Cargo();
         //}
 
-      
-        public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion, string empModalidad, double empSalario)
+        
+        public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
         {
-            return new DominioTangerine.Entidades.M10.Cargo(empCargo, empCargoDescripcion, empContratacion, empModalidad, empSalario);
+            return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
+        }
+
+        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido, 
+                                                 string empSApellido, int empCedula, DateTime empFecha, string empActivo, 
+                                                 string empEmail, string empGenero, string empEstudio, string empModalidad, 
+                                                 double empSalario, Entidad cargo)
+        {
+                        return (new DominioTangerine.Entidades.M10.EmpleadoM10 ( empId,empPNombre,empSNombre,empPApellido, 
+                                empSApellido, empCedula,empFecha,empActivo,empEmail,empGenero,empEstudio,empModalidad,empSalario,cargo));
         }
 
         #endregion
-
-        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero,
-                                                 int empCedula, DateTime empFecha, string empActivo, string empEstudio, string empEmail, Entidad cargoEmpleado)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

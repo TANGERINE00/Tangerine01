@@ -14,13 +14,13 @@ using Tangerine_Presentador.M3;
 
 namespace Tangerine.GUI.M3
 {
-    public partial class Listar : System.Web.UI.Page, IContratoListarLeads
+    public partial class Listar : System.Web.UI.Page, IContratoListarClientePotencial
     {
-        PresentadorListarLeads presentador;
+        PresentadorListarClientePotencial presentador;
 
         public Listar()
         {
-            this.presentador = new PresentadorListarLeads(this);
+            this.presentador = new PresentadorListarClientePotencial(this);
         }
         
         public Literal ClientePotencial

@@ -322,7 +322,7 @@ namespace DatosTangerine.M2
         /// </summary>
         /// <param name="empleado"></param>
         /// <returns></returns>
-        public static Usuario ObtenerUsuarioDeEmpleado( Empleado empleado ) 
+        public static Usuario ObtenerUsuarioDeEmpleado( int num_empleado ) 
         {
             Usuario usuario = new Usuario();
 
@@ -334,12 +334,10 @@ namespace DatosTangerine.M2
             {
                 laConexion.Conectar();
 
-                elParametro = new Parametro( ResourceUser.ParametroNumFicha, SqlDbType.Int, 
-                                             empleado.Emp_num_ficha.ToString(), false );
+                elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                 parametros.Add( elParametro );
 
-                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, 
-                                                                         parametros );
+                DataTable dt = laConexion.EjecutarStoredProcedureTuplas( ResourceUser.ObtenerUsuarioDeEmpleado, parametros );
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
