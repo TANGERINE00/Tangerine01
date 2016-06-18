@@ -29,7 +29,7 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
-            public static Comandos.M2.ComandoAgregarUsuario agregarUsuario( DominioTangerine.Entidad usuario )
+            public static Comando<Boolean> agregarUsuario( DominioTangerine.Entidad usuario )
             {
                 return new Comandos.M2.ComandoAgregarUsuario( usuario );
             }
@@ -39,7 +39,7 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="fichaEmpleado"></param>
             /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
-            public static Comandos.M2.ComandoVerificarUsuario verificarUsuario( int fichaEmpleado )
+            public static Comando<Boolean> verificarUsuario(int fichaEmpleado)
             {
                 return new Comandos.M2.ComandoVerificarUsuario( fichaEmpleado );
             }
@@ -48,7 +48,7 @@ namespace LogicaTangerine.Fabrica
             /// Método utilizado para devolver una instancia de la clase ComandoConsultarListaDeEmpleados
             /// </summary>
             /// <returns>Retorna una una instancia a ComandoConsultarListaDeEmpleados</returns>
-            public static Comandos.M2.ComandoConsultarListaDeEmpleados listaEmpleados()
+            public static Comando<List<DominioTangerine.Entidad>> listaEmpleados()
             {
                 return new Comandos.M2.ComandoConsultarListaDeEmpleados();
             }
@@ -58,7 +58,7 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
-            public static Comandos.M2.ComandoValidarUsuario validarUsuario( string usuario )
+            public static Comando<Boolean> validarUsuario(string usuario)
             {
                 return new Comandos.M2.ComandoValidarUsuario( usuario );
             }
@@ -69,7 +69,7 @@ namespace LogicaTangerine.Fabrica
             /// <param name="nombre"></param>
             /// <param name="apellido"></param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-            public static Comandos.M2.ComandoCrearUsuarioDefault crearUsuario( string nombre , string apellido )
+            public static Comando<String> crearUsuario(string nombre, string apellido)
             {
                 return new Comandos.M2.ComandoCrearUsuarioDefault( nombre, apellido );
             }
@@ -79,12 +79,12 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="theEmpleado"></param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-            public static Comandos.M2.ComandoObtenerUsuario obtenerUsuario( DominioTangerine.Entidad theEmpleado )
+            public static Comando<DominioTangerine.Entidad> obtenerUsuario(DominioTangerine.Entidad theEmpleado)
             {
                 return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
             }
 
-        #endregion
+            #endregion
 
             #region Comandos Rol
 
