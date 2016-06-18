@@ -13,7 +13,7 @@ namespace LogicaTangerine.Comandos.M10
     {
         private Entidad empleado;
 
-        public ComandoConsultarEmpleado(Entidad empleado)
+        public ComandoConsultarEmpleado()
         {
             // TODO: Complete member initialization
             this.empleado = empleado;
@@ -22,9 +22,9 @@ namespace LogicaTangerine.Comandos.M10
         {
             try
             {
-                IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
-                List<Entidad> empleados = daoEmpleado.ConsultarTodos();
-                return empleados;
+                IDAOEmpleado daoEmpleado =(DatosTangerine.DAO.M10.DAOEmpleado) DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
+               // List<Entidad> empleados = daoEmpleado.ConsultarTodos();
+                return daoEmpleado.ConsultarTodos();
             }
             catch (Exception e)
             {

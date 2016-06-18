@@ -606,9 +606,9 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-        public static Comando<List<Entidad>> ConsultarEmpleados(Entidad Empleado)
+        public static Comando<List<Entidad>> ConsultarEmpleados()
         {
-            return new ComandoConsultarEmpleado(Empleado);
+            return new ComandoConsultarEmpleado();
         }
         #endregion
     }
