@@ -10,6 +10,7 @@ using LogicaTangerine.Comandos.M4;
 using LogicaTangerine.Comandos.M10;
 using LogicaTangerine.Comandos.M8;
 using LogicaTangerine.Comandos.M3;
+using LogicaTangerine.Comandos.M5;
 
 namespace LogicaTangerine.Fabrica
 {
@@ -183,7 +184,98 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 5
+        /// <summary>
+        /// Método para instancear el ComandoAgregarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoAgregarContacto( Entidad contacto ) 
+        {
+            return new ComandoAgregarContacto( contacto );
+        }
 
+        /// <summary>
+        /// Método para instancear el ComandoAgregarContactoAProyecto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoAgregarContactoAProyecto( Entidad contacto, Entidad proyecto )
+        {
+            return new ComandoAgregarContactoAProyecto( contacto, proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearComandoConsultarContacto( Entidad contacto ) 
+        {
+            return new ComandoConsultarContacto( contacto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosNoPertenecenAProyecto
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarContactosNoPertenecenAProyecto( Entidad proyecto ) 
+        {
+            return new ComandoConsultarContactosNoPertenecenAProyecto( proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosPorCompania
+        /// </summary>
+        /// <param name="compania"></param>
+        /// <param name="tipoCompania"></param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarContactosPorCompania( Entidad compania, int tipoCompania ) 
+        {
+            return new ComandoConsultarContactosPorCompania( compania, tipoCompania );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosPorProyecto
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarContactosPorProyecto( Entidad proyecto )
+        {
+            return new ComandoConsultarContactosPorProyecto( proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoEliminarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEliminarContacto( Entidad contacto ) 
+        {
+            return new ComandoEliminarContacto( contacto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoEliminarContactoDeProyecto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEliminarContactoDeProyecto( Entidad contacto, Entidad proyecto ) 
+        {
+            return new ComandoEliminarContactoDeProyecto( contacto, proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoModificarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoModificarContacto( Entidad contacto ) 
+        {
+            return new ComandoModificarContacto( contacto );
+        }
         #endregion
 
         #region Modulo 6
