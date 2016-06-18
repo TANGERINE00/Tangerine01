@@ -4365,3 +4365,43 @@ Error Number:-1,State:0,Class:20
 2016-06-18 16:02:51,171 INFO  DaoClientePotencial - Clase: DaoClientePotencial
 2016-06-18 16:02:51,171 INFO  DaoClientePotencial - Mensaje: Fin Método
 2016-06-18 16:02:51,171 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-18 18:06:05,688 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:06:05,700 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:06:05,701 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:06:05,701 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:06:06,274 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:06:06,274 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:06:06,274 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:06:06,274 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:12,496 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:12,504 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:12,504 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:07:12,504 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:12,652 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:12,652 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:12,652 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:07:12,652 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:19,720 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:19,720 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:19,720 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:07:19,720 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:07:19,774 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:07:19,774 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:07:19,774 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:07:19,774 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:49,647 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:49,656 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:49,656 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:08:49,656 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:49,822 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:49,822 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:49,822 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:08:49,822 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:56,987 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:56,987 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:56,987 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:08:56,987 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:08:57,048 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:08:57,049 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:08:57,049 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:08:57,049 INFO  BDEmpleado - Metodo: ListarEmpleados

@@ -19,7 +19,7 @@ namespace Tangerine.GUI.M2
             numFicha = int.Parse(Request.QueryString["idFicha"]);
             nombreUsuario = Request.QueryString["Nombre"];
             apellidoUsuario = Request.QueryString["Apellido"];
-            //userDefault.Value = ObtenerUsuarioDefault2(nombreUsuario,apellidoUsuario);
+            userDefault.Value = ObtenerUsuarioDefault2(nombreUsuario,apellidoUsuario);
         }
 
         public void ObtenerUsuarioDefault()
