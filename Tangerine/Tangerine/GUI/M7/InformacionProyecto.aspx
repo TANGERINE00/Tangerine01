@@ -37,7 +37,8 @@
                                     </h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="NombrePropuesta"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="nombrePropuesta"></asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -45,7 +46,8 @@
                                         <label for="NombreProyecto1">Nombre del Proyecto</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="NombreProyecto"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="nombreProyecto"></asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -53,7 +55,8 @@
                                         <label for="CodigoProyecto1">Codigo del Proyecto</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="CodigoProyecto"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="codigoProyecto"> </asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -61,7 +64,8 @@
                                         <label for="FechaInicio1">Fecha de Inicio del Proyecto</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="FechaInicio"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="fechaInicio"> </asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -69,7 +73,8 @@
                                         <label for="FechaFin1">Fecha Estimada de culminacion</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="FechaFin"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="fechaFin"> </asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -77,7 +82,8 @@
                                         <label for="Costo1">Costo del Proyecto</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="Costo"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="costo"> </asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -85,7 +91,8 @@
                                         <label for="Porcentaje1">Porcentaje de realizacion</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="Porcentaje"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="porcentaje"> </asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -93,7 +100,8 @@
                                         <label for="Estatus1">Estatus</label></h4>
                                     <div>
                                         <h5>
-                                            <asp:Literal runat="server" ID="Estatus"> </asp:Literal></h5>
+                                            <asp:Label runat="server" ID="estatus"> </asp:Label>
+                                        </h5>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6" runat="server">
@@ -101,14 +109,14 @@
                                         <label for="inputPersonal">Personal</label></h4>
 
                                     <h5>
-                                        <select class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
-                                        </select></h5>
+                                        <asp:DropDownList runat="server" ID="inputPersonal1"> </asp:DropDownList>
+                                    </h5>
 
                                     <h4>
                                         <label for="inputEncargado">Encargado de la empresa contratante</label></h4>
                                     <h5>
-                                        <select class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
-                                        </select></h5>
+                                        <asp:DropDownList runat="server" ID="inputEncargado1"> </asp:DropDownList>
+                                    </h5>
                                 </div>
                             </div>
                         </div>

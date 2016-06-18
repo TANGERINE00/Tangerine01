@@ -49,6 +49,7 @@
     <Compile Include="M6\IContratoModificarPropuesta.cs" />
     <Compile Include="M6\IContratoConsultaPropuesta.cs" />
     <Compile Include="M7\IContratoConsultaProyecto.cs" />
+    <Compile Include="M7\IContratoInformacionProyecto.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
