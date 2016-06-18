@@ -52,7 +52,7 @@ namespace Tangerine.GUI.M2
                     }
                     else
                     {
-                        tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegBlock + ResourceGUIM2.CloseTD;
+                        tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegBlock + ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
                     }
 
                     tablaEmpleado += ResourceGUIM2.CloseTR;
