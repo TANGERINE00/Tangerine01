@@ -27,13 +27,13 @@ namespace Tangerine.GUI.M5
             }
         }
 
-        public string input_nombre 
+        public string input_nombre
         {
-            get 
+            get
             {
                 return this.nombre.Value;
             }
-            set 
+            set
             {
                 this.nombre.Value = value;
             }
@@ -96,12 +96,12 @@ namespace Tangerine.GUI.M5
                 this.cargo.Value = value;
             }
         }
-        public int GetTypeComp 
-        { 
-             get
+        public int GetTypeComp
+        {
+            get
             {
                 return int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            }       
+            }
         }
         public int GetIdComp
         {
@@ -117,7 +117,11 @@ namespace Tangerine.GUI.M5
                 + ResourceGUIM5.BotonVolver3;
         }
 
-
+        public void BotonAceptar(int typeComp, int idComp)
+        {
+            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2
+                + idComp + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusAgregado);
+        }
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -129,21 +133,9 @@ namespace Tangerine.GUI.M5
 
         public void btnaceptar_Click(object sender, EventArgs e)
         {
-         /*   _nombre = nombre.Value;
-            _apellido = apellido.Value;
-            _departamento = departamento.Value;
-            _cargo = cargo.Value;
-            _telefono = telefono.Value;
-            _correo = correo.Value;
+            presentador.BtnaceptarContrato();
+            Response.Redirect("../M1/DashBoard.aspx");
 
-            Contacto contact = new Contacto(_nombre, _apellido, _departamento,
-                _cargo, _telefono, _correo, typeComp, idComp);
-            LogicaM5 contactLogic = new LogicaM5();
-            contactLogic.AddNewContact(contact);
-
-            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 
-                + idComp + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusAgregado );
-           */ 
         }
     }
 }
