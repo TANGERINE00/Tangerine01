@@ -97,11 +97,11 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a  tittle=&quot;Asignar&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; href=&quot;AsignarRol.aspx?idFicha=.
+        ///   Looks up a localized string similar to &lt;a  tittle=&quot;Asignar&quot; runat =&quot;server&quot;class=&quot;btn btn-success glyphicon glyphicon-plus&quot; href=&quot;AccionRegistrar.aspx?idFicha=.
         /// </summary>
-        internal static string BotonRegVentana {
+        internal static string BotonRegNuevaVentana {
             get {
-                return ResourceManager.GetString("BotonRegVentana", resourceCulture);
+                return ResourceManager.GetString("BotonRegNuevaVentana", resourceCulture);
             }
         }
         
