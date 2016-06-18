@@ -8,28 +8,29 @@ using DatosTangerine.Fabrica;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAORol
 {
-    class ComandoObtenerRolUsuario : Comando<DominioTangerine.Entidad>
+    class ComandoObtenerRolUsuarioPorNombre : Comando<DominioTangerine.Entidad>
     {
-        public int _codigoRol;
+        
+        public string _nombreoRol;
 
         /// <summary>
-        /// Constructor que recibe un parametro codigo rol
+        /// Constructor que recibe un parametro nombre rol
         /// </summary>
         /// <param name="usuario"></param>
-        public ComandoObtenerRolUsuario(int codigoRol)
+        public ComandoObtenerRolUsuarioPorNombre( string nombreRol )
         {
-            _codigoRol = codigoRol;
+            _nombreoRol = nombreRol;
         }
 
         /// <summary>
-        /// Método para crear la instancia de la clase DaoRol y usar el método Obtener Rol Usuario
+        /// Método para crear la instancia de la clase DaoRol y usar el método Obtener Rol Usuario por nombre
         /// </summary>
-        /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
+        /// <returns>Retorna una instancia del tipo Entidad</returns>
         public override DominioTangerine.Entidad Ejecutar()
         {
             DominioTangerine.Entidad resultado;
             IDAORol rolDAO = FabricaDAOSqlServer.crearDaoRol();
-            resultado = rolDAO.ObtenerRolUsuario(_codigoRol);
+            resultado = rolDAO.ObtenerRolUsuarioPorNombre(_nombreoRol);
             return resultado;
         }
     }
