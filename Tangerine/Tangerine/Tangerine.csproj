@@ -1147,9 +1147,9 @@
       <DependentUpon>Promover.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\ResourceInterfaz.Designer.cs">
+      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>

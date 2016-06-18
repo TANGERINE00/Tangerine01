@@ -48,6 +48,13 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="M1\PresentadorInicio.cs" />
+    <Compile Include="M3\PresentadorListarLeads.cs" />
+    <Compile Include="M3\ResourceInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="M5\PresentadorAgregarContacto.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
     <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
@@ -75,15 +82,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="M2\" />
-    <Folder Include="M3\" />
     <Folder Include="M4\" />
-    <Folder Include="M5\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="M10\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M3\ResourceInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M6\RecursosPresentadorPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>

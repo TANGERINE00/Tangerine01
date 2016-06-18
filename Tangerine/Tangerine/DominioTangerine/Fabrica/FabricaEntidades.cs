@@ -7,6 +7,7 @@ using DominioTangerine;
 using DominioTangerine.Entidades.M2;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Entidades.M5;
+using DominioTangerine.Entidades.M8;
 
 namespace DominioTangerine.Fabrica
 {
@@ -210,7 +211,12 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-
+            #region Metodos para instanciar Lead
+            public static Entidad ObtenerLead()
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial();
+            }
+            #endregion
         #endregion
 
         #region Modulo 4
@@ -475,6 +481,25 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 8
+
+        public static Entidad ObtenerFacturacion()
+        {
+            return new Facturacion();
+        }
+
+        public static Entidad Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
+            double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
+        {
+            return new Facturacion(fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
+                descripcion, estatus, idProyecto, idCompania);
+        }
+
+        public static Entidad Facturacion(int id, int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto,
+            double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
+        {
+            return new Facturacion(id, fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
+                descripcion, estatus, idProyecto, idCompania);
+        }
 
         #endregion
 

@@ -10,7 +10,6 @@ namespace DominioTangerine.Entidades.M8
     {
         #region Atributos
 
-        private int _idNumeroFactura;
         private DateTime _fecha;
         private DateTime _fechaUltimoPago;
         private int _idCompania;
@@ -24,16 +23,6 @@ namespace DominioTangerine.Entidades.M8
         #endregion
 
         #region Get´s Set´s
-
-        /// <summary>
-        /// Metodo para setear y obtener el ID de la factura
-        /// </summary>
-        /// <returns>Retorna el id de la factura</returns>
-        public int idFactura
-        {
-            get { return _idNumeroFactura; }
-            set { _idNumeroFactura = value; }
-        }
 
         /// <summary>
         /// Metodo para setear y obtener la fecha de la factura
@@ -158,11 +147,10 @@ namespace DominioTangerine.Entidades.M8
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
         /// <param name="tipoMoneda"></param>
-        public Facturacion(int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
             : base(0)
         {
-            this._idNumeroFactura = idNumeroFactura;
             this._fecha = fecha;
             this._fechaUltimoPago = fechaUltimoPago;
             this._idCompania = idCompania;
@@ -177,7 +165,7 @@ namespace DominioTangerine.Entidades.M8
         /// <summary>
         /// Constructor con todos los atributos y el id de Entidad.
         /// </summary>
-        /// <param name="idNumeroFactura"></param>
+        /// <param name="id"></param>
         /// <param name="fecha"></param>
         /// <param name="fechaUltimoPago"></param>
         /// <param name="idCompania"></param>
@@ -187,11 +175,11 @@ namespace DominioTangerine.Entidades.M8
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
         /// <param name="tipoMoneda"></param>
-        public Facturacion(int id, int idNumeroFactura, DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public Facturacion(int id, DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
             : base(id)
         {
-            this._idNumeroFactura = idNumeroFactura;
+            this.Id = id;
             this._fecha = fecha;
             this._fechaUltimoPago = fechaUltimoPago;
             this._idCompania = idCompania;
