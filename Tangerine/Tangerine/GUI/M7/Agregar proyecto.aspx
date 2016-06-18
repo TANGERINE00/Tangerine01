@@ -52,14 +52,23 @@
                         </div>
 
                         <div class="form-group" runat="server">
-                            <label for="InputFechaInicio">Fecha de inicio *</label>
-                            <input runat="server" type="date" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa">
+                            <label for="InputFechaInicio">Fecha de Inicio *</label> 
+                        <div class="form-control input-group date" data-provide="datepicker">
+                          <input type="text" class="form-control" readonly placeholder="dd/mm/aaaa" id="textInputFechaInicio" runat="server" required>
+                          <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                          </div>
                         </div>
 
                         <div class="form-group" runat="server">
                             <label for="InputFechaEstimada">Fecha Estimada de culminación *</label>
-                            <input runat="server" type="date" class="form-control" id="textInputFechaEstimada" name="textInputFechaEstimada" placeholder="dd/mm/aaaa">
-                        </div>
+                             <div class="form-control input-group date" data-provide="datepicker">
+                          <input type="text" class="form-control" readonly placeholder="dd/mm/aaaa" id="textInputFechaEstimada" runat="server" required>
+                          <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                          </div>
+                            </div>
+
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
                             <input runat="server" type="text" class="form-control" id="textInputCosto" name="textInputCosto" placeholder="0 Bs" Disabled="disabled">
