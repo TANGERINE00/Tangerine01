@@ -71,6 +71,7 @@
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoCrearUsuarioDefault.cs" />
-    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarRol.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosLeads.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
