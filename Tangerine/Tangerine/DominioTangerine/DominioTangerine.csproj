@@ -62,6 +62,7 @@
     <Compile Include="Entidades\M2\OpcionM2.cs" />
     <Compile Include="Entidades\M2\RolM2.cs" />
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
+    <Compile Include="Entidades\M3\ClientePotencial.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
     <Compile Include="Entidades\M5\Contacto.cs" />
@@ -97,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Entidades\M3\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

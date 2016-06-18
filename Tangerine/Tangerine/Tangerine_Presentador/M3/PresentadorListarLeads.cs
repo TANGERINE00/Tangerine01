@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M3;
-using LogicaTangerine;
+using LogicaTangerine.M3;
 using DominioTangerine;
 using System.Web;
 
@@ -19,10 +19,16 @@ namespace Tangerine_Presentador.M3
             this.vista = vista;
         }
 
-        public void Llenar(List<ClientePotencial> list)
+        public void Llenar()
         { // metodo que se usa para recorrer la lista
             try
             {
+                //crear un objeto de la capa de logica
+                LogicaM3 logicalistarClientePotencial = new LogicaM3();
+                //crear una lista de clientes potenciales
+                List<ClientePotencial> list = new List<ClientePotencial>();
+                // llena la lista de clientes potenciales creada
+                list = logicalistarClientePotencial.LogicalistarClientePotencial();
                 foreach (ClientePotencial item in list)
                 {
                     vista.ClientePotencial.Text += ResourceInterfaz.AbrirTR;

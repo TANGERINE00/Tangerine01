@@ -55,6 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceUser.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\M3\DaoLead.cs" />
     <Compile Include="DAO\M4\DaoCompania.cs" />
     <Compile Include="DAO\M4\DaoLugarDireccion.cs" />
     <Compile Include="DAO\M4\ResourceCompanyM4.Designer.cs">
@@ -115,6 +116,7 @@
     <Compile Include="InterfazDAO\M1\IDaoLogin.cs" />
     <Compile Include="InterfazDAO\M2\IDAORol.cs" />
     <Compile Include="InterfazDAO\M2\IDAOUsuarios.cs" />
+    <Compile Include="InterfazDAO\M3\IDAOLead.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
     <Compile Include="InterfazDAO\M5\IDAOContacto.cs" />
@@ -219,9 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="DAO\M3\" />
     <Folder Include="DAO\M8\" />
-    <Folder Include="InterfazDAO\M3\" />
     <Folder Include="InterfazDAO\M8\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />

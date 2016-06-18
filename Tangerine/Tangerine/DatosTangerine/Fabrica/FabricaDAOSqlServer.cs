@@ -10,6 +10,7 @@ using DatosTangerine.InterfazDAO.M2;
 using DatosTangerine.InterfazDAO.M5;
 using DatosTangerine.InterfazDAO.M4;
 using DatosTangerine.InterfazDAO.M10;
+using DatosTangerine.InterfazDAO.M3;
 
 
 namespace DatosTangerine.Fabrica
@@ -43,7 +44,14 @@ namespace DatosTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-
+        /// <summary>
+        /// Método que crea la instancia de DAO Lead
+        /// </summary>
+        /// <returns>Retorna la instancia a la clase DaoLead</returns>
+        static public IDAOLead crearDaoLead()
+        {
+            return new DAO.M3.DaoLead();
+        }
         #endregion
 
         #region Modulo 4
