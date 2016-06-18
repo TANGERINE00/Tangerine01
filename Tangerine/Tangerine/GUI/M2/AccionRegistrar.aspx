@@ -16,6 +16,63 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+        <script type="text/javascript">
+            function ajaxRes() {
+                $('.table > tbody > tr > td:nth-child(6) > a')
+                    .click(function (e) {
+                        e.preventDefault();
+                        var nombre = $(this).closest("tr").find("td:nth-child(2)").text();
+                        var apellido = $(this).closest("tr").find("td:nth-child(3)").text();
+                        var empleadoF = $(this).closest("tr").find("td:nth-child(1)").text();
+                        document.getElementById("ContentPlaceHolder1_fichaEmp").value = empleadoF;
+                        var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
+                        $.ajax({
+                            type: "POST",
+                            url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
+                            data: param,
+                            contentType: 'application/json; charset=utf-8',
+                            dataType: 'json',
+                            success: function (result) {
+                                var local = JSON.stringify(result);
+                                var obj = JSON.parse(local);
+                                document.getElementById("ContentPlaceHolder1_userDefault").value = obj.d;
+                            },
+                            failure: function (result) {
+                                alert("_");
+                            }
+                        });
+                    });
+
+            }
+            function validacion() {
+                var nombreuser = ContentPlaceHolder1_userDefault.value;
+                var param = "{'usuario':'" + nombreuser + "'}";
+                $.ajax({
+                    type: "POST",
+                    url: "RegistroUsuario.aspx/validarUsuario",
+                    data: param,
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    success: function (result) {
+                        var local = JSON.stringify(result);
+                        var obj = JSON.parse(local);
+
+                        if (obj.d == "Disponible") {
+                            document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
+                            document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
+                        } else {
+                            document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
+                            document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
+                        }
+                    },
+                    failure: function (result) {
+                        alert("_");
+                    }
+                });
+            }
+    </script>
+
     <div class="row">
         <!-- left column -->
         <div class="col-md-6">
@@ -55,7 +112,7 @@
                         </div>
 
                         <div class="box-footer" runat="server">
-                            <asp:Button ID="btnCrear" runat="server" Style="margin-top: 5%" type="submit" class="btn btn-primary" Text="Crear" OnClientClick="return confirm('¿Seguro que desea crear este usuario?');" OnClick="btnCrear_Click"></asp:Button>
+                            <asp:Button ID="btnCrear" runat="server" Style="margin-top: 5%" class="btn btn-primary" Text="Crear" OnClientClick="return confirm('¿Seguro que desea crear este usuario?');" OnClick="btnCrear_Click"></asp:Button>
                         </div>
 
 
@@ -75,60 +132,6 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        function ajaxRes() {
-            $('.table > tbody > tr > td:nth-child(6) > a')
-                .click(function (e) {
-                    e.preventDefault();
-                    var nombre = $(this).closest("tr").find("td:nth-child(2)").text();
-                    var apellido = $(this).closest("tr").find("td:nth-child(3)").text();
-                    var empleadoF = $(this).closest("tr").find("td:nth-child(1)").text();
-                    document.getElementById("ContentPlaceHolder1_fichaEmp").value = empleadoF;
-                    var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
-                    $.ajax({
-                        type: "POST",
-                        url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
-                        data: param,
-                        contentType: 'application/json; charset=utf-8',
-                        dataType: 'json',
-                        success: function (result) {
-                            var local = JSON.stringify(result);
-                            var obj = JSON.parse(local);
-                            document.getElementById("ContentPlaceHolder1_userDefault").value = obj.d;
-                        },
-                        failure: function (result) {
-                            alert("_");
-                        }
-                    });
-                });
 
-        }
-        function validacion() {
-            var nombreuser = ContentPlaceHolder1_userDefault.value;
-            var param = "{'usuario':'" + nombreuser + "'}";
-            $.ajax({
-                type: "POST",
-                url: "RegistroUsuario.aspx/validarUsuario",
-                data: param,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                success: function (result) {
-                    var local = JSON.stringify(result);
-                    var obj = JSON.parse(local);
-
-                    if (obj.d == "Disponible") {
-                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
-                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
-                    } else {
-                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
-                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
-                    }
-                },
-                failure: function (result) {
-                    alert("_");
-                }
-            });
-        }
-    </script>
 
 </asp:Content>
