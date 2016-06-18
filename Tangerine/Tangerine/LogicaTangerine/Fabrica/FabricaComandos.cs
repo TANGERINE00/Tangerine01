@@ -9,7 +9,7 @@ using LogicaTangerine.Comandos.M7;
 using LogicaTangerine.Comandos.M4;
 using LogicaTangerine.Comandos.M10;
 using LogicaTangerine.Comandos.M8;
-
+using LogicaTangerine.Comandos.M3;
 
 namespace LogicaTangerine.Fabrica
 {
@@ -54,7 +54,10 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosLeads()
+        {
+            return new ComandoListarTodosLeads();
+        }
         #endregion
 
         #region Modulo 4

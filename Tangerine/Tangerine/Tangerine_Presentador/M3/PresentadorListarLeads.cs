@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M3;
-using LogicaTangerine.M3;
+using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
 
@@ -20,47 +20,45 @@ namespace Tangerine_Presentador.M3
         }
 
         public void Llenar()
-        { // metodo que se usa para recorrer la lista
+        {
             try
             {
-                //crear un objeto de la capa de logica
-                LogicaM3 logicalistarClientePotencial = new LogicaM3();
-                //crear una lista de clientes potenciales
-                List<ClientePotencial> list = new List<ClientePotencial>();
-                // llena la lista de clientes potenciales creada
-                list = logicalistarClientePotencial.LogicalistarClientePotencial();
-                foreach (ClientePotencial item in list)
+                Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosLeads();
+                List<Entidad> list = comando.Ejecutar();
+                foreach (Entidad item in list)
                 {
+                    DominioTangerine.Entidades.M3.ClientePotencial elLead = (DominioTangerine.Entidades.M3.ClientePotencial)item;
+
                     vista.ClientePotencial.Text += ResourceInterfaz.AbrirTR;
-                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + item.NombreClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
-                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + item.RifClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
-                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + item.EmailClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
-                    if (item.Status == 1)
+                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + elLead.NombreClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
+                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + elLead.RifClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
+                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + elLead.EmailClientePotencial.ToString() + ResourceInterfaz.CerrarTD;
+                    if (elLead.Status == 1)
                     {
-                        vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.Activo + item.IdClientePotencial +
+                        vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.Activo + elLead.IdClientePotencial +
                             ResourceInterfaz.CloseSpanAct + ResourceInterfaz.CerrarTD;
                     }
-                    if (item.Status == 0)
+                    if (elLead.Status == 0)
                     {
-                        vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.Inactivo + item.IdClientePotencial +
+                        vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.Inactivo + elLead.IdClientePotencial +
                             ResourceInterfaz.CloseSpanInact + ResourceInterfaz.CerrarTD;
                     }
-                    if (item.Status == 2)
+                    if (elLead.Status == 2)
                     {
-                        vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.Promovido + item.IdClientePotencial +
+                        vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.Promovido + elLead.IdClientePotencial +
                             ResourceInterfaz.CloseSpanProm + ResourceInterfaz.CerrarTD;
                     }
 
-                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + item.PresupuestoAnual_inversion.ToString() +
+                    vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + elLead.PresupuestoAnual_inversion.ToString() +
                     ResourceInterfaz.CerrarTD;
 
                     vista.ClientePotencial.Text += ResourceInterfaz.AbrirTD + ResourceInterfaz.OpenDivRow + ResourceInterfaz.BotonInfo +
-                        item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
-                        ResourceInterfaz.BotonModificar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
-                        ResourceInterfaz.BotonEliminar + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
-                        ResourceInterfaz.BotonActiv + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
-                        ResourceInterfaz.BotonContacto + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
-                        ResourceInterfaz.BotonPromover + item.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                        elLead.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonModificar + elLead.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonEliminar + elLead.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonActiv + elLead.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonContacto + elLead.IdClientePotencial + ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonPromover + elLead.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                         ResourceInterfaz.CloseDiv + ResourceInterfaz.CerrarTD;
 
                     vista.ClientePotencial.Text += ResourceInterfaz.CerrarTR;
