@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
-using DominioTangerine.Entidades.M10;
+//using DominioTangerine.DominioTangerine.Entidades.M10;
 using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M10
@@ -58,17 +58,17 @@ namespace DatosTangerine.DAO.M10
             throw new NotImplementedException();
         }
 
-        public bool Agregar(Entidad parametro)
+        public bool Agregar(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
-        public bool Modificar(Entidad parametro)
+        public bool Modificar(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
-        public Entidad ConsultarXId(Entidad parametro)
+        public DominioTangerine.Entidad ConsultarXId(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
@@ -78,16 +78,16 @@ namespace DatosTangerine.DAO.M10
         /// Metodo para consultar todos los empleados
         /// </summary>
         /// <returns></returns>
-        public List<Entidad> ConsultarTodos()
+        public List<DominioTangerine.Entidad> ConsultarTodos()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
 
-            List<Entidad> listEmpleado = new List<Entidad>();
+            List<DominioTangerine.Entidad> listEmpleado = new List<DominioTangerine.Entidad>();
 
             try
             {
@@ -121,10 +121,14 @@ namespace DatosTangerine.DAO.M10
                     double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
                     ////Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
 
-                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion, empContratacion, empModalidad, empSalario);
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion,
+                                            empContratacion);
 
-                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre, empPApellido, empSApellido, empGenero,
-                                                empCedula, empFecha, empActivo, empEstudio, empEmail, cargoEmpleado);
+                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre,
+                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad, empSalario,cargoEmpleado);
+
+                   // DominioTangerine.Entidades.M10.EmpleadoM10 hola = (DominioTangerine.Entidades.M10.EmpleadoM10) empleado;
+
 
                     listEmpleado.Add(empleado);
                 }
