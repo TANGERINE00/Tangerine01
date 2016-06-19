@@ -11,7 +11,7 @@ using LogicaTangerine.M7;
 using LogicaTangerine.Comandos.M8;
 using LogicaTangerine.Fabrica;
 using DominioTangerine.Entidades.M8;
-using DominioTangerine. ;
+using DominioTangerine.Fabrica;
 
 namespace Tangerine.GUI.M1
 {
