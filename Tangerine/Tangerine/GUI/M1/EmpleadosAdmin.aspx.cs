@@ -67,6 +67,7 @@ namespace Tangerine.GUI.M1
             if (!IsPostBack)
             {
                 presentador.cargarConsultarEmpleados();
+
                 
             }
 
