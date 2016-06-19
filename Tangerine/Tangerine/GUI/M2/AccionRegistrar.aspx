@@ -61,17 +61,17 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelFicha_M2">Ficha Usuario</label>
-                            <input type="text" runat="server" class="form-control" id="textFicha_M2" name="textFicha_M2" placeholder="Ficha" disabled="disabled">
+                            <input type="text" runat="server" class="form-control" id="textFicha_M2" name="textFicha_M2" placeholder="Ficha" disabled="disabled" required>
                         </div>
 
                         <div class="form-group">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion()" required>
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[A-z]+$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group">
                             <label for="labelContraseña_M2">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion()" required>
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion(); setCustomValidity('')" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group" runat="server">

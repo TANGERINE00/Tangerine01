@@ -634,6 +634,24 @@ namespace DominioTangerine.Fabrica
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
 
+        public static Entidad ObtenerLugar()
+        {
+            return new DominioTangerine.Entidades.M10.LugarDireccion();
+        }
+        public static Entidad ObtenerCargoM10()
+        {
+            return new DominioTangerine.Entidades.M10.CargoM10();
+        }
+        public static Entidad ObtenerEstadoM10()
+        {
+            return new DominioTangerine.Entidades.M10.LugarDireccion();
+        }
+        public static Entidad AgregarEmpledoM10()
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
+        }
+
+
         //public static Entidad ObtenerCargo()
         //{
         //    return new DominioTangerine.Entidades.M10.Cargo();
@@ -652,8 +670,8 @@ namespace DominioTangerine.Fabrica
         {
                         return (new DominioTangerine.Entidades.M10.EmpleadoM10 ( empId,empPNombre,empSNombre,empPApellido, 
                                 empSApellido, empCedula,empFecha,empActivo,empEmail,empGenero,empEstudio,empModalidad,empSalario,cargo));
-        }
 
+        }
         #endregion
     }
 }

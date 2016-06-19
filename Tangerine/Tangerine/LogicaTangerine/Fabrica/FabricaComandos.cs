@@ -711,6 +711,21 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarEmpleado();
         }
+
+        public static Comando<List<Entidad>> ObtenerFabricaPaises()
+        {
+            return new ComandoObtenerPais();
+        }
+        public static Comando<List<Entidad>> ObtenerFabricaCargo()
+        {
+            return new ComandoObtenerCargo();
+        }
+        public static Comando<List<Entidad>> ObtenerFabricaEstado(Entidad Pais)
+        {
+            return new ComandoObtenerEstado(Pais);
+        }
+        
+
         #endregion
     }
 }

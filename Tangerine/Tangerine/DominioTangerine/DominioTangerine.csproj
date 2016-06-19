@@ -54,6 +54,8 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\M10\CargoM10.cs" />
+    <Compile Include="Entidades\M10\LugarDireccion.cs" />
     <Compile Include="Entidades\M10\Cargo.cs" />
     <Compile Include="Entidades\M10\EmpleadoM10.cs" />
     <Compile Include="Entidades\M1\Cuenta.cs" />
@@ -66,7 +68,6 @@
     <Compile Include="Entidades\M3\ClientePotencial.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
-    <Compile Include="Entidades\M5\Contacto.cs" />
     <Compile Include="Entidades\M5\ContactoM5.cs" />
     <Compile Include="Entidades\M6\Propuesta.cs" />
     <Compile Include="Entidades\M6\Requerimiento.cs" />
