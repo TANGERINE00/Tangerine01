@@ -12,7 +12,7 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado de la tabla consulta
         /// </summary>
-        Literal tablaEmpleados
+        string empleado
         {
             get;
             set;
