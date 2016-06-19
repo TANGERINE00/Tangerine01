@@ -14,6 +14,7 @@ namespace Tangerine.GUI.M2
         public static int numFicha;
         public static string nombreUsuario;
         public static string apellidoUsuario;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             numFicha = int.Parse(Request.QueryString["idFicha"]);
@@ -21,6 +22,8 @@ namespace Tangerine.GUI.M2
             apellidoUsuario = Request.QueryString["Apellido"];
             userDefault.Value = ObtenerUsuarioDefault2(nombreUsuario,apellidoUsuario);
         }
+
+        #region Web Methods 
 
         public void ObtenerUsuarioDefault()
         {
@@ -68,6 +71,8 @@ namespace Tangerine.GUI.M2
 
             return retorno;
         }
+
+        #endregion
 
         /// <summary>
         /// Crear el usuario de un empleado
