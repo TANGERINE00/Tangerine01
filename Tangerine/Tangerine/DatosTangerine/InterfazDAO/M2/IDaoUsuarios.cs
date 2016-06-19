@@ -36,7 +36,7 @@ namespace DatosTangerine.InterfazDAO.M2
         /// </summary>
         /// <param name="theEmpleado"></param>
         /// <returns>Retorna el usuario de un empleado</returns>
-        Entidad ObtenerUsuarioDeEmpleado( int num_empleado );
+        Entidad ObtenerUsuarioDeEmpleado( Entidad num_empleado );
 
         /// <summary>
         /// Encabezado del metodo para retornar los datos del usuario
