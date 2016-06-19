@@ -114,6 +114,21 @@ namespace LogicaTangerine.Fabrica
             {
                 return new Comandos.M2.ComandosDAOUsuario.ComandoModificarContrasena( usuario );
             }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoPrepararUsuario
+            /// </summary>
+            /// <param name="usuarioNombre"></param>
+            /// <param name="contrasenaUsuario"></param>
+            /// <param name="rolUsuario"></param>
+            /// <param name="fichaEmpleado"></param>
+            /// <returns>Retorna una instancia a ComandoPrepararUsuario</returns>
+            public static Comando<Boolean> prepararUsuario( String usuarioNombre , String contrasenaUsuario , 
+                                                            String rolUsuario , int fichaEmpleado)
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario( usuarioNombre , contrasenaUsuario , 
+                                                                                  rolUsuario , fichaEmpleado );
+            }
         
             #endregion
 
