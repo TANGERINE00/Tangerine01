@@ -66,10 +66,12 @@
 
                         <div class="form-group">
                             <label for="labelUsuario_M2">Usuario</label>
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[A-z]+$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group">
                             <label for="labelContraseña_M2">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion(); setCustomValidity('')" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group" runat="server">
