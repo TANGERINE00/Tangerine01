@@ -162,6 +162,31 @@ namespace LogicaTangerine.Fabrica
             }
             
             #endregion
+
+            #region Comandos Especificos
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAOpciones
+            /// </summary>
+            /// <param name="nombreRol"></param>
+            /// <returns>Retorna una una instancia a ComandoVerificarAccesoAOpciones</returns>
+            public static Comando<List<String>> obtenerComandoVerificarAccesoAOpciones( String nombreRol )
+            {
+                return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAOpciones( nombreRol );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAPagina
+            /// </summary>
+            /// <param name="paginaAVerificar"></param>
+            /// <param name="nombreRol"></param>
+            /// <returns>Retorna una una instancia a ComandoVerificarAccesoAPagina</returns>
+            public static Comando<Boolean> obtenerComandoVerificarAccesoAPagina( String paginaAVerificar , String nombreRol)
+            {
+                return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAPagina( paginaAVerificar, nombreRol );
+            }
+
+            #endregion
         
         #endregion
 
