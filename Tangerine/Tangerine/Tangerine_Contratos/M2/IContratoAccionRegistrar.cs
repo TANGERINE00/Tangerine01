@@ -34,5 +34,14 @@ namespace Tangerine_Contratos.M2
             get;
             set;
         }
+
+        /// <summary>
+        /// Encabezado del textBox de ficha usuario
+        /// </summary>
+        string ficha
+        {
+            get;
+            set;
+        }
     }
 }
