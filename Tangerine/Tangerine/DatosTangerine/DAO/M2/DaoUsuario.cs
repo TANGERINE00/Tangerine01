@@ -130,6 +130,7 @@ namespace DatosTangerine.DAO.M2
             {
                 throw new NotImplementedException();
             }
+
         #endregion
 
         #region IDAOUsuarios
