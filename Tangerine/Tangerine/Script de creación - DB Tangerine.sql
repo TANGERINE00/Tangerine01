@@ -1,4 +1,4 @@
-﻿ create table LUGAR_DIRECCION
+﻿create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -461,7 +461,7 @@ END;
 GO
 
 CREATE PROCEDURE M2_BorrarUsuario
-	@usu_id
+	@usu_id int
 AS
 	BEGIN
 		DELETE FROM USUARIO
