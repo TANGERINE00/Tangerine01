@@ -6,14 +6,16 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Tangerine_Contratos.M2;
 
 namespace Tangerine.GUI.M2
 {
-    public partial class AccionRegistrar : System.Web.UI.Page
+    public partial class AccionRegistrar : System.Web.UI.Page, IContratoAccionRegistrar
     {
         public static int numFicha;
         public static string nombreUsuario;
         public static string apellidoUsuario;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             numFicha = int.Parse(Request.QueryString["idFicha"]);
@@ -21,6 +23,8 @@ namespace Tangerine.GUI.M2
             apellidoUsuario = Request.QueryString["Apellido"];
             userDefault.Value = ObtenerUsuarioDefault2(nombreUsuario,apellidoUsuario);
         }
+
+        #region Web Methods 
 
         public void ObtenerUsuarioDefault()
         {
@@ -68,6 +72,39 @@ namespace Tangerine.GUI.M2
 
             return retorno;
         }
+
+        #endregion
+
+        #region Contrato
+
+            /// <summary>
+            /// comboBox de seleccion de rol
+            /// </summary>
+            public string comboRol
+            {
+                get { return textRol_M2.Value;}
+                set { textRol_M2.Value = value; }
+            }
+
+            /// <summary>
+            /// textBox de la contraseña
+            /// </summary>
+            public string contrasena
+            {
+                get { return passwordDefault.Value; }
+                set { passwordDefault.Value = value;}
+            }
+
+            /// <summary>
+            /// Encabezado del textBox del nombre de usuario
+            /// </summary>
+            public string usuario
+            {
+                get { return userDefault.Value; }
+                set { userDefault.Value = value;}
+            }
+
+        #endregion
 
         /// <summary>
         /// Crear el usuario de un empleado

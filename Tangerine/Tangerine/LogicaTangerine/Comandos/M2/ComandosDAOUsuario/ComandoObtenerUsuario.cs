@@ -11,15 +11,15 @@ namespace LogicaTangerine.Comandos.M2
 {
     public class ComandoObtenerUsuario : Comando<DominioTangerine.Entidad>
     {
-        DominioTangerine.Entidad _theEmpleado;
+        int _theEmpleado;
 
         /// <summary>
         /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
         /// <param name="theEmpleado"></param>
-        public ComandoObtenerUsuario( DominioTangerine.Entidad theEmpleado )
+        public ComandoObtenerUsuario( int numEmpleado )
         {
-            _theEmpleado = theEmpleado;
+            _theEmpleado = numEmpleado;
         }
 
         /// <summary>

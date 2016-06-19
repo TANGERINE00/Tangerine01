@@ -130,6 +130,7 @@ namespace DatosTangerine.DAO.M2
             {
                 throw new NotImplementedException();
             }
+
         #endregion
 
         #region IDAOUsuarios
@@ -233,12 +234,10 @@ namespace DatosTangerine.DAO.M2
             /// </summary>
             /// <param name="empleado"></param>
             /// <returns>Retorna el usuario de un empleado</returns>
-            public Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado )
+            public Entidad ObtenerUsuarioDeEmpleado( int num_empleado )
             {
-                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10) theEmpleado;
                 Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
-
-                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
 
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
@@ -247,7 +246,7 @@ namespace DatosTangerine.DAO.M2
                 {
                     Conectar();
 
-                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, empleado.Emp_num_ficha.ToString(), false);
+                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerUsuarioDeEmpleado, parametros);
@@ -258,8 +257,8 @@ namespace DatosTangerine.DAO.M2
                         string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
                         string rolUsuario = row[ResourceUser.RolNombre].ToString();
 
-                        Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre( rolUsuario );
-                        DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 ) theRol;
+                        Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre(rolUsuario);
+                        DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                         usuario.nombreUsuario = nombreUsuario;
                         usuario.rol = rol;
