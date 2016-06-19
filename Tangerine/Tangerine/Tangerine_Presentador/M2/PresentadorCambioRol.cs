@@ -40,7 +40,7 @@ namespace Tangerine_Presentador.M2
                 {
                     _vista.empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
                     _vista.empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha + ResourceGUIM2.RolEmpleado + user.Rol.Nombre
+                    _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha
                                       + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                     _vista.empleado += ResourceGUIM2.CloseTR;
                 }

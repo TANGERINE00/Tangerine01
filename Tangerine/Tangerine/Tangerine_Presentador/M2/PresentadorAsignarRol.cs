@@ -10,7 +10,6 @@ namespace Tangerine_Presentador.M2
     public class PresentadorAsignarRol
     {
         private int _numFicha;
-        private static string _rol;
         private IContratoAsignarRol _vista;
 
         /// <summary>
@@ -18,12 +17,10 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         /// <param name="vista"></param>
         /// <param name="numFicha"></param>
-        public PresentadorAsignarRol ( IContratoAsignarRol vista, int numFicha, string rol )
+        public PresentadorAsignarRol ( IContratoAsignarRol vista, int numFicha )
         {
             _vista = vista;
             _numFicha = numFicha;
-            _rol = rol;
-
         }
 
         /// <summary>
@@ -36,7 +33,7 @@ namespace Tangerine_Presentador.M2
             DominioTangerine.Entidad theUser = comando.Ejecutar();
             DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
             _vista.usuario = user.nombreUsuario;
-            _vista.comboBoxRol = _rol;
+            _vista.comboBoxRol = user.rol.nombre;
         }
 
         /// <summary>
