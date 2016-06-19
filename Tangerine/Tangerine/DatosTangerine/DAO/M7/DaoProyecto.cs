@@ -155,6 +155,21 @@ namespace DatosTangerine.DAO.M7
             return proyecto;
         }
 
+        public Double CalcularPagoMensual(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M7.Proyecto P = (DominioTangerine.Entidades.M7.Proyecto)parametro;
+
+            int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
+            if (dias > 31)
+            {
+                return (P.Costo / dias) * 30;
+            }
+            else
+            {
+                return P.Costo;
+            }
+        }
+
         public List<Entidad> ConsultarTodos()
         {
            List<Parametro> parameters = new List<Parametro>();

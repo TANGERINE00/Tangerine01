@@ -495,15 +495,15 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
         }
-/*
-        public static Comando<Entidad> ObtenerComandoConsultarAcuerdoPagoMensual()
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarAcuerdoPagoMensual()
         {
             return new ComandoConsultarAcuerdoPagoMensual();
-        }*/
+        }
 
-        public static Comando<Entidad> ObtenerComandoCalcularPagoMesual()
+        public static Comando<Double> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
         {
-            return new ComandoCalcularPagoMensual();
+            return new ComandoCalcularPagoMensual(proyecto);
         }
         #endregion
 
