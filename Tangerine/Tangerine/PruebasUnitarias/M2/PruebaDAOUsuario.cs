@@ -17,7 +17,7 @@ namespace PruebasUnitarias.M2
         #region Atributos
         public bool answer;
         //public bool answer1;
-        public RolM2 elRol;
+        public RolM2 elRol = new RolM2("Administrador"); 
         public Entidad elUsuario;
         public Entidad elUsuario1;
         public Entidad elUsuario2;
@@ -27,9 +27,9 @@ namespace PruebasUnitarias.M2
         [SetUp]
         public void init()
         {
-            elRol = new RolM2(1);
+            
             elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),"Activo", elRol,1);
-            elUsuario1 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("GianJose", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            elUsuario1 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("GianJose", "1234", new DateTime(2015, 2, 10), "Activo", elRol,1);
 
         }
 
@@ -54,13 +54,13 @@ namespace PruebasUnitarias.M2
             answer = daoUsuario.Agregar(elUsuario);
 
             elUsuario1 = daoUsuario.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(),"GianJose", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1));
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).Id == daoUsuario.ConsultLastUserID());
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).nombreUsuario == "Daniel");
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).contrasena == "1234");
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).fechaCreacion == new DateTime(2015, 2, 10));
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).activo == "Activo");
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).rol == elRol);
-            Assert.IsFalse(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).fichaEmpleado == 1);
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).Id == daoUsuario.ConsultLastUserID());
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).nombreUsuario == "Daniel");
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).contrasena == "1234");
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).fechaCreacion == new DateTime(2015, 2, 10));
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).activo == "Activo");
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).rol.Id == 1);
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).fichaEmpleado == 1);
 
         }
 
