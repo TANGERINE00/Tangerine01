@@ -309,4 +309,7 @@
   <data name="VentanaAgregarContacto" xml:space="preserve">
     <value>&lt;a id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" href="AgregarContacto.aspx?typeComp=</value>
   </data>
+  <data name="botonPagarCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
+  </data>
 </root>

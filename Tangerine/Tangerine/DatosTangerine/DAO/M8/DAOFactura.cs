@@ -218,7 +218,7 @@ namespace DatosTangerine.DAO.M8
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                theFactura = new Facturacion( facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
+                theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                     facEstatus, facIdProyecto, facIdCompania);
                 theFactura.Id = facId;
 
@@ -287,7 +287,7 @@ namespace DatosTangerine.DAO.M8
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                    Facturacion theFactura = new Facturacion(facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                         facEstatus, facIdProyecto, facIdCompania);
                     theFactura.Id = facId;
 
@@ -507,7 +507,7 @@ namespace DatosTangerine.DAO.M8
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
-                    theFactura = new Facturacion(facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
+                    theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                         facEstatus, facIdProyecto, facIdCompania);
                     theFactura.Id = facId;
 
@@ -560,7 +560,6 @@ namespace DatosTangerine.DAO.M8
             List<Parametro> parameters = new List<Parametro>();
             CompaniaM4 theCompany = (CompaniaM4)parametro;
             Parametro theParam = new Parametro();
-            Facturacion theFactura = (Facturacion)parametro;
             List<Entidad> listFactura = new List<Entidad>();
 
             try
@@ -586,7 +585,7 @@ namespace DatosTangerine.DAO.M8
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
-                    theFactura = new Facturacion(facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, facDescripcion,
                                                         facEstatus, facIdProyecto, facIdCompania);
                     theFactura.Id = facId;
 

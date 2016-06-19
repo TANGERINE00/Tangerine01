@@ -5,146 +5,137 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
-using LogicaTangerine;
-using LogicaTangerine.M4;
-using DatosTangerine.M4;
+using Tangerine_Contratos.M4;
+using Tangerine_Presentador.M4;
 
 namespace Tangerine.GUI.M4
 {
-    public partial class HabilitarCompania : System.Web.UI.Page
+    public partial class HabilitarCompania : System.Web.UI.Page, IContratoInformacionCompania
     {
-        LogicaM4 prueba = new LogicaM4();
-      
-        public string Name
+        #region CargarPresentador
+        PresentadorInformacionCompania _presentador;
+
+        public HabilitarCompania()
+        {
+            this._presentador = new PresentadorInformacionCompania(this);
+        }
+
+        #endregion
+
+        #region Contrato
+        public Label NombreCompania 
         {
             get
             {
-                return this.Nombre.Text;
+                return Nombre;
             }
-
             set
             {
-                this.Nombre.Text = value;
+                Nombre = value;
             }
-        }
-
-        public string Siglas
+        }   
+        public Label Estatus
         {
             get
             {
-                return this.Acronimo.Text;
+                return habilitado;
             }
-
             set
             {
-                this.Acronimo.Text = value;
+                habilitado = value;
             }
-        }
-
-        public string Telefono
+        }   
+        public Label Acronimo      
         {
             get
             {
-                return this.telefono.Text;
+                return acronimo;
             }
-
             set
             {
-                this.telefono.Text = value;
+                acronimo = value;
             }
-        }
-
-        public string RIF
+        }   
+        public Label PlazoDePagos      
         {
             get
             {
-                return this.Rif.Text;
+                return plazo;
             }
-
             set
             {
-                this.Rif.Text = value;
+                plazo = value;
             }
         }
-
-        public string Direccion
+        public Label RIF      
         {
             get
             {
-                return this.direccion.Text;
+                return Rif;
             }
-
             set
             {
-                this.direccion.Text = value;
+                Rif = value;
             }
         }
-
-        public string Correo
+        public Label Presupuesto      
         {
             get
             {
-                return this.correo.Text;
+                return presupuesto;
             }
-
             set
             {
-                this.correo.Text = value;
+                presupuesto = value;
             }
         }
-
-        public string Fecha
+        public Label Direccion      
         {
             get
             {
-                return this.fecha.ToString();
+                return direccion;
             }
-
             set
             {
-                this.fecha.Text = value;
+                direccion = value;
             }
         }
-
-        public string Habilitado
+        public Label Correo
+        {
+            get 
+            {
+                return correo;
+            }
+            set 
+            {
+                correo = value;
+            }
+        }
+        public Label Telefono      
         {
             get
             {
-                return this.habilitado.ToString();
+                return telefono;
             }
-
             set
             {
-                this.habilitado.Text = value;
+                telefono = value;
             }
         }
-
-        public string Plazo
+        public Label Fecha      
         {
             get
             {
-                return this.plazo.ToString();
+                return fecha;
             }
-
             set
             {
-                this.plazo.Text = value;
+                fecha = value;
             }
         }
+        #endregion
 
-        public string Presupuesto
-        {
-            get
-            {
-                return this.presupuesto.ToString();
-            }
-
-            set
-            {
-                this.presupuesto.Text = value;
-            }
-        }
-
+        #region Load
         /// <summary>
         /// Método de carga de página en el cual carga los datos de la compañía.
         /// </summary>
@@ -152,47 +143,11 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Compania company = new Compania();
-          
-            List<LugarDireccion> listaLugares = prueba.getPlaces();      
-
-            try
-            {
-                company = prueba.ConsultCompany(int.Parse(Request.QueryString["idComp"]));
-            }
-            catch 
-            {
-            }
-          
-            foreach (LugarDireccion lugar in listaLugares)
-            {
+            int i = int.Parse(Request.QueryString["idComp"]);
+            if (!IsPostBack)
                 
-                if (lugar.LugId.Equals(company.IdLugar))
-                {  
-                    Name= company.NombreCompania;
-                    Siglas= company.AcronimoCompania;
-                    Telefono= company.TelefonoCompania;
-                    RIF= company.RifCompania;
-                    Correo= company.EmailCompania;
-                    Fecha= company.FechaRegistroCompania.ToShortDateString();
-                    Direccion = lugar.LugNombre ;
-                    Plazo = company.PlazoPagoCompania.ToString() + ResourceGUIM4.Dias;
-                    Presupuesto = company.PresupuestoCompania.ToString();
-                
-                    if (company.StatusCompania == 1)
-                    {
-                        Habilitado = ResourceGUIM4.habilitado + ResourceGUIM4.CloseSpanHab;
-                    }
-
-                    if (company.StatusCompania == 0)
-                    {
-                        Habilitado = ResourceGUIM4.inhabilitado + ResourceGUIM4.CloseSpanInhab;
-                    
-                    }
-                }
-            
-            } 
-
+                _presentador.CargarInformacionCompania(i);
         }
+        #endregion
     }
 }

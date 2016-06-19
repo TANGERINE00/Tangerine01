@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tangerine_Presentador.M2
 {
-    class PresentacionCambioRol
+    public class PresentadorAsignarRol
     {
     }
 }
