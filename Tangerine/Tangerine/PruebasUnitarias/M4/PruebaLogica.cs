@@ -93,7 +93,7 @@ namespace PruebasUnitarias.M4
         /// <summary>
         /// Prueba que permite verificar el consultar de todas las companías Habilitadas en la base de datos.
         /// </summary>
-        [Test]
+        /*[Test]
         public void TestGetAll()
         {
             Comando<List<Entidad>> Comand2 = FabricaComandos.CrearConsultarCompaniasActivas();
@@ -104,7 +104,7 @@ namespace PruebasUnitarias.M4
                 Assert.IsTrue(Companias[i].Id != 0);
             }
 
-        }
+        }*/
        
 
      
