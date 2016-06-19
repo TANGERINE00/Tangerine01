@@ -164,6 +164,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoModificarClientePotencial(Entidad cliente)
+        {
+            return new ComandoModificarClientePotencial(cliente);
+        }
         #endregion
 
         #region Modulo 4

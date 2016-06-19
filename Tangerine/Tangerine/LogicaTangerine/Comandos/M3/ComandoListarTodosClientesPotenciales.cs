@@ -16,8 +16,7 @@ namespace LogicaTangerine.Comandos.M3
             try
             {
                 IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-                List<Entidad> clientesPotenciales = daoClientePotencial.ConsultarTodos();
-                return clientesPotenciales;
+                return daoClientePotencial.ConsultarTodos();
             }
             catch (Exception e)
             {
