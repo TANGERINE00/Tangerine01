@@ -21,6 +21,7 @@ namespace PruebasUnitarias.M4
         public Entidad theCompany;
         public Entidad theCompany1;
         public Entidad theCompany2;
+        public Entidad Lugar1;
         public bool answer;
         public bool answer1;
         LogicaM4 Logica = new LogicaM4();
@@ -33,7 +34,7 @@ namespace PruebasUnitarias.M4
         {
             theCompany = FabricaEntidades.CrearEntidadCompaniaM4Llena(5,"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             theCompany1 = FabricaEntidades.CrearEntidadCompaniaM4Llena(1,"CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-
+            Lugar1 = FabricaEntidades.CrearEntidadLugarM4(5,"Caracas");
         }
 
         [TearDown]
@@ -89,24 +90,44 @@ namespace PruebasUnitarias.M4
             
         }
 
-       
-
         /// <summary>
-        /// Prueba que permite la búsqueda de una compañía a la base de datos.
+        /// Prueba que permite verificar el consultar de todas las companías Habilitadas en la base de datos.
         /// </summary>
         [Test]
-        public void TestEnableCompany()
+        public void TestGetAll()
         {
-            
+            Comando<List<Entidad>> Comand2 = FabricaComandos.CrearConsultarCompaniasActivas();
+            List<Entidad> Companias = Comand2.Ejecutar();
+            for (int i = 0; i < Companias.Count(); i++)
+            {
+
+                Assert.IsTrue(Companias[i].Id != 0);
+            }
+
         }
+       
+
+     
 
         /// <summary>
-        /// Prueba que permite la búsqueda de una compañía a la base de datos.
+        /// Prueba que permite deshabilitar una compania.
         /// </summary>
         [Test]
         public void TestDisableCompany()
         {
-            
+            Comando<bool> Comand = FabricaComandos.CrearDeshabilitarCompania(theCompany);
+            Assert.IsTrue(Comand.Ejecutar());
+        }
+
+        /// <summary>
+        /// Prueba que permite habilitar una compania.
+        /// </summary>
+        [Test]
+        public void TestEnableCompany()
+        {
+            Comando<bool> Comand = FabricaComandos.CrearHabilitarCompania(theCompany);
+            Assert.IsTrue(Comand.Ejecutar());
+           
         }
         #endregion
 
@@ -116,9 +137,17 @@ namespace PruebasUnitarias.M4
         [Test]
         public void TestConsultPlaces()
         {
+            Comando<List<Entidad>> Comand = FabricaComandos.CrearConsultarLugar();
+            List<Entidad> lugar = Comand.Ejecutar();
+            for (int i = 0; i < lugar.Count(); i++)
+            {
+
+                Assert.IsTrue(lugar[i].Id != 0);
+            }
+
            
         }
-        /// <summary>
+        /*// <summary>
         /// Prueba que permite verificar la busqueda de un Id por un nombre de Lugar en la base de datos.
         /// </summary>
         [Test]
@@ -127,15 +156,17 @@ namespace PruebasUnitarias.M4
             //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
             Assert.AreEqual(5, Logica.MatchIdLugar("Caracas"));
         }
-
+        */
         /// <summary>
-        /// Prueba que permite verificar la busqueda de un nombre de lugar por su id de Lugar en la base de datos.
+        /// Prueba que permite Consultar Lugar por id.
         /// </summary>
         [Test]
-        public void TestMatchNombreLugar()
+        public void TestConsultarLugarxID()
         {
-            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
-            Assert.AreEqual("Caracas", Logica.MatchNombreLugar(5));
+            Comando<Entidad> Comand = FabricaComandos.CrearConsultarLugarXID(Lugar1);
+            Entidad lugar = Comand.Ejecutar();
+            Assert.IsTrue(lugar.Id==5);
+            
         }
     }
 }
