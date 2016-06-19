@@ -14,49 +14,53 @@ namespace Tangerine.GUI.M2
 {
     public partial class AsignarRol : System.Web.UI.Page, IContratoAsignarRol
     {
-        private int numFicha;
-        private string rol;
         private Tangerine_Presentador.M2.PresentadorAsignarRol presentador;
 
+        #region Contrato
+
+        /// <summary>
+        /// textBox de nombre de usuario
+        /// </summary>
+        public string usuario
+        {
+            get { return textUsuario_M2.Value; }
+            set { textUsuario_M2.Value = value; }
+        }
+
+        /// <summary>
+        /// comboBox de seleccion de rol
+        /// </summary>
+        public string comboBoxRol
+        {
+            get { return textRol_M2.Value; }
+            set { textRol_M2.Value = value; }
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Carga la ventana de Asignar Rol
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            numFicha = int.Parse(Request.QueryString["idEmpleado"]);
-            rol = Request.QueryString["Rol"];
-            presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, numFicha, rol);
+            presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, int.Parse(Request.QueryString["idEmpleado"]));
             if (!IsPostBack)
             {
                 presentador.inicioVista(); 
             }
         }
 
-        #region Contrato
-
-            /// <summary>
-            /// textBox de nombre de usuario
-            /// </summary>
-            public string usuario
-            {
-                get { return textUsuario_M2.Value; }
-                set { textUsuario_M2.Value = value; }
-            }
-
-            /// <summary>
-            /// comboBox de seleccion de rol
-            /// </summary>
-            public string comboBoxRol
-            {
-                get { return textRol_M2.Value; }
-                set { textRol_M2.Value = value; }
-            }
-
-        #endregion
-
+        /// <summary>
+        /// Le asignar un rol al usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttonAsignar_Click(object sender, EventArgs e)
         {
             presentador.asignar();
             Response.Redirect("../M2/CambiarRol.aspx");
         }
-
-        public static bool isPostBack { get; set; }
     }
 }

@@ -15,16 +15,26 @@ namespace Tangerine_Presentador.M5
     {
         private IContratoAgregarContacto _vista;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorAgregarContacto( IContratoAgregarContacto vista )
         {
             this._vista = vista;
         }
 
+        /// <summary>
+        /// Método que carga el boton volver en la vista
+        /// </summary>
         public void CargarPagina()
         {
             _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp, _vista.GetIdComp );
         }
 
+        /// <summary>
+        /// Método que agrega un contacto nuevo
+        /// </summary>
         public void AgregarContacto()
         {
             Entidad contactoNuevo = FabricaEntidades.crearContactoSinId( _vista.input_nombre, _vista.input_apellido,

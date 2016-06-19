@@ -20,11 +20,20 @@ namespace Tangerine_Presentador.M5
     {
         private IContratoConsultarContactos _vista;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorConsultarContactos( IContratoConsultarContactos vista )
         {
             this._vista = vista;
         }
 
+        /// <summary>
+        /// Método que carga el boton volver de la vista
+        /// </summary>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
         public void CargarBotonVolver( int typeComp, int idComp )
         {
             if ( typeComp == 1 )
@@ -58,6 +67,9 @@ namespace Tangerine_Presentador.M5
             }
         }
 
+        /// <summary>
+        /// Metodo que elimina un contacto seleccionado de la tabla de contactos de la vista
+        /// </summary>
         public void EliminarContacto()
         {
             try
@@ -76,6 +88,9 @@ namespace Tangerine_Presentador.M5
             }
         }
 
+        /// <summary>
+        /// Método que carga alertas de la vista
+        /// </summary>
         public void Alertas()
         {
             try
@@ -101,6 +116,9 @@ namespace Tangerine_Presentador.M5
             } 
         }
 
+        /// <summary>
+        /// Método para llenar la tabla de contactos de la vista
+        /// </summary>
         public void LlenarTablaContactos()
         {
             try
@@ -128,6 +146,9 @@ namespace Tangerine_Presentador.M5
             }
         }
 
+        /// <summary>
+        /// Método que se ejecuta al cargar la vista
+        /// </summary>
         public void CargarPagina()
         {
             CargarBotonVolver( _vista.getTypeComp, _vista.getIdComp );
