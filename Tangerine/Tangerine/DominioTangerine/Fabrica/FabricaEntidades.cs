@@ -366,7 +366,7 @@ namespace DominioTangerine.Fabrica
             #region Metodos para instaciar Lugar Direccion
             public static Entidad ObtenerLugarDireccion() 
             {
-                return new DominioTangerine.Entidades.M7.LugarDireccion();
+                return new DominioTangerine.Entidades.M7. LugarDireccion2();
             }
             #endregion
 
@@ -426,9 +426,24 @@ namespace DominioTangerine.Fabrica
 
         public static Entidad ConsultarEmpleados() 
         {
-            return new DominioTangerine.Entidades.M10.Empleado();
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
-
+        public static Entidad ObtenerLugar()
+        {
+            return new DominioTangerine.Entidades.M10.LugarDireccion();
+        }
+        public static Entidad ObtenerCargoM10()
+        {
+            return new DominioTangerine.Entidades.M10.CargoM10();
+        }
+        public static Entidad ObtenerEstadoM10()
+        {
+            return new DominioTangerine.Entidades.M10.LugarDireccion();
+        }
+        public static Entidad AgregarEmpledoM10()
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
+        }
         #endregion
     }
 }

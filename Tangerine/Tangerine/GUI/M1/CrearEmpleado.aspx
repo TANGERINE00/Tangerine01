@@ -44,7 +44,7 @@
                     <input type="text" runat="server" id="SecondNamee" class="form-control" maxlenght="20" placeholder="Segundo Nombre">
                   </div>
                   <div class="form-group ">
-                    <label for="FirstLastName">Primer Nombre</label> <label for="Requerido" style="color: red;">*</label>
+                    <label for="FirstLastName">Primer Apellido</label> <label for="Requerido" style="color: red;">*</label>
                     <input type="text" runat="server" id="FirstLastName" class="form-control" maxlenght="20" placeholder="Primer Apellido" required>
                   </div>
                   <div class="form-group ">

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="M10\IContratoConsultaEmpleados.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
+    <Compile Include="M10\IContratoCrearEmpleado.cs" />
     <Compile Include="M7\IContratoConsultaProyecto.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />

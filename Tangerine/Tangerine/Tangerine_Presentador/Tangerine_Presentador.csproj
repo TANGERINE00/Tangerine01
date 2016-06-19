@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\PresentadorConsultaEmpleado.cs" />
+    <Compile Include="M10\PresentadorCrearEmpleado.cs" />
     <Compile Include="M1\PresentadorInicio.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />
     <Compile Include="M7\RecursoPresentadorM7.Designer.cs">

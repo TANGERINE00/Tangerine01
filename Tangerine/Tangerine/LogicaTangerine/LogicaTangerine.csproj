@@ -71,6 +71,9 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\M10\ComandoAgregarEmpleado.cs" />
+    <Compile Include="Comandos\M10\ComandoObtenerEstado.cs" />
+    <Compile Include="Comandos\M10\ComandoObtenerPais - Copy.cs" />
+    <Compile Include="Comandos\M10\ComandoObtenerCargo.cs" />
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
