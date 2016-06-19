@@ -8,7 +8,9 @@ using LogicaTangerine.Comandos;
 using LogicaTangerine.Comandos.M7;
 using LogicaTangerine.Comandos.M4;
 using LogicaTangerine.Comandos.M10;
-
+using LogicaTangerine.Comandos.M8;
+using LogicaTangerine.Comandos.M3;
+using LogicaTangerine.Comandos.M5;
 
 namespace LogicaTangerine.Fabrica
 {
@@ -20,40 +22,215 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 2
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia de la clase ComandoAgregarUsuario
-        /// </summary>
-        /// <returns>Retorna una instancia a ComandoAgregarUsuario</returns>
-        public static Comandos.M2.ComandoAgregarUsuario agregarUsuario()
-        {
-            return new Comandos.M2.ComandoAgregarUsuario();
-        }
+            #region Comandos Usuarios
 
-        /// <summary>
-        /// Método utilizado para devolver una instancia del ComandoUsuarioDefault
-        /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="apellido"></param>
-        /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-        public static Comandos.M2.ComandoCrearUsuarioDefault crearUsuario(String nombre, String apellido)
-        {
-            return new Comandos.M2.ComandoCrearUsuarioDefault(nombre, apellido);
-        }
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoAgregarUsuario
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
+            public static Comando<Boolean> agregarUsuario( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandoAgregarUsuario( usuario );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoVerificarUsuario
+            /// </summary>
+            /// <param name="fichaEmpleado"></param>
+            /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
+            public static Comando<Boolean> verificarUsuario( int fichaEmpleado )
+            {
+                return new Comandos.M2.ComandoVerificarUsuario( fichaEmpleado );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoConsultarListaDeEmpleados
+            /// </summary>
+            /// <returns>Retorna una una instancia a ComandoConsultarListaDeEmpleados</returns>
+            public static Comando<List<DominioTangerine.Entidad>> listaEmpleados()
+            {
+                return new Comandos.M2.ComandoConsultarListaDeEmpleados();
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoValidarUsuario
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
+            public static Comando<Boolean> validarUsuario( string usuario )
+            {
+                return new Comandos.M2.ComandoValidarUsuario( usuario );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoObtenerCaracteres
+            /// </summary>
+            /// <param name="cadena"></param>
+            /// <param name="cantidad"></param>
+            /// <returns>Retorna una instancia a ComandoObtenerCaracteres</returns>
+            public static Comando<String> obtenerCaracteres( String cadena , int cantidad )
+            {
+                return new Comandos.M2.ComandoObtenerCaracteres( cadena , cantidad );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoUsuarioDefault
+            /// </summary>
+            /// <param name="nombre"></param>
+            /// <param name="apellido"></param>
+            /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
+            public static Comando<String> crearUsuario( string nombre , string apellido )
+            {
+                return new Comandos.M2.ComandoCrearUsuarioDefault( nombre , apellido );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoObtenerUsuario
+            /// </summary>
+            /// <param name="theEmpleado"></param>
+            /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
+            public static Comando<DominioTangerine.Entidad> obtenerUsuario( int theEmpleado )
+            {
+                return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultarPorID
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioPorID( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarPorID( usuario );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoModificarContrasena
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoModificarContrasena</returns>
+            public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoModificarContrasena( usuario );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoPrepararUsuario
+            /// </summary>
+            /// <param name="usuarioNombre"></param>
+            /// <param name="contrasenaUsuario"></param>
+            /// <param name="rolUsuario"></param>
+            /// <param name="fichaEmpleado"></param>
+            /// <returns>Retorna una instancia a ComandoPrepararUsuario</returns>
+            public static Comando<Boolean> prepararUsuario( String usuarioNombre , String contrasenaUsuario , 
+                                                            String rolUsuario , int fichaEmpleado)
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario( usuarioNombre , contrasenaUsuario , 
+                                                                                  rolUsuario , fichaEmpleado );
+            }
         
-        /// <summary>
-        /// Método utilizado para devolver una instancia del ComandoValidarUsuario
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
-        public static Comandos.M2.ComandoValidarUsuario validarUsuario(String usuario)
-        {
-            return new Comandos.M2.ComandoValidarUsuario(usuario);
-        }
+            #endregion
 
+            #region Comandos Rol
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoModificarRolUsuario
+            /// </summary>
+            /// <param name="theUsuario"></param>
+            /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
+            public static Comando<Boolean> obtenerComandoModificarRolUsuario( DominioTangerine.Entidad theUsuario )
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoModificarRolUsuario( theUsuario );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoObtenerRolUsuario
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una una instancia a ObtenerRolUsuario</returns>
+            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuario( int codigoRol )
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuario( codigoRol );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoObtenerOpciones
+            /// </summary>
+            /// <param name="nombreMenu"></param>
+            /// <param name="codigoRol"></param>
+            /// <returns>Retorna una una instancia a ObtenerOpciones</returns>
+            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerOpciones( string nombreMenu , int codigoRol )
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoObtenerOpciones( nombreMenu , codigoRol );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoObtenerRolUsuarioPorNombre
+            /// </summary>
+            /// <param name="nombreMenu"></param>
+            /// <param name="codigoRol"></param>
+            /// <returns>Retorna una una instancia a ObtenerRolUsuarioPorNombre</returns>
+            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre(string nombreRol)
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre( nombreRol );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoModificarRol
+            /// </summary>
+            /// <param name="elUsuario"></param>
+            /// <param name="elRol"></param>
+            /// <returns>Retorna una una instancia a ComandoModificarRol</returns>
+            public static Comando<Boolean> obtenerComandoModificarRol( string elUsuario , string elRol )
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoModificarRol( elUsuario , elRol );
+            }
+            
+            #endregion
+
+            #region Comandos Especificos
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAOpciones
+            /// </summary>
+            /// <param name="nombreRol"></param>
+            /// <returns>Retorna una una instancia a ComandoVerificarAccesoAOpciones</returns>
+            public static Comando<List<String>> obtenerComandoVerificarAccesoAOpciones( String nombreRol )
+            {
+                return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAOpciones( nombreRol );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAPagina
+            /// </summary>
+            /// <param name="paginaAVerificar"></param>
+            /// <param name="nombreRol"></param>
+            /// <returns>Retorna una una instancia a ComandoVerificarAccesoAPagina</returns>
+            public static Comando<Boolean> obtenerComandoVerificarAccesoAPagina( String paginaAVerificar , String nombreRol)
+            {
+                return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAPagina( paginaAVerificar, nombreRol );
+            }
+
+            #endregion
+        
         #endregion
 
         #region Modulo 3
+        public static Comando<List<Entidad>> ObtenerComandoConsultarTodosClientePotencial()
+        {
+            return new ComandoListarTodosClientesPotenciales();
+        }
 
+        public static Comando<Entidad> ObtenerComandoConsultarClientePotencial(Entidad cliente)
+        {
+            return new ComandoConsultarClientePotencial(cliente);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarClientePotencial(Entidad cliente)
+        {
+            return new ComandoModificarClientePotencial(cliente);
+        }
         #endregion
 
         #region Modulo 4
@@ -133,10 +310,144 @@ namespace LogicaTangerine.Fabrica
 
         }
 
+       /// <summary>
+       /// metodo que crea comando para consultar los luegare
+       /// </summary>
+       /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarLugar()
+        {
+            return new ComandoConsultarTodosLugares();
+
+        }
+
+        /// <summary>
+        /// metodo que crea comando para modificar los luegare
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<bool> CrearModificarLugar(Entidad parametro)
+        {
+            return new ComandoModificarLugar(parametro);
+
+        }
+
+        
+
+
+         /// <summary>
+        /// metodo que crea comando para consultar un  luegar
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarLugarXID(Entidad parametro)
+        {
+            return new ComandoConsultarLugarXID(parametro);
+
+        }
+
+        /// <summary>
+        /// metodo que crea comando para consultar un  luegar
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<bool> CrearAgregarLugar(Entidad parametro)
+        {
+            return new ComandoAgregarLugar(parametro);
+
+        }
+
         #endregion
 
         #region Modulo 5
+        /// <summary>
+        /// Método para instancear el ComandoAgregarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoAgregarContacto( Entidad contacto ) 
+        {
+            return new ComandoAgregarContacto( contacto );
+        }
 
+        /// <summary>
+        /// Método para instancear el ComandoAgregarContactoAProyecto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoAgregarContactoAProyecto( Entidad contacto, Entidad proyecto )
+        {
+            return new ComandoAgregarContactoAProyecto( contacto, proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearComandoConsultarContacto( Entidad contacto ) 
+        {
+            return new ComandoConsultarContacto( contacto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosNoPertenecenAProyecto
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarContactosNoPertenecenAProyecto( Entidad proyecto ) 
+        {
+            return new ComandoConsultarContactosNoPertenecenAProyecto( proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosPorCompania
+        /// </summary>
+        /// <param name="compania"></param>
+        /// <param name="tipoCompania"></param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarContactosPorCompania( Entidad compania, int tipoCompania ) 
+        {
+            return new ComandoConsultarContactosPorCompania( compania, tipoCompania );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosPorProyecto
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarContactosPorProyecto( Entidad proyecto )
+        {
+            return new ComandoConsultarContactosPorProyecto( proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoEliminarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEliminarContacto( Entidad contacto ) 
+        {
+            return new ComandoEliminarContacto( contacto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoEliminarContactoDeProyecto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEliminarContactoDeProyecto( Entidad contacto, Entidad proyecto ) 
+        {
+            return new ComandoEliminarContactoDeProyecto( contacto, proyecto );
+        }
+
+        /// <summary>
+        /// Método para instancear el ComandoModificarContacto
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoModificarContacto( Entidad contacto ) 
+        {
+            return new ComandoModificarContacto( contacto );
+        }
         #endregion
 
         #region Modulo 6
@@ -252,9 +563,137 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
         }
 
+        public static Comando<List<Entidad>> ObtenerComandoConsultarAcuerdoPagoMensual()
+        {
+            return new ComandoConsultarAcuerdoPagoMensual();
+        }
+
+        public static Comando<Double> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
+        {
+            return new ComandoCalcularPagoMensual(proyecto);
+        }
         #endregion
 
         #region Modulo 8
+
+        /// <summary>
+        /// metodo para crear comando que permite agregar una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearAgregarFactura(Entidad factura)
+        {
+            return new ComandoAgregarFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite anular una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearAnularFactura(Entidad factura)
+        {
+            return new ComandoAnularFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar monto restante de una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<double> CrearBuscarMontoRestanteFactura(Entidad factura)
+        {
+            return new ComandoBuscarMontoRestanteFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar una compania dada una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarCompaniaFactura(Entidad factura)
+        {
+            return new ComandoConsultarCompaniaFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las facturas de una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarFacturasCompania(Entidad compania)
+        {
+            return new ComandoConsultarFacturasCompania(compania);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las facturas pagadas de una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarFacturasPagadasCompania(Entidad compania)
+        {
+            return new ComandoConsultarFacturasPagadasCompania(compania);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar el proyecto de una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarProyectoFactura(Entidad factura)
+        {
+            return new ComandoConsultarProyectoFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar todas las facturas
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarTodosFactura()
+        {
+            return new ComandoConsultarTodosFactura();
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite consultar los datos de una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<Entidad> CrearConsultarXIdFactura(Entidad factura)
+        {
+            return new ComandoConsultarXIdFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite eliminar una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearEliminarFactura(Entidad factura)
+        {
+            return new ComandoEliminarFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite modificar una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearModificarFactura(Entidad factura)
+        {
+            return new ComandoModificarFactura(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite verificar si existe una factura
+        /// </summary>
+        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearSearchExistingBill(Entidad factura)
+        {
+            return new ComandoSearchExistingBill(factura);
+        }
 
         #endregion
 
@@ -268,9 +707,9 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-        public static Comando<List<Entidad>> ConsultarEmpleados(Entidad Empleado)
+        public static Comando<List<Entidad>> ConsultarEmpleados()
         {
-            return new ComandoConsultarEmpleado(Empleado);
+            return new ComandoConsultarEmpleado();
         }
 
         public static Comando<List<Entidad>> ObtenerFabricaPaises()

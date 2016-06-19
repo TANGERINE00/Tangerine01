@@ -42,12 +42,14 @@ namespace PruebasUnitarias.M10
             direccion.Add(new LugarDireccion("Caracas", "Ciudad"));
             direccion.Add(new LugarDireccion("Plaza Sucre", "Direccion"));
 
-            theEmpleado = new Empleado(0, "Antonio", "Juan", "Garcia",
-                                               "Gobea", "Masculino",
-                                               19627934,
-                                               DateTime.ParseExact("05/02/1991", "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                               "Activo", "Bachiller", "antonio11346@hotmail.com", theCargo,
-                                               direccion);
+            theEmpleado = new Empleado();
+
+            //theEmpleado = new Empleado(0, "Antonio", "Juan", "Garcia",
+            //                                   "Gobea", "Masculino",
+            //                                   19627934,
+            //                                   DateTime.ParseExact("05/02/1991", "MM/dd/yyyy", CultureInfo.InvariantCulture),
+            //                                   "Activo", "Bachiller", "antonio11346@hotmail.com", theCargo,
+            //                                   direccion);
 
       
             empleadoId = 1;

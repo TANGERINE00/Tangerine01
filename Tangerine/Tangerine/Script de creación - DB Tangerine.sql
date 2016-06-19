@@ -1,4 +1,4 @@
-﻿ create table LUGAR_DIRECCION
+﻿create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -460,6 +460,15 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE M2_BorrarUsuario
+	@usu_id int
+AS
+	BEGIN
+		DELETE FROM USUARIO
+ 		WHERE usu_id = @usu_id;
+	END;
+GO
+
 CREATE PROCEDURE M2_ModificarRolUsuario
 	(@usuario [varchar](20),
 	@rol_nombre_nuevo [varchar](20))
@@ -558,6 +567,23 @@ AS
 		FROM usuario
 		WHERE usu_usuario = @usuario;
 	END;
+GO
+
+CREATE PROCEDURE M2_ConsultarIdUltimoUsuario
+AS
+ BEGIN
+     SELECT MAX(usu_id) usu_id FROM USUARIO; 
+ end;
+GO
+
+CREATE PROCEDURE M2_ConsultarUsuario
+	@id int
+AS
+	BEGIN
+		SELECT usu_id as usu_id, usu_usuario as usu_usuario, usu_contrasena as usu_contrasena, usu_fecha_creacion as usu_fecha_creacion,
+			usu_activo as usu_activo, fk_rol_id as fk_rol_id, fk_emp_num_ficha as fk_emp_num_ficha
+		FROM USUARIO WHERE usu_id = @id;
+	END
 GO
 ---------------------------------------------------------------------------------------------------------
 --------Stored Procedure M3------------------------------------------------------------------------------
@@ -821,11 +847,25 @@ GO
 
 --- StoredProcedure Consultar Lugar(Para Agregar y Modificar) ----
 CREATE PROCEDURE M4_ConsultarLugar
+
 AS
 	BEGIN
 		SELECT lug_dir_id as lug_dir_id, lug_dir_nombre as lug_dir_nombre
 		FROM Lugar_Direccion
 		WHERE lug_dir_tipo LIKE 'Ciudad';
+	end;
+GO	
+
+
+--- StoredProcedure Consultar Lugar por id(Para Agregar y Modificar) ----
+CREATE PROCEDURE M4_ConsultarLugarPorId
+@id int
+AS
+	BEGIN
+		SELECT lug_dir_id as lug_dir_id, lug_dir_nombre as lug_dir_nombre,
+		lug_dir_tipo as lug_dir_tipo, fk_lug_dir_id as fk_lug_dir_id 
+		FROM Lugar_Direccion
+		WHERE lug_dir_id = @id;
 	end;
 GO		
 
@@ -907,6 +947,16 @@ AS
     con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
     where con_id = @id;
  end;
+GO
+--Consultar todos los contactos
+CREATE PROCEDURE M5_ConsultarTodosContactos
+AS
+	BEGIN
+		SELECT contacto.con_id as con_id, contacto.con_nombre as con_nombre, contacto.con_apellido as con_apellido,
+		contacto.con_departamento as con_departamento, contacto.con_cargo as con_cargo, contacto.con_telefono as con_telefono,
+		contacto.con_correo as con_correo, contacto.con_tipo_emp as con_tipo_emp, contacto.fk_id_com_lead as fk_id_com_lead
+		FROM CONTACTO
+	END
 GO
 --Consultar contactos de una empresa
 CREATE PROCEDURE M5_ConsultarContactoCompania
@@ -1030,6 +1080,13 @@ WHERE prop_nombre = @cod_Nombre
 END;
 
 GO
+--- ConsultarIdUltimaPropuesta(Para pruebas) ----
+CREATE PROCEDURE M6_ConsultarIdUltimaPropuesta
+AS
+ BEGIN
+     SELECT MAX(prop_id) prop_id FROM PROPUESTA; 
+ end;
+GO
 -- Modificar Requerimiento
 CREATE PROCEDURE M6_ModificarRequerimiento
 
@@ -1090,7 +1147,7 @@ GO
 --Eliminar Propuesta
 CREATE PROCEDURE M6_EliminarPropuesta
 
-@propuesta_nombre varchar(20)
+@propuesta_nombre varchar(500)
 
 AS
  BEGIN
@@ -1098,6 +1155,13 @@ AS
     DELETE FROM PROPUESTA WHERE prop_nombre=@propuesta_nombre; 	
  END;
 
+GO
+---ConsultarIdUltimoRequerimiento(Para pruebas) ----
+CREATE PROCEDURE M6_ConsultarIdUltimoRequerimiento
+AS
+ BEGIN
+     SELECT MAX(req_id) req_id FROM REQUERIMIENTO; 
+ end;
 GO
 
 -----------------------------------

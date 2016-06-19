@@ -29,6 +29,8 @@ namespace Tangerine_Presentador.M7
                 {
                     Comando<Entidad> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(((DominioTangerine.Entidades.M7.Proyecto)theProject));
                     Entidad propuesta = comando2.Ejecutar();
+
+                    
                     vista.Tabla.Text += RecursoPresentadorM7.OpenTr;
                     vista.Tabla.Text += RecursoPresentadorM7.OpenTD + ((DominioTangerine.Entidades.M7.Proyecto)theProject).Nombre.ToString() + RecursoPresentadorM7.CloseTd;
                     vista.Tabla.Text += RecursoPresentadorM7.OpenTD + ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre.ToString() + RecursoPresentadorM7.CloseTd; // Acomodar debe mostrar el nombre y muestra el id

@@ -155,6 +155,8 @@
     <Content Include="GUI\M1\NuevaContraseña.aspx" />
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
+    <Content Include="GUI\M2\AccionRegistrar.aspx" />
+    <Content Include="GUI\M2\AsignarRol.aspx" />
     <Content Include="GUI\M2\CambiarRol.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
     <Content Include="GUI\M3\ActivarLead.aspx" />
@@ -1071,6 +1073,20 @@
     <Compile Include="GUI\M1\VerEmpleado.aspx.designer.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\AccionRegistrar.aspx.cs">
+      <DependentUpon>AccionRegistrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\AccionRegistrar.aspx.designer.cs">
+      <DependentUpon>AccionRegistrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M2\AsignarRol.aspx.cs">
+      <DependentUpon>AsignarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\AsignarRol.aspx.designer.cs">
+      <DependentUpon>AsignarRol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M2\CambiarRol.aspx.cs">
       <DependentUpon>CambiarRol.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1147,9 +1163,9 @@
       <DependentUpon>Promover.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\ResourceInterfaz.Designer.cs">
+      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>

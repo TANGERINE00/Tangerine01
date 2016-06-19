@@ -21,8 +21,47 @@ namespace DatosTangerine.DAO.M7
 
         public List<Entidad> ContactProyectoxAcuerdoPago()
         {
-            throw new NotImplementedException();
+        List<Parametro> parameters = new List<Parametro>();
+           List<Entidad> listProyecto = new List<Entidad>();
+
+            try
+            {
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = EjecutarStoredProcedureTuplas(ResourceProyecto.ContactProyectosxAcuerdoPago, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre = row[ResourceProyecto.ProyNombre].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo = row[ResourceProyecto.ProyCodigo].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion = row[ResourceProyecto.ProyDescripcion].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion = row[ResourceProyecto.ProyRealizacion].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus = row[ResourceProyecto.ProyEstatus].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon = row[ResourceProyecto.ProyRazon].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
+
+                    listProyecto.Add(proyecto);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return listProyecto;
         }
+        
 
         public List<Entidad> ContactProyectoPorEmpleado(Entidad empleado)
         {
@@ -42,7 +81,7 @@ namespace DatosTangerine.DAO.M7
             {
                 List<Parametro> parameters = new List<Parametro>();
 
-                Parametro theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Propuesta)parametro).Id.ToString(), false);
+                Parametro theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
@@ -114,6 +153,21 @@ namespace DatosTangerine.DAO.M7
             }
 
             return proyecto;
+        }
+
+        public Double CalcularPagoMensual(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M7.Proyecto P = (DominioTangerine.Entidades.M7.Proyecto)parametro;
+
+            int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
+            if (dias > 31)
+            {
+                return (P.Costo / dias) * 30;
+            }
+            else
+            {
+                return P.Costo;
+            }
         }
 
         public List<Entidad> ConsultarTodos()

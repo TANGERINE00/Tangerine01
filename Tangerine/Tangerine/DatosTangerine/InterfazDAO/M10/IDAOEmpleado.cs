@@ -15,7 +15,7 @@ namespace DatosTangerine.InterfazDAO.M10
         
         List<Empleado> ListarEmpleados();
 
-        Empleado ConsultarEmpleados(int employeeId);
+        List<Entidad> ConsultarTodos();
         
         bool CambiarEstatus(int empleadoId);
 

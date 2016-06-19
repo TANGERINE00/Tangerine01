@@ -54,12 +54,18 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Entidad.cs" />
-    <Compile Include="Entidades\M10\CargoM10.cs" />
-    <Compile Include="Entidades\M10\EmpleadoM10.cs" />
+    <Compile Include="Entidades\M10\CargoM10.cs" />    
     <Compile Include="Entidades\M10\LugarDireccion.cs" />
+    <Compile Include="Entidades\M10\Cargo.cs" />
+    <Compile Include="Entidades\M10\EmpleadoM10.cs" />
     <Compile Include="Entidades\M1\Cuenta.cs" />
+    <Compile Include="Entidades\M1\UtilM1.cs" />
+    <Compile Include="Entidades\M2\ListaGenericaM2.cs" />
+    <Compile Include="Entidades\M2\MenuM2.cs" />
+    <Compile Include="Entidades\M2\OpcionM2.cs" />
     <Compile Include="Entidades\M2\RolM2.cs" />
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
+    <Compile Include="Entidades\M3\ClientePotencial.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
     <Compile Include="Entidades\M5\Contacto.cs" />
@@ -73,12 +79,13 @@
     <Compile Include="Entidades\M7\Propuesta.cs" />
     <Compile Include="Entidades\M7\Proyecto.cs" />
     <Compile Include="Entidades\M7\Requerimiento.cs" />
+    <Compile Include="Entidades\M8\CorreoGmailM8.cs" />
+    <Compile Include="Entidades\M8\DatosCorreo.cs" />
     <Compile Include="Entidades\M8\Facturacion.cs" />
     <Compile Include="Entidades\M9\Pago.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
     <Compile Include="ListaGenerica.cs" />
     <Compile Include="Contacto.cs" />
-    <Compile Include="Facturacion.cs" />
     <Compile Include="LugarDireccion.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -95,7 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Entidades\M3\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

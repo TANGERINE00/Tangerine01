@@ -83,8 +83,11 @@
     <Compile Include="M10\M10PruebasLogica.cs" />
     <Compile Include="M10\PruebasDatos.cs" />
     <Compile Include="M1\M1PruebasLogica.cs" />
-    <Compile Include="M2\M2PruebasLogica.cs" />
-    <Compile Include="M2\PruebasBDUsuario.cs" />
+    <Compile Include="M2\PruebaComandosDAOUsuario.cs" />
+    <Compile Include="M2\PruebaDAORol.cs" />
+    <Compile Include="M2\PruebaDAOUsuario.cs" />
+    <Compile Include="M2\Pruebas Unitarias Primera Entrega\M2PruebasLogica.cs" />
+    <Compile Include="M2\Pruebas Unitarias Primera Entrega\PruebasBDUsuario.cs" />
     <Compile Include="M3\PruebaClientePotencialLogica.cs" />
     <Compile Include="M3\PruebaClientePotencial.cs" />
     <Compile Include="M4\PruebaDatos.cs" />
@@ -97,8 +100,8 @@
     <Compile Include="M6\Pruebas.cs" />
     <Compile Include="M7\M7PruebasLogica.cs" />
     <Compile Include="M7\PruebasDatos.cs" />
-    <Compile Include="M8\PruebasDatos.cs" />
-    <Compile Include="M8\PruebasLogica.cs" />
+    <Compile Include="M8\PruebasDatosFactura.cs" />
+    <Compile Include="M8\PruebasLogicaFactura.cs" />
     <Compile Include="M9\PruebaLogica.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />

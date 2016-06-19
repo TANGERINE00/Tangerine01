@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DatosTangerine.InterfazDAO.M10;
-using DominioTangerine.Entidades.M10;
-using DominioTangerine;
-using ExcepcionesTangerine;
-using DatosTangerine.M10;
 using System.Data;
+using System.Data.Sql;
 using System.Data.SqlClient;
+using DatosTangerine.M6;
+using DatosTangerine.InterfazDAO.M10;
+using DominioTangerine;
+//using DominioTangerine.DominioTangerine.Entidades.M10;
+using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M10
 {
@@ -57,17 +58,17 @@ namespace DatosTangerine.DAO.M10
             throw new NotImplementedException();
         }
 
-        public bool Agregar(Entidad parametro)
+        public bool Agregar(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
-        public bool Modificar(Entidad parametro)
+        public bool Modificar(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
-        public Entidad ConsultarXId(Entidad parametro)
+        public DominioTangerine.Entidad ConsultarXId(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
@@ -77,47 +78,59 @@ namespace DatosTangerine.DAO.M10
         /// Metodo para consultar todos los empleados
         /// </summary>
         /// <returns></returns>
-        public List<Entidad> ConsultarTodos()
+        public List<DominioTangerine.Entidad> ConsultarTodos()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            List<Entidad> listEmpleado = new List<Entidad>();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            List<DominioTangerine.Entidad> listEmpleado = new List<DominioTangerine.Entidad>();
 
             try
             {
-                List<Parametro> parameters = new List<Parametro>();
-                Parametro theParam = new Parametro(ResourceEmpleado.ParamCPrueba, System.Data.SqlDbType.Int, "1", false);
+                theConnection.Conectar();
+                //PRUEBA
+                theParam = new Parametro("@param", SqlDbType.Int, "1", false);
                 parameters.Add(theParam);
 
-                //Guardo la tabla que me regresa el procedimiento de consultar empleados
-                DataTable dt = EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleados, parameters);
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleado, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
-                    //Entidad cargo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Id = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_p_nombre = row[ResourceEmpleado.EmpPNombre].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_s_nombre = row[ResourceEmpleado.EmpSNombre].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_p_apellido = row[ResourceEmpleado.EmpPApellido].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_s_apellido = row[ResourceEmpleado.EmpSApellido].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_cedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
 
-                    //((DominioTangerine.Entidades.M7.Empleado)empleado).Job = cargo;
-                    //((DominioTangerine.Entidades.M7.Cargo)cargo).Nombre = row[ResourceEmpleado.EmpCargo].ToString();
-                    //((DominioTangerine.Entidades.M7.Cargo)cargo).Sueldo = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
-                    //((DominioTangerine.Entidades.M7.Cargo)cargo).FechaContratacion = DateTime.Parse(row[ResourceEmpleado.EmpFechaInicio].ToString());
-                    //((DominioTangerine.Entidades.M7.Cargo)cargo).FechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
+                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                    String empEmail = row[ResourceEmpleado.EmpEmail].ToString();
+                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                    String empEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
 
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_activo = row[ResourceEmpleado.EmpActivo].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Fk_lug_dir_id = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_genero = row[ResourceEmpleado.EmpGenero].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_nivel_estudio = row[ResourceEmpleado.EmpEstudio].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_email = row[ResourceEmpleado.EmpEmail].ToString();
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Emp_fecha_nac = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Fk_lug_dir_id = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                    String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                    String empCargoDescripcion = row[ResourceEmpleado.EmpCargoDescripcion].ToString();
+                    DateTime empContratacion = DateTime.Parse(row[ResourceEmpleado.EmpFechaInicio].ToString());
+                    String empModalidad = row[ResourceEmpleado.EmpModalidad].ToString();
+                    double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+                    ////Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
+
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion,
+                                            empContratacion);
+
+                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre,
+                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad, empSalario,cargoEmpleado);
+
+                   // DominioTangerine.Entidades.M10.EmpleadoM10 hola = (DominioTangerine.Entidades.M10.EmpleadoM10) empleado;
+
+
 
                     listEmpleado.Add(empleado);
                 }
@@ -160,6 +173,7 @@ namespace DatosTangerine.DAO.M10
 
             return listEmpleado;
         }
+
 
         /// <summary>
         /// Metodo para consultar los Lugares de tipo Pais dentro de la base de datos
@@ -309,9 +323,6 @@ namespace DatosTangerine.DAO.M10
         }
 
 
-        
-
-
         /// <summary>
         /// Metodo para traer todos los cargos
         /// </summary>
@@ -385,9 +396,8 @@ namespace DatosTangerine.DAO.M10
 
             return listCargo;
         }
-
-
     
     }
     }
-
+    }
+}

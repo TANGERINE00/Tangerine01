@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M8;
+//using LogicaTangerine.M8;
 using DatosTangerine;
 using System.Data.SqlClient;
 
@@ -24,27 +24,27 @@ namespace Tangerine.GUI.M8
         int _estatus = 0;
         int _proyectoId = 0;
         int _companiaId = 0;
-        public static Facturacion theFactura = null;
+        //public static Facturacion theFactura = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             int idFac = int.Parse(Request.QueryString["idFac"]);
             if (!IsPostBack)
             {
-                LogicaM8 facturaLogic = new LogicaM8();
-                theFactura = facturaLogic.SearchFactura(idFac);
+                //LogicaM8 facturaLogic = new LogicaM8();
+                //theFactura = facturaLogic.SearchFactura(idFac);
 
-                    this.textNumeroFactura_M8.Value = theFactura.idFactura.ToString();
-                    this.textFecha_M8.Value = theFactura.fechaFactura.ToString("dd/MM/yyyy");
-                    this.textDescripcion_M8.Value = theFactura.descripcionFactura;
-                        Compania compania = facturaLogic.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                        this.textCliente_M8.Value = compania.NombreCompania;
-                        Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
-                        this.textProyecto_M8.Value = proyecto.Nombre;
-                    this.textMonto_M8.Value = theFactura.montoFactura.ToString();
-                    _tipoMoneda = theFactura.tipoMoneda;
-                    this.textTipoMoneda_M8.Value = _tipoMoneda;
-                    _montoRestante = int.Parse(theFactura.montoRestanteFactura.ToString());
+                //    this.textNumeroFactura_M8.Value = theFactura.idFactura.ToString();
+                //    this.textFecha_M8.Value = theFactura.fechaFactura.ToString("dd/MM/yyyy");
+                //    this.textDescripcion_M8.Value = theFactura.descripcionFactura;
+                //        Compania compania = facturaLogic.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
+                //        this.textCliente_M8.Value = compania.NombreCompania;
+                //        Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
+                //        this.textProyecto_M8.Value = proyecto.Nombre;
+                //    this.textMonto_M8.Value = theFactura.montoFactura.ToString();
+                //    _tipoMoneda = theFactura.tipoMoneda;
+                //    this.textTipoMoneda_M8.Value = _tipoMoneda;
+                //    _montoRestante = int.Parse(theFactura.montoRestanteFactura.ToString());
             }    
         }
 
@@ -62,22 +62,22 @@ namespace Tangerine.GUI.M8
             }
             else
             {*/
-                _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
-                _fechaEmision = DateTime.Parse(textFecha_M8.Value);
-                _fechaUltimoPago = DateTime.Now;
-                _companiaId = int.Parse(theFactura.idCompaniaFactura.ToString());
-                _proyectoId = int.Parse(theFactura.idProyectoFactura.ToString());
-                _descripcion = textDescripcion_M8.Value;
-                _estatus = theFactura.estatusFactura;
-                _montoTotal = int.Parse(textMonto_M8.Value);
-               // _montoRestante = int.Parse(textMonto_M8.Value);
+            //    _numeroFactura = int.Parse(textNumeroFactura_M8.Value);
+            //    _fechaEmision = DateTime.Parse(textFecha_M8.Value);
+            //    _fechaUltimoPago = DateTime.Now;
+            //    _companiaId = int.Parse(theFactura.idCompaniaFactura.ToString());
+            //    _proyectoId = int.Parse(theFactura.idProyectoFactura.ToString());
+            //    _descripcion = textDescripcion_M8.Value;
+            //    _estatus = theFactura.estatusFactura;
+            //    _montoTotal = int.Parse(textMonto_M8.Value);
+            //   // _montoRestante = int.Parse(textMonto_M8.Value);
 
-                Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, _estatus,
-                    _proyectoId, _companiaId);
-                LogicaM8 facturaLogic = new LogicaM8();
-                facturaLogic.ChangeExistingFactura(factura);
-                Server.Transfer("ConsultarFacturaM8.aspx");
-            //}
+            //    Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, _estatus,
+            //        _proyectoId, _companiaId);
+            //    LogicaM8 facturaLogic = new LogicaM8();
+            //    facturaLogic.ChangeExistingFactura(factura);
+            //    Server.Transfer("ConsultarFacturaM8.aspx");
+            ////}
         }
  
     }

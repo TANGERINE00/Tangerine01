@@ -97,6 +97,8 @@ namespace DatosTangerine.M10
         /// <returns>Lista de empleados.</returns>
         public static List<Empleado> ListarEmpleados()
         {
+            List<Empleado> listEmpleado = new List<Empleado>();
+            
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -104,7 +106,7 @@ namespace DatosTangerine.M10
             BDConexion theConnection = new BDConexion();
             Parametro theParam = new Parametro();
 
-            List<Empleado> listEmpleado = new List<Empleado>();
+           
 
             try
             {
@@ -181,7 +183,7 @@ namespace DatosTangerine.M10
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+            
             return listEmpleado;
         }
 
@@ -228,10 +230,11 @@ namespace DatosTangerine.M10
                 String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                 String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
-                employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
-                                                empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
-                                                empFechaFin, empDireccion);
+                employee = new Empleado();
+                //employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                //                                empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                //                                empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                //                                empFechaFin, empDireccion);
             }
             catch (ArgumentNullException ex)
             {
@@ -520,10 +523,12 @@ namespace DatosTangerine.M10
                     string empDireccion = row[ResourceEmpleado.EmpLugId].ToString();
 
                     //Creo un objeto de tipo Empleado con los datos de la fila y lo guardo en una lista de empleados
-                    Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
-                                                        empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                        empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
-                                                        empFechaFin, empDireccion);
+                    Empleado theEmpleado = new Empleado();
+                    
+                    //Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                    //                                    empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                    //                                    empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
+                    //                                    empFechaFin, empDireccion);
                     listEmpleado.Add(theEmpleado);
                 }
 
@@ -612,10 +617,13 @@ namespace DatosTangerine.M10
                     string empDireccion = row[ResourceEmpleado.EmpLugId].ToString();
 
                     //Creo un objeto de tipo Empleado con los datos de la fila y lo guardo en una lista de empleados
-                    Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
-                                                        empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                        empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
-                                                        empFechaFin, empDireccion);
+
+                    Empleado theEmpleado = new Empleado();
+                    
+                    //Empleado theEmpleado = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                    //                                    empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                    //                                    empEmailEmployee, empLugId, empCargo, empSlario, empFechaInicio,
+                    //                                    empFechaFin, empDireccion);
                     listEmpleado.Add(theEmpleado);
                 }
 

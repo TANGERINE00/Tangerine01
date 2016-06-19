@@ -75,12 +75,16 @@ namespace Tangerine.GUI.M1
             presentador.AgregarEmpleado();
 
             LogicaM10 logicEmployee = new LogicaM10();
-            Empleado empleado = new Empleado(0, FirstName.Value, SecondNamee.Value, FirstLastName.Value,
+            
+            /*Empleado empleado = new Empleado(0, FirstName.Value, SecondNamee.Value, FirstLastName.Value,
                                                 SecondLastName.Value, SelectedListGender.SelectedItem.Text.ToString(),
                                                 int.Parse(Cedula.Value),
                                                 DateTime.ParseExact(DateEmployee.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                                                 active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
                                                 newAddress());
+            
+             */
+            Empleado empleado = new Empleado();
             logicEmployee.AddNewEmpleado(empleado);
             Response.Redirect("../M1/EmpleadosAdmin.aspx");
         }
