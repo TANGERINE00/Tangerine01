@@ -79,7 +79,7 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="theEmpleado"></param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerUsuario( DominioTangerine.Entidad theEmpleado )
+            public static Comando<DominioTangerine.Entidad> obtenerUsuario( int theEmpleado )
             {
                 return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
             }
@@ -148,6 +148,11 @@ namespace LogicaTangerine.Fabrica
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosClientePotencial()
         {
             return new ComandoListarTodosClientesPotenciales();
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarClientePotencial(Entidad cliente)
+        {
+            return new ComandoConsultarClientePotencial(cliente);
         }
         #endregion
 

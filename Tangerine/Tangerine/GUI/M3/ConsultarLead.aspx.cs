@@ -4,150 +4,158 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaTangerine.M3;
-using DominioTangerine;
+using Tangerine_Contratos.M3;
+using Tangerine_Presentador.M3;
 
 namespace Tangerine.GUI.M3
 {
-    public partial class ConsultarLead : System.Web.UI.Page
+    public partial class ConsultarLead : System.Web.UI.Page, IContratoConsultarClientePotencial
     {
+        PresentadorConsultarClientePotencial presentador;
 
-        public string Name
+        public ConsultarLead()
+        {
+            this.presentador = new PresentadorConsultarClientePotencial(this);
+        }
+
+        public Literal NombreEtiqueta
         {
             get
             {
-                return this.Nombre.Text;
+                return this.Nombre;
             }
 
             set
             {
-                this.Nombre.Text = value;
+                this.Nombre = value;
             }
         }
 
-        public string RIF
+        public Literal RIFEtiqueta
         {
             get
             {
-                return this.Rif.Text;
+                return this.Rif;
             }
 
             set
             {
-                this.Rif.Text = value;
+                this.Rif = value;
             }
         }
 
-        public string Correo
+        public Literal CorreoEtiqueta
         {
             get
             {
-                return this.correo.Text;
+                return this.correo;
             }
 
             set
             {
-                this.correo.Text = value;
+                this.correo = value;
             }
         }
 
-        public string Status
+        public Literal EstatusEtiqueta
         {
             get
             {
-                return this.status.ToString();
+                return this.status;
             }
 
             set
             {
-                this.status.Text = value;
+                this.status = value;
             }
         }
      
-        public string Presupuesto
+        public Literal PresupuestoInicialEtiqueta
         {
             get
             {
-                return this.presupuesto.ToString();
+                return this.presupuesto;
             }
 
             set
             {
-                this.presupuesto.Text = value;
+                this.presupuesto = value;
             }
         }
 
-        public string Llamadas
+        public Literal NumLlamadasEtiqueta
         {
             get
             {
-                return this.llamadas.ToString();
+                return this.llamadas;
             }
 
             set
             {
-                this.llamadas.Text = value;
+                this.llamadas = value;
             }
         }
-        public string Visitas
+        public Literal NumVisitasEtiqueta
         {
             get
             {
-                return this.visitas.ToString();
+                return this.visitas;
             }
 
             set
             {
-                this.visitas.Text = value;
+                this.visitas = value;
             }
-
-
         }
-
-
 
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM3 prueba = new LogicaM3();
             int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
             if (!IsPostBack)
             {
-                ClientePotencial elClientePotencial = prueba.BuscarClientePotencial(idClientePotencial);
-
-                try
-                {
-
-
-                    Name = elClientePotencial.NombreClientePotencial;
-                    RIF = elClientePotencial.RifClientePotencial;
-                    Correo = elClientePotencial.EmailClientePotencial;
-                    Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
-                    Llamadas = elClientePotencial.NumeroLlamadas.ToString();
-                    Visitas = elClientePotencial.NumeroVisitas.ToString();
-                    if (elClientePotencial.Status == 0)
-                    {
-                        Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
-
-                    }
-                    if (elClientePotencial.Status == 1)
-                    {
-                        Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
-                    }
-                    if (elClientePotencial.Status == 2)
-                    {
-                        Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
-                    }
-
-
-
-                }
-                catch (Exception ex)
-                {
-
-                }
-
+                presentador.Llenar(idClientePotencial);
             }
+
+            //LogicaM3 prueba = new LogicaM3();
+            //int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            //if (!IsPostBack)
+            //{
+            //    ClientePotencial elClientePotencial = prueba.BuscarClientePotencial(idClientePotencial);
+
+            //    try
+            //    {
+
+
+            //        Name = elClientePotencial.NombreClientePotencial;
+            //        RIF = elClientePotencial.RifClientePotencial;
+            //        Correo = elClientePotencial.EmailClientePotencial;
+            //        Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
+            //        Llamadas = elClientePotencial.NumeroLlamadas.ToString();
+            //        Visitas = elClientePotencial.NumeroVisitas.ToString();
+            //        if (elClientePotencial.Status == 0)
+            //        {
+            //            Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
+
+            //        }
+            //        if (elClientePotencial.Status == 1)
+            //        {
+            //            Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
+            //        }
+            //        if (elClientePotencial.Status == 2)
+            //        {
+            //            Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
+            //        }
+
+
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //    }
+
+            //}
         }
     }
 }

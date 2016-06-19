@@ -8,10 +8,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Tangerine_Contratos.M2;
 
 namespace Tangerine.GUI.M2
 {
-    public partial class AsignarRol : System.Web.UI.Page
+    public partial class AsignarRol : System.Web.UI.Page, IContratoAsignarRol
     {
 
         string nombreUsuario = String.Empty;
@@ -29,6 +30,28 @@ namespace Tangerine.GUI.M2
             }  
 
         }
+
+        #region Contrato
+
+            /// <summary>
+            /// textBox de nombre de usuario
+            /// </summary>
+            public string usuario
+            {
+                get { return textRol_M2.Value; }
+                set { textUsuario_M2.Value = value; }
+            }
+
+            /// <summary>
+            /// comboBox de seleccion de rol
+            /// </summary>
+            public string comboBoxRol
+            {
+                get { return textRol_M2.Value; }
+                set { textRol_M2.Value = value; }
+            }
+
+        #endregion
 
         protected void buttonAsignar_Click(object sender, EventArgs e)
         {

@@ -46,7 +46,11 @@
     <Compile Include="M2\IContratoAsignarRol.cs" />
     <Compile Include="M2\IContratoCambiarRol.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />
+    <Compile Include="M3\IContratoConsultarClientePotencial.cs" />
     <Compile Include="M3\IContratoListarClientePotencial.cs" />
+    <Compile Include="M4\IContratoAgregarCompania.cs" />
+    <Compile Include="M4\IContratoConsultarCompania.cs" />
+    <Compile Include="M4\IContratoInformacionCompania.cs" />
     <Compile Include="M5\IContratoAgregarContacto.cs" />
     <Compile Include="M5\IContratoConsultarContactos.cs" />
     <Compile Include="M6\IContratoAgregarPropuesta.cs" />
@@ -62,7 +66,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M4\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>

@@ -52,11 +52,20 @@
     <Compile Include="M2\PresentadorCambioRol.cs" />
     <Compile Include="M2\PresentadorAccionRegistrar.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
+    <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="M4\PresentadorAgregarCompania.cs" />
+    <Compile Include="M4\PresentadorConsultarCompania.cs" />
+    <Compile Include="M4\PresentadorInformacionCompania.cs" />
+    <Compile Include="M4\RecursosPresentadorM4.Designer.cs">
+      <DependentUpon>RecursosPresentadorM4.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="M5\PresentadorAgregarContacto.cs" />
     <Compile Include="M5\PresentadorConsultarContactos.cs" />
@@ -88,7 +97,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M4\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +107,10 @@
     <EmbeddedResource Include="M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M4\RecursosPresentadorM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosPresentadorM4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M6\RecursosPresentadorPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>

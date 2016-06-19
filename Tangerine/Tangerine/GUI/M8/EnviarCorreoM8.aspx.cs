@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 //using DatosTangerine.M8;
-using LogicaTangerine.M8;
+//using LogicaTangerine.M8;
 using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M8
@@ -82,8 +82,8 @@ namespace Tangerine.GUI.M8
             _asunto = textAsunto_M8.Value;
             _mensaje = textMensaje_M8.Value;
 
-            CorreoM8 correo = new CorreoM8();
-            correo.enviarCorreoGmail(_asunto, _destinatario, _mensaje);
+            //CorreoM8 correo = new CorreoM8();
+            //correo.enviarCorreoGmail(_asunto, _destinatario, _mensaje);
             Server.Transfer("ConsultarFacturaM8.aspx");
         }
     }

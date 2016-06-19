@@ -5,14 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace Tangerine_Contratos.M9
+namespace Tangerine_Contratos.M4
 {
-   public interface IContratoFacturasPorPagar
+    public interface IContratoAgregarCompania
     {
-       string factura { get; set; }
-
-
-
-   
-   }
+    }
 }

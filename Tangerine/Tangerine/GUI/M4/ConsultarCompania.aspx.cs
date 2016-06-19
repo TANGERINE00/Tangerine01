@@ -7,25 +7,35 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M4;
+using Tangerine_Contratos.M4;
 
 namespace Tangerine.GUI.M4
 {
-    public partial class ConsultarCompania : System.Web.UI.Page
+    public partial class ConsultarCompania : System.Web.UI.Page, IContratoConsultarCompania
     {
-        LogicaM4 prueba = new LogicaM4();
-       
-        public string company
+        #region CargarPresentador
+        Tangerine_Presentador.M4.PresentadorConsultarCompania Presentador;
+
+        public ConsultarCompania()
+        {
+            this.Presentador = new Tangerine_Presentador.M4.PresentadorConsultarCompania(this);
+        }
+        #endregion
+
+        #region Contrato
+        public Literal Tabla
         {
             get 
             {
-                return this.tabla.Text;            
+                return tabla;            
             }
             
             set 
             {
-                this.tabla.Text = value;
+                tabla = value;
             }
         }
+        #endregion
 
         /// <summary>
         /// Método de carga de página en el cual carga una tabla con los datos básicos de las compañías.
@@ -34,9 +44,10 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+           if (!IsPostBack)
             {
-                Compania laCompania;
+                Presentador.ImprimirCompania();
+                /*Compania laCompania;
                 int idComp, typeHab;
                 try
                 {
@@ -57,80 +68,7 @@ namespace Tangerine.GUI.M4
                 {
                 }
 
-                imprimirTabla();     
-            }
-        }
-
-        /// <summary>
-        /// Imprime la tabla de datos.
-        /// </summary>
-        /// <param name=""></param>
-        /// <returns></returns>
-        public void imprimirTabla()
-        {
-            List<Compania> listCompany = prueba.ConsultCompanies();
-            try
-            {
-                foreach (Compania theCompany in listCompany)
-                {
-                    company += ResourceGUIM4.OpenTR;
-                    company += ResourceGUIM4.OpenTD + theCompany.NombreCompania.ToString() + ResourceGUIM4.CloseTD;
-                    //company += ResourceGUIM4.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceGUIM4.CloseTD;
-                    company += ResourceGUIM4.OpenTD + theCompany.RifCompania + ResourceGUIM4.CloseTD;
-                    company += ResourceGUIM4.OpenTD + theCompany.TelefonoCompania + ResourceGUIM4.CloseTD;
-                    //company += ResourceGUIM4.OpenTD + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.CloseTD;
-
-                    if (theCompany.StatusCompania.Equals(1))
-                    {
-                        company += ResourceGUIM4.OpenTD + ResourceGUIM4.habilitado + theCompany.IdCompania +
-                            ResourceGUIM4.CloseSpanHab + ResourceGUIM4.CloseTD;
-                    }
-                    else if (theCompany.StatusCompania.Equals(0))
-                    {
-                        company += ResourceGUIM4.OpenTD + ResourceGUIM4.inhabilitado + theCompany.IdCompania +
-                            ResourceGUIM4.CloseSpanInhab + ResourceGUIM4.CloseTD;
-                    }
-
-                    //Acciones de cada compania  
-                    imprimirBotonesAccion(theCompany);
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        /// <summary>
-        /// Imprime botones de accion en la última columna de la tabla.
-        /// </summary>
-        /// <param name="theCompany">Objeto de tipo compañía</param>
-        /// <returns></returns>
-        public void imprimirBotonesAccion(Compania theCompany)
-        {
-            if (HttpContext.Current.Session["Rol"].Equals("Administrador") ||
-                        HttpContext.Current.Session["Rol"].Equals("Gerente"))
-            {
-                company += ResourceGUIM4.OpenTD + ResourceGUIM4.OpenDivRow +
-                ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania + /*Boton Info */
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonEdit + theCompany.IdCompania + /*Boton Edit */
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonHab + theCompany.IdCompania + /*Boton Habilitar */
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.OpenBotonInhab + theCompany.IdCompania + /*Boton Inhabilitar*/
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania + /*Boton Contacto*/
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.CloseDiv +
-                ResourceGUIM4.CloseTD;
-
-                company += ResourceGUIM4.CloseTR;
-            }
-            else if (HttpContext.Current.Session["Rol"].Equals("Programador") ||
-                     HttpContext.Current.Session["Rol"].Equals("Director"))
-            {
-                company += ResourceGUIM4.OpenTD + ResourceGUIM4.OpenDivRow +
-                ResourceGUIM4.OpenBotonInfo + theCompany.IdCompania + /*Boton Info */
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.BotonInvol + theCompany.IdCompania + /*Boton Contacto*/
-                ResourceGUIM4.CloseBotonParametro + ResourceGUIM4.CloseDiv +
-                ResourceGUIM4.CloseTD;
-
-                company += ResourceGUIM4.CloseTR;
+                imprimirTabla();   */  
             }
         }
     }
