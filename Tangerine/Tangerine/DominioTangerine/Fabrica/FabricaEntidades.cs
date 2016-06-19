@@ -570,14 +570,14 @@ namespace DominioTangerine.Fabrica
             return new Facturacion();
         }
 
-        public static Entidad Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public static Entidad ObtenerFacturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
         {
             return new Facturacion(fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
                 descripcion, estatus, idProyecto, idCompania);
         }
 
-        public static Entidad Facturacion(int facturaId, int idNumeroFactura, DateTime fecha,
+        public static Entidad ObtenerFacturacion(int facturaId, int idNumeroFactura, DateTime fecha,
             DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion,
             int estatus, int idProyecto, int idCompania)
         {
