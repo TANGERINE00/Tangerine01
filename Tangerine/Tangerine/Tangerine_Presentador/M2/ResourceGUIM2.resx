@@ -117,11 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApellidoEmpleado" xml:space="preserve">
+    <value>&amp;Apellido=</value>
+  </data>
+  <data name="Botonblock" xml:space="preserve">
+    <value>&lt;a href="#"  tittle="Modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
+  </data>
   <data name="BotonModif" xml:space="preserve">
     <value>&lt;a tittle="modificar" class="btn btn-default btn-xs" id="</value>
   </data>
   <data name="BotonReg" xml:space="preserve">
     <value>&lt;a href="javascript:ajaxRes()" tittle ="registrar" runat ="server"  class="btn btn-success btn-xs" &gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonRegBlock" xml:space="preserve">
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" disabled</value>
+  </data>
+  <data name="BotonRegNuevaVentana" xml:space="preserve">
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" href="AccionRegistrar.aspx?idFicha=</value>
+  </data>
+  <data name="CloseBotonModify" xml:space="preserve">
+    <value>"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalC" onclick="ClickCambiar"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonParametro" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonParametroDesactivado" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseBotonReg" xml:space="preserve">
+    <value>"&gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>
@@ -132,11 +156,35 @@
   <data name="Closeh4" xml:space="preserve">
     <value>&lt;/h4&gt;</value>
   </data>
+  <data name="CloseInputModif" xml:space="preserve">
+    <value>" disabled&gt;</value>
+  </data>
+  <data name="CloseLabelFor" xml:space="preserve">
+    <value>" class="col-sm-2 control-label"&gt;Usuario&lt;/label&gt;</value>
+  </data>
   <data name="CloseTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CloseTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="comillas" xml:space="preserve">
+    <value>"</value>
+  </data>
+  <data name="LabelFor" xml:space="preserve">
+    <value>&lt;label for="</value>
+  </data>
+  <data name="llamadoCompleto" xml:space="preserve">
+    <value>&lt;a href="javascript:ajaxRes()"  tittle="modificar" runat ="server" class="btn btn-primary btn-xs"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="llamadoNuevaPagina" xml:space="preserve">
+    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
+  </data>
+  <data name="NombreEmpleado" xml:space="preserve">
+    <value>&amp;Nombre=</value>
+  </data>
+  <data name="OpenDivModif" xml:space="preserve">
+    <value>&lt;div class="col-sm-10"&gt;</value>
   </data>
   <data name="OpenDivRow" xml:space="preserve">
     <value>&lt;div class="row"&gt;</value>
@@ -147,65 +195,17 @@
   <data name="Openh4" xml:space="preserve">
     <value>&lt;h4&gt;</value>
   </data>
+  <data name="OpenInputModif" xml:space="preserve">
+    <value>&lt;input type="email" class="form-control" id="</value>
+  </data>
   <data name="OpenTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
   </data>
   <data name="OpenTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
-  <data name="CloseBotonModify" xml:space="preserve">
-    <value>"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalC" onclick="ClickCambiar"&gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseBotonReg" xml:space="preserve">
-    <value>"&gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseInputModif" xml:space="preserve">
-    <value>" disabled&gt;</value>
-  </data>
-  <data name="CloseLabelFor" xml:space="preserve">
-    <value>" class="col-sm-2 control-label"&gt;Usuario&lt;/label&gt;</value>
-  </data>
-  <data name="LabelFor" xml:space="preserve">
-    <value>&lt;label for="</value>
-  </data>
-  <data name="llamadoCompleto" xml:space="preserve">
-    <value>&lt;a href="javascript:ajaxRes()"  tittle="modificar" runat ="server" class="btn btn-primary btn-xs"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" &gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="OpenDivModif" xml:space="preserve">
-    <value>&lt;div class="col-sm-10"&gt;</value>
-  </data>
-  <data name="OpenInputModif" xml:space="preserve">
-    <value>&lt;input type="email" class="form-control" id="</value>
-  </data>
   <data name="placeholder" xml:space="preserve">
     <value>placeholder="</value>
-  </data>
-  <data name="Botonblock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="Modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
-  </data>
-  <data name="BotonRegBlock" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" disabled</value>
-  </data>
-  <data name="llamadoNuevaPagina" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
-  </data>
-  <data name="CloseBotonParametro" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseBotonParametroDesactivado" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonRegNuevaVentana" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" href="AccionRegistrar.aspx?idFicha=</value>
-  </data>
-  <data name="ApellidoEmpleado" xml:space="preserve">
-    <value>&amp;Apellido=</value>
-  </data>
-  <data name="comillas" xml:space="preserve">
-    <value>"</value>
-  </data>
-  <data name="NombreEmpleado" xml:space="preserve">
-    <value>&amp;Nombre=</value>
   </data>
   <data name="RolEmpleado" xml:space="preserve">
     <value>&amp;Rol=</value>

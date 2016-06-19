@@ -53,6 +53,11 @@
     <Compile Include="M2\PresentadorCambioRol.cs" />
     <Compile Include="M2\PresentadorAccionRegistrar.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
+    <Compile Include="M2\ResourceGUIM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM2.resx</DependentUpon>
+    </Compile>
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
@@ -106,6 +111,10 @@
     <EmbeddedResource Include="M10\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M2\ResourceGUIM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
