@@ -3303,6 +3303,56 @@ Error Number:-1,State:0,Class:20
 2016-06-14 00:13:05,497 INFO  BDCompania - Clase: BDCompania
 2016-06-14 00:13:05,497 INFO  BDCompania - Mensaje: Salida del Método
 2016-06-14 00:13:05,497 INFO  BDCompania - Metodo: ConsultCompanies
+<<<<<<< HEAD
+>>>>>>> 7fccb2cdc8beb8037082a191e7f8888c02a557c4
+<<<<<<< HEAD
+2016-06-14 18:26:57,379 INFO  BDClientePotencial - *******************************************************
+2016-06-14 18:26:57,448 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 18:26:57,448 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-14 18:26:57,448 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 18:28:30,561 INFO  BDClientePotencial - *******************************************************
+2016-06-14 18:28:30,567 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 18:28:30,567 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-14 18:28:30,567 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 18:28:32,208 INFO  BDClientePotencial - *******************************************************
+2016-06-14 18:28:32,208 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 18:28:32,208 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-14 18:28:32,208 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 18:28:39,658 INFO  BDClientePotencial - *******************************************************
+2016-06-14 18:28:39,658 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 18:28:39,658 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-14 18:28:39,658 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 18:28:39,678 INFO  BDClientePotencial - *******************************************************
+2016-06-14 18:28:39,678 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 18:28:39,678 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-14 18:28:39,678 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 19:06:58,507 INFO  BDClientePotencial - *******************************************************
+2016-06-14 19:06:58,517 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 19:06:58,517 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-14 19:06:58,517 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 19:06:58,609 INFO  BDClientePotencial - *******************************************************
+2016-06-14 19:06:58,609 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 19:06:58,609 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-14 19:06:58,609 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 19:08:23,498 INFO  BDClientePotencial - *******************************************************
+2016-06-14 19:08:23,506 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 19:08:23,506 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-14 19:08:23,506 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 19:08:23,603 INFO  BDClientePotencial - *******************************************************
+2016-06-14 19:08:23,603 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 19:08:23,603 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-14 19:08:23,603 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 19:09:16,969 INFO  BDClientePotencial - *******************************************************
+2016-06-14 19:09:16,969 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 19:09:16,969 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-14 19:09:16,969 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+2016-06-14 19:09:17,017 INFO  BDClientePotencial - *******************************************************
+2016-06-14 19:09:17,017 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-14 19:09:17,017 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-14 19:09:17,017 INFO  BDClientePotencial - Metodo: DatosListarClientePotencial
+=======
+=======
+>>>>>>> 8b1d9b7d56b5ad3ab0a775153c15197c5acd2dc9
 2016-06-14 19:12:56,166 INFO  BDEmpleado - *******************************************************
 2016-06-14 19:12:56,188 INFO  BDEmpleado - Clase: BDEmpleado
 2016-06-14 19:12:56,188 INFO  BDEmpleado - Mensaje: Entrada en el Método
@@ -3353,6 +3403,9 @@ Error Number:-1,State:0,Class:20
    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\genio_000\Desktop\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:-1,State:0,Class:20
+<<<<<<< HEAD
+>>>>>>> a3974a73411aa70d6194918bf2769bbfb8a0a7a4
+=======
 2016-06-17 21:48:08,258 INFO  BDPropuesta - *******************************************************
 2016-06-17 21:48:08,280 INFO  BDPropuesta - Clase: BDPropuesta
 2016-06-17 21:48:08,281 INFO  BDPropuesta - Mensaje: Entrada en el Método
@@ -4249,6 +4302,9 @@ Error Number:-1,State:0,Class:20
 2016-06-17 22:31:00,580 INFO  BDCompania - Clase: BDCompania
 2016-06-17 22:31:00,580 INFO  BDCompania - Mensaje: Salida del Método
 2016-06-17 22:31:00,580 INFO  BDCompania - Metodo: ConsultCompanies
+<<<<<<< HEAD
+>>>>>>> 8b1d9b7d56b5ad3ab0a775153c15197c5acd2dc9
+=======
 2016-06-18 16:01:10,647 INFO  LogicaM4 - *******************************************************
 2016-06-18 16:01:10,682 INFO  LogicaM4 - Clase: LogicaM4
 2016-06-18 16:01:10,682 INFO  LogicaM4 - Mensaje: Entrada en el Método
@@ -4405,6 +4461,9 @@ Error Number:-1,State:0,Class:20
 2016-06-18 18:08:57,049 INFO  BDEmpleado - Clase: BDEmpleado
 2016-06-18 18:08:57,049 INFO  BDEmpleado - Mensaje: Salida del Método
 2016-06-18 18:08:57,049 INFO  BDEmpleado - Metodo: ListarEmpleados
+<<<<<<< HEAD
+>>>>>>> 371e7ed2ca2d09b95e0943c89c6bdffd62c67fc5
+=======
 2016-06-18 18:38:50,146 INFO  DaoProyectoContacto - *******************************************************
 2016-06-18 18:38:50,152 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
 2016-06-18 18:38:50,152 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
@@ -5153,3 +5212,4 @@ Error Number:-1,State:0,Class:20
 2016-06-19 02:50:34,623 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
 2016-06-19 02:50:34,623 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
 2016-06-19 02:50:34,623 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+>>>>>>> 71e83db1635d1382f566450ee0086bf209f7ed33

@@ -58,5 +58,12 @@ namespace DatosTangerine.InterfazDAO.M2
         /// <returns>Retorna el ultimo ID de Usuario</returns>
         int ConsultLastUserID();
 
+        /// <summary>
+        /// Encabezado del metodo para retornar el ultimo ID del usuario
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns>Retorna true si el usuario fue borrado exitosamente</returns>
+        bool BorrarUsuario( int userID );
+
     }
 }

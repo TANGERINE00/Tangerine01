@@ -1,4 +1,4 @@
-﻿ create table LUGAR_DIRECCION
+﻿create table LUGAR_DIRECCION
 (
 	lug_dir_id int not null,
 	lug_dir_nombre varchar(255) not null,
@@ -458,6 +458,15 @@ BEGIN
 	INSERT INTO USUARIO VALUES (@id_usuario + 1, @usuario, @contraseña, @fecha_creacion, 'Activo',
 		                        @id_rol, @emp_num_ficha);
 END;
+GO
+
+CREATE PROCEDURE M2_BorrarUsuario
+	@usu_id int
+AS
+	BEGIN
+		DELETE FROM USUARIO
+ 		WHERE usu_id = @usu_id;
+	END;
 GO
 
 CREATE PROCEDURE M2_ModificarRolUsuario
@@ -1138,7 +1147,7 @@ GO
 --Eliminar Propuesta
 CREATE PROCEDURE M6_EliminarPropuesta
 
-@propuesta_nombre varchar(20)
+@propuesta_nombre varchar(500)
 
 AS
  BEGIN

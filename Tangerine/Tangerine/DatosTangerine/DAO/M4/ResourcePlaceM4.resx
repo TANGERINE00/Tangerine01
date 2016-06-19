@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConsultCityId" xml:space="preserve">
+    <value>M4_ConsultarLugarPorId</value>
+  </data>
   <data name="ConsultCityPlaces" xml:space="preserve">
     <value>M4_ConsultarLugar</value>
   </data>
@@ -131,5 +134,8 @@
   </data>
   <data name="LugTypePlace" xml:space="preserve">
     <value>lug_dir_tipo</value>
+  </data>
+  <data name="ParamId" xml:space="preserve">
+    <value>@id</value>
   </data>
 </root>
