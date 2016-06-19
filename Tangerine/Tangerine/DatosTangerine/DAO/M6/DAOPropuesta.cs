@@ -203,8 +203,8 @@ namespace DatosTangerine.DAO.M6
                 propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
                     ((DominioTangerine.Entidades.M6.Propuesta)id).Nombre,
                     fila[RecursosPropuesta.PropDescripcion].ToString(), 
-                    fila[RecursosPropuesta.PropDuracion].ToString(), 
                     fila[RecursosPropuesta.PropTipoDuracion].ToString(), 
+                    fila[RecursosPropuesta.PropDuracion].ToString(), 
                     fila[RecursosPropuesta.PropAcuerdo].ToString(), 
                     fila[RecursosPropuesta.PropEstatus].ToString(), 
                     fila[RecursosPropuesta.PropMoneda].ToString(), 

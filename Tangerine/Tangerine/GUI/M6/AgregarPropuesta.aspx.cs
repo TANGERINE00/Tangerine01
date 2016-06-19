@@ -49,9 +49,9 @@ namespace Tangerine.GUI.M6
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            
 
- 
+
+
 
 
             /*
@@ -59,7 +59,7 @@ namespace Tangerine.GUI.M6
                                                  _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
             LogicaPropuesta propuestaLogica = new LogicaPropuesta();
             propuestaLogica.agregar(propuesta);
-          
+       
 
 
             _precondicion = arrPrecondicion.Value.Split(';');
@@ -76,8 +76,8 @@ namespace Tangerine.GUI.M6
                 requerimientoLogica.agregar(requerimiento);
 
             }
+               */
 
-              */
 
         }
 
@@ -114,6 +114,7 @@ namespace Tangerine.GUI.M6
             formaPago.Items.Add("Mensual");
             formaPago.Items.Add("Por cuotas");
         }
+           
         private void cargarCompañias()
         {
             try
