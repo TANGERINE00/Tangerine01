@@ -39,7 +39,7 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="fichaEmpleado"></param>
             /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
-            public static Comando<Boolean> verificarUsuario(int fichaEmpleado)
+            public static Comando<Boolean> verificarUsuario( int fichaEmpleado )
             {
                 return new Comandos.M2.ComandoVerificarUsuario( fichaEmpleado );
             }
@@ -58,9 +58,20 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
-            public static Comando<Boolean> validarUsuario(string usuario)
+            public static Comando<Boolean> validarUsuario( string usuario )
             {
                 return new Comandos.M2.ComandoValidarUsuario( usuario );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoObtenerCaracteres
+            /// </summary>
+            /// <param name="cadena"></param>
+            /// <param name="cantidad"></param>
+            /// <returns>Retorna una instancia a ComandoObtenerCaracteres</returns>
+            public static Comando<String> obtenerCaracteres( String cadena , int cantidad )
+            {
+                return new Comandos.M2.ComandoObtenerCaracteres( cadena , cantidad );
             }
 
             /// <summary>
@@ -69,9 +80,9 @@ namespace LogicaTangerine.Fabrica
             /// <param name="nombre"></param>
             /// <param name="apellido"></param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-            public static Comando<String> crearUsuario(string nombre, string apellido)
+            public static Comando<String> crearUsuario( string nombre , string apellido )
             {
-                return new Comandos.M2.ComandoCrearUsuarioDefault( nombre, apellido );
+                return new Comandos.M2.ComandoCrearUsuarioDefault( nombre , apellido );
             }
 
             /// <summary>
