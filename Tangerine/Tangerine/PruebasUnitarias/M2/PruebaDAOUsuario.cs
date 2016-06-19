@@ -28,7 +28,7 @@ namespace PruebasUnitarias.M2
         #region SetUp And TearDown
 
         /// <summary>
-        /// SetUp para las Pruebas de Datos
+        /// SetUp para las pruebas de DAOUsuario
         /// </summary>
         [SetUp]
         public void init()
@@ -38,7 +38,7 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
-        /// TearDown para las Pruebas de Datos
+        /// TearDown para las pruebas de DAOUsuario
         /// </summary>
         [TearDown]
         public void clean()
