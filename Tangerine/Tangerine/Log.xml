@@ -5317,3 +5317,27 @@ Error Number:-1,State:0,Class:20
 2016-06-19 17:16:36,832 INFO  BDEmpleado - Clase: BDEmpleado
 2016-06-19 17:16:36,832 INFO  BDEmpleado - Mensaje: Salida del Método
 2016-06-19 17:16:36,832 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-19 19:49:06,164 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 19:49:06,184 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 19:49:06,184 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-19 19:49:06,184 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 19:49:06,391 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 19:49:06,392 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 19:49:06,392 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-19 19:49:06,392 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 19:49:19,926 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 19:49:19,926 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 19:49:19,926 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-19 19:49:19,926 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 19:49:19,941 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 19:49:19,941 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 19:49:19,941 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-19 19:49:19,941 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 19:49:22,517 INFO  BDClientePotencial - *******************************************************
+2016-06-19 19:49:22,518 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-19 19:49:22,518 INFO  BDClientePotencial - Mensaje: Entrada Método
+2016-06-19 19:49:22,518 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-06-19 19:49:22,532 INFO  BDClientePotencial - *******************************************************
+2016-06-19 19:49:22,532 INFO  BDClientePotencial - Clase: BDClientePotencial
+2016-06-19 19:49:22,532 INFO  BDClientePotencial - Mensaje: Fin Método
+2016-06-19 19:49:22,532 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
