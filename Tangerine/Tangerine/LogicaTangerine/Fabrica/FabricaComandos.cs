@@ -99,11 +99,11 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una instancia a ComandoModificarContrasena</returns>
-           /* public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
+            public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
             {
                 return new Comandos.M2.ComandosDAOUsuario.ComandoModificarContrasena( usuario );
             }
-        */
+        
             #endregion
 
             #region Comandos Rol

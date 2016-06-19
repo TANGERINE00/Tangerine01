@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatosTangerine.DAO;
 using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
-using DominioTangerine;
 using ExcepcionesTangerine;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
@@ -15,7 +15,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
         public DominioTangerine.Entidad _theUsuario;
 
         /// <summary>
-        /// Constructor que recibe un parametro del tipo Entidad
+        /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
         /// <param name="theUsuario"></param>
         public ComandoModificarContrasena( DominioTangerine.Entidad theUsuario )
