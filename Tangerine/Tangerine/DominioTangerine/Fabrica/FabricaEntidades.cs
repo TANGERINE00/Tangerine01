@@ -649,6 +649,7 @@ namespace DominioTangerine.Fabrica
         public static Entidad AgregarEmpledoM10()
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
+        }
 
 
         //public static Entidad ObtenerCargo()
