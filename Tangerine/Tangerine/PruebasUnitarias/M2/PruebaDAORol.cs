@@ -43,7 +43,7 @@ namespace PruebasUnitarias.M2
         public void clean()
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            elUsuario1 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            elUsuario1 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol1, 1);
             DominioTangerine.Entidades.M2.UsuarioM2 theUsuario1 = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1;
             answer = daoUsuario.BorrarUsuario(theUsuario1.Id);
             elUsuario = null;
