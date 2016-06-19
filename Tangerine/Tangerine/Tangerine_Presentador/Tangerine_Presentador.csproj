@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\PresentadorConsultaEmpleado.cs" />
+    <Compile Include="M10\PresentadorCrearEmpleado.cs" />
     <Compile Include="M10\ResourceGUIM10.Designer.cs">
       <DependentUpon>ResourceGUIM10.resx</DependentUpon>
       <AutoGen>True</AutoGen>
