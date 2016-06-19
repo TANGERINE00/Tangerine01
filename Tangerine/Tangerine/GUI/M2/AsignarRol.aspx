@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="box-footer" runat="server">
-                            <asp:Button ID="buttonAsignar_M2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Asignar" OnClientClick="return confirm('¿Seguro que desea este rol al usuario?');" OnClick="buttonAsignar_Click"></asp:Button>
+                            <asp:Button ID="buttonAsignar_M2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Asignar" OnClientClick="return confirm('¿Seguro que desea modificar el rol?');" OnClick="buttonAsignar_Click"></asp:Button>
                         </div>
 
 

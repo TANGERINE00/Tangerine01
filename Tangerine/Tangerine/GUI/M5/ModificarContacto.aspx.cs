@@ -7,73 +7,96 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M5;
+using Tangerine_Contratos.M5;
+using Tangerine_Presentador.M5;
 
 namespace Tangerine.GUI.M5
 {
-    public partial class Modificar : System.Web.UI.Page
+    public partial class Modificar : System.Web.UI.Page, IContratoModificarContacto
     {
-        string _nombre = String.Empty;
-        string _apellido = String.Empty;
-        string _departamento = String.Empty;
-        string _cargo = String.Empty;
-        string _telefono = String.Empty;
-        string _correo = String.Empty;
-        Contacto theContact = new Contacto();
-        public int typeComp;
-        public int idComp;
+        private PresentadorModificarContacto presentador;
 
         public string botonVolver
         {
-            get
+            get { return this.volver.Text; }
+            set { this.volver.Text = value; }
+        }
+        public string input_nombre
+        {
+            get { return this.nombre.Value; }
+            set { this.nombre.Value = value; }
+        }
+
+        public string input_apellido
+        {
+            get { return this.apellido.Value; }
+            set { this.apellido.Value = value; }
+        }
+
+        public string input_correo
+        {
+            get { return this.correo.Value; }
+            set { this.correo.Value = value; }
+        }
+
+        public string input_departamento
+        {
+            get { return this.departamento.Value; }
+            set { this.departamento.Value = value; }
+        }
+
+        public string input_telefono
+        {
+            get { return this.telefono.Value; }
+            set { this.telefono.Value = value; }
+        }
+
+        public string input_cargo
+        {
+            get { return this.cargo.Value; }
+            set { this.cargo.Value = value; }
+        }
+
+        public int GetTypeComp
+        {
+            get { return int.Parse( Request.QueryString[ ResourceGUIM5.typeComp ] ); }
+        }
+
+        public int GetIdComp
+        {
+            get { return int.Parse( Request.QueryString[ ResourceGUIM5.idComp ] ); }
+        }
+
+        public int GetidCont
+        {
+            get { return int.Parse( Request.QueryString[ ResourceGUIM5.idCont ] ); }
+        }
+
+        public string CargarBotonVolver( int typeComp, int idComp )
+        {
+            return this.botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                                      + ResourceGUIM5.BotonVolver3;
+        }
+
+        public void BotonAceptar( int typeComp, int idComp )
+        {
+            Server.Transfer( ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                             + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusModificado );
+        }
+
+        protected void Page_Load( object sender, EventArgs e )
+        {
+            presentador = new PresentadorModificarContacto( this );
+            presentador.CargarPagina();
+            if ( !IsPostBack )
             {
-                return this.volver.Text;
-            }
-            set
-            {
-                this.volver.Text = value;
+                presentador.NoPostPagina();
             }
         }
 
-
-        protected void Page_Load(object sender, EventArgs e)
+        protected void btnmodificar_Click( object sender, EventArgs e )
         {
-            typeComp = int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            idComp = int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
-            int idCont = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
-
-            botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-                + ResourceGUIM5.BotonVolver3;
-
-            theContact.IdContacto = idCont;
-            if (!IsPostBack)
-            {
-                LogicaM5 contactLogic = new LogicaM5();
-                theContact = contactLogic.SearchContact(theContact);
-                this.nombre.Value = theContact.Nombre;
-                this.apellido.Value = theContact.Apellido;
-                this.departamento.Value = theContact.Departamento;
-                this.cargo.Value = theContact.Cargo;
-                this.telefono.Value = theContact.Telefono;
-                this.correo.Value = theContact.Correo;
-            }
-        }
-
-        protected void btnmodificar_Click(object sender, EventArgs e)
-        {
-            Contacto contact = new Contacto();
-            contact.IdContacto = int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
-            contact.Nombre = nombre.Value; 
-            contact.Apellido = apellido.Value;
-            contact.Departamento = departamento.Value;
-            contact.Cargo = cargo.Value;
-            contact.Telefono = telefono.Value;
-            contact.Correo = correo.Value;            
-            
-            LogicaM5 contactLogic = new LogicaM5();
-            contactLogic.ChangeContact(contact);
-
-            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-                + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusModificado);
+            presentador.ModificarContacto();
         }
     }
 }

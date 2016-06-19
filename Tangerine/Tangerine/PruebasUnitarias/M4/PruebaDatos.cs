@@ -250,6 +250,26 @@ namespace PruebasUnitarias.M4
             }
         }
 
+
+        /// <summary>
+        /// Prueba que permite validad el consultar de un lugar por el id.
+        /// </summary>
+        [Test]
+        public void TestConsultPlacesXId()
+        {
+            IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
+            answer = daoCompania.Agregar(lacompania);
+            IDaoLugarDireccion daoLugarDireccion = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoLugarDireccion();
+
+            Entidad lugar = daoLugarDireccion.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionConLugar(3,"prueba"));
+            
+            Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugId == 3);
+            Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugNombre == "Zulia");
+            Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugTipo == "Estado");
+            Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).Fk_lugId == 1);
+            
+        }
+
       
     }
 }

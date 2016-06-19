@@ -17,60 +17,33 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <script type="text/javascript">
-            function ajaxRes() {
-                $('.table > tbody > tr > td:nth-child(6) > a')
-                    .click(function (e) {
-                        e.preventDefault();
-                        var nombre = $(this).closest("tr").find("td:nth-child(2)").text();
-                        var apellido = $(this).closest("tr").find("td:nth-child(3)").text();
-                        var empleadoF = $(this).closest("tr").find("td:nth-child(1)").text();
-                        document.getElementById("ContentPlaceHolder1_fichaEmp").value = empleadoF;
-                        var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
-                        $.ajax({
-                            type: "POST",
-                            url: "AccionRegistrar.aspx/ObtenerUsuarioDefault2",
-                            data: param,
-                            contentType: 'application/json; charset=utf-8',
-                            dataType: 'json',
-                            success: function (result) {
-                                var local = JSON.stringify(result);
-                                var obj = JSON.parse(local);
-                                document.getElementById("ContentPlaceHolder1_userDefault").value = obj.d;
-                            },
-                            failure: function (result) {
-                                alert("_");
-                            }
-                        });
-                    });
+    <script type="text/javascript">
+        function validacion() {
+            var nombreuser = ContentPlaceHolder1_userDefault.value;
+            var param = "{'usuario':'" + nombreuser + "'}";
+            $.ajax({
+                type: "POST",
+                url: "AccionRegistrar.aspx/validarUsuario",
+                data: param,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (result) {
+                    var local = JSON.stringify(result);
+                    var obj = JSON.parse(local);
 
-            }
-            function validacion() {
-                var nombreuser = ContentPlaceHolder1_userDefault.value;
-                var param = "{'usuario':'" + nombreuser + "'}";
-                $.ajax({
-                    type: "POST",
-                    url: "AccionRegistrar.aspx/validarUsuario",
-                    data: param,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json',
-                    success: function (result) {
-                        var local = JSON.stringify(result);
-                        var obj = JSON.parse(local);
-
-                        if (obj.d == "Disponible") {
-                            document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
-                            document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
-                        } else {
-                            document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
-                            document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
-                        }
-                    },
-                    failure: function (result) {
-                        alert("_");
+                    if (obj.d == "Disponible") {
+                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
+                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
+                    } else {
+                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
+                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
                     }
-                });
-            }
+                },
+                failure: function (result) {
+                    alert("_");
+                }
+            });
+        }
     </script>
 
     <div class="row">
@@ -83,8 +56,8 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" runat="server" method="post" name="asignar_rol" id="asignar_rol" >
-                    <div class="box-body" runat="server" >
+                <form role="form" runat="server" method="post" name="asignar_rol" id="asignar_rol">
+                    <div class="box-body" runat="server">
 
                         <div class="form-group" runat="server">
                             <label for="labelFicha_M2">Ficha Usuario</label>

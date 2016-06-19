@@ -7,11 +7,19 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Tangerine_Contratos.M2;
 
 namespace Tangerine.GUI.M2
 {
-    public partial class RegistroUsuario : System.Web.UI.Page
+    public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
+        
+
+        #region Contrato
+
+        /// <summary>
+        /// Implementacion del contrato
+        /// </summary>
         public string tablaEmpleado
         {
             get
@@ -24,6 +32,8 @@ namespace Tangerine.GUI.M2
             }
         }
 
+
+        #endregion
         /// <summary>
         /// Método que se ejecuta al cargar la página, se carga la tabla de empleados
         /// </summary>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExcepcionesTangerine;
+using LogicaTangerine.Fabrica;
 
 namespace LogicaTangerine.Comandos.M2
 {
@@ -39,8 +40,8 @@ namespace LogicaTangerine.Comandos.M2
                 _nombre = _nombre.ToLower();
                 _apellido = _apellido.ToLower();
 
-                ComandoObtenerCaracteres commandObtenerNombre = new ComandoObtenerCaracteres(_nombre, 2);
-                ComandoObtenerCaracteres commandObtenerApellido = new ComandoObtenerCaracteres(_apellido, 4);
+                LogicaTangerine.Comando<String> commandObtenerNombre = FabricaComandos.obtenerCaracteres( _nombre , 2 );
+                LogicaTangerine.Comando<String> commandObtenerApellido = FabricaComandos.obtenerCaracteres( _apellido , 4 );
 
                 //Obtiene los 2 primeros caracteres del nombre
                 usuarioNuevo = commandObtenerNombre.Ejecutar();

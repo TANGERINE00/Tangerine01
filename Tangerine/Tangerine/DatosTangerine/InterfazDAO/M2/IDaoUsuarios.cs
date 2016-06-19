@@ -36,7 +36,7 @@ namespace DatosTangerine.InterfazDAO.M2
         /// </summary>
         /// <param name="theEmpleado"></param>
         /// <returns>Retorna el usuario de un empleado</returns>
-        Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado );
+        Entidad ObtenerUsuarioDeEmpleado( int num_empleado );
 
         /// <summary>
         /// Encabezado del metodo para retornar los datos del usuario
@@ -57,6 +57,13 @@ namespace DatosTangerine.InterfazDAO.M2
         /// </summary>
         /// <returns>Retorna el ultimo ID de Usuario</returns>
         int ConsultLastUserID();
+
+        /// <summary>
+        /// Encabezado del metodo para retornar el ultimo ID del usuario
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns>Retorna true si el usuario fue borrado exitosamente</returns>
+        bool BorrarUsuario( int userID );
 
     }
 }

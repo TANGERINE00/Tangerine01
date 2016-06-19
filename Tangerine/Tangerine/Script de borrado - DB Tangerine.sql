@@ -50,6 +50,7 @@ drop procedure M4_InhabilitarHabilitarCompania;
 drop procedure M4_EliminarCompania;
 drop procedure M4_ConsultarIdUltimaCompania;
 drop procedure M4_ConsultarLugar;
+drop procedure M4_ConsultarLugarPorId;
 
 
 drop procedure M5_AgregarContacto;
