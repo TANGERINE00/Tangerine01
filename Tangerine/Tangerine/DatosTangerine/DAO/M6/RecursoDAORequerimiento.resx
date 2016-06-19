@@ -132,6 +132,9 @@
   <data name="ConsultarIdUltimoRequerimiento" xml:space="preserve">
     <value>M6_ConsultarIdUltimoRequerimiento</value>
   </data>
+  <data name="ConsultarNumeroRequerimientos" xml:space="preserve">
+    <value>M6_ConsultarNumeroRequerimientos</value>
+  </data>
   <data name="ConsultarPropuesta" xml:space="preserve">
     <value>M6_ListaPropuestaProyecto</value>
     <comment>Stored Procedure que consulta las propuestas aprobadas que aun no son proyectos</comment>

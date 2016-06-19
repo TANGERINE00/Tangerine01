@@ -1033,7 +1033,6 @@ CREATE PROCEDURE M6_AgregarRequerimiento
 	@reqCodigo varchar(200),
 	@reqDescripcion varchar(200),
 	@fk_pro_req varchar(200)
-
 AS
 	BEGIN
 		 INSERT INTO REQUERIMIENTO(req_codigo, req_descripcion,fk_prop_req_id)
@@ -1043,9 +1042,7 @@ GO
 
 --Lista Propuesta que no estan en proyecto
 CREATE PROCEDURE M6_ListaPropuestaProyecto
-
 AS
-
 BEGIN
 SELECT prop_id, prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago,
 prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin,prop_costo,
@@ -1053,7 +1050,6 @@ PROPUESTA.fk_com_id
 FROM PROPUESTA LEFT JOIN PROYECTO ON (fk_propuesta_id=prop_id) 
 WHERE prop_estatus = 'Aprobado' and proy_id IS NULL
 END;
-
 GO
 
 --Modificar Propuesta
@@ -1068,47 +1064,39 @@ CREATE PROCEDURE M6_ModificarPropuesta
 @fechai date,
 @fechaf date,
 @costo int
-
-
 AS
-
 BEGIN
 UPDATE PROPUESTA SET prop_descripcion = @descripcion, prop_tipoDuracion = @tipoDura,
 prop_duracion = @duracion, prop_acuerdo_pago = @acuerdo, prop_estatus = @estatus, prop_moneda = @moneda, prop_fecha_inicio = @fechai, prop_fecha_fin = @fechaf, prop_costo = @costo
-
 WHERE prop_nombre = @cod_Nombre
 END;
 
 GO
+
 --- ConsultarIdUltimaPropuesta(Para pruebas) ----
 CREATE PROCEDURE M6_ConsultarIdUltimaPropuesta
 AS
  BEGIN
      SELECT MAX(prop_id) prop_id FROM PROPUESTA; 
  end;
+
 GO
+
 -- Modificar Requerimiento
 CREATE PROCEDURE M6_ModificarRequerimiento
-
 @req_descripcion [varchar] (200),
 @cod_Nombre [varchar] (50)
-
 AS
-
 BEGIN
 UPDATE REQUERIMIENTO SET req_descripcion = @req_descripcion WHERE req_codigo = @cod_Nombre  
-
 END;
 
 GO
 
 --Listar requerimientos por propuesta
 CREATE PROCEDURE M6_ListarRequerimientos
-
 @cod_Nombre [varchar] (200)
-
 AS
-
 BEGIN
 SELECT req_codigo, req_descripcion FROM REQUERIMIENTO WHERE fk_prop_req_id = @cod_Nombre 
 END;
@@ -1116,39 +1104,29 @@ END;
 GO
 
 --Consultar propuesta por nombre
-
 CREATE PROCEDURE M6_ConsultarPropuestaNombre
 @propuesta_nombre [varchar] (50)
-
 AS
-
 BEGIN
-
 SELECT prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
 prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA WHERE prop_nombre = @propuesta_nombre
-
 END;
+
 GO
 
+--Consultar todas las propuestas
 CREATE PROCEDURE M6_ConsultarPropuestas
-
-
 AS
-
 BEGIN
-
 SELECT prop_nombre,prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
 prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA 
-
 END;
 GO
 
 
 --Eliminar Propuesta
 CREATE PROCEDURE M6_EliminarPropuesta
-
 @propuesta_nombre varchar(500)
-
 AS
  BEGIN
     DELETE FROM REQUERIMIENTO WHERE fk_prop_req_id=@propuesta_nombre;
@@ -1156,6 +1134,7 @@ AS
  END;
 
 GO
+
 ---ConsultarIdUltimoRequerimiento(Para pruebas) ----
 CREATE PROCEDURE M6_ConsultarIdUltimoRequerimiento
 AS
@@ -1163,6 +1142,20 @@ AS
      SELECT MAX(req_id) req_id FROM REQUERIMIENTO; 
  end;
 GO
+---ConsultarNumeroPropuestas(Para pruebas) ----
+CREATE PROCEDURE M6_ConsultarNumeroPropuestas
+AS
+ BEGIN
+     SELECT COUNT(prop_id) prop_id FROM PROPUESTA; 
+ end;
+GO
+---ConsultarNumeroRequerimientos(Para pruebas) ----
+CREATE PROCEDURE M6_ConsultarNumeroRequerimientos
+AS
+ BEGIN
+     SELECT COUNT(req_id) req_id FROM REQUERIMIENTO; 
+ end;
+GO     
 
 -----------------------------------
 ------Fin Stored Procedure M6------

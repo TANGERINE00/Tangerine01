@@ -10,7 +10,7 @@ using DominioTangerine;
 
 namespace PruebasUnitarias.M6
 {
-    public class PruebaDAOPropuesta
+    public class PruebasDAOPropuesta
     {
         #region Atributos
 
@@ -153,6 +153,63 @@ namespace PruebasUnitarias.M6
                 Assert.IsTrue(dao.BorrarPropuesta("NombrePropuestaPrueba"));
             }
 
+        }
+
+        /// <summary>
+        /// Prueba que se consulten propuestas por nombre.
+        /// </summary>
+        [Test]
+        public void ConsultaPropuestaXId()
+        {
+            //Se crea un objeto DAO para poder realizar la inserción.
+            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
+            //Se inserta la propuesta
+            confirmacion = dao.Agregar(laPropuesta);
+            laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
+            Assert.AreEqual(laPropuesta.Descripcion, laPropuesta2.Descripcion);
+            Assert.AreEqual(laPropuesta.TipoDuracion, laPropuesta2.TipoDuracion);
+            Assert.AreEqual(laPropuesta.CantDuracion, laPropuesta2.CantDuracion);
+            Assert.AreEqual(laPropuesta.Acuerdopago, laPropuesta2.Acuerdopago);
+            Assert.AreEqual(laPropuesta.Estatus, laPropuesta2.Estatus);
+            Assert.AreEqual(laPropuesta.Moneda, laPropuesta2.Moneda);
+            Assert.AreEqual(laPropuesta.Entrega, laPropuesta2.Entrega);
+            Assert.AreEqual(laPropuesta.Feincio, laPropuesta2.Feincio);
+            Assert.AreEqual(laPropuesta.Fefinal, laPropuesta2.Fefinal);
+            Assert.AreEqual(laPropuesta.Costo, laPropuesta2.Costo);
+            Assert.AreEqual(laPropuesta.IdCompañia, laPropuesta2.IdCompañia);
+            //Elimino la propuesta de prueba
+            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+        }
+
+        /// <summary>
+        /// Prueba que se consulten todas las propuestas
+        /// </summary>
+        [Test]
+        {
+            //Se crea un objeto DAO para poder realizar la inserción.
+            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
+            //Se inserta la propuesta para tener un minimo
+            confirmacion = dao.Agregar(laPropuesta);
+            //Se cuentan la cantidad de propuestas
+            listaPropuestas = dao.ConsultarTodos();
+            int contador2 = 0;
+            foreach (Entidad propuesta in listaPropuestas)
+            {
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Descripcion);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).CantDuracion);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Acuerdopago);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Moneda);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Entrega);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Feincio);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Fefinal);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Costo);
+                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia);
+                contador2++;
+            }
+            //Se checkea que el numero de propuestas extraidas coincida con el numero de propuestas en la bd
+            Assert.AreEqual(contador, contador2);
         }
 
 
