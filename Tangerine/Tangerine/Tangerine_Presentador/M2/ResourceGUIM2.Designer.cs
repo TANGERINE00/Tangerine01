@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M2 {
+namespace Tangerine_Presentador.M2 {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Tangerine.GUI.M2 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tangerine.GUI.M2.ResourceGUIM2", typeof(ResourceGUIM2).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Tangerine_Presentador.M2.ResourceGUIM2", typeof(ResourceGUIM2).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
