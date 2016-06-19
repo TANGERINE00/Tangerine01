@@ -8,6 +8,7 @@ using LogicaTangerine;
 using DominioTangerine;
 using Tangerine_Contratos;
 using Tangerine_Presentador.M10;
+using System.Web;
 
 namespace Tangerine_Presentador.M10
 {
@@ -111,6 +112,9 @@ namespace Tangerine_Presentador.M10
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
                     vista.Tabla.Text += ResourceGUIM10.CerrarTR;
                 }
+
+                if (HttpContext.Current.Session["Rol"] + "" != "Programador")
+                    vista.button += ResourceGUIM10.VentanaAgregarEmpleado;
             }
             catch (Exception ex)
             {
