@@ -8,12 +8,21 @@ using System.Threading.Tasks;
 
 namespace LogicaTangerine.Comandos.M7
 {
-    class ComandoCalcularPagoMensual : Comando<Entidad>
+    class ComandoCalcularPagoMensual : Comando<Double>
     {
-        public override Entidad Ejecutar()
+        private Entidad _proyecto;
+        
+
+        public ComandoCalcularPagoMensual(Entidad proyecto)
         {
-           Entidad proyecto = null;
-           return proyecto;
+             this._proyecto = proyecto;
+        }
+        public override Double Ejecutar()
+        {
+            IDaoProyecto daoProyecto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyecto();
+            Double resultado = daoProyecto.CalcularPagoMensual(_proyecto);
+            return resultado;
+
         }
 
     }
