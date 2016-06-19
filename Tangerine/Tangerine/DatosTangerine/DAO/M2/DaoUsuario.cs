@@ -234,9 +234,9 @@ namespace DatosTangerine.DAO.M2
             /// </summary>
             /// <param name="empleado"></param>
             /// <returns>Retorna el usuario de un empleado</returns>
-            public Entidad ObtenerUsuarioDeEmpleado( int num_empleado )
+            public Entidad ObtenerUsuarioDeEmpleado( Entidad num_empleado )
             {
-                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10) theEmpleado;
+                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)num_empleado;
                 Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
 
                 DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
@@ -248,7 +248,7 @@ namespace DatosTangerine.DAO.M2
                 {
                     Conectar();
 
-                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, empleado.Emp_num_ficha.ToString(), false);
+                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerUsuarioDeEmpleado, parametros);
