@@ -7,13 +7,124 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
 using LogicaTangerine.M5;
+using Tangerine_Presentador.M7;
+using Tangerine_Contratos.M7;
 using LogicaTangerine.M10;
+
 
 namespace Tangerine.GUI.M7
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class modificarProyecto : System.Web.UI.Page, IContratoModificarProyecto
     {
-        int _idProyecto;
+
+        PresentadorModificarProyecto presentador;
+
+        public modificarProyecto()
+        {
+            this.presentador = new PresentadorModificarProyecto(this);
+        }
+
+        #region Contrato
+
+        TextBox IContratoModificarProyecto.inputPropuesta
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoModificarProyecto.textInputNombreProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoModificarProyecto.textInputCodigo
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoModificarProyecto.textInputFechaInicio
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoModificarProyecto.textInputFechaEstimada
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoModificarProyecto.textInputCosto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        TextBox IContratoModificarProyecto.textInputPorcentaje
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        Button IContratoModificarProyecto.btnGuardar
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        #endregion
+
+        /*int _idProyecto;
         LogicaProyecto LogicProject = new LogicaProyecto();
         Proyecto proyecto = new Proyecto();
         List<Contacto> Contactos = new List<Contacto>();
@@ -176,5 +287,9 @@ namespace Tangerine.GUI.M7
                
             }
         } 
+    }*/
+
+
+        
     }
 }
