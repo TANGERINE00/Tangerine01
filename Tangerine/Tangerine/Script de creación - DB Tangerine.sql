@@ -1147,7 +1147,7 @@ GO
 --Eliminar Propuesta
 CREATE PROCEDURE M6_EliminarPropuesta
 
-@propuesta_nombre varchar(20)
+@propuesta_nombre varchar(500)
 
 AS
  BEGIN
