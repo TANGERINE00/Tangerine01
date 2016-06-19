@@ -176,6 +176,17 @@ namespace LogicaTangerine.Fabrica
                 return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre( nombreRol );
             }
             
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoModificarRol
+            /// </summary>
+            /// <param name="elUsuario"></param>
+            /// <param name="elRol"></param>
+            /// <returns>Retorna una una instancia a ComandoModificarRol</returns>
+            public static Comando<Boolean> obtenerComandoModificarRol( String elUsuario , String elRol )
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoModificarRol( elUsuario , elRol );
+            }
+            
             #endregion
 
             #region Comandos Especificos

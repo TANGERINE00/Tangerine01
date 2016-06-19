@@ -64,6 +64,27 @@ namespace PruebasUnitarias.M2
             Assert.IsTrue(resultado);
         }
 
+        /// <summary>
+        /// Método para probar el ObtenerRolUsuario de DAORol
+        /// </summary>
+        [Test]
+        public void TestObtenerRolUsuario()
+        {
+            /*elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol1, 1);
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+            DominioTangerine.Entidad theRol = daoRol.ObtenerRolUsuario(2);
+            DominioTangerine.Entidades.M2.OpcionM2 rol = (DominioTangerine.Entidades.M2.OpcionM2)theRol;
+            Assert.IsTrue(rol.Id == 2);*/
+
+
+            /*IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+            DominioTangerine.Entidad theRol = daoRol.ObtenerRolUsuario(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).rol.Id);
+            DominioTangerine.Entidades.M2.UsuarioM2 rol = (DominioTangerine.Entidades.M2.UsuarioM2)theRol;
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).rol.Id == rol.Id);*/
+        }
+
         #endregion
 
 
