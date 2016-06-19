@@ -520,6 +520,15 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to req_id.
+        /// </summary>
+        internal static string ReqId {
+            get {
+                return ResourceManager.GetString("ReqId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @reqnombre.
         /// </summary>
         internal static string ReqNombre {

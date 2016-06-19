@@ -300,6 +300,9 @@
     <value>req_descripcion</value>
     <comment>atributo tabla requerimientos</comment>
   </data>
+  <data name="ReqId" xml:space="preserve">
+    <value>req_id</value>
+  </data>
   <data name="ReqNombre" xml:space="preserve">
     <value>@reqnombre</value>
     <comment>atributo que identifica el nombre del requerimiento</comment>
