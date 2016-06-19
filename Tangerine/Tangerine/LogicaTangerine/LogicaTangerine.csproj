@@ -85,6 +85,7 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
+    <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
