@@ -19,6 +19,7 @@ namespace DominioTangerine.Entidades.M8
         private double _monto;
         private double _montoRestante;
         private String _tipoMoneda;
+        private int _idFactura;
 
         #endregion
 
@@ -52,6 +53,16 @@ namespace DominioTangerine.Entidades.M8
         {
             get { return _idCompania; }
             set { _idCompania = value; }
+        }
+
+        /// <summary>
+        /// Metodo para setear y obtener el id de la factura
+        /// </summary>
+        /// <returns>Retorna el id del compañia de la factura</returns>
+        public int idFactura
+        {
+            get { return _idFactura; }
+            set { _idFactura = value; }
         }
 
         /// <summary>
@@ -147,7 +158,7 @@ namespace DominioTangerine.Entidades.M8
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
         /// <param name="tipoMoneda"></param>
-        public Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public Facturacion(int facturaId, DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
             : base(0)
         {
@@ -160,6 +171,7 @@ namespace DominioTangerine.Entidades.M8
             this._monto = monto;
             this._montoRestante = montoRestante;
             this._tipoMoneda = tipoMoneda;
+            this._idFactura = facturaId;
         }
 
         /// <summary>
@@ -175,11 +187,12 @@ namespace DominioTangerine.Entidades.M8
         /// <param name="monto"></param>
         /// <param name="montoRestante"></param>
         /// <param name="tipoMoneda"></param>
-        public Facturacion(int id, DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public Facturacion(int id, int facturaId, DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
             : base(id)
         {
             this.Id = id;
+            this._idFactura = facturaId;
             this._fecha = fecha;
             this._fechaUltimoPago = fechaUltimoPago;
             this._idCompania = idCompania;
