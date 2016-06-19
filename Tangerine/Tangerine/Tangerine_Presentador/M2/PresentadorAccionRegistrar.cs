@@ -34,17 +34,17 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void inicioVista()
         {
+            _vista.ficha = _numFicha.ToString();
             LogicaTangerine.Comando<String> theComando = LogicaTangerine.Fabrica.FabricaComandos.crearUsuario(_nombreUser,_apellidoUser);
             LogicaTangerine.Comandos.M2.ComandoCrearUsuarioDefault comando = (LogicaTangerine.Comandos.M2.ComandoCrearUsuarioDefault)theComando;
             _vista.usuario = comando.Ejecutar();
         }
 
-        public void Registrar()
+        public void registrar()
         {
-           /* _vista.comboRol;
-            _vista.contrasena;
-            _vista.usuario;*/
-            /*LogicaTangerine.Comando<> theComando = LogicaTangerine.Fabrica.FabricaComandos.*/
+            LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario( _vista.usuario, _vista.contrasena, _vista.comboRol, _numFicha);
+            LogicaTangerine.Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario comando = (LogicaTangerine.Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario)theComando;
+            comando.Ejecutar();
         }
 
 
