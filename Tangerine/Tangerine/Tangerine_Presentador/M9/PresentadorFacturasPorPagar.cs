@@ -19,7 +19,11 @@ namespace Tangerine_Presentador.M9
             this.vista = vista;
         }
     
-    public void LlenarFacturas (int idComp)
+    /// <summary>
+    /// Metodo para llenar la tabla de facturas por pagar de una compania determinada
+    /// </summary>
+    /// <param name="idComp">Entero, es el Id de la empresa que se desea consultar sus facturas por pagar</param>
+        public void LlenarFacturas (int idComp)
         {
             //capturo el id de la compania que se esta enviando por el URL
             DominioTangerine.Entidades.M4.CompaniaM4 comp =
@@ -33,7 +37,6 @@ namespace Tangerine_Presentador.M9
             {          
                 
                     ////con el id capturado utilizao el metodo SearchFacturas para mostrar todas las facturas asociadas a esa compania
-                    //List<Facturacion> listFacturas = prueba.SearchFacturasCompania(identificador);
 
                     if (listaF.Count() < 1)
                     {

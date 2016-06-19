@@ -8,5 +8,13 @@ namespace Tangerine_Contratos.M9
 {
     public interface IContratoCargarPago
     {
+        string cliente { get; set; }
+        string proyecto { get; set; }
+        string moneda { get; set; }
+        string monto { get; set; }
+        string numero { get; set; }
+        string codAprob { get; set; }
+        string formPago { get; set; }
+
     }
 }
