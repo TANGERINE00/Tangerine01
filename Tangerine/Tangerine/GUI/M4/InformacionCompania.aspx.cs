@@ -15,7 +15,7 @@ namespace Tangerine.GUI.M4
         #region CargarPresentador
         PresentadorInformacionCompania _presentador;
 
-        public void InformacionCompania()
+        public HabilitarCompania()
         {
             this._presentador = new PresentadorInformacionCompania(this);
         }
@@ -143,51 +143,10 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int _CompaniaId = int.Parse(Request.QueryString["idCont"]);
-
+            int i = int.Parse(Request.QueryString["idComp"]);
             if (!IsPostBack)
-                _presentador.CargarInformacionCompania(_CompaniaId);
-            /*Compania company = new Compania();
-          
-            List<LugarDireccion> listaLugares = prueba.getPlaces();      
-
-            try
-            {
-                company = prueba.ConsultCompany(int.Parse(Request.QueryString["idComp"]));
-            }
-            catch 
-            {
-            }
-          
-            foreach (LugarDireccion lugar in listaLugares)
-            {
                 
-                if (lugar.LugId.Equals(company.IdLugar))
-                {  
-                    Name= company.NombreCompania;
-                    Siglas= company.AcronimoCompania;
-                    Telefono= company.TelefonoCompania;
-                    RIF= company.RifCompania;
-                    Correo= company.EmailCompania;
-                    Fecha= company.FechaRegistroCompania.ToShortDateString();
-                    Direccion = lugar.LugNombre ;
-                    Plazo = company.PlazoPagoCompania.ToString() + ResourceGUIM4.Dias;
-                    Presupuesto = company.PresupuestoCompania.ToString();
-                
-                    if (company.StatusCompania == 1)
-                    {
-                        Habilitado = ResourceGUIM4.habilitado + ResourceGUIM4.CloseSpanHab;
-                    }
-
-                    if (company.StatusCompania == 0)
-                    {
-                        Habilitado = ResourceGUIM4.inhabilitado + ResourceGUIM4.CloseSpanInhab;
-                    
-                    }
-                }
-            
-            }*/
-
+                _presentador.CargarInformacionCompania(i);
         }
         #endregion
     }

@@ -14,11 +14,13 @@ namespace Tangerine_Presentador.M4
         #region InicializarVista
         IContratoInformacionCompania _vista;
         Entidad _entidad;
+        
 
         public PresentadorInformacionCompania(IContratoInformacionCompania vista)
         {
 
             this._vista = vista;
+
 
         }
         #endregion
@@ -26,6 +28,7 @@ namespace Tangerine_Presentador.M4
         #region CargarInformacionCompania
         public void CargarInformacionCompania(int id) 
         {
+            _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
             _entidad.Id = id;
             Comando<Entidad> _comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_entidad);
             Entidad _company = _comandoCompania.Ejecutar();
