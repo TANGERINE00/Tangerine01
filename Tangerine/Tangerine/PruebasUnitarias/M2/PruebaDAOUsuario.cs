@@ -94,18 +94,6 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
-        /// Método para probar el ConsultLastUserID de DAOUsuario
-        /// </summary>
-        [Test]
-        public void TestConsultLastUserId()
-        {
-            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            answer = daoUsuario.Agregar( elUsuario );
-            int lastID = daoUsuario.ConsultLastUserID();
-            Assert.IsTrue(lastID > 0);
-        }
-
-        /// <summary>
         /// Método para probar el VerificarUsuarioPorFichaEmpleado de DAOUsuario
         /// </summary>
         [Test]
@@ -115,6 +103,72 @@ namespace PruebasUnitarias.M2
             answer = daoUsuario.Agregar( elUsuario );
             bool resultado = daoUsuario.VerificarUsuarioPorFichaEmpleado(1);
             Assert.IsTrue(resultado);
+        }
+
+        /// <summary>
+        /// Método para probar el VerificarExistenciaUsuario de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestVerificarExistenciaUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            bool resultado = daoUsuario.VerificarExistenciaUsuario(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).nombreUsuario);
+            Assert.IsTrue(resultado);
+        }
+
+        /// <summary>
+        /// Método para probar el ObtenerUsuarioDeEmpleado de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestObtenerUsuarioDeEmpleado()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            DominioTangerine.Entidad theUsuario =
+                                daoUsuario.ObtenerUsuarioDeEmpleado(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).fichaEmpleado);
+            DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).nombreUsuario == usuario.nombreUsuario);
+        }
+        
+        /// <summary>
+        /// Método para probar el ObtenerDatoUsuario de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestObtenerDatoUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            DominioTangerine.Entidad theUsuario = daoUsuario.ObtenerDatoUsuario(elUsuario);
+            DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).fechaCreacion == usuario.fechaCreacion);
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).activo == usuario.activo);
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).rol.Id == usuario.rol.Id);
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).fichaEmpleado == usuario.fichaEmpleado);
+        }
+
+        /// <summary>
+        /// Método para probar el ObtenerDatoUsuario de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestModificarContraseniaUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            bool resultado = daoUsuario.ModificarContraseniaUsuario(elUsuario);
+            Assert.IsTrue(resultado);
+        }
+
+        /// <summary>
+        /// Método para probar el ConsultLastUserID de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestConsultLastUserId()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            int lastID = daoUsuario.ConsultLastUserID();
+            Assert.IsTrue(lastID > 0);
         }
 
         #endregion
