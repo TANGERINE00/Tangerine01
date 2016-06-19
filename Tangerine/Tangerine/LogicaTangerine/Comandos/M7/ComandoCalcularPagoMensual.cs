@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LogicaTangerine.Comandos.M7
 {
-    class ComandoCalcularPagoMensual : Comando<Double>
+    public class ComandoCalcularPagoMensual : Comando<Double>
     {
         private Entidad _proyecto;
         
