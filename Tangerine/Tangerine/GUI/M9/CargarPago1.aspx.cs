@@ -4,19 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaTangerine.M8;
 using LogicaTangerine.M9;
 using LogicaTangerine.M4;
 using DominioTangerine;
 using LogicaTangerine;
-
-
+using Tangerine_Contratos.M9;
+using Tangerine_Presentador.M9;
 namespace Tangerine.GUI.M9
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page , IContratoCargarPago
     {
         #region Atributos
-       // LogicaM9 logica = new LogicaM9();
+        public PresentadorCargarPago presentador;
+
+        public WebForm3 ()
+        {
+            this.presentador = new PresentadorCargarPago(this);
+        }
+        
         public string cliente
         {
             get
@@ -82,6 +87,33 @@ namespace Tangerine.GUI.M9
                 this.monedaPago.Value = value;
             }
         }
+
+        public string codAprob
+        {
+            get
+            {
+                return this.codAprobacion.Value;
+            }
+            set
+            {
+                this.codAprobacion.Value = value;
+            }
+
+        }
+
+        public string formPago
+        {
+            get
+            {
+                return this.formaPago.Value;
+            }
+            set
+            {
+                this.formaPago.Value = value;
+            }
+
+
+        }
         #endregion
 
 
@@ -91,27 +123,7 @@ namespace Tangerine.GUI.M9
         /// recibe un solo parametro, id de la factura para consultar los detalles asociados, este parametro se recibe via URL
         /// <param name="id">Entero, representa el id de factura</param>
     
-        public void llenarTablaPorID(int numeroFactura)
-        {
-            //LogicaM8 consulta = new LogicaM8();
 
-
-            //Facturacion Factura = consulta.SearchFactura(numeroFactura);
-
-            try
-            {
-                //Compania compania = consulta.SearchCompaniaFactura(int.Parse(Factura.idCompaniaFactura.ToString()));
-                //cliente = compania.NombreCompania;
-                //proyecto = Factura.descripcionFactura ;
-                //monto = Factura.montoFactura.ToString() ;
-                //moneda = Factura.tipoMoneda;
-                //numero = Factura.idFactura.ToString() ;
-            }
-            catch
-            {
-
-            }
-        }
 
         /// <summary>
         /// Metodo de carga de los elementos de la ventana.
@@ -122,31 +134,15 @@ namespace Tangerine.GUI.M9
         protected void Page_Load(object sender, EventArgs e)
         {
             int identificador = int.Parse(Request.QueryString["id"]);
-            llenarTablaPorID(identificador);
+            presentador.LlenarPorId(identificador);
 
         }
 
         /// <summary>
         /// Metodo para tomar los valores de la vista y guardarlos en BD luego de apretar el boton agregar.
-        protected void btnagregar_Click(object sender, EventArgs e)
+        public void btnagregar_Click(object sender, EventArgs e)
         {
-            int _idFactura = int.Parse(numFactura.Value.ToString());
-            int _monto = int.Parse(montoFactura.Value.ToString());
-            string _moneda = monedaPago.Value.ToString();
-            string _forma =  formaPago.Value.ToString();
-            int _codApro = int.Parse(codAprobacion.Value);
-            string _fecha = "01/08/2008";
-
-            Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(_moneda, _monto, _forma, _codApro, DateTime.Parse(_fecha), _idFactura);
-
-            LogicaTangerine.Comandos.M9.ComandoAgregarPago comando = LogicaTangerine.Fabrica.FabricaComandos.cargarPago(pago);
-
-            comando.Ejecutar();
-            //logica.AgregarPago(pago);
-           // logica.CambiarStatusFactura(pago.idFactura, 1);
-            //codAprobacion.Value = _idFactura.ToString();
-
-
+            presentador.AgregarPago();
             Server.Transfer("SeleccionCompania.aspx", true);
         }
 

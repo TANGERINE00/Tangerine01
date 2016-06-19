@@ -33,49 +33,49 @@
                        <div class="row">
                           <div class="form-group col-md-6" runat="server">
                           <h4><label for="Nombre">Nombre:</label></h4>
-                       <div><h5><asp:Literal runat="server" ID="Nombre"> </asp:Literal></h5></div>
+                       <div><h5><asp:Label runat="server" ID="Nombre"> </asp:Label></h5></div>
                        </div> 
                         <div class="form-group col-md-6" runat="server">
                             <h4><label for="habilitado">Status:</label></h4>
-                           <div><h5><asp:Literal runat="server" ID="habilitado"> </asp:Literal></h5></div>
+                           <div><h5><asp:Label runat="server" ID="habilitado"> </asp:Label></h5></div>
                         </div>    
                            </div>
                            <div class="row">
                           <div class="form-group col-md-6" runat="server">
                          <h4><label for="Acronimo">Acrónimo:</label></h4>
-                       <div><h5><asp:Literal runat="server" ID="Acronimo"> </asp:Literal></h5></div>
+                       <div><h5><asp:Label runat="server" ID="acronimo"> </asp:Label></h5></div>
                         </div>
                             <div class="form-group col-md-6" runat="server">
                             <h4><label for="plazo">Plazo para pagos:</label></h4>
-                           <div><h5><asp:Literal runat="server" ID="plazo"> </asp:Literal></h5></div>
+                           <div><h5><asp:Label runat="server" ID="plazo"> </asp:Label></h5></div>
                         </div>
                         </div>
                          
                           <div class="row">
                           <div class="form-group col-md-6" runat="server">
                             <h4><label for="Rif">RIF:</label></h4>
-                            <div><h5><asp:Literal runat="server" ID="Rif"> </asp:Literal></h5></div>
+                            <div><h5><asp:Label runat="server" ID="Rif"> </asp:Label></h5></div>
                         </div>
                               <div class="form-group col-md-6" runat="server">
                             <h4><label for="presupuesto">Presupuesto Actual:</label></h4>
-                           <div><h5><asp:Literal runat="server" ID="presupuesto"> </asp:Literal></h5></div>
+                           <div><h5><asp:Label runat="server" ID="presupuesto"> </asp:Label></h5></div>
                         </div>
                           </div>
                         <div class="form-group" runat="server">
                             <h4><label for="direccion">Dirección:</label></h4>
-                      <div><h5><asp:Literal runat="server" ID="direccion"> </asp:Literal></h5></div>
+                      <div><h5><asp:Label runat="server" ID="direccion"> </asp:Label></h5></div>
                         </div>
                         <div class="form-group" runat="server">
                             <h4><label for="correo">Correo Electrónico:</label></h4>
-                      <div><h5><asp:Literal runat="server" ID="correo"> </asp:Literal></h5></div>
+                      <div><h5><asp:Label runat="server" ID="correo"> </asp:Label></h5></div>
                         </div>
                         <div class="form-group" runat="server">
                             <h4><label for="telefono">Teléfono:</label></h4>
-                            <div><h5><asp:Literal runat="server" ID="telefono"> </asp:Literal></h5></div>
+                            <div><h5><asp:Label runat="server" ID="telefono"> </asp:Label></h5></div>
                        </div>
                         <div class="form-group" runat="server">
                             <h4><label for="fecha">Fecha de Registro:</label></h4>
-                           <div><h5><asp:Literal runat="server" ID="fecha"> </asp:Literal></h5></div>
+                           <div><h5><asp:Label runat="server" ID="fecha"> </asp:Label></h5></div>
                         </div>                        
                      </div> 
                    </div><!-- /.box-body -->

@@ -9,14 +9,14 @@ namespace Tangerine_Contratos.M7
 {
     public interface IContratoAgregarProyecto
     {
-        Label NombrePropuesta { get; set; }
-        Label NombreProyecto { get; set; }
-        Label CodigoProyecto { get; set; }
-        Label FechaInicio { get; set; }
-        Label FechaFin { get; set; }
-        Label Costo { get; set; }
-        Label Porcentaje { get; set; }
-        Label Estatus { get; set; }
+        String NombrePropuesta { get; set; }
+        String NombreProyecto { get; set; }
+        String CodigoProyecto { get; set; }
+        String FechaInicio { get; set; }
+        String FechaFin { get; set; }
+        String Costo { get; set; }
+        String Porcentaje { get; set; }
+        String Estatus { get; set; }
         DropDownList inputPersonal { get; set; }
         DropDownList inputEncargado { get; set; }
 

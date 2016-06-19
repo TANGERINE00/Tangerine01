@@ -48,15 +48,28 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="M1\PresentadorInicio.cs" />
-    <Compile Include="M2\PresentacionCambioRol.cs" />
+    <Compile Include="M2\PresentadorAsignarRol.cs" />
+    <Compile Include="M2\PresentadorCambioRol.cs" />
+    <Compile Include="M2\PresentadorAccionRegistrar.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
+    <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
     </Compile>
+    <Compile Include="M4\PresentadorAgregarCompania.cs" />
+    <Compile Include="M4\PresentadorConsultarCompania.cs" />
+    <Compile Include="M4\PresentadorInformacionCompania.cs" />
+    <Compile Include="M4\RecursosPresentadorM4.Designer.cs">
+      <DependentUpon>RecursosPresentadorM4.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="M5\PresentadorAgregarContacto.cs" />
+    <Compile Include="M5\PresentadorConsultarContactos.cs" />
+    <Compile Include="M5\PresentadorModificarContacto.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
     <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
@@ -67,6 +80,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="M7\PresentadorModificarProyecto.cs" />
+    <Compile Include="M7\PresentadorAgregarProyecto.cs" />
     <Compile Include="M7\PresentadorInformacionProyecto.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />
     <Compile Include="M7\RecursoPresentadorM7.Designer.cs">
@@ -75,6 +89,7 @@
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
     <Compile Include="M9\PresentadorCargarPago.cs" />
+    <Compile Include="M9\PresentadorFacturasPorPagar.cs" />
     <Compile Include="M9\RecursoPresentadorM9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,7 +99,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M4\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +109,10 @@
     <EmbeddedResource Include="M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M4\RecursosPresentadorM4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosPresentadorM4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M6\RecursosPresentadorPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>

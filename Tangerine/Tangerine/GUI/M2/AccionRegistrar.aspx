@@ -17,7 +17,7 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <script type="text/javascript">
+    <script type="text/javascript">
             function ajaxRes() {
                 $('.table > tbody > tr > td:nth-child(6) > a')
                     .click(function (e) {
@@ -29,7 +29,7 @@
                         var param = "{'nombreUsuario':'" + nombre + "','apellidoUsuario':'" + apellido + "'}";
                         $.ajax({
                             type: "POST",
-                            url: "RegistroUsuario.aspx/ObtenerUsuarioDefault",
+                            url: "AccionRegistrar.aspx/ObtenerUsuarioDefault2",
                             data: param,
                             contentType: 'application/json; charset=utf-8',
                             dataType: 'json',
@@ -50,7 +50,7 @@
                 var param = "{'usuario':'" + nombreuser + "'}";
                 $.ajax({
                     type: "POST",
-                    url: "RegistroUsuario.aspx/validarUsuario",
+                    url: "AccionRegistrar.aspx/validarUsuario",
                     data: param,
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
