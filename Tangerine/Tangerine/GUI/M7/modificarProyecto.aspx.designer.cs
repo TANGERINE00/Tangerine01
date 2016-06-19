@@ -64,7 +64,7 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textInputFechaEstimada;
+        protected global::System.Web.UI.WebControls.Calendar textInputFechaEstimada;
         
         /// <summary>
         /// textInputCosto control.
@@ -76,6 +76,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox textInputCosto;
         
         /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        
+        /// <summary>
         /// textInputPorcentaje control.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,22 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox textInputPorcentaje;
         
         /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
         /// inputGerente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputGerente;
+        protected global::System.Web.UI.WebControls.DropDownList inputGerente;
         
         /// <summary>
         /// inputPersonal control.
@@ -118,7 +136,7 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputEstatus;
+        protected global::System.Web.UI.WebControls.DropDownList inputEstatus;
         
         /// <summary>
         /// text10 control.
@@ -127,6 +145,6 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText text10;
+        protected global::System.Web.UI.WebControls.TextBox text10;
     }
 }

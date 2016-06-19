@@ -13,9 +13,11 @@ namespace Tangerine_Contratos.M7
         TextBox textInputNombreProyecto { get; set; }
         TextBox textInputCodigo { get; set; }
         TextBox textInputFechaInicio { get; set; }
-        TextBox textInputFechaEstimada { get; set; }
+        Calendar textInputFechaEstimada { get; set; }
         TextBox textInputCosto { get; set; }
         TextBox textInputPorcentaje { get; set; }
-        Button btnGuardar { get; set; }
+        DropDownList inputGerente { get; set; }
+        DropDownList inputEstatus { get; set; }
+        TextBox text10 { get; set; }
     }
 }

@@ -155,11 +155,5 @@ namespace Tangerine.GUI.M7
                 presentador.CargarInformacionProyecto(Proyectoid);
             }
         }
-
-
-
-
-
-
     }
 }
