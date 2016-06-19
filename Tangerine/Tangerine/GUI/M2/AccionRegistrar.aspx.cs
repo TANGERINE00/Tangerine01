@@ -24,7 +24,10 @@ namespace Tangerine.GUI.M2
             nombreUsuario = Request.QueryString["Nombre"];
             apellidoUsuario = Request.QueryString["Apellido"];
             presentador = new PresentadorAccionRegistrar(this, numFicha, nombreUsuario, apellidoUsuario);
-            presentador.inicioVista();
+            if (!IsPostBack)
+            {
+                presentador.inicioVista();
+            }
         }
 
         #region Web Methods 
