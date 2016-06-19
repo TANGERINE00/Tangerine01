@@ -34,6 +34,8 @@ namespace Tangerine.GUI.M2
 
 
         #endregion
+
+
         /// <summary>
         /// Método que se ejecuta al cargar la página, se carga la tabla de empleados
         /// </summary>

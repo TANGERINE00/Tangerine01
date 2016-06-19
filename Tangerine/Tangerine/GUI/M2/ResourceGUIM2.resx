@@ -207,4 +207,7 @@
   <data name="NombreEmpleado" xml:space="preserve">
     <value>&amp;Nombre=</value>
   </data>
+  <data name="RolEmpleado" xml:space="preserve">
+    <value>&amp;Rol=</value>
+  </data>
 </root>
