@@ -77,6 +77,8 @@
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuarioPorNombre.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoValidarUsuario.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
+    <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
@@ -134,6 +137,7 @@
     <Compile Include="Comandos\M8\ComandoConsultarTodosFactura.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarXIdFactura.cs" />
     <Compile Include="Comandos\M8\ComandoEliminarFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoEnviarCorreoGmail.cs" />
     <Compile Include="Comandos\M8\ComandoModificarFactura.cs" />
     <Compile Include="Comandos\M8\ComandoSearchExistingBill.cs" />
     <Compile Include="Comandos\M8\ResourceLogicaM8.Designer.cs">
@@ -184,7 +188,6 @@
     </Compile>
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
-    <Compile Include="M8\CorreoM8.cs" />
     <Compile Include="M9\LogicaM9.cs" />
     <Compile Include="M9\LogicResourcesM9.Designer.cs">
       <AutoGen>True</AutoGen>

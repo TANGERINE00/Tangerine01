@@ -27,64 +27,43 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna true si se agrega en la BD</returns>
             public bool Agregar( Entidad theUsuario )
             {
-              /*  Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name); */
-
-                List<Parametro> parametros = new List<Parametro>();
-                Parametro elParametro;
-                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceUser.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Parametro theParam = new Parametro();
                 try
                 {
+                    List<Parametro> parameters = new List<Parametro>();
 
-                    elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.nombreUsuario, false);
-                    parametros.Add(elParametro);
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                    theParam = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, ((DominioTangerine.Entidades.M2.UsuarioM2)theUsuario).nombreUsuario, false);
+                    parameters.Add(theParam);
 
-                    elParametro = new Parametro(ResourceUser.ParametroContrasenia, SqlDbType.VarChar, usuario.contrasena, false);
-                    parametros.Add(elParametro);
+                    theParam = new Parametro(ResourceUser.ParametroContrasenia, SqlDbType.VarChar, ((DominioTangerine.Entidades.M2.UsuarioM2)theUsuario).contrasena, false);
+                    parameters.Add(theParam);
 
-                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, usuario.fichaEmpleado.ToString(), false);
-                    parametros.Add(elParametro);
+                    theParam = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, ((DominioTangerine.Entidades.M2.UsuarioM2)theUsuario).fichaEmpleado.ToString(), false);
+                    parameters.Add(theParam);
 
-                    elParametro = new Parametro(ResourceUser.ParametroFechaCreacion, SqlDbType.Date, usuario.fechaCreacion.ToString(), false);
-                    parametros.Add(elParametro);
+                    theParam = new Parametro(ResourceUser.ParametroFechaCreacion, SqlDbType.Date, ((DominioTangerine.Entidades.M2.UsuarioM2)theUsuario).fechaCreacion.ToString(), false);
+                    parameters.Add(theParam);
 
-                    elParametro = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, usuario.rol.nombre.ToString(), false);
-                    parametros.Add(elParametro);
+                    theParam = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, ((DominioTangerine.Entidades.M2.UsuarioM2)theUsuario).rol.nombre, false);
+                    parameters.Add(theParam);
 
-                    List<Resultado> results = EjecutarStoredProcedure(ResourceUser.AgregarUsuario, parametros);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
+                    List<Resultado> results = EjecutarStoredProcedure(ResourceUser.AgregarUsuario, parameters);
+
                 }
-                catch (NullReferenceException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
-                }
-                catch (SqlException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                    throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
-                }
-
-                catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                    throw ex;
-                }
-
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
-             /*   Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                  RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name); */
-
                 return true;
-            } // DONE COMANDO
+            } 
 
             /// <summary>
             /// Método para modificar un usuario
@@ -103,7 +82,44 @@ namespace DatosTangerine.DAO.M2
             /// <returns>Retorna la consulta</returns>
             public Entidad ConsultarXId( Entidad theUsuario )
             {
-                throw new NotImplementedException();
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceUser.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Entidad usuario;
+
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+
+                    Parametro theParam = new Parametro(ResourceUser.ParametroID, SqlDbType.Int, ((DominioTangerine.Entidades.M2.UsuarioM2)theUsuario).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Guardo la tabla que me regresa el procedimiento de ConsultarUsuario
+                    DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ConsultUser, parameters);
+                    //Guardar los datos 
+                    DataRow row = dt.Rows[0];
+
+                    int usuId = int.Parse(row[ResourceUser.ComIDUser].ToString());
+                    String usuUser = row[ResourceUser.UsuNombre].ToString();
+                    String usuContrasena = row[ResourceUser.UsuContrasena].ToString();
+                    DateTime usuFechaCreacion = DateTime.Parse(row[ResourceUser.UsuFechaCreacion].ToString());
+                    String usuActivo = row[ResourceUser.UsuActivo].ToString();
+                    int theRolID = int.Parse(row[ResourceUser.UsuFKRol].ToString());
+                    DominioTangerine.Entidad rolID = DominioTangerine.Fabrica.FabricaEntidades.crearRolConID( theRolID );
+                    DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)rolID;
+                    int empleadoNumFicha = int.Parse(row[ResourceUser.UsuEmpFicha].ToString());
+
+                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                    usuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( usuId, usuUser, usuContrasena,
+                                                                                              usuFechaCreacion , usuActivo ,
+                                                                                              rol, empleadoNumFicha);
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+
+                return usuario;
             }
 
             /// <summary>
@@ -114,6 +130,7 @@ namespace DatosTangerine.DAO.M2
             {
                 throw new NotImplementedException();
             }
+
         #endregion
 
         #region IDAOUsuarios
@@ -217,12 +234,10 @@ namespace DatosTangerine.DAO.M2
             /// </summary>
             /// <param name="empleado"></param>
             /// <returns>Retorna el usuario de un empleado</returns>
-            public Entidad ObtenerUsuarioDeEmpleado( Entidad theEmpleado )
+            public Entidad ObtenerUsuarioDeEmpleado( int num_empleado )
             {
-                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10) theEmpleado;
                 Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
-
-                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
 
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
@@ -231,7 +246,7 @@ namespace DatosTangerine.DAO.M2
                 {
                     Conectar();
 
-                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, empleado.Emp_num_ficha.ToString(), false);
+                    elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerUsuarioDeEmpleado, parametros);
@@ -242,8 +257,8 @@ namespace DatosTangerine.DAO.M2
                         string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
                         string rolUsuario = row[ResourceUser.RolNombre].ToString();
 
-                        Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre( rolUsuario );
-                        DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 ) theRol;
+                        Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre(rolUsuario);
+                        DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                         usuario.nombreUsuario = nombreUsuario;
                         usuario.rol = rol;

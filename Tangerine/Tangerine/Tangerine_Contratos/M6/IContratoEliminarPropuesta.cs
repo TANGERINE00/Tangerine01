@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tangerine_Contratos.M6
 {
-    interface IContratoEliminarPropuesta
+    public interface IContratoEliminarPropuesta
     {
     }
 }

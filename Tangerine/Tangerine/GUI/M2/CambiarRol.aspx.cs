@@ -6,23 +6,25 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaTangerine.M2;
 using DominioTangerine;
+using Tangerine_Contratos.M2;
 
 namespace Tangerine.GUI.M2
 {
-    public partial class CambiarRol : System.Web.UI.Page
+    public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
-        public string empleado
-        {
-            get
+        #region Contrato
+            /// <summary>
+            /// tabla consulta
+            /// </summary>
+            public string empleado
             {
-               return this.tablaempleados.Text;
-            }
+                get
+                { return this.tablaempleados.Text; }
 
-            set
-            {
-                this.tablaempleados.Text = value;
+                set
+                { this.tablaempleados.Text = value; }
             }
-        }
+        #endregion
 
         /// <summary>
         /// Método que se ejecuta al cargar la página, se carga la tabla de empleados con sus respectivos usuarios
@@ -58,22 +60,6 @@ namespace Tangerine.GUI.M2
                     }
                 }
             } 
-        }
-
-        /// <summary>
-        /// Método que utiliza para conectar la interfaz con la logica, para modificar el rol. Se ejecuta al presionar
-        /// el boton Cambiar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void botonCambiar_Click( object sender, EventArgs e )
-        {
-            string nombreUsuario = usuarioCambiar.Value;
-            string rol = rolCambiar.Value; 
-
-            LogicaModificarRol.ModificarRol( nombreUsuario, rol );
-
-            Response.Redirect( "../M2/CambiarRol.aspx" );
         }
     }
 }

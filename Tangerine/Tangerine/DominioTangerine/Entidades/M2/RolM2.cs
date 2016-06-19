@@ -25,6 +25,15 @@ namespace DominioTangerine.Entidades.M2
         }
 
         /// <summary>
+        /// Constructor de la clase RolM2 con ID
+        /// </summary>
+        /// <param name="id"></param>
+        public RolM2( int id )
+        {
+            Id = id;
+        }
+
+        /// <summary>
         /// Constructor de la clase RolM2 con nombre
         /// </summary>
         /// <param name="nombre"></param>

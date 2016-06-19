@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DominioTangerine;
+using LogicaTangerine.M5;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +11,7 @@ namespace Tangerine_Presentador.M5
 {
     public class PresentadorAgregarContacto
     {
-        string _nombre = String.Empty;
-        string _apellido = String.Empty;
-        string _departamento = String.Empty;
-        string _cargo = String.Empty;
-        string _telefono = String.Empty;
-        string _correo = String.Empty;
-        int typeComp;
-        int idComp;
+
         string volverCC;
         private IContratoAgregarContacto _vista;
 
@@ -28,6 +23,15 @@ namespace Tangerine_Presentador.M5
         {
 
             _vista.botonVolver = _vista.CargarBotonVolver(_vista.GetTypeComp, _vista.GetIdComp);
+
+        }
+
+        public void BtnaceptarContrato()
+        {
+            Contacto contact = new Contacto(_vista.input_nombre, _vista.input_apellido, _vista.input_departamento,
+               _vista.input_cargo, _vista.input_telefono, _vista.input_correo, _vista.GetTypeComp, _vista.GetIdComp);
+            LogicaM5 contactLogic = new LogicaM5();
+            contactLogic.AddNewContact(contact);
 
         }
 

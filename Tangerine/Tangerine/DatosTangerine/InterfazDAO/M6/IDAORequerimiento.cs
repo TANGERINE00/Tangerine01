@@ -12,6 +12,7 @@ namespace DatosTangerine.InterfazDAO.M6
     {
 
         List<Entidad> ConsultarRequerimientosXPropuesta(String id);
+        int ConsultarIdUltimoRequerimiento();
 
     }
 }

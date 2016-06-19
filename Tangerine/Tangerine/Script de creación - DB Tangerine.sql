@@ -566,6 +566,16 @@ AS
      SELECT MAX(usu_id) usu_id FROM USUARIO; 
  end;
 GO
+
+CREATE PROCEDURE M2_ConsultarUsuario
+	@id int
+AS
+	BEGIN
+		SELECT usu_id as usu_id, usu_usuario as usu_usuario, usu_contrasena as usu_contrasena, usu_fecha_creacion as usu_fecha_creacion,
+			usu_activo as usu_activo, fk_rol_id as fk_rol_id, fk_emp_num_ficha as fk_emp_num_ficha
+		FROM USUARIO WHERE usu_id = @id;
+	END
+GO
 ---------------------------------------------------------------------------------------------------------
 --------Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
@@ -1047,6 +1057,13 @@ WHERE prop_nombre = @cod_Nombre
 END;
 
 GO
+--- ConsultarIdUltimaPropuesta(Para pruebas) ----
+CREATE PROCEDURE M6_ConsultarIdUltimaPropuesta
+AS
+ BEGIN
+     SELECT MAX(prop_id) prop_id FROM PROPUESTA; 
+ end;
+GO
 -- Modificar Requerimiento
 CREATE PROCEDURE M6_ModificarRequerimiento
 
@@ -1115,6 +1132,13 @@ AS
     DELETE FROM PROPUESTA WHERE prop_nombre=@propuesta_nombre; 	
  END;
 
+GO
+---ConsultarIdUltimoRequerimiento(Para pruebas) ----
+CREATE PROCEDURE M6_ConsultarIdUltimoRequerimiento
+AS
+ BEGIN
+     SELECT MAX(req_id) req_id FROM REQUERIMIENTO; 
+ end;
 GO
 
 -----------------------------------

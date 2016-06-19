@@ -129,6 +129,9 @@
     <value>TGE_00_001</value>
     <comment>Codigo de error en el parseo</comment>
   </data>
+  <data name="ConsultarIdUltimoRequerimiento" xml:space="preserve">
+    <value>M6_ConsultarIdUltimoRequerimiento</value>
+  </data>
   <data name="ConsultarPropuesta" xml:space="preserve">
     <value>M6_ListaPropuestaProyecto</value>
     <comment>Stored Procedure que consulta las propuestas aprobadas que aun no son proyectos</comment>

@@ -79,9 +79,29 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="theEmpleado"></param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerUsuario(DominioTangerine.Entidad theEmpleado)
+            public static Comando<DominioTangerine.Entidad> obtenerUsuario( int theEmpleado )
             {
                 return new Comandos.M2.ComandoObtenerUsuario( theEmpleado );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultarPorID
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioPorID( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarPorID( usuario );
+            }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoModificarContrasena
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoModificarContrasena</returns>
+            public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoModificarContrasena( usuario );
             }
 
             #endregion
@@ -138,6 +158,11 @@ namespace LogicaTangerine.Fabrica
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosClientePotencial()
         {
             return new ComandoListarTodosClientesPotenciales();
+        }
+
+        public static Comando<Entidad> ObtenerComandoConsultarClientePotencial(Entidad cliente)
+        {
+            return new ComandoConsultarClientePotencial(cliente);
         }
         #endregion
 

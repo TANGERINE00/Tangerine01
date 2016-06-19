@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using DatosTangerine.M3;
 using LogicaTangerine.M3;
-using Tangerine.GUI.M3;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
 
@@ -22,7 +21,8 @@ namespace Tangerine.GUI.M3
         {
             this.presentador = new PresentadorListarClientePotencial(this);
         }
-        
+
+        #region Contrato
         public Literal ClientePotencial
         {
             get
@@ -35,7 +35,7 @@ namespace Tangerine.GUI.M3
                 Lista = value;
             }
         }
-
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {

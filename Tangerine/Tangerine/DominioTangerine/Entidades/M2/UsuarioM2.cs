@@ -77,7 +77,7 @@ namespace DominioTangerine.Entidades.M2
         }
 
         /// <summary>
-        /// Constructor de la clase Usuario con todos sus atributos
+        /// Constructor de la clase Usuario con todos sus atributos sin id
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasena"></param>
@@ -88,6 +88,24 @@ namespace DominioTangerine.Entidades.M2
         public UsuarioM2( string usuario, string contrasena, DateTime fechaCreacion, string activo, RolM2 rol, int fichaEmpleado )
                :this( usuario, contrasena, activo, rol )
         {
+            _fechaCreacion = fechaCreacion;
+            _fichaEmpleado = fichaEmpleado;
+        }
+
+        /// <summary>
+        /// Constructor de la clase Usuario con todos sus atributos y con id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="usuario"></param>
+        /// <param name="contrasena"></param>
+        /// <param name="fechaCreacion"></param>
+        /// <param name="activo"></param>
+        /// <param name="rol"></param>
+        /// <param name="fichaEmpleado"></param>
+        public UsuarioM2( int id , string usuario, string contrasena, DateTime fechaCreacion, string activo, RolM2 rol, int fichaEmpleado )
+               :this ( usuario , contrasena , activo , rol )
+        {
+            Id = id;
             _fechaCreacion = fechaCreacion;
             _fichaEmpleado = fichaEmpleado;
         }

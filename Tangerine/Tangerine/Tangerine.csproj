@@ -155,6 +155,7 @@
     <Content Include="GUI\M1\NuevaContraseña.aspx" />
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
+    <Content Include="GUI\M2\AccionRegistrar.aspx" />
     <Content Include="GUI\M2\AsignarRol.aspx" />
     <Content Include="GUI\M2\CambiarRol.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
@@ -1071,6 +1072,13 @@
     </Compile>
     <Compile Include="GUI\M1\VerEmpleado.aspx.designer.cs">
       <DependentUpon>VerEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M2\AccionRegistrar.aspx.cs">
+      <DependentUpon>AccionRegistrar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\AccionRegistrar.aspx.designer.cs">
+      <DependentUpon>AccionRegistrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M2\AsignarRol.aspx.cs">
       <DependentUpon>AsignarRol.aspx</DependentUpon>

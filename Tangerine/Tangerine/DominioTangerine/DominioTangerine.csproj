@@ -77,6 +77,8 @@
     <Compile Include="Entidades\M7\Propuesta.cs" />
     <Compile Include="Entidades\M7\Proyecto.cs" />
     <Compile Include="Entidades\M7\Requerimiento.cs" />
+    <Compile Include="Entidades\M8\CorreoGmailM8.cs" />
+    <Compile Include="Entidades\M8\DatosCorreo.cs" />
     <Compile Include="Entidades\M8\Facturacion.cs" />
     <Compile Include="Entidades\M9\Pago.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
