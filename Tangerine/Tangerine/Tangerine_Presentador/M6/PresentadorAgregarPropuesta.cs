@@ -1,5 +1,4 @@
 ﻿using DatosTangerine;
-using DominioTangerine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,7 @@ using System.Text.RegularExpressions;
 namespace Tangerine_Presentador.M6
 {
 
+    // Este método agrega tanto Propuestas como sus requerimientos asociados.
     public class PresentadorAgregarPropuesta
     {
         IContratoAgregarPropuesta vista;
@@ -43,6 +43,7 @@ namespace Tangerine_Presentador.M6
         }
         public void agregarPropuesta()
         {
+            //Asignacion de los campos obtenidos de la Vista.
             _upperText = vista.ComboCompania.ToUpper();
             consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU](?!$)", "");
             _nombcodigoPropuesta = consonantes + today.ToString("yyMMdd");
@@ -56,6 +57,7 @@ namespace Tangerine_Presentador.M6
             _acuerdo = vista.FormaPago;
             _estatusW = vista.ComboStatus;
             _idCompañia = vista.IdCompania;
+          
             try
             {
                 _entregaCant = Int32.Parse(vista.ComboCuota);
@@ -64,10 +66,37 @@ namespace Tangerine_Presentador.M6
             {
                 _entregaCant = 0;
             }
-            DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(_nombcodigoPropuesta, _descripcion, _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,
-                                                 _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+
+
+            //Creación del Objeto Propuesta.
+            DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(_nombcodigoPropuesta, _descripcion,
+            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,_entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+           
+            //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
             LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
             Confirmacion = comando.Ejecutar();
+        
+            //El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
+            // agregados en la vista separados por un ';'.
+            _precondicion = vista.ArrPrecondicion.Split(';');
+
+
+            //Se recorre el arreglo.
+            for (int i = 0; i < _precondicion.Length - 1; i++)
+            {
+                int j = i + 1;
+                string codReq = consonantes + "_RF_" + j.ToString();
+                
+                //Debug.Print(_precondicion[i]);
+                  
+                //Creación del Objeto Propuesta.
+                Requerimiento requerimiento = new Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
+
+
+                //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto requerimiento.
+                LogicaTangerine.Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
+                comando2.Ejecutar();
+            }
         }
     }
 }
