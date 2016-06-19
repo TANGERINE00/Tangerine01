@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="modificarProyecto.aspx.cs" Inherits="Tangerine.GUI.M7.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="modificarProyecto.aspx.cs" Inherits="Tangerine.GUI.M7.modificarProyecto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -28,40 +28,39 @@
                 <form role="form" id="modificar_proyecto" method="post" runat="server">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="InputPropuesta">Propuesta Aprobada *</label>
-                            <select class="form-control" id="inputPropuesta" name="inputPropuesta" runat="server" disabled="disabled">
-                            </select>
+                            <label for="InputPropuesta">Propuesta Aprobada *</label> </br>
+                            <asp:TextBox runat="server" id="inputPropuesta" ReadOnly="true"></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <label for="InputNombreProyecto">Nombre de proyecto *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputNombreProyecto" placeholder="Nombre Proyecto" name="textInputNombreProyecto" disabled="disabled">
+                            <label for="InputNombreProyecto">Nombre de proyecto *</label> </br>
+                            <asp:TextBox runat="server" ID="textInputNombreProyecto" ReadOnly="true"></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <label for="InputCodigo">Codigo del proyecto *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputCodigo" name="textInputCodigo" placeholder="123456789" disabled="disabled">
+                            <label for="InputCodigo">Codigo del proyecto *</label> </br>
+                            <asp:TextBox runat="server" ID="textInputCodigo" ReadOnly="true"></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <label for="InputFechaInicio">Fecha de inicio *</label>
-                            <input runat="server" type="datetime" class="form-control" id="textInputFechaInicio" name="textInputFechaInicio" placeholder="dd/mm/aaaa" disabled="disabled">
+                            <label for="InputFechaInicio">Fecha de inicio *</label></br>
+                            <asp:TextBox runat="server" ID="textInputFechaInicio" ReadOnly="false"></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <label for="InputFechaEstimada">Fecha Estimada de culminación *</label>
-                            <input runat="server" type="datetime" class="form-control" id="textInputFechaEstimada" name="textInputFechaEstimada" placeholder="dd/mm/aaaa">
+                            <label for="InputFechaEstimada">Fecha Estimada de culminación *</label> </br>
+                            <asp:TextBox runat="server" ID="textInputFechaEstimada"></asp:TextBox>
                         </div>
 
 
                         <div class="form-group">
-                            <label for="InputCosto">Costo estimado *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputCosto" name="textInputCosto" placeholder="0 Bs">
+                            <label for="InputCosto">Costo estimado *</label> </br>
+                            <asp:TextBox runat="server" ID="textInputCosto"></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <label for="InputPorcentaje">Porcentaje de realizacion *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputPorcentaje" name="textInputPorcentaje" placeholder="0 %">
+                            <label for="InputPorcentaje">Porcentaje de realizacion *</label> </br>
+                            <asp:TextBox runat="server" ID="textInputPorcentaje"></asp:TextBox>
                         </div>
 
                         <hr />
@@ -72,7 +71,7 @@
                     <!-- /.box-body -->
 
                     <div class="box-footer">
-                        <asp:Button ID="btnGuardar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnGenerar_Click" type="submit" runat="server" Text="Modificar"></asp:Button>
+                       
                     </div>
                     <div>
                         <label>* Todos los campos son obligatorios</label></div>

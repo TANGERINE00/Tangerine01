@@ -79,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="M7\PresentadorModificarProyecto.cs" />
     <Compile Include="M7\PresentadorAgregarProyecto.cs" />
     <Compile Include="M7\PresentadorInformacionProyecto.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />

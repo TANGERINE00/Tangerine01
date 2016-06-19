@@ -4405,3 +4405,581 @@ Error Number:-1,State:0,Class:20
 2016-06-18 18:08:57,049 INFO  BDEmpleado - Clase: BDEmpleado
 2016-06-18 18:08:57,049 INFO  BDEmpleado - Mensaje: Salida del Método
 2016-06-18 18:08:57,049 INFO  BDEmpleado - Metodo: ListarEmpleados
+2016-06-18 18:38:50,146 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:38:50,152 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:38:50,152 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:38:50,152 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:38:50,164 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:38:50,164 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:38:50,164 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:38:50,164 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:38:54,569 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:38:54,569 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:38:54,569 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:38:54,569 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:38:54,591 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:38:54,591 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:38:54,591 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:38:54,591 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:38:58,918 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:38:58,918 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:38:58,918 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:38:58,918 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:38:58,939 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:38:58,940 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:38:58,940 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:38:58,940 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:01,858 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:01,858 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:01,858 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:39:01,858 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:01,873 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:01,873 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:01,873 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:39:01,873 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:04,615 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:04,615 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:04,615 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:39:04,615 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:04,631 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:04,631 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:04,631 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:39:04,631 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:06,866 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:06,866 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:06,866 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:39:06,866 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:06,880 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:06,880 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:06,881 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:39:06,881 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:09,474 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:09,474 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:09,474 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:39:09,474 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:09,496 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:09,496 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:09,496 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:39:09,496 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:36,071 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:36,071 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:36,071 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 18:39:36,071 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:39:36,085 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 18:39:36,085 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 18:39:36,085 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 18:39:36,085 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 18:45:30,590 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:45:30,590 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:45:30,590 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,590 INFO  LogicaM10 - Metodo: GetGerentes
+2016-06-18 18:45:30,601 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,601 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,601 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,601 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 18:45:30,666 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,666 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,666 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:45:30,666 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 18:45:30,674 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:45:30,674 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:45:30,674 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,674 INFO  LogicaM10 - Metodo: GetProgramadores
+2016-06-18 18:45:30,682 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,682 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,682 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,682 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 18:45:30,691 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,691 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,691 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:45:30,691 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 18:45:30,700 INFO  LogicaM5 - *******************************************************
+2016-06-18 18:45:30,700 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 18:45:30,700 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,700 INFO  LogicaM5 - Metodo: GetContactsProyect
+2016-06-18 18:45:30,708 INFO  BDContacto - *******************************************************
+2016-06-18 18:45:30,708 INFO  BDContacto - Clase: BDContacto
+2016-06-18 18:45:30,708 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,708 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 18:45:30,717 INFO  BDContacto - *******************************************************
+2016-06-18 18:45:30,717 INFO  BDContacto - Clase: BDContacto
+2016-06-18 18:45:30,717 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 18:45:30,717 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 18:45:30,726 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:45:30,726 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:45:30,726 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,726 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:45:30,728 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,728 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,728 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,728 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:45:30,761 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,761 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,761 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:45:30,761 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:45:30,769 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:45:30,769 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:45:30,769 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,769 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:45:30,779 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,779 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,779 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,779 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:45:30,801 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:45:30,801 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:45:30,801 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 18:45:30,801 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:45:30,812 INFO  LogicaM5 - *******************************************************
+2016-06-18 18:45:30,812 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 18:45:30,812 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,812 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 18:45:30,821 INFO  BDContacto - *******************************************************
+2016-06-18 18:45:30,821 INFO  BDContacto - Clase: BDContacto
+2016-06-18 18:45:30,821 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 18:45:30,821 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 18:45:30,835 INFO  BDContacto - *******************************************************
+2016-06-18 18:45:30,835 INFO  BDContacto - Clase: BDContacto
+2016-06-18 18:45:30,835 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 18:45:30,835 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 18:49:15,848 INFO  DAOEmpleado - *******************************************************
+2016-06-18 18:49:15,848 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-18 18:49:15,848 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:49:15,848 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-18 18:49:15,861 INFO  DAOEmpleado - *******************************************************
+2016-06-18 18:49:15,861 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-18 18:49:15,861 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-18 18:49:15,861 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-18 18:49:18,618 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:49:18,618 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:49:18,618 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:49:18,618 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:49:18,630 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:49:18,630 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:49:18,630 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:49:18,630 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:49:18,817 ERROR BDEmpleado - *******************************************************
+2016-06-18 18:49:18,817 ERROR BDEmpleado - Mensaje: There is no row at position 0.
+2016-06-18 18:49:18,884 ERROR BDEmpleado - Origen: System.Data
+2016-06-18 18:49:18,885 ERROR BDEmpleado - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-18 18:49:18,886 ERROR BDEmpleado - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:18,886 ERROR BDEmpleado - InnerException: 
+2016-06-18 18:49:18,913 ERROR LogicaM10 - *******************************************************
+2016-06-18 18:49:18,914 ERROR LogicaM10 - Mensaje: No se pudo completar la operacion
+2016-06-18 18:49:18,927 ERROR LogicaM10 - Origen: DatosTangerine
+2016-06-18 18:49:18,927 ERROR LogicaM10 - Metodo: DominioTangerine.Empleado GetEmployeeById(Int32)
+2016-06-18 18:49:18,927 ERROR LogicaM10 - StackTrace:    at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 269
+   at LogicaTangerine.M10.LogicaM10.GetEmployee(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M10\LogicaM10.cs:line 123
+2016-06-18 18:49:18,928 ERROR LogicaM10 - InnerException: System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:26,562 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:49:26,562 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:49:26,562 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:49:26,562 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:49:26,581 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:49:26,582 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:49:26,582 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:49:26,582 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:49:26,598 ERROR BDEmpleado - *******************************************************
+2016-06-18 18:49:26,598 ERROR BDEmpleado - Mensaje: There is no row at position 0.
+2016-06-18 18:49:26,599 ERROR BDEmpleado - Origen: System.Data
+2016-06-18 18:49:26,599 ERROR BDEmpleado - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-18 18:49:26,599 ERROR BDEmpleado - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:26,599 ERROR BDEmpleado - InnerException: 
+2016-06-18 18:49:26,747 ERROR LogicaM10 - *******************************************************
+2016-06-18 18:49:26,747 ERROR LogicaM10 - Mensaje: No se pudo completar la operacion
+2016-06-18 18:49:26,747 ERROR LogicaM10 - Origen: DatosTangerine
+2016-06-18 18:49:26,747 ERROR LogicaM10 - Metodo: DominioTangerine.Empleado GetEmployeeById(Int32)
+2016-06-18 18:49:26,748 ERROR LogicaM10 - StackTrace:    at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 269
+   at LogicaTangerine.M10.LogicaM10.GetEmployee(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M10\LogicaM10.cs:line 123
+2016-06-18 18:49:26,748 ERROR LogicaM10 - InnerException: System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:30,458 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:49:30,458 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:49:30,458 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:49:30,458 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:49:30,470 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:49:30,470 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:49:30,470 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:49:30,470 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:49:30,481 ERROR BDEmpleado - *******************************************************
+2016-06-18 18:49:30,481 ERROR BDEmpleado - Mensaje: There is no row at position 0.
+2016-06-18 18:49:30,481 ERROR BDEmpleado - Origen: System.Data
+2016-06-18 18:49:30,481 ERROR BDEmpleado - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-18 18:49:30,482 ERROR BDEmpleado - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:30,482 ERROR BDEmpleado - InnerException: 
+2016-06-18 18:49:30,492 ERROR LogicaM10 - *******************************************************
+2016-06-18 18:49:30,492 ERROR LogicaM10 - Mensaje: No se pudo completar la operacion
+2016-06-18 18:49:30,492 ERROR LogicaM10 - Origen: DatosTangerine
+2016-06-18 18:49:30,492 ERROR LogicaM10 - Metodo: DominioTangerine.Empleado GetEmployeeById(Int32)
+2016-06-18 18:49:30,492 ERROR LogicaM10 - StackTrace:    at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 269
+   at LogicaTangerine.M10.LogicaM10.GetEmployee(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M10\LogicaM10.cs:line 123
+2016-06-18 18:49:30,492 ERROR LogicaM10 - InnerException: System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:41,469 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:49:41,469 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:49:41,469 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:49:41,469 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:49:41,486 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:49:41,486 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:49:41,486 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:49:41,486 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:49:41,502 ERROR BDEmpleado - *******************************************************
+2016-06-18 18:49:41,502 ERROR BDEmpleado - Mensaje: There is no row at position 0.
+2016-06-18 18:49:41,502 ERROR BDEmpleado - Origen: System.Data
+2016-06-18 18:49:41,502 ERROR BDEmpleado - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-18 18:49:41,502 ERROR BDEmpleado - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:49:41,502 ERROR BDEmpleado - InnerException: 
+2016-06-18 18:49:41,513 ERROR LogicaM10 - *******************************************************
+2016-06-18 18:49:41,513 ERROR LogicaM10 - Mensaje: No se pudo completar la operacion
+2016-06-18 18:49:41,513 ERROR LogicaM10 - Origen: DatosTangerine
+2016-06-18 18:49:41,513 ERROR LogicaM10 - Metodo: DominioTangerine.Empleado GetEmployeeById(Int32)
+2016-06-18 18:49:41,513 ERROR LogicaM10 - StackTrace:    at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 269
+   at LogicaTangerine.M10.LogicaM10.GetEmployee(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M10\LogicaM10.cs:line 123
+2016-06-18 18:49:41,513 ERROR LogicaM10 - InnerException: System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:50:28,585 INFO  LogicaM10 - *******************************************************
+2016-06-18 18:50:28,585 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 18:50:28,585 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 18:50:28,585 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 18:50:28,602 INFO  BDEmpleado - *******************************************************
+2016-06-18 18:50:28,603 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 18:50:28,603 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 18:50:28,603 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 18:50:28,624 ERROR BDEmpleado - *******************************************************
+2016-06-18 18:50:28,624 ERROR BDEmpleado - Mensaje: There is no row at position 0.
+2016-06-18 18:50:28,625 ERROR BDEmpleado - Origen: System.Data
+2016-06-18 18:50:28,625 ERROR BDEmpleado - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-18 18:50:28,625 ERROR BDEmpleado - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 18:50:28,625 ERROR BDEmpleado - InnerException: 
+2016-06-18 18:50:28,634 ERROR LogicaM10 - *******************************************************
+2016-06-18 18:50:28,634 ERROR LogicaM10 - Mensaje: No se pudo completar la operacion
+2016-06-18 18:50:28,634 ERROR LogicaM10 - Origen: DatosTangerine
+2016-06-18 18:50:28,634 ERROR LogicaM10 - Metodo: DominioTangerine.Empleado GetEmployeeById(Int32)
+2016-06-18 18:50:28,634 ERROR LogicaM10 - StackTrace:    at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 269
+   at LogicaTangerine.M10.LogicaM10.GetEmployee(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\LogicaTangerine\M10\LogicaM10.cs:line 123
+2016-06-18 18:50:28,634 ERROR LogicaM10 - InnerException: System.IndexOutOfRangeException: There is no row at position 0.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.M10.BDEmpleado.GetEmployeeById(Int32 employeeId) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.1\Tangerine01\Tangerine\Tangerine\DatosTangerine\M10\BDEmpleado.cs:line 212
+2016-06-18 19:28:16,646 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 19:28:16,646 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 19:28:16,646 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 19:28:16,646 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 19:28:16,662 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 19:28:16,662 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 19:28:16,662 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 19:28:16,662 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 19:28:19,442 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 19:28:19,442 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 19:28:19,442 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-18 19:28:19,442 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 19:28:19,462 INFO  DaoProyectoContacto - *******************************************************
+2016-06-18 19:28:19,462 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-18 19:28:19,462 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-18 19:28:19,462 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-18 19:28:54,057 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,057 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,057 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,057 INFO  LogicaM10 - Metodo: GetGerentes
+2016-06-18 19:28:54,081 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,081 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,081 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,081 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:28:54,093 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,093 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,093 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,093 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:28:54,101 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,101 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,101 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,101 INFO  LogicaM10 - Metodo: GetProgramadores
+2016-06-18 19:28:54,109 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,109 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,109 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,109 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:28:54,125 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,125 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,125 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,125 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:28:54,141 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:28:54,141 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:28:54,141 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,141 INFO  LogicaM5 - Metodo: GetContactsProyect
+2016-06-18 19:28:54,153 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,153 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,153 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,153 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:28:54,165 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,165 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,165 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:28:54,165 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:28:54,173 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,173 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,173 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,173 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:28:54,185 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,185 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,185 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,185 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,205 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,205 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,205 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,205 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,209 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,213 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,213 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,213 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:28:54,221 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,221 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,221 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,221 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,229 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,229 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,229 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,229 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,237 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:28:54,237 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:28:54,237 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,237 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 19:28:54,245 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,245 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,245 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,245 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:28:54,253 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,253 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,253 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:28:54,257 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:28:54,633 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,633 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,633 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,633 INFO  LogicaM10 - Metodo: GetGerentes
+2016-06-18 19:28:54,641 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,641 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,641 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,641 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:28:54,649 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,653 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,653 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,653 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:28:54,661 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,661 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,661 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,661 INFO  LogicaM10 - Metodo: GetProgramadores
+2016-06-18 19:28:54,665 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,665 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,665 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,665 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:28:54,677 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,677 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,677 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,677 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:28:54,685 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:28:54,685 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:28:54,685 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,685 INFO  LogicaM5 - Metodo: GetContactsProyect
+2016-06-18 19:28:54,693 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,693 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,693 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,693 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:28:54,701 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,701 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,701 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:28:54,701 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:28:54,709 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,709 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,709 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,709 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:28:54,717 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,717 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,717 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,717 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,725 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,725 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,725 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,725 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,733 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:28:54,733 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:28:54,733 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,733 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:28:54,741 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,741 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,741 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,741 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,749 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:28:54,749 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:28:54,749 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:28:54,749 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:28:54,757 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:28:54,757 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:28:54,757 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,757 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 19:28:54,765 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,765 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,765 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:28:54,765 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:28:54,773 INFO  BDContacto - *******************************************************
+2016-06-18 19:28:54,773 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:28:54,773 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:28:54,773 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:48:00,461 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:00,469 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:00,469 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,469 INFO  LogicaM10 - Metodo: GetGerentes
+2016-06-18 19:48:00,489 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,489 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,489 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,489 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:48:00,509 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,509 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,509 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:00,509 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:48:00,517 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:00,517 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:00,517 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,517 INFO  LogicaM10 - Metodo: GetProgramadores
+2016-06-18 19:48:00,525 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,525 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,525 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,525 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:48:00,537 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,537 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,537 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:00,537 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:48:00,549 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:48:00,549 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:48:00,549 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,549 INFO  LogicaM5 - Metodo: GetContactsProyect
+2016-06-18 19:48:00,557 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:00,557 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:00,557 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,557 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:48:00,569 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:00,569 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:00,569 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:48:00,569 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:48:00,581 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:00,581 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:00,581 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,581 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:48:00,589 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,589 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,589 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,589 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:00,605 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,605 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,605 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:00,605 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:00,613 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:00,613 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:00,613 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,613 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:48:00,621 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,621 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,621 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,621 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:00,641 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:00,641 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:00,641 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:00,641 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:00,649 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:48:00,649 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:48:00,649 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,649 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 19:48:00,661 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:00,661 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:00,661 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:48:00,661 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:48:00,669 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:00,669 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:00,669 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:48:00,669 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:48:15,595 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:15,595 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:15,595 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,595 INFO  LogicaM10 - Metodo: GetGerentes
+2016-06-18 19:48:15,611 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,611 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,611 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,611 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:48:15,627 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,627 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,627 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:15,627 INFO  BDEmpleado - Metodo: ListarGerentes
+2016-06-18 19:48:15,635 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:15,635 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:15,635 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,635 INFO  LogicaM10 - Metodo: GetProgramadores
+2016-06-18 19:48:15,643 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,643 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,643 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,643 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:48:15,651 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,651 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,651 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:15,651 INFO  BDEmpleado - Metodo: ListarProgramadores
+2016-06-18 19:48:15,659 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:48:15,659 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:48:15,659 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,659 INFO  LogicaM5 - Metodo: GetContactsProyect
+2016-06-18 19:48:15,667 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:15,667 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:15,667 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,667 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:48:15,675 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:15,675 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:15,675 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:48:15,675 INFO  BDContacto - Metodo: ContactProyect
+2016-06-18 19:48:15,683 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:15,683 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:15,683 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,683 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:48:15,691 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,691 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,691 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,691 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:15,699 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,699 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,699 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:15,699 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:15,707 INFO  LogicaM10 - *******************************************************
+2016-06-18 19:48:15,707 INFO  LogicaM10 - Clase: LogicaM10
+2016-06-18 19:48:15,707 INFO  LogicaM10 - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,707 INFO  LogicaM10 - Metodo: GetEmployee
+2016-06-18 19:48:15,715 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,715 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,715 INFO  BDEmpleado - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,715 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:15,723 INFO  BDEmpleado - *******************************************************
+2016-06-18 19:48:15,723 INFO  BDEmpleado - Clase: BDEmpleado
+2016-06-18 19:48:15,723 INFO  BDEmpleado - Mensaje: Salida del Método
+2016-06-18 19:48:15,723 INFO  BDEmpleado - Metodo: GetEmployeeById
+2016-06-18 19:48:15,731 INFO  LogicaM5 - *******************************************************
+2016-06-18 19:48:15,731 INFO  LogicaM5 - Clase: LogicaM5
+2016-06-18 19:48:15,731 INFO  LogicaM5 - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,731 INFO  LogicaM5 - Metodo: GetContacts
+2016-06-18 19:48:15,739 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:15,739 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:15,739 INFO  BDContacto - Mensaje: Entrada en el Método
+2016-06-18 19:48:15,739 INFO  BDContacto - Metodo: ContactCompany
+2016-06-18 19:48:15,751 INFO  BDContacto - *******************************************************
+2016-06-18 19:48:15,751 INFO  BDContacto - Clase: BDContacto
+2016-06-18 19:48:15,751 INFO  BDContacto - Mensaje: Salida del Método
+2016-06-18 19:48:15,751 INFO  BDContacto - Metodo: ContactCompany

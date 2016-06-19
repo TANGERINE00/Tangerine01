@@ -327,7 +327,20 @@ namespace DominioTangerine.Fabrica
                 inputAcronimo,  inputFechaRegistro,  inputStatus, inputPresupuesto,inputPlazoPago,  inputIdLugar);
         }
 
+        public static Entidad CrearEntidadLugarM4()
+        {
+            return new LugarDireccionM4();
+        }
 
+        public static Entidad CrearEntidadLugarM4(int lugId, string lugNombre, string lugTipo, int fk_lugId)
+        {
+            return new LugarDireccionM4( lugId,  lugNombre, lugTipo, fk_lugId);
+        }
+
+        public static Entidad CrearEntidadLugarM4(int lugId, string lugNombre)
+        {
+            return new LugarDireccionM4( lugId,  lugNombre);
+        }
 
             #region instancias de la clase LugarDireccionM4
 
@@ -557,14 +570,14 @@ namespace DominioTangerine.Fabrica
             return new Facturacion();
         }
 
-        public static Entidad Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public static Entidad ObtenerFacturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
         {
             return new Facturacion(fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
                 descripcion, estatus, idProyecto, idCompania);
         }
 
-        public static Entidad Facturacion(int facturaId, int idNumeroFactura, DateTime fecha,
+        public static Entidad ObtenerFacturacion(int facturaId, int idNumeroFactura, DateTime fecha,
             DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion,
             int estatus, int idProyecto, int idCompania)
         {
