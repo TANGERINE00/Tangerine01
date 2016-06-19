@@ -366,7 +366,7 @@ namespace DominioTangerine.Fabrica
             #region Metodos para instaciar Lugar Direccion
             public static Entidad ObtenerLugarDireccion() 
             {
-                return new DominioTangerine.Entidades.M7. LugarDireccion2();
+                return new DominioTangerine.Entidades.M7.LugarDireccion();
             }
             #endregion
 

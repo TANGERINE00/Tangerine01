@@ -69,7 +69,7 @@
     <Compile Include="Entidades\M7\Cargo.cs" />
     <Compile Include="Entidades\M7\Contacto.cs" />
     <Compile Include="Entidades\M7\Empleado.cs" />
-    <Compile Include="Entidades\M7\LugarDireccion2.cs" />
+    <Compile Include="Entidades\M7\LugarDireccion.cs" />
     <Compile Include="Entidades\M7\Propuesta.cs" />
     <Compile Include="Entidades\M7\Proyecto.cs" />
     <Compile Include="Entidades\M7\Requerimiento.cs" />
