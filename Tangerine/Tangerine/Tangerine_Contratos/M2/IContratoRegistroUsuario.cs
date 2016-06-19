@@ -13,7 +13,7 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado de la tabla de usuarios
         /// </summary>
-        public Literal tablaUsuarios
+        Literal tablaUsuarios
         {
             get;
             set;

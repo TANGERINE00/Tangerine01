@@ -11,7 +11,7 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado del comboBox de seleccion de rol
         /// </summary>
-        public string comboRol
+        string comboRol
         {
             get;
             set;
@@ -20,7 +20,7 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado del textBox de la contraseña
         /// </summary>
-        public string contrasena
+        string contrasena
         {
             get;
             set;
@@ -29,7 +29,7 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado del textBox del nombre de usuario
         /// </summary>
-        public string usuario
+        string usuario
         {
             get;
             set;
