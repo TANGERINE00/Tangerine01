@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Agregar proyecto.aspx.cs" Inherits="Tangerine.GUI.M7.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Agregar proyecto.aspx.cs" Inherits="Tangerine.GUI.M7.AgregarProyecto" %>
 
 
 
@@ -20,6 +20,7 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+      
 
     <div class="row">
 
@@ -51,23 +52,27 @@
                             <input runat="server" type="text" class="form-control" id="textInputCodigo" name="textInputCodigo" placeholder="123456789">
                         </div>
 
-                        <div class="form-group" runat="server">
-                            <label for="InputFechaInicio">Fecha de Inicio *</label> 
-                        <div class="form-control input-group date" data-provide="datepicker">
-                          <input type="text" class="form-control" readonly placeholder="dd/mm/aaaa" id="textInputFechaInicio" runat="server" required>
-                          <div class="input-group-addon">
-                              <span class="glyphicon glyphicon-th"></span>
-                          </div>
-                        </div>
+                        <div class="form-group date">
+                        <label>Fecha de Inicio: *</label>
 
-                        <div class="form-group" runat="server">
-                            <label for="InputFechaEstimada">Fecha Estimada de culminación *</label>
-                             <div class="form-control input-group date" data-provide="datepicker">
-                          <input type="text" class="form-control" readonly placeholder="dd/mm/aaaa" id="textInputFechaEstimada" runat="server" required>
-                          <div class="input-group-addon">
-                              <span class="glyphicon glyphicon-th"></span>
-                          </div>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
                             </div>
+                            <input class="form-control pull-right" id="textInputFechaInicio" type="text" runat="server" clientidmode="static">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+
+                    <div class="form-group date">
+                        <label>Fecha Fin Estimada *:</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="textInputFechaEstimada" type="text" runat="server" clientidmode="static" >
+                        </div>
 
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>

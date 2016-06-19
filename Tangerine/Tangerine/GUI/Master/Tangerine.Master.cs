@@ -7,18 +7,41 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Tangerine_Contratos.Master;
+using Tangerine_Presentador.Master;
+using DominioTangerine.Entidades.M1;
 
 namespace Tangerine.GUI.Master
 {
-    public partial class Tangerine : System.Web.UI.MasterPage
+    public partial class Tangerine : System.Web.UI.MasterPage, IContratoMasterPage
     {
         /// <summary>
         /// Método que ejecuta al cargar la página. Aqui se verifica la permisología del usuario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
+        private Cuenta userLogin = new Cuenta();
+        private PresentadorMasterPage presentador { get; set; }
+
+
+        Cuenta IContratoMasterPage.UserLogin
+        {
+            get { return userLogin; }
+            set { userLogin = value; }
+        }
+
+
+        public void CargarMenus()
+        { 
+           // presentador.
+        }
+
+
+
         protected void Page_Load( object sender, EventArgs e )
         {
+            
             if ( HttpContext.Current.Session[ "User" ] == null )
                 Response.Redirect( "../M1/Login.aspx" );
             else
@@ -69,5 +92,8 @@ namespace Tangerine.GUI.Master
             HttpContext.Current.Session.Abandon();
             Response.Redirect( "../M1/Login.aspx" );
         }
+
+      
+
     }
 }

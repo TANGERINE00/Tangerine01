@@ -53,6 +53,7 @@
     <Compile Include="M4\IContratoInformacionCompania.cs" />
     <Compile Include="M5\IContratoAgregarContacto.cs" />
     <Compile Include="M5\IContratoConsultarContactos.cs" />
+    <Compile Include="M5\IContratoModificarContacto.cs" />
     <Compile Include="M6\IContratoAgregarPropuesta.cs" />
     <Compile Include="M6\IContratoEliminarPropuesta.cs" />
     <Compile Include="M6\IContratoModificarPropuesta.cs" />
