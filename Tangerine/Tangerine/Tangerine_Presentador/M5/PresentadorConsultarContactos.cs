@@ -1,4 +1,9 @@
 ﻿using DominioTangerine;
+using DominioTangerine.Entidades.M4;
+using DominioTangerine.Entidades.M5;
+using DominioTangerine.Fabrica;
+using LogicaTangerine;
+using LogicaTangerine.Fabrica;
 using LogicaTangerine.M3;
 using LogicaTangerine.M4;
 using LogicaTangerine.M5;
@@ -13,28 +18,43 @@ namespace Tangerine_Presentador.M5
 {
     public class PresentadorConsultarContactos
     {
-        LogicaM4 _logicM4 = new LogicaM4();
-        LogicaM3 _logicM3 = new LogicaM3();
-        LogicaM5 _logicM5 = new LogicaM5();
         private IContratoConsultarContactos _vista;
 
-        public PresentadorConsultarContactos(IContratoConsultarContactos vista)
+        public PresentadorConsultarContactos( IContratoConsultarContactos vista )
         {
             this._vista = vista;
         }
-        public void CargarBotonVolver(int typeComp, int idComp)
+
+        public void CargarBotonVolver( int typeComp, int idComp )
         {
-            if (typeComp == 1)
-            {
-                Compania compania = _logicM4.ConsultCompany(idComp);
-                _vista.botonVolver = _vista.botonVolverCompania();
-                _vista.nombreEmpresa = _vista.empresaGen() + compania.NombreCompania;
+            if ( typeComp == 1 )
+            { 
+                Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                compania.Id = idComp;
+                
+                Comando<Entidad> comandoEntidad = FabricaComandos.CrearConsultarCompania( compania );
+                compania = comandoEntidad.Ejecutar();
+
+                CompaniaM4 companiaConsultada = ( CompaniaM4 )compania;
+
+                _vista.botonVolver = _vista.BotonVolverCompania();
+                _vista.nombreEmpresa = _vista.EmpresaGen() + companiaConsultada.NombreCompania;
             }
             else
             {
-                ClientePotencial cliPotencial = _logicM3.BuscarClientePotencial(idComp);
-                _vista.botonVolver = _vista.botonVolverLead();
-                _vista.nombreEmpresa = _vista.leadGen() + cliPotencial.NombreClientePotencial;
+                Entidad clientePotencial = FabricaEntidades.ObtenerClientePotencial();
+                clientePotencial.Id = idComp;
+
+                Comando<Entidad> comandoEntidad = 
+                                 FabricaComandos.ObtenerComandoConsultarClientePotencial( clientePotencial );
+
+                clientePotencial = comandoEntidad.Ejecutar();
+
+                DominioTangerine.Entidades.M3.ClientePotencial leadConsultado = 
+                    ( DominioTangerine.Entidades.M3.ClientePotencial ) clientePotencial;
+
+                _vista.botonVolver = _vista.BotonVolverLead();
+                _vista.nombreEmpresa = _vista.LeadGen() + leadConsultado.NombreClientePotencial;
             }
         }
 
@@ -42,34 +62,36 @@ namespace Tangerine_Presentador.M5
         {
             try
             {
-                int id = _vista.idCont();
-                Contacto contacto = new Contacto();
-                contacto.IdContacto= id;
-                _logicM5.DeleteContact(contacto);
+                int id = _vista.IdCont();
+
+                Entidad contacto = FabricaEntidades.crearContactoVacio();
+                contacto.Id= id;
+
+                Comando<bool> comandoBool = FabricaComandos.CrearComandoEliminarContacto( contacto );
+                comandoBool.Ejecutar();
             }
-            
             catch (Exception ex)
             {
                 //No se hace nada,  ya que el idCont no es un parametro obligatorio
             }
-
         }
-        public void alertas ()
+
+        public void Alertas()
         {
-        try
+            try
             {
-                int status = _vista.statusAccion();
+                int status = _vista.StatusAccion();
 
                 switch (status)
                 {
                     case 1:
-                        _vista.Alerta(_vista.ContactoAgregadoMsj(), _vista.statusAgregado());
+                        _vista.Alerta( _vista.ContactoAgregadoMsj(), _vista.StatusAgregado() );
                         break;
                     case 2:
-                        _vista.Alerta(_vista.ContadoModificadoMsj(), _vista.statusAgregado());
+                        _vista.Alerta( _vista.ContadoModificadoMsj(), _vista.StatusAgregado() );
                         break;
                     case 3:
-                        _vista.Alerta(_vista.ContactoEliminadoMsj(), _vista.statusAgregado());
+                        _vista.Alerta( _vista.ContactoEliminadoMsj(), _vista.StatusAgregado() );
                         break;
                 }
             }
@@ -83,35 +105,35 @@ namespace Tangerine_Presentador.M5
         {
             try
             {
-                List<Contacto> _listContact;
-                _listContact = _logicM5.GetContacts(_vista.GetTypeComp, _vista.GetIdComp);
-                foreach (Contacto _contacto2 in _listContact)
+                Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                compania.Id = _vista.getIdComp;
+
+                Comando<List<Entidad>> comandoLista = 
+                                       FabricaComandos.CrearComandoConsultarContactosPorCompania( compania,
+                                                                                                  _vista.getTypeComp );
+
+                List<Entidad> listaContactos = comandoLista.Ejecutar();
+
+                foreach ( Entidad entidad in listaContactos )
                 {
-                   _vista.LlenarTabla(_contacto2, _vista.GetTypeComp, _vista.GetIdComp);
+                    ContactoM5 contacto = ( ContactoM5 ) entidad;
+                    _vista.LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
                 }
-                _vista.CargarBotonNuevoContacto(_vista.GetTypeComp, _vista.GetIdComp);
+
+                _vista.CargarBotonNuevoContacto( _vista.getTypeComp, _vista.getIdComp );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                _vista.Alerta(ex.Message,int.Parse(_vista.StatusModificado()));
-
-
+                _vista.Alerta( ex.Message, int.Parse( _vista.StatusModificado() ) );
             }
         }
 
-        public void cargar_pagina()
+        public void CargarPagina()
         {
-            CargarBotonVolver(_vista.GetTypeComp, _vista.GetIdComp);
+            CargarBotonVolver( _vista.getTypeComp, _vista.getIdComp );
             EliminarContacto();
-            alertas();
+            Alertas();
             LlenarTablaContactos();
         }
-
-
-
-
-    
-
-
     }
 }
