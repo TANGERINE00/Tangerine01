@@ -234,12 +234,10 @@ namespace DatosTangerine.DAO.M2
             /// </summary>
             /// <param name="empleado"></param>
             /// <returns>Retorna el usuario de un empleado</returns>
-            public Entidad ObtenerUsuarioDeEmpleado( Entidad num_empleado )
+            public Entidad ObtenerUsuarioDeEmpleado( int num_empleado )
             {
-                DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)num_empleado;
                 Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
-
-                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2) theUsuario;
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
 
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
@@ -259,8 +257,8 @@ namespace DatosTangerine.DAO.M2
                         string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
                         string rolUsuario = row[ResourceUser.RolNombre].ToString();
 
-                        Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre( rolUsuario );
-                        DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 ) theRol;
+                        Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre(rolUsuario);
+                        DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                         usuario.nombreUsuario = nombreUsuario;
                         usuario.rol = rol;
