@@ -9,12 +9,12 @@ namespace Tangerine_Contratos.M3
 {
     public interface IContratoConsultarClientePotencial
     {
-        Label NombreEtiqueta { get; set; }
-        Label EstatusEtiqueta { get; set; }
-        Label RIFEtiquete { get; set; }
-        Label PresupuestoInicial { get; set; }
-        Label Correo { get; set; }
-        Label NumLlamadas { get; set; }
-        Label NumVisitas { get; set; }
+        Literal NombreEtiqueta { get; set; }
+        Literal EstatusEtiqueta { get; set; }
+        Literal RIFEtiqueta { get; set; }
+        Literal PresupuestoInicialEtiqueta { get; set; }
+        Literal CorreoEtiqueta { get; set; }
+        Literal NumLlamadasEtiqueta { get; set; }
+        Literal NumVisitasEtiqueta { get; set; }
     }
 }
