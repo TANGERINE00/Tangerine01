@@ -247,7 +247,7 @@ namespace LogicaTangerine.Fabrica
         /// metodo que crea comando para modificar los luegare
         /// </summary>
         /// <returns></returns>
-        public static Comando<bool> CrearConsultarLugar(Entidad parametro)
+        public static Comando<bool> CrearModificarLugar(Entidad parametro)
         {
             return new ComandoModificarLugar(parametro);
 
