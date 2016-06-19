@@ -48,7 +48,8 @@ namespace Tangerine.GUI.M2
                     {  
                         empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
+                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha +ResourceGUIM2.RolEmpleado + user.Rol.Nombre 
+                                    + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                         empleado += ResourceGUIM2.CloseTR;
                     }
                     else 

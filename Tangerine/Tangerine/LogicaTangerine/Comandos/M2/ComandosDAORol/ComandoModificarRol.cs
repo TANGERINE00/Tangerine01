@@ -21,7 +21,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
         /// </summary>
         /// <param name="elUsuario"></param>
         /// <param name="elRol"></param>
-        public ComandoModificarRol( String elUsuario , String elRol )
+        public ComandoModificarRol( string elUsuario , string elRol )
         {
             _elUsuario = elUsuario;
             _elRol = elRol;

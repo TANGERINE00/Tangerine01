@@ -329,5 +329,14 @@ namespace Tangerine.GUI.M2 {
                 return ResourceManager.GetString("placeholder", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Rol=.
+        /// </summary>
+        internal static string RolEmpleado {
+            get {
+                return ResourceManager.GetString("RolEmpleado", resourceCulture);
+            }
+        }
     }
 }

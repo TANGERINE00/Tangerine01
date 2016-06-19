@@ -14,17 +14,19 @@ namespace Tangerine.GUI.M2
 {
     public partial class AsignarRol : System.Web.UI.Page, IContratoAsignarRol
     {
-
-        string nombreUsuario = String.Empty;
-        string rol = String.Empty;
+        private int numFicha;
+        private string rol;
         private Tangerine_Presentador.M2.PresentadorAsignarRol presentador;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int numFicha = int.Parse(Request.QueryString["idEmpleado"]);
-            presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, numFicha);
-            presentador.inicioVista(); 
-
+            numFicha = int.Parse(Request.QueryString["idEmpleado"]);
+            rol = Request.QueryString["Rol"];
+            presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, numFicha, rol);
+            if (!IsPostBack)
+            {
+                presentador.inicioVista(); 
+            }
         }
 
         #region Contrato
@@ -34,7 +36,7 @@ namespace Tangerine.GUI.M2
             /// </summary>
             public string usuario
             {
-                get { return textRol_M2.Value; }
+                get { return textUsuario_M2.Value; }
                 set { textUsuario_M2.Value = value; }
             }
 
@@ -51,12 +53,10 @@ namespace Tangerine.GUI.M2
 
         protected void buttonAsignar_Click(object sender, EventArgs e)
         {
-            nombreUsuario = textUsuario_M2.Value;
-            rol = textRol_M2.Value;
-
-            LogicaModificarRol.ModificarRol(nombreUsuario, rol);
-
+            presentador.asignar();
             Response.Redirect("../M2/CambiarRol.aspx");
         }
+
+        public static bool isPostBack { get; set; }
     }
 }
