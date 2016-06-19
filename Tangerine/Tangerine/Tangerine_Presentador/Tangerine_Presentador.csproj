@@ -58,6 +58,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
     </Compile>
+    <Compile Include="M4\PresentadorAgregarCompania.cs" />
+    <Compile Include="M4\PresentadorConsultarCompania.cs" />
+    <Compile Include="M4\PresentadorInformacionCompania.cs" />
     <Compile Include="M5\PresentadorAgregarContacto.cs" />
     <Compile Include="M5\PresentadorConsultarContactos.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
@@ -87,7 +90,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="M4\" />
     <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
