@@ -78,8 +78,10 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoPrepararUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoCrearUsuarioDefault.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />

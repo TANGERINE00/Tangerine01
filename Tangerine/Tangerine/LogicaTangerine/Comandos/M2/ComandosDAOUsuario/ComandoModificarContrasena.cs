@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatosTangerine.DAO;
 using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
-using DominioTangerine;
 using ExcepcionesTangerine;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
@@ -15,7 +15,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
         public DominioTangerine.Entidad _theUsuario;
 
         /// <summary>
-        /// Constructor que recibe un parametro del tipo Entidad
+        /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
         /// <param name="theUsuario"></param>
         public ComandoModificarContrasena( DominioTangerine.Entidad theUsuario )
@@ -23,6 +23,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             _theUsuario = theUsuario;
         }
 
+        /// <summary>
+        /// Método para crear la instancia de la clase DaoUsuario y usar el método ModificarContraseniaUsuario
+        /// </summary>
+        /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override bool Ejecutar()
         {
             bool resultado = false;

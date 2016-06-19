@@ -341,7 +341,7 @@ namespace DatosTangerine.DAO.M2
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>true se es exitoso y false si es fallido</returns>
-            public bool ModificarContraseniaUsuario(Entidad theUsuario)
+            public bool ModificarContraseniaUsuario( Entidad theUsuario )
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro;
