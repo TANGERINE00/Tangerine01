@@ -557,21 +557,36 @@ namespace DominioTangerine.Fabrica
             return new Facturacion();
         }
 
-        public static Entidad Facturacion(int facturaId, DateTime fecha, DateTime fechaUltimoPago, double monto,
+        public static Entidad Facturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
+        {
+            return new Facturacion(fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
+                descripcion, estatus, idProyecto, idCompania);
+        }
+
+        public static Entidad Facturacion(int facturaId, int idNumeroFactura, DateTime fecha,
+            DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion,
+            int estatus, int idProyecto, int idCompania)
         {
             return new Facturacion(facturaId, fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
                 descripcion, estatus, idProyecto, idCompania);
         }
 
-        public static Entidad Facturacion(int id, int facturaId, int idNumeroFactura, DateTime fecha,
-            DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion,
-            int estatus, int idProyecto, int idCompania)
+        //-----------Correo------------
+        public static Entidad ObtenerCorreoGmailM8()
         {
-            return new Facturacion(id, facturaId, fecha, fechaUltimoPago, monto, montoRestante, tipoMoneda,
-                descripcion, estatus, idProyecto, idCompania);
+            return new CorreoGmailM8();
         }
 
+        public static Entidad ObtenerDatosCorreo()
+        {
+            return new DatosCorreo();
+        }
+
+        public static Entidad ObtenerDatosCorreo(string asunto, string destinatario, string mensaje)
+        {
+            return new DatosCorreo(asunto, destinatario, mensaje);
+        }
         #endregion
 
         #region Modulo 9
