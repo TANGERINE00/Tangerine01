@@ -15,16 +15,17 @@ namespace Tangerine_Presentador.M5
     {
         private IContratoAgregarContacto _vista;
 
-        public PresentadorAgregarContacto(IContratoAgregarContacto vista)
+        public PresentadorAgregarContacto( IContratoAgregarContacto vista )
         {
             this._vista = vista;
         }
-        public void cargar_pagina()
+
+        public void CargarPagina()
         {
-            _vista.botonVolver = _vista.CargarBotonVolver(_vista.GetTypeComp, _vista.GetIdComp);
+            _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp, _vista.GetIdComp );
         }
 
-        public void BtnAceptarContrato()
+        public void AgregarContacto()
         {
             Entidad contactoNuevo = FabricaEntidades.crearContactoSinId( _vista.input_nombre, _vista.input_apellido,
                                                                          _vista.input_apellido, _vista.input_cargo,
@@ -32,7 +33,8 @@ namespace Tangerine_Presentador.M5
                                                                          _vista.GetTypeComp, _vista.GetIdComp );
             
             Comando<bool> comandoBool = FabricaComandos.CrearComandoAgregarContacto( contactoNuevo );
-            bool respuesta = comandoBool.Ejecutar();
+            comandoBool.Ejecutar();
+            _vista.BotonAceptar(_vista.GetTypeComp, _vista.GetIdComp);
         }
     }
 }

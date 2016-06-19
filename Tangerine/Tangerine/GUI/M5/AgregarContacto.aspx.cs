@@ -60,37 +60,35 @@ namespace Tangerine.GUI.M5
 
         public int GetTypeComp
         {
-            get { return int.Parse(Request.QueryString[ResourceGUIM5.typeComp]); }
+            get { return int.Parse( Request.QueryString[ ResourceGUIM5.typeComp ] ); }
         }
 
         public int GetIdComp
         {
-            get { return int.Parse(Request.QueryString[ResourceGUIM5.idComp]); }
+            get { return int.Parse( Request.QueryString[ ResourceGUIM5.idComp ] ); }
         }
 
-        public string CargarBotonVolver(int typeComp, int idComp)
+        public string CargarBotonVolver( int typeComp, int idComp )
         {
             return this.botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-                + ResourceGUIM5.BotonVolver3;
+                                      + ResourceGUIM5.BotonVolver3;
         }
 
-        public void BotonAceptar(int typeComp, int idComp)
+        public void BotonAceptar( int typeComp, int idComp )
         {
-            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2
-                + idComp + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusAgregado);
+            Server.Transfer( ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2
+                             + idComp + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusAgregado );
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load( object sender, EventArgs e )
         {
-            presentador = new PresentadorAgregarContacto(this);
-            presentador.cargar_pagina();
+            presentador = new PresentadorAgregarContacto( this );
+            presentador.CargarPagina();
         }
 
-        public void btnaceptar_Click(object sender, EventArgs e)
+        public void btnaceptar_Click( object sender, EventArgs e )
         {
-            presentador.BtnAceptarContrato();
-            Response.Redirect("../M1/DashBoard.aspx");
-
+            presentador.AgregarContacto();
         }
     }
 }

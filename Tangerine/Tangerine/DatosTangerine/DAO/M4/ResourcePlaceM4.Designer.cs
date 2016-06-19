@@ -61,6 +61,15 @@ namespace DatosTangerine.DAO.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_ConsultarLugarPorId.
+        /// </summary>
+        internal static string ConsultCityId {
+            get {
+                return ResourceManager.GetString("ConsultCityId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M4_ConsultarLugar.
         /// </summary>
         internal static string ConsultCityPlaces {
@@ -102,6 +111,15 @@ namespace DatosTangerine.DAO.M4 {
         internal static string LugTypePlace {
             get {
                 return ResourceManager.GetString("LugTypePlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @id.
+        /// </summary>
+        internal static string ParamId {
+            get {
+                return ResourceManager.GetString("ParamId", resourceCulture);
             }
         }
     }

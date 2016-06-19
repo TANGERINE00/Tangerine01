@@ -83,6 +83,7 @@
     <Compile Include="M10\M10PruebasLogica.cs" />
     <Compile Include="M10\PruebasDatos.cs" />
     <Compile Include="M1\M1PruebasLogica.cs" />
+    <Compile Include="M2\PruebaComandosDAOUsuario.cs" />
     <Compile Include="M2\PruebaDAORol.cs" />
     <Compile Include="M2\PruebaDAOUsuario.cs" />
     <Compile Include="M2\Pruebas Unitarias Primera Entrega\M2PruebasLogica.cs" />
