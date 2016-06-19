@@ -42,7 +42,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
                                                    "Activo" , rol , _fichaEmpleado);
                 usuario.contrasena = usuario.GetMD5( usuario.contrasena );
                 LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( usuario );
-                commandAgregarUsuario.Ejecutar();
+                resultado = commandAgregarUsuario.Ejecutar();
             }
 
             catch (Exception ex)
