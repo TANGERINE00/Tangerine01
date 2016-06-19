@@ -1,4 +1,4 @@
-﻿using DominioTangerine;
+﻿using DominioTangerine.Entidades.M5;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,6 @@ namespace Tangerine_Contratos.M5
 {
     public interface IContratoConsultarContactos
     {
-
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }
@@ -17,21 +16,21 @@ namespace Tangerine_Contratos.M5
         string botonVolver { get; set; }
         string button { get; set; }
         string nombreEmpresa { get; set; }
-        int GetTypeComp { get; }
-        int GetIdComp { get; }
-        string botonVolverCompania();
-        string botonVolverLead();
-        string empresaGen();
-        string leadGen();
-        int idCont();
-        int statusAccion();
-        int statusAgregado();
+        int getTypeComp { get; }
+        int getIdComp { get; }
+        string BotonVolverCompania();
+        string BotonVolverLead();
+        string EmpresaGen();
+        string LeadGen();
+        int IdCont();
+        int StatusAccion();
+        int StatusAgregado();
         string ContactoAgregadoMsj();
         string ContadoModificadoMsj();
         string ContactoEliminadoMsj();
-        string CargarBotonNuevoContacto(int typeComp, int idComp);
-        void Alerta(string msj, int typeMsg);
-         void LlenarTabla(Contacto _theContact2, int typeComp, int idComp);
+        string CargarBotonNuevoContacto( int typeComp, int idComp );
+        void Alerta( string msj, int typeMsg );
+        void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp );
         string StatusModificado();
     }
 }

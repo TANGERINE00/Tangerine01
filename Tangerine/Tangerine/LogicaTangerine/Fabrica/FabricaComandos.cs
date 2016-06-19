@@ -114,6 +114,21 @@ namespace LogicaTangerine.Fabrica
             {
                 return new Comandos.M2.ComandosDAOUsuario.ComandoModificarContrasena( usuario );
             }
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoPrepararUsuario
+            /// </summary>
+            /// <param name="usuarioNombre"></param>
+            /// <param name="contrasenaUsuario"></param>
+            /// <param name="rolUsuario"></param>
+            /// <param name="fichaEmpleado"></param>
+            /// <returns>Retorna una instancia a ComandoPrepararUsuario</returns>
+            public static Comando<Boolean> prepararUsuario( String usuarioNombre , String contrasenaUsuario , 
+                                                            String rolUsuario , int fichaEmpleado)
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario( usuarioNombre , contrasenaUsuario , 
+                                                                                  rolUsuario , fichaEmpleado );
+            }
         
             #endregion
 
@@ -159,6 +174,17 @@ namespace LogicaTangerine.Fabrica
             public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre(string nombreRol)
             {
                 return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre( nombreRol );
+            }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia de la clase ComandoModificarRol
+            /// </summary>
+            /// <param name="elUsuario"></param>
+            /// <param name="elRol"></param>
+            /// <returns>Retorna una una instancia a ComandoModificarRol</returns>
+            public static Comando<Boolean> obtenerComandoModificarRol( string elUsuario , string elRol )
+            {
+                return new Comandos.M2.ComandosDAORol.ComandoModificarRol( elUsuario , elRol );
             }
             
             #endregion
@@ -546,6 +572,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoCalcularPagoMensual(proyecto);
         }
+
+        public static Comando<String> ObtenerComandoGenerarCodigoProyecto(Entidad propuesta)
+        {
+            return new ComandoGenerarCodigoProyecto(propuesta);
+        }
         #endregion
 
         #region Modulo 8
@@ -685,6 +716,21 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarEmpleado();
         }
+
+        public static Comando<List<Entidad>> ObtenerFabricaPaises()
+        {
+            return new ComandoObtenerPais();
+        }
+        public static Comando<List<Entidad>> ObtenerFabricaCargo()
+        {
+            return new ComandoObtenerCargo();
+        }
+        public static Comando<List<Entidad>> ObtenerFabricaEstado(Entidad Pais)
+        {
+            return new ComandoObtenerEstado(Pais);
+        }
+        
+
         #endregion
     }
 }

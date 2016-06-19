@@ -68,9 +68,13 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\M10\ComandoAgregarEmpleado.cs" />
+    <Compile Include="Comandos\M10\ComandoObtenerEstado.cs" />
+    <Compile Include="Comandos\M10\ComandoObtenerPais - Copy.cs" />
+    <Compile Include="Comandos\M10\ComandoObtenerCargo.cs" />
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRol.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoPrepararUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoCrearUsuarioDefault.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
@@ -109,6 +114,7 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M7\ComandoGenerarCodigoProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />

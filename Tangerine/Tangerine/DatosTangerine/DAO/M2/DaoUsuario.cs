@@ -402,6 +402,38 @@ namespace DatosTangerine.DAO.M2
                 return ultimoID;
             }
 
+            /// <summary>
+            /// Borrar usuario por el Id de un usuario
+            /// </summary>
+            /// <param name="userID"></param>
+            /// <returns>Retorna true si es elimanado exitosamente</returns>
+            public bool BorrarUsuario( int userID )
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceUser.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Parametro theParam = new Parametro();
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                    theParam = new Parametro(ResourceUser.ParametroUsuID, SqlDbType.Int, userID.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
+                    List<Resultado> results = EjecutarStoredProcedure(ResourceUser.BorrarUsuario, parameters);
+
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+
+                return true;
+            }
+
         #endregion
 
     }

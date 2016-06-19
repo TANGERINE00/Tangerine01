@@ -212,6 +212,14 @@ namespace DatosTangerine.DAO.M7
 
             return listProyecto;
         }
+
+        public String GenerarCodigoProyecto(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M6.Propuesta P = (DominioTangerine.Entidades.M6.Propuesta) parametro;
+            String nombre = P.Nombre;
+            return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
+        }
+
         #endregion
     }
 }

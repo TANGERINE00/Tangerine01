@@ -203,8 +203,8 @@ namespace DatosTangerine.DAO.M6
                 propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
                     ((DominioTangerine.Entidades.M6.Propuesta)id).Nombre,
                     fila[RecursosPropuesta.PropDescripcion].ToString(), 
-                    fila[RecursosPropuesta.PropDuracion].ToString(), 
                     fila[RecursosPropuesta.PropTipoDuracion].ToString(), 
+                    fila[RecursosPropuesta.PropDuracion].ToString(), 
                     fila[RecursosPropuesta.PropAcuerdo].ToString(), 
                     fila[RecursosPropuesta.PropEstatus].ToString(), 
                     fila[RecursosPropuesta.PropMoneda].ToString(), 
@@ -333,6 +333,37 @@ namespace DatosTangerine.DAO.M6
             }
 
             return mayorId;
+        }
+
+        /// <summary>
+        /// Método para consultar la cantidad de propuestas en la base de datos.
+        /// </summary>
+        /// <returns>Cantidad de propuestas</returns>
+
+        public int ConsultarNumeroPropuestas()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int numero = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAOPropuesta.ConsultarNumeroPropuestas, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                numero = int.Parse(row[RecursoDAOPropuesta.PropCodigo].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return numero;
         }
 
         /// <summary>
