@@ -107,6 +107,7 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarEmpleadosXIdProyecto.cs" />

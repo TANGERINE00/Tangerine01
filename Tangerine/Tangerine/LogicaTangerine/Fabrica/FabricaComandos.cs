@@ -486,6 +486,15 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
         }
 
+        public static Comando<Entidad> ObtenerComandoConsultarAcuerdoPagoMensual()
+        {
+            return new ComandoConsultarAcuerdoPagoMensual();
+        }
+
+        public static Comando<Entidad> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
+        {
+            return new ComandoCalcularPagoMesual(proyecto);
+        }
         #endregion
 
         #region Modulo 8
