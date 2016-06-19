@@ -78,7 +78,6 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
-    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoValidarUsuario.cs" />
@@ -88,6 +87,7 @@
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
+    <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarLugarXID.cs" />
@@ -108,6 +108,8 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarEmpleadosXIdProyecto.cs" />

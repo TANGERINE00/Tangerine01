@@ -99,11 +99,11 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una instancia a ComandoModificarContrasena</returns>
-            public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
+           /* public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
             {
                 return new Comandos.M2.ComandosDAOUsuario.ComandoModificarContrasena( usuario );
             }
-
+        */
             #endregion
 
             #region Comandos Rol
@@ -163,6 +163,11 @@ namespace LogicaTangerine.Fabrica
         public static Comando<Entidad> ObtenerComandoConsultarClientePotencial(Entidad cliente)
         {
             return new ComandoConsultarClientePotencial(cliente);
+        }
+
+        public static Comando<bool> ObtenerComandoModificarClientePotencial(Entidad cliente)
+        {
+            return new ComandoModificarClientePotencial(cliente);
         }
         #endregion
 
@@ -496,6 +501,15 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
         }
 
+        public static Comando<List<Entidad>> ObtenerComandoConsultarAcuerdoPagoMensual()
+        {
+            return new ComandoConsultarAcuerdoPagoMensual();
+        }
+
+        public static Comando<Double> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
+        {
+            return new ComandoCalcularPagoMensual(proyecto);
+        }
         #endregion
 
         #region Modulo 8

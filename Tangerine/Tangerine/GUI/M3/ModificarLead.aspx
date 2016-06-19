@@ -33,7 +33,9 @@
                     <!--Nombre-->
                         <div class="form-group" runat="server">
                             <label for="InputNombre">Nombre</label>
-                            <input runat="server" type="text" class="form-control" id="nombre" name="nombre" 
+                            <input runat="server" type="text" class="form-control" id="nombre" name="nombre"
+                                pattern="^[a-zA-Z'.\s]{1,40}$"
+                                title="Introduzca nombre" 
                                 placeholder="Introduzca nombre de la compañía" maxlength="50" required>
                         </div>
                     
@@ -43,7 +45,7 @@
                             <label for="InputRIF">RIF</label>
                             <input runat="server" type="text" class="form-control" 
 
-                                pattern="^[J]+[-]+([0-9-]{9,11})+[-]+([0-9]{1,1})$"
+                                pattern="^[J]+[-]+([0-9])+[-]+([0-9]{1,1})$"
                                 id="rif" name="rif" 
                                 placeholder="Introduzca RIF de la compañía.    e.g: J-23686197-6" required
                                 title="e.g: J-23686197-6 ">
@@ -55,7 +57,8 @@
                             <input runat="server" type="text" class="form-control"
                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
                                 id="email" name="email" 
-                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required/>
+                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required
+                                title="e.g: mail@ejemplo.com"/>
                         </div>
                       
 
