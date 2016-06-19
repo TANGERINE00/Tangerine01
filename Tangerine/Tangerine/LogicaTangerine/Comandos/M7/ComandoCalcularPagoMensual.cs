@@ -10,6 +10,11 @@ namespace LogicaTangerine.Comandos.M7
 {
     class ComandoCalcularPagoMensual : Comando<Entidad>
     {
+        public override Entidad Ejecutar()
+        {
+           Entidad proyecto = null;
+           return proyecto;
+        }
 
     }
 }
