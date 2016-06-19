@@ -233,4 +233,10 @@
   <data name="ParametroID" xml:space="preserve">
     <value>@id</value>
   </data>
+  <data name="BorrarUsuario" xml:space="preserve">
+    <value>M2_BorrarUsuario</value>
+  </data>
+  <data name="ParametroUsuID" xml:space="preserve">
+    <value>@usu_id</value>
+  </data>
 </root>

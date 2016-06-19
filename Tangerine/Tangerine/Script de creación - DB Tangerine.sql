@@ -460,6 +460,15 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE M2_BorrarUsuario
+	@usu_id
+AS
+	BEGIN
+		DELETE FROM USUARIO
+ 		WHERE usu_id = @usu_id;
+	END;
+GO
+
 CREATE PROCEDURE M2_ModificarRolUsuario
 	(@usuario [varchar](20),
 	@rol_nombre_nuevo [varchar](20))

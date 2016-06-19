@@ -70,6 +70,15 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M2_BorrarUsuario.
+        /// </summary>
+        internal static string BorrarUsuario {
+            get {
+                return ResourceManager.GetString("BorrarUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a usu_id.
         /// </summary>
         internal static string ComIDUser {
@@ -273,6 +282,15 @@ namespace DatosTangerine.DAO.M2 {
         internal static string ParametroUsuario {
             get {
                 return ResourceManager.GetString("ParametroUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @usu_id.
+        /// </summary>
+        internal static string ParametroUsuID {
+            get {
+                return ResourceManager.GetString("ParametroUsuID", resourceCulture);
             }
         }
         
