@@ -17,17 +17,13 @@ namespace Tangerine.GUI.M2
 
         string nombreUsuario = String.Empty;
         string rol = String.Empty;
+        private Tangerine_Presentador.M2.PresentadorAsignarRol presentador;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             int numFicha = int.Parse(Request.QueryString["idEmpleado"]);
-            
-            if (!IsPostBack)
-            {
-                Usuario user = LogicaModificarRol.ObtenerUsuario(numFicha);
-                textUsuario_M2.Value = user.NombreUsuario;
-                textRol_M2.Value = user.Rol.Nombre;
-            }  
+            presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, numFicha);
+            presentador.inicioVista(); 
 
         }
 
