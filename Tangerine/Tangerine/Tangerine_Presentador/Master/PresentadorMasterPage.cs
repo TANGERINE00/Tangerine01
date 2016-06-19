@@ -16,5 +16,12 @@ namespace Tangerine_Presentador.Master
         {
             _iMaster = Imaster;
         }
+
+
+    
+
+
+
+
     }
 }

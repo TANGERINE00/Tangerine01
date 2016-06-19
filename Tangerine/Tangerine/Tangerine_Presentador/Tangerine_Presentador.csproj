@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="M5\PresentadorAgregarContacto.cs" />
     <Compile Include="M5\PresentadorConsultarContactos.cs" />
+    <Compile Include="M5\PresentadorModificarContacto.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
     <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
@@ -78,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="M7\PresentadorModificarProyecto.cs" />
     <Compile Include="M7\PresentadorAgregarProyecto.cs" />
     <Compile Include="M7\PresentadorInformacionProyecto.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />
