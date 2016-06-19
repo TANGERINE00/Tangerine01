@@ -137,6 +137,7 @@
     <Compile Include="Comandos\M8\ComandoConsultarTodosFactura.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarXIdFactura.cs" />
     <Compile Include="Comandos\M8\ComandoEliminarFactura.cs" />
+    <Compile Include="Comandos\M8\ComandoEnviarCorreoGmail.cs" />
     <Compile Include="Comandos\M8\ComandoModificarFactura.cs" />
     <Compile Include="Comandos\M8\ComandoSearchExistingBill.cs" />
     <Compile Include="Comandos\M8\ResourceLogicaM8.Designer.cs">
@@ -187,7 +188,6 @@
     </Compile>
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
-    <Compile Include="M8\CorreoM8.cs" />
     <Compile Include="M9\LogicaM9.cs" />
     <Compile Include="M9\LogicResourcesM9.Designer.cs">
       <AutoGen>True</AutoGen>
