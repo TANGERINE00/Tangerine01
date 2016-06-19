@@ -18,6 +18,7 @@ namespace Tangerine.GUI.M3
             this.presentador = new PresentadorConsultarClientePotencial(this);
         }
 
+        #region Contrato
         public Literal NombreEtiqueta
         {
             get
@@ -107,8 +108,8 @@ namespace Tangerine.GUI.M3
                 this.visitas = value;
             }
         }
+        #endregion
 
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
@@ -116,46 +117,6 @@ namespace Tangerine.GUI.M3
             {
                 presentador.Llenar(idClientePotencial);
             }
-
-            //LogicaM3 prueba = new LogicaM3();
-            //int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
-            //if (!IsPostBack)
-            //{
-            //    ClientePotencial elClientePotencial = prueba.BuscarClientePotencial(idClientePotencial);
-
-            //    try
-            //    {
-
-
-            //        Name = elClientePotencial.NombreClientePotencial;
-            //        RIF = elClientePotencial.RifClientePotencial;
-            //        Correo = elClientePotencial.EmailClientePotencial;
-            //        Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
-            //        Llamadas = elClientePotencial.NumeroLlamadas.ToString();
-            //        Visitas = elClientePotencial.NumeroVisitas.ToString();
-            //        if (elClientePotencial.Status == 0)
-            //        {
-            //            Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
-
-            //        }
-            //        if (elClientePotencial.Status == 1)
-            //        {
-            //            Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
-            //        }
-            //        if (elClientePotencial.Status == 2)
-            //        {
-            //            Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
-            //        }
-
-
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //    }
-
-            //}
         }
     }
 }
