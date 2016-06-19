@@ -23,5 +23,7 @@ namespace DatosTangerine.InterfazDAO.M7
 
         Double CalcularPagoMensual(Entidad parametro);
 
+        String GenerarCodigoProyecto(Entidad parametro);
+
     }
 }

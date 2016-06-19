@@ -3,6 +3,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de Proyectos
@@ -51,28 +52,30 @@
                             <label for="InputCodigo">Codigo del proyecto * </label>
                             <input runat="server" type="text" class="form-control" id="textInputCodigo" name="textInputCodigo" placeholder="123456789">
                         </div>
-
                         <div class="form-group date">
-                        <label>Fecha de Inicio: *</label>
+                        <label>Fecha estimada Incio:</label>
 
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="textInputFechaInicio" type="text" runat="server" clientidmode="static">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
 
                     <div class="form-group date">
-                        <label>Fecha Fin Estimada *:</label>
+                        <label>Fecha estimada Final:</label>
 
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="textInputFechaEstimada" type="text" runat="server" clientidmode="static" >
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" >
                         </div>
+                        <!-- /.input group -->
+                    </div>
+
 
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
