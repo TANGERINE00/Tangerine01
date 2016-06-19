@@ -23,6 +23,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             _theUsuario = theUsuario;
         }
 
+        /// <summary>
+        /// Método para crear la instancia de la clase DaoUsuario y usar el método ModificarContraseniaUsuario
+        /// </summary>
+        /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override bool Ejecutar()
         {
             bool resultado = false;
