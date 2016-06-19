@@ -41,8 +41,9 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void asignar()
         {
-            /*LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoModificarRolUsuario();
-            LogicaModificarRol.ModificarRol(_vista.usuario, _vista.comboBoxRol);*/
+            LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoModificarRol(_vista.usuario, _vista.comboBoxRol);
+            LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoModificarRol comando = (LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoModificarRol)theComando;
+            comando.Ejecutar();
         }
     }
 }

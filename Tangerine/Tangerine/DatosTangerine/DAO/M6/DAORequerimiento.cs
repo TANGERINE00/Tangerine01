@@ -165,6 +165,38 @@ namespace DatosTangerine.DAO.M6
 
 
         /// <summary>
+        /// Método para consultar la cantidad de requerimientos en la base de datos.
+        /// </summary>
+        /// <returns>Cantidad de requerimientos</returns>
+
+        public int ConsultarNumeroRequerimientos()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int numero = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAORequerimiento.ConsultarNumeroRequerimientos, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                numero = int.Parse(row[RecursoDAORequerimiento.ReqId].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return numero;
+        }
+
+
+        /// <summary>
         /// Método para listar los requerimientos por propuesta 
         /// </summary>
         /// <param name="id"></param>

@@ -17,17 +17,27 @@ namespace Tangerine_Presentador.M5
     {
         private IContratoModificarContacto _vista;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorModificarContacto ( IContratoModificarContacto vista )
         {
             this._vista = vista;    
         }
 
+        /// <summary>
+        /// Método que se ejecuta al cargar la vista
+        /// </summary>
         public void CargarPagina() 
         {
             int idcont = _vista.GetidCont;
             _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp, _vista.GetIdComp );
         }
 
+        /// <summary>
+        /// Método que carga los datos del contacto a modificar en la vista
+        /// </summary>
         public void NoPostPagina()
         {
             int idcont = _vista.GetidCont;
@@ -47,6 +57,9 @@ namespace Tangerine_Presentador.M5
             _vista.input_telefono = contactoConsultado.Telefono; 
         }
 
+        /// <summary>
+        /// Método para modificar el contacto
+        /// </summary>
         public void ModificarContacto() 
         {
             Entidad contacto = FabricaEntidades.crearContactoConId( _vista.GetidCont, _vista.input_nombre,

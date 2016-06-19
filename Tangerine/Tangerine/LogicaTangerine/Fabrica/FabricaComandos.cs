@@ -182,7 +182,7 @@ namespace LogicaTangerine.Fabrica
             /// <param name="elUsuario"></param>
             /// <param name="elRol"></param>
             /// <returns>Retorna una una instancia a ComandoModificarRol</returns>
-            public static Comando<Boolean> obtenerComandoModificarRol( String elUsuario , String elRol )
+            public static Comando<Boolean> obtenerComandoModificarRol( string elUsuario , string elRol )
             {
                 return new Comandos.M2.ComandosDAORol.ComandoModificarRol( elUsuario , elRol );
             }
@@ -716,6 +716,21 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarEmpleado();
         }
+
+        public static Comando<List<Entidad>> ObtenerFabricaPaises()
+        {
+            return new ComandoObtenerPais();
+        }
+        public static Comando<List<Entidad>> ObtenerFabricaCargo()
+        {
+            return new ComandoObtenerCargo();
+        }
+        public static Comando<List<Entidad>> ObtenerFabricaEstado(Entidad Pais)
+        {
+            return new ComandoObtenerEstado(Pais);
+        }
+        
+
         #endregion
     }
 }

@@ -336,6 +336,37 @@ namespace DatosTangerine.DAO.M6
         }
 
         /// <summary>
+        /// Método para consultar la cantidad de propuestas en la base de datos.
+        /// </summary>
+        /// <returns>Cantidad de propuestas</returns>
+
+        public int ConsultarNumeroPropuestas()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int numero = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAOPropuesta.ConsultarNumeroPropuestas, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                numero = int.Parse(row[RecursoDAOPropuesta.PropCodigo].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return numero;
+        }
+
+        /// <summary>
         /// Metodo para eliminar una Propuesta de la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>

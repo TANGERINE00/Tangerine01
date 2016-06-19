@@ -36,11 +36,6 @@ namespace Tangerine_Presentador.M6
 
         public void consultarPropuestas()
         {
-            /*
-             * Aqui va el uso del recurso para imprimir la tabla 
-             * (guiarse del que hicimos en ../GUI/M4/ConsultarCompania)
-             * Ver recurso ya hecho por el M6 para la entrega anterior
-             */
             Comando <List<Entidad>> cmdConsultarPropuestas = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarTodosPropuesta();
             
             Comando<Entidad> cmdConsultarCompania;
@@ -51,65 +46,32 @@ namespace Tangerine_Presentador.M6
             {
                 foreach (Entidad _laPropuesta in listaPropuestas)
                 {
-                    cmdConsultarCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_laPropuesta);
-                    
-                    Entidad _laCompania = cmdConsultarCompania.Ejecutar();
-
+                    //Creo un objeto de tipo Propuesta para poder obtener el fk de id de compania.
                     DominioTangerine.Entidades.M6.Propuesta laPropuesta = (DominioTangerine.Entidades.M6.Propuesta)_laPropuesta;
+                    
+                    //Creo objeto tipo Entidad(Compania) para luego pasarlo al comando de consulta y obtener los datos en BD.
+                    //Inicializo el objeto solo con el Id (los demas campos en NULL).
+                    Entidad _laCompania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(
+                        Int32.Parse(laPropuesta.IdCompañia), null, null, null, null, null, DateTime.Today, 0, 0, 0, 0);
+
+                    cmdConsultarCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_laCompania);
+                    
+                    //Guardo en un objeto de tipo Entidad los datos de la compania, finalmente la casteo a tipo Compania.
+                    _laCompania = cmdConsultarCompania.Ejecutar();
+
                     DominioTangerine.Entidades.M4.CompaniaM4 laCompania = (DominioTangerine.Entidades.M4.CompaniaM4)_laCompania; 
 
                     propuesta += RecursosPresentadorPropuesta.AbrirTR;
                     propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.CerrarTD;
                     propuesta += RecursosPresentadorPropuesta.AbrirTD + laCompania.NombreCompania.ToString() + RecursosPresentadorPropuesta.CerrarTD;
                     propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Feincio.ToShortDateString() + RecursosPresentadorPropuesta.CerrarTD;
-                        
-                    if (laPropuesta.Estatus.Equals("Aprobado"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.aprobado + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
-                    
-                    if (laPropuesta.Estatus.Equals("Pendiente"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.pendiente + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
-                    
-                    if (laPropuesta.Estatus.Equals("Cerrado"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.cerrado + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
 
-                    if (laPropuesta.Moneda.Equals("Bolivar"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bolivar + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
-                    
-                    if (laPropuesta.Moneda.Equals("Dolar"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.dolar + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
-                    
-                    if (laPropuesta.Moneda.Equals("Euro"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.euro + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
-                    
-                    if (laPropuesta.Moneda.Equals("Bitcoin"))
-                    {
-                        propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bitcoin + RecursosPresentadorPropuesta.CerrarTD;   
-                    }
+                    imprimirStatus(laPropuesta);
 
-                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Costo + RecursosPresentadorPropuesta.CerrarTD;
+                    imprimirMoneda(laPropuesta);
 
-                    
-                    //Acciones de cada propuesta
-                    propuesta += RecursosPresentadorPropuesta.AbrirTD2
-                        + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.botonCerra
-                        + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.botonCerra;
-                    propuesta += RecursosPresentadorPropuesta.CerrarTD;
-                    propuesta += RecursosPresentadorPropuesta.CerrarTR;
-                    
-                }
-                
+                    imprimirBotones(laPropuesta);
+                } 
             } 
             catch (Exception ex)
             {
@@ -118,27 +80,58 @@ namespace Tangerine_Presentador.M6
         }
 
 
-        public void imprimirBotones()
+        public void imprimirBotones(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
-            /*
-             * Same here... En M4 se pico la impresion de la tabla en DATOS y BOTONEs (acciones).
-             */
+            propuesta += RecursosPresentadorPropuesta.AbrirTD2
+                        + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.botonCerra
+                        + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.botonCerra;
+            propuesta += RecursosPresentadorPropuesta.CerrarTD;
+            propuesta += RecursosPresentadorPropuesta.CerrarTR;
         }
 
 
-        public void imprimirStatus()
+        public void imprimirStatus(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
-            /*
-             * Same here... pero con los diferentes status (meter todos esos IF aqui)
-             */
+            if (laPropuesta.Estatus.Equals("Aprobado"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.aprobado + RecursosPresentadorPropuesta.CerrarTD;
+            }
+
+            if (laPropuesta.Estatus.Equals("Pendiente"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.pendiente + RecursosPresentadorPropuesta.CerrarTD;
+            }
+
+            if (laPropuesta.Estatus.Equals("Cerrado"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.cerrado + RecursosPresentadorPropuesta.CerrarTD;
+            }
         }
 
 
-        public void imprimirMoneda()
+        public void imprimirMoneda(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
-            /*
-             * Same here... pero con los tipos de moneda.
-             */
+            if (laPropuesta.Moneda.Equals("Bolivar"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bolivar + RecursosPresentadorPropuesta.CerrarTD;
+            }
+
+            if (laPropuesta.Moneda.Equals("Dolar"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.dolar + RecursosPresentadorPropuesta.CerrarTD;
+            }
+
+            if (laPropuesta.Moneda.Equals("Euro"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.euro + RecursosPresentadorPropuesta.CerrarTD;
+            }
+
+            if (laPropuesta.Moneda.Equals("Bitcoin"))
+            {
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bitcoin + RecursosPresentadorPropuesta.CerrarTD;
+            }
+
+            propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Costo + RecursosPresentadorPropuesta.CerrarTD;
         }
     }
 }
