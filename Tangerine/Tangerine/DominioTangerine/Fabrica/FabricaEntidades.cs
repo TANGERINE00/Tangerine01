@@ -311,9 +311,23 @@ namespace DominioTangerine.Fabrica
      
         
         
-        public static Entidad CrearEntidadCompaniaM4 (){
+        public static Entidad CrearEntidadCompaniaM4 ()
+        {
              return new CompaniaM4 ();
         }
+
+        
+        
+        public static Entidad CrearEntidadCompaniaM4Llena(int inputId, string inputNombre, string inputRif, string inputEmail, 
+            string inputTelefono,string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
+            int inputPlazoPago, int inputIdLugar)
+        {
+            
+            return new CompaniaM4 (inputId,  inputNombre,  inputRif,  inputEmail, inputTelefono,
+                inputAcronimo,  inputFechaRegistro,  inputStatus, inputPresupuesto,inputPlazoPago,  inputIdLugar);
+        }
+
+
 
             #region instancias de la clase LugarDireccionM4
 
