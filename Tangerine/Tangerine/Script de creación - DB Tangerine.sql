@@ -1389,6 +1389,16 @@ AS
  	END;
 GO
 
+---- StoredProcedure Eliminar Factura ----
+CREATE PROCEDURE M8_EliminarFactura
+	@id_Factura int
+
+AS
+	BEGIN
+		DELETE FROM FACTURA WHERE fac_id = @id_Factura;
+	END;
+GO
+
 ---- StoredProcedure Consultar Factura ----
 CREATE PROCEDURE M8_ConsultarFactura
 	@id_Factura int
