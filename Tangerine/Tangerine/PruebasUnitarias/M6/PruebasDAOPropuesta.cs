@@ -185,12 +185,14 @@ namespace PruebasUnitarias.M6
         /// Prueba que se consulten todas las propuestas
         /// </summary>
         [Test]
+        public void ConsultaTodasPropuesta()
         {
             //Se crea un objeto DAO para poder realizar la inserción.
             DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             //Se inserta la propuesta para tener un minimo
             confirmacion = dao.Agregar(laPropuesta);
             //Se cuentan la cantidad de propuestas
+            int contador = dao.ConsultarNumeroPropuestas();
             listaPropuestas = dao.ConsultarTodos();
             int contador2 = 0;
             foreach (Entidad propuesta in listaPropuestas)

@@ -172,6 +172,7 @@ namespace DatosTangerine.DAO.M6
         public int ConsultarNumeroRequerimientos()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             int numero = 0;
             try
             {
