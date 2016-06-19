@@ -10,7 +10,7 @@
 namespace Tangerine.GUI.M7 {
     
     
-    public partial class WebForm1 {
+    public partial class AgregarProyecto {
         
         /// <summary>
         /// generar_proyecto control.

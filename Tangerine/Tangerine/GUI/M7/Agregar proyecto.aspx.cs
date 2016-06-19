@@ -6,34 +6,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
-using LogicaTangerine.M5;
-using LogicaTangerine.M10;
+using Tangerine_Contratos.M7;
+using Tangerine_Presentador.M7;
+using DominioTangerine.Entidades.M7;
 
 namespace Tangerine.GUI.M7
 {
 
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class AgregarProyecto : System.Web.UI.Page
     {
-        LogicaProyecto LogicaM7 = new LogicaProyecto();
-        List<Propuesta> Propuestas = new List<Propuesta>();
-        LogicaM5 LogicaM5 = new LogicaM5();
-        LogicaM10 LogicaM10 = new LogicaM10();
-        List<Empleado> Gerentes = new List<Empleado>();
-        List<Empleado> Programadores = new List<Empleado>();
-        List<Contacto> Contactos = new List<Contacto>();
-        List<Empleado> seleccionProgramadores = new List<Empleado>();
-        List<Contacto> seleccionContactos = new List<Contacto>();
+     
 
+        PresentadorAgregarProyecto presenter;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-           Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
-           Gerentes = LogicaM10.GetGerentes();
-           Programadores = LogicaM10.GetProgramadores();
+           
 
            if (!IsPostBack)
            {
                
-            if( Propuestas.Count > 0 )
+          /*  if( Propuestas.Count > 0 )
             {
                 textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[0].Nombre);
 
@@ -59,7 +52,7 @@ namespace Tangerine.GUI.M7
             {
                 
                 inputPersonal.Items.Add(Programadores[i].emp_p_nombre + " " + Programadores[i].emp_p_apellido);
-            }
+            }*/
            }
         }
 
@@ -72,7 +65,7 @@ namespace Tangerine.GUI.M7
 
         protected void comboPropuesta_Click(object sender, EventArgs e)
         {
-            inputEncargado.Items.Clear();
+           /* inputEncargado.Items.Clear();
 
             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
 
@@ -83,51 +76,52 @@ namespace Tangerine.GUI.M7
             
             textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
             textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
+             */
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
-            Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
-            Gerentes = LogicaM10.GetGerentes();
-            Programadores = LogicaM10.GetProgramadores();
-            Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
-            Proyecto _proyecto = new Proyecto(0,textInputNombreProyecto.Value,textInputCodigo.Value,DateTime.Parse(textInputFechaInicio.Value),
-                                              DateTime.Parse(textInputFechaEstimada.Value), Double.Parse(textInputCosto.Value),
-                                              Propuestas[inputPropuesta.SelectedIndex].Descripcion, "0", "En desarrollo", "",
-                                              Propuestas[inputPropuesta.SelectedIndex].Acuerdopago, int.Parse(Propuestas[inputPropuesta.SelectedIndex].CodigoP), 
-                                              int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia),
-                                              Gerentes[inputGerente.SelectedIndex].Emp_num_ficha);
-            Empleado _empleado = new Empleado();
-            for (int i = 0; i < inputPersonal.Items.Count; i++)
-            {
-                if (inputPersonal.Items[i].Selected)
-                {
-                    seleccionProgramadores.Add(Programadores[i]);
-                }
-            }
+            /* Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
+             Gerentes = LogicaM10.GetGerentes();
+             Programadores = LogicaM10.GetProgramadores();
+             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
+             Proyecto _proyecto = new Proyecto(0,textInputNombreProyecto.Value,textInputCodigo.Value,DateTime.Parse(textInputFechaInicio.Value),
+                                               DateTime.Parse(textInputFechaEstimada.Value), Double.Parse(textInputCosto.Value),
+                                               Propuestas[inputPropuesta.SelectedIndex].Descripcion, "0", "En desarrollo", "",
+                                               Propuestas[inputPropuesta.SelectedIndex].Acuerdopago, int.Parse(Propuestas[inputPropuesta.SelectedIndex].CodigoP), 
+                                               int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia),
+                                               Gerentes[inputGerente.SelectedIndex].Emp_num_ficha);
+             Empleado _empleado = new Empleado();
+             for (int i = 0; i < inputPersonal.Items.Count; i++)
+             {
+                 if (inputPersonal.Items[i].Selected)
+                 {
+                     seleccionProgramadores.Add(Programadores[i]);
+                 }
+             }
             
                 
-            for (int i = 0; i < inputEncargado.Items.Count; i++)
-            {
-                if (inputEncargado.Items[i].Selected)
-                {
-                    seleccionContactos.Add(Contactos[i]);
-                }
-            }
+             for (int i = 0; i < inputEncargado.Items.Count; i++)
+             {
+                 if (inputEncargado.Items[i].Selected)
+                 {
+                     seleccionContactos.Add(Contactos[i]);
+                 }
+             }
 
-            _proyecto.set_contactos(seleccionContactos);
-            _proyecto.set_empleados(seleccionProgramadores);
+             _proyecto.set_contactos(seleccionContactos);
+             _proyecto.set_empleados(seleccionProgramadores);
            
-            LogicaProyecto _logica =  new LogicaProyecto();
-            if (_logica.agregarProyecto(_proyecto))
-            {
-                Server.Transfer("ConsultaProyecto.aspx");
-                //colocar un mensaje de creacion con exito y vaciar text.
-            }
-            else
-            { 
-                //colocar  un mensaje de error en la creacion
-            }
+             LogicaProyecto _logica =  new LogicaProyecto();
+             if (_logica.agregarProyecto(_proyecto))
+             {
+                 Server.Transfer("ConsultaProyecto.aspx");
+                 //colocar un mensaje de creacion con exito y vaciar text.
+             }
+             else
+             { 
+                 //colocar  un mensaje de error en la creacion
+             }*/
         } 
     }
 }
