@@ -21,7 +21,8 @@ namespace Tangerine.GUI.M3
         {
             this.presentador = new PresentadorListarClientePotencial(this);
         }
-        
+
+        #region Contrato
         public Literal ClientePotencial
         {
             get
@@ -34,7 +35,7 @@ namespace Tangerine.GUI.M3
                 Lista = value;
             }
         }
-
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {

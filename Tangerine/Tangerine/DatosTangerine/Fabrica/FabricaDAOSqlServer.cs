@@ -164,6 +164,43 @@ namespace DatosTangerine.Fabrica
             return new DAO.M10.DAOEmpleado();
         }
 
+
+        public static IDAOEmpleado ConsultarDAOEmpleadoId()
+        {
+            return new DAO.M10.DAOEmpleado(); //AQUIIIIIIIIIIIIIIIII
+        }
+
+        /// <summary>
+        /// Metodo que trae todos los paises
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado ObtenerIDaoPaises()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }       
+
+         /// <summary>
+        /// Metodo que trae todos los cargos
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado ObtenerIDaoCargo()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
+
+        /// <summary>
+        /// Metodo que trae todos los estados de un pais
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado ObtenerIDaoEstados()
+
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
         #endregion
+
     }
 }

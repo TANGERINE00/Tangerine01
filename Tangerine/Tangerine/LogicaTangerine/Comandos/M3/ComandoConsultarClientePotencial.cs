@@ -14,7 +14,7 @@ namespace LogicaTangerine.Comandos.M3
         /// <summary>
         /// Constructor del comando
         /// </summary>
-        /// <param name="parametro">Factura a consultar</param>
+        /// <param name="parametro">Cliente Potencial a consultar</param>
         public ComandoConsultarClientePotencial(Entidad parametro)
         {
             LaEntidad = parametro;
@@ -25,8 +25,7 @@ namespace LogicaTangerine.Comandos.M3
             try
             {
                 IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-                Entidad clientePotencial = daoClientePotencial.ConsultarXId(this.LaEntidad);
-                return clientePotencial;
+                return daoClientePotencial.ConsultarXId(this.LaEntidad);
             }
             catch (Exception e)
             {

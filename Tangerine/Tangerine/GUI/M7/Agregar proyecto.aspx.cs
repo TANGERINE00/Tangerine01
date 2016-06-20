@@ -6,41 +6,203 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
-using LogicaTangerine.M5;
-using LogicaTangerine.M10;
+using Tangerine_Contratos.M7;
+using Tangerine_Presentador.M7;
+using DominioTangerine.Entidades.M7;
+using System.Web.UI.HtmlControls;
 
 namespace Tangerine.GUI.M7
 {
 
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class AgregarProyecto : System.Web.UI.Page, IContratoAgregarProyecto
     {
-        LogicaProyecto LogicaM7 = new LogicaProyecto();
-        List<Propuesta> Propuestas = new List<Propuesta>();
-        LogicaM5 LogicaM5 = new LogicaM5();
-        LogicaM10 LogicaM10 = new LogicaM10();
-        List<Empleado> Gerentes = new List<Empleado>();
-        List<Empleado> Programadores = new List<Empleado>();
-        List<Contacto> Contactos = new List<Contacto>();
-        List<Empleado> seleccionProgramadores = new List<Empleado>();
-        List<Contacto> seleccionContactos = new List<Contacto>();
+     
+
+        private PresentadorAgregarProyecto _presentador;
+
+        #region Atributos
+
+        public string NombrePropuesta
+        {
+            get { return this.inputPropuesta.ToString(); }
+            set { this.inputPropuesta.Text = value; }
+        }
+
+
+        public string NombreProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string CodigoProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                this.textInputCodigo.Value = value.ToString();
+            }
+        }
+
+        public string FechaInicio
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string FechaFin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Costo
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                this.textInputCosto.Value = value.ToString();
+            }
+        }
+
+        public string Porcentaje
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Estatus
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        HtmlSelect IContratoAgregarProyecto.inputPersonal
+        {
+            get
+            {
+                return this.inputPersonal;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        HtmlSelect IContratoAgregarProyecto.inputEncargado
+        {
+            get
+            {
+                return this.inputEncargado;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        DropDownList IContratoAgregarProyecto.inputPropuesta
+        {
+            get
+            {
+                return this.inputPropuesta;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+
+
+        }
+
+        DropDownList IContratoAgregarProyecto.inputGerente
+        {
+            get
+            {
+                return this.inputGerente;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+
+        }
+
+        HtmlGenericControl IContratoAgregarProyecto.columna2
+        {
+            get
+            {
+                return this.columna2;
+            }
+            set
+            {
+                this.columna2 = value;
+            }
+        }
+
+        Button IContratoAgregarProyecto.BtnGenerar
+        {
+            get 
+            {
+                return this.btnGenerar;
+            }
+            set
+            {
+                this.btnGenerar = value;
+            }
+        }
+
+        #endregion
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
-           Gerentes = LogicaM10.GetGerentes();
-           Programadores = LogicaM10.GetProgramadores();
+
+            _presentador = new PresentadorAgregarProyecto (this);
+            
 
            if (!IsPostBack)
            {
+               _presentador.CargarPagina();
                
-            if( Propuestas.Count > 0 )
+          /*  if( Propuestas.Count > 0 )
             {
-                textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[0].Nombre);
-
-                for (int i = 0; i < Propuestas.Count;i++ )
-                {
-                    inputPropuesta.Items.Add(Propuestas[i].Nombre);
-                }
 
                 Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[0].IdCompañia),1); 
 
@@ -59,20 +221,23 @@ namespace Tangerine.GUI.M7
             {
                 
                 inputPersonal.Items.Add(Programadores[i].emp_p_nombre + " " + Programadores[i].emp_p_apellido);
-            }
+            }*/
            }
         }
 
         protected void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
-
-            columna2.Visible = true;
-            btnGenerar.Enabled = true;
+            _presentador.AgregarPersonal();
+            
+        
         }
 
         protected void comboPropuesta_Click(object sender, EventArgs e)
         {
-            inputEncargado.Items.Clear();
+
+            _presentador.CargarInformacionPropuesta(sender);
+
+           /* inputEncargado.Items.Clear();
 
             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
 
@@ -81,53 +246,54 @@ namespace Tangerine.GUI.M7
                 inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
             }
             
-            textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
-            textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
+             */
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
-            Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
-            Gerentes = LogicaM10.GetGerentes();
-            Programadores = LogicaM10.GetProgramadores();
-            Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
-            Proyecto _proyecto = new Proyecto(0,textInputNombreProyecto.Value,textInputCodigo.Value,DateTime.Parse(textInputFechaInicio.Value),
-                                              DateTime.Parse(textInputFechaEstimada.Value), Double.Parse(textInputCosto.Value),
-                                              Propuestas[inputPropuesta.SelectedIndex].Descripcion, "0", "En desarrollo", "",
-                                              Propuestas[inputPropuesta.SelectedIndex].Acuerdopago, int.Parse(Propuestas[inputPropuesta.SelectedIndex].CodigoP), 
-                                              int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia),
-                                              Gerentes[inputGerente.SelectedIndex].Emp_num_ficha);
-            Empleado _empleado = new Empleado();
-            for (int i = 0; i < inputPersonal.Items.Count; i++)
-            {
-                if (inputPersonal.Items[i].Selected)
-                {
-                    seleccionProgramadores.Add(Programadores[i]);
-                }
-            }
+            /* Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
+             Gerentes = LogicaM10.GetGerentes();
+             Programadores = LogicaM10.GetProgramadores();
+             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
+             Proyecto _proyecto = new Proyecto(0,textInputNombreProyecto.Value,textInputCodigo.Value,DateTime.Parse(textInputFechaInicio.Value),
+                                               DateTime.Parse(textInputFechaEstimada.Value), Double.Parse(textInputCosto.Value),
+                                               Propuestas[inputPropuesta.SelectedIndex].Descripcion, "0", "En desarrollo", "",
+                                               Propuestas[inputPropuesta.SelectedIndex].Acuerdopago, int.Parse(Propuestas[inputPropuesta.SelectedIndex].CodigoP), 
+                                               int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia),
+                                               Gerentes[inputGerente.SelectedIndex].Emp_num_ficha);
+             Empleado _empleado = new Empleado();
+             for (int i = 0; i < inputPersonal.Items.Count; i++)
+             {
+                 if (inputPersonal.Items[i].Selected)
+                 {
+                     seleccionProgramadores.Add(Programadores[i]);
+                 }
+             }
             
                 
-            for (int i = 0; i < inputEncargado.Items.Count; i++)
-            {
-                if (inputEncargado.Items[i].Selected)
-                {
-                    seleccionContactos.Add(Contactos[i]);
-                }
-            }
+             for (int i = 0; i < inputEncargado.Items.Count; i++)
+             {
+                 if (inputEncargado.Items[i].Selected)
+                 {
+                     seleccionContactos.Add(Contactos[i]);
+                 }
+             }
 
-            _proyecto.set_contactos(seleccionContactos);
-            _proyecto.set_empleados(seleccionProgramadores);
+             _proyecto.set_contactos(seleccionContactos);
+             _proyecto.set_empleados(seleccionProgramadores);
            
-            LogicaProyecto _logica =  new LogicaProyecto();
-            if (_logica.agregarProyecto(_proyecto))
-            {
-                Server.Transfer("ConsultaProyecto.aspx");
-                //colocar un mensaje de creacion con exito y vaciar text.
-            }
-            else
-            { 
-                //colocar  un mensaje de error en la creacion
-            }
-        } 
+             LogicaProyecto _logica =  new LogicaProyecto();
+             if (_logica.agregarProyecto(_proyecto))
+             {
+                 Server.Transfer("ConsultaProyecto.aspx");
+                 //colocar un mensaje de creacion con exito y vaciar text.
+             }
+             else
+             { 
+                 //colocar  un mensaje de error en la creacion
+             }*/
+        }
+
+
     }
 }

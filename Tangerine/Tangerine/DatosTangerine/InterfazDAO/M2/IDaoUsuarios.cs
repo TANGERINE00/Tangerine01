@@ -19,12 +19,6 @@ namespace DatosTangerine.InterfazDAO.M2
         bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado );
 
         /// <summary>
-        /// Encabezado de metodo para devolver todos los empleados sin usuario
-        /// </summary>
-        /// <returns>Retorna la lista de empleados</returns>
-        List<Entidad> ConsultarListaDeEmpleados();
-
-        /// <summary>
         /// Encabezado de metodo usado para verificar si el usuario existe en el sistema
         /// </summary>
         /// <param name="nombreUsuario"></param>
@@ -57,6 +51,13 @@ namespace DatosTangerine.InterfazDAO.M2
         /// </summary>
         /// <returns>Retorna el ultimo ID de Usuario</returns>
         int ConsultLastUserID();
+
+        /// <summary>
+        /// Encabezado del metodo para retornar el ultimo ID del usuario
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns>Retorna true si el usuario fue borrado exitosamente</returns>
+        bool BorrarUsuario( int userID );
 
     }
 }

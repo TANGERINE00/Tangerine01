@@ -15,6 +15,7 @@ namespace Tangerine_Contratos.M9
         string numero { get; set; }
         string codAprob { get; set; }
         string formPago { get; set; }
+        void btnagregar_Click(object sender, EventArgs e);
 
     }
 }

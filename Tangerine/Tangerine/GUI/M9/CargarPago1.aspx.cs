@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using LogicaTangerine.M8;
 using LogicaTangerine.M9;
 using LogicaTangerine.M4;
 using DominioTangerine;
@@ -141,7 +140,7 @@ namespace Tangerine.GUI.M9
 
         /// <summary>
         /// Metodo para tomar los valores de la vista y guardarlos en BD luego de apretar el boton agregar.
-        protected void btnagregar_Click(object sender, EventArgs e)
+        public void btnagregar_Click(object sender, EventArgs e)
         {
             presentador.AgregarPago();
             Server.Transfer("SeleccionCompania.aspx", true);

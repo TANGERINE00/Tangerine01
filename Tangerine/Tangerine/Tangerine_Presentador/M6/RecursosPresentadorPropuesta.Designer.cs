@@ -133,7 +133,7 @@ namespace Tangerine_Presentador.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:3px;&quot;  href=&quot;ModificarPropuesta.aspx?id=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:3px;&quot;  href=&quot;InformacionPropuesta.aspx?id=.
         /// </summary>
         internal static string botonConsultar {
             get {
@@ -214,7 +214,7 @@ namespace Tangerine_Presentador.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string euro {
             get {

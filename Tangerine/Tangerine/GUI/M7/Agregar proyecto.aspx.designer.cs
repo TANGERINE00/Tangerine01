@@ -10,7 +10,7 @@
 namespace Tangerine.GUI.M7 {
     
     
-    public partial class WebForm1 {
+    public partial class AgregarProyecto {
         
         /// <summary>
         /// generar_proyecto control.
@@ -49,22 +49,22 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText textInputCodigo;
         
         /// <summary>
-        /// textInputFechaInicio control.
+        /// datepicker1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText textInputFechaInicio;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker1;
         
         /// <summary>
-        /// textInputFechaEstimada control.
+        /// datepicker2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText textInputFechaEstimada;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker2;
         
         /// <summary>
         /// textInputCosto control.
@@ -109,7 +109,7 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputGerente;
+        protected global::System.Web.UI.WebControls.DropDownList inputGerente;
         
         /// <summary>
         /// inputPersonal control.

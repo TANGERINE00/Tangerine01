@@ -103,13 +103,39 @@ namespace DatosTangerine.DAO.M6
 
 
         /// <summary>
-        /// Metodo para consultar propuesta por id (nombre)
+        /// Metodo para consultar requerimiento por id (nombre)
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public Entidad ConsultarXId(Entidad id)
         {
-            Entidad requerimiento = null;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parametros = new List<Parametro>();
+
+            Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento();
+
+            try
+            {
+                Parametro parametro = new Parametro(RecursoDAORequerimiento.ReqNombre, SqlDbType.VarChar,
+                    ((DominioTangerine.Entidades.M6.Requerimiento)id).CodigoRequerimiento, false);
+                parametros.Add(parametro);
+
+                DataTable dataTableRequerimientos = EjecutarStoredProcedureTuplas(RecursoDAORequerimiento.ConsultarRequerimientoNombre,
+                    parametros);
+
+                DataRow fila = dataTableRequerimientos.Rows[0];
+
+                requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                    ((DominioTangerine.Entidades.M6.Requerimiento)id).CodigoRequerimiento,
+                    fila[RecursoDAORequerimiento.ReqDescripcion].ToString(),
+                    fila[RecursoDAORequerimiento.ReqNombrePropuesta].ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
 
             return requerimiento;
         }
@@ -165,6 +191,38 @@ namespace DatosTangerine.DAO.M6
 
 
         /// <summary>
+        /// Método para consultar la cantidad de requerimientos en la base de datos.
+        /// </summary>
+        /// <returns>Cantidad de requerimientos</returns>
+
+        public int ConsultarNumeroRequerimientos()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int numero = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAORequerimiento.ConsultarNumeroRequerimientos, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                numero = int.Parse(row[RecursoDAORequerimiento.ReqId].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return numero;
+        }
+
+
+        /// <summary>
         /// Método para listar los requerimientos por propuesta 
         /// </summary>
         /// <param name="id"></param>
@@ -172,25 +230,24 @@ namespace DatosTangerine.DAO.M6
         public List<Entidad> ConsultarRequerimientosXPropuesta(String id)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parametros = new List<Parametro>();
 
             List<Entidad> listaRequerimientos = new List<Entidad>();
 
-            Parametro parametro = new Parametro(RecursosPropuesta.ReqPropNombre, SqlDbType.VarChar, id, false);
+            Parametro parametro = new Parametro(RecursoDAORequerimiento.ReqPropNombre, SqlDbType.VarChar, id, false);
             parametros.Add(parametro);
 
             try
             {
-                DataTable dataTableRequerimientos = EjecutarStoredProcedureTuplas(RecursosPropuesta.ListarRequerimiento, parametros);
+                DataTable dataTableRequerimientos = EjecutarStoredProcedureTuplas(RecursoDAORequerimiento.ListarRequerimiento, parametros);
 
                 foreach (DataRow fila in dataTableRequerimientos.Rows)
                 {
                     listaRequerimientos.Add(DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
-                        id,
-                        fila[RecursosPropuesta.ReqCodigo].ToString(),
-                        fila[RecursosPropuesta.ReqDescripcion].ToString()));
+                        fila[RecursoDAORequerimiento.ReqCodigo].ToString(),
+                        fila[RecursoDAORequerimiento.ReqDescripcion].ToString(),id));
                 }
             }
             catch (Exception ex)
@@ -199,6 +256,41 @@ namespace DatosTangerine.DAO.M6
             }
 
             return listaRequerimientos;
+        }
+
+        /// <summary>
+        /// Metodo que permite eliminar un requerimiento en la BD
+        /// </summary>
+        /// <param name="requerimiento"></param>
+        /// <returns></returns>
+        public Boolean EliminarRequerimiento(Entidad elRequerimiento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            DominioTangerine.Entidades.M6.Requerimiento requerimiento = (DominioTangerine.Entidades.M6.Requerimiento)elRequerimiento;
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursoDAORequerimiento.ReqPropNombre, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false);
+                parameters.Add(theParam);
+
+                List<Resultado> results = EjecutarStoredProcedure(RecursoDAORequerimiento.EliminarRequerimiento, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+            return true;
         }
         
         #endregion

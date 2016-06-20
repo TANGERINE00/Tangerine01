@@ -5,8 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LogicaTangerine.M4;
+using DominioTangerine.Fabrica;
+using DominioTangerine.Entidades.M4;
 using DominioTangerine;
 using DatosTangerine.M4;
+using LogicaTangerine.Fabrica;
+using LogicaTangerine;
 
 namespace PruebasUnitarias.M4
 {
@@ -14,8 +18,10 @@ namespace PruebasUnitarias.M4
     public class PruebaLogica
     {
         #region Atributos
-        public Compania theCompany;
-        public Compania theCompany1;
+        public Entidad theCompany;
+        public Entidad theCompany1;
+        public Entidad theCompany2;
+        public Entidad Lugar1;
         public bool answer;
         public bool answer1;
         LogicaM4 Logica = new LogicaM4();
@@ -26,9 +32,9 @@ namespace PruebasUnitarias.M4
         [SetUp]
         public void setup()
         {
-            theCompany = new Compania("CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-            theCompany1 = new Compania("CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-
+            theCompany = FabricaEntidades.CrearEntidadCompaniaM4Llena(5,"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            theCompany1 = FabricaEntidades.CrearEntidadCompaniaM4Llena(1,"CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            Lugar1 = FabricaEntidades.CrearEntidadLugarM4(5,"Caracas");
         }
 
         [TearDown]
@@ -42,90 +48,86 @@ namespace PruebasUnitarias.M4
         #region Tests
 
         /// <summary>
-        /// Prueba que permite verificar el consultar de todas las companías en la base de datos.
-        /// </summary>
-        [Test]
-        public void TestGetCompanies()
-        {
-            //Inserto una compañía por si la base de datos está vacía.
-            answer1 = Logica.AddNewCompany(theCompany);
-            //Consulto todas las compañías en la base de datos.
-            List<Compania> companias = Logica.ConsultCompanies();
-            //Recorro las compañías y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
-            foreach (Compania compania in companias)
-            {
-                Assert.IsNotNull(compania.IdCompania);
-            }
-        }
-
-        /// <summary>
         /// Prueba que permite verificar el agregar una compañía a la base de datos.
         /// </summary>
         [Test]
         public void TestAddNewCompany()
         {
-            //Inserto una compañía.
-            answer = Logica.AddNewCompany(theCompany);
-            //Compruebo que el método de modificación finalizó correctamente.
-            Assert.IsTrue(answer);
+            Comando<bool> Comand = FabricaComandos.CrearAgregarCompania(theCompany);
+            Assert.IsTrue(Comand.Ejecutar());
+            Comando<Entidad> Comand2 = FabricaComandos.CrearConsultarCompania(theCompany);
+            theCompany2 = Comand2.Ejecutar();
+            Assert.IsTrue(theCompany2.Id == 5);
+          
         }
 
         /// <summary>
-        /// Prueba que permite la búsqueda de una compañía a la base de datos.
+        /// Prueba que permite la búsqueda de una compañía a la base de datos
         /// </summary>
         [Test]
-        public void TestChangeCompany()
+        public void TestGet()
         {
-            //Inserto una compañía para posteriormente modificarla.
-            answer1 = Logica.AddNewCompany(theCompany);
-            theCompany.IdCompania = BDCompania.ConsultLastCompanyId();
-            theCompany.NombreCompania = "Nombremodificado";
-            //Aplico el método para modificar una compañía.
-            answer = Logica.ChangeCompany(theCompany);
-            //Compruebo que el método de modificación finalizó correctamente.
-            Assert.IsTrue(answer);
+           
+            Comando<Entidad> Comand2 = FabricaComandos.CrearConsultarCompania(theCompany1);
+            theCompany2 = Comand2.Ejecutar();
+            Assert.IsTrue(theCompany2.Id == 1);
+            
         }
 
         /// <summary>
-        /// Prueba que permite la búsqueda de una compañía a la base de datos.
+        /// Prueba que permite verificar el consultar de todas las companías en la base de datos.
         /// </summary>
         [Test]
-        public void TestSearchCompany()
+        public void TestGetAll()
         {
-            //Inserto la compañía para poder probar la consulta.
-            answer1 = Logica.AddNewCompany(theCompany);
-            //Aplico el metodo para consultar la companía agregada anteriormente.
-            theCompany1 = Logica.ConsultCompany(BDCompania.ConsultLastCompanyId());
-            //Comparo que el id de la companía creada coincide con el id de la compañía consultada.
-            Assert.AreEqual(BDCompania.ConsultLastCompanyId(), theCompany1.IdCompania);
+            Comando<List<Entidad>> Comand2 = FabricaComandos.CrearConsultarTodasCompania();
+            List<Entidad> Companias = Comand2.Ejecutar();
+            for (int i = 0; i < Companias.Count(); i++)
+            {
+
+                Assert.IsTrue(Companias[i].Id != 0);
+            }
+            
         }
 
         /// <summary>
-        /// Prueba que permite la búsqueda de una compañía a la base de datos.
+        /// Prueba que permite verificar el consultar de todas las companías Habilitadas en la base de datos.
         /// </summary>
-        [Test]
-        public void TestEnableCompany()
+        /*[Test]
+        public void TestGetAll()
         {
-            //Inserto la compañía para poder probar la habilitación.
-            answer1 = Logica.AddNewCompany(theCompany);
-            //Aplico el método sobre la compañía creada.
-            answer = Logica.EnableCompany(theCompany);
-            //Compruebo que el metodo de habilitación finalizó correctamente.
-            Assert.IsTrue(answer);
-        }
+            Comando<List<Entidad>> Comand2 = FabricaComandos.CrearConsultarCompaniasActivas();
+            List<Entidad> Companias = Comand2.Ejecutar();
+            for (int i = 0; i < Companias.Count(); i++)
+            {
+
+                Assert.IsTrue(Companias[i].Id != 0);
+            }
+
+        }*/
+       
+
+     
 
         /// <summary>
-        /// Prueba que permite la búsqueda de una compañía a la base de datos.
+        /// Prueba que permite deshabilitar una compania.
         /// </summary>
         [Test]
         public void TestDisableCompany()
         {
-            //Inserto la compañia para poder probar la deshabilitación.
-            answer1 = Logica.AddNewCompany(theCompany);
-            //Aplico el método sobre la compañía creada.
-            answer = Logica.DisableCompany(theCompany);
-            //Compruebo que el metodo de inhabilitación finalizó correctamente.
-            Assert.IsTrue(answer);
+            Comando<bool> Comand = FabricaComandos.CrearDeshabilitarCompania(theCompany);
+            Assert.IsTrue(Comand.Ejecutar());
+        }
+
+        /// <summary>
+        /// Prueba que permite habilitar una compania.
+        /// </summary>
+        [Test]
+        public void TestEnableCompany()
+        {
+            Comando<bool> Comand = FabricaComandos.CrearHabilitarCompania(theCompany);
+            Assert.IsTrue(Comand.Ejecutar());
+           
         }
         #endregion
 
@@ -135,15 +137,17 @@ namespace PruebasUnitarias.M4
         [Test]
         public void TestConsultPlaces()
         {
-            //Consulto los lugares que son Ciudad que se hallan en la base de datos.
-            List<LugarDireccion> lugares = Logica.getPlaces();
-            //Recorro los lugares y verifico que su id no es nulo para corroborar que está extrayendo correctamente.
-            foreach (LugarDireccion lugar in lugares)
+            Comando<List<Entidad>> Comand = FabricaComandos.CrearConsultarLugar();
+            List<Entidad> lugar = Comand.Ejecutar();
+            for (int i = 0; i < lugar.Count(); i++)
             {
-                Assert.IsNotNull(lugar.LugId);
+
+                Assert.IsTrue(lugar[i].Id != 0);
             }
+
+           
         }
-        /// <summary>
+        /*// <summary>
         /// Prueba que permite verificar la busqueda de un Id por un nombre de Lugar en la base de datos.
         /// </summary>
         [Test]
@@ -152,15 +156,17 @@ namespace PruebasUnitarias.M4
             //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
             Assert.AreEqual(5, Logica.MatchIdLugar("Caracas"));
         }
-
+        */
         /// <summary>
-        /// Prueba que permite verificar la busqueda de un nombre de lugar por su id de Lugar en la base de datos.
+        /// Prueba que permite Consultar Lugar por id.
         /// </summary>
         [Test]
-        public void TestMatchNombreLugar()
+        public void TestConsultarLugarxID()
         {
-            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
-            Assert.AreEqual("Caracas", Logica.MatchNombreLugar(5));
+            Comando<Entidad> Comand = FabricaComandos.CrearConsultarLugarXID(Lugar1);
+            Entidad lugar = Comand.Ejecutar();
+            Assert.IsTrue(lugar.Id==5);
+            
         }
     }
 }
