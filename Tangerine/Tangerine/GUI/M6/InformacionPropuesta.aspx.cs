@@ -23,7 +23,6 @@ namespace Tangerine.GUI.M6
             this.presentadorInformacion = new PresentadorInformacionPropuesta(this);
         }
 
-        
         public Label Codigo
         {
             get
@@ -71,7 +70,42 @@ namespace Tangerine.GUI.M6
                 descripcion = value;
             }
         }
-        
+
+        public Label Duracion
+        {
+            get
+            {
+                return duracion;
+            }
+            set
+            {
+                duracion = value;
+            }
+        }
+
+        public Label Costo
+        {
+            get
+            {
+                return costo;
+            }
+            set
+            {
+                costo = value;
+            }
+        }
+
+        public Label AcuerdoPago
+        {
+            get
+            {
+                return acuerdopago;
+            }
+            set
+            {
+                acuerdopago = value;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {

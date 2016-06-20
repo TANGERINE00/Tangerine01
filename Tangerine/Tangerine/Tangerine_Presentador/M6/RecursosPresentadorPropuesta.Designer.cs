@@ -214,7 +214,7 @@ namespace Tangerine_Presentador.M6 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;.
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string euro {
             get {

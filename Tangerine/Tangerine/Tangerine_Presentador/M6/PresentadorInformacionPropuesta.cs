@@ -32,24 +32,21 @@ namespace Tangerine_Presentador.M6
             try
             {
                 vistaInformacion.Codigo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Nombre;
-                
-                if ( ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Aprobado" )
-                {
-                    vistaInformacion.Status.Text = RecursosPresentadorPropuesta.aprobado;
-                }
-                else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Cerrado")
-                {
-                    vistaInformacion.Status.Text = RecursosPresentadorPropuesta.cerrado;
-                }
-                else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Pendiente")
-                {
-                    vistaInformacion.Status.Text = RecursosPresentadorPropuesta.pendiente;
-                }
+
+                imprimirStatus(_propuesta);
 
                 imprimirCompania(_propuesta);
 
                 vistaInformacion.Descripcion.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Descripcion;
-                 
+
+                //imprimirRequerimientos(_propuesta);
+
+                imprimirDuracion(_propuesta);
+
+                imprimirCosto(_propuesta);
+
+                imprimirAcuerdo(_propuesta);
+
             }
             catch (Exception ex)
             {
@@ -68,6 +65,68 @@ namespace Tangerine_Presentador.M6
             _compania = cmdConsultarCompania.Ejecutar();
 
             vistaInformacion.Compania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).NombreCompania;
+        }
+
+        public void imprimirStatus(Entidad _propuesta)
+        {
+            if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Aprobado")
+            {
+                vistaInformacion.Status.Text = RecursosPresentadorPropuesta.aprobado;
+            }
+            else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Cerrado")
+            {
+                vistaInformacion.Status.Text = RecursosPresentadorPropuesta.cerrado;
+            }
+            else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Pendiente")
+            {
+                vistaInformacion.Status.Text = RecursosPresentadorPropuesta.pendiente;
+            }
+        }
+
+        public void imprimirDuracion(Entidad _propuesta)
+        {
+            vistaInformacion.Duracion.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).CantDuracion
+                    + " " + ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).TipoDuracion
+                    + "  /  Fecha de inicio: " + ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Feincio.ToShortDateString()
+                    + " - Fecha de terminación estimada: " 
+                    + ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Fefinal.ToShortDateString();
+        }
+
+        public void imprimirCosto(Entidad _propuesta)
+        {
+            if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Moneda == "Bitcoin")
+            {
+                vistaInformacion.Costo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Costo
+                    + RecursosPresentadorPropuesta.bitcoin;
+            }
+            else if(((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Moneda == "Euro")
+            {
+                vistaInformacion.Costo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Costo
+                    + RecursosPresentadorPropuesta.euro;
+            }
+            else if(((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Moneda == "Dolar")
+            {
+                vistaInformacion.Costo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Costo
+                    + RecursosPresentadorPropuesta.dolar;
+            }
+            else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Moneda == "Bolivar")
+            {
+                vistaInformacion.Costo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Costo
+                    + RecursosPresentadorPropuesta.bolivar;
+            }
+        }
+
+        public void imprimirAcuerdo(Entidad _propuesta)
+        {
+            if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Acuerdopago == "Mensual")
+            {
+                vistaInformacion.AcuerdoPago.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Acuerdopago;
+            }
+            else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Acuerdopago == "Por cuotas")
+            {
+                vistaInformacion.AcuerdoPago.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Entrega
+                    + " cuotas"; 
+            }
         }
 
     }

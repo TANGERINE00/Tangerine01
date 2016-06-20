@@ -155,7 +155,7 @@
     <comment>icono de dolar</comment>
   </data>
   <data name="euro" xml:space="preserve">
-    <value>&lt;a class="glyphicon glyphicon-euro"&gt;</value>
+    <value>&lt;a class="glyphicon glyphicon-euro"&gt;&lt;/a&gt;</value>
     <comment>icono de euro</comment>
   </data>
   <data name="botonConsultar" xml:space="preserve">

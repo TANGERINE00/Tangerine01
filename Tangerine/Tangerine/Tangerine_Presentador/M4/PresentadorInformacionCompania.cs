@@ -40,7 +40,7 @@ namespace Tangerine_Presentador.M4
 
                 _vista.NombreCompania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).NombreCompania;
                 _vista.Acronimo.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).AcronimoCompania;
-                _vista.Direccion.Text = ((DominioTangerine.Entidades.M4.LugarDireccionM4)_direccion).LugNombre;            
+                //_vista.Direccion.Text = ((DominioTangerine.Entidades.M4.LugarDireccionM4)_direccion).LugNombre;            
                 if (((DominioTangerine.Entidades.M4.CompaniaM4)_company).StatusCompania == 1)
                     _vista.Estatus.Text = "Habilitado";
                 else
