@@ -244,9 +244,18 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
             }
             #endregion
+            #region instancia de cliente potencial sin estatus
+            public static Entidad CrearClientePotencial(int idCliente, string nombre, string rif, 
+                                                        string email, float presupuesto,
+                                                        int llamadas, int visitas)
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial(idCliente, nombre,rif, email,
+                                                                          presupuesto, llamadas, visitas);
+            }
+            #endregion 
         #endregion
 
-        #region Modulo 4
+            #region Modulo 4
 
             #region instancias de la clase CompaniaM4
             /// <summary>

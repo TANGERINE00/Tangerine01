@@ -5413,3 +5413,167 @@ Error Number:-1,State:0,Class:20
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Clase: DaoClientePotencial
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Mensaje: Fin Método
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 09:07:48,503 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:07:48,527 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:07:48,527 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 09:07:48,527 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 09:10:33,581 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:10:33,589 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:10:33,589 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 09:10:33,589 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 09:10:33,872 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:10:33,872 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:10:33,872 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 09:10:33,872 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 09:11:14,229 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:11:14,229 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:11:14,229 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 09:11:14,229 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 09:11:14,245 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:11:14,245 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:11:14,245 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 09:11:14,245 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 09:11:16,308 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:11:16,308 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:11:16,308 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 09:11:16,308 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 09:11:16,320 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 09:11:16,320 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 09:11:16,320 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 09:11:16,320 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:54:04,114 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:54:04,136 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:54:04,136 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:54:04,136 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 11:54:04,339 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:54:04,339 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:54:04,339 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:54:04,339 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 11:54:31,247 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:54:31,247 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:54:31,247 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:54:31,247 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 11:54:31,259 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:54:31,259 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:54:31,259 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:54:31,259 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 11:54:35,133 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:54:35,133 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:54:35,133 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:54:35,133 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:54:35,165 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:54:35,165 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:54:35,165 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:54:35,165 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:55:02,116 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:55:02,116 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:55:02,116 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:55:02,116 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:55:02,136 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:55:02,136 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:55:02,136 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:55:02,136 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:55:53,869 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:55:53,869 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:55:53,869 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:55:53,869 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:55:53,885 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:55:53,885 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:55:53,885 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:55:53,885 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:55:59,119 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:55:59,119 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:55:59,119 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:55:59,119 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:55:59,346 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:55:59,346 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:55:59,346 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:55:59,346 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:04,696 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:04,696 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:04,696 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:04,696 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:04,708 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:04,708 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:04,708 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:04,708 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:09,108 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:09,112 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:09,112 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:09,112 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:09,124 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:09,124 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:09,124 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:09,124 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:12,532 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:12,532 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:12,536 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:12,536 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:12,548 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:12,548 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:12,548 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:12,548 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:13,592 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:13,592 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:13,592 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:13,592 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:13,604 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:13,604 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:13,604 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:13,604 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:14,584 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:14,584 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:14,584 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:14,584 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:14,596 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:14,596 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:14,596 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:14,596 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:15,301 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:15,301 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:15,301 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:15,301 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:15,317 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:15,317 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:15,317 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:15,317 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:24,514 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:24,514 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:24,514 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:24,514 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:24,566 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:24,566 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:24,566 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:24,566 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:28,409 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:28,409 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:28,409 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:28,409 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:28,421 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:28,421 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:28,421 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:28,421 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:32,035 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:32,035 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:32,035 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:32,035 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 11:56:32,055 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:32,055 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:32,055 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:32,055 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-20 11:56:34,865 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:34,865 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:34,865 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:34,865 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:34,885 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:34,885 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:34,885 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:34,885 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-20 11:56:43,985 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:43,985 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:43,985 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-20 11:56:43,985 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-20 11:56:44,029 INFO  DaoClientePotencial - *******************************************************
+2016-06-20 11:56:44,033 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-20 11:56:44,033 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-20 11:56:44,033 INFO  DaoClientePotencial - Metodo: Modificar
