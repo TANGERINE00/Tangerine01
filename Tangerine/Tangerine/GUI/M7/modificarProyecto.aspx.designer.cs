@@ -103,6 +103,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
+        /// modificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton modificar;
+        
+        /// <summary>
         /// inputGerente control.
         /// </summary>
         /// <remarks>
@@ -118,7 +127,7 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputPersonal;
+        protected global::System.Web.UI.WebControls.ListBox inputPersonal;
         
         /// <summary>
         /// inputEncargado control.
@@ -127,7 +136,7 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputEncargado;
+        protected global::System.Web.UI.WebControls.ListBox inputEncargado;
         
         /// <summary>
         /// inputEstatus control.
