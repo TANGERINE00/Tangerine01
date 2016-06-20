@@ -27,16 +27,14 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void iniciarVista()
         {
-            LogicaTangerine.Comando<List<Entidad>> theComando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
-            LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado comando = (LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado)theComando;
-            List<Entidad> listaDeEmpleados = comando.Ejecutar();
+            LogicaTangerine.Comando<List<Entidad>> theComando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();           
+            List<Entidad> listaDeEmpleados = theComando.Ejecutar();
 
             foreach (Entidad theEmpleador in listaDeEmpleados)
             {
                 DominioTangerine.Entidades.M10.EmpleadoM10 empleador = (DominioTangerine.Entidades.M10.EmpleadoM10)theEmpleador;
-                LogicaTangerine.Comando<DominioTangerine.Entidad> theComandoObtener = LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(empleador.emp_id);
-                LogicaTangerine.Comandos.M2.ComandoObtenerUsuario comandoObtener = (LogicaTangerine.Comandos.M2.ComandoObtenerUsuario)theComandoObtener;
-                DominioTangerine.Entidad theUser = comandoObtener.Ejecutar();
+                LogicaTangerine.Comando<DominioTangerine.Entidad> theComandoObtener = LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(empleador.emp_id);               
+                DominioTangerine.Entidad theUser = theComandoObtener.Ejecutar();
                 DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
 
                 _vista.empleado += ResourceGUIM2.OpenTR;
