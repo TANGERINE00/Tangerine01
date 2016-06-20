@@ -1524,23 +1524,23 @@ GO
 
 ---- StoredProcedure Facturas por Pagar ----
 CREATE PROCEDURE M8_VerificarFacturasParaPagar
-	@idFactura int
+	@id_Factura int
 
 AS
 	BEGIN
-		IF (SELECT DATEDIFF(day,fac_fecha_ultimo_pago,CONVERT(DATE,GETDATE())) FROM FACTURA WHERE fac_id = @idFactura) >= 31
-			UPDATE FACTURA SET fac_estatus = 2 WHERE fac_id = @idFactura;
+		IF (SELECT DATEDIFF(day,fac_fecha_ultimo_pago,CONVERT(DATE,GETDATE())) FROM FACTURA WHERE fac_id = @id_Factura) >= 31
+			UPDATE FACTURA SET fac_estatus = 2 WHERE fac_id = @id_Factura;
 	END
 GO
 
 ---- StoredProcedure Monto Restante de una Factura ----
 CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
-	@idFactura int
+	@id_Factura int
 
 AS
 	BEGIN
 		SELECT fac_monto_restante AS fac_monto_restante
-		FROM FACTURA WHERE fac_id = @idFactura;
+		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
 
