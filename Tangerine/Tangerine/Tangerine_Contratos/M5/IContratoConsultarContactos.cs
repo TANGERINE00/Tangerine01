@@ -31,7 +31,7 @@ namespace Tangerine_Contratos.M5
         string ContactoEliminadoMsj();
         string CargarBotonNuevoContacto( int typeComp, int idComp );
         void Alerta( string msj, int typeMsg );
-        void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp );
+        //void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp );
         string StatusModificado();
     }
 }

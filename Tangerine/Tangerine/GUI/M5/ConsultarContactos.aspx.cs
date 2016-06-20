@@ -135,7 +135,7 @@ namespace Tangerine.GUI.M5
             alertaRol = ResourceGUIM5.Alert;
             alerta = ResourceGUIM5.AlertShowSu1 + msj + ResourceGUIM5.AlertShowSu2;
         }
-
+        /*
         public void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp )
         {
             contact.Text += ResourceGUIM5.AbrirTR;
@@ -154,7 +154,7 @@ namespace Tangerine.GUI.M5
                 + ResourceGUIM5.StatusEliminado + ResourceGUIM5.BotonCerrar;
             contact.Text += ResourceGUIM5.CerrarTD;
             contact.Text += ResourceGUIM5.CerrarTR;
-        }
+        }*/
         public string StatusModificado()
         {
             return ResourceGUIM5.StatusModificado;
