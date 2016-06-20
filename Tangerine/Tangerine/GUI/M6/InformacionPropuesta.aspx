@@ -31,58 +31,51 @@
                     
                      <div class="box-body" runat="server">
                        <div class="row">
-                          <div class="form-group col-md-6" runat="server">
-                          <h4><label for="Nombre">Código:</label></h4>
-                       <div><h5><asp:Label runat="server" ID="Nombre"> </asp:Label></h5></div>
-                       </div> 
                         <div class="form-group col-md-6" runat="server">
-                            <h4><label for="habilitado">Status:</label></h4>
-                           <div><h5><asp:Label runat="server" ID="habilitado"> </asp:Label></h5></div>
+                            <h4><label for="Codigo">Código:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="codigo"> </asp:Label></h5></div>
+                          </div> 
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="Descripcion">Descripción:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="descripcion"> </asp:Label></h5></div>
+                        </div>
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="Requerimientos">Requerimientos:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="requerimientos"> </asp:Label></h5></div>
                         </div>    
-                           </div>
-                           <div class="row">
-                          <div class="form-group col-md-6" runat="server">
-                         <h4><label for="Acronimo">Acrónimo:</label></h4>
-                       <div><h5><asp:Label runat="server" ID="acronimo"> </asp:Label></h5></div>
+                       </div>
+                       <div class="row">
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="duracion">Duración:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="duracion"> </asp:Label></h5></div>
                         </div>
-                            <div class="form-group col-md-6" runat="server">
-                            <h4><label for="plazo">Plazo para pagos:</label></h4>
-                           <div><h5><asp:Label runat="server" ID="plazo"> </asp:Label></h5></div>
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="acuerdopago">Acuerdo de pago:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="acuerdopago"> </asp:Label></h5></div>
                         </div>
-                        </div>
+                       </div>
                          
                           <div class="row">
                           <div class="form-group col-md-6" runat="server">
-                            <h4><label for="Rif">RIF:</label></h4>
-                            <div><h5><asp:Label runat="server" ID="Rif"> </asp:Label></h5></div>
+                            <h4><label for="status">Status:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="status"> </asp:Label></h5></div>
                         </div>
                               <div class="form-group col-md-6" runat="server">
-                            <h4><label for="presupuesto">Presupuesto Actual:</label></h4>
-                           <div><h5><asp:Label runat="server" ID="presupuesto"> </asp:Label></h5></div>
+                            <h4><label for="costo">Costo:</label></h4>
+                           <div><h5><asp:Label runat="server" ID="costo"> </asp:Label></h5></div>
                         </div>
                           </div>
+                        
                         <div class="form-group" runat="server">
-                            <h4><label for="direccion">Dirección:</label></h4>
-                      <div><h5><asp:Label runat="server" ID="direccion"> </asp:Label></h5></div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h4><label for="correo">Correo Electrónico:</label></h4>
-                      <div><h5><asp:Label runat="server" ID="correo"> </asp:Label></h5></div>
-                        </div>
-                        <div class="form-group" runat="server">
-                            <h4><label for="telefono">Teléfono:</label></h4>
-                            <div><h5><asp:Label runat="server" ID="telefono"> </asp:Label></h5></div>
-                       </div>
-                        <div class="form-group" runat="server">
-                            <h4><label for="fecha">Fecha de Registro:</label></h4>
-                           <div><h5><asp:Label runat="server" ID="fecha"> </asp:Label></h5></div>
+                            <h4><label for="compania">Compañía:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="compania"> </asp:Label></h5></div>
                         </div>                        
                      </div> 
                    </div><!-- /.box-body -->
                     
                  
                     <div class="box-footer" runat="server">
-                        <a href="ConsultarCompania.aspx" class="btn btn-default pull-left">Regresar</a>
+                        <a href="ConsultarPropuesta.aspx" class="btn btn-default pull-left">Regresar</a>
                     </div>
 
                 </div>

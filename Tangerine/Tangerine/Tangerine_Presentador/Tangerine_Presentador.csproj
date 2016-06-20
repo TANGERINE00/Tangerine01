@@ -85,8 +85,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoM5.resx</DependentUpon>
     </Compile>
+    <Compile Include="M6\PresentadorInformacionPropuesta.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
-    <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
     <Compile Include="M6\PresentadorConsultarPropuesta.cs" />
     <Compile Include="M6\RecursosPresentadorPropuesta.Designer.cs">

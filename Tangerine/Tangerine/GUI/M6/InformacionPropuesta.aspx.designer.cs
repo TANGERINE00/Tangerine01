@@ -13,93 +13,75 @@ namespace Tangerine.GUI.M6 {
     public partial class InformacionPropuesta {
         
         /// <summary>
-        /// Nombre control.
+        /// codigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Nombre;
+        protected global::System.Web.UI.WebControls.Label codigo;
         
         /// <summary>
-        /// habilitado control.
+        /// descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label habilitado;
+        protected global::System.Web.UI.WebControls.Label descripcion;
         
         /// <summary>
-        /// acronimo control.
+        /// requerimientos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label acronimo;
+        protected global::System.Web.UI.WebControls.Label requerimientos;
         
         /// <summary>
-        /// plazo control.
+        /// duracion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label plazo;
+        protected global::System.Web.UI.WebControls.Label duracion;
         
         /// <summary>
-        /// Rif control.
+        /// acuerdopago control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Rif;
+        protected global::System.Web.UI.WebControls.Label acuerdopago;
         
         /// <summary>
-        /// presupuesto control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label presupuesto;
+        protected global::System.Web.UI.WebControls.Label status;
         
         /// <summary>
-        /// direccion control.
+        /// costo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label direccion;
+        protected global::System.Web.UI.WebControls.Label costo;
         
         /// <summary>
-        /// correo control.
+        /// compania control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label correo;
-        
-        /// <summary>
-        /// telefono control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label telefono;
-        
-        /// <summary>
-        /// fecha control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fecha;
+        protected global::System.Web.UI.WebControls.Label compania;
     }
 }
