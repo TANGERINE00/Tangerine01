@@ -36,7 +36,7 @@ namespace Tangerine_Presentador.M6
         int _entregaCant = 0;
         string _fdepago = String.Empty;
         string _estatusW;
-        DateTime today = DateTime.Today;
+        DateTime today = DateTime.Now;
         String[] _precondicion;
 
         public PresentadorAgregarPropuesta(IContratoAgregarPropuesta vista)
@@ -48,7 +48,8 @@ namespace Tangerine_Presentador.M6
             //Asignacion de los campos obtenidos de la Vista.
             _upperText = vista.ComboCompania.SelectedItem.Text;
             consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU](?!$)", "");
-            _nombcodigoPropuesta = consonantes + today.ToString("yyMMdd");
+            //_nombcodigoPropuesta = consonantes + today.ToString("yyMMddss");
+            _nombcodigoPropuesta = today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
             _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
             _duracion = vista.ComboDuracion.SelectedItem.Text;
@@ -87,7 +88,7 @@ namespace Tangerine_Presentador.M6
             for (int i = 0; i < _precondicion.Length - 1; i++)
             {
                 int j = i + 1;
-                string codReq = consonantes + "_RF_" + j.ToString();
+                string codReq = consonantes.Trim() + "_RF_" + j.ToString();
                 
                 //Debug.Print(_precondicion[i]);
                   
