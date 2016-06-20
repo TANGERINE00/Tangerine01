@@ -9,6 +9,7 @@ using LogicaTangerine.M7;
 using Tangerine_Contratos.M7;
 using Tangerine_Presentador.M7;
 using DominioTangerine.Entidades.M7;
+using System.Web.UI.HtmlControls;
 
 namespace Tangerine.GUI.M7
 {
@@ -112,11 +113,11 @@ namespace Tangerine.GUI.M7
             }
         }
 
-        DropDownList IContratoAgregarProyecto.inputPersonal
+        HtmlSelect IContratoAgregarProyecto.inputPersonal
         {
             get
             {
-                throw new NotImplementedException();
+                return this.inputPersonal;
             }
             set
             {
@@ -124,7 +125,7 @@ namespace Tangerine.GUI.M7
             }
         }
 
-        ListBox IContratoAgregarProyecto.inputEncargado
+        HtmlSelect IContratoAgregarProyecto.inputEncargado
         {
             get
             {
@@ -146,8 +147,46 @@ namespace Tangerine.GUI.M7
             {
                 //this.inputPropuesta.Text = value.ToString();
             }
+
+
         }
 
+        DropDownList IContratoAgregarProyecto.inputGerente
+        {
+            get
+            {
+                return this.inputGerente;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+
+        }
+
+        HtmlGenericControl IContratoAgregarProyecto.columna2
+        {
+            get
+            {
+                return this.columna2;
+            }
+            set
+            {
+                this.columna2 = value;
+            }
+        }
+
+        Button IContratoAgregarProyecto.BtnGenerar
+        {
+            get 
+            {
+                return this.btnGenerar;
+            }
+            set
+            {
+                this.btnGenerar = value;
+            }
+        }
 
         #endregion
 
@@ -188,9 +227,9 @@ namespace Tangerine.GUI.M7
 
         protected void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
-
-            columna2.Visible = true;
-            btnGenerar.Enabled = true;
+            _presentador.AgregarPersonal();
+            
+        
         }
 
         protected void comboPropuesta_Click(object sender, EventArgs e)

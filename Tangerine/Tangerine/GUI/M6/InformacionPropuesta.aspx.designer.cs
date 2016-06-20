@@ -7,90 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M9 {
+namespace Tangerine.GUI.M6 {
     
     
-    public partial class WebForm3 {
+    public partial class InformacionPropuesta {
         
         /// <summary>
-        /// ValSum control.
+        /// codigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValSum;
+        protected global::System.Web.UI.WebControls.Label codigo;
         
         /// <summary>
-        /// numFactura control.
+        /// descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText numFactura;
+        protected global::System.Web.UI.WebControls.Label descripcion;
         
         /// <summary>
-        /// compCliente control.
+        /// requerimientos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText compCliente;
+        protected global::System.Web.UI.WebControls.Label requerimientos;
         
         /// <summary>
-        /// proyectoNombre control.
+        /// duracion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText proyectoNombre;
+        protected global::System.Web.UI.WebControls.Label duracion;
         
         /// <summary>
-        /// monedaPago control.
+        /// acuerdopago control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText monedaPago;
+        protected global::System.Web.UI.WebControls.Label acuerdopago;
         
         /// <summary>
-        /// montoFactura control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText montoFactura;
+        protected global::System.Web.UI.WebControls.Label status;
         
         /// <summary>
-        /// formaPago control.
+        /// costo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect formaPago;
+        protected global::System.Web.UI.WebControls.Label costo;
         
         /// <summary>
-        /// codAprobacion control.
+        /// compania control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText codAprobacion;
-        
-        /// <summary>
-        /// btnagregar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnagregar;
+        protected global::System.Web.UI.WebControls.Label compania;
     }
 }

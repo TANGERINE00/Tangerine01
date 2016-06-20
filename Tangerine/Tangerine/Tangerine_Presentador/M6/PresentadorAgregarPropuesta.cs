@@ -36,7 +36,7 @@ namespace Tangerine_Presentador.M6
         int _entregaCant = 0;
         string _fdepago = String.Empty;
         string _estatusW;
-        DateTime today = DateTime.Today;
+        DateTime today = DateTime.Now;
         String[] _precondicion;
 
         public PresentadorAgregarPropuesta(IContratoAgregarPropuesta vista)
@@ -47,8 +47,8 @@ namespace Tangerine_Presentador.M6
         {
             //Asignacion de los campos obtenidos de la Vista.
             _upperText = vista.ComboCompania.SelectedItem.Text;
-            consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU](?!$)", "");
-            _nombcodigoPropuesta = consonantes + today.ToString("yyMMdd");
+            consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
+            _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
             _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
             _duracion = vista.ComboDuracion.SelectedItem.Text;

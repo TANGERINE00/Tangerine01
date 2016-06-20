@@ -81,7 +81,6 @@
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuarioPorNombre.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
-    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
@@ -117,6 +116,7 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M6\ComandoEliminarRequerimiento.cs" />
     <Compile Include="Comandos\M7\ComandoGenerarCodigoProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />
