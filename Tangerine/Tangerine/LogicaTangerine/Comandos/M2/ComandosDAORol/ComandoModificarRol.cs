@@ -27,6 +27,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             _elRol = elRol;
         }
 
+        /// <summary>
+        /// Método para crear la instancia de la clase DaoRol y usar el método ComandoModificarRolUsuario
+        /// </summary>
+        /// <returns>Retorna una instancia del tipo ComandoModificarRolUsuario</returns>
         public override bool Ejecutar()
         {
             bool resultado = false;
