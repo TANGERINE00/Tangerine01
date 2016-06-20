@@ -83,13 +83,9 @@ namespace PruebasUnitarias.M2
            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
             DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuarioPorNombre(theUsuario.nombreUsuario);
             DominioTangerine.Entidades.M2.RolM2 resultado = (DominioTangerine.Entidades.M2.RolM2)theResultado;
-            Assert.IsNotNull(resultado.Id);
-
-            
+            Assert.IsNotNull(resultado.Id);    
         }
 
         #endregion
-
-
     }
 }
