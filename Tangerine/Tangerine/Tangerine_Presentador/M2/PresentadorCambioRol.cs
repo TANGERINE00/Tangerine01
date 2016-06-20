@@ -27,20 +27,26 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void iniciarVista()
         {
-            List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
+            LogicaTangerine.Comando<List<Entidad>> theComando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+            LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado comando = (LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado)theComando;
+            List<Entidad> listaDeEmpleados = comando.Ejecutar();
 
-            foreach (Empleado empleador in listaDeEmpleados)
+            foreach (Entidad theEmpleador in listaDeEmpleados)
             {
-                Usuario user = LogicaModificarRol.ObtenerUsuario(empleador.emp_num_ficha);
+                DominioTangerine.Entidades.M10.EmpleadoM10 empleador = (DominioTangerine.Entidades.M10.EmpleadoM10)theEmpleador;
+                LogicaTangerine.Comando<DominioTangerine.Entidad> theComandoObtener = LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(empleador.emp_id);
+                LogicaTangerine.Comandos.M2.ComandoObtenerUsuario comandoObtener = (LogicaTangerine.Comandos.M2.ComandoObtenerUsuario)theComandoObtener;
+                DominioTangerine.Entidad theUser = comandoObtener.Ejecutar();
+                DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
 
                 _vista.empleado += ResourceGUIM2.OpenTR;
                 _vista.empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
                 _vista.empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
-                if (user.NombreUsuario != null)
+                if (user.nombreUsuario != null)
                 {
-                    _vista.empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha
+                    _vista.empleado += ResourceGUIM2.OpenTD + user.nombreUsuario + ResourceGUIM2.CloseTD;
+                    _vista.empleado += ResourceGUIM2.OpenTD + user.rol.nombre + ResourceGUIM2.CloseTD;
+                    _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id
                                       + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                     _vista.empleado += ResourceGUIM2.CloseTR;
                 }
