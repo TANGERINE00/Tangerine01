@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
-namespace Tangerine_Contratos.M2
+namespace PruebasUnitarias.M8
 {
-    public interface IContratoRol
+    [TestFixture]
+    public class PruebasLogicaFactura
     {
     }
 }

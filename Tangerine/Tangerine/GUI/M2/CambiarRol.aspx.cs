@@ -6,74 +6,41 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaTangerine.M2;
 using DominioTangerine;
+using Tangerine_Contratos.M2;
+using Tangerine_Presentador.M2;
 
 namespace Tangerine.GUI.M2
 {
-    public partial class CambiarRol : System.Web.UI.Page
+    public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
+        private PresentadorCambioRol presentador;
+
+        #region Contrato
+        /// <summary>
+        /// tabla consulta de empleados
+        /// </summary>
         public string empleado
         {
             get
-            {
-               return this.tablaempleados.Text;
-            }
+            { return this.tablaempleados.Text; }
 
             set
-            {
-                this.tablaempleados.Text = value;
-            }
+            { this.tablaempleados.Text = value; }
         }
+        #endregion
 
         /// <summary>
         /// Método que se ejecuta al cargar la página, se carga la tabla de empleados con sus respectivos usuarios
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Page_Load( object sender, EventArgs e )
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if ( !IsPostBack )
+            presentador = new PresentadorCambioRol(this);
+            if (!IsPostBack)
             {
-                List<Empleado> listaDeEmpleados = LogicaAgregarUsuario.ConsultarListaDeEmpleados();
-
-                foreach ( Empleado  empleador in listaDeEmpleados )
-                {
-                    Usuario user = LogicaModificarRol.ObtenerUsuario( empleador.emp_num_ficha );
-                    
-                    empleado += ResourceGUIM2.OpenTR;
-                    empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
-                    empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
-                    if ( user.NombreUsuario != null )
-                    {  
-                        empleado += ResourceGUIM2.OpenTD + user.NombreUsuario + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + user.Rol.Nombre + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_num_ficha + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.CloseTR;
-                    }
-                    else 
-                    {
-                        empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
-                        empleado += ResourceGUIM2.CloseTR;
-                    }
-                }
-            } 
-        }
-
-        /// <summary>
-        /// Método que utiliza para conectar la interfaz con la logica, para modificar el rol. Se ejecuta al presionar
-        /// el boton Cambiar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void botonCambiar_Click( object sender, EventArgs e )
-        {
-            string nombreUsuario = usuarioCambiar.Value;
-            string rol = rolCambiar.Value; 
-
-            LogicaModificarRol.ModificarRol( nombreUsuario, rol );
-
-            Response.Redirect( "../M2/CambiarRol.aspx" );
+                presentador.iniciarVista();
+            }
         }
     }
 }

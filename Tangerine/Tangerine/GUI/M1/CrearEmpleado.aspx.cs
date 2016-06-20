@@ -9,30 +9,34 @@ using System.Globalization;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M10;
-
+using Tangerine_Contratos.M10;
+using Tangerine_Presentador.M10;
+using Tangerine_Contratos.M1;
 
 namespace Tangerine.GUI.M1
 {
-    public partial class CrearEmpleado : System.Web.UI.Page
+    public partial class CrearEmpleado : System.Web.UI.Page, IContratoCrearEmpleado
     {
-
+        private PresentadorCrearEmpleado presentador;
         string active = "Activo";
         Hashtable elementos = new Hashtable();
 
+        public CrearEmpleado()
+        {
+            presentador= new PresentadorCrearEmpleado(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            FillSelectedListGender();
-            FillLevelListStudy();
-            FillSelectedListJob();
-            FillSelectedListCountry();
-            FillSelectedListState();
-        }
-
-        protected void SelectedGender_Change(object sender, EventArgs e)
-        {
-
-
-        }
+            #region LLENAR combo de genero
+            if (!IsPostBack)
+            {
+                presentador.LlenarComboEmpleado();
+                presentador.LlenarComboNivelEstudio();
+                presentador.ObtenerPaises();
+                presentador.ObtenerCargos();
+            }
+            #endregion
+        }       
 
         protected void SelectedJob_Change(object sender, EventArgs e)
         {
@@ -50,17 +54,9 @@ namespace Tangerine.GUI.M1
 
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
-            LogicaM10 componentes = new LogicaM10();
-            int x = 1;
-            string country = SelectedListCountry.SelectedItem.Text;
-            //SelectedListState.Items.Clear();
-            foreach (LugarDireccion estados in componentes.ItemsForListState(country))
-            {
-                if (x==1)
-                    SelectedListState.Items.Insert(0, "Seleccione un estado");
-                SelectedListState.Items.Insert(x, estados.LugNombre);
-                x++;
-            }
+
+            presentador.SelectedPaisChanged();      
+            
 
         }
 
@@ -76,6 +72,8 @@ namespace Tangerine.GUI.M1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
+            presentador.AgregarEmpleado();
+
             LogicaM10 logicEmployee = new LogicaM10();
             
             /*Empleado empleado = new Empleado(0, FirstName.Value, SecondNamee.Value, FirstLastName.Value,
@@ -160,5 +158,106 @@ namespace Tangerine.GUI.M1
             SelectedListState.Items.Insert(0, "Seleccione un Estado");
             SelectedListGender.DataBind();
         }
+ 
+#region Contrato
+
+        DropDownList IContratoCrearEmpleado.IcomboGenero
+        {
+            get{return SelectedListGender;}
+            set{SelectedListGender = value;}
+        }
+
+        DropDownList IContratoCrearEmpleado.IcomboNivelEstudio
+        {
+            get{return LevelListStudy;}
+            set { LevelListStudy = value;}
+        }
+
+        DropDownList IContratoCrearEmpleado.IcomboPais
+        {
+            get{return SelectedListCountry;}
+            set{SelectedListCountry = value;}
+        }
+
+        DropDownList IContratoCrearEmpleado.IcomboCargo
+        {
+            get{return SelectedListJob;}
+            set{SelectedListJob = value;}
+        }
+        DropDownList IContratoCrearEmpleado.IcomboEstado   
+        {
+            get {return SelectedListState;}
+            set {SelectedListState = value;}
+        }
+
+        String IContratoCrearEmpleado.ItextCedula
+        {
+            get {return Cedula.Value;}
+            set {Cedula.Value = value;} 
+        }
+
+        String IContratoCrearEmpleado.ItextFirstName
+        {
+            get { return FirstName.Value; }
+            set { FirstName.Value = value; } 
+        }
+        String IContratoCrearEmpleado.ItextSecondNamee
+        {
+            get { return SecondNamee.Value; }
+            set { SecondNamee.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextFirstLastName
+        {
+            get { return FirstLastName.Value; }
+            set { FirstLastName.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextSecondLastName
+        {
+            get { return SecondLastName.Value; }
+            set { SecondLastName.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextDateEmployee
+        {
+            get { return DateEmployee.Value; }
+            set { DateEmployee.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextDateJob
+        {
+            get { return DateJob.Value; }
+            set { DateJob.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextJobMode
+        {
+            get { return JobMode.Value; }
+            set { JobMode.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextSalaryJob
+        {
+            get { return SalaryJob.Value; }
+            set { SalaryJob.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextCityAddress
+        {
+            get { return CityAddress.Value; }
+            set { CityAddress.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextAddresEspecific
+        {
+            get { return AddresEspecific.Value; }
+            set { AddresEspecific.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextEmailPerson
+        {
+            get { return EmailPerson.Value; }
+            set { EmailPerson.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextPhonePerson
+        {
+            get { return PhonePerson.Value; }
+            set { PhonePerson.Value = value; }
+        }
+               
+
+#endregion
     }
 }

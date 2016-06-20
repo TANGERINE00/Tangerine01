@@ -6,161 +6,127 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaTangerine.M3;
 using DominioTangerine;
+using Tangerine_Contratos.M3;
+using Tangerine_Presentador.M3;
 
 namespace Tangerine.GUI.M3
 {
-    public partial class ActivarLead : System.Web.UI.Page
+    public partial class ActivarLead : System.Web.UI.Page, IContratoConsultarClientePotencial
     {
-        public string Name
+        PresentadorConsultarClientePotencial presentadorMostrar;
+        PresentadorActivarClientePotencial presentadorActivar;
+        int idClientePotencial;
+
+        public ActivarLead()
+        {
+            this.presentadorMostrar = new PresentadorConsultarClientePotencial(this);
+            this.presentadorActivar = new PresentadorActivarClientePotencial(this);
+        }
+
+        #region Contrato
+        public Literal NombreEtiqueta
         {
             get
             {
-                return this.Nombre.Text;
+                return this.Nombre;
             }
 
             set
             {
-                this.Nombre.Text = value;
+                this.Nombre = value;
             }
         }
 
-        public string RIF
+        public Literal RIFEtiqueta
         {
             get
             {
-                return this.Rif.Text;
+                return this.Rif;
             }
 
             set
             {
-                this.Rif.Text = value;
+                this.Rif = value;
             }
         }
 
-        public string Correo
+        public Literal CorreoEtiqueta
         {
             get
             {
-                return this.correo.Text;
+                return this.correo;
             }
 
             set
             {
-                this.correo.Text = value;
+                this.correo = value;
             }
         }
 
-        public string Status
+        public Literal EstatusEtiqueta
         {
             get
             {
-                return this.status.ToString();
+                return this.status;
             }
 
             set
             {
-                this.status.Text = value;
+                this.status = value;
             }
         }
 
-        public string Presupuesto
+        public Literal PresupuestoInicialEtiqueta
         {
             get
             {
-                return this.presupuesto.ToString();
+                return this.presupuesto;
             }
 
             set
             {
-                this.presupuesto.Text = value;
+                this.presupuesto = value;
             }
         }
 
-        public string Llamadas
+        public Literal NumLlamadasEtiqueta
         {
             get
             {
-                return this.llamadas.ToString();
+                return this.llamadas;
             }
 
             set
             {
-                this.llamadas.Text = value;
+                this.llamadas = value;
             }
         }
-        public string Visitas
+        public Literal NumVisitasEtiqueta
         {
             get
             {
-                return this.visitas.ToString();
+                return this.visitas;
             }
 
             set
             {
-                this.visitas.Text = value;
+                this.visitas = value;
             }
-
-
         }
-
-
-
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM3 prueba = new LogicaM3();
-            int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            idClientePotencial = int.Parse(Request.QueryString["idclp"]);
             if (!IsPostBack)
             {
-                ClientePotencial elClientePotencial = prueba.BuscarClientePotencial(idClientePotencial);
-
-                try
-                {
-
-
-                    Name = elClientePotencial.NombreClientePotencial;
-                    RIF = elClientePotencial.RifClientePotencial;
-                    Correo = elClientePotencial.EmailClientePotencial;
-                    Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
-                    Llamadas = elClientePotencial.NumeroLlamadas.ToString();
-                    Visitas = elClientePotencial.NumeroVisitas.ToString();
-                    if (elClientePotencial.Status == 0)
-                    {
-                        Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
-
-                    }
-                    if (elClientePotencial.Status == 1)
-                    {
-                        Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
-                    }
-                    if (elClientePotencial.Status == 2)
-                    {
-                        Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
-                    }
-
-
-
-                }
-                catch (Exception ex)
-                {
-
-                }
-
+                presentadorMostrar.Llenar(idClientePotencial);
             }
         }
 
         protected void Activar_Click(object sender, EventArgs e)
         {
-            //Cuidado , recordar cambiar luego del this , el id que tenga la interfaz 
-
-            // String nombre = this.idnombre.Value;
-            // int id = Int32.Parse(Request.QueryString["idEmp"]);
-            int idClip = int.Parse(Request.QueryString["idclp"]);
-
-            //LogicaEmpleado logica = new LogicaEmpleado();
-            LogicaM3 logica = new LogicaM3();
-
-            logica.ActivarclientePotencial(logica.BuscarClientePotencial(idClip));
+            presentadorActivar.Activar(idClientePotencial);
             Response.Redirect("Listar.aspx");
         }
 

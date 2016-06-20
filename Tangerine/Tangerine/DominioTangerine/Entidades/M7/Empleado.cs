@@ -333,7 +333,7 @@ namespace DominioTangerine.Entidades.M7
             }
             set
             {
-                this.Job = value;
+                this.job = value;
             }
         }
 

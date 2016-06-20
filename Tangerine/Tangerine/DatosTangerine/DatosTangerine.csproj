@@ -55,7 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceUser.resx</DependentUpon>
     </Compile>
-    <Compile Include="DAO\M3\DaoLead.cs" />
+    <Compile Include="DAO\M3\DaoClientePotencial.cs" />
     <Compile Include="DAO\M4\DaoCompania.cs" />
     <Compile Include="DAO\M4\DaoLugarDireccion.cs" />
     <Compile Include="DAO\M4\ResourceCompanyM4.Designer.cs">
@@ -122,7 +122,7 @@
     <Compile Include="InterfazDAO\M1\IDaoLogin.cs" />
     <Compile Include="InterfazDAO\M2\IDAORol.cs" />
     <Compile Include="InterfazDAO\M2\IDAOUsuarios.cs" />
-    <Compile Include="InterfazDAO\M3\IDAOLead.cs" />
+    <Compile Include="InterfazDAO\M3\IDAOClientePotencial.cs" />
     <Compile Include="InterfazDAO\M4\IDaoCompania.cs" />
     <Compile Include="InterfazDAO\M4\IDaoLugarDireccion.cs" />
     <Compile Include="InterfazDAO\M5\IDAOContacto.cs" />
@@ -202,6 +202,9 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\..\Desktop\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -222,8 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="DAO\M8\" />
-    <Folder Include="InterfazDAO\M8\" />
     <Folder Include="M1\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

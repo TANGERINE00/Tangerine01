@@ -194,8 +194,8 @@
   <data name="RolNombre" xml:space="preserve">
     <value>rol_nombre</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="UsuContrasena" xml:space="preserve">
+    <value>usu_contrasena</value>
   </data>
   <data name="UsuActivo" xml:space="preserve">
     <value>usu_activo</value>
@@ -226,5 +226,17 @@
   </data>
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
+  </data>
+  <data name="ConsultUser" xml:space="preserve">
+    <value>M2_ConsultarUsuario</value>
+  </data>
+  <data name="ParametroID" xml:space="preserve">
+    <value>@id</value>
+  </data>
+  <data name="BorrarUsuario" xml:space="preserve">
+    <value>M2_BorrarUsuario</value>
+  </data>
+  <data name="ParametroUsuID" xml:space="preserve">
+    <value>@usu_id</value>
   </data>
 </root>

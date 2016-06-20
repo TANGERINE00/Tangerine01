@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tangerine_Presentador.M2
+namespace Tangerine_Presentador.M4
 {
-    class PresentacionCambioRol
+    public class PresentadorAgregarCompania
     {
     }
 }

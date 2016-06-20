@@ -9,15 +9,14 @@ using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3
 {
-    public class ComandoListarTodosLeads : Comando<List<Entidad>>
+    public class ComandoListarTodosClientesPotenciales : Comando<List<Entidad>>
     {
         public override List<Entidad> Ejecutar()
         {
             try
             {
-                IDAOLead daoLead = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoLead();
-                List<Entidad> leads = daoLead.ConsultarTodos();
-                return leads;
+                IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+                return daoClientePotencial.ConsultarTodos();
             }
             catch (Exception e)
             {

@@ -5,10 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace Tangerine_Contratos.M3
+namespace Tangerine_Contratos.M9
 {
-    public interface IContratoListarLeads
+   public interface IContratoFacturasPorPagar
     {
-        Literal ClientePotencial { get; set; }
-    }
+       string factura { get; set; }
+
+
+
+   
+   }
 }

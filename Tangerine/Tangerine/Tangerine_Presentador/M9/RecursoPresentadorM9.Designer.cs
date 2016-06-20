@@ -277,6 +277,15 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;&lt;/th&gt;.
+        /// </summary>
+        internal static string botonPagarCerrar {
+            get {
+                return ResourceManager.GetString("botonPagarCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;/div&gt;.
         /// </summary>
         internal static string CloseDiv {

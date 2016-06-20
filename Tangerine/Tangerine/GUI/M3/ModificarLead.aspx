@@ -17,102 +17,67 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-    
 
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-xs-12">
+        <div class="box box-default">
+            <form role="form" name="modificar_lead" id="modificar_lead" method="post"   runat="server">
+            <div class="container-fluid">
 
-</div>
-<form role="form" name="modificar_lead" id="modificar_lead" method="post"   runat="server">
+                <br /><br />
+                <!-- Etiqueta -->
+                <div class="form-group ">
+                    <label for="nombre">Nombe</label> 
+                    <label for="Requerido" style="color: red;">*</label>
+                    <input type="text" runat="server" id="nombre" class="form-control" maxlength="20" placeholder="Nombre de etiqueta" required>
+                </div>
 
- <div class="container">
-	<div class="row" style="margin-top: 5%">
-		<div class="col-md-6">
-			<div id="id_otro" runat="server" class="form-group">
-				<div class="icon-addon addon-lg">
-					
-                    <!--Nombre-->
-                        <div class="form-group" runat="server">
-                            <label for="InputNombre">Nombre</label>
-                            <input runat="server" type="text" class="form-control" id="nombre" name="nombre" 
-                                placeholder="Introduzca nombre de la compañía" maxlength="50" required>
-                        </div>
-                    
-                    
-                     <!--RIF-->
-                        <div class="form-group" runat="server">
-                            <label for="InputRIF">RIF</label>
-                            <input runat="server" type="text" class="form-control" 
+                <!--Rif-->
+                <div class="form-group ">
+                    <label for="rif">Rif</label> 
+                    <label for="Requerido" style="color: red;">*</label>
+                    <input type="text" runat="server" id="rif" class="form-control" maxlength="20" placeholder="# de rif" required>
+                </div>
 
-                                pattern="^[J]+[-]+([0-9-]{9,11})+[-]+([0-9]{1,1})$"
-                                id="rif" name="rif" 
-                                placeholder="Introduzca RIF de la compañía.    e.g: J-23686197-6" required
-                                title="e.g: J-23686197-6 ">
-                        </div>
-                  
-                     <!--Email-->
-                        <div class="form-group" runat="server">
-                            <label for="InputEmail">Correo Electrónico</label>
-                            <input runat="server" type="text" class="form-control"
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-                                id="email" name="email" 
-                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required/>
-                        </div>
-                      
+                <!--Correo-->
+                <div class="form-group ">
+                    <label for="email">Correo</label> 
+                    <label for="Requerido" style="color: red;">*</label>
+                    <input type="email" runat="server" id="correo" class="form-control" maxlength="20" placeholder="Direccion de correo" required>
+                </div>
 
-                                <!--Presupuesto-->
-                        <div class="form-group" runat="server">
-                            <label for="InputPresupuesto">Presupuesto Inicial de Inversion</label>
-                            <input runat="server" type="number" class="form-control" 
-                                id="presupuesto" name="presupuesto" 
-                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
-                        </div> 
+                <!--Presupuesto-->
+                <div class="form-group ">
+                    <label for="presupuesto">Presupuesto Anual</label> 
+                    <label for="Requerido" style="color: red;">*</label>
+                    <input type="number" runat="server" id="presupuesto" class="form-control" maxlength="20" placeholder="Presupuesto" required>
+                </div>
+                <!--Numero de llamadas-->
+                <div class="form-group ">
+                    <label for="llamadas"># LLamadas</label> 
+                    <label for="Requerido" style="color: red;">*</label>
+                    <input type="number" runat="server" id="numLlamadas" class="form-control" maxlength="20" placeholder="# de llamadas" required>
+                </div>
 
+                <!--Numero de visitas-->
+                <div class="form-group ">
+                    <label for="visitas"># Visitas</label> 
+                    <label for="Requerido" style="color: red;">*</label>
+                    <input type="number" runat="server" id="visitas" class="form-control" maxlength="20" placeholder="# de visitas" required>
+               </div>
 
-                            <!--Numero de llamadas-->
-                        <div class="form-group" runat="server">
-                            <label for="InputLlamadas">Numero de llamadas</label>
-                            <input runat="server" type="number" class="form-control" 
-                                id="llamadas" name="llamadas" 
-                                placeholder="Introduzca el numero de llamadas realizadas a la Compañía" maxlength="10" required>
-                        </div>  
-					
-                         <!--Numero de visitas-->
-                        <div class="form-group" runat="server">
-                            <label for="InputPresupuesto">Numero de visitas</label>
-                            <input runat="server" type="number" class="form-control" 
-                                id="visitas" name="visitas" 
-                                placeholder="Introduzca el numero de visitas realizadas a la Compañía" maxlength="10" required>
-                        </div>  
-					
-                     
-                   
-                   
-                   
-                    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
-    
-                    </div>
+                <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary"  OnClick="Modificar_Click" type="submit" runat="server" Text = "Modificar"   ></asp:Button>
 
-
-
-            
-                    
-                    <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary"  OnClick="Modificar_Click" type="submit" runat="server" Text = "Modificar"   ></asp:Button>
-				</div>	
-			
             </div>
-		</div>
-        
-	</div>
+            <br /><br />
+            </form>
+        </div>
+    </div>
 </div>
 
 
- 
-
-            
-                 
-
-
-</form>   
+  
+        
 
 
 </asp:Content>

@@ -117,11 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotonModif" xml:space="preserve">
-    <value>&lt;a tittle="modificar" class="btn btn-default btn-xs" id="</value>
+  <data name="CloseBoton" xml:space="preserve">
+    <value>&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonReg" xml:space="preserve">
-    <value>&lt;a href="javascript:ajaxRes()" tittle ="registrar" runat ="server"  class="btn btn-success btn-xs" &gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="CloseBotonParametro" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="CloseTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CloseTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="OpenParentesis" xml:space="preserve">
+    <value>(</value>
+  </data>
+  <data name="habilitado" xml:space="preserve">
+    <value>&lt;span class="label label-success" ="h</value>
+    <comment>"&gt;Habilitada&lt;/span&gt;</comment>
+  </data>
+  <data name="inhabilitado" xml:space="preserve">
+    <value>&lt;span class="label label-danger" id="i</value>
+    <comment>"&gt;Inhabilitada&lt;/span&gt;</comment>
+  </data>
+  <data name="OpenTD" xml:space="preserve">
+    <value>&lt;td&gt;</value>
+  </data>
+  <data name="OpenTR" xml:space="preserve">
+    <value>&lt;tr&gt;</value>
+  </data>
+  <data name="Comp" xml:space="preserve">
+    <value>Comp</value>
+  </data>
+  <data name="OpenBotonEdit" xml:space="preserve">
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarCompania.aspx?idComp=</value>
+  </data>
+  <data name="OpenBotonHab" xml:space="preserve">
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=1&amp;idComp=</value>
+  </data>
+  <data name="OpenBotonInfo" xml:space="preserve">
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px;"OnClick="MostrarInfo"href="InformacionCompania.aspx?idComp=</value>
+  </data>
+  <data name="OpenBotonInhab" xml:space="preserve">
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=0&amp;idComp=</value>
+  </data>
+  <data name="Acronimo" xml:space="preserve">
+    <value>Acrónimo:</value>
   </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>
@@ -132,14 +173,20 @@
   <data name="Closeh4" xml:space="preserve">
     <value>&lt;/h4&gt;</value>
   </data>
-  <data name="CloseTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail:</value>
   </data>
-  <data name="CloseTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+  <data name="Fecha" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="Lugar" xml:space="preserve">
+    <value>Lugar:</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Nombre:</value>
   </data>
   <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="row"&gt;</value>
+    <value>&lt;div class="center-block"&gt;</value>
   </data>
   <data name="Openh3" xml:space="preserve">
     <value>&lt;h3 style="bold"&gt;</value>
@@ -147,52 +194,34 @@
   <data name="Openh4" xml:space="preserve">
     <value>&lt;h4&gt;</value>
   </data>
-  <data name="OpenTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="Rif" xml:space="preserve">
+    <value>RIF:</value>
   </data>
-  <data name="OpenTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
+  <data name="Status" xml:space="preserve">
+    <value>Status:</value>
   </data>
-  <data name="CloseBotonModify" xml:space="preserve">
-    <value>"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalC" onclick="ClickCambiar"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="Dias" xml:space="preserve">
+    <value> dìas.</value>
   </data>
-  <data name="CloseBotonReg" xml:space="preserve">
-    <value>"&gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="BotonContac" xml:space="preserve">
+    <value>&lt;a title="Contactos" class="btn btn-warning glyphicon glyphicon-list-alt" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
-  <data name="CloseInputModif" xml:space="preserve">
-    <value>" disabled&gt;</value>
+  <data name="BotonInvol" xml:space="preserve">
+    <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=1&amp;idComp=</value>
   </data>
-  <data name="CloseLabelFor" xml:space="preserve">
-    <value>" class="col-sm-2 control-label"&gt;Usuario&lt;/label&gt;</value>
+  <data name="CloseSpanHab" xml:space="preserve">
+    <value>"&gt;Habilitada&lt;/span&gt;</value>
   </data>
-  <data name="LabelFor" xml:space="preserve">
-    <value>&lt;label for="</value>
+  <data name="CloseSpanInhab" xml:space="preserve">
+    <value>"&gt;Inhabilitada&lt;/span&gt;</value>
   </data>
-  <data name="llamadoCompleto" xml:space="preserve">
-    <value>&lt;a href="javascript:ajaxRes()"  tittle="modificar" runat ="server" class="btn btn-primary btn-xs"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" &gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="CloseParentesis" xml:space="preserve">
+    <value>)</value>
   </data>
-  <data name="OpenDivModif" xml:space="preserve">
-    <value>&lt;div class="col-sm-10"&gt;</value>
+  <data name="PlazoPago" xml:space="preserve">
+    <value>Plazo de Pagos:</value>
   </data>
-  <data name="OpenInputModif" xml:space="preserve">
-    <value>&lt;input type="email" class="form-control" id="</value>
-  </data>
-  <data name="placeholder" xml:space="preserve">
-    <value>placeholder="</value>
-  </data>
-  <data name="Botonblock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
-  </data>
-  <data name="BotonRegBlock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="modificar" runat ="server" class="btn btn-success btn-xs"disabled&gt;&lt;span span class="glyphicon glyphicon-plus" data-toggle="" data-target="" &gt;&lt;/span&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="llamadoNuevaPagina" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
-  </data>
-  <data name="CloseBotonParametro" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseBotonParametroDesactivado" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
+  <data name="Presupuesto" xml:space="preserve">
+    <value>Presupuesto Actual:</value>
   </data>
 </root>

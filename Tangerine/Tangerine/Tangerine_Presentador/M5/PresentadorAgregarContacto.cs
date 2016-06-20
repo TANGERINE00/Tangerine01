@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DominioTangerine;
+using DominioTangerine.Fabrica;
+using LogicaTangerine;
+using LogicaTangerine.Fabrica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,27 +13,38 @@ namespace Tangerine_Presentador.M5
 {
     public class PresentadorAgregarContacto
     {
-        string _nombre = String.Empty;
-        string _apellido = String.Empty;
-        string _departamento = String.Empty;
-        string _cargo = String.Empty;
-        string _telefono = String.Empty;
-        string _correo = String.Empty;
-        int typeComp;
-        int idComp;
-        string volverCC;
         private IContratoAgregarContacto _vista;
 
-        public PresentadorAgregarContacto(IContratoAgregarContacto vista)
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="vista"></param>
+        public PresentadorAgregarContacto( IContratoAgregarContacto vista )
         {
             this._vista = vista;
         }
-        public void cargar_pagina()
+
+        /// <summary>
+        /// Método que carga el boton volver en la vista
+        /// </summary>
+        public void CargarPagina()
         {
-
-            _vista.botonVolver = _vista.CargarBotonVolver(_vista.GetTypeComp, _vista.GetIdComp);
-
+            _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp, _vista.GetIdComp );
         }
 
+        /// <summary>
+        /// Método que agrega un contacto nuevo
+        /// </summary>
+        public void AgregarContacto()
+        {
+            Entidad contactoNuevo = FabricaEntidades.crearContactoSinId( _vista.input_nombre, _vista.input_apellido,
+                                                                         _vista.input_departamento, _vista.input_cargo,
+                                                                         _vista.input_telefono, _vista.input_correo,
+                                                                         _vista.GetTypeComp, _vista.GetIdComp );
+            
+            Comando<bool> comandoBool = FabricaComandos.CrearComandoAgregarContacto( contactoNuevo );
+            comandoBool.Ejecutar();
+            _vista.BotonAceptar(_vista.GetTypeComp, _vista.GetIdComp);
+        }
     }
 }

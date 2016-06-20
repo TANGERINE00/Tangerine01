@@ -49,9 +49,9 @@ namespace DatosTangerine.Fabrica
         /// Método que crea la instancia de DAO Lead
         /// </summary>
         /// <returns>Retorna la instancia a la clase DaoLead</returns>
-        static public IDAOLead crearDaoLead()
+        static public IDAOClientePotencial CrearDaoClientePotencial()
         {
-            return new DAO.M3.DaoLead();
+            return new DAO.M3.DaoClientePotencial();
         }
         #endregion
 
@@ -164,10 +164,40 @@ namespace DatosTangerine.Fabrica
             return new DAO.M10.DAOEmpleado();
         }
 
+
         public static IDAOEmpleado ConsultarDAOEmpleadoId()
+
+        /// <summary>
+        /// Metodo que trae todos los paises
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado ObtenerIDaoPaises()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }       
+
+         /// <summary>
+        /// Metodo que trae todos los cargos
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado ObtenerIDaoCargo()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
+
+        /// <summary>
+        /// Metodo que trae todos los estados de un pais
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado ObtenerIDaoEstados()
+
         {
             return new DAO.M10.DAOEmpleado();
         }
         #endregion
+
     }
 }

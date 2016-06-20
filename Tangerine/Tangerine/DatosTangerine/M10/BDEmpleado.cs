@@ -98,7 +98,7 @@ namespace DatosTangerine.M10
         public static List<Empleado> ListarEmpleados()
         {
             List<Empleado> listEmpleado = new List<Empleado>();
-            /*
+            
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -183,7 +183,7 @@ namespace DatosTangerine.M10
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            */
+            
             return listEmpleado;
         }
 
