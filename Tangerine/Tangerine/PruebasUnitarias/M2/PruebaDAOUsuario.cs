@@ -129,8 +129,7 @@ namespace PruebasUnitarias.M2
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
             answer = daoUsuario.Agregar(elUsuario);
-            DominioTangerine.Entidad theUsuario =
-                                daoUsuario.ObtenerUsuarioDeEmpleado(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).fichaEmpleado);
+            DominioTangerine.Entidad theUsuario = daoUsuario.ObtenerUsuarioDeEmpleado(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).fichaEmpleado);
             DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
             Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario).nombreUsuario == usuario.nombreUsuario);
         }
