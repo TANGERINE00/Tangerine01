@@ -88,6 +88,51 @@ namespace Tangerine_Presentador.M5 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a alert.
+        /// </summary>
+        internal static string Alert {
+            get {
+                return ResourceManager.GetString("Alert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string AlertDanger {
+            get {
+                return ResourceManager.GetString("AlertDanger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string AlertShowSu1 {
+            get {
+                return ResourceManager.GetString("AlertShowSu1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertShowSu2 {
+            get {
+                return ResourceManager.GetString("AlertShowSu2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string AlertSuccess {
+            get {
+                return ResourceManager.GetString("AlertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
@@ -169,11 +214,92 @@ namespace Tangerine_Presentador.M5 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Compañía: .
+        /// </summary>
+        internal static string Compania {
+            get {
+                return ResourceManager.GetString("Compania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El contacto ha sido creado correctamente.
+        /// </summary>
+        internal static string ContactoAgregado {
+            get {
+                return ResourceManager.GetString("ContactoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El contacto ha sido eliminado correctamente.
+        /// </summary>
+        internal static string ContactoEliminado {
+            get {
+                return ResourceManager.GetString("ContactoEliminado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El contacto ha sido modificado correctamente.
+        /// </summary>
+        internal static string ContactoModificado {
+            get {
+                return ResourceManager.GetString("ContactoModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lead: .
+        /// </summary>
+        internal static string Lead {
+            get {
+                return ResourceManager.GetString("Lead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 1.
+        /// </summary>
+        internal static string StatusAgregado {
+            get {
+                return ResourceManager.GetString("StatusAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a 3.
         /// </summary>
         internal static string StatusEliminado {
             get {
                 return ResourceManager.GetString("StatusEliminado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 2.
+        /// </summary>
+        internal static string StatusModificado {
+            get {
+                return ResourceManager.GetString("StatusModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M3/Listar.aspx&quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string VolverCliPotencial {
+            get {
+                return ResourceManager.GetString("VolverCliPotencial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a id=&quot;btn-cancelar&quot; type=&quot;submit&quot; style=&quot;margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;&quot; class=&quot;btn btn-default&quot; href=&quot;../M4/ConsultarCompania.aspx&quot;&gt;Volver&lt;/a&gt;.
+        /// </summary>
+        internal static string VolverCompania {
+            get {
+                return ResourceManager.GetString("VolverCompania", resourceCulture);
             }
         }
     }
