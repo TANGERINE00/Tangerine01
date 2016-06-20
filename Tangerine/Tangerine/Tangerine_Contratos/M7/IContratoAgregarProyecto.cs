@@ -19,6 +19,7 @@ namespace Tangerine_Contratos.M7
         String Estatus { get; set; }
         DropDownList inputPersonal { get; set; }
         DropDownList inputEncargado { get; set; }
+        DropDownList inputPropuesta { get; set; }
 
     }
 }

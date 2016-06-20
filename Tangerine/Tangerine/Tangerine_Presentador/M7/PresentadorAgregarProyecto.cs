@@ -8,11 +8,14 @@ using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
 using DominioTangerine.Entidades.M7;
+using DominioTangerine.Fabrica;
+using LogicaTangerine.Fabrica;
+
 namespace Tangerine_Presentador.M7
 {
     public class PresentadorAgregarProyecto
     {
-        IContratoAgregarProyecto _vista;
+       private IContratoAgregarProyecto _vista;
 
         DateTime _fechaIni;
         DateTime _fechaFin;
@@ -31,9 +34,34 @@ namespace Tangerine_Presentador.M7
             _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
             _costo = Convert.ToDouble(_vista.Costo);
 
-            /*DominioTangerine.Entidades.M7.Proyecto p = new DominioTangerine.Entidades.M7.Proyecto(_vista.NombreProyecto, _vista.CodigoProyecto,
-                _fechaIni, _fechaFin, _costo, "Descripcion", "0", "En desarrollo", "", "AcuerdoPago", "IDPropuesta", "IdResponsable", "idgerente");
+            /*DominioTangerine.Entidades.M7.Proyecto p = new DominioTangerine.Entidades.M7.Proyecto(_vista.NombreProyecto,
+                                                   _vista.CodigoProyecto,_fechaIni, _fechaFin, _costo, "Descripcion",
+                                                     "0", "En desarrollo", "", "AcuerdoPago", "IDPropuesta", "IdResponsable", "idgerente");
             */
+        }
+
+        public void cargarPropuestas()
+        {
+            Comando<List<Entidad>> comandoLista = FabricaComandos.ComandoConsultarPropuestaXProyecto();
+
+            List<Entidad> listaPropuestas = comandoLista.Ejecutar();
+
+            foreach (Entidad entidad in listaPropuestas)
+            {
+                DominioTangerine.Entidades.M6.Propuesta propuesta = (DominioTangerine.Entidades.M6.Propuesta) entidad;
+                _vista.inputPropuesta.Items.Add(propuesta.Nombre);
+            }
+        }
+
+        public void cargarCodigoProyecto()
+        {
+            //Comando<Entidad> comandoLista = FabricaComandos.ObtenerComandoGenerarCodigoProyecto();
+        }
+
+        public void CargarPagina()
+        {
+            cargarPropuestas();
+            cargarCodigoProyecto();
         }
 
 
