@@ -70,6 +70,26 @@ namespace PruebasUnitarias.M2
             answer = daoUsuario.BorrarUsuario(theUsuario2.Id);
         }
 
+        /*/// <summary>
+        /// Método para probar el ComandoConsultarPorID de ComandosDAOUsuario
+        /// </summary>
+        [Test]
+        public void TestConsultarPorID()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario );
+            resultado = commandAgregarUsuario.Ejecutar();
+            Assert.IsTrue(resultado);
+            LogicaTangerine.Comando<DominioTangerine.Entidad> commandConsultar = FabricaComandos.consultarUsuarioPorID( elUsuario );
+            DominioTangerine.Entidad resultado2 = commandConsultar.Ejecutar();
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = ( DominioTangerine.Entidades.M2.UsuarioM2 )resultado2;
+            Assert.IsTrue(theUsuario.nombreUsuario == "Daniel");
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario2 = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario2;
+            answer = daoUsuario.BorrarUsuario(theUsuario2.Id);
+        }*/
+
         /// <summary>
         /// Método para probar el ComandoCrearUsuarioDefault de ComandosDAOUsuario
         /// </summary>
