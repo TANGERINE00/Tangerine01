@@ -5341,3 +5341,11 @@ Error Number:-1,State:0,Class:20
 2016-06-19 19:49:22,532 INFO  BDClientePotencial - Clase: BDClientePotencial
 2016-06-19 19:49:22,532 INFO  BDClientePotencial - Mensaje: Fin Método
 2016-06-19 19:49:22,532 INFO  BDClientePotencial - Metodo: ConsultarClientePotencial
+2016-06-19 20:05:32,687 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 20:05:32,695 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 20:05:32,695 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-19 20:05:32,695 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 20:05:32,714 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 20:05:32,714 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 20:05:32,714 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-19 20:05:32,714 INFO  DaoClientePotencial - Metodo: ConsultarTodos

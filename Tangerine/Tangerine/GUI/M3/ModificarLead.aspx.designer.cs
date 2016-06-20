@@ -22,15 +22,6 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlForm modificar_lead;
         
         /// <summary>
-        /// Control id_otro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl id_otro;
-        
-        /// <summary>
         /// Control nombre.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText rif;
         
         /// <summary>
-        /// Control email.
+        /// Control correo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl correo;
         
         /// <summary>
         /// Control presupuesto.
@@ -67,13 +58,13 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl presupuesto;
         
         /// <summary>
-        /// Control llamadas.
+        /// Control numLlamadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl llamadas;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl numLlamadas;
         
         /// <summary>
         /// Control visitas.
