@@ -73,6 +73,38 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el ObtenerRolUsuario de DAORol
+        /// </summary>
+        [Test]
+        public void TestObtenerRolUsuario()
+        {
+            RolM2 elRol = new RolM2(4);
+            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+            DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuario( elRol.Id );
+            DominioTangerine.Entidades.M2.RolM2 resultado = ( DominioTangerine.Entidades.M2.RolM2 )theResultado;
+            Assert.IsTrue(resultado.nombre.Equals("Programador"));
+        }
+
+
+
+        /// <summary>
+        /// Método para probar el ObtenerRolUsuarioPorNombre de DAORol
+        /// </summary>
+        [Test]
+        public void TestObtenerOperaciones()
+        {
+           IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),
+                                                                                        "Activo", elRol1, 1);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario;
+            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+            DominioTangerine.Entidad theResultado = daoRol.ObtenerOpciones("Administrador",2);
+            DominioTangerine.Entidades.M2.RolM2 resultado = (DominioTangerine.Entidades.M2.RolM2)theResultado;
+            Assert.IsNotNull(resultado.Id);
+        }
+
+        /// <summary>
         /// Método para probar el ObtenerRolUsuarioPorNombre de DAORol
         /// </summary>
         [Test]
