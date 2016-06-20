@@ -205,6 +205,15 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7IdEvento.
+        /// </summary>
+        internal static string IdEvento {
+            get {
+                return ResourceManager.GetString("IdEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
