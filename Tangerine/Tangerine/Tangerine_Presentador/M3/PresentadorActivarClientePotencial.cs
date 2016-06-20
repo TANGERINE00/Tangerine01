@@ -10,21 +10,21 @@ using System.Web;
 
 namespace Tangerine_Presentador.M3
 {
-    public class PresentadorDesactivarClientePotencial
+    public class PresentadorActivarClientePotencial 
     {
         IContratoConsultarClientePotencial vista;
 
-        public PresentadorDesactivarClientePotencial(IContratoConsultarClientePotencial vista)
+        public PresentadorActivarClientePotencial(IContratoConsultarClientePotencial vista)
         {
             this.vista = vista;
         }
 
-        public void Desactivar(int idCliente)
+        public void Activar(int idCliente)
         {
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.ObtenerClientePotencial();
             _entidad.Id = idCliente;
 
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoDesactivarClientePotencial(_entidad);
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoActivarClientePotencial(_entidad);
             comando.Ejecutar();
         }
     }
