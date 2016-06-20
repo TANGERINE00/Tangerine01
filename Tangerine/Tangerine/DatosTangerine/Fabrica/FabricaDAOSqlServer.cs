@@ -167,8 +167,9 @@ namespace DatosTangerine.Fabrica
 
         public static IDAOEmpleado ConsultarDAOEmpleadoId()
         {
-            return new DAO.M10.DAOEmpleado();
+            return new DAO.M10.DAOEmpleado(); //AQUIIIIIIIIIIIIIIIII
         }
+
         /// <summary>
         /// Metodo que trae todos los paises
         /// </summary>
