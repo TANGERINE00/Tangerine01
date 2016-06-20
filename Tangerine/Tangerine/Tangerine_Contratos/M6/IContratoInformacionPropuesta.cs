@@ -32,5 +32,25 @@ namespace Tangerine_Contratos.M6
             get;
             set;
         }
+
+        //Literal Requerimiento
+
+        Label Duracion
+        {
+            get;
+            set;
+        }
+
+        Label Costo
+        {
+            get;
+            set;
+        }
+
+        Label AcuerdoPago
+        {
+            get;
+            set;
+        }
     }
 }
