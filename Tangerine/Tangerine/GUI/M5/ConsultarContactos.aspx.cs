@@ -36,10 +36,10 @@ namespace Tangerine.GUI.M5
             set { alert.InnerHtml = value; }
         }
 
-        public string contact
+        public Literal contact
         {
-            get { return this.tabla.Text; }
-            set { this.tabla.Text = value; }
+            get { return this.tabla; }
+            set { this.tabla = value; }
         }
 
         public string botonVolver
@@ -138,22 +138,22 @@ namespace Tangerine.GUI.M5
 
         public void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp )
         {
-            contact += ResourceGUIM5.AbrirTR;
-            contact += ResourceGUIM5.AbrirTD + _theContact2.Apellido.ToString() + ResourceGUIM5.Coma
+            contact.Text += ResourceGUIM5.AbrirTR;
+            contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Apellido.ToString() + ResourceGUIM5.Coma
                 + _theContact2.Nombre.ToString() + ResourceGUIM5.CerrarTD;
-            contact += ResourceGUIM5.AbrirTD + _theContact2.Departamento.ToString() + ResourceGUIM5.CerrarTD;
-            contact += ResourceGUIM5.AbrirTD + _theContact2.Cargo.ToString() + ResourceGUIM5.CerrarTD;
-            contact += ResourceGUIM5.AbrirTD + _theContact2.Telefono.ToString() + ResourceGUIM5.CerrarTD;
-            contact += ResourceGUIM5.AbrirTD + _theContact2.Correo.ToString() + ResourceGUIM5.CerrarTD;
+            contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Departamento.ToString() + ResourceGUIM5.CerrarTD;
+            contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Cargo.ToString() + ResourceGUIM5.CerrarTD;
+            contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Telefono.ToString() + ResourceGUIM5.CerrarTD;
+            contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Correo.ToString() + ResourceGUIM5.CerrarTD;
             //Acciones de cada contacto
-            contact += ResourceGUIM5.AbrirTD2;
-            contact += ResourceGUIM5.ButtonModContact + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+            contact.Text += ResourceGUIM5.AbrirTD2;
+            contact.Text += ResourceGUIM5.ButtonModContact + typeComp + ResourceGUIM5.BotonVolver2 + idComp
                 + ResourceGUIM5.BotonEliminar2 + _theContact2.Id + ResourceGUIM5.BotonCerrar
                 + ResourceGUIM5.BotonEliminar + typeComp + ResourceGUIM5.BotonVolver2 + idComp
                 + ResourceGUIM5.BotonEliminar2 + _theContact2.Id + ResourceGUIM5.BotonVolver4
                 + ResourceGUIM5.StatusEliminado + ResourceGUIM5.BotonCerrar;
-            contact += ResourceGUIM5.CerrarTD;
-            contact += ResourceGUIM5.CerrarTR;
+            contact.Text += ResourceGUIM5.CerrarTD;
+            contact.Text += ResourceGUIM5.CerrarTR;
         }
         public string StatusModificado()
         {
