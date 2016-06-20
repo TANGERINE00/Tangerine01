@@ -48,7 +48,7 @@ namespace Tangerine.GUI.M1
 
             age = Int32.Parse(DateTime.Now.ToString("yyyy")) - Int32.Parse(year);
             
-            return age.ToString();
+            return age.ToString(); 
         }
 
         private String ViewFormEmployee(Empleado employee)

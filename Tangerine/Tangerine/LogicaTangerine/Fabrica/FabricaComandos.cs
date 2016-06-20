@@ -610,6 +610,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarEmpleado();
         }
+
+        public static Comando<Entidad> ConsultarIdEmpleado(Entidad empleado)
+        {
+            return new ComandoConsultarPorId(empleado);
+        }
         #endregion
     }
 }

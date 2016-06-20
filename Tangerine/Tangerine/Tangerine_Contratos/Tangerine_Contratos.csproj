@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\IContratoConsultaEmpleados.cs" />
+    <Compile Include="M10\IContratoVerEmpleados.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
     <Compile Include="M2\IContratoRol.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />

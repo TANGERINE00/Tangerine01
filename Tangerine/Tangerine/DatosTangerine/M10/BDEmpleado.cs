@@ -195,7 +195,7 @@ namespace DatosTangerine.M10
         public static Empleado GetEmployeeById(int employeeId)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parameters = new List<Parametro>();
             BDConexion Connection = new BDConexion();
@@ -230,11 +230,11 @@ namespace DatosTangerine.M10
                 String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                 String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
-                employee = new Empleado();
-                //employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
-                //                                empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                //                                empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
-                //                                empFechaFin, empDireccion);
+                //employee = new Empleado();
+                employee = new Empleado(empId, empPNombre, empSNombre, empPApellido, empSApellido,
+                                                empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                                                empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                                                empFechaFin, empDireccion);
             }
             catch (ArgumentNullException ex)
             {

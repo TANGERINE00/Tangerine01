@@ -164,6 +164,10 @@ namespace DatosTangerine.Fabrica
             return new DAO.M10.DAOEmpleado();
         }
 
+        public static IDAOEmpleado ConsultarDAOEmpleadoId()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
         #endregion
     }
 }
