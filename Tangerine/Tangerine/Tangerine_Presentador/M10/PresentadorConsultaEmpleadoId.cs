@@ -128,7 +128,7 @@ namespace Tangerine_Presentador.M10
                   vista.FormViewEmployee.Text += ResourceGUIM10.CloseDiv;
 
 
-                  return vista.FormViewEmployee.Text ;
+                  //return vista.FormViewEmployee.Text; REVISAR!!!!
 
               }
 
