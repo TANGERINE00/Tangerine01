@@ -19,12 +19,6 @@ namespace DatosTangerine.InterfazDAO.M2
         bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado );
 
         /// <summary>
-        /// Encabezado de metodo para devolver todos los empleados sin usuario
-        /// </summary>
-        /// <returns>Retorna la lista de empleados</returns>
-        List<Entidad> ConsultarListaDeEmpleados();
-
-        /// <summary>
         /// Encabezado de metodo usado para verificar si el usuario existe en el sistema
         /// </summary>
         /// <param name="nombreUsuario"></param>

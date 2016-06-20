@@ -146,7 +146,6 @@ namespace DatosTangerine.DAO.M2
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
-
                 bool resultado = false;
 
                 try
@@ -170,31 +169,7 @@ namespace DatosTangerine.DAO.M2
                 }
 
                 return resultado;
-            } //DONE COMMAND
-
-            /// <summary>
-            /// Método usado para devolver todos los empleados sin usuario
-            /// </summary>
-            /// <returns>Retorna la lista de empleados</returns>
-            public List<Entidad> ConsultarListaDeEmpleados()
-            {
-                List<Entidad> listaDeEmpleados = new List<Entidad>();
-                //List<DominioTangerine.Entidades.M10.Empleado> listaEmpleado = (List<DominioTangerine.Entidades.M10.Empleado>)theListaDeEmpleados;
-
-                
-                try
-                {
-                    //Hablar con mod10 para que cambien el metodo ListaEmpleados() de lugar.
-                    DatosTangerine.InterfazDAO.M10.IDAOEmpleado empleadoConexion = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
-                    //listaDeEmpleados = empleadoConexion.ListarEmpleados();
-                }
-                catch (Exception ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " + "ConsultarListaDeEmpleados()", ex);
-                }
-                return listaDeEmpleados;
-            } //OJOOOOOOOOOOOOO HABLAR CON M10
+            }
 
             /// <summary>
             /// Método usado para verificar si el usuario existe en el sistema
