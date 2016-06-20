@@ -146,6 +146,29 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        ListBox IContratoModificarProyecto.imputEncargado
+        {
+            get
+            {
+                return inputEncargado;
+            }
+            set
+            {
+                inputEncargado = value;
+            }
+        }
+
+                ListBox IContratoModificarProyecto.inputPersonal
+        {
+            get
+            {
+                return inputPersonal;
+            }
+            set
+            {
+                inputPersonal = value;
+            }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -155,6 +178,19 @@ namespace Tangerine.GUI.M7
             if (!IsPostBack)
             {
                 presentador.CargarProyecto(Proyectoid);
+            }
+        }
+
+        protected void Modificar_Datos(object sender, EventArgs e)
+        {
+            bool resultado = presentador.EventoClick_Modificar();
+            if (resultado.Equals(true))
+            {
+                //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaModificada);
+            }
+            else if (resultado.Equals(false))
+            {
+                //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaNoModificada);
             }
         }
     }

@@ -9,6 +9,7 @@ using LogicaTangerine.M7;
 using Tangerine_Contratos.M7;
 using Tangerine_Presentador.M7;
 using DominioTangerine.Entidades.M7;
+using System.Web.UI.HtmlControls;
 
 namespace Tangerine.GUI.M7
 {
@@ -48,7 +49,7 @@ namespace Tangerine.GUI.M7
             }
             set
             {
-                throw new NotImplementedException();
+                this.textInputCodigo.Value = value.ToString();
             }
         }
 
@@ -84,7 +85,7 @@ namespace Tangerine.GUI.M7
             }
             set
             {
-                throw new NotImplementedException();
+                this.textInputCosto.Value = value.ToString();
             }
         }
 
@@ -112,11 +113,11 @@ namespace Tangerine.GUI.M7
             }
         }
 
-        DropDownList IContratoAgregarProyecto.inputPersonal
+        HtmlSelect IContratoAgregarProyecto.inputPersonal
         {
             get
             {
-                throw new NotImplementedException();
+                return this.inputPersonal;
             }
             set
             {
@@ -124,11 +125,11 @@ namespace Tangerine.GUI.M7
             }
         }
 
-        DropDownList IContratoAgregarProyecto.inputEncargado
+        HtmlSelect IContratoAgregarProyecto.inputEncargado
         {
             get
             {
-                throw new NotImplementedException();
+                return this.inputEncargado;
             }
             set
             {
@@ -146,8 +147,46 @@ namespace Tangerine.GUI.M7
             {
                 //this.inputPropuesta.Text = value.ToString();
             }
+
+
         }
 
+        DropDownList IContratoAgregarProyecto.inputGerente
+        {
+            get
+            {
+                return this.inputGerente;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+
+        }
+
+        HtmlGenericControl IContratoAgregarProyecto.columna2
+        {
+            get
+            {
+                return this.columna2;
+            }
+            set
+            {
+                this.columna2 = value;
+            }
+        }
+
+        Button IContratoAgregarProyecto.BtnGenerar
+        {
+            get 
+            {
+                return this.btnGenerar;
+            }
+            set
+            {
+                this.btnGenerar = value;
+            }
+        }
 
         #endregion
 
@@ -156,19 +195,14 @@ namespace Tangerine.GUI.M7
         {
 
             _presentador = new PresentadorAgregarProyecto (this);
-            _presentador.CargarPagina();
+            
 
            if (!IsPostBack)
            {
+               _presentador.CargarPagina();
                
           /*  if( Propuestas.Count > 0 )
             {
-                textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[0].Nombre);
-
-                for (int i = 0; i < Propuestas.Count;i++ )
-                {
-                    inputPropuesta.Items.Add(Propuestas[i].Nombre);
-                }
 
                 Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[0].IdCompañia),1); 
 
@@ -193,13 +227,16 @@ namespace Tangerine.GUI.M7
 
         protected void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
-
-            columna2.Visible = true;
-            btnGenerar.Enabled = true;
+            _presentador.AgregarPersonal();
+            
+        
         }
 
         protected void comboPropuesta_Click(object sender, EventArgs e)
         {
+
+            _presentador.CargarInformacionPropuesta(sender);
+
            /* inputEncargado.Items.Clear();
 
             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
@@ -209,8 +246,6 @@ namespace Tangerine.GUI.M7
                 inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
             }
             
-            textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
-            textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
              */
         }
 

@@ -9,13 +9,16 @@ using LogicaTangerine;
 //using LogicaTangerine.M8;
 using LogicaTangerine.M4;
 using LogicaTangerine.M7;
+using Tangerine_Presentador.M8;
+using Tangerine_Contratos.M8;
 
 namespace Tangerine.GUI.M8
 {
-    public partial class ConsultarFacturaM8 : System.Web.UI.Page
+    public partial class ConsultarFacturaM8 : System.Web.UI.Page, IContratoConsultarFactura
     {
+        PresentadorConsultaFactura _presentador;
 
-        public string factura
+        public string facturasCreadas
         {
             get
             {
@@ -28,86 +31,99 @@ namespace Tangerine.GUI.M8
             }
         }
 
+        public ConsultarFacturaM8()
+        {
+            _presentador = new PresentadorConsultaFactura(this);
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                _presentador.cargarConsultarFacturas();
+            }
+        }
+
         /// <summary>
         /// Metodo para llenar la tabla de consulta con todos los registro de factura de la base de datos
         /// </summary>
         public void llenarTabla()
         {
 
-            //LogicaM8 prueba = new LogicaM8();
-            LogicaM4 pruebaM4 = new LogicaM4();
-            //List<Facturacion> listFactura = prueba.getFacturas();
-            bool pagada = false;
-            bool anulada = false;
+            /* LogicaM8 prueba = new LogicaM8();
+             LogicaM4 pruebaM4 = new LogicaM4();
+             List<Facturacion> listFactura = prueba.getFacturas();
+             bool pagada = false;
+             bool anulada = false;
 
-            try
-            {
-                //foreach (Facturacion theFactura in listFactura)
-                //{
-                //    factura += ResourceGUIM8.OpenTR;
+             try
+             {
+                 foreach (Facturacion theFactura in listFactura)
+                 {
+                     factura += ResourceGUIM8.OpenTR;
 
-                //    factura += ResourceGUIM8.OpenTD + theFactura.idFactura.ToString() + ResourceGUIM8.CloseTD;
-                //    Compania compania = prueba.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                //    factura += ResourceGUIM8.OpenTD + compania.NombreCompania.ToString() + ResourceGUIM8.CloseTD;
-                //    Proyecto proyecto = prueba.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
-                //    factura += ResourceGUIM8.OpenTD + proyecto.Nombre.ToString() + ResourceGUIM8.CloseTD;
-                //    factura += ResourceGUIM8.OpenTD + theFactura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
-                //    factura += ResourceGUIM8.OpenTD + theFactura.fechaFactura.ToString("dd/MM/yyyy") + ResourceGUIM8.CloseTD;
+                     factura += ResourceGUIM8.OpenTD + theFactura.idFactura.ToString() + ResourceGUIM8.CloseTD;
+                     Compania compania = prueba.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
+                     factura += ResourceGUIM8.OpenTD + compania.NombreCompania.ToString() + ResourceGUIM8.CloseTD;
+                     Proyecto proyecto = prueba.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
+                     factura += ResourceGUIM8.OpenTD + proyecto.Nombre.ToString() + ResourceGUIM8.CloseTD;
+                     factura += ResourceGUIM8.OpenTD + theFactura.descripcionFactura.ToString() + ResourceGUIM8.CloseTD;
+                     factura += ResourceGUIM8.OpenTD + theFactura.fechaFactura.ToString("dd/MM/yyyy") + ResourceGUIM8.CloseTD;
 
-                //    //Equals cero para factura "Por Pagar"
-                //    if (theFactura.estatusFactura.Equals(0))
-                //    {
-                //        factura += ResourceGUIM8.OpenTD + ResourceGUIM8.porPagar + ResourceGUIM8.CloseTD;
+                     //Equals cero para factura "Por Pagar"
+                     if (theFactura.estatusFactura.Equals(0))
+                     {
+                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.porPagar + ResourceGUIM8.CloseTD;
 
-                //    }
-                //    //Equals uno para factura "Pagada"
-                //    else if (theFactura.estatusFactura.Equals(1))
-                //    {
-                //        pagada = true;
-                //        factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
-                //    }
-                //    //Equals dos para factura "Anulada"
-                //    else if (theFactura.estatusFactura.Equals(2))
-                //    {
-                //        anulada = true;
-                //        factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
-                //    }
+                     }
+                     //Equals uno para factura "Pagada"
+                     else if (theFactura.estatusFactura.Equals(1))
+                     {
+                         pagada = true;
+                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.pagada + ResourceGUIM8.CloseTD;
+                     }
+                     //Equals dos para factura "Anulada"
+                     else if (theFactura.estatusFactura.Equals(2))
+                     {
+                         anulada = true;
+                         factura += ResourceGUIM8.OpenTD + ResourceGUIM8.anulada + ResourceGUIM8.CloseTD;
+                     }
 
 
-                //    factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " "+ theFactura.tipoMoneda + ResourceGUIM8.CloseTD;
+                     factura += ResourceGUIM8.OpenTD + theFactura.montoFactura + " "+ theFactura.tipoMoneda + ResourceGUIM8.CloseTD;
 
-                //    //Acciones de cada contacto
-                //    factura += ResourceGUIM8.OpenTD;
+                     //Acciones de cada contacto
+                     factura += ResourceGUIM8.OpenTD;
 
-                //    if (pagada == true || anulada == true)
-                //    {
-                //        factura += ResourceGUIM8.BotonModifInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                //                   ResourceGUIM8.BotonAnularInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                //                   ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                //                    ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
+                     if (pagada == true || anulada == true)
+                     {
+                         factura += ResourceGUIM8.BotonModifInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                    ResourceGUIM8.BotonAnularInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                    ResourceGUIM8.BotonPagarInhabilitado + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                     ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
 
-                //        factura += ResourceGUIM8.CloseTD;
-                //        factura += ResourceGUIM8.CloseTR;
-                //    }
-                //    else
-                //    {
-                //        factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                //                ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                //                ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
-                //                ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
-                       
-                //        factura += ResourceGUIM8.CloseTD;
-                //        factura += ResourceGUIM8.CloseTR;
-                //    }
-                //    anulada = false;
-                //    pagada = false;
-                //}
+                         factura += ResourceGUIM8.CloseTD;
+                         factura += ResourceGUIM8.CloseTR;
+                     }
+                     else
+                     {
+                         factura += ResourceGUIM8.BotonModif + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                 ResourceGUIM8.BotonAnular + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                 ResourceGUIM8.BotonPagar + theFactura.idFactura + ResourceGUIM8.CloseBotonParametro +
+                                 ResourceGUIM8.BotonMail + theFactura.idCompaniaFactura + ResourceGUIM8.CloseBotonParametro;
+                      
+                         factura += ResourceGUIM8.CloseTD;
+                         factura += ResourceGUIM8.CloseTR;
+                     }
+                     anulada = false;
+                     pagada = false;
+                 }
 
-            }
-            catch (Exception ex)
-            {
+             }
+             catch (Exception ex)
+             {
 
-            }
+             }*/
 
         }
 
@@ -187,22 +203,6 @@ namespace Tangerine.GUI.M8
             {
 
             }
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                try
-                {
-                    llenarTabla();
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
-
         }
 
         /// <summary>

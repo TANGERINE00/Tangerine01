@@ -126,6 +126,21 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="Alert" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="AlertDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertShowSu1" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertShowSu2" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="AlertSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
@@ -153,7 +168,34 @@
   <data name="Coma" xml:space="preserve">
     <value>,</value>
   </data>
+  <data name="Compania" xml:space="preserve">
+    <value>Compañía: </value>
+  </data>
+  <data name="ContactoAgregado" xml:space="preserve">
+    <value>El contacto ha sido creado correctamente</value>
+  </data>
+  <data name="ContactoEliminado" xml:space="preserve">
+    <value>El contacto ha sido eliminado correctamente</value>
+  </data>
+  <data name="ContactoModificado" xml:space="preserve">
+    <value>El contacto ha sido modificado correctamente</value>
+  </data>
+  <data name="Lead" xml:space="preserve">
+    <value>Lead: </value>
+  </data>
+  <data name="StatusAgregado" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="StatusEliminado" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="StatusModificado" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="VolverCliPotencial" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;" class="btn btn-default" href="../M3/Listar.aspx"&gt;Volver&lt;/a&gt;</value>
+  </data>
+  <data name="VolverCompania" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;" class="btn btn-default" href="../M4/ConsultarCompania.aspx"&gt;Volver&lt;/a&gt;</value>
   </data>
 </root>

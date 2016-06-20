@@ -72,6 +72,7 @@
     <Compile Include="Comandos\M10\ComandoObtenerPais - Copy.cs" />
     <Compile Include="Comandos\M10\ComandoObtenerCargo.cs" />
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
+    <Compile Include="Comandos\M10\ComandoConsultarPorId.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRol.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuarioPorNombre.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
-    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
@@ -91,7 +91,9 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
+    <Compile Include="Comandos\M3\ComandoActivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M6\ComandoEliminarRequerimiento.cs" />
     <Compile Include="Comandos\M7\ComandoGenerarCodigoProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />

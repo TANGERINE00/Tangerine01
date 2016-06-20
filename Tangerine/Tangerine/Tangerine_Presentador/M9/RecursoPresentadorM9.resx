@@ -312,4 +312,10 @@
   <data name="botonPagarCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
   </data>
+  <data name="boton_cerrar_id" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
+  </data>
+  <data name="habilitado" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;Habilitada&lt;/span&gt;</value>
+  </data>
 </root>

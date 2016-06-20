@@ -13,17 +13,21 @@ namespace DatosTangerine.InterfazDAO.M10
         
         bool AgregarEmpleado(Empleado elEmpleado);
         
-        List<Empleado> ListarEmpleados();
+        //List<Entidad> ConsultarXId(Entidad empleado);        
 
         List<Entidad> ConsultarTodos();
         
-        bool CambiarEstatus(int empleadoId);
+
+        bool CambiarEstatus(int empleadoId);       
+
+        //bool CambiarEstatus(int empleadoId);
 
         List<Entidad> ObtenerPaises();
 
         List<Entidad> ObtenerCargos();
 
         List<Entidad> ObtenerEstados(Entidad parametro);
+
 
 
     }

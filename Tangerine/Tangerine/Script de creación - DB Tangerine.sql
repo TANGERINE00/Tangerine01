@@ -210,7 +210,7 @@ create table CONTACTO
       create table PROPUESTA
 (
 	prop_id int IDENTITY(1,1) not null,
-	prop_nombre varchar(50),
+	prop_nombre varchar(200),
 	prop_descripcion varchar(255),
 	prop_tipoDuracion varchar(200),
 	prop_Duracion varchar(200),
@@ -1114,12 +1114,24 @@ END;
 
 GO
 
+--Listar requerimientos por propuesta
+CREATE PROCEDURE M6_ConsultarRequerimientoNombre
+@reqnombre [varchar] (200)
+AS
+BEGIN
+SELECT req_descripcion,fk_prop_req_id FROM REQUERIMIENTO WHERE req_codigo = @reqnombre 
+END;
+
+GO
+
 --Consultar todas las propuestas
 CREATE PROCEDURE M6_ConsultarPropuestas
 AS
 BEGIN
 SELECT prop_nombre,prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
-prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA 
+prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id 
+FROM PROPUESTA
+WHERE fk_com_id IN (select com_id from COMPANIA where com_status = 1)
 END;
 GO
 
@@ -1133,6 +1145,15 @@ AS
     DELETE FROM PROPUESTA WHERE prop_nombre=@propuesta_nombre; 	
  END;
 
+GO
+
+--Eliminar Requerimiento
+CREATE PROCEDURE M6_EliminarRequerimiento
+@cod_Nombre [varchar] (500)
+AS
+ BEGIN
+    DELETE FROM REQUERIMIENTO WHERE req_codigo=@cod_Nombre;
+ END;
 GO
 
 ---ConsultarIdUltimoRequerimiento(Para pruebas) ----
@@ -1522,23 +1543,23 @@ GO
 
 ---- StoredProcedure Facturas por Pagar ----
 CREATE PROCEDURE M8_VerificarFacturasParaPagar
-	@idFactura int
+	@id_Factura int
 
 AS
 	BEGIN
-		IF (SELECT DATEDIFF(day,fac_fecha_ultimo_pago,CONVERT(DATE,GETDATE())) FROM FACTURA WHERE fac_id = @idFactura) >= 31
-			UPDATE FACTURA SET fac_estatus = 2 WHERE fac_id = @idFactura;
+		IF (SELECT DATEDIFF(day,fac_fecha_ultimo_pago,CONVERT(DATE,GETDATE())) FROM FACTURA WHERE fac_id = @id_Factura) >= 31
+			UPDATE FACTURA SET fac_estatus = 2 WHERE fac_id = @id_Factura;
 	END
 GO
 
 ---- StoredProcedure Monto Restante de una Factura ----
 CREATE PROCEDURE M8_ConsultarMontoRestanteFactura
-	@idFactura int
+	@id_Factura int
 
 AS
 	BEGIN
 		SELECT fac_monto_restante AS fac_monto_restante
-		FROM FACTURA WHERE fac_id = @idFactura;
+		FROM FACTURA WHERE fac_id = @id_Factura;
 	END
 GO
 

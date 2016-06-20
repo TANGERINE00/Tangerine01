@@ -45,15 +45,6 @@ namespace LogicaTangerine.Fabrica
             }
 
             /// <summary>
-            /// Método utilizado para devolver una instancia de la clase ComandoConsultarListaDeEmpleados
-            /// </summary>
-            /// <returns>Retorna una una instancia a ComandoConsultarListaDeEmpleados</returns>
-            public static Comando<List<DominioTangerine.Entidad>> listaEmpleados()
-            {
-                return new Comandos.M2.ComandoConsultarListaDeEmpleados();
-            }
-
-            /// <summary>
             /// Método utilizado para devolver una instancia del ComandoValidarUsuario
             /// </summary>
             /// <param name="usuario"></param>
@@ -230,6 +221,16 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> ObtenerComandoModificarClientePotencial(Entidad cliente)
         {
             return new ComandoModificarClientePotencial(cliente);
+        }
+
+        public static Comando<bool> ObtenerComandoDesactivarClientePotencial(Entidad cliente)
+        {
+            return new ComandoDesactivarClientePotencial(cliente);
+        }
+
+        public static Comando<bool> ObtenerComandoActivarClientePotencial(Entidad cliente)
+        {
+            return new ComandoActivarClientePotencial(cliente);
         }
         #endregion
 
@@ -717,6 +718,12 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarEmpleado();
         }
 
+
+        public static Comando<Entidad> ConsultarIdEmpleado(Entidad empleado)
+        {
+            return new ComandoConsultarPorId(empleado);
+        }
+
         public static Comando<List<Entidad>> ObtenerFabricaPaises()
         {
             return new ComandoObtenerPais();
@@ -730,6 +737,7 @@ namespace LogicaTangerine.Fabrica
             return new ComandoObtenerEstado(Pais);
         }
         
+
 
         #endregion
     }

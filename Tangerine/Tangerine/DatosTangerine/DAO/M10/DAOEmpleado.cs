@@ -26,22 +26,14 @@ namespace DatosTangerine.DAO.M10
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Metodo para consultar todos los empleados
-        /// </summary>
-        /// <returns></returns>
+        
         public List<DominioTangerine.Empleado> ListarEmpleados()
         {
 
             throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Metodo para consultar empleados por Id
-        /// </summary>
-        /// <param name="employeeId"></param>
-        /// <returns></returns>
-
+       
         public DominioTangerine.Empleado ConsultarEmpleados(int employeeId)
         {
             throw new NotImplementedException();
@@ -68,12 +60,104 @@ namespace DatosTangerine.DAO.M10
             throw new NotImplementedException();
         }
 
-        public DominioTangerine.Entidad ConsultarXId(DominioTangerine.Entidad parametro)
+
+
+        /// <summary>
+        /// Metodo para consultar empleados por Id
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
+
+        public Entidad ConsultarXId(Entidad empleado)
         {
-            throw new NotImplementedException();
-        }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion Connection = new BDConexion();
+            Parametro param = new Parametro();
+            Entidad empleadoFinal;
+
+            try
+            {
+                
+                param = new Parametro("@id", SqlDbType.Int, ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false);
+                parameters.Add(param);
+
+                DataTable dataTable = EjecutarStoredProcedureTuplas(ResourceEmpleado.DetallarEmpleado, parameters);
+
+                    DataRow row = dataTable.Rows[0];
+
+                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                    int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                    String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
+                    String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
+
+                    //Variables que son de la entidad Cargo 
+                    String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                    double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+                    String empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
+                    String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
+                    String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
 
+                    empleadoFinal = DominioTangerine.Fabrica.FabricaEntidades.ListarEmpleadoId(empId, empPNombre,
+                                                    empSNombre, empPApellido, empSApellido,
+                                                    empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
+                                                    empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                                                    empFechaFin, empDireccion);
+    
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return empleadoFinal;
+           
+        
+
+    }
         /// <summary>
         /// Metodo para consultar todos los empleados
         /// </summary>
@@ -120,16 +204,16 @@ namespace DatosTangerine.DAO.M10
                     DateTime empContratacion = DateTime.Parse(row[ResourceEmpleado.EmpFechaInicio].ToString());
                     String empModalidad = row[ResourceEmpleado.EmpModalidad].ToString();
                     double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+
+
                     ////Creo un objeto de tipo Contacto con los datos de la fila y lo guardo en una lista de contactos
 
                     Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion,
                                             empContratacion);
 
                     Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre,
-                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad, empSalario,cargoEmpleado);
-
-                   // DominioTangerine.Entidades.M10.EmpleadoM10 hola = (DominioTangerine.Entidades.M10.EmpleadoM10) empleado;
-
+                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad,
+                    empSalario,cargoEmpleado);
 
 
                     listEmpleado.Add(empleado);

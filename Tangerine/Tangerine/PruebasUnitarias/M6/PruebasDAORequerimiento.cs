@@ -14,11 +14,14 @@ namespace PruebasUnitarias.M6
     {
         #region Atributos
 
-        private DominioTangerine.Entidades.M6.Propuesta laPropuesta, laPropuesta2, laPropuesta3;
+        private DominioTangerine.Entidades.M6.Propuesta laPropuesta;
         private DateTime Date1, Date2;
         private List<DominioTangerine.Entidad> listaRequerimientos;
         private DominioTangerine.Entidades.M6.Requerimiento elRequerimiento, elRequerimiento2, elRequerimiento3;
         Boolean confirmacion;
+        DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao;
+        DatosTangerine.InterfazDAO.M6.IDAORequerimiento daor;
+        int contador;
         #endregion
 
 
@@ -29,7 +32,8 @@ namespace PruebasUnitarias.M6
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
             laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
-
+            dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
+            daor = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
 
             elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
@@ -37,9 +41,9 @@ namespace PruebasUnitarias.M6
         public void Clean()
         {
             laPropuesta = null;
-            laPropuesta2 = null;
             elRequerimiento = null;
             elRequerimiento2 = null;
+            contador = 0;
         }
 
 
@@ -52,13 +56,14 @@ namespace PruebasUnitarias.M6
         [Test]
         public void TestAgregarRequerimiento()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-            DatosTangerine.InterfazDAO.M6.IDAORequerimiento daor = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
             //Se inserta la propuesta
             Assert.IsTrue(dao.Agregar(laPropuesta));
-            //Agregar un Requerimiento y pruebo que se agregó
+            //Se obtiene el número de requerimientos totales antes de la inserción
+            contador = daor.ConsultarNumeroRequerimientos();
+            //Se agrega un Requerimiento y pruebo que se agregó
             Assert.IsTrue(daor.Agregar(elRequerimiento));
+            //Se checkea que la cantidad total de requerimientos en la base de datos haya aumentado en una unidad
+            Assert.AreEqual(daor.ConsultarNumeroRequerimientos(), contador + 1);
             //Pruebo que el requerimiento pertenece a la propuesta que acabo de agregar
             listaRequerimientos = daor.ConsultarRequerimientosXPropuesta("NombrePropuestaPrueba");
             Assert.AreEqual("NombreRequerimiento1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
@@ -75,9 +80,6 @@ namespace PruebasUnitarias.M6
         [Test]
         public void TestModificarRequerimiento()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-            DatosTangerine.InterfazDAO.M6.IDAORequerimiento daor = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
             elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1Modificado", "NombrePropuestaPrueba");
             //Se inserta la propuesta
             Assert.IsTrue(dao.Agregar(laPropuesta));
@@ -102,9 +104,6 @@ namespace PruebasUnitarias.M6
         [Test]
         public void ConsultarRequerimientosXPropuesta()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-            DatosTangerine.InterfazDAO.M6.IDAORequerimiento daor = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
             elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba", "NombrePropuestaPrueba");
             elRequerimiento3 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento2", "DescripcionRequerimientoPrueba2", "NombrePropuestaPrueba");
             //Se inserta la propuesta
@@ -120,6 +119,48 @@ namespace PruebasUnitarias.M6
             }
             //Elimino la propuesta de prueba junto con los requerimientos
             confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+        }
+
+        // <summary>
+        //Prueba que pueda eliminar un requerimiento
+        // <summary>
+        [Test]
+        public void EliminarRequerimiento()
+        {
+            //Se obtiene el número de propuestas totales antes del insertado
+            contador = daor.ConsultarNumeroRequerimientos();
+            //Se inserta el requerimiento
+            Assert.IsTrue(daor.Agregar(elRequerimiento));
+            //Elimino el requerimiento de prueba
+            confirmacion = daor.EliminarRequerimiento(elRequerimiento);
+            //Se checkea que haya disminuido en una unidad la cantidad de requerimientos en la base de datos
+            Assert.AreEqual(daor.ConsultarNumeroRequerimientos(), contador);
+            try
+            {
+                //Se intenta consultar el requerimiento anteriormente eliminado.
+                elRequerimiento = (DominioTangerine.Entidades.M6.Requerimiento)daor.ConsultarXId(elRequerimiento);
+            }
+            //Se chequea que no haya sido encontrada.
+            catch (ExcepcionesTangerine.ExceptionsTangerine e)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+
+        /// <summary>
+        /// Prueba que se requerimientos por nombre.
+        /// </summary>
+        [Test]
+        public void ConsultaRequerimientoXId()
+        {
+            //Se inserta el requerimiento
+            confirmacion = daor.Agregar(elRequerimiento);
+            elRequerimiento2 = (DominioTangerine.Entidades.M6.Requerimiento)daor.ConsultarXId(elRequerimiento);
+            Assert.AreEqual(elRequerimiento.CodigoRequerimiento, elRequerimiento2.CodigoRequerimiento);
+            Assert.AreEqual(elRequerimiento.Descripcion, elRequerimiento2.Descripcion);
+            Assert.AreEqual(elRequerimiento.CodigoPropuesta, elRequerimiento2.CodigoPropuesta);
+            //Elimino el requerimiento
+            confirmacion = daor.EliminarRequerimiento(elRequerimiento);
         }
     }
 }

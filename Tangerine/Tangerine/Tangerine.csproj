@@ -174,13 +174,12 @@
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
     <Content Include="GUI\M5\ModificarContacto.aspx" />
     <Content Include="GUI\M6\ConsultarPropuesta.aspx" />
+    <Content Include="GUI\M6\InformacionPropuesta.aspx" />
     <Content Include="GUI\M6\js\Modificar.js" />
     <Content Include="GUI\M6\js\modulo6.js" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
-    <Content Include="GUI\M6\Prueba_Datatable.aspx" />
-    <Content Include="GUI\M6\Eliminar.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\ConsultaProyecto.aspx" />
     <Content Include="GUI\M7\InformacionProyecto.aspx" />
@@ -1241,26 +1240,19 @@
     <Compile Include="GUI\M6\AgregarPropuesta.aspx.designer.cs">
       <DependentUpon>AgregarPropuesta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M6\InformacionPropuesta.aspx.cs">
+      <DependentUpon>InformacionPropuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\InformacionPropuesta.aspx.designer.cs">
+      <DependentUpon>InformacionPropuesta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M6\ModificarPropuesta.aspx.cs">
       <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\M6\ModificarPropuesta.aspx.designer.cs">
       <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M6\Prueba_Datatable.aspx.cs">
-      <DependentUpon>Prueba_Datatable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M6\Prueba_Datatable.aspx.designer.cs">
-      <DependentUpon>Prueba_Datatable.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M6\Eliminar.aspx.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M6\Eliminar.aspx.designer.cs">
-      <DependentUpon>Eliminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\RecursosGUI_M6.Designer.cs">
       <AutoGen>True</AutoGen>

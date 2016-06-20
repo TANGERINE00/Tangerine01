@@ -19,19 +19,8 @@ namespace Tangerine_Contratos.M5
         string nombreEmpresa { get; set; }
         int getTypeComp { get; }
         int getIdComp { get; }
-        string BotonVolverCompania();
-        string BotonVolverLead();
-        string EmpresaGen();
-        string LeadGen();
         int IdCont();
         int StatusAccion();
-        int StatusAgregado();
-        string ContactoAgregadoMsj();
-        string ContadoModificadoMsj();
-        string ContactoEliminadoMsj();
         string CargarBotonNuevoContacto( int typeComp, int idComp );
-        void Alerta( string msj, int typeMsg );
-        //void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp );
-        string StatusModificado();
     }
 }
