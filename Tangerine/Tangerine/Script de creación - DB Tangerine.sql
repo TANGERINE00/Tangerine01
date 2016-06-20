@@ -1137,6 +1137,15 @@ AS
 
 GO
 
+--Eliminar Requerimiento
+CREATE PROCEDURE M6_EliminarRequerimiento
+@cod_Nombre [varchar] (500)
+AS
+ BEGIN
+    DELETE FROM REQUERIMIENTO WHERE req_codigo=@cod_Nombre;
+ END;
+GO
+
 ---ConsultarIdUltimoRequerimiento(Para pruebas) ----
 CREATE PROCEDURE M6_ConsultarIdUltimoRequerimiento
 AS

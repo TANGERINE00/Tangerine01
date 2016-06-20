@@ -231,6 +231,41 @@ namespace DatosTangerine.DAO.M6
 
             return listaRequerimientos;
         }
+
+        /// <summary>
+        /// Metodo que permite eliminar un requerimiento en la BD
+        /// </summary>
+        /// <param name="requerimiento"></param>
+        /// <returns></returns>
+        public Boolean EliminarRequerimiento(Entidad elRequerimiento)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            DominioTangerine.Entidades.M6.Requerimiento requerimiento = (DominioTangerine.Entidades.M6.Requerimiento)elRequerimiento;
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursoDAORequerimiento.ReqPropNombre, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false);
+                parameters.Add(theParam);
+
+                List<Resultado> results = EjecutarStoredProcedure(RecursoDAORequerimiento.EliminarRequerimiento, parameters);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+            return true;
+        }
         
         #endregion
 
