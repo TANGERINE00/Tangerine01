@@ -116,26 +116,26 @@ namespace Tangerine_Presentador.M5
             } 
         }
 
-        /*
-        public void LlenarTabla(ContactoM5 _theContact2, int typeComp, int idComp)
+        
+        private void LlenarTabla(ContactoM5 _theContact2, int typeComp, int idComp)
         {
-            _vista.contact.Text += ResourceGUIM5.AbrirTR;
-            _vista.contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Apellido.ToString() + ResourceGUIM5.Coma
-                + _theContact2.Nombre.ToString() + ResourceGUIM5.CerrarTD;
-            _vista.contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Departamento.ToString() + ResourceGUIM5.CerrarTD;
-            _vista.contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Cargo.ToString() + ResourceGUIM5.CerrarTD;
-            _vista.contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Telefono.ToString() + ResourceGUIM5.CerrarTD;
-            _vista.contact.Text += ResourceGUIM5.AbrirTD + _theContact2.Correo.ToString() + ResourceGUIM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTR;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Apellido.ToString() + RecursoM5.Coma
+                + _theContact2.Nombre.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Departamento.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Cargo.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Telefono.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Correo.ToString() + RecursoM5.CerrarTD;
             //Acciones de cada contacto
-            _vista.contact.Text += ResourceGUIM5.AbrirTD2;
-            _vista.contact.Text += ResourceGUIM5.ButtonModContact + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-                + ResourceGUIM5.BotonEliminar2 + _theContact2.Id + ResourceGUIM5.BotonCerrar
-                + ResourceGUIM5.BotonEliminar + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-                + ResourceGUIM5.BotonEliminar2 + _theContact2.Id + ResourceGUIM5.BotonVolver4
-                + ResourceGUIM5.StatusEliminado + ResourceGUIM5.BotonCerrar;
-            _vista.contact.Text += ResourceGUIM5.CerrarTD;
-            _vista.contact.Text += ResourceGUIM5.CerrarTR;
-        }*/
+            _vista.contact.Text += RecursoM5.AbrirTD2;
+            _vista.contact.Text += RecursoM5.ButtonModContact + typeComp + RecursoM5.BotonVolver2 + idComp
+                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonCerrar
+                + RecursoM5.BotonEliminar + typeComp + RecursoM5.BotonVolver2 + idComp
+                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonVolver4
+                + RecursoM5.StatusEliminado + RecursoM5.BotonCerrar;
+            _vista.contact.Text += RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.CerrarTR;
+        }
 
         /// <summary>
         /// Método para llenar la tabla de contactos de la vista
@@ -156,7 +156,7 @@ namespace Tangerine_Presentador.M5
                 foreach ( Entidad entidad in listaContactos )
                 {
                     ContactoM5 contacto = ( ContactoM5 ) entidad;
-                    _vista.LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
+                    LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
                 }
 
                 _vista.CargarBotonNuevoContacto( _vista.getTypeComp, _vista.getIdComp );
