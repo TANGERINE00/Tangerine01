@@ -71,6 +71,19 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el ComandoAgregarUsuario de ComandosDAOUsuario
+        /// </summary>
+        [Test]
+        public void TestComandoVerificarUsuario()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandverificarUsuario = FabricaComandos.verificarUsuario(10);
+            resultado = commandverificarUsuario.Ejecutar();
+            Assert.IsTrue(resultado);
+            
+        }
+
+        /// <summary>
         /// Método para probar el ComandoCrearUsuarioDefault de ComandosDAOUsuario
         /// </summary>
         [Test]
