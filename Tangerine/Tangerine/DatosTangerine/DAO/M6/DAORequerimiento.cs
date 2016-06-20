@@ -110,7 +110,7 @@ namespace DatosTangerine.DAO.M6
         public Entidad ConsultarXId(Entidad id)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parametros = new List<Parametro>();
 
@@ -130,7 +130,7 @@ RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.Ge
                 requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
                     ((DominioTangerine.Entidades.M6.Requerimiento)id).CodigoRequerimiento,
                     fila[RecursoDAORequerimiento.ReqDescripcion].ToString(),
-                    fila[RecursoDAORequerimiento.ReqPropNombre].ToString());
+                    fila[RecursoDAORequerimiento.ReqNombrePropuesta].ToString());
             }
             catch (Exception ex)
             {
