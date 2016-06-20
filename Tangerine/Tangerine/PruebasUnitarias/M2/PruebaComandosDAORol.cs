@@ -88,6 +88,26 @@ namespace PruebasUnitarias.M2
             Assert.IsTrue(resultado2);
         }
 
+        /// <summary>
+        /// Método para probar el ComandoObtenerRolUsuarioPorNombre de ComandosDAORol
+        /// </summary>
+        [Test]
+        public void TestComandoObtenerRolUsuarioPorNombre()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario(elUsuario);
+            resultado = commandAgregarUsuario.Ejecutar();
+            Assert.IsTrue(resultado);
+            RolM2 elRol = new RolM2(1);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol1, 1);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario;
+            LogicaTangerine.Comando<DominioTangerine.Entidad> commandObtenerRolUsuarioPorNombre
+                = FabricaComandos.obtenerComandoObtenerRolUsuarioPorNombre(theUsuario.nombreUsuario);
+            DominioTangerine.Entidad theResultado = commandObtenerRolUsuarioPorNombre.Ejecutar();
+            DominioTangerine.Entidades.M2.RolM2 resultado2 = (DominioTangerine.Entidades.M2.RolM2)theResultado;
+            Assert.IsNotNull(resultado2.Id);
+        }
+
         #endregion
     }
 }
