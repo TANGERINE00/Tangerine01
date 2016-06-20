@@ -17,8 +17,8 @@ namespace PruebasUnitarias.M2
         #region Atributos
 
         public bool answer;
-        public RolM2 elRol = new RolM2("Administrador");
-        public RolM2 elRol1 = new RolM2("Gerente");
+        public RolM2 elRol = new RolM2( "Administrador" );
+        public RolM2 elRol1 = new RolM2( "Gerente" );
         public Entidad elUsuario;
         public Entidad elUsuario1;
 
@@ -32,7 +32,8 @@ namespace PruebasUnitarias.M2
         [SetUp]
         public void init()
         {
-            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( "Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                        "Activo" , elRol , 1 );
         }
 
         /// <summary>

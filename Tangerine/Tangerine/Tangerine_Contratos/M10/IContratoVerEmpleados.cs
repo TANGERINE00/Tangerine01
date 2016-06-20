@@ -9,6 +9,6 @@ namespace Tangerine_Contratos.M10
 {
     public interface IContratoVerEmpleados
     {
-        Literal FormViewEmployee { get; set; }
+        Literal FormViewEmployees { get; set; }
     }
 }

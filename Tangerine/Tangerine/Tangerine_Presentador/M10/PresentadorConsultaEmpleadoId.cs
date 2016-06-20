@@ -22,29 +22,46 @@ namespace Tangerine_Presentador.M10
         }
 
 
-         
-        
-        
-        
-        
-        
-        public void cargarEmpleadosId(int Id) 
+        /// <summary>
+        /// Metodo para calcular la edad del empleado 
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+
+          private string EdadEmpleado(string year)
+          {
+              int age;
+
+              age = Int32.Parse(DateTime.Now.ToString("yyyy")) - Int32.Parse(year);
+
+              return age.ToString();
+          }
+
+     
+        /// <summary>
+        /// Metodo para mostrar en ventana VerEmpleado todo los datos de un empleado en especifico 
+        /// </summary>
+        /// <param name="Id"></param>
+
+        public void  cargarEmpleadosId(int Id) 
           {
               try
               {
-                  Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
-                  ((DominioTangerine.Entidades.M10.EmpleadoM10)parametro).Id = Id;
+                  Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados();
+                  ((DominioTangerine.Entidades.M10.EmpleadoM10)parametro).emp_id = Id;
 
                   Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarIdEmpleado(parametro);
                   Entidad empleado = comando.Ejecutar();
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenDivRow;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenDivRow;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos personales</h4>";
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos personales</h4>";
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Nombre" + ResourceGUIM10.CloseLabel;
+                  //Nombres y Apellidos
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Nombre" + ResourceGUIM10.CloseLabel;
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                     ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_cedula.ToString() +
                     ResourceGUIM10.CloseInputTextDisabled +
                     ResourceGUIM10.CloseDiv + ResourceGUIM10.OpenFormGroup +
@@ -54,81 +71,98 @@ namespace Tangerine_Presentador.M10
                     ResourceGUIM10.Espacio + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_s_apellido.ToString() +
                     ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Genero" + ResourceGUIM10.CloseLabel;
+                  //Genero
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Genero" + ResourceGUIM10.CloseLabel;
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_genero.ToString() +
                                   ResourceGUIM10.CloseInputTextDisabled +
                                   ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Fecha de nacimiento" + ResourceGUIM10.CloseLabel;
+                  //Fecha Nacimiento
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Fecha de nacimiento" + ResourceGUIM10.CloseLabel;
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_fecha_nac.ToString("dd/MM/yyyy") +
                                   ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Edad" + ResourceGUIM10.CloseLabel;
+                  //Edad
 
-                  //vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
-                  //                EmployeeAge(empleado.Emp_fecha_nac.ToString("yyyy")).ToString() + ResourceGUIM10.CloseInputTextDisabled +
-                  //                ResourceGUIM10.CloseDiv;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Edad" + ResourceGUIM10.CloseLabel;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Direccion" + ResourceGUIM10.CloseLabel;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                                  EdadEmpleado(((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_fecha_nac.ToString("dd/MM/yyyy")) + ResourceGUIM10.CloseInputTextDisabled +
+                                  ResourceGUIM10.CloseDiv;
+                  
+                  //Direccion
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Direccion" + ResourceGUIM10.CloseLabel;
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Adrress
                                   + ResourceGUIM10.CloseInputTextDisabled +
                                   ResourceGUIM10.CloseDiv;
 
                   //cierre de col
-                  vista.FormViewEmployee.Text += ResourceGUIM10.CloseDiv;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos contrato</h4>";
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos contrato</h4>";
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Fecha contratacion" + ResourceGUIM10.CloseLabel;
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  //Fecha Contratacion
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Fecha contratacion" + ResourceGUIM10.CloseLabel;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   Convert.ToDateTime((((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).jobs).FechaContratacion.ToString("dd/MM/yyyy"))+
                                   ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
+                  //FechaFin 
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   (((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).jobs).FechaFin
                                   + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
+                  //Cargo
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Cargo" + ResourceGUIM10.CloseLabel;
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Cargo" + ResourceGUIM10.CloseLabel;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   (((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).jobs).Nombre
                                   + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Sueldo Base" + ResourceGUIM10.CloseLabel;
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  //Sueldo Base
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Sueldo Base" + ResourceGUIM10.CloseLabel;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   (((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).jobs).Sueldo.ToString()
                                   + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenLabel + "Estatus" + ResourceGUIM10.CloseLabel;
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  //Estatus
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenLabel + "Estatus" + ResourceGUIM10.CloseLabel;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_activo 
                                   + ResourceGUIM10.CloseInputTextDisabled + ResourceGUIM10.CloseDiv;
 
                   //cierre de col
-                  vista.FormViewEmployee.Text += ResourceGUIM10.CloseDiv;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.CloseDiv;
 
                   //cierre de row
-                  vista.FormViewEmployee.Text += ResourceGUIM10.CloseDiv;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.CloseDiv;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenDivRow;
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenDivRow;
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos de contacto</h4>";
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenDivColDataInfo + "<h4> Datos de contacto</h4>";
 
-                  vista.FormViewEmployee.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
+                  //Email
+
+                  vista.FormViewEmployees.Text += ResourceGUIM10.OpenFormGroup + ResourceGUIM10.OpenInputText +
                                   ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_email.ToString() + ResourceGUIM10.CloseInputTextDisabled +
                                   ResourceGUIM10.CloseDiv;
 
+
+
                   //cierre de row
-                  vista.FormViewEmployee.Text += ResourceGUIM10.CloseDiv;
-
-
-                  //return vista.FormViewEmployee.Text; REVISAR!!!!
+                  vista.FormViewEmployees.Text += ResourceGUIM10.CloseDiv;
 
               }
 

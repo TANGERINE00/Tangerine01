@@ -36,24 +36,21 @@ namespace Tangerine_Presentador.M3
                 vista.PresupuestoInversion = elCliente.PresupuestoAnual_inversion;
                 vista.NumeroLlamadas = elCliente.NumeroLlamadas;
                 vista.NumeroVisitas = elCliente.NumeroVisitas;
-
-                /*if (elCliente.Status == 0)
-                {
-                    vista..Text = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
-                }
-                if (elCliente.Status == 1)
-                {
-                    vista.EstatusEtiqueta.Text = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
-                }
-                if (elCliente.Status == 2)
-                {
-                    vista.EstatusEtiqueta.Text = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
-                }*/
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public void ModificarClientePotencial(int idCliente)
+        {
+            Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(idCliente,vista.NombreEtiqueta,
+                                                                                               vista.RifEtiqueta,vista.CorreoElectronico,
+                                                                                               vista.PresupuestoInversion, 
+                                                                                               vista.NumeroLlamadas,vista.NumeroVisitas);
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarClientePotencial(_entidad);
+            comando.Ejecutar();
         }
 
 

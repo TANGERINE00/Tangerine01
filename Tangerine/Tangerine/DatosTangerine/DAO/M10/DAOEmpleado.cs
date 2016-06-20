@@ -83,7 +83,7 @@ namespace DatosTangerine.DAO.M10
             try
             {
                 
-                param = new Parametro("@id", SqlDbType.Int, ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Id.ToString(), false);
+                param = new Parametro("@id", SqlDbType.Int, ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false);
                 parameters.Add(param);
 
                 DataTable dataTable = EjecutarStoredProcedureTuplas(ResourceEmpleado.DetallarEmpleado, parameters);
