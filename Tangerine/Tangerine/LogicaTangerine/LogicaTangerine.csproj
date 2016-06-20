@@ -81,7 +81,6 @@
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuarioPorNombre.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
-    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarListaDeEmpleados.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />

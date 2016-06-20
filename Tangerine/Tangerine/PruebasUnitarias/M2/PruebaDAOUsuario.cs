@@ -174,7 +174,19 @@ namespace PruebasUnitarias.M2
             Assert.IsTrue(lastID > 0);
         }
 
-        #endregion
+        /// <summary>
+        /// Método para probar el BorrarUsuario de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestBorrarUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            bool resultado1 = daoUsuario.Agregar(elUsuario);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario;
+            bool resultado2 = daoUsuario.BorrarUsuario(theUsuario.Id);
+            Assert.IsTrue(resultado2);
+        }
 
+        #endregion
     }
 }

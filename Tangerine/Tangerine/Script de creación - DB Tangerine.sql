@@ -210,7 +210,7 @@ create table CONTACTO
       create table PROPUESTA
 (
 	prop_id int IDENTITY(1,1) not null,
-	prop_nombre varchar(50),
+	prop_nombre varchar(200),
 	prop_descripcion varchar(255),
 	prop_tipoDuracion varchar(200),
 	prop_Duracion varchar(200),
