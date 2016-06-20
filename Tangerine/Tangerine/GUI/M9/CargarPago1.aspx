@@ -96,7 +96,7 @@
 
           
                 <div class="form-group">
-                    <label>Forma de Pago</label>
+                    <label>Forma de Pago</label><label for="Requerido" style="color: red;">*</label>
                     
                     <select required runat="server" class="form-control" id="formaPago" name="formaPago">
                         <option></option>
@@ -105,13 +105,8 @@
                         <option>Otro</option>
                        </select>
                 </div>
-
-               
-
-
-
                     <div class="form-group" runat="server">
-                            <label for="input_cliente">Codigo de aprobacion</label>
+                            <label for="input_cliente">Codigo de aprobacion</label><label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" 
                                  pattern="([0-9]{4,9})([^'.,-_!¡¿?*#$%&][}{çÇ´¨`/|º\ª;:)(><\x22])" 
                             
