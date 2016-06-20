@@ -4,27 +4,102 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DominioTangerine;
-
-using LogicaTangerine.M3;
+using Tangerine_Contratos.M3;
+using Tangerine_Presentador.M3;
 
 
 namespace Tangerine.GUI.M3
 {
-    public partial class ModificarLead : System.Web.UI.Page
+    public partial class ModificarLead : System.Web.UI.Page, IContratoModificarClientePotencial
     {
-        /*string _nombre = String.Empty;
-        string _rif = String.Empty;
-       string _email = String.Empty;
-       float _presupuesto = 0;
-        int _llamadas = 0;
-        int _visitas = 0;
+        
+        PresentadorModificarClientePotencial presentador;
 
-        ClientePotencial elClientePotencial = null;*/
+        public ModificarLead() 
+        {
+            presentador = new PresentadorModificarClientePotencial(this);
+        }
+
+        #region Contrato
+        public String NombreEtiqueta 
+        {
+            get 
+            {
+                return this.nombre.Value;
+            }
+            set 
+            {
+                this.nombre.Value = value;
+            }
+        }
+
+        public String RifEtiqueta 
+        {
+            get 
+            {
+                return this.rif.Value;
+            }
+            set 
+            {
+                this.rif.Value = value;
+            }
+        }
+
+        public String CorreoElectronico
+        {
+            get 
+            {
+                return this.correo.Value;
+            }
+            set 
+            {
+                this.correo.Value = value;
+            }
+        }
+
+        public float PresupuestoInversion
+        {
+            get
+            {
+                return Convert.ToSingle(this.presupuesto.Value);
+            }
+            set
+            {
+                this.presupuesto.Value = value.ToString();
+            }
+
+        }
+
+        public int NumeroLlamadas
+        {
+            get 
+            {
+                return Int32.Parse(this.numLlamadas.Value);
+            }
+
+            set
+            {
+                this.numLlamadas.Value = value.ToString();
+            }
+        }
+
+        public int NumeroVisitas 
+        {
+            get
+            {
+                return Int32.Parse(this.visitas.Value);
+            }
+            set
+            {
+                this.visitas.Value = value.ToString();
+            }
+        }
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
-             /*int idClip = int.Parse(Request.QueryString["idclp"]);
-              if (!IsPostBack)
+             int idClip = int.Parse(Request.QueryString["idclp"]);
+              /*if (!IsPostBack)
               {
                   LogicaM3 clientePotencialLogic = new LogicaM3();
                   elClientePotencial = clientePotencialLogic.BuscarClientePotencial(idClip);

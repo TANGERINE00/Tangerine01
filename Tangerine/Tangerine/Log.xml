@@ -5349,3 +5349,19 @@ Error Number:-1,State:0,Class:20
 2016-06-19 20:05:32,714 INFO  DaoClientePotencial - Clase: DaoClientePotencial
 2016-06-19 20:05:32,714 INFO  DaoClientePotencial - Mensaje: Fin Método
 2016-06-19 20:05:32,714 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 21:07:15,822 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 21:07:15,831 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 21:07:15,831 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-19 21:07:15,831 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 21:07:15,873 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 21:07:15,873 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 21:07:15,873 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-19 21:07:15,873 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 21:07:31,896 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 21:07:31,896 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 21:07:31,896 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-19 21:07:31,896 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-19 21:07:31,911 INFO  DaoClientePotencial - *******************************************************
+2016-06-19 21:07:31,911 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-19 21:07:31,911 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-19 21:07:31,911 INFO  DaoClientePotencial - Metodo: ConsultarTodos

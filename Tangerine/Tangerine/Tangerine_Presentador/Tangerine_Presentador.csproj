@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorModificarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
