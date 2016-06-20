@@ -103,13 +103,39 @@ namespace DatosTangerine.DAO.M6
 
 
         /// <summary>
-        /// Metodo para consultar propuesta por id (nombre)
+        /// Metodo para consultar requerimiento por id (nombre)
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public Entidad ConsultarXId(Entidad id)
         {
-            Entidad requerimiento = null;
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+RecursoDAORequerimiento.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parametros = new List<Parametro>();
+
+            Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento();
+
+            try
+            {
+                Parametro parametro = new Parametro(RecursoDAORequerimiento.ReqNombre, SqlDbType.VarChar,
+                    ((DominioTangerine.Entidades.M6.Requerimiento)id).CodigoRequerimiento, false);
+                parametros.Add(parametro);
+
+                DataTable dataTableRequerimientos = EjecutarStoredProcedureTuplas(RecursoDAORequerimiento.ConsultarRequerimientoNombre,
+                    parametros);
+
+                DataRow fila = dataTableRequerimientos.Rows[0];
+
+                requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                    ((DominioTangerine.Entidades.M6.Requerimiento)id).CodigoRequerimiento,
+                    fila[RecursoDAORequerimiento.ReqDescripcion].ToString(),
+                    fila[RecursoDAORequerimiento.ReqPropNombre].ToString());
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
 
             return requerimiento;
         }
