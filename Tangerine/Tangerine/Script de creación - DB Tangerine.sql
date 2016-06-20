@@ -1114,6 +1114,16 @@ END;
 
 GO
 
+--Listar requerimientos por propuesta
+CREATE PROCEDURE M6_ConsultarRequerimientoNombre
+@reqnombre [varchar] (200)
+AS
+BEGIN
+SELECT req_descripcion,fk_prop_req_id FROM REQUERIMIENTO WHERE req_codigo = @reqnombre 
+END;
+
+GO
+
 --Consultar todas las propuestas
 CREATE PROCEDURE M6_ConsultarPropuestas
 AS

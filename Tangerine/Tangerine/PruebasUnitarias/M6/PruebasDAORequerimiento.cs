@@ -146,5 +146,21 @@ namespace PruebasUnitarias.M6
                 Assert.IsTrue(true);
             }
         }
+
+        /// <summary>
+        /// Prueba que se requerimientos por nombre.
+        /// </summary>
+        [Test]
+        public void ConsultaRequerimientoXId()
+        {
+            //Se inserta el requerimiento
+            confirmacion = daor.Agregar(elRequerimiento);
+            elRequerimiento2 = (DominioTangerine.Entidades.M6.Requerimiento)daor.ConsultarXId(elRequerimiento);
+            Assert.AreEqual(elRequerimiento.CodigoRequerimiento, elRequerimiento2.CodigoRequerimiento);
+            Assert.AreEqual(elRequerimiento.Descripcion, elRequerimiento2.Descripcion);
+            Assert.AreEqual(elRequerimiento.CodigoPropuesta, elRequerimiento2.CodigoPropuesta);
+            //Elimino el requerimiento
+            confirmacion = daor.EliminarRequerimiento(elRequerimiento);
+        }
     }
 }

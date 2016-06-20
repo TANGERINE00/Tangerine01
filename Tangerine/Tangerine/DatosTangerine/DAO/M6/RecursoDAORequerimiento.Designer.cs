@@ -556,6 +556,15 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fk_prop_req_id.
+        /// </summary>
+        internal static string ReqNombrePropuesta {
+            get {
+                return ResourceManager.GetString("ReqNombrePropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @req_id.
         /// </summary>
         internal static string ReqProp {

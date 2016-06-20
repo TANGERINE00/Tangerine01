@@ -313,6 +313,9 @@
     <value>@reqnombre</value>
     <comment>atributo que identifica el nombre del requerimiento</comment>
   </data>
+  <data name="ReqNombrePropuesta" xml:space="preserve">
+    <value>fk_prop_req_id</value>
+  </data>
   <data name="ReqProp" xml:space="preserve">
     <value>@req_id</value>
     <comment>atributo que identifica el id del requerimiento</comment>
