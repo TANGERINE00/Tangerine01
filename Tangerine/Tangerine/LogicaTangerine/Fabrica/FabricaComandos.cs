@@ -236,6 +236,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoDesactivarClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoActivarClientePotencial(Entidad cliente)
+        {
+            return new ComandoActivarClientePotencial(cliente);
+        }
         #endregion
 
         #region Modulo 4
@@ -722,6 +727,12 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarEmpleado();
         }
 
+
+        public static Comando<Entidad> ConsultarIdEmpleado(Entidad empleado)
+        {
+            return new ComandoConsultarPorId(empleado);
+        }
+
         public static Comando<List<Entidad>> ObtenerFabricaPaises()
         {
             return new ComandoObtenerPais();
@@ -735,6 +746,7 @@ namespace LogicaTangerine.Fabrica
             return new ComandoObtenerEstado(Pais);
         }
         
+
 
         #endregion
     }

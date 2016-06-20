@@ -663,15 +663,29 @@ namespace DominioTangerine.Fabrica
             return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
         }
 
-        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido, 
-                                                 string empSApellido, int empCedula, DateTime empFecha, string empActivo, 
-                                                 string empEmail, string empGenero, string empEstudio, string empModalidad, 
+        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido,
+                                                 string empSApellido, int empCedula, DateTime empFecha, string empActivo,
+                                                 string empEmail, string empGenero, string empEstudio, string empModalidad,
                                                  double empSalario, Entidad cargo)
         {
-                        return (new DominioTangerine.Entidades.M10.EmpleadoM10 ( empId,empPNombre,empSNombre,empPApellido, 
-                                empSApellido, empCedula,empFecha,empActivo,empEmail,empGenero,empEstudio,empModalidad,empSalario,cargo));
+            return (new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre, empSNombre, empPApellido,
+                    empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad, empSalario, cargo));
 
         }
+
         #endregion
+
+        public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
+                                               string empSApellido, string empGenero, int empCedula, DateTime empFecha,
+                                               string empActivo, string empNivelEstudio, string empEmailEmployee,
+                                               int empLugId, string empCargo, double empSalario, string empFechaInicio,
+                                               string empFechaFin, string empDireccion)
+        {
+            return (new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre,  empSNombre,  empPApellido,
+                                                                   empSApellido,  empGenero,  empCedula,  empFecha,
+                                                                   empActivo,  empNivelEstudio,  empEmailEmployee,
+                                                                   empLugId,  empCargo,  empSalario,  empFechaInicio,
+                                                                   empFechaFin, empDireccion));
+        }
     }
 }

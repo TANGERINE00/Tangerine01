@@ -9,13 +9,13 @@ using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3
 {
-    public class ComandoDesactivarClientePotencial : Comando<bool>
+    public class ComandoActivarClientePotencial : Comando<bool>
     {
         /// <summary>
         /// Constructor del comando
         /// </summary>
-        /// <param name="parametro">Cliente Potencial a desactivar</param>
-        public ComandoDesactivarClientePotencial(Entidad parametro)
+        /// <param name="parametro">Cliente Potencial a activar</param>
+        public ComandoActivarClientePotencial(Entidad parametro)
         {
             LaEntidad = parametro;
         }
@@ -25,7 +25,7 @@ namespace LogicaTangerine.Comandos.M3
             try
             {
                 IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-                return daoClientePotencial.Desactivar(this.LaEntidad);
+                return daoClientePotencial.Activar(this.LaEntidad);
             }
             catch (Exception e)
             {

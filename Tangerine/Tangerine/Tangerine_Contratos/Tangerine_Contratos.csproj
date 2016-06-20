@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\IContratoConsultaEmpleados.cs" />
+    <Compile Include="M10\IContratoVerEmpleados.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
     <Compile Include="M10\IContratoCrearEmpleado.cs" />
     <Compile Include="M2\IContratoAccionRegistrar.cs" />
@@ -64,14 +65,13 @@
     <Compile Include="M7\IContratoInformacionProyecto.cs" />
     <Compile Include="M7\IContratoAgregarProyecto.cs" />
     <Compile Include="M7\IContratoModificarProyecto.cs" />
+    <Compile Include="M8\IContratoConsultarFactura.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="M9\IContratoFacturasPorPagar.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="M8\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">
       <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>

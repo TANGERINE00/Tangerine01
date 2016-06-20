@@ -46,32 +46,37 @@ namespace Tangerine_Presentador.M10
                     //Nombres
 
                    
-                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_nombre.ToString() + ResourceGUIM10.CerrarTD;
+                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
+                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_nombre.ToString() + ResourceGUIM10.CerrarTD;
 
                      
 
                     //Apellidos
 
                    
-                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_apellido.ToString() + ResourceGUIM10.CerrarTD;
+                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
+                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_apellido.ToString() + ResourceGUIM10.CerrarTD;
 
 
 
                     //Cedula
 
                     
-                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_cedula.ToString() + ResourceGUIM10.CerrarTD;
+                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
+                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_cedula.ToString() + ResourceGUIM10.CerrarTD;
 
 
                     ////Cargo
 
                     
-                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).Nombre.ToString() + ResourceGUIM10.CerrarTD;
+                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
+                    (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).Nombre.ToString() + ResourceGUIM10.CerrarTD;
 
                     ////Sueldo base
                   
                     
-                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).Sueldo + ResourceGUIM10.CerrarTD;
+                    vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
+                    (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_salario) + ResourceGUIM10.CerrarTD;
 
 
                    ////Fecha de contratacion
@@ -102,7 +107,7 @@ namespace Tangerine_Presentador.M10
                     //Ver
 
                     vista.Tabla.Text += ResourceGUIM10.BotonVerEmpAbrir
-                    + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_num_ficha +
+                    + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id.ToString() +
                         ResourceGUIM10.BotonVerEmpCerrar;
                    
                     //if (HttpContext.Current.Session["Rol"]+"" !="Programador")

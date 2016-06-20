@@ -72,6 +72,7 @@
     <Compile Include="Comandos\M10\ComandoObtenerPais - Copy.cs" />
     <Compile Include="Comandos\M10\ComandoObtenerCargo.cs" />
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
+    <Compile Include="Comandos\M10\ComandoConsultarPorId.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRol.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoVerificarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
+    <Compile Include="Comandos\M3\ComandoActivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
