@@ -27,9 +27,6 @@
                      </div>
                 </div><!-- /.box-header -->
                 <!-- table start -->
-					
- 
-                    
                      <div class="box-body" runat="server">
                        <div class="row">
                           <div class="form-group col-md-6" runat="server">
@@ -74,22 +71,11 @@
                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Eliminar_Click" Text = "Eliminar"   ></asp:Button>
                 </form>
                     </div>
-
-   
-
-            
                     
 				</div>	
 			
             </div>
 		</div>
         
-
-
- 
- 
-    
-
-
 </asp:Content>
 

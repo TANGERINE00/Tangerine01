@@ -59,6 +59,7 @@
       <DependentUpon>ResourceGUIM2.resx</DependentUpon>
     </Compile>
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\PresentadorModificarClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
