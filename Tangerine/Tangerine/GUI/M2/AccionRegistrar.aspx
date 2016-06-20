@@ -57,7 +57,7 @@
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form role="form" runat="server" method="post" name="asignar_rol" id="asignar_rol">
-                    <div class="box-body" runat="server">
+                    <div class="box-body" runat="server"  oninput="javascript:validacion()">
 
                         <div class="form-group" runat="server">
                             <label for="labelFicha_M2">Ficha Usuario</label>
@@ -66,12 +66,12 @@
 
                         <div class="form-group">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[A-z]+$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group">
                             <label for="labelContraseña_M2">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion(); setCustomValidity('')" required oninvalid="setCustomValidity('Campo inválido o vacío')">
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group" runat="server">
