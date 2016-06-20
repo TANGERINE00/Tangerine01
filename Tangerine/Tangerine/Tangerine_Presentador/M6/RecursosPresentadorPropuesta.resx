@@ -159,7 +159,7 @@
     <comment>icono de euro</comment>
   </data>
   <data name="botonConsultar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" type="submit" runat="server" style="margin-left:3px;"  href="ModificarPropuesta.aspx?id=</value>
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" type="submit" runat="server" style="margin-left:3px;"  href="InformacionPropuesta.aspx?id=</value>
   </data>
   <data name="botonEliminar" xml:space="preserve">
     <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left:3px;"   href="ModificarPropuesta.aspx?id=</value>
