@@ -22,13 +22,31 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.WebControls.Label codigo;
         
         /// <summary>
+        /// status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label status;
+        
+        /// <summary>
+        /// compania control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label compania;
+        
+        /// <summary>
         /// descripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label descripcion;
+        protected global::System.Web.UI.WebControls.Literal descripcion;
         
         /// <summary>
         /// requerimientos control.
@@ -58,15 +76,6 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.WebControls.Label acuerdopago;
         
         /// <summary>
-        /// status control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label status;
-        
-        /// <summary>
         /// costo control.
         /// </summary>
         /// <remarks>
@@ -74,14 +83,5 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label costo;
-        
-        /// <summary>
-        /// compania control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label compania;
     }
 }

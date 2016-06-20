@@ -35,6 +35,42 @@ namespace Tangerine.GUI.M6
                 codigo = value;
             }
         }
+
+        public Label Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+            }
+        }
+
+        public Label Compania
+        {
+            get
+            {
+                return compania;
+            }
+            set
+            {
+                compania = value;
+            }
+        }
+
+        public Literal Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+            set
+            {
+                descripcion = value;
+            }
+        }
         
 
         protected void Page_Load(object sender, EventArgs e)

@@ -14,5 +14,23 @@ namespace Tangerine_Contratos.M6
             get;
             set;
         }
+
+        Label Status
+        {
+            get;
+            set;
+        }
+
+        Label Compania
+        {
+            get;
+            set;
+        }
+
+        Literal Descripcion
+        {
+            get;
+            set;
+        }
     }
 }

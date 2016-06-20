@@ -31,12 +31,44 @@ namespace Tangerine_Presentador.M6
  
             try
             {
-                vistaInformacion.Codigo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Nombre; 
+                vistaInformacion.Codigo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Nombre;
+                
+                if ( ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Aprobado" )
+                {
+                    vistaInformacion.Status.Text = RecursosPresentadorPropuesta.aprobado;
+                }
+                else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Cerrado")
+                {
+                    vistaInformacion.Status.Text = RecursosPresentadorPropuesta.cerrado;
+                }
+                else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Pendiente")
+                {
+                    vistaInformacion.Status.Text = RecursosPresentadorPropuesta.pendiente;
+                }
+
+                imprimirCompania(_propuesta);
+
+                vistaInformacion.Descripcion.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Descripcion;
+                 
             }
             catch (Exception ex)
             {
                
             }
         }
+
+        public void imprimirCompania(Entidad _propuesta)
+        {
+            Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(
+                Int32.Parse(((DominioTangerine.Entidades.M6.Propuesta)_propuesta).IdCompañia), null, null, null, null, null,
+                DateTime.Now, 0, 0, 0, 0);
+
+            Comando<Entidad> cmdConsultarCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_compania);
+
+            _compania = cmdConsultarCompania.Ejecutar();
+
+            vistaInformacion.Compania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).NombreCompania;
+        }
+
     }
 }
