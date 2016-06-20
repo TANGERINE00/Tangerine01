@@ -48,7 +48,7 @@ namespace Tangerine.GUI.M7
             }
             set
             {
-                throw new NotImplementedException();
+                this.textInputCodigo.Value = value.ToString();
             }
         }
 
@@ -84,7 +84,7 @@ namespace Tangerine.GUI.M7
             }
             set
             {
-                throw new NotImplementedException();
+                this.textInputCosto.Value = value.ToString();
             }
         }
 
@@ -124,11 +124,11 @@ namespace Tangerine.GUI.M7
             }
         }
 
-        DropDownList IContratoAgregarProyecto.inputEncargado
+        ListBox IContratoAgregarProyecto.inputEncargado
         {
             get
             {
-                throw new NotImplementedException();
+                return this.inputEncargado;
             }
             set
             {
@@ -156,19 +156,14 @@ namespace Tangerine.GUI.M7
         {
 
             _presentador = new PresentadorAgregarProyecto (this);
-            _presentador.CargarPagina();
+            
 
            if (!IsPostBack)
            {
+               _presentador.CargarPagina();
                
           /*  if( Propuestas.Count > 0 )
             {
-                textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[0].Nombre);
-
-                for (int i = 0; i < Propuestas.Count;i++ )
-                {
-                    inputPropuesta.Items.Add(Propuestas[i].Nombre);
-                }
 
                 Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[0].IdCompañia),1); 
 
@@ -200,6 +195,9 @@ namespace Tangerine.GUI.M7
 
         protected void comboPropuesta_Click(object sender, EventArgs e)
         {
+
+            _presentador.CargarInformacionPropuesta(sender);
+
            /* inputEncargado.Items.Clear();
 
             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
@@ -209,8 +207,6 @@ namespace Tangerine.GUI.M7
                 inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
             }
             
-            textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
-            textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
              */
         }
 
