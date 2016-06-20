@@ -27,16 +27,21 @@ namespace Tangerine_Presentador.M9
 
             List<Entidad> ListComp = comando.Ejecutar();
 
-                            try
+            try
                 {
                     foreach (Entidad theCompany in ListComp)
                     {
                         vista.company += RecursoPresentadorM9.OpenTR;
 
-                        vista.company += RecursoPresentadorM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).NombreCompania + RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).AcronimoCompania.ToString() + RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).RifCompania + RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).FechaRegistroCompania.ToShortDateString() + RecursoPresentadorM9.CloseTD;
+                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).NombreCompania + RecursoPresentadorM9.CloseTD;
+                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).AcronimoCompania.ToString() + RecursoPresentadorM9.CloseTD;
+                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).RifCompania + RecursoPresentadorM9.CloseTD;
+                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).FechaRegistroCompania.ToShortDateString() + 
+                            RecursoPresentadorM9.CloseTD;
                         if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(1))
                         {
                             vista.company += RecursoPresentadorM9.OpenTD + RecursoPresentadorM9.habilitado + RecursoPresentadorM9.CloseTD;
@@ -47,16 +52,17 @@ namespace Tangerine_Presentador.M9
                         }
 
                         //Boton para cargar las facturas asociadas a cada compañia
+                        vista.company += RecursoPresentadorM9.boton + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).Id + 
+                            RecursoPresentadorM9.boton_cerrar_id;
 
-                        vista.company += RecursoPresentadorM9.boton + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).Id + RecursoPresentadorM9.boton_cerrar_id;                   
+                        //Boton para cargar los pagos asociadas a cada compañia
+                        vista.company += RecursoPresentadorM9.BotonPagos + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).Id +
+                            RecursoPresentadorM9.boton_cerrar_id;   
                     }
 
                 }
             catch (Exception e)
-                            { 
-
-}
-
+                            { }
 
 
         }

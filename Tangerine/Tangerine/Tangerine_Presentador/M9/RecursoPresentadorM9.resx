@@ -318,4 +318,7 @@
   <data name="habilitado" xml:space="preserve">
     <value>&lt;span class="label label-success"&gt;Habilitada&lt;/span&gt;</value>
   </data>
+  <data name="BotonPagos" xml:space="preserve">
+    <value>&lt;th style="text-align: center;"&gt;&lt;a tittle="Pagos" class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="PagosPorCompania.aspx?id=</value>
+  </data>
 </root>
