@@ -13,15 +13,150 @@ using DominioTangerine.Entidades.M7;
 namespace Tangerine.GUI.M7
 {
 
-    public partial class AgregarProyecto : System.Web.UI.Page
+    public partial class AgregarProyecto : System.Web.UI.Page, IContratoAgregarProyecto
     {
      
 
-        PresentadorAgregarProyecto presenter;
-        
+        private PresentadorAgregarProyecto _presentador;
+
+        #region Atributos
+
+        public string NombrePropuesta
+        {
+            get { return this.inputPropuesta.ToString(); }
+            set { this.inputPropuesta.Text = value; }
+        }
+
+
+        public string NombreProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string CodigoProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string FechaInicio
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string FechaFin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Costo
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Porcentaje
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Estatus
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        DropDownList IContratoAgregarProyecto.inputPersonal
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        DropDownList IContratoAgregarProyecto.inputEncargado
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        DropDownList IContratoAgregarProyecto.inputPropuesta
+        {
+            get
+            {
+                return this.inputPropuesta;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+        }
+
+
+        #endregion
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            _presentador = new PresentadorAgregarProyecto (this);
+            _presentador.CargarPagina();
 
            if (!IsPostBack)
            {
@@ -122,6 +257,8 @@ namespace Tangerine.GUI.M7
              { 
                  //colocar  un mensaje de error en la creacion
              }*/
-        } 
+        }
+
+
     }
 }

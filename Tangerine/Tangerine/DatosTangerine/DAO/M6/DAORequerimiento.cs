@@ -183,7 +183,7 @@ namespace DatosTangerine.DAO.M6
                 //Guardar los datos 
                 DataRow row = dt.Rows[0];
 
-                numero = int.Parse(row[RecursoDAORequerimiento.ReqProp].ToString());
+                numero = int.Parse(row[RecursoDAORequerimiento.ReqId].ToString());
 
             }
             catch (Exception ex)

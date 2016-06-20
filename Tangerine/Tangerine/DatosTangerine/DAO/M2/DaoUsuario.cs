@@ -108,7 +108,7 @@ namespace DatosTangerine.DAO.M2
                     DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)rolID;
                     int empleadoNumFicha = int.Parse(row[ResourceUser.UsuEmpFicha].ToString());
 
-                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                    //Creo un objeto de tipo Usuario con los datos de la fila y lo guardo.
                     usuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( usuId, usuUser, usuContrasena,
                                                                                               usuFechaCreacion , usuActivo ,
                                                                                               rol, empleadoNumFicha);
@@ -121,6 +121,8 @@ namespace DatosTangerine.DAO.M2
 
                 return usuario;
             }
+
+
 
             /// <summary>
             /// Método para consultar todos los usuarios
@@ -402,6 +404,11 @@ namespace DatosTangerine.DAO.M2
                 return ultimoID;
             }
 
+            /// <summary>
+            /// Borrar usuario por el Id de un usuario
+            /// </summary>
+            /// <param name="userID"></param>
+            /// <returns>Retorna true si es elimanado exitosamente</returns>
             public bool BorrarUsuario( int userID )
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

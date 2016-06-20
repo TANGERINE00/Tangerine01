@@ -231,6 +231,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoModificarClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoDesactivarClientePotencial(Entidad cliente)
+        {
+            return new ComandoDesactivarClientePotencial(cliente);
+        }
         #endregion
 
         #region Modulo 4
@@ -571,6 +576,11 @@ namespace LogicaTangerine.Fabrica
         public static Comando<Double> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
         {
             return new ComandoCalcularPagoMensual(proyecto);
+        }
+
+        public static Comando<String> ObtenerComandoGenerarCodigoProyecto(Entidad propuesta)
+        {
+            return new ComandoGenerarCodigoProyecto(propuesta);
         }
         #endregion
 
