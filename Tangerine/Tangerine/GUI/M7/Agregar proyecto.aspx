@@ -141,8 +141,9 @@
 
                         <div class="form-group" runat="server">
                             <label for="inputGerente">Gerente de proyecto *</label>
-                            <select class="form-control" id="inputGerente" name="inputGerente" runat="server">
-                            </select>
+                            <asp:DropDownList class="form-control" DataTextField="text" id="inputGerente" name="inputGerente" runat="server">
+                            </asp:DropDownList>
+                            
                         </div>
 
                         <hr />
@@ -157,9 +158,8 @@
                             <label for="inputEncargado">Encargado de la empresa contratante *</label>
                           
                         </div>
-                             <asp:ListBox runat="server" ID="inputEncargado" name="inputEncargado" SelectionMode="Multiple" >
-
-                            </asp:ListBox>
+                             <select multiple="true" class="form-control" id="inputEncargado" name="inputEncargado" runat="server">
+                            </select>
                           
                         <hr />
                        </div>
