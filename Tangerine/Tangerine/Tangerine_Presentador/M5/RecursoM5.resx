@@ -117,94 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonPersonal" xml:space="preserve">
-    <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="Cancelado" xml:space="preserve">
-    <value>&lt;span class="label label-danger"&gt;Cancelado&lt;/span&gt;</value>
-  </data>
-  <data name="CloseBoton" xml:space="preserve">
-    <value>&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseBotonParametro" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="CloseDiv" xml:space="preserve">
-    <value>&lt;/div&gt;</value>
-  </data>
-  <data name="CloseTd" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
-  </data>
-  <data name="CloseTh" xml:space="preserve">
-    <value>&lt;/th&gt;</value>
-  </data>
-  <data name="CloseTr" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
-  </data>
-  <data name="Codigo" xml:space="preserve">
-    <value>Codigo:</value>
-  </data>
-  <data name="Completado" xml:space="preserve">
-    <value>&lt;span class="label label-success"&gt;Completado&lt;/span&gt;</value>
-  </data>
-  <data name="CompletadoAdestiempo" xml:space="preserve">
-    <value>&lt;span class="label label-warning"&gt;Completado a destiempo&lt;/span&gt;</value>
-  </data>
-  <data name="Desarrollo" xml:space="preserve">
-    <value>&lt;span class="label label-primary"&gt;En Desarrollo&lt;/span&gt;</value>
-  </data>
-  <data name="Estatus" xml:space="preserve">
-    <value>Estatus:</value>
-  </data>
-  <data name="FechaEstimadaCulminar" xml:space="preserve">
-    <value>FechaFin:</value>
-  </data>
-  <data name="FechaInicio" xml:space="preserve">
-    <value>FechaInicio:</value>
-  </data>
-  <data name="IdEvento" xml:space="preserve">
-    <value>M7_IdEvento</value>
-  </data>
-  <data name="NombreProyecto" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
-  <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" href="InformacionProyecto.aspx?idCont=</value>
-  </data>
-  <data name="OpenBotonModificar" xml:space="preserve">
-    <value>&lt;a title="Modificar"  class="btn btn-default glyphicon glyphicon-pencil" href="modificarProyecto.aspx?idCont=</value>
-  </data>
-  <data name="OpenBotonPersonal" xml:space="preserve">
-    <value>&lt;a class="btn btn-info glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" OnClick="MostrarPersonal" id="Personal"</value>
-  </data>
-  <data name="OpenDiv" xml:space="preserve">
-    <value>&lt;div&gt;</value>
-  </data>
-  <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="row"&gt;</value>
-  </data>
-  <data name="OpenH3" xml:space="preserve">
-    <value>&lt;h3&gt;</value>
-  </data>
-  <data name="OpenTD" xml:space="preserve">
+  <data name="AbrirTD" xml:space="preserve">
     <value>&lt;td&gt;</value>
   </data>
-  <data name="OpenTh" xml:space="preserve">
-    <value>&lt;th&gt;</value>
+  <data name="AbrirTD2" xml:space="preserve">
+    <value>&lt;td style="text-align:center;"&gt;</value>
   </data>
-  <data name="OpenTr" xml:space="preserve">
+  <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
-  <data name="PorcentajeDeRealizacion" xml:space="preserve">
-    <value>PorcentajeRealizado:</value>
+  <data name="Alert" xml:space="preserve">
+    <value>alert</value>
   </data>
-  <data name="PropuestaAprovada" xml:space="preserve">
-    <value>Propuesta:</value>
+  <data name="AlertDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
   </data>
-  <data name="TipoEvento" xml:space="preserve">
-    <value>M7_tipo</value>
+  <data name="AlertShowSu1" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertShowSu2" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="AlertSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="BotonCerrar" xml:space="preserve">
+    <value>"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="BotonEliminar" xml:space="preserve">
+    <value>&lt;a title="Eliminar Contacto" class="btn btn-danger glyphicon glyphicon-trash" style="margin-left:3px;" href="ConsultarContactos.aspx?typeComp=</value>
+  </data>
+  <data name="BotonEliminar2" xml:space="preserve">
+    <value>&amp;idCont=</value>
+  </data>
+  <data name="BotonVolver2" xml:space="preserve">
+    <value>&amp;idComp=</value>
+  </data>
+  <data name="BotonVolver4" xml:space="preserve">
+    <value>&amp;status=</value>
+  </data>
+  <data name="ButtonModContact" xml:space="preserve">
+    <value>&lt;a title="Modificar Contacto" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarContacto.aspx?typeComp=</value>
+  </data>
+  <data name="CerrarTD" xml:space="preserve">
+    <value>&lt;/td&gt;</value>
+  </data>
+  <data name="CerrarTR" xml:space="preserve">
+    <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="Coma" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="Compania" xml:space="preserve">
+    <value>Compañía: </value>
+  </data>
+  <data name="ContactoAgregado" xml:space="preserve">
+    <value>El contacto ha sido creado correctamente</value>
+  </data>
+  <data name="ContactoEliminado" xml:space="preserve">
+    <value>El contacto ha sido eliminado correctamente</value>
+  </data>
+  <data name="ContactoModificado" xml:space="preserve">
+    <value>El contacto ha sido modificado correctamente</value>
+  </data>
+  <data name="Lead" xml:space="preserve">
+    <value>Lead: </value>
+  </data>
+  <data name="StatusAgregado" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="StatusEliminado" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="StatusModificado" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="VolverCliPotencial" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;" class="btn btn-default" href="../M3/Listar.aspx"&gt;Volver&lt;/a&gt;</value>
+  </data>
+  <data name="VolverCompania" xml:space="preserve">
+    <value>&lt;a id="btn-cancelar" type="submit" style="margin-bottom:20px; margin-top:20px; margin-right:5%; height:35px; width:120px;" class="btn btn-default" href="../M4/ConsultarCompania.aspx"&gt;Volver&lt;/a&gt;</value>
   </data>
 </root>

@@ -1119,7 +1119,9 @@ CREATE PROCEDURE M6_ConsultarPropuestas
 AS
 BEGIN
 SELECT prop_nombre,prop_descripcion, prop_tipoDuracion, prop_duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas,
-prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id FROM PROPUESTA 
+prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id 
+FROM PROPUESTA
+WHERE fk_com_id IN (select com_id from COMPANIA where com_status = 1)
 END;
 GO
 
@@ -1403,6 +1405,16 @@ AS
     	INSERT INTO FACTURA(fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
 		VALUES(@fecha_emision, @fecha_ultimo_pago, @monto_total, @monto_restante, @tipo_moneda, @descripcion, @estatus, @id_proyecto, @id_compania);
  	END;
+GO
+
+---- StoredProcedure Eliminar Factura ----
+CREATE PROCEDURE M8_EliminarFactura
+	@id_Factura int
+
+AS
+	BEGIN
+		DELETE FROM FACTURA WHERE fac_id = @id_Factura;
+	END;
 GO
 
 ---- StoredProcedure Consultar Factura ----

@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <label for="InputCosto">Costo estimado *</label> </br>
                             <asp:TextBox runat="server" ID="textInputCosto" CssClass="form-control"></asp:TextBox>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="textInputCosto" runat="server" ErrorMessage="Solo Numeros" ValidationExpression="\d+"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="textInputCosto" runat="server" ErrorMessage="Solo Numeros y Hasta 2 Decimales" ValidationExpression="\d+(\.\d{1,2})?"></asp:RegularExpressionValidator>
                         </div>
 
                         <div class="form-group">
@@ -73,7 +73,7 @@
                     <!-- /.box-body -->
 
                     <div class="box-footer">
-                       
+                       <asp:LinkButton runat="server" ID="modificar" OnClick="Modificar_Datos" CssClass="btn btn-primary"></asp:LinkButton>
                     </div>
                     <div>
                         <label>* Todos los campos son obligatorios</label></div>
@@ -102,14 +102,11 @@
                     <hr />
                     <hr />
                     <div class="form-group">
-                        <label for="inputPersonal">Personal *</label>
-                        <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
-                        </select>
-
+                        <label for="inputPersonal">Personal *</label></br>
+                        <asp:ListBox runat="server" ID="inputPersonal" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
 
                         <label for="inputEncargado">Encargado de la empresa contratante *</label>
-                        <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
-                        </select>
+                        <asp:ListBox runat="server" ID="inputEncargado" CssClass="form-control" SelectionMode="Single"></asp:ListBox>
 
                     </div>
                     <hr />

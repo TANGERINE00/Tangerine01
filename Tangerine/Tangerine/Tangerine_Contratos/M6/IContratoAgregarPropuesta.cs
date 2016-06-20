@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace Tangerine_Contratos.M6
 {
@@ -11,7 +12,7 @@ namespace Tangerine_Contratos.M6
 
 
 
-        string ComboCompania
+        DropDownList ComboCompania
         {
             get;
             set;
@@ -29,7 +30,7 @@ namespace Tangerine_Contratos.M6
         {
             get;
         }
-        string ComboDuracion
+        DropDownList ComboDuracion
         {
             get;
             set;
@@ -46,7 +47,7 @@ namespace Tangerine_Contratos.M6
         {
             get;
         }
-        string TipoCosto
+        DropDownList TipoCosto
         {
             get;
             set;
@@ -56,17 +57,17 @@ namespace Tangerine_Contratos.M6
         {
             get;
         }
-        string FormaPago
+        DropDownList FormaPago
         {
             get;
             set;
         }
-        string ComboCuota
+        DropDownList ComboCuota
         {
             get;
             set;
         }
-        string ComboStatus
+        DropDownList ComboStatus
         {
             get;
             set;

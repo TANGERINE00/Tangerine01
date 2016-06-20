@@ -46,8 +46,8 @@ namespace Tangerine_Presentador.M5
 
                 CompaniaM4 companiaConsultada = ( CompaniaM4 )compania;
 
-                _vista.botonVolver = _vista.BotonVolverCompania();
-                _vista.nombreEmpresa = _vista.EmpresaGen() + companiaConsultada.NombreCompania;
+                _vista.botonVolver = RecursoM5.VolverCompania;
+                _vista.nombreEmpresa = RecursoM5.Compania + companiaConsultada.NombreCompania;
             }
             else
             {
@@ -62,8 +62,8 @@ namespace Tangerine_Presentador.M5
                 DominioTangerine.Entidades.M3.ClientePotencial leadConsultado = 
                     ( DominioTangerine.Entidades.M3.ClientePotencial ) clientePotencial;
 
-                _vista.botonVolver = _vista.BotonVolverLead();
-                _vista.nombreEmpresa = _vista.LeadGen() + leadConsultado.NombreClientePotencial;
+                _vista.botonVolver = RecursoM5.VolverCliPotencial;
+                _vista.nombreEmpresa = RecursoM5.Lead + leadConsultado.NombreClientePotencial;
             }
         }
 
@@ -89,6 +89,22 @@ namespace Tangerine_Presentador.M5
         }
 
         /// <summary>
+        /// Método que contigura el div de alerta de la vista
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void Alerta(string msj, int typeMsg)
+        {
+            if (typeMsg == 1)
+                _vista.alertaClase = RecursoM5.AlertSuccess;
+            else
+                _vista.alertaClase = RecursoM5.AlertDanger;
+
+            _vista.alertaRol = RecursoM5.Alert;
+            _vista.alerta = RecursoM5.AlertShowSu1 + msj + RecursoM5.AlertShowSu2;
+        }
+
+        /// <summary>
         /// Método que carga alertas de la vista
         /// </summary>
         public void Alertas()
@@ -100,13 +116,13 @@ namespace Tangerine_Presentador.M5
                 switch (status)
                 {
                     case 1:
-                        _vista.Alerta( _vista.ContactoAgregadoMsj(), _vista.StatusAgregado() );
+                        Alerta( RecursoM5.ContactoAgregado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                     case 2:
-                        _vista.Alerta( _vista.ContadoModificadoMsj(), _vista.StatusAgregado() );
+                        Alerta(RecursoM5.ContactoModificado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                     case 3:
-                        _vista.Alerta( _vista.ContactoEliminadoMsj(), _vista.StatusAgregado() );
+                        Alerta(RecursoM5.ContactoEliminado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                 }
             }
@@ -114,6 +130,32 @@ namespace Tangerine_Presentador.M5
             {
                 //No se hace nada,  ya que el status no es un parametro obligatorio
             } 
+        }
+
+        /// <summary>
+        /// Método que agrega un row a la tabla de la vista
+        /// </summary>
+        /// <param name="_theContact2"></param>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
+        private void LlenarTabla(ContactoM5 _theContact2, int typeComp, int idComp)
+        {
+            _vista.contact.Text += RecursoM5.AbrirTR;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Apellido.ToString() + RecursoM5.Coma
+                + _theContact2.Nombre.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Departamento.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Cargo.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Telefono.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Correo.ToString() + RecursoM5.CerrarTD;
+            //Acciones de cada contacto
+            _vista.contact.Text += RecursoM5.AbrirTD2;
+            _vista.contact.Text += RecursoM5.ButtonModContact + typeComp + RecursoM5.BotonVolver2 + idComp
+                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonCerrar
+                + RecursoM5.BotonEliminar + typeComp + RecursoM5.BotonVolver2 + idComp
+                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonVolver4
+                + RecursoM5.StatusEliminado + RecursoM5.BotonCerrar;
+            _vista.contact.Text += RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.CerrarTR;
         }
 
         /// <summary>
@@ -135,14 +177,14 @@ namespace Tangerine_Presentador.M5
                 foreach ( Entidad entidad in listaContactos )
                 {
                     ContactoM5 contacto = ( ContactoM5 ) entidad;
-                    _vista.LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
+                    LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
                 }
 
                 _vista.CargarBotonNuevoContacto( _vista.getTypeComp, _vista.getIdComp );
             }
             catch ( Exception ex )
             {
-                _vista.Alerta( ex.Message, int.Parse( _vista.StatusModificado() ) );
+                Alerta( ex.Message, int.Parse( RecursoM5.StatusModificado ) );
             }
         }
 
