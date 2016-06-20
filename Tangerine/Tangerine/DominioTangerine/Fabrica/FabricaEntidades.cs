@@ -469,7 +469,7 @@ namespace DominioTangerine.Fabrica
         #region Modulo 6
 
             #region Instancia Propuesta
-            static public Entidad ObtenerPropuesta()
+            static public Entidad ObtenerPropuestaVacia()
             {
                 return new DominioTangerine.Entidades.M6.Propuesta();
             }
