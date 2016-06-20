@@ -116,6 +116,11 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M5\RecursoComandosM5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoComandosM5.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\M6\ComandoEliminarRequerimiento.cs" />
     <Compile Include="Comandos\M7\ComandoGenerarCodigoProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
@@ -212,6 +217,10 @@
     <Compile Include="M5\LogicaM5.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\M5\RecursoComandosM5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoComandosM5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\M8\ResourceLogicaM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
