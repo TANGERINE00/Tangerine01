@@ -20,7 +20,7 @@ namespace DatosTangerine.InterfazDAO.M10
 
         bool CambiarEstatus(int empleadoId);       
 
-        bool CambiarEstatus(int empleadoId);
+        //bool CambiarEstatus(int empleadoId);
 
         List<Entidad> ObtenerPaises();
 
