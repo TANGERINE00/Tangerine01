@@ -78,6 +78,7 @@ drop procedure M6_EliminarPropuesta;
 drop procedure M6_ConsultarIdUltimoRequerimiento;
 drop procedure M6_ConsultarNumeroPropuestas;
 drop procedure M6_ConsultarNumeroRequerimientos;
+drop procedure M6_EliminarRequerimiento;
 
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;

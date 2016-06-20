@@ -142,6 +142,15 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M6_EliminarRequerimiento.
+        /// </summary>
+        internal static string EliminarRequerimiento {
+            get {
+                return ResourceManager.GetString("EliminarRequerimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ListarRequerimientos.
         /// </summary>
         internal static string ListarRequerimiento {

@@ -150,6 +150,9 @@
   <data name="EliminarPropuesta" xml:space="preserve">
     <value>M6_EliminarPropuesta</value>
   </data>
+  <data name="EliminarRequerimiento" xml:space="preserve">
+    <value>M6_EliminarRequerimiento</value>
+  </data>
   <data name="ListarRequerimiento" xml:space="preserve">
     <value>M6_ListarRequerimientos</value>
     <comment>Procedimiento que se encarga de listar los requerimientos por propuesta</comment>

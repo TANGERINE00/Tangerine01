@@ -120,5 +120,21 @@ namespace PruebasUnitarias.M6
             //Elimino la propuesta de prueba junto con los requerimientos
             confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
         }
+
+        // <summary>
+        //Prueba que pueda eliminar un requerimiento
+        // <summary>
+        [Test]
+        public void EliminarRequerimiento()
+        {
+            //Se obtiene el número de propuestas totales antes del insertado
+            contador = daor.ConsultarNumeroRequerimientos();
+            //Se inserta el requerimiento
+            Assert.IsTrue(daor.Agregar(elRequerimiento));
+            //Elimino el requerimiento de prueba
+            confirmacion = daor.EliminarRequerimiento(elRequerimiento);
+            //Se checkea que haya disminuido en una unidad la cantidad de requerimientos en la base de datos
+            Assert.AreEqual(daor.ConsultarNumeroRequerimientos(), contador);
+        }
     }
 }
