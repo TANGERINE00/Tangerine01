@@ -469,6 +469,10 @@ namespace DominioTangerine.Fabrica
         #region Modulo 6
 
             #region Instancia Propuesta
+            static public Entidad ObtenerPropuestaVacia()
+            {
+                return new DominioTangerine.Entidades.M6.Propuesta();
+            }
 
             static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, 
                 string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, DateTime fefinal, 
