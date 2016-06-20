@@ -70,25 +70,31 @@ namespace PruebasUnitarias.M2
             answer = daoUsuario.BorrarUsuario(theUsuario2.Id);
         }
 
-        /*/// <summary>
+        /// <summary>
         /// Método para probar el ComandoConsultarPorID de ComandosDAOUsuario
         /// </summary>
         [Test]
         public void TestConsultarPorID()
         {
             bool resultado;
-            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario );
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario1 );
             resultado = commandAgregarUsuario.Ejecutar();
             Assert.IsTrue(resultado);
-            LogicaTangerine.Comando<DominioTangerine.Entidad> commandConsultar = FabricaComandos.consultarUsuarioPorID( elUsuario );
-            DominioTangerine.Entidad resultado2 = commandConsultar.Ejecutar();
-            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = ( DominioTangerine.Entidades.M2.UsuarioM2 )resultado2;
-            Assert.IsTrue(theUsuario.nombreUsuario == "Daniel");
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
-            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario2 = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario2;
-            answer = daoUsuario.BorrarUsuario(theUsuario2.Id);
-        }*/
+            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Fernando", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            LogicaTangerine.Comando<DominioTangerine.Entidad> commandConsultarPorID
+                = FabricaComandos.consultarUsuarioPorID(elUsuario2);
+            elUsuario1 = commandConsultarPorID.Ejecutar();
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).Id == daoUsuario.ConsultLastUserID());
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).nombreUsuario == "GianJose");
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).contrasena == "1234");
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).fechaCreacion == new DateTime(2015, 2, 10));
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).activo == "Activo");
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).rol.Id == 1);
+            Assert.IsTrue(((DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1).fichaEmpleado == 1);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario1 = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1;
+            answer = daoUsuario.BorrarUsuario(theUsuario1.Id);
+        }
 
         /// <summary>
         /// Método para probar el ComandoCrearUsuarioDefault de ComandosDAOUsuario
