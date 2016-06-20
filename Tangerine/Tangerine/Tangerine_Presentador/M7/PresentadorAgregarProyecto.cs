@@ -99,8 +99,32 @@ namespace Tangerine_Presentador.M7
                     DominioTangerine.Entidades.M5.ContactoM5 contacto = (DominioTangerine.Entidades.M5.ContactoM5)entidad;
                     _vista.inputEncargado.Items.Add(contacto.Nombre + " " + contacto.Apellido);
                 }
+
+                Comando<List<Entidad>> comandoConsultarEmpleados = FabricaComandos.ConsultarEmpleados();
+                List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
+
+                foreach (Entidad entidad in listaEmpleados)
+                { 
+                    DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10) entidad;
+
+                    if (empleado.jobs.Nombre == "Gerente")
+                    {
+                        _vista.inputGerente.Items.Add(empleado.emp_p_nombre + " " + empleado.emp_p_apellido);
+                    }
+
+                    if (empleado.jobs.Nombre == "Programador")
+                    {
+                        _vista.inputPersonal.Items.Add(empleado.emp_p_nombre + " " + empleado.emp_p_apellido);
+                    }
+                }
                 
             }
+        }
+
+        public void AgregarPersonal()
+        {
+            _vista.columna2.Visible = true;
+            _vista.BtnGenerar.Enabled = true;
         }
     }
 
