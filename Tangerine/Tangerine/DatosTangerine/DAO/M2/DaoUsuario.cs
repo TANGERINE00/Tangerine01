@@ -402,6 +402,11 @@ namespace DatosTangerine.DAO.M2
                 return ultimoID;
             }
 
+            /// <summary>
+            /// Borrar usuario por el Id de un usuario
+            /// </summary>
+            /// <param name="userID"></param>
+            /// <returns>Retorna true si es elimanado exitosamente</returns>
             public bool BorrarUsuario( int userID )
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

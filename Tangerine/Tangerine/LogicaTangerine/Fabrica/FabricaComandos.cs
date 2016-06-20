@@ -572,6 +572,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoCalcularPagoMensual(proyecto);
         }
+
+        public static Comando<String> ObtenerComandoGenerarCodigoProyecto(Entidad propuesta)
+        {
+            return new ComandoGenerarCodigoProyecto(propuesta);
+        }
         #endregion
 
         #region Modulo 8

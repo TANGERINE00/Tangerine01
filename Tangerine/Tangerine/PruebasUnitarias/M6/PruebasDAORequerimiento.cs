@@ -10,7 +10,7 @@ using DominioTangerine;
 
 namespace PruebasUnitarias.M6
 {
-    public class PruebaDAORequerimiento
+    public class PruebasDAORequerimiento
     {
         #region Atributos
 

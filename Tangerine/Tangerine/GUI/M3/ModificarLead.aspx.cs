@@ -13,17 +13,17 @@ namespace Tangerine.GUI.M3
 {
     public partial class ModificarLead : System.Web.UI.Page
     {
-        string _nombre = String.Empty;
+        /*string _nombre = String.Empty;
         string _rif = String.Empty;
        string _email = String.Empty;
        float _presupuesto = 0;
         int _llamadas = 0;
         int _visitas = 0;
 
-        ClientePotencial elClientePotencial = null;
+        ClientePotencial elClientePotencial = null;*/
         protected void Page_Load(object sender, EventArgs e)
         {
-             int idClip = int.Parse(Request.QueryString["idclp"]);
+             /*int idClip = int.Parse(Request.QueryString["idclp"]);
               if (!IsPostBack)
               {
                   LogicaM3 clientePotencialLogic = new LogicaM3();
@@ -41,7 +41,7 @@ namespace Tangerine.GUI.M3
                   this.llamadas.Value = elClientePotencial.NumeroLlamadas.ToString();
                   this.visitas.Value = elClientePotencial.NumeroVisitas.ToString();
                       
-              }
+              }*/
           }
 
 
@@ -51,7 +51,7 @@ namespace Tangerine.GUI.M3
 
             // String nombre = this.idnombre.Value;
 
-            int idClip = int.Parse(Request.QueryString["idclp"]);
+            /*int idClip = int.Parse(Request.QueryString["idclp"]);
 
 
             String nombre = this.nombre.Value;
@@ -67,7 +67,7 @@ namespace Tangerine.GUI.M3
             //logica.ModificarNuevoclientePotencial(logica.BuscarClientePotencial(idClip));
             logica.ModificarNuevoclientePotencial( nuevoCliente );
             Response.Redirect("Listar.aspx");
-
+            */
 
            
    
