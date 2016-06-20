@@ -69,7 +69,7 @@ namespace PruebasUnitarias.M6
             Assert.AreEqual(laPropuesta.Moneda, laPropuesta2.Moneda);
             Assert.AreEqual(laPropuesta.Entrega, laPropuesta2.Entrega);
             Assert.AreEqual(laPropuesta.Feincio, laPropuesta2.Feincio);
-            Assert.AreEqual(laPropuesta.Feincio, laPropuesta2.Feincio);
+            Assert.AreEqual(laPropuesta.Fefinal, laPropuesta2.Fefinal);
             Assert.AreEqual(laPropuesta.Costo, laPropuesta2.Costo);
             Assert.AreEqual(laPropuesta.IdCompañia, laPropuesta2.IdCompañia);
 
@@ -154,6 +154,7 @@ namespace PruebasUnitarias.M6
                 //Se Elimina la propuesta de prueba
                 Assert.IsTrue(dao.BorrarPropuesta("NombrePropuestaPrueba"));
             }
+
 
         }
 

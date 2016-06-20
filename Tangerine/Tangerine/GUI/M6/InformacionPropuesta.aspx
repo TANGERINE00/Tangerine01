@@ -1,0 +1,86 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="InformacionPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.InformacionPropuesta" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
+    Gestión de Propuestas
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
+    Información de Propuesta
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
+    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+    <li><a href="#">Gestión de Propuesta</a></li>
+    <li class="active">Información de Propuesta</li>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    
+</asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Información de Propuesta</h3>
+                    <div class="box-tools">    
+                     </div>
+                </div><!-- /.box-header -->
+                <!-- table start -->
+                <div class="box-body table-responsive no-padding">
+                    
+                     <div class="box-body" runat="server">
+                       <div class="row">
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="Codigo">Código:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="codigo"> </asp:Label></h5></div>
+                          </div> 
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="Descripcion">Descripción:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="descripcion"> </asp:Label></h5></div>
+                        </div>
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="Requerimientos">Requerimientos:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="requerimientos"> </asp:Label></h5></div>
+                        </div>    
+                       </div>
+                       <div class="row">
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="duracion">Duración:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="duracion"> </asp:Label></h5></div>
+                        </div>
+                        <div class="form-group col-md-6" runat="server">
+                            <h4><label for="acuerdopago">Acuerdo de pago:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="acuerdopago"> </asp:Label></h5></div>
+                        </div>
+                       </div>
+                         
+                          <div class="row">
+                          <div class="form-group col-md-6" runat="server">
+                            <h4><label for="status">Status:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="status"> </asp:Label></h5></div>
+                        </div>
+                              <div class="form-group col-md-6" runat="server">
+                            <h4><label for="costo">Costo:</label></h4>
+                           <div><h5><asp:Label runat="server" ID="costo"> </asp:Label></h5></div>
+                        </div>
+                          </div>
+                        
+                        <div class="form-group" runat="server">
+                            <h4><label for="compania">Compañía:</label></h4>
+                            <div><h5><asp:Label runat="server" ID="compania"> </asp:Label></h5></div>
+                        </div>                        
+                     </div> 
+                   </div><!-- /.box-body -->
+                    
+                 
+                    <div class="box-footer" runat="server">
+                        <a href="ConsultarPropuesta.aspx" class="btn btn-default pull-left">Regresar</a>
+                    </div>
+
+                </div>
+              </div><!-- /.box -->
+         
+            </div><!--/.col (left) -->
+       
+</asp:Content>

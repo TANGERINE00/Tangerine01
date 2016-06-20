@@ -22,6 +22,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             _theUsuario = usuario;
         }
 
+        /// <summary>
+        /// Método para crear la instancia de la clase DaoUsuario y usar el método ConsultarXId
+        /// </summary>
+        /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override DominioTangerine.Entidad Ejecutar()
         {
             DominioTangerine.Entidad usuario;

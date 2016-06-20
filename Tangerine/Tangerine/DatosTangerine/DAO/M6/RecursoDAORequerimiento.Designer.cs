@@ -124,6 +124,15 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M6_ConsultarRequerimientoNombre.
+        /// </summary>
+        internal static string ConsultarRequerimientoNombre {
+            get {
+                return ResourceManager.GetString("ConsultarRequerimientoNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ConsultarPropuestas.
         /// </summary>
         internal static string ConsultarTodasPropuestas {

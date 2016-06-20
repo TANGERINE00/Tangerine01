@@ -135,6 +135,16 @@ namespace PruebasUnitarias.M6
             confirmacion = daor.EliminarRequerimiento(elRequerimiento);
             //Se checkea que haya disminuido en una unidad la cantidad de requerimientos en la base de datos
             Assert.AreEqual(daor.ConsultarNumeroRequerimientos(), contador);
+            try
+            {
+                //Se intenta consultar el requerimiento anteriormente eliminado.
+                elRequerimiento = (DominioTangerine.Entidades.M6.Requerimiento)daor.ConsultarXId(elRequerimiento);
+            }
+            //Se chequea que no haya sido encontrada.
+            catch (ExcepcionesTangerine.ExceptionsTangerine e)
+            {
+                Assert.IsTrue(true);
+            }
         }
     }
 }

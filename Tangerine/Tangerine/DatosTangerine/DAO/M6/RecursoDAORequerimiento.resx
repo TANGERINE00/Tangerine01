@@ -143,6 +143,9 @@
     <value>M6_ConsultarPropuestaNombre</value>
     <comment>Metodo que se encarga de listar las propuestas por codigoNombre</comment>
   </data>
+  <data name="ConsultarRequerimientoNombre" xml:space="preserve">
+    <value>M6_ConsultarRequerimientoNombre</value>
+  </data>
   <data name="ConsultarTodasPropuestas" xml:space="preserve">
     <value>M6_ConsultarPropuestas</value>
     <comment>Store Procedure que consulta todas las propuestas</comment>
