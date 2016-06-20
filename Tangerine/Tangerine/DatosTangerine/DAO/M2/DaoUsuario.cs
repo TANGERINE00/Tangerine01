@@ -110,8 +110,8 @@ namespace DatosTangerine.DAO.M2
 
                     //Creo un objeto de tipo Usuario con los datos de la fila y lo guardo.
                     usuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( usuId, usuUser, usuContrasena,
-                                                                                              usuFechaCreacion , usuActivo ,
-                                                                                              rol, empleadoNumFicha);
+                                                                                                   usuFechaCreacion , usuActivo ,
+                                                                                                    rol, empleadoNumFicha );
                 }
                 catch (Exception ex)
                 {
@@ -150,8 +150,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar();
-
                     elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, fichaEmpleado.ToString(), false);
                     parametros.Add(elParametro);
 
@@ -185,8 +183,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a la base de datos
-
                     elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario, false);
                     parametros.Add(elParametro);
 
@@ -221,14 +217,11 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar();
-
                     elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerUsuarioDeEmpleado, parametros);
 
-                    //Por cada fila de la tabla voy a guardar los datos 
                     foreach (DataRow row in dt.Rows)
                     {
                         string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
@@ -268,8 +261,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a la BD
-
                     elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.nombreUsuario, false);
                     parametros.Add(elParametro);
 
