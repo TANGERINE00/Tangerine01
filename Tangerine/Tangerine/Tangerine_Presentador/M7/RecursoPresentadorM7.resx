@@ -165,6 +165,9 @@
   <data name="FechaInicio" xml:space="preserve">
     <value>FechaInicio:</value>
   </data>
+  <data name="IdEvento" xml:space="preserve">
+    <value>M7IdEvento</value>
+  </data>
   <data name="Key" xml:space="preserve">
     <value>Key</value>
   </data>

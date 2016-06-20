@@ -19,5 +19,7 @@ namespace Tangerine_Contratos.M7
         DropDownList inputGerente { get; set; }
         DropDownList inputEstatus { get; set; }
         TextBox text10 { get; set; }
+        ListBox imputEncargado { get; set; }
+        ListBox inputPersonal { get; set; }
     }
 }
