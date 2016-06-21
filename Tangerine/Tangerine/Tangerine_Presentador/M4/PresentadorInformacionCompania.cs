@@ -32,15 +32,17 @@ namespace Tangerine_Presentador.M4
             _entidad.Id = id;
             Comando<Entidad> _comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_entidad);
             Entidad _company = _comandoCompania.Ejecutar();
-            Comando<Entidad> _comandoLugar = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXID(_company);
-            Entidad _direccion = _comandoLugar.Ejecutar();
+            Entidad _lugar = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadLugarM4();
+            _lugar.Id = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).IdLugar;
+            Comando<Entidad> _comandoLugar = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXID(_lugar);
+            _lugar = _comandoLugar.Ejecutar();
 
             try
             {
 
                 _vista.NombreCompania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).NombreCompania;
                 _vista.Acronimo.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).AcronimoCompania;
-                //_vista.Direccion.Text = ((DominioTangerine.Entidades.M4.LugarDireccionM4)_direccion).LugNombre;            
+                _vista.Direccion.Text = ((DominioTangerine.Entidades.M4.LugarDireccionM4)_lugar).LugNombre;            
                 if (((DominioTangerine.Entidades.M4.CompaniaM4)_company).StatusCompania == 1)
                     _vista.Estatus.Text = "Habilitado";
                 else
