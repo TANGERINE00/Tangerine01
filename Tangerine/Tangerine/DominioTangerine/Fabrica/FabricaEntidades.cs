@@ -667,7 +667,13 @@ namespace DominioTangerine.Fabrica
   
         public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
         {
-            return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empCargoDescripcion, empContratacion);
+        }
+
+        
+        public static Entidad ObtenerCargoXid(string empCargo, double empSalario, string empFechaInicio, string empFechaFin)
+        {
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empSalario,empFechaInicio,empFechaFin);
         }
 
         public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido,
@@ -685,7 +691,7 @@ namespace DominioTangerine.Fabrica
         public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
                                                string empSApellido, string empGenero, int empCedula, DateTime empFecha,
                                                string empActivo, string empNivelEstudio, string empEmailEmployee,
-                                               int empLugId, string empCargo, double empSalario, string empFechaInicio,
+                                               int empLugId, Entidad empCargo, double empSalario, string empFechaInicio,
                                                string empFechaFin, string empDireccion)
         {
             return (new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre,  empSNombre,  empPApellido,

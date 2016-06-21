@@ -66,7 +66,7 @@ namespace Tangerine.GUI.M5
                 return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.typeComp ],
                                                                false ) ); 
             }
-            catch ( HttpRequestValidationException ex ) 
+            catch ( Exception ex ) 
             {
                 Response.Redirect( "../M1/DashBoard.aspx" );
             }
@@ -81,7 +81,7 @@ namespace Tangerine.GUI.M5
                 return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.idComp ],
                                                              false) );
             }
-            catch ( HttpRequestValidationException ex ) 
+            catch ( Exception ex ) 
             {
                 Response.Redirect( "../M1/DashBoard.aspx" );
             }
