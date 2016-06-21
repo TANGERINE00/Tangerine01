@@ -28,10 +28,17 @@ namespace LogicaTangerine.Comandos.M7
                 IDaoProyectoEmpleado daoProyectoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
                 Boolean eliminados = daoProyectoEmpleado.DeleteProyectoEmpleado(_proyecto);
 
-                IDaoProyectoEmpleado daoProyectoEmpleado2 = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
-                //Boolean agregados = daoProyectoEmpleado2.AgregarEmpleados(_trabajadores);
+                foreach(Entidad trabajador in _trabajadores)
+                {
+                    Char delimiter = '-';
+                    String[] substrings = ((DominioTangerine.Entidades.M7.Empleado)trabajador).Emp_p_nombre.ToString().Split(delimiter);
+                    ((DominioTangerine.Entidades.M7.Empleado)trabajador).Id = int.Parse(substrings[0]);
+                    IDaoProyectoEmpleado daoProyectoEmpleado2 = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
+                    Boolean agregados = daoProyectoEmpleado2.AgregarProyectoEmpleados( _proyecto, trabajador);
+                }
 
-                
+                IDaoProyecto daoProyecto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyecto();
+                Boolean modificado = daoProyecto.Modificar(_proyecto);
             }
             catch (Exception e)
             {

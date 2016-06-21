@@ -31,6 +31,10 @@
                             <label for="InputPropuesta">Propuesta Aprobada *</label> </br>
                             <asp:TextBox runat="server" id="inputPropuesta" ReadOnly="true" CssClass="form-control"></asp:TextBox>
                             <asp:TextBox runat="server" id="idPropuesta" ReadOnly="true" Visible="false"></asp:TextBox>
+                            <asp:TextBox runat="server" id="descripcion" ReadOnly="true" Visible="false"></asp:TextBox>
+                            <asp:TextBox runat="server" id="acuerdoPago" ReadOnly="true" Visible="false"></asp:TextBox>
+                            <asp:TextBox runat="server" id="idCompania" ReadOnly="true" Visible="false"></asp:TextBox>
+
                         </div>
 
                         <div class="form-group">

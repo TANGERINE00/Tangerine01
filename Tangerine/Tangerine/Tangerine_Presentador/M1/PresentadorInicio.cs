@@ -7,13 +7,12 @@ using Tangerine_Contratos.M1;
 
 namespace Tangerine_Presentador.M1
 {
-    class PresentadorInicio
+    public class PresentadorInicio
     {
         #region Variables
+
         private IContratoInicio _iMaster;
-        private String QuerySuccess;
-        private String QueryInfo;
-        private String QueryError;
+        
         #endregion
 
          public PresentadorInicio(IContratoInicio iMaster)

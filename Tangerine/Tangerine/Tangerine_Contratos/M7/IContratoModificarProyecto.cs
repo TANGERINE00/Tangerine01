@@ -25,5 +25,8 @@ namespace Tangerine_Contratos.M7
         TextBox idProyecto { get; set; }
         ListBox GerentesPasados { get; set; }
         ListBox inputPersonalNoActivo { get; set; }
+        TextBox acuerdoPago { get; set; } 
+        TextBox idCompania { get; set; }
+        TextBox descripcion { get; set; }
     }
 }

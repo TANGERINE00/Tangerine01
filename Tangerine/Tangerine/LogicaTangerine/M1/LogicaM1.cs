@@ -10,6 +10,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using ExcepcionesTangerine;
 using DatosTangerine.M10;
+using DominioTangerine.Entidades.M1;
 
 namespace LogicaTangerine.M1
 {
@@ -61,26 +62,23 @@ namespace LogicaTangerine.M1
         ///<param name="usuario">String de nombre de Usuario</param>
         ///<param name="contrasena">String de contraseña de Usuario</param>
         ///<returns>true, si los datos estan en el formato correcto y el usuario existe</returns>
-        public bool ValidarUsuario(string usuario, string contrasena)
+        public bool ValidarUsuario(Cuenta lacuentaL)
         {
             List<String> campos = new List<String>();
 
-            campos.Add(usuario);
-            campos.Add(contrasena);
+            //campos.Add(usuario);
+            //campos.Add(contrasena);
 
-            if (ValidarVacio(campos))
+
+            if (ConsultarUsuario(lacuentaL))
             {
-                if (this.ValidarCaracter(usuario) && this.ValidarCaracter(contrasena))
-                {
-                    if (ConsultarUsuario(usuario, contrasena))
-                        return true;
-                    else
-                        return false;
-                }
-                else
-                    return false;
+                return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+
         }
 
         ///<sumary>
@@ -90,12 +88,12 @@ namespace LogicaTangerine.M1
         ///<param name="nombreUsuario">String de nombre de Usuario</param>
         ///<param name="clave">String de contraseña de Usuario</param>
         ///<returns>true, si el usuario existe</returns>
-        public bool ConsultarUsuario(string nombreUsuario, string clave)
+        public bool ConsultarUsuario(Cuenta cuenta)
         {
             try
             {
-                Usuario theUsuario = new Usuario(nombreUsuario,clave);
-                theUsuario.Contrasenia = theUsuario.GetMD5(clave);
+                Usuario theUsuario = new Usuario(cuenta.Nombre_usuario, cuenta.Contrasena);
+                theUsuario.Contrasenia = theUsuario.GetMD5(cuenta.Contrasena);
                 theUsuario = BDUsuario.ObtenerDatoUsuario(theUsuario);
 
                 if (theUsuario.Activo != null)

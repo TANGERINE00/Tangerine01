@@ -14,6 +14,7 @@ namespace DatosTangerine.DAO.M7
     public class DaoProyecto : DAOGeneral, IDaoProyecto
     {
         #region IDAO Proyecto
+
         public bool DeleteProyecto(Entidad proyecto)
         {
             throw new NotImplementedException();
@@ -104,9 +105,11 @@ namespace DatosTangerine.DAO.M7
         {
             throw new NotImplementedException();
         }
+
         #endregion
 
-        #region IDAO
+        #region DAO
+
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
@@ -114,7 +117,66 @@ namespace DatosTangerine.DAO.M7
 
         public bool Modificar(Entidad parametro)
         {
-            throw new NotImplementedException();
+
+            List<Parametro> parameters = new List<Parametro>();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                Parametro theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
+                parameters.Add(theParam);
+
+                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Nombre.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Codigo.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamFechaInicio, SqlDbType.Date, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Fechainicio.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Fechaestimadafin.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Costo.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamDescripcion, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Descripcion.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Realizacion.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Estatus.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Razon.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Acuerdopago.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idpropuesta.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idresponsable.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idgerente.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M7_ModificarProyecto y todos los parametros que recibe
+                List<Resultado> results = EjecutarStoredProcedure(ResourceProyecto.ChangeProyecto, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
         }
 
         public Entidad ConsultarXId(Entidad parametro)
