@@ -71,6 +71,18 @@ namespace Tangerine.GUI.M6
             }
         }
 
+        public Literal Requerimientos
+        {
+            get
+            {
+                return requerimientos;
+            }
+            set
+            {
+                requerimientos = value;
+            }
+        }
+
         public Label Duracion
         {
             get
