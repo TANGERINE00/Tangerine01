@@ -20,8 +20,15 @@ namespace LogicaTangerine.Comandos.M4
 
          public override List<Entidad> Ejecutar()
          {
-             IDaoLugarDireccion DaoLugar = FabricaDAOSqlServer.crearDaoLugarDireccion();
-             return DaoLugar.ConsultCityPlaces();
+             try
+             {
+                 IDaoLugarDireccion DaoLugar = FabricaDAOSqlServer.crearDaoLugarDireccion();
+                 return DaoLugar.ConsultCityPlaces();
+             }
+             catch (NotImplementedException)
+             {
+                 return null ;
+             }
          }
     }
 }
