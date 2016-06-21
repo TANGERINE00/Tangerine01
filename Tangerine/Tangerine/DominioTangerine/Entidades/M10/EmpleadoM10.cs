@@ -58,11 +58,35 @@ namespace DominioTangerine.Entidades.M10
         public string emp_estudio;
         public string emp_modalidad;
         public double emp_salario;
+        private string emp_FechaInicio;    
+        private string emp_FechaFin;      
+        private string emp_Direccion;
+        private int emp_LugId;
+        private string emp_cargo;
+
+      
 
         private string address;
-        public Cargo jobs;
+        public CargoM10 jobs;
         private List<Proyecto> listProjects = new List<Proyecto>();
         private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
+        //private int empId;
+        //private string empPNombre;
+        //private string empSNombre;
+        //private string empPApellido;
+        //private string empSApellido;
+        //private string empGenero;
+        //private int empCedula;
+        //private DateTime empFecha;
+        //private string empActivo;
+        //private string empNivelEstudio;
+        //private string empEmailEmployee;
+        //private int empLugId;
+        //private string empCargo;
+        //private double empSalario;
+        //private string empFechaInicio;
+        //private string empFechaFin;
+        //private string empDireccion;
         #endregion
 
         #region constructores
@@ -231,12 +255,37 @@ namespace DominioTangerine.Entidades.M10
           this.emp_estudio = empEstudio;
           this.emp_modalidad = empModalidad;
           this.emp_salario = empSalario;
-          this.jobs =(Cargo)cargo;
+          this.jobs =(CargoM10)cargo;
       }
 
         public EmpleadoM10()
         {
             
+        }
+
+        public EmpleadoM10(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
+                           string empGenero, int empCedula, DateTime empFecha, string empActivo, string empNivelEstudio,
+                           string empEmailEmployee, int empLugId, Entidad empCargo, double empSalario, string empFechaInicio,
+                           string empFechaFin, string empDireccion)
+        {
+            // TODO: Complete member initialization
+            this.emp_id = empId;
+            this.emp_p_nombre = empPNombre;
+            this.emp_s_nombre = empSNombre;
+            this.emp_p_apellido = empPApellido;
+            this.emp_s_apellido = empSApellido;
+            this.emp_genero = empGenero;
+            this.emp_cedula = empCedula;
+            this.emp_fecha_nac = empFecha;
+            this.emp_activo = empActivo;
+            this.emp_nivel_estudio = empNivelEstudio;
+            this.emp_email = empEmailEmployee;
+            this.emp_LugId = empLugId;
+            this.jobs = (CargoM10)empCargo;
+            this.emp_salario = empSalario;
+            this.emp_FechaInicio = empFechaInicio;
+            this.emp_FechaFin = empFechaFin;
+            this.emp_Direccion = empDireccion;
         }             
 
         #endregion
@@ -411,11 +460,16 @@ namespace DominioTangerine.Entidades.M10
             }
         }
 
-        public Cargo Jobs
+        public CargoM10 Jobs
         {
             get
             {
                 return this.jobs;
+            }
+
+            set
+            {
+                this.jobs = value;
             }
         }
 
@@ -430,7 +484,37 @@ namespace DominioTangerine.Entidades.M10
                 this.addressComplete = value;
             }
 
+
+
         }
+
+        public string Emp_Direccion
+        {
+            get { return emp_Direccion; }
+            set { emp_Direccion = value; }
+        }
+
+        public int Emp_LugId
+        {
+            get { return emp_LugId; }
+            set { emp_LugId = value; }
+        }
+
+        public string Emp_FechaInicio
+        {
+            get { return emp_FechaInicio; }
+            set { emp_FechaInicio = value; }
+        }
+
+        public string Emp_FechaFin
+        {
+            get { return emp_FechaFin; }
+            set { emp_FechaFin = value; }
+        }
+
+
+
+
         #endregion
 
 

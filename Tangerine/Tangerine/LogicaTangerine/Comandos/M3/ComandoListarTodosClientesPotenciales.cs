@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
-using DatosTangerine.M3;
+using DatosTangerine;
 using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3
@@ -16,8 +16,7 @@ namespace LogicaTangerine.Comandos.M3
             try
             {
                 IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-                List<Entidad> clientesPotenciales = daoClientePotencial.ConsultarTodos();
-                return clientesPotenciales;
+                return daoClientePotencial.ConsultarTodos();
             }
             catch (Exception e)
             {

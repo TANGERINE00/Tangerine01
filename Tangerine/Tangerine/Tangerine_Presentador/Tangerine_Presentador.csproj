@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\PresentadorConsultaEmpleado.cs" />
+    <Compile Include="M10\PresentadorConsultaEmpleadoId.cs" />
+    <Compile Include="M10\PresentadorCrearEmpleado.cs" />
     <Compile Include="M10\ResourceGUIM10.Designer.cs">
       <DependentUpon>ResourceGUIM10.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -52,8 +54,17 @@
     <Compile Include="M2\PresentadorCambioRol.cs" />
     <Compile Include="M2\PresentadorAccionRegistrar.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
+    <Compile Include="M2\ResourceGUIM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM2.resx</DependentUpon>
+    </Compile>
+    <Compile Include="M3\PresentadorActivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorModificarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorPromoverClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,8 +81,13 @@
     <Compile Include="M5\PresentadorAgregarContacto.cs" />
     <Compile Include="M5\PresentadorConsultarContactos.cs" />
     <Compile Include="M5\PresentadorModificarContacto.cs" />
+    <Compile Include="M5\RecursoM5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoM5.resx</DependentUpon>
+    </Compile>
+    <Compile Include="M6\PresentadorInformacionPropuesta.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
-    <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
     <Compile Include="M6\PresentadorConsultarPropuesta.cs" />
     <Compile Include="M6\RecursosPresentadorPropuesta.Designer.cs">
@@ -79,6 +95,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="M7\PresentadorModificarProyecto.cs" />
     <Compile Include="M7\PresentadorAgregarProyecto.cs" />
     <Compile Include="M7\PresentadorInformacionProyecto.cs" />
     <Compile Include="M7\PresentadorConsultaProyecto.cs" />
@@ -87,6 +104,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
+    <Compile Include="M8\PresentadorConsultaFactura.cs" />
+    <Compile Include="M8\RecursoPresentadorM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoPresentadorM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="M9\PresentadorCargarPago.cs" />
     <Compile Include="M9\PresentadorFacturasPorPagar.cs" />
     <Compile Include="M9\RecursoPresentadorM9.Designer.cs">
@@ -94,16 +117,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoPresentadorM9.resx</DependentUpon>
     </Compile>
+    <Compile Include="M9\PresentadorSeleccionCompania.cs" />
     <Compile Include="Master\PresentadorMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="M8\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="M10\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M2\ResourceGUIM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,6 +138,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPresentadorM4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="M5\RecursoM5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoM5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="M6\RecursosPresentadorPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPresentadorPropuesta.Designer.cs</LastGenOutput>
@@ -120,6 +149,10 @@
     <EmbeddedResource Include="M7\RecursoPresentadorM7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoPresentadorM7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M8\RecursoPresentadorM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M9\RecursoPresentadorM9.resx">
       <Generator>ResXFileCodeGenerator</Generator>

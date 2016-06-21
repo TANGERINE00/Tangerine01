@@ -21,5 +21,9 @@ namespace DatosTangerine.InterfazDAO.M7
 
         int ContactMaxIdProyecto();
 
+        Double CalcularPagoMensual(Entidad parametro);
+
+        String GenerarCodigoProyecto(Entidad parametro);
+
     }
 }

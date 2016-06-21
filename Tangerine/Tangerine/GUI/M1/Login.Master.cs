@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M1;
-//using LogicaTangerine.M8;
 using LogicaTangerine.M7;
 using DominioTangerine.Entidades.M1;
 using Tangerine_Contratos.M1;
 using Tangerine_Presentador.M1;
+using LogicaTangerine.Comandos.M8;
+using LogicaTangerine.Comandos.M7;
+using LogicaTangerine.Fabrica;
+using DominioTangerine.Entidades.M8;
+using DominioTangerine.Fabrica;
+
 
 namespace Tangerine.GUI.M1
 {
@@ -83,19 +88,45 @@ namespace Tangerine.GUI.M1
                 #region Generación de facturas mensuales
                 // AQUI EMPIEZA EL CODIGO PARA GENERAR LAS FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
 
+                //------------------------SEGUNDA ENTREGA----------------------------
                 //List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
                 //foreach (Proyecto theProyecto in listProyecto)
                 //{
                 //    montoFactura = Convert.ToInt32(proyectoLogic.calcularPagoMesual(theProyecto));
-                //    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);                    
+                //    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);
                 //    LogicaM8 facturaLogic = new LogicaM8();
-                //    facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now,theProyecto.Idproyecto,theProyecto.Idresponsable);
+                //    facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now, theProyecto.Idproyecto, theProyecto.Idresponsable);
                 //    if (facturaExistente == false)
                 //    {
                 //        facturaLogic.AddNewFactura(factura);
                 //    }
                 //    facturaExistente = false;
                 //}
+
+                //------------------------TERCERA ENTREGA-----------------------------
+                ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo = 
+                    (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
+                List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
+
+                foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
+                {
+                    ComandoCalcularPagoMensual _comandoCalcular = (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
+                    montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
+
+                    Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
+                        montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Id,
+                        theProyecto.Idresponsable);
+
+                    ComandoSearchExistingBill _comandoBill = (ComandoSearchExistingBill)FabricaComandos.CrearSearchExistingBill(factura);
+                    facturaExistente = _comandoBill.Ejecutar();
+
+                    if (facturaExistente == false)
+                    {
+                        ComandoAgregarFactura _comandoAgregar = (ComandoAgregarFactura)FabricaComandos.CrearAgregarFactura(factura);
+                        _comandoAgregar.Ejecutar();
+                    }
+                    facturaExistente = false;
+                }
 
                 // AQUI TERMINA EL CODIGO PARA GENERAR LA FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
                 // HECHO POR EL MÓDULO 7 Y MÓDULO 8

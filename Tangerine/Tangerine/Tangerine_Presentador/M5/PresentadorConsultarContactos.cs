@@ -1,4 +1,9 @@
 ﻿using DominioTangerine;
+using DominioTangerine.Entidades.M4;
+using DominioTangerine.Entidades.M5;
+using DominioTangerine.Fabrica;
+using LogicaTangerine;
+using LogicaTangerine.Fabrica;
 using LogicaTangerine.M3;
 using LogicaTangerine.M4;
 using LogicaTangerine.M5;
@@ -13,63 +18,111 @@ namespace Tangerine_Presentador.M5
 {
     public class PresentadorConsultarContactos
     {
-        LogicaM4 _logicM4 = new LogicaM4();
-        LogicaM3 _logicM3 = new LogicaM3();
-        LogicaM5 _logicM5 = new LogicaM5();
         private IContratoConsultarContactos _vista;
 
-        public PresentadorConsultarContactos(IContratoConsultarContactos vista)
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="vista"></param>
+        public PresentadorConsultarContactos( IContratoConsultarContactos vista )
         {
             this._vista = vista;
         }
-        public void CargarBotonVolver(int typeComp, int idComp)
+
+        /// <summary>
+        /// Método que carga el boton volver de la vista
+        /// </summary>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
+        public void CargarBotonVolver( int typeComp, int idComp )
         {
-            if (typeComp == 1)
-            {
-                Compania compania = _logicM4.ConsultCompany(idComp);
-                _vista.botonVolver = _vista.botonVolverCompania();
-                _vista.nombreEmpresa = _vista.empresaGen() + compania.NombreCompania;
+            if ( typeComp == 1 )
+            { 
+                Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                compania.Id = idComp;
+                
+                Comando<Entidad> comandoEntidad = FabricaComandos.CrearConsultarCompania( compania );
+                compania = comandoEntidad.Ejecutar();
+
+                CompaniaM4 companiaConsultada = ( CompaniaM4 )compania;
+
+                _vista.botonVolver = RecursoM5.VolverCompania;
+                _vista.nombreEmpresa = RecursoM5.Compania + companiaConsultada.NombreCompania;
             }
             else
             {
-                ClientePotencial cliPotencial = _logicM3.BuscarClientePotencial(idComp);
-                _vista.botonVolver = _vista.botonVolverLead();
-                _vista.nombreEmpresa = _vista.leadGen() + cliPotencial.NombreClientePotencial;
+                Entidad clientePotencial = FabricaEntidades.ObtenerClientePotencial();
+                clientePotencial.Id = idComp;
+
+                Comando<Entidad> comandoEntidad = 
+                                 FabricaComandos.ObtenerComandoConsultarClientePotencial( clientePotencial );
+
+                clientePotencial = comandoEntidad.Ejecutar();
+
+                DominioTangerine.Entidades.M3.ClientePotencial leadConsultado = 
+                    ( DominioTangerine.Entidades.M3.ClientePotencial ) clientePotencial;
+
+                _vista.botonVolver = RecursoM5.VolverCliPotencial;
+                _vista.nombreEmpresa = RecursoM5.Lead + leadConsultado.NombreClientePotencial;
             }
         }
 
+        /// <summary>
+        /// Metodo que elimina un contacto seleccionado de la tabla de contactos de la vista
+        /// </summary>
         public void EliminarContacto()
         {
             try
             {
-                int id = _vista.idCont();
-                Contacto contacto = new Contacto();
-                contacto.IdContacto= id;
-                _logicM5.DeleteContact(contacto);
+                int id = _vista.IdCont();
+
+                Entidad contacto = FabricaEntidades.crearContactoVacio();
+                contacto.Id= id;
+
+                Comando<bool> comandoBool = FabricaComandos.CrearComandoEliminarContacto( contacto );
+                comandoBool.Ejecutar();
             }
-            
             catch (Exception ex)
             {
                 //No se hace nada,  ya que el idCont no es un parametro obligatorio
             }
-
         }
-        public void alertas ()
+
+        /// <summary>
+        /// Método que contigura el div de alerta de la vista
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void Alerta(string msj, int typeMsg)
         {
-        try
+            if (typeMsg == 1)
+                _vista.alertaClase = RecursoM5.AlertSuccess;
+            else
+                _vista.alertaClase = RecursoM5.AlertDanger;
+
+            _vista.alertaRol = RecursoM5.Alert;
+            _vista.alerta = RecursoM5.AlertShowSu1 + msj + RecursoM5.AlertShowSu2;
+        }
+
+        /// <summary>
+        /// Método que carga alertas de la vista
+        /// </summary>
+        public void Alertas()
+        {
+            try
             {
-                int status = _vista.statusAccion();
+                int status = _vista.StatusAccion();
 
                 switch (status)
                 {
                     case 1:
-                        _vista.Alerta(_vista.ContactoAgregadoMsj(), _vista.statusAgregado());
+                        Alerta( RecursoM5.ContactoAgregado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                     case 2:
-                        _vista.Alerta(_vista.ContadoModificadoMsj(), _vista.statusAgregado());
+                        Alerta(RecursoM5.ContactoModificado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                     case 3:
-                        _vista.Alerta(_vista.ContactoEliminadoMsj(), _vista.statusAgregado());
+                        Alerta(RecursoM5.ContactoEliminado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                 }
             }
@@ -79,39 +132,71 @@ namespace Tangerine_Presentador.M5
             } 
         }
 
+        /// <summary>
+        /// Método que agrega un row a la tabla de la vista
+        /// </summary>
+        /// <param name="_theContact2"></param>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
+        private void LlenarTabla(ContactoM5 _theContact2, int typeComp, int idComp)
+        {
+            _vista.contact.Text += RecursoM5.AbrirTR;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Apellido.ToString() + RecursoM5.Coma
+                + _theContact2.Nombre.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Departamento.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Cargo.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Telefono.ToString() + RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Correo.ToString() + RecursoM5.CerrarTD;
+            //Acciones de cada contacto
+            _vista.contact.Text += RecursoM5.AbrirTD2;
+            _vista.contact.Text += RecursoM5.ButtonModContact + typeComp + RecursoM5.BotonVolver2 + idComp
+                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonCerrar
+                + RecursoM5.BotonEliminar + typeComp + RecursoM5.BotonVolver2 + idComp
+                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonVolver4
+                + RecursoM5.StatusEliminado + RecursoM5.BotonCerrar;
+            _vista.contact.Text += RecursoM5.CerrarTD;
+            _vista.contact.Text += RecursoM5.CerrarTR;
+        }
+
+        /// <summary>
+        /// Método para llenar la tabla de contactos de la vista
+        /// </summary>
         public void LlenarTablaContactos()
         {
             try
             {
-                List<Contacto> _listContact;
-                _listContact = _logicM5.GetContacts(_vista.GetTypeComp, _vista.GetIdComp);
-                foreach (Contacto _contacto2 in _listContact)
+                Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                compania.Id = _vista.getIdComp();
+
+                Comando<List<Entidad>> comandoLista = 
+                                       FabricaComandos.CrearComandoConsultarContactosPorCompania( compania,
+                                                                                                _vista.getTypeComp() );
+
+                List<Entidad> listaContactos = comandoLista.Ejecutar();
+
+                foreach ( Entidad entidad in listaContactos )
                 {
-                   _vista.LlenarTabla(_contacto2, _vista.GetTypeComp, _vista.GetIdComp);
+                    ContactoM5 contacto = ( ContactoM5 ) entidad;
+                    LlenarTabla( contacto, _vista.getTypeComp(), _vista.getIdComp() );
                 }
-                _vista.CargarBotonNuevoContacto(_vista.GetTypeComp, _vista.GetIdComp);
+
+                _vista.CargarBotonNuevoContacto( _vista.getTypeComp(), _vista.getIdComp() );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                _vista.Alerta(ex.Message,int.Parse(_vista.StatusModificado()));
-
-
+                Alerta( ex.Message, int.Parse( RecursoM5.StatusModificado ) );
             }
         }
 
-        public void cargar_pagina()
+        /// <summary>
+        /// Método que se ejecuta al cargar la vista
+        /// </summary>
+        public void CargarPagina()
         {
-            CargarBotonVolver(_vista.GetTypeComp, _vista.GetIdComp);
+            CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
             EliminarContacto();
-            alertas();
+            Alertas();
             LlenarTablaContactos();
         }
-
-
-
-
-    
-
-
     }
 }

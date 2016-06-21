@@ -81,12 +81,9 @@ namespace Tangerine_Presentador.M7
             Dictionary<int, string> listaContactos = new Dictionary<int, string>();
             foreach (Entidad contacto in contactos)
             {
-                listaContactos.Add(((DominioTangerine.Entidades.M7.Contacto)contacto).Id, (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) + " " +((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
+                listaContactos.Add(((DominioTangerine.Entidades.M7.Contacto)contacto).Id, (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) + 
+                                " " +((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
             }
-            /*foreach (Entidad competencia in competencias)
-            {
-                listaEventos.Add(((DominioSKD.Entidades.Modulo12.Competencia)competencia).Id, ((DominioSKD.Entidades.Modulo12.Competencia)competencia).Nombre);
-            }*/
             vista.inputEncargado.DataSource = listaContactos;
             vista.inputEncargado.DataTextField = RecursoPresentadorM7.Value;
             vista.inputEncargado.DataValueField = RecursoPresentadorM7.Key;

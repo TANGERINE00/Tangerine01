@@ -85,7 +85,6 @@ namespace DatosTangerine.DAO.M2
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
                                                                         RecursoGeneralBD.Mensaje, ex);
                 }
-
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -116,8 +115,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a BD
-
                     elParametro = new Parametro(ResourceUser.ParametroRolCodigo, SqlDbType.Int, codigoRol.ToString(), false);
                     parametros.Add(elParametro);
 
@@ -139,7 +136,6 @@ namespace DatosTangerine.DAO.M2
 
                         Entidad theOpciones = ObtenerOpciones(menNombre, codigoRol);
                         ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2> opciones = (ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2>)theOpciones;
-
 
                         theMenu = DominioTangerine.Fabrica.FabricaEntidades.crearMenuCompleto(menNombre, opciones);
                         DominioTangerine.Entidades.M2.MenuM2 menu = (DominioTangerine.Entidades.M2.MenuM2)theMenu;
@@ -181,8 +177,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a BD
-
                     elParametro = new Parametro(ResourceUser.ParametroMenuNombre, SqlDbType.VarChar, nombreMenu, false);
                     parametros.Add(elParametro);
 
@@ -221,12 +215,9 @@ namespace DatosTangerine.DAO.M2
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
                 Entidad rol = DominioTangerine.Fabrica.FabricaEntidades.crearRolVacio();
-                //DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                 try
                 {
-                    Conectar(); //Conexion a BD
-
                     elParametro = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, nombreRol.ToString(),false);
                     parametros.Add(elParametro);
 

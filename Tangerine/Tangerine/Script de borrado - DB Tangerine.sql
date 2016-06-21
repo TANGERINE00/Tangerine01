@@ -31,6 +31,7 @@ drop procedure M2_VerificarUsuarioPorFichaEmpleado;
 drop procedure M2_VerificarExistenciaUsuario;
 drop procedure M2_ConsultarIdUltimoUsuario;
 drop procedure M2_ConsultarUsuario;
+drop procedure M2_BorrarUsuario;
 
 drop procedure M3_agregar_clientePotencial;
 drop procedure M3_listar_cliente_potencial;
@@ -50,6 +51,7 @@ drop procedure M4_InhabilitarHabilitarCompania;
 drop procedure M4_EliminarCompania;
 drop procedure M4_ConsultarIdUltimaCompania;
 drop procedure M4_ConsultarLugar;
+drop procedure M4_ConsultarLugarPorId;
 
 
 drop procedure M5_AgregarContacto;
@@ -74,6 +76,10 @@ drop procedure M6_ConsultarPropuestaNombre;
 drop procedure M6_ConsultarPropuestas;
 drop procedure M6_EliminarPropuesta;
 drop procedure M6_ConsultarIdUltimoRequerimiento;
+drop procedure M6_ConsultarNumeroPropuestas;
+drop procedure M6_ConsultarNumeroRequerimientos;
+drop procedure M6_EliminarRequerimiento;
+drop procedure M6_ConsultarRequerimientoNombre;
 
 drop procedure M7_AgregarProyecto;
 drop procedure M7_ConsultarProyecto;
@@ -102,10 +108,12 @@ drop procedure M8_VerificarFacturasParaPagar;
 drop procedure M8_ConsultarMontoRestanteFactura;
 drop procedure M8_VerificarFacturaExistente;
 drop procedure M8_ConsultarFacturasPagadasCompania;
+drop procedure M8_EliminarFactura
 
 drop procedure M9_AgregarPago;
 drop procedure M9_CambioStatus;
 drop Procedure M9_ConsultarPago;
+drop procedure M9_historico_pago_por_compania;
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;

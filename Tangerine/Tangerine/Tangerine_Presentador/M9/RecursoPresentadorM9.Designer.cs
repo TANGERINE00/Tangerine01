@@ -205,6 +205,15 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;&lt;/th&gt;.
+        /// </summary>
+        internal static string boton_cerrar_id {
+            get {
+                return ResourceManager.GetString("boton_cerrar_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a style=&apos;margin-left:5px;&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-circle&apos; href=&quot;ConsultarContactos.aspx?idCont=.
         /// </summary>
         internal static string BotonEliminar {
@@ -282,6 +291,24 @@ namespace Tangerine_Presentador.M9 {
         internal static string botonPagarCerrar {
             get {
                 return ResourceManager.GetString("botonPagarCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;th style=&quot;text-align: center;&quot;&gt;&lt;a tittle=&quot;Pagos&quot; class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;PagosPorCompania.aspx?id=.
+        /// </summary>
+        internal static string BotonPagos {
+            get {
+                return ResourceManager.GetString("BotonPagos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/tr&gt;.
+        /// </summary>
+        internal static string CerrarTR {
+            get {
+                return ResourceManager.GetString("CerrarTR", resourceCulture);
             }
         }
         
@@ -426,6 +453,15 @@ namespace Tangerine_Presentador.M9 {
         internal static string Fecha {
             get {
                 return ResourceManager.GetString("Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot;&gt;Habilitada&lt;/span&gt;.
+        /// </summary>
+        internal static string habilitado {
+            get {
+                return ResourceManager.GetString("habilitado", resourceCulture);
             }
         }
         

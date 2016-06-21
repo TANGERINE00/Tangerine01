@@ -23,7 +23,28 @@ namespace DatosTangerine.DAO.M7
 
         public bool DeleteProyectoEmpleado(Entidad proyecto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //Las segunda linea  tienenque repetirse tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                List<Parametro> parameters = new List<Parametro>();
+                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                parameters.Add(theParam);
+
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+                //Se manda a ejecutar en BDConexion el stored procedure M7_EliminarProyecto y todos los parametros que recibe
+                List<Resultado> results = EjecutarStoredProcedure(Resource_M7.DeleteProyectoEmpleado, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                return false;
+            }
+
+            return true;
         }
 
         public List<Entidad> ConsultarTodosProgramadores()
@@ -146,9 +167,40 @@ namespace DatosTangerine.DAO.M7
             }
             return true;
         }
+
+        public bool AgregarProyectoEmpleados(Entidad proyecto, Entidad empleado)
+        {
+            {
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+
+
+                    Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    theParam = new Parametro(Resource_M7.ParamPEIdEmpleado, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Empleado)empleado).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
+                    List<Resultado> results = EjecutarStoredProcedure(Resource_M7.AddProyectoEmpleado, parameters);
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                    return false;
+                }
+
+            }
+            return true;
+        }
         #endregion
 
-        #region IDAO
+        #region DAO
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
@@ -249,5 +301,6 @@ namespace DatosTangerine.DAO.M7
             return listEmpleado;
         }
         #endregion
+
     }
 }

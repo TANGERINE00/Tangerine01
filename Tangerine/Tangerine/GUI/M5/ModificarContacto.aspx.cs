@@ -9,144 +9,125 @@ using LogicaTangerine;
 using LogicaTangerine.M5;
 using Tangerine_Contratos.M5;
 using Tangerine_Presentador.M5;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M5
 {
     public partial class Modificar : System.Web.UI.Page, IContratoModificarContacto
     {
-
         private PresentadorModificarContacto presentador;
+
         public string botonVolver
         {
-            get
-            {
-                return this.volver.Text;
-            }
-            set
-            {
-                this.volver.Text = value;
-            }
+            get { return this.volver.Text; }
+            set { this.volver.Text = value; }
         }
         public string input_nombre
         {
-            get
-            {
-                return this.nombre.Value;
-            }
-            set
-            {
-                this.nombre.Value = value;
-            }
+            get { return this.nombre.Value; }
+            set { this.nombre.Value = value; }
         }
 
         public string input_apellido
         {
-            get
-            {
-                return this.apellido.Value;
-            }
-            set
-            {
-                this.apellido.Value = value;
-            }
+            get { return this.apellido.Value; }
+            set { this.apellido.Value = value; }
         }
 
         public string input_correo
         {
-            get
-            {
-                return this.correo.Value;
-            }
-            set
-            {
-                this.correo.Value = value;
-            }
+            get { return this.correo.Value; }
+            set { this.correo.Value = value; }
         }
 
         public string input_departamento
         {
-            get
-            {
-                return this.departamento.Value;
-            }
-            set
-            {
-                this.departamento.Value = value;
-            }
+            get { return this.departamento.Value; }
+            set { this.departamento.Value = value; }
         }
+
         public string input_telefono
         {
-            get
-            {
-                return this.telefono.Value;
-            }
-            set
-            {
-                this.telefono.Value = value;
-            }
-        }
-        public string input_cargo
-        {
-            get
-            {
-                return this.cargo.Value;
-            }
-            set
-            {
-                this.cargo.Value = value;
-            }
-        }
-        public int GetTypeComp
-        {
-            get
-            {
-                return int.Parse(Request.QueryString[ResourceGUIM5.typeComp]);
-            }
-        }
-        public int GetIdComp
-        {
-            get
-            {
-                return int.Parse(Request.QueryString[ResourceGUIM5.idComp]);
-            }
+            get { return this.telefono.Value; }
+            set { this.telefono.Value = value; }
         }
 
-        public int GetidCont
+        public string item_cargo
         {
-            get
-            {
-                return int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
-            }
+            get { return this.cargoLB.Value; }
+            set { this.cargoLB.Value = value; }
         }
 
-        public string CargarBotonVolver(int typeComp, int idComp)
+        public int GetTypeComp()
+        {
+            try
+            {
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.typeComp ],
+                                                             false ) );
+            }
+            catch ( Exception ex )
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
+        }
+
+        public int GetIdComp()
+        {
+            try 
+            {
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.idComp ],
+                                                             false ) ); 
+            }
+            catch ( Exception ex )
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
+        }
+
+        public int GetidCont()
+        {
+            try 
+            {
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.idCont ],
+                                                             false ) ); 
+            }
+            catch ( Exception ex )
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
+        }
+
+        public string CargarBotonVolver( int typeComp, int idComp )
         {
             return this.botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-                + ResourceGUIM5.BotonVolver3;
-        }
-        public void BotonAceptar(int typeComp, int idComp)
-        {
-            Server.Transfer(ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp
-               + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusModificado);
+                                      + ResourceGUIM5.BotonVolver3;
         }
 
-
-        protected void Page_Load(object sender, EventArgs e)
+        public void BotonAceptar( int typeComp, int idComp )
         {
-            presentador = new PresentadorModificarContacto(this);
-            presentador.cargar_pagina();
-            if (!IsPostBack)
+            Server.Transfer( ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp
+                             + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusModificado );
+        }
+
+        protected void Page_Load( object sender, EventArgs e )
+        {
+            presentador = new PresentadorModificarContacto( this );
+            presentador.CargarPagina();
+            if ( !IsPostBack )
             {
-                presentador.noPost_pagina();
+                presentador.NoPostPagina();
             }
         }
 
-
-        protected void btnmodificar_Click(object sender, EventArgs e)
+        protected void btnmodificar_Click( object sender, EventArgs e )
         {
-            presentador.Event_btnmodificar_Click();
-           
+            presentador.ModificarContacto();
         }
-
     }
 }

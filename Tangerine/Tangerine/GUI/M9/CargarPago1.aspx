@@ -24,8 +24,7 @@
 
         <!-- form start -->
         <form role="form" runat="server">
-            <div class="box-body">
-                <div class="form-group">
+             <div class="box-body">
 
                     <asp:ValidationSummary 
                          id="ValSum" 
@@ -34,71 +33,98 @@
                          HeaderText="Ha habido un error:"
                          runat="server"/>
 
-                 <div>
-                    <label for="input_cliente">Numero de Factura</label>
-                     <input runat="server" type="text" class="form-control" id="numFactura" readonly="True"/>
+               
+
+
+                      
+                     <!--NUMERO DE FACTURA -->
+       
+     
+                       <div class="form-group" runat="server">
+                            <label for="input_cliente">Numero de Factura</label>
+                            <input runat="server" type="text" class="form-control" 
+
+                                pattern="([0-9]{1,3})([^'\x22])$"
+                                id="numFactura" name="numFactura" 
+                                placeholder="Introduzca el numero de factura correspondiente.e.g: 1" disabled="disabled">
+                        </div>
+
+
                     
-                </div>
+                         <div class="form-group" runat="server">
+                            <label for="input_cliente">Cliente (compañía contratante)</label>
+                            <input runat="server" type="text" class="form-control" 
+                                 pattern="([a-z0-9.%+-])([A-Z])([^'\x22]){3,20}" 
+                            
+                                id="compCliente" name="compCliente" 
+                                placeholder="Introduzca el nombre de la compañía. " disabled="disabled">
+                        </div>
 
-                <div>
-                    &nbsp;
-                    <label for="input_cliente">Cliente (compañía contratante)</label>
-                     <input runat="server" type="text" class="form-control" id="compCliente" readonly="True"/>
-                    &nbsp;
-                </div>
-            
 
-                    <div class="form-group">
-                        &nbsp;
-                       <label for="input_cliente">Proyecto</label>
-                     <input runat="server" type="text" class="form-control" id="proyectoNombre" readonly="True"/>
-                    </div>    
+                    <div class="form-group" runat="server">
+                            <label for="input_cliente">Proyecto</label>
+                            <input runat="server" type="text" class="form-control" 
+                                 pattern="([a-z0-9.%+-])([A-Z])([^'\x22]){3,20}" 
+                            
+                                id="proyectoNombre" name="proyectoNombre" 
+                                placeholder="Introduzca el nombre del proyecto. " disabled="disabled">
+                        </div>
 
-             
-                <!-- /.box-body -->
-                <label for="input_costo">Moneda Factura</label>
-                <div class="input-group">
-                     <input runat="server" type="text" class="form-control" id="monedaPago" readonly="True"/>
-                    &nbsp;
-                </div>
-               <label for="input_costo">Monto Factura</label>
-                <div class="input-group">
-                     <input runat="server" type="text" class="form-control" id="montoFactura" readonly="True"/>
-                    &nbsp;
-                </div>
-                
+                    
 
+                    <div class="form-group" runat="server">
+                            <label for="input_costo">Moneda Factura</label>
+                            <input runat="server" type="text" class="form-control" 
+                                 pattern="([a-z0-9.%+-])([A-Z])([^'\x22]){3,20}" 
+                            
+                                id="monedaPago" name="monedaPago" 
+                                placeholder="Introduzca el nombre del proyecto.. e.g: USD , MXN , EUR " disabled="disabled">
+                        </div>
+
+
+                    
+                    <div class="form-group" runat="server">
+                            <label for="input_costo">Monto Factura</label>
+                            <input runat="server" type="text" class="form-control" 
+                                 pattern="([0-9]{1,10})([^'\x22])$" 
+                            
+                                id="montoFactura" name="montoFactura" 
+                                placeholder="Introduzca el nombre del proyecto.. e.g: USD , MXN , EUR " disabled="disabled">
+                        </div>
+
+
+
+          
                 <div class="form-group">
-                    <label>Forma de Pago</label>
+                    <label>Forma de Pago</label><label for="Requerido" style="color: red;">*</label>
                     
-                    <select required runat="server" class="form-control" id="formaPago" name="seccion">
+                    <select required runat="server" class="form-control" id="formaPago" name="formaPago">
                         <option></option>
                         <option data-icon="fa-heart">Deposito</option>
                         <option>Transferencia</option>
                         <option>Otro</option>
                        </select>
                 </div>
+                    <div class="form-group" runat="server">
+                            <label for="input_cliente">Codigo de aprobacion</label><label for="Requerido" style="color: red;">*</label>
+                            <input runat="server" type="text" class="form-control" 
+                                 pattern=\d{10}
+                            
+                                id="codAprobacion" name="codAprobacion" 
+                                placeholder="Introduzca el numero de codigo de aprobacion  " required>
+                        </div>
 
-                <div class="form-group">
-                   
-                    <label for="input_cliente">Codigo de aprobacion</label>
-                    <input type="text" id="codAprobacion" class="form-control"  placeholder="Codigo de aprobacion" runat="server" required>
 
                     
-                   <asp:RegularExpressionValidator id="RegularExpressionValidator1" 
-                     ControlToValidate="codAprobacion"
-                     ValidationExpression="\d{10}"
-                     Display="Dynamic"
-                     ErrorMessage="El código de aprobación debe ser de 10 caracteres numéricos."
-                     ForeColor="red"
-                     runat="server" ValidationGroup="AllValidations" />
-                </div>
+                   
+             
 
             <div class="box-foot">
                 <asp:Button id="btnagregar" class="btn btn-primary" OnClick="btnagregar_Click" type="submit" runat="server" Text = "Agregar"></asp:Button>
                     
                
             </div>
+        </div>
 
         </form>
     </div>

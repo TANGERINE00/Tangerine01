@@ -9,31 +9,200 @@ using LogicaTangerine.M7;
 using Tangerine_Contratos.M7;
 using Tangerine_Presentador.M7;
 using DominioTangerine.Entidades.M7;
+using System.Web.UI.HtmlControls;
 
 namespace Tangerine.GUI.M7
 {
 
-    public partial class AgregarProyecto : System.Web.UI.Page
+    public partial class AgregarProyecto : System.Web.UI.Page, IContratoAgregarProyecto
     {
      
 
-        PresentadorAgregarProyecto presenter;
-        
+        private PresentadorAgregarProyecto _presentador;
+
+        #region Atributos
+
+        public string NombrePropuesta
+        {
+            get { return this.inputPropuesta.ToString(); }
+            set { this.inputPropuesta.Text = value; }
+        }
+
+
+        public string NombreProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string CodigoProyecto
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                this.textInputCodigo.Value = value.ToString();
+            }
+        }
+
+        public string FechaInicio
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string FechaFin
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Costo
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                this.textInputCosto.Value = value.ToString();
+            }
+        }
+
+        public string Porcentaje
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Estatus
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        HtmlSelect IContratoAgregarProyecto.inputPersonal
+        {
+            get
+            {
+                return this.inputPersonal;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        HtmlSelect IContratoAgregarProyecto.inputEncargado
+        {
+            get
+            {
+                return this.inputEncargado;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        DropDownList IContratoAgregarProyecto.inputPropuesta
+        {
+            get
+            {
+                return this.inputPropuesta;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+
+
+        }
+
+        DropDownList IContratoAgregarProyecto.inputGerente
+        {
+            get
+            {
+                return this.inputGerente;
+            }
+            set
+            {
+                //this.inputPropuesta.Text = value.ToString();
+            }
+
+        }
+
+        HtmlGenericControl IContratoAgregarProyecto.columna2
+        {
+            get
+            {
+                return this.columna2;
+            }
+            set
+            {
+                this.columna2 = value;
+            }
+        }
+
+        Button IContratoAgregarProyecto.BtnGenerar
+        {
+            get 
+            {
+                return this.btnGenerar;
+            }
+            set
+            {
+                this.btnGenerar = value;
+            }
+        }
+
+        #endregion
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            _presentador = new PresentadorAgregarProyecto (this);
+            
 
            if (!IsPostBack)
            {
+               _presentador.CargarPagina();
                
           /*  if( Propuestas.Count > 0 )
             {
-                textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[0].Nombre);
-
-                for (int i = 0; i < Propuestas.Count;i++ )
-                {
-                    inputPropuesta.Items.Add(Propuestas[i].Nombre);
-                }
 
                 Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[0].IdCompañia),1); 
 
@@ -58,13 +227,16 @@ namespace Tangerine.GUI.M7
 
         protected void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
-
-            columna2.Visible = true;
-            btnGenerar.Enabled = true;
+            _presentador.AgregarPersonal();
+            
+        
         }
 
         protected void comboPropuesta_Click(object sender, EventArgs e)
         {
+
+            _presentador.CargarInformacionPropuesta(sender);
+
            /* inputEncargado.Items.Clear();
 
             Contactos = LogicaM5.GetContacts(int.Parse(Propuestas[inputPropuesta.SelectedIndex].IdCompañia), 1);
@@ -74,8 +246,6 @@ namespace Tangerine.GUI.M7
                 inputEncargado.Items.Add(Contactos[i].Nombre + " " + Contactos[i].Apellido);
             }
             
-            textInputCosto.Value = Propuestas[inputPropuesta.SelectedIndex].Costo.ToString();
-            textInputCodigo.Value = LogicaM7.generarCodigoProyecto(Propuestas[inputPropuesta.SelectedIndex].Nombre);
              */
         }
 
@@ -122,6 +292,8 @@ namespace Tangerine.GUI.M7
              { 
                  //colocar  un mensaje de error en la creacion
              }*/
-        } 
+        }
+
+
     }
 }
