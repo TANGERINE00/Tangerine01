@@ -117,70 +117,154 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AbrirTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="AddNewProyecto" xml:space="preserve">
+    <value>M7_AgregarProyecto</value>
   </data>
-  <data name="botonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-pencil" type="submit" runat="server" style="margin-left:3px;"  href="ModificarPropuesta.aspx?id=</value>
+  <data name="AddNewProyectoContacto" xml:space="preserve">
+    <value>M7_AgregarProyectoContacto</value>
   </data>
-  <data name="boton_cerrar_id" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;&lt;/th&gt;</value>
+  <data name="AddProyectoEmpleado" xml:space="preserve">
+    <value>M7_AgregarProyectoEmpleado</value>
   </data>
-  <data name="CerrarTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
+  <data name="ChangeProyecto" xml:space="preserve">
+    <value>M7_ModificarProyecto</value>
   </data>
-  <data name="AbrirTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
+  <data name="ContacMaxIdProyecto" xml:space="preserve">
+    <value>M7_ConsultarMaxIdProyecto</value>
   </data>
-  <data name="CerrarTR" xml:space="preserve">
-    <value>&lt;/tr&gt;</value>
+  <data name="ContactNombrePropuestaID" xml:space="preserve">
+    <value>M7_ConsultarNombrePropuestaID</value>
   </data>
-  <data name="aprobado" xml:space="preserve">
-    <value>&lt;span class="label label-success"&gt;Aprobado&lt;/span&gt;</value>
-    <comment>coloca el label Aprobado</comment>
+  <data name="ContactProyecto" xml:space="preserve">
+    <value>M7_ConsultarProyecto</value>
   </data>
-  <data name="pendiente" xml:space="preserve">
-    <value>&lt;span class="label label-warning"&gt;Pendiente&lt;/span&gt;</value>
-    <comment>coloca el label Pendiente</comment>
+  <data name="ContactProyectoContacto" xml:space="preserve">
+    <value>M7_ConsultarProyectoContacto</value>
   </data>
-  <data name="bitcoin" xml:space="preserve">
-    <value>&lt;a class="glyphicon glyphicon-bitcoin"&gt;&lt;/a&gt;</value>
-    <comment>icono de bitcoin</comment>
+  <data name="ContactProyectoEmpleado" xml:space="preserve">
+    <value>M7_ConsultarProyectoEmpleado</value>
   </data>
-  <data name="bolivar" xml:space="preserve">
-    <value>&lt;b style="color: #3c8dbc;"&gt;Bf &lt;/b&gt;</value>
+  <data name="ContactProyectoPorEmpleado" xml:space="preserve">
+    <value>M7_ConsultarProyectoTrabajaEmpleado</value>
   </data>
-  <data name="dolar" xml:space="preserve">
-    <value>&lt;a class="glyphicon glyphicon-usd"&gt;&lt;/a&gt;</value>
-    <comment>icono de dolar</comment>
+  <data name="ContactProyectoPorGerente" xml:space="preserve">
+    <value>M7_ConsultarProyectosPorGerente</value>
   </data>
-  <data name="euro" xml:space="preserve">
-    <value>&lt;a class="glyphicon glyphicon-euro"&gt;&lt;/a&gt;</value>
-    <comment>icono de euro</comment>
+  <data name="ContactProyectos" xml:space="preserve">
+    <value>M7_ConsultarProyectos</value>
   </data>
-  <data name="botonConsultar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" type="submit" runat="server" style="margin-left:3px;"  href="InformacionPropuesta.aspx?id=</value>
+  <data name="ContactProyectosxAcuerdoPago" xml:space="preserve">
+    <value>M7_ConsultarAcuerdoPagoMensual</value>
   </data>
-  <data name="botonEliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left:3px;"   href="ModificarPropuesta.aspx?id=</value>
+  <data name="DeleteProyecto" xml:space="preserve">
+    <value>M7_EliminarProyecto</value>
   </data>
-  <data name="botonCerra" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
+  <data name="DeleteProyectoContacto" xml:space="preserve">
+    <value>M7_EliminarProyectoContacto</value>
   </data>
-  <data name="btn_eliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"&gt;&lt;/a&gt;</value>
+  <data name="DeleteProyectoEmpleado" xml:space="preserve">
+    <value>M7_EliminarProyectoEmpleado</value>
   </data>
-  <data name="btn_Modificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil mod_req" data-toggle="modal" data-target="#modal-update" href="#"&gt;&lt;/a&gt;</value>
+  <data name="ParamAcuerdoPago" xml:space="preserve">
+    <value>@AcuerdoPago</value>
   </data>
-  <data name="cerrado" xml:space="preserve">
-    <value>&lt;span class="label label-danger"&gt;Cerrado&lt;/span&gt;</value>
-    <comment>coloca el label Cerrado</comment>
+  <data name="ParamCodigo" xml:space="preserve">
+    <value>@Codigo</value>
   </data>
-  <data name="AbrirTD2" xml:space="preserve">
-    <value>&lt;td style="text-align:center;"&gt;</value>
+  <data name="ParamCosto" xml:space="preserve">
+    <value>@Costo</value>
   </data>
-  <data name="Salto" xml:space="preserve">
-    <value>&lt;br&gt;</value>
+  <data name="ParamDescripcion" xml:space="preserve">
+    <value>@Descripcion</value>
+  </data>
+  <data name="ParamEstatus" xml:space="preserve">
+    <value>@Estatus</value>
+  </data>
+  <data name="ParamFechaEstFin" xml:space="preserve">
+    <value>@FechaEstFin</value>
+  </data>
+  <data name="ParamFechaInicio" xml:space="preserve">
+    <value>@FechaInicio</value>
+  </data>
+  <data name="ParamIdCompania" xml:space="preserve">
+    <value>@IdCompania</value>
+  </data>
+  <data name="ParamIdGerente" xml:space="preserve">
+    <value>@IdGerente</value>
+  </data>
+  <data name="ParamIdPropuesta" xml:space="preserve">
+    <value>@IdPropuesta</value>
+  </data>
+  <data name="ParamIdPropuestaPrpu" xml:space="preserve">
+    <value>@IdPropuestaPrpu</value>
+  </data>
+  <data name="ParamId_Proyecto" xml:space="preserve">
+    <value>@IdProyecto</value>
+  </data>
+  <data name="ParamNombre" xml:space="preserve">
+    <value>@Nombre</value>
+  </data>
+  <data name="ParamPCIdContacto" xml:space="preserve">
+    <value>@PCIdContacto</value>
+  </data>
+  <data name="ParamPEIdEmpleado" xml:space="preserve">
+    <value>@PEIdEmpleado</value>
+  </data>
+  <data name="ParamRazon" xml:space="preserve">
+    <value>@Razon</value>
+  </data>
+  <data name="ParamRealizacion" xml:space="preserve">
+    <value>@Realizacion</value>
+  </data>
+  <data name="PCIdContacto" xml:space="preserve">
+    <value>fk_con_id</value>
+  </data>
+  <data name="PEIdEmpleado" xml:space="preserve">
+    <value>fk_emp_num_ficha</value>
+  </data>
+  <data name="ProyAcuerdoPago" xml:space="preserve">
+    <value>proy_acuerdo_pago</value>
+  </data>
+  <data name="ProyCodigo" xml:space="preserve">
+    <value>proy_codigo</value>
+  </data>
+  <data name="ProyCosto" xml:space="preserve">
+    <value>proy_costo</value>
+  </data>
+  <data name="ProyDescripcion" xml:space="preserve">
+    <value>proy_descripcion</value>
+  </data>
+  <data name="ProyEstatus" xml:space="preserve">
+    <value>proy_estatus</value>
+  </data>
+  <data name="ProyFechaEstFin" xml:space="preserve">
+    <value>proy_fecha_est_fin</value>
+  </data>
+  <data name="ProyFechaInicio" xml:space="preserve">
+    <value>proy_fecha_inicio</value>
+  </data>
+  <data name="ProyIdCompania" xml:space="preserve">
+    <value>fk_com_id</value>
+  </data>
+  <data name="ProyIdGerente" xml:space="preserve">
+    <value>fk_gerente_id</value>
+  </data>
+  <data name="ProyIdPropuesta" xml:space="preserve">
+    <value>fk_propuesta_id</value>
+  </data>
+  <data name="ProyIdProyecto" xml:space="preserve">
+    <value>proy_id</value>
+  </data>
+  <data name="ProyNombre" xml:space="preserve">
+    <value>proy_nombre</value>
+  </data>
+  <data name="ProyRazon" xml:space="preserve">
+    <value>proy_razon</value>
+  </data>
+  <data name="ProyRealizacion" xml:space="preserve">
+    <value>proy_realizacion</value>
+  </data>
+  <data name="PrpuNombre" xml:space="preserve">
+    <value>prop_nombre</value>
   </data>
 </root>

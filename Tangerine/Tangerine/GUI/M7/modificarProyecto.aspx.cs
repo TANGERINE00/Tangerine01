@@ -158,7 +158,7 @@ namespace Tangerine.GUI.M7
             }
         }
 
-                ListBox IContratoModificarProyecto.inputPersonal
+        ListBox IContratoModificarProyecto.inputPersonal
         {
             get
             {
@@ -169,6 +169,55 @@ namespace Tangerine.GUI.M7
                 inputPersonal = value;
             }
         }
+
+        TextBox IContratoModificarProyecto.idPropuesta
+        {
+            get
+            {
+                return idPropuesta;
+            }
+            set
+            {
+                idPropuesta = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.idProyecto
+        {
+            get
+            {
+                return idProyecto;
+            }
+            set
+            {
+                idProyecto = value;
+            }
+       }
+
+        ListBox IContratoModificarProyecto.GerentesPasados
+        {
+            get
+            {
+                return GerentesPasados;
+            }
+            set
+            {
+                GerentesPasados = value;
+            }
+        }
+
+        ListBox IContratoModificarProyecto.inputPersonalNoActivo
+        {
+            get
+            {
+                return inputPersonalNoActivo;
+            }
+            set
+            {
+                inputPersonalNoActivo = value;
+            }
+        }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -193,5 +242,16 @@ namespace Tangerine.GUI.M7
                 //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaNoModificada);
             }
         }
+
+        protected void bIzquierdo_Click(object sender, EventArgs e)
+        {
+            presentador.MoverIzquierda();
+        }
+
+        protected void bDerecho_Click(object sender, EventArgs e)
+        {
+            presentador.MoverDerecha();
+        }
+
     }
 }

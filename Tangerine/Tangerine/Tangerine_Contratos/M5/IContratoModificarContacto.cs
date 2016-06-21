@@ -9,9 +9,9 @@ namespace Tangerine_Contratos.M5
     public interface IContratoModificarContacto
     {
         string botonVolver { get; set; }
-        int GetTypeComp { get; }
-        int GetIdComp { get; }
-        int GetidCont { get; }
+        int GetTypeComp();
+        int GetIdComp();
+        int GetidCont();
         string CargarBotonVolver( int typeComp, int idComp );
         string input_nombre { get; set; }
         string input_apellido { get; set; }
