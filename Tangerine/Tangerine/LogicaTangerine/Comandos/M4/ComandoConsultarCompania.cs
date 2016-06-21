@@ -23,9 +23,16 @@ namespace LogicaTangerine.Comandos.M4
        /// <returns>una entidad compania </returns>
         public override Entidad Ejecutar()
         {
+            try
+            {
+                IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+                return C.ConsultarXId(_laEntidad);
+            }
+            catch (NotImplementedException)
+            {
 
-            IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
-            return C.ConsultarXId(_laEntidad);
+                return null;
+            }
         }
     }
 }
