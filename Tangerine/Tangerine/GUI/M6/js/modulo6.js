@@ -13,10 +13,10 @@ function agregarPrecondicion() {
     child = document.getElementById("div-precondiciones").lastElementChild.lastElementChild;
     child.innerHTML = "<button type=\"button\" class=\"btn btn-danger btn-circle glyphicon glyphicon-remove\" onclick=\"eliminarCampo(this)\"></button>";
     codigo = "<div class=\"form-group\">" +
-			"    <div class=\"col-sm-11 col-md-11 col-lg-11\">" +
+			"    <div class=\"col-sm-11 col-md-11 col-lg-11\" style=\"margin-left:-30px;\"> " +
 			"        <input type=\"text\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\"/>" +
 			"    </div>" +
-			"    <div class=\"col-sm-1 col-md-1 col-lg-1\">" +
+			"    <div class=\"col-sm-1 col-md-1 col-lg-1\" style=\"margin-left:-20px;\" >" +
 			"        <button type=\"button\" class=\"btn btn-default btn-circle glyphicon glyphicon-plus\" onclick=\"agregarPrecondicion()\"></button>" +
 			"    </div>" +
 			"</div>";
