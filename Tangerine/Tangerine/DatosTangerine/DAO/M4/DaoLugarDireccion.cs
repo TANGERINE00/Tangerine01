@@ -34,14 +34,17 @@ namespace DatosTangerine.DAO.M4
        {
            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
            ResourceCompanyM4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-           List<Parametro> parameters = new List<Parametro>();
            Parametro theParam = new Parametro();
            Entidad thePlace;
 
            try
            {
-               theParam = new Parametro(ResourcePlaceM4.ParamId, SqlDbType.VarChar,
-                   ((DominioTangerine.Entidades.M4.LugarDireccionM4)parametro).LugId.ToString(), false);
+               List<Parametro> parameters = new List<Parametro>();
+
+               //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+               //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+               theParam = new Parametro(ResourcePlaceM4.ParamId, SqlDbType.Int,
+                     ((DominioTangerine.Entidades.M4.LugarDireccionM4)parametro).Id.ToString(), false);
                parameters.Add(theParam);
 
                //Guardo la tabla que me regresa el procedimiento de consultar contactos
