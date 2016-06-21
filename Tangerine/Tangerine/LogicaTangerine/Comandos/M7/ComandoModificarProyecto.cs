@@ -14,6 +14,13 @@ namespace LogicaTangerine.Comandos.M7
         private Entidad _proyecto;
         private List<Entidad> _trabajadores;
 
+        /// <summary>
+        /// Constructor de la clase ComandoCalcularPagoMensual
+        /// </summary>
+        /// <param name="propuesta"> entidad de tipo propuesta </param>
+        /// <param name="proyecto"> entidad de tipo proyecto </param>
+        /// <param name="trabajadores"> lita de entidades de tipo empleado </param>
+
         public ComandoModificarProyecto(Entidad propuesta, Entidad proyecto, List<Entidad> trabajadores)
         {
              this._propuesta = propuesta;
@@ -21,6 +28,10 @@ namespace LogicaTangerine.Comandos.M7
              this._trabajadores = trabajadores;
         }
 
+        /// <summary>
+        /// Método Override para ejecutar el comando
+        /// </summary>
+        /// <returns> True si se ejecuto correctamente </returns>
         public override Boolean Ejecutar()
         {
             try
@@ -28,10 +39,17 @@ namespace LogicaTangerine.Comandos.M7
                 IDaoProyectoEmpleado daoProyectoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
                 Boolean eliminados = daoProyectoEmpleado.DeleteProyectoEmpleado(_proyecto);
 
-                IDaoProyectoEmpleado daoProyectoEmpleado2 = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
-                //Boolean agregados = daoProyectoEmpleado2.AgregarEmpleados(_trabajadores);
+                foreach(Entidad trabajador in _trabajadores)
+                {
+                    Char delimiter = '-';
+                    String[] substrings = ((DominioTangerine.Entidades.M7.Empleado)trabajador).Emp_p_nombre.ToString().Split(delimiter);
+                    ((DominioTangerine.Entidades.M7.Empleado)trabajador).Id = int.Parse(substrings[0]);
+                    IDaoProyectoEmpleado daoProyectoEmpleado2 = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
+                    Boolean agregados = daoProyectoEmpleado2.AgregarProyectoEmpleados( _proyecto, trabajador);
+                }
 
-                
+                IDaoProyecto daoProyecto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyecto();
+                Boolean modificado = daoProyecto.Modificar(_proyecto);
             }
             catch (Exception e)
             {

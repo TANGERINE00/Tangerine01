@@ -99,15 +99,19 @@
                     <div class="form-group">
                         <label>Alcance del Proyecto</label>
                         <div class="form-group">
-                            <div id="div-precondiciones" class="col-sm-10 col-md-10 col-lg-10">
+                            <div id="div-precondiciones" class="col-sm-12 col-md-12 col-lg-12">
 
                                 <div class="form-group">
-                                    <div class="col-sm-11 col-md-11 col-lg-11">
-                                        
-                                        <input runat="server" placeholder="Requerimiento" type="text" pattern="^[A-z]+$" class="form-control precondicion" id="precondicion_0" name="precondicion_0" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')" />
-                                    </div>
-                                    <div class="col-sm-1 col-md-1 col-lg-1">
-                                        <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" onclick="agregarPrecondicion()"></button>
+                                    <div class="col-sm-11 col-md-11 col-lg-11" style="margin-left:-30px;">  
+                                        <input runat="server" placeholder="Requerimiento" type="text" 
+                                            pattern="^[A-z]+$" class="form-control precondicion" id="precondicion_0" 
+                                            name="precondicion_0" 
+                                            required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" 
+                                            oninput="setCustomValidity('')" />
+                                    </div>            
+                                    <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left:-20px;">     
+                                        <button type="button" class="btn btn-default btn-circle glyphicon glyphicon-plus" 
+                                            onclick="agregarPrecondicion()"></button>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +126,8 @@
                         <div class="input-group input-group">
                             <div class="input-group-btn">
 
-                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server">
+                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server" 
+                                    AutoPostBack="true" OnSelectedIndexChanged="comboDuracion_SelectedIndexChanged">
                                 </asp:DropDownList>
 
                             </div>
@@ -132,7 +137,6 @@
                         </div>
 
                     </div>
-
 
                     <div class="form-group date">
                         <label>Fecha estimada Incio:</label>

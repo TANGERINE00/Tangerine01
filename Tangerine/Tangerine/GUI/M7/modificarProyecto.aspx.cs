@@ -218,6 +218,43 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        TextBox IContratoModificarProyecto.acuerdoPago
+        {
+            get
+            {
+                return acuerdoPago;
+            }
+            set
+            {
+                acuerdoPago = value;
+
+            }
+        }
+
+        TextBox IContratoModificarProyecto.idCompania
+        {
+            get
+            {
+                return idCompania;
+            }
+            set
+            {
+                idCompania = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+            set
+            {
+                descripcion = value;
+            }
+        }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)

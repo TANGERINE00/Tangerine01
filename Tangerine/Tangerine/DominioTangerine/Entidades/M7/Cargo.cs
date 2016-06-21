@@ -9,6 +9,22 @@ namespace DominioTangerine.Entidades.M7
     public class Cargo : Entidad
     {
         #region Atributos
+
+        /// <summary>
+        /// Clase propuesta
+        /// <attr name="nombre"></attr>
+        /// <attr name="descripcion"></attr>
+        /// <attr name="fechaContratacion"></attr>
+        /// <attr name="fechaFinContrato"></attr>
+        /// <attr name="modalidad"></attr>
+        /// <attr name="sueldo"></attr>
+        /// <attr name="fechaIni"></attr>
+        /// <attr name="fechaFin"></attr>
+        /// <attr name="fk_car_id"></attr>
+        /// <attr name="fk_emp_num_ficha"></attr>
+        /// <attr name="car_id"></attr>
+        /// </summary>
+        /// 
         private string nombre;
         private string descripcion;
         private DateTime fechaContratacion;

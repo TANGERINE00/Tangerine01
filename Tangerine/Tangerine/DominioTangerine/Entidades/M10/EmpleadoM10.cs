@@ -74,6 +74,9 @@ namespace DominioTangerine.Entidades.M10
         }
 
        
+
+        private string address;
+
         public CargoM10 jobs;
         private List<Proyecto> listProjects = new List<Proyecto>();
         private List<LugarDireccion> listaDireccion = new List<LugarDireccion>();

@@ -88,9 +88,9 @@ namespace Tangerine.GUI.M2
         [WebMethod]
         public static string validarUsuario(string usuario)
         {
-            string nombreUsuario = usuario;
             bool respuesta = false;
-            respuesta = LogicaAgregarUsuario.ExisteUsuario(nombreUsuario);
+            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( usuario );
+            respuesta = comando.Ejecutar();
 
             string retorno = "Disponible";
 

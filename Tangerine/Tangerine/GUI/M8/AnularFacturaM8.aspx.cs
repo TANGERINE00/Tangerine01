@@ -5,28 +5,19 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
-//using DatosTangerine.M8;
-//using LogicaTangerine.M8;
+using DatosTangerine;
+using LogicaTangerine.M4;
+using LogicaTangerine.M7;
+using Tangerine_Presentador.M8;
+using Tangerine_Contratos.M8;
 
 
 namespace Tangerine.GUI.M8
 {
-    public partial class AnularFacturaM8 : System.Web.UI.Page
+    public partial class AnularFacturaM8 : System.Web.UI.Page, IContratoAnularFactura
     {
-        int _numeroFactura = 0;
-        DateTime _fechaEmision = DateTime.Now;
-        DateTime _fechaUltimoPago = DateTime.Now;
-        int _montoTotal = 0;
-        int _montoRestante = 0;
-        string _tipoMoneda = String.Empty;
-        string _descripcion = String.Empty;
-        int _estatus = 0;
-        int _proyectoId = 0;
-        int _companiaId = 0;
-        //public static Facturacion theFactura = null;
-
-
-        public string Numero
+        #region contrato
+        public string numero
         {
             get
             {
@@ -39,7 +30,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string FechaFactura
+        public string fecha
         {
             get
             {
@@ -52,7 +43,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string CompaniaFactura
+        public string compania
         {
             get
             {
@@ -65,7 +56,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string DescripcionFactura
+        public string descripcion
         {
             get
             {
@@ -78,7 +69,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string ProyectoFactura
+        public string proyecto
         {
             get
             {
@@ -91,7 +82,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string MontoFactura
+        public string monto
         {
             get
             {
@@ -104,7 +95,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string Moneda
+        public string moneda
         {
             get
             {
@@ -116,14 +107,42 @@ namespace Tangerine.GUI.M8
                 this.TipoMoneda.Text = value;
             }
         }
+        #endregion
+
+        #region presentador
+        PresentadorAnularFactura _presentador;
+
+        public AnularFacturaM8()
+        {
+            _presentador = new PresentadorAnularFactura(this);
+        }
+        #endregion
+
+        int _numeroFactura = 0;
+        DateTime _fechaEmision = DateTime.Now;
+        DateTime _fechaUltimoPago = DateTime.Now;
+        int _montoTotal = 0;
+        int _montoRestante = 0;
+        string _tipoMoneda = String.Empty;
+        string _descripcion = String.Empty;
+        int _estatus = 0;
+        int _proyectoId = 0;
+        int _companiaId = 0;
+        //public static Facturacion theFactura = null;
+
+        
+        
 
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idFac = int.Parse(Request.QueryString["idFac"]);
+            //int idFac = int.Parse(Request.QueryString[ResourceGUIM8.idF]);
+            this.numero = Request.QueryString[ResourceGUIM8.idF];
+
             if (!IsPostBack)
             {
+                _presentador.cargarFactura();
                 //LogicaM8 facturaLogic = new LogicaM8();
                 //theFactura = facturaLogic.SearchFactura(idFac);
 

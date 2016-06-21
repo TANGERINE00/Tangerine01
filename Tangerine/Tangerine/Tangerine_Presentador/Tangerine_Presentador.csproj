@@ -73,6 +73,7 @@
     <Compile Include="M4\PresentadorAgregarCompania.cs" />
     <Compile Include="M4\PresentadorConsultarCompania.cs" />
     <Compile Include="M4\PresentadorInformacionCompania.cs" />
+    <Compile Include="M4\PresentadorModificarCompania.cs" />
     <Compile Include="M4\RecursosPresentadorM4.Designer.cs">
       <DependentUpon>RecursosPresentadorM4.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -104,6 +105,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
+    <Compile Include="M8\PresentadorAnularFactura.cs" />
+    <Compile Include="M8\PresentadorGenerarFactura.cs" />
     <Compile Include="M8\PresentadorConsultaFactura.cs" />
     <Compile Include="M8\RecursoPresentadorM8.Designer.cs">
       <AutoGen>True</AutoGen>
