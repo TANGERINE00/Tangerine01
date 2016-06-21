@@ -10,7 +10,10 @@ namespace LogicaTangerine.Comandos.M7
 {
     public class ComandoConsultarAcuerdoPagoMensual : Comando<List<Entidad>>
     {
-        
+        /// <summary>
+        /// Método Override para ejecutar el comando
+        /// </summary>
+        /// <returns>Lista de entidades tipo proyecto</returns>
         public override List<Entidad> Ejecutar()
         {
             try
