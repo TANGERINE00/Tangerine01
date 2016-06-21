@@ -10,7 +10,10 @@ namespace LogicaTangerine.Comandos.M7
 {
     public class ComandoConsultarTodosProgramadores : Comando<List<Entidad>>
     {
-
+        /// <summary>
+        /// Método Override para ejecutar el comando
+        /// </summary>
+        /// <returns>Lista de entidad tipo empleado</returns>
         public override List<Entidad> Ejecutar()
         {
             try

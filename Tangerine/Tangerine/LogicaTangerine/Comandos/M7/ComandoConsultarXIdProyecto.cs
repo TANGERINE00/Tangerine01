@@ -18,11 +18,19 @@ namespace LogicaTangerine.Comandos.M7
             set { proyecto = value; }
         }
 
+        /// <summary>
+        /// Constructor de la clase ComandoConsultarXIdProyecto
+        /// </summary>
+        /// <param name="proyecto"> entidad de tipo proyecto </param>
         public ComandoConsultarXIdProyecto(Entidad proyecto)
         {
             this.proyecto = proyecto;
         }
 
+        /// <summary>
+        /// Método Override para ejecutar el comando
+        /// </summary>
+        /// <returns>entidad tipo proyecto</returns>
         public override Entidad Ejecutar()
         {
             try

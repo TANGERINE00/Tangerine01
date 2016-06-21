@@ -14,6 +14,13 @@ namespace LogicaTangerine.Comandos.M7
         private Entidad _proyecto;
         private List<Entidad> _trabajadores;
 
+        /// <summary>
+        /// Constructor de la clase ComandoCalcularPagoMensual
+        /// </summary>
+        /// <param name="propuesta"> entidad de tipo propuesta </param>
+        /// <param name="proyecto"> entidad de tipo proyecto </param>
+        /// <param name="trabajadores"> lita de entidades de tipo empleado </param>
+
         public ComandoModificarProyecto(Entidad propuesta, Entidad proyecto, List<Entidad> trabajadores)
         {
              this._propuesta = propuesta;
@@ -21,6 +28,10 @@ namespace LogicaTangerine.Comandos.M7
              this._trabajadores = trabajadores;
         }
 
+        /// <summary>
+        /// Método Override para ejecutar el comando
+        /// </summary>
+        /// <returns> True si se ejecuto correctamente </returns>
         public override Boolean Ejecutar()
         {
             try
