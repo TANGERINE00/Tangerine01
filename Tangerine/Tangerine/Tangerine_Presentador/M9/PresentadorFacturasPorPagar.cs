@@ -40,7 +40,14 @@ namespace Tangerine_Presentador.M9
 
                     if (listaF.Count() < 1)
                     {
+                        vista.factura += RecursoPresentadorM9.AbrirTR;
                         vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.CerrarTR;
                     }
                     else
                     {
@@ -57,6 +64,7 @@ namespace Tangerine_Presentador.M9
 
                             //Boton para cargar el pago de una factura especifica
                             vista.factura += RecursoPresentadorM9.botonPagarAbrir + theFactura.Id + RecursoPresentadorM9.botonPagarCerrar;
+                            vista.factura += RecursoPresentadorM9.CerrarTR;
                         }
                     }
 

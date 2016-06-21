@@ -354,6 +354,16 @@ namespace LogicaTangerine.Fabrica
 
         }
 
+        /// <summary>
+        /// metodo que crea comando para consultar los  luegares con su id y nombre
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarLugarXNombreID()
+        {
+            return new ComandoConsultarLugarXNombreID();
+
+        }
+
         #endregion
 
         #region Modulo 5
@@ -577,6 +587,11 @@ namespace LogicaTangerine.Fabrica
         public static Comando<String> ObtenerComandoGenerarCodigoProyecto(Entidad propuesta)
         {
             return new ComandoGenerarCodigoProyecto(propuesta);
+        }
+
+        public static Comando<Boolean> ObtenerComandoModificarProyecto(Entidad _propuesta, Entidad _proyecto, List<Entidad> _trabajadores)
+        {
+            return new ComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
         }
         #endregion
 

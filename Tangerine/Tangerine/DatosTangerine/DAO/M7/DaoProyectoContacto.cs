@@ -1,5 +1,6 @@
-﻿using DatosTangerine.InterfazDAO.M7;
+﻿ using DatosTangerine.InterfazDAO.M7;
 using DatosTangerine.M5;
+using DatosTangerine.M7;
 using DominioTangerine;
 using ExcepcionesTangerine;
 using System;
@@ -20,7 +21,7 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
-        public bool DeleteProyectoContacto(Entidad proyecto)
+        public Boolean DeleteProyectoContacto(Entidad proyecto)
         {
             throw new NotImplementedException();
         }

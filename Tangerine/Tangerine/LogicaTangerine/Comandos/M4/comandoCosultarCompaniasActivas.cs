@@ -25,9 +25,15 @@ namespace LogicaTangerine.Comandos.M4
        /// <returns>boolean true or false </returns>
         public override List<Entidad> Ejecutar()
         {
-
-             IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
-            return C.ConsultarCompaniasActivas();
+            try
+            {
+                IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+                return C.ConsultarCompaniasActivas();
+            }
+            catch (NotImplementedException)
+            {
+                return null;
+            }
         }
     }
 }
