@@ -13,7 +13,7 @@ namespace Tangerine_Contratos.M10
 
          String button {get; set; }
 
-         int request { get;}
+        // int request { get;}
         
         }
 

@@ -54,14 +54,14 @@ namespace Tangerine.GUI.M1
             }
         }
 
-        public int request
-        {
-            get
-            {
-                return int.Parse(Request.QueryString["id"]);
-            }
+        //public int request
+        //{
+        //    get
+        //    {
+        //        return int.Parse(Request.QueryString["id"]);
+        //    }
             
-        }
+        //}
 
          
 

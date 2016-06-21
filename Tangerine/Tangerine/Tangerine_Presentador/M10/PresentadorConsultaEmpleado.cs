@@ -131,14 +131,14 @@ namespace Tangerine_Presentador.M10
 
         public void CambiarEstatus() 
         {
-            int idEmpleado;
-            idEmpleado = vista.request;
-            Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.obtenerEntidad();
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)estatusId).Id = idEmpleado;            
-            LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado comando =
-            (LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado)LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);
+            //int idEmpleado;
+            //idEmpleado = vista.request;
+            //Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.obtenerEntidad();
+            //((DominioTangerine.Entidades.M10.EmpleadoM10)estatusId).Id = idEmpleado;            
+            //LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado comando =
+            //(LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado)LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);
 
-            Confirmacion = comando.Ejecutar();
+            //Confirmacion = comando.Ejecutar();
         }
 
     }
