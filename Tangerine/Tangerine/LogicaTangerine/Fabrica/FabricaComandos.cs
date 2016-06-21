@@ -756,7 +756,12 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoObtenerEstado(Pais);
         }
-        
+        public static Comando<bool> ComandoAgregarEmpleado(Entidad empleado)
+        {
+            return new LogicaTangerine.Comandos.M10.ComandoAgregarEmpleado(empleado);
+        }
+
+
 
 
         #endregion

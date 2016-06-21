@@ -26,13 +26,13 @@
                   <h4>Datos Personales</h4>
                   <div class="form-group ">
                     <label for="Cedula">Cédula</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="Cedula" class="form-control" maxlength="20" placeholder="Introduzca cédula" required>
+                    <input type="text" runat="server" id="Cedula" class="form-control" maxlength="9" placeholder="Introduzca cédula" required>
                       <asp:RegularExpressionValidator id="RegularExpressionValidator1"
                             ControlToValidate="Cedula"
                             ValidationExpression="\d+"
                             Display="Static"
                             EnableClientScript="true"
-                            ErrorMessage="Por favor inserte un valor numerico"
+                            ErrorMessage="Por favor inserte un valor numerico" ForeColor="Red"
                             runat="server"/>
                   </div>
                   <div class="form-group ">

@@ -23,7 +23,7 @@ namespace Tangerine.GUI.M1
 
         public CrearEmpleado()
         {
-            presentador= new PresentadorCrearEmpleado(this);
+            presentador = new PresentadorCrearEmpleado(this);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M1
                 presentador.ObtenerCargos();
             }
             #endregion
-        }       
+        }
 
         protected void SelectedJob_Change(object sender, EventArgs e)
         {
@@ -55,8 +55,8 @@ namespace Tangerine.GUI.M1
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
 
-            presentador.SelectedPaisChanged();      
-            
+            presentador.SelectedPaisChanged();
+
 
         }
 
@@ -73,33 +73,11 @@ namespace Tangerine.GUI.M1
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             presentador.AgregarEmpleado();
-
-            LogicaM10 logicEmployee = new LogicaM10();
             
-            /*Empleado empleado = new Empleado(0, FirstName.Value, SecondNamee.Value, FirstLastName.Value,
-                                                SecondLastName.Value, SelectedListGender.SelectedItem.Text.ToString(),
-                                                int.Parse(Cedula.Value),
-                                                DateTime.ParseExact(DateEmployee.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                                active, LevelListStudy.SelectedItem.Text, EmailPerson.Value, jobForEmployee(),
-                                                newAddress());
-            
-             */
-            Empleado empleado = new Empleado();
-            logicEmployee.AddNewEmpleado(empleado);
             Response.Redirect("../M1/EmpleadosAdmin.aspx");
         }
 
-        private List<LugarDireccion> newAddress()
-        {
-            List<LugarDireccion> direccion = new List<LugarDireccion>();
-
-            direccion.Add(new LugarDireccion(SelectedListCountry.SelectedItem.Text.ToString(), "Pais"));
-            direccion.Add(new LugarDireccion(SelectedListState.SelectedItem.Text.ToString(), "Estado"));
-            direccion.Add(new LugarDireccion(CityAddress.Value, "Ciudad"));
-            direccion.Add(new LugarDireccion(AddresEspecific.Value, "Direccion"));
-
-            return direccion;
-        }
+       
 
         private Cargo jobForEmployee()
         {
@@ -158,48 +136,48 @@ namespace Tangerine.GUI.M1
             SelectedListState.Items.Insert(0, "Seleccione un Estado");
             SelectedListGender.DataBind();
         }
- 
-#region Contrato
+
+        #region Contrato
 
         DropDownList IContratoCrearEmpleado.IcomboGenero
         {
-            get{return SelectedListGender;}
-            set{SelectedListGender = value;}
+            get { return SelectedListGender; }
+            set { SelectedListGender = value; }
         }
 
         DropDownList IContratoCrearEmpleado.IcomboNivelEstudio
         {
-            get{return LevelListStudy;}
-            set { LevelListStudy = value;}
+            get { return LevelListStudy; }
+            set { LevelListStudy = value; }
         }
 
         DropDownList IContratoCrearEmpleado.IcomboPais
         {
-            get{return SelectedListCountry;}
-            set{SelectedListCountry = value;}
+            get { return SelectedListCountry; }
+            set { SelectedListCountry = value; }
         }
 
         DropDownList IContratoCrearEmpleado.IcomboCargo
         {
-            get{return SelectedListJob;}
-            set{SelectedListJob = value;}
+            get { return SelectedListJob; }
+            set { SelectedListJob = value; }
         }
-        DropDownList IContratoCrearEmpleado.IcomboEstado   
+        DropDownList IContratoCrearEmpleado.IcomboEstado
         {
-            get {return SelectedListState;}
-            set {SelectedListState = value;}
+            get { return SelectedListState; }
+            set { SelectedListState = value; }
         }
 
         String IContratoCrearEmpleado.ItextCedula
         {
-            get {return Cedula.Value;}
-            set {Cedula.Value = value;} 
+            get { return Cedula.Value; }
+            set { Cedula.Value = value; }
         }
 
         String IContratoCrearEmpleado.ItextFirstName
         {
             get { return FirstName.Value; }
-            set { FirstName.Value = value; } 
+            set { FirstName.Value = value; }
         }
         String IContratoCrearEmpleado.ItextSecondNamee
         {
@@ -256,8 +234,8 @@ namespace Tangerine.GUI.M1
             get { return PhonePerson.Value; }
             set { PhonePerson.Value = value; }
         }
-               
 
-#endregion
+
+        #endregion
     }
 }

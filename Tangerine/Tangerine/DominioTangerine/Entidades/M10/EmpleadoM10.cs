@@ -63,13 +63,22 @@ namespace DominioTangerine.Entidades.M10
         private string emp_Direccion;
         private int emp_LugId;
         private string emp_cargo;
-
-      
-
+        private string emp_telefono;      
         private string address;
+        private List<Entidad> addressComplete = new List<Entidad>();
+
+        public List<Entidad> AddressComplete
+        {
+            get { return addressComplete; }
+            set { addressComplete = value; }
+        }
+
+       
         public CargoM10 jobs;
         private List<Proyecto> listProjects = new List<Proyecto>();
-        private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
+        private List<LugarDireccion> listaDireccion = new List<LugarDireccion>();
+
+        
         //private int empId;
         //private string empPNombre;
         //private string empSNombre;
@@ -292,6 +301,24 @@ namespace DominioTangerine.Entidades.M10
 
 
         #region Get's Set's
+        
+       
+
+        public string Address
+        {
+          get { return address; }
+          set { address = value; }
+        }
+        public List<LugarDireccion> ListaDireccion
+        {
+            get { return listaDireccion; }
+            set { listaDireccion = value; }
+        }
+        public string Emp_telefono
+        {
+            get { return emp_telefono; }
+            set { emp_telefono = value; }
+        }
         public int Emp_num_ficha
         {
             get
@@ -473,21 +500,6 @@ namespace DominioTangerine.Entidades.M10
             }
         }
 
-        public List<LugarDireccion> AddressComplete
-        {
-            get
-            {
-                return this.addressComplete;
-            }
-            set
-            {
-                this.addressComplete = value;
-            }
-
-
-
-        }
-
         public string Emp_Direccion
         {
             get { return emp_Direccion; }
@@ -517,13 +529,7 @@ namespace DominioTangerine.Entidades.M10
 
         #endregion
 
-
-
-
-
-
-
-
+                
         //#region Get's Set's
         //public string Address
         //{
