@@ -203,6 +203,18 @@ namespace LogicaTangerine.Fabrica
                 return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAPagina( paginaAVerificar, nombreRol );
             }
 
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultaUsuarioLogin
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin(DominioTangerine.Entidad usuario)
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin(usuario);
+            }
+
+
+
             #endregion
         
         #endregion
@@ -539,64 +551,153 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 7
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosProyectos
+        /// </summary>
+        /// <returns>comando con un lista de entidades tipo proyecto</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProyectos()
         {
             return new ComandoConsultarTodosProyectos();
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarXIdProyecto
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con una entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoConsultarXIdProyecto(Entidad proyecto)
         {
             return new ComandoConsultarXIdProyecto(proyecto);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosXIdProyecto
+        /// </summary>
+        /// <param name="contacto">entidad de tipo contacto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con un lista de entidades tipo contacto</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarContactosXIdProyecto(Entidad contacto)
         {
             return new ComandoConsultarContactosXIdProyecto(contacto);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosGerentes
+        /// </summary>
+        /// <returns>comando con un lista de entidades tipo empleado</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosGerentes()
         {
             return new ComandoConsultarTodosGerentes();
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosProgramadores
+        /// </summary>
+        /// <returns>comando con un lista de entidades tipo empleado</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProgramadores()
         {
             return new ComandoConsultarTodosProgramadores();
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarXIdProyecto
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
         {
             return new ComandoConsultarXIdProyecto(proyecto);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarXIdProyectoContacto
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoConsultarXIdProyectoContacto(Entidad comando)
         {
             return new ComandoConsultarXIdProyectoContacto(comando);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactoNombrePropuestaId
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoContactNombrePropuestaId(Entidad proyecto) 
         {
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoConsultarAcuerdoPagoMensual utilizado por M8
+        /// para la generación de facturas
+        /// </summary>
+        /// <returns>Comando que se utiliza para consultar el acuerdo de pago de un proyecto</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarAcuerdoPagoMensual()
         {
             return new ComandoConsultarAcuerdoPagoMensual();
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoCalcularPagoMensual utilizado por M8
+        /// para la generación de facturas
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
         public static Comando<Double> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
         {
             return new ComandoCalcularPagoMensual(proyecto);
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoGenerarCodigoProyecto
+        /// </summary>
+        /// <param name="propuesta">Entidad de tipo propuesta</param>
+        /// <returns>Comando que se utiliza para generar el código de un proyecto</returns>
         public static Comando<String> ObtenerComandoGenerarCodigoProyecto(Entidad propuesta)
         {
             return new ComandoGenerarCodigoProyecto(propuesta);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoModificarProyecto
+        /// </summary>
+        /// <param name="_propuesta">lista de entidades de tipo propuesta sobre la cual se va a trabajar el comando</param>
+        /// <param name="_proyecto">lista de entidades de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <param name="_trabajadores">lista de entidades de tipo trabajadores sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con bolean true o false</returns>
         public static Comando<Boolean> ObtenerComandoModificarProyecto(Entidad _propuesta, Entidad _proyecto, List<Entidad> _trabajadores)
         {
             return new ComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarProyecto
+        /// </summary>
+        /// <param name="proyecto">proyecto de tipo Entidad que será insertado en la base de datos</param>
+        /// <returns>Comando para agregar un proyecto a la BD.</returns>
+        public static Comando<bool> ObtenerComandoAgregarProyecto(Entidad proyecto)
+        {
+            return new ComandoAgregarProyecto(proyecto);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoUltimoIdProyecto
+        /// </summary>
+        /// <returns>Id del último proyecto insertado en la BD.</returns>
+        public static Comando<int> ObtenerComandoUltimoIdProyecto()
+        {
+            return new ComandoUltimoIdProyecto();
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarEmpleados.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los empleados.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<bool> ObtenerComandoAgregarEmpleados (Entidad proyecto)
+        {
+            return new ComandoAgregarEmpleados(proyecto);
         }
         #endregion
 
@@ -756,8 +857,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoObtenerEstado(Pais);
         }
-        
 
+        public static Comando<bool> HabilitarEmpleado(Entidad estatus)
+        {
+            return new LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado(estatus);
+        }
 
         #endregion
     }

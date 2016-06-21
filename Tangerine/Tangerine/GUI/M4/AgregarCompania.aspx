@@ -49,7 +49,7 @@
                         <!--Direccion-->
                         <div class="form-group" runat="server">
                             <label for="InputLugar">Dirección</label> <label for="Requerido" style="color: red;">*</label>
-                            <select runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></select>
+                            <asp:DropDownList runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></asp:DropDownList>
                         </div>
                         <!--Email-->
                         <div class="form-group" runat="server">

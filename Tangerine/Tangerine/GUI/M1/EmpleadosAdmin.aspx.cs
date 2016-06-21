@@ -54,6 +54,19 @@ namespace Tangerine.GUI.M1
             }
         }
 
+        //public int request
+        //{
+        //    get
+        //    {
+        //        return int.Parse(Request.QueryString["id"]);
+        //    }
+            
+        //}
+
+         
+
+
+
          public EmpleadosAdmin()
         {
             this.presentador = new PresentadorConsultaEmpleado(this); 
@@ -64,20 +77,15 @@ namespace Tangerine.GUI.M1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            presentador.CambiarEstatus();
+
             if (!IsPostBack)
             {
                 presentador.cargarConsultarEmpleados();
 
-                
             }
 
         }
 
-
-
-
-
-
-       
     }
 }
