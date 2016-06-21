@@ -21,6 +21,12 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Metodo para eliminar los empleados asociados a un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto con el ID para buscar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>true si se ejecuto exitosamente</returns>
         public bool DeleteProyectoEmpleado(Entidad proyecto)
         {
             try
@@ -35,7 +41,7 @@ namespace DatosTangerine.DAO.M7
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
                 //Se manda a ejecutar en BDConexion el stored procedure M7_EliminarProyecto y todos los parametros que recibe
-                List<Resultado> results = EjecutarStoredProcedure(Resource_M7.DeleteProyectoContacto, parameters);
+                List<Resultado> results = EjecutarStoredProcedure(Resource_M7.DeleteProyectoEmpleado, parameters);
 
             }
             catch (Exception ex)
@@ -47,6 +53,11 @@ namespace DatosTangerine.DAO.M7
             return true;
         }
 
+        /// <summary>
+        /// Metodo para consultar todos los empleados de tipo programador en la base de datos.
+        /// </summary>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>lista de Empleados existentes en la base de datos</returns>
         public List<Entidad> ConsultarTodosProgramadores()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -131,6 +142,12 @@ namespace DatosTangerine.DAO.M7
             return listEmpleado;
         }
 
+        /// <summary>
+        /// Metodo para consultar todos los empleados asociados a un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto con el ID para buscar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Lista de Empleados asociados al proyecto</returns>
         public bool ObtenerListaEmpleados(Entidad proyecto)
         {
 
@@ -167,9 +184,45 @@ namespace DatosTangerine.DAO.M7
             }
             return true;
         }
+
+        /// <summary>
+        /// Metodo para agregar un empleados asociado a un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="proyecto">objeto de tipo proyecto con el ID para agregar en BD</param>
+        ///  <param name="empleado">objeto de tipo empleado con el ID para agregar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>true si se ejecuto exitosamente</returns>
+        public bool AgregarProyectoEmpleados(Entidad proyecto, Entidad empleado)
+        {
+            {
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+                    Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    theParam = new Parametro(Resource_M7.ParamPEIdEmpleado, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Empleado)empleado).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
+                    List<Resultado> results = EjecutarStoredProcedure(Resource_M7.AddProyectoEmpleado, parameters);
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                    return false;
+                }
+
+            }
+            return true;
+        }
         #endregion
 
-        #region IDAO
+        #region DAO
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
@@ -185,6 +238,11 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Metodo para consultar todos los empleados en la base de datos.
+        /// </summary>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Lista de entidad empleados</returns>
         public List<Entidad> ConsultarTodos()
         {
 
@@ -270,5 +328,6 @@ namespace DatosTangerine.DAO.M7
             return listEmpleado;
         }
         #endregion
+
     }
 }
