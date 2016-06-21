@@ -16,5 +16,7 @@ namespace DatosTangerine.InterfazDAO.M7
         List<Entidad> ConsultarTodosProgramadores();
 
         bool ObtenerListaEmpleados(Entidad proyecto);
+
+        Boolean AgregarProyectoEmpleados(Entidad proyecto, Entidad empleado);
     }
 }
