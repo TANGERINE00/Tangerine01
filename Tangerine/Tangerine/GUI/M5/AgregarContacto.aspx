@@ -33,7 +33,11 @@
 					        <label>Departamento <a style="color:rgb(255, 0, 0);">*</a></label>
                             <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9a-zA-Z ]+$" class="form-control" id="departamento" name ="departamento" required  oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">          
 					        <label>Cargo <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="cargo" name ="cargo" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">
+                            <select style="margin-bottom:3%" runat="server" class="form-control" id="cargoLB" name="cargosLB">
+                                <option>Gerente</option>
+                                <option>Director</option>
+                                <option>Programador</option>
+                            </select>
                             <label>Telefono</label>
                             <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9]*$" class="form-control" id="telefono" name="telefono" required oninvalid="setCustomValidity('Campo obligatorio, introduzca solo números. Ej: 02129876543')" oninput="setCustomValidity('')">
                             <label>Correo</label>

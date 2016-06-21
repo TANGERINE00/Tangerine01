@@ -51,10 +51,10 @@ namespace Tangerine.GUI.M5
             set { this.telefono.Value = value; }
         }
 
-        public string input_cargo
+        public string item_cargo
         {
-            get { return this.cargo.Value; }
-            set { this.cargo.Value = value; }
+            get { return this.cargoLB.Value; }
+            set { this.cargoLB.Value = value; }
         }
 
         public int GetTypeComp

@@ -12,7 +12,7 @@ namespace Tangerine_Contratos.M5
         string input_nombre { get; set; }
         string input_apellido { get; set; }
         string input_correo { get; set; }
-        string input_cargo { get; set; }
+        string item_cargo { get; set; }
         string input_departamento { get; set; }
         string input_telefono { get; set; }
         int GetTypeComp { get; }
