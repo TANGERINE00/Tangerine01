@@ -588,6 +588,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoGenerarCodigoProyecto(propuesta);
         }
+
+        public static Comando<Boolean> ObtenerComandoModificarProyecto(Entidad _propuesta, Entidad _proyecto, List<Entidad> _trabajadores)
+        {
+            return new ComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
+        }
         #endregion
 
         #region Modulo 8

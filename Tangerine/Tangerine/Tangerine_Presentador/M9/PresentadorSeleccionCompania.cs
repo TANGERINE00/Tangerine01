@@ -57,7 +57,8 @@ namespace Tangerine_Presentador.M9
 
                         //Boton para cargar los pagos asociadas a cada compañia
                         vista.company += RecursoPresentadorM9.BotonPagos + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).Id +
-                            RecursoPresentadorM9.boton_cerrar_id;   
+                            RecursoPresentadorM9.boton_cerrar_id;
+                        vista.company += RecursoPresentadorM9.CerrarTR;
                     }
 
                 }

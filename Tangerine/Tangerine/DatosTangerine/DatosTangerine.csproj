@@ -89,6 +89,11 @@
     <Compile Include="DAO\M7\DaoProyecto.cs" />
     <Compile Include="DAO\M7\DaoProyectoContacto.cs" />
     <Compile Include="DAO\M7\DaoProyectoEmpleado.cs" />
+    <Compile Include="DAO\M7\Resource_M7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_M7.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\M8\DAOFactura.cs" />
     <Compile Include="DAO\M8\ResourceFactura.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -255,6 +260,10 @@
     <EmbeddedResource Include="DAO\M6\RecursoDAOPropuesta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoDAOPropuesta.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\M7\Resource_M7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_M7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\M8\ResourceFactura.resx">
       <Generator>ResXFileCodeGenerator</Generator>
