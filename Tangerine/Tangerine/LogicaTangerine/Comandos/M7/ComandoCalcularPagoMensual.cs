@@ -22,7 +22,9 @@ namespace LogicaTangerine.Comandos.M7
         }
 
         /// <summary>
-        /// Método Override para ejecutar el comando
+        /// Método Override para ejecutar el comando utilizado por M8
+        /// y calcular el pago mensual de un proyecto para la generación
+        /// de las facturas.
         /// </summary>
         /// <returns></returns>
         public override Double Ejecutar()
