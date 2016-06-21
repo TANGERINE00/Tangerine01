@@ -49,8 +49,8 @@
                         </div>
 
                         <div class="form-group col-md-6" runat="server">
-                            <h4 style="display:inline-block;"><label for="Requerimientos">Requerimientos</label></h4>
-                            <div><h5><asp:Label runat="server" ID="requerimientos"> </asp:Label></h5></div>
+                            <h4 style="display:block;"><label for="Requerimientos">Requerimientos</label></h4>
+                            <asp:Literal runat="server" ID="requerimientos"> </asp:Literal>
                         </div>    
                        
                         <div class="form-group col-md-10" runat="server">
