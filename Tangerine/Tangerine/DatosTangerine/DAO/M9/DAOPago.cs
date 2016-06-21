@@ -13,9 +13,13 @@ namespace DatosTangerine.DAO.M9
     public class DAOPago : DAOGeneral , IDAOPago
     {
     
+        /// <summary>
+        /// Metodo para Agregar un Pago a la BD
+        /// </summary>
+        /// <param name="pagoParam">Entidad con la informacion que se va a agregar a la BD</param>
+        /// <returns></returns>
         public bool Agregar (Entidad pagoParam)
         {
-            //Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9();
             
             DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
             List<Parametro> parametros = new List<Parametro>();
@@ -48,6 +52,12 @@ namespace DatosTangerine.DAO.M9
             }
         }
     
+        /// <summary>
+        /// Metodo para cambiar el Status de la factura a pagada
+        /// </summary>
+        /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
+        /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
+        /// <returns></returns>
         public bool CargarStatus (int factura, int status)
         {
             List<Parametro> parametros = new List<Parametro>();
