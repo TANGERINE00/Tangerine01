@@ -228,6 +228,15 @@ namespace DominioTangerine.Fabrica
             /// Se crea la instancia sin atributos de ListaGenericaM2
             /// </summary>
             /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            static public Entidad crearListaGenericaVaciaMenu()
+            {
+                return new ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>();
+            }
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
             static public Entidad crearListaGenericaVacia()
             {
                 return new ListaGenericaM2<Entidad>();
