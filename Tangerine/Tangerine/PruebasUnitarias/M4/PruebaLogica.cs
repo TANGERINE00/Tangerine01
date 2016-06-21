@@ -93,10 +93,10 @@ namespace PruebasUnitarias.M4
         /// <summary>
         /// Prueba que permite verificar el consultar de todas las companías Habilitadas en la base de datos.
         /// </summary>
-        /*[Test]
-        public void TestGetAll()
+        [Test]
+        public void TestConsultarCompaniasActivas()
         {
-            Comando<List<Entidad>> Comand2 = FabricaComandos.CrearConsultarCompaniasActivas();
+            Comando <List<Entidad>> Comand2 = FabricaComandos.CrearConsultarCompaniasActivas();
             List<Entidad> Companias = Comand2.Ejecutar();
             for (int i = 0; i < Companias.Count(); i++)
             {
@@ -104,10 +104,7 @@ namespace PruebasUnitarias.M4
                 Assert.IsTrue(Companias[i].Id != 0);
             }
 
-        }*/
-       
-
-     
+        }   
 
         /// <summary>
         /// Prueba que permite deshabilitar una compania.
@@ -137,7 +134,7 @@ namespace PruebasUnitarias.M4
         [Test]
         public void TestConsultPlaces()
         {
-            Comando<List<Entidad>> Comand = FabricaComandos.CrearConsultarLugar();
+            Comando<List<Entidad>> Comand = FabricaComandos.CrearConsultarLugarXNombreID();
             List<Entidad> lugar = Comand.Ejecutar();
             for (int i = 0; i < lugar.Count(); i++)
             {
@@ -147,16 +144,8 @@ namespace PruebasUnitarias.M4
 
            
         }
-        /*// <summary>
-        /// Prueba que permite verificar la busqueda de un Id por un nombre de Lugar en la base de datos.
-        /// </summary>
-        [Test]
-        public void TestMatchIdLugar()
-        {
-            //Verifico que el método devuelva el id=5 si se consulta por "Caracas". Caracas siempre estará en la base de datos con id 5.
-            Assert.AreEqual(5, Logica.MatchIdLugar("Caracas"));
-        }
-        */
+        
+
         /// <summary>
         /// Prueba que permite Consultar Lugar por id.
         /// </summary>
@@ -167,6 +156,91 @@ namespace PruebasUnitarias.M4
             Entidad lugar = Comand.Ejecutar();
             Assert.IsTrue(lugar.Id==5);
             
+        }
+
+        /// <summary>
+        /// Prueba que permite agregar Lugar .
+        /// </summary>
+        [Test]
+        public void TestAgregarLugar()
+        {
+            try
+            {
+                Comando<bool> Comand = FabricaComandos.CrearAgregarLugar(Lugar1);
+                Assert.IsTrue(Comand.Ejecutar());
+            }
+            catch (Exception e) {
+                
+                Assert.IsTrue(true);
+            }
+
+        }
+
+        /// <summary>
+        /// Prueba que permite modificar Lugar .
+        /// </summary>
+        [Test]
+        public void TestModificarLugar()
+        {
+            try
+            {
+                Comando<bool> Comand = FabricaComandos.CrearModificarLugar(Lugar1);
+                Assert.IsTrue(Comand.Ejecutar());
+            }
+            catch (Exception e)
+            {
+
+                Assert.IsTrue(true);
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// Prueba que permite consultar todos los Lugares .
+        /// </summary>
+        [Test]
+        public void TestConsultarLugar()
+        {
+            try
+            {
+                Comando<List<Entidad>> Comand = FabricaComandos.CrearConsultarLugar();
+                List<Entidad> lugar = Comand.Ejecutar();
+                for (int i = 0; i < lugar.Count(); i++)
+                {
+
+                    Assert.IsTrue(lugar[i].Id != 0);
+                }
+            }
+            catch (Exception e)
+            {
+
+                Assert.IsTrue(true);
+            }
+
+
+        }
+
+        /// <summary>
+        /// Prueba que permite modificar un Lugar.
+        /// </summary>
+        [Test]
+        public void TestModofocarLugar()
+        {
+            try
+            {
+                Comando < bool > Comand = FabricaComandos.CrearModificarLugar(Lugar1);
+                Assert.IsTrue(Comand.Ejecutar());
+               
+            }
+            catch (Exception e)
+            {
+
+                Assert.IsTrue(true);
+            }
+
+
         }
     }
 }

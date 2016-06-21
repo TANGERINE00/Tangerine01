@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security.AntiXss;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Tangerine_Contratos.M2;
@@ -45,11 +46,19 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, int.Parse(Request.QueryString["idEmpleado"]));
-            if (!IsPostBack)
+            try
             {
-                presentador.inicioVista(); 
+                presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idEmpleado"], false)));
+                if (!IsPostBack)
+                {
+                    presentador.inicioVista();
+                }
             }
+            catch (Exception ex)
+            {
+                Response.Redirect("../M1/DashBoard.aspx");
+            }
+
         }
 
         /// <summary>

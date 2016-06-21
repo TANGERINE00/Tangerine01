@@ -9,7 +9,11 @@ using LogicaTangerine;
 
 namespace Tangerine_Presentador.M9
 {
-   public class PresentadorCargarPago
+    /// <summary>
+    /// Constructor del Presentador para implementar en GUI
+    /// </summary>
+    /// <param name="vista">Interfaz del Contrato con firma de metodos utilizados por el Presentador</param>
+    public class PresentadorCargarPago
     {
         IContratoCargarPago vista;
 
@@ -18,6 +22,10 @@ namespace Tangerine_Presentador.M9
             this.vista = vista;
         }
     
+       /// <summary>
+       /// Metodo para llenar los campos para Agregar un pago
+       /// </summary>
+       /// <param name="numeroFactura">Entero, representa el Id de la factura que se va a pagar</param>
    public void LlenarPorId (int numeroFactura)
         {
             DominioTangerine.Entidades.M8.Facturacion fact =
@@ -51,6 +59,9 @@ namespace Tangerine_Presentador.M9
 
         }
 
+      /// <summary>
+      /// Metodo para agregar un pago y cambiar status de una factura
+      /// </summary>
        public void AgregarPago()
    {
 

@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesTangerine.M4
 {
-    class ExceptionM4Tangerine : Exception
+    public class ExceptionM4Tangerine : Exception
     {
-        public ExceptionM4Tangerine(String codigo, String mjs, Exception inner) : base ( mjs , inner ) { }
-        
+
+
+        public ExceptionM4Tangerine(String codigo, String mjs, Exception inner) : base(mjs, inner) { }
+
+       
     
     }
 }
