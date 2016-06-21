@@ -9,14 +9,23 @@ using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3
 {
-    public class ComandoListarTodosClientesPotenciales : Comando<List<Entidad>>
+    public class ComandoPromoverClientePotencial : Comando<bool>
     {
-        public override List<Entidad> Ejecutar()
+        /// <summary>
+        /// Constructor del comando
+        /// </summary>
+        /// <param name="parametro">Cliente Potencial a promover</param>
+        public ComandoPromoverClientePotencial(Entidad parametro)
+        {
+            LaEntidad = parametro;
+        }
+
+        public override bool Ejecutar()
         {
             try
             {
                 IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-                return daoClientePotencial.ConsultarTodos();
+                return daoClientePotencial.Promover(this.LaEntidad);
             }
             catch (Exception e)
             {

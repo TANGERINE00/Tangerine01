@@ -122,7 +122,8 @@
                         <div class="input-group input-group">
                             <div class="input-group-btn">
 
-                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server">
+                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server" 
+                                    AutoPostBack="true" OnSelectedIndexChanged="comboDuracion_SelectedIndexChanged">
                                 </asp:DropDownList>
 
                             </div>
@@ -132,7 +133,6 @@
                         </div>
 
                     </div>
-
 
                     <div class="form-group date">
                         <label>Fecha estimada Incio:</label>

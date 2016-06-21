@@ -17,8 +17,8 @@ namespace Tangerine_Contratos.M5
         string botonVolver { get; set; }
         string button { get; set; }
         string nombreEmpresa { get; set; }
-        int getTypeComp { get; }
-        int getIdComp { get; }
+        int getTypeComp();
+        int getIdComp();
         int IdCont();
         int StatusAccion();
         string CargarBotonNuevoContacto( int typeComp, int idComp );

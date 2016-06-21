@@ -166,21 +166,21 @@ namespace Tangerine_Presentador.M5
             try
             {
                 Entidad compania = FabricaEntidades.crearCompaniaVacia();
-                compania.Id = _vista.getIdComp;
+                compania.Id = _vista.getIdComp();
 
                 Comando<List<Entidad>> comandoLista = 
                                        FabricaComandos.CrearComandoConsultarContactosPorCompania( compania,
-                                                                                                  _vista.getTypeComp );
+                                                                                                _vista.getTypeComp() );
 
                 List<Entidad> listaContactos = comandoLista.Ejecutar();
 
                 foreach ( Entidad entidad in listaContactos )
                 {
                     ContactoM5 contacto = ( ContactoM5 ) entidad;
-                    LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
+                    LlenarTabla( contacto, _vista.getTypeComp(), _vista.getIdComp() );
                 }
 
-                _vista.CargarBotonNuevoContacto( _vista.getTypeComp, _vista.getIdComp );
+                _vista.CargarBotonNuevoContacto( _vista.getTypeComp(), _vista.getIdComp() );
             }
             catch ( Exception ex )
             {
@@ -193,7 +193,7 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void CargarPagina()
         {
-            CargarBotonVolver( _vista.getTypeComp, _vista.getIdComp );
+            CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
             EliminarContacto();
             Alertas();
             LlenarTablaContactos();

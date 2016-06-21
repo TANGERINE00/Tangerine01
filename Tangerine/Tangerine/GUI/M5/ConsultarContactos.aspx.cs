@@ -12,6 +12,7 @@ using LogicaTangerine.M4;
 using Tangerine_Contratos.M5;
 using Tangerine_Presentador.M5;
 using DominioTangerine.Entidades.M5;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M5
 {
@@ -60,13 +61,33 @@ namespace Tangerine.GUI.M5
             set { this.empresa.Text = value; }
         }
 
-        public int getTypeComp
+        public int getTypeComp()
         {
-            get { return int.Parse( Request.QueryString[ ResourceGUIM5.typeComp ] ); }
+            try 
+            {
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.typeComp ],
+                                                               false ) ); 
+            }
+            catch ( Exception ex )
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
         }
-        public int getIdComp
+        public int getIdComp()
         {
-            get { return int.Parse( Request.QueryString[ ResourceGUIM5.idComp ] ); }
+            try 
+            {
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.idComp ],
+                                                               false ) ); 
+            }
+            catch ( Exception ex )
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
         }
 
         public int IdCont()
