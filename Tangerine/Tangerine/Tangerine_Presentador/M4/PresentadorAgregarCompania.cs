@@ -40,6 +40,7 @@ namespace Tangerine_Presentador.M4
                                                                                             1, int.Parse(_vista.inputPresupuesto1), int.Parse(_vista.inputPlazoPago1), _idLugar);
             Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearAgregarCompania(compania);
             comando.Ejecutar();
+
         }
 
         public void CargarLugares() {
