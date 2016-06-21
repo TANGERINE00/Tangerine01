@@ -72,6 +72,26 @@ namespace DominioTangerine.Entidades.M7
             this._idgerente = id_gerente;
         }
 
+        public Proyecto(string nombre, string codigo, DateTime fecha_inicio, DateTime fecha_estimada_fin,
+         double costo, string descripcion, string realizacion, string estatus, string razon, string acuerdopago, int id_propuesta, int id_responsable,
+         int id_gerente, List<Entidad> empleados, List<Entidad> contactos)
+        {
+            this._nombre = nombre;
+            this._codigo = codigo;
+            this._fechainicio = fecha_inicio;
+            this._fechaestimadafin = fecha_estimada_fin;
+            this._costo = costo;
+            this._descripcion = descripcion;
+            this._realizacion = realizacion;
+            this._estatus = estatus;
+            this._razon = razon;
+            this._acuerdopago = acuerdopago;
+            this._idpropuesta = id_propuesta;
+            this._idcompania = id_responsable;
+            this._idgerente = id_gerente;
+            this._empleados = empleados;
+            this._contacto = contactos;
+        }
 
         #endregion
 

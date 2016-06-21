@@ -50,16 +50,6 @@ namespace Tangerine_Presentador.M7
             DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
             Double _costo = Convert.ToDouble(_vista.Costo);
 
-            ///Se crea un nuevo proyecto con la información de la vista.
-            Entidad nuevoProyecto = FabricaEntidades.CrearProyecto(_vista.NombreProyecto,
-                                                   _vista.CodigoProyecto, _fechaIni, _fechaFin, _costo, propuesta.Descripcion,
-                                                     "0", "En desarrollo", "", propuesta.Acuerdopago, int.Parse(propuesta.CodigoP),
-                                                     int.Parse(propuesta.IdCompañia), 1);
-
-            ///Se crea un nuevo comando para agregarel proyecto en la base de datos y se ejecuta.
-            Comando<bool> comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(nuevoProyecto);
-            comandoBool.Ejecutar();
-
             ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
             for (int i = 0; i < _vista.inputPersonal.Items.Count; i++)
             {
@@ -74,12 +64,34 @@ namespace Tangerine_Presentador.M7
             {
                 if (_vista.inputEncargado.Items[i].Selected)
                 {
-                    listaContactos.Add(programadores[i]);
+                    listaContactos.Add(contactos[i]);
                 }
             }
 
+
+
+            ///Se crea un nuevo proyecto con la información de la vista.
+            Entidad nuevoProyecto = FabricaEntidades.CrearProyectoConListas(_vista.NombreProyecto,
+                                    _vista.CodigoProyecto, _fechaIni, _fechaFin, _costo, propuesta.Descripcion,
+                                    "0", "En desarrollo", "", propuesta.Acuerdopago, int.Parse(propuesta.CodigoP),
+                                    int.Parse(propuesta.IdCompañia), 1, listaProgramadores, listaContactos);
+
+            ///Se crea un nuevo comando para agregarel proyecto en la base de datos y se ejecuta.
+            Comando<bool> comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(nuevoProyecto);
+            comandoBool.Ejecutar();
             Comando<int> comandoIdProyecto = FabricaComandos.ObtenerComandoUltimoIdProyecto();
             int idProyecto = comandoIdProyecto.Ejecutar();
+
+            nuevoProyecto.Id = idProyecto;
+
+            Comando<bool> comandoEmpleados = FabricaComandos.ObtenerComandoAgregarEmpleados(nuevoProyecto);
+            comandoEmpleados.Ejecutar();
+
+            /*DominioTangerine.Entidades.M7.Proyecto tal = (DominioTangerine.Entidades.M7.Proyecto)nuevoProyecto;
+            tal.set_empleados(listaProgramadores);
+            tal.set_contactos(listaContactos);*/
+
+
          
         }
 

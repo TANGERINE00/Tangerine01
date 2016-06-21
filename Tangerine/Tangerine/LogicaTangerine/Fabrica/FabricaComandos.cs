@@ -690,6 +690,15 @@ namespace LogicaTangerine.Fabrica
             return new ComandoUltimoIdProyecto();
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarEmpleados.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los empleados.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<bool> ObtenerComandoAgregarEmpleados (Entidad proyecto)
+        {
+            return new ComandoAgregarEmpleados(proyecto);
+        }
         #endregion
 
         #region Modulo 8
