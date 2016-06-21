@@ -539,41 +539,78 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 7
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosProyectos
+        /// </summary>
+        /// <returns>comando con un lista de entidades tipo proyecto</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProyectos()
         {
             return new ComandoConsultarTodosProyectos();
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarXIdProyecto
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con una entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoConsultarXIdProyecto(Entidad proyecto)
         {
             return new ComandoConsultarXIdProyecto(proyecto);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactosXIdProyecto
+        /// </summary>
+        /// <param name="contacto">entidad de tipo contacto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con un lista de entidades tipo contacto</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarContactosXIdProyecto(Entidad contacto)
         {
             return new ComandoConsultarContactosXIdProyecto(contacto);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosGerentes
+        /// </summary>
+        /// <returns>comando con un lista de entidades tipo empleado</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosGerentes()
         {
             return new ComandoConsultarTodosGerentes();
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosProgramadores
+        /// </summary>
+        /// <returns>comando con un lista de entidades tipo empleado</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosProgramadores()
         {
             return new ComandoConsultarTodosProgramadores();
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarXIdProyecto
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
         {
             return new ComandoConsultarXIdProyecto(proyecto);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarXIdProyectoContacto
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoConsultarXIdProyectoContacto(Entidad comando)
         {
             return new ComandoConsultarXIdProyectoContacto(comando);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoConsultarContactoNombrePropuestaId
+        /// </summary>
+        /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con entidad tipo proyecto</returns>
         public static Comando<Entidad> ObtenerComandoContactNombrePropuestaId(Entidad proyecto) 
         {
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
@@ -594,6 +631,13 @@ namespace LogicaTangerine.Fabrica
             return new ComandoGenerarCodigoProyecto(propuesta);
         }
 
+        /// <summary>
+        /// Método para instancear el ComandoModificarProyecto
+        /// </summary>
+        /// <param name="_propuesta">lista de entidades de tipo propuesta sobre la cual se va a trabajar el comando</param>
+        /// <param name="_proyecto">lista de entidades de tipo proyecto sobre la cual se va a trabajar el comando</param>
+        /// <param name="_trabajadores">lista de entidades de tipo trabajadores sobre la cual se va a trabajar el comando</param>
+        /// <returns>comando con bolean true o false</returns>
         public static Comando<Boolean> ObtenerComandoModificarProyecto(Entidad _propuesta, Entidad _proyecto, List<Entidad> _trabajadores)
         {
             return new ComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
