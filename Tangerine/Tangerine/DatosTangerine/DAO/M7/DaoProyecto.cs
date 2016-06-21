@@ -63,7 +63,6 @@ namespace DatosTangerine.DAO.M7
             return listProyecto;
         }
         
-
         public List<Entidad> ContactProyectoPorEmpleado(Entidad empleado)
         {
             throw new NotImplementedException();
@@ -106,6 +105,28 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
+        public Double CalcularPagoMensual(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M7.Proyecto P = (DominioTangerine.Entidades.M7.Proyecto)parametro;
+
+            int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
+            if (dias > 31)
+            {
+                return (P.Costo / dias) * 30;
+            }
+            else
+            {
+                return P.Costo;
+            }
+        }
+
+        public String GenerarCodigoProyecto(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M6.Propuesta P = (DominioTangerine.Entidades.M6.Propuesta)parametro;
+            String nombre = P.Nombre;
+            return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
+        }
+
         #endregion
 
         #region DAO
@@ -115,6 +136,12 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Metodo para modificar un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto para agregar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>true si fue agregado</returns>
         public bool Modificar(Entidad parametro)
         {
 
@@ -179,6 +206,12 @@ namespace DatosTangerine.DAO.M7
             return true;
         }
 
+        /// <summary>
+        /// Metodo para consultar un poryecto por su ID en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto obtener el ID y buscar en la BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Entidad Proyecto con todos los atributos</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
             // AQUI VA EL LOGGER!
@@ -217,21 +250,11 @@ namespace DatosTangerine.DAO.M7
             return proyecto;
         }
 
-        public Double CalcularPagoMensual(Entidad parametro)
-        {
-            DominioTangerine.Entidades.M7.Proyecto P = (DominioTangerine.Entidades.M7.Proyecto)parametro;
-
-            int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
-            if (dias > 31)
-            {
-                return (P.Costo / dias) * 30;
-            }
-            else
-            {
-                return P.Costo;
-            }
-        }
-
+        /// <summary>
+        /// Metodo para consultar todos los proyectos en la base de datos.
+        /// </summary>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Lista de Proyectos</returns>
         public List<Entidad> ConsultarTodos()
         {
            List<Parametro> parameters = new List<Parametro>();
@@ -273,13 +296,6 @@ namespace DatosTangerine.DAO.M7
             }
 
             return listProyecto;
-        }
-
-        public String GenerarCodigoProyecto(Entidad parametro)
-        {
-            DominioTangerine.Entidades.M6.Propuesta P = (DominioTangerine.Entidades.M6.Propuesta) parametro;
-            String nombre = P.Nombre;
-            return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
         }
 
         #endregion
