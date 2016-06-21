@@ -9,6 +9,7 @@ using DatosTangerine.InterfazDAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M4;
 
 namespace DatosTangerine.DAO.M4
 {
@@ -64,11 +65,25 @@ namespace DatosTangerine.DAO.M4
                return thePlace;
 
            }
+           catch (ArgumentNullException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Ingreso de un argumento con valor invalido", ex);
+           }
+           catch (FormatException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Ingreso de datos con un formato invalido", ex);
+           }
+           catch (SqlException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
-                   RecursoGeneralBD.Mensaje, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la operacion ", ex);
            }
        }
 
@@ -109,11 +124,25 @@ namespace DatosTangerine.DAO.M4
                return listPlace;
 
            }
+           catch (ArgumentNullException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Ingreso de un argumento con valor invalido", ex);
+           }
+           catch (FormatException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Ingreso de datos con un formato invalido", ex);
+           }
+           catch (SqlException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw new ExcepcionesTangerine.M4.NullArgumentException(RecursoGeneralBD.Codigo,
-                   RecursoGeneralBD.Mensaje, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la operacion ", ex);
            }
        }
 
