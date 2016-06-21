@@ -67,7 +67,7 @@ namespace DominioTangerine.Entidades.M10
       
 
         private string address;
-        public Cargo jobs;
+        public CargoM10 jobs;
         private List<Proyecto> listProjects = new List<Proyecto>();
         private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
         //private int empId;
@@ -255,7 +255,7 @@ namespace DominioTangerine.Entidades.M10
           this.emp_estudio = empEstudio;
           this.emp_modalidad = empModalidad;
           this.emp_salario = empSalario;
-          this.jobs =(Cargo)cargo;
+          this.jobs =(CargoM10)cargo;
       }
 
         public EmpleadoM10()
@@ -265,7 +265,7 @@ namespace DominioTangerine.Entidades.M10
 
         public EmpleadoM10(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
                            string empGenero, int empCedula, DateTime empFecha, string empActivo, string empNivelEstudio,
-                           string empEmailEmployee, int empLugId, string empCargo, double empSalario, string empFechaInicio,
+                           string empEmailEmployee, int empLugId, Entidad empCargo, double empSalario, string empFechaInicio,
                            string empFechaFin, string empDireccion)
         {
             // TODO: Complete member initialization
@@ -281,7 +281,7 @@ namespace DominioTangerine.Entidades.M10
             this.emp_nivel_estudio = empNivelEstudio;
             this.emp_email = empEmailEmployee;
             this.emp_LugId = empLugId;
-            this.emp_cargo = empCargo;
+            this.jobs = (CargoM10)empCargo;
             this.emp_salario = empSalario;
             this.emp_FechaInicio = empFechaInicio;
             this.emp_FechaFin = empFechaFin;
@@ -460,11 +460,16 @@ namespace DominioTangerine.Entidades.M10
             }
         }
 
-        public Cargo Jobs
+        public CargoM10 Jobs
         {
             get
             {
                 return this.jobs;
+            }
+
+            set
+            {
+                this.jobs = value;
             }
         }
 

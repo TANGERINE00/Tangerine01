@@ -110,11 +110,13 @@ namespace DatosTangerine.DAO.M10
                     String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                     String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoXid(empCargo, empSalario,
+                                              empFechaInicio,empFechaFin);
 
                     empleadoFinal = DominioTangerine.Fabrica.FabricaEntidades.ListarEmpleadoId(empId, empPNombre,
                                                     empSNombre, empPApellido, empSApellido,
                                                     empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                    empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                                                    empEmailEmployee, empLugId, cargoEmpleado, empSalario, empFechaInicio,
                                                     empFechaFin, empDireccion);
     
             }
