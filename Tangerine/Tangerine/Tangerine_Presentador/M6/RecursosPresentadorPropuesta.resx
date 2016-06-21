@@ -180,4 +180,7 @@
   <data name="AbrirTD2" xml:space="preserve">
     <value>&lt;td style="text-align:center;"&gt;</value>
   </data>
+  <data name="Salto" xml:space="preserve">
+    <value>&lt;br&gt;</value>
+  </data>
 </root>

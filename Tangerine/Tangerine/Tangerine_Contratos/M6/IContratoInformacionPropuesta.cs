@@ -33,7 +33,11 @@ namespace Tangerine_Contratos.M6
             set;
         }
 
-        //Literal Requerimiento
+        Literal Requerimientos
+        {
+            get;
+            set;
+        }
 
         Label Duracion
         {

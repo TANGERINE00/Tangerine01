@@ -230,5 +230,14 @@ namespace Tangerine_Presentador.M6 {
                 return ResourceManager.GetString("pendiente", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;br&gt;.
+        /// </summary>
+        internal static string Salto {
+            get {
+                return ResourceManager.GetString("Salto", resourceCulture);
+            }
+        }
     }
 }
