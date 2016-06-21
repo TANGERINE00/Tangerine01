@@ -146,8 +146,7 @@
     </Compile>
     <Compile Include="M2\BDUsuario.cs" />
     <Compile Include="M2\ResourceUser.Designer.cs" />
-    <Compile Include="M3\BDClientePotencial.cs" />
-    <Compile Include="M3\ResourceClientePotencial.Designer.cs">
+    <Compile Include="DAO\M3\ResourceClientePotencial.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceClientePotencial.resx</DependentUpon>
@@ -286,7 +285,7 @@
       <LastGenOutput>ResourceEmpleado.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M2\ResourceUser.resx" />
-    <EmbeddedResource Include="M3\ResourceClientePotencial.resx">
+    <EmbeddedResource Include="DAO\M3\ResourceClientePotencial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceClientePotencial.Designer.cs</LastGenOutput>
     </EmbeddedResource>
