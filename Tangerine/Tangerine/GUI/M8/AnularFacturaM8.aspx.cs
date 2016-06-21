@@ -143,30 +143,13 @@ namespace Tangerine.GUI.M8
             if (!IsPostBack)
             {
                 _presentador.cargarFactura();
-                //LogicaM8 facturaLogic = new LogicaM8();
-                //theFactura = facturaLogic.SearchFactura(idFac);
-
-                //Numero = theFactura.idFactura.ToString();
-                ////this.textNumeroFactura_M8.Value = theFactura.idFactura.ToString();
-                //FechaFactura = theFactura.fechaFactura.ToString("dd/MM/yyyy");
-                ////this.textFecha_M8.Value = theFactura.fechaFactura.ToString("dd/MM/yyyy");
-                //DescripcionFactura = theFactura.descripcionFactura;
-                ////this.textDescripcion_M8.Value = theFactura.descripcionFactura;
-                //Compania compania = facturaLogic.SearchCompaniaFactura(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                //CompaniaFactura = compania.NombreCompania;
-                ////this.textCliente_M8.Value = compania.NombreCompania;
-                //Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
-                //ProyectoFactura = proyecto.Nombre;
-                ////this.textProyecto_M8.Value = proyecto.Nombre;
-                //MontoFactura = theFactura.montoFactura.ToString();
-                //Moneda = theFactura.tipoMoneda;
-                ////this.textMonto_M8.Value = theFactura.montoFactura.ToString();
-                ////this._montoRestante.Value = theFactura.montoRestanteFactura.ToString();
+                
             }  
         }
 
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
         {
+            //_presentador.anularFactura();
             //_numeroFactura = int.Parse(Numero);
             //_montoTotal = int.Parse(MontoFactura);
             //_fechaEmision = DateTime.Parse(FechaFactura);
