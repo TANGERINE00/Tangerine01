@@ -110,9 +110,9 @@ namespace Tangerine_Presentador.M10
                     + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id.ToString() +
                         ResourceGUIM10.BotonVerEmpCerrar;
 
-                    //if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                    //    vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
-                    //        ResourceGUIM10.BotonStatusEmpCerrar;
+                    if (HttpContext.Current.Session["Rol"] + "" != "Programador")
+                        vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
+                            ResourceGUIM10.BotonStatusEmpCerrar;
 
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
                     vista.Tabla.Text += ResourceGUIM10.CerrarTR;
