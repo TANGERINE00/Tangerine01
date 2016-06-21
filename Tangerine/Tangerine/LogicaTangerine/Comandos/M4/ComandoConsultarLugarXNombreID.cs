@@ -25,9 +25,10 @@ namespace LogicaTangerine.Comandos.M4
                  IDaoLugarDireccion DaoLugar = FabricaDAOSqlServer.crearDaoLugarDireccion();
                  return DaoLugar.ConsultCityPlaces();
              }
-             catch (NotImplementedException)
+             catch (NotImplementedException e)
              {
                  return null ;
+                 throw new ExceptionM4Tangerine("DS-404", "Metodo no implementado", e);
              }
          }
     }
