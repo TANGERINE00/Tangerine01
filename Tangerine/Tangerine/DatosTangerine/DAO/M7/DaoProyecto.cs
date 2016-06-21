@@ -63,7 +63,6 @@ namespace DatosTangerine.DAO.M7
             return listProyecto;
         }
         
-
         public List<Entidad> ContactProyectoPorEmpleado(Entidad empleado)
         {
             throw new NotImplementedException();
@@ -103,18 +102,129 @@ namespace DatosTangerine.DAO.M7
 
         public int ContactMaxIdProyecto()
         {
-            throw new NotImplementedException();
+
+            List<Parametro> parameters = new List<Parametro>();
+
+            int proyId;
+
+            try
+            {
+                //Guardo la tabla que me regresa el procedimiento de buscar el ID Max.
+                DataTable dt = EjecutarStoredProcedureTuplas(ResourceProyecto.ContacMaxIdProyecto, parameters);
+
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+                proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return proyId;
+        }
+
+        public Double CalcularPagoMensual(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M7.Proyecto P = (DominioTangerine.Entidades.M7.Proyecto)parametro;
+
+            int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
+            if (dias > 31)
+            {
+                return (P.Costo / dias) * 30;
+            }
+            else
+            {
+                return P.Costo;
+            }
+        }
+
+        public String GenerarCodigoProyecto(Entidad parametro)
+        {
+            DominioTangerine.Entidades.M6.Propuesta P = (DominioTangerine.Entidades.M6.Propuesta)parametro;
+            String nombre = P.Nombre;
+            return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
         }
 
         #endregion
 
         #region DAO
 
-        public bool Agregar(Entidad parametro)
+        public bool Agregar(Entidad proyecto)
         {
-            throw new NotImplementedException();
+
+            DominioTangerine.Entidades.M7.Proyecto theProyecto = (DominioTangerine.Entidades.M7.Proyecto)proyecto;
+
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                //theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Idproyecto.ToString(), false);
+                //parameters.Add(theParam);
+
+                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar, theProyecto.Nombre.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, theProyecto.Codigo.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamFechaInicio, SqlDbType.Date, theProyecto.Fechainicio.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date, theProyecto.Fechaestimadafin.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, theProyecto.Costo.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamDescripcion, SqlDbType.VarChar, theProyecto.Descripcion.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar, theProyecto.Realizacion.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, theProyecto.Estatus.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, theProyecto.Razon.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, theProyecto.Acuerdopago.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, theProyecto.Idpropuesta.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, theProyecto.Idresponsable.ToString(), false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, theProyecto.Idgerente.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
+                List<Resultado> results = EjecutarStoredProcedure(ResourceProyecto.AddNewProyecto, parameters);
+
+            }
+            catch (Exception ex)
+            {
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return true;
         }
 
+        /// <summary>
+        /// Metodo para modificar un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto para agregar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>true si fue agregado</returns>
         public bool Modificar(Entidad parametro)
         {
 
@@ -179,6 +289,12 @@ namespace DatosTangerine.DAO.M7
             return true;
         }
 
+        /// <summary>
+        /// Metodo para consultar un poryecto por su ID en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto obtener el ID y buscar en la BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Entidad Proyecto con todos los atributos</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
             // AQUI VA EL LOGGER!
@@ -217,21 +333,11 @@ namespace DatosTangerine.DAO.M7
             return proyecto;
         }
 
-        public Double CalcularPagoMensual(Entidad parametro)
-        {
-            DominioTangerine.Entidades.M7.Proyecto P = (DominioTangerine.Entidades.M7.Proyecto)parametro;
-
-            int dias = Int32.Parse((P.Fechaestimadafin - P.Fechainicio).Days.ToString());
-            if (dias > 31)
-            {
-                return (P.Costo / dias) * 30;
-            }
-            else
-            {
-                return P.Costo;
-            }
-        }
-
+        /// <summary>
+        /// Metodo para consultar todos los proyectos en la base de datos.
+        /// </summary>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Lista de Proyectos</returns>
         public List<Entidad> ConsultarTodos()
         {
            List<Parametro> parameters = new List<Parametro>();
@@ -275,12 +381,6 @@ namespace DatosTangerine.DAO.M7
             return listProyecto;
         }
 
-        public String GenerarCodigoProyecto(Entidad parametro)
-        {
-            DominioTangerine.Entidades.M6.Propuesta P = (DominioTangerine.Entidades.M6.Propuesta) parametro;
-            String nombre = P.Nombre;
-            return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
-        }
 
         #endregion
     }

@@ -10,6 +10,10 @@ namespace LogicaTangerine.Comandos.M7
 {
     public class ComandoConsultarTodosProyectos : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Método Override para ejecutar el comando
+        /// </summary>
+        /// <returns>Lista de entidad tipo proyecto</returns>
         public override List<Entidad> Ejecutar()
         {
             try

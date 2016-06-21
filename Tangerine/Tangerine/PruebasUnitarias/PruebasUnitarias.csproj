@@ -90,6 +90,7 @@
     <Compile Include="M2\PruebasComandosEspecificos.cs" />
     <Compile Include="M3\PruebaClientePotencialLogica.cs" />
     <Compile Include="M3\PruebaClientePotencial.cs" />
+    <Compile Include="M3\PruebasDAOClientePotencial.cs" />
     <Compile Include="M4\PruebaDatos.cs" />
     <Compile Include="M4\PruebaLogica.cs" />
     <Compile Include="M5\PruebaLogica.cs" />

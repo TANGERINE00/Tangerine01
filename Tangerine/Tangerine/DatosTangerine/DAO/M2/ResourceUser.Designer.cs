@@ -106,6 +106,15 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Entrada en el Método.
         /// </summary>
         internal static string MensajeInicioInfoLogger {

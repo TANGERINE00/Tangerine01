@@ -115,16 +115,28 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 7
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Proyecto
+        /// </summary>
+        /// <returns>La instancia</returns>
         public static IDaoProyecto ObetenerDaoProyecto()
         {
             return new DAO.M7.DaoProyecto();
         }
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Proyecto Contacto
+        /// </summary>
+        /// <returns>La instancia</returns>
         public static IDaoProyectoContacto ObetenerDaoProyectoContacto()
         {
             return new DAO.M7.DaoProyectoContacto();
         }
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Proyecto Empleado
+        /// </summary>
+        /// <returns>La instancia</returns>
         public static IDaoProyectoEmpleado ObetenerDaoProyectoEmpleado()
         {
             return new DAO.M7.DaoProyectoEmpleado();

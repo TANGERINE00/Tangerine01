@@ -9,6 +9,9 @@ namespace DatosTangerine.InterfazDAO.M7
 {
     public interface IDaoProyecto : IDao<Entidad, bool, Entidad>
     {
+        /// <summary> Firma de Método para eliminar un proyecto </summary>
+        /// <param name="proyecto"> entidad de tipo proyecto</param>
+        /// <returns>Retorna true cuando se elimina exitosamente</returns>
         bool DeleteProyecto(Entidad proyecto);
 
         List<Entidad> ContactProyectoxAcuerdoPago();

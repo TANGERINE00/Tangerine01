@@ -110,7 +110,7 @@ namespace DatosTangerine.DAO.M7
         }
         #endregion
 
-        #region IDAO
+        #region DAO
         public bool Agregar(Entidad parametro)
         {
             throw new NotImplementedException();
@@ -121,6 +121,12 @@ namespace DatosTangerine.DAO.M7
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Metodo para consultar el contacto de un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto con el ID para buscar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>entidad Contacto asociada al proyecto</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

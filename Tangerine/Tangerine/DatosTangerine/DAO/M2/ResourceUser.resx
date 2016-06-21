@@ -239,4 +239,7 @@
   <data name="ParametroUsuID" xml:space="preserve">
     <value>@usu_id</value>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
 </root>
