@@ -17,12 +17,13 @@ namespace Tangerine.GUI.M7
     public partial class AgregarProyecto : System.Web.UI.Page, IContratoAgregarProyecto
     {
      
-
         private PresentadorAgregarProyecto _presentador;
 
-        #region Atributos
+        #region Implementación de Interfaz
 
-
+        /// <summary>
+        /// Implementación de la interfaz IContratoAgregarProyecto.
+        /// </summary>
         public string NombreProyecto
         {
             get
@@ -184,12 +185,20 @@ namespace Tangerine.GUI.M7
 
         #endregion
 
-
+        /// <summary>
+        /// Constructor de la clase AgregarProyecto
+        /// en la que se crea un nuevo presentador para esta vista.
+        /// </summary>
         public AgregarProyecto()
         {
             _presentador = new PresentadorAgregarProyecto(this);
         }
 
+        /// <summary>
+        /// Método que se ejcutará al cargar la página por primera vez.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
                
@@ -221,13 +230,24 @@ namespace Tangerine.GUI.M7
            }
         }
 
+
+        /// <summary>
+        /// Método que se ejecuta al hacer click
+        /// el botón agregar personal.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnAgregarPersonal_Click(object sender, EventArgs e)
         {
-            _presentador.AgregarPersonal();
-            
-        
+            _presentador.AgregarPersonal();                  
         }
 
+        /// <summary>
+        /// Método que se ejecuta al seleccionar una propuesta
+        /// del DropDownList en la vista.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void comboPropuesta_Click(object sender, EventArgs e)
         {
 
@@ -245,6 +265,13 @@ namespace Tangerine.GUI.M7
              */
         }
 
+
+        /// <summary>
+        /// Método que se ejecuta al hacer click en
+        /// el botón agregar en la vista.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
 

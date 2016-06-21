@@ -616,16 +616,32 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarContactoNombrePropuestaId(proyecto);
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoConsultarAcuerdoPagoMensual utilizado por M8
+        /// para la generación de facturas
+        /// </summary>
+        /// <returns>Comando que se utiliza para consultar el acuerdo de pago de un proyecto</returns>
         public static Comando<List<Entidad>> ObtenerComandoConsultarAcuerdoPagoMensual()
         {
             return new ComandoConsultarAcuerdoPagoMensual();
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoCalcularPagoMensual utilizado por M8
+        /// para la generación de facturas
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns></returns>
         public static Comando<Double> ObtenerComandoCalcularPagoMesual(Entidad proyecto)
         {
             return new ComandoCalcularPagoMensual(proyecto);
         }
 
+        /// <summary>
+        /// Método para crear una instancia del ComandoGenerarCodigoProyecto
+        /// </summary>
+        /// <param name="propuesta">Entidad de tipo propuesta</param>
+        /// <returns>Comando que se utiliza para generar el código de un proyecto</returns>
         public static Comando<String> ObtenerComandoGenerarCodigoProyecto(Entidad propuesta)
         {
             return new ComandoGenerarCodigoProyecto(propuesta);
@@ -642,6 +658,12 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
         }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarProyecto
+        /// </summary>
+        /// <param name="proyecto">proyecto de tipo Entidad que será insertado en la base de datos</param>
+        /// <returns></returns>
         public static Comando<bool> ObtenerComandoAgregarProyecto(Entidad proyecto)
         {
             return new ComandoAgregarProyecto(proyecto);

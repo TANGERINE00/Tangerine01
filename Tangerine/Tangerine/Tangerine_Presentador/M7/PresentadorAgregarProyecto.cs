@@ -16,10 +16,10 @@ namespace Tangerine_Presentador.M7
 {
     public class PresentadorAgregarProyecto
     {
-        private IContratoAgregarProyecto _vista;
-
-
         
+
+        #region Atributos
+        private IContratoAgregarProyecto _vista;
         static DominioTangerine.Entidades.M6.Propuesta propuesta;
         static Entidad entPropuesta;
         static int _idPropuesta = 0;
@@ -28,28 +28,39 @@ namespace Tangerine_Presentador.M7
         static List<Entidad> listaProgramadores = new List<Entidad>();
         static List<Entidad> contactos = new List<Entidad>();
         static List<Entidad> programadores = new List<Entidad>();
+        #endregion
 
+        /// <summary>
+        /// Constructor de la clase PresentadorAgregarProyecto
+        /// </summary>
+        /// <param name="vista">Atributo para comunicarse con la vista</param>
         public PresentadorAgregarProyecto(IContratoAgregarProyecto vista)
         {
             _vista = vista;
         }
 
-
+        /// <summary>
+        /// Método que se ejecuta al hacer click en el botón
+        /// agregar proyecto en la vista
+        /// </summary>
         public void agregarProyecto()
         {
-
+            ///Se capturan los datos de la vista para crear un proyecto.
             DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "MM/dd/yyyy", null);
             DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
             Double _costo = Convert.ToDouble(_vista.Costo);
 
+            ///Se crea un nuevo proyecto con la información de la vista.
             Entidad nuevoProyecto = FabricaEntidades.CrearProyecto(_vista.NombreProyecto,
                                                    _vista.CodigoProyecto, _fechaIni, _fechaFin, _costo, propuesta.Descripcion,
                                                      "0", "En desarrollo", "", propuesta.Acuerdopago, int.Parse(propuesta.CodigoP),
                                                      int.Parse(propuesta.IdCompañia), 1);
 
+            ///Se crea un nuevo comando para agregarel proyecto en la base de datos y se ejecuta.
             Comando<bool> comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(nuevoProyecto);
             comandoBool.Ejecutar();
 
+            ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
             for (int i = 0; i < _vista.inputPersonal.Items.Count; i++)
             {
                 if (_vista.inputPersonal.Items[i].Selected)
@@ -58,6 +69,7 @@ namespace Tangerine_Presentador.M7
                 }
             }
 
+            ///Se guarda en una lista los encargados de comunicación seleccionados para el proyecto.
             for (int i = 0; i < _vista.inputEncargado.Items.Count; i++)
             {
                 if (_vista.inputEncargado.Items[i].Selected)
@@ -69,7 +81,11 @@ namespace Tangerine_Presentador.M7
          
         }
 
-
+        /// <summary>
+        /// Método que se ejecuta al cargar la página
+        /// y llena el DropDownList de la vista con todas las propuestas
+        /// aprobadas que no están asociadas a un proyecto.
+        /// </summary>
         public void CargarPagina()
         {
             _vista.inputPropuesta.Items.Add("Seleccione una propuesta");
@@ -85,7 +101,12 @@ namespace Tangerine_Presentador.M7
         }
 
 
-
+        /// <summary>
+        /// Método que se ejecuta al seleccionar una propuesta aprobada
+        /// carga los gerentes, programadores y contactos de la empresa 
+        /// para trabajar en el proyecto asociado a dicha propuesta.
+        /// </summary>
+        /// <param name="sender"></param>
         public void CargarInformacionPropuesta(object sender)
         {
             {
@@ -141,6 +162,11 @@ namespace Tangerine_Presentador.M7
             }
         }
 
+        /// <summary>
+        /// Método que hace visible la segunda columna del formulario
+        /// para seleccionar el personal que trabajara en el proyecto
+        /// y el botón de agregar proyecto.
+        /// </summary>
         public void AgregarPersonal()
         {
             _vista.columna2.Visible = true;
