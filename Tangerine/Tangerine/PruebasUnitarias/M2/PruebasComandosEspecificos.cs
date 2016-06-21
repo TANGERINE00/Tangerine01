@@ -64,7 +64,7 @@ namespace PruebasUnitarias.M2
             Assert.IsNotEmpty(listaResultado);
         }*/
 
-        /*/// <summary>
+        /// <summary>
         /// Método para probar el ComandoVerificarAccesoAPagina de ComandosEspecificos
         /// </summary>
         [Test]
@@ -72,10 +72,10 @@ namespace PruebasUnitarias.M2
         {
             bool resultado;
             LogicaTangerine.Comando<Boolean> commandVerificarAccesoAPagina =
-                FabricaComandos.obtenerComandoVerificarAccesoAPagina( "../../GUI/M2/RegistroUsuario.aspx" , "Programador" );
+                FabricaComandos.obtenerComandoVerificarAccesoAPagina("../../GUI/M2/RegistroUsuario.aspx", "Programador");
             resultado = commandVerificarAccesoAPagina.Ejecutar();
-            Assert.IsTrue(resultado);
-        }*/
+            Assert.IsNotNull(resultado);
+        }
 
         #endregion
     }
