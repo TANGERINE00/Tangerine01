@@ -642,6 +642,10 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
         }
+        public static Comando<bool> ObtenerComandoAgregarProyecto(Entidad proyecto)
+        {
+            return new ComandoAgregarProyecto(proyecto);
+        }
         #endregion
 
         #region Modulo 8

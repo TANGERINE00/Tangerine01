@@ -600,6 +600,14 @@ namespace DominioTangerine.Fabrica
             {
                 return new DominioTangerine.Entidades.M7.Proyecto();
             }
+
+            public static Entidad CrearProyecto(string nombre, string codigo, DateTime fecha_inicio, DateTime fecha_estimada_fin,
+                     double costo, string descripcion, string realizacion, string estatus, string razon, string acuerdopago, int id_propuesta, int id_responsable,
+                     int id_gerente)
+            {
+                return new DominioTangerine.Entidades.M7.Proyecto(nombre, codigo, fecha_inicio, fecha_estimada_fin,
+                 costo, descripcion, realizacion, estatus, razon, acuerdopago, id_propuesta, id_responsable, id_gerente);
+            }
             #endregion
 
         #endregion
