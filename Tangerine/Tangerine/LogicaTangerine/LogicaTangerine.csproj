@@ -99,6 +99,7 @@
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarLugarXID.cs" />
+    <Compile Include="Comandos\M4\ComandoConsultarLugarXNombreID.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodosLugares.cs" />
     <Compile Include="Comandos\M4\comandoCosultarCompaniasActivas.cs" />
     <Compile Include="Comandos\M4\ComandoDeshabilitarCompania.cs" />

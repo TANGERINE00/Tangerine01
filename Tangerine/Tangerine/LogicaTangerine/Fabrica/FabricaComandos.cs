@@ -354,6 +354,16 @@ namespace LogicaTangerine.Fabrica
 
         }
 
+        /// <summary>
+        /// metodo que crea comando para consultar los  luegares con su id y nombre
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarLugarXNombreID()
+        {
+            return new ComandoConsultarLugarXNombreID();
+
+        }
+
         #endregion
 
         #region Modulo 5
