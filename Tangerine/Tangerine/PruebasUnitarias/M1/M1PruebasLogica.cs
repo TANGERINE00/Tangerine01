@@ -66,7 +66,7 @@ namespace PruebasUnitarias.M1
         /// <summary>
         /// Prueba que permite verificar la validacion y existencia de un Usuario registrado
         /// </summary>
-        [Test]
+      /*  [Test]
         public void TestValidarUsuario()
         {
             answer = logicaM1.ValidarUsuario(usuario,clave);
@@ -83,7 +83,7 @@ namespace PruebasUnitarias.M1
             answer = logicaM1.ConsultarUsuario(usuario, clave);
 
             Assert.IsTrue(answer);
-        }
+        }*/
 
 
     }
