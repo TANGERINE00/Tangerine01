@@ -11541,3 +11541,139 @@ Error Number:-1,State:0,Class:20
 2016-06-21 00:15:51,226 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
 2016-06-21 00:15:51,226 INFO  DaoProyectoContacto - Mensaje: Salida del Método
 2016-06-21 00:15:51,226 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 00:53:19,806 INFO  DAOEmpleado - *******************************************************
+2016-06-21 00:53:19,816 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 00:53:19,816 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 00:53:19,816 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 00:53:19,866 INFO  DAOEmpleado - *******************************************************
+2016-06-21 00:53:19,866 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 00:53:19,867 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 00:53:19,867 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 00:53:21,752 INFO  DAOEmpleado - *******************************************************
+2016-06-21 00:53:21,752 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 00:53:21,752 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 00:53:21,752 INFO  DAOEmpleado - Metodo: ConsultarXId
+2016-06-21 00:53:21,783 INFO  DAOEmpleado - *******************************************************
+2016-06-21 00:53:21,783 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 00:53:21,783 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 00:53:21,783 INFO  DAOEmpleado - Metodo: ConsultarXId
+2016-06-21 00:53:28,171 INFO  DAOEmpleado - *******************************************************
+2016-06-21 00:53:28,171 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 00:53:28,171 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 00:53:28,171 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 00:53:28,186 INFO  DAOEmpleado - *******************************************************
+2016-06-21 00:53:28,186 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 00:53:28,186 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 00:53:28,186 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:18:59,981 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:18:59,988 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:18:59,988 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:18:59,988 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:19:00,094 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:19:00,094 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:19:00,094 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:19:00,094 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:27,162 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:27,172 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:27,172 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:21:27,172 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:27,209 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:27,209 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:27,209 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:21:27,209 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:29,142 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:29,142 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:29,142 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:21:29,142 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:29,166 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:29,166 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:29,166 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:21:29,166 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:30,859 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:30,859 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:30,859 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:21:30,859 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:30,937 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:30,937 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:30,937 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:21:30,937 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:31,607 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:31,607 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:31,607 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:21:31,607 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:31,676 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:31,676 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:31,676 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:21:31,676 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:33,220 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:33,220 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:33,220 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:21:33,220 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:33,238 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:33,238 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:33,238 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:21:33,238 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:37,957 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:37,957 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:37,957 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:21:37,957 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:21:37,973 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:21:37,973 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:21:37,973 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:21:37,973 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:45,907 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:45,915 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:45,915 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:45,915 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:45,948 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:45,948 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:45,948 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:45,948 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:48,065 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:48,065 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:48,065 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:48,065 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:48,082 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:48,082 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:48,082 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:48,082 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:49,659 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:49,659 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:49,659 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:49,659 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:49,719 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:49,719 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:49,719 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:49,719 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:52,865 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:52,865 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:52,865 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:52,865 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:52,887 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:52,887 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:52,887 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:52,887 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:54,058 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:54,058 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:54,058 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:54,058 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:54,079 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:54,079 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:54,079 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:54,079 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:54,999 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:54,999 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:54,999 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:54,999 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:55,022 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:55,022 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:55,022 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:55,022 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:56,200 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:56,200 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:56,200 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-21 04:24:56,200 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 04:24:56,230 INFO  DAOEmpleado - *******************************************************
+2016-06-21 04:24:56,230 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-21 04:24:56,230 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-21 04:24:56,230 INFO  DAOEmpleado - Metodo: ConsultarTodos

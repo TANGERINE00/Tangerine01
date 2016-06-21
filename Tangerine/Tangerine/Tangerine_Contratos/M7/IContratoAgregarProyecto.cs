@@ -10,7 +10,6 @@ namespace Tangerine_Contratos.M7
 {
     public interface IContratoAgregarProyecto
     {
-        String NombrePropuesta { get; set; }
         String NombreProyecto { get; set; }
         String CodigoProyecto { get; set; }
         String FechaInicio { get; set; }

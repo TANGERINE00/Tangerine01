@@ -18,11 +18,19 @@ namespace LogicaTangerine.Comandos.M7
                 set { propuesta = value; }
             }
 
+            /// <summary>
+            /// Constructor de la clase ComandoConsultarContactoNombrePropuestaId
+            /// </summary>
+            /// <param name="propuesta"> entidad de tipo propuesta </param>
             public ComandoConsultarContactoNombrePropuestaId(Entidad propuesta)
             {
                 this.propuesta = propuesta;
             }
 
+            /// <summary>
+            /// Método Override para ejecutar el comando
+            /// </summary>
+            /// <returns>Enntidad de tipo Proyecto</returns>
             public override Entidad Ejecutar()
             {
                 try
