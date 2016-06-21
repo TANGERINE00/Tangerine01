@@ -10,6 +10,7 @@ using DatosTangerine.InterfazDAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
+using ExcepcionesTangerine.M4;
 
 
 
@@ -34,9 +35,9 @@ namespace LogicaTangerine.Comandos.M4
                 IDaoCompania DaoComp = FabricaDAOSqlServer.crearDaoCompania();
                 return DaoComp.Agregar(_laEntidad);
             }
-            catch (NotImplementedException)
+            catch (NotImplementedException e)
             {
-                return false;
+                throw new ExceptionM4Tangerine ("DS-404", "Metodo no implementado" , e );
             }
         }
     }
