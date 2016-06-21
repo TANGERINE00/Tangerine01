@@ -78,6 +78,8 @@ namespace Tangerine_Presentador.M7
                 }
             }
 
+            Comando<int> comandoIdProyecto = FabricaComandos.ObtenerComandoUltimoIdProyecto();
+            int idProyecto = comandoIdProyecto.Ejecutar();
          
         }
 
