@@ -111,7 +111,7 @@ namespace Tangerine_Presentador.M10
                         ResourceGUIM10.BotonVerEmpCerrar;
 
                     //if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                    //    empleado += ResourceGUIM10.BotonStatusEmpAbrir + theEmpleado.emp_num_ficha +
+                    //    vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
                     //        ResourceGUIM10.BotonStatusEmpCerrar;
 
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
