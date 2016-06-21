@@ -45,15 +45,6 @@ namespace LogicaTangerine.Fabrica
             }
 
             /// <summary>
-            /// Método utilizado para devolver una instancia de la clase ComandoConsultarListaDeEmpleados
-            /// </summary>
-            /// <returns>Retorna una una instancia a ComandoConsultarListaDeEmpleados</returns>
-            public static Comando<List<DominioTangerine.Entidad>> listaEmpleados()
-            {
-                return new Comandos.M2.ComandoConsultarListaDeEmpleados();
-            }
-
-            /// <summary>
             /// Método utilizado para devolver una instancia del ComandoValidarUsuario
             /// </summary>
             /// <param name="usuario"></param>
@@ -360,6 +351,16 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> CrearAgregarLugar(Entidad parametro)
         {
             return new ComandoAgregarLugar(parametro);
+
+        }
+
+        /// <summary>
+        /// metodo que crea comando para consultar los  luegares con su id y nombre
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearConsultarLugarXNombreID()
+        {
+            return new ComandoConsultarLugarXNombreID();
 
         }
 

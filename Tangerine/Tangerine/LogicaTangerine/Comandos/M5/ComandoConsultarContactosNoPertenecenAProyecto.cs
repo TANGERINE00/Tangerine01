@@ -1,6 +1,7 @@
 ﻿using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
+using ExcepcionesTangerine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,10 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override List<Entidad> Ejecutar()
         {
+            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursoComandosM5.MensajeInicioInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
+
             List<Entidad> listaContactos = new List<Entidad>();
 
             try 
@@ -35,8 +40,13 @@ namespace LogicaTangerine.Comandos.M5
             }
             catch ( Exception ex )
             {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 return listaContactos;
             }
+
+            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                 RecursoComandosM5.MensajeFinInfoLogger,
+                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             return listaContactos;
         }

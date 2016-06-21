@@ -43,7 +43,7 @@
                 <div class="form-group ">
                     <label for="email">Correo</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="email" runat="server" id="correo" class="form-control" maxlength="20" placeholder="Direccion de correo" required>
+                    <input type="email" runat="server" id="correo" class="form-control" maxlength="100" placeholder="Direccion de correo" required>
                 </div>
 
                 <!--Presupuesto-->

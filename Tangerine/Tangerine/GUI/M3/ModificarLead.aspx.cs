@@ -108,30 +108,8 @@ namespace Tangerine.GUI.M3
 
         protected void Modificar_Click(object sender, EventArgs e)
         {
-            //Cuidado , recordar cambiar luego del this , el id que tenga la interfaz 
-
-            // String nombre = this.idnombre.Value;
-
-            /*int idClip = int.Parse(Request.QueryString["idclp"]);
-
-
-            String nombre = this.nombre.Value;
-            String rif = this.rif.Value;
-            String email = this.email.Value;
-
-            float presupuesto = float.Parse(this.presupuesto.Value.ToString());
-            int llamadas = int.Parse(this.llamadas.Value.ToString());
-            int visitas = int.Parse(this.visitas.Value.ToString());
-            ClientePotencial nuevoCliente = new ClientePotencial(idClip,nombre,rif,email,presupuesto,llamadas,visitas);
-
-            LogicaM3 logica = new LogicaM3();
-            //logica.ModificarNuevoclientePotencial(logica.BuscarClientePotencial(idClip));
-            logica.ModificarNuevoclientePotencial( nuevoCliente );
-            Response.Redirect("Listar.aspx");
-            */
-
-           
-   
+            int idClip = int.Parse(Request.QueryString["idclp"]);
+            presentador.ModificarClientePotencial(idClip);
         }
     
     

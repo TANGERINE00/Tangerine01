@@ -58,13 +58,13 @@ namespace Tangerine.GUI.M5 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText departamento;
         
         /// <summary>
-        /// Control cargo.
+        /// Control cargoLB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cargo;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect cargoLB;
         
         /// <summary>
         /// Control telefono.

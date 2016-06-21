@@ -32,6 +32,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             _fichaEmpleado = fichaEmpleado;
         }
 
+        /// <summary>
+        /// Método para crear la instancia de la clase DaoUsuario y usar el método ComandoAgregarUsuario
+        /// </summary>
+        /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override bool Ejecutar()
         {
             bool resultado = true;

@@ -55,12 +55,13 @@
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Acrónimo</th>
-                                <th>RIF</th>
-                                <th>Fecha Registro</th>
-                                <th>Status</th>
+                                <th style="text-align: center;">Nombre</th>
+                                <th style="text-align: center;">Acrónimo</th>
+                                <th style="text-align: center;">RIF</th>
+                                <th style="text-align: center;">Fecha Registro</th>
+                                <th style="text-align: center;">Status</th>
                                 <th style="text-align: center;">Facturas</th>
+                                <th style="text-align: center;">Pagos</th>
                             </tr>
                         </thead>
                         <asp:Literal runat="server" ID="tabla"></asp:Literal>

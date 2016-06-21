@@ -23,6 +23,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
             _nombreRol = nombreRol;
         }
 
+        /// <summary>
+        /// Método para verificar las paginas a las que puede acceder un rol
+        /// </summary>
+        /// <returns>Retorna un valor booleando indicando si un rol puede acceder a una pagina especifica</returns>
         public override bool Ejecutar()
         {
             bool resultado = false;

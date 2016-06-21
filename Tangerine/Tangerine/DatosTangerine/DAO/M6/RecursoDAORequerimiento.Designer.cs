@@ -124,6 +124,15 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M6_ConsultarRequerimientoNombre.
+        /// </summary>
+        internal static string ConsultarRequerimientoNombre {
+            get {
+                return ResourceManager.GetString("ConsultarRequerimientoNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ConsultarPropuestas.
         /// </summary>
         internal static string ConsultarTodasPropuestas {
@@ -138,6 +147,15 @@ namespace DatosTangerine.DAO.M6 {
         internal static string EliminarPropuesta {
             get {
                 return ResourceManager.GetString("EliminarPropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M6_EliminarRequerimiento.
+        /// </summary>
+        internal static string EliminarRequerimiento {
+            get {
+                return ResourceManager.GetString("EliminarRequerimiento", resourceCulture);
             }
         }
         
@@ -534,6 +552,15 @@ namespace DatosTangerine.DAO.M6 {
         internal static string ReqNombre {
             get {
                 return ResourceManager.GetString("ReqNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_prop_req_id.
+        /// </summary>
+        internal static string ReqNombrePropuesta {
+            get {
+                return ResourceManager.GetString("ReqNombrePropuesta", resourceCulture);
             }
         }
         

@@ -85,8 +85,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoM5.resx</DependentUpon>
     </Compile>
+    <Compile Include="M6\PresentadorInformacionPropuesta.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />
-    <Compile Include="M6\PresentadorEliminarPropuesta.cs" />
     <Compile Include="M6\PresentadorAgregarPropuesta.cs" />
     <Compile Include="M6\PresentadorConsultarPropuesta.cs" />
     <Compile Include="M6\RecursosPresentadorPropuesta.Designer.cs">
@@ -116,10 +116,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoPresentadorM9.resx</DependentUpon>
     </Compile>
+    <Compile Include="M9\PresentadorSeleccionCompania.cs" />
     <Compile Include="Master\PresentadorMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="M10\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>

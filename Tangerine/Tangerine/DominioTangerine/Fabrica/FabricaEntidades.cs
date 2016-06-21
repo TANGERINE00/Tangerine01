@@ -244,9 +244,18 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
             }
             #endregion
+            #region instancia de cliente potencial sin estatus
+            public static Entidad CrearClientePotencial(int idCliente, string nombre, string rif, 
+                                                        string email, float presupuesto,
+                                                        int llamadas, int visitas)
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial(idCliente, nombre,rif, email,
+                                                                          presupuesto, llamadas, visitas);
+            }
+            #endregion 
         #endregion
 
-        #region Modulo 4
+            #region Modulo 4
 
             #region instancias de la clase CompaniaM4
             /// <summary>
@@ -469,6 +478,10 @@ namespace DominioTangerine.Fabrica
         #region Modulo 6
 
             #region Instancia Propuesta
+            static public Entidad ObtenerPropuestaVacia()
+            {
+                return new DominioTangerine.Entidades.M6.Propuesta();
+            }
 
             static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, 
                 string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, DateTime fefinal, 
@@ -651,13 +664,7 @@ namespace DominioTangerine.Fabrica
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
 
-
-        //public static Entidad ObtenerCargo()
-        //{
-        //    return new DominioTangerine.Entidades.M10.Cargo();
-        //}
-
-        
+  
         public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
         {
             return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
@@ -673,7 +680,7 @@ namespace DominioTangerine.Fabrica
 
         }
 
-        #endregion
+       
 
         public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
                                                string empSApellido, string empGenero, int empCedula, DateTime empFecha,
@@ -687,5 +694,6 @@ namespace DominioTangerine.Fabrica
                                                                    empLugId,  empCargo,  empSalario,  empFechaInicio,
                                                                    empFechaFin, empDireccion));
         }
+        #endregion
     }
 }

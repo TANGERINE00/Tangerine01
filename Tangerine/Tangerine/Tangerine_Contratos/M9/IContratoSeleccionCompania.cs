@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tangerine_Contratos.M6
+namespace Tangerine_Contratos.M9
 {
-    public interface IContratoEliminarPropuesta
+    public interface IContratoSeleccionCompania
     {
+
+        string company { get; set; }
+    
     }
 }
