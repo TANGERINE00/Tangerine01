@@ -69,7 +69,10 @@ namespace Tangerine_Presentador.M6
                 _entregaCant = 0;
             }
 
-
+            //AQUI TIENE QUE SER ENTIDAD
+            //
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!
+            //
             //Creación del Objeto Propuesta.
             DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(_nombcodigoPropuesta, _descripcion,
             _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,_entregaCant, _fechaI, _fechaF, _costo, _idCompañia);

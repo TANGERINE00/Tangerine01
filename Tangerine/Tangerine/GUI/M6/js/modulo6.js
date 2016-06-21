@@ -40,7 +40,6 @@ function contarElementos() {
     }
 }
 
-
 function crearPrecondicionArr() {
 
     var values = "";
@@ -81,3 +80,14 @@ function doSearch() {
         }
     }
 }
+
+$(document).ready(function () {
+    $(".mod_req").on("click", function () {
+        var id = $(this).parents().siblings("td:nth-child(1)").html();
+        var descripcion = $(this).parents().siblings("td:nth-child(2)").html();
+        $(".idreq_input").val(id);
+        $(".input_requerimiento").val(descripcion);
+
+    })
+
+});
