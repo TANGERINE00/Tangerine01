@@ -69,16 +69,13 @@ namespace Tangerine_Presentador.M6
                 _entregaCant = 0;
             }
 
-            //AQUI TIENE QUE SER ENTIDAD
-            //
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!
-            //
+            
             //Creación del Objeto Propuesta.
-            DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(_nombcodigoPropuesta, _descripcion,
-            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,_entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
-           
+            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
+            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+
             //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
             Confirmacion = comando.Ejecutar();
         
             //El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
@@ -95,11 +92,11 @@ namespace Tangerine_Presentador.M6
                 //Debug.Print(_precondicion[i]);
                   
                 //Creación del Objeto Propuesta.
-                DominioTangerine.Entidades.M6.Requerimiento requerimiento = new DominioTangerine.Entidades.M6.Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
-
+                Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                    codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
 
                 //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto requerimiento.
-                LogicaTangerine.Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
+                Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
                 comando2.Ejecutar();
             }
         }

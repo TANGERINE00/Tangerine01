@@ -273,7 +273,7 @@
   <data name="PropuestaAprovada" xml:space="preserve">
     <value>Propuesta:</value>
   </data>
-  <data name="Value" xml:space="preserve">
-    <value>Value</value>
+  <data name="dateTipe" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
   </data>
 </root>
