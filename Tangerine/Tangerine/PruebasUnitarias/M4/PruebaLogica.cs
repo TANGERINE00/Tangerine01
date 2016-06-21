@@ -226,7 +226,7 @@ namespace PruebasUnitarias.M4
         /// Prueba que permite modificar un Lugar.
         /// </summary>
         [Test]
-        public void TestModificarLugar()
+        public void TestModofocarLugar()
         {
             try
             {
