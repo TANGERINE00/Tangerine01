@@ -22,18 +22,12 @@ namespace Tangerine.GUI.M7
 
         #region Atributos
 
-        public string NombrePropuesta
-        {
-            get { return this.inputPropuesta.ToString(); }
-            set { this.inputPropuesta.Text = value; }
-        }
-
 
         public string NombreProyecto
         {
             get
             {
-                throw new NotImplementedException();
+                return this.textInputNombreProyecto.Value;
             }
             set
             {
@@ -45,7 +39,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                throw new NotImplementedException();
+                return this.textInputCodigo.Value;
             }
             set
             {
@@ -57,7 +51,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                throw new NotImplementedException();
+                return this.datepicker1.Value;
             }
             set
             {
@@ -69,7 +63,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                throw new NotImplementedException();
+                return this.datepicker2.Value;
             }
             set
             {
@@ -81,7 +75,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                throw new NotImplementedException();
+                return this.textInputCosto.Value;
             }
             set
             {
@@ -93,7 +87,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                throw new NotImplementedException();
+                return this.Porcentaje;
             }
             set
             {
@@ -105,7 +99,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                throw new NotImplementedException();
+                return this.Estatus;
             }
             set
             {
@@ -178,7 +172,7 @@ namespace Tangerine.GUI.M7
 
         Button IContratoAgregarProyecto.BtnGenerar
         {
-            get 
+            get
             {
                 return this.btnGenerar;
             }
@@ -191,12 +185,14 @@ namespace Tangerine.GUI.M7
         #endregion
 
 
+        public AgregarProyecto()
+        {
+            _presentador = new PresentadorAgregarProyecto(this);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            _presentador = new PresentadorAgregarProyecto (this);
-            
-
+               
            if (!IsPostBack)
            {
                _presentador.CargarPagina();
@@ -251,6 +247,8 @@ namespace Tangerine.GUI.M7
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
+
+            _presentador.agregarProyecto();
             /* Propuestas = LogicaM7.ConsultarPropuestasAprobadas();
              Gerentes = LogicaM10.GetGerentes();
              Programadores = LogicaM10.GetProgramadores();
