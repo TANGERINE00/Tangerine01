@@ -12,5 +12,8 @@ namespace Tangerine_Contratos.M1
 
         string passwordInput { get; set; }
 
+        string mensajeVista { get; set; }
+
+
     }
 }

@@ -203,6 +203,18 @@ namespace LogicaTangerine.Fabrica
                 return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAPagina( paginaAVerificar, nombreRol );
             }
 
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultaUsuarioLogin
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin(DominioTangerine.Entidad usuario)
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin(usuario);
+            }
+
+
+
             #endregion
         
         #endregion

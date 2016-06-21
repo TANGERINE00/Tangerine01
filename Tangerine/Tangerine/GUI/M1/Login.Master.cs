@@ -18,16 +18,17 @@ using DominioTangerine.Entidades.M8;
 using DominioTangerine.Fabrica;
 
 
+
 namespace Tangerine.GUI.M1
 {
     public partial class Login1 : System.Web.UI.MasterPage, IContratoInicio
     {
-        LogicaM1 _logicaM1 = new LogicaM1();
+       // LogicaM1 _logicaM1 = new LogicaM1();
         string _usuario = String.Empty;
         string _contrasena = String.Empty;
-        LogicaProyecto proyectoLogic = new LogicaProyecto();
-        bool facturaExistente = false;
-        int montoFactura = 0;
+        // LogicaProyecto proyectoLogic = new LogicaProyecto();
+      //  bool facturaExistente = false;
+        //int montoFactura = 0;
         PresentadorInicio presentador;
 
         #region Contrato
@@ -50,6 +51,15 @@ namespace Tangerine.GUI.M1
             set { userIni.Value = value; }
         }
 
+        /// <summary>
+        /// Encabezado del textBox del mensaje de error
+        /// </summary>
+        public string mensajeVista
+        {
+            get { return mensaje.Text; }
+            set { mensaje.Text = value; }
+        }
+
         #endregion
 
         public Login1()
@@ -58,8 +68,10 @@ namespace Tangerine.GUI.M1
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (HttpContext.Current.Session["User"] + "" != "")
-                HttpContext.Current.Session.Abandon();
+            //if (HttpContext.Current.Session["User"] + "" != "")
+            //    HttpContext.Current.Session.Abandon();
+            presentador.ValidarSesion();
+
         }
         /// <summary>
         /// Metodo resultante de accionar el acceder, realiza la conexion con LogicaTangerine para validar las entradas
@@ -68,7 +80,8 @@ namespace Tangerine.GUI.M1
         /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
-            Usuario nuevoUsuario = new Usuario();
+            presentador.ValidarElUsuario();
+          /*  Usuario nuevoUsuario = new Usuario();
             _usuario = userIni.Value.ToString();
             _contrasena = passwordIni.Value.ToString();
             Cuenta lacuenta = new Cuenta();
@@ -104,7 +117,7 @@ namespace Tangerine.GUI.M1
                 //}
 
                 //------------------------TERCERA ENTREGA-----------------------------
-                ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo = 
+                ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =
                     (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
                 List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
 
@@ -139,7 +152,7 @@ namespace Tangerine.GUI.M1
             {
                 mensaje.Text = "Error en el inicio de sesión";
                 //Response.Redirect("Login.aspx");
-            }
+            }*/
 
 
 

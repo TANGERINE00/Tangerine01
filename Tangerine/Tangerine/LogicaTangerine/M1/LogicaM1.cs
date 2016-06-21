@@ -12,6 +12,7 @@ using ExcepcionesTangerine;
 using DatosTangerine.M10;
 using DominioTangerine.Entidades.M1;
 
+
 namespace LogicaTangerine.M1
 {
     public class LogicaM1
