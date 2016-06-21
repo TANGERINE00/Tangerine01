@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Comandos\M1\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +70,10 @@
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M1\ComandoConsultarUsuario.cs" />
+    <Compile Include="Comandos\M1\ComandoGenerarNuevaContraseña.cs" />
+    <Compile Include="Comandos\M1\ComandoValidarCorreo.cs" />
+    <Compile Include="Comandos\M1\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
