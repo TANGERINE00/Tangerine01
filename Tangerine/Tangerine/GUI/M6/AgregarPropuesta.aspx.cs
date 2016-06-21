@@ -33,16 +33,39 @@ namespace Tangerine.GUI.M6
 
             if (!IsPostBack)
             {
-                presenter.llenarVista();   
+                presenter.llenarVista();
+
+                comboDuracion_SelectedIndexChanged(sender, e);
             }
 
 
         }
 
+
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             presenter.agregarPropuesta();
         }
+
+
+        protected void comboDuracion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            datepicker1.Value = DateTime.Today.ToShortDateString();
+            datepicker2.Value = DateTime.Today.ToShortDateString();
+
+            if (comboDuracion.SelectedItem.Text != "Custom")
+            {
+                datepicker1.Disabled = true;
+                datepicker2.Disabled = true;
+            }
+            else
+            {
+                datepicker1.Disabled = false;
+                datepicker2.Disabled = false;
+            }
+        }
+
+        
         public DropDownList ComboCompania 
         {
             get { return comboCompañia; }
@@ -85,7 +108,6 @@ namespace Tangerine.GUI.M6
             get { return comboTipoCosto; }
             set { comboTipoCosto= value; }
         }
-
         public string TextoCosto
         {
             get { return textoCosto.Value; }

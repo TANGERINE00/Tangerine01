@@ -51,7 +51,7 @@ namespace Tangerine_Presentador.M6
             _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
             _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
-            _duracion = vista.ComboDuracion.SelectedItem.Text;
+            _duracion = vista.TextoDuracion;
             _fechaI = DateTime.ParseExact(vista.DatePickerUno, "MM/dd/yyyy", null);
             _fechaF = DateTime.ParseExact(vista.DatePickerDos, "MM/dd/yyyy", null);
             _moneda = vista.TipoCosto.SelectedItem.Text;
@@ -141,7 +141,7 @@ namespace Tangerine_Presentador.M6
         {
             vista.ComboDuracion.Items.Add("Meses");
             vista.ComboDuracion.Items.Add("Dias");
-            vista.ComboDuracion.Items.Add("Horas");
+            vista.ComboDuracion.Items.Add("Custom");
         }
         public void llenarComboTipoCosto()
         {
@@ -181,7 +181,6 @@ namespace Tangerine_Presentador.M6
          llenarComboEstatus();
          llenarComboCuota();
          llenarComboFpago();
-        
         }
     }
 }
