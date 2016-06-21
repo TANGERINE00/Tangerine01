@@ -27,25 +27,9 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override Entidad Ejecutar()
         {
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                                 RecursoComandosM5.MensajeInicioInfoLogger,
-                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
-
-            try 
-            {
-                IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-                _laEntidad = daoContacto.ConsultarXId( _laEntidad );
-            }
-            catch ( Exception ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw ex;
-            }
-
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                                 RecursoComandosM5.MensajeFinInfoLogger,
-                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
-
+            IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
+            _laEntidad = daoContacto.ConsultarXId( _laEntidad );
+            
             return _laEntidad;
         }
     }
