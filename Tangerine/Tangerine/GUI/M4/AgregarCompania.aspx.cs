@@ -158,8 +158,8 @@ namespace Tangerine.GUI.M4
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             Presentador.AgregarCompania();
+                Server.Transfer("ConsultarCompania.aspx", true);
 
-            Server.Transfer("ConsultarCompania.aspx", true);
         }
 
         /// <summary>

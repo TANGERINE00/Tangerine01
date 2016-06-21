@@ -79,6 +79,7 @@
     <Compile Include="M3\NullArgumentExceptionLeads.cs" />
     <Compile Include="M3\WrongFormatExceptionLeads.cs" />
     <Compile Include="M4\ExceptionDataBase.cs" />
+    <Compile Include="M4\ExeptionM4Tangerine.cs" />
     <Compile Include="M4\NullArgumentException.cs" />
     <Compile Include="M4\WrongFormatException.cs" />
     <Compile Include="M5\ExceptionDataBase.cs" />

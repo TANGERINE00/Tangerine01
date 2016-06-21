@@ -69,7 +69,7 @@
                                 maxlength="15" required>
                         </div>
                         <!--Fecha Registro-->
-                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
+                        <!--<div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
                             <label for="InputFechaRegistro">Fecha de Registro</label> <label for="Requerido" style="color: red;">*</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
