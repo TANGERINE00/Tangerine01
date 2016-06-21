@@ -79,17 +79,15 @@ namespace DatosTangerine.DAO.M2
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarRolUsuario, parametros);
                 }
-                catch (NullReferenceException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
-                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             }
@@ -155,7 +153,12 @@ namespace DatosTangerine.DAO.M2
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return rol;
             }
@@ -199,7 +202,12 @@ namespace DatosTangerine.DAO.M2
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return lista;
             }
