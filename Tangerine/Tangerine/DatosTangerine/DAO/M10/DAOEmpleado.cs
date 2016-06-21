@@ -45,19 +45,20 @@ namespace DatosTangerine.DAO.M10
         /// <param name="empleadoId"></param>
         /// <returns></returns>
 
-        public bool CambiarEstatus(int empleadoId)
+        public bool CambiarEstatus(Entidad empleado)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Parametro> parameters = new List<Parametro>();
-            BDConexion theConnection = new BDConexion();
+           
             try
             {
-                
-                parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar, empleadoId.ToString(), false));
 
-                List<Resultado> results = theConnection.EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
+                parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar,
+                              ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false));
+
+                List<Resultado> results = EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
 
             }
             catch (ArgumentNullException ex)

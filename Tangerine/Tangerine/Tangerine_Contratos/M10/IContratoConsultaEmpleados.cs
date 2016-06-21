@@ -12,6 +12,8 @@ namespace Tangerine_Contratos.M10
         Literal Tabla { get; set; }
 
          String button {get; set; }
+
+         int request { get;}
         
         }
 

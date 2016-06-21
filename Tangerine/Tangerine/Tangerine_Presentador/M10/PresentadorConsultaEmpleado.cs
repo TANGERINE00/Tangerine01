@@ -15,6 +15,7 @@ namespace Tangerine_Presentador.M10
     public class PresentadorConsultaEmpleado
     {
         IContratoConsultaEmpleados vista;
+        Boolean Confirmacion;
 
         public PresentadorConsultaEmpleado(IContratoConsultaEmpleados vista)
         {
@@ -111,8 +112,9 @@ namespace Tangerine_Presentador.M10
                         ResourceGUIM10.BotonVerEmpCerrar;
 
                     if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                        vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
-                            ResourceGUIM10.BotonStatusEmpCerrar;
+                        vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir + 
+                        ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
+                        ResourceGUIM10.BotonStatusEmpCerrar;
 
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
                     vista.Tabla.Text += ResourceGUIM10.CerrarTR;
@@ -125,6 +127,18 @@ namespace Tangerine_Presentador.M10
             {
                 throw ex;
             }
+        }
+
+        public void CambiarEstatus() 
+        {
+            int idEmpleado;
+            idEmpleado = vista.request;
+            Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.obtenerEntidad();
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)estatusId).Id = idEmpleado;            
+            LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado comando =
+            (LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado)LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);
+
+            Confirmacion = comando.Ejecutar();
         }
 
     }

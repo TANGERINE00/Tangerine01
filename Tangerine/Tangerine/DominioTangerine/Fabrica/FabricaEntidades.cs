@@ -701,5 +701,10 @@ namespace DominioTangerine.Fabrica
                                                                    empFechaFin, empDireccion));
         }
         #endregion
+
+        public static Entidad obtenerEntidad()
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
+        }
     }
 }

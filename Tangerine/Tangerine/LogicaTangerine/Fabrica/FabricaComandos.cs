@@ -756,8 +756,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoObtenerEstado(Pais);
         }
-        
 
+        public static Comando<bool> HabilitarEmpleado(Entidad estatus)
+        {
+            return new LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado(estatus);
+        }
 
         #endregion
     }

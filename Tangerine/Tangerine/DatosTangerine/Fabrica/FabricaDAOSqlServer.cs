@@ -167,7 +167,12 @@ namespace DatosTangerine.Fabrica
 
         public static IDAOEmpleado ConsultarDAOEmpleadoId()
         {
-            return new DAO.M10.DAOEmpleado(); //AQUIIIIIIIIIIIIIIIII
+            return new DAO.M10.DAOEmpleado(); 
+        }
+
+        public static IDAOEmpleado EstatusDAOEmpleado()
+        {
+            return new DAO.M10.DAOEmpleado();
         }
 
         /// <summary>
