@@ -7,19 +7,133 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.M4;
+using Tangerine_Contratos.M4;
+using Tangerine_Presentador.M4;
 
 namespace Tangerine.GUI.M4
 {
-    public partial class ModificarCompania : System.Web.UI.Page
+    public partial class ModificarCompania : System.Web.UI.Page , IContratoAgregarCompania
     {
-        LogicaM4 logica = new LogicaM4();
-        int _idComp;
+        PresentadorModificarCompania Presentador;
 
-        public int IdCompania
+        public ModificarCompania()
         {
-            get { return _idComp; }
-            set { _idComp = value; }
+            Presentador = new PresentadorModificarCompania(this);
         }
+
+        #region Contrato
+        public string inputNombre1
+        {
+            get
+            {
+                return InputNombre1.Value;
+            }
+            set
+            {
+                InputNombre1.Value = value;
+            }
+        }
+        public string inputAcronimo1
+        {
+            get
+            {
+                return InputAcronimo1.Value;
+            }
+            set
+            {
+                InputAcronimo1.Value = value;
+            }
+        }
+        public string inputRIF1
+        {
+            get
+            {
+                return InputRIF1.Value;
+            }
+            set
+            {
+                InputRIF1.Value = value;
+            }
+        }
+        public DropDownList inputDireccion1
+        {
+            get
+            {
+                return InputDireccion1;
+            }
+            set
+            {
+                InputDireccion1 = value;
+            }
+        }
+        public string inputEmail1
+        {
+            get
+            {
+                return InputEmail1.Value;
+            }
+            set
+            {
+                InputEmail1.Value = value;
+            }
+        }
+        public string inputTelefono1
+        {
+            get
+            {
+                return InputTelefono1.Value;
+            }
+            set
+            {
+                InputTelefono1.Value = value;
+            }
+        }
+        public string Datepicker1
+        {
+            get
+            {
+                return datepicker1.Value;
+            }
+            set
+            {
+                datepicker1.Value = value;
+            }
+        }
+        public string inputPresupuesto1
+        {
+            get
+            {
+                return InputPresupuesto1.Value;
+            }
+            set
+            {
+                InputPresupuesto1.Value = value;
+            }
+        }
+        public string inputPlazoPago1
+        {
+            get
+            {
+                return InputPlazoPago1.Value;
+            }
+            set
+            {
+                InputPlazoPago1.Value = value;
+            }
+        }
+
+        public DropDownList direccion
+        {
+            get
+            {
+                return this.InputDireccion1;
+            }
+            set
+            {
+                //InputDireccion1 = value;
+            }
+        }
+        #endregion
 
 
         /// <summary>
@@ -29,25 +143,11 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Compania laCompania;
-
             try
             {
-                IdCompania = int.Parse(Request.QueryString["idComp"]);
-                laCompania = logica.ConsultCompany(IdCompania);
-
                 if (!IsPostBack)
                 {
-                    llenarComboBoxLugar();
-                    InputNombre1.Value = laCompania.NombreCompania;
-                    InputAcronimo1.Value = laCompania.AcronimoCompania;
-                    InputRIF1.Value = laCompania.RifCompania;
-                    InputDireccion1.Value = logica.MatchNombreLugar(laCompania.IdLugar);
-                    InputEmail1.Value = laCompania.EmailCompania;
-                    InputTelefono1.Value = laCompania.TelefonoCompania;
-                    datepicker1.Value = laCompania.FechaRegistroCompania.ToShortDateString();
-                    InputPresupuesto1.Value = laCompania.PresupuestoCompania.ToString();
-                    InputPlazoPago1.Value = laCompania.PlazoPagoCompania.ToString();
+                    Presentador.CargarCompania(int.Parse(Request.QueryString["idComp"]));
                 }
             }
             catch (Exception ex)
@@ -62,22 +162,7 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnmodificar_Click(object sender, EventArgs e)
         {
-            string _nombre = InputNombre1.Value;
-            string _acronimo = InputAcronimo1.Value;
-            string _rif = InputRIF1.Value;
-            string _email = InputEmail1.Value;
-            string _telefono = InputTelefono1.Value;
-            string _fecha = datepicker1.Value;
-            int _status = logica.ConsultCompany(IdCompania).StatusCompania;
-            int _presupuesto = int.Parse(InputPresupuesto1.Value);
-            int _plazo = int.Parse(InputPlazoPago1.Value.ToString());
-            int _direccionId = logica.MatchIdLugar(InputDireccion1.Value);
-
-            Compania company = new Compania(IdCompania, _nombre, _rif, _email, _telefono, _acronimo,
-                                            DateTime.ParseExact(_fecha, "MM/dd/yyyy", null), _status, _presupuesto, 
-                                            _plazo, _direccionId);
-            logica.ChangeCompany(company);
-
+            Presentador.ModificarCompania(int.Parse(Request.QueryString["idComp"]));
             Server.Transfer("ConsultarCompania.aspx", true);
         }
 
@@ -86,20 +171,5 @@ namespace Tangerine.GUI.M4
         /// </summary>
         /// <param name=""></param>
         /// <returns></returns>
-        protected void llenarComboBoxLugar()
-        {
-            List<LugarDireccion> listPlace = logica.getPlaces();
-
-            try
-            {
-                foreach (LugarDireccion thePlace in listPlace)
-                {
-                    InputDireccion1.Items.Add(thePlace.LugNombre);
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-        }
     }
 }
