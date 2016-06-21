@@ -35,7 +35,7 @@ namespace Tangerine.GUI.M6
             {
                 presenter.llenarVista();
 
-                comboDuracion_SelectedIndexChanged(sender, e);
+                //comboDuracion_SelectedIndexChanged(sender, e);
             }
 
 

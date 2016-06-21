@@ -10,6 +10,7 @@ using DatosTangerine.InterfazDAO.M4;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
+using ExcepcionesTangerine.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
@@ -30,9 +31,9 @@ namespace LogicaTangerine.Comandos.M4
                 IDaoLugarDireccion DaoLugar = FabricaDAOSqlServer.crearDaoLugarDireccion();
                 return DaoLugar.Agregar(this._laEntidad);
             }
-            catch ( NotImplementedException )
+            catch ( NotImplementedException e)
             {
-                return false;
+                throw new ExceptionM4Tangerine("DS-404", "Metodo no implementado", e);
             }
         }
     }

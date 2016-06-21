@@ -232,6 +232,33 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IdCompania.
+        /// </summary>
+        internal static string idC {
+            get {
+                return ResourceManager.GetString("idC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idFac.
+        /// </summary>
+        internal static string idF {
+            get {
+                return ResourceManager.GetString("idF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IdProyecto.
+        /// </summary>
+        internal static string idP {
+            get {
+                return ResourceManager.GetString("idP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
         internal static string OpenTD {

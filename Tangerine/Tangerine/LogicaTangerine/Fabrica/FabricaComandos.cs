@@ -675,10 +675,29 @@ namespace LogicaTangerine.Fabrica
         /// Método para crear una instancia del ComandoAgregarProyecto
         /// </summary>
         /// <param name="proyecto">proyecto de tipo Entidad que será insertado en la base de datos</param>
-        /// <returns></returns>
+        /// <returns>Comando para agregar un proyecto a la BD.</returns>
         public static Comando<bool> ObtenerComandoAgregarProyecto(Entidad proyecto)
         {
             return new ComandoAgregarProyecto(proyecto);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoUltimoIdProyecto
+        /// </summary>
+        /// <returns>Id del último proyecto insertado en la BD.</returns>
+        public static Comando<int> ObtenerComandoUltimoIdProyecto()
+        {
+            return new ComandoUltimoIdProyecto();
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarEmpleados.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los empleados.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<bool> ObtenerComandoAgregarEmpleados (Entidad proyecto)
+        {
+            return new ComandoAgregarEmpleados(proyecto);
         }
         #endregion
 
