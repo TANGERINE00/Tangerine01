@@ -22,7 +22,7 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo para agregar una requerimiento en la base de datos.
         /// </summary>
-        ///  <param name="parametro">objeto de tipo Requerimiento para agregar en BD</param>
+        ///  <param name="elRequerimiento">objeto de tipo Requerimiento para agregar en BD</param>
         /// <returns>true si fue agregado</returns>
         public bool Agregar(Entidad elRequerimiento)
         {
@@ -81,8 +81,8 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo que permite modificar un requerimiento en la BD
         /// </summary>
-        /// <param name="propuesta"></param>
-        /// <returns></returns>
+        /// <param name="elRequerimiento">objeto de tipo requerimiento a ser modificado</param>
+        /// <returns>true si fue modificado</returns>
         public Boolean Modificar(Entidad elRequerimiento)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
@@ -134,8 +134,8 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo para consultar un requerimiento por id (nombre)
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">nombre de requerimiento</param>
+        /// <returns>Objeto requerimiento</returns>
         public Entidad ConsultarXId(Entidad id)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -301,8 +301,8 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Método para listar los requerimientos por propuesta 
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">nombre propuesta</param>
+        /// <returns>Lista de requerimientos</returns>
         public List<Entidad> ConsultarRequerimientosXPropuesta(String id)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -354,8 +354,8 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo que permite eliminar un requerimiento en la BD
         /// </summary>
-        /// <param name="requerimiento"></param>
-        /// <returns></returns>
+        /// <param name="elRequerimiento">objeto tipo Requerimiento</param>
+        /// <returns>True si fue eliminado</returns>
         public Boolean EliminarRequerimiento(Entidad elRequerimiento)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

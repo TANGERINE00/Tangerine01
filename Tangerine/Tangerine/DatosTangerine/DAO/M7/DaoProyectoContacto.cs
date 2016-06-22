@@ -44,7 +44,8 @@ namespace DatosTangerine.DAO.M7
                 Parametro theParam = new Parametro(Resource_M7.ParamTComp, SqlDbType.Int, parametro1, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(Resource_M7.ParamIdComp, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)contacto).Id.ToString(), false);
+                theParam = new Parametro(Resource_M7.ParamIdComp, SqlDbType.Int,
+                                ((DominioTangerine.Entidades.M7.Proyecto)contacto).Id.ToString(), false);
                 parameters.Add(theParam);
 
                 /*theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, parametro2, false);
@@ -57,15 +58,24 @@ namespace DatosTangerine.DAO.M7
                 foreach (DataRow row in dt.Rows)
                 {
                     Entidad contacto2 = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Id = int.Parse(row[Resource_M7.ConIdContact].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Nombre = row[Resource_M7.ConNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Apellido = row[Resource_M7.ConLastNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Departamento = row[Resource_M7.ConDepartmentContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Cargo = row[Resource_M7.ConRolContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Telefono = row[Resource_M7.ConPhoneContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Correo = row[Resource_M7.ConEmailContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).TipoCompañia = int.Parse(row[Resource_M7.ConTypeComp].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).IdCompañia = int.Parse(row[Resource_M7.ConIdComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Id = 
+                                        int.Parse(row[Resource_M7.ConIdContact].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Nombre = 
+                                        row[Resource_M7.ConNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Apellido = 
+                                        row[Resource_M7.ConLastNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Departamento = 
+                                        row[Resource_M7.ConDepartmentContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Cargo =
+                                        row[Resource_M7.ConRolContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Telefono = 
+                                        row[Resource_M7.ConPhoneContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Correo = 
+                                        row[Resource_M7.ConEmailContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).TipoCompañia = 
+                                        int.Parse(row[Resource_M7.ConTypeComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).IdCompañia = 
+                                        int.Parse(row[Resource_M7.ConIdComp].ToString());
 
                     listContact.Add(contacto2);
                 }
@@ -119,10 +129,12 @@ namespace DatosTangerine.DAO.M7
                         //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
 
-                        theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, elProyecto.Id.ToString(), false);
+                        theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, 
+                                        elProyecto.Id.ToString(), false);
                         parameters.Add(theParam);
 
-                        theParam = new Parametro(Resource_M7.ParamPCIdContacto, SqlDbType.Int, contacto.Id.ToString(), false);
+                        theParam = new Parametro(Resource_M7.ParamPCIdContacto, SqlDbType.Int,
+                                        contacto.Id.ToString(), false);
                         parameters.Add(theParam);
 
                         
@@ -187,15 +199,24 @@ namespace DatosTangerine.DAO.M7
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Id = int.Parse(row[Resource_M7.ConIdContact].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre = row[Resource_M7.ConNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido = row[Resource_M7.ConLastNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Departamento = row[Resource_M7.ConDepartmentContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Cargo = row[Resource_M7.ConRolContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Telefono = row[Resource_M7.ConPhoneContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Correo = row[Resource_M7.ConEmailContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).TipoCompañia = int.Parse(row[Resource_M7.ConTypeComp].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).IdCompañia = int.Parse(row[Resource_M7.ConIdComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Id = 
+                                        int.Parse(row[Resource_M7.ConIdContact].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre = 
+                                        row[Resource_M7.ConNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido = 
+                                        row[Resource_M7.ConLastNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Departamento = 
+                                        row[Resource_M7.ConDepartmentContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Cargo = 
+                                        row[Resource_M7.ConRolContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Telefono = 
+                                        row[Resource_M7.ConPhoneContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Correo = 
+                                        row[Resource_M7.ConEmailContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).TipoCompañia = 
+                                        int.Parse(row[Resource_M7.ConTypeComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).IdCompañia = 
+                                        int.Parse(row[Resource_M7.ConIdComp].ToString());
                 }
 
             }
