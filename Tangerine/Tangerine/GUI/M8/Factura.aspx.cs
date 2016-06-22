@@ -11,9 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace Tangerine.GUI.M8
 {
-    public partial class ModificarFacturaM8 : System.Web.UI.Page, IContratoModificarFactura
+    public partial class Factura : System.Web.UI.Page, IContratoFactura
     {
-        PresentadorModificarFactura _presentador;
+        PresentadorFactura _presentador;
 
         #region Implementacion de Contrato
 
@@ -71,9 +71,9 @@ namespace Tangerine.GUI.M8
 
         #region Constructor
 
-        public ModificarFacturaM8()
+        public Factura()
         {
-            _presentador = new PresentadorModificarFactura(this);
+            _presentador = new PresentadorFactura(this);
         }
 
         #endregion
