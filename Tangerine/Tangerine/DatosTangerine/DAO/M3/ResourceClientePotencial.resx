@@ -222,4 +222,7 @@
   <data name="SP_promoverClientePotencial" xml:space="preserve">
     <value>M3_promover_cliente_potencial</value>
   </data>
+  <data name="ConsultarUltimoId" xml:space="preserve">
+    <value>M3_ConsultarIdUltimoLead</value>
+  </data>
 </root>

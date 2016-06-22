@@ -271,6 +271,15 @@ namespace DominioTangerine.Fabrica
                                                                           presupuesto, llamadas, visitas);
             }
             #endregion 
+
+            #region instancia de cliente potencial para agregar
+            public static Entidad CrearClientePotencialSinLlamadaVisita(string nombre, string rif, string email, float presupuesto,
+            int status)
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email,
+                                                                          presupuesto, status);
+            }
+            #endregion 
         #endregion
 
             #region Modulo 4

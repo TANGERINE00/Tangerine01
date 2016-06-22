@@ -195,6 +195,32 @@ namespace DatosTangerine.DAO.M3
 
             return true;
         }
+
+        public int ConsultarIdUltimoClientePotencial()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            int mayorId = 0;
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de cliente potencial
+                DataTable dt = EjecutarStoredProcedureTuplas(ResourceClientePotencial.ConsultarUltimoId, parameters);
+                //Guardar los datos 
+                DataRow row = dt.Rows[0];
+
+                mayorId = int.Parse(row[ResourceClientePotencial.idClientePotencial].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            return mayorId;
+        }
         #endregion
 
         #region DAO General

@@ -16,9 +16,10 @@ namespace PruebasUnitarias.M3
     {
         #region Atributos
 
-        public bool answer;
-        public Entidad elClientePotencial1;
-        public Entidad elClientePotencial2;
+        private DominioTangerine.Entidades.M3.ClientePotencial elCliente1, elCliente2, elCliente3;
+        Boolean respuesta;
+        DatosTangerine.InterfazDAO.M3.IDAOClientePotencial daoCliente;
+        int contador;
 
         #endregion
 
@@ -29,8 +30,8 @@ namespace PruebasUnitarias.M3
         [SetUp]
         public void init()
         {
-            elClientePotencial1 = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(40, "TestCorp", "J-2342434-6",
-                                                                                        "prueba@gmail.com", 12121, 0,0);
+            elCliente1 = new DominioTangerine.Entidades.M3.ClientePotencial("Test2", "J-121212-F","prueba@gmail.com",121212,1);
+            elCliente2 = new DominioTangerine.Entidades.M3.ClientePotencial();
         }
 
         /// <summary>
@@ -39,8 +40,7 @@ namespace PruebasUnitarias.M3
         [TearDown]
         public void clean()
         {
-            elClientePotencial1 = null;
-            elClientePotencial2 = null;
+            elCliente1 = null;
         }
         #endregion
 
@@ -51,19 +51,17 @@ namespace PruebasUnitarias.M3
         public void TestConsultarXId()
         {
             IDAOClientePotencial daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-            answer = daoCliente.Agregar(elClientePotencial1);
-            //Aplico el metodo para consultar el usuario agregado anteriormente.
-            elClientePotencial2 = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(40, "TestCorp", "J-2342434-6",
-                                                                                        "prueba@gmail.com", 12121, 0,0);
-            elClientePotencial1 = daoCliente.ConsultarXId(elClientePotencial2);
             
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).IdClientePotencial == 40);
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).NombreClientePotencial == "TestCorp");
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).RifClientePotencial == "J-2342434-6");
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).EmailClientePotencial == "prueba@gmail.com");
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).PresupuestoAnual_inversion == 12121);
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).NumeroLlamadas == 1);
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).NumeroVisitas == 5);
+            respuesta = daoCliente.Agregar(elCliente1);
+            elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
+
+            Assert.AreEqual(elCliente2.NombreClientePotencial,elCliente1.NombreClientePotencial);
+            Assert.AreEqual(elCliente2.RifClientePotencial, elCliente1.RifClientePotencial);
+            Assert.AreEqual(elCliente2.EmailClientePotencial, elCliente1.EmailClientePotencial);
+            Assert.AreEqual(elCliente2.PresupuestoAnual_inversion, elCliente1.PresupuestoAnual_inversion);
+            Assert.AreEqual(elCliente2.Status, elCliente1.Status);
+
         }
 
     }
