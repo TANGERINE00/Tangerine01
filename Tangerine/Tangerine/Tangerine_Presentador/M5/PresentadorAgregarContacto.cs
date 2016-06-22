@@ -52,10 +52,12 @@ namespace Tangerine_Presentador.M5
             catch( AgregarContactoException ex )
             {
                 //Muestro en pantalla el error
+                System.Diagnostics.Debug.WriteLine("Error Agregar Contacto");
             }
             catch( BaseDeDatosContactoException ex )
             {
                 //Muestro en pantalla el error
+                System.Diagnostics.Debug.WriteLine("Error Base de Datos");
             }
         }
     }
