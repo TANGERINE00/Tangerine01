@@ -258,10 +258,11 @@ namespace DatosTangerine.DAO.M7
             return contacto;
         }
 
+        #endregion
+
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
         }
-        #endregion
     }
 }

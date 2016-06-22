@@ -17,11 +17,6 @@ namespace DatosTangerine.DAO.M7
     {
         #region IDAO Proyecto
 
-        public bool DeleteProyecto(Entidad proyecto)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Entidad> ContactProyectoxAcuerdoPago()
         {
             List<Parametro> parameters = new List<Parametro>();
