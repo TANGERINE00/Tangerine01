@@ -1,6 +1,4 @@
 ﻿ using DatosTangerine.InterfazDAO.M7;
-using DatosTangerine.M5;
-using DatosTangerine.M7;
 using DominioTangerine;
 using ExcepcionesTangerine;
 using System;
@@ -29,7 +27,7 @@ namespace DatosTangerine.DAO.M7
         public List<Entidad> ContactCompany(Entidad contacto) 
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Resource_M7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             List<Entidad> listContact = new List<Entidad>();
 
@@ -41,31 +39,31 @@ namespace DatosTangerine.DAO.M7
                 parameters.Add(theParam);*/
 
                 List<Parametro> parameters = new List<Parametro>();
-                Parametro theParam = new Parametro(ResourceContact.ParamTComp, SqlDbType.Int, parametro1, false);
+                Parametro theParam = new Parametro(Resource_M7.ParamTComp, SqlDbType.Int, parametro1, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)contacto).Id.ToString(), false);
+                theParam = new Parametro(Resource_M7.ParamIdComp, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)contacto).Id.ToString(), false);
                 parameters.Add(theParam);
 
                 /*theParam = new Parametro(ResourceContact.ParamIdComp, SqlDbType.Int, parametro2, false);
                 parameters.Add(theParam);*/
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = EjecutarStoredProcedureTuplas(ResourceContact.ContactCompany, parameters);
+                DataTable dt = EjecutarStoredProcedureTuplas(Resource_M7.ContactCompany, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
                     Entidad contacto2 = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Id = int.Parse(row[ResourceContact.ConIdContact].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Nombre = row[ResourceContact.ConNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Apellido = row[ResourceContact.ConLastNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Departamento = row[ResourceContact.ConDepartmentContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Cargo = row[ResourceContact.ConRolContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Telefono = row[ResourceContact.ConPhoneContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Correo = row[ResourceContact.ConEmailContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).TipoCompañia = int.Parse(row[ResourceContact.ConTypeComp].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).IdCompañia = int.Parse(row[ResourceContact.ConIdComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Id = int.Parse(row[Resource_M7.ConIdContact].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Nombre = row[Resource_M7.ConNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Apellido = row[Resource_M7.ConLastNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Departamento = row[Resource_M7.ConDepartmentContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Cargo = row[Resource_M7.ConRolContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Telefono = row[Resource_M7.ConPhoneContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).Correo = row[Resource_M7.ConEmailContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).TipoCompañia = int.Parse(row[Resource_M7.ConTypeComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto2).IdCompañia = int.Parse(row[Resource_M7.ConIdComp].ToString());
 
                     listContact.Add(contacto2);
                 }
@@ -89,8 +87,8 @@ namespace DatosTangerine.DAO.M7
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
-                     ResourceContact.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M5.WrongFormatException(Resource_M7.Codigo_Error_Formato,
+                     Resource_M7.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -104,7 +102,7 @@ namespace DatosTangerine.DAO.M7
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Resource_M7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listContact;
         }
@@ -130,21 +128,21 @@ namespace DatosTangerine.DAO.M7
                         //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
 
-                        theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, elProyecto.Id.ToString(), false);
+                        theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, elProyecto.Id.ToString(), false);
                         parameters.Add(theParam);
 
-                        theParam = new Parametro(ResourceProyecto.ParamPCIdContacto, SqlDbType.Int, contacto.Id.ToString(), false);
+                        theParam = new Parametro(Resource_M7.ParamPCIdContacto, SqlDbType.Int, contacto.Id.ToString(), false);
                         parameters.Add(theParam);
 
                         
                         //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
-                        List<Resultado> results = EjecutarStoredProcedure(ResourceProyecto.AddNewProyectoContacto, parameters);
+                        List<Resultado> results = EjecutarStoredProcedure(Resource_M7.AddNewProyectoContacto, parameters);
 
                         
                     }
                     catch (Exception ex)
                     {
-                        throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                        throw new ExcepcionesTangerine.ExceptionsTangerine(Resource_M7.Mensaje_Generico_Error, ex);
                         return false;
                     }
 
@@ -167,31 +165,31 @@ namespace DatosTangerine.DAO.M7
         public Entidad ConsultarXId(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceContact.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Resource_M7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             Entidad contacto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
 
             try
             {
                 List<Parametro> parameters = new List<Parametro>();
-                Parametro theParam = new Parametro(ResourceContact.ParamIdProy, SqlDbType.Int, parametro.Id.ToString(), false);
+                Parametro theParam = new Parametro(Resource_M7.ParamIdProy, SqlDbType.Int, parametro.Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = EjecutarStoredProcedureTuplas(ResourceContact.ContactProyect, parameters);
+                DataTable dt = EjecutarStoredProcedureTuplas(Resource_M7.ContactProyect, parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
                 {
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Id = int.Parse(row[ResourceContact.ConIdContact].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre = row[ResourceContact.ConNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido = row[ResourceContact.ConLastNameContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Departamento = row[ResourceContact.ConDepartmentContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Cargo = row[ResourceContact.ConRolContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Telefono = row[ResourceContact.ConPhoneContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Correo = row[ResourceContact.ConEmailContact].ToString();
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).TipoCompañia = int.Parse(row[ResourceContact.ConTypeComp].ToString());
-                    ((DominioTangerine.Entidades.M7.Contacto)contacto).IdCompañia = int.Parse(row[ResourceContact.ConIdComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Id = int.Parse(row[Resource_M7.ConIdContact].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre = row[Resource_M7.ConNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido = row[Resource_M7.ConLastNameContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Departamento = row[Resource_M7.ConDepartmentContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Cargo = row[Resource_M7.ConRolContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Telefono = row[Resource_M7.ConPhoneContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Correo = row[Resource_M7.ConEmailContact].ToString();
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).TipoCompañia = int.Parse(row[Resource_M7.ConTypeComp].ToString());
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).IdCompañia = int.Parse(row[Resource_M7.ConIdComp].ToString());
                 }
 
             }
@@ -199,22 +197,22 @@ namespace DatosTangerine.DAO.M7
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M5.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M5.NullArgumentException(Resource_M7.Codigo,
+                    Resource_M7.Mensaje, ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(Resource_M7.Codigo,
+                    Resource_M7.Mensaje, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M5.WrongFormatException(ResourceContact.Codigo_Error_Formato,
-                     ResourceContact.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M5.WrongFormatException(Resource_M7.Codigo_Error_Formato,
+                     Resource_M7.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
@@ -225,10 +223,10 @@ namespace DatosTangerine.DAO.M7
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(Resource_M7.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                ResourceContact.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Resource_M7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return contacto;
         }
