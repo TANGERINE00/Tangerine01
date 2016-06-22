@@ -64,7 +64,6 @@ namespace Tangerine_Presentador.M8
                     _laCompania = (CompaniaM4)_comandoCompania.Ejecutar();
                     Comando<Entidad> _comandoProyecto = FabricaComandos.ObtenerComandoConsultarXIdProyecto(_elProyecto);
                     _elProyecto = (DominioTangerine.Entidades.M7.Proyecto)_comandoProyecto.Ejecutar();
-                    /*Entidad nombreCompania = companiaComando.Ejecutar();*/
 
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTr;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.Id.ToString() 
