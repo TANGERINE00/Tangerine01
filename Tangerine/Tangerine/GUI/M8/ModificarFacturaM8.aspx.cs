@@ -15,6 +15,8 @@ namespace Tangerine.GUI.M8
     {
         PresentadorModificarFactura _presentador;
 
+        #region Implementacion de Contrato
+
         public string textNumeroFactura
         {
             get { return this.textNumeroFactura_M8.Value; }
@@ -50,11 +52,31 @@ namespace Tangerine.GUI.M8
             get { return this.textTipoMoneda_M8.Value; }
             set { this.textTipoMoneda_M8.Value = value; }
         }
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM8.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
+        #endregion
+
+        #region Constructor
 
         public ModificarFacturaM8()
         {
             _presentador = new PresentadorModificarFactura(this);
         }
+
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,35 +87,6 @@ namespace Tangerine.GUI.M8
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //int _numeroFactura = 0;
-        //DateTime _fechaEmision = DateTime.Now;
-        //DateTime _fechaUltimoPago = DateTime.Now;
-        //int _montoTotal = 0;
-        //static int _montoRestante = 0;
-        //static string _tipoMoneda = String.Empty;
-        //string _descripcion = String.Empty;
-        //int _estatus = 0;
-        //int _proyectoId = 0;
-        //int _companiaId = 0;
-        //public static Facturacion theFactura = null;
-
-
-
         /// <summary>
         /// Evento que se dispara con el boton de modificar factura
         /// </summary>
@@ -101,31 +94,11 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonModificarFactura_Click(object sender, EventArgs e)
         {
-            ///*  if (textDescripcion_M8.Value.Equals(""))
-            //  {
-            //      string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
-            //      ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
-            //  }
-            //  else
-            //  {*/
-            //_numeroFactura = int.Parse(textNumeroFactura_M8.Value);
-            //_fechaEmision = DateTime.Parse(textFecha_M8.Value);
-            //_fechaUltimoPago = DateTime.Now;
-            //_companiaId = int.Parse(theFactura.idCompaniaFactura.ToString());
-            //_proyectoId = int.Parse(theFactura.idProyectoFactura.ToString());
-            //_descripcion = textDescripcion_M8.Value;
-            //_estatus = theFactura.estatusFactura;
-            //_montoTotal = int.Parse(textMonto_M8.Value);
-            //// _montoRestante = int.Parse(textMonto_M8.Value);
-
-            //Facturacion factura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, _estatus,
-            //    _proyectoId, _companiaId);
-            //LogicaM8 facturaLogic = new LogicaM8();
-            //facturaLogic.ChangeExistingFactura(factura);
-            //Server.Transfer("ConsultarFacturaM8.aspx");
-            ////}
+            Boolean validar = _presentador.ModificarFactura();
+            if (validar)
+            {
+                Response.Redirect("ConsultarFacturaM8.aspx");
+            }
         }
-
     }
-
 }

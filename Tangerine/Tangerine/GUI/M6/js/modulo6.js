@@ -1,4 +1,13 @@
 ﻿
+$(document).ready(function () {
+    
+    var date = new Date();
+
+    document.getElementById("datepicker1").value = date.toLocaleDateString('en-US');
+    document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
+
+    document.getElementById("datepicker2").disabled = true;
+});
 
 function actualizarIdPrecondiciones() {
     escenarios = $("[id^=precondicion_]");
@@ -81,13 +90,63 @@ function doSearch() {
     }
 }
 
-$(document).ready(function () {
-    $(".mod_req").on("click", function () {
-        var id = $(this).parents().siblings("td:nth-child(1)").html();
-        var descripcion = $(this).parents().siblings("td:nth-child(2)").html();
-        $(".idreq_input").val(id);
-        $(".input_requerimiento").val(descripcion);
+function enableDeFechas(s1, date1, date2, input)
+{
+    var s1 = document.getElementById(s1);
+    var date1 = document.getElementById(date1);
+    var date2 = document.getElementById(date2);
+    var input = document.getElementById(input);
 
-    })
+    var date = new Date();
 
-});
+    date1.value = date.toLocaleDateString('en-US');
+    date2.value = date.toLocaleDateString('en-US');
+
+    if (s1.value == "Meses")
+    {
+        date2.disabled = true;
+        input.disabled = false;
+    }
+    else if (s1.value == "Dias")
+    {
+        date2.disabled = true;
+        input.disabled = false;
+    }
+    else if (s1.value == "Custom")
+    {
+        date2.disabled = false;
+        input.value = "";
+        input.disabled = true;
+    }
+
+}
+
+function setFechas(i1, date1, date2, select1)
+{
+    var i1 = document.getElementById(i1);
+    var date1 = document.getElementById(date1);
+    var date2 = document.getElementById(date2);
+    var select1 = document.getElementById(select1);
+
+    var fechaInicio = new Date(date1.value);
+    var fechaFin = new Date();
+
+    var prueba = select1.value;
+
+    if (select1.value == "Meses")
+    {
+        var diasASumar = parseInt(i1.value)*30;
+
+        fechaFin.setDate(fechaInicio.getDate() + diasASumar);
+
+        date2.value = fechaFin.toLocaleDateString('en-US');
+    }
+    else if(select1.value == "Dias")
+    {
+        var diasASumar = parseInt(i1.value);
+
+        fechaFin.setDate(fechaInicio.getDate() + diasASumar);
+
+        date2.value = fechaFin.toLocaleDateString('en-US');
+    } 
+}
