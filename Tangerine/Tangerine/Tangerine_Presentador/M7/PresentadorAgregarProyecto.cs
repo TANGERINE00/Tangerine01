@@ -90,14 +90,7 @@ namespace Tangerine_Presentador.M7
 
             //Se crea un nuevo comando para agregar los contactos en el proyecto.
             Comando<bool> comandoContactos = FabricaComandos.ObtenerComandoAgregarContactos(nuevoProyecto);
-            comandoContactos.Ejecutar();
-
-            /*DominioTangerine.Entidades.M7.Proyecto tal = (DominioTangerine.Entidades.M7.Proyecto)nuevoProyecto;
-            tal.set_empleados(listaProgramadores);
-            tal.set_contactos(listaContactos);*/
-
-
-         
+            comandoContactos.Ejecutar();       
         }
 
         /// <summary>
