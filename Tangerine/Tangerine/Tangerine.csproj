@@ -166,6 +166,7 @@
     <Content Include="GUI\M3\Listar.aspx" />
     <Content Include="GUI\M3\ModificarLead.aspx" />
     <Content Include="GUI\M3\Promover.aspx" />
+    <Content Include="GUI\M3\SeguimientoDeLeads.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\InformacionCompania.aspx" />
@@ -1159,6 +1160,13 @@
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GUI\M3\SeguimientoDeLeads.aspx.cs">
+      <DependentUpon>SeguimientoDeLeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\SeguimientoDeLeads.aspx.designer.cs">
+      <DependentUpon>SeguimientoDeLeads.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>
