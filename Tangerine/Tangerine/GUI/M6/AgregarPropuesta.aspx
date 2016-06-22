@@ -147,7 +147,7 @@
                                 <i class="fa fa-calendar"></i>
                             </div>
                             <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
-                                clientidmode="static">
+                                onchange="setFechasMesesYDias()" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -160,7 +160,7 @@
                                 <i class="fa fa-calendar"></i>
                             </div>
                             <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
-                                clientidmode="static" >
+                                onchange="setFechasCustom()" clientidmode="static" >
                         </div>
                         <!-- /.input group -->
                     </div>

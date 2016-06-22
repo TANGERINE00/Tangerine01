@@ -110,6 +110,7 @@ function enableDeFechas(s1, date1, date2, input)
 
     date1.value = date.toLocaleDateString('en-US');
     date2.value = date.toLocaleDateString('en-US');
+    input.value = "";
 
     if (s1.value == "Meses")
     {
@@ -140,24 +141,21 @@ function setFechas(i1, date1, date2, select1)
     var fechaInicio = new Date(date1.value);
     var fechaFin = new Date();
 
-    var prueba = select1.value;
+    var diasASumar = parseInt(i1.value);
 
-    if (select1.value == "Meses")
+    if (diasASumar > 0)
     {
-        var diasASumar = parseInt(i1.value)*30;
-
-        fechaFin.setDate(fechaInicio.getDate() + diasASumar);
-
-        date2.value = fechaFin.toLocaleDateString('en-US');
+        if (select1.value == "Meses") {
+            var mes = fechaInicio.getMonth() + 1 + diasASumar;
+            var texto = mes + "/" + fechaInicio.getDate() + "/" + fechaInicio.getFullYear();
+            date2.value = texto;
+        }
+        else if (select1.value == "Dias") {
+            var dia = fechaInicio.getDate() + diasASumar;
+            var texto = fechaInicio.getMonth() + 1 + "/" + dia + "/" + fechaInicio.getFullYear();
+            date2.value = texto;
+        }
     }
-    else if(select1.value == "Dias")
-    {
-        var diasASumar = parseInt(i1.value);
-
-        fechaFin.setDate(fechaInicio.getDate() + diasASumar);
-
-        date2.value = fechaFin.toLocaleDateString('en-US');
-    } 
 }
 
 function setCuotas()
@@ -169,4 +167,104 @@ function setCuotas()
     else if (document.getElementById("formaPago").value == "Por cuotas") {
         document.getElementById("cantidadCuotas").readOnly = false;
     }
+}
+
+function setFechasMesesYDias()
+{
+    var _fechaInicio = document.getElementById("datepicker1");
+    var _fechaFin = document.getElementById("datepicker2");
+    var diasASumar = parseInt(document.getElementById("textoDuracion").value);
+    var select1 = document.getElementById("comboDuracion");
+
+    var fechaInicio = new Date(_fechaInicio.value);
+    var fechaFin = new Date();
+
+    if (diasASumar > 0)
+    {
+        if (select1.value == "Meses")
+        {
+            var mes = fechaInicio.getMonth() + 1 + diasASumar;
+            var texto = mes + "/" + fechaInicio.getDate() + "/" + fechaInicio.getFullYear();
+            _fechaFin.value = texto;
+        }
+        else if (select1.value == "Dias")
+        {
+            var dia = fechaInicio.getDate() + diasASumar;
+            var texto = fechaInicio.getMonth() + 1 + "/" + dia + "/" + fechaInicio.getFullYear();
+            _fechaFin.value = texto;
+        }
+    }
+    else if (select1.value == "Custom")
+    {
+        var fechaAux = new Date(_fechaFin.value);
+
+        var diaInicio = fechaInicio.getDate();
+        var diaFin = fechaAux.getDate();
+        var mesInicio = fechaInicio.getMonth() + 1;
+        var mesFin = fechaAux.getMonth() + 1;
+        var anoInicio = fechaInicio.getFullYear();
+        var anoFin = fechaAux.getFullYear();
+
+        if (anoInicio <= anoFin)
+        {
+            if (mesInicio <= mesFin)
+            {
+                if (diaInicio <= diaFin)
+                {
+                    //
+                }
+            }
+            else
+            {
+                _fechaFin.value = _fechaInicio.value;
+            }
+        }
+        else
+        {
+            _fechaFin.value = _fechaInicio.value;
+        }
+
+    }
+}
+
+function setFechasCustom()
+{
+    var _fechaInicio = document.getElementById("datepicker1");
+    var _fechaFin = document.getElementById("datepicker2");
+
+    var fechaInicio = new Date(_fechaInicio.value);
+    var fechaFin = new Date();
+
+    var fechaAux = new Date(_fechaFin.value);
+
+    var diaInicio = fechaInicio.getDate();
+    var diaFin = fechaAux.getDate();
+    var mesInicio = fechaInicio.getMonth() + 1;
+    var mesFin = fechaAux.getMonth() + 1;
+    var anoInicio = fechaInicio.getFullYear();
+    var anoFin = fechaAux.getFullYear();
+
+    if (anoInicio <= anoFin)
+    {
+        if (mesInicio <= mesFin)
+        {
+            if (diaInicio <= diaFin)
+            {
+                //
+            }
+            else
+            {
+                _fechaFin.value = _fechaInicio.value;
+            }
+        }
+        else
+        {
+            _fechaFin.value = _fechaInicio.value;
+        }
+    }
+    else
+    {
+        _fechaFin.value = _fechaInicio.value;
+    }
+
 }
