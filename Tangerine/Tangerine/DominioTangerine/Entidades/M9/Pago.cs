@@ -26,12 +26,13 @@ namespace DominioTangerine.Entidades.M9
             
         }
 
-        public Pago(int _idFactura, DateTime _fechaPago, double _montoPago, string _monedaPago)
+        public Pago(int _idFactura, DateTime _fechaPago, double _montoPago, string _monedaPago, int _codPago)
         {
             this._idFactura = _idFactura;
             this._fechaPago = _fechaPago;
             this._montoPago = _montoPago;
             this._monedaPago = _monedaPago;
+            this._codPago = _codPago;
      
         }
 

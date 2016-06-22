@@ -131,6 +131,7 @@ function enableDeFechas(s1, date1, date2, input)
 
 }
 
+//Cuando se modifica el input de duracion
 function setFechas(i1, date1, date2, select1)
 {
     var i1 = document.getElementById(i1);
@@ -143,17 +144,21 @@ function setFechas(i1, date1, date2, select1)
 
     var diasASumar = parseInt(i1.value);
 
+    var cambioDeAno = false;
+
     if (diasASumar > 0)
     {
         if (select1.value == "Meses") {
-            var mes = fechaInicio.getMonth() + 1 + diasASumar;
-            var texto = mes + "/" + fechaInicio.getDate() + "/" + fechaInicio.getFullYear();
-            date2.value = texto;
+            diasASumar = diasASumar * 30;
+
+            fechaFin.setDate(fechaInicio.getDate() + diasASumar);
+
+            date2.value = fechaFin.toLocaleDateString('en-US');
         }
         else if (select1.value == "Dias") {
-            var dia = fechaInicio.getDate() + diasASumar;
-            var texto = fechaInicio.getMonth() + 1 + "/" + dia + "/" + fechaInicio.getFullYear();
-            date2.value = texto;
+            fechaFin.setDate(fechaInicio.getDate() + diasASumar);
+
+            date2.value = fechaFin.toLocaleDateString('en-US');
         }
     }
 }
@@ -169,6 +174,7 @@ function setCuotas()
     }
 }
 
+//Cuando se modifica la Fecha de Inicio
 function setFechasMesesYDias()
 {
     var _fechaInicio = document.getElementById("datepicker1");
@@ -183,15 +189,17 @@ function setFechasMesesYDias()
     {
         if (select1.value == "Meses")
         {
-            var mes = fechaInicio.getMonth() + 1 + diasASumar;
-            var texto = mes + "/" + fechaInicio.getDate() + "/" + fechaInicio.getFullYear();
-            _fechaFin.value = texto;
+            diasASumar = diasASumar * 30;
+
+            fechaFin.setDate(fechaInicio.getDate() + diasASumar);
+
+            _fechaFin.value = fechaFin.toLocaleDateString('en-US');
         }
         else if (select1.value == "Dias")
         {
-            var dia = fechaInicio.getDate() + diasASumar;
-            var texto = fechaInicio.getMonth() + 1 + "/" + dia + "/" + fechaInicio.getFullYear();
-            _fechaFin.value = texto;
+            fechaFin.setDate(fechaInicio.getDate() + diasASumar);
+
+            _fechaFin.value = fechaFin.toLocaleDateString('en-US');
         }
     }
     else if (select1.value == "Custom")
@@ -205,28 +213,27 @@ function setFechasMesesYDias()
         var anoInicio = fechaInicio.getFullYear();
         var anoFin = fechaAux.getFullYear();
 
-        if (anoInicio <= anoFin)
-        {
-            if (mesInicio <= mesFin)
-            {
-                if (diaInicio <= diaFin)
-                {
+        //Validacion de fecha inicio "mayor" o "igual" a HOY.
+        //Validacion de fecha de inicio sea "menor" a la fecha de fin.
+        if (anoInicio <= anoFin){
+            if (mesInicio <= mesFin){
+                if (diaInicio <= diaFin){
                     //
                 }
             }
-            else
-            {
+            else{
                 _fechaFin.value = _fechaInicio.value;
             }
         }
-        else
-        {
+        else{
             _fechaFin.value = _fechaInicio.value;
         }
+        //Validacion de fecha de fin "mayor" a la fecha de inicio.
 
     }
 }
 
+//Cuando se modifica la Fecha de Fin
 function setFechasCustom()
 {
     var _fechaInicio = document.getElementById("datepicker1");
@@ -244,26 +251,21 @@ function setFechasCustom()
     var anoInicio = fechaInicio.getFullYear();
     var anoFin = fechaAux.getFullYear();
 
-    if (anoInicio <= anoFin)
-    {
-        if (mesInicio <= mesFin)
-        {
-            if (diaInicio <= diaFin)
-            {
+    //Validacion de que la fecha de inicio sea "menor" a la fecha de fin.
+    if (anoInicio <= anoFin){
+        if (mesInicio <= mesFin){
+            if (diaInicio <= diaFin){
                 //
             }
-            else
-            {
+            else{
                 _fechaFin.value = _fechaInicio.value;
             }
         }
-        else
-        {
+        else{
             _fechaFin.value = _fechaInicio.value;
         }
     }
-    else
-    {
+    else{
         _fechaFin.value = _fechaInicio.value;
     }
 

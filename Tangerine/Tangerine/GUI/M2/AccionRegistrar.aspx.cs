@@ -19,38 +19,41 @@ namespace Tangerine.GUI.M2
 
         #region Contrato
 
-        /// <summary>
-        /// comboBox de seleccion de rol
-        /// </summary>
-        public string comboRol
-        {
-            get { return textRol_M2.Value; }
-            set { textRol_M2.Value = value; }
-        }
+            /// <summary>
+            /// comboBox de seleccion de rol
+            /// </summary>
+            public string comboRol
+            {
+                get { return textRol_M2.Value; }
+                set { textRol_M2.Value = value; }
+            }
 
-        /// <summary>
-        /// textBox de la contraseña
-        /// </summary>
-        public string contrasena
-        {
-            get { return passwordDefault.Value; }
-            set { passwordDefault.Value = value; }
-        }
+            /// <summary>
+            /// textBox de la contraseña
+            /// </summary>
+            public string contrasena
+            {
+                get { return passwordDefault.Value; }
+                set { passwordDefault.Value = value; }
+            }
 
-        /// <summary>
-        /// Encabezado del textBox del nombre de usuario
-        /// </summary>
-        public string usuario
-        {
-            get { return userDefault.Value; }
-            set { userDefault.Value = value; }
-        }
+            /// <summary>
+            /// Encabezado del textBox del nombre de usuario
+            /// </summary>
+            public string usuario
+            {
+                get { return userDefault.Value; }
+                set { userDefault.Value = value; }
+            }
 
-        public string ficha
-        {
-            get { return textFicha_M2.Value; }
-            set { textFicha_M2.Value = value; }
-        }
+            /// <summary>
+            /// Textbox de la ficha del usuario
+            /// </summary>
+            public string ficha
+            {
+                get { return textFicha_M2.Value; }
+                set { textFicha_M2.Value = value; }
+            }
 
         #endregion
 
@@ -65,7 +68,8 @@ namespace Tangerine.GUI.M2
             {
                 presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idFicha"], false)),
                                                              AntiXssEncoder.HtmlEncode(Request.QueryString["Nombre"], false),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false));
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Rol"], false));
                 if (!IsPostBack)
                 {
                     presentador.inicioVista();

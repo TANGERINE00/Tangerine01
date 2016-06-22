@@ -8,17 +8,27 @@ using DominioTangerine;
 //using DatosTangerine.M8;
 //using LogicaTangerine.M8;
 using LogicaTangerine.M4;
+using Tangerine_Presentador.M8;
+using Tangerine_Contratos.M8;
 
 namespace Tangerine.GUI.M8
 {
-    public partial class EnviarCorreoM8 : System.Web.UI.Page
+    public partial class EnviarCorreoM8 : System.Web.UI.Page, IContratoCorreo
     {
-        //public static Facturacion theFactura = null;
-        string _destinatario = String.Empty;
-        string _asunto = String.Empty;
-        string _mensaje = String.Empty;
 
-        public string Destinatario
+
+        #region presentador
+        PresentadorCorreo _presentador;
+
+        public EnviarCorreoM8()
+        {
+            _presentador = new PresentadorCorreo(this);
+        }
+        #endregion
+        
+        #region contrato
+
+        public string destinatario
         {
             get
             {
@@ -31,7 +41,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string Asunto
+        public string asunto
         {
             get
             {
@@ -44,7 +54,7 @@ namespace Tangerine.GUI.M8
             }
         }
 
-        public string Mensaje
+        public string mensaje
         {
             get
             {
@@ -56,10 +66,15 @@ namespace Tangerine.GUI.M8
                 this.textMensaje_M8.Value = value;
             }
         }
+        #endregion
 
+        //public static Facturacion theFactura = null;
+        string _destinatario = String.Empty;
+        string _asunto = String.Empty;
+        string _mensaje = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idFac = int.Parse(Request.QueryString["idFac"]);
+            int idFac = int.Parse(Request.QueryString[ResourceGUIM8.idF]);
             if (!IsPostBack)
             {
                 //LogicaM8 facturaLogic = new LogicaM8();

@@ -171,4 +171,7 @@
   <data name="ParamStatus" xml:space="preserve">
     <value>@status</value>
   </data>
+  <data name="PagoCod" xml:space="preserve">
+    <value>pag_cod</value>
+  </data>
 </root>

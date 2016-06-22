@@ -74,6 +74,30 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el ComandoConsultarDatosUsuarioLogin de ComandosDAOUsuario
+        /// </summary>
+        [Test]
+        public void TestComandoConsultarDatosUsuarioLogin()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario );
+            resultado = commandAgregarUsuario.Ejecutar();
+            Assert.IsTrue( resultado );
+            LogicaTangerine.Comando<DominioTangerine.Entidad> commandConsultarDatos = FabricaComandos.consultarUsuarioLogin( elUsuario );
+            DominioTangerine.Entidad theUsuario = commandConsultarDatos.Ejecutar();
+            DominioTangerine.Entidades.M2.UsuarioM2 usuario = ( DominioTangerine.Entidades.M2.UsuarioM2 )theUsuario;
+            Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario ).fechaCreacion == usuario.fechaCreacion );
+            Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario ).activo == usuario.activo );
+            Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario ).rol.Id == usuario.rol.Id );
+            Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario ).fichaEmpleado == usuario.fichaEmpleado );
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Daniel",
+                                                                              "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario2 = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario2;
+            answer = daoUsuario.BorrarUsuario(theUsuario2.Id);
+        }
+
+        /// <summary>
         /// Método para probar el ComandoConsultarPorID de ComandosDAOUsuario
         /// </summary>
         [Test]
