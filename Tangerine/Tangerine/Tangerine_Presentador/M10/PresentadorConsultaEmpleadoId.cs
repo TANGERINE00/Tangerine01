@@ -27,7 +27,6 @@ namespace Tangerine_Presentador.M10
         /// </summary>
         /// <param name="year"></param>
         /// <returns></returns>
-
         private string EdadEmpleado(string year)
         {
             int age;
@@ -43,7 +42,6 @@ namespace Tangerine_Presentador.M10
         /// Metodo para mostrar en ventana VerEmpleado todo los datos de un empleado en especifico 
         /// </summary>
         /// <param name="Id"></param>
-
         public void cargarEmpleadosId(int Id)
         {
             try
