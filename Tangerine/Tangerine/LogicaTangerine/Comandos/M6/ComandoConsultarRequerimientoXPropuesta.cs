@@ -14,7 +14,7 @@ namespace LogicaTangerine.Comandos.M6
         /// Constructor, recibe parametro de tipo propuesta
         /// </summary>
         /// <param name="laPropuesta">objeto de tipo propuesta</param>
-        public ComandoConsultarRequerimientoXPropuesta(Entidad laPropuesta)
+        public ComandoConsultarRequerimientoXPropuesta( Entidad laPropuesta )
         {
             _laEntidad = laPropuesta;
         }
@@ -28,10 +28,10 @@ namespace LogicaTangerine.Comandos.M6
             try
             {
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
-                DominioTangerine.Entidades.M6.Propuesta propuesta = (DominioTangerine.Entidades.M6.Propuesta)_laEntidad;
+                DominioTangerine.Entidades.M6.Propuesta propuesta = ( DominioTangerine.Entidades.M6.Propuesta )_laEntidad;
                 return daoRequerimiento.ConsultarRequerimientosXPropuesta(propuesta.Nombre);
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }
