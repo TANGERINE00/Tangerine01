@@ -26,20 +26,21 @@ namespace Tangerine.GUI.M2
 
         #region Contrato
 
-        /// <summary>
-        /// Implementacion del contrato
-        /// </summary>
-        public string tablaEmpleado
-        {
-            get
+            /// <summary>
+            /// Implementacion del contrato
+            /// </summary>
+            public string tablaEmpleado
             {
-                return this.tabla.Text;
+                get
+                {
+                    return this.tabla.Text;
+                }
+                set
+                {
+                    this.tabla.Text = value;
+                }
             }
-            set
-            {
-                this.tabla.Text = value;
-            }
-        }
+
         #endregion
 
         /// <summary>

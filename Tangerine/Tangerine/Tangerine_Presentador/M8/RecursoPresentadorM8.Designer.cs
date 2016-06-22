@@ -250,6 +250,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bs.
+        /// </summary>
+        internal static string BS {
+            get {
+                return ResourceManager.GetString("BS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Cancelado&lt;/span&gt;.
         /// </summary>
         internal static string Cancelado {
@@ -403,11 +412,29 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to $.
+        /// </summary>
+        internal static string Dolar {
+            get {
+                return ResourceManager.GetString("Dolar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estatus:.
         /// </summary>
         internal static string Estatus {
             get {
                 return ResourceManager.GetString("Estatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to €.
+        /// </summary>
+        internal static string Euro {
+            get {
+                return ResourceManager.GetString("Euro", resourceCulture);
             }
         }
         
@@ -435,6 +462,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string Key {
             get {
                 return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TOTAL :.
+        /// </summary>
+        internal static string MontoTotal {
+            get {
+                return ResourceManager.GetString("MontoTotal", resourceCulture);
             }
         }
         
