@@ -67,6 +67,7 @@
     <Compile Include="M7\IContratoAgregarProyecto.cs" />
     <Compile Include="M7\IContratoModificarProyecto.cs" />
     <Compile Include="M8\IContratoConsultarFactura.cs" />
+    <Compile Include="M8\IContratoFactura.cs" />
     <Compile Include="M8\IContratoGenerarFactura.cs" />
     <Compile Include="M8\IContratoAnularFactura.cs" />
     <Compile Include="M8\IContratoModificarFactura.cs" />
