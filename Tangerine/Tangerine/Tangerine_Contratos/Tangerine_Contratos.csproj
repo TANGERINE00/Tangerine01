@@ -77,6 +77,7 @@
     </Compile>
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="M9\IContratoFacturasPorPagar.cs" />
+    <Compile Include="M9\IContratoPagosPorCompania.cs" />
     <Compile Include="M9\IContratoSeleccionCompania.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

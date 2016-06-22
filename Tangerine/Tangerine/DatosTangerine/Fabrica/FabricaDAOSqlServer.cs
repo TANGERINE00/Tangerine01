@@ -12,7 +12,7 @@ using DatosTangerine.InterfazDAO.M4;
 using DatosTangerine.InterfazDAO.M10;
 using DatosTangerine.InterfazDAO.M8;
 using DatosTangerine.InterfazDAO.M3;
-
+using DatosTangerine.InterfazDAO.M9;
 
 namespace DatosTangerine.Fabrica
 {
@@ -157,7 +157,11 @@ namespace DatosTangerine.Fabrica
         /// Metodo que instancia al objeto DAOPago
         /// </summary>
         /// <returns>Retorna el objeto DAOPago</returns>
+<<<<<<< HEAD
+        public static IDAOPago CrearDAOPago()
+=======
         public static InterfazDAO.M9.IDAOPago CrearDAOPago()
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
         {
             return new DAO.M9.DAOPago();
         }

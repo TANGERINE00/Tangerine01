@@ -24,6 +24,7 @@ namespace Tangerine.GUI.M2
         }
 
         #region Contrato
+
         /// <summary>
         /// tabla consulta de empleados
         /// </summary>
@@ -35,6 +36,22 @@ namespace Tangerine.GUI.M2
             set
             { this.tablaempleados.Text = value; }
         }
+
+        /// <summary>
+        /// Implementacion del contrato
+        /// </summary>
+        public string nombreUsuario
+        {
+            get
+            {
+                return this.textBuscarNombre.Value;
+            }
+            set
+            {
+                this.textBuscarNombre.Value = value;
+            }
+        }
+
         #endregion
 
         /// <summary>
@@ -48,6 +65,16 @@ namespace Tangerine.GUI.M2
             {
                 _presentador.iniciarVista();
             }
+        }
+
+        /// <summary>
+        /// Método para actualizar la pagina cuando se activa el evento del boton buscar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void busquedaNombre_Click(object sender, EventArgs e)
+        {
+            _presentador.actualizarVista();
         }
     }
 }

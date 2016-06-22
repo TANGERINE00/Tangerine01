@@ -280,7 +280,7 @@ namespace DominioTangerine.Fabrica
             #endregion
         #endregion
 
-            #region Modulo 4
+        #region Modulo 4
 
             #region instancias de la clase CompaniaM4
             /// <summary>
@@ -694,17 +694,18 @@ namespace DominioTangerine.Fabrica
             {
                 return new DominioTangerine.Entidades.M9.Pago();
             }
-        public static Entidad ObtenerPago_M9(int idPago, int montoPago, string monedaPago, string formaPago,
-           int codPago, DateTime fechaPago, int idFactura)
+        public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, int _montoPago, string _monedaPago)
         {
-            return new DominioTangerine.Entidades.M9.Pago(idPago, montoPago, monedaPago, formaPago, codPago, fechaPago, idFactura);
+            return new DominioTangerine.Entidades.M9.Pago(_idFactura,_fechaPago, _montoPago, _monedaPago);
         }
 
         public static Entidad ObtenerPago_M9(string monedaPago, int montoPago, string formaPago, int codPago, DateTime fechaPago,
           int idFactura)
         {
-            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura );
+            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura);
         }
+<<<<<<< HEAD
+=======
        
         public static Entidad ObtenerPago_M9(int codPago, int montoPago, string monedaPago, string formaPago, int idFactura)
         {
@@ -712,6 +713,7 @@ namespace DominioTangerine.Fabrica
         }
 
 
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
         #endregion
 
         #region Modulo 10

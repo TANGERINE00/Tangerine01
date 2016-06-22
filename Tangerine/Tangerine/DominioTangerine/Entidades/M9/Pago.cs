@@ -17,12 +17,22 @@ namespace DominioTangerine.Entidades.M9
         private int _codPago;
         private DateTime _fechaPago;
         private int _idFactura;
+        private DateTime _fechaFactura;
         #endregion
 
         #region Constructores
         public Pago ()
         {
             
+        }
+
+        public Pago(int _idFactura, DateTime _fechaPago, int _montoPago, string _monedaPago)
+        {
+            this._idFactura = _idFactura;
+            this._fechaPago = _fechaPago;
+            this._montoPago = _montoPago;
+            this._monedaPago = _monedaPago;
+     
         }
 
         public Pago(int _idPago, int _montoPago, string _monedaPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)

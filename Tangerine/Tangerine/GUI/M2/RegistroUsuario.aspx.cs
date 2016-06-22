@@ -78,7 +78,14 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void busquedaNumero_Click(object sender, EventArgs e)
         {
-            _presentador.actualizarVista();
+            if (System.Text.RegularExpressions.Regex.IsMatch(numeroEmpleado, "[^0-9]"))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('Error de búsqueda, solo números.')", true); 
+            }
+            else
+            {
+                _presentador.actualizarVista();
+            }
         }
     }
 }

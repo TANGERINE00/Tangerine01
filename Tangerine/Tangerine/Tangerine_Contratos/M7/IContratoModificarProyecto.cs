@@ -10,6 +10,11 @@ namespace Tangerine_Contratos.M7
     public interface IContratoModificarProyecto
     {
         /// <summary>
+        /// Mensajes de alerta
+        /// </summary>
+        string alerta { set; }
+        
+        /// <summary>
         /// Encabezado del TextBox de nombre de la propuesta
         /// </summary>
         TextBox inputPropuesta { get; set; }

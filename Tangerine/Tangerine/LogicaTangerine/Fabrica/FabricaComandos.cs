@@ -11,6 +11,7 @@ using LogicaTangerine.Comandos.M10;
 using LogicaTangerine.Comandos.M8;
 using LogicaTangerine.Comandos.M3;
 using LogicaTangerine.Comandos.M5;
+using LogicaTangerine.Comandos.M9;
 
 namespace LogicaTangerine.Fabrica
 {
@@ -120,7 +121,17 @@ namespace LogicaTangerine.Fabrica
                 return new Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario( usuarioNombre , contrasenaUsuario , 
                                                                                   rolUsuario , fichaEmpleado );
             }
-        
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultarEmpleadoPorUsuario
+            /// </summary>
+            /// <param name="nombreUsuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarEmpleadoPorUsuario</returns>
+            public static Comando<DominioTangerine.Entidad> obtenerEmpleado( string nombreUsuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarEmpleadoPorUsuario( nombreUsuario );
+            }
+
             #endregion
 
             #region Comandos Rol
@@ -844,6 +855,15 @@ namespace LogicaTangerine.Fabrica
         public static Comandos.M9.ComandoAgregarPago cargarPago(Entidad entidad)
         {
             return new Comandos.M9.ComandoAgregarPago(entidad);
+        }
+        /// <summary>
+        /// metodo para crear comando que permite consultar todos los pagos de una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> ConsultarPagosCompania(Entidad compania)
+        {
+            return new ComandoConsultarPagos(compania);
         }
 
         #endregion
