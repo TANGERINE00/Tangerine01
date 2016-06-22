@@ -45,7 +45,7 @@ namespace LogicaTangerine.Comandos.M8
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceLogicaM8.Mensaje_Generico_Error, ex);
+                throw ex;
             }
         }
     }

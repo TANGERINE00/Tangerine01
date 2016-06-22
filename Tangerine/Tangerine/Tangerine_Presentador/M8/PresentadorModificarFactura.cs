@@ -101,8 +101,9 @@ namespace Tangerine_Presentador.M8
             {
                 vista.alertaClase = RecursoPresentadorM8.alertaError;
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
                     + RecursoPresentadorM8.alertaHtmlFinal;
+                vista.textMonto = "hdsfnhdfsh";
                 return false;
             }
         }
