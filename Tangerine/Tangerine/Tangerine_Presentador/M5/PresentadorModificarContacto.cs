@@ -61,11 +61,11 @@ namespace Tangerine_Presentador.M5
             }
             catch ( ConsultarContactoException ex )
             {
-                //Muestro en pantalla el error
+                System.Diagnostics.Debug.WriteLine("Error en Consultar Contacto");
             }
             catch ( BaseDeDatosContactoException ex ) 
             {
-                //Muestro en pantalla el error
+                System.Diagnostics.Debug.WriteLine("Error en Base de Datos");
             }
         }
 
@@ -88,11 +88,11 @@ namespace Tangerine_Presentador.M5
             }
             catch( ModificarContactoException ex )
             {
-                //Muestro en pantalla el error
+                System.Diagnostics.Debug.WriteLine("Error en Modificar Contacto");
             }
             catch( BaseDeDatosContactoException ex )
             {
-                //Muestro en pantalla el error
+                System.Diagnostics.Debug.WriteLine("Error en Base de Datos");
             }
         }
     }
