@@ -31,15 +31,39 @@
 
                                 <div class="input-group-btn">
                                   <!--  <button type="submit" class="btn btn-default" id="BuscadorId" runat="server" Onclick="busquedaNumero_Click"><i class="fa fa-search" ></i></button>-->
-                                    <asp:LinkButton type="submit" runat="server" ID="btnRun" Text="<i class='fa fa-search' ></i>" 
-                                        ValidationGroup="edt" OnClick="busquedaNumero_Click" class="btn btn-default" />
+                                    
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <!-- /.box-header -->
+                    <script language="javascript">
+                        function doSearch() {
+                            var tableReg = document.getElementById('example2');
+                            var searchText = document.getElementById('searchTerm').value.toLowerCase();
+                            for (var i = 1; i < tableReg.rows.length; i++) {
+                                var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                                var found = false;
+                                for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                                    var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                                    if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                                        found = true;
+                                    }
+                                }
+                                if (found) {
+                                    tableReg.rows[i].style.display = '';
+                                } else {
+                                    tableReg.rows[i].style.display = 'none';
+                                }
+                            }
+                        }
+                    </script>
                     <div class="box-body table-responsive no-padding">
+                        <div style="float:right; padding-top:5px;">
+                            <a style="margin-right:10px;">Buscador</a>
+                            <input id="searchTerm" type="text" onkeyup="doSearch()"/>
+                        </div>
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>

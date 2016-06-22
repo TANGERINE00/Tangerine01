@@ -14,7 +14,7 @@ namespace LogicaTangerine.Comandos.M6
         /// Constructor, recibe parametro de tipo propuesta
         /// </summary>
         /// <param name="laPropuesta">objeto de tipo propuesta</param>
-        public ComandoBorrarPropuesta(Entidad laPropuesta)
+        public ComandoBorrarPropuesta( Entidad laPropuesta )
         {
             _laEntidad = laPropuesta;
         }
@@ -28,8 +28,8 @@ namespace LogicaTangerine.Comandos.M6
             try
             {
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-                DominioTangerine.Entidades.M6.Propuesta propuesta = (DominioTangerine.Entidades.M6.Propuesta)_laEntidad;
-                return daoPropuesta.BorrarPropuesta(propuesta.Nombre);
+                DominioTangerine.Entidades.M6.Propuesta propuesta = ( DominioTangerine.Entidades.M6.Propuesta )_laEntidad;
+                return daoPropuesta.BorrarPropuesta( propuesta.Nombre );
             }
             catch (Exception e)
             {

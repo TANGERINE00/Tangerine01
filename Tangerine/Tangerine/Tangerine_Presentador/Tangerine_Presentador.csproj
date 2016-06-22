@@ -64,6 +64,7 @@
     <Compile Include="M3\PresentadorAgregarClientePotencial.cs" />
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorHistorialDeSeguimiento.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\PresentadorModificarClientePotencial.cs" />
     <Compile Include="M3\PresentadorPromoverClientePotencial.cs" />
