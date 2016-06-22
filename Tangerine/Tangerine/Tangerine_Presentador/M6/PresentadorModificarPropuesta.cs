@@ -137,15 +137,20 @@ namespace Tangerine_Presentador.M6
         }
         
         public void TraerCompania(String idPropuesta)
-        {/*
-            DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(vista.IdCompania, _descripcion,
+        {
+            //Creo una propuesta
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(vista.IdCompania, _descripcion,
             _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+            LogicaTangerine.Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
+            //Consulto la propuesta
+            propuesta = (DominioTangerine.Entidades.M6.Propuesta)comando.Ejecutar();
 
-            
-            LogicaTangerine.Comando<p> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(p);
-            p = comando.Ejecutar();
-
-      
+            Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia), null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
+            //Consulto la compañia de esa propuesta
+            comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
+            compañia = comando.Ejecutar();
+            //Extraigo el nombre de la compañia y lleno el contenedor
+            vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
           /* Logica Vieja   
           * LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
 

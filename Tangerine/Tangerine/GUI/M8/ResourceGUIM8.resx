@@ -201,4 +201,7 @@
   <data name="alertRole" xml:space="preserve">
     <value>role</value>
   </data>
+  <data name="redirectHome" xml:space="preserve">
+    <value>ConsultarFacturaM8.aspx</value>
+  </data>
 </root>

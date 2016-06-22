@@ -53,7 +53,8 @@ namespace Tangerine_Presentador.M8
             {
                 Facturacion lafactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
                 lafactura.Id = int.Parse(this.vista.numero);
-                //Comando<Entidad> comandoAnular = FabricaComandos.CrearAnularFactura(lafactura);
+                Comando<bool> comandoAnular = FabricaComandos.CrearAnularFactura(lafactura);
+                comandoAnular.Ejecutar();
             }
             catch (Exception e)
             {

@@ -311,5 +311,14 @@ namespace Tangerine.GUI.M8 {
                 return ResourceManager.GetString("porPagar", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx.
+        /// </summary>
+        internal static string redirectHome {
+            get {
+                return ResourceManager.GetString("redirectHome", resourceCulture);
+            }
+        }
     }
 }

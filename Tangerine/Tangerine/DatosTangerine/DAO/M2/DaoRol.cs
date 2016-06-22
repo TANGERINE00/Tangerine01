@@ -172,7 +172,7 @@ namespace DatosTangerine.DAO.M2
             public Entidad ObtenerOpciones( string nombreMenu , int codigoRol )
             {
 
-                Entidad theLista = DominioTangerine.Fabrica.FabricaEntidades.crearListaGenericaVacia();
+                Entidad theLista = DominioTangerine.Fabrica.FabricaEntidades.crearListaGenericaVaciaOpcion();
                 DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2> lista = (DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2>)theLista;
                 Entidad theOpcion;
                 List<Parametro> parametros = new List<Parametro>();
