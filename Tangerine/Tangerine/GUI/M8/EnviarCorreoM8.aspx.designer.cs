@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M8 {
     public partial class EnviarCorreoM8 {
         
         /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// textDestinatario_M8 control.
         /// </summary>
         /// <remarks>

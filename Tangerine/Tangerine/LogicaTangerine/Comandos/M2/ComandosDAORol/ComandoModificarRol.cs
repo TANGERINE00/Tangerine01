@@ -9,6 +9,7 @@ using DatosTangerine.InterfazDAO.M2;
 using DominioTangerine.Entidades.M2;
 using LogicaTangerine.Fabrica;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAORol
 {
@@ -46,8 +47,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
-                                                                         "ModificarRol()", ex);
+                throw new ExcepcionModificarRol("Error al ejecutar ComandoModificarRol", ex);
             }
 
             return resultado;

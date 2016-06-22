@@ -96,6 +96,7 @@
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
     <Compile Include="Comandos\M3\ComandoActivarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoAgregarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
@@ -112,7 +113,7 @@
     <Compile Include="Comandos\M4\ComandoHabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
-    <Compile Include="Comandos\M4\ComandoModificarLugat.cs" />
+    <Compile Include="Comandos\M4\ComandoModificarLugar.cs" />
     <Compile Include="Comandos\M5\ComandoAgregarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoAgregarContactoAProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoConsultarContacto.cs" />
@@ -122,6 +123,9 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarNumeroPropuestas.cs" />
+    <Compile Include="Comandos\M6\ComandoConsultarNumeroRequerimientos.cs" />
+    <Compile Include="Comandos\M7\ComandoAgregarContactos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarEmpleados.cs" />
     <Compile Include="Comandos\M7\ComandoUltimoIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarProyecto.cs" />
@@ -173,6 +177,12 @@
       <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
     </Compile>
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
+    <Compile Include="Comandos\M9\ComandoConsultarPagos.cs" />
+    <Compile Include="Comandos\M9\ResourceComandoM9.Designer.cs">
+      <DependentUpon>ResourceComandoM9.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
     <Compile Include="M10\LogicaM10.cs" />
     <Compile Include="M10\LogicaM10Resources.Designer.cs">
@@ -215,12 +225,6 @@
     </Compile>
     <Compile Include="M6\LogicaRequerimiento.cs" />
     <Compile Include="M7\LogicaProyecto.cs" />
-    <Compile Include="M9\LogicaM9.cs" />
-    <Compile Include="M9\LogicResourcesM9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LogicResourcesM9.resx</DependentUpon>
-    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -234,6 +238,10 @@
     <EmbeddedResource Include="Comandos\M8\ResourceLogicaM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\M9\ResourceComandoM9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceComandoM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M10\LogicaM10Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -258,10 +266,6 @@
     <EmbeddedResource Include="M6\LogicaRecursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LogicaRecursos.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M9\LogicResourcesM9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>LogicResourcesM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

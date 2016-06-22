@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,7 @@
       <DependentUpon>ResourceGUIM2.resx</DependentUpon>
     </Compile>
     <Compile Include="M3\PresentadorActivarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorAgregarClientePotencial.cs" />
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
@@ -106,8 +108,10 @@
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
     <Compile Include="M8\PresentadorAnularFactura.cs" />
+    <Compile Include="M8\PresentadorFactura.cs" />
     <Compile Include="M8\PresentadorGenerarFactura.cs" />
     <Compile Include="M8\PresentadorConsultaFactura.cs" />
+    <Compile Include="M8\PresentadorModificarFactura.cs" />
     <Compile Include="M8\RecursoPresentadorM8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +119,7 @@
     </Compile>
     <Compile Include="M9\PresentadorCargarPago.cs" />
     <Compile Include="M9\PresentadorFacturasPorPagar.cs" />
+    <Compile Include="M9\PresentadorPagosPorCompania.cs" />
     <Compile Include="M9\RecursoPresentadorM9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

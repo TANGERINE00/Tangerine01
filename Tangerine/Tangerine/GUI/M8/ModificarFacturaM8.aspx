@@ -11,11 +11,13 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Gestion Factura</a></li>
-    <li class="active">Factura</li>
+    <li class="active">FacturaFacturaFacturaFacturaFactura</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="alert" runat="server">
+    </div>
     <div class="row">
         <!-- left column -->
         <div class="col-md-6" runat="server">
@@ -36,7 +38,7 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelFecha_M8">Fecha de facturación</label>
-                            <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha de facturación" disabled="disabled">
+                            <input type="text" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha de facturación" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">
@@ -51,20 +53,10 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelDescripcion_M8">Descripción</label>
-                            <input type="text" runat="server" class="form-control"
-                                   pattern="^[0-9a-zñA-ZÑ.- ]+$"
-                                   id="textDescripcion_M8" name="textDescripcion_M8" 
-                                   placeholder="Descripción" maxlength="50" required>
+                            <input type="text" runat="server" class="form-control" pattern="^[0-9a-zA-Z ]+$" id="textDescripcion_M8" 
+                                name="textDescripcion_M8" maxlength="50" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolos')" oninput="setCustomValidity('')">
                         </div>
-
-                        <%--    <div class="form-group" runat="server">
-                      <label for="labelEstatus_M8">Estatus</label>
-                     <select runat="server" class="form-control" id="textEstatus_M8" name="textEstatus_M8"> 
-                     <option>Por Pagar</option>
-                     <option>Pagada</option>
-                     <option>Anulada</option> 
-                     </select>
-                    </div> --%>
 
                         <div class="form-group" runat="server">
                             <label for="labelMonto_M8">Monto</label>
@@ -76,8 +68,9 @@
                             <input type="text" runat="server" class="form-control" id="textTipoMoneda_M8" name="textTipoMoneda_M8" placeholder="Tipo de Moneda" disabled="disabled">
                         </div>
 
-                        <div class="form-group" runat="server">
-                            <asp:Button ID="buttonModificar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Modificar" OnClick="buttonModificarFactura_Click"></asp:Button>
+                        <div class="form-group" runat="server" style="text-align:center;">
+                            <asp:Button ID="buttonModificar_M8" Style="margin-top: 5%; margin-right:15px;" class="btn btn-primary" type="submit" runat="server" Text="Modificar" OnClick="buttonModificarFactura_Click"></asp:Button>
+                            <a Style="margin-top: 5%; width:81px;" href="ConsultarFacturaM8.aspx" class="btn btn-default" type="submit">Cancelar</a>
                         </div>
 
                     </div>

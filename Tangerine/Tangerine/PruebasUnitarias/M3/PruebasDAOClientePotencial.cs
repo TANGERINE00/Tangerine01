@@ -16,9 +16,10 @@ namespace PruebasUnitarias.M3
     {
         #region Atributos
 
-        public bool answer;
-        public Entidad elClientePotencial1;
-        public Entidad elClientePotencial2;
+        private DominioTangerine.Entidades.M3.ClientePotencial elCliente1, elCliente2, elCliente3,elCliente4;
+        private Boolean respuesta;
+        private List<Entidad> losClientes;
+        private DatosTangerine.InterfazDAO.M3.IDAOClientePotencial daoCliente;
 
         #endregion
 
@@ -29,8 +30,11 @@ namespace PruebasUnitarias.M3
         [SetUp]
         public void init()
         {
-            elClientePotencial1 = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(40, "TestCorp", "J-2342434-6",
-                                                                                        "prueba@gmail.com", 12121, 0,0);
+            elCliente1 = new DominioTangerine.Entidades.M3.ClientePotencial("Test2", "J-121212-F","prueba@gmail.com",121212,1);
+            elCliente2 = new DominioTangerine.Entidades.M3.ClientePotencial();
+            elCliente3 = new DominioTangerine.Entidades.M3.ClientePotencial("Test2Cambio", "J-121212-F", "cambio@gmail.com", 746, 1);
+            elCliente4 = new DominioTangerine.Entidades.M3.ClientePotencial("Test3", "J-121212-F", "prueba@gmail.com", 121212, 0);
+            losClientes = new List<Entidad>();
         }
 
         /// <summary>
@@ -39,8 +43,7 @@ namespace PruebasUnitarias.M3
         [TearDown]
         public void clean()
         {
-            elClientePotencial1 = null;
-            elClientePotencial2 = null;
+            elCliente1 = null;
         }
         #endregion
 
@@ -48,23 +51,137 @@ namespace PruebasUnitarias.M3
         /// Método para probar el ConsultarXId de DAOClientePotencial
         /// </summary>
         [Test]
-        public void TestConsultarXId()
+        public void TestConsultarXIdClientePotencial()
         {
-            IDAOClientePotencial daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-            answer = daoCliente.Agregar(elClientePotencial1);
-            //Aplico el metodo para consultar el usuario agregado anteriormente.
-            elClientePotencial2 = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(40, "TestCorp", "J-2342434-6",
-                                                                                        "prueba@gmail.com", 12121, 0,0);
-            elClientePotencial1 = daoCliente.ConsultarXId(elClientePotencial2);
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
             
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).IdClientePotencial == 40);
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).NombreClientePotencial == "TestCorp");
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).RifClientePotencial == "J-2342434-6");
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).EmailClientePotencial == "prueba@gmail.com");
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).PresupuestoAnual_inversion == 12121);
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).NumeroLlamadas == 1);
-            Assert.IsTrue(((DominioTangerine.Entidades.M3.ClientePotencial)elClientePotencial1).NumeroVisitas == 5);
+            respuesta = daoCliente.Agregar(elCliente1);
+            elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
+
+            Assert.AreEqual(elCliente2.NombreClientePotencial,elCliente1.NombreClientePotencial);
+            Assert.AreEqual(elCliente2.RifClientePotencial, elCliente1.RifClientePotencial);
+            Assert.AreEqual(elCliente2.EmailClientePotencial, elCliente1.EmailClientePotencial);
+            Assert.AreEqual(elCliente2.PresupuestoAnual_inversion, elCliente1.PresupuestoAnual_inversion);
+            Assert.AreEqual(elCliente2.Status, elCliente1.Status);
+
+            daoCliente.Eliminar(elCliente1);
+
         }
 
+        /// <summary>
+        /// Método para probar el Agregar de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestAgregarClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+
+            Assert.IsTrue(daoCliente.Agregar(elCliente1));
+            elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
+
+            Assert.AreEqual(elCliente2.NombreClientePotencial, elCliente1.NombreClientePotencial);
+            Assert.AreEqual(elCliente2.RifClientePotencial, elCliente1.RifClientePotencial);
+            Assert.AreEqual(elCliente2.EmailClientePotencial, elCliente1.EmailClientePotencial);
+            Assert.AreEqual(elCliente2.PresupuestoAnual_inversion, elCliente1.PresupuestoAnual_inversion);
+            Assert.AreEqual(elCliente2.Status, elCliente1.Status);
+
+            daoCliente.Eliminar(elCliente1);
+
+        }
+
+        /// <summary>
+        /// Método para probar el Activar de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestActivarClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+
+            respuesta = daoCliente.Agregar(elCliente4);
+            elCliente4.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+            Assert.IsTrue(daoCliente.Activar(elCliente4));
+
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente4);
+            Assert.AreEqual(1, elCliente2.Status);
+
+            daoCliente.Eliminar(elCliente4);
+
+        }
+
+        /// <summary>
+        /// Método para probar el Desactivar de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestDesactivarClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+
+            respuesta = daoCliente.Agregar(elCliente1);
+            elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+            Assert.IsTrue(daoCliente.Desactivar(elCliente1));
+
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
+            Assert.AreEqual(0, elCliente2.Status);
+
+            daoCliente.Eliminar(elCliente1);
+
+        }
+
+        /// <summary>
+        /// Método para probar el Modificar de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestModificarClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+
+            respuesta = daoCliente.Agregar(elCliente1);
+            elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
+            elCliente2.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+
+            Assert.IsTrue(daoCliente.Modificar(elCliente2));
+            
+            daoCliente.Eliminar(elCliente1);
+
+        }
+
+        /// <summary>
+        /// Método para probar el Modificar de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestListarClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+
+            losClientes = daoCliente.ConsultarTodos();
+
+            Assert.IsTrue(losClientes.Count()>0);
+
+            daoCliente.Eliminar(elCliente1);
+
+        }
+
+        /// <summary>
+        /// Método para probar el Promover de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestPromoverClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+
+            respuesta = daoCliente.Agregar(elCliente1);
+            elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
+            Assert.IsTrue(daoCliente.Promover(elCliente1));
+
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
+            Assert.AreEqual(2, elCliente2.Status);
+
+            daoCliente.Eliminar(elCliente1);
+
+        }
     }
 }

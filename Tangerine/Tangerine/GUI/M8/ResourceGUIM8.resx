@@ -195,4 +195,28 @@
   <data name="idP" xml:space="preserve">
     <value>IdProyecto</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
+  <data name="redirectHome" xml:space="preserve">
+    <value>ConsultarFacturaM8.aspx</value>
+  </data>
+  <data name="volver" xml:space="preserve">
+    <value>ConsultarFacturaM8.aspx</value>
+  </data>
+  <data name="volverModificado" xml:space="preserve">
+    <value>ConsultarFacturaM8.aspx?estado=1</value>
+  </data>
+  <data name="idFac" xml:space="preserve">
+    <value>idFac</value>
+  </data>
+  <data name="amount" xml:space="preserve">
+    <value>Monto</value>
+  </data>
+  <data name="dateTipe" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
 </root>

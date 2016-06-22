@@ -227,7 +227,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia sin atributos de ListaGenericaM2
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos de tipo MenuM2</returns>
             static public Entidad crearListaGenericaVaciaMenu()
             {
                 return new ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>();
@@ -236,7 +236,16 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia sin atributos de ListaGenericaM2
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos de tipo OpcionM2</returns>
+            static public Entidad crearListaGenericaVaciaOpcion()
+            {
+                return new ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2>();
+            }
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos de tipo Entidad</returns>
             static public Entidad crearListaGenericaVacia()
             {
                 return new ListaGenericaM2<Entidad>();
@@ -247,7 +256,7 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-            #region Metodos para instanciar Cliente Potencial
+            #region Metodo para instanciar Cliente Potencial
             public static Entidad ObtenerClientePotencial()
             {
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
@@ -262,9 +271,16 @@ namespace DominioTangerine.Fabrica
                                                                           presupuesto, llamadas, visitas);
             }
             #endregion 
+
+            #region metodo para instaciar cliente potencial si llamadas, visitas ni id
+            public static Entidad CrearClientePotencial(string nombre, string rif, string email, float presupuesto, int status)
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email, presupuesto, status);
+            }
+            #endregion
         #endregion
 
-            #region Modulo 4
+        #region Modulo 4
 
             #region instancias de la clase CompaniaM4
             /// <summary>
@@ -678,17 +694,23 @@ namespace DominioTangerine.Fabrica
             {
                 return new DominioTangerine.Entidades.M9.Pago();
             }
-        public static Entidad ObtenerPago_M9(int idPago, int montoPago, string monedaPago, string formaPago,
-           int codPago, DateTime fechaPago, int idFactura)
+        public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, double _montoPago, string _monedaPago, int _codPago)
         {
-            return new DominioTangerine.Entidades.M9.Pago(idPago, montoPago, monedaPago, formaPago, codPago, fechaPago, idFactura);
+            return new DominioTangerine.Entidades.M9.Pago(_idFactura,_fechaPago, _montoPago, _monedaPago, _codPago);
         }
 
-        public static Entidad ObtenerPago_M9(string monedaPago, int montoPago, string formaPago, int codPago, DateTime fechaPago,
+        public static Entidad ObtenerPago_M9(string monedaPago, double montoPago, string formaPago, int codPago, DateTime fechaPago,
           int idFactura)
         {
-            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura );
+            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura);
         }
+
+       
+        public static Entidad ObtenerPago_M9(int codPago, double montoPago, string monedaPago, string formaPago, int idFactura)
+        {
+            return new DominioTangerine.Entidades.M9.Pago(codPago, montoPago, monedaPago, formaPago, idFactura);
+        }
+
 
         #endregion
 
@@ -698,6 +720,11 @@ namespace DominioTangerine.Fabrica
         /// Metodo para instanciar empleados sin atributos
         /// </summary>
         /// <returns></returns>
+
+        public static Entidad ConsultarEmpleados(int id)
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10(id);
+        }
 
         public static Entidad ConsultarEmpleados() 
         {

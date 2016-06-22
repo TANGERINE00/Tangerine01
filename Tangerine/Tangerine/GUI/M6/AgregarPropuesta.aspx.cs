@@ -19,7 +19,6 @@ namespace Tangerine.GUI.M6
     public partial class AgregarPropuesta : System.Web.UI.Page, IContratoAgregarPropuesta
     {
         
-        String[] _precondicion;
         PresentadorAgregarPropuesta presenter;
 
         public AgregarPropuesta()
@@ -30,42 +29,20 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 presenter.llenarVista();
-
-                //comboDuracion_SelectedIndexChanged(sender, e);
             }
-
-
         }
 
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             presenter.agregarPropuesta();
+            Server.Transfer("ConsultarPropuesta.aspx", true);
         }
 
-
-        protected void comboDuracion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            datepicker1.Value = DateTime.Today.ToShortDateString();
-            datepicker2.Value = DateTime.Today.ToShortDateString();
-
-            if (comboDuracion.SelectedItem.Text != "Custom")
-            {
-                datepicker1.Disabled = true;
-                datepicker2.Disabled = true;
-            }
-            else
-            {
-                datepicker1.Disabled = false;
-                datepicker2.Disabled = false;
-            }
-        }
-
-        
+       
         public DropDownList ComboCompania 
         {
             get { return comboCompañia; }
@@ -73,7 +50,7 @@ namespace Tangerine.GUI.M6
         }
         public string IdCompania
         {
-            get { return comboCompañia.SelectedIndex.ToString(); }
+            get { return comboCompañia.SelectedValue.ToString(); }
             set { }
         }
         public string Descripcion
@@ -85,10 +62,10 @@ namespace Tangerine.GUI.M6
             get { return arrPrecondicion.Value; }
 
         }
-        public DropDownList ComboDuracion
+        public string ComboDuracion
         {
-            get { return comboDuracion; }
-            set { comboDuracion=value; }
+            get { return comboDuracion.Value; }
+            set { comboDuracion.Value = value; }
         }
         public string TextoDuracion
         {
@@ -111,16 +88,15 @@ namespace Tangerine.GUI.M6
         public string TextoCosto
         {
             get { return textoCosto.Value; }
-        }
-        public DropDownList FormaPago
+        } 
+        public string FormaPago
         {
-            get { return formaPago; }
-            set { formaPago= value; }
+            get { return formaPago.Value; }
+            set { formaPago.Value = value; }
         }
-        public DropDownList ComboCuota
+        public string CantidadCuotas
         {
-            get { return comboCuota; }
-            set { comboCuota=value; }
+            get { return cantidadCuotas.Value; }
         }
         public DropDownList ComboStatus
         {

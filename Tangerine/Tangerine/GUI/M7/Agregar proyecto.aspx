@@ -43,15 +43,21 @@
                             </asp:DropDownList>
                         </div>
 
-                        <div class="form-group" runat="server">
-                            <label for="InputNombreProyecto">Nombre de proyecto *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputNombreProyecto" placeholder="Nombre Proyecto" name="textInputNombreProyecto">
-                        </div>
-
-                        <div class="form-group" runat="server">
-                            <label for="InputCodigo">Codigo del proyecto * </label>
-                            <input runat="server" type="text" class="form-control" id="textInputCodigo" name="textInputCodigo" placeholder="123456789">
-                        </div>
+                        <div class="form-group" runat="server"> 
+                            <label for="InputNombreProyecto">Nombre de proyecto *</label> 
+                                        <input runat="server" id="textInputNombreProyecto" placeholder="Nombre Proyecto" type="text" 
+                                            pattern="^[a-zA-Z][a-zA-Z ]{4,20}$" class="form-control"  name="textInputNombreProyecto" 
+                                            required oninvalid="setCustomValidity('Únicamente letras. (Max.20)')" 
+                                            oninput="setCustomValidity('')" />
+                         </div>       
+                        
+                        <div class="form-group" runat="server"> 
+                            <label for="InputCodigo">Codigo del proyecto *</label> 
+                                        <input runat="server" id="textInputCodigo" name="textInputCodigo" placeholder="Proy-DS2016" type="text" 
+                                            pattern="^[a-zA-Z][a-zA-Z0-9 -]{4,20}$" class="form-control"  
+                                            required oninvalid="setCustomValidity('Sólo letras, guiones y números. (Max.20)')" 
+                                            oninput="setCustomValidity('')" />
+                         </div>
 
                           <div class="row">
                 <div class="col-lg-5 col-md-10 col-sm-10 col-xs-10">
@@ -62,7 +68,9 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static"
+                                placeholder="mm/dd/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+                                required data-date-format="dd/mm/yyyy" readonly="">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -75,7 +83,9 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" >
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" 
+                                placeholder="mm/dd/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+                                required data-date-format="dd/mm/yyyy" readonly="" >
                         </div>
                         <!-- /.input group -->
                     </div>

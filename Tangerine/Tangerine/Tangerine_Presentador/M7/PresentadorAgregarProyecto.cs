@@ -46,8 +46,8 @@ namespace Tangerine_Presentador.M7
         public void agregarProyecto()
         {
             ///Se capturan los datos de la vista para crear un proyecto.
-            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "MM/dd/yyyy", null);
-            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
+            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
+            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
             Double _costo = Convert.ToDouble(_vista.Costo);
 
             ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
@@ -76,16 +76,21 @@ namespace Tangerine_Presentador.M7
                                     "0", "En desarrollo", "", propuesta.Acuerdopago, int.Parse(propuesta.CodigoP),
                                     int.Parse(propuesta.IdCompañia), 1, listaProgramadores, listaContactos);
 
-            ///Se crea un nuevo comando para agregarel proyecto en la base de datos y se ejecuta.
+            ///Se crea un nuevo comando para agregar el proyecto en la base de datos y se ejecuta.
             Comando<bool> comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(nuevoProyecto);
             comandoBool.Ejecutar();
             Comando<int> comandoIdProyecto = FabricaComandos.ObtenerComandoUltimoIdProyecto();
             int idProyecto = comandoIdProyecto.Ejecutar();
 
             nuevoProyecto.Id = idProyecto;
-
+            
+            //Se crea un nuevo comando para agregar los empleados que trabajaran en el proyecto.
             Comando<bool> comandoEmpleados = FabricaComandos.ObtenerComandoAgregarEmpleados(nuevoProyecto);
             comandoEmpleados.Ejecutar();
+
+            //Se crea un nuevo comando para agregar los contactos en el proyecto.
+            Comando<bool> comandoContactos = FabricaComandos.ObtenerComandoAgregarContactos(nuevoProyecto);
+            comandoContactos.Ejecutar();
 
             /*DominioTangerine.Entidades.M7.Proyecto tal = (DominioTangerine.Entidades.M7.Proyecto)nuevoProyecto;
             tal.set_empleados(listaProgramadores);
@@ -183,6 +188,7 @@ namespace Tangerine_Presentador.M7
         /// </summary>
         public void AgregarPersonal()
         {
+            _vista.btnAgregarPersonal.Enabled = false;
             _vista.columna2.Visible = true;
             _vista.BtnGenerar.Enabled = true;
         }

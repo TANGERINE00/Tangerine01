@@ -14,25 +14,32 @@ namespace Tangerine.GUI.M2
 {
     public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
-        private PresentadorRegistroUsuario presentador;
+        private PresentadorRegistroUsuario _presentador;
+
+        /// <summary>
+        /// Constructor de PresentadorRegistroUsuario
+        /// </summary>
+        public RegistroUsuario()
+        {
+            _presentador = new PresentadorRegistroUsuario(this);
+        }
 
         #region Contrato
 
-        /// <summary>
-        /// Implementacion del contrato
-        /// </summary>
-        public string tablaEmpleado
-        {
-            get
+            /// <summary>
+            /// Implementacion del contrato
+            /// </summary>
+            public string tablaEmpleado
             {
-                return this.tablaempleados.Text;
+                get
+                {
+                    return this.tabla.Text;
+                }
+                set
+                {
+                    this.tabla.Text = value;
+                }
             }
-            set
-            {
-                this.tablaempleados.Text = value;
-            }
-        }
-
 
         #endregion
 
@@ -43,10 +50,9 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
-            presentador = new PresentadorRegistroUsuario(this);
             if (!IsPostBack)
             {
-                presentador.inicioVista();
+                _presentador.inicioVista();
             }
         }
     }

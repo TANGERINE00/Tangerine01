@@ -13,20 +13,30 @@ namespace Tangerine.GUI.M2
 {
     public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
-        private PresentadorCambioRol presentador;
+        private PresentadorCambioRol _presentador;
+
+        /// <summary>
+        /// Constructor de PresentadorCambioRol
+        /// </summary>
+        public CambiarRol()
+        {
+            _presentador = new PresentadorCambioRol(this);
+        }
 
         #region Contrato
-        /// <summary>
-        /// tabla consulta de empleados
-        /// </summary>
-        public string empleado
-        {
-            get
-            { return this.tablaempleados.Text; }
 
-            set
-            { this.tablaempleados.Text = value; }
-        }
+            /// <summary>
+            /// tabla consulta de empleados
+            /// </summary>
+            public string empleado
+            {
+                get
+                { return this.tabla.Text; }
+
+                set
+                { this.tabla.Text = value; }
+            }
+
         #endregion
 
         /// <summary>
@@ -36,10 +46,9 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            presentador = new PresentadorCambioRol(this);
             if (!IsPostBack)
             {
-                presentador.iniciarVista();
+                _presentador.iniciarVista();
             }
         }
     }
