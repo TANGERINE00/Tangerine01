@@ -41,6 +41,7 @@ namespace Tangerine_Presentador.M9
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
 
                 }
                 else
@@ -54,6 +55,8 @@ namespace Tangerine_Presentador.M9
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.fechaPago.ToShortDateString() + RecursoPresentadorM9.CloseTD;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.montoPago + RecursoPresentadorM9.CloseTD;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.monedaPago + RecursoPresentadorM9.CloseTD;
+                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.codPago + RecursoPresentadorM9.CloseTD;
+                        vista.pago += RecursoPresentadorM9.CloseTR;
 
                     }
                 }

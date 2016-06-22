@@ -8,6 +8,7 @@ using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
 using DominioTangerine.Entidades.M2;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 using LogicaTangerine.Fabrica;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
@@ -54,8 +55,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " +
-                                                                     "ComandoPrepararUsuario()", ex);
+                throw new ExceptionM2Tangerine("Error al ejecutar ComandoPrepararUsuario", ex);
             }
             return resultado;
         }

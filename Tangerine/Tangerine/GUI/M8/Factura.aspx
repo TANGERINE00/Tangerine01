@@ -19,67 +19,112 @@
     </div>
     <div class="row">
         <!-- left column -->
-        <div id="Div1" class="col-md-6" runat="server">
+        <div id="Div1" class="col-md-6">
             <!-- general form elements -->
-            <div id="Div2" class="box box-primary" runat="server">
-                <div id="Div3" class="box-header with-border" runat="server">
-                    <h3 class="box-title">Modificar Factura</h3>
-                </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                <form id="Form1" role="form" runat="server">
-                    <div id="Div4" class="box-body" runat="server">
+            <div id="Div2" class="box box-primary" style="height:335px !important;">
 
-                        <div id="Div5" class="form-group" runat="server">
-                            <label for="labelNumeroFactura_M8">Número Factura</label>
-                            <input runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" disabled="disabled">
-                        </div>
 
-                        <div id="Div6" class="form-group" runat="server">
-                            <label for="labelFecha_M8">Fecha de facturación</label>
-                            <input type="text" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha de facturación" disabled="disabled">
-                        </div>
 
-                        <div id="Div7" class="form-group" runat="server">
-                            <label for="labelCliente_M8">Compañía</label>
-                            <input type="text" runat="server" class="form-control" id="textCliente_M8" name="textCliente_M8" placeholder="Compañía" disabled="disabled">
-                        </div>
+                <div id="imprimirbody" class="box" style="text-align:center;">
 
-                        <div id="Div8" class="form-group" runat="server">
-                            <label for="labelProyecto_M8">Proyecto</label>
-                            <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
-                        </div>
-
-                        <div id="Div9" class="form-group" runat="server">
-                            <label for="labelDescripcion_M8">Descripción</label>
-                            <input type="text" runat="server" class="form-control" pattern="^[0-9a-zA-Z ]+$" id="textDescripcion_M8" 
-                                name="textDescripcion_M8" maxlength="50" required 
-                                oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolos')" oninput="setCustomValidity('')">
-                        </div>
-
-                        <div id="Div10" class="form-group" runat="server">
-                            <label for="labelMonto_M8">Monto</label>
-                            <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">
-                        </div>
-
-                        <div id="Div11" class="form-group" runat="server">
-                            <label for="labelTipoMoneda_M8">Tipo de Moneda</label>
-                            <input type="text" runat="server" class="form-control" id="textTipoMoneda_M8" name="textTipoMoneda_M8" placeholder="Tipo de Moneda" disabled="disabled">
-                        </div>
-
-                        <div id="Div12" class="form-group" runat="server" style="text-align:center;">
-                            <asp:Button ID="buttonModificar_M8" Style="margin-top: 5%;" class="btn btn-default" type="submit" runat="server" Text="Volver" OnClick="buttonModificarFactura_Click"></asp:Button>
-                        </div>
-
+                    <div id="Div3" class="box-header" style="text-align:center;">
+                        <h3 class="box-title">TANGERINE CA</h3>
                     </div>
-                    <!-- /.box-body -->
 
 
-                </form>
+
+                    <!-- /.box-header -->
+                        <div id="Div4" class="box-body with-border">
+                            <div style="width:80%; height:70px; margin-left:10%;">
+                                <div style="float:left;">
+                                    <div id="Div5">
+                                        <label for="labelNumeroFactura_M8">Factura N°</label>
+                                        <asp:Literal runat="server" ID="textNumeroFactura_M8"></asp:Literal>
+                                    </div>
+                                    <div id="Div6">
+                                        <label for="labelFecha_M8">Fecha:</label>
+                                        <asp:Literal runat="server" ID="textFecha_M8"></asp:Literal>
+                                    </div>
+                                </div>
+                                <div style="float:right;">
+                                    <div id="Div7">
+                                        <label for="labelCliente_M8">Compañía:</label>
+                                        <asp:Literal runat="server" ID="textCliente_M8"></asp:Literal>
+                                    </div>
+                                    <div>
+                                        <label for="labelCliente_M8">Rif: </label>
+                                        <asp:Literal runat="server" ID="textRif_M8"></asp:Literal>
+                                    </div>
+                                    <div>
+                                        <label for="labelCliente_M8">Telefono: </label>
+                                        <asp:Literal runat="server" ID="textDireccion_M8"></asp:Literal>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <table class="table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width: 30px;text-align:center;">#</th>
+                                            <th style="width: 150px;text-align:center;">Proyecto</th>
+                                            <th style="width: 500px;text-align:center;">Descripción</th>
+                                            <th style="width: 80px;text-align:center;">Precio</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td><asp:Literal runat="server" ID="textProyecto_M8"></asp:Literal></td>
+                                            <td><asp:Literal runat="server" ID="textDescripcion_M8"></asp:Literal></td>
+                                            <td><asp:Literal runat="server" ID="textMonto_M8"></asp:Literal></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4" style="text-align:right;">
+                                                <asp:Literal runat="server" ID="textTipoMoneda_M8"></asp:Literal>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            
+
+                            
+
+                            
+
+
+                        </div>
+                    <!-- /.box-header -->
+
+
+                </div>
+
+
+
+
+
+                    <div id="Div12" style="text-align:center; ">
+                        <a id="imprimir" class="btn btn-primary" style="margin-right:15px;">Imprimir</a>
+                        <a class="btn btn-default" href="ConsultarFacturaM8.aspx" style="width:77px;">Volver</a>
+                    </div>
             </div>
             <!-- /.box -->
 
         </div>
+    </div>
         <!--/.col (left) -->
         <!-- right column -->
         <div class="col-md-6">
