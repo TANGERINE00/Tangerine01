@@ -260,6 +260,11 @@ namespace DominioTangerine.Entidades.M10
             
         }
 
+        public EmpleadoM10(int id)
+        {
+            emp_id = id;
+        }
+
         public EmpleadoM10(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido,
                            string empGenero, int empCedula, DateTime empFecha, string empActivo, string empNivelEstudio,
                            string empEmailEmployee, int empLugId, Entidad empCargo, double empSalario, string empFechaInicio,
