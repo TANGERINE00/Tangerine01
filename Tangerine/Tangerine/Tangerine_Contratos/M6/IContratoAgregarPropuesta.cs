@@ -30,11 +30,20 @@ namespace Tangerine_Contratos.M6
         {
             get;
         }
+
+        /*
         DropDownList ComboDuracion
         {
             get;
             set;
         }
+        */
+        string ComboDuracion
+        {
+            get;
+            set;
+        }
+
         string TextoDuracion
         {
             get;
