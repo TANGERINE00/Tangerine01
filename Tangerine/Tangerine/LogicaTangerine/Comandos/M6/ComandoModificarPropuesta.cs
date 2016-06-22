@@ -10,11 +10,19 @@ namespace LogicaTangerine.Comandos.M6
 {
     class ComandoModificarPropuesta : Comando<bool>
     {
+        /// <summary>
+        /// Constructor, recibe parametro de tipo propuesta
+        /// </summary>
+        /// <param name="laPropuesta">objeto de tipo propuesta</param>
         public ComandoModificarPropuesta(Entidad laPropuesta) 
         {
              _laEntidad = laPropuesta;
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo ModificarPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna true si fue satisfactoria la modificacion</returns>
         public override bool Ejecutar()
         {
             try
