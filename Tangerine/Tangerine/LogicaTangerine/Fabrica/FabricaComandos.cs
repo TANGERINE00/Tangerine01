@@ -249,6 +249,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoPromoverClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoAgregarClientePotencial(Entidad cliente)
+        {
+            return new ComandoAgregarClientePotencial(cliente);
+        }
         #endregion
 
         #region Modulo 4
@@ -698,6 +703,16 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> ObtenerComandoAgregarEmpleados (Entidad proyecto)
         {
             return new ComandoAgregarEmpleados(proyecto);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarContactos.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los contactos.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<bool> ObtenerComandoAgregarContactos(Entidad proyecto)
+        {
+            return new ComandoAgregarContactos(proyecto);
         }
         #endregion
 

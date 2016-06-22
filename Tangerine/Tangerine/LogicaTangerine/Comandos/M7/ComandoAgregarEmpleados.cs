@@ -12,9 +12,10 @@ namespace LogicaTangerine.Comandos.M7
     {
 
         /// <summary>
-        /// Constructor de la clase ComandoAgregarProyecto.
+        /// Constructor de la clase ComandoAgregarEmpleados.
         /// </summary>
-        /// <param name="proyecto">proyecto de tipo Entidad para ejecutar dentro del comando.</param>
+        /// <param name="proyecto">proyecto de tipo Entidad para
+        /// insertar la lista de empleados.</param>
         public ComandoAgregarEmpleados(Entidad proyecto)
         {
             _laEntidad = proyecto;

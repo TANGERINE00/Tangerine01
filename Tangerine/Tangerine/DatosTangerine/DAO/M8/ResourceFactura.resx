@@ -126,6 +126,9 @@
   <data name="ChangeFactura" xml:space="preserve">
     <value>M8_ModificarFactura</value>
   </data>
+  <data name="Codigo" xml:space="preserve">
+    <value>Dao Factura</value>
+  </data>
   <data name="ComNameCompany" xml:space="preserve">
     <value>com_nombre</value>
   </data>
@@ -182,6 +185,24 @@
   </data>
   <data name="FacTipoMoneda" xml:space="preserve">
     <value>fac_tipo_moneda</value>
+  </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeFormato" xml:space="preserve">
+    <value>Error de formato - </value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
+  <data name="MensajeNull" xml:space="preserve">
+    <value>Error por nulo - </value>
+  </data>
+  <data name="MensajeOtro" xml:space="preserve">
+    <value>Otro error - </value>
+  </data>
+  <data name="MensajeSQL" xml:space="preserve">
+    <value>Error de BD - </value>
   </data>
   <data name="ParamDescripcion" xml:space="preserve">
     <value>@descripcion</value>

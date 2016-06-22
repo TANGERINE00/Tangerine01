@@ -118,22 +118,8 @@ namespace Tangerine.GUI.M8
         }
         #endregion
 
-        int _numeroFactura = 0;
         DateTime _fechaEmision = DateTime.Now;
         DateTime _fechaUltimoPago = DateTime.Now;
-        int _montoTotal = 0;
-        int _montoRestante = 0;
-        string _tipoMoneda = String.Empty;
-        string _descripcion = String.Empty;
-        int _estatus = 0;
-        int _proyectoId = 0;
-        int _companiaId = 0;
-        //public static Facturacion theFactura = null;
-
-        
-        
-
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -142,26 +128,15 @@ namespace Tangerine.GUI.M8
 
             if (!IsPostBack)
             {
-                _presentador.cargarFactura();
-                
+                _presentador.cargarFactura();                
             }  
         }
 
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
         {
-            //_presentador.anularFactura();
-            //_numeroFactura = int.Parse(Numero);
-            //_montoTotal = int.Parse(MontoFactura);
-            //_fechaEmision = DateTime.Parse(FechaFactura);
-            //_fechaUltimoPago = DateTime.Now;
-            //_montoRestante = int.Parse(MontoFactura);
-            //_tipoMoneda = "Bolivares";
-            //_descripcion = DescripcionFactura;
-
-            //theFactura = new Facturacion(_numeroFactura, _fechaEmision, _fechaUltimoPago, _montoTotal, _montoRestante, _tipoMoneda, _descripcion, 0, 1, 1);
-            //LogicaM8 facturaLogic = new LogicaM8();
-            //facturaLogic.AnnularFactura(theFactura);
+            _presentador.anularFactura();
             //Server.Transfer("ConsultarFacturaM8.aspx");
+            Server.Transfer(ResourceGUIM8.redirectHome);
         }
     }
 }

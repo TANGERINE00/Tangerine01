@@ -40,9 +40,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net10-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -55,7 +54,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="M1\" />
-    <Folder Include="M7\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +73,7 @@
     <Compile Include="M2\ExcepcionModificarRol.cs" />
     <Compile Include="M2\ExcepcionRegistro.cs" />
     <Compile Include="M2\ExcepcionPrivilegios.cs" />
+    <Compile Include="M2\ExceptionM2Tangerine.cs" />
     <Compile Include="M3\ExceptionDataBaseLeads.cs" />
     <Compile Include="M3\NullArgumentExceptionLeads.cs" />
     <Compile Include="M3\WrongFormatExceptionLeads.cs" />
@@ -82,17 +81,23 @@
     <Compile Include="M4\ExeptionM4Tangerine.cs" />
     <Compile Include="M4\NullArgumentException.cs" />
     <Compile Include="M4\WrongFormatException.cs" />
+    <Compile Include="M5\AgregarContactoException.cs" />
+    <Compile Include="M5\BaseDeDatosContactoException.cs" />
+    <Compile Include="M5\ConsultarContactoException.cs" />
+    <Compile Include="M5\EliminarContactoException.cs" />
     <Compile Include="M5\ExceptionDataBase.cs" />
+    <Compile Include="M5\ModificarContactoException.cs" />
     <Compile Include="M5\NullArgumentException.cs" />
     <Compile Include="M5\WrongFormatException.cs" />
     <Compile Include="M6\BasedeDatosException.cs" />
     <Compile Include="M6\FormatoIncorrectoException.cs" />
     <Compile Include="M6\ListaSinPropuestaException.cs" />
     <Compile Include="M6\PropuestaSinCodigoException.cs" />
+    <Compile Include="M7\ExceptionM7Tangerine.cs" />
     <Compile Include="M8\ExceptionDataBase.cs" />
     <Compile Include="M8\NotArgumentException.cs" />
     <Compile Include="M8\WrongFormatException.cs" />
-    <Compile Include="M9\ExceptionDataBase.cs" />
+    <Compile Include="M9\ExceptionDataBaseM9Tangerine.cs" />
     <Compile Include="M9\NullArgumentException.cs" />
     <Compile Include="M9\WrongFormatException.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

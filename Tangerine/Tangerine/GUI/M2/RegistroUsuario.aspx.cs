@@ -14,7 +14,15 @@ namespace Tangerine.GUI.M2
 {
     public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
-        private PresentadorRegistroUsuario presentador;
+        private PresentadorRegistroUsuario _presentador;
+
+        /// <summary>
+        /// Constructor de PresentadorRegistroUsuario
+        /// </summary>
+        public RegistroUsuario()
+        {
+            _presentador = new PresentadorRegistroUsuario(this);
+        }
 
         #region Contrato
 
@@ -33,6 +41,20 @@ namespace Tangerine.GUI.M2
             }
         }
 
+        /// <summary>
+        /// Implementacion del contrato
+        /// </summary>
+        public string numeroEmpleado
+        {
+            get
+            {
+                return this.textBuscarId.Value;
+            }
+            set
+            {
+                this.textBuscarId.Value = value;
+            }
+        }
 
         #endregion
 
@@ -43,10 +65,26 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
-            presentador = new PresentadorRegistroUsuario(this);
             if (!IsPostBack)
             {
-                presentador.inicioVista();
+                _presentador.inicioVista();
+            }
+        }
+
+        /// <summary>
+        /// Método para actualizar la pagina cuando se activa el evento del boton buscar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void busquedaNumero_Click(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(numeroEmpleado, "[^0-9]"))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('Error de búsqueda, solo números.')", true); 
+            }
+            else
+            {
+                _presentador.actualizarVista();
             }
         }
     }

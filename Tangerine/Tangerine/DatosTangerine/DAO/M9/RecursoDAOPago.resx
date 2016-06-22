@@ -123,6 +123,12 @@
   <data name="CambiarStatus" xml:space="preserve">
     <value>M9_CambioStatus</value>
   </data>
+  <data name="CodigoErrorSQL" xml:space="preserve">
+    <value>"901"</value>
+  </data>
+  <data name="MensajeErrorSQL" xml:space="preserve">
+    <value>"Error al realizar la conexion"</value>
+  </data>
   <data name="ParamCod" xml:space="preserve">
     <value>@cod</value>
   </data>

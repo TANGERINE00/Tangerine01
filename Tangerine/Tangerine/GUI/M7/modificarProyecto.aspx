@@ -55,7 +55,7 @@
 
                         <div class="form-group">
                             <label for="InputFechaEstimada">Fecha Estimada de culminación *</label> <br />
-                            <asp:Calendar runat="server" ID="textInputFechaEstimada" SelectionMode="DayWeekMonth"></asp:Calendar>
+                            <asp:Calendar runat="server" ID="textInputFechaEstimada" SelectionMode="DayWeekMonth" OnDayRender="textInputFechaEstimada_DayRender"></asp:Calendar>
                         </div>
 
                         <div class="form-group">

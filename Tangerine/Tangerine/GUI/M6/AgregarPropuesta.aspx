@@ -1,11 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AgregarPropuesta.aspx.cs" Inherits="Tangerine.GUI.M6.AgregarPropuesta" %>
 
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
- 
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestion de Propuesta
@@ -84,16 +82,11 @@
 
                     </div>
 
-
-
                     <div class="form-group">
                         <label>Objeto del proyecto</label>
                         
                         <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z]+$"  class="form-control" id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" oninput="setCustomValidity('')"></textarea>
-					     
-                      <%--  <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="nombre" name ="nombre" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">
-                    --%>
-                    
+			
                     </div>
 
                     <div class="form-group">
@@ -126,14 +119,22 @@
                         <div class="input-group input-group">
                             <div class="input-group-btn">
 
-                                <asp:DropDownList ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server" 
-                                    AutoPostBack="true" OnSelectedIndexChanged="comboDuracion_SelectedIndexChanged">
-                                </asp:DropDownList>
+                                <select ID="comboDuracion" class="btn btn-primary dropdown-toggle" runat="server" 
+                                    AutoPostBack="true" clientidmode="static"
+                                    onchange="enableDeFechas(this.id, 'datepicker1', 'datepicker2', 'textoDuracion')">
+                                    <option value="Meses">Meses</option>
+                                    <option value="Dias">Dias</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
 
                             </div>
                             <!-- /btn-group -->
                             
-                            <input type="text" class="form-control" id="textoDuracion" name="duracion" runat="server" pattern="^[0-50]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" oninput="setCustomValidity('')">
+                            <input type="text" class="form-control" ID="textoDuracion" name="duracion" runat="server" 
+                                pattern="^[0-9]*$" required clientidmode="static"
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                oninput="setCustomValidity('')" 
+                                onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')">
                         </div>
 
                     </div>
@@ -145,7 +146,8 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                                onchange="setFechasMesesYDias()" clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -157,7 +159,8 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" >
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
+                                onchange="setFechasCustom()" clientidmode="static" >
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -175,7 +178,10 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" pattern="^[0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" oninput="setCustomValidity('')">
+                            <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" 
+                                pattern="^[0-9]*$" title="Costo de la propuesta" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                oninput="setCustomValidity('')">
                         </div>
 
                     </div>
@@ -183,8 +189,11 @@
                     <div class="form-group">
                         <label>Forma de Pago</label>
                         <div class="dropdown" runat="server" id="fpago">
-                            <asp:DropDownList ID="formaPago" class="btn btn-default dropdown-toggle" runat="server">
-                            </asp:DropDownList>
+                            <select ID="formaPago" class="btn btn-default dropdown-toggle" runat="server" 
+                                onchange="setCuotas()" clientidmode="static">
+                                <option value="Mensual">Mensual</option>
+                                <option value="Por cuotas">Por Cuotas</option>
+                            </select>
                         </div>
                     </div>
 
@@ -193,8 +202,8 @@
                     <div class="form-group">
                         <label>Cantidad Cuotas</label>
                         <div class="dropdown" runat="server" id="cuota">
-                            <asp:DropDownList ID="comboCuota" class="btn btn-default dropdown-toggle" runat="server">
-                            </asp:DropDownList>
+                            <input type="text" pattern="^[0-9]*$" title="Numero de cuotas" class="form-control" 
+                                id="cantidadCuotas" name="cantidadCuotas" runat="server" clientidmode="static">
                         </div>
                     </div>
 
