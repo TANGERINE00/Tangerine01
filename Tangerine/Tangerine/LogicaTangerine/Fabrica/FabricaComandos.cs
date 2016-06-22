@@ -531,6 +531,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new LogicaTangerine.Comandos.M6.ComandoModificarPropuesta(propuesta);
         }
+
+        public static Comando<int> ComandoConsultarNumeroPropuestas()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarNumeroPropuestas();
+        }
         #endregion
 
         #region Instancia Requerimiento
@@ -561,6 +566,16 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> ComandoModificarRequerimiento(Entidad requerimiento)
         {
             return new LogicaTangerine.Comandos.M6.ComandoModificarRequerimiento(requerimiento);
+        }
+
+        public static Comando<int> ComandoConsultarNumeroRequerimientos()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarNumeroRequerimientos();
+        }
+
+        public static Comando<bool> ComandoEliminarRequerimiento(Entidad requerimiento)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoEliminarRequerimiento(requerimiento);
         }
         #endregion
 
