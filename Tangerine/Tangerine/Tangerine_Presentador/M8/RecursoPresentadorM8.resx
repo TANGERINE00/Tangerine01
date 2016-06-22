@@ -312,4 +312,22 @@
   <data name="Euro" xml:space="preserve">
     <value>€</value>
   </data>
+  <data name="blank" xml:space="preserve">
+    <value>.\n</value>
+  </data>
+  <data name="espacio" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="punto" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="recordar" xml:space="preserve">
+    <value>Se le recuerda que tiene una factura por pagar, por un monto de:</value>
+  </data>
+  <data name="recordatorio" xml:space="preserve">
+    <value>Recordatorio de Pago - Proyecto:</value>
+  </data>
+  <data name="saludos" xml:space="preserve">
+    <value>Saludos Cordiales, estimados:</value>
+  </data>
 </root>
