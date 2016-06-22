@@ -123,7 +123,7 @@
   <data name="CambiarStatus" xml:space="preserve">
     <value>M9_CambioStatus</value>
   </data>
-<<<<<<< HEAD
+
   <data name="ConsultarHistoricoPagos" xml:space="preserve">
     <value>M9_HistoricoPagoCompania</value>
   </data>
@@ -141,13 +141,13 @@
   </data>
   <data name="PagoMonto" xml:space="preserve">
     <value>pag_monto</value>
-=======
+</data>
   <data name="CodigoErrorSQL" xml:space="preserve">
     <value>"901"</value>
   </data>
   <data name="MensajeErrorSQL" xml:space="preserve">
     <value>"Error al realizar la conexion"</value>
->>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
+
   </data>
   <data name="ParamCod" xml:space="preserve">
     <value>@cod</value>

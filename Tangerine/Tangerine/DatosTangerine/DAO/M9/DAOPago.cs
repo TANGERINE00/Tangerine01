@@ -7,15 +7,14 @@ using DatosTangerine.InterfazDAO.M9;
 using DominioTangerine.Entidades.M9;
 using DominioTangerine;
 using System.Data;
-<<<<<<< HEAD
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine.Entidades.M4;
 using DatosTangerine.M4;
-=======
+
 using System.Data.SqlClient;
 using ExcepcionesTangerine.M9;
->>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
+
 using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M9
@@ -30,14 +29,8 @@ namespace DatosTangerine.DAO.M9
         /// <returns></returns>
         public bool Agregar (Entidad pagoParam)
         {
-<<<<<<< HEAD
-            
-            DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
-            List<Parametro> parametros = new List<Parametro>();
-=======
->>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
 
-            try
+           try
             {
                 DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
                 List<Parametro> parametros = new List<Parametro>();
