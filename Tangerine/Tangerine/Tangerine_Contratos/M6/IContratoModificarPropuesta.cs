@@ -9,6 +9,12 @@ namespace Tangerine_Contratos.M6
 {
     public interface IContratoModificarPropuesta
     {
+
+        Literal Requerimientos
+        {
+            get;
+            set;
+        }
         string ContenedorCompania
         {
             get;

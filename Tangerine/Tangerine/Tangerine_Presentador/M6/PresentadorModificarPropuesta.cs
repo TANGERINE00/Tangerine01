@@ -122,7 +122,28 @@ namespace Tangerine_Presentador.M6
 
 
         }
-         
+        public void imprimirRequerimientos(Entidad _propuesta)
+        {
+            List<Entidad> _requerimientos;
+            Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
+
+            _requerimientos = cmdConsultarRequerimientos.Ejecutar();
+
+            foreach (Entidad _elRequerimiento in _requerimientos)
+            {
+                
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTR;
+
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + RecursosPresentadorPropuesta.CerrarTD;
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() + RecursosPresentadorPropuesta.CerrarTD;
+
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Modificar + RecursosPresentadorPropuesta.CerrarTD;
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_eliminar + RecursosPresentadorPropuesta.CerrarTD;
+
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
+            }
+        }
+
 
        public void ModificarRequerimiento(String idRequerimiento, String descripcion, String idPropuesta)
         {
@@ -151,7 +172,9 @@ namespace Tangerine_Presentador.M6
             compañia = comando.Ejecutar();
             //Extraigo el nombre de la compañia y lleno el contenedor
             vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
-          /* Logica Vieja   
+            imprimirRequerimientos(propuesta);
+            
+            /* Logica Vieja   
           * LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
 
             Prueba = logicaPropuesta.TraerPropuesta(idPropuesta);
@@ -163,23 +186,6 @@ namespace Tangerine_Presentador.M6
             */
         }
 
-        public void llenarRequerimiento() {
-
-            foreach (DominioTangerine.Entidades.M6.Requerimiento elRequerimiento in req)
-            {
-                requerimiento += RecursosPresentadorPropuesta.AbrirTR;
-
-                requerimiento += RecursosPresentadorPropuesta.AbrirTD + elRequerimiento.CodigoRequerimiento.ToString() + RecursosPresentadorPropuesta.CerrarTD;
-                requerimiento += RecursosPresentadorPropuesta.AbrirTD + elRequerimiento.Descripcion.ToString() + RecursosPresentadorPropuesta.CerrarTD;
-
-
-                requerimiento += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Modificar + RecursosPresentadorPropuesta.CerrarTD;
-                requerimiento += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_eliminar + RecursosPresentadorPropuesta.CerrarTD;
-
-                requerimiento += RecursosPresentadorPropuesta.CerrarTR;
-
-            }
-        }
         public void llenarVista() {
 
             TraerCompania(vista.IdCompania);
