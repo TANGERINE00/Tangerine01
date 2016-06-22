@@ -79,6 +79,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monto.
+        /// </summary>
+        internal static string amount {
+            get {
+                return ResourceManager.GetString("amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Anulada&lt;/span&gt;.
         /// </summary>
         internal static string anulada {
@@ -246,6 +255,15 @@ namespace Tangerine.GUI.M8 {
         internal static string Coma {
             get {
                 return ResourceManager.GetString("Coma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dd/MM/yyyy.
+        /// </summary>
+        internal static string dateTipe {
+            get {
+                return ResourceManager.GetString("dateTipe", resourceCulture);
             }
         }
         
