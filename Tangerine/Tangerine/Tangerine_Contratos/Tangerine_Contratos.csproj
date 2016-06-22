@@ -67,6 +67,7 @@
     <Compile Include="M7\IContratoAgregarProyecto.cs" />
     <Compile Include="M7\IContratoModificarProyecto.cs" />
     <Compile Include="M8\IContratoConsultarFactura.cs" />
+    <Compile Include="M8\IContratoFactura.cs" />
     <Compile Include="M8\IContratoGenerarFactura.cs" />
     <Compile Include="M8\IContratoAnularFactura.cs" />
     <Compile Include="M8\IContratoModificarFactura.cs" />
@@ -77,6 +78,7 @@
     </Compile>
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="M9\IContratoFacturasPorPagar.cs" />
+    <Compile Include="M9\IContratoPagosPorCompania.cs" />
     <Compile Include="M9\IContratoSeleccionCompania.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

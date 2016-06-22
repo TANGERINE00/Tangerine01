@@ -92,12 +92,30 @@ namespace Tangerine.GUI.M5
 
         public int IdCont()
         {
-            return int.Parse( Request.QueryString[ ResourceGUIM5.idCont ] );
+            try
+            {
+                return int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
+            }
+            catch (ArgumentNullException ex)
+            {
+                //No se hace nada ya que IdCont es opcional
+            }
+
+            return 0;
         }
 
         public int StatusAccion()
         {
-            return int.Parse( Request.QueryString[ ResourceGUIM5.Status ] );
+            try
+            {
+                return int.Parse(Request.QueryString[ResourceGUIM5.Status]);
+            }
+            catch (ArgumentNullException ex)
+            {
+                //No se hace nada ya que IdCont es opcional
+            }
+
+            return 0;
         }
 
         public string CargarBotonNuevoContacto( int typeComp, int idComp )

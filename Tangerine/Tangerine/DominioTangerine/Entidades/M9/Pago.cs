@@ -11,12 +11,13 @@ namespace DominioTangerine.Entidades.M9
         #region Atributos
 
         private int _idPago;
-        private int _montoPago;
+        private double _montoPago;
         private string _monedaPago;
         private string _formaPago;
         private int _codPago;
         private DateTime _fechaPago;
         private int _idFactura;
+        private DateTime _fechaFactura;
         #endregion
 
         #region Constructores
@@ -25,7 +26,17 @@ namespace DominioTangerine.Entidades.M9
             
         }
 
-        public Pago(int _idPago, int _montoPago, string _monedaPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
+        public Pago(int _idFactura, DateTime _fechaPago, double _montoPago, string _monedaPago, int _codPago)
+        {
+            this._idFactura = _idFactura;
+            this._fechaPago = _fechaPago;
+            this._montoPago = _montoPago;
+            this._monedaPago = _monedaPago;
+            this._codPago = _codPago;
+     
+        }
+
+        public Pago(int _idPago, double _montoPago, string _monedaPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
         {
             this._idPago = _idPago;
             this._montoPago = _montoPago;
@@ -36,7 +47,7 @@ namespace DominioTangerine.Entidades.M9
             this._idFactura = _idFactura;
         }
 
-        public Pago(string _monedaPago, int _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
+        public Pago(string _monedaPago, double _montoPago, string _formaPago, int _codPago, DateTime _fechaPago, int _idFactura)
         {
 
             this._monedaPago = _monedaPago;
@@ -47,7 +58,7 @@ namespace DominioTangerine.Entidades.M9
             this._idFactura = _idFactura;
         }
 
-        public Pago(int _codPago, int _montoPago, string _monedaPago, string _formaPago, int _idFactura)
+        public Pago(int _codPago, double _montoPago, string _monedaPago, string _formaPago, int _idFactura)
         {
             this._codPago = _codPago;
             this._montoPago = _montoPago;
@@ -63,7 +74,7 @@ namespace DominioTangerine.Entidades.M9
         {
             get { return _idPago; }
         }
-        public int montoPago
+        public double montoPago
         {
             get { return _montoPago; }
         }

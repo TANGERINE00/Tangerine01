@@ -79,6 +79,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monto.
+        /// </summary>
+        internal static string amount {
+            get {
+                return ResourceManager.GetString("amount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Anulada&lt;/span&gt;.
         /// </summary>
         internal static string anulada {
@@ -250,6 +259,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dd/MM/yyyy.
+        /// </summary>
+        internal static string dateTipe {
+            get {
+                return ResourceManager.GetString("dateTipe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IdCompania.
         /// </summary>
         internal static string idC {
@@ -264,6 +282,15 @@ namespace Tangerine.GUI.M8 {
         internal static string idF {
             get {
                 return ResourceManager.GetString("idF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idFac.
+        /// </summary>
+        internal static string idFac {
+            get {
+                return ResourceManager.GetString("idFac", resourceCulture);
             }
         }
         
@@ -318,6 +345,24 @@ namespace Tangerine.GUI.M8 {
         internal static string redirectHome {
             get {
                 return ResourceManager.GetString("redirectHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=1.
+        /// </summary>
+        internal static string volver {
+            get {
+                return ResourceManager.GetString("volver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=1.
+        /// </summary>
+        internal static string volverModificado {
+            get {
+                return ResourceManager.GetString("volverModificado", resourceCulture);
             }
         }
     }

@@ -24,17 +24,19 @@ namespace Tangerine.GUI.M2
         }
 
         #region Contrato
+
         /// <summary>
         /// tabla consulta de empleados
         /// </summary>
         public string empleado
         {
             get
-            { return this.tablaempleados.Text; }
+            { return this.tabla.Text; }
 
             set
-            { this.tablaempleados.Text = value; }
+            { this.tabla.Text = value; }
         }
+
         #endregion
 
         /// <summary>

@@ -255,6 +255,11 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -288,6 +293,11 @@ namespace Tangerine.GUI.M7
         protected void bDerecho_Click(object sender, EventArgs e)
         {
             presentador.MoverDerecha();
+        }
+
+        protected void textInputFechaEstimada_DayRender(object sender, DayRenderEventArgs e)
+        {
+            presentador.RenderCalendario(e, presentador.Proyecto);
         }
 
     }

@@ -605,6 +605,29 @@ AS
 		FROM USUARIO WHERE usu_id = @id;
 	END
 GO
+
+CREATE PROCEDURE M2_ConsultarUsuarioPorNombre
+	@usuario [varchar](100)
+AS
+	BEGIN
+		SELECT  Employee.emp_num_ficha as emp_num_ficha, Employee.emp_p_nombre as emp_p_nombre,
+				Employee.emp_s_nombre as emp_s_nombre,Employee.emp_p_apellido as emp_p_apellido, 
+				Employee.emp_s_apellido as emp_s_apellido,Employee.emp_cedula as emp_cedula, 
+				Employee.emp_fecha_nac as emp_fecha_nac,Employee.emp_activo as emp_activo,
+				Employee.emp_email as emp_email, Employee.emp_genero as emp_genero, 
+				Employee.emp_nivel_estudio as emp_nivel_estudio,
+				Job.car_nombre as car_nombre, Job.car_descripcion as car_descripcion,
+				JobEmployee.car_emp_fecha_cont as car_emp_fecha_cont, 
+				JobEmployee.car_emp_modalidad as car_emp_modalidad,
+				JobEmployee.car_emp_sueldo as car_emp_sueldo     
+			FROM EMPLEADO Employee, CARGO_EMPLEADO JobEmployee, CARGO job, USUARIO Usu, ROL Ro
+		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha 
+			  and JobEmployee.fk_car_id=Job.car_id
+			  and Ro.rol_id = Usu.fk_rol_id
+			  and Employee.emp_num_ficha = Usu.fk_emp_num_ficha
+			  and Usu.usu_usuario = @usuario
+	END;
+GO
 ---------------------------------------------------------------------------------------------------------
 --------Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
@@ -741,6 +764,14 @@ as
 AS
  BEGIN
     DELETE FROM CLIENTE_POTENCIAL WHERE cli_pot_id = @idClientePotencial;
+ end;
+GO
+
+---------------Buscar ultimo Id---------------------
+CREATE PROCEDURE M3_ConsultarIdUltimoLead
+AS
+ BEGIN
+     SELECT MAX(cli_pot_id) cli_pot_id FROM CLIENTE_POTENCIAL; 
  end;
 GO
 
@@ -1678,7 +1709,7 @@ CREATE PROCEDURE M9_historico_pago_por_compania
 @id_compania int
 AS
 	BEGIN
-		SELECT  fac_id, fac_fecha_emision,pag_fecha,pag_monto,pag_moneda
+		SELECT  fac_id, fac_fecha_emision,pag_fecha,pag_monto,pag_moneda, pag_cod
                 FROM factura, pago
 				WHERE fk_fac_id=fac_id AND fk_compania_id=@id_compania
 

@@ -188,11 +188,13 @@
     <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
     <Content Include="GUI\M8\EnviarCorreoM8.aspx" />
+    <Content Include="GUI\M8\Factura.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="GUI\M9\FacturasPagadas.aspx" />
     <Content Include="GUI\M9\FacturasPorPagar.aspx" />
+    <Content Include="GUI\M9\PagosPorCompania.aspx" />
     <Content Include="GUI\M9\SeleccionCompaniaPagadas.aspx" />
     <Content Include="GUI\M9\SeleccionCompania.aspx" />
     <Content Include="GUI\M9\CargarPago1.aspx" />
@@ -1321,6 +1323,13 @@
     <Compile Include="GUI\M8\EnviarCorreoM8.aspx.designer.cs">
       <DependentUpon>EnviarCorreoM8.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M8\Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1360,6 +1369,13 @@
     </Compile>
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\PagosPorCompania.aspx.cs">
+      <DependentUpon>PagosPorCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\PagosPorCompania.aspx.designer.cs">
+      <DependentUpon>PagosPorCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M9\ResourceLogicaM9.Designer.cs">
       <AutoGen>True</AutoGen>

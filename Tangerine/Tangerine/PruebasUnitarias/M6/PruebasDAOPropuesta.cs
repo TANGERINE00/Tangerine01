@@ -112,7 +112,7 @@ namespace PruebasUnitarias.M6
         //Prueba que pueda eliminar una propuesta
         // <summary>
         [Test]
-        public void EliminarPropuesta()
+        public void TestEliminarPropuesta()
         {
             //Se obtiene el número de propuestas totales antes del insertado
             contador = dao.ConsultarNumeroPropuestas();
@@ -138,7 +138,7 @@ namespace PruebasUnitarias.M6
         /// Prueba que se consulten propuestas aprobadas no halladas en proyectos en ejecución.
         /// </summary>
         [Test]
-        public void ConsultaPropuestaProyecto()
+        public void TestConsultaPropuestaProyecto()
         {
             //Se inserta la propuesta.
             if (dao.Agregar(laPropuesta))
@@ -163,7 +163,7 @@ namespace PruebasUnitarias.M6
         /// Prueba que se consulten propuestas por nombre.
         /// </summary>
         [Test]
-        public void ConsultaPropuestaXId()
+        public void TestConsultaPropuestaXId()
         {
             //Se inserta la propuesta
             confirmacion = dao.Agregar(laPropuesta);
@@ -187,7 +187,7 @@ namespace PruebasUnitarias.M6
         /// Prueba que se consulten todas las propuestas
         /// </summary>
         [Test]
-        public void ConsultaTodasPropuesta()
+        public void TestConsultaTodasPropuesta()
         {
             //Se inserta la propuesta para tener un minimo
             confirmacion = dao.Agregar(laPropuesta);
