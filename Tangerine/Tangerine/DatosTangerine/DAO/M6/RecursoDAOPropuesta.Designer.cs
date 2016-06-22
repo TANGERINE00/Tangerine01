@@ -88,6 +88,15 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DS-606.
+        /// </summary>
+        internal static string CodigoModulo {
+            get {
+                return ResourceManager.GetString("CodigoModulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M6_ConsultarIdUltimaPropuesta.
         /// </summary>
         internal static string ConsultarIdUltimaPropuesta {
@@ -169,6 +178,24 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingreso de un argumento con valor nulo.
+        /// </summary>
+        internal static string MensajeArgumentNullException {
+            get {
+                return ResourceManager.GetString("MensajeArgumentNullException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generada excepcion generica.
+        /// </summary>
+        internal static string MensajeExceptionGenerica {
+            get {
+                return ResourceManager.GetString("MensajeExceptionGenerica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Salida del Método.
         /// </summary>
         internal static string MensajeFinInfoLogger {
@@ -178,11 +205,29 @@ namespace DatosTangerine.DAO.M6 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ingreso de datos con un formato invalido.
+        /// </summary>
+        internal static string MensajeFormatException {
+            get {
+                return ResourceManager.GetString("MensajeFormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entrada en el Método.
         /// </summary>
         internal static string MensajeInicioInfoLogger {
             get {
                 return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al momento de realizar la conexion.
+        /// </summary>
+        internal static string MensajeSqlException {
+            get {
+                return ResourceManager.GetString("MensajeSqlException", resourceCulture);
             }
         }
         

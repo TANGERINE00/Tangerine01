@@ -117,67 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AbrirTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
   </data>
-  <data name="AbrirTR" xml:space="preserve">
-    <value>&lt;tr&gt;</value>
-  </data>
-  <data name="Activo" xml:space="preserve">
-    <value>&lt;span class="label label-success" id="a</value>
-  </data>
-  <data name="BotonActiv" xml:space="preserve">
-    <value>&lt;a title="Activa"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ActivarLead.aspx?idclp=</value>
-  </data>
-  <data name="BotonCerrar" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
-  </data>
-  <data name="BotonContacto" xml:space="preserve">
-    <value>&lt;a title="Administrar Contactos" class="btn btn-info glyphicon glyphicon-user" style="margin-left: 3px"  href="../M5/ConsultarContactos.aspx?typeComp=2&amp;idComp=</value>
-  </data>
-  <data name="BotonEliminar" xml:space="preserve">
-    <value>&lt;a title="Inactiva" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="EliminarLead.aspx?idclp=</value>
-  </data>
-  <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px" href="ConsultarLead.aspx?idclp=</value>
-  </data>
-  <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarLead.aspx?idclp=</value>
-  </data>
-  <data name="BotonPromover" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-upload"  style="margin-left:3px" href="Promover.aspx?idclp=</value>
-  </data>
-  <data name="CerrarTD" xml:space="preserve">
-    <value>&lt;/td&gt;</value>
-  </data>
-  <data name="CerrarTR" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CloseDiv" xml:space="preserve">
-    <value>&lt;/div&gt;</value>
-  </data>
-  <data name="CloseSpanAct" xml:space="preserve">
-    <value>"&gt;Activa&lt;/span&gt;</value>
-  </data>
-  <data name="CloseSpanInact" xml:space="preserve">
-    <value>"&gt;Inactiva&lt;/span&gt;</value>
-  </data>
-  <data name="CloseSpanProm" xml:space="preserve">
-    <value>"&gt;Promovido&lt;/span&gt;</value>
-  </data>
-  <data name="idclp" xml:space="preserve">
-    <value>idclp</value>
-  </data>
-  <data name="Inactivo" xml:space="preserve">
-    <value>&lt;span class="label label-danger" id="i</value>
-  </data>
-  <data name="OpenDivRow" xml:space="preserve">
-    <value>&lt;div class="center-block"&gt;</value>
-  </data>
-  <data name="Promovido" xml:space="preserve">
-    <value>&lt;span class="label label-warning" id="p</value>
-  </data>
-  <data name="BotonSeguimiento" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-list-alt" style="margin-left:3px;" href="SeguimientoDeLeads.aspx?idclp=</value>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
   </data>
 </root>

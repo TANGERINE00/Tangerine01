@@ -15,8 +15,6 @@ namespace Tangerine_Contratos.M7
         String FechaInicio { get; set; }
         String FechaFin { get; set; }
         String Costo { get; set; }
-        String Porcentaje { get; set; }
-        String Estatus { get; set; }
         HtmlSelect inputPersonal { get; set; }
         HtmlSelect inputEncargado { get; set; }
         DropDownList inputPropuesta { get; set; }

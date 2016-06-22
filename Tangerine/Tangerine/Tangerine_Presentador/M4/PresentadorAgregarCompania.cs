@@ -30,6 +30,8 @@ namespace Tangerine_Presentador.M4
                 int _idLugar = 0;
                 Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
                 Lugares = comando2.Ejecutar();
+                if (_vista.inputPresupuesto1.Equals(""))
+                    _vista.inputPresupuesto1 = "0";
                 foreach (Entidad Lugar in Lugares)
                 {
                     DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;

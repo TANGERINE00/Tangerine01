@@ -763,16 +763,6 @@ namespace LogicaTangerine.Fabrica
         }
 
         /// <summary>
-        /// metodo para crear comando que permite consultar una compania dada una factura
-        /// </summary>
-        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
-        public static Comando<Entidad> CrearConsultarCompaniaFactura(Entidad factura)
-        {
-            return new ComandoConsultarCompaniaFactura(factura);
-        }
-
-        /// <summary>
         /// metodo para crear comando que permite consultar todas las facturas de una compania
         /// </summary>
         /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
@@ -790,16 +780,6 @@ namespace LogicaTangerine.Fabrica
         public static Comando<List<Entidad>> CrearConsultarFacturasPagadasCompania(Entidad compania)
         {
             return new ComandoConsultarFacturasPagadasCompania(compania);
-        }
-
-        /// <summary>
-        /// metodo para crear comando que permite consultar el proyecto de una factura
-        /// </summary>
-        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
-        public static Comando<Entidad> CrearConsultarProyectoFactura(Entidad factura)
-        {
-            return new ComandoConsultarProyectoFactura(factura);
         }
 
         /// <summary>

@@ -33,23 +33,32 @@ namespace Tangerine_Presentador.M7
             Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
             ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = id;
 
-            Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdproyecto(parametro);
+            Comando<Entidad> comando = 
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdproyecto(parametro);
             proyecto = comando.Ejecutar();
 
-            Comando<List<Entidad>> comando1 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
+            Comando<List<Entidad>> comando1 = 
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
             List<Entidad> contactos = comando1.Ejecutar();
 
-            Comando<Entidad> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(parametro);
+            Comando<Entidad> comando2 = 
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(parametro);
             Entidad propuesta = comando2.Ejecutar();
 
-            Comando<List<Entidad>> comando3 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosGerentes();
+            Comando<List<Entidad>> comando3 = 
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosGerentes();
             List<Entidad> gerentes = comando3.Ejecutar();
 
-            Comando<List<Entidad>> comando4 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProgramadores();
+            Comando<List<Entidad>> comando4 = 
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProgramadores();
             List<Entidad> programadores = comando4.Ejecutar();
 
-            Comando<Entidad> comando5 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyectoContacto(parametro);
+            Comando<Entidad> comando5 = 
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyectoContacto(parametro);
             Entidad contactoEmp = comando5.Ejecutar();
+
+            Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+            List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
 
             try
             {
@@ -201,7 +210,8 @@ namespace Tangerine_Presentador.M7
 
             if (vista.inputPersonal.Items.Count <= 0)
             {
-                MessageBox.Show("Debe seleccionar por lo menos una persona para trabajar en el proyecto", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe seleccionar por lo menos una persona para trabajar en el proyecto",
+                    "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 vista.inputPersonal.Focus();
                 return false;
             }
@@ -231,10 +241,16 @@ namespace Tangerine_Presentador.M7
 
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Costo = int.Parse(vista.textInputCosto.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.textInputPorcentaje.Text;
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = vista.inputEstatus.SelectedItem.ToString();
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = 
+                    vista.inputEstatus.SelectedItem.ToString();
+
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Razon = vista.text10.Text;
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idgerente = int.Parse(vista.inputGerente.SelectedValue);
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechainicio = Convert.ToDateTime(vista.textInputFechaInicio.Text.ToString());
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idgerente = 
+                    int.Parse(vista.inputGerente.SelectedValue);
+
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechainicio =
+                    Convert.ToDateTime(vista.textInputFechaInicio.Text.ToString());
+
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idpropuesta = int.Parse(vista.idPropuesta.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Descripcion = vista.descripcion.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Acuerdopago = vista.acuerdoPago.Text;
@@ -290,11 +306,6 @@ namespace Tangerine_Presentador.M7
                     vista.inputPersonal.Items.Remove(li);
                 }
             }
-        }
-
-        public void RenderCalendario(DayRenderEventArgs e, Entidad proyecto)
-        {
-
         }
 
         public void MoverDerecha()

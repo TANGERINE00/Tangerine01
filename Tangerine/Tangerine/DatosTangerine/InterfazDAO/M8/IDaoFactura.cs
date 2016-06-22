@@ -17,10 +17,6 @@ namespace DatosTangerine.InterfazDAO.M8
 
         List<Entidad> ContactFacturasPagadasCompania(Entidad parametro);
 
-        Entidad ConsultCompany(Entidad parametro);
-
-        Entidad ContactProyectoFactura(Entidad parametro);
-
         double ContactMontoRestanteFactura(Entidad parametro);
 
         bool CheckExistingInvoice(Entidad parametro);
