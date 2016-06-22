@@ -15,7 +15,7 @@ namespace LogicaTangerine.Comandos.M10
 
         public ComandoConsultarEmpleado()
         {
-            // TODO: Complete member initialization
+            
             this.empleado = empleado;
         }
         public override List<Entidad> Ejecutar()
@@ -23,7 +23,6 @@ namespace LogicaTangerine.Comandos.M10
             try
             {
                 IDAOEmpleado daoEmpleado =(DatosTangerine.DAO.M10.DAOEmpleado) DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
-               // List<Entidad> empleados = daoEmpleado.ConsultarTodos();
                 return daoEmpleado.ConsultarTodos();
             }
             catch (Exception e)

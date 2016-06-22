@@ -17,6 +17,7 @@ namespace Tangerine.GUI.M1
     public partial class EmpleadosAdmin : System.Web.UI.Page, IContratoConsultaEmpleados
     {
         private PresentadorConsultaEmpleado presentador;
+        private PresentadorConsultaEmpleado presentador1;
 
         public string empleado
         {
@@ -54,37 +55,32 @@ namespace Tangerine.GUI.M1
             }
         }
 
-        //public int request
-        //{
-        //    get
-        //    {
-        //        return int.Parse(Request.QueryString["id"]);
-        //    }
-            
-        //}
-
+      
          public EmpleadosAdmin()
         {
-            this.presentador = new PresentadorConsultaEmpleado(this); 
+            this.presentador = new PresentadorConsultaEmpleado(this);
+            this.presentador1 = new PresentadorConsultaEmpleado(this);
         }
+
+       
 
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            
             if (!IsPostBack)
             {
                 presentador.cargarConsultarEmpleados();
             }
-               
-            else 
-            {
-                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
-                presentador.CambiarEstatus(Empleadoid);
-            }
 
+        }
+
+        protected void Activar_Empleado(object sender, EventArgs e)
+        {
+            int Empleadoid = int.Parse(Request.QueryString["id"]);
+            presentador1.CambiarEstatus(Empleadoid);
+            Response.Redirect("EmpleadosAdmin.aspx");
         }
 
     }
