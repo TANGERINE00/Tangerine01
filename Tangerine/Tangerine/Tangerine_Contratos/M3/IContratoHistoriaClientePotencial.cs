@@ -15,6 +15,8 @@ namespace Tangerine_Contratos.M3
         Literal RIFEtiqueta { get; set; }
         Literal CorreoEtiqueta { get; set; }
         Literal PresupuestoInicialEtiqueta { get; set; }
+        Literal NumLlamadasEtiqueta { get; set; }
+        Literal NumVisitasEtiqueta { get; set; }
         Literal SegumientoLLamadas { get; set; }
         Literal SeguimientoVisitas { get; set; }
     }

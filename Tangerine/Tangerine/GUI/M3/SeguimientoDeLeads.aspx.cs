@@ -101,10 +101,39 @@ namespace Tangerine.GUI.M3
                 this.ListaVisitas = value;
             }
         }
+
+        public Literal NumLlamadasEtiqueta
+        {
+            get
+            {
+                return this.llamadas;
+            }
+            set 
+            {
+                this.llamadas = value;
+            }
+        }
+
+        public Literal NumVisitasEtiqueta
+        {
+            get
+            {
+                return this.visitas;
+            }
+            set
+            {
+                this.visitas = value;
+            }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            if (!IsPostBack)
+            {
+                presentador.Llenar(idClientePotencial);
+            }
             
         }
     }

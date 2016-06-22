@@ -20,35 +20,44 @@
             <div class="container-fluid">
                 <br />
                 <div class="row">
-                    <div id="Div1" class="form-group col-md-4 col-lg-4 col-xs-12" runat="server">
+                    <div id="Div1" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
                         <h5><label for="Nombre">Nombre:</label></h5>
                         <div><h5><asp:Literal runat="server" ID="nombre"> </asp:Literal></h5></div>
                     </div> 
-                    <div id="Div2" class="form-group col-md-4 col-lg-4 col-xs-12" runat="server">
+                    <div id="Div2" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
                         <h5><label for="habilitado">rif:</label></h5>
                         <div><h5><asp:Literal runat="server" ID="rif"> </asp:Literal></h5></div>
                     </div>
-                    <div id="Div3" class="form-group col-md-4 col-lg-4 col-xs-12" runat="server">
+                    <div id="Div3" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
                         <h5><label for="habilitado">Correo:</label></h5>
                         <div><h5><asp:Literal runat="server" ID="email"> </asp:Literal></h5></div>
+                    </div>
+                    <div id="Div7" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
+                        <h5><label for="Nombre">presupuesto</label></h5>
+                        <div><h5><asp:Literal runat="server" ID="presupuesto"> </asp:Literal></h5></div>
                     </div>                    
                 </div>
                 <div class="row">
-                    <div id="Div4" class="form-group col-md-4 col-lg-4 col-xs-12" runat="server">
-                        <h5><label for="Nombre">presupuesto</label></h5>
-                        <div><h5><asp:Literal runat="server" ID="presupuesto"> </asp:Literal></h5></div>
-                    </div>
-                    <div id="Div5" class="form-group col-md-4 col-lg-4 col-xs-12" runat="server">
+                    <div id="Div5" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
                         <h5><label for="Nombre">estatus</label></h5>
                         <div><h5><asp:Literal runat="server" ID="estatus"> </asp:Literal></h5></div>
                     </div> 
-
-                    <div id="Div6" class="form-group col-md-4 col-lg-4 col-xs-12" runat="server">
+                    <div id="Div4" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
+                        <h5><label for="Nombre">Numero de llamadas</label></h5>
+                        <div><h5><asp:Literal runat="server" ID="llamadas"> </asp:Literal></h5></div>
+                    </div>
+                    <div id="Div8" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
+                        <h5><label for="Nombre">Numero de visitas</label></h5>
+                        <div><h5><asp:Literal runat="server" ID="visitas"> </asp:Literal></h5></div>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div id="Div6" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
                         <button class="btn btn-primary btn-md " >
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             Agregar
                         </button>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>

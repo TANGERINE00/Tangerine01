@@ -28,7 +28,7 @@ namespace LogicaTangerine.Comandos.M6
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
                 return daoRequerimiento.ConsultarNumeroRequerimientos();
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }
