@@ -35,18 +35,21 @@ namespace Tangerine_Presentador.M9
             try
             {
                 DominioTangerine.Entidades.M8.Facturacion fact =
-                    (DominioTangerine.Entidades.M8.Facturacion)DominioTangerine.Fabrica.FabricaEntidades.ObtenerFacturacion();
+                    (DominioTangerine.Entidades.M8.Facturacion)DominioTangerine.Fabrica.FabricaEntidades.
+                    ObtenerFacturacion();
                 fact.Id = numeroFactura;
 
             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarXIdFactura(fact);
             Entidad facturaPagar = comando.Ejecutar();
 
             DominioTangerine.Entidades.M4.CompaniaM4 compania =
-                (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
+                (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.
+                crearCompaniaVacia();
 
             compania.Id = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).idCompaniaFactura;
 
-            Comando<Entidad> comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compania);
+            Comando<Entidad> comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.
+                CrearConsultarCompania(compania);
             Entidad companiaPagar = comandoCompania.Ejecutar();
 
 
@@ -83,14 +86,16 @@ namespace Tangerine_Presentador.M9
            Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(_moneda, _monto, _forma, 
                _codApro, _fecha, _idFactura);
 
-           LogicaTangerine.Comandos.M9.ComandoAgregarPago comando = LogicaTangerine.Fabrica.FabricaComandos.cargarPago(pago);
+           LogicaTangerine.Comandos.M9.ComandoAgregarPago comando = LogicaTangerine.Fabrica.FabricaComandos.
+               cargarPago(pago);
 
            comando.Ejecutar();
        }
 
        catch (ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine ex)
        {
-           MessageBox.Show("Error, llene todos los campos", "Campos Vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           MessageBox.Show("Error, llene todos los campos", "Campos Vacios", MessageBoxButtons.OK, 
+               MessageBoxIcon.Error);
        }
 
        catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)

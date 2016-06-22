@@ -694,19 +694,23 @@ namespace DominioTangerine.Fabrica
             {
                 return new DominioTangerine.Entidades.M9.Pago();
             }
-        public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, double _montoPago, string _monedaPago)
+        public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, double _montoPago, 
+            string _monedaPago, int _codPago)
         {
-            return new DominioTangerine.Entidades.M9.Pago(_idFactura,_fechaPago, _montoPago, _monedaPago);
+            return new DominioTangerine.Entidades.M9.Pago(_idFactura,_fechaPago, _montoPago, _monedaPago, _codPago);
         }
 
-        public static Entidad ObtenerPago_M9(string monedaPago, double montoPago, string formaPago, int codPago, DateTime fechaPago,
+        public static Entidad ObtenerPago_M9(string monedaPago, double montoPago, string formaPago, int codPago, 
+            DateTime fechaPago,
           int idFactura)
         {
-            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura);
+            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, 
+                idFactura);
         }
 
        
-        public static Entidad ObtenerPago_M9(int codPago, double montoPago, string monedaPago, string formaPago, int idFactura)
+        public static Entidad ObtenerPago_M9(int codPago, double montoPago, string monedaPago, string formaPago, 
+            int idFactura)
         {
             return new DominioTangerine.Entidades.M9.Pago(codPago, montoPago, monedaPago, formaPago, idFactura);
         }
@@ -715,21 +719,25 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-
-        /// <summary>
-        /// Metodo para instanciar empleados sin atributos
-        /// </summary>
+        #region Metodo para instanciar empleados sin atributos
+        // <summary>
+        // Metodo para instanciar empleados sin atributos
+        // </summary>
         /// <returns></returns>
+
+
 
         public static Entidad ConsultarEmpleados(int id)
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10(id);
         }
 
+
         public static Entidad ConsultarEmpleados() 
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
+        #endregion
 
         public static Entidad ObtenerLugar()
         {

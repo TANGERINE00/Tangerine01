@@ -125,6 +125,9 @@
     <value>M6_AgregarRequerimiento</value>
     <comment>Stored Procedure que agrega un Requerimiento</comment>
   </data>
+  <data name="CodigoModulo" xml:space="preserve">
+    <value>DS-606</value>
+  </data>
   <data name="Codigo_Error_Formato" xml:space="preserve">
     <value>TGE_00_001</value>
     <comment>Codigo de error en el parseo</comment>
@@ -160,11 +163,23 @@
     <value>M6_ListarRequerimientos</value>
     <comment>Procedimiento que se encarga de listar los requerimientos por propuesta</comment>
   </data>
+  <data name="MensajeArgumentNullException" xml:space="preserve">
+    <value>Ingreso de un argumento con valor nulo</value>
+  </data>
+  <data name="MensajeExceptionGenerica" xml:space="preserve">
+    <value>Generada excepcion generica</value>
+  </data>
   <data name="MensajeFinInfoLogger" xml:space="preserve">
     <value>Salida del Método</value>
   </data>
+  <data name="MensajeFormatException" xml:space="preserve">
+    <value>Ingreso de datos con un formato invalido</value>
+  </data>
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
+  </data>
+  <data name="MensajeSqlException" xml:space="preserve">
+    <value>Error al momento de realizar la conexion</value>
   </data>
   <data name="Mensaje_Error_Formato" xml:space="preserve">
     <value>Error de parseo</value>

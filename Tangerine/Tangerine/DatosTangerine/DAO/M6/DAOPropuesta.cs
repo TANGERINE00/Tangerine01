@@ -22,9 +22,7 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo para agregar una propuesta en la base de datos.
         /// </summary>
-        ///  <param name="parametro">objeto de tipo Propuesta para agregar en BD</param>
-        ///  <param name="theConnection">Objeto de tipo BDConexion para la conexion a la BD</param>
-        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        ///  <param name="laPropuesta">objeto de tipo Propuesta para agregar en BD</param>
         /// <returns>true si fue agregado</returns>
         public bool Agregar(Entidad laPropuesta)
         {
@@ -84,21 +82,22 @@ namespace DatosTangerine.DAO.M6
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
             }
-
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
             }
-
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
+            }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -111,8 +110,8 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo que permite modificar una propuesta en la BD
         /// </summary>
-        /// <param name="propuesta"></param>
-        /// <returns></returns>
+        /// <param name="propuesta">objeto de tipo propuesta a ser modificado</param>
+        /// <returns>true si fue modificado</returns>
         public Boolean Modificar(Entidad laPropuesta)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -167,10 +166,25 @@ namespace DatosTangerine.DAO.M6
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
             }
-
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
@@ -178,8 +192,8 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo para consultar propuesta por id (nombre)
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">nombre de propuesta</param>
+        /// <returns>objeto de tipo propuesta</returns>
         public Entidad ConsultarXId(Entidad id)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -214,11 +228,29 @@ namespace DatosTangerine.DAO.M6
                     Convert.ToInt32(fila[RecursosPropuesta.PropCosto]), 
                     fila[RecursosPropuesta.PropIdCompania].ToString() );
             }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
+            }
             catch (Exception ex)
             {
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return propuesta;
         }
 
@@ -226,7 +258,6 @@ namespace DatosTangerine.DAO.M6
         /// <summary>
         /// Metodo que consulta todas las propuestas
         /// </summary>
-        ///
         /// <returns>Retorna la lista de propuestas</returns>
         public List<Entidad> ConsultarTodos()
         {
@@ -267,30 +298,26 @@ namespace DatosTangerine.DAO.M6
                     listaPropuesta.Add(propuesta);
                 }
             }
-
-            //catch (Exception ex)
-            //{
-            //    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            //}
-
-
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
             }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -326,12 +353,29 @@ namespace DatosTangerine.DAO.M6
                 mayorId = int.Parse(row[RecursoDAOPropuesta.PropCodigo].ToString());
 
             }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
+            }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return mayorId;
         }
 
@@ -357,19 +401,36 @@ namespace DatosTangerine.DAO.M6
                 numero = int.Parse(row[RecursoDAOPropuesta.PropCodigo].ToString());
 
             }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
+            }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return numero;
         }
 
         /// <summary>
         /// Metodo para eliminar una Propuesta de la base de datos.
         /// </summary>
-        /// <param name="parametro">objeto de tipo Contacto a eliminar en bd</param>
+        /// <param name="nombrePropuesta">objeto de tipo propuesta a eliminar en bd</param>
         /// <returns>true si fue eliminado</returns>
         public Boolean BorrarPropuesta(string nombrePropuesta)
         {
@@ -394,26 +455,22 @@ namespace DatosTangerine.DAO.M6
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesTangerine.M5.WrongFormatException(RecursosPropuesta.ReqPropNombre,
-                     RecursosPropuesta.Mensaje_Error_Formato, ex);
-            }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -468,19 +525,22 @@ namespace DatosTangerine.DAO.M6
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeSqlException, ex);
             }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeArgumentNullException, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeFormatException, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, RecursoDAOPropuesta.MensajeExceptionGenerica, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
