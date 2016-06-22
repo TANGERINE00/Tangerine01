@@ -14,6 +14,8 @@
     <li class="active">Factura</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div id="alert" runat="server">
+    </div>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -36,7 +38,7 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelFecha_M8">Fecha de facturación</label>
-                            <input type="date" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha de facturación" disabled="disabled">
+                            <input type="text" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="Fecha de facturación" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">
