@@ -8,6 +8,7 @@ drop table propuesta;
 drop table contacto;
 drop table telefono;
 drop table compania;
+drop table seguimiento;
 drop table cliente_potencial;
 drop table usuario;
 drop table cargo_empleado;

@@ -715,21 +715,25 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-
-        /// <summary>
-        /// Metodo para instanciar empleados sin atributos
-        /// </summary>
+        #region Metodo para instanciar empleados sin atributos
+        // <summary>
+        // Metodo para instanciar empleados sin atributos
+        // </summary>
         /// <returns></returns>
+
+
 
         public static Entidad ConsultarEmpleados(int id)
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10(id);
         }
 
+
         public static Entidad ConsultarEmpleados() 
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
+        #endregion
 
         public static Entidad ObtenerLugar()
         {
