@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M7 {
     public partial class modificarProyecto {
         
         /// <summary>
+        /// alert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// modificar_proyecto control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
+        /// ValidarCostoEstimado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarCostoEstimado;
+        
+        /// <summary>
         /// textInputPorcentaje control.
         /// </summary>
         /// <remarks>
@@ -146,6 +164,15 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
+        /// ValidarPorcentaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidarPorcentaje;
         
         /// <summary>
         /// inputGerente control.

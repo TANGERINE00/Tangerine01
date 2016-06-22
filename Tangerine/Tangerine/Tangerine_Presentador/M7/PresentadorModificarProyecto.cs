@@ -2,10 +2,12 @@
 using LogicaTangerine;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Tangerine_Contratos.M7;
 
 namespace Tangerine_Presentador.M7
@@ -67,6 +69,7 @@ namespace Tangerine_Presentador.M7
                 vista.descripcion.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion;
                 vista.acuerdoPago.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago;
                 vista.idCompania.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idcompania.ToString();
+                vista.text10.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon;
 
             }
             catch (Exception ex)
@@ -177,28 +180,29 @@ namespace Tangerine_Presentador.M7
 
         public bool Validaciones()
         {
-            //if ((((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio) > vista.textInputFechaEstimada.SelectedDate)
-            //{
-            //    return false;
-            //}
+            string dia = vista.textInputFechaEstimada.SelectedDate.Day.ToString();
+            string mes = vista.textInputFechaEstimada.SelectedDate.Month.ToString();
+            string ano = vista.textInputFechaEstimada.SelectedDate.Year.ToString();
+            string seleccionada = dia + "/" + mes + "/" + ano;
+            DateTime seleccionada2 = DateTime.Parse(seleccionada);
+            DateTime exsitente = DateTime.Parse(vista.textInputFechaInicio.Text.ToString());
+
+            if (exsitente > seleccionada2)
+            {
+                MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                vista.textInputFechaEstimada.Focus();
+                return false;
+            }
 
             //if (int.Parse(vista.textInputFechaInicio.Text) > int.Parse(vista.textInputFechaEstimada.SelectedDate.ToString("dd/MM/yyyy")))
             //{
             //    return false;
             //}
 
-            if (vista.textInputCosto.Text == "")
-            {
-                return false;
-            }
-
-            if (vista.textInputPorcentaje.Text == "")
-            {
-                return false;
-            }
-
             if (vista.inputPersonal.Items.Count <= 0)
             {
+                MessageBox.Show("Debe seleccionar por lo menos una persona para trabajar en el proyecto", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                vista.inputPersonal.Focus();
                 return false;
             }
 
@@ -208,18 +212,28 @@ namespace Tangerine_Presentador.M7
 
         public bool ModificarDatos() 
         {
+            DateTime diaNulo = DateTime.Parse("1/1/0001");
             try
             {
                 Entidad _proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Id = int.Parse(vista.idProyecto.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Nombre = vista.textInputNombreProyecto.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Codigo = vista.textInputCodigo.Text;
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = vista.textInputFechaEstimada.SelectedDate;
+
+                if (vista.textInputFechaEstimada.SelectedDate == diaNulo)
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin;
+                }
+                else
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = vista.textInputFechaEstimada.SelectedDate;
+                }
+
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Costo = int.Parse(vista.textInputCosto.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.textInputPorcentaje.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = vista.inputEstatus.SelectedItem.ToString();
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Razon = vista.text10.Text;
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idgerente = vista.inputGerente.SelectedIndex;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idgerente = int.Parse(vista.inputGerente.SelectedValue);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechainicio = Convert.ToDateTime(vista.textInputFechaInicio.Text.ToString());
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idpropuesta = int.Parse(vista.idPropuesta.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Descripcion = vista.descripcion.Text;
