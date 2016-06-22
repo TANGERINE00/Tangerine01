@@ -14,10 +14,10 @@
     <li class="active">Factura</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <div id="alert" runat="server">
-    </div>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="alert" runat="server">
+    </div>
     <div class="row">
         <!-- left column -->
         <div class="col-md-6" runat="server">

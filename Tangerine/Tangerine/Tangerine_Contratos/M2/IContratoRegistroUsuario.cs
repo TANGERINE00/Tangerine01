@@ -13,7 +13,16 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado de la tabla de usuarios
         /// </summary>
-         string tablaEmpleado
+        string tablaEmpleado
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Encabezado del campo Numero Empleado
+        /// </summary>
+        string numeroEmpleado
         {
             get;
             set;

@@ -8,6 +8,8 @@ using System.Data;
 using DominioTangerine.Entidades.M2;
 using DominioTangerine;
 using DatosTangerine.InterfazDAO.M2;
+using ExcepcionesTangerine.M2;
+using System.Data.SqlClient;
 
 namespace DatosTangerine.DAO.M2
 {
@@ -78,6 +80,21 @@ namespace DatosTangerine.DAO.M2
                     parametros.Add(elParametro);
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarRolUsuario, parametros);
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
@@ -150,6 +167,21 @@ namespace DatosTangerine.DAO.M2
                     rol.menu = lista;
 
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -199,6 +231,21 @@ namespace DatosTangerine.DAO.M2
                         lista.agregarElemento(opcion);
                     }
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -236,6 +283,21 @@ namespace DatosTangerine.DAO.M2
                         int idRol = int.Parse(row[ResourceUser.RolId].ToString());
                         rol = ObtenerRolUsuario(idRol);
                     }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (NullReferenceException ex)
                 {
