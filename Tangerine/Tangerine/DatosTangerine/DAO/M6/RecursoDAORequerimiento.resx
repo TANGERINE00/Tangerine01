@@ -143,12 +143,18 @@
     <value>M6_ConsultarPropuestaNombre</value>
     <comment>Metodo que se encarga de listar las propuestas por codigoNombre</comment>
   </data>
+  <data name="ConsultarRequerimientoNombre" xml:space="preserve">
+    <value>M6_ConsultarRequerimientoNombre</value>
+  </data>
   <data name="ConsultarTodasPropuestas" xml:space="preserve">
     <value>M6_ConsultarPropuestas</value>
     <comment>Store Procedure que consulta todas las propuestas</comment>
   </data>
   <data name="EliminarPropuesta" xml:space="preserve">
     <value>M6_EliminarPropuesta</value>
+  </data>
+  <data name="EliminarRequerimiento" xml:space="preserve">
+    <value>M6_EliminarRequerimiento</value>
   </data>
   <data name="ListarRequerimiento" xml:space="preserve">
     <value>M6_ListarRequerimientos</value>
@@ -306,6 +312,9 @@
   <data name="ReqNombre" xml:space="preserve">
     <value>@reqnombre</value>
     <comment>atributo que identifica el nombre del requerimiento</comment>
+  </data>
+  <data name="ReqNombrePropuesta" xml:space="preserve">
+    <value>fk_prop_req_id</value>
   </data>
   <data name="ReqProp" xml:space="preserve">
     <value>@req_id</value>

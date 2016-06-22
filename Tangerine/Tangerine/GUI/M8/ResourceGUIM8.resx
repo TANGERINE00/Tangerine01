@@ -186,4 +186,13 @@
   <data name="BotonMail1" xml:space="preserve">
     <value>&lt;a title="Mail" class="btn btn-primary glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idCompania=</value>
   </data>
+  <data name="idC" xml:space="preserve">
+    <value>IdCompania</value>
+  </data>
+  <data name="idF" xml:space="preserve">
+    <value>idFac</value>
+  </data>
+  <data name="idP" xml:space="preserve">
+    <value>IdProyecto</value>
+  </data>
 </root>

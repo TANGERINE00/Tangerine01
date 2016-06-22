@@ -146,6 +146,115 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        ListBox IContratoModificarProyecto.imputEncargado
+        {
+            get
+            {
+                return inputEncargado;
+            }
+            set
+            {
+                inputEncargado = value;
+            }
+        }
+
+        ListBox IContratoModificarProyecto.inputPersonal
+        {
+            get
+            {
+                return inputPersonal;
+            }
+            set
+            {
+                inputPersonal = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.idPropuesta
+        {
+            get
+            {
+                return idPropuesta;
+            }
+            set
+            {
+                idPropuesta = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.idProyecto
+        {
+            get
+            {
+                return idProyecto;
+            }
+            set
+            {
+                idProyecto = value;
+            }
+       }
+
+        ListBox IContratoModificarProyecto.GerentesPasados
+        {
+            get
+            {
+                return GerentesPasados;
+            }
+            set
+            {
+                GerentesPasados = value;
+            }
+        }
+
+        ListBox IContratoModificarProyecto.inputPersonalNoActivo
+        {
+            get
+            {
+                return inputPersonalNoActivo;
+            }
+            set
+            {
+                inputPersonalNoActivo = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.acuerdoPago
+        {
+            get
+            {
+                return acuerdoPago;
+            }
+            set
+            {
+                acuerdoPago = value;
+
+            }
+        }
+
+        TextBox IContratoModificarProyecto.idCompania
+        {
+            get
+            {
+                return idCompania;
+            }
+            set
+            {
+                idCompania = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+            set
+            {
+                descripcion = value;
+            }
+        }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -157,5 +266,29 @@ namespace Tangerine.GUI.M7
                 presentador.CargarProyecto(Proyectoid);
             }
         }
+
+        protected void Modificar_Datos(object sender, EventArgs e)
+        {
+            bool resultado = presentador.EventoClick_Modificar();
+            if (resultado.Equals(true))
+            {
+                //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaModificada);
+            }
+            else if (resultado.Equals(false))
+            {
+                //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaNoModificada);
+            }
+        }
+
+        protected void bIzquierdo_Click(object sender, EventArgs e)
+        {
+            presentador.MoverIzquierda();
+        }
+
+        protected void bDerecho_Click(object sender, EventArgs e)
+        {
+            presentador.MoverDerecha();
+        }
+
     }
 }

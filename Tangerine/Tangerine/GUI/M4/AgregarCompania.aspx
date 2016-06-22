@@ -49,7 +49,7 @@
                         <!--Direccion-->
                         <div class="form-group" runat="server">
                             <label for="InputLugar">Dirección</label> <label for="Requerido" style="color: red;">*</label>
-                            <select runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></select>
+                            <asp:DropDownList runat="server" class="form-control" id="InputDireccion1" name="InputDireccion1"></asp:DropDownList>
                         </div>
                         <!--Email-->
                         <div class="form-group" runat="server">
@@ -69,7 +69,7 @@
                                 maxlength="15" required>
                         </div>
                         <!--Fecha Registro-->
-                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
+                        <!--<div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
                             <label for="InputFechaRegistro">Fecha de Registro</label> <label for="Requerido" style="color: red;">*</label>
                             <div class="input-group">
                                 <div class="input-group-addon">

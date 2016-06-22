@@ -29,7 +29,7 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void CargarPagina()
         {
-            _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp, _vista.GetIdComp );
+            _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp(), _vista.GetIdComp() );
         }
 
         /// <summary>
@@ -38,13 +38,13 @@ namespace Tangerine_Presentador.M5
         public void AgregarContacto()
         {
             Entidad contactoNuevo = FabricaEntidades.crearContactoSinId( _vista.input_nombre, _vista.input_apellido,
-                                                                         _vista.input_apellido, _vista.input_cargo,
+                                                                         _vista.input_departamento, _vista.item_cargo,
                                                                          _vista.input_telefono, _vista.input_correo,
-                                                                         _vista.GetTypeComp, _vista.GetIdComp );
+                                                                         _vista.GetTypeComp(), _vista.GetIdComp() );
             
             Comando<bool> comandoBool = FabricaComandos.CrearComandoAgregarContacto( contactoNuevo );
             comandoBool.Ejecutar();
-            _vista.BotonAceptar(_vista.GetTypeComp, _vista.GetIdComp);
+            _vista.BotonAceptar( _vista.GetTypeComp(), _vista.GetIdComp() );
         }
     }
 }

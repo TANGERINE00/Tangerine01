@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tangerine_Contratos.M6
+namespace LogicaTangerine.Comandos.M1
 {
-    public interface IContratoEliminarPropuesta
+    class ComandoValidarCorreo
     {
     }
 }

@@ -32,14 +32,20 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             _fichaEmpleado = fichaEmpleado;
         }
 
+        /// <summary>
+        /// Método para crear la instancia de la clase DaoUsuario y usar el método ComandoAgregarUsuario
+        /// </summary>
+        /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override bool Ejecutar()
         {
             bool resultado = true;
             try
             {
-                RolM2 rol = new RolM2( _rolUsuario );
-                UsuarioM2 usuario = new UsuarioM2( _usuarioNombre , _contrasenaUsuario , DateTime.Now , 
-                                                   "Activo" , rol , _fichaEmpleado);
+                DominioTangerine.Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre( _rolUsuario );
+                DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
+                DominioTangerine.Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto(_usuarioNombre, 
+                                                                    _contrasenaUsuario, DateTime.Now, "Activo", rol, _fichaEmpleado);
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
                 usuario.contrasena = usuario.GetMD5( usuario.contrasena );
                 LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( usuario );
                 resultado = commandAgregarUsuario.Ejecutar();

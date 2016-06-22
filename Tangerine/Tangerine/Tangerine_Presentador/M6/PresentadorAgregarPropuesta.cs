@@ -36,7 +36,7 @@ namespace Tangerine_Presentador.M6
         int _entregaCant = 0;
         string _fdepago = String.Empty;
         string _estatusW;
-        DateTime today = DateTime.Today;
+        DateTime today = DateTime.Now;
         String[] _precondicion;
 
         public PresentadorAgregarPropuesta(IContratoAgregarPropuesta vista)
@@ -47,11 +47,11 @@ namespace Tangerine_Presentador.M6
         {
             //Asignacion de los campos obtenidos de la Vista.
             _upperText = vista.ComboCompania.SelectedItem.Text;
-            consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU](?!$)", "");
-            _nombcodigoPropuesta = consonantes + today.ToString("yyMMdd");
+            consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
+            _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
             _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
-            _duracion = vista.ComboDuracion.SelectedItem.Text;
+            _duracion = vista.TextoDuracion;
             _fechaI = DateTime.ParseExact(vista.DatePickerUno, "MM/dd/yyyy", null);
             _fechaF = DateTime.ParseExact(vista.DatePickerDos, "MM/dd/yyyy", null);
             _moneda = vista.TipoCosto.SelectedItem.Text;
@@ -69,13 +69,13 @@ namespace Tangerine_Presentador.M6
                 _entregaCant = 0;
             }
 
-
+            
             //Creación del Objeto Propuesta.
-            DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(_nombcodigoPropuesta, _descripcion,
-            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,_entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
-           
+            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
+            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+
             //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
             Confirmacion = comando.Ejecutar();
         
             //El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
@@ -92,11 +92,11 @@ namespace Tangerine_Presentador.M6
                 //Debug.Print(_precondicion[i]);
                   
                 //Creación del Objeto Propuesta.
-                DominioTangerine.Entidades.M6.Requerimiento requerimiento = new DominioTangerine.Entidades.M6.Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
-
+                Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                    codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
 
                 //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto requerimiento.
-                LogicaTangerine.Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
+                Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
                 comando2.Ejecutar();
             }
         }
@@ -141,7 +141,7 @@ namespace Tangerine_Presentador.M6
         {
             vista.ComboDuracion.Items.Add("Meses");
             vista.ComboDuracion.Items.Add("Dias");
-            vista.ComboDuracion.Items.Add("Horas");
+            vista.ComboDuracion.Items.Add("Custom");
         }
         public void llenarComboTipoCosto()
         {
@@ -181,7 +181,6 @@ namespace Tangerine_Presentador.M6
          llenarComboEstatus();
          llenarComboCuota();
          llenarComboFpago();
-        
         }
     }
 }

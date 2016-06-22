@@ -79,18 +79,15 @@ namespace DatosTangerine.DAO.M2
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarRolUsuario, parametros);
                 }
-                catch (NullReferenceException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
-                }
-
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             }
@@ -106,7 +103,7 @@ namespace DatosTangerine.DAO.M2
                 DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                 Entidad theMenu;
-                Entidad theLista = DominioTangerine.Fabrica.FabricaEntidades.crearListaGenericaVacia();
+                Entidad theLista = DominioTangerine.Fabrica.FabricaEntidades.crearListaGenericaVaciaMenu();
                 DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2> lista = (DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>)theLista;
 
                 List<Parametro> parametros = new List<Parametro>();
@@ -116,8 +113,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a BD
-
                     elParametro = new Parametro(ResourceUser.ParametroRolCodigo, SqlDbType.Int, codigoRol.ToString(), false);
                     parametros.Add(elParametro);
 
@@ -140,7 +135,6 @@ namespace DatosTangerine.DAO.M2
                         Entidad theOpciones = ObtenerOpciones(menNombre, codigoRol);
                         ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2> opciones = (ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2>)theOpciones;
 
-
                         theMenu = DominioTangerine.Fabrica.FabricaEntidades.crearMenuCompleto(menNombre, opciones);
                         DominioTangerine.Entidades.M2.MenuM2 menu = (DominioTangerine.Entidades.M2.MenuM2)theMenu;
 
@@ -159,7 +153,12 @@ namespace DatosTangerine.DAO.M2
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return rol;
             }
@@ -181,8 +180,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a BD
-
                     elParametro = new Parametro(ResourceUser.ParametroMenuNombre, SqlDbType.VarChar, nombreMenu, false);
                     parametros.Add(elParametro);
 
@@ -205,7 +202,12 @@ namespace DatosTangerine.DAO.M2
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return lista;
             }
@@ -221,12 +223,9 @@ namespace DatosTangerine.DAO.M2
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
                 Entidad rol = DominioTangerine.Fabrica.FabricaEntidades.crearRolVacio();
-                //DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                 try
                 {
-                    Conectar(); //Conexion a BD
-
                     elParametro = new Parametro(ResourceUser.ParametroRolNombre, SqlDbType.VarChar, nombreRol.ToString(),false);
                     parametros.Add(elParametro);
 

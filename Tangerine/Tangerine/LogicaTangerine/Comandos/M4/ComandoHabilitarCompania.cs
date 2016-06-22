@@ -10,6 +10,7 @@ using DominioTangerine.Fabrica;
 using DominioTangerine;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M4;
+using ExcepcionesTangerine.M4;
 
 namespace LogicaTangerine.Comandos.M4
 {
@@ -26,9 +27,16 @@ namespace LogicaTangerine.Comandos.M4
        /// <returns>boolean true or false </returns>
         public override bool Ejecutar()
         {
-
-            IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
-            return  C.EnableCompany(_laEntidad);
+            try
+            {
+                IDaoCompania C = FabricaDAOSqlServer.crearDaoCompania();
+                return C.EnableCompany(_laEntidad);
+            }
+            catch (NotImplementedException e)
+            {
+                return false;
+                throw new ExceptionM4Tangerine("DS-404", "Metodo no implementado", e);
+            }
         }
     }
 }

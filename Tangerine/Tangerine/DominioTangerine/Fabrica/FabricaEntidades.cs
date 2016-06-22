@@ -35,7 +35,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia sin atributos
             /// </summary>
-            /// <returns>Retorna una instacion de UsuarioM2 sin atributos</returns>
+            /// <returns>Retorna una instancia de UsuarioM2 sin atributos</returns>
             static public Entidad crearUsuarioVacio()
             {
                 return new UsuarioM2();
@@ -46,7 +46,7 @@ namespace DominioTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <param name="contrasena"></param>
-            /// <returns>Retorna una instacion de Usuario con usuario y contraseña</returns>
+            /// <returns>Retorna una instancia de Usuario con usuario y contraseña</returns>
             static public Entidad crearUsuarioConUsuarioYContrasena( string usuario , string contrasena )
             {
                 return new UsuarioM2( usuario , contrasena );
@@ -57,7 +57,7 @@ namespace DominioTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <param name="rol"></param>
-            /// <returns>Retorna una instacion de Usuario con usuario y rol</returns>
+            /// <returns>Retorna una instancia de Usuario con usuario y rol</returns>
             static public Entidad crearUsuarioConUsuarioRol( string usuario , RolM2 rol )
             {
                 return new UsuarioM2( usuario , rol );
@@ -69,7 +69,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="usuario"></param>
             /// <param name="contrasena"></param>
             /// <param name="activo"></param>
-            /// <returns>Retorna una instacion de Usuario con usuario, contraseña y activo</returns>
+            /// <returns>Retorna una instancia de Usuario con usuario, contraseña y activo</returns>
             static public Entidad crearUsuarioConUsuarioContrasenaActivo( string usuario , string contrasena , string activo )
             {
                 return new UsuarioM2( usuario , contrasena , activo );
@@ -82,7 +82,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="contrasena"></param>
             /// <param name="activo"></param>
             /// <param name="rol"></param>
-            /// <returns>Retorna una instacion de Usuario con usuario, contraseña, activo y rol</returns>
+            /// <returns>Retorna una instancia de Usuario con usuario, contraseña, activo y rol</returns>
             static public Entidad crearUsuarioConUsuarioContrasenaActivoRol( string usuario , string contrasena , string activo , RolM2 rol )
             {
                 return new UsuarioM2( usuario , contrasena , activo , rol);
@@ -97,7 +97,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputActivo"></param>
             /// <param name="inputRol"></param>
             /// <param name="inputfFichaEmpleado"></param>
-            /// <returns>Retorna una instacion de Usuario con todos los atributos</returns>
+            /// <returns>Retorna una instancia de Usuario con todos los atributos</returns>
             static public Entidad crearUsuarioCompleto( string inputUsuario , string inputContrasena , DateTime inputFechaCreacion , 
                                                         string inputActivo , RolM2 inputRol , int inputfFichaEmpleado )
             {
@@ -114,7 +114,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputActivo"></param>
             /// <param name="inputRol"></param>
             /// <param name="inputfFichaEmpleado"></param>
-            /// <returns>Retorna una instacion de Usuario con todos los atributos y el id</returns>
+            /// <returns>Retorna una instancia de Usuario con todos los atributos y el id</returns>
             static public Entidad crearUsuarioCompletoConID( int inputID , string inputUsuario , string inputContrasena , 
                                                              DateTime inputFechaCreacion , string inputActivo , RolM2 inputRol , 
                                                              int inputfFichaEmpleado )
@@ -228,6 +228,15 @@ namespace DominioTangerine.Fabrica
             /// Se crea la instancia sin atributos de ListaGenericaM2
             /// </summary>
             /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            static public Entidad crearListaGenericaVaciaMenu()
+            {
+                return new ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>();
+            }
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
             static public Entidad crearListaGenericaVacia()
             {
                 return new ListaGenericaM2<Entidad>();
@@ -244,9 +253,18 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
             }
             #endregion
+            #region instancia de cliente potencial sin estatus
+            public static Entidad CrearClientePotencial(int idCliente, string nombre, string rif, 
+                                                        string email, float presupuesto,
+                                                        int llamadas, int visitas)
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial(idCliente, nombre,rif, email,
+                                                                          presupuesto, llamadas, visitas);
+            }
+            #endregion 
         #endregion
 
-        #region Modulo 4
+            #region Modulo 4
 
             #region instancias de la clase CompaniaM4
             /// <summary>
@@ -469,6 +487,10 @@ namespace DominioTangerine.Fabrica
         #region Modulo 6
 
             #region Instancia Propuesta
+            static public Entidad ObtenerPropuestaVacia()
+            {
+                return new DominioTangerine.Entidades.M6.Propuesta();
+            }
 
             static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, 
                 string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, DateTime fefinal, 
@@ -508,6 +530,10 @@ namespace DominioTangerine.Fabrica
         #region Modulo 7
 
             #region Metodos para instanciar Propuesta
+            /// <summary>
+            /// Método para instancear la clase Propuesta vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerPropuesta() 
             {
                 return new DominioTangerine.Entidades.M7.Propuesta();
@@ -515,6 +541,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instaciar Requerimiento
+            /// <summary>
+            /// Método para instancear la clase Requerimiento vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerRequerimiento()
             {
                 return new DominioTangerine.Entidades.M7.Requerimiento();
@@ -522,6 +552,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar Cargo
+            /// <summary>
+            /// Método para instancear la clase Cargo vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerCargo()
             {
                 return new DominioTangerine.Entidades.M7.Cargo();
@@ -534,6 +568,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instaciar Lugar Direccion
+            /// <summary>
+            /// Método para instancear la clase Lugar Direccion vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerLugarDireccion() 
             {
                 return new DominioTangerine.Entidades.M7.LugarDireccion();
@@ -541,6 +579,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar ObtenerContacto
+            /// <summary>
+            /// Método para instancear la clase Entidad vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerContacto() 
             {
                 return new DominioTangerine.Entidades.M7.Contacto();
@@ -548,6 +590,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar Obtener Empleados
+            /// <summary>
+            /// Método para instancear la clase Empleado vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerEmpleado()
             {
                 return new DominioTangerine.Entidades.M7.Empleado();
@@ -555,9 +601,33 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar Proyecto
+            /// <summary>
+            /// Método para instancear la clase Proyecto vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerProyecto()
             {
                 return new DominioTangerine.Entidades.M7.Proyecto();
+            }
+
+            public static Entidad CrearProyecto(string nombre, string codigo, DateTime fecha_inicio, 
+                                  DateTime fecha_estimada_fin, double costo, string descripcion, 
+                                  string realizacion, string estatus, string razon, string acuerdopago,
+                                  int id_propuesta, int id_responsable, int id_gerente)
+            {
+                return new DominioTangerine.Entidades.M7.Proyecto(nombre, codigo, fecha_inicio,
+                            fecha_estimada_fin, costo, descripcion, realizacion, estatus, razon, 
+                            acuerdopago, id_propuesta, id_responsable, id_gerente);
+            }
+
+            public static Entidad CrearProyectoConListas(string nombre, string codigo, DateTime fecha_inicio, 
+                                  DateTime fecha_estimada_fin, double costo, string descripcion, string realizacion, 
+                                  string estatus, string razon, string acuerdopago, int id_propuesta, 
+                                  int id_responsable, int id_gerente, List<Entidad> empleados, List<Entidad> contactos)
+            {
+                return new DominioTangerine.Entidades.M7.Proyecto(nombre, codigo, fecha_inicio, 
+                           fecha_estimada_fin, costo, descripcion, realizacion, estatus, razon, acuerdopago,
+                           id_propuesta, id_responsable, id_gerente, empleados, contactos);
             }
             #endregion
 
@@ -619,6 +689,12 @@ namespace DominioTangerine.Fabrica
         {
             return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura );
         }
+       
+        public static Entidad ObtenerPago_M9(int codPago, int montoPago, string monedaPago, string formaPago, int idFactura)
+        {
+            return new DominioTangerine.Entidades.M9.Pago(codPago, montoPago, monedaPago, formaPago, idFactura);
+        }
+
 
         #endregion
 
@@ -651,27 +727,47 @@ namespace DominioTangerine.Fabrica
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
 
-
-        //public static Entidad ObtenerCargo()
-        //{
-        //    return new DominioTangerine.Entidades.M10.Cargo();
-        //}
-
-        
+  
         public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
         {
-            return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empCargoDescripcion, empContratacion);
         }
 
-        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido, 
-                                                 string empSApellido, int empCedula, DateTime empFecha, string empActivo, 
-                                                 string empEmail, string empGenero, string empEstudio, string empModalidad, 
+        
+        public static Entidad ObtenerCargoXid(string empCargo, double empSalario, string empFechaInicio, string empFechaFin)
+        {
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empSalario,empFechaInicio,empFechaFin);
+        }
+
+        public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido,
+                                                 string empSApellido, int empCedula, DateTime empFecha, string empActivo,
+                                                 string empEmail, string empGenero, string empEstudio, string empModalidad,
                                                  double empSalario, Entidad cargo)
         {
-                        return (new DominioTangerine.Entidades.M10.EmpleadoM10 ( empId,empPNombre,empSNombre,empPApellido, 
-                                empSApellido, empCedula,empFecha,empActivo,empEmail,empGenero,empEstudio,empModalidad,empSalario,cargo));
+            return (new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre, empSNombre, empPApellido,
+                    empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad, empSalario, cargo));
 
         }
+
+       
+
+        public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
+                                               string empSApellido, string empGenero, int empCedula, DateTime empFecha,
+                                               string empActivo, string empNivelEstudio, string empEmailEmployee,
+                                               int empLugId, Entidad empCargo, double empSalario, string empFechaInicio,
+                                               string empFechaFin, string empDireccion)
+        {
+            return (new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre,  empSNombre,  empPApellido,
+                                                                   empSApellido,  empGenero,  empCedula,  empFecha,
+                                                                   empActivo,  empNivelEstudio,  empEmailEmployee,
+                                                                   empLugId,  empCargo,  empSalario,  empFechaInicio,
+                                                                   empFechaFin, empDireccion));
+        }
         #endregion
+
+        public static Entidad obtenerEntidad()
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
+        }
     }
 }

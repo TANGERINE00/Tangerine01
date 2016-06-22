@@ -1,6 +1,7 @@
 ﻿using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
+using ExcepcionesTangerine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,16 +27,9 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override Entidad Ejecutar()
         {
-            try 
-            {
-                IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-                _laEntidad = daoContacto.ConsultarXId( _laEntidad );
-            }
-            catch ( Exception ex )
-            {
-                throw ex;
-            }
-
+            IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
+            _laEntidad = daoContacto.ConsultarXId( _laEntidad );
+            
             return _laEntidad;
         }
     }

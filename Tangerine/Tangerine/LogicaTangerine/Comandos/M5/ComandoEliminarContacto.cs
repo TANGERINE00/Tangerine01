@@ -1,6 +1,7 @@
 ﻿using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
+using ExcepcionesTangerine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,16 +29,9 @@ namespace LogicaTangerine.Comandos.M5
         {
             bool respuesta = false;
 
-            try 
-            {
-                IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-                respuesta = daoContacto.Eliminar( _laEntidad );
-            }
-            catch ( Exception ex )
-            {
-                return respuesta;
-            }
-
+            IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
+            respuesta = daoContacto.Eliminar( _laEntidad );
+            
             return respuesta;
         }
     }

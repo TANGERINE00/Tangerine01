@@ -62,6 +62,10 @@ namespace DatosTangerine.DAO.M2
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return true;
             } 
 
@@ -108,10 +112,10 @@ namespace DatosTangerine.DAO.M2
                     DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)rolID;
                     int empleadoNumFicha = int.Parse(row[ResourceUser.UsuEmpFicha].ToString());
 
-                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                    //Creo un objeto de tipo Usuario con los datos de la fila y lo guardo.
                     usuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( usuId, usuUser, usuContrasena,
-                                                                                              usuFechaCreacion , usuActivo ,
-                                                                                              rol, empleadoNumFicha);
+                                                                                                   usuFechaCreacion , usuActivo ,
+                                                                                                    rol, empleadoNumFicha );
                 }
                 catch (Exception ex)
                 {
@@ -119,8 +123,14 @@ namespace DatosTangerine.DAO.M2
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return usuario;
             }
+
+
 
             /// <summary>
             /// Método para consultar todos los usuarios
@@ -144,13 +154,10 @@ namespace DatosTangerine.DAO.M2
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro();
-
                 bool resultado = false;
 
                 try
                 {
-                    Conectar();
-
                     elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, fichaEmpleado.ToString(), false);
                     parametros.Add(elParametro);
 
@@ -164,35 +171,15 @@ namespace DatosTangerine.DAO.M2
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return resultado;
-            } //DONE COMMAND
-
-            /// <summary>
-            /// Método usado para devolver todos los empleados sin usuario
-            /// </summary>
-            /// <returns>Retorna la lista de empleados</returns>
-            public List<Entidad> ConsultarListaDeEmpleados()
-            {
-                List<Entidad> listaDeEmpleados = new List<Entidad>();
-                //List<DominioTangerine.Entidades.M10.Empleado> listaEmpleado = (List<DominioTangerine.Entidades.M10.Empleado>)theListaDeEmpleados;
-
-                
-                try
-                {
-                    //Hablar con mod10 para que cambien el metodo ListaEmpleados() de lugar.
-                    DatosTangerine.InterfazDAO.M10.IDAOEmpleado empleadoConexion = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
-                    //listaDeEmpleados = empleadoConexion.ListarEmpleados();
-                }
-                catch (Exception ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " + "ConsultarListaDeEmpleados()", ex);
-                }
-                return listaDeEmpleados;
-            } //OJOOOOOOOOOOOOO HABLAR CON M10
+            }
 
             /// <summary>
             /// Método usado para verificar si el usuario existe en el sistema
@@ -208,8 +195,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a la base de datos
-
                     elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario, false);
                     parametros.Add(elParametro);
 
@@ -223,8 +208,12 @@ namespace DatosTangerine.DAO.M2
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return resultado;
             }
@@ -244,14 +233,11 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar();
-
                     elParametro = new Parametro(ResourceUser.ParametroNumFicha, SqlDbType.Int, num_empleado.ToString(), false);
                     parametros.Add(elParametro);
 
                     DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ObtenerUsuarioDeEmpleado, parametros);
 
-                    //Por cada fila de la tabla voy a guardar los datos 
                     foreach (DataRow row in dt.Rows)
                     {
                         string nombreUsuario = row[ResourceUser.UsuNombre].ToString();
@@ -264,16 +250,15 @@ namespace DatosTangerine.DAO.M2
                         usuario.rol = rol;
                     }
                 }
-                catch (NullReferenceException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
-                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return usuario;
             }
@@ -291,8 +276,6 @@ namespace DatosTangerine.DAO.M2
 
                 try
                 {
-                    Conectar(); //Conexion a la BD
-
                     elParametro = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, usuario.nombreUsuario, false);
                     parametros.Add(elParametro);
 
@@ -320,16 +303,15 @@ namespace DatosTangerine.DAO.M2
                     }
 
                 }
-                catch (NullReferenceException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
-                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return usuario;
             }
@@ -357,17 +339,15 @@ namespace DatosTangerine.DAO.M2
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarContraUsuario, parametros);
                 }
-                catch (NullReferenceException ex)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
-                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             }
@@ -398,6 +378,10 @@ namespace DatosTangerine.DAO.M2
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return ultimoID;
             }
@@ -430,6 +414,10 @@ namespace DatosTangerine.DAO.M2
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             }

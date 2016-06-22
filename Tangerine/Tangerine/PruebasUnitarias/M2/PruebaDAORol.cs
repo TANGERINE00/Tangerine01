@@ -18,8 +18,8 @@ namespace PruebasUnitarias.M2
         #region Atributos
 
         public bool answer;
-        public RolM2 elRol = new RolM2("Administrador");
-        public RolM2 elRol1 = new RolM2("Gerente");
+        public RolM2 elRol = new RolM2( "Administrador" );
+        public RolM2 elRol1 = new RolM2( "Gerente" );
         public Entidad elUsuario;
         public Entidad elUsuario1;
 
@@ -33,7 +33,8 @@ namespace PruebasUnitarias.M2
         [SetUp]
         public void init()
         {
-            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( "Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                        "Activo" , elRol , 1 );
         }
 
         /// <summary>
@@ -43,9 +44,10 @@ namespace PruebasUnitarias.M2
         public void clean()
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            elUsuario1 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(), "Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol1, 1);
-            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario1 = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario1;
-            answer = daoUsuario.BorrarUsuario(theUsuario1.Id);
+            elUsuario1 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( daoUsuario.ConsultLastUserID() , "Daniel" ,
+                                                                             "1234" , new DateTime(2015, 2, 10) , "Activo" , elRol1 , 1 );
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario1 = ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario1;
+            answer = daoUsuario.BorrarUsuario( theUsuario1.Id );
             elUsuario = null;
             elRol = null;
             elRol1 = null;
@@ -62,11 +64,49 @@ namespace PruebasUnitarias.M2
         public void TestModificarRolUsuario()
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            answer = daoUsuario.Agregar(elUsuario);
-            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol1, 1);
+            answer = daoUsuario.Agregar( elUsuario );
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( "Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                        "Activo" , elRol1 , 1 );
             IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
-            bool resultado = daoRol.ModificarRolUsuario(elUsuario);
-            Assert.IsTrue(resultado);
+            bool resultado = daoRol.ModificarRolUsuario( elUsuario );
+            Assert.IsTrue( resultado );
+        }
+
+        /// <summary>
+        /// Método para probar el ObtenerRolUsuario de DAORol
+        /// </summary>
+        [Test]
+        public void TestObtenerRolUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),
+                                                                                        "Activo", elRol1, 1);
+
+            RolM2 elRol = new RolM2(4);
+            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+            DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuario( elRol.Id );
+            DominioTangerine.Entidades.M2.RolM2 resultado = ( DominioTangerine.Entidades.M2.RolM2 )theResultado;
+            Assert.IsTrue(resultado.Id == 4);
+        }
+
+
+
+        /// <summary>
+        /// Método para probar el ObtenerRolUsuarioPorNombre de DAORol
+        /// </summary>
+        [Test]
+        public void TestObtenerOperaciones()
+        {
+           IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),
+                                                                                        "Activo", elRol1, 1);
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario;
+            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
+            DominioTangerine.Entidad theResultado = daoRol.ObtenerOpciones("Administrador",2);
+            DominioTangerine.Entidades.M2.RolM2 resultado = (DominioTangerine.Entidades.M2.RolM2)theResultado;
+            Assert.IsNotNull(resultado.Id);
         }
 
         /// <summary>
@@ -76,18 +116,17 @@ namespace PruebasUnitarias.M2
         public void TestObtenerRolUsuarioPorNombre()
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            answer = daoUsuario.Agregar(elUsuario);
-            RolM2 elRol2 = new RolM2(1);
-            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10), "Activo", elRol2, 1);
-            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = (DominioTangerine.Entidades.M2.UsuarioM2)elUsuario;
+            answer = daoUsuario.Agregar( elUsuario );
+            RolM2 elRol = new RolM2( 1 );
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( "Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                        "Activo" , elRol1 , 1 );
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario;
             IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
-            DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuarioPorNombre(theUsuario.nombreUsuario);
-            DominioTangerine.Entidades.M2.RolM2 resultado = (DominioTangerine.Entidades.M2.RolM2)theResultado;
-            Assert.IsTrue(resultado.Id == 1);
+            DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuarioPorNombre( theUsuario.nombreUsuario );
+            DominioTangerine.Entidades.M2.RolM2 resultado = ( DominioTangerine.Entidades.M2.RolM2 )theResultado;
+            Assert.IsNotNull( resultado.Id );
         }
 
         #endregion
-
-
     }
 }

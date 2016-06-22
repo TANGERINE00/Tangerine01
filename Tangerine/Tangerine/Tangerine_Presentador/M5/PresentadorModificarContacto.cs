@@ -31,8 +31,8 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void CargarPagina() 
         {
-            int idcont = _vista.GetidCont;
-            _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp, _vista.GetIdComp );
+            int idcont = _vista.GetidCont();
+            _vista.botonVolver = _vista.CargarBotonVolver( _vista.GetTypeComp(), _vista.GetIdComp() );
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void NoPostPagina()
         {
-            int idcont = _vista.GetidCont;
+            int idcont = _vista.GetidCont();
             Entidad contacto = FabricaEntidades.crearContactoVacio();
             contacto.Id = idcont;
 
@@ -51,7 +51,7 @@ namespace Tangerine_Presentador.M5
 
             _vista.input_nombre = contactoConsultado.Nombre;
             _vista.input_apellido = contactoConsultado.Apellido;
-            _vista.input_cargo = contactoConsultado.Cargo;
+            _vista.item_cargo = contactoConsultado.Cargo;
             _vista.input_correo = contactoConsultado.Correo;
             _vista.input_departamento = contactoConsultado.Departamento;
             _vista.input_telefono = contactoConsultado.Telefono; 
@@ -62,15 +62,15 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void ModificarContacto() 
         {
-            Entidad contacto = FabricaEntidades.crearContactoConId( _vista.GetidCont, _vista.input_nombre,
+            Entidad contacto = FabricaEntidades.crearContactoConId( _vista.GetidCont(), _vista.input_nombre,
                                                                     _vista.input_apellido, _vista.input_departamento,
-                                                                    _vista.input_cargo, _vista.input_telefono, 
-                                                                    _vista.input_correo, _vista.GetTypeComp,
-                                                                    _vista.GetIdComp );
+                                                                    _vista.item_cargo, _vista.input_telefono, 
+                                                                    _vista.input_correo, _vista.GetTypeComp(),
+                                                                    _vista.GetIdComp() );
 
             Comando<bool> comandoEntidad = FabricaComandos.CrearComandoModificarContacto( contacto );
             comandoEntidad.Ejecutar();
-            _vista.BotonAceptar( _vista.GetTypeComp, _vista.GetIdComp );
+            _vista.BotonAceptar( _vista.GetTypeComp(), _vista.GetIdComp() );
         }
     }
 }

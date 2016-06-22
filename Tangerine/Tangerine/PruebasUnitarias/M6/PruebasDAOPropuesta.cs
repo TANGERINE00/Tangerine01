@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DatosTangerine.M6;
 using LogicaTangerine.M6;
 using DominioTangerine;
+using System.Collections;
 
 namespace PruebasUnitarias.M6
 {
@@ -17,8 +18,11 @@ namespace PruebasUnitarias.M6
         private DominioTangerine.Entidades.M6.Propuesta laPropuesta, laPropuesta2, laPropuesta3;
         private DateTime Date1, Date2;
         private List<DominioTangerine.Entidad> listaPropuestas;
-        private DominioTangerine.Entidades.M6.Requerimiento elRequerimiento, elRequerimiento2, elRequerimiento3;
+        private DominioTangerine.Entidades.M6.Requerimiento elRequerimiento;
         Boolean confirmacion;
+        DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao;
+        int contador;
+
         #endregion
 
 
@@ -29,8 +33,7 @@ namespace PruebasUnitarias.M6
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
             laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
-
-
+            dao=DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
         [TearDown]
@@ -39,7 +42,7 @@ namespace PruebasUnitarias.M6
             laPropuesta = null;
             laPropuesta2 = null;
             elRequerimiento = null;
-            elRequerimiento2 = null;
+            contador = 0;
         }
 
 
@@ -47,15 +50,17 @@ namespace PruebasUnitarias.M6
 
 
         // <summary>
-        //Prueba que pueda agrega una propuesta
+        //Prueba que pueda agregar una propuesta
         // <summary>
         [Test]
         public void TestAgregarPropuesta()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
+            //Se obtiene el número de propuestas totales antes de la inserción
+           contador=dao.ConsultarNumeroPropuestas();
             //Se inserta la propuesta
             Assert.IsTrue(dao.Agregar(laPropuesta));
+            //Se checkea que aumente en una unidad el total de las propuestas en la base de datos.
+            Assert.AreEqual(dao.ConsultarNumeroPropuestas(),contador+1);
             laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
             Assert.AreEqual(laPropuesta.Descripcion, laPropuesta2.Descripcion);
             Assert.AreEqual(laPropuesta.TipoDuracion, laPropuesta2.TipoDuracion);
@@ -65,7 +70,7 @@ namespace PruebasUnitarias.M6
             Assert.AreEqual(laPropuesta.Moneda, laPropuesta2.Moneda);
             Assert.AreEqual(laPropuesta.Entrega, laPropuesta2.Entrega);
             Assert.AreEqual(laPropuesta.Feincio, laPropuesta2.Feincio);
-            Assert.AreEqual(laPropuesta.Feincio, laPropuesta2.Feincio);
+            Assert.AreEqual(laPropuesta.Fefinal, laPropuesta2.Fefinal);
             Assert.AreEqual(laPropuesta.Costo, laPropuesta2.Costo);
             Assert.AreEqual(laPropuesta.IdCompañia, laPropuesta2.IdCompañia);
 
@@ -79,8 +84,6 @@ namespace PruebasUnitarias.M6
         [Test]
         public void TestModificarPropuesta()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             //Se inserta la propuesta
             Assert.IsTrue(dao.Agregar(laPropuesta));
             laPropuesta2 = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPruebaModificada", "MesesModificados", "3", "AcuerdoM", "PendientePruebaModif", "Dolar", 1, Date1, Date2, 100, "1");
@@ -111,12 +114,14 @@ namespace PruebasUnitarias.M6
         [Test]
         public void EliminarPropuesta()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
+            //Se obtiene el número de propuestas totales antes del insertado
+            contador = dao.ConsultarNumeroPropuestas();
             //Se inserta la propuesta
             Assert.IsTrue(dao.Agregar(laPropuesta));
             //Elimino la propuesta de prueba
             confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            //Se checkea que haya disminuido en una unidad la cantidad de propuestas en la base de datos
+            Assert.AreEqual(dao.ConsultarNumeroPropuestas(),contador);
             try
             {
                 //Se intenta consultar la propuesta anteriormente eliminada.
@@ -135,8 +140,6 @@ namespace PruebasUnitarias.M6
         [Test]
         public void ConsultaPropuestaProyecto()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             //Se inserta la propuesta.
             if (dao.Agregar(laPropuesta))
             {
@@ -153,6 +156,7 @@ namespace PruebasUnitarias.M6
                 Assert.IsTrue(dao.BorrarPropuesta("NombrePropuestaPrueba"));
             }
 
+
         }
 
         /// <summary>
@@ -161,8 +165,6 @@ namespace PruebasUnitarias.M6
         [Test]
         public void ConsultaPropuestaXId()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             //Se inserta la propuesta
             confirmacion = dao.Agregar(laPropuesta);
             laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
@@ -187,32 +189,51 @@ namespace PruebasUnitarias.M6
         [Test]
         public void ConsultaTodasPropuesta()
         {
-            //Se crea un objeto DAO para poder realizar la inserción.
-            DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             //Se inserta la propuesta para tener un minimo
             confirmacion = dao.Agregar(laPropuesta);
             //Se cuentan la cantidad de propuestas
-            int contador = dao.ConsultarNumeroPropuestas();
             listaPropuestas = dao.ConsultarTodos();
-            int contador2 = 0;
+            //Se almacena el tamaño de la estructura de propuestas
+            int cantidadPropuestas = listaPropuestas.Count;
+            //Se instancia un DAOCompañía
+            DatosTangerine.InterfazDAO.M4.IDaoCompania daoc = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
+            //Se obtienen las compañías activas 
+            List<Entidad> companias = daoc.ConsultarCompaniasActivas();
+            //Se crea una estructura de datos
+            ArrayList idscompaniasactivas = new ArrayList();
+            //Se llena la estructura de datos con los ids de las compañias activas
+            foreach (Entidad compania in companias)
+            {
+                idscompaniasactivas.Add(((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id.ToString());
+            }
+            //Se inicializa un contador para las propuestas
+            contador = 0;
+            //Se recorre la estructura con las propuestas y se cuentan las propuestas que cuyo id de compañía estén en la estructura anteriormente creada
             foreach (Entidad propuesta in listaPropuestas)
             {
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Descripcion);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).CantDuracion);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Acuerdopago);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Moneda);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Entrega);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Feincio);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Fefinal);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Costo);
-                Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia);
-                contador2++;
+                if (idscompaniasactivas.Contains(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia))
+                {
+                    //Se verifica que los campos no estén en null
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Descripcion);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).CantDuracion);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Acuerdopago);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Moneda);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Entrega);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Feincio);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Fefinal);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Costo);
+                    Assert.NotNull(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia);
+                    contador++;
+                }
             }
-            //Se checkea que el numero de propuestas extraidas coincida con el numero de propuestas en la bd
-            Assert.AreEqual(contador, contador2);
+            //Se verifica que la totalidad de las propuestas en la estructura de datos pertenezcan a una compañia activa
+            Assert.AreEqual(cantidadPropuestas, contador);
+            //Elimino la propuesta de prueba
+            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
         }
+
 
 
     }

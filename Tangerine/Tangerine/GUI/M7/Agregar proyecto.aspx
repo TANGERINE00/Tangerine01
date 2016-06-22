@@ -52,9 +52,12 @@
                             <label for="InputCodigo">Codigo del proyecto * </label>
                             <input runat="server" type="text" class="form-control" id="textInputCodigo" name="textInputCodigo" placeholder="123456789">
                         </div>
+
+                          <div class="row">
+                <div class="col-lg-5 col-md-10 col-sm-10 col-xs-10">
                         <div class="form-group date">
                         <label>Fecha estimada Incio:</label>
-
+          
                         <div class="input-group">
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
@@ -63,7 +66,8 @@
                         </div>
                         <!-- /.input group -->
                     </div>
-
+                </div>
+                <div class="col-lg-5 col-md-10 col-sm-10 col-xs-10">
                     <div class="form-group date">
                         <label>Fecha estimada Final:</label>
 
@@ -75,7 +79,8 @@
                         </div>
                         <!-- /.input group -->
                     </div>
-
+                          </div>
+                              </div>
 
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
@@ -136,22 +141,26 @@
 
                         <div class="form-group" runat="server">
                             <label for="inputGerente">Gerente de proyecto *</label>
-                            <select class="form-control" id="inputGerente" name="inputGerente" runat="server">
-                            </select>
+                            <asp:DropDownList class="form-control" DataTextField="text" id="inputGerente" name="inputGerente" runat="server">
+                            </asp:DropDownList>
+                            
                         </div>
 
                         <hr />
 
                         <div class="form-group">
                             <label for="inputPersonal">Personal Responsable *</label>
+
                             <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="inputEncargado">Encargado de la empresa contratante *</label>
-                            <select multiple="true" class="form-control" datatextfield="text" id="inputEncargado" name="inputEncargado" runat="server">
-                            </select>
+                          
                         </div>
+                             <select multiple="true" class="form-control" id="inputEncargado" name="inputEncargado" runat="server">
+                            </select>
+                          
                         <hr />
                        </div>
                     <div>

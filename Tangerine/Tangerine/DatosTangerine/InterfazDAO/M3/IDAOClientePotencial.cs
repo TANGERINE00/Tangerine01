@@ -9,6 +9,8 @@ namespace DatosTangerine.InterfazDAO.M3
 {
     public interface IDAOClientePotencial : IDao<Entidad, bool, Entidad>
     {
-
+        bool Activar(Entidad parametro);
+        bool Desactivar(Entidad parametro);
+        bool Promover(Entidad parametro);
     }
 }

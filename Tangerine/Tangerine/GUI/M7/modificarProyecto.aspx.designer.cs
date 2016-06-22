@@ -31,6 +31,42 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox inputPropuesta;
         
         /// <summary>
+        /// idPropuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idPropuesta;
+        
+        /// <summary>
+        /// descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox descripcion;
+        
+        /// <summary>
+        /// acuerdoPago control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox acuerdoPago;
+        
+        /// <summary>
+        /// idCompania control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idCompania;
+        
+        /// <summary>
         /// textInputNombreProyecto control.
         /// </summary>
         /// <remarks>
@@ -38,6 +74,15 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textInputNombreProyecto;
+        
+        /// <summary>
+        /// idProyecto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idProyecto;
         
         /// <summary>
         /// textInputCodigo control.
@@ -112,13 +157,49 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.DropDownList inputGerente;
         
         /// <summary>
+        /// GerentesPasados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox GerentesPasados;
+        
+        /// <summary>
         /// inputPersonal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputPersonal;
+        protected global::System.Web.UI.WebControls.ListBox inputPersonal;
+        
+        /// <summary>
+        /// inputPersonalNoActivo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox inputPersonalNoActivo;
+        
+        /// <summary>
+        /// bIzquierdo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton bIzquierdo;
+        
+        /// <summary>
+        /// bDerecho control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton bDerecho;
         
         /// <summary>
         /// inputEncargado control.
@@ -127,7 +208,7 @@ namespace Tangerine.GUI.M7 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect inputEncargado;
+        protected global::System.Web.UI.WebControls.ListBox inputEncargado;
         
         /// <summary>
         /// inputEstatus control.
@@ -146,5 +227,14 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox text10;
+        
+        /// <summary>
+        /// modificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton modificar;
     }
 }
