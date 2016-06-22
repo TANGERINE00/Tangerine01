@@ -35,7 +35,8 @@ namespace DatosTangerine.DAO.M9
                 DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
                 List<Parametro> parametros = new List<Parametro>();
 
-                Parametro parametro = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, pago.codPago.ToString(), false);
+                Parametro parametro = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, pago.codPago.ToString(), 
+                    false);
                 parametros.Add(parametro);
 
                 parametro = new Parametro(RecursoDAOPago.ParamMonto, SqlDbType.Int, pago.montoPago.ToString(), false);
@@ -47,7 +48,8 @@ namespace DatosTangerine.DAO.M9
                 parametro = new Parametro(RecursoDAOPago.ParamForma, SqlDbType.VarChar, pago.formaPago, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, pago.idFactura.ToString(), false);
+                parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, pago.idFactura.ToString(), 
+                    false);
                 parametros.Add(parametro);
 
                 List<Resultado> resultados = EjecutarStoredProcedure(RecursoDAOPago.AgregarPago, parametros);
@@ -65,7 +67,8 @@ namespace DatosTangerine.DAO.M9
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,RecursoDAOPago.MensajeErrorSQL,ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL,ex);
             }
         }
     
@@ -79,7 +82,8 @@ namespace DatosTangerine.DAO.M9
         {
             List<Parametro> parametros = new List<Parametro>();
 
-            Parametro parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, factura.ToString(),false);
+            Parametro parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, factura.ToString(),
+                false);
             parametros.Add(parametro);
             parametro = new Parametro(RecursoDAOPago.ParamStatus, SqlDbType.Int, status.ToString(),false);
             parametros.Add(parametro);
@@ -94,6 +98,13 @@ namespace DatosTangerine.DAO.M9
                 return false;
             }
         }
+        
+        /// <summary>
+        /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizaos por una compania
+        /// </summary>
+        /// <param name="parametro">Entidad, parametro con id de la compania que se va realizar la busqueda de pagos
+        /// </param>
+        /// <returns></returns>
         public List<Entidad> ConsultarPagosCompania(Entidad parametro)
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -104,7 +115,8 @@ namespace DatosTangerine.DAO.M9
             
             try
             {
-                theParam = new Parametro(RecursoDAOPago.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(), false);
+                theParam = new Parametro(RecursoDAOPago.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(), 
+                    false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar pagos

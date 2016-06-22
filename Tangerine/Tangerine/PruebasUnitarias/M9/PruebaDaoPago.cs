@@ -58,13 +58,6 @@ namespace PruebasUnitarias.M9
         }
 
         #endregion
-
-
-
-      
-
-
-
         /// <summary>
         /// Método para probar el Agregar de DAOPago
         /// </summary>

@@ -10,10 +10,17 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoConsultarPropuestaXProyecto : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ComandoConsultarPropuestaXProyecto()
         {
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo ConsultarPropuestaXProyecto en capa de datos.
+        /// </summary>
+        /// <returns>Retorna lista de propuestas</returns>
         public override List<Entidad> Ejecutar()
         {
             try
