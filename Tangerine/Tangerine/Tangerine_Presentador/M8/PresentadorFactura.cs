@@ -15,13 +15,13 @@ using ExcepcionesTangerine;
 
 namespace Tangerine_Presentador.M8
 {
-    public class PresentadorModificarFactura
+    public class PresentadorFactura
     {
-        private IContratoModificarFactura vista;
+        private IContratoFactura vista;
         private int idCompania;
         private int idProyecto;
 
-        public PresentadorModificarFactura(IContratoModificarFactura laVista)
+        public PresentadorFactura(IContratoFactura laVista)
         {
             this.vista = laVista;
         }

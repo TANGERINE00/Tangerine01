@@ -108,6 +108,7 @@
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
     <Compile Include="M8\PresentadorAnularFactura.cs" />
+    <Compile Include="M8\PresentadorFactura.cs" />
     <Compile Include="M8\PresentadorGenerarFactura.cs" />
     <Compile Include="M8\PresentadorConsultaFactura.cs" />
     <Compile Include="M8\PresentadorModificarFactura.cs" />
