@@ -29,6 +29,7 @@ namespace Tangerine.GUI.M1
         //LogicaProyecto proyectoLogic = new LogicaProyecto();
         //bool facturaExistente = false;
         //int montoFactura = 0;
+
         PresentadorInicio presentador;
 
         #region Contrato
@@ -71,6 +72,7 @@ namespace Tangerine.GUI.M1
             //if (HttpContext.Current.Session["User"] + "" != "")
             //    HttpContext.Current.Session.Abandon();
             presentador.ValidarSesion();
+            
 
         }
         /// <summary>

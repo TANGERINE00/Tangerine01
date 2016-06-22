@@ -19,49 +19,49 @@ namespace Tangerine.GUI.M8
 
         public string textNumeroFactura
         {
-            get { return this.textNumeroFactura_M8.Value; }
-            set { this.textNumeroFactura_M8.Value = value; }
+            get { return this.textNumeroFactura_M8.Text; }
+            set { this.textNumeroFactura_M8.Text = value; }
         }
         public string textFecha
         {
-            get { return this.textFecha_M8.Value; }
-            set { this.textFecha_M8.Value = value; }
+            set { this.textFecha_M8.Text = value; }
         }
         public string textDescripcion
         {
-            get { return this.textDescripcion_M8.Value; }
-            set { this.textDescripcion_M8.Value = value; }
+            set { this.textDescripcion_M8.Text = value; }
         }
         public string textCliente
         {
-            get { return this.textCliente_M8.Value; }
-            set { this.textCliente_M8.Value = value; }
+            set { this.textCliente_M8.Text = value; }
         }
         public string textProyecto
         {
-            get { return this.textProyecto_M8.Value; }
-            set { this.textProyecto_M8.Value = value; }
+            set { this.textProyecto_M8.Text = value; }
         }
         public string textMonto
         {
-            get { return this.textMonto_M8.Value; }
-            set { this.textMonto_M8.Value = value; }
+            set { this.textMonto_M8.Text = value; }
+        }
+        public string textDireccion
+        {
+            set { this.textDireccion_M8.Text = value; }
+        }
+        public string textRif
+        {
+            set { this.textRif_M8.Text = value; }
         }
         public string textTipoMoneda
         {
-            get { return this.textTipoMoneda_M8.Value; }
-            set { this.textTipoMoneda_M8.Value = value; }
+            set { this.textTipoMoneda_M8.Text = value; }
         }
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
         }
-
         public string alertaRol
         {
             set { alert.Attributes[ResourceGUIM8.alertRole] = value; }
         }
-
         public string alerta
         {
             set { alert.InnerHtml = value; }
@@ -104,7 +104,7 @@ namespace Tangerine.GUI.M8
             Boolean validar = _presentador.ModificarFactura();
             if (validar)
             {
-                Response.Redirect(ResourceGUIM8.volverModificado);
+                Response.Redirect(ResourceGUIM8.volver);
             }
         }
     }

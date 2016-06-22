@@ -69,13 +69,13 @@
                                 maxlength="15" required>
                         </div>
                         <!--Fecha Registro-->
-                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
+                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server" >
                             <label for="InputFechaRegistro">Fecha de Registro</label> <label for="Requerido" style="color: red;">*</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                                <input class="form-control pull-right" id="datepicker1" type="text" runat="server" disabled="disabled" 
                                     clientidmode="static" required>
                             </div>
                         </div>

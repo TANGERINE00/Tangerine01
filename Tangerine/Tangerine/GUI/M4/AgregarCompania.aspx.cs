@@ -1,12 +1,13 @@
-﻿using System;
+﻿using DominioTangerine;
+using LogicaTangerine;
+using LogicaTangerine.M4;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Windows;
 using System.Web.UI.WebControls;
-using DominioTangerine;
-using LogicaTangerine;
-using LogicaTangerine.M4;
 using Tangerine_Contratos.M4;
 using Tangerine_Presentador.M4;
 
@@ -16,6 +17,7 @@ namespace Tangerine.GUI.M4
     {
         LogicaM4 logica = new LogicaM4();
         PresentadorAgregarCompania Presentador;
+        string error;
 
         public AgregarCompania() {
             Presentador = new PresentadorAgregarCompania(this);
@@ -133,6 +135,17 @@ namespace Tangerine.GUI.M4
                 //InputDireccion1 = value;
             } 
         }
+       public string msjError
+       {
+           get 
+           {
+               return error;
+           }
+           set 
+           {
+               error = value;
+           }
+       }
         #endregion
 
         /// <summary>
@@ -157,8 +170,11 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            Presentador.AgregarCompania();
+            
+            if(Presentador.AgregarCompania())
                 Server.Transfer("ConsultarCompania.aspx", true);
+            else
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('"+ msjError +"')", true); 
 
         }
 

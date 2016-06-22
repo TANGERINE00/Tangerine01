@@ -46,8 +46,8 @@ namespace Tangerine_Presentador.M7
         public void agregarProyecto()
         {
             ///Se capturan los datos de la vista para crear un proyecto.
-            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "MM/dd/yyyy", null);
-            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
+            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
+            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
             Double _costo = Convert.ToDouble(_vista.Costo);
 
             ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
@@ -188,6 +188,7 @@ namespace Tangerine_Presentador.M7
         /// </summary>
         public void AgregarPersonal()
         {
+            _vista.btnAgregarPersonal.Enabled = false;
             _vista.columna2.Visible = true;
             _vista.BtnGenerar.Enabled = true;
         }

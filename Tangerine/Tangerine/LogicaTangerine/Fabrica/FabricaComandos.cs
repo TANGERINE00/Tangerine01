@@ -122,16 +122,6 @@ namespace LogicaTangerine.Fabrica
                                                                                   rolUsuario , fichaEmpleado );
             }
             
-            /// <summary>
-            /// Método utilizado para devolver una instancia del ComandoConsultarEmpleadoPorUsuario
-            /// </summary>
-            /// <param name="nombreUsuario"></param>
-            /// <returns>Retorna una instancia a ComandoConsultarEmpleadoPorUsuario</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerEmpleado( string nombreUsuario )
-            {
-                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarEmpleadoPorUsuario( nombreUsuario );
-            }
-
             #endregion
 
             #region Comandos Rol

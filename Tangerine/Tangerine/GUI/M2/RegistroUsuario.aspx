@@ -22,7 +22,7 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Contactos Existentes</h3>
+                    <h3 class="box-title">Empleados Existentes</h3>
                     <div class="box-tools"></div>
                 </div>
                 <form role="form" name="consultar" id="consultar">

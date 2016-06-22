@@ -97,7 +97,7 @@ namespace DatosTangerine.DAO.M9
         public List<Entidad> ConsultarPagosCompania(Entidad parametro)
         {
             List<Parametro> parameters = new List<Parametro>();
-            CompaniaM4 theCompany = (CompaniaM4)parametro;
+            Entidad theCompany = (DominioTangerine.Entidades.M4.CompaniaM4)parametro;
             Parametro theParam = new Parametro();
             List<Entidad> listaPagos = new List<Entidad>();
 
@@ -116,10 +116,12 @@ namespace DatosTangerine.DAO.M9
 
                     int facId = int.Parse(row[RecursoDAOPago.FacIdFactura].ToString());
                     DateTime PagoFecha = DateTime.Parse(row[RecursoDAOPago.PagoFecha].ToString());
-                    int PagoMonto = int.Parse(row[RecursoDAOPago.PagoMonto].ToString());
+                    double PagoMonto = double.Parse(row[RecursoDAOPago.PagoMonto].ToString());
                     String PagoMoneda = row[RecursoDAOPago.PagoMoneda].ToString();
+                    int PagoCodAprob = int.Parse(row[RecursoDAOPago.PagoCod].ToString());
 
-                    Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(facId, PagoFecha, PagoMonto, PagoMoneda);
+                    Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(facId, PagoFecha,
+                        PagoMonto, PagoMoneda,PagoCodAprob);
 
                     listaPagos.Add(pago);
                 }

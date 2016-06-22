@@ -51,18 +51,18 @@ namespace PruebasUnitarias.M2
 
         #region Test
 
-        /*/// <summary>
+        /// <summary>
         /// Método para probar el ComandoVerificarAccesoAOpciones de ComandosEspecificos
         /// </summary>
         [Test]
         public void TestComandoVerificarAccesoAOpciones()
         {
             List<String> listaResultado;
-            LogicaTangerine.Comando<List<String>> commandVerificarAccesoAOpciones = 
-                FabricaComandos.obtenerComandoVerificarAccesoAOpciones( "Gerente" );
+            LogicaTangerine.Comando<List<String>> commandVerificarAccesoAOpciones =
+                FabricaComandos.obtenerComandoVerificarAccesoAOpciones("Gerente");
             listaResultado = commandVerificarAccesoAOpciones.Ejecutar();
             Assert.IsNotEmpty(listaResultado);
-        }*/
+        }
 
         /// <summary>
         /// Método para probar el ComandoVerificarAccesoAPagina de ComandosEspecificos
