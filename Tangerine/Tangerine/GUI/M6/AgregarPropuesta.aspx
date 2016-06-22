@@ -146,7 +146,8 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                                clientidmode="static">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -158,7 +159,8 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" >
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
+                                clientidmode="static" >
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -176,7 +178,10 @@
 
                             </div>
                             <!-- /btn-group -->
-                            <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" pattern="^[0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" oninput="setCustomValidity('')">
+                            <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" 
+                                pattern="^[0-9]*$" title="Costo de la propuesta" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                oninput="setCustomValidity('')">
                         </div>
 
                     </div>
@@ -184,8 +189,11 @@
                     <div class="form-group">
                         <label>Forma de Pago</label>
                         <div class="dropdown" runat="server" id="fpago">
-                            <asp:DropDownList ID="formaPago" class="btn btn-default dropdown-toggle" runat="server">
-                            </asp:DropDownList>
+                            <select ID="formaPago" class="btn btn-default dropdown-toggle" runat="server" 
+                                onchange="setCuotas()" clientidmode="static">
+                                <option value="Mensual">Mensual</option>
+                                <option value="Por cuotas">Por Cuotas</option>
+                            </select>
                         </div>
                     </div>
 
@@ -194,8 +202,8 @@
                     <div class="form-group">
                         <label>Cantidad Cuotas</label>
                         <div class="dropdown" runat="server" id="cuota">
-                            <asp:DropDownList ID="comboCuota" class="btn btn-default dropdown-toggle" runat="server">
-                            </asp:DropDownList>
+                            <input type="text" pattern="^[0-9]*$" title="Numero de cuotas" class="form-control" 
+                                id="cantidadCuotas" name="cantidadCuotas" runat="server" clientidmode="static">
                         </div>
                     </div>
 
