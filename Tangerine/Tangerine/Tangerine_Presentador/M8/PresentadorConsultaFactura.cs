@@ -19,6 +19,25 @@ namespace Tangerine_Presentador.M8
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta(string msj)
+        {
+            if (msj == "1")
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            else
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+        }
+
         public void cargarConsultarFacturas()
         {
             bool pagada = false;

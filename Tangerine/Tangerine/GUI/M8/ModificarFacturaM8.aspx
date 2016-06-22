@@ -53,10 +53,9 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelDescripcion_M8">Descripción</label>
-                            <input type="text" runat="server" class="form-control"
-                                   pattern="^[0-9a-zñA-ZÑ.- ]+$"
-                                   id="textDescripcion_M8" name="textDescripcion_M8" 
-                                   placeholder="Descripción" maxlength="50" required>
+                            <input type="text" runat="server" class="form-control" pattern="^[0-9a-zA-Z ]+$" id="textDescripcion_M8" 
+                                name="textDescripcion_M8" maxlength="50" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolos')" oninput="setCustomValidity('')">
                         </div>
 
                         <div class="form-group" runat="server">
@@ -69,8 +68,9 @@
                             <input type="text" runat="server" class="form-control" id="textTipoMoneda_M8" name="textTipoMoneda_M8" placeholder="Tipo de Moneda" disabled="disabled">
                         </div>
 
-                        <div class="form-group" runat="server">
-                            <asp:Button ID="buttonModificar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Modificar" OnClick="buttonModificarFactura_Click"></asp:Button>
+                        <div class="form-group" runat="server" style="text-align:center;">
+                            <asp:Button ID="buttonModificar_M8" Style="margin-top: 5%; margin-right:15px;" class="btn btn-primary" type="submit" runat="server" Text="Modificar" OnClick="buttonModificarFactura_Click"></asp:Button>
+                            <a Style="margin-top: 5%; width:81px;" href="ConsultarFacturaM8.aspx" class="btn btn-default" type="submit">Cancelar</a>
                         </div>
 
                     </div>
