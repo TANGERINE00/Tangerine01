@@ -44,8 +44,8 @@ namespace Tangerine_Presentador.M2
                 if (!theComandoVerificar.Ejecutar())
                 {
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegNuevaVentana + empleado.emp_id + ResourceGUIM2.NombreEmpleado
-                                            + empleado.emp_p_nombre + ResourceGUIM2.ApellidoEmpleado + empleado.emp_p_apellido
-                                            + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
+                                            + empleado.emp_p_nombre + ResourceGUIM2.ApellidoEmpleado + empleado.emp_p_apellido 
+                                            + ResourceGUIM2.RolEmpleado + empleado.jobs.Nombre + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                 }
                 else
                 {

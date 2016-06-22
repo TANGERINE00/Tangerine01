@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ExcepcionesTangerine;
 using LogicaTangerine.Fabrica;
+using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2
 {
@@ -51,13 +53,12 @@ namespace LogicaTangerine.Comandos.M2
             catch (NullReferenceException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Parametro invalido", ex);
+                throw new ExceptionM2Tangerine("Ingreso de un argumento con valor invalido", ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " +
-                                                                     "CrearUsuarioDefault()", ex);
+                throw new ExceptionM2Tangerine("Error al ejecutar ComandoCrearUsuarioDefault", ex);
             }
 
             return usuarioNuevo;

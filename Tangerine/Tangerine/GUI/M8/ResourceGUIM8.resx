@@ -205,7 +205,7 @@
     <value>ConsultarFacturaM8.aspx</value>
   </data>
   <data name="volver" xml:space="preserve">
-    <value>ConsultarFacturaM8.aspx?estado=1</value>
+    <value>ConsultarFacturaM8.aspx</value>
   </data>
   <data name="volverModificado" xml:space="preserve">
     <value>ConsultarFacturaM8.aspx?estado=1</value>
