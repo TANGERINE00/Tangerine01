@@ -11943,3 +11943,43 @@ Error Number:-1,State:0,Class:20
 2016-06-21 16:24:46,330 INFO  DAOFactura - Clase: DAOFactura
 2016-06-21 16:24:46,330 INFO  DAOFactura - Mensaje: Salida del Método
 2016-06-21 16:24:46,330 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-21 19:32:43,281 INFO  DaoLugarDireccion - *******************************************************
+2016-06-21 19:32:43,427 INFO  DaoLugarDireccion - Clase: DaoLugarDireccion
+2016-06-21 19:32:43,427 INFO  DaoLugarDireccion - Mensaje: Entrada en el Método
+2016-06-21 19:32:43,427 INFO  DaoLugarDireccion - Metodo: ConsultCityPlaces
+2016-06-21 19:33:49,471 INFO  DAORol - *******************************************************
+2016-06-21 19:33:49,472 INFO  DAORol - Clase: DAORol
+2016-06-21 19:33:49,472 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 19:33:49,472 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 19:33:49,475 INFO  DAOUsuario - *******************************************************
+2016-06-21 19:33:49,475 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 19:33:49,475 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 19:33:49,475 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 19:34:17,616 INFO  DaoCompania - *******************************************************
+2016-06-21 19:34:17,616 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:34:17,617 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:34:17,617 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:34:59,749 INFO  DaoCompania - *******************************************************
+2016-06-21 19:34:59,749 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:34:59,749 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:34:59,749 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - *******************************************************
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - Clase: DaoLugarDireccion
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - Mensaje: Entrada en el Método
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - Metodo: ConsultarXId
+2016-06-21 19:36:47,064 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:47,065 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:47,065 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:47,065 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:36:47,853 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:47,853 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:47,853 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:47,853 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:36:48,762 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:48,762 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:48,762 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:48,762 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:36:54,599 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:54,599 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:54,599 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:54,599 INFO  DaoCompania - Metodo: ConsultarTodos

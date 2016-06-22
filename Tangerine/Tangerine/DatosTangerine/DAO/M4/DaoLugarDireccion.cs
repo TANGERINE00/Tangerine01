@@ -45,7 +45,7 @@ namespace DatosTangerine.DAO.M4
                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
                theParam = new Parametro(ResourcePlaceM4.ParamId, SqlDbType.Int,
-                     ((DominioTangerine.Entidades.M4.LugarDireccionM4)parametro).Id.ToString(), false);
+                     ((DominioTangerine.Entidades.M4.LugarDireccionM4)parametro).LugId.ToString(), false);
                parameters.Add(theParam);
 
                //Guardo la tabla que me regresa el procedimiento de consultar contactos
