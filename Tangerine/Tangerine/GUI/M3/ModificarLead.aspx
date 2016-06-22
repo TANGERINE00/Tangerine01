@@ -29,44 +29,57 @@
                 <div class="form-group ">
                     <label for="nombre">Nombe</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="nombre" class="form-control" maxlength="20" placeholder="Nombre de etiqueta" required>
+                    <input type="text" runat="server" 
+                        pattern="^[a-zA-Z'.\s]{1,40}$"
+                        id="nombre" class="form-control" maxlength="20" 
+                        placeholder="Nombre de etiqueta" title="Utilice caracteres alfanuméricos" required>
                 </div>
 
                 <!--Rif-->
                 <div class="form-group ">
                     <label for="rif">Rif</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="rif" class="form-control" maxlength="20" placeholder="# de rif" required>
+                    <input type="text" runat="server" 
+                        pattern="^[J]+[-]+([0-9]{7,10})+[-]+([0-9]{1,1})$"
+                        id="rif" class="form-control" maxlength="20" 
+                        placeholder="# de rif" title="Ej: J-23232343-5" required>
                 </div>
 
                 <!--Correo-->
                 <div class="form-group ">
                     <label for="email">Correo</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="email" runat="server" id="correo" class="form-control" maxlength="100" placeholder="Direccion de correo" required>
+                    <input type="email" runat="server" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+                        id="correo" class="form-control" maxlength="100" 
+                        placeholder="Dirección de correo" title="Ej: correo@gmail.com" required>
                 </div>
 
                 <!--Presupuesto-->
                 <div class="form-group ">
                     <label for="presupuesto">Presupuesto Anual</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="number" runat="server" id="presupuesto" class="form-control" maxlength="20" placeholder="Presupuesto" required>
+                    <input type="number" runat="server" id="presupuesto" class="form-control" 
+                        maxlength="20" placeholder="Presupuesto" required>
                 </div>
                 <!--Numero de llamadas-->
                 <div class="form-group ">
                     <label for="llamadas"># LLamadas</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="number" runat="server" id="numLlamadas" class="form-control" maxlength="20" placeholder="# de llamadas" required>
+                    <input type="number" runat="server" id="numLlamadas" class="form-control" 
+                        maxlength="20" placeholder="# de llamadas" required>
                 </div>
 
                 <!--Numero de visitas-->
                 <div class="form-group ">
                     <label for="visitas"># Visitas</label> 
                     <label for="Requerido" style="color: red;">*</label>
-                    <input type="number" runat="server" id="visitas" class="form-control" maxlength="20" placeholder="# de visitas" required>
+                    <input type="number" runat="server" id="visitas" class="form-control" 
+                        maxlength="20" placeholder="# de visitas" required>
                </div>
 
-                <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary"  OnClick="Modificar_Click" type="submit" runat="server" Text = "Modificar"   ></asp:Button>
+                <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary" 
+                    OnClick="Modificar_Click" type="submit" runat="server" Text = "Modificar"></asp:Button>
 
             </div>
             <br /><br />
