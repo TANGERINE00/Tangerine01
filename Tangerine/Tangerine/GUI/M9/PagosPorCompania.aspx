@@ -55,9 +55,9 @@
                     <thead>
                         <tr>
                             <th>N° Factura</th>
-                            <th>Fecha Emisión Factura</th>
-                            <th>Monto</th>
                             <th>Fecha de Pago</th>
+                            <th>Monto</th>
+                            <th>Moneda</th>
                         </tr>
                     </thead>
                     <tbody>

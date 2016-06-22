@@ -88,7 +88,7 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M9_HistoricoPagoCompania.
+        ///   Looks up a localized string similar to M9_historico_pago_por_compania.
         /// </summary>
         internal static string ConsultarHistoricoPagos {
             get {

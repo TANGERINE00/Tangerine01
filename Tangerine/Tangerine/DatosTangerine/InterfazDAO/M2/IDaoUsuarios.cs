@@ -59,11 +59,5 @@ namespace DatosTangerine.InterfazDAO.M2
         /// <returns>Retorna true si el usuario fue borrado exitosamente</returns>
         bool BorrarUsuario( int userID );
 
-        /// <summary>
-        /// Encabezado del metodo para retornar los datos de un empleado de acuerdo a su nombre de usuario
-        /// </summary>
-        /// <param name="nombreUsuario"></param>
-        /// <returns>Retorna los datos del empleado</returns>
-        Entidad ConsultarEmpleadoPorUsuario( string nombreUsuario );
     }
 }

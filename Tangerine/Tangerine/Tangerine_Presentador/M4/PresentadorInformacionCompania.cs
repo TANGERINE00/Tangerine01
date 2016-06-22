@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Tangerine_Contratos.M4;
 using LogicaTangerine;
 using DominioTangerine;
+using ExcepcionesTangerine.M4;
 
 namespace Tangerine_Presentador.M4
 {
@@ -26,38 +27,36 @@ namespace Tangerine_Presentador.M4
         #endregion
 
         #region CargarInformacionCompania
-        public void CargarInformacionCompania(int id) 
+        public Boolean CargarInformacionCompania(int id)
         {
-            _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
-            _entidad.Id = id;
-            Comando<Entidad> _comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_entidad);
-            Entidad _company = _comandoCompania.Ejecutar();
-            Entidad _lugar = DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionConLugar(((DominioTangerine.Entidades.M4.CompaniaM4)_company).IdLugar, "");
-          //  _lugar.Id = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).IdLugar;
-            Comando<Entidad> _comandoLugar = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXID(_lugar);
-            _lugar = _comandoLugar.Ejecutar();
-
             try
             {
-
+                _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                _entidad.Id = id;
+                Comando<Entidad> _comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_entidad);
+                Entidad _company = _comandoCompania.Ejecutar();
+                Entidad _lugar = DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionConLugar(((DominioTangerine.Entidades.M4.CompaniaM4)_company).IdLugar, "");
+                Comando<Entidad> _comandoLugar = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXID(_lugar);
+                 _lugar = _comandoLugar.Ejecutar();
                 _vista.NombreCompania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).NombreCompania;
                 _vista.Acronimo.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).AcronimoCompania;
                 _vista.Direccion.Text = ((DominioTangerine.Entidades.M4.LugarDireccionM4)_lugar).LugNombre;            
                 if (((DominioTangerine.Entidades.M4.CompaniaM4)_company).StatusCompania == 1)
-                    _vista.Estatus.Text = "Habilitado";
+                    _vista.Estatus.Text = RecursosPresentadorM4.habilitado2;
                 else
-                    _vista.Estatus.Text = "Inhabilitado";
+                    _vista.Estatus.Text = RecursosPresentadorM4.inhabilitado2;
                 _vista.Fecha.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).FechaRegistroCompania.ToString();
                 _vista.PlazoDePagos.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).PlazoPagoCompania.ToString();
                 _vista.RIF.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).RifCompania;
                 _vista.Correo.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).EmailCompania;
                 _vista.Telefono.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).TelefonoCompania;
                 _vista.Presupuesto.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).PresupuestoCompania.ToString();
-
+                return true;
             }
-            catch (Exception ex) 
+            catch (ExceptionM4Tangerine ex) 
             {
-                throw ex;
+                _vista.msjError = ex.Message;
+                return false;
             }
         }
         #endregion
