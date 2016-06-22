@@ -81,7 +81,12 @@
     <Compile Include="M4\ExeptionM4Tangerine.cs" />
     <Compile Include="M4\NullArgumentException.cs" />
     <Compile Include="M4\WrongFormatException.cs" />
+    <Compile Include="M5\AgregarContactoException.cs" />
+    <Compile Include="M5\BaseDeDatosContactoException.cs" />
+    <Compile Include="M5\ConsultarContactoException.cs" />
+    <Compile Include="M5\EliminarContactoException.cs" />
     <Compile Include="M5\ExceptionDataBase.cs" />
+    <Compile Include="M5\ModificarContactoException.cs" />
     <Compile Include="M5\NullArgumentException.cs" />
     <Compile Include="M5\WrongFormatException.cs" />
     <Compile Include="M6\BasedeDatosException.cs" />
