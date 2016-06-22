@@ -6,15 +6,15 @@ $(document).ready(function () {
     document.getElementById("datepicker1").value = date.toLocaleDateString('en-US');
     document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
 
-    document.getElementById("datepicker2").disabled = true;
+    document.getElementById("datepicker2").readOnly = true;
 
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").disabled = true;
+        document.getElementById("cantidadCuotas").readOnly = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas")
     {
-        document.getElementById("cantidadCuotas").disabled = false;
+        document.getElementById("cantidadCuotas").readOnly = false;
     }
 });
 
@@ -113,19 +113,19 @@ function enableDeFechas(s1, date1, date2, input)
 
     if (s1.value == "Meses")
     {
-        date2.disabled = true;
-        input.disabled = false;
+        date2.readOnly = true;
+        input.readOnly = false;
     }
     else if (s1.value == "Dias")
     {
-        date2.disabled = true;
-        input.disabled = false;
+        date2.readOnly = true;
+        input.readOnly = false;
     }
     else if (s1.value == "Custom")
     {
-        date2.disabled = false;
+        date2.readOnly = false;
         input.value = "";
-        input.disabled = true;
+        input.readOnly = true;
     }
 
 }
@@ -164,9 +164,9 @@ function setCuotas()
 {
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").disabled = true;
+        document.getElementById("cantidadCuotas").readOnly = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas") {
-        document.getElementById("cantidadCuotas").disabled = false;
+        document.getElementById("cantidadCuotas").readOnly = false;
     }
 }

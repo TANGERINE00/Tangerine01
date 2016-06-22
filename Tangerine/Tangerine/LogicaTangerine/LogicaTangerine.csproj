@@ -96,6 +96,7 @@
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
     <Compile Include="Comandos\M3\ComandoActivarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoAgregarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />

@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesTangerine;
+using ExcepcionesTangerine.M7;
 
 namespace DatosTangerine.DAO.M7
 {
@@ -42,10 +44,25 @@ namespace DatosTangerine.DAO.M7
                 List<Resultado> results = EjecutarStoredProcedure(Resource_M7.DeleteProyectoEmpleado, parameters);
 
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+            }
             catch (Exception ex)
             {
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                return false;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
             }
 
             return true;
@@ -105,34 +122,22 @@ namespace DatosTangerine.DAO.M7
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesTangerine.M10.NullArgumentException(Resource_M7.Codigo,
-                    Resource_M7.Mensaje, ex);
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesTangerine.ExceptionTGConBD(Resource_M7.Codigo,
-                    Resource_M7.Mensaje, ex);
+                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesTangerine.M10.WrongFormatException(Resource_M7.Codigo_Error_Formato,
-                     Resource_M7.Mensaje_Error_Formato, ex);
+                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
             }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
+                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(Resource_M7.Mensaje_Generico_Error, ex);
+                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 Resource_M7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -175,10 +180,25 @@ namespace DatosTangerine.DAO.M7
                 }
                 ((DominioTangerine.Entidades.M7.Proyecto)proyecto).set_empleados(listEmpleado);
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+            }
             catch (Exception ex)
             {
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                return false;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
             }
             return true;
         }
@@ -209,10 +229,25 @@ namespace DatosTangerine.DAO.M7
                     List<Resultado> results = EjecutarStoredProcedure(Resource_M7.AddProyectoEmpleado, parameters);
 
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(Resource_M7.Mensaje_Generico_Error, ex);
-                    return false;
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
                 }
 
             }
@@ -253,10 +288,25 @@ namespace DatosTangerine.DAO.M7
                             List<Resultado> results = EjecutarStoredProcedure(Resource_M7.AddProyectoEmpleado, parameters);
 
                         }
+                        catch (ArgumentNullException ex)
+                        {
+                            Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                            throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+                        }
+                        catch (FormatException ex)
+                        {
+                            Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                            throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+                        }
+                        catch (SqlException ex)
+                        {
+                            Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                            throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+                        }
                         catch (Exception ex)
                         {
-                            throw new ExcepcionesTangerine.ExceptionsTangerine(Resource_M7.Mensaje_Generico_Error, ex);
-                            return false;
+                            Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                            throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
                         }
 
                     }

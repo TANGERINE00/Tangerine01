@@ -10,5 +10,8 @@ namespace Tangerine_Contratos.M8
     public interface IContratoConsultarFactura
     {
         string facturasCreadas { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
     }
 }

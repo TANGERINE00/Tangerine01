@@ -85,8 +85,7 @@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-
-                            <asp:Literal ID="tablaR" runat="server"></asp:Literal>
+                            <asp:Literal runat="server" ID="requerimientos"> </asp:Literal>>
                         </table>
                     </div>
 

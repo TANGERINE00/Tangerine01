@@ -149,18 +149,18 @@ namespace Tangerine.GUI.M6
             Server.Transfer("ConsultarPropuesta.aspx", true);   
         }
 
-        public string requerimiento
+       public Literal Requerimientos
         {
             get
             {
-                return this.tablaR.Text;
+                return requerimientos;
             }
-
             set
             {
-                this.tablaR.Text = value;
+                requerimientos = value;
             }
         }
+
 
 
         public string ContenedorCompania
@@ -178,12 +178,7 @@ namespace Tangerine.GUI.M6
             set { descripcion.Value = value; }
 
         }
-        public string TablaR
-        {
-            get { return tablaR.Text;}
-            set { tablaR.Text = value; }
-
-        }
+        
         public DropDownList ComboDuracion
         {
             get { return comboDuracion; }

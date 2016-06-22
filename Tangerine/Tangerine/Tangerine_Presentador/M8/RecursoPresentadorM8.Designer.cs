@@ -88,6 +88,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string alertaModificado {
+            get {
+                return ResourceManager.GetString("alertaModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Anulada&lt;/span&gt;.
         /// </summary>
         internal static string anulada {
@@ -417,6 +426,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string Key {
             get {
                 return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La factura ha sido modificada.
+        /// </summary>
+        internal static string MsjModificado {
+            get {
+                return ResourceManager.GetString("MsjModificado", resourceCulture);
             }
         }
         
