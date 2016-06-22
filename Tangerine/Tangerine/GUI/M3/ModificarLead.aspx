@@ -31,7 +31,7 @@
                     <label for="Requerido" style="color: red;">*</label>
                     <input type="text" runat="server" 
                         pattern="^[a-zA-Z'.\s]{1,40}$"
-                        id="nombre" class="form-control" maxlength="20" 
+                        id="nombre" class="form-control" maxlength="30" 
                         placeholder="Nombre de etiqueta" title="Utilice caracteres alfanuméricos" required>
                 </div>
 
@@ -51,7 +51,7 @@
                     <label for="Requerido" style="color: red;">*</label>
                     <input type="email" runat="server" 
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
-                        id="correo" class="form-control" maxlength="100" 
+                        id="correo" class="form-control" maxlength="50" 
                         placeholder="Dirección de correo" title="Ej: correo@gmail.com" required>
                 </div>
 
