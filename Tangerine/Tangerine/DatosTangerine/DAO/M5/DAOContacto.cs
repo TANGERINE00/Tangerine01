@@ -6,6 +6,7 @@ using ExcepcionesTangerine;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,23 @@ namespace DatosTangerine.DAO.M5
                 List<Resultado> results = EjecutarStoredProcedure( RecursosDAOContacto.AgregarContacto, parametros );
 
             }
+
+            catch   (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.AgregarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch(FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.AgregarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch(SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.AgregarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
+
+            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -107,6 +125,22 @@ namespace DatosTangerine.DAO.M5
 
                 //Se ejecuta el stored procedure
                 List<Resultado> results = EjecutarStoredProcedure( RecursosDAOContacto.EliminarConacto, parametros );
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.EliminarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.EliminarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.EliminarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
 
             }
             catch ( Exception ex )
@@ -173,6 +207,22 @@ namespace DatosTangerine.DAO.M5
                 List<Resultado> results = EjecutarStoredProcedure( RecursosDAOContacto.ModificarContacto, parametros );
 
             }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ModificarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ModificarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ModificarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
+
+            }
             catch (Exception ex)
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -231,6 +281,22 @@ namespace DatosTangerine.DAO.M5
                 }
 
             }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
+
+            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -282,6 +348,22 @@ namespace DatosTangerine.DAO.M5
                                                                                  conCompId);
                     lista.Add(nuevoContacto);
                 }
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
 
             }
             catch (Exception ex)
@@ -348,6 +430,22 @@ namespace DatosTangerine.DAO.M5
                 }
 
             }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
+
+            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -394,6 +492,22 @@ namespace DatosTangerine.DAO.M5
                 List<Resultado> results = EjecutarStoredProcedure( RecursosDAOContacto.AgregarContactoProyecto, 
                                           parametros );
                 
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.AgregarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.AgregarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.AgregarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
+
             }
             catch ( Exception ex )
             {
@@ -458,6 +572,22 @@ namespace DatosTangerine.DAO.M5
                 }
 
             }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
+
+            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -503,6 +633,22 @@ namespace DatosTangerine.DAO.M5
 
                 List<Resultado> results = EjecutarStoredProcedure( RecursosDAOContacto.EliminarContactoProyecto,
                                           parametros );
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.EliminarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.EliminarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.EliminarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
 
             }
             catch ( Exception ex )
@@ -566,6 +712,22 @@ namespace DatosTangerine.DAO.M5
                                                                                  conCompId );
                     lista.Add( nuevoContacto );
                 }
+
+            }
+            catch (NullReferenceException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M5.ConsultarContactoException("DS-505", "Error al momento de realizar la conexion", ex);
 
             }
             catch ( Exception ex )

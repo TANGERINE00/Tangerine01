@@ -14,10 +14,10 @@
     <li class="active">Factura</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <div id="alert" runat="server">
-    </div>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="alert" runat="server">
+    </div>
     <div class="row">
         <!-- left column -->
         <div class="col-md-6" runat="server">
@@ -58,15 +58,6 @@
                                    id="textDescripcion_M8" name="textDescripcion_M8" 
                                    placeholder="Descripción" maxlength="50" required>
                         </div>
-
-                        <%--    <div class="form-group" runat="server">
-                      <label for="labelEstatus_M8">Estatus</label>
-                     <select runat="server" class="form-control" id="textEstatus_M8" name="textEstatus_M8"> 
-                     <option>Por Pagar</option>
-                     <option>Pagada</option>
-                     <option>Anulada</option> 
-                     </select>
-                    </div> --%>
 
                         <div class="form-group" runat="server">
                             <label for="labelMonto_M8">Monto</label>
