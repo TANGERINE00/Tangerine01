@@ -33,29 +33,13 @@ namespace Tangerine.GUI.M2
         {
             get
             {
-                return this.tablaempleados.Text;
+                return this.tabla.Text;
             }
             set
             {
-                this.tablaempleados.Text = value;
+                this.tabla.Text = value;
             }
         }
-
-        /// <summary>
-        /// Implementacion del contrato
-        /// </summary>
-        public string numeroEmpleado
-        {
-            get
-            {
-                return this.textBuscarId.Value;
-            }
-            set
-            {
-                this.textBuscarId.Value = value;
-            }
-        }
-
         #endregion
 
         /// <summary>
@@ -69,16 +53,6 @@ namespace Tangerine.GUI.M2
             {
                 _presentador.inicioVista();
             }
-        }
-
-        /// <summary>
-        /// Método para actualizar la pagina cuando se activa el evento del boton buscar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void busquedaNumero_Click(object sender, EventArgs e)
-        {
-            _presentador.actualizarVista();
         }
     }
 }

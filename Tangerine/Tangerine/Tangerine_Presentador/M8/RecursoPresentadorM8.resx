@@ -294,4 +294,10 @@
   <data name="MsjModificado" xml:space="preserve">
     <value>La factura ha sido modificada</value>
   </data>
+  <data name="BotonFactura" xml:space="preserve">
+    <value>&lt;a title="Factura"  class="btn btn-primary glyphicon glyphicon-file" href="Factura.aspx?idFac=</value>
+  </data>
+  <data name="TipoFecha" xml:space="preserve">
+    <value>dd/mm/yyyy</value>
+  </data>
 </root>

@@ -27,12 +27,19 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override bool Ejecutar()
         {
-            bool respuesta = false;
+            try
+            {
+                bool respuesta = false;
 
-            IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-            respuesta = daoContacto.Agregar( _laEntidad );
-            
-            return respuesta;
+                IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
+                respuesta = daoContacto.Agregar(_laEntidad);
+
+                return respuesta;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
