@@ -27,7 +27,6 @@ namespace LogicaTangerine.Comandos.M9
             IDAOPago Pago = FabricaDAOSqlServer.CrearDAOPago();
 
             Pago.Agregar(this._laEntidad);
-            return true;
 
             return Pago.Agregar(this._laEntidad);
             

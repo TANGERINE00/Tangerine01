@@ -177,4 +177,7 @@
   <data name="Promovido" xml:space="preserve">
     <value>&lt;span class="label label-warning" id="p</value>
   </data>
+  <data name="BotonSeguimiento" xml:space="preserve">
+    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-list-alt" style="margin-left:3px;" href="SeguimientoDeLeads.aspx?idclp=</value>
+  </data>
 </root>

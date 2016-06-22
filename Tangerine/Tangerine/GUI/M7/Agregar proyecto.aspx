@@ -1,9 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Agregar proyecto.aspx.cs" Inherits="Tangerine.GUI.M7.AgregarProyecto" %>
-
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" 
+    CodeBehind="Agregar proyecto.aspx.cs" Inherits="Tangerine.GUI.M7.AgregarProyecto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de Proyectos
@@ -39,24 +37,28 @@
                     <div class="box-body" runat="server">
                         <div class="form-group" runat="server">
                             <label for="inputPropuesta">Propuesta Aprobada *</label>
-                            <asp:DropDownList class="form-control" DataTextField="text" ID="inputPropuesta" name="inputPropuesta" OnSelectedIndexChanged="comboPropuesta_Click" AutoPostBack="True" runat="server">
+                            <asp:DropDownList class="form-control" DataTextField="text" ID="inputPropuesta" 
+                             name="inputPropuesta" OnSelectedIndexChanged="comboPropuesta_Click" 
+                                AutoPostBack="True" runat="server">
                             </asp:DropDownList>
                         </div>
 
                         <div class="form-group" runat="server"> 
                             <label for="InputNombreProyecto">Nombre de proyecto *</label> 
-                                        <input runat="server" id="textInputNombreProyecto" placeholder="Nombre Proyecto" type="text" 
-                                            pattern="^[a-zA-Z][a-zA-Z ]{4,20}$" class="form-control"  name="textInputNombreProyecto" 
-                                            required oninvalid="setCustomValidity('Únicamente letras. (Max.20)')" 
+                                        <input runat="server" id="textInputNombreProyecto" required type="text"
+                                            placeholder="Nombre Proyecto"  name="textInputNombreProyecto"
+                                            pattern="^[a-zA-Z][a-zA-Z ]{4,20}$" class="form-control"  
+                                             oninvalid="setCustomValidity('Únicamente letras. (Max.20)')" 
                                             oninput="setCustomValidity('')" />
                          </div>       
                         
                         <div class="form-group" runat="server"> 
                             <label for="InputCodigo">Codigo del proyecto *</label> 
-                                        <input runat="server" id="textInputCodigo" name="textInputCodigo" placeholder="Proy-DS2016" type="text" 
-                                            pattern="^[a-zA-Z][a-zA-Z0-9 -]{4,20}$" class="form-control"  
-                                            required oninvalid="setCustomValidity('Sólo letras, guiones y números. (Max.20)')" 
-                                            oninput="setCustomValidity('')" />
+                                        <input runat="server" id="textInputCodigo" name="textInputCodigo" required 
+                                         type="text" placeholder="Proy-DS2016" class="form-control" 
+                                         pattern="^[a-zA-Z][a-zA-Z0-9 -]{4,20}$"  
+                                         oninvalid="setCustomValidity('Sólo letras, guiones y números. (Max.20)')" 
+                                         oninput="setCustomValidity('')" />
                          </div>
 
                           <div class="row">
@@ -68,9 +70,10 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" clientidmode="static"
-                                placeholder="mm/dd/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
-                                required data-date-format="dd/mm/yyyy" readonly="">
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server"
+                                 clientidmode="static" placeholder="mm/dd/yyyy" required
+                                 pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+                                 data-date-format="dd/mm/yyyy" readonly="">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -83,9 +86,10 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" clientidmode="static" 
-                                placeholder="mm/dd/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
-                                required data-date-format="dd/mm/yyyy" readonly="" >
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
+                                clientidmode="static"  placeholder="mm/dd/yyyy" required 
+                                pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+                                data-date-format="dd/mm/yyyy" readonly="" >
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -94,15 +98,20 @@
 
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
-                            <input runat="server" type="text" class="form-control" id="textInputCosto" name="textInputCosto" placeholder="0 Bs" Disabled="disabled">
+                            <input runat="server" type="text" class="form-control" id="textInputCosto" 
+                                name="textInputCosto" placeholder="0 Bs" Disabled="disabled">
                         </div>
                         <div class="form-group" runat="server">
-                            <asp:Button ID="btnAgregarPersonal" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnAgregarPersonal_Click" type="submit" runat="server" Text="Agregar Personal"></asp:Button>
+                            <asp:Button ID="btnAgregarPersonal" Style="margin-top: 5%" class="btn btn-primary" 
+                            OnClick="btnAgregarPersonal_Click" type="submit" runat="server" Text="Agregar Personal">
+                            </asp:Button>
                         </div>
                         <hr />
                     </div>
                     <div class="box-footer">
-                        <asp:Button ID="btnGenerar" Style="margin-top: 5%" class="btn btn-primary" OnClick="btnGenerar_Click" type="submit" runat="server" Text="Generar" Enabled="false"></asp:Button>
+                        <asp:Button ID="btnGenerar" Style="margin-top: 5%" class="btn btn-primary" 
+                        OnClick="btnGenerar_Click" type="submit" runat="server" Text="Generar" Enabled="false">
+                        </asp:Button>
                     </div>
                     <div>
                         <style>
@@ -151,7 +160,8 @@
 
                         <div class="form-group" runat="server">
                             <label for="inputGerente">Gerente de proyecto *</label>
-                            <asp:DropDownList class="form-control" DataTextField="text" id="inputGerente" name="inputGerente" runat="server">
+                            <asp:DropDownList class="form-control" DataTextField="text" id="inputGerente" 
+                            name="inputGerente" runat="server">
                             </asp:DropDownList>
                             
                         </div>
@@ -161,14 +171,16 @@
                         <div class="form-group">
                             <label for="inputPersonal">Personal Responsable *</label>
 
-                            <select multiple="true" class="form-control" id="inputPersonal" name="inputPersonal" runat="server">
+                            <select multiple="true" class="form-control" id="inputPersonal" 
+                            name="inputPersonal" runat="server">
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="inputEncargado">Encargado de la empresa contratante *</label>
                           
                         </div>
-                             <select multiple="true" class="form-control" id="inputEncargado" name="inputEncargado" runat="server">
+                             <select multiple="true" class="form-control" id="inputEncargado" 
+                             name="inputEncargado" runat="server">
                             </select>
                           
                         <hr />
