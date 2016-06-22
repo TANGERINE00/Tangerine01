@@ -57,6 +57,9 @@ namespace Tangerine_Presentador.M7
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyectoContacto(parametro);
             Entidad contactoEmp = comando5.Ejecutar();
 
+            Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+            List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
+
             try
             {
                 llenarComboEstatus(proyecto);
@@ -303,11 +306,6 @@ namespace Tangerine_Presentador.M7
                     vista.inputPersonal.Items.Remove(li);
                 }
             }
-        }
-
-        public void RenderCalendario(DayRenderEventArgs e, Entidad proyecto)
-        {
-
         }
 
         public void MoverDerecha()
