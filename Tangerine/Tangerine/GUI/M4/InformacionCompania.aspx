@@ -46,7 +46,7 @@
                        <div><h5><asp:Label runat="server" ID="acronimo"> </asp:Label></h5></div>
                         </div>
                             <div class="form-group col-md-6" runat="server">
-                            <h4><label for="plazo">Plazo para pagos:</label></h4>
+                            <h4><label for="plazo">Plazo para pagos (dias):</label></h4>
                            <div><h5><asp:Label runat="server" ID="plazo"> </asp:Label></h5></div>
                         </div>
                         </div>
