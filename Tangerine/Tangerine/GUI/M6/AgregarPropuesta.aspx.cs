@@ -42,25 +42,7 @@ namespace Tangerine.GUI.M6
             presenter.agregarPropuesta();
         }
 
-        /*
-        protected void comboDuracion_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            datepicker1.Value = DateTime.Today.ToShortDateString();
-            datepicker2.Value = DateTime.Today.ToShortDateString();
-
-            if (comboDuracion.SelectedItem.Text != "Custom")
-            {
-                datepicker1.Disabled = true;
-                datepicker2.Disabled = true;
-            }
-            else
-            {
-                datepicker1.Disabled = false;
-                datepicker2.Disabled = false;
-            }
-        }
-        */
-        
+       
         public DropDownList ComboCompania 
         {
             get { return comboCompañia; }
@@ -80,21 +62,11 @@ namespace Tangerine.GUI.M6
             get { return arrPrecondicion.Value; }
 
         }
-        
-        /*
-        public DropDownList ComboDuracion
-        {
-            get { return comboDuracion; }
-            set { comboDuracion=value; }
-        }
-        */
-
         public string ComboDuracion
         {
             get { return comboDuracion.Value; }
             set { comboDuracion.Value = value; }
         }
-
         public string TextoDuracion
         {
             get { return textoDuracion.Value; }
@@ -116,17 +88,17 @@ namespace Tangerine.GUI.M6
         public string TextoCosto
         {
             get { return textoCosto.Value; }
-        }
-        public DropDownList FormaPago
+        } 
+        public string FormaPago
         {
-            get { return formaPago; }
-            set { formaPago= value; }
+            get { return formaPago.Value; }
+            set { formaPago.Value = value; }
         }
-        public DropDownList ComboCuota
+        public string CantidadCuotas
         {
-            get { return comboCuota; }
-            set { comboCuota=value; }
+            get { return cantidadCuotas.Value; }
         }
+
         public DropDownList ComboStatus
         {
             get { return comboEstatus; }
