@@ -256,7 +256,7 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-            #region Metodos para instanciar Cliente Potencial
+            #region Metodo para instanciar Cliente Potencial
             public static Entidad ObtenerClientePotencial()
             {
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
@@ -272,14 +272,12 @@ namespace DominioTangerine.Fabrica
             }
             #endregion 
 
-            #region instancia de cliente potencial para agregar
-            public static Entidad CrearClientePotencialSinLlamadaVisita(string nombre, string rif, string email, float presupuesto,
-            int status)
+            #region metodo para instaciar cliente potencial si llamadas, visitas ni id
+            public static Entidad CrearClientePotencial(string nombre, string rif, string email, float presupuesto, int status)
             {
-                return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email,
-                                                                          presupuesto, status);
+                return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email, presupuesto, status);
             }
-            #endregion 
+            #endregion
         #endregion
 
             #region Modulo 4

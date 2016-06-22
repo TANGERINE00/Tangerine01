@@ -80,10 +80,17 @@ namespace Tangerine.GUI.M8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            textNumeroFactura = Request.QueryString["idFac"]; ;
-            if (!IsPostBack)
+            try
             {
-                _presentador.llenarModificar();
+                textNumeroFactura = Request.QueryString["idFac"]; ;
+                if (!IsPostBack)
+                {
+                    _presentador.llenarModificar();
+                }
+            }
+            catch
+            {
+                Response.Redirect(ResourceGUIM8.volver);
             }
         }
 
@@ -97,7 +104,7 @@ namespace Tangerine.GUI.M8
             Boolean validar = _presentador.ModificarFactura();
             if (validar)
             {
-                Response.Redirect("ConsultarFacturaM8.aspx");
+                Response.Redirect(ResourceGUIM8.volverModificado);
             }
         }
     }

@@ -19,7 +19,6 @@ namespace Tangerine.GUI.M6
     public partial class AgregarPropuesta : System.Web.UI.Page, IContratoAgregarPropuesta
     {
         
-        String[] _precondicion;
         PresentadorAgregarPropuesta presenter;
 
         public AgregarPropuesta()
@@ -40,6 +39,7 @@ namespace Tangerine.GUI.M6
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             presenter.agregarPropuesta();
+            Server.Transfer("ConsultarPropuesta.aspx", true);
         }
 
        
@@ -50,7 +50,7 @@ namespace Tangerine.GUI.M6
         }
         public string IdCompania
         {
-            get { return comboCompañia.SelectedIndex.ToString(); }
+            get { return comboCompañia.SelectedValue.ToString(); }
             set { }
         }
         public string Descripcion
@@ -98,7 +98,6 @@ namespace Tangerine.GUI.M6
         {
             get { return cantidadCuotas.Value; }
         }
-
         public DropDownList ComboStatus
         {
             get { return comboEstatus; }

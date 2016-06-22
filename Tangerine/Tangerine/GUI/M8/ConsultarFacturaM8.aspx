@@ -17,7 +17,8 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Main content -->
-
+    <div id="alert" runat="server">
+    </div>
     <div class="row" runat="server">
         <div class="col-md-12" runat="server">
             <div class="box box-primary" runat="server">
