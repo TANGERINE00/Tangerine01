@@ -186,16 +186,19 @@ namespace Tangerine.GUI.M6
         }
         public string TextoDuracion
         {
-            get { return textoDuracion.Value; }
-
+          
+          get { return textoDuracion.Value; }
+            set { textoDuracion.Value = value; }
         }
         public string DatePickerUno
         {
             get { return datepicker1.Value; }
+            set { datepicker1.Value = value; }
         }
         public string DatePickerDos
         {
             get { return datepicker2.Value; }
+            set { datepicker2.Value = value; }
         }
         public DropDownList TipoCosto
         {
@@ -206,6 +209,7 @@ namespace Tangerine.GUI.M6
         public string TextoCosto
         {
             get { return textoCosto.Value; }
+            set { textoCosto.Value = value; }
         }
         public DropDownList FormaPago
         {

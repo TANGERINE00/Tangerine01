@@ -148,24 +148,39 @@ namespace Tangerine_Presentador.M6
        public void ModificarRequerimiento(String idRequerimiento, String descripcion, String idPropuesta)
         {
             DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(idRequerimiento,descripcion,idPropuesta);
-           // elRequerimiento.Descripcion = descripcion;
+           
             elRequerimiento.Id = int.Parse(idRequerimiento);
+       
            //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
             LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
             Confirmacion = comando.Ejecutar();
-        /*
-        */
-        }
         
-        public void TraerCompania(String idPropuesta)
+        }
+
+       public void llenarDatosPropuesta(Entidad propuesta)
+       {
+           vista.Descripcion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Descripcion;
+           
+           vista.ComboDuracion.Text = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion;
+           vista.TextoDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).CantDuracion;
+
+           vista.TipoCosto.Text = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Moneda;
+           vista.TextoCosto = (((DominioTangerine.Entidades.M6.Propuesta)propuesta).Costo).ToString() ;
+
+           vista.FormaPago.Text =  ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Acuerdopago;
+           vista.DatePickerUno = (((DominioTangerine.Entidades.M6.Propuesta)propuesta).Feincio).ToString();
+           vista.DatePickerDos = (((DominioTangerine.Entidades.M6.Propuesta)propuesta).Fefinal).ToString();
+       }
+
+           public void TraerCompania(String idPropuesta)
         {
             //Creo una propuesta
-            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(vista.IdCompania, _descripcion,
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(idPropuesta, _descripcion,
             _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
             LogicaTangerine.Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
             //Consulto la propuesta
             propuesta = (DominioTangerine.Entidades.M6.Propuesta)comando.Ejecutar();
-
+           
             Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia), null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
             //Consulto la compañia de esa propuesta
             comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
