@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionesTangerine;
+using ExcepcionesTangerine.M7;
 
 namespace DatosTangerine.DAO.M7
 {
@@ -140,10 +142,25 @@ namespace DatosTangerine.DAO.M7
 
                         
                     }
+                    catch (ArgumentNullException ex)
+                    {
+                        Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                        throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+                    }
+                    catch (FormatException ex)
+                    {
+                        Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                        throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+                    }
+                    catch (SqlException ex)
+                    {
+                        Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                        throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+                    }
                     catch (Exception ex)
                     {
-                        throw new ExcepcionesTangerine.ExceptionsTangerine(Resource_M7.Mensaje_Generico_Error, ex);
-                        return false;
+                        Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                        throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
                     }
 
                 }

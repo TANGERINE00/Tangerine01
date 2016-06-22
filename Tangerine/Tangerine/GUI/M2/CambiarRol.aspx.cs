@@ -13,7 +13,15 @@ namespace Tangerine.GUI.M2
 {
     public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
-        private PresentadorCambioRol presentador;
+        private PresentadorCambioRol _presentador;
+
+        /// <summary>
+        /// Constructor de PresentadorCambioRol
+        /// </summary>
+        public CambiarRol()
+        {
+            _presentador = new PresentadorCambioRol(this);
+        }
 
         #region Contrato
         /// <summary>
@@ -36,10 +44,9 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            presentador = new PresentadorCambioRol(this);
             if (!IsPostBack)
             {
-                presentador.iniciarVista();
+                _presentador.iniciarVista();
             }
         }
     }
