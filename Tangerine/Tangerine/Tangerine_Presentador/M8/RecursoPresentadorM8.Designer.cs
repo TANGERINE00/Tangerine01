@@ -115,6 +115,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .\n.
+        /// </summary>
+        internal static string blank {
+            get {
+                return ResourceManager.GetString("blank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonAnular {
@@ -421,6 +430,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to   .
+        /// </summary>
+        internal static string espacio {
+            get {
+                return ResourceManager.GetString("espacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estatus:.
         /// </summary>
         internal static string Estatus {
@@ -624,6 +642,42 @@ namespace Tangerine_Presentador.M8 {
         internal static string PropuestaAprovada {
             get {
                 return ResourceManager.GetString("PropuestaAprovada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ..
+        /// </summary>
+        internal static string punto {
+            get {
+                return ResourceManager.GetString("punto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se le recuerda que tiene una factura por pagar, por un monto de:.
+        /// </summary>
+        internal static string recordar {
+            get {
+                return ResourceManager.GetString("recordar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recordatorio de Pago - Proyecto:.
+        /// </summary>
+        internal static string recordatorio {
+            get {
+                return ResourceManager.GetString("recordatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saludos Cordiales, estimados:.
+        /// </summary>
+        internal static string saludos {
+            get {
+                return ResourceManager.GetString("saludos", resourceCulture);
             }
         }
         
