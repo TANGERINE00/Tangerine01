@@ -148,7 +148,8 @@ namespace Tangerine_Presentador.M7
 
                 Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
                 ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).Id = Int32.Parse(propuesta.IdCompañia);
-                Comando<List<Entidad>> comandoConsultarContacto = FabricaComandos.CrearComandoConsultarContactosPorCompania(_compania, 1);
+                Comando<List<Entidad>> comandoConsultarContacto = 
+                                    FabricaComandos.CrearComandoConsultarContactosPorCompania(_compania, 1);
                 List<Entidad> listaContacto = comandoConsultarContacto.Ejecutar();
 
                 foreach (Entidad entidad in listaContacto)
