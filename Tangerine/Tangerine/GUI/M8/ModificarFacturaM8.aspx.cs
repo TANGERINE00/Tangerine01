@@ -97,7 +97,7 @@ namespace Tangerine.GUI.M8
             Boolean validar = _presentador.ModificarFactura();
             if (validar)
             {
-                Response.Redirect("ConsultarFacturaM8.aspx");
+                Response.Redirect("ConsultarFacturaM8.aspx?estado=1");
             }
         }
     }

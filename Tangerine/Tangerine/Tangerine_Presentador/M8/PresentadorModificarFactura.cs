@@ -31,9 +31,9 @@ namespace Tangerine_Presentador.M8
         /// </summary>
         public void Alerta(string msj)
         {
-            vista.alertaClase = "alert alert-danger alert-dismissible";
-            vista.alertaRol = "alert";
-            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+            vista.alertaClase = RecursoPresentadorM8.alertaError;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
         }
 
         /// <summary>
@@ -103,7 +103,6 @@ namespace Tangerine_Presentador.M8
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
                 vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
                     + RecursoPresentadorM8.alertaHtmlFinal;
-                vista.textMonto = "hdsfnhdfsh";
                 return false;
             }
         }
