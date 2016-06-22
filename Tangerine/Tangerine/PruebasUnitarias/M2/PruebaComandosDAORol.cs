@@ -92,6 +92,45 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el ComandoObtenerOpciones de ComandosDAORol
+        /// </summary>
+        [Test]
+        public void TestComandoObtenerOpciones()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario );
+            resultado = commandAgregarUsuario.Ejecutar();
+            Assert.IsTrue( resultado );
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( "Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                        "Activo" , elRol1 , 1 );
+            LogicaTangerine.Comando<DominioTangerine.Entidad> commandObtenerOpciones
+                = FabricaComandos.obtenerComandoObtenerOpciones( "Gestión de Pagos" , 2 );
+            DominioTangerine.Entidad theResultado = commandObtenerOpciones.Ejecutar();
+            DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2> lista
+                = ( DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2> )theResultado;
+            Assert.IsNotEmpty( lista );
+        }
+
+        /// <summary>
+        /// Método para probar el ComandoObtenerRolUsuario de ComandosDAORol
+        /// </summary>
+        [Test]
+        public void TestComandoObtenerRolUsuario()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario );
+            resultado = commandAgregarUsuario.Ejecutar();
+            Assert.IsTrue( resultado );
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( "Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                        "Activo" , elRol1 , 1 );
+            LogicaTangerine.Comando<DominioTangerine.Entidad> commandObtenerRolUsuario
+                = FabricaComandos.obtenerComandoObtenerRolUsuario( 2 );
+            DominioTangerine.Entidad theRol = commandObtenerRolUsuario.Ejecutar();
+            DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
+            Assert.IsNotNull(rol);
+        }
+
+        /// <summary>
         /// Método para probar el ComandoObtenerRolUsuarioPorNombre de ComandosDAORol
         /// </summary>
         [Test]

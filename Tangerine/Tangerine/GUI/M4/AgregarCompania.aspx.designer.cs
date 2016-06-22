@@ -64,7 +64,7 @@ namespace Tangerine.GUI.M4 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputEmail1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl InputEmail1;
         
         /// <summary>
         /// Control InputTelefono1.
@@ -100,7 +100,7 @@ namespace Tangerine.GUI.M4 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputPlazoPago1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl InputPlazoPago1;
         
         /// <summary>
         /// Control btnagregar.

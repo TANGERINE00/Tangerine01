@@ -10,10 +10,17 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoConsultarNumeroRequerimientos : Comando<int>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ComandoConsultarNumeroRequerimientos()
         {
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo ConsultarNumeroRequerimientos en capa de datos.
+        /// </summary>
+        /// <returns>Retorna numero de requerimientos registrados</returns>
         public override int Ejecutar()
         {
             try
