@@ -16022,3 +16022,338 @@ Error Number:547,State:0,Class:16
 2016-06-22 12:23:42,582 INFO  DaoProyectoContacto - Mensaje: Salida del Método
 2016-06-22 12:23:42,582 INFO  DaoProyectoContacto - Metodo: ConsultarXId
 >>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
+2016-06-22 17:37:44,004 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:37:44,009 ERROR DaoProyecto - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-22 17:37:44,020 ERROR DaoProyecto - Origen: DatosTangerine
+2016-06-22 17:37:44,020 ERROR DaoProyecto - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-22 17:37:44,020 ERROR DaoProyecto - StackTrace:    at DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:line 299
+   at DatosTangerine.DAO.M7.DaoProyecto.ConsultarTodos() in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 540
+2016-06-22 17:37:44,020 ERROR DaoProyecto - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:line 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-22 17:39:50,993 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:39:51,001 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:39:51,016 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:39:51,016 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:39:51,016 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:39:51,016 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:40:23,122 INFO  DAORol - *******************************************************
+2016-06-22 17:40:23,123 INFO  DAORol - Clase: DAORol
+2016-06-22 17:40:23,123 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:40:23,123 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:40:23,126 INFO  DAOUsuario - *******************************************************
+2016-06-22 17:40:23,127 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-22 17:40:23,127 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-22 17:40:23,127 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-22 17:40:23,175 INFO  DAORol - *******************************************************
+2016-06-22 17:40:23,175 INFO  DAORol - Clase: DAORol
+2016-06-22 17:40:23,175 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:40:23,175 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:40:23,181 INFO  DAORol - *******************************************************
+2016-06-22 17:40:23,181 INFO  DAORol - Clase: DAORol
+2016-06-22 17:40:23,181 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:40:23,181 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:40:25,947 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:40:25,947 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:40:25,947 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:40:25,947 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:40:25,947 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:40:25,947 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:43:44,295 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:43:44,295 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:43:44,295 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:43:44,295 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:43:44,296 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:43:44,296 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:46:13,914 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:46:13,920 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:46:13,925 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:46:13,925 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:46:13,925 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 107
+2016-06-22 17:46:13,925 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:51:25,552 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:51:25,557 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:51:25,561 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:51:25,561 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:51:25,562 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:51:25,562 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:52:38,263 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:52:38,263 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:52:38,263 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:52:38,263 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:52:38,263 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:52:38,263 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:54:39,847 INFO  DAOPropuesta - *******************************************************
+2016-06-22 17:54:39,853 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-22 17:54:39,853 INFO  DAOPropuesta - Mensaje: Entrada en el Método
+2016-06-22 17:54:39,853 INFO  DAOPropuesta - Metodo: PropuestaProyecto
+2016-06-22 17:54:39,891 INFO  DAOPropuesta - *******************************************************
+2016-06-22 17:54:39,892 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-22 17:54:39,892 INFO  DAOPropuesta - Mensaje: Salida del Método
+2016-06-22 17:54:39,892 INFO  DAOPropuesta - Metodo: PropuestaProyecto
+2016-06-22 17:54:42,261 INFO  DAORol - *******************************************************
+2016-06-22 17:54:42,261 INFO  DAORol - Clase: DAORol
+2016-06-22 17:54:42,261 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:54:42,261 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:54:42,265 INFO  DAOUsuario - *******************************************************
+2016-06-22 17:54:42,265 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-22 17:54:42,265 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-22 17:54:42,265 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-22 17:54:42,306 INFO  DAORol - *******************************************************
+2016-06-22 17:54:42,306 INFO  DAORol - Clase: DAORol
+2016-06-22 17:54:42,306 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:54:42,306 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:54:42,315 INFO  DAORol - *******************************************************
+2016-06-22 17:54:42,315 INFO  DAORol - Clase: DAORol
+2016-06-22 17:54:42,315 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:54:42,315 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:54:45,289 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:54:45,289 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:54:45,292 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:54:45,292 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:54:45,292 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:54:45,292 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:55:32,442 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:55:32,442 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:55:32,442 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:55:32,442 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:55:32,442 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:55:32,442 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:57:49,183 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:57:49,183 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:57:49,184 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:57:49,184 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:57:49,184 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:57:49,184 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:57:50,200 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:57:50,200 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:57:50,200 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:57:50,200 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:57:50,200 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:57:50,200 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:57:51,425 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:57:51,425 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:57:51,425 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:57:51,425 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:57:51,425 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:57:51,425 ERROR DaoProyecto - InnerException: 
+2016-06-22 17:58:11,894 INFO  DAORol - *******************************************************
+2016-06-22 17:58:11,899 INFO  DAORol - Clase: DAORol
+2016-06-22 17:58:11,899 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:58:11,899 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:58:11,905 INFO  DAOUsuario - *******************************************************
+2016-06-22 17:58:11,905 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-22 17:58:11,905 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-22 17:58:11,905 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-22 17:58:11,987 INFO  DAORol - *******************************************************
+2016-06-22 17:58:11,987 INFO  DAORol - Clase: DAORol
+2016-06-22 17:58:11,987 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:58:11,987 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:58:11,995 INFO  DAORol - *******************************************************
+2016-06-22 17:58:11,995 INFO  DAORol - Clase: DAORol
+2016-06-22 17:58:11,995 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:58:11,995 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:58:15,177 INFO  DAOPropuesta - *******************************************************
+2016-06-22 17:58:15,177 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-22 17:58:15,177 INFO  DAOPropuesta - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,177 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-22 17:58:15,183 INFO  DAOPropuesta - *******************************************************
+2016-06-22 17:58:15,183 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-22 17:58:15,183 INFO  DAOPropuesta - Mensaje: Salida del Método
+2016-06-22 17:58:15,183 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-22 17:58:15,188 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,188 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,188 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,188 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,224 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,224 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,224 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,224 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,227 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,227 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,227 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,228 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,232 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,232 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,232 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,232 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,236 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,236 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,236 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,236 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,240 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,240 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,240 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,240 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,245 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,245 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,245 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,245 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,250 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,250 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,250 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,250 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,254 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,254 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,254 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,254 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,259 INFO  DaoCompania - *******************************************************
+2016-06-22 17:58:15,259 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 17:58:15,259 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 17:58:15,259 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-22 17:58:15,265 INFO  DAORol - *******************************************************
+2016-06-22 17:58:15,266 INFO  DAORol - Clase: DAORol
+2016-06-22 17:58:15,266 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:58:15,266 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:58:15,270 INFO  DAORol - *******************************************************
+2016-06-22 17:58:15,270 INFO  DAORol - Clase: DAORol
+2016-06-22 17:58:15,270 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 17:58:15,270 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 17:59:16,095 ERROR DaoProyecto - *******************************************************
+2016-06-22 17:59:16,096 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 17:59:16,099 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 17:59:16,100 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 17:59:16,100 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 17:59:16,100 ERROR DaoProyecto - InnerException: 
+2016-06-22 18:00:35,056 ERROR DaoProyecto - *******************************************************
+2016-06-22 18:00:35,056 ERROR DaoProyecto - Mensaje: There is no row at position 0.
+2016-06-22 18:00:35,056 ERROR DaoProyecto - Origen: System.Data
+2016-06-22 18:00:35,056 ERROR DaoProyecto - Metodo: NodePath GetNodeByIndex(Int32)
+2016-06-22 18:00:35,056 ERROR DaoProyecto - StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at DatosTangerine.DAO.M7.DaoProyecto.ContactNombrePropuestaId(Entidad parametro) in c:\Users\Paul\Documents\Desarrollo\Proyecto 2.2\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M7\DaoProyecto.cs:line 122
+2016-06-22 18:00:35,056 ERROR DaoProyecto - InnerException: 
+2016-06-22 18:03:30,373 INFO  DAORol - *******************************************************
+2016-06-22 18:03:30,378 INFO  DAORol - Clase: DAORol
+2016-06-22 18:03:30,378 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:03:30,378 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:03:30,385 INFO  DAOUsuario - *******************************************************
+2016-06-22 18:03:30,386 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-22 18:03:30,386 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-22 18:03:30,386 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-22 18:03:31,093 INFO  DAORol - *******************************************************
+2016-06-22 18:03:31,093 INFO  DAORol - Clase: DAORol
+2016-06-22 18:03:31,093 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:03:31,093 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:03:31,102 INFO  DAORol - *******************************************************
+2016-06-22 18:03:31,102 INFO  DAORol - Clase: DAORol
+2016-06-22 18:03:31,102 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:03:31,102 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:03:38,370 INFO  DAORol - *******************************************************
+2016-06-22 18:03:38,370 INFO  DAORol - Clase: DAORol
+2016-06-22 18:03:38,370 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:03:38,370 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:03:38,375 INFO  DAORol - *******************************************************
+2016-06-22 18:03:38,375 INFO  DAORol - Clase: DAORol
+2016-06-22 18:03:38,375 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:03:38,375 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:04:53,719 INFO  DAORol - *******************************************************
+2016-06-22 18:04:53,723 INFO  DAORol - Clase: DAORol
+2016-06-22 18:04:53,724 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:04:53,724 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:04:53,733 INFO  DAOUsuario - *******************************************************
+2016-06-22 18:04:53,733 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-22 18:04:53,733 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-22 18:04:53,733 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-22 18:04:53,792 INFO  DAORol - *******************************************************
+2016-06-22 18:04:53,792 INFO  DAORol - Clase: DAORol
+2016-06-22 18:04:53,792 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:04:53,792 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:04:53,800 INFO  DAORol - *******************************************************
+2016-06-22 18:04:53,801 INFO  DAORol - Clase: DAORol
+2016-06-22 18:04:53,801 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:04:53,801 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:05:00,445 INFO  DAORol - *******************************************************
+2016-06-22 18:05:00,445 INFO  DAORol - Clase: DAORol
+2016-06-22 18:05:00,445 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:05:00,445 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:05:00,452 INFO  DAORol - *******************************************************
+2016-06-22 18:05:00,452 INFO  DAORol - Clase: DAORol
+2016-06-22 18:05:00,452 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:05:00,452 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:05:04,851 INFO  DaoProyectoContacto - *******************************************************
+2016-06-22 18:05:04,851 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-22 18:05:04,851 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-22 18:05:04,851 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-22 18:05:04,869 INFO  DaoProyectoContacto - *******************************************************
+2016-06-22 18:05:04,869 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-22 18:05:04,869 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-22 18:05:04,869 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-22 18:05:06,856 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-22 18:05:06,856 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-22 18:05:06,856 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-22 18:05:06,856 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-22 18:05:06,918 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-22 18:05:06,918 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-22 18:05:06,918 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-22 18:05:06,918 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-22 18:05:06,923 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-22 18:05:06,923 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-22 18:05:06,923 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-22 18:05:06,923 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-22 18:05:06,931 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-22 18:05:06,931 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-22 18:05:06,931 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-22 18:05:06,931 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-22 18:05:06,936 INFO  DaoProyectoContacto - *******************************************************
+2016-06-22 18:05:06,937 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-22 18:05:06,937 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-22 18:05:06,937 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-22 18:05:06,944 INFO  DaoProyectoContacto - *******************************************************
+2016-06-22 18:05:06,945 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-22 18:05:06,945 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-22 18:05:06,945 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-22 18:05:06,951 INFO  DAOEmpleado - *******************************************************
+2016-06-22 18:05:06,951 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-22 18:05:06,951 INFO  DAOEmpleado - Mensaje: Entrada en el Método
+2016-06-22 18:05:06,951 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-22 18:05:06,961 INFO  DAOEmpleado - *******************************************************
+2016-06-22 18:05:06,961 INFO  DAOEmpleado - Clase: DAOEmpleado
+2016-06-22 18:05:06,961 INFO  DAOEmpleado - Mensaje: Salida del Método
+2016-06-22 18:05:06,961 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-22 18:05:06,971 INFO  DAORol - *******************************************************
+2016-06-22 18:05:06,971 INFO  DAORol - Clase: DAORol
+2016-06-22 18:05:06,971 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:05:06,971 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-22 18:05:06,976 INFO  DAORol - *******************************************************
+2016-06-22 18:05:06,976 INFO  DAORol - Clase: DAORol
+2016-06-22 18:05:06,976 INFO  DAORol - Mensaje: Salida del Método
+2016-06-22 18:05:06,976 INFO  DAORol - Metodo: ObtenerRolUsuario
