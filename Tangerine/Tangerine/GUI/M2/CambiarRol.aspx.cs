@@ -31,25 +31,10 @@ namespace Tangerine.GUI.M2
         public string empleado
         {
             get
-            { return this.tablaempleados.Text; }
+            { return this.tabla.Text; }
 
             set
-            { this.tablaempleados.Text = value; }
-        }
-
-        /// <summary>
-        /// Implementacion del contrato
-        /// </summary>
-        public string nombreUsuario
-        {
-            get
-            {
-                return this.textBuscarNombre.Value;
-            }
-            set
-            {
-                this.textBuscarNombre.Value = value;
-            }
+            { this.tabla.Text = value; }
         }
 
         #endregion
@@ -65,16 +50,6 @@ namespace Tangerine.GUI.M2
             {
                 _presentador.iniciarVista();
             }
-        }
-
-        /// <summary>
-        /// Método para actualizar la pagina cuando se activa el evento del boton buscar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void busquedaNombre_Click(object sender, EventArgs e)
-        {
-            _presentador.actualizarVista();
         }
     }
 }

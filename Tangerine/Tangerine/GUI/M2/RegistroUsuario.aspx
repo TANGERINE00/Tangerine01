@@ -9,7 +9,7 @@
     Empleados sin cuenta de usuario asignada
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+    <li><a href="#"><i class="fa fa-home"></i></a></li>
     <li><a href="#">Ejemplo</a></li>
     <li class="active">Página en blanco</li>
 </asp:Content>
