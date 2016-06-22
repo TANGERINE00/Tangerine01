@@ -7,9 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine_Contratos.M9
 {
-   public interface IContratoFacturasPorPagar
+    public interface IContratoPagosPorCompania
     {
-       string factura { get; set; }
+        string pago { get; set; }
 
-   }
+    }
 }

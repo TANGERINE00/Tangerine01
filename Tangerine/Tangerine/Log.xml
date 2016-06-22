@@ -8701,3 +8701,235 @@ Error Number:-1,State:0,Class:20
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Mensaje: Fin Método
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Metodo: ConsultarXId
 >>>>>>> 2bf045d654b72a63965a03ef112a91071de1b539
+2016-06-20 15:10:51,172 INFO  LogicaM4 - *******************************************************
+2016-06-20 15:10:51,178 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-20 15:10:51,178 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-20 15:10:51,178 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-20 15:10:51,185 INFO  BDCompania - *******************************************************
+2016-06-20 15:10:51,185 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:10:51,185 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-20 15:10:51,185 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 15:11:08,780 ERROR BDCompania - *******************************************************
+2016-06-20 15:11:08,780 ERROR BDCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-20 15:11:08,790 ERROR BDCompania - Origen: DatosTangerine
+2016-06-20 15:11:08,790 ERROR BDCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-20 15:11:08,791 ERROR BDCompania - StackTrace:    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 296
+   en DatosTangerine.M4.BDCompania.ConsultCompanies() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:línea 548
+2016-06-20 15:11:08,791 ERROR BDCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): El sistema no puede encontrar el archivo especificado
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2016-06-20 15:21:01,019 INFO  LogicaM4 - *******************************************************
+2016-06-20 15:21:01,027 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-20 15:21:01,027 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-20 15:21:01,027 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-20 15:21:01,041 INFO  BDCompania - *******************************************************
+2016-06-20 15:21:01,041 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:21:01,041 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-20 15:21:01,041 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 15:21:18,128 ERROR BDCompania - *******************************************************
+2016-06-20 15:21:18,128 ERROR BDCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-20 15:21:18,130 ERROR BDCompania - Origen: DatosTangerine
+2016-06-20 15:21:18,177 ERROR BDCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-20 15:21:18,177 ERROR BDCompania - StackTrace:    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 296
+   en DatosTangerine.M4.BDCompania.ConsultCompanies() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:línea 548
+2016-06-20 15:21:18,177 ERROR BDCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): El sistema no puede encontrar el archivo especificado
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2016-06-20 15:23:20,042 INFO  LogicaM4 - *******************************************************
+2016-06-20 15:23:20,051 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-20 15:23:20,051 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-20 15:23:20,051 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-20 15:23:20,060 INFO  BDCompania - *******************************************************
+2016-06-20 15:23:20,060 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:23:20,060 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-20 15:23:20,060 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 15:23:37,245 ERROR BDCompania - *******************************************************
+2016-06-20 15:23:37,245 ERROR BDCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-20 15:23:37,248 ERROR BDCompania - Origen: DatosTangerine
+2016-06-20 15:23:37,248 ERROR BDCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-20 15:23:37,248 ERROR BDCompania - StackTrace:    en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 296
+   en DatosTangerine.M4.BDCompania.ConsultCompanies() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\M4\BDCompania.cs:línea 548
+2016-06-20 15:23:37,249 ERROR BDCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): El sistema no puede encontrar el archivo especificado
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:línea 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2016-06-20 15:32:09,594 INFO  LogicaM4 - *******************************************************
+2016-06-20 15:32:09,600 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-20 15:32:09,600 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-20 15:32:09,600 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-20 15:32:09,609 INFO  BDCompania - *******************************************************
+2016-06-20 15:32:09,609 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:32:09,609 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-20 15:32:09,609 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 15:32:09,911 INFO  BDCompania - *******************************************************
+2016-06-20 15:32:09,911 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:32:09,911 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-20 15:32:09,911 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 15:32:25,046 INFO  LogicaM4 - *******************************************************
+2016-06-20 15:32:25,046 INFO  LogicaM4 - Clase: LogicaM4
+2016-06-20 15:32:25,046 INFO  LogicaM4 - Mensaje: Entrada en el Método
+2016-06-20 15:32:25,046 INFO  LogicaM4 - Metodo: ConsultCompanies
+2016-06-20 15:32:25,048 INFO  BDCompania - *******************************************************
+2016-06-20 15:32:25,048 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:32:25,048 INFO  BDCompania - Mensaje: Entrada en el Método
+2016-06-20 15:32:25,048 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 15:32:25,061 INFO  BDCompania - *******************************************************
+2016-06-20 15:32:25,061 INFO  BDCompania - Clase: BDCompania
+2016-06-20 15:32:25,061 INFO  BDCompania - Mensaje: Salida del Método
+2016-06-20 15:32:25,061 INFO  BDCompania - Metodo: ConsultCompanies
+2016-06-20 17:27:53,798 INFO  DaoCompania - *******************************************************
+2016-06-20 17:27:53,805 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 17:27:53,805 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 17:27:53,805 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 18:15:00,937 INFO  DaoCompania - *******************************************************
+2016-06-20 18:15:00,937 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 18:15:00,937 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 18:15:00,937 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 18:57:21,298 INFO  DaoCompania - *******************************************************
+2016-06-20 18:57:21,303 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 18:57:21,303 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 18:57:21,303 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:05:22,428 INFO  DaoCompania - *******************************************************
+2016-06-20 19:05:22,428 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:05:22,428 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:05:22,428 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:25:21,337 INFO  DaoCompania - *******************************************************
+2016-06-20 19:25:21,345 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:25:21,345 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:25:21,346 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:25:32,175 INFO  DaoCompania - *******************************************************
+2016-06-20 19:25:32,175 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:25:32,175 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:25:32,175 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:35:06,594 INFO  DaoCompania - *******************************************************
+2016-06-20 19:35:06,600 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:35:06,600 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:35:06,600 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:43:30,118 INFO  DaoCompania - *******************************************************
+2016-06-20 19:43:30,124 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:43:30,124 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:43:30,124 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:43:42,356 INFO  DaoCompania - *******************************************************
+2016-06-20 19:43:42,356 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:43:42,356 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:43:42,356 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:50:25,116 INFO  DaoCompania - *******************************************************
+2016-06-20 19:50:25,126 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:50:25,126 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:50:25,126 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 19:50:38,031 INFO  DaoCompania - *******************************************************
+2016-06-20 19:50:38,031 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 19:50:38,031 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 19:50:38,031 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 20:02:29,945 INFO  DaoCompania - *******************************************************
+2016-06-20 20:02:29,954 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 20:02:29,954 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 20:02:29,954 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 20:02:58,415 INFO  DaoCompania - *******************************************************
+2016-06-20 20:02:58,415 INFO  DaoCompania - Clase: DaoCompania
+2016-06-20 20:02:58,415 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-20 20:02:58,415 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-20 20:03:01,485 INFO  ComandoConsultarFacturasCompania - *******************************************************
+2016-06-20 20:03:01,486 INFO  ComandoConsultarFacturasCompania - Clase: ComandoConsultarFacturasCompania
+2016-06-20 20:03:01,486 INFO  ComandoConsultarFacturasCompania - Mensaje: Entrada en el Método
+2016-06-20 20:03:01,486 INFO  ComandoConsultarFacturasCompania - Metodo: Ejecutar
+2016-06-20 20:03:01,584 INFO  DAOFactura - *******************************************************
+2016-06-20 20:03:01,584 INFO  DAOFactura - Clase: DAOFactura
+2016-06-20 20:03:01,585 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-20 20:03:01,585 INFO  DAOFactura - Metodo: ContactFacturasCompania
+2016-06-20 20:03:09,470 INFO  ComandoConsultarFacturasCompania - *******************************************************
+2016-06-20 20:03:09,470 INFO  ComandoConsultarFacturasCompania - Clase: ComandoConsultarFacturasCompania
+2016-06-20 20:03:09,470 INFO  ComandoConsultarFacturasCompania - Mensaje: Entrada en el Método
+2016-06-20 20:03:09,470 INFO  ComandoConsultarFacturasCompania - Metodo: Ejecutar
+2016-06-20 20:03:09,486 INFO  DAOFactura - *******************************************************
+2016-06-20 20:03:09,486 INFO  DAOFactura - Clase: DAOFactura
+2016-06-20 20:03:09,486 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-20 20:03:09,486 INFO  DAOFactura - Metodo: ContactFacturasCompania
+2016-06-22 12:53:10,581 INFO  DaoCompania - *******************************************************
+2016-06-22 12:53:10,587 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 12:53:10,587 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 12:53:10,587 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-22 12:53:31,236 INFO  DaoCompania - *******************************************************
+2016-06-22 12:53:31,236 INFO  DaoCompania - Clase: DaoCompania
+2016-06-22 12:53:31,236 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-22 12:53:31,236 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-22 12:53:45,213 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-22 12:53:45,213 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-22 12:53:45,213 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-22 12:53:45,213 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-22 12:53:45,614 ERROR DAOPago - *******************************************************
+2016-06-22 12:53:45,614 ERROR DAOPago - Mensaje: La cadena de entrada no tiene el formato correcto.
+2016-06-22 12:53:45,628 ERROR DAOPago - Origen: mscorlib
+2016-06-22 12:53:45,655 ERROR DAOPago - Metodo: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+2016-06-22 12:53:45,655 ERROR DAOPago - StackTrace:    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en DatosTangerine.DAO.M9.DAOPago.ConsultarPagosCompania(Entidad parametro) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M9\DAOPago.cs:línea 96
+2016-06-22 12:53:45,655 ERROR DAOPago - InnerException: 
+2016-06-22 12:53:45,676 ERROR ComandoConsultarPagos - *******************************************************
+2016-06-22 12:53:45,676 ERROR ComandoConsultarPagos - Mensaje: Error de parseo
+2016-06-22 12:53:45,677 ERROR ComandoConsultarPagos - Origen: DatosTangerine
+2016-06-22 12:53:45,677 ERROR ComandoConsultarPagos - Metodo: System.Collections.Generic.List`1[DominioTangerine.Entidad] ConsultarPagosCompania(DominioTangerine.Entidad)
+2016-06-22 12:53:45,677 ERROR ComandoConsultarPagos - StackTrace:    en DatosTangerine.DAO.M9.DAOPago.ConsultarPagosCompania(Entidad parametro) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M9\DAOPago.cs:línea 121
+   en LogicaTangerine.Comandos.M9.ComandoConsultarPagos.Ejecutar() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\LogicaTangerine\Comandos\M9\ComandoConsultarPagos.cs:línea 39
+2016-06-22 12:53:45,677 ERROR ComandoConsultarPagos - InnerException: System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Int32.Parse(String s)
+   en DatosTangerine.DAO.M9.DAOPago.ConsultarPagosCompania(Entidad parametro) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M9\DAOPago.cs:línea 96

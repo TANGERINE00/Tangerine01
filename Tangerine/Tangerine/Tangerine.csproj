@@ -192,6 +192,7 @@
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="GUI\M9\FacturasPagadas.aspx" />
     <Content Include="GUI\M9\FacturasPorPagar.aspx" />
+    <Content Include="GUI\M9\PagosPorCompania.aspx" />
     <Content Include="GUI\M9\SeleccionCompaniaPagadas.aspx" />
     <Content Include="GUI\M9\SeleccionCompania.aspx" />
     <Content Include="GUI\M9\CargarPago1.aspx" />
@@ -1352,6 +1353,13 @@
     </Compile>
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\PagosPorCompania.aspx.cs">
+      <DependentUpon>PagosPorCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\PagosPorCompania.aspx.designer.cs">
+      <DependentUpon>PagosPorCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M9\ResourceLogicaM9.Designer.cs">
       <AutoGen>True</AutoGen>

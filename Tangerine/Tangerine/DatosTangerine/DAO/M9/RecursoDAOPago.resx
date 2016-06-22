@@ -123,6 +123,24 @@
   <data name="CambiarStatus" xml:space="preserve">
     <value>M9_CambioStatus</value>
   </data>
+  <data name="ConsultarHistoricoPagos" xml:space="preserve">
+    <value>M9_HistoricoPagoCompania</value>
+  </data>
+  <data name="FacFechaEmision" xml:space="preserve">
+    <value>fac_fecha_emision</value>
+  </data>
+  <data name="FacIdFactura" xml:space="preserve">
+    <value>fac_id</value>
+  </data>
+  <data name="PagoFecha" xml:space="preserve">
+    <value>pag_fecha</value>
+  </data>
+  <data name="PagoMoneda" xml:space="preserve">
+    <value>pag_moneda</value>
+  </data>
+  <data name="PagoMonto" xml:space="preserve">
+    <value>pag_monto</value>
+  </data>
   <data name="ParamCod" xml:space="preserve">
     <value>@cod</value>
   </data>
@@ -131,6 +149,9 @@
   </data>
   <data name="ParamForma" xml:space="preserve">
     <value>@forma</value>
+  </data>
+  <data name="ParamIdCompania" xml:space="preserve">
+    <value>@id_compania</value>
   </data>
   <data name="ParamIdFactura" xml:space="preserve">
     <value>@id_factura</value>

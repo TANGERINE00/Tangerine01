@@ -11,6 +11,7 @@ using LogicaTangerine.Comandos.M10;
 using LogicaTangerine.Comandos.M8;
 using LogicaTangerine.Comandos.M3;
 using LogicaTangerine.Comandos.M5;
+using LogicaTangerine.Comandos.M9;
 
 namespace LogicaTangerine.Fabrica
 {
@@ -708,6 +709,15 @@ namespace LogicaTangerine.Fabrica
         public static Comandos.M9.ComandoAgregarPago cargarPago(Entidad entidad)
         {
             return new Comandos.M9.ComandoAgregarPago(entidad);
+        }
+        /// <summary>
+        /// metodo para crear comando que permite consultar todos los pagos de una compania
+        /// </summary>
+        /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> ConsultarPagosCompania(Entidad compania)
+        {
+            return new ComandoConsultarPagos(compania);
         }
 
         #endregion
