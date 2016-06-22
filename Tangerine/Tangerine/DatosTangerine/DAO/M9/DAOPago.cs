@@ -118,9 +118,10 @@ namespace DatosTangerine.DAO.M9
                     DateTime PagoFecha = DateTime.Parse(row[RecursoDAOPago.PagoFecha].ToString());
                     double PagoMonto = double.Parse(row[RecursoDAOPago.PagoMonto].ToString());
                     String PagoMoneda = row[RecursoDAOPago.PagoMoneda].ToString();
+                    int PagoCodAprob = int.Parse(row[RecursoDAOPago.PagoCod].ToString());
 
                     Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(facId, PagoFecha,
-                        PagoMonto, PagoMoneda);
+                        PagoMonto, PagoMoneda,PagoCodAprob);
 
                     listaPagos.Add(pago);
                 }

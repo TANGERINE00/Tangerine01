@@ -58,6 +58,7 @@
                             <th>Fecha de Pago</th>
                             <th>Monto</th>
                             <th>Moneda</th>
+                            <th>Codigo Aprobacion</th>
                         </tr>
                     </thead>
                     <tbody>
