@@ -61,11 +61,47 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M5_AgregarContacto.
+        /// </summary>
+        internal static string AddNewContact {
+            get {
+                return ResourceManager.GetString("AddNewContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_AgregarContactoProyecto.
+        /// </summary>
+        internal static string AddNewContactProy {
+            get {
+                return ResourceManager.GetString("AddNewContactProy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_AgregarEmpleado.
+        /// </summary>
+        internal static string AddNewEmpleado {
+            get {
+                return ResourceManager.GetString("AddNewEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_AgregarProyecto.
         /// </summary>
         internal static string AddNewProyecto {
             get {
                 return ResourceManager.GetString("AddNewProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_AgregarProyecto.
+        /// </summary>
+        internal static string AddNewProyecto1 {
+            get {
+                return ResourceManager.GetString("AddNewProyecto1", resourceCulture);
             }
         }
         
@@ -79,11 +115,38 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_AgregarProyectoContacto.
+        /// </summary>
+        internal static string AddNewProyectoContacto1 {
+            get {
+                return ResourceManager.GetString("AddNewProyectoContacto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_AgregarProyectoEmpleado.
         /// </summary>
         internal static string AddProyectoEmpleado {
             get {
                 return ResourceManager.GetString("AddProyectoEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_AgregarProyectoEmpleado.
+        /// </summary>
+        internal static string AddProyectoEmpleado1 {
+            get {
+                return ResourceManager.GetString("AddProyectoEmpleado1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ModificarContacto.
+        /// </summary>
+        internal static string ChangeContact {
+            get {
+                return ResourceManager.GetString("ChangeContact", resourceCulture);
             }
         }
         
@@ -97,11 +160,182 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ModificarProyecto.
+        /// </summary>
+        internal static string ChangeProyecto1 {
+            get {
+                return ResourceManager.GetString("ChangeProyecto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TGE_00_001.
+        /// </summary>
+        internal static string Codigo {
+            get {
+                return ResourceManager.GetString("Codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TGE_00_003.
+        /// </summary>
+        internal static string Codigo_Error_Desconexion {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Desconexion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TGE_00_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TGE_00_001.
+        /// </summary>
+        internal static string Codigo_Error_Formato1 {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Formato1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TGE_00_02.
+        /// </summary>
+        internal static string Codigo_Parametro_Errado {
+            get {
+                return ResourceManager.GetString("Codigo_Parametro_Errado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_departamento.
+        /// </summary>
+        internal static string ConDepartmentContact {
+            get {
+                return ResourceManager.GetString("ConDepartmentContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_correo.
+        /// </summary>
+        internal static string ConEmailContact {
+            get {
+                return ResourceManager.GetString("ConEmailContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_id_com_lead.
+        /// </summary>
+        internal static string ConIdComp {
+            get {
+                return ResourceManager.GetString("ConIdComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_id.
+        /// </summary>
+        internal static string ConIdContact {
+            get {
+                return ResourceManager.GetString("ConIdContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_apellido.
+        /// </summary>
+        internal static string ConLastNameContact {
+            get {
+                return ResourceManager.GetString("ConLastNameContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_nombre.
+        /// </summary>
+        internal static string ConNameContact {
+            get {
+                return ResourceManager.GetString("ConNameContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_telefono.
+        /// </summary>
+        internal static string ConPhoneContact {
+            get {
+                return ResourceManager.GetString("ConPhoneContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_cargo.
+        /// </summary>
+        internal static string ConRolContact {
+            get {
+                return ResourceManager.GetString("ConRolContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarEmpleado.
+        /// </summary>
+        internal static string ConsultarEmpleado {
+            get {
+                return ResourceManager.GetString("ConsultarEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarGerentes.
+        /// </summary>
+        internal static string ConsultarGerente {
+            get {
+                return ResourceManager.GetString("ConsultarGerente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_ConsultarProgramadores.
+        /// </summary>
+        internal static string ConsultarProgramadores {
+            get {
+                return ResourceManager.GetString("ConsultarProgramadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarMaxIdProyecto.
         /// </summary>
         internal static string ContacMaxIdProyecto {
             get {
                 return ResourceManager.GetString("ContacMaxIdProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarMaxIdProyecto.
+        /// </summary>
+        internal static string ContacMaxIdProyecto1 {
+            get {
+                return ResourceManager.GetString("ContacMaxIdProyecto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoCompania.
+        /// </summary>
+        internal static string ContactCompany {
+            get {
+                return ResourceManager.GetString("ContactCompany", resourceCulture);
             }
         }
         
@@ -115,11 +349,47 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarNombrePropuestaID.
+        /// </summary>
+        internal static string ContactNombrePropuestaID1 {
+            get {
+                return ResourceManager.GetString("ContactNombrePropuestaID1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoNoProyecto.
+        /// </summary>
+        internal static string ContactNoProyect {
+            get {
+                return ResourceManager.GetString("ContactNoProyect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoProyecto.
+        /// </summary>
+        internal static string ContactProyect {
+            get {
+                return ResourceManager.GetString("ContactProyect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarProyecto.
         /// </summary>
         internal static string ContactProyecto {
             get {
                 return ResourceManager.GetString("ContactProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyecto.
+        /// </summary>
+        internal static string ContactProyecto1 {
+            get {
+                return ResourceManager.GetString("ContactProyecto1", resourceCulture);
             }
         }
         
@@ -133,11 +403,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyectoContacto.
+        /// </summary>
+        internal static string ContactProyectoContacto1 {
+            get {
+                return ResourceManager.GetString("ContactProyectoContacto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarProyectoEmpleado.
         /// </summary>
         internal static string ContactProyectoEmpleado {
             get {
                 return ResourceManager.GetString("ContactProyectoEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyectoEmpleado.
+        /// </summary>
+        internal static string ContactProyectoEmpleado1 {
+            get {
+                return ResourceManager.GetString("ContactProyectoEmpleado1", resourceCulture);
             }
         }
         
@@ -151,11 +439,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyectoTrabajaEmpleado.
+        /// </summary>
+        internal static string ContactProyectoPorEmpleado1 {
+            get {
+                return ResourceManager.GetString("ContactProyectoPorEmpleado1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarProyectosPorGerente.
         /// </summary>
         internal static string ContactProyectoPorGerente {
             get {
                 return ResourceManager.GetString("ContactProyectoPorGerente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyectosPorGerente.
+        /// </summary>
+        internal static string ContactProyectoPorGerente1 {
+            get {
+                return ResourceManager.GetString("ContactProyectoPorGerente1", resourceCulture);
             }
         }
         
@@ -169,11 +475,56 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarProyectos.
+        /// </summary>
+        internal static string ContactProyectos1 {
+            get {
+                return ResourceManager.GetString("ContactProyectos1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_ConsultarAcuerdoPagoMensual.
         /// </summary>
         internal static string ContactProyectosxAcuerdoPago {
             get {
                 return ResourceManager.GetString("ContactProyectosxAcuerdoPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarAcuerdoPagoMensual.
+        /// </summary>
+        internal static string ContactProyectosxAcuerdoPago1 {
+            get {
+                return ResourceManager.GetString("ContactProyectosxAcuerdoPago1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to con_tipo_emp.
+        /// </summary>
+        internal static string ConTypeComp {
+            get {
+                return ResourceManager.GetString("ConTypeComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_EliminarContacto.
+        /// </summary>
+        internal static string DeleteContact {
+            get {
+                return ResourceManager.GetString("DeleteContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_EliminarContactoProyecto.
+        /// </summary>
+        internal static string DeleteContactProyect {
+            get {
+                return ResourceManager.GetString("DeleteContactProyect", resourceCulture);
             }
         }
         
@@ -187,11 +538,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_EliminarProyecto.
+        /// </summary>
+        internal static string DeleteProyecto1 {
+            get {
+                return ResourceManager.GetString("DeleteProyecto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_EliminarProyectoContacto.
         /// </summary>
         internal static string DeleteProyectoContacto {
             get {
                 return ResourceManager.GetString("DeleteProyectoContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_EliminarProyectoContacto.
+        /// </summary>
+        internal static string DeleteProyectoContacto1 {
+            get {
+                return ResourceManager.GetString("DeleteProyectoContacto1", resourceCulture);
             }
         }
         
@@ -205,11 +574,470 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_EliminarProyectoEmpleado.
+        /// </summary>
+        internal static string DeleteProyectoEmpleado1 {
+            get {
+                return ResourceManager.GetString("DeleteProyectoEmpleado1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_DetallarEmpleado.
+        /// </summary>
+        internal static string DetallarEmpleado {
+            get {
+                return ResourceManager.GetString("DetallarEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_activo.
+        /// </summary>
+        internal static string EmpActivo {
+            get {
+                return ResourceManager.GetString("EmpActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_nombre.
+        /// </summary>
+        internal static string EmpCargo {
+            get {
+                return ResourceManager.GetString("EmpCargo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_descripcion.
+        /// </summary>
+        internal static string EmpCargoDescripcion {
+            get {
+                return ResourceManager.GetString("EmpCargoDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_cedula.
+        /// </summary>
+        internal static string EmpCedula {
+            get {
+                return ResourceManager.GetString("EmpCedula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EmpDireccion.
+        /// </summary>
+        internal static string EmpDireccion {
+            get {
+                return ResourceManager.GetString("EmpDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_email.
+        /// </summary>
+        internal static string EmpEmail {
+            get {
+                return ResourceManager.GetString("EmpEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_nivel_estudio.
+        /// </summary>
+        internal static string EmpEstudio {
+            get {
+                return ResourceManager.GetString("EmpEstudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_fecha_nac.
+        /// </summary>
+        internal static string EmpFecha {
+            get {
+                return ResourceManager.GetString("EmpFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_fecha_fin.
+        /// </summary>
+        internal static string EmpFechaFin {
+            get {
+                return ResourceManager.GetString("EmpFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_fecha_cont.
+        /// </summary>
+        internal static string EmpFechaInicio {
+            get {
+                return ResourceManager.GetString("EmpFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_genero.
+        /// </summary>
+        internal static string EmpGenero {
+            get {
+                return ResourceManager.GetString("EmpGenero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_num_ficha.
+        /// </summary>
+        internal static string EmpIdEmpleado {
+            get {
+                return ResourceManager.GetString("EmpIdEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_lug_dir_id.
+        /// </summary>
+        internal static string EmpLugId {
+            get {
+                return ResourceManager.GetString("EmpLugId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_modalidad.
+        /// </summary>
+        internal static string EmpModalidad {
+            get {
+                return ResourceManager.GetString("EmpModalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_p_apellido.
+        /// </summary>
+        internal static string EmpPApellido {
+            get {
+                return ResourceManager.GetString("EmpPApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_p_nombre.
+        /// </summary>
+        internal static string EmpPNombre {
+            get {
+                return ResourceManager.GetString("EmpPNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_s_apellido.
+        /// </summary>
+        internal static string EmpSApellido {
+            get {
+                return ResourceManager.GetString("EmpSApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emp_s_nombre.
+        /// </summary>
+        internal static string EmpSNombre {
+            get {
+                return ResourceManager.GetString("EmpSNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_emp_sueldo.
+        /// </summary>
+        internal static string EmpSueldo {
+            get {
+                return ResourceManager.GetString("EmpSueldo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_CambiarEstatus.
+        /// </summary>
+        internal static string EstatusEmpleado {
+            get {
+                return ResourceManager.GetString("EstatusEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LLenarSelectPaises.
+        /// </summary>
+        internal static string FillSelectCountry {
+            get {
+                return ResourceManager.GetString("FillSelectCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LLenarSelectPaises.
+        /// </summary>
+        internal static string FillSelectCountry1 {
+            get {
+                return ResourceManager.GetString("FillSelectCountry1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LlenarSelectCargo.
+        /// </summary>
+        internal static string FillSelectJobs {
+            get {
+                return ResourceManager.GetString("FillSelectJobs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LLenarSelectEstados.
+        /// </summary>
+        internal static string FillSelectState {
+            get {
+                return ResourceManager.GetString("FillSelectState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M10_LLenarSelectEstados.
+        /// </summary>
+        internal static string FillSelectState1 {
+            get {
+                return ResourceManager.GetString("FillSelectState1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_nombre.
+        /// </summary>
+        internal static string ItemCountryText {
+            get {
+                return ResourceManager.GetString("ItemCountryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_nombre.
+        /// </summary>
+        internal static string ItemCountryText1 {
+            get {
+                return ResourceManager.GetString("ItemCountryText1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_id.
+        /// </summary>
+        internal static string ItemCountryValue {
+            get {
+                return ResourceManager.GetString("ItemCountryValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_id.
+        /// </summary>
+        internal static string ItemCountryValue1 {
+            get {
+                return ResourceManager.GetString("ItemCountryValue1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_nombre.
+        /// </summary>
+        internal static string ItemJobText {
+            get {
+                return ResourceManager.GetString("ItemJobText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_id.
+        /// </summary>
+        internal static string ItemJobValue {
+            get {
+                return ResourceManager.GetString("ItemJobValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_nombre.
+        /// </summary>
+        internal static string ItemStateText {
+            get {
+                return ResourceManager.GetString("ItemStateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lug_dir_id.
+        /// </summary>
+        internal static string ItemStateValue {
+            get {
+                return ResourceManager.GetString("ItemStateValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to car_descripcion.
+        /// </summary>
+        internal static string JobDescription {
+            get {
+                return ResourceManager.GetString("JobDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error con la Conexion en la Base de Datos, no se pudo abrir la conexion.
+        /// </summary>
+        internal static string Mensaje {
+            get {
+                return ResourceManager.GetString("Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al Desconectarse de la Base de Datos.
+        /// </summary>
+        internal static string Mensaje_Error_Desconexion {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Desconexion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string Mensaje_Error_Formato {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo de datos.
+        /// </summary>
+        internal static string Mensaje_Error_Formato1 {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Formato1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No se pudo completar la operacion.
+        /// </summary>
+        internal static string Mensaje_Generico_Error {
+            get {
+                return ResourceManager.GetString("Mensaje_Generico_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error en un parametro del stored procedure.
+        /// </summary>
+        internal static string Mensaje_Parametro_Errado {
+            get {
+                return ResourceManager.GetString("Mensaje_Parametro_Errado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger1 {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger1 {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BDTangerine.
+        /// </summary>
+        internal static string NombreBD {
+            get {
+                return ResourceManager.GetString("NombreBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M1_ObtenerCorreoUsuario.
+        /// </summary>
+        internal static string ObtenerCorreoUsuario {
+            get {
+                return ResourceManager.GetString("ObtenerCorreoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @activo.
+        /// </summary>
+        internal static string ParamActivo {
+            get {
+                return ResourceManager.GetString("ParamActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @AcuerdoPago.
         /// </summary>
         internal static string ParamAcuerdoPago {
             get {
                 return ResourceManager.GetString("ParamAcuerdoPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @AcuerdoPago.
+        /// </summary>
+        internal static string ParamAcuerdoPago1 {
+            get {
+                return ResourceManager.GetString("ParamAcuerdoPago1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cedula.
+        /// </summary>
+        internal static string ParamCedula {
+            get {
+                return ResourceManager.GetString("ParamCedula", resourceCulture);
             }
         }
         
@@ -223,11 +1051,47 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @Codigo.
+        /// </summary>
+        internal static string ParamCodigo1 {
+            get {
+                return ResourceManager.GetString("ParamCodigo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @Costo.
         /// </summary>
         internal static string ParamCosto {
             get {
                 return ResourceManager.GetString("ParamCosto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @Costo.
+        /// </summary>
+        internal static string ParamCosto1 {
+            get {
+                return ResourceManager.GetString("ParamCosto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @prueba.
+        /// </summary>
+        internal static string ParamCPrueba {
+            get {
+                return ResourceManager.GetString("ParamCPrueba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @departamento.
+        /// </summary>
+        internal static string ParamDepa {
+            get {
+                return ResourceManager.GetString("ParamDepa", resourceCulture);
             }
         }
         
@@ -241,11 +1105,65 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @Descripcion.
+        /// </summary>
+        internal static string ParamDescripcion1 {
+            get {
+                return ResourceManager.GetString("ParamDescripcion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @direccion.
+        /// </summary>
+        internal static string ParamDireccion {
+            get {
+                return ResourceManager.GetString("ParamDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @correo.
+        /// </summary>
+        internal static string ParamEmail {
+            get {
+                return ResourceManager.GetString("ParamEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @email.
+        /// </summary>
+        internal static string ParamEmail1 {
+            get {
+                return ResourceManager.GetString("ParamEmail1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @estado.
+        /// </summary>
+        internal static string ParamEstado {
+            get {
+                return ResourceManager.GetString("ParamEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @Estatus.
         /// </summary>
         internal static string ParamEstatus {
             get {
                 return ResourceManager.GetString("ParamEstatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @Estatus.
+        /// </summary>
+        internal static string ParamEstatus1 {
+            get {
+                return ResourceManager.GetString("ParamEstatus1", resourceCulture);
             }
         }
         
@@ -259,11 +1177,65 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @FechaEstFin.
+        /// </summary>
+        internal static string ParamFechaEstFin1 {
+            get {
+                return ResourceManager.GetString("ParamFechaEstFin1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @FechaInicio.
         /// </summary>
         internal static string ParamFechaInicio {
             get {
                 return ResourceManager.GetString("ParamFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @FechaInicio.
+        /// </summary>
+        internal static string ParamFechaInicio1 {
+            get {
+                return ResourceManager.GetString("ParamFechaInicio1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @fecha_nac.
+        /// </summary>
+        internal static string ParamFechaNac {
+            get {
+                return ResourceManager.GetString("ParamFechaNac", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ficha.
+        /// </summary>
+        internal static string ParamFicha {
+            get {
+                return ResourceManager.GetString("ParamFicha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @genero.
+        /// </summary>
+        internal static string ParamGenero {
+            get {
+                return ResourceManager.GetString("ParamGenero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id.
+        /// </summary>
+        internal static string ParamId {
+            get {
+                return ResourceManager.GetString("ParamId", resourceCulture);
             }
         }
         
@@ -277,11 +1249,47 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @IdProyecto.
+        /// </summary>
+        internal static string ParamId_Proyecto1 {
+            get {
+                return ResourceManager.GetString("ParamId_Proyecto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_empresa.
+        /// </summary>
+        internal static string ParamIdComp {
+            get {
+                return ResourceManager.GetString("ParamIdComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @IdCompania.
         /// </summary>
         internal static string ParamIdCompania {
             get {
                 return ResourceManager.GetString("ParamIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @IdCompania.
+        /// </summary>
+        internal static string ParamIdCompania1 {
+            get {
+                return ResourceManager.GetString("ParamIdCompania1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_contacto.
+        /// </summary>
+        internal static string ParamIdContact {
+            get {
+                return ResourceManager.GetString("ParamIdContact", resourceCulture);
             }
         }
         
@@ -295,11 +1303,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @IdGerente.
+        /// </summary>
+        internal static string ParamIdGerente1 {
+            get {
+                return ResourceManager.GetString("ParamIdGerente1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @IdPropuesta.
         /// </summary>
         internal static string ParamIdPropuesta {
             get {
                 return ResourceManager.GetString("ParamIdPropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @IdPropuesta.
+        /// </summary>
+        internal static string ParamIdPropuesta1 {
+            get {
+                return ResourceManager.GetString("ParamIdPropuesta1", resourceCulture);
             }
         }
         
@@ -313,11 +1339,83 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @IdPropuestaPrpu.
+        /// </summary>
+        internal static string ParamIdPropuestaPrpu1 {
+            get {
+                return ResourceManager.GetString("ParamIdPropuestaPrpu1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @id_proyecto.
+        /// </summary>
+        internal static string ParamIdProy {
+            get {
+                return ResourceManager.GetString("ParamIdProy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @apellido.
+        /// </summary>
+        internal static string ParamLName {
+            get {
+                return ResourceManager.GetString("ParamLName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nombre.
+        /// </summary>
+        internal static string ParamName {
+            get {
+                return ResourceManager.GetString("ParamName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @nivel_estudio.
+        /// </summary>
+        internal static string ParamNivelEstudio {
+            get {
+                return ResourceManager.GetString("ParamNivelEstudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @Nombre.
         /// </summary>
         internal static string ParamNombre {
             get {
                 return ResourceManager.GetString("ParamNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @Nombre.
+        /// </summary>
+        internal static string ParamNombre1 {
+            get {
+                return ResourceManager.GetString("ParamNombre1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @pais.
+        /// </summary>
+        internal static string ParamPais {
+            get {
+                return ResourceManager.GetString("ParamPais", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @p_apellido.
+        /// </summary>
+        internal static string ParamPApellido {
+            get {
+                return ResourceManager.GetString("ParamPApellido", resourceCulture);
             }
         }
         
@@ -331,11 +1429,38 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @PCIdContacto.
+        /// </summary>
+        internal static string ParamPCIdContacto1 {
+            get {
+                return ResourceManager.GetString("ParamPCIdContacto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @PEIdEmpleado.
         /// </summary>
         internal static string ParamPEIdEmpleado {
             get {
                 return ResourceManager.GetString("ParamPEIdEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @PEIdEmpleado.
+        /// </summary>
+        internal static string ParamPEIdEmpleado1 {
+            get {
+                return ResourceManager.GetString("ParamPEIdEmpleado1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @p_nombre.
+        /// </summary>
+        internal static string ParamPNombre {
+            get {
+                return ResourceManager.GetString("ParamPNombre", resourceCulture);
             }
         }
         
@@ -349,11 +1474,74 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @Razon.
+        /// </summary>
+        internal static string ParamRazon1 {
+            get {
+                return ResourceManager.GetString("ParamRazon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @Realizacion.
         /// </summary>
         internal static string ParamRealizacion {
             get {
                 return ResourceManager.GetString("ParamRealizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @Realizacion.
+        /// </summary>
+        internal static string ParamRealizacion1 {
+            get {
+                return ResourceManager.GetString("ParamRealizacion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @cargo.
+        /// </summary>
+        internal static string ParamRol {
+            get {
+                return ResourceManager.GetString("ParamRol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @s_apellido.
+        /// </summary>
+        internal static string ParamSApellido {
+            get {
+                return ResourceManager.GetString("ParamSApellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @s_nombre.
+        /// </summary>
+        internal static string ParamSNombre {
+            get {
+                return ResourceManager.GetString("ParamSNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @tipo_comp.
+        /// </summary>
+        internal static string ParamTComp {
+            get {
+                return ResourceManager.GetString("ParamTComp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @telefono.
+        /// </summary>
+        internal static string ParamTele {
+            get {
+                return ResourceManager.GetString("ParamTele", resourceCulture);
             }
         }
         
@@ -367,11 +1555,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fk_con_id.
+        /// </summary>
+        internal static string PCIdContacto1 {
+            get {
+                return ResourceManager.GetString("PCIdContacto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fk_emp_num_ficha.
         /// </summary>
         internal static string PEIdEmpleado {
             get {
                 return ResourceManager.GetString("PEIdEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_emp_num_ficha.
+        /// </summary>
+        internal static string PEIdEmpleado1 {
+            get {
+                return ResourceManager.GetString("PEIdEmpleado1", resourceCulture);
             }
         }
         
@@ -385,11 +1591,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_acuerdo_pago.
+        /// </summary>
+        internal static string ProyAcuerdoPago1 {
+            get {
+                return ResourceManager.GetString("ProyAcuerdoPago1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to proy_codigo.
         /// </summary>
         internal static string ProyCodigo {
             get {
                 return ResourceManager.GetString("ProyCodigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to proy_codigo.
+        /// </summary>
+        internal static string ProyCodigo1 {
+            get {
+                return ResourceManager.GetString("ProyCodigo1", resourceCulture);
             }
         }
         
@@ -403,11 +1627,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_costo.
+        /// </summary>
+        internal static string ProyCosto1 {
+            get {
+                return ResourceManager.GetString("ProyCosto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to proy_descripcion.
         /// </summary>
         internal static string ProyDescripcion {
             get {
                 return ResourceManager.GetString("ProyDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to proy_descripcion.
+        /// </summary>
+        internal static string ProyDescripcion1 {
+            get {
+                return ResourceManager.GetString("ProyDescripcion1", resourceCulture);
             }
         }
         
@@ -421,11 +1663,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_estatus.
+        /// </summary>
+        internal static string ProyEstatus1 {
+            get {
+                return ResourceManager.GetString("ProyEstatus1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to proy_fecha_est_fin.
         /// </summary>
         internal static string ProyFechaEstFin {
             get {
                 return ResourceManager.GetString("ProyFechaEstFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to proy_fecha_est_fin.
+        /// </summary>
+        internal static string ProyFechaEstFin1 {
+            get {
+                return ResourceManager.GetString("ProyFechaEstFin1", resourceCulture);
             }
         }
         
@@ -439,11 +1699,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_fecha_inicio.
+        /// </summary>
+        internal static string ProyFechaInicio1 {
+            get {
+                return ResourceManager.GetString("ProyFechaInicio1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fk_com_id.
         /// </summary>
         internal static string ProyIdCompania {
             get {
                 return ResourceManager.GetString("ProyIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_com_id.
+        /// </summary>
+        internal static string ProyIdCompania1 {
+            get {
+                return ResourceManager.GetString("ProyIdCompania1", resourceCulture);
             }
         }
         
@@ -457,11 +1735,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fk_gerente_id.
+        /// </summary>
+        internal static string ProyIdGerente1 {
+            get {
+                return ResourceManager.GetString("ProyIdGerente1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fk_propuesta_id.
         /// </summary>
         internal static string ProyIdPropuesta {
             get {
                 return ResourceManager.GetString("ProyIdPropuesta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_propuesta_id.
+        /// </summary>
+        internal static string ProyIdPropuesta1 {
+            get {
+                return ResourceManager.GetString("ProyIdPropuesta1", resourceCulture);
             }
         }
         
@@ -475,11 +1771,29 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_id.
+        /// </summary>
+        internal static string ProyIdProyecto1 {
+            get {
+                return ResourceManager.GetString("ProyIdProyecto1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to proy_nombre.
         /// </summary>
         internal static string ProyNombre {
             get {
                 return ResourceManager.GetString("ProyNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to proy_nombre.
+        /// </summary>
+        internal static string ProyNombre1 {
+            get {
+                return ResourceManager.GetString("ProyNombre1", resourceCulture);
             }
         }
         
@@ -493,6 +1807,15 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_razon.
+        /// </summary>
+        internal static string ProyRazon1 {
+            get {
+                return ResourceManager.GetString("ProyRazon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to proy_realizacion.
         /// </summary>
         internal static string ProyRealizacion {
@@ -502,11 +1825,83 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to proy_realizacion.
+        /// </summary>
+        internal static string ProyRealizacion1 {
+            get {
+                return ResourceManager.GetString("ProyRealizacion1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to prop_nombre.
         /// </summary>
         internal static string PrpuNombre {
             get {
                 return ResourceManager.GetString("PrpuNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prop_nombre.
+        /// </summary>
+        internal static string PrpuNombre1 {
+            get {
+                return ResourceManager.GetString("PrpuNombre1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ConsultarContactoId.
+        /// </summary>
+        internal static string SingleContact {
+            get {
+                return ResourceManager.GetString("SingleContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to data source=PAULMERAND; Initial Catalog=BDTangerine; Integrated Security=True.
+        /// </summary>
+        internal static string StringDeConexion {
+            get {
+                return ResourceManager.GetString("StringDeConexion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to usu_activo.
+        /// </summary>
+        internal static string UsuActivo {
+            get {
+                return ResourceManager.GetString("UsuActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_emp_num_ficha.
+        /// </summary>
+        internal static string UsuEmpFicha {
+            get {
+                return ResourceManager.GetString("UsuEmpFicha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ResourceEmpleado.
+        /// </summary>
+        internal static string UsuFechaCreacion {
+            get {
+                return ResourceManager.GetString("UsuFechaCreacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_rol_id.
+        /// </summary>
+        internal static string UsuFKRol {
+            get {
+                return ResourceManager.GetString("UsuFKRol", resourceCulture);
             }
         }
     }

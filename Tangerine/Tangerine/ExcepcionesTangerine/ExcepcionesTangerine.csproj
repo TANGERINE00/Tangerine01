@@ -54,7 +54,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="M1\" />
-    <Folder Include="M7\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +88,7 @@
     <Compile Include="M6\FormatoIncorrectoException.cs" />
     <Compile Include="M6\ListaSinPropuestaException.cs" />
     <Compile Include="M6\PropuestaSinCodigoException.cs" />
+    <Compile Include="M7\ExceptionM7Tangerine.cs" />
     <Compile Include="M8\ExceptionDataBase.cs" />
     <Compile Include="M8\NotArgumentException.cs" />
     <Compile Include="M8\WrongFormatException.cs" />
