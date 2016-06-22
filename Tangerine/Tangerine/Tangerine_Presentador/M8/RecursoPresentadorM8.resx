@@ -300,4 +300,16 @@
   <data name="TipoFecha" xml:space="preserve">
     <value>dd/mm/yyyy</value>
   </data>
+  <data name="MontoTotal" xml:space="preserve">
+    <value>TOTAL :</value>
+  </data>
+  <data name="BS" xml:space="preserve">
+    <value>Bs</value>
+  </data>
+  <data name="Dolar" xml:space="preserve">
+    <value>$</value>
+  </data>
+  <data name="Euro" xml:space="preserve">
+    <value>€</value>
+  </data>
 </root>

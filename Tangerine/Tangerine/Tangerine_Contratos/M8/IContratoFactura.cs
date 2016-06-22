@@ -9,13 +9,15 @@ namespace Tangerine_Contratos.M8
 {
     public interface IContratoFactura
     {
-        string textNumeroFactura { get; set; }
-        string textFecha { get; set; }
-        string textDescripcion { get; set; }
-        string textCliente { get; set; }
-        string textProyecto { get; set; }
-        string textMonto { get; set; }
-        string textTipoMoneda { get; set; }
+        string textNumeroFactura { get;  set; }
+        string textFecha { set; }
+        string textDescripcion { set; }
+        string textCliente { set; }
+        string textProyecto { set; }
+        string textMonto { set; }
+        string textRif { set; }
+        string textDireccion { set; }
+        string textTipoMoneda { set; }
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }

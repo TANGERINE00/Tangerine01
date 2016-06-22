@@ -6,15 +6,70 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-//using LogicaTangerine.M8;
 using LogicaTangerine.M4;
 using LogicaTangerine.M7;
+using Tangerine_Presentador.M8;
+using Tangerine_Contratos.M8;
 
 
 namespace Tangerine.GUI.M8
 {
-    public partial class GenerarFacturaM8 : System.Web.UI.Page
+    public partial class GenerarFacturaM8 : System.Web.UI.Page, IContratoGenerarFactura
     {
+
+        #region Implementacion de Contrato
+
+        public string fecha
+        {
+            get { return this.textFecha_M8.Value; }
+            set { this.textFecha_M8.Value = value; }
+        }
+        public string compania
+        {
+            get { return this.textCompania_M8.Value; }
+            set { this.textCompania_M8.Value = value; }
+        }
+        public string proyecto
+        {
+            get { return this.textProyecto_M8.Value; }
+            set { this.textProyecto_M8.Value = value; }
+        }
+        public string descripcion
+        {
+            get { return this.textDescripcion_M8.Value; }
+            set { this.textDescripcion_M8.Value = value; }
+        }
+        public string monto
+        {
+            get { return this.textMonto_M8.Value; }
+            set { this.textMonto_M8.Value = value; }
+        }
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM8.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+        #endregion
+
+        #region Constructor
+        PresentadorGenerarFactura _presentador;
+
+        public GenerarFacturaM8()
+        {
+            _presentador = new PresentadorGenerarFactura(this);
+        }
+
+        #endregion
+
         DateTime _fechaEmision = DateTime.Now;
         DateTime _fechaUltimoPago = DateTime.Now;
         static int _montoTotal = 0;
@@ -26,22 +81,21 @@ namespace Tangerine.GUI.M8
         static int _companiaId = 0;
         LogicaM4 logicaCompania = new LogicaM4();
         LogicaProyecto logicaProyecto = new LogicaProyecto();
-        Proyecto proyecto = new Proyecto();
-        Compania compania = new Compania();
+        //Proyecto proyecto = new Proyecto();
+        //Compania compania = new Compania();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-                int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
-                int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
-                textFecha_M8.Value = DateTime.Now.ToString("dd/MM/yyyy");
-                textMonto_M8.Value = int.Parse(Request.QueryString["Monto"]).ToString();
-                compania = logicaCompania.ConsultCompany(_companiaId);
-                textCompania_M8.Value = compania.NombreCompania;
-                proyecto = logicaProyecto.consultarProyecto(_proyectoId);
-                textProyecto_M8.Value = proyecto.Nombre;
-            
-
+            this.compania = Request.QueryString[ResourceGUIM8.idC];
+            this.proyecto = Request.QueryString[ResourceGUIM8.idP];
+            this.fecha = DateTime.Now.ToString(ResourceGUIM8.dateTipe);
+            this.monto = Request.QueryString[ResourceGUIM8.amount];
+            this.
+            _presentador.llenarGenerar();/*
+            compania = logicaCompania.ConsultCompany(_companiaId);
+            textCompania_M8.Value = compania.NombreCompania;
+            proyecto = logicaProyecto.consultarProyecto(_proyectoId);
+            textProyecto_M8.Value = proyecto.Nombre;*/
         }
 
         /// <summary>
@@ -51,13 +105,17 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
-           /* if (textDescripcion_M8.Value.Equals(""))
-            {
-                string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
-            }
-            else
-            {*/
+            this.compania = Request.QueryString[ResourceGUIM8.idC];
+            this.proyecto = Request.QueryString[ResourceGUIM8.idP];
+            _presentador.GenerarFactura();
+            Response.Redirect(ResourceGUIM8.volverModificado);
+            /* if (textDescripcion_M8.Value.Equals(""))
+             {
+                 string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
+                 ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
+             }
+             else
+             {*/
 
             //    _Descripcion = textDescripcion_M8.Value;
             //    _fechaEmision = DateTime.Parse(textFecha_M8.Value);
