@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 using Tangerine_Contratos.M9;
 using DominioTangerine;
 using LogicaTangerine;
+using ExcepcionesTangerine.M9;
+using System.Windows.Forms;
 
 namespace Tangerine_Presentador.M9
 {
-   public class PresentadorCargarPago
+    /// <summary>
+    /// Constructor del Presentador para implementar en GUI
+    /// </summary>
+    /// <param name="vista">Interfaz del Contrato con firma de metodos utilizados por el Presentador</param>
+    public class PresentadorCargarPago
     {
         IContratoCargarPago vista;
 
@@ -18,11 +24,18 @@ namespace Tangerine_Presentador.M9
             this.vista = vista;
         }
     
+       /// <summary>
+       /// Metodo para llenar los campos para Agregar un pago
+       /// </summary>
+       /// <param name="numeroFactura">Entero, representa el Id de la factura que se va a pagar</param>
    public void LlenarPorId (int numeroFactura)
         {
-            DominioTangerine.Entidades.M8.Facturacion fact =
+
+            try
+            {
+                DominioTangerine.Entidades.M8.Facturacion fact =
                     (DominioTangerine.Entidades.M8.Facturacion)DominioTangerine.Fabrica.FabricaEntidades.ObtenerFacturacion();
-            fact.Id = numeroFactura;
+                fact.Id = numeroFactura;
 
             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarXIdFactura(fact);
             Entidad facturaPagar = comando.Ejecutar();
@@ -35,37 +48,51 @@ namespace Tangerine_Presentador.M9
             Comando<Entidad> comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compania);
             Entidad companiaPagar = comandoCompania.Ejecutar();
 
-            try
-            {
+
                 vista.cliente = ((DominioTangerine.Entidades.M4.CompaniaM4)companiaPagar).NombreCompania;
                 vista.proyecto = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).descripcionFactura;
                 vista.monto = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).montoFactura.ToString();
                 vista.moneda = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).tipoMoneda;
                 vista.numero = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).Id.ToString();
             }
-            catch
+            catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)
             {
-
+                MessageBox.Show("Error en la conexion a la Base de Datos","Error de Conexion",
+                    MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
 
         }
 
+      /// <summary>
+      /// Metodo para agregar un pago y cambiar status de una factura
+      /// </summary>
        public void AgregarPago()
    {
 
-       int _idFactura = int.Parse(vista.numero.ToString());
-       int _monto = int.Parse(vista.monto);
-       string _moneda = vista.moneda.ToString();
-       string _forma = vista.formPago;
-       int _codApro = int.Parse(vista.codAprob);
-       DateTime _fecha = DateTime.Today;
+       try
+       {
+           int _idFactura = int.Parse(vista.numero.ToString());
+           int _monto = int.Parse(vista.monto);
+           string _moneda = vista.moneda.ToString();
+           string _forma = vista.formPago;
+           int _codApro = int.Parse(vista.codAprob);
+           DateTime _fecha = DateTime.Today;
 
-       Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(_moneda, _monto, _forma, _codApro,_fecha, _idFactura);
+           Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(_moneda, _monto, _forma, 
+               _codApro, _fecha, _idFactura);
 
-       LogicaTangerine.Comandos.M9.ComandoAgregarPago comando = LogicaTangerine.Fabrica.FabricaComandos.cargarPago(pago);
+           LogicaTangerine.Comandos.M9.ComandoAgregarPago comando = LogicaTangerine.Fabrica.FabricaComandos.cargarPago(pago);
 
-       comando.Ejecutar();
+           comando.Ejecutar();
+       }
+
+       catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)
+       {
+           MessageBox.Show("Error en la conexion a la Base de Datos", "Error de Conexion",
+               MessageBoxButtons.OK, MessageBoxIcon.Error);
+       }
+
 
    }
    

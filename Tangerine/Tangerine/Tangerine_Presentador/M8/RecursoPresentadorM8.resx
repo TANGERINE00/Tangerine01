@@ -273,7 +273,25 @@
   <data name="PropuestaAprovada" xml:space="preserve">
     <value>Propuesta:</value>
   </data>
-  <data name="Value" xml:space="preserve">
-    <value>Value</value>
+  <data name="dateTipe" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="alertaModificado" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="MsjModificado" xml:space="preserve">
+    <value>La factura ha sido modificada</value>
   </data>
 </root>

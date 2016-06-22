@@ -19,6 +19,25 @@ namespace Tangerine_Presentador.M8
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta(string msj)
+        {
+            if (msj == "1")
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            else
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+        }
+
         public void cargarConsultarFacturas()
         {
             bool pagada = false;
@@ -38,7 +57,7 @@ namespace Tangerine_Presentador.M8
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).idCompaniaFactura.ToString() + RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).idProyectoFactura.ToString() + RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).descripcionFactura.ToString() + RecursoPresentadorM8.CloseTd;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).fechaFactura.ToString("dd/MM/yyyy") + RecursoPresentadorM8.CloseTd;
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).fechaFactura.ToString(RecursoPresentadorM8.dateTipe) + RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).tipoMoneda.ToString() + RecursoPresentadorM8.CloseTd;
                     //Equals cero para factura "Por Pagar"
                     if (((DominioTangerine.Entidades.M8.Facturacion)laFactura).estatusFactura.Equals(0))

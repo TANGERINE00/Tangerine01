@@ -45,9 +45,58 @@ namespace DatosTangerine.DAO.M10
         /// <param name="empleadoId"></param>
         /// <returns></returns>
 
-        public bool CambiarEstatus(int empleadoId)
+        public bool CambiarEstatus(Entidad empleado)
         {
-            throw new NotImplementedException();
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+           
+            try
+            {
+
+                parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar,
+                              ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false));
+
+                List<Resultado> results = EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
         }
 
         public bool Agregar(DominioTangerine.Entidad parametro)
@@ -110,11 +159,13 @@ namespace DatosTangerine.DAO.M10
                     String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                     String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoXid(empCargo, empSalario,
+                                              empFechaInicio,empFechaFin);
 
                     empleadoFinal = DominioTangerine.Fabrica.FabricaEntidades.ListarEmpleadoId(empId, empPNombre,
                                                     empSNombre, empPApellido, empSApellido,
                                                     empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                    empEmailEmployee, empLugId, empCargo, empSalario, empFechaInicio,
+                                                    empEmailEmployee, empLugId, cargoEmpleado, empSalario, empFechaInicio,
                                                     empFechaFin, empDireccion);
     
             }

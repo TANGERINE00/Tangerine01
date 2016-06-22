@@ -27,27 +27,11 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override bool Ejecutar()
         {
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                                 RecursoComandosM5.MensajeInicioInfoLogger,
-                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
-
             bool respuesta = false;
 
-            try 
-            {
-                IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-                respuesta = daoContacto.Eliminar( _laEntidad );
-            }
-            catch ( Exception ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                return respuesta;
-            }
-
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                                 RecursoComandosM5.MensajeFinInfoLogger,
-                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
-
+            IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
+            respuesta = daoContacto.Eliminar( _laEntidad );
+            
             return respuesta;
         }
     }

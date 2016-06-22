@@ -227,7 +227,25 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia sin atributos de ListaGenericaM2
             /// </summary>
-            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos de tipo MenuM2</returns>
+            static public Entidad crearListaGenericaVaciaMenu()
+            {
+                return new ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>();
+            }
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos de tipo OpcionM2</returns>
+            static public Entidad crearListaGenericaVaciaOpcion()
+            {
+                return new ListaGenericaM2<DominioTangerine.Entidades.M2.OpcionM2>();
+            }
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos de tipo Entidad</returns>
             static public Entidad crearListaGenericaVacia()
             {
                 return new ListaGenericaM2<Entidad>();
@@ -238,7 +256,7 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 3
-            #region Metodos para instanciar Cliente Potencial
+            #region Metodo para instanciar Cliente Potencial
             public static Entidad ObtenerClientePotencial()
             {
                 return new DominioTangerine.Entidades.M3.ClientePotencial();
@@ -253,6 +271,13 @@ namespace DominioTangerine.Fabrica
                                                                           presupuesto, llamadas, visitas);
             }
             #endregion 
+
+            #region metodo para instaciar cliente potencial si llamadas, visitas ni id
+            public static Entidad CrearClientePotencial(string nombre, string rif, string email, float presupuesto, int status)
+            {
+                return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email, presupuesto, status);
+            }
+            #endregion
         #endregion
 
         #region Modulo 4
@@ -521,6 +546,10 @@ namespace DominioTangerine.Fabrica
         #region Modulo 7
 
             #region Metodos para instanciar Propuesta
+            /// <summary>
+            /// Método para instancear la clase Propuesta vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerPropuesta() 
             {
                 return new DominioTangerine.Entidades.M7.Propuesta();
@@ -528,6 +557,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instaciar Requerimiento
+            /// <summary>
+            /// Método para instancear la clase Requerimiento vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerRequerimiento()
             {
                 return new DominioTangerine.Entidades.M7.Requerimiento();
@@ -535,6 +568,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar Cargo
+            /// <summary>
+            /// Método para instancear la clase Cargo vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerCargo()
             {
                 return new DominioTangerine.Entidades.M7.Cargo();
@@ -547,6 +584,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instaciar Lugar Direccion
+            /// <summary>
+            /// Método para instancear la clase Lugar Direccion vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerLugarDireccion() 
             {
                 return new DominioTangerine.Entidades.M7.LugarDireccion();
@@ -554,6 +595,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar ObtenerContacto
+            /// <summary>
+            /// Método para instancear la clase Entidad vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerContacto() 
             {
                 return new DominioTangerine.Entidades.M7.Contacto();
@@ -561,6 +606,10 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar Obtener Empleados
+            /// <summary>
+            /// Método para instancear la clase Empleado vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerEmpleado()
             {
                 return new DominioTangerine.Entidades.M7.Empleado();
@@ -568,9 +617,33 @@ namespace DominioTangerine.Fabrica
             #endregion
 
             #region Metodos para instanciar Proyecto
+            /// <summary>
+            /// Método para instancear la clase Proyecto vacia
+            /// </summary>
+            /// <returns></returns>
             public static Entidad ObtenerProyecto()
             {
                 return new DominioTangerine.Entidades.M7.Proyecto();
+            }
+
+            public static Entidad CrearProyecto(string nombre, string codigo, DateTime fecha_inicio, 
+                                  DateTime fecha_estimada_fin, double costo, string descripcion, 
+                                  string realizacion, string estatus, string razon, string acuerdopago,
+                                  int id_propuesta, int id_responsable, int id_gerente)
+            {
+                return new DominioTangerine.Entidades.M7.Proyecto(nombre, codigo, fecha_inicio,
+                            fecha_estimada_fin, costo, descripcion, realizacion, estatus, razon, 
+                            acuerdopago, id_propuesta, id_responsable, id_gerente);
+            }
+
+            public static Entidad CrearProyectoConListas(string nombre, string codigo, DateTime fecha_inicio, 
+                                  DateTime fecha_estimada_fin, double costo, string descripcion, string realizacion, 
+                                  string estatus, string razon, string acuerdopago, int id_propuesta, 
+                                  int id_responsable, int id_gerente, List<Entidad> empleados, List<Entidad> contactos)
+            {
+                return new DominioTangerine.Entidades.M7.Proyecto(nombre, codigo, fecha_inicio, 
+                           fecha_estimada_fin, costo, descripcion, realizacion, estatus, razon, acuerdopago,
+                           id_propuesta, id_responsable, id_gerente, empleados, contactos);
             }
             #endregion
 
@@ -631,6 +704,16 @@ namespace DominioTangerine.Fabrica
         {
             return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura);
         }
+<<<<<<< HEAD
+=======
+       
+        public static Entidad ObtenerPago_M9(int codPago, int montoPago, string monedaPago, string formaPago, int idFactura)
+        {
+            return new DominioTangerine.Entidades.M9.Pago(codPago, montoPago, monedaPago, formaPago, idFactura);
+        }
+
+
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
         #endregion
 
         #region Modulo 10
@@ -639,6 +722,11 @@ namespace DominioTangerine.Fabrica
         /// Metodo para instanciar empleados sin atributos
         /// </summary>
         /// <returns></returns>
+
+        public static Entidad ConsultarEmpleados(int id)
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10(id);
+        }
 
         public static Entidad ConsultarEmpleados() 
         {
@@ -665,7 +753,13 @@ namespace DominioTangerine.Fabrica
   
         public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
         {
-            return new DominioTangerine.Entidades.M10.Cargo(empCargo,empCargoDescripcion,empContratacion);
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empCargoDescripcion, empContratacion);
+        }
+
+        
+        public static Entidad ObtenerCargoXid(string empCargo, double empSalario, string empFechaInicio, string empFechaFin)
+        {
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empSalario,empFechaInicio,empFechaFin);
         }
 
         public static Entidad ConsultarEmpleados(int empId, string empPNombre, string empSNombre, string empPApellido,
@@ -683,7 +777,7 @@ namespace DominioTangerine.Fabrica
         public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
                                                string empSApellido, string empGenero, int empCedula, DateTime empFecha,
                                                string empActivo, string empNivelEstudio, string empEmailEmployee,
-                                               int empLugId, string empCargo, double empSalario, string empFechaInicio,
+                                               int empLugId, Entidad empCargo, double empSalario, string empFechaInicio,
                                                string empFechaFin, string empDireccion)
         {
             return (new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre,  empSNombre,  empPApellido,
@@ -693,5 +787,10 @@ namespace DominioTangerine.Fabrica
                                                                    empFechaFin, empDireccion));
         }
         #endregion
+
+        public static Entidad obtenerEntidad()
+        {
+            return new DominioTangerine.Entidades.M10.EmpleadoM10();
+        }
     }
 }

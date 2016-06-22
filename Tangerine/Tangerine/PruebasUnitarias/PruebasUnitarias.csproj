@@ -91,6 +91,7 @@
     <Compile Include="M2\PruebasComandosEspecificos.cs" />
     <Compile Include="M3\PruebaClientePotencialLogica.cs" />
     <Compile Include="M3\PruebaClientePotencial.cs" />
+    <Compile Include="M3\PruebasDAOClientePotencial.cs" />
     <Compile Include="M4\PruebaDatos.cs" />
     <Compile Include="M4\PruebaLogica.cs" />
     <Compile Include="M5\PruebaLogica.cs" />
@@ -105,6 +106,12 @@
     <Compile Include="M7\PruebasDatos.cs" />
     <Compile Include="M8\PruebasDatosFactura.cs" />
     <Compile Include="M8\PruebasLogicaFactura.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="M9\PruebaComandoDaoPago.cs" />
+    <Compile Include="M9\PruebaDaoPago.cs" />
+    <Compile Include="M9\PruebaLogica.cs" />
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />

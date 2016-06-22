@@ -13,9 +13,18 @@ namespace Tangerine.GUI.M2
 {
     public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
-        private PresentadorCambioRol presentador;
+        private PresentadorCambioRol _presentador;
+
+        /// <summary>
+        /// Constructor de PresentadorCambioRol
+        /// </summary>
+        public CambiarRol()
+        {
+            _presentador = new PresentadorCambioRol(this);
+        }
 
         #region Contrato
+
         /// <summary>
         /// tabla consulta de empleados
         /// </summary>
@@ -27,6 +36,22 @@ namespace Tangerine.GUI.M2
             set
             { this.tablaempleados.Text = value; }
         }
+
+        /// <summary>
+        /// Implementacion del contrato
+        /// </summary>
+        public string nombreUsuario
+        {
+            get
+            {
+                return this.textBuscarNombre.Value;
+            }
+            set
+            {
+                this.textBuscarNombre.Value = value;
+            }
+        }
+
         #endregion
 
         /// <summary>
@@ -36,11 +61,20 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            presentador = new PresentadorCambioRol(this);
             if (!IsPostBack)
             {
-                presentador.iniciarVista();
+                _presentador.iniciarVista();
             }
+        }
+
+        /// <summary>
+        /// Método para actualizar la pagina cuando se activa el evento del boton buscar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void busquedaNombre_Click(object sender, EventArgs e)
+        {
+            _presentador.actualizarVista();
         }
     }
 }

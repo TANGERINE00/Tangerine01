@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,14 +39,13 @@ namespace Tangerine_Presentador.M6
 
                 vistaInformacion.Descripcion.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Descripcion;
 
-                //imprimirRequerimientos(_propuesta);
+                imprimirRequerimientos(_propuesta);
 
                 imprimirDuracion(_propuesta);
 
                 imprimirCosto(_propuesta);
 
                 imprimirAcuerdo(_propuesta);
-
             }
             catch (Exception ex)
             {
@@ -80,6 +79,25 @@ namespace Tangerine_Presentador.M6
             else if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Pendiente")
             {
                 vistaInformacion.Status.Text = RecursosPresentadorPropuesta.pendiente;
+            }
+        }
+
+        public void imprimirRequerimientos(Entidad _propuesta)
+        {
+            List<Entidad> _requerimientos;
+            Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
+
+            _requerimientos = cmdConsultarRequerimientos.Ejecutar();
+
+            foreach (Entidad _elRequerimiento in _requerimientos)
+            {
+                vistaInformacion.Requerimientos.Text += 
+                    ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString();
+
+                vistaInformacion.Requerimientos.Text += " - Descripción: "
+                    + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString();
+
+                vistaInformacion.Requerimientos.Text += RecursosPresentadorPropuesta.Salto + RecursosPresentadorPropuesta.Salto;
             }
         }
 

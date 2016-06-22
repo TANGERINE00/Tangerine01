@@ -57,6 +57,15 @@ namespace DominioTangerine.Entidades.M9
             this._idFactura = _idFactura;
         }
 
+        public Pago(int _codPago, int _montoPago, string _monedaPago, string _formaPago, int _idFactura)
+        {
+            this._codPago = _codPago;
+            this._montoPago = _montoPago;
+            this._monedaPago = _monedaPago;
+            this._formaPago = _formaPago;
+            this._idFactura = _idFactura;
+        }
+
         #endregion
 
         #region Get's

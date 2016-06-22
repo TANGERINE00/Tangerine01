@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,10 +61,12 @@
       <DependentUpon>ResourceGUIM2.resx</DependentUpon>
     </Compile>
     <Compile Include="M3\PresentadorActivarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorAgregarClientePotencial.cs" />
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\PresentadorModificarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorPromoverClientePotencial.cs" />
     <Compile Include="M3\ResourceInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +75,7 @@
     <Compile Include="M4\PresentadorAgregarCompania.cs" />
     <Compile Include="M4\PresentadorConsultarCompania.cs" />
     <Compile Include="M4\PresentadorInformacionCompania.cs" />
+    <Compile Include="M4\PresentadorModificarCompania.cs" />
     <Compile Include="M4\RecursosPresentadorM4.Designer.cs">
       <DependentUpon>RecursosPresentadorM4.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -103,7 +107,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
+    <Compile Include="M8\PresentadorAnularFactura.cs" />
+    <Compile Include="M8\PresentadorGenerarFactura.cs" />
     <Compile Include="M8\PresentadorConsultaFactura.cs" />
+    <Compile Include="M8\PresentadorModificarFactura.cs" />
     <Compile Include="M8\RecursoPresentadorM8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -239,4 +239,10 @@
   <data name="ParametroUsuID" xml:space="preserve">
     <value>@usu_id</value>
   </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="ConsultarEmpleado" xml:space="preserve">
+    <value>M2_ConsultarUsuarioPorNombre</value>
+  </data>
 </root>

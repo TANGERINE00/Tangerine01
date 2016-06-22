@@ -25,8 +25,13 @@ namespace LogicaTangerine.Comandos.M9
         public override Boolean Ejecutar()
         {
             IDAOPago Pago = FabricaDAOSqlServer.CrearDAOPago();
+<<<<<<< HEAD
             Pago.Agregar(this._laEntidad);
             return true;
+=======
+            return Pago.Agregar(this._laEntidad);
+            
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
 
         }
     

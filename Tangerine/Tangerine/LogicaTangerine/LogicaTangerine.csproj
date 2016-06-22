@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
-    <Folder Include="Comandos\M1\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -75,12 +74,18 @@
     <Compile Include="Comandos\M10\ComandoConsultarPorId.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoInhabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M1\ComandoConsultarUsuario.cs" />
+    <Compile Include="Comandos\M1\ComandoGenerarNuevaContraseña.cs" />
+    <Compile Include="Comandos\M1\ComandoValidarCorreo.cs" />
+    <Compile Include="Comandos\M1\ComandoValidarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRol.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoModificarRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAORol\ComandoObtenerRolUsuarioPorNombre.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoAgregarUsuario.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarDatosUsuarioLogin.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarEmpleadoPorUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
@@ -92,13 +97,16 @@
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAOpciones.cs" />
     <Compile Include="Comandos\M2\ComandosEspecificos\ComandoVerificarAccesoAPagina.cs" />
     <Compile Include="Comandos\M3\ComandoActivarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoAgregarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoPromoverClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarLugarXID.cs" />
+    <Compile Include="Comandos\M4\ComandoConsultarLugarXNombreID.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodosLugares.cs" />
     <Compile Include="Comandos\M4\comandoCosultarCompaniasActivas.cs" />
     <Compile Include="Comandos\M4\ComandoDeshabilitarCompania.cs" />
@@ -106,7 +114,7 @@
     <Compile Include="Comandos\M4\ComandoHabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
-    <Compile Include="Comandos\M4\ComandoModificarLugat.cs" />
+    <Compile Include="Comandos\M4\ComandoModificarLugar.cs" />
     <Compile Include="Comandos\M5\ComandoAgregarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoAgregarContactoAProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoConsultarContacto.cs" />
@@ -116,6 +124,11 @@
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />
+    <Compile Include="Comandos\M7\ComandoAgregarContactos.cs" />
+    <Compile Include="Comandos\M7\ComandoAgregarEmpleados.cs" />
+    <Compile Include="Comandos\M7\ComandoUltimoIdProyecto.cs" />
+    <Compile Include="Comandos\M7\ComandoAgregarProyecto.cs" />
+    <Compile Include="Comandos\M7\ComandoModificarProyecto.cs" />
     <Compile Include="Comandos\M5\RecursoComandosM5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

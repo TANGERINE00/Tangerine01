@@ -50,7 +50,8 @@ namespace Tangerine_Presentador.M3
                                                                                                vista.PresupuestoInversion, 
                                                                                                vista.NumeroLlamadas,vista.NumeroVisitas);
             Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarClientePotencial(_entidad);
-            comando.Ejecutar();
+
+            vista.AccionSobreBd= comando.Ejecutar() ? true : false;
         }
 
 

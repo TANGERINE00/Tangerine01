@@ -122,17 +122,17 @@ namespace Tangerine.GUI.M4
             }
         }
 
-     /*   public DropDownList direccion 
+       public DropDownList direccion 
         {
             get
             {
-
+                return this.InputDireccion1;
             }
             set
             {
-                InputDireccion1 = value;
+                //InputDireccion1 = value;
             } 
-        }*/
+        }
         #endregion
 
         /// <summary>
@@ -157,26 +157,9 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            string _nombre = InputNombre1.Value;
-            string _acronimo = InputAcronimo1.Value;
-            string _rif = InputRIF1.Value;
-            string _email = InputEmail1.Value;
-            string _telefono = InputTelefono1.Value;
-            string _fecha = datepicker1.Value;
+            Presentador.AgregarCompania();
+                Server.Transfer("ConsultarCompania.aspx", true);
 
-            //Por defecto se crea la compania HABILITADA.
-            int _status = 1;  
-                            
-            int _presupuesto = int.Parse(InputPresupuesto1.Value);
-            int _plazo = int.Parse(InputPlazoPago1.Value.ToString());
-            /*int _direccionId = logica.MatchIdLugar(/*InputDireccion1);
-
-            Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo, 
-                                            DateTime.ParseExact(_fecha, "MM/dd/yyyy", null), _status, _presupuesto, 
-                                            _plazo, _direccionId);
-            logica.AddNewCompany(company);*/
-
-            Server.Transfer("ConsultarCompania.aspx", true);
         }
 
         /// <summary>

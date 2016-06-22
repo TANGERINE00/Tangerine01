@@ -2,6 +2,7 @@
 using DominioTangerine.Entidades.M4;
 using DominioTangerine.Entidades.M5;
 using DominioTangerine.Fabrica;
+using ExcepcionesTangerine.M5;
 using LogicaTangerine;
 using LogicaTangerine.Fabrica;
 using LogicaTangerine.M3;
@@ -36,34 +37,45 @@ namespace Tangerine_Presentador.M5
         /// <param name="idComp"></param>
         public void CargarBotonVolver( int typeComp, int idComp )
         {
-            if ( typeComp == 1 )
-            { 
-                Entidad compania = FabricaEntidades.crearCompaniaVacia();
-                compania.Id = idComp;
-                
-                Comando<Entidad> comandoEntidad = FabricaComandos.CrearConsultarCompania( compania );
-                compania = comandoEntidad.Ejecutar();
-
-                CompaniaM4 companiaConsultada = ( CompaniaM4 )compania;
-
-                _vista.botonVolver = RecursoM5.VolverCompania;
-                _vista.nombreEmpresa = RecursoM5.Compania + companiaConsultada.NombreCompania;
-            }
-            else
+            try
             {
-                Entidad clientePotencial = FabricaEntidades.ObtenerClientePotencial();
-                clientePotencial.Id = idComp;
+                if ( typeComp == 1 )
+                {
+                    Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                    compania.Id = idComp;
 
-                Comando<Entidad> comandoEntidad = 
-                                 FabricaComandos.ObtenerComandoConsultarClientePotencial( clientePotencial );
+                    Comando<Entidad> comandoEntidad = FabricaComandos.CrearConsultarCompania( compania );
+                    compania = comandoEntidad.Ejecutar();
 
-                clientePotencial = comandoEntidad.Ejecutar();
+                    CompaniaM4 companiaConsultada = ( CompaniaM4 ) compania;
 
-                DominioTangerine.Entidades.M3.ClientePotencial leadConsultado = 
-                    ( DominioTangerine.Entidades.M3.ClientePotencial ) clientePotencial;
+                    _vista.botonVolver = RecursoM5.VolverCompania;
+                    _vista.nombreEmpresa = RecursoM5.Compania + companiaConsultada.NombreCompania;
+                }
+                else
+                {
+                    Entidad clientePotencial = FabricaEntidades.ObtenerClientePotencial();
+                    clientePotencial.Id = idComp;
 
-                _vista.botonVolver = RecursoM5.VolverCliPotencial;
-                _vista.nombreEmpresa = RecursoM5.Lead + leadConsultado.NombreClientePotencial;
+                    Comando<Entidad> comandoEntidad =
+                                     FabricaComandos.ObtenerComandoConsultarClientePotencial( clientePotencial );
+
+                    clientePotencial = comandoEntidad.Ejecutar();
+
+                    DominioTangerine.Entidades.M3.ClientePotencial leadConsultado =
+                        ( DominioTangerine.Entidades.M3.ClientePotencial ) clientePotencial;
+
+                    _vista.botonVolver = RecursoM5.VolverCliPotencial;
+                    _vista.nombreEmpresa = RecursoM5.Lead + leadConsultado.NombreClientePotencial;
+                }
+            }
+            catch( ConsultarContactoException ex )
+            {
+                //Muestro en pantalla el error
+            }
+            catch( BaseDeDatosContactoException ex )
+            {
+                //Muestro en pantalla el error
             }
         }
 
@@ -82,9 +94,13 @@ namespace Tangerine_Presentador.M5
                 Comando<bool> comandoBool = FabricaComandos.CrearComandoEliminarContacto( contacto );
                 comandoBool.Ejecutar();
             }
-            catch (Exception ex)
+            catch( EliminarContactoException ex )
             {
-                //No se hace nada,  ya que el idCont no es un parametro obligatorio
+                //Muestro en pantalla el error
+            }
+            catch( BaseDeDatosContactoException ex )
+            {
+                //Muestro en pantalla el error
             }
         }
 
@@ -138,24 +154,31 @@ namespace Tangerine_Presentador.M5
         /// <param name="_theContact2"></param>
         /// <param name="typeComp"></param>
         /// <param name="idComp"></param>
-        private void LlenarTabla(ContactoM5 _theContact2, int typeComp, int idComp)
+        private void LlenarTabla( ContactoM5 _theContact2, int typeComp, int idComp )
         {
-            _vista.contact.Text += RecursoM5.AbrirTR;
-            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Apellido.ToString() + RecursoM5.Coma
-                + _theContact2.Nombre.ToString() + RecursoM5.CerrarTD;
-            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Departamento.ToString() + RecursoM5.CerrarTD;
-            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Cargo.ToString() + RecursoM5.CerrarTD;
-            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Telefono.ToString() + RecursoM5.CerrarTD;
-            _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Correo.ToString() + RecursoM5.CerrarTD;
-            //Acciones de cada contacto
-            _vista.contact.Text += RecursoM5.AbrirTD2;
-            _vista.contact.Text += RecursoM5.ButtonModContact + typeComp + RecursoM5.BotonVolver2 + idComp
-                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonCerrar
-                + RecursoM5.BotonEliminar + typeComp + RecursoM5.BotonVolver2 + idComp
-                + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonVolver4
-                + RecursoM5.StatusEliminado + RecursoM5.BotonCerrar;
-            _vista.contact.Text += RecursoM5.CerrarTD;
-            _vista.contact.Text += RecursoM5.CerrarTR;
+            try
+            {
+                _vista.contact.Text += RecursoM5.AbrirTR;
+                _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Apellido.ToString() + RecursoM5.Coma
+                    + _theContact2.Nombre.ToString() + RecursoM5.CerrarTD;
+                _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Departamento.ToString() + RecursoM5.CerrarTD;
+                _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Cargo.ToString() + RecursoM5.CerrarTD;
+                _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Telefono.ToString() + RecursoM5.CerrarTD;
+                _vista.contact.Text += RecursoM5.AbrirTD + _theContact2.Correo.ToString() + RecursoM5.CerrarTD;
+                //Acciones de cada contacto
+                _vista.contact.Text += RecursoM5.AbrirTD2;
+                _vista.contact.Text += RecursoM5.ButtonModContact + typeComp + RecursoM5.BotonVolver2 + idComp
+                    + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonCerrar
+                    + RecursoM5.BotonEliminar + typeComp + RecursoM5.BotonVolver2 + idComp
+                    + RecursoM5.BotonEliminar2 + _theContact2.Id + RecursoM5.BotonVolver4
+                    + RecursoM5.StatusEliminado + RecursoM5.BotonCerrar;
+                _vista.contact.Text += RecursoM5.CerrarTD;
+                _vista.contact.Text += RecursoM5.CerrarTR;
+            }
+            catch( Exception ex )
+            {
+                //Muestro en pantalla el error
+            }
         }
 
         /// <summary>
@@ -166,25 +189,29 @@ namespace Tangerine_Presentador.M5
             try
             {
                 Entidad compania = FabricaEntidades.crearCompaniaVacia();
-                compania.Id = _vista.getIdComp;
+                compania.Id = _vista.getIdComp();
 
                 Comando<List<Entidad>> comandoLista = 
                                        FabricaComandos.CrearComandoConsultarContactosPorCompania( compania,
-                                                                                                  _vista.getTypeComp );
+                                                                                                _vista.getTypeComp() );
 
                 List<Entidad> listaContactos = comandoLista.Ejecutar();
 
                 foreach ( Entidad entidad in listaContactos )
                 {
                     ContactoM5 contacto = ( ContactoM5 ) entidad;
-                    LlenarTabla( contacto, _vista.getTypeComp, _vista.getIdComp );
+                    LlenarTabla( contacto, _vista.getTypeComp(), _vista.getIdComp() );
                 }
 
-                _vista.CargarBotonNuevoContacto( _vista.getTypeComp, _vista.getIdComp );
+                _vista.CargarBotonNuevoContacto( _vista.getTypeComp(), _vista.getIdComp() );
             }
-            catch ( Exception ex )
+            catch ( ConsultarContactoException ex )
             {
-                Alerta( ex.Message, int.Parse( RecursoM5.StatusModificado ) );
+                //Muestro en pantalla el error
+            }
+            catch( BaseDeDatosContactoException ex )
+            {
+                //Muestro en pantalla el error
             }
         }
 
@@ -193,7 +220,7 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void CargarPagina()
         {
-            CargarBotonVolver( _vista.getTypeComp, _vista.getIdComp );
+            CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
             EliminarContacto();
             Alertas();
             LlenarTablaContactos();

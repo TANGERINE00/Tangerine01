@@ -12,6 +12,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine.Entidades.M2;
+using ExcepcionesTangerine.M2;
 
 namespace DatosTangerine.DAO.M2
 {
@@ -56,11 +57,30 @@ namespace DatosTangerine.DAO.M2
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.AgregarUsuario, parameters);
 
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             } 
@@ -113,16 +133,33 @@ namespace DatosTangerine.DAO.M2
                                                                                                    usuFechaCreacion , usuActivo ,
                                                                                                     rol, empleadoNumFicha );
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return usuario;
             }
-
-
 
             /// <summary>
             /// Método para consultar todos los usuarios
@@ -160,11 +197,30 @@ namespace DatosTangerine.DAO.M2
                         resultado = true;
                     }
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return resultado;
             }
@@ -193,11 +249,30 @@ namespace DatosTangerine.DAO.M2
                         resultado = true;
                     }
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return resultado;
             }
@@ -234,16 +309,30 @@ namespace DatosTangerine.DAO.M2
                         usuario.rol = rol;
                     }
                 }
-                catch (NullReferenceException ex)
+                catch (ArgumentNullException ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return usuario;
             }
@@ -288,16 +377,30 @@ namespace DatosTangerine.DAO.M2
                     }
 
                 }
-                catch (NullReferenceException ex)
+                catch (ArgumentNullException ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return usuario;
             }
@@ -325,17 +428,30 @@ namespace DatosTangerine.DAO.M2
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarContraUsuario, parametros);
                 }
-                catch (NullReferenceException ex)
+                catch (ArgumentNullException ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
-                                                                        RecursoGeneralBD.Mensaje, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                    return false;
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
             }
@@ -361,11 +477,30 @@ namespace DatosTangerine.DAO.M2
                     ultimoID = int.Parse(row[ResourceUser.ComIDUser].ToString());
 
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
+
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return ultimoID;
             }
@@ -393,13 +528,115 @@ namespace DatosTangerine.DAO.M2
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.BorrarUsuario, parameters);
 
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                     throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                     ResourceUser.MensajeFinInfoLogger,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name);
+
                 return true;
+            }
+
+            public Entidad ConsultarEmpleadoPorUsuario( string nombreUsuario )
+            {
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                List<Parametro> parameters = new List<Parametro>();
+                BDConexion Connection = new BDConexion();
+                Parametro param = new Parametro();
+
+                try
+                {
+
+                    param = new Parametro(ResourceUser.ParametroUsuario, SqlDbType.VarChar, nombreUsuario, false);
+                    parameters.Add(param);
+
+                    DataTable dataTable = EjecutarStoredProcedureTuplas(ResourceUser.ConsultarEmpleado, parameters);
+
+                    DataRow row = dataTable.Rows[0];
+
+                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                    String empEmail = row[ResourceEmpleado.EmpEmail].ToString();
+                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                    String empEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
+
+                    String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
+                    String empCargoDescripcion = row[ResourceEmpleado.EmpCargoDescripcion].ToString();
+                    DateTime empContratacion = DateTime.Parse(row[ResourceEmpleado.EmpFechaInicio].ToString());
+                    String empModalidad = row[ResourceEmpleado.EmpModalidad].ToString();
+                    double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion,
+                                            empContratacion);
+
+                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre,
+                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad,
+                    empSalario, cargoEmpleado);
+
+                    return empleado;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                        RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                         ResourceEmpleado.Mensaje_Error_Formato, ex);
+                }
+                catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             }
 
         #endregion

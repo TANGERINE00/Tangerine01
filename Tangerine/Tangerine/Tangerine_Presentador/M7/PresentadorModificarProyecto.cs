@@ -2,10 +2,12 @@
 using LogicaTangerine;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Tangerine_Contratos.M7;
 
 namespace Tangerine_Presentador.M7
@@ -13,6 +15,13 @@ namespace Tangerine_Presentador.M7
     public class PresentadorModificarProyecto
     {
         IContratoModificarProyecto vista;
+        Entidad proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
+
+        public Entidad Proyecto
+        {
+            get { return proyecto; }
+            set { proyecto = value; }
+        }
 
         public PresentadorModificarProyecto(IContratoModificarProyecto vista)
         {
@@ -25,7 +34,7 @@ namespace Tangerine_Presentador.M7
             ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = id;
 
             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdproyecto(parametro);
-            Entidad proyecto = comando.Ejecutar();
+            proyecto = comando.Ejecutar();
 
             Comando<List<Entidad>> comando1 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
             List<Entidad> contactos = comando1.Ejecutar();
@@ -47,14 +56,20 @@ namespace Tangerine_Presentador.M7
                 llenarComboEstatus(proyecto);
                 llenarInputEncargados(contactos, contactoEmp);
                 llenarComboGerentes(gerentes, proyecto);
-                llenarInputPersonal(programadores);
+                llenarInputPersonal(programadores,programadores);
 
+                vista.idPropuesta.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta.ToString();
                 vista.inputPropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
+                vista.idProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString();
                 vista.textInputCosto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo.ToString();
                 vista.textInputNombreProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre;
                 vista.textInputCodigo.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo;
                 vista.textInputFechaInicio.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio.ToString("dd/MM/yyyy");
                 vista.textInputPorcentaje.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion.ToString();
+                vista.descripcion.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion;
+                vista.acuerdoPago.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago;
+                vista.idCompania.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idcompania.ToString();
+                vista.text10.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon;
 
             }
             catch (Exception ex)
@@ -102,14 +117,16 @@ namespace Tangerine_Presentador.M7
             { 
                 if (contacto.Id == contactoEmp.Id)
                 {
-                    vista.imputEncargado.Items.Add((((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) +
-                                " " + ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
+                    vista.imputEncargado.Items.Add((((DominioTangerine.Entidades.M7.Contacto)contacto).Id) +
+                                    "-" + (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) +
+                                    " " + ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
                     vista.imputEncargado.SelectedIndex = index;
                     index++;
                 }
                 else
                 {
-                    vista.imputEncargado.Items.Add((((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) +
+                    vista.imputEncargado.Items.Add((((DominioTangerine.Entidades.M7.Contacto)contacto).Id) +
+                                    "-" + (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) +
                                     " " + ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
                     index++;
                 }
@@ -121,8 +138,9 @@ namespace Tangerine_Presentador.M7
             Dictionary<int, string> listaGerentes = new Dictionary<int, string>();
             foreach (Entidad gerente in gerentes)
             {
-                listaGerentes.Add(((DominioTangerine.Entidades.M7.Empleado)gerente).Id, (((DominioTangerine.Entidades.M7.Empleado)gerente).emp_p_nombre) +
-                    " " + (((DominioTangerine.Entidades.M7.Empleado)gerente).emp_p_apellido));
+                listaGerentes.Add(((DominioTangerine.Entidades.M7.Empleado)gerente).Id, 
+                                    (((DominioTangerine.Entidades.M7.Empleado)gerente).emp_p_nombre) +
+                                    " " + (((DominioTangerine.Entidades.M7.Empleado)gerente).emp_p_apellido));
             }
             vista.inputGerente.DataSource = listaGerentes;
             vista.inputGerente.DataTextField = RecursoPresentadorM7.Value;
@@ -131,23 +149,105 @@ namespace Tangerine_Presentador.M7
             vista.inputGerente.DataBind();
         }
 
-        private void llenarInputPersonal(List<Entidad> programadores)
+        private void llenarInputPersonal(List<Entidad> programadores, List<Entidad> actuales)
         {
             foreach (Entidad programador in programadores)
             {
-                vista.inputPersonal.Items.Add(((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_nombre + " " + ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_apellido);
+                vista.inputPersonal.Items.Add(((DominioTangerine.Entidades.M7.Empleado)programador).Id +
+                                                "-" + ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_nombre +
+                                                " " + ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_apellido);
+
             }
         }
 
+
+
         public bool EventoClick_Modificar()
         {
+            bool resultado = Validaciones();
+
+            if (resultado == true)
+            {
+                ModificarDatos();
+                return true;
+            }
+            else
+            {
+
+                return true;
+            }
+        }
+
+        public bool Validaciones()
+        {
+            string dia = vista.textInputFechaEstimada.SelectedDate.Day.ToString();
+            string mes = vista.textInputFechaEstimada.SelectedDate.Month.ToString();
+            string ano = vista.textInputFechaEstimada.SelectedDate.Year.ToString();
+            string seleccionada = dia + "/" + mes + "/" + ano;
+            DateTime seleccionada2 = DateTime.Parse(seleccionada);
+            DateTime exsitente = DateTime.Parse(vista.textInputFechaInicio.Text.ToString());
+
+            if (exsitente > seleccionada2)
+            {
+                MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                vista.textInputFechaEstimada.Focus();
+                return false;
+            }
+
+            //if (int.Parse(vista.textInputFechaInicio.Text) > int.Parse(vista.textInputFechaEstimada.SelectedDate.ToString("dd/MM/yyyy")))
+            //{
+            //    return false;
+            //}
+
+            if (vista.inputPersonal.Items.Count <= 0)
+            {
+                MessageBox.Show("Debe seleccionar por lo menos una persona para trabajar en el proyecto", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                vista.inputPersonal.Focus();
+                return false;
+            }
+
+            ModificarDatos();
+            return true;
+        }
+
+        public bool ModificarDatos() 
+        {
+            DateTime diaNulo = DateTime.Parse("1/1/0001");
             try
             {
-                
-                int _idGerente = vista.inputGerente.SelectedIndex;
+                Entidad _proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Id = int.Parse(vista.idProyecto.Text);
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Nombre = vista.textInputNombreProyecto.Text;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Codigo = vista.textInputCodigo.Text;
+
+                if (vista.textInputFechaEstimada.SelectedDate == diaNulo)
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin;
+                }
+                else
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = vista.textInputFechaEstimada.SelectedDate;
+                }
+
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Costo = int.Parse(vista.textInputCosto.Text);
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.textInputPorcentaje.Text;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = vista.inputEstatus.SelectedItem.ToString();
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Razon = vista.text10.Text;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idgerente = int.Parse(vista.inputGerente.SelectedValue);
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechainicio = Convert.ToDateTime(vista.textInputFechaInicio.Text.ToString());
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idpropuesta = int.Parse(vista.idPropuesta.Text);
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Descripcion = vista.descripcion.Text;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Acuerdopago = vista.acuerdoPago.Text;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Acuerdopago = vista.acuerdoPago.Text;
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idcompania = int.Parse(vista.idCompania.Text);
+
+                Entidad _propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();
+                ((DominioTangerine.Entidades.M7.Propuesta)_propuesta).Id = int.Parse(vista.idPropuesta.Text);
+                ((DominioTangerine.Entidades.M7.Propuesta)_propuesta).Nombre = vista.inputPropuesta.Text;
+
+                Entidad _contacto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
 
                 string _encargadoNombre;
-
                 foreach (ListItem item in vista.imputEncargado.Items)
                 {
                     if (item.Selected)
@@ -156,7 +256,19 @@ namespace Tangerine_Presentador.M7
                     }
                 }
 
-                
+
+                List<Entidad> _trabajadores = new List<Entidad>();
+
+                foreach (ListItem item in vista.inputPersonal.Items)
+                {
+                    Entidad _trabajador = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
+                    ((DominioTangerine.Entidades.M7.Empleado)_trabajador).Emp_p_nombre = item.Text.ToString();
+                    _trabajadores.Add(_trabajador);
+                }
+
+                Comando<Boolean> comando =
+                    LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
+                Boolean ejecutado = comando.Ejecutar();
 
             }
             catch (Exception e)
@@ -166,5 +278,37 @@ namespace Tangerine_Presentador.M7
 
             return true;
         }
+
+        public void MoverIzquierda()
+        {
+            for (int i = vista.inputPersonal.Items.Count - 1; i >= 0; i--)
+            {
+                if (vista.inputPersonal.Items[i].Selected == true)
+                {
+                    vista.inputPersonalNoActivo.Items.Add(vista.inputPersonal.Items[i]);
+                    ListItem li = vista.inputPersonal.Items[i];
+                    vista.inputPersonal.Items.Remove(li);
+                }
+            }
+        }
+
+        public void RenderCalendario(DayRenderEventArgs e, Entidad proyecto)
+        {
+
+        }
+
+        public void MoverDerecha()
+        {
+            for (int i = vista.inputPersonalNoActivo.Items.Count - 1; i >= 0; i--)
+            {
+                if (vista.inputPersonalNoActivo.Items[i].Selected == true)
+                {
+                    vista.inputPersonal.Items.Add(vista.inputPersonalNoActivo.Items[i]);
+                    ListItem li = vista.inputPersonalNoActivo.Items[i];
+                    vista.inputPersonalNoActivo.Items.Remove(li);
+                }
+            }
+        }
+
     }
 }

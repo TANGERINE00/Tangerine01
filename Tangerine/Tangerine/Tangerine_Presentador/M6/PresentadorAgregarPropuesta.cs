@@ -43,6 +43,8 @@ namespace Tangerine_Presentador.M6
         {
             this.vista = vista;
         }
+
+
         public void agregarPropuesta()
         {
             //Asignacion de los campos obtenidos de la Vista.
@@ -50,32 +52,27 @@ namespace Tangerine_Presentador.M6
             consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
             _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
-            _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
-            _duracion = vista.ComboDuracion.SelectedItem.Text;
-            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "MM/dd/yyyy", null);
-            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "MM/dd/yyyy", null);
+            _Tipoduracion = vista.ComboDuracion;
+            _duracion = vista.TextoDuracion;
+            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "M/dd/yyyy", null);
+
+            string prueba = vista.DatePickerDos;
+
+            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "M/dd/yyyy", null);
             _moneda = vista.TipoCosto.SelectedItem.Text;
             _costo = int.Parse(vista.TextoCosto);
-            _acuerdo = vista.FormaPago.SelectedItem.Text;
+            _acuerdo = vista.FormaPago;
             _estatusW = vista.ComboStatus.SelectedItem.Text;
             _idCompañia = vista.IdCompania;
-          
-            try
-            {
-                _entregaCant = Int32.Parse(vista.ComboCuota.SelectedItem.Text);
-            }
-            catch (Exception)
-            {
-                _entregaCant = 0;
-            }
+            _entregaCant = Int32.Parse(vista.CantidadCuotas);
 
-
+            
             //Creación del Objeto Propuesta.
-            DominioTangerine.Entidades.M6.Propuesta p = new DominioTangerine.Entidades.M6.Propuesta(_nombcodigoPropuesta, _descripcion,
-            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda,_entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
-           
+            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
+            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+
             //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
             Confirmacion = comando.Ejecutar();
         
             //El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
@@ -92,19 +89,19 @@ namespace Tangerine_Presentador.M6
                 //Debug.Print(_precondicion[i]);
                   
                 //Creación del Objeto Propuesta.
-                DominioTangerine.Entidades.M6.Requerimiento requerimiento = new DominioTangerine.Entidades.M6.Requerimiento(codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
-
+                Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                    codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
 
                 //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto requerimiento.
-                LogicaTangerine.Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
+                Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
                 comando2.Ejecutar();
             }
         }
 
-         public void cargarCompañias()
-        {
-            Comando<List<Entidad>> cmdConsultarCompania;
 
+        public void cargarCompañias()
+         {
+            Comando<List<Entidad>> cmdConsultarCompania;
 
             try
             {
@@ -119,16 +116,16 @@ namespace Tangerine_Presentador.M6
                 itemCompa.Value = "0";
                 vista.ComboCompania.Items.Add(itemCompa);
 
-                foreach (DominioTangerine.Entidades.M4.CompaniaM4 objetoCompa in listaCompanias)
+                foreach (Entidad _compania in listaCompanias)
                 {
-                    itemCompa = new ListItem();
-                    itemCompa.Text = objetoCompa.NombreCompania;
-                    itemCompa.Value = objetoCompa.Id.ToString();
-                    vista.ComboCompania.Items.Add(itemCompa);
-                     
+                    if (((DominioTangerine.Entidades.M4.CompaniaM4)_compania).StatusCompania == 1)
+                    {
+                        itemCompa = new ListItem();
+                        itemCompa.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).NombreCompania;
+                        itemCompa.Value = ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).Id.ToString();
+                        vista.ComboCompania.Items.Add(itemCompa);
+                    }     
                 }
-
-
             }
             catch (Exception e)
             {
@@ -137,12 +134,7 @@ namespace Tangerine_Presentador.M6
 
         }
 
-        public void llenarComboDuracion()
-        {
-            vista.ComboDuracion.Items.Add("Meses");
-            vista.ComboDuracion.Items.Add("Dias");
-            vista.ComboDuracion.Items.Add("Horas");
-        }
+         
         public void llenarComboTipoCosto()
         {
          
@@ -151,37 +143,21 @@ namespace Tangerine_Presentador.M6
             vista.TipoCosto.Items.Add("Euro");
             vista.TipoCosto.Items.Add("Bitcoin");
         }
+        
+        
         public void llenarComboEstatus()
         {
             vista.ComboStatus.Items.Add("Pendiente");
             vista.ComboStatus.Items.Add("Aprobado");
             vista.ComboStatus.Items.Add("Cerrado");
         }
-        public void llenarComboCuota()
-        {
-            vista.ComboCuota.Items.Add("");
-            vista.ComboCuota.Items.Add("1");
-            vista.ComboCuota.Items.Add("2");
-            vista.ComboCuota.Items.Add("3");
-            vista.ComboCuota.Items.Add("4");
-        }
-
-        public void llenarComboFpago()
-        {
-            vista.FormaPago.Items.Add("Mensual");
-            vista.FormaPago.Items.Add("Por cuotas");
-        }
-           
+ 
         
         public void llenarVista() 
         {
          cargarCompañias();
-         llenarComboDuracion();
          llenarComboTipoCosto();
          llenarComboEstatus();
-         llenarComboCuota();
-         llenarComboFpago();
-        
         }
     }
 }

@@ -79,15 +79,24 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to M9_HistoricoPagoCompania.
         /// </summary>
         internal static string ConsultarHistoricoPagos {
             get {
                 return ResourceManager.GetString("ConsultarHistoricoPagos", resourceCulture);
+=======
+        ///   Looks up a localized string similar to &quot;901&quot;.
+        /// </summary>
+        internal static string CodigoErrorSQL {
+            get {
+                return ResourceManager.GetString("CodigoErrorSQL", resourceCulture);
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
             }
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to fac_fecha_emision.
         /// </summary>
         internal static string FacFechaEmision {
@@ -129,6 +138,13 @@ namespace DatosTangerine.DAO.M9 {
         internal static string PagoMonto {
             get {
                 return ResourceManager.GetString("PagoMonto", resourceCulture);
+=======
+        ///   Looks up a localized string similar to &quot;Error al realizar la conexion&quot;.
+        /// </summary>
+        internal static string MensajeErrorSQL {
+            get {
+                return ResourceManager.GetString("MensajeErrorSQL", resourceCulture);
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
             }
         }
         

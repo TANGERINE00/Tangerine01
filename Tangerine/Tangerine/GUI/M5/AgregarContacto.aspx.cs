@@ -9,6 +9,7 @@ using LogicaTangerine;
 using LogicaTangerine.M5;
 using Tangerine_Presentador.M5;
 using Tangerine_Contratos;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M5
 {
@@ -52,20 +53,40 @@ namespace Tangerine.GUI.M5
             set { this.telefono.Value = value; }
         }
 
-        public string input_cargo
+        public string item_cargo
         {
-            get { return this.cargo.Value; }
-            set { this.cargo.Value = value; }
+            get { return this.cargoLB.Value; }
+            set { this.cargoLB.Value = value; }
         }
 
-        public int GetTypeComp
+        public int GetTypeComp()
         {
-            get { return int.Parse( Request.QueryString[ ResourceGUIM5.typeComp ] ); }
+            try 
+            { 
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.typeComp ],
+                                                               false ) ); 
+            }
+            catch ( Exception ex ) 
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
         }
 
-        public int GetIdComp
+        public int GetIdComp()
         {
-            get { return int.Parse( Request.QueryString[ ResourceGUIM5.idComp ] ); }
+            try 
+            { 
+                return int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ ResourceGUIM5.idComp ],
+                                                             false) );
+            }
+            catch ( Exception ex ) 
+            {
+                Response.Redirect( "../M1/DashBoard.aspx" );
+            }
+
+            return 0;
         }
 
         public string CargarBotonVolver( int typeComp, int idComp )

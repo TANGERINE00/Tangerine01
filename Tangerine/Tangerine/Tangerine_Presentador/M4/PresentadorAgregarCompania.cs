@@ -15,6 +15,7 @@ namespace Tangerine_Presentador.M4
     public class PresentadorAgregarCompania
     {
         IContratoAgregarCompania _vista;
+        List<Entidad> Lugares;
         public PresentadorAgregarCompania(IContratoAgregarCompania vista)
         {
             this._vista = vista;
@@ -22,37 +23,35 @@ namespace Tangerine_Presentador.M4
 
         public void AgregarCompania() 
         {
-            
-            string _nombre = _vista.inputNombre1;
-            string _acronimo = _vista.inputAcronimo1;
-            string _rif = _vista.inputRIF1;
-            string _email = _vista.inputEmail1;
-            string _telefono = _vista.inputTelefono1;
-            string _fecha = _vista.Datepicker1;
+            int i = 0;
+            int _idLugar = 0;
+            Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
+            Lugares = comando2.Ejecutar();
+            foreach (Entidad Lugar in Lugares)
+            {
+                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
+                if(i == _vista.inputDireccion1.SelectedIndex)
+                    _idLugar = lugar2.LugId;
+                i++;
+            }
 
-            //Por defecto se crea la compania HABILITADA.
-            int _status = 1;
+            DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaSinId(_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
+                                                                                            _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
+                                                                                            1, int.Parse(_vista.inputPresupuesto1), int.Parse(_vista.inputPlazoPago1), _idLugar);
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearAgregarCompania(compania);
+            comando.Ejecutar();
 
-            int _presupuesto = int.Parse(_vista.inputPresupuesto1);
-            int _plazo = int.Parse(_vista.inputPlazoPago1);
-           
-           // int _direccionId = logica.MatchIdLugar(_vista.inputDireccion1);
-
-            /*Compania company = new Compania(_nombre, _rif, _email, _telefono, _acronimo,
-                                            DateTime.ParseExact(_fecha, "MM/dd/yyyy", null), _status, _presupuesto,
-                                            _plazo, _direccionId);*/
-           // logica.AddNewCompany(company);       
         }
 
         public void CargarLugares() {
-            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugar();
-            List<Entidad> Lugares = comando.Ejecutar();
-            DropDownList Lugares2 = new DropDownList();
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
+            Lugares = comando.Ejecutar();
             foreach (Entidad Lugar in Lugares)
             {
-                Lugares2.Items.Add(((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar).LugNombre);
+                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
+                _vista.inputDireccion1.Items.Add(lugar2.LugNombre);
             }
-            _vista.inputDireccion1 = Lugares2;
+            
         }
     }
 }

@@ -115,16 +115,28 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 7
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Proyecto
+        /// </summary>
+        /// <returns>La instancia</returns>
         public static IDaoProyecto ObetenerDaoProyecto()
         {
             return new DAO.M7.DaoProyecto();
         }
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Proyecto Contacto
+        /// </summary>
+        /// <returns>La instancia</returns>
         public static IDaoProyectoContacto ObetenerDaoProyectoContacto()
         {
             return new DAO.M7.DaoProyectoContacto();
         }
 
+        /// <summary>
+        /// Metodo que crea la instancia de DAO Proyecto Empleado
+        /// </summary>
+        /// <returns>La instancia</returns>
         public static IDaoProyectoEmpleado ObetenerDaoProyectoEmpleado()
         {
             return new DAO.M7.DaoProyectoEmpleado();
@@ -145,7 +157,11 @@ namespace DatosTangerine.Fabrica
         /// Metodo que instancia al objeto DAOPago
         /// </summary>
         /// <returns>Retorna el objeto DAOPago</returns>
+<<<<<<< HEAD
         public static IDAOPago CrearDAOPago()
+=======
+        public static InterfazDAO.M9.IDAOPago CrearDAOPago()
+>>>>>>> 27744b3a4a27d67c70e9e29bb58b3fb719a7b234
         {
             return new DAO.M9.DAOPago();
         }
@@ -167,7 +183,12 @@ namespace DatosTangerine.Fabrica
 
         public static IDAOEmpleado ConsultarDAOEmpleadoId()
         {
-            return new DAO.M10.DAOEmpleado(); //AQUIIIIIIIIIIIIIIIII
+            return new DAO.M10.DAOEmpleado(); 
+        }
+
+        public static IDAOEmpleado EstatusDAOEmpleado()
+        {
+            return new DAO.M10.DAOEmpleado();
         }
 
         /// <summary>

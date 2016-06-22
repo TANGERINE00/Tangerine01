@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
-using DatosTangerine.M3;
+using DatosTangerine;
 using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3

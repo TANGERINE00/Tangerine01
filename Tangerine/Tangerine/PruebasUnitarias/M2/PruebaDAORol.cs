@@ -78,11 +78,16 @@ namespace PruebasUnitarias.M2
         [Test]
         public void TestObtenerRolUsuario()
         {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar(elUsuario);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),
+                                                                                        "Activo", elRol1, 1);
+
             RolM2 elRol = new RolM2(4);
             IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
             DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuario( elRol.Id );
             DominioTangerine.Entidades.M2.RolM2 resultado = ( DominioTangerine.Entidades.M2.RolM2 )theResultado;
-            Assert.IsTrue(resultado.nombre.Equals("Programador"));
+            Assert.IsTrue(resultado.Id == 4);
         }
 
 
