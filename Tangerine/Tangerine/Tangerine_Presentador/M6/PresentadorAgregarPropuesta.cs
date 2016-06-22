@@ -64,7 +64,16 @@ namespace Tangerine_Presentador.M6
             _acuerdo = vista.FormaPago;
             _estatusW = vista.ComboStatus.SelectedItem.Text;
             _idCompañia = vista.IdCompania;
-            _entregaCant = Int32.Parse(vista.CantidadCuotas);
+
+            if (vista.CantidadCuotas == "")
+            {
+                _entregaCant = 0;
+            }
+            else
+            {
+                _entregaCant = Int32.Parse(vista.CantidadCuotas);
+            }
+            
 
             
             //Creación del Objeto Propuesta.
