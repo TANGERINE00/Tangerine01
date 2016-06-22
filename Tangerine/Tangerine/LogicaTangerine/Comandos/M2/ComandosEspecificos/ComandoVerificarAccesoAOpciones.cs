@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaTangerine.Fabrica;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
 {
@@ -47,8 +49,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios("Error al ejecutar " +
-                                                                        "VerificarAccesoAOpciones()", ex);
+                throw new ExceptionM2Tangerine("Error al ejecutar ComandoVerificarAccesoAOpciones", ex);
             }
             return lista;
         }
