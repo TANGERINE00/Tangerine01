@@ -210,4 +210,7 @@
   <data name="volverModificado" xml:space="preserve">
     <value>ConsultarFacturaM8.aspx?estado=1</value>
   </data>
+  <data name="idFac" xml:space="preserve">
+    <value>idFac</value>
+  </data>
 </root>

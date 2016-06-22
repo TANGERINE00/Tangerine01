@@ -8,19 +8,7 @@ namespace ExcepcionesTangerine.M9
 {
     public class ExceptionDataBaseM9Tangerine : ExceptionsTangerine
     {
-        public ExceptionDataBaseM9Tangerine()
-            : base()
-        { }
 
-        public ExceptionDataBaseM9Tangerine(string message)
-            : base(message)
-        {
-        }
-
-        public ExceptionDataBaseM9Tangerine(string message, Exception inner)
-            : base(message, inner)
-        {
-        }
 
         public ExceptionDataBaseM9Tangerine(string codigo, string message, Exception inner)
             : base(codigo, message, inner)

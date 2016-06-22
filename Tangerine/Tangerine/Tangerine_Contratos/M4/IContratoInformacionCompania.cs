@@ -19,5 +19,6 @@ namespace Tangerine_Contratos.M4
         Label Correo { get; set; }
         Label Telefono { get; set; }
         Label Fecha { get; set; }
+        string msjError { get; set; }
     }
 }

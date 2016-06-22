@@ -7,8 +7,14 @@ using DatosTangerine.InterfazDAO.M9;
 using DominioTangerine.Entidades.M9;
 using DominioTangerine;
 using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using DominioTangerine.Entidades.M4;
+using DatosTangerine.M4;
+
 using System.Data.SqlClient;
 using ExcepcionesTangerine.M9;
+
 using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M9
@@ -24,7 +30,7 @@ namespace DatosTangerine.DAO.M9
         public bool Agregar (Entidad pagoParam)
         {
 
-            try
+           try
             {
                 DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
                 List<Parametro> parametros = new List<Parametro>();
@@ -88,6 +94,72 @@ namespace DatosTangerine.DAO.M9
                 return false;
             }
         }
+        public List<Entidad> ConsultarPagosCompania(Entidad parametro)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            Entidad theCompany = (DominioTangerine.Entidades.M4.CompaniaM4)parametro;
+            Parametro theParam = new Parametro();
+            List<Entidad> listaPagos = new List<Entidad>();
+
+            
+            try
+            {
+                theParam = new Parametro(RecursoDAOPago.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar pagos
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAOPago.ConsultarHistoricoPagos, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    int facId = int.Parse(row[RecursoDAOPago.FacIdFactura].ToString());
+                    DateTime PagoFecha = DateTime.Parse(row[RecursoDAOPago.PagoFecha].ToString());
+                    double PagoMonto = double.Parse(row[RecursoDAOPago.PagoMonto].ToString());
+                    String PagoMoneda = row[RecursoDAOPago.PagoMoneda].ToString();
+
+                    Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(facId, PagoFecha,
+                        PagoMonto, PagoMoneda);
+
+                    listaPagos.Add(pago);
+                }
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
+                     ResourceCompany.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaPagos;
+        }
     
         public Boolean Modificar (Entidad e)
         {
@@ -104,9 +176,6 @@ namespace DatosTangerine.DAO.M9
             throw new NotImplementedException();
         }
     
-    
-    
     }
-
 
 }

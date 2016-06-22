@@ -18,5 +18,6 @@ namespace Tangerine_Contratos.M4
         string Datepicker1 { get; set; }
         string inputPresupuesto1 { get; set; }
         string inputPlazoPago1 { get; set; }
+        string msjError { get; set; }
     }
 }

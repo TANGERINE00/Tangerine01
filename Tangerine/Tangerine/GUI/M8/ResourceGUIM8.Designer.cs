@@ -268,6 +268,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idFac.
+        /// </summary>
+        internal static string idFac {
+            get {
+                return ResourceManager.GetString("idFac", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IdProyecto.
         /// </summary>
         internal static string idP {

@@ -67,7 +67,7 @@ namespace Tangerine_Presentador.M8
                 vista.textProyecto = proyecto.Nombre;
                 vista.textMonto = _laFactura.montoFactura.ToString();
                 vista.textTipoMoneda = _laFactura.tipoMoneda;
-                vista.textFecha = _laFactura.fechaFactura.ToString("dd/mm/yyyy");
+                vista.textFecha = _laFactura.fechaFactura.ToString(RecursoPresentadorM8.TipoFecha);
 
                 idCompania = compania.Id;
                 idProyecto = proyecto.Id;

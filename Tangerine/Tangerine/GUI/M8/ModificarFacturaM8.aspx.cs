@@ -82,7 +82,7 @@ namespace Tangerine.GUI.M8
         {
             try
             {
-                textNumeroFactura = Request.QueryString["idFac"]; ;
+                textNumeroFactura = Request.QueryString[ResourceGUIM8.idFac]; ;
                 if (!IsPostBack)
                 {
                     _presentador.llenarModificar();
