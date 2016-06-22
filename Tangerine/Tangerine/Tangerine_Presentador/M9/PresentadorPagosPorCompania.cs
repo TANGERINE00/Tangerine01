@@ -18,13 +18,18 @@ namespace Tangerine_Presentador.M9
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Metodo para llenar la tabla de pagos realizados por una compania 
+        /// </summary>
+        /// <param name="idComp">Entero, representa el id de la compania que se desea saber historial de pagos</param>
         public void LlenarPagos(int idComp)
         {
 
            try
             {
             DominioTangerine.Entidades.M4.CompaniaM4 comp =
-                (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
+                (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.
+                crearCompaniaVacia();
             comp.Id = idComp;
             Comando<List<Entidad>> comandoListaPagos =
                 LogicaTangerine.Fabrica.FabricaComandos.ConsultarPagosCompania(comp);
@@ -33,15 +38,19 @@ namespace Tangerine_Presentador.M9
 
             
 
-                //con el id capturado utilizao el metodo SearchFacturas para mostrar todas las facturas asociadas a esa compania
 
                 if (listaP.Count() < 1)
                 {
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + RecursoPresentadorM9.CloseTD;
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                        RecursoPresentadorM9.CloseTD;
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                        RecursoPresentadorM9.CloseTD;
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                        RecursoPresentadorM9.CloseTD;
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                        RecursoPresentadorM9.CloseTD;
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                        RecursoPresentadorM9.CloseTD;
 
                 }
                 else
@@ -51,8 +60,10 @@ namespace Tangerine_Presentador.M9
                     {
 
                         vista.pago += RecursoPresentadorM9.AbrirTR;
-                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.idFactura + RecursoPresentadorM9.CloseTD;
-                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.fechaPago.ToShortDateString() + RecursoPresentadorM9.CloseTD;
+                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.idFactura + 
+                            RecursoPresentadorM9.CloseTD;
+                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.fechaPago.ToShortDateString() + 
+                            RecursoPresentadorM9.CloseTD;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.montoPago + RecursoPresentadorM9.CloseTD;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.monedaPago + RecursoPresentadorM9.CloseTD;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.codPago + RecursoPresentadorM9.CloseTD;
