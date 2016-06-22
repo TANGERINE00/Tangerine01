@@ -10,17 +10,24 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoAgregarRequerimiento: Comando<bool>
     {
-        public ComandoAgregarRequerimiento(Entidad elRequerimiento) 
+        /// <summary>
+        /// Constructor, recibe parametro de tipo requerimiento
+        /// </summary>
+        /// <param name="elRequerimiento">objeto de tipo requerimiento</param>
+        public ComandoAgregarRequerimiento( Entidad elRequerimiento ) 
         {
              _laEntidad = elRequerimiento;
         }
-
+        /// <summary>
+        /// Método para utilizar el metodo AgregarRequerimiento en capa de datos.
+        /// </summary>
+        /// <returns>Retorna true si fue satisfactoria la insercion</returns>
         public override bool Ejecutar()
         {
             try
             {
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
-                return daoRequerimiento.Agregar(_laEntidad);
+                return daoRequerimiento.Agregar( _laEntidad );
             }
             catch (Exception e)
             {

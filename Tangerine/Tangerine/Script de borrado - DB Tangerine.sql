@@ -8,6 +8,7 @@ drop table propuesta;
 drop table contacto;
 drop table telefono;
 drop table compania;
+drop table seguimiento;
 drop table cliente_potencial;
 drop table usuario;
 drop table cargo_empleado;
@@ -42,6 +43,7 @@ drop procedure M3_consultar_cliente_potencial;
 drop procedure M3_modificar_clientePotencialF;
 drop procedure M3_activar_cliente_potencial;
 drop procedure M3_eliminar_cliente_potencial_def;
+drop procedure M3_ConsultarIdUltimoLead
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;

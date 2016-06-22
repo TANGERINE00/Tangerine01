@@ -10,18 +10,26 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoBorrarPropuesta : Comando<bool>
     {
-        public ComandoBorrarPropuesta(Entidad laPropuesta)
+        /// <summary>
+        /// Constructor, recibe parametro de tipo propuesta
+        /// </summary>
+        /// <param name="laPropuesta">objeto de tipo propuesta</param>
+        public ComandoBorrarPropuesta( Entidad laPropuesta )
         {
             _laEntidad = laPropuesta;
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo BorrarPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna true si fue satisfactorio el borrado</returns>
         public override bool Ejecutar()
         {
             try
             {
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-                DominioTangerine.Entidades.M6.Propuesta propuesta = (DominioTangerine.Entidades.M6.Propuesta)_laEntidad;
-                return daoPropuesta.BorrarPropuesta(propuesta.Nombre);
+                DominioTangerine.Entidades.M6.Propuesta propuesta = ( DominioTangerine.Entidades.M6.Propuesta )_laEntidad;
+                return daoPropuesta.BorrarPropuesta( propuesta.Nombre );
             }
             catch (Exception e)
             {

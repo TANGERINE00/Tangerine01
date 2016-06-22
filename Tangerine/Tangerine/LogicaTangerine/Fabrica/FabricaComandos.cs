@@ -121,7 +121,17 @@ namespace LogicaTangerine.Fabrica
                 return new Comandos.M2.ComandosDAOUsuario.ComandoPrepararUsuario( usuarioNombre , contrasenaUsuario , 
                                                                                   rolUsuario , fichaEmpleado );
             }
-            
+
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultaUsuarioLogin
+            /// </summary>
+            /// <param name="usuario"></param>
+            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin(DominioTangerine.Entidad usuario)
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin(usuario);
+            }
+
             #endregion
 
             #region Comandos Rol
@@ -203,18 +213,6 @@ namespace LogicaTangerine.Fabrica
             {
                 return new Comandos.M2.ComandosEspecificos.ComandoVerificarAccesoAPagina( paginaAVerificar, nombreRol );
             }
-
-            /// <summary>
-            /// Método utilizado para devolver una instancia del ComandoConsultaUsuarioLogin
-            /// </summary>
-            /// <param name="usuario"></param>
-            /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
-            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin(DominioTangerine.Entidad usuario)
-            {
-                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin(usuario);
-            }
-
-
 
             #endregion
         
@@ -765,16 +763,6 @@ namespace LogicaTangerine.Fabrica
         }
 
         /// <summary>
-        /// metodo para crear comando que permite consultar una compania dada una factura
-        /// </summary>
-        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
-        public static Comando<Entidad> CrearConsultarCompaniaFactura(Entidad factura)
-        {
-            return new ComandoConsultarCompaniaFactura(factura);
-        }
-
-        /// <summary>
         /// metodo para crear comando que permite consultar todas las facturas de una compania
         /// </summary>
         /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
@@ -792,16 +780,6 @@ namespace LogicaTangerine.Fabrica
         public static Comando<List<Entidad>> CrearConsultarFacturasPagadasCompania(Entidad compania)
         {
             return new ComandoConsultarFacturasPagadasCompania(compania);
-        }
-
-        /// <summary>
-        /// metodo para crear comando que permite consultar el proyecto de una factura
-        /// </summary>
-        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
-        public static Comando<Entidad> CrearConsultarProyectoFactura(Entidad factura)
-        {
-            return new ComandoConsultarProyectoFactura(factura);
         }
 
         /// <summary>

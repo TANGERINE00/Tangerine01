@@ -10,11 +10,18 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoConsultarTodosRequerimiento : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ComandoConsultarTodosRequerimiento()
         {
 
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo AgregarPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna lista de todos los requerimientos registrados</returns>
         public override List<Entidad> Ejecutar()
         {
             try
@@ -22,7 +29,7 @@ namespace LogicaTangerine.Comandos.M6
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
                 return daoRequerimiento.ConsultarTodos();
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }

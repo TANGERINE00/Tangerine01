@@ -46,8 +46,8 @@ namespace Tangerine_Presentador.M7
         public void agregarProyecto()
         {
             ///Se capturan los datos de la vista para crear un proyecto.
-            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "MM/dd/yyyy", null);
-            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
+            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
+            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
             Double _costo = Convert.ToDouble(_vista.Costo);
 
             ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
@@ -90,14 +90,7 @@ namespace Tangerine_Presentador.M7
 
             //Se crea un nuevo comando para agregar los contactos en el proyecto.
             Comando<bool> comandoContactos = FabricaComandos.ObtenerComandoAgregarContactos(nuevoProyecto);
-            comandoContactos.Ejecutar();
-
-            /*DominioTangerine.Entidades.M7.Proyecto tal = (DominioTangerine.Entidades.M7.Proyecto)nuevoProyecto;
-            tal.set_empleados(listaProgramadores);
-            tal.set_contactos(listaContactos);*/
-
-
-         
+            comandoContactos.Ejecutar();       
         }
 
         /// <summary>
@@ -148,7 +141,8 @@ namespace Tangerine_Presentador.M7
 
                 Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
                 ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).Id = Int32.Parse(propuesta.IdCompañia);
-                Comando<List<Entidad>> comandoConsultarContacto = FabricaComandos.CrearComandoConsultarContactosPorCompania(_compania, 1);
+                Comando<List<Entidad>> comandoConsultarContacto = 
+                                    FabricaComandos.CrearComandoConsultarContactosPorCompania(_compania, 1);
                 List<Entidad> listaContacto = comandoConsultarContacto.Ejecutar();
 
                 foreach (Entidad entidad in listaContacto)
@@ -188,6 +182,7 @@ namespace Tangerine_Presentador.M7
         /// </summary>
         public void AgregarPersonal()
         {
+            _vista.btnAgregarPersonal.Enabled = false;
             _vista.columna2.Visible = true;
             _vista.BtnGenerar.Enabled = true;
         }

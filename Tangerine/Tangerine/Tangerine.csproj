@@ -166,6 +166,7 @@
     <Content Include="GUI\M3\Listar.aspx" />
     <Content Include="GUI\M3\ModificarLead.aspx" />
     <Content Include="GUI\M3\Promover.aspx" />
+    <Content Include="GUI\M3\SeguimientoDeLeads.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\InformacionCompania.aspx" />
@@ -1101,6 +1102,11 @@
     <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\ResourceM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceM2.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M3\ActivarLead.aspx.cs">
       <DependentUpon>ActivarLead.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1161,6 +1167,13 @@
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GUI\M3\SeguimientoDeLeads.aspx.cs">
+      <DependentUpon>SeguimientoDeLeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\SeguimientoDeLeads.aspx.designer.cs">
+      <DependentUpon>SeguimientoDeLeads.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>
@@ -1537,6 +1550,10 @@
     <EmbeddedResource Include="GUI\M1\ResourceGUIM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M2\ResourceM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
