@@ -136,7 +136,7 @@ namespace Tangerine.GUI.M6 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList formaPago;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect formaPago;
         
         /// <summary>
         /// cuota control.
@@ -148,13 +148,13 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cuota;
         
         /// <summary>
-        /// comboCuota control.
+        /// cantidadCuotas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboCuota;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cantidadCuotas;
         
         /// <summary>
         /// contenedorEstatus control.
