@@ -68,7 +68,8 @@ namespace Tangerine.GUI.M2
             {
                 presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idFicha"], false)),
                                                              AntiXssEncoder.HtmlEncode(Request.QueryString["Nombre"], false),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false));
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Rol"], false));
                 if (!IsPostBack)
                 {
                     presentador.inicioVista();
