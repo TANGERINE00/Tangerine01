@@ -157,7 +157,7 @@ namespace DatosTangerine.Fabrica
         /// Metodo que instancia al objeto DAOPago
         /// </summary>
         /// <returns>Retorna el objeto DAOPago</returns>
-        public static DAO.M9.DAOPago CrearDAOPago()
+        public static InterfazDAO.M9.IDAOPago CrearDAOPago()
         {
             return new DAO.M9.DAOPago();
         }

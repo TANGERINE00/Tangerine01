@@ -24,9 +24,9 @@ namespace LogicaTangerine.Comandos.M9
         /// <returns></returns>
         public override Boolean Ejecutar()
         {
-            DAOPago Pago = FabricaDAOSqlServer.CrearDAOPago();
-            Pago.Agregar(this._laEntidad);
-            return true;
+            IDAOPago Pago = FabricaDAOSqlServer.CrearDAOPago();
+            return Pago.Agregar(this._laEntidad);
+            
 
         }
     
