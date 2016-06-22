@@ -142,7 +142,7 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Factura&quot;  class=&quot;btn btn-primary glyphicon glyphicon-file&quot; href=&quot;Factura.aspx?idFac=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Factura&quot;  class=&quot;btn btn-info glyphicon glyphicon-file&quot; href=&quot;Factura.aspx?idFac=.
         /// </summary>
         internal static string BotonFactura {
             get {
@@ -196,7 +196,7 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Mail&quot; class=&quot;btn btn-primary glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idFac=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Correo&quot; class=&quot;btn btn-default glyphicon glyphicon-envelope&quot; href=&quot;EnviarCorreoM8.aspx?idFac=.
         /// </summary>
         internal static string BotonMail {
             get {
