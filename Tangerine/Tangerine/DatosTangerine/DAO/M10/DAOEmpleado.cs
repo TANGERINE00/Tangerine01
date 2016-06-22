@@ -158,14 +158,14 @@ namespace DatosTangerine.DAO.M10
                     String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                     String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
-                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoXid(empCargo, empSalario,
-                                              empFechaInicio,empFechaFin);
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoXid(empCargo,
+                                            empSalario, empFechaInicio, empFechaFin);
 
                     empleadoFinal = DominioTangerine.Fabrica.FabricaEntidades.ListarEmpleadoId(empId, empPNombre,
                                                     empSNombre, empPApellido, empSApellido,
                                                     empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                    empEmailEmployee, empLugId, cargoEmpleado, empSalario, empFechaInicio,
-                                                    empFechaFin, empDireccion);
+                                                    empEmailEmployee, empLugId, cargoEmpleado, empSalario,
+                                                    empFechaInicio, empFechaFin, empDireccion);
     
             }
             catch (ArgumentNullException ex)
@@ -231,7 +231,8 @@ namespace DatosTangerine.DAO.M10
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleado, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleado,
+                               parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -258,12 +259,14 @@ namespace DatosTangerine.DAO.M10
 
                     //Creo un objeto de tipo Entidad con los datos de la fila
 
-                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion,
-                                            empContratacion);
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo,
+                        empCargoDescripcion, empContratacion);
+                                            
 
-                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre,
-                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad,
-                    empSalario,cargoEmpleado);
+                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados
+                    (empId, empPNombre, empSNombre,
+                     empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio,
+                     empModalidad, empSalario, cargoEmpleado);
 
 
                     listEmpleado.Add(empleado);
@@ -334,8 +337,10 @@ namespace DatosTangerine.DAO.M10
                 {
                     Entidad pais = DominioTangerine.Fabrica.FabricaEntidades.ObtenerLugar();
 
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).Id = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).LugNombre = (row[ResourceComplemento.ItemCountryText].ToString());
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).Id = int.Parse(row[ResourceComplemento.
+                    ItemCountryValue].ToString());
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).LugNombre = (row[ResourceComplemento.
+                    ItemCountryText].ToString());
 
                     listPais.Add(pais);
                 }
@@ -408,8 +413,10 @@ namespace DatosTangerine.DAO.M10
                 {
                     Entidad Estado=DominioTangerine.Fabrica.FabricaEntidades.ObtenerLugar();
 
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).Id = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).LugNombre = (row[ResourceComplemento.ItemCountryText].ToString());                   
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).Id = int.Parse(row[ResourceComplemento.
+                    ItemCountryValue].ToString());
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).LugNombre = (row[ResourceComplemento.
+                    ItemCountryText].ToString());                   
 
                     estados.Add(Estado);
                 }
@@ -481,8 +488,10 @@ namespace DatosTangerine.DAO.M10
                     
                     Entidad cargo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoM10();
 
-                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Car_id = int.Parse(row[ResourceComplemento.ItemJobValue].ToString());
-                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Nombre = (row[ResourceComplemento.ItemJobText].ToString());
+                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Car_id = int.Parse(row[ResourceComplemento.
+                    ItemJobValue].ToString());
+                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Nombre = (row[ResourceComplemento.ItemJobText].
+                    ToString());
 
                     listCargo.Add(cargo);
                 }
