@@ -213,4 +213,10 @@
   <data name="idFac" xml:space="preserve">
     <value>idFac</value>
   </data>
+  <data name="amount" xml:space="preserve">
+    <value>Monto</value>
+  </data>
+  <data name="dateTipe" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
 </root>

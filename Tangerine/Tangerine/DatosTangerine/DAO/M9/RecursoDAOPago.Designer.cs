@@ -124,6 +124,15 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to pag_cod.
+        /// </summary>
+        internal static string PagoCod {
+            get {
+                return ResourceManager.GetString("PagoCod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pag_fecha.
         /// </summary>
         internal static string PagoFecha {
