@@ -318,6 +318,17 @@ insert into USUARIO values (3, 'calozano', '81dc9bdb52d04dc20036dbd8313ed055', C
 insert into USUARIO values (4, 'jams', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 4, null);
 ---------Fin de Inserts de Usuarios y Roles-----------
 
+----------------INSERT PAGO-------------------------------------------
+INSERT INTO [dbo].[PAGO]
+           ([pag_moneda]
+           ,[pag_monto]
+           ,[pag_forma]
+           ,[pag_cod]
+           ,[pag_fecha]
+           ,[fk_fac_id])
+     VALUES
+           ('Bolivares',250,'Deposito',1234543212,'06/05/2015',4);
+
 
 --------------------------INSERTS REQUERIMIENTOS---------------------------
 INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
