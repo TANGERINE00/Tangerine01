@@ -23,6 +23,6 @@ namespace Tangerine_Contratos.M7
         DropDownList inputGerente { get; set; }
         HtmlGenericControl columna2 { get; set; }
         Button BtnGenerar { get; set; }
-
+        Button btnAgregarPersonal { get; set; }
     }
 }

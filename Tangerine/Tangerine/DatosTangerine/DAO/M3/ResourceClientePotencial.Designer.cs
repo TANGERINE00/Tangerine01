@@ -142,6 +142,15 @@ namespace DatosTangerine.DAO.M3 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M3_ConsultarIdUltimoLead.
+        /// </summary>
+        internal static string ConsultarUltimoId {
+            get {
+                return ResourceManager.GetString("ConsultarUltimoId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a cli_pot_email.
         /// </summary>
         internal static string emailClientePotencial {

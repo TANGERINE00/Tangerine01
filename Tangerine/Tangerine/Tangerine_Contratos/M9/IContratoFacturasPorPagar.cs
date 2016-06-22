@@ -11,8 +11,5 @@ namespace Tangerine_Contratos.M9
     {
        string factura { get; set; }
 
-
-
-   
    }
 }

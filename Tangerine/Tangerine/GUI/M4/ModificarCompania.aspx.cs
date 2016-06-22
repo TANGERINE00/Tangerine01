@@ -15,6 +15,7 @@ namespace Tangerine.GUI.M4
     public partial class ModificarCompania : System.Web.UI.Page , IContratoAgregarCompania
     {
         PresentadorModificarCompania Presentador;
+        string error;
 
         public ModificarCompania()
         {
@@ -133,6 +134,17 @@ namespace Tangerine.GUI.M4
                 //InputDireccion1 = value;
             }
         }
+        public string msjError
+        {
+            get
+            {
+                return error;
+            }
+            set
+            {
+                error = value;
+            }
+        }
         #endregion
 
 
@@ -143,16 +155,12 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
                 if (!IsPostBack)
                 {
-                    Presentador.CargarCompania(int.Parse(Request.QueryString["idComp"]));
+                    if(!Presentador.CargarCompania(int.Parse(Request.QueryString["idComp"])))
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
                 }
-            }
-            catch (Exception ex)
-            { 
-            }
+       
         }
 
         /// <summary>
@@ -162,8 +170,10 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnmodificar_Click(object sender, EventArgs e)
         {
-            Presentador.ModificarCompania(int.Parse(Request.QueryString["idComp"]));
-            Server.Transfer("ConsultarCompania.aspx", true);
+            if (Presentador.ModificarCompania(int.Parse(Request.QueryString["idComp"])))
+                Server.Transfer("ConsultarCompania.aspx", true);
+            else
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
         }
 
         /// <summary>

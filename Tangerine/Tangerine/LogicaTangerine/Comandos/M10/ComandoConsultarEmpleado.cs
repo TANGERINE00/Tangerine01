@@ -1,6 +1,7 @@
 ﻿using DatosTangerine.DAO.M10;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
+using ExcepcionesTangerine.M5;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,14 @@ namespace LogicaTangerine.Comandos.M10
                 IDAOEmpleado daoEmpleado =(DatosTangerine.DAO.M10.DAOEmpleado) DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
                 return daoEmpleado.ConsultarTodos();
             }
-            catch (Exception e)
+            catch (AgregarContactoException ex)
             {
-                throw e;
+                throw ex;
             }
-
+            catch (BaseDeDatosContactoException ex)
+            {
+                throw ex;
+            }
         }
     }
 }

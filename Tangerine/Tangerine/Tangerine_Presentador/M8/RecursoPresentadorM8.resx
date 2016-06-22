@@ -276,4 +276,40 @@
   <data name="dateTipe" xml:space="preserve">
     <value>dd/MM/yyyy</value>
   </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="alertaModificado" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="MsjModificado" xml:space="preserve">
+    <value>La factura ha sido modificada</value>
+  </data>
+  <data name="BotonFactura" xml:space="preserve">
+    <value>&lt;a title="Factura"  class="btn btn-primary glyphicon glyphicon-file" href="Factura.aspx?idFac=</value>
+  </data>
+  <data name="TipoFecha" xml:space="preserve">
+    <value>dd/mm/yyyy</value>
+  </data>
+  <data name="MontoTotal" xml:space="preserve">
+    <value>TOTAL :</value>
+  </data>
+  <data name="BS" xml:space="preserve">
+    <value>Bs</value>
+  </data>
+  <data name="Dolar" xml:space="preserve">
+    <value>$</value>
+  </data>
+  <data name="Euro" xml:space="preserve">
+    <value>€</value>
+  </data>
 </root>

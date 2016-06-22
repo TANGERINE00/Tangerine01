@@ -27,6 +27,7 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void iniciarVista()
         {
+            _vista.empleado = null;
             LogicaTangerine.Comando<List<Entidad>> theComando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();           
             List<Entidad> listaDeEmpleados = theComando.Ejecutar();
 

@@ -183,6 +183,17 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        Button IContratoAgregarProyecto.btnAgregarPersonal
+        {
+            get
+            {
+                return this.btnAgregarPersonal;
+            }
+            set
+            {
+                this.btnAgregarPersonal = value;
+            }
+        }
         #endregion
 
         /// <summary>

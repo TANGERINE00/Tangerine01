@@ -48,6 +48,7 @@
     <Compile Include="M2\IContratoAsignarRol.cs" />
     <Compile Include="M2\IContratoCambiarRol.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />
+    <Compile Include="M3\IContratoAgregarClientePotencial.cs" />
     <Compile Include="M3\IContratoConsultarClientePotencial.cs" />
     <Compile Include="M3\IContratoListarClientePotencial.cs" />
     <Compile Include="M3\IContratoModificarClientePotencial.cs" />
@@ -66,24 +67,17 @@
     <Compile Include="M7\IContratoAgregarProyecto.cs" />
     <Compile Include="M7\IContratoModificarProyecto.cs" />
     <Compile Include="M8\IContratoConsultarFactura.cs" />
+    <Compile Include="M8\IContratoFactura.cs" />
     <Compile Include="M8\IContratoGenerarFactura.cs" />
     <Compile Include="M8\IContratoAnularFactura.cs" />
-    <Compile Include="M8\RecursoInterfazModulo8.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursoInterfazModulo8.resx</DependentUpon>
-    </Compile>
+    <Compile Include="M8\IContratoModificarFactura.cs" />
+    <Compile Include="M8\IContratoCorreo.cs" />
     <Compile Include="M9\IContratoCargarPago.cs" />
     <Compile Include="M9\IContratoFacturasPorPagar.cs" />
+    <Compile Include="M9\IContratoPagosPorCompania.cs" />
     <Compile Include="M9\IContratoSeleccionCompania.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="M8\RecursoInterfazModulo8.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursoInterfazModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">

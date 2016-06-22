@@ -19,6 +19,25 @@ namespace Tangerine_Presentador.M8
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta(string msj)
+        {
+            if (msj == "1")
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            else
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+        }
+
         public void cargarConsultarFacturas()
         {
             bool pagada = false;
@@ -68,7 +87,8 @@ namespace Tangerine_Presentador.M8
                     {
                         vista.facturasCreadas += RecursoPresentadorM8.BotonModifInhabilitado + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro +
                                    RecursoPresentadorM8.BotonAnularInhabilitado + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro +
-                                   RecursoPresentadorM8.BotonPagarInhabilitado + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro;
+                                   RecursoPresentadorM8.BotonPagarInhabilitado + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro +
+                                   RecursoPresentadorM8.BotonFactura + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro;
 
                         vista.facturasCreadas += RecursoPresentadorM8.CloseTd;
                         vista.facturasCreadas += RecursoPresentadorM8.CloseTr;
@@ -77,7 +97,8 @@ namespace Tangerine_Presentador.M8
                     {
                         vista.facturasCreadas += RecursoPresentadorM8.BotonModif + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro +
                                 RecursoPresentadorM8.BotonAnular + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro +
-                                RecursoPresentadorM8.BotonPagar + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro;
+                                RecursoPresentadorM8.BotonPagar + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro +
+                                RecursoPresentadorM8.BotonFactura + ((DominioTangerine.Entidades.M8.Facturacion)laFactura).Id.ToString() + RecursoPresentadorM8.CloseBotonParametro;
 
                         vista.facturasCreadas += RecursoPresentadorM8.CloseTd;
                         vista.facturasCreadas += RecursoPresentadorM8.CloseTr;

@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaTangerine.M9;
-using LogicaTangerine.M4;
 using DominioTangerine;
 using LogicaTangerine;
 using Tangerine_Contratos.M9;
@@ -117,20 +115,10 @@ namespace Tangerine.GUI.M9
         #endregion
 
 
-        /// <summary>
-        /// Metodo de carga la tabla de la ventana.
-        /// </summary>
-        /// recibe un solo parametro, id de la factura para consultar los detalles asociados, este parametro se recibe via URL
-        /// <param name="id">Entero, representa el id de factura</param>
-    
 
 
-        /// <summary>
-        /// Metodo de carga de los elementos de la ventana.
-        /// </summary>
-        /// recibe un solo parametro, id de la compania para consultar todas las facturas asociadas, este parametro se recibe via URL
-        /// recibe un solo parametro, id de la factura para consultar los detalles asociados, este parametro se recibe via URL
 
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             int identificador = int.Parse(Request.QueryString["id"]);

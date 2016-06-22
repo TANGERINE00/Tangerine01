@@ -9,7 +9,12 @@ namespace Tangerine_Contratos.Master
 {
     public interface IContratoMasterPage
     {
-        Cuenta UserLogin { get; set; }
+        string sesionUsuario { get; set; }
+        string usuarioDet { get; set; }
+        string fechaUser { get; set; }
+
+        bool IFindControl(string id);
+        
 
     }
 }
