@@ -16,19 +16,20 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box box-primary">
-                <!--<div class="panel-heading">Filtrar empleados</div>-->
-                <div class="box-header with-border">
-                    <h3 class="box-title">Lista de empleados sin cuenta de usuario</h3>
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+    <div class="row" runat="server">
+        <div class="col-md-12" runat="server">
+            <div class="box box-primary" runat="server">
+                <form role="form" runat="server" method="post" name="consulta_factura" id="consulta_factura">
+                    <div class="box-header with-border" runat="server">
+                        <h3 class="box-title">Lista de Empleados sin cuenta de Usuario</h3>
+                        <div class="box-tools" runat="server">
+                        <div class="input-group input-group-sm" style="width: 150px;" runat="server">
+                            <input name="table_search" class="form-control pull-right" id="textBuscarId" placeholder="Ficha Empleado" type="text" runat="server">
 
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
+                                <div class="input-group-btn">
+                                    <asp:LinkButton type="submit" runat="server" ID="btnRun" Text="<i class='fa fa-search' ></i>" 
+                                        ValidationGroup="edt" OnClick="busquedaNumero_Click" class="btn btn-default" />
+                                </div>
                         </div>
                     </div>
 
@@ -53,7 +54,7 @@
                         </table>
                     </div>
                     <!-- /.box-body -->
-                </div>
+                </form>
             </div>
         </div>
     </div>
