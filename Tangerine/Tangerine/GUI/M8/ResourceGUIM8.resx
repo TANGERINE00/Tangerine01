@@ -195,4 +195,13 @@
   <data name="idP" xml:space="preserve">
     <value>IdProyecto</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
+  <data name="redirectHome" xml:space="preserve">
+    <value>ConsultarFacturaM8.aspx</value>
+  </data>
 </root>

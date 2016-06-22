@@ -50,7 +50,8 @@ namespace Tangerine_Presentador.M6
             consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
             _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
-            _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
+            //_Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
+            _Tipoduracion = vista.ComboDuracion;
             _duracion = vista.TextoDuracion;
             _fechaI = DateTime.ParseExact(vista.DatePickerUno, "MM/dd/yyyy", null);
             _fechaF = DateTime.ParseExact(vista.DatePickerDos, "MM/dd/yyyy", null);
@@ -137,12 +138,15 @@ namespace Tangerine_Presentador.M6
 
         }
 
+        /*
         public void llenarComboDuracion()
         {
             vista.ComboDuracion.Items.Add("Meses");
             vista.ComboDuracion.Items.Add("Dias");
             vista.ComboDuracion.Items.Add("Custom");
         }
+        */
+          
         public void llenarComboTipoCosto()
         {
          
@@ -176,7 +180,7 @@ namespace Tangerine_Presentador.M6
         public void llenarVista() 
         {
          cargarCompañias();
-         llenarComboDuracion();
+         //llenarComboDuracion();
          llenarComboTipoCosto();
          llenarComboEstatus();
          llenarComboCuota();

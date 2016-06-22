@@ -111,9 +111,46 @@ namespace DatosTangerine.DAO.M7
         #endregion
 
         #region DAO
-        public bool Agregar(Entidad parametro)
+        public bool Agregar(Entidad entProyecto)
         {
-            throw new NotImplementedException();
+            {
+                List<Parametro> parameters;
+                Parametro theParam = new Parametro();
+                DominioTangerine.Entidades.M7.Proyecto elProyecto = (DominioTangerine.Entidades.M7.Proyecto)entProyecto;
+
+                foreach (Entidad entidad in elProyecto.get__contactos())
+                {
+                    DominioTangerine.Entidades.M5.ContactoM5 contacto = (DominioTangerine.Entidades.M5.ContactoM5)entidad;
+
+
+                    try
+                    {
+                        parameters = new List<Parametro>();
+                        //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                        //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+
+                        theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, elProyecto.Id.ToString(), false);
+                        parameters.Add(theParam);
+
+                        theParam = new Parametro(ResourceProyecto.ParamPCIdContacto, SqlDbType.Int, contacto.Id.ToString(), false);
+                        parameters.Add(theParam);
+
+                        
+                        //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
+                        List<Resultado> results = EjecutarStoredProcedure(ResourceProyecto.AddNewProyectoContacto, parameters);
+
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                        return false;
+                    }
+
+                }
+                return true;
+            }
         }
 
         public bool Modificar(Entidad parametro)

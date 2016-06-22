@@ -30,15 +30,10 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 presenter.llenarVista();
-
-                //comboDuracion_SelectedIndexChanged(sender, e);
             }
-
-
         }
 
 
@@ -47,7 +42,7 @@ namespace Tangerine.GUI.M6
             presenter.agregarPropuesta();
         }
 
-
+        /*
         protected void comboDuracion_SelectedIndexChanged(object sender, EventArgs e)
         {
             datepicker1.Value = DateTime.Today.ToShortDateString();
@@ -64,7 +59,7 @@ namespace Tangerine.GUI.M6
                 datepicker2.Disabled = false;
             }
         }
-
+        */
         
         public DropDownList ComboCompania 
         {
@@ -85,11 +80,21 @@ namespace Tangerine.GUI.M6
             get { return arrPrecondicion.Value; }
 
         }
+        
+        /*
         public DropDownList ComboDuracion
         {
             get { return comboDuracion; }
             set { comboDuracion=value; }
         }
+        */
+
+        public string ComboDuracion
+        {
+            get { return comboDuracion.Value; }
+            set { comboDuracion.Value = value; }
+        }
+
         public string TextoDuracion
         {
             get { return textoDuracion.Value; }
