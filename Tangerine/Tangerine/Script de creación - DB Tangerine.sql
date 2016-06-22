@@ -1689,7 +1689,7 @@ CREATE PROCEDURE M9_historico_pago_por_compania
 @id_compania int
 AS
 	BEGIN
-		SELECT  fac_id, fac_fecha_emision,pag_fecha,pag_monto,pag_moneda
+		SELECT  fac_id, fac_fecha_emision,pag_fecha,pag_monto,pag_moneda, pag_cod
                 FROM factura, pago
 				WHERE fk_fac_id=fac_id AND fk_compania_id=@id_compania
 				
