@@ -349,7 +349,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=1.
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx.
         /// </summary>
         internal static string volver {
             get {
