@@ -16,7 +16,12 @@ namespace Tangerine.GUI.M3
     public partial class AgregarLeads : System.Web.UI.Page, IContratoAgregarClientePotencial
     {
         bool accionEnBd;
+        PresentadorAgregarClientePotencial presentador;
 
+        public AgregarLeads()
+        {
+            presentador = new PresentadorAgregarClientePotencial(this);
+        }
 
         #region Contrato
         public String NombreEtiqueta
@@ -83,30 +88,21 @@ namespace Tangerine.GUI.M3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!IsPostBack)
-            {
-
-            }*/
+            
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            /*_nombre = nombre.Value;
-            _rif = rif.Value;
-            _email = email.Value;
-            _presupuesto = float.Parse(presupuesto.Value);
-          //  _llamadas = int.Parse(llamadas.Value);
-          //  _visitas = int.Parse(Visitas.Value);
-          //  _potencial=Potencial.Value;
-          //  _borrado = Borrado.Value;
-            //Los dos ultimos valores deben de venir de la ventana de consultar contactos (tipo empresa y id empresa)
-            // ((_nombre, _rif, _email, _presupuesto, _lla) en esa parte esta usando lo del constructor sin id
-            ClientePotencial clientePotencial = new ClientePotencial(_nombre, _rif, _email, _presupuesto,1);//, _llamadas, _visitas, _potencial, _borrado);
-            LogicaM3 clientePotencialLogica = new LogicaM3();
-            //clientePotencialLogica. AgregarNuevoclientePotencial(clientePotencial);
-            Response.Redirect("Listar.aspx");*/
+            presentador.Agregar();
 
-
+            if (this.accionEnBd)
+            {
+                Server.Transfer("Listar.aspx", true);
+            }
+            else
+            {
+                Response.Write("<script type='text/javascript'> alert('Los datos del Cliente no fueron procesados') </script>");
+            }
         }
     }
 }
