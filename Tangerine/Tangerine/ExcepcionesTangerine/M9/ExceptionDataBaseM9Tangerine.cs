@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesTangerine.M9
 {
-    public class ExceptionDataBase : ExceptionsTangerine
+    public class ExceptionDataBaseM9Tangerine : ExceptionsTangerine
     {
-        public ExceptionDataBase()
+        public ExceptionDataBaseM9Tangerine()
             : base()
         { }
 
-        public ExceptionDataBase(string message)
+        public ExceptionDataBaseM9Tangerine(string message)
             : base(message)
         {
         }
 
-        public ExceptionDataBase(string message, Exception inner)
+        public ExceptionDataBaseM9Tangerine(string message, Exception inner)
             : base(message, inner)
         {
         }
 
-        public ExceptionDataBase(string codigo, string message, Exception inner)
+        public ExceptionDataBaseM9Tangerine(string codigo, string message, Exception inner)
             : base(codigo, message, inner)
         {
         }
