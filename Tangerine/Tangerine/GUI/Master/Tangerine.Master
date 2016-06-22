@@ -155,6 +155,7 @@
               <ul class="treeview-menu">
                 <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar Lead</a></li>
                 <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Consultar Lead</a></li>
+                <li id="SeguimientoDeLeads" runat="server"><a href="../M3/SeguimientoDeLeads.aspx"><i class="fa fa-circle-o"></i>Seguimiento</a></li>
               </ul>                
             </li>
             <li class="treeview" id="GestionDeCompañias" runat="server">

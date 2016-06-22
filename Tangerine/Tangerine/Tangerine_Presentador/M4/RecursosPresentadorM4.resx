@@ -224,4 +224,10 @@
   <data name="Presupuesto" xml:space="preserve">
     <value>Presupuesto Actual:</value>
   </data>
+  <data name="habilitado2" xml:space="preserve">
+    <value>&lt;span class="label label-success"&gt;habilitado&lt;/span&gt;</value>
+  </data>
+  <data name="inhabilitado2" xml:space="preserve">
+    <value>&lt;span class="label label-danger"&gt;Inhabilitado&lt;/span&gt;</value>
+  </data>
 </root>

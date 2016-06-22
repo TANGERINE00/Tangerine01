@@ -122,16 +122,6 @@ namespace LogicaTangerine.Fabrica
                                                                                   rolUsuario , fichaEmpleado );
             }
             
-            /// <summary>
-            /// Método utilizado para devolver una instancia del ComandoConsultarEmpleadoPorUsuario
-            /// </summary>
-            /// <param name="nombreUsuario"></param>
-            /// <returns>Retorna una instancia a ComandoConsultarEmpleadoPorUsuario</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerEmpleado( string nombreUsuario )
-            {
-                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarEmpleadoPorUsuario( nombreUsuario );
-            }
-
             #endregion
 
             #region Comandos Rol
@@ -531,6 +521,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new LogicaTangerine.Comandos.M6.ComandoModificarPropuesta(propuesta);
         }
+
+        public static Comando<int> ComandoConsultarNumeroPropuestas()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarNumeroPropuestas();
+        }
         #endregion
 
         #region Instancia Requerimiento
@@ -561,6 +556,16 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> ComandoModificarRequerimiento(Entidad requerimiento)
         {
             return new LogicaTangerine.Comandos.M6.ComandoModificarRequerimiento(requerimiento);
+        }
+
+        public static Comando<int> ComandoConsultarNumeroRequerimientos()
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoConsultarNumeroRequerimientos();
+        }
+
+        public static Comando<bool> ComandoEliminarRequerimiento(Entidad requerimiento)
+        {
+            return new LogicaTangerine.Comandos.M6.ComandoEliminarRequerimiento(requerimiento);
         }
         #endregion
 

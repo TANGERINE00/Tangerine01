@@ -11,7 +11,7 @@ using System.Collections;
 
 namespace PruebasUnitarias.M6
 {
-    public class PruebasDAOPropuesta
+    public class PruebasComandoPropuestas
     {
         #region Atributos
 
@@ -20,9 +20,11 @@ namespace PruebasUnitarias.M6
         private List<DominioTangerine.Entidad> listaPropuestas;
         private DominioTangerine.Entidades.M6.Requerimiento elRequerimiento;
         Boolean confirmacion;
-        DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao;
         int contador;
-
+        LogicaTangerine.Comando<Entidad> comandoEntidad;
+        LogicaTangerine.Comando<List<Entidad>> comandoListEntidad;
+        LogicaTangerine.Comando<bool> comandoBool;
+        LogicaTangerine.Comando<int> comandoInt;
         #endregion
 
 
@@ -33,7 +35,6 @@ namespace PruebasUnitarias.M6
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
             laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
-            dao=DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
             elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
         [TearDown]
@@ -43,6 +44,10 @@ namespace PruebasUnitarias.M6
             laPropuesta2 = null;
             elRequerimiento = null;
             contador = 0;
+            comandoEntidad = null;
+            comandoListEntidad = null;
+            comandoBool = null;
+            comandoInt = null;
         }
 
 
@@ -56,12 +61,16 @@ namespace PruebasUnitarias.M6
         public void TestAgregarPropuesta()
         {
             //Se obtiene el número de propuestas totales antes de la inserción
-           contador=dao.ConsultarNumeroPropuestas();
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            comandoInt = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarNumeroPropuestas();
+            contador = comandoInt.Ejecutar();
             //Se inserta la propuesta
-            Assert.IsTrue(dao.Agregar(laPropuesta));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Se checkea que aumente en una unidad el total de las propuestas en la base de datos.
-            Assert.AreEqual(dao.ConsultarNumeroPropuestas(),contador+1);
-            laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
+            Assert.AreEqual(comandoInt.Ejecutar(), contador + 1);
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)comandoEntidad.Ejecutar();
             Assert.AreEqual(laPropuesta.Descripcion, laPropuesta2.Descripcion);
             Assert.AreEqual(laPropuesta.TipoDuracion, laPropuesta2.TipoDuracion);
             Assert.AreEqual(laPropuesta.CantDuracion, laPropuesta2.CantDuracion);
@@ -75,7 +84,8 @@ namespace PruebasUnitarias.M6
             Assert.AreEqual(laPropuesta.IdCompañia, laPropuesta2.IdCompañia);
 
             //Elimino la propuesta de prueba
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
         }
 
         // <summary>
@@ -85,11 +95,14 @@ namespace PruebasUnitarias.M6
         public void TestModificarPropuesta()
         {
             //Se inserta la propuesta
-            Assert.IsTrue(dao.Agregar(laPropuesta));
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            Assert.IsTrue(comandoBool.Ejecutar());
             laPropuesta2 = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPruebaModificada", "MesesModificados", "3", "AcuerdoM", "PendientePruebaModif", "Dolar", 1, Date1, Date2, 100, "1");
             //Se modifica la propuesta
-            Assert.IsTrue(dao.Modificar(laPropuesta2));
-            laPropuesta3 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarPropuesta(laPropuesta2);
+            Assert.IsTrue(comandoBool.Ejecutar());
+            laPropuesta3 = (DominioTangerine.Entidades.M6.Propuesta)comandoEntidad.Ejecutar();
             //Comparo y confirmo la modificacion
             Assert.AreEqual(laPropuesta2.Descripcion, laPropuesta3.Descripcion);
             Assert.AreEqual(laPropuesta2.TipoDuracion, laPropuesta3.TipoDuracion);
@@ -104,7 +117,8 @@ namespace PruebasUnitarias.M6
             Assert.AreEqual(laPropuesta2.IdCompañia, laPropuesta3.IdCompañia);
 
             //Elimino la propuesta de prueba
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta2);
+            confirmacion = comandoBool.Ejecutar();
         }
 
 
@@ -115,17 +129,21 @@ namespace PruebasUnitarias.M6
         public void TestEliminarPropuesta()
         {
             //Se obtiene el número de propuestas totales antes del insertado
-            contador = dao.ConsultarNumeroPropuestas();
+            comandoInt=LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarNumeroPropuestas();
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            contador = comandoInt.Ejecutar();
             //Se inserta la propuesta
-            Assert.IsTrue(dao.Agregar(laPropuesta));
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Elimino la propuesta de prueba
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
             //Se checkea que haya disminuido en una unidad la cantidad de propuestas en la base de datos
-            Assert.AreEqual(dao.ConsultarNumeroPropuestas(),contador);
+            Assert.AreEqual(comandoInt.Ejecutar(), contador);
             try
             {
                 //Se intenta consultar la propuesta anteriormente eliminada.
-                laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
+                laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)comandoEntidad.Ejecutar();
             }
             //Se chequea que no haya sido encontrada.
             catch (ExcepcionesTangerine.ExceptionsTangerine e)
@@ -141,10 +159,13 @@ namespace PruebasUnitarias.M6
         public void TestConsultaPropuestaProyecto()
         {
             //Se inserta la propuesta.
-            if (dao.Agregar(laPropuesta))
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarPropuestaXProyecto();
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            if (comandoBool.Ejecutar())
             {
                 //Se listan las propuestas aprobadas no halladas en proyectos en curso.
-                listaPropuestas = dao.PropuestaProyecto();
+                listaPropuestas = comandoListEntidad.Ejecutar();
                 //Se checkea que el método devuelve por lo menos la propuesta anteriormente insertada
                 Assert.IsNotEmpty(listaPropuestas);
                 //Se recorre la lista y se prueba que solo aparezcan propuestas aprobadas en la lista.
@@ -153,7 +174,8 @@ namespace PruebasUnitarias.M6
                     Assert.AreEqual(((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus, "Aprobado");
                 }
                 //Se Elimina la propuesta de prueba
-                Assert.IsTrue(dao.BorrarPropuesta("NombrePropuestaPrueba"));
+                comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+                Assert.IsTrue(comandoBool.Ejecutar());
             }
 
 
@@ -166,8 +188,12 @@ namespace PruebasUnitarias.M6
         public void TestConsultaPropuestaXId()
         {
             //Se inserta la propuesta
-            confirmacion = dao.Agregar(laPropuesta);
-            laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarPropuestaXProyecto();
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+
+            confirmacion = comandoBool.Ejecutar();
+            laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)comandoEntidad.Ejecutar();
             Assert.AreEqual(laPropuesta.Descripcion, laPropuesta2.Descripcion);
             Assert.AreEqual(laPropuesta.TipoDuracion, laPropuesta2.TipoDuracion);
             Assert.AreEqual(laPropuesta.CantDuracion, laPropuesta2.CantDuracion);
@@ -180,7 +206,8 @@ namespace PruebasUnitarias.M6
             Assert.AreEqual(laPropuesta.Costo, laPropuesta2.Costo);
             Assert.AreEqual(laPropuesta.IdCompañia, laPropuesta2.IdCompañia);
             //Elimino la propuesta de prueba
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
         }
 
         /// <summary>
@@ -190,15 +217,19 @@ namespace PruebasUnitarias.M6
         public void TestConsultaTodasPropuesta()
         {
             //Se inserta la propuesta para tener un minimo
-            confirmacion = dao.Agregar(laPropuesta);
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarPropuestaXProyecto();
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+
+            confirmacion = comandoBool.Ejecutar();
             //Se cuentan la cantidad de propuestas
-            listaPropuestas = dao.ConsultarTodos();
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarTodosPropuesta();
+            listaPropuestas = comandoListEntidad.Ejecutar();
             //Se almacena el tamaño de la estructura de propuestas
             int cantidadPropuestas = listaPropuestas.Count;
-            //Se instancia un DAOCompañía
-            DatosTangerine.InterfazDAO.M4.IDaoCompania daoc = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompaniasActivas();
             //Se obtienen las compañías activas 
-            List<Entidad> companias = daoc.ConsultarCompaniasActivas();
+            List<Entidad> companias = comandoListEntidad.Ejecutar();
             //Se crea una estructura de datos
             ArrayList idscompaniasactivas = new ArrayList();
             //Se llena la estructura de datos con los ids de las compañias activas
@@ -231,7 +262,8 @@ namespace PruebasUnitarias.M6
             //Se verifica que la totalidad de las propuestas en la estructura de datos pertenezcan a una compañia activa
             Assert.AreEqual(cantidadPropuestas, contador);
             //Elimino la propuesta de prueba
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
         }
 
 

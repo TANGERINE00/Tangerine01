@@ -10,7 +10,7 @@ using DominioTangerine;
 
 namespace PruebasUnitarias.M6
 {
-    public class PruebasDAORequerimiento
+    public class PruebasComandoRequerimiento
     {
         #region Atributos
 
@@ -19,8 +19,10 @@ namespace PruebasUnitarias.M6
         private List<DominioTangerine.Entidad> listaRequerimientos;
         private DominioTangerine.Entidades.M6.Requerimiento elRequerimiento, elRequerimiento2, elRequerimiento3;
         Boolean confirmacion;
-        DatosTangerine.InterfazDAO.M6.IDAOPropuesta dao;
-        DatosTangerine.InterfazDAO.M6.IDAORequerimiento daor;
+        LogicaTangerine.Comando<Entidad> comandoEntidad;
+        LogicaTangerine.Comando<List<Entidad>> comandoListEntidad;
+        LogicaTangerine.Comando<bool> comandoBool;
+        LogicaTangerine.Comando<int> comandoInt;
         int contador;
         #endregion
 
@@ -32,9 +34,6 @@ namespace PruebasUnitarias.M6
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
             laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
-            dao = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-            daor = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
-
             elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
         [TearDown]
@@ -44,6 +43,10 @@ namespace PruebasUnitarias.M6
             elRequerimiento = null;
             elRequerimiento2 = null;
             contador = 0;
+            comandoEntidad = null;
+            comandoListEntidad = null;
+            comandoBool = null;
+            comandoInt = null;
         }
 
 
@@ -57,21 +60,26 @@ namespace PruebasUnitarias.M6
         public void TestAgregarRequerimiento()
         {
             //Se inserta la propuesta
-            Assert.IsTrue(dao.Agregar(laPropuesta));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Se obtiene el número de requerimientos totales antes de la inserción
-            contador = daor.ConsultarNumeroRequerimientos();
+            comandoInt = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarNumeroRequerimientos();
+            contador = comandoInt.Ejecutar();
             //Se agrega un Requerimiento y pruebo que se agregó
-            Assert.IsTrue(daor.Agregar(elRequerimiento));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Se checkea que la cantidad total de requerimientos en la base de datos haya aumentado en una unidad
-            Assert.AreEqual(daor.ConsultarNumeroRequerimientos(), contador + 1);
+            Assert.AreEqual(comandoInt.Ejecutar(), contador + 1);
             //Pruebo que el requerimiento pertenece a la propuesta que acabo de agregar
-            listaRequerimientos = daor.ConsultarRequerimientosXPropuesta("NombrePropuestaPrueba");
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(laPropuesta);
+            listaRequerimientos = comandoListEntidad.Ejecutar();
             Assert.AreEqual("NombreRequerimiento1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
             Assert.AreEqual("DescripcionRequerimientoPrueba1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).Descripcion);
             Assert.AreEqual("NombrePropuestaPrueba", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoPropuesta);
 
             //Elimino la propuesta de prueba junto con el requerimiento
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
         }
 
         // <summary>
@@ -82,20 +90,24 @@ namespace PruebasUnitarias.M6
         {
             elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1Modificado", "NombrePropuestaPrueba");
             //Se inserta la propuesta
-            Assert.IsTrue(dao.Agregar(laPropuesta));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Agregar un Requerimiento y pruebo que se agregó
-            Assert.IsTrue(daor.Agregar(elRequerimiento));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Modifico el requerimiento
-            Assert.IsTrue(daor.Modificar(elRequerimiento2));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento2);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Consulto el requerimiento modificado 
-            listaRequerimientos = daor.ConsultarRequerimientosXPropuesta("NombrePropuestaPrueba");
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(laPropuesta);
+            listaRequerimientos = comandoListEntidad.Ejecutar();
             Assert.AreEqual("NombreRequerimiento1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
             Assert.AreEqual("DescripcionRequerimientoPrueba1Modificado", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).Descripcion);
             Assert.AreEqual("NombrePropuestaPrueba", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoPropuesta);
 
             //Elimino la propuesta de prueba junto con el requerimiento
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
-
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
         }
 
         // <summary>
@@ -107,18 +119,24 @@ namespace PruebasUnitarias.M6
             elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba", "NombrePropuestaPrueba");
             elRequerimiento3 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento2", "DescripcionRequerimientoPrueba2", "NombrePropuestaPrueba");
             //Se inserta la propuesta
-            Assert.IsTrue(dao.Agregar(laPropuesta));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Agregar un Requerimiento y pruebo que se agregó
-            Assert.IsTrue(daor.Agregar(elRequerimiento));
-            Assert.IsTrue(daor.Agregar(elRequerimiento2));
-            Assert.IsTrue(daor.Agregar(elRequerimiento3));
-            listaRequerimientos = daor.ConsultarRequerimientosXPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento);
+            Assert.IsTrue(comandoBool.Ejecutar());
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento2);
+            Assert.IsTrue(comandoBool.Ejecutar());
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento3);
+            Assert.IsTrue(comandoBool.Ejecutar());
+            comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(laPropuesta);
+            listaRequerimientos = comandoListEntidad.Ejecutar();
             foreach (Entidad requerimiento in listaRequerimientos)
             {
                 Assert.AreEqual(((DominioTangerine.Entidades.M6.Requerimiento)requerimiento).CodigoPropuesta, "NombrePropuestaPrueba");
             }
             //Elimino la propuesta de prueba junto con los requerimientos
-            confirmacion = dao.BorrarPropuesta("NombrePropuestaPrueba");
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
+            confirmacion = comandoBool.Ejecutar();
         }
 
         // <summary>
@@ -128,17 +146,21 @@ namespace PruebasUnitarias.M6
         public void TestEliminarRequerimiento()
         {
             //Se obtiene el número de propuestas totales antes del insertado
-            contador = daor.ConsultarNumeroRequerimientos();
+            comandoInt = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarNumeroRequerimientos();
+            contador = comandoInt.Ejecutar();
             //Se inserta el requerimiento
-            Assert.IsTrue(daor.Agregar(elRequerimiento));
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Elimino el requerimiento de prueba
-            confirmacion = daor.EliminarRequerimiento(elRequerimiento);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(elRequerimiento);
+            Assert.IsTrue(comandoBool.Ejecutar());
             //Se checkea que haya disminuido en una unidad la cantidad de requerimientos en la base de datos
-            Assert.AreEqual(daor.ConsultarNumeroRequerimientos(), contador);
+            Assert.AreEqual(comandoInt.Ejecutar(), contador);
             try
             {
                 //Se intenta consultar el requerimiento anteriormente eliminado.
-                elRequerimiento = (DominioTangerine.Entidades.M6.Requerimiento)daor.ConsultarXId(elRequerimiento);
+                comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdRequerimiento(elRequerimiento);
+                elRequerimiento = (DominioTangerine.Entidades.M6.Requerimiento)comandoEntidad.Ejecutar();
             }
             //Se chequea que no haya sido encontrada.
             catch (ExcepcionesTangerine.ExceptionsTangerine e)
@@ -154,13 +176,16 @@ namespace PruebasUnitarias.M6
         public void TestConsultaRequerimientoXId()
         {
             //Se inserta el requerimiento
-            confirmacion = daor.Agregar(elRequerimiento);
-            elRequerimiento2 = (DominioTangerine.Entidades.M6.Requerimiento)daor.ConsultarXId(elRequerimiento);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(elRequerimiento);
+            Assert.IsTrue(comandoBool.Ejecutar());
+            comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdRequerimiento(elRequerimiento);
+            elRequerimiento2 = (DominioTangerine.Entidades.M6.Requerimiento)comandoEntidad.Ejecutar();
             Assert.AreEqual(elRequerimiento.CodigoRequerimiento, elRequerimiento2.CodigoRequerimiento);
             Assert.AreEqual(elRequerimiento.Descripcion, elRequerimiento2.Descripcion);
             Assert.AreEqual(elRequerimiento.CodigoPropuesta, elRequerimiento2.CodigoPropuesta);
             //Elimino el requerimiento
-            confirmacion = daor.EliminarRequerimiento(elRequerimiento);
+            comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(elRequerimiento);
+            confirmacion = comandoBool.Ejecutar();
         }
     }
 }

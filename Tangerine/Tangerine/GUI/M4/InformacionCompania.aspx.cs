@@ -14,6 +14,7 @@ namespace Tangerine.GUI.M4
     {
         #region CargarPresentador
         PresentadorInformacionCompania _presentador;
+        string error;
 
         public HabilitarCompania()
         {
@@ -133,6 +134,17 @@ namespace Tangerine.GUI.M4
                 fecha = value;
             }
         }
+        public string msjError
+        {
+            get 
+            {
+                return error;
+            }
+            set
+            {
+                error = value;
+            }
+        }
         #endregion
 
         #region Load
@@ -145,8 +157,9 @@ namespace Tangerine.GUI.M4
         {
             int i = int.Parse(Request.QueryString["idComp"]);
             if (!IsPostBack)
+                if(!_presentador.CargarInformacionCompania(i))
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
                 
-                _presentador.CargarInformacionCompania(i);
         }
         #endregion
     }

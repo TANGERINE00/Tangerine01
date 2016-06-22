@@ -65,10 +65,28 @@ namespace Tangerine_Presentador.M8
                 vista.textDescripcion = _laFactura.descripcionFactura;
                 vista.textCliente = compania.NombreCompania;
                 vista.textProyecto = proyecto.Nombre;
-                vista.textMonto = _laFactura.montoFactura.ToString();
-                vista.textTipoMoneda = _laFactura.tipoMoneda;
                 vista.textFecha = _laFactura.fechaFactura.ToString(RecursoPresentadorM8.TipoFecha);
+                vista.textDireccion = compania.TelefonoCompania;
+                vista.textRif = compania.RifCompania;
 
+                if (_laFactura.tipoMoneda == "Dolares")
+                {
+                    vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.Dolar;
+                    vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal 
+                        + _laFactura.montoFactura + RecursoPresentadorM8.Dolar;
+                }
+                if (_laFactura.tipoMoneda == "Euros")
+                {
+                    vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.Euro;
+                    vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal
+                        + _laFactura.montoFactura + RecursoPresentadorM8.Euro;
+                }
+                if (_laFactura.tipoMoneda == "Bolivares")
+                {
+                    vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.BS;
+                    vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal
+                        + _laFactura.montoFactura + RecursoPresentadorM8.BS;
+                }
                 idCompania = compania.Id;
                 idProyecto = proyecto.Id;
             }
@@ -81,48 +99,12 @@ namespace Tangerine_Presentador.M8
             }
         }
 
-        public Facturacion meterParametrosVistaEnObjeto1()
-        {
-            try
-            {
-                Facturacion _laFactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
-                _laFactura.Id = int.Parse(this.vista.textNumeroFactura);
-                Comando<Entidad> _elComando = FabricaComandos.CrearConsultarXIdFactura(_laFactura);
-                _laFactura = (Facturacion)_elComando.Ejecutar();
-                _laFactura.descripcionFactura = vista.textDescripcion;
-                return _laFactura;
-            }
-            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
-            {
-                vista.alertaClase = RecursoPresentadorM8.alertaError;
-                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
-                    + RecursoPresentadorM8.alertaHtmlFinal;
-                return null;
-            }
-        }
-
         /// <summary>
         /// Método para llenar la informacion de la factura
         /// </summary>
         public Boolean ModificarFactura()
         {
-            Facturacion _laFactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
-            _laFactura = meterParametrosVistaEnObjeto1();
-
-            try
-            {
-                Comando<bool> _ComandoModificar = FabricaComandos.CrearModificarFactura(_laFactura);
-                return _ComandoModificar.Ejecutar();
-            }
-            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
-            {
-                vista.alertaClase = RecursoPresentadorM8.alertaError;
-                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
-                    + RecursoPresentadorM8.alertaHtmlFinal;
-                return false;
-            }
+            return true;
         }
 
     }

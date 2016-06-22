@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaTangerine.Fabrica;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
 {
@@ -63,15 +64,12 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
             catch (IndexOutOfRangeException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios("Error al ejecutar " +
-                                                                        "VerificarAccesoAPagina()" +
-                                                                        " [Pagina Errónea]", ex);
+                throw new ExcepcionPrivilegios("Error al ejecutar ComandoVerificarAccesoAPagina", ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios("Error al ejecutar " +
-                                                                        "VerificarAccesoAPagina()", ex);
+                throw new ExceptionM2Tangerine("Error al ejecutar ComandoVerificarAccesoAPagina", ex);
             }
             return resultado;
         }

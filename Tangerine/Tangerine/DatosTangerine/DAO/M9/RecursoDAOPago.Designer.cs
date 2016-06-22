@@ -88,7 +88,7 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M9_HistoricoPagoCompania.
+        ///   Looks up a localized string similar to M9_historico_pago_por_compania.
         /// </summary>
         internal static string ConsultarHistoricoPagos {
             get {
@@ -120,6 +120,15 @@ namespace DatosTangerine.DAO.M9 {
         internal static string MensajeErrorSQL {
             get {
                 return ResourceManager.GetString("MensajeErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pag_cod.
+        /// </summary>
+        internal static string PagoCod {
+            get {
+                return ResourceManager.GetString("PagoCod", resourceCulture);
             }
         }
         
