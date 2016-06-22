@@ -1,5 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Factura.aspx.cs" Inherits="Tangerine.GUI.M8.Factura" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script language="Javascript">
+        function imprSelec(nombre) {
+            var ficha = document.getElementById(nombre);
+            var ventimp = window.open(' ', 'popimpr');
+            ventimp.document.write(ficha.innerHTML);
+            ventimp.document.close();
+            ventimp.print();
+            ventimp.close();
+        }
+	</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Facturación
@@ -117,7 +127,7 @@
 
 
                     <div id="Div12" style="text-align:center; ">
-                        <a id="imprimir" class="btn btn-primary" style="margin-right:15px;">Imprimir</a>
+                        <a id="imprimir" href="javascript:imprSelec('imprimirbody')" class="btn btn-primary" style="margin-right:15px;">Imprimir</a>
                         <a class="btn btn-default" href="ConsultarFacturaM8.aspx" style="width:77px;">Volver</a>
                     </div>
             </div>
