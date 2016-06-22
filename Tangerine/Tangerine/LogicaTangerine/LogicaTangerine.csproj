@@ -114,7 +114,7 @@
     <Compile Include="Comandos\M4\ComandoHabilitarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarTodasCompanias.cs" />
-    <Compile Include="Comandos\M4\ComandoModificarLugat.cs" />
+    <Compile Include="Comandos\M4\ComandoModificarLugar.cs" />
     <Compile Include="Comandos\M5\ComandoAgregarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoAgregarContactoAProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoConsultarContacto.cs" />

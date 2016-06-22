@@ -48,6 +48,13 @@ namespace Tangerine_Presentador.M2
             theComando.Ejecutar();
         }
 
+        public bool usuarioExistente()
+        {
+            bool respuesta = false;
+            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(_vista.usuario);
+            respuesta = comando.Ejecutar();
+            return respuesta;
+        }
 
     }
 }
