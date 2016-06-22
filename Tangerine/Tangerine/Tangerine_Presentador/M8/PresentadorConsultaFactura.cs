@@ -8,6 +8,10 @@ using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
 using DominioTangerine.Entidades.M8;
+using DominioTangerine.Entidades.M4;
+using DominioTangerine.Entidades.M7;
+using LogicaTangerine.Fabrica;
+using DominioTangerine.Fabrica;
 
 namespace Tangerine_Presentador.M8
 {
@@ -39,26 +43,35 @@ namespace Tangerine_Presentador.M8
             }
         }
 
+
         public void cargarConsultarFacturas()
         {
             bool pagada = false;
             bool anulada = false;
             try
             {
-                Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarTodosFactura();
+                Comando<List<Entidad>> comando = FabricaComandos.CrearConsultarTodosFactura();
                 List<Entidad> listaEntidad = comando.Ejecutar();
+                CompaniaM4 _laCompania = (CompaniaM4)FabricaEntidades.crearCompaniaVacia();
+                DominioTangerine.Entidades.M7.Proyecto _elProyecto =
+                    (DominioTangerine.Entidades.M7.Proyecto)FabricaEntidades.ObtenerProyecto();
+
                 foreach (Facturacion laFactura in listaEntidad)
                 {
-                    Comando<Entidad> companiaComando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompaniaFactura(laFactura);
+                    _laCompania.Id = laFactura.idCompaniaFactura;
+                    _elProyecto.Id = laFactura.idProyectoFactura;
+                    Comando<Entidad> _comandoCompania = FabricaComandos.CrearConsultarCompania(_laCompania);
+                    _laCompania = (CompaniaM4)_comandoCompania.Ejecutar();
+                    Comando<Entidad> _comandoProyecto = FabricaComandos.ObtenerComandoConsultarXIdProyecto(_elProyecto);
+                    _elProyecto = (DominioTangerine.Entidades.M7.Proyecto)_comandoProyecto.Ejecutar();
                     /*Entidad nombreCompania = companiaComando.Ejecutar();*/
-
 
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTr;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.Id.ToString() 
                         + RecursoPresentadorM8.CloseTd;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.idCompaniaFactura.ToString() 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + _laCompania.NombreCompania 
                         + RecursoPresentadorM8.CloseTd;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.idProyectoFactura.ToString() 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + _elProyecto.Nombre
                         + RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.descripcionFactura.ToString() 
                         + RecursoPresentadorM8.CloseTd;
