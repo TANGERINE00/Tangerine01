@@ -123,9 +123,8 @@
   <data name="CambiarStatus" xml:space="preserve">
     <value>M9_CambioStatus</value>
   </data>
-
   <data name="ConsultarHistoricoPagos" xml:space="preserve">
-    <value>M9_HistoricoPagoCompania</value>
+    <value>M9_historico_pago_por_compania</value>
   </data>
   <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
@@ -141,13 +140,12 @@
   </data>
   <data name="PagoMonto" xml:space="preserve">
     <value>pag_monto</value>
-</data>
+  </data>
   <data name="CodigoErrorSQL" xml:space="preserve">
     <value>"901"</value>
   </data>
   <data name="MensajeErrorSQL" xml:space="preserve">
     <value>"Error al realizar la conexion"</value>
-
   </data>
   <data name="ParamCod" xml:space="preserve">
     <value>@cod</value>
