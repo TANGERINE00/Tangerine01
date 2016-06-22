@@ -97,7 +97,7 @@
     <Compile Include="M8\ExceptionDataBase.cs" />
     <Compile Include="M8\NotArgumentException.cs" />
     <Compile Include="M8\WrongFormatException.cs" />
-    <Compile Include="M9\ExceptionDataBase.cs" />
+    <Compile Include="M9\ExceptionDataBaseM9Tangerine.cs" />
     <Compile Include="M9\NullArgumentException.cs" />
     <Compile Include="M9\WrongFormatException.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

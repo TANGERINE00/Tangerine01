@@ -79,6 +79,24 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;901&quot;.
+        /// </summary>
+        internal static string CodigoErrorSQL {
+            get {
+                return ResourceManager.GetString("CodigoErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Error al realizar la conexion&quot;.
+        /// </summary>
+        internal static string MensajeErrorSQL {
+            get {
+                return ResourceManager.GetString("MensajeErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @cod.
         /// </summary>
         internal static string ParamCod {

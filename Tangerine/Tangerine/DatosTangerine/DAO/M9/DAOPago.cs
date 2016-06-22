@@ -7,6 +7,9 @@ using DatosTangerine.InterfazDAO.M9;
 using DominioTangerine.Entidades.M9;
 using DominioTangerine;
 using System.Data;
+using System.Data.SqlClient;
+using ExcepcionesTangerine.M9;
+using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M9
 {
@@ -20,35 +23,43 @@ namespace DatosTangerine.DAO.M9
         /// <returns></returns>
         public bool Agregar (Entidad pagoParam)
         {
-            
-            DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
-            List<Parametro> parametros = new List<Parametro>();
 
-            Parametro parametro = new Parametro(RecursoDAOPago.ParamCod,SqlDbType.Int, pago.codPago.ToString(),false);
-            parametros.Add(parametro);
-
-            parametro = new Parametro(RecursoDAOPago.ParamMonto, SqlDbType.Int, pago.montoPago.ToString(), false);
-            parametros.Add(parametro);
-
-            parametro = new Parametro(RecursoDAOPago.ParamMoneda, SqlDbType.VarChar, pago.monedaPago, false);
-            parametros.Add(parametro);
-
-            parametro = new Parametro(RecursoDAOPago.ParamForma, SqlDbType.VarChar, pago.formaPago, false);
-            parametros.Add(parametro);
-
-            parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, pago.idFactura.ToString(), false);
-            parametros.Add(parametro);
-
-            List<Resultado> resultados = EjecutarStoredProcedure(RecursoDAOPago.AgregarPago, parametros);
-            
-            if (resultados!=null)
+            try
             {
-                CargarStatus(pago.idFactura, 1);
-                return true;
+                DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
+                List<Parametro> parametros = new List<Parametro>();
+
+                Parametro parametro = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, pago.codPago.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursoDAOPago.ParamMonto, SqlDbType.Int, pago.montoPago.ToString(), false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursoDAOPago.ParamMoneda, SqlDbType.VarChar, pago.monedaPago, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursoDAOPago.ParamForma, SqlDbType.VarChar, pago.formaPago, false);
+                parametros.Add(parametro);
+
+                parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, pago.idFactura.ToString(), false);
+                parametros.Add(parametro);
+
+                List<Resultado> resultados = EjecutarStoredProcedure(RecursoDAOPago.AgregarPago, parametros);
+
+                if (resultados != null)
+                {
+                    CargarStatus(pago.idFactura, 1);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (SqlException ex)
             {
-                return false;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,RecursoDAOPago.MensajeErrorSQL,ex);
             }
         }
     
