@@ -8,15 +8,15 @@ using DominioTangerine;
 
 namespace LogicaTangerine.Comandos.M7
 {
-    public class ComandoAgregarEmpleados : Comando<bool>
+    public class ComandoAgregarContactos: Comando<bool>
     {
 
         /// <summary>
-        /// Constructor de la clase ComandoAgregarEmpleados.
+        /// Constructor de la clase ComandoAgregarContacto.
         /// </summary>
-        /// <param name="proyecto">proyecto de tipo Entidad para
-        /// insertar la lista de empleados.</param>
-        public ComandoAgregarEmpleados(Entidad proyecto)
+        /// <param name="proyecto">proyecto de tipo Entidad para 
+        /// obtener la lista de contactos.</param>
+        public ComandoAgregarContactos(Entidad proyecto)
         {
             _laEntidad = proyecto;
         }
@@ -24,15 +24,15 @@ namespace LogicaTangerine.Comandos.M7
         /// <summary>
         /// Método override para ejecutar el comando
         /// e insertar en la Base de Datos 
-        /// los empleados de un proyecto.
+        /// los contactos de un proyecto.
         /// </summary>
         /// <returns></returns>
         public override bool Ejecutar()
         {
             try
             {
-                IDaoProyectoEmpleado daoProyectoEmp = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoEmpleado();
-                return daoProyectoEmp.Agregar(_laEntidad);
+                IDaoProyectoContacto daoProyectoCont = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoContacto();
+                return daoProyectoCont.Agregar(_laEntidad);
             }
             catch (Exception e)
             {
