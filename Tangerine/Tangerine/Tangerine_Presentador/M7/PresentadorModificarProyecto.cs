@@ -49,7 +49,7 @@ namespace Tangerine_Presentador.M7
                 llenarComboGerentes(gerentes, proyecto);
                 llenarInputPersonal(programadores,programadores);
 
-                vista.idPropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Id.ToString();
+                vista.idPropuesta.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta.ToString();
                 vista.inputPropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
                 vista.idProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString();
                 vista.textInputCosto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo.ToString();

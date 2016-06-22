@@ -88,6 +88,15 @@ namespace DatosTangerine.DAO.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dao Factura.
+        /// </summary>
+        internal static string Codigo {
+            get {
+                return ResourceManager.GetString("Codigo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to com_nombre.
         /// </summary>
         internal static string ComNameCompany {
@@ -255,6 +264,60 @@ namespace DatosTangerine.DAO.M8 {
         internal static string FacTipoMoneda {
             get {
                 return ResourceManager.GetString("FacTipoMoneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de formato - .
+        /// </summary>
+        internal static string MensajeFormato {
+            get {
+                return ResourceManager.GetString("MensajeFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error por nulo - .
+        /// </summary>
+        internal static string MensajeNull {
+            get {
+                return ResourceManager.GetString("MensajeNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Otro error - .
+        /// </summary>
+        internal static string MensajeOtro {
+            get {
+                return ResourceManager.GetString("MensajeOtro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de BD - .
+        /// </summary>
+        internal static string MensajeSQL {
+            get {
+                return ResourceManager.GetString("MensajeSQL", resourceCulture);
             }
         }
         

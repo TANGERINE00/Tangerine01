@@ -50,25 +50,16 @@ namespace Tangerine_Presentador.M6
             consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
             _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
             _descripcion = vista.Descripcion;
-            //_Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
             _Tipoduracion = vista.ComboDuracion;
             _duracion = vista.TextoDuracion;
             _fechaI = DateTime.ParseExact(vista.DatePickerUno, "MM/dd/yyyy", null);
             _fechaF = DateTime.ParseExact(vista.DatePickerDos, "MM/dd/yyyy", null);
             _moneda = vista.TipoCosto.SelectedItem.Text;
             _costo = int.Parse(vista.TextoCosto);
-            _acuerdo = vista.FormaPago.SelectedItem.Text;
+            _acuerdo = vista.FormaPago;
             _estatusW = vista.ComboStatus.SelectedItem.Text;
             _idCompañia = vista.IdCompania;
-          
-            try
-            {
-                _entregaCant = Int32.Parse(vista.ComboCuota.SelectedItem.Text);
-            }
-            catch (Exception)
-            {
-                _entregaCant = 0;
-            }
+            _entregaCant = Int32.Parse(vista.CantidadCuotas);
 
             
             //Creación del Objeto Propuesta.
@@ -161,6 +152,8 @@ namespace Tangerine_Presentador.M6
             vista.ComboStatus.Items.Add("Aprobado");
             vista.ComboStatus.Items.Add("Cerrado");
         }
+
+        /*
         public void llenarComboCuota()
         {
             vista.ComboCuota.Items.Add("");
@@ -169,13 +162,15 @@ namespace Tangerine_Presentador.M6
             vista.ComboCuota.Items.Add("3");
             vista.ComboCuota.Items.Add("4");
         }
-
+        */
+          
+        /*
         public void llenarComboFpago()
         {
             vista.FormaPago.Items.Add("Mensual");
             vista.FormaPago.Items.Add("Por cuotas");
         }
-           
+         */  
         
         public void llenarVista() 
         {
@@ -183,8 +178,8 @@ namespace Tangerine_Presentador.M6
          //llenarComboDuracion();
          llenarComboTipoCosto();
          llenarComboEstatus();
-         llenarComboCuota();
-         llenarComboFpago();
+         //llenarComboCuota();
+         //llenarComboFpago();
         }
     }
 }

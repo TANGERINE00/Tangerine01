@@ -7,6 +7,15 @@ $(document).ready(function () {
     document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
 
     document.getElementById("datepicker2").disabled = true;
+
+    if (document.getElementById("formaPago").value == "Mensual") {
+        document.getElementById("cantidadCuotas").value = "";
+        document.getElementById("cantidadCuotas").disabled = true;
+    }
+    else if (document.getElementById("formaPago").value == "Por cuotas")
+    {
+        document.getElementById("cantidadCuotas").disabled = false;
+    }
 });
 
 function actualizarIdPrecondiciones() {
@@ -149,4 +158,15 @@ function setFechas(i1, date1, date2, select1)
 
         date2.value = fechaFin.toLocaleDateString('en-US');
     } 
+}
+
+function setCuotas()
+{
+    if (document.getElementById("formaPago").value == "Mensual") {
+        document.getElementById("cantidadCuotas").value = "";
+        document.getElementById("cantidadCuotas").disabled = true;
+    }
+    else if (document.getElementById("formaPago").value == "Por cuotas") {
+        document.getElementById("cantidadCuotas").disabled = false;
+    }
 }
