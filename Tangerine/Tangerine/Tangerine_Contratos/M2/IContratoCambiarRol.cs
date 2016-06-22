@@ -17,14 +17,5 @@ namespace Tangerine_Contratos.M2
             get;
             set;
         }
-
-        /// <summary>
-        /// Encabezado para el consultar por nombre de usuario
-        /// </summary>
-        string nombreUsuario
-        {
-            get;
-            set;
-        }
     }
 }
