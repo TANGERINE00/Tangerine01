@@ -320,5 +320,23 @@ namespace Tangerine.GUI.M8 {
                 return ResourceManager.GetString("redirectHome", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=1.
+        /// </summary>
+        internal static string volver {
+            get {
+                return ResourceManager.GetString("volver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=1.
+        /// </summary>
+        internal static string volverModificado {
+            get {
+                return ResourceManager.GetString("volverModificado", resourceCulture);
+            }
+        }
     }
 }
