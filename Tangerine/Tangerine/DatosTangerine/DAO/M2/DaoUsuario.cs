@@ -12,6 +12,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine.Entidades.M2;
+using ExcepcionesTangerine.M2;
 
 namespace DatosTangerine.DAO.M2
 {
@@ -55,6 +56,21 @@ namespace DatosTangerine.DAO.M2
                     //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.AgregarUsuario, parameters);
 
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
@@ -117,6 +133,21 @@ namespace DatosTangerine.DAO.M2
                                                                                                    usuFechaCreacion , usuActivo ,
                                                                                                     rol, empleadoNumFicha );
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -168,6 +199,21 @@ namespace DatosTangerine.DAO.M2
                         resultado = true;
                     }
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -204,6 +250,21 @@ namespace DatosTangerine.DAO.M2
                     {
                         resultado = true;
                     }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
@@ -249,6 +310,21 @@ namespace DatosTangerine.DAO.M2
                         usuario.nombreUsuario = nombreUsuario;
                         usuario.rol = rol;
                     }
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
@@ -303,6 +379,21 @@ namespace DatosTangerine.DAO.M2
                     }
 
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -339,6 +430,21 @@ namespace DatosTangerine.DAO.M2
 
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.ModificarContraUsuario, parametros);
                 }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
+                }
                 catch (Exception ex)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -372,6 +478,21 @@ namespace DatosTangerine.DAO.M2
 
                     ultimoID = int.Parse(row[ResourceUser.ComIDUser].ToString());
 
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {
@@ -408,6 +529,21 @@ namespace DatosTangerine.DAO.M2
                     //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
                     List<Resultado> results = EjecutarStoredProcedure(ResourceUser.BorrarUsuario, parameters);
 
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex);
                 }
                 catch (Exception ex)
                 {

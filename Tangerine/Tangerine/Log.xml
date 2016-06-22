@@ -8700,7 +8700,6 @@ Error Number:-1,State:0,Class:20
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Clase: DaoClientePotencial
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Mensaje: Fin Método
 2016-06-19 21:30:45,771 INFO  DaoClientePotencial - Metodo: ConsultarXId
->>>>>>> 2bf045d654b72a63965a03ef112a91071de1b539
 2016-06-20 10:55:26,615 INFO  DaoProyectoContacto - *******************************************************
 2016-06-20 10:55:26,621 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
 2016-06-20 10:55:26,621 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
@@ -11983,3 +11982,482 @@ Error Number:-1,State:0,Class:20
 2016-06-21 19:36:54,599 INFO  DaoCompania - Clase: DaoCompania
 2016-06-21 19:36:54,599 INFO  DaoCompania - Mensaje: Entrada en el Método
 2016-06-21 19:36:54,599 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 21:03:59,015 ERROR DAOUsuario - *******************************************************
+2016-06-21 21:03:59,023 ERROR DAOUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 21:03:59,033 ERROR DAOUsuario - Origen: DatosTangerine
+2016-06-21 21:03:59,033 ERROR DAOUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 21:03:59,033 ERROR DAOUsuario - StackTrace:    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\EDG-Repository 2\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\EDG-Repository 2\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 285
+2016-06-21 21:03:59,045 ERROR DAOUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\EDG-Repository 2\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 21:04:52,335 INFO  DAORol - *******************************************************
+2016-06-21 21:04:52,344 INFO  DAORol - Clase: DAORol
+2016-06-21 21:04:52,344 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:04:52,344 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:04:52,351 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:04:52,351 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:04:52,351 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:04:52,351 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:10:29,402 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:10:29,412 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:10:29,412 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:10:29,412 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:10:38,480 INFO  DAORol - *******************************************************
+2016-06-21 21:10:38,480 INFO  DAORol - Clase: DAORol
+2016-06-21 21:10:38,480 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:10:38,480 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:10:38,487 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:10:38,487 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:10:38,488 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:10:38,488 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:10:43,898 INFO  DaoClientePotencial - *******************************************************
+2016-06-21 21:10:43,898 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-21 21:10:43,898 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-21 21:10:43,898 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-21 21:10:43,905 INFO  DaoClientePotencial - *******************************************************
+2016-06-21 21:10:43,905 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-21 21:10:43,905 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-21 21:10:43,905 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-21 21:45:41,480 INFO  DAORol - *******************************************************
+2016-06-21 21:45:41,486 INFO  DAORol - Clase: DAORol
+2016-06-21 21:45:41,486 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:45:41,486 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:45:41,491 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:45:41,491 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:45:41,492 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:45:41,492 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:45:48,605 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:48,605 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:48,605 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:45:48,605 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:45:48,636 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:48,636 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:48,636 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:45:48,636 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:45:48,644 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:48,644 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:48,644 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:45:48,644 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:45:48,787 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:48,787 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:48,787 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:45:48,787 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:45:48,790 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:48,790 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:48,790 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:45:48,790 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:45:48,795 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:48,795 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:48,795 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:45:48,795 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:45:48,798 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:48,798 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:48,798 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:45:48,798 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:45:48,832 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:48,832 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:48,832 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:45:48,832 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:45:57,470 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:57,470 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:57,470 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:45:57,470 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:45:57,481 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:57,481 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:57,481 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:45:57,481 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:45:57,494 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:57,494 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:57,494 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:45:57,494 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:45:57,505 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:57,505 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:57,505 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:45:57,505 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:45:57,508 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:57,508 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:57,508 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:45:57,508 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:45:57,513 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:45:57,513 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:45:57,513 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:45:57,513 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:45:57,517 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:57,517 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:57,517 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:45:57,517 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:45:57,520 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:45:57,520 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:45:57,520 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:45:57,520 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:47:07,544 INFO  DAORol - *******************************************************
+2016-06-21 21:47:07,549 INFO  DAORol - Clase: DAORol
+2016-06-21 21:47:07,549 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:47:07,549 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:47:07,576 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:47:07,576 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:47:07,576 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:47:07,576 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:47:12,856 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:47:12,856 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:47:12,856 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:47:12,856 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:47:12,861 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:47:12,861 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:47:12,861 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:47:12,861 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:47:12,870 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:47:12,870 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:47:12,870 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:47:12,870 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:47:12,879 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:47:12,879 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:47:12,879 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:47:12,879 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:47:12,885 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:47:12,885 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:47:12,885 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:47:12,885 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:47:12,890 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:47:12,890 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:47:12,891 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:47:12,891 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:47:12,895 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:47:12,896 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:47:12,896 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:47:12,896 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:47:12,902 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:47:12,902 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:47:12,902 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:47:12,902 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:47:58,546 INFO  DAORol - *******************************************************
+2016-06-21 21:47:58,551 INFO  DAORol - Clase: DAORol
+2016-06-21 21:47:58,551 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:47:58,551 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:47:58,578 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:47:58,578 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:47:58,578 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:47:58,578 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:48:03,405 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:48:03,405 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:48:03,405 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:48:03,405 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:48:03,413 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:48:03,413 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:48:03,413 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:48:03,413 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:48:03,422 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:48:03,422 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:48:03,422 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:48:03,422 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:48:03,430 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:48:03,430 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:48:03,430 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:48:03,430 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:48:03,435 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:48:03,435 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:48:03,435 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:48:03,435 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:48:03,442 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:48:03,442 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:48:03,442 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:48:03,442 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:48:03,447 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:48:03,447 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:48:03,447 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:48:03,447 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:48:03,452 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:48:03,452 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:48:03,452 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:48:03,452 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:52:34,627 INFO  DAORol - *******************************************************
+2016-06-21 21:52:34,633 INFO  DAORol - Clase: DAORol
+2016-06-21 21:52:34,633 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:52:34,633 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:52:34,639 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:52:34,639 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:52:34,639 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:52:34,639 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:52:38,347 INFO  DAOPropuesta - *******************************************************
+2016-06-21 21:52:38,347 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-21 21:52:38,347 INFO  DAOPropuesta - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,347 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-21 21:52:38,355 INFO  DAOPropuesta - *******************************************************
+2016-06-21 21:52:38,355 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-21 21:52:38,355 INFO  DAOPropuesta - Mensaje: Salida del Método
+2016-06-21 21:52:38,355 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-21 21:52:38,362 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,362 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,362 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,362 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,373 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,373 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,373 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,373 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,379 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,379 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,379 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,379 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,386 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,386 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,386 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,386 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,393 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,393 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,393 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,393 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,399 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,399 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,399 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,399 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,404 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,405 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,405 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,405 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,411 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,411 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,411 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,411 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,417 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,417 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,417 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,417 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:38,423 INFO  DaoCompania - *******************************************************
+2016-06-21 21:52:38,423 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 21:52:38,423 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 21:52:38,423 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 21:52:44,906 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:52:44,907 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:52:44,907 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:52:44,908 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:52:44,921 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:52:44,921 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:52:44,922 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:52:44,922 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:53:44,433 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:53:44,433 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:53:44,434 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:53:44,434 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:53:44,440 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:53:44,440 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:53:44,440 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:53:44,440 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:53:44,450 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:53:44,450 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:53:44,450 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:53:44,450 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:53:44,457 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:53:44,457 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:53:44,457 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:53:44,457 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:53:44,464 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:53:44,464 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:53:44,464 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:53:44,464 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:53:44,469 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:53:44,470 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:53:44,470 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:53:44,470 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:54:26,053 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:54:26,078 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:54:26,078 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:54:26,078 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:54:26,094 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:54:26,094 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:54:26,094 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:54:26,094 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:54:53,018 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:54:53,018 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:54:53,018 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:54:53,018 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:54:53,036 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:54:53,037 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:54:53,037 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:54:53,037 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:54:53,068 INFO  DAORol - *******************************************************
+2016-06-21 21:54:53,068 INFO  DAORol - Clase: DAORol
+2016-06-21 21:54:53,068 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:54:53,068 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:54:53,076 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:54:53,076 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:54:53,076 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:54:53,076 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:54:53,087 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:54:53,088 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:54:53,088 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:54:53,088 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:54:53,108 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:54:53,108 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:54:53,108 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:54:53,109 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:54:53,116 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:54:53,116 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:54:53,116 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:54:53,116 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:55:03,989 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:55:03,989 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:55:03,989 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:55:03,989 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:55:03,996 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:55:03,996 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:55:03,996 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:55:03,996 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:55:06,159 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:55:06,160 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:55:06,160 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:55:06,160 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:55:06,164 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:55:06,164 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:55:06,164 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:55:06,164 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:55:06,169 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:55:06,169 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:55:06,169 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:55:06,169 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:55:06,174 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:55:06,174 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:55:06,174 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:55:06,174 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:55:06,184 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:55:06,184 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:55:06,184 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:55:06,184 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:55:06,188 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:55:06,188 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:55:06,188 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:55:06,188 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:56:19,464 INFO  DAORol - *******************************************************
+2016-06-21 21:56:19,464 INFO  DAORol - *******************************************************
+2016-06-21 21:56:19,469 INFO  DAORol - Clase: DAORol
+2016-06-21 21:56:19,469 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:56:19,469 INFO  DAORol - Clase: DAORol
+2016-06-21 21:56:19,469 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:56:19,469 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:56:19,469 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:56:19,476 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:56:19,476 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:56:19,476 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:56:19,476 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 21:56:24,453 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:24,453 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:24,453 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:56:24,453 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:56:24,460 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:24,460 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:24,460 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:56:24,460 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:56:28,434 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:28,434 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:28,434 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:56:28,435 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:56:28,441 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:28,441 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:28,441 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:56:28,441 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:56:28,452 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:28,452 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:28,452 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:56:28,452 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:56:28,459 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:28,459 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:28,459 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:56:28,459 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:56:28,468 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:28,468 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:28,468 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:56:28,468 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:56:28,473 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:28,473 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:28,473 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:56:28,473 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:56:39,994 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:39,994 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:39,994 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:56:39,994 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:56:40,005 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:40,005 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:40,005 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:56:40,005 INFO  DaoProyectoContacto - Metodo: ContactCompany
+2016-06-21 21:56:47,264 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:47,265 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:47,265 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:56:47,265 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:56:47,269 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:47,269 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:47,269 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:56:47,269 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-21 21:56:47,273 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:47,273 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:47,273 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-21 21:56:47,273 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:56:47,280 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-21 21:56:47,280 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-21 21:56:47,280 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-21 21:56:47,280 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-21 21:56:47,284 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:47,284 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:47,284 INFO  DaoProyectoContacto - Mensaje: Entrada en el Método
+2016-06-21 21:56:47,284 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+2016-06-21 21:56:47,290 INFO  DaoProyectoContacto - *******************************************************
+2016-06-21 21:56:47,290 INFO  DaoProyectoContacto - Clase: DaoProyectoContacto
+2016-06-21 21:56:47,290 INFO  DaoProyectoContacto - Mensaje: Salida del Método
+2016-06-21 21:56:47,290 INFO  DaoProyectoContacto - Metodo: ConsultarXId
+=======
+2016-06-21 21:28:39,009 ERROR DAOUsuario - *******************************************************
+2016-06-21 21:28:39,018 ERROR DAOUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 21:28:39,024 ERROR DAOUsuario - Origen: DatosTangerine
+2016-06-21 21:28:39,024 ERROR DAOUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 21:28:39,024 ERROR DAOUsuario - StackTrace:    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\EDG-Repository 2\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\EDG-Repository 2\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 285
+2016-06-21 21:28:39,025 ERROR DAOUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\EDG-Repository 2\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 21:31:19,108 INFO  DAORol - *******************************************************
+2016-06-21 21:31:19,119 INFO  DAORol - Clase: DAORol
+2016-06-21 21:31:19,119 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 21:31:19,119 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 21:31:19,129 INFO  DAOUsuario - *******************************************************
+2016-06-21 21:31:19,129 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 21:31:19,129 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 21:31:19,129 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
