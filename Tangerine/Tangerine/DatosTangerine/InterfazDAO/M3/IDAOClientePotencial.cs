@@ -12,5 +12,7 @@ namespace DatosTangerine.InterfazDAO.M3
         bool Activar(Entidad parametro);
         bool Desactivar(Entidad parametro);
         bool Promover(Entidad parametro);
+        int ConsultarIdUltimoClientePotencial();
+        bool Eliminar(Entidad parametro);
     }
 }

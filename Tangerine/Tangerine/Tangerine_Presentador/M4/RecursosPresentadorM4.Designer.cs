@@ -223,11 +223,29 @@ namespace Tangerine_Presentador.M4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-success&quot;&gt;habilitado&lt;/span&gt;.
+        /// </summary>
+        internal static string habilitado2 {
+            get {
+                return ResourceManager.GetString("habilitado2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-danger&quot; id=&quot;i.
         /// </summary>
         internal static string inhabilitado {
             get {
                 return ResourceManager.GetString("inhabilitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;span class=&quot;label label-danger&quot;&gt;Inhabilitado&lt;/span&gt;.
+        /// </summary>
+        internal static string inhabilitado2 {
+            get {
+                return ResourceManager.GetString("inhabilitado2", resourceCulture);
             }
         }
         

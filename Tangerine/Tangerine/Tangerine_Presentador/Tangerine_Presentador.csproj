@@ -108,6 +108,7 @@
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
     <Compile Include="M8\PresentadorAnularFactura.cs" />
+    <Compile Include="M8\PresentadorFactura.cs" />
     <Compile Include="M8\PresentadorGenerarFactura.cs" />
     <Compile Include="M8\PresentadorConsultaFactura.cs" />
     <Compile Include="M8\PresentadorModificarFactura.cs" />
@@ -118,6 +119,7 @@
     </Compile>
     <Compile Include="M9\PresentadorCargarPago.cs" />
     <Compile Include="M9\PresentadorFacturasPorPagar.cs" />
+    <Compile Include="M9\PresentadorPagosPorCompania.cs" />
     <Compile Include="M9\RecursoPresentadorM9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

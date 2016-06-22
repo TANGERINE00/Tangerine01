@@ -17,35 +17,6 @@
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script type="text/javascript">
-        function validacion() {
-            var nombreuser = ContentPlaceHolder1_userDefault.value;
-            var param = "{'usuario':'" + nombreuser + "'}";
-            $.ajax({
-                type: "POST",
-                url: "AccionRegistrar.aspx/validarUsuario",
-                data: param,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                success: function (result) {
-                    var local = JSON.stringify(result);
-                    var obj = JSON.parse(local);
-
-                    if (obj.d == "Disponible") {
-                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#00FF00";
-                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = false;
-                    } else {
-                        document.getElementById("ContentPlaceHolder1_userDefault").style.borderColor = "#FF0000";
-                        document.getElementById("ContentPlaceHolder1_btnCrear").disabled = true;
-                    }
-                },
-                failure: function (result) {
-                    alert("_");
-                }
-            });
-        }
-    </script>
-
     <div class="row">
         <!-- left column -->
         <div class="col-md-6">
@@ -66,12 +37,12 @@
 
                         <div class="form-group">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group">
                             <label for="labelContraseña_M2">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="javascript:validacion(); setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
 
                         <div class="form-group" runat="server">

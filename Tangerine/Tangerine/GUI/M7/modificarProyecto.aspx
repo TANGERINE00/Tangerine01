@@ -15,6 +15,10 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div id="alert" runat="server">
+    </div>
+
     <div class="row">
         <!-- left column -->
         <div class="col-md-6">
@@ -62,12 +66,14 @@
                             <label for="InputCosto">Costo estimado *</label> <br />
                             <asp:TextBox runat="server" ID="textInputCosto" CssClass="form-control"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="textInputCosto" runat="server" ErrorMessage="Solo Numeros y Hasta 2 Decimales" ValidationExpression="\d+(\.\d{1,2})?"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="ValidarCostoEstimado" runat="server" ControlToValidate="textInputCosto" ErrorMessage="Debe ingresar un costo" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
                         <div class="form-group">
                             <label for="InputPorcentaje">Porcentaje de realizacion *</label> <br />
                             <asp:TextBox runat="server" ID="textInputPorcentaje" CssClass="form-control"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="textInputPorcentaje" runat="server" ErrorMessage="Solo Numeros del 1 al 100" ValidationExpression="^[1-9][0-9]?$|^100$"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="ValidarPorcentaje" runat="server" ControlToValidate="textInputPorcentaje" ErrorMessage="Debe ingresar un porcentaje de realizacion" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
             </div>
@@ -96,7 +102,7 @@
                     <div class="inline">
                         <label for="inputPersonal">Personal*</label><br />
                         <asp:ListBox runat="server" ID="inputPersonal" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
-        
+
                         <label for="inputPersonal">Personal No Activo</label><br />
                         <asp:ListBox runat="server" ID="inputPersonalNoActivo" CssClass="form-control" SelectionMode="Multiple"></asp:ListBox>
                         <br />
@@ -109,7 +115,6 @@
                             <span aria-hidden="true" class="glyphicon glyphicon-chevron-up"></span>
                         </asp:LinkButton>
                     </div>
-                    <br />
                     <hr />
 
                     <div class="form-group">

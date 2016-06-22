@@ -109,9 +109,9 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         /// <param name="msj"></param>
         /// <param name="typeMsg"></param>
-        public void Alerta(string msj, int typeMsg)
+        public void Alerta( string msj, int typeMsg )
         {
-            if (typeMsg == 1)
+            if ( typeMsg == 1 )
                 _vista.alertaClase = RecursoM5.AlertSuccess;
             else
                 _vista.alertaClase = RecursoM5.AlertDanger;
@@ -135,10 +135,10 @@ namespace Tangerine_Presentador.M5
                         Alerta( RecursoM5.ContactoAgregado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                     case 2:
-                        Alerta(RecursoM5.ContactoModificado, int.Parse(RecursoM5.StatusAgregado) );
+                        Alerta( RecursoM5.ContactoModificado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                     case 3:
-                        Alerta(RecursoM5.ContactoEliminado, int.Parse(RecursoM5.StatusAgregado) );
+                        Alerta( RecursoM5.ContactoEliminado, int.Parse(RecursoM5.StatusAgregado) );
                         break;
                 }
             }

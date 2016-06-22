@@ -18,14 +18,5 @@ namespace Tangerine_Contratos.M2
             get;
             set;
         }
-
-        /// <summary>
-        /// Encabezado del campo Numero Empleado
-        /// </summary>
-        string numeroEmpleado
-        {
-            get;
-            set;
-        }
     }
 }

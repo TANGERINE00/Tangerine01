@@ -133,6 +133,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Factura&quot;  class=&quot;btn btn-primary glyphicon glyphicon-file&quot; href=&quot;Factura.aspx?idFac=.
+        /// </summary>
+        internal static string BotonFactura {
+            get {
+                return ResourceManager.GetString("BotonFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;ConsultarFacturaM8.aspx.
         /// </summary>
         internal static string BotonGenerarFactura {
@@ -588,6 +597,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string tipoAlerta {
             get {
                 return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dd/mm/yyyy.
+        /// </summary>
+        internal static string TipoFecha {
+            get {
+                return ResourceManager.GetString("TipoFecha", resourceCulture);
             }
         }
     }

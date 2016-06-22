@@ -56,6 +56,12 @@ namespace DatosTangerine.DAO.M4
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
            }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
+           }
+
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -104,6 +110,11 @@ namespace DatosTangerine.DAO.M4
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
            }
            catch (Exception ex)
            {
@@ -157,6 +168,11 @@ namespace DatosTangerine.DAO.M4
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
            }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
+           }
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -208,6 +224,11 @@ namespace DatosTangerine.DAO.M4
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
            }
            catch (Exception ex)
            {
@@ -289,17 +310,22 @@ namespace DatosTangerine.DAO.M4
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Ingreso de datos con un formato invalido", ex);
            }
-           catch (SqlException ex)
+           catch (System.Data.SqlClient.SqlException ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Compañia ya registrada dentro del sistema ", ex);
            }
+          catch (ExceptionTGConBD ex)
+          {
+              Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+              throw new ExceptionM4Tangerine("DS-404", "Nombre de la compania o rif ya utilizado", ex);
+          }
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la operacion ", ex);
            }
-
+         
            return true;
        }
 
@@ -384,6 +410,11 @@ namespace DatosTangerine.DAO.M4
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
            }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Nombre de la compania o rif ya utilizado", ex);
+           }
            catch (Exception ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -447,6 +478,11 @@ namespace DatosTangerine.DAO.M4
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
            }
            catch (Exception ex)
            {
@@ -514,6 +550,11 @@ namespace DatosTangerine.DAO.M4
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
            }
            catch (Exception ex)
            {
@@ -583,6 +624,11 @@ namespace DatosTangerine.DAO.M4
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion", ex);
+           }
+           catch (ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExceptionM4Tangerine("DS-404", "Error al momento de realizar la conexion con la base de datos", ex);
            }
            catch (Exception ex)
            {

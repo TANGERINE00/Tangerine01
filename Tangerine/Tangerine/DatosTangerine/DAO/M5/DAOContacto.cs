@@ -82,7 +82,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new AgregarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
             }
-            catch( SqlException ex )
+            catch( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );

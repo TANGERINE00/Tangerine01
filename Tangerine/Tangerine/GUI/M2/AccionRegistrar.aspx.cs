@@ -15,6 +15,7 @@ namespace Tangerine.GUI.M2
     public partial class AccionRegistrar : System.Web.UI.Page, IContratoAccionRegistrar
     {
         private PresentadorAccionRegistrar presentador;
+        private bool existenciaUsuario;
 
         #region Contrato
 
@@ -83,34 +84,18 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void btnCrear_Click(object sender, EventArgs e)
         {
-            presentador.registrar();
-            Response.Redirect("../M2/RegistroUsuario.aspx");
-        }
+            existenciaUsuario = presentador.usuarioExistente();
 
-        #region Web Methods
-
-        /// <summary>
-        /// Método para validar si el usuario escrito existe o no.
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns></returns>
-        [WebMethod]
-        public static string validarUsuario(string usuario)
-        {
-            bool respuesta = false;
-            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(usuario);
-            respuesta = comando.Ejecutar();
-
-            string retorno = "Disponible";
-
-            if (respuesta)
+            if (!existenciaUsuario)
             {
-                retorno = "Usuario Existe!";
+                presentador.registrar();
+                Response.Redirect("../M2/RegistroUsuario.aspx");
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('Nombre de usuario ya existente, intente otro.')", true); 
             }
 
-            return retorno;
         }
-
-        #endregion
     }
 }
