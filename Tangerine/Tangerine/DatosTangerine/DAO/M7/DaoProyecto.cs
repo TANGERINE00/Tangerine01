@@ -268,43 +268,56 @@ namespace DatosTangerine.DAO.M7
                 //parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar, theProyecto.Nombre.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar,
+                                theProyecto.Nombre.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, theProyecto.Codigo.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, 
+                                theProyecto.Codigo.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamFechaInicio, SqlDbType.Date, theProyecto.Fechainicio.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamFechaInicio, SqlDbType.Date,
+                                theProyecto.Fechainicio.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date, theProyecto.Fechaestimadafin.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date, 
+                                theProyecto.Fechaestimadafin.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, theProyecto.Costo.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, 
+                                theProyecto.Costo.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamDescripcion, SqlDbType.VarChar, theProyecto.Descripcion.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamDescripcion, SqlDbType.VarChar,
+                                theProyecto.Descripcion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar, theProyecto.Realizacion.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar, 
+                                theProyecto.Realizacion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, theProyecto.Estatus.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, 
+                                theProyecto.Estatus.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, theProyecto.Razon.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, 
+                                theProyecto.Razon.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, theProyecto.Acuerdopago.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, 
+                                theProyecto.Acuerdopago.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, theProyecto.Idpropuesta.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, 
+                                theProyecto.Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, theProyecto.Idresponsable.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, 
+                                theProyecto.Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, theProyecto.Idgerente.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, 
+                                theProyecto.Idgerente.ToString(), false);
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
@@ -355,44 +368,57 @@ namespace DatosTangerine.DAO.M7
                 parameters.Add(theParam);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                     parametro).Nombre.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamNombre, SqlDbType.VarChar,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Nombre.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                     parametro).Codigo.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, 
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Codigo.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamFechaInicio, SqlDbType.Date, ((DominioTangerine.Entidades.M7.Proyecto)                                   parametro).Fechainicio.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamFechaInicio, SqlDbType.Date,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Fechainicio.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date, ((DominioTangerine.Entidades.M7.Proyecto)                                   parametro).Fechaestimadafin.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Fechaestimadafin.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, 
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Costo.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamDescripcion, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                parametro).Descripcion.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamDescripcion, SqlDbType.VarChar,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Descripcion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                parametro).Realizacion.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Realizacion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                    parametro).Estatus.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, 
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Estatus.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                      parametro).Razon.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, 
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Razon.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, ((DominioTangerine.Entidades.M7.Proyecto)                                parametro).Acuerdopago.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Acuerdopago.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)                                    parametro).Idpropuesta.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)                                     parametro).Idresponsable.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, 
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)                                      parametro).Idgerente.ToString(), false);
+                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int,
+                                ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idgerente.ToString(), false);
+
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M7_ModificarProyecto y todos los parametros que recibe
@@ -437,7 +463,8 @@ namespace DatosTangerine.DAO.M7
             {
                 List<Parametro> parameters = new List<Parametro>(); 
 
-                Parametro theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
+                Parametro theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, 
+                                            ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar Proyecto

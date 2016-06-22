@@ -31,7 +31,8 @@ namespace Tangerine_Presentador.M9
         {
             //capturo el id de la compania que se esta enviando por el URL
             DominioTangerine.Entidades.M4.CompaniaM4 comp =
-                (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
+                (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.
+                crearCompaniaVacia();
             comp.Id = idComp;
             Comando<List<Entidad>> comandoListaFactura =
                 LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarFacturasCompania(comp);
@@ -40,17 +41,22 @@ namespace Tangerine_Presentador.M9
             try
             {          
                 
-                    ////con el id capturado utilizao el metodo SearchFacturas para mostrar todas las facturas asociadas a esa compania
 
                     if (listaF.Count() < 1)
                     {
                         vista.factura += RecursoPresentadorM9.AbrirTR;
-                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
-                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
-                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
-                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
-                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
-                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + 
+                            RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + 
+                            RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + 
+                            RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + 
+                            RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + 
+                            RecursoPresentadorM9.CloseTD;
+                        vista.factura += RecursoPresentadorM9.AbrirTD + "No hay facturas asociadas" + 
+                            RecursoPresentadorM9.CloseTD;
                         vista.factura += RecursoPresentadorM9.CerrarTR;
                     }
                     else
@@ -60,14 +66,19 @@ namespace Tangerine_Presentador.M9
                         {
                             
                             vista.factura += RecursoPresentadorM9.AbrirTR;
-                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.Id + RecursoPresentadorM9.CloseTD;
-                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.fechaFactura.ToShortDateString() + RecursoPresentadorM9.CloseTD;
+                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.Id + 
+                                RecursoPresentadorM9.CloseTD;
+                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.fechaFactura.ToShortDateString()+
+                                RecursoPresentadorM9.CloseTD;
                             vista.factura += RecursoPresentadorM9.EtiquetaPorPagar;
-                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.descripcionFactura + RecursoPresentadorM9.CloseTD;
-                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.montoFactura + " " + theFactura.tipoMoneda + RecursoPresentadorM9.CloseTD;
+                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.descripcionFactura + 
+                                RecursoPresentadorM9.CloseTD;
+                            vista.factura += RecursoPresentadorM9.AbrirTD + theFactura.montoFactura + " " + 
+                                theFactura.tipoMoneda + RecursoPresentadorM9.CloseTD;
 
                             //Boton para cargar el pago de una factura especifica
-                            vista.factura += RecursoPresentadorM9.botonPagarAbrir + theFactura.Id + RecursoPresentadorM9.botonPagarCerrar;
+                            vista.factura += RecursoPresentadorM9.botonPagarAbrir + theFactura.Id + 
+                                RecursoPresentadorM9.botonPagarCerrar;
                             vista.factura += RecursoPresentadorM9.CerrarTR;
                         }
                     }

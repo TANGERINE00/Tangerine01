@@ -10,11 +10,19 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoBorrarPropuesta : Comando<bool>
     {
+        /// <summary>
+        /// Constructor, recibe parametro de tipo propuesta
+        /// </summary>
+        /// <param name="laPropuesta">objeto de tipo propuesta</param>
         public ComandoBorrarPropuesta(Entidad laPropuesta)
         {
             _laEntidad = laPropuesta;
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo BorrarPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna true si fue satisfactorio el borrado</returns>
         public override bool Ejecutar()
         {
             try

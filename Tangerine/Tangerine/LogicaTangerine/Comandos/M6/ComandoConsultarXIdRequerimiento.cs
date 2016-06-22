@@ -10,11 +10,19 @@ namespace LogicaTangerine.Comandos.M6
 {
     class ComandoConsultarXIdRequerimiento : Comando<Entidad>
     {
+        /// <summary>
+        /// Constructor, recibe parametro de tipo requerimiento
+        /// </summary>
+        /// <param name="elRequerimiento">objeto de tipo requerimiento</param>
         public ComandoConsultarXIdRequerimiento(Entidad elRequerimiento)
         {
             _laEntidad = elRequerimiento;
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo ConsultarXIdRequerimiento en capa de datos.
+        /// </summary>
+        /// <returns>Retorna un requerimiento</returns>
         public override Entidad Ejecutar()
         {
             try

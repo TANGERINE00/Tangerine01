@@ -63,5 +63,18 @@ namespace Tangerine_Presentador.M8
             }
         }
 
+        public void enviarCorreo()
+        {
+            try
+            {
+                vista.destinatario = this.vista.destinatario;
+                vista.asunto = this.vista.asunto;
+                vista.mensaje = this.vista.mensaje;
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
