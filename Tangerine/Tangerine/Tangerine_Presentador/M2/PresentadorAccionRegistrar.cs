@@ -48,6 +48,10 @@ namespace Tangerine_Presentador.M2
             theComando.Ejecutar();
         }
 
+        /// <summary>
+        /// Verificar si el nombre de usuario ya existe en la BD.
+        /// </summary>
+        /// <returns></returns>
         public bool usuarioExistente()
         {
             bool respuesta = false;
