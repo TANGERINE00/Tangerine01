@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security.AntiXss;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -59,11 +60,19 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            presentador = new PresentadorAccionRegistrar(this, int.Parse(Request.QueryString["idFicha"]), 
-                                                         Request.QueryString["Nombre"], Request.QueryString["Apellido"]);
-            if (!IsPostBack)
+            try
             {
-                presentador.inicioVista();
+                presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idFicha"], false)),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Nombre"], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false));
+                if (!IsPostBack)
+                {
+                    presentador.inicioVista();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("../M1/DashBoard.aspx");
             }
         }
 
@@ -88,9 +97,9 @@ namespace Tangerine.GUI.M2
         [WebMethod]
         public static string validarUsuario(string usuario)
         {
-            string nombreUsuario = usuario;
             bool respuesta = false;
-            respuesta = LogicaAgregarUsuario.ExisteUsuario(nombreUsuario);
+            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(usuario);
+            respuesta = comando.Ejecutar();
 
             string retorno = "Disponible";
 

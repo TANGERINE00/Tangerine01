@@ -4,58 +4,50 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using DominioTangerine;
+using LogicaTangerine;
 using LogicaTangerine.M6;
 using LogicaTangerine.M4;
+using Tangerine_Contratos.M6;
+using Tangerine_Presentador.M6;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
+
 
 namespace Tangerine.GUI.M6
 {
-    public partial class ModificarPropuesta : System.Web.UI.Page
+    public partial class ModificarPropuesta : System.Web.UI.Page, IContratoModificarPropuesta
     {
-        public string requerimiento
-        {
-            get
-            {
-                return this.tablaR.Text;
-            }
-
-            set
-            {
-                this.tablaR.Text = value;
-            }
-        }
-
-
+     
 
         public Propuesta Prueba;
         LogicaM4 logicacompania = new LogicaM4();
         public List<Requerimiento> req;
         public bool modi;
-        string prueba;
+        string company;
 
+         PresentadorModificarPropuesta presenter;
 
+        public ModificarPropuesta()
+        {
+            this.presenter = new PresentadorModificarPropuesta(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            prueba = Request.QueryString.Get("id");
-
-            btn_ConsultaP(prueba);
-            btn_ConsultaReq(prueba);
+            company = Request.QueryString.Get("id");
+            presenter.llenarVista();
+       //     TraerCompania(company);
+       //     
+       //     btn_ConsultaReq(prueba);
 
 
           //  volver.Attributes.Add("href", "ConsultarPropuesta.aspx");
 
 
-
+/*
             if (!IsPostBack)
             {
-                llenarComboTipoCosto();
-                llenarComboDuracion();
-                llenarComboEstatus();
-                llenarComboCuota();
-                llenarComboFpago();
-
-
 
                 foreach (Requerimiento elRequerimiento in req)
                 {
@@ -71,19 +63,8 @@ namespace Tangerine.GUI.M6
                     requerimiento += RecursosGUI_M6.CerrarTR;
 
                 }
-
-                descripcion.Value = Prueba.Descripcion;
-                textoDuracion.Value = Prueba.CantDuracion;
-                comboDuracion.SelectedValue = Prueba.TipoDuracion;
-                comboTipoCosto.SelectedValue = Prueba.Moneda;
-                textoCosto.Value = Prueba.Costo.ToString();
-                comboEstatus.SelectedValue = Prueba.Estatus;
-                datepicker1.Value = Prueba.Feincio.ToString("MM/dd/yyyy");
-                datepicker2.Value = Prueba.Fefinal.ToString("MM/dd/yyyy");
-                formaPago.SelectedValue = Prueba.Acuerdopago;
-                comboCuota.SelectedValue = Prueba.Entrega.ToString();
-
             }
+ * */
 
           
 
@@ -100,7 +81,7 @@ namespace Tangerine.GUI.M6
         /// <param name="idPropuesta"></param>
 
 
-        public void btn_ConsultaP(String idPropuesta)
+     /*   public void TraerCompania(String idPropuesta)
         {
 
             LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
@@ -112,36 +93,29 @@ namespace Tangerine.GUI.M6
             lacompania = logicacompania.ConsultCompany(Int32.Parse(Prueba.IdCompañia));
             cliente_id.Value = lacompania.NombreCompania;
 
-        }
-
-
-
-
-
+        } */
 
         /// <summary>
         /// Metodo para cargar el o los requerimientos asociados a la propuesta seleccionada en la pantalla de listar. 
         /// </summary>
         /// <param name="idPropuesta"></param>
 
-        public void btn_ConsultaReq(String idPropuesta)
+   /*     public void btn_ConsultaReq(String idPropuesta)
         {
 
             LogicaRequerimiento logreq = new LogicaRequerimiento();
 
             req = logreq.TraerRequerimientoPropuesta(idPropuesta);
 
-        }
-
-
-
+        } */
         /// <summary>
         /// Metodo para modificar el requerimiento desde el modal
         /// </summary>
         /// <param name="idRequerimiento"></param>
         /// <param name="descripcion"></param>
 
-        public void btn_ModReq(String idRequerimiento, String descripcion)
+        /*
+        public void llenarReq(String idRequerimiento, String descripcion)
         {
             Requerimiento vistaReq = new Requerimiento();
             LogicaRequerimiento logica = new LogicaRequerimiento();
@@ -149,57 +123,10 @@ namespace Tangerine.GUI.M6
             vistaReq.CodigoRequerimiento = idRequerimiento;
             modi = logica.ModRequerimiento(vistaReq);
 
-        }
-
-
-
-
-        public void llenarComboDuracion()
-        {
-            comboDuracion.Items.Add("Meses");
-            comboDuracion.Items.Add("Dias");
-            comboDuracion.Items.Add("Horas");
-        }
-
-
-        public void llenarComboTipoCosto()
-        {
-            comboTipoCosto.Items.Add("Bolivar");
-            comboTipoCosto.Items.Add("Dolar");
-            comboTipoCosto.Items.Add("Euro");
-            comboTipoCosto.Items.Add("Bitcoin");
-        }
-
-
-        public void llenarComboEstatus()
-        {
-            comboEstatus.Items.Add("Pendiente");
-            comboEstatus.Items.Add("Aprobado");
-            comboEstatus.Items.Add("Cerrado");
-
-        }
-
-        public void llenarComboCuota()
-        {
-            comboCuota.Items.Add("");
-            comboCuota.Items.Add("1");
-            comboCuota.Items.Add("2");
-            comboCuota.Items.Add("3");
-            comboCuota.Items.Add("4");
-
-        }
-
-        public void llenarComboFpago()
-        {
-            formaPago.Items.Add("Mensual");
-            formaPago.Items.Add("Por cuotas");
-
-
-        }
-
+        } */
         protected void botonModificarPro_Click(object sender, EventArgs e)
         {
-            Propuesta propuestas = new Propuesta();
+           /* Propuesta propuestas = new Propuesta();
 
             propuestas.Nombre = prueba;
             propuestas.Descripcion = descripcion.Value;
@@ -215,10 +142,92 @@ namespace Tangerine.GUI.M6
 
             LogicaPropuesta propuesta = new LogicaPropuesta();
             propuesta.ModificarPropuesta(propuestas);
-            Server.Transfer("ConsultarPropuesta.aspx", true);
+
+            */
+            presenter.ModificarPropuesta();
+
+            Server.Transfer("ConsultarPropuesta.aspx", true);   
         }
 
-      
+        public string requerimiento
+        {
+            get
+            {
+                return this.tablaR.Text;
+            }
+
+            set
+            {
+                this.tablaR.Text = value;
+            }
+        }
+
+
+        public string ContenedorCompania
+        {
+            get { return cliente_id.Value; }
+            set { cliente_id.Value = value;  }
+        }
+
+        public string IdCompania {
+            get { return company; }
+        }
+        public string Descripcion
+        {
+            get { return descripcion.Value; }
+            set { descripcion.Value = value; }
+
+        }
+        public string TablaR
+        {
+            get { return tablaR.Text;}
+            set { tablaR.Text = value; }
+
+        }
+        public DropDownList ComboDuracion
+        {
+            get { return comboDuracion; }
+            set { comboDuracion = value; }
+        }
+        public string TextoDuracion
+        {
+            get { return textoDuracion.Value; }
+
+        }
+        public string DatePickerUno
+        {
+            get { return datepicker1.Value; }
+        }
+        public string DatePickerDos
+        {
+            get { return datepicker2.Value; }
+        }
+        public DropDownList TipoCosto
+        {
+            get { return comboTipoCosto; }
+            set { comboTipoCosto = value; }
+        }
+
+        public string TextoCosto
+        {
+            get { return textoCosto.Value; }
+        }
+        public DropDownList FormaPago
+        {
+            get { return formaPago; }
+            set { formaPago = value; }
+        }
+        public DropDownList ComboCuota
+        {
+            get { return comboCuota; }
+            set { comboCuota = value; }
+        }
+        public DropDownList ComboStatus
+        {
+            get { return comboEstatus; }
+            set { comboEstatus = value; }
+        }
+
 
 
 

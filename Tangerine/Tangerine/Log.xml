@@ -11677,3 +11677,309 @@ Error Number:-1,State:0,Class:20
 2016-06-21 04:24:56,230 INFO  DAOEmpleado - Clase: DAOEmpleado
 2016-06-21 04:24:56,230 INFO  DAOEmpleado - Mensaje: Salida del Método
 2016-06-21 04:24:56,230 INFO  DAOEmpleado - Metodo: ConsultarTodos
+2016-06-21 10:47:14,581 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 10:47:14,587 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 10:47:14,587 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 10:47:14,587 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 10:47:28,981 ERROR DAOFactura - *******************************************************
+2016-06-21 10:47:28,981 ERROR DAOFactura - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:47:28,983 ERROR DAOFactura - Origen: DatosTangerine
+2016-06-21 10:47:28,983 ERROR DAOFactura - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:47:28,983 ERROR DAOFactura - StackTrace:    at DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:line 299
+   at DatosTangerine.DAO.M8.DAOFactura.ConsultarTodos() in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M8\DAOFactura.cs:line 272
+2016-06-21 10:47:28,984 ERROR DAOFactura - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:line 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 10:47:29,003 ERROR ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 10:47:29,003 ERROR ComandoConsultarTodosFactura - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:47:29,003 ERROR ComandoConsultarTodosFactura - Origen: DatosTangerine
+2016-06-21 10:47:29,003 ERROR ComandoConsultarTodosFactura - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:47:29,006 ERROR ComandoConsultarTodosFactura - StackTrace:    at DatosTangerine.DAO.M8.DAOFactura.ConsultarTodos() in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M8\DAOFactura.cs:line 320
+   at LogicaTangerine.Comandos.M8.ComandoConsultarTodosFactura.Ejecutar() in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\LogicaTangerine\Comandos\M8\ComandoConsultarTodosFactura.cs:line 30
+2016-06-21 10:47:29,006 ERROR ComandoConsultarTodosFactura - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:line 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 10:48:08,615 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 10:48:08,615 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 10:48:08,615 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 10:48:08,615 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 10:51:03,521 ERROR BDUsuario - *******************************************************
+2016-06-21 10:51:03,526 ERROR BDUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:51:03,528 ERROR BDUsuario - Origen: DatosTangerine
+2016-06-21 10:51:03,528 ERROR BDUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:51:03,528 ERROR BDUsuario - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M2.BDUsuario.ObtenerDatoUsuario(Usuario usuario) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\M2\BDUsuario.cs:line 174
+2016-06-21 10:51:03,528 ERROR BDUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 10:51:06,864 ERROR BDUsuario - *******************************************************
+2016-06-21 10:51:06,864 ERROR BDUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:51:06,864 ERROR BDUsuario - Origen: DatosTangerine
+2016-06-21 10:51:06,864 ERROR BDUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:51:06,865 ERROR BDUsuario - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M2.BDUsuario.ObtenerDatoUsuario(Usuario usuario) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\M2\BDUsuario.cs:line 174
+2016-06-21 10:51:06,865 ERROR BDUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 10:51:08,084 ERROR BDUsuario - *******************************************************
+2016-06-21 10:51:08,084 ERROR BDUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:51:08,084 ERROR BDUsuario - Origen: DatosTangerine
+2016-06-21 10:51:08,084 ERROR BDUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:51:08,084 ERROR BDUsuario - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M2.BDUsuario.ObtenerDatoUsuario(Usuario usuario) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\M2\BDUsuario.cs:line 174
+2016-06-21 10:51:08,084 ERROR BDUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 10:51:26,837 ERROR BDUsuario - *******************************************************
+2016-06-21 10:51:26,837 ERROR BDUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:51:26,837 ERROR BDUsuario - Origen: DatosTangerine
+2016-06-21 10:51:26,837 ERROR BDUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:51:26,837 ERROR BDUsuario - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M2.BDUsuario.ObtenerDatoUsuario(Usuario usuario) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\M2\BDUsuario.cs:line 174
+2016-06-21 10:51:26,837 ERROR BDUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 10:51:32,691 ERROR BDUsuario - *******************************************************
+2016-06-21 10:51:32,691 ERROR BDUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-21 10:51:32,691 ERROR BDUsuario - Origen: DatosTangerine
+2016-06-21 10:51:32,691 ERROR BDUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-21 10:51:32,692 ERROR BDUsuario - StackTrace:    at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 296
+   at DatosTangerine.M2.BDUsuario.ObtenerDatoUsuario(Usuario usuario) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\M2\BDUsuario.cs:line 174
+2016-06-21 10:51:32,692 ERROR BDUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DatosTangerine.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\Tangerine01\Tangerine\Tangerine\DatosTangerine\BDConexion.cs:line 279
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-21 14:46:42,567 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 14:46:42,574 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 14:46:42,574 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 14:46:42,574 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 14:46:42,631 INFO  DAOFactura - *******************************************************
+2016-06-21 14:46:42,631 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 14:46:42,631 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 14:46:42,631 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 14:50:18,604 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 14:50:18,611 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 14:50:18,611 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 14:50:18,611 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 14:50:18,626 INFO  DAOFactura - *******************************************************
+2016-06-21 14:50:18,626 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 14:50:18,626 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 14:50:18,626 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 15:50:37,754 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 15:50:37,760 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 15:50:37,760 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 15:50:37,760 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 15:50:37,782 INFO  DAOFactura - *******************************************************
+2016-06-21 15:50:37,782 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 15:50:37,782 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 15:50:37,782 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 15:53:29,579 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 15:53:29,586 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 15:53:29,586 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 15:53:29,586 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 15:53:29,601 INFO  DAOFactura - *******************************************************
+2016-06-21 15:53:29,601 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 15:53:29,601 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 15:53:29,601 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 15:54:10,732 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 15:54:10,741 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 15:54:10,741 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 15:54:10,741 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 15:54:10,777 INFO  DAOFactura - *******************************************************
+2016-06-21 15:54:10,777 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 15:54:10,778 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 15:54:10,778 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 15:57:07,501 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 15:57:07,507 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 15:57:07,507 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 15:57:07,507 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 15:57:07,521 INFO  DAOFactura - *******************************************************
+2016-06-21 15:57:07,521 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 15:57:07,521 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 15:57:07,521 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 15:57:23,462 INFO  ComandoConsultarXIdFactura - *******************************************************
+2016-06-21 15:57:23,463 INFO  ComandoConsultarXIdFactura - Clase: ComandoConsultarXIdFactura
+2016-06-21 15:57:23,463 INFO  ComandoConsultarXIdFactura - Mensaje: Entrada en el Método
+2016-06-21 15:57:23,463 INFO  ComandoConsultarXIdFactura - Metodo: Ejecutar
+2016-06-21 15:57:23,598 INFO  DAOFactura - *******************************************************
+2016-06-21 15:57:23,598 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 15:57:23,598 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 15:57:23,598 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-21 15:58:01,888 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 15:58:01,888 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 15:58:01,888 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 15:58:01,888 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 15:58:01,899 INFO  DAOFactura - *******************************************************
+2016-06-21 15:58:01,899 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 15:58:01,899 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 15:58:01,899 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 16:05:55,969 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 16:05:55,975 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 16:05:55,975 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 16:05:55,975 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 16:05:56,009 INFO  DAOFactura - *******************************************************
+2016-06-21 16:05:56,009 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 16:05:56,009 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 16:05:56,009 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 16:06:03,576 INFO  ComandoConsultarXIdFactura - *******************************************************
+2016-06-21 16:06:03,576 INFO  ComandoConsultarXIdFactura - Clase: ComandoConsultarXIdFactura
+2016-06-21 16:06:03,576 INFO  ComandoConsultarXIdFactura - Mensaje: Entrada en el Método
+2016-06-21 16:06:03,576 INFO  ComandoConsultarXIdFactura - Metodo: Ejecutar
+2016-06-21 16:06:03,583 INFO  DAOFactura - *******************************************************
+2016-06-21 16:06:03,583 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 16:06:03,583 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 16:06:03,583 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-21 16:20:19,017 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 16:20:19,023 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 16:20:19,023 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 16:20:19,023 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 16:20:19,064 INFO  DAOFactura - *******************************************************
+2016-06-21 16:20:19,064 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 16:20:19,064 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 16:20:19,064 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 16:20:21,373 INFO  ComandoConsultarXIdFactura - *******************************************************
+2016-06-21 16:20:21,373 INFO  ComandoConsultarXIdFactura - Clase: ComandoConsultarXIdFactura
+2016-06-21 16:20:21,373 INFO  ComandoConsultarXIdFactura - Mensaje: Entrada en el Método
+2016-06-21 16:20:21,373 INFO  ComandoConsultarXIdFactura - Metodo: Ejecutar
+2016-06-21 16:20:21,397 INFO  DAOFactura - *******************************************************
+2016-06-21 16:20:21,397 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 16:20:21,397 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 16:20:21,397 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-21 16:24:43,602 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-21 16:24:43,608 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-21 16:24:43,608 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-21 16:24:43,608 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-21 16:24:43,621 INFO  DAOFactura - *******************************************************
+2016-06-21 16:24:43,621 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 16:24:43,621 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 16:24:43,621 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-21 16:24:46,326 INFO  ComandoConsultarXIdFactura - *******************************************************
+2016-06-21 16:24:46,326 INFO  ComandoConsultarXIdFactura - Clase: ComandoConsultarXIdFactura
+2016-06-21 16:24:46,326 INFO  ComandoConsultarXIdFactura - Mensaje: Entrada en el Método
+2016-06-21 16:24:46,326 INFO  ComandoConsultarXIdFactura - Metodo: Ejecutar
+2016-06-21 16:24:46,330 INFO  DAOFactura - *******************************************************
+2016-06-21 16:24:46,330 INFO  DAOFactura - Clase: DAOFactura
+2016-06-21 16:24:46,330 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-21 16:24:46,330 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-21 19:32:43,281 INFO  DaoLugarDireccion - *******************************************************
+2016-06-21 19:32:43,427 INFO  DaoLugarDireccion - Clase: DaoLugarDireccion
+2016-06-21 19:32:43,427 INFO  DaoLugarDireccion - Mensaje: Entrada en el Método
+2016-06-21 19:32:43,427 INFO  DaoLugarDireccion - Metodo: ConsultCityPlaces
+2016-06-21 19:33:49,471 INFO  DAORol - *******************************************************
+2016-06-21 19:33:49,472 INFO  DAORol - Clase: DAORol
+2016-06-21 19:33:49,472 INFO  DAORol - Mensaje: Salida del Método
+2016-06-21 19:33:49,472 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-21 19:33:49,475 INFO  DAOUsuario - *******************************************************
+2016-06-21 19:33:49,475 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-21 19:33:49,475 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-21 19:33:49,475 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-21 19:34:17,616 INFO  DaoCompania - *******************************************************
+2016-06-21 19:34:17,616 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:34:17,617 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:34:17,617 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:34:59,749 INFO  DaoCompania - *******************************************************
+2016-06-21 19:34:59,749 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:34:59,749 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:34:59,749 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - *******************************************************
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - Clase: DaoLugarDireccion
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - Mensaje: Entrada en el Método
+2016-06-21 19:34:59,979 INFO  DaoLugarDireccion - Metodo: ConsultarXId
+2016-06-21 19:36:47,064 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:47,065 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:47,065 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:47,065 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:36:47,853 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:47,853 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:47,853 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:47,853 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:36:48,762 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:48,762 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:48,762 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:48,762 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-21 19:36:54,599 INFO  DaoCompania - *******************************************************
+2016-06-21 19:36:54,599 INFO  DaoCompania - Clase: DaoCompania
+2016-06-21 19:36:54,599 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-21 19:36:54,599 INFO  DaoCompania - Metodo: ConsultarTodos

@@ -61,6 +61,24 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase {
+            get {
+                return ResourceManager.GetString("alertClase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole {
+            get {
+                return ResourceManager.GetString("alertRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-danger&quot;&gt;Anulada&lt;/span&gt;.
         /// </summary>
         internal static string anulada {
@@ -228,6 +246,33 @@ namespace Tangerine.GUI.M8 {
         internal static string Coma {
             get {
                 return ResourceManager.GetString("Coma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IdCompania.
+        /// </summary>
+        internal static string idC {
+            get {
+                return ResourceManager.GetString("idC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idFac.
+        /// </summary>
+        internal static string idF {
+            get {
+                return ResourceManager.GetString("idF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IdProyecto.
+        /// </summary>
+        internal static string idP {
+            get {
+                return ResourceManager.GetString("idP", resourceCulture);
             }
         }
         

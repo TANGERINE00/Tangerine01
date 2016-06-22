@@ -13,7 +13,11 @@ namespace Tangerine_Presentador.M9
     {
 
         IContratoSeleccionCompania vista;
-  
+
+        /// <summary>
+        /// Constructor del Presentador para implementar en GUI
+        /// </summary>
+        /// <param name="vista">Interfaz del Contrato con firma de metodos utilizados por el Presentador</param>
         public PresentadorSeleccionCompania (IContratoSeleccionCompania vista)
         {
 

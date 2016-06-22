@@ -103,7 +103,7 @@ namespace DatosTangerine.DAO.M2
                 DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
 
                 Entidad theMenu;
-                Entidad theLista = DominioTangerine.Fabrica.FabricaEntidades.crearListaGenericaVacia();
+                Entidad theLista = DominioTangerine.Fabrica.FabricaEntidades.crearListaGenericaVaciaMenu();
                 DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2> lista = (DominioTangerine.Entidades.M2.ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>)theLista;
 
                 List<Parametro> parametros = new List<Parametro>();

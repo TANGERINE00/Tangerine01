@@ -228,6 +228,15 @@ namespace DominioTangerine.Fabrica
             /// Se crea la instancia sin atributos de ListaGenericaM2
             /// </summary>
             /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
+            static public Entidad crearListaGenericaVaciaMenu()
+            {
+                return new ListaGenericaM2<DominioTangerine.Entidades.M2.MenuM2>();
+            }
+
+            /// <summary>
+            /// Se crea la instancia sin atributos de ListaGenericaM2
+            /// </summary>
+            /// <returns>Devuelve la instancia de la clase ListaGenericaM2 sin atributos</returns>
             static public Entidad crearListaGenericaVacia()
             {
                 return new ListaGenericaM2<Entidad>();
@@ -680,6 +689,12 @@ namespace DominioTangerine.Fabrica
         {
             return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura );
         }
+       
+        public static Entidad ObtenerPago_M9(int codPago, int montoPago, string monedaPago, string formaPago, int idFactura)
+        {
+            return new DominioTangerine.Entidades.M9.Pago(codPago, montoPago, monedaPago, formaPago, idFactura);
+        }
+
 
         #endregion
 
