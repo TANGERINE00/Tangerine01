@@ -77,7 +77,7 @@
                         <th>Motivo</th>
                       </tr>
                     </thead>
-                    <asp:Literal runat="server" ID="Lista"></asp:Literal>
+                    <asp:Literal runat="server" ID="ListaLlamadas"></asp:Literal>
                     <tbody>       
                     </tbody>
                   </table>
@@ -106,7 +106,7 @@
                         <th>Motivo</th>
                       </tr>
                     </thead>
-                    <asp:Literal runat="server" ID="Literal1"></asp:Literal>
+                    <asp:Literal runat="server" ID="ListaVisitas"></asp:Literal>
                     <tbody>       
                     </tbody>
                   </table>

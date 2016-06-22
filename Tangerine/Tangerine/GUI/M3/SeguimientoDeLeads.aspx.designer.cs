@@ -112,21 +112,21 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div6;
         
         /// <summary>
-        /// Control Lista.
+        /// Control ListaLlamadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Lista;
+        protected global::System.Web.UI.WebControls.Literal ListaLlamadas;
         
         /// <summary>
-        /// Control Literal1.
+        /// Control ListaVisitas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
+        protected global::System.Web.UI.WebControls.Literal ListaVisitas;
     }
 }
