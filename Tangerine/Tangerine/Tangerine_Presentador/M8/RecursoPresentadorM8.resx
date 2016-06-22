@@ -288,4 +288,10 @@
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
   </data>
+  <data name="alertaModificado" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="MsjModificado" xml:space="preserve">
+    <value>La factura ha sido modificada</value>
+  </data>
 </root>
