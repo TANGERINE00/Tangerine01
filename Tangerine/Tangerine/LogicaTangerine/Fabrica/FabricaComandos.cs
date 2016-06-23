@@ -858,6 +858,16 @@ namespace LogicaTangerine.Fabrica
             return new ComandoSearchExistingBill(factura);
         }
 
+        /// <summary>
+        /// metodo para crear comando que permite mandar correos
+        /// </summary>
+        /// <param name="correo">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEnviarCorreoGmail(Entidad correo)
+        {
+            return new ComandoEnviarCorreoGmail(correo);
+        }
+
         #endregion
 
         #region Modulo 9
