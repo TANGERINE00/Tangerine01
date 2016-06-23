@@ -14,25 +14,49 @@ namespace Tangerine.GUI.M2
 {
     public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
-        private PresentadorRegistroUsuario presentador;
+        private PresentadorRegistroUsuario _presentador;
+        string error;
+        private bool errorManejo;
+
+        /// <summary>
+        /// Constructor de PresentadorRegistroUsuario
+        /// </summary>
+        public RegistroUsuario()
+        {
+            _presentador = new PresentadorRegistroUsuario(this);
+        }
 
         #region Contrato
 
-        /// <summary>
-        /// Implementacion del contrato
-        /// </summary>
-        public string tablaEmpleado
-        {
-            get
+            /// <summary>
+            /// Implementacion del contrato
+            /// </summary>
+            public string tablaEmpleado
             {
-                return this.tablaempleados.Text;
+                get
+                {
+                    return this.tabla.Text;
+                }
+                set
+                {
+                    this.tabla.Text = value;
+                }
             }
-            set
-            {
-                this.tablaempleados.Text = value;
-            }
-        }
 
+            /// <summary>
+            /// Manejo de errores
+            /// </summary>
+            public string msjError
+            {
+                get
+                {
+                    return error;
+                }
+                set
+                {
+                    error = value;
+                }
+            }
 
         #endregion
 
@@ -43,10 +67,13 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
-            presentador = new PresentadorRegistroUsuario(this);
             if (!IsPostBack)
             {
-                presentador.inicioVista();
+                errorManejo = _presentador.inicioVista();
+                if(!errorManejo)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                }
             }
         }
     }

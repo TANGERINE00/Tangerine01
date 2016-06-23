@@ -102,7 +102,7 @@ namespace PruebasUnitarias.M6
         //Prueba que se consulten requerimientos por propuesta
         // </summary>
         [Test]
-        public void ConsultarRequerimientosXPropuesta()
+        public void TestConsultarRequerimientosXPropuesta()
         {
             elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba", "NombrePropuestaPrueba");
             elRequerimiento3 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento2", "DescripcionRequerimientoPrueba2", "NombrePropuestaPrueba");
@@ -125,7 +125,7 @@ namespace PruebasUnitarias.M6
         //Prueba que pueda eliminar un requerimiento
         // <summary>
         [Test]
-        public void EliminarRequerimiento()
+        public void TestEliminarRequerimiento()
         {
             //Se obtiene el número de propuestas totales antes del insertado
             contador = daor.ConsultarNumeroRequerimientos();
@@ -151,7 +151,7 @@ namespace PruebasUnitarias.M6
         /// Prueba que se requerimientos por nombre.
         /// </summary>
         [Test]
-        public void ConsultaRequerimientoXId()
+        public void TestConsultaRequerimientoXId()
         {
             //Se inserta el requerimiento
             confirmacion = daor.Agregar(elRequerimiento);

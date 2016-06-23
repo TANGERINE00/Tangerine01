@@ -30,13 +30,13 @@
                         <div class="form-group" runat="server">
                             <label for="InputNombre">Nombre</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" id="InputNombre1" name="InputNombre1" 
-                                placeholder="Introduzca nombre de la compañía" maxlength="50" required>
+                                placeholder="Introduzca nombre de la compañía" maxlength="50" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
                         <!--Acronimo-->
                         <div class="form-group" runat="server">
                             <label for="InputAcronimo">Acrónimo (opcional)</label>
                             <input runat="server" type="text" class="form-control" id="InputAcronimo1" name="InputAcronimo1" 
-                                placeholder="Introduzca acrónimo de la compañía" maxlength="10">
+                                placeholder="Introduzca acrónimo de la compañía" maxlength="10" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" oninvalid="setCustomValidity('Campo inválido o vacío')">
                         </div>
                         <!--RIF-->
                         <div class="form-group" runat="server">
@@ -54,8 +54,7 @@
                         <!--Email-->
                         <div class="form-group" runat="server">
                             <label for="InputEmail">Correo Electrónico</label> <label for="Requerido" style="color: red;">*</label>
-                            <input runat="server" type="text" class="form-control"
-                                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
+                            <input runat="server" type="email" class="form-control"
                                 id="InputEmail1" name="InputEmail1" 
                                 placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required/>
                         </div>
@@ -69,13 +68,13 @@
                                 maxlength="15" required>
                         </div>
                         <!--Fecha Registro-->
-                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server">
+                        <div class="form-group col-md-11" style="margin-left:-14px;" runat="server" >
                             <label for="InputFechaRegistro">Fecha de Registro</label> <label for="Requerido" style="color: red;">*</label>
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                                <input class="form-control pull-right" id="datepicker1" type="text" runat="server" disabled="disabled" 
                                     clientidmode="static" required>
                             </div>
                         </div>
@@ -84,12 +83,12 @@
                             <label for="InputPresupuesto">Presupuesto Anual</label> <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="number" class="form-control" 
                                 id="InputPresupuesto1" name="InputPresupuesto1" 
-                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
+                                placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10">
                         </div>
                         <!--Plazo de Pagos-->
                         <div class="form-group" runat="server">
                             <label for="InputPlazoPago">Plazo de Pagos (días)</label> <label for="Requerido" style="color: red;">*</label>
-                            <input runat="server" type="text" class="form-control" id="InputPlazoPago1" name="InputPlazoPago1" 
+                            <input runat="server" type="number" class="form-control" id="InputPlazoPago1" name="InputPlazoPago1" 
                                 placeholder="Introduzca el plazo para los pagos de la compañía" maxlength="4" required>
                         </div>
                      </div><!-- /.box-body -->

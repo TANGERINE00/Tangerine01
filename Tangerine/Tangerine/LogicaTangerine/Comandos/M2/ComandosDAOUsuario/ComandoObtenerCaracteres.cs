@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2
 {
@@ -52,13 +53,12 @@ namespace LogicaTangerine.Comandos.M2
             catch (NullReferenceException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido", ex );
+                throw new ExceptionM2Tangerine("Ingreso de un argumento con valor invalido", ex);
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
-                                                                     "ObtenerCaracteres()", ex );
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return caracteres;

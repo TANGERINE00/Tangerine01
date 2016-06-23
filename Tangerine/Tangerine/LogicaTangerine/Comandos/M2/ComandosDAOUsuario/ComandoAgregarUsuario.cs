@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using DatosTangerine.DAO;
 using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
+using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2
 {
@@ -28,10 +30,18 @@ namespace LogicaTangerine.Comandos.M2
         /// <returns>Retorna una instancia del tipo DaoUsuario</returns>
         public override Boolean Ejecutar()
         {
-            bool resultado;
-            IDAOUsuarios UsuarioAdd = FabricaDAOSqlServer.crearDaoUsuario();
-            resultado = UsuarioAdd.Agregar( _usuario );
-            return resultado;
+            try
+            {
+                bool resultado;
+                IDAOUsuarios UsuarioAdd = FabricaDAOSqlServer.crearDaoUsuario();
+                resultado = UsuarioAdd.Agregar(_usuario);
+                return resultado;
+            }
+            catch ( Exception ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
+            }
         }
     }
 }

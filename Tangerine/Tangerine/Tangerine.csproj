@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\ActiproSoftware.Shared.Net20.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>packages\log4net.2.0.5\lib\net10-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=3.0.5797.27550, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -144,7 +147,6 @@
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\Dashboard.aspx" />
-    <Content Include="GUI\M1\EjemploM1.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
@@ -163,6 +165,7 @@
     <Content Include="GUI\M3\Listar.aspx" />
     <Content Include="GUI\M3\ModificarLead.aspx" />
     <Content Include="GUI\M3\Promover.aspx" />
+    <Content Include="GUI\M3\SeguimientoDeLeads.aspx" />
     <Content Include="GUI\M4\AgregarCompania.aspx" />
     <Content Include="GUI\M4\ConsultarCompania.aspx" />
     <Content Include="GUI\M4\InformacionCompania.aspx" />
@@ -184,11 +187,13 @@
     <Content Include="GUI\M8\AnularFacturaM8.aspx" />
     <Content Include="GUI\M8\ConsultarFacturaM8.aspx" />
     <Content Include="GUI\M8\EnviarCorreoM8.aspx" />
+    <Content Include="GUI\M8\Factura.aspx" />
     <Content Include="GUI\M8\GenerarFacturaM8.aspx" />
     <Content Include="GUI\M8\ModificarFacturaM8.aspx" />
     <Content Include="GUI\M9\EjemploM9.aspx" />
     <Content Include="GUI\M9\FacturasPagadas.aspx" />
     <Content Include="GUI\M9\FacturasPorPagar.aspx" />
+    <Content Include="GUI\M9\PagosPorCompania.aspx" />
     <Content Include="GUI\M9\SeleccionCompaniaPagadas.aspx" />
     <Content Include="GUI\M9\SeleccionCompania.aspx" />
     <Content Include="GUI\M9\CargarPago1.aspx" />
@@ -1002,13 +1007,6 @@
     <Compile Include="GUI\M1\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\M1\EmpleadosAdmin.aspx.cs">
       <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1096,6 +1094,11 @@
     <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\ResourceM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceM2.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M3\ActivarLead.aspx.cs">
       <DependentUpon>ActivarLead.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1156,6 +1159,13 @@
       <DependentUpon>ResourceInterfaz.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="GUI\M3\SeguimientoDeLeads.aspx.cs">
+      <DependentUpon>SeguimientoDeLeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\SeguimientoDeLeads.aspx.designer.cs">
+      <DependentUpon>SeguimientoDeLeads.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M4\AgregarCompania.aspx.cs">
       <DependentUpon>AgregarCompania.aspx</DependentUpon>
@@ -1310,6 +1320,13 @@
     <Compile Include="GUI\M8\EnviarCorreoM8.aspx.designer.cs">
       <DependentUpon>EnviarCorreoM8.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M8\Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M8\Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M8\GenerarFacturaM8.aspx.cs">
       <DependentUpon>GenerarFacturaM8.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1349,6 +1366,13 @@
     </Compile>
     <Compile Include="GUI\M9\FacturasPorPagar.aspx.designer.cs">
       <DependentUpon>FacturasPorPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M9\PagosPorCompania.aspx.cs">
+      <DependentUpon>PagosPorCompania.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M9\PagosPorCompania.aspx.designer.cs">
+      <DependentUpon>PagosPorCompania.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M9\ResourceLogicaM9.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1518,6 +1542,10 @@
     <EmbeddedResource Include="GUI\M1\ResourceGUIM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M2\ResourceM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>

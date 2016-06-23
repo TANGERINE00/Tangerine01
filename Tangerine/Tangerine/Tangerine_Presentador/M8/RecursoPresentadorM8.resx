@@ -145,7 +145,7 @@
     <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonMail" xml:space="preserve">
-    <value>&lt;a title="Mail" class="btn btn-primary glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idFac=</value>
+    <value>&lt;a title="Correo" class="btn btn-default glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idFac=</value>
   </data>
   <data name="BotonMail1" xml:space="preserve">
     <value>&lt;a title="Mail" class="btn btn-primary glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idCompania=</value>
@@ -275,5 +275,59 @@
   </data>
   <data name="dateTipe" xml:space="preserve">
     <value>dd/MM/yyyy</value>
+  </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="alertaModificado" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="MsjModificado" xml:space="preserve">
+    <value>La factura ha sido modificada</value>
+  </data>
+  <data name="BotonFactura" xml:space="preserve">
+    <value>&lt;a title="Factura"  class="btn btn-info glyphicon glyphicon-file" href="Factura.aspx?idFac=</value>
+  </data>
+  <data name="TipoFecha" xml:space="preserve">
+    <value>dd/mm/yyyy</value>
+  </data>
+  <data name="MontoTotal" xml:space="preserve">
+    <value>TOTAL :</value>
+  </data>
+  <data name="BS" xml:space="preserve">
+    <value>Bs</value>
+  </data>
+  <data name="Dolar" xml:space="preserve">
+    <value>$</value>
+  </data>
+  <data name="Euro" xml:space="preserve">
+    <value>€</value>
+  </data>
+  <data name="blank" xml:space="preserve">
+    <value>.\n</value>
+  </data>
+  <data name="espacio" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="punto" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="recordar" xml:space="preserve">
+    <value>Se le recuerda que tiene una factura por pagar, por un monto de:</value>
+  </data>
+  <data name="recordatorio" xml:space="preserve">
+    <value>Recordatorio de Pago - Proyecto:</value>
+  </data>
+  <data name="saludos" xml:space="preserve">
+    <value>Saludos Cordiales, estimados:</value>
   </data>
 </root>

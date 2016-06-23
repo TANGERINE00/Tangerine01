@@ -30,11 +30,12 @@ namespace Tangerine_Contratos.M6
         {
             get;
         }
-        DropDownList ComboDuracion
+        string ComboDuracion
         {
             get;
             set;
         }
+
         string TextoDuracion
         {
             get;
@@ -57,23 +58,19 @@ namespace Tangerine_Contratos.M6
         {
             get;
         }
-        DropDownList FormaPago
+        string FormaPago
         {
             get;
             set;
         }
-        DropDownList ComboCuota
+        string CantidadCuotas
         {
             get;
-            set;
         }
         DropDownList ComboStatus
         {
             get;
             set;
         }
-
-
-
     }
 }

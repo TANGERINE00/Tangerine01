@@ -19,6 +19,9 @@ namespace Tangerine_Contratos.M5
         string item_cargo { get; set; }
         string input_departamento { get; set; }
         string input_telefono { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
         void BotonAceptar( int typeComp, int idComp );
 
     }

@@ -11,5 +11,6 @@ namespace Tangerine_Contratos.M4
     public interface IContratoConsultarCompania
     {
         Literal Tabla { get; set; }
+        string msjError { get; set; }
     }
 }

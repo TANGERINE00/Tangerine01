@@ -30,7 +30,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "ConsultarListaDeEmpleados()", ex );
             }
             return listaDeEmpleados;
@@ -52,7 +52,7 @@ namespace LogicaTangerine.M2
             catch ( NullReferenceException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido [numeroFicha es null]", ex );
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Parametro invalido [numeroFicha es null]", ex );
             }
             catch ( SqlException ex )
             {
@@ -64,7 +64,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "VerificarUsuarioDeEmpleado()", ex );
             }
             return resultado;
@@ -86,7 +86,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "AgregarUsuario()", ex );
             }
             
@@ -117,7 +117,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "PrepararUsuario()", ex );
             }
             return resultado;
@@ -145,12 +145,12 @@ namespace LogicaTangerine.M2
             catch ( NullReferenceException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido", ex );
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Parametro invalido", ex );
             }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "CrearUsuarioDefault()", ex );
             }
             return usuarioNuevo;
@@ -187,12 +187,12 @@ namespace LogicaTangerine.M2
             catch ( NullReferenceException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Parametro invalido", ex );
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Parametro invalido", ex );
             }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "ObtenerCaracteres()", ex );
             }
 
@@ -214,7 +214,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionRegistro( "Error al ejecutar " +
                                                                      "ExisteUsuario()", ex );
             }
             return resultado;

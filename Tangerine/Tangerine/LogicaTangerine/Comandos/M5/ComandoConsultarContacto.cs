@@ -2,6 +2,7 @@
 using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M5;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,26 +28,21 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override Entidad Ejecutar()
         {
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                                 RecursoComandosM5.MensajeInicioInfoLogger,
-                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
-
-            try 
+            try
             {
                 IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
                 _laEntidad = daoContacto.ConsultarXId( _laEntidad );
+
+                return _laEntidad;
             }
-            catch ( Exception ex )
+            catch ( ConsultarContactoException ex )
             {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw ex;
             }
-
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                                 RecursoComandosM5.MensajeFinInfoLogger,
-                                 System.Reflection.MethodBase.GetCurrentMethod().Name );
-
-            return _laEntidad;
+            catch ( BaseDeDatosContactoException ex )
+            {
+                throw ex;
+            }
         }
     }
 }

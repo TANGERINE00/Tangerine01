@@ -14,5 +14,6 @@ namespace Tangerine_Contratos.M3
         float PresupuestoInversion { get; set; }
         int NumeroLlamadas { get; set; }
         int NumeroVisitas { get; set; }
+        bool AccionSobreBd { get; set; }
     }
 }

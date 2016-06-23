@@ -7,18 +7,10 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M7
 {
-    public interface IDaoProyecto : IDao<Entidad, bool, Entidad>
+    public interface IDaoProyecto : IDao
     {
-        /// <summary> Firma de Método para eliminar un proyecto </summary>
-        /// <param name="proyecto"> entidad de tipo proyecto</param>
-        /// <returns>Retorna true cuando se elimina exitosamente</returns>
-        bool DeleteProyecto(Entidad proyecto);
 
         List<Entidad> ContactProyectoxAcuerdoPago();
-
-        List<Entidad> ContactProyectoPorEmpleado(Entidad empleado);
-
-        List<Entidad> ContactProyectoPorGerente (Entidad empleado);
 
         Entidad ContactNombrePropuestaId(Entidad proupesta);
 
@@ -28,5 +20,8 @@ namespace DatosTangerine.InterfazDAO.M7
 
         String GenerarCodigoProyecto(Entidad parametro);
 
+        int ConsultarNumeroProyectos();
+
+        bool BorrarProyecto(int proyID);
     }
 }

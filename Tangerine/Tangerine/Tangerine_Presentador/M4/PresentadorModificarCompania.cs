@@ -9,6 +9,7 @@ using System.Web;
 using Tangerine_Contratos.M4;
 using LogicaTangerine;
 using DominioTangerine;
+using ExcepcionesTangerine.M4;
 
 namespace Tangerine_Presentador.M4
 {
@@ -21,53 +22,67 @@ namespace Tangerine_Presentador.M4
             this._vista = vista;
         }
 
-        public void CargarCompania(int id)
+        public Boolean CargarCompania(int id)
         {
-            CargarLugares();
-            Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
-            entidad.Id = id;
-            Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(entidad);
-            entidad = comando.Ejecutar();
-            DominioTangerine.Entidades.M4.CompaniaM4 Parametros = (DominioTangerine.Entidades.M4.CompaniaM4)entidad;
-            int i = 0;
-            Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
-            Lugares = comando2.Ejecutar();
-            foreach (Entidad Lugar in Lugares)
-            {
-                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
-                if (lugar2.LugNombre.Equals(_vista.inputDireccion1.Items[i].Text))
-                    _vista.inputDireccion1.SelectedIndex = i;
-                i++;
+            try 
+            { 
+                CargarLugares();
+                Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                entidad.Id = id;
+                Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(entidad);
+                entidad = comando.Ejecutar();
+                Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
+                Lugares = comando2.Ejecutar();
+                for (int j = 0; j < Lugares.Count; j++)
+                    if (((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugId == ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).IdLugar)
+                        _vista.inputDireccion1.SelectedValue = ((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugNombre;         
+                _vista.inputNombre1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).NombreCompania;
+                _vista.inputAcronimo1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).AcronimoCompania;
+                _vista.inputRIF1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).RifCompania;
+                _vista.inputEmail1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).EmailCompania;
+                _vista.inputTelefono1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).TelefonoCompania;
+                _vista.Datepicker1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).FechaRegistroCompania.ToShortDateString();
+                _vista.inputPresupuesto1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).PresupuestoCompania.ToString();
+                _vista.inputPlazoPago1 = ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).PlazoPagoCompania.ToString();
+                return true;
             }
-            _vista.inputNombre1 = Parametros.NombreCompania;
-            _vista.inputAcronimo1 = Parametros.AcronimoCompania;
-            _vista.inputRIF1 = Parametros.RifCompania;
-            _vista.inputEmail1 = Parametros.EmailCompania;
-            _vista.inputTelefono1 = Parametros.TelefonoCompania;
-            _vista.Datepicker1 = Parametros.FechaRegistroCompania.ToShortDateString();
-            _vista.inputPresupuesto1 = Parametros.PresupuestoCompania.ToString();
-            _vista.inputPlazoPago1 = Parametros.PlazoPagoCompania.ToString();
+            catch (ExceptionM4Tangerine ex)
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
         }
 
-        public void ModificarCompania(int id) 
+        public Boolean ModificarCompania(int id) 
         {
-            int i = 0;
-            int _idLugar = 0;
-            Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
-            Lugares = comando2.Ejecutar();
-            foreach (Entidad Lugar in Lugares)
+            try
             {
-                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
-                if(i == _vista.inputDireccion1.SelectedIndex)
-                    _idLugar = lugar2.LugId;
-                i++;
+               
+                int _idLugar = 0;
+                Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                entidad.Id = id;
+                Comando<Entidad> comando1 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(entidad);
+                entidad = comando1.Ejecutar();
+                Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
+                Lugares = comando2.Ejecutar();
+                for (int j = 0; j < Lugares.Count; j++)
+                    if (j == _vista.inputDireccion1.SelectedIndex)
+                        _idLugar = ((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugId;    
+                if (_vista.inputPresupuesto1.Equals(""))
+                    _vista.inputPresupuesto1 = "0";
+                DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(id,_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
+                                                                                                _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
+                                                                                                ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).StatusCompania, int.Parse(_vista.inputPresupuesto1),
+                                                                                                int.Parse(_vista.inputPlazoPago1), _idLugar);
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearModificarCompania(compania);
+                comando.Ejecutar();
+                return true;
             }
-
-            DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(id,_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
-                                                                                            _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
-                                                                                            1, int.Parse(_vista.inputPresupuesto1), int.Parse(_vista.inputPlazoPago1), _idLugar);
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearModificarCompania(compania);
-            comando.Ejecutar();
+            catch (ExceptionM4Tangerine ex)
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
         }
 
         public void CargarLugares() {
@@ -75,8 +90,7 @@ namespace Tangerine_Presentador.M4
             Lugares = comando.Ejecutar();
             foreach (Entidad Lugar in Lugares)
             {
-                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
-                _vista.inputDireccion1.Items.Add(lugar2.LugNombre);
+                _vista.inputDireccion1.Items.Add(((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar).LugNombre);
             }
             
         }

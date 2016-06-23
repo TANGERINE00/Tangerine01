@@ -9,6 +9,7 @@ using System.Web;
 using Tangerine_Contratos.M4;
 using LogicaTangerine;
 using DominioTangerine;
+using ExcepcionesTangerine.M4;
 
 namespace Tangerine_Presentador.M4
 {
@@ -21,37 +22,46 @@ namespace Tangerine_Presentador.M4
             this._vista = vista;
         }
 
-        public void AgregarCompania() 
+        public Boolean AgregarCompania() 
         {
-            int i = 0;
-            int _idLugar = 0;
-            Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
-            Lugares = comando2.Ejecutar();
-            foreach (Entidad Lugar in Lugares)
+            try
             {
-                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
-                if(i == _vista.inputDireccion1.SelectedIndex)
-                    _idLugar = lugar2.LugId;
-                i++;
+                int _idLugar = 0;
+                Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
+                Lugares = comando2.Ejecutar();
+                if (_vista.inputPresupuesto1.Equals(""))
+                    _vista.inputPresupuesto1 = "0";
+                for (int j = 0; j < Lugares.Count; j++)
+                    if (j==_vista.inputDireccion1.SelectedIndex)
+                        _idLugar = ((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugId;         
+                DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaSinId(_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
+                                                                                                _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
+                                                                                                1, int.Parse(_vista.inputPresupuesto1), int.Parse(_vista.inputPlazoPago1), _idLugar);
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearAgregarCompania(compania);
+                return comando.Ejecutar();  
             }
-
-            DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaSinId(_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
-                                                                                            _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
-                                                                                            1, int.Parse(_vista.inputPresupuesto1), int.Parse(_vista.inputPlazoPago1), _idLugar);
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearAgregarCompania(compania);
-            comando.Ejecutar();
+            catch (ExceptionM4Tangerine ex) 
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
 
         }
 
         public void CargarLugares() {
-            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
-            Lugares = comando.Ejecutar();
-            foreach (Entidad Lugar in Lugares)
+            try
             {
-                DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
-                _vista.inputDireccion1.Items.Add(lugar2.LugNombre);
+                Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
+                Lugares = comando.Ejecutar();
+                foreach (Entidad Lugar in Lugares)
+                {
+                    _vista.inputDireccion1.Items.Add(((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar).LugNombre);
+                }
             }
-            
+            catch (ExceptionM4Tangerine ex) 
+            {
+                _vista.msjError = ex.Message;
+            }
         }
     }
 }

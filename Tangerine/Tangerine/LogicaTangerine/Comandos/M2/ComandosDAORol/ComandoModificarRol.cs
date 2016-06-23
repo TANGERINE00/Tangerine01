@@ -9,6 +9,7 @@ using DatosTangerine.InterfazDAO.M2;
 using DominioTangerine.Entidades.M2;
 using LogicaTangerine.Fabrica;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAORol
 {
@@ -43,11 +44,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
                 LogicaTangerine.Comando<Boolean> commandModificarRolUsuario = FabricaComandos.obtenerComandoModificarRolUsuario( usuario );
                 resultado = commandModificarRolUsuario.Ejecutar();
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
-                                                                         "ModificarRol()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return resultado;

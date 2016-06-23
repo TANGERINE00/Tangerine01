@@ -46,5 +46,20 @@ namespace Tangerine_Presentador.M8
             }
 
         }
+
+        public void anularFactura()
+        {
+            try
+            {
+                Facturacion lafactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
+                lafactura.Id = int.Parse(this.vista.numero);
+                Comando<bool> comandoAnular = FabricaComandos.CrearAnularFactura(lafactura);
+                comandoAnular.Ejecutar();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
     }
 }

@@ -68,36 +68,38 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.AddNewFactura, parameters);
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return true;
         }
@@ -151,36 +153,39 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.ChangeFactura, parameters);
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return true;
         }
 
@@ -222,36 +227,39 @@ namespace DatosTangerine.DAO.M8
                                                     facEstatus, facIdProyecto, facIdCompania);
                 theFactura.Id = facId;
 
-            }catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             
             return theFactura;
         }
@@ -296,36 +304,38 @@ namespace DatosTangerine.DAO.M8
 
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
          
             return listFactura;
         }
@@ -356,36 +366,39 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.DeleteFactura, parameters);
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return true;
         }
 
@@ -438,36 +451,39 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.AnnularFactura, parameters);
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return true;
         }
 
@@ -516,36 +532,38 @@ namespace DatosTangerine.DAO.M8
 
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
          
             return listFactura;
         }
@@ -594,193 +612,40 @@ namespace DatosTangerine.DAO.M8
 
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listFactura;
-        }
-
-        /// <summary>
-        /// Metodo para consultar una compañia en especifico.
-        /// Recibe un parametros: idCompany que es el id de la Compañia a consultar.
-        /// </summary>
-        /// <returns>Lista de contactos de la Empresa</returns>
-        public Entidad ConsultCompany(Entidad parametro)
-        {
-            List<Parametro> parameters = new List<Parametro>();
-            CompaniaM4 theCompany = (CompaniaM4)parametro;
-            Parametro theParam = new Parametro();
-
-
-
-            try
-            {
-                theParam = new Parametro(ResourceCompany.ParamId, SqlDbType.Int, theCompany.Id.ToString(), false);
-                parameters.Add(theParam);
-
-                //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = EjecutarStoredProcedureTuplas(ResourceCompany.ConsultCompany, parameters);
-
-                //Guardar los datos 
-                DataRow row = dt.Rows[0];
-
-                int comId = int.Parse(row[ResourceCompany.ComIdCompany].ToString());
-                String comName = row[ResourceCompany.ComNameCompany].ToString();
-                String comRif = row[ResourceCompany.ComRifCompany].ToString();
-                String comEmail = row[ResourceCompany.ComEmailCompany].ToString();
-                String comTelephone = row[ResourceCompany.ComTelephoneCompany].ToString();
-                String comAcronym = row[ResourceCompany.ComAcronymCompany].ToString();
-                DateTime comRegisterDate = DateTime.Parse(row[ResourceCompany.ComRegisterDateCompany].ToString());
-                int comStatus = int.Parse(row[ResourceCompany.ComStatusCompany].ToString());
-                int comIdPlace = int.Parse(row[ResourceCompany.ComIdPlace].ToString());
-
-                //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                theCompany = new CompaniaM4(comId, comName, comRif, comEmail, comTelephone, comAcronym, 
-                                                    comRegisterDate, comStatus, 1, 1, comIdPlace);
-
-            
-            }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
-            }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-         
-
-            return theCompany;
-        }
-
-        /// <summary>
-        /// Metodo para consultar un Proyecto específico que pertenecen a la base de datos.
-        /// Recibe UN parametro: idProyecto que es el numero de Proyecto del mismo.
-        ///                     
-        /// </summary>
-        /// <returns>Un objeto de tipo Proyecto</returns>
-        public Entidad ContactProyectoFactura(Entidad parametro)
-        {
-            List<Parametro> parameters = new List<Parametro>();
-            Parametro theParam = new Parametro();
-            DominioTangerine.Entidades.M7.Proyecto TheProyecto = (DominioTangerine.Entidades.M7.Proyecto) parametro;
-
-            try
-            {
-                theParam = new Parametro(ResourceFactura.ParamId_Proyecto, SqlDbType.Int, TheProyecto.Id.ToString(), false);
-                parameters.Add(theParam);
-
-                //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
-                DataTable dt = EjecutarStoredProcedureTuplas(ResourceFactura.ContactProyecto, parameters);
-
-                //Guardar los datos 
-                DataRow row = dt.Rows[0];
-
-                
-                int proyId = int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
-                string proyNombre = row[ResourceProyecto.ProyNombre].ToString();
-                string proyCodigo = row[ResourceProyecto.ProyCodigo].ToString();
-                DateTime proyFechaInicio = DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
-                DateTime proyFechaEstFin = DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                double proyCosto = double.Parse(row[ResourceProyecto.ProyCosto].ToString());
-                String proyDescripcion = row[ResourceProyecto.ProyDescripcion].ToString();
-                String proyRealizacion = row[ResourceProyecto.ProyRealizacion].ToString();
-                String proyEstatus = row[ResourceProyecto.ProyEstatus].ToString();
-                String proyRazon = row[ResourceProyecto.ProyRazon].ToString();
-                String proyAcuerdoPago = row[ResourceProyecto.ProyAcuerdoPago].ToString();
-                int proyIdPropuesta = int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                int proyIdResponsable = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
-                int proyIdGerente = int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
-
-                //Creo un objeto de tipo Proyecto con los datos de la fila y lo guardo. 
-                TheProyecto = new DominioTangerine.Entidades.M7.Proyecto(proyNombre, proyCodigo, proyFechaInicio, proyFechaEstFin,
-                                                    proyCosto, proyDescripcion, proyRealizacion, proyEstatus, proyRazon,
-                                                    proyAcuerdoPago, proyIdPropuesta, proyIdResponsable, proyIdGerente);
-                TheProyecto.Id = proyId;
-
-            }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
-            }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-         
-            return TheProyecto;
         }
 
         /// <summary>
@@ -811,37 +676,38 @@ namespace DatosTangerine.DAO.M8
                 montoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
  
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-         
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return montoRestante;
         }
@@ -881,37 +747,38 @@ namespace DatosTangerine.DAO.M8
                     resultado = true;
                 }
             }
-            
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceFactura.Codigo,
+                     ResourceFactura.MensajeFormato, ex);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M8.NullArgumentException(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeNull, ex);
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                   ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
+                    ResourceFactura.MensajeOtro, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
          
             return resultado;
         }

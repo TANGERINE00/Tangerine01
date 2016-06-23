@@ -108,7 +108,7 @@
                     <div class="form-group" runat="server">
                             <label for="input_cliente">Codigo de aprobacion</label><label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" 
-                                 pattern=\d{10}
+                             pattern=\d{10}
                             
                                 id="codAprobacion" name="codAprobacion" 
                                 placeholder="Introduzca el numero de codigo de aprobacion  " required>

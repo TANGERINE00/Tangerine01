@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LogicaTangerine.Fabrica;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
 {
@@ -60,18 +61,15 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
                     }
                 }
             }
-            catch (IndexOutOfRangeException ex)
+            catch ( IndexOutOfRangeException ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios("Error al ejecutar " +
-                                                                        "VerificarAccesoAPagina()" +
-                                                                        " [Pagina Errónea]", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Error, indice fuera de rango" , ex );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios("Error al ejecutar " +
-                                                                        "VerificarAccesoAPagina()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202", "Metodo no implementado" , ex );
             }
             return resultado;
         }

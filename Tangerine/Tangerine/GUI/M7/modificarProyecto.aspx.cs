@@ -255,6 +255,11 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)

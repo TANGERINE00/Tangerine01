@@ -25,37 +25,48 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Carga en la tabla todos los empleados
         /// </summary>
-        public void iniciarVista()
+        public bool iniciarVista()
         {
-            LogicaTangerine.Comando<List<Entidad>> theComando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();           
-            List<Entidad> listaDeEmpleados = theComando.Ejecutar();
-
-            foreach (Entidad theEmpleador in listaDeEmpleados)
+            try
             {
-                DominioTangerine.Entidades.M10.EmpleadoM10 empleador = (DominioTangerine.Entidades.M10.EmpleadoM10)theEmpleador;
-                LogicaTangerine.Comando<DominioTangerine.Entidad> theComandoObtener = LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(empleador.emp_id);               
-                DominioTangerine.Entidad theUser = theComandoObtener.Ejecutar();
-                DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
+                _vista.empleado = null;
+                LogicaTangerine.Comando<List<Entidad>> theComando = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+                List<Entidad> listaDeEmpleados = theComando.Ejecutar();
 
-                _vista.empleado += ResourceGUIM2.OpenTR;
-                _vista.empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
-                _vista.empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
-                if (user.nombreUsuario != null)
+                foreach (Entidad theEmpleador in listaDeEmpleados)
                 {
-                    _vista.empleado += ResourceGUIM2.OpenTD + user.nombreUsuario + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + user.rol.nombre + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id
-                                      + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.CloseTR;
+                    DominioTangerine.Entidades.M10.EmpleadoM10 empleador = (DominioTangerine.Entidades.M10.EmpleadoM10)theEmpleador;
+                    LogicaTangerine.Comando<DominioTangerine.Entidad> theComandoObtener = LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(empleador.emp_id);
+                    DominioTangerine.Entidad theUser = theComandoObtener.Ejecutar();
+                    DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
+
+                    _vista.empleado += ResourceGUIM2.OpenTR;
+                    _vista.empleado += ResourceGUIM2.OpenTD + empleador.emp_p_nombre + ResourceGUIM2.CloseTD;
+                    _vista.empleado += ResourceGUIM2.OpenTD + empleador.emp_p_apellido + ResourceGUIM2.CloseTD;
+                    if (user.nombreUsuario != null)
+                    {
+                        _vista.empleado += ResourceGUIM2.OpenTD + user.nombreUsuario + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.OpenTD + user.rol.nombre + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id
+                                          + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.CloseTR;
+                    }
+                    else
+                    {
+                        _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.CloseTR;
+                    }
                 }
-                else
-                {
-                    _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock + ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
-                    _vista.empleado += ResourceGUIM2.CloseTR;
-                }
+                return true;
             }
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
+
         }
     }
 }

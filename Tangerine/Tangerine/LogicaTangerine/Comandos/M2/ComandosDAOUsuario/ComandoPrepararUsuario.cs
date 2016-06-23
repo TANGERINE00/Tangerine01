@@ -8,6 +8,7 @@ using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
 using DominioTangerine.Entidades.M2;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 using LogicaTangerine.Fabrica;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
@@ -41,19 +42,20 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             bool resultado = true;
             try
             {
-                RolM2 rol = new RolM2( _rolUsuario );
-                UsuarioM2 usuario = new UsuarioM2( _usuarioNombre , _contrasenaUsuario , DateTime.Now , 
-                                                   "Activo" , rol , _fichaEmpleado);
+                DominioTangerine.Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre( _rolUsuario );
+                DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
+                DominioTangerine.Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto(_usuarioNombre, 
+                                                                    _contrasenaUsuario, DateTime.Now, "Activo", rol, _fichaEmpleado);
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
                 usuario.contrasena = usuario.GetMD5( usuario.contrasena );
                 LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( usuario );
                 resultado = commandAgregarUsuario.Ejecutar();
             }
 
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " +
-                                                                     "ComandoPrepararUsuario()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
             return resultado;
         }

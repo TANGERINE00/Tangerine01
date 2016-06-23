@@ -36,7 +36,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionPrivilegios( "Error al ejecutar " +
                                                                         "VerificarAccesoAOpciones()", ex );
             }
             return lista;
@@ -79,14 +79,14 @@ namespace LogicaTangerine.M2
             catch ( IndexOutOfRangeException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionPrivilegios( "Error al ejecutar " +
                                                                         "VerificarAccesoAPagina()" +
                                                                         " [Pagina Errónea]", ex );
             }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionPrivilegios( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionPrivilegios( "Error al ejecutar " +
                                                                         "VerificarAccesoAPagina()", ex );
             }
             return resultado;

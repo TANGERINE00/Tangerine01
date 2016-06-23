@@ -7,6 +7,7 @@ using DatosTangerine.DAO;
 using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAORol
 {
@@ -36,11 +37,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
                 IDAORol RolUsuario = FabricaDAOSqlServer.crearDaoRol();
                 resultado = RolUsuario.ModificarRolUsuario( _theUsuario );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol("Error al ejecutar " +
-                                                                         "ModificarRol()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return resultado;   

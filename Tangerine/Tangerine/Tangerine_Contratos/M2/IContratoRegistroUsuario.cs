@@ -13,7 +13,16 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado de la tabla de usuarios
         /// </summary>
-         string tablaEmpleado
+        string tablaEmpleado
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Mensaje de error
+        /// </summary>
+        string msjError
         {
             get;
             set;

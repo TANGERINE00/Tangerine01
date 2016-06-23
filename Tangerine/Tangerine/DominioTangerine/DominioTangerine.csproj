@@ -66,6 +66,7 @@
     <Compile Include="Entidades\M2\RolM2.cs" />
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
     <Compile Include="Entidades\M3\ClientePotencial.cs" />
+    <Compile Include="Entidades\M3\SeguimientoCliente.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
     <Compile Include="Entidades\M5\ContactoM5.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Opcion.cs" />
-    <Compile Include="Pago.cs" />
     <Compile Include="Propuesta.cs" />
     <Compile Include="Proyecto.cs" />
     <Compile Include="Requerimiento.cs" />

@@ -79,6 +79,159 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DS-902.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DS-903.
+        /// </summary>
+        internal static string CodigoErrorNull {
+            get {
+                return ResourceManager.GetString("CodigoErrorNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DS-901.
+        /// </summary>
+        internal static string CodigoErrorSQL {
+            get {
+                return ResourceManager.GetString("CodigoErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_historico_pago_por_compania.
+        /// </summary>
+        internal static string ConsultarHistoricoPagos {
+            get {
+                return ResourceManager.GetString("ConsultarHistoricoPagos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_EliminarPago.
+        /// </summary>
+        internal static string EliminarPago {
+            get {
+                return ResourceManager.GetString("EliminarPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fac_fecha_emision.
+        /// </summary>
+        internal static string FacFechaEmision {
+            get {
+                return ResourceManager.GetString("FacFechaEmision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fac_id.
+        /// </summary>
+        internal static string FacIdFactura {
+            get {
+                return ResourceManager.GetString("FacIdFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de Formato.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, elemento Null.
+        /// </summary>
+        internal static string MensajeErrorNull {
+            get {
+                return ResourceManager.GetString("MensajeErrorNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al realizar la conexion.
+        /// </summary>
+        internal static string MensajeErrorSQL {
+            get {
+                return ResourceManager.GetString("MensajeErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida exitosa del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método, No exitoso.
+        /// </summary>
+        internal static string MensajeFinInfoLoggerError {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLoggerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pag_cod.
+        /// </summary>
+        internal static string PagoCod {
+            get {
+                return ResourceManager.GetString("PagoCod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pag_fecha.
+        /// </summary>
+        internal static string PagoFecha {
+            get {
+                return ResourceManager.GetString("PagoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pag_moneda.
+        /// </summary>
+        internal static string PagoMoneda {
+            get {
+                return ResourceManager.GetString("PagoMoneda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pag_monto.
+        /// </summary>
+        internal static string PagoMonto {
+            get {
+                return ResourceManager.GetString("PagoMonto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @cod.
         /// </summary>
         internal static string ParamCod {
@@ -106,11 +259,29 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @id_compania.
+        /// </summary>
+        internal static string ParamIdCompania {
+            get {
+                return ResourceManager.GetString("ParamIdCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @id_factura.
         /// </summary>
         internal static string ParamIdFactura {
             get {
                 return ResourceManager.GetString("ParamIdFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idpago.
+        /// </summary>
+        internal static string ParamIdPago {
+            get {
+                return ResourceManager.GetString("ParamIdPago", resourceCulture);
             }
         }
         

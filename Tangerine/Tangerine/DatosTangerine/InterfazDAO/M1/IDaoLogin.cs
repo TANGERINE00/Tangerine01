@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M1
 {
-    public interface IDaoLogin : IDao<Entidad,bool,Entidad>
+    public interface IDaoLogin : IDao
     {
         Entidad ObtenerElUsuario(string nombre_usuario);
 

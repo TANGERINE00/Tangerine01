@@ -69,7 +69,7 @@ namespace Tangerine_Presentador.M1
                 UtilM1._theGlobalUser = ((DominioTangerine.Entidades.M2.UsuarioM2)user);
                 HttpContext.Current.Session["User"] = UtilM1._theGlobalUser.nombreUsuario;
                 HttpContext.Current.Session["UserID"] = UtilM1._theGlobalUser.fichaEmpleado;
-                HttpContext.Current.Session["Rol"] = "Administrador";
+                HttpContext.Current.Session["Rol"] = UtilM1._theGlobalUser.rol.nombre;
                 HttpContext.Current.Session["Date"] = UtilM1._theGlobalUser.fechaCreacion.ToString("dd/MM/yyyy");
 
                 ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =

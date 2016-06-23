@@ -7,6 +7,7 @@ using DatosTangerine.DAO;
 using DatosTangerine.Fabrica;
 using DatosTangerine.InterfazDAO.M2;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M2;
 
 namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
 {
@@ -37,9 +38,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             }
             catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M2.ExcepcionRegistro("Error al ejecutar " +
-                                                                     "ModificarContraseniaUsuario()", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return resultado;

@@ -180,6 +180,15 @@
   <data name="ContactoModificado" xml:space="preserve">
     <value>El contacto ha sido modificado correctamente</value>
   </data>
+  <data name="ErrorBaseDeDatos" xml:space="preserve">
+    <value>Error en la base de datos, por favor intente de nuevo.</value>
+  </data>
+  <data name="ErrorConsultarContacto" xml:space="preserve">
+    <value>Error al consultar contacto(s), por favor intente de nuevo.</value>
+  </data>
+  <data name="ErrorEliminarContacto" xml:space="preserve">
+    <value>Error al eliminar el contacto, por favor intente de nuevo.</value>
+  </data>
   <data name="Lead" xml:space="preserve">
     <value>Lead: </value>
   </data>

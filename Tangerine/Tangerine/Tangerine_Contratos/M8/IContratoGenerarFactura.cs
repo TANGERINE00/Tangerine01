@@ -13,5 +13,8 @@ namespace Tangerine_Contratos.M8
         string proyecto { get; set; }
         string descripcion { get; set; }
         string monto { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DominioTangerine;
 using DominioTangerine.Fabrica;
+using ExcepcionesTangerine.M5;
 using LogicaTangerine;
 using LogicaTangerine.Fabrica;
 using System;
@@ -33,18 +34,45 @@ namespace Tangerine_Presentador.M5
         }
 
         /// <summary>
+        /// Método que contigura el div de alerta de la vista
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void Alerta( string msj, int typeMsg )
+        {
+            if ( typeMsg == 1 )
+                _vista.alertaClase = RecursoM5.AlertSuccess;
+            else
+                _vista.alertaClase = RecursoM5.AlertDanger;
+
+            _vista.alertaRol = RecursoM5.Alert;
+            _vista.alerta = RecursoM5.AlertShowSu1 + msj + RecursoM5.AlertShowSu2;
+        }
+
+        /// <summary>
         /// Método que agrega un contacto nuevo
         /// </summary>
         public void AgregarContacto()
         {
-            Entidad contactoNuevo = FabricaEntidades.crearContactoSinId( _vista.input_nombre, _vista.input_apellido,
-                                                                         _vista.input_departamento, _vista.item_cargo,
-                                                                         _vista.input_telefono, _vista.input_correo,
-                                                                         _vista.GetTypeComp(), _vista.GetIdComp() );
-            
-            Comando<bool> comandoBool = FabricaComandos.CrearComandoAgregarContacto( contactoNuevo );
-            comandoBool.Ejecutar();
-            _vista.BotonAceptar( _vista.GetTypeComp(), _vista.GetIdComp() );
+            try
+            {
+                Entidad contactoNuevo = FabricaEntidades.crearContactoSinId( _vista.input_nombre, _vista.input_apellido,
+                                                                             _vista.input_departamento, _vista.item_cargo,
+                                                                             _vista.input_telefono, _vista.input_correo,
+                                                                             _vista.GetTypeComp(), _vista.GetIdComp() );
+
+                Comando<bool> comandoBool = FabricaComandos.CrearComandoAgregarContacto( contactoNuevo );
+                comandoBool.Ejecutar();
+                _vista.BotonAceptar( _vista.GetTypeComp(), _vista.GetIdComp() );
+            }
+            catch( AgregarContactoException ex )
+            {
+                Alerta( ex.Mensaje + ", por favor intente de nuevo.", 0 );
+            }
+            catch( BaseDeDatosContactoException ex )
+            {
+                Alerta( ex.Mensaje + ", por favor intente de nuevo.", 0 );
+            }
         }
     }
 }

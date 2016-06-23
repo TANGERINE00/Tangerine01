@@ -10,17 +10,25 @@ namespace LogicaTangerine.Comandos.M6
 {
     class ComandoConsultarXIdPropuesta : Comando<Entidad>
     {
-        public ComandoConsultarXIdPropuesta(Entidad laPropuesta)
+        /// <summary>
+        /// Constructor, recibe parametro de tipo propuesta
+        /// </summary>
+        /// <param name="laPropuesta">objeto de tipo propuesta</param>
+        public ComandoConsultarXIdPropuesta( Entidad laPropuesta )
         {
             _laEntidad = laPropuesta;
         }
-
+        
+        /// <summary>
+        /// Método para utilizar el metodo ConsultarXIdPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna una propuesta</returns>
         public override Entidad Ejecutar()
         {
             try
             {
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-                return daoPropuesta.ConsultarXId(_laEntidad);
+                return daoPropuesta.ConsultarXId( _laEntidad );
             }
             catch (Exception e)
             {
