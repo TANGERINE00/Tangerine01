@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
+using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
@@ -24,7 +25,7 @@ namespace LogicaTangerine.Comandos.M10
                 IDAOEmpleado daoEstatus = DatosTangerine.Fabrica.FabricaDAOSqlServer.EstatusDAOEmpleado();
                 return daoEstatus.CambiarEstatus(this.LaEntidad);
             }
-            catch (Exception e)
+            catch (ModificarEstatusException e)
             {
                 throw e;
             }
