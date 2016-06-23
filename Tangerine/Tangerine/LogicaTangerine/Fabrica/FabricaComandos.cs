@@ -939,6 +939,21 @@ namespace LogicaTangerine.Fabrica
             return new LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado(estatus);
         }
 
+        public static Comando<Entidad> ConsultarUsuarioxCorreo (Entidad usuario)
+        {
+            return new LogicaTangerine.Comandos.M10.ComandoValidarUsuarioCorreo(usuario);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que envia un correo
+        /// </summary>
+        /// <param name="correo">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> EnviarCorreoG(Entidad correo)
+        {
+            return new ComandoEnviarCorreoGmail(correo);
+        }
+
         #endregion
     }
 }

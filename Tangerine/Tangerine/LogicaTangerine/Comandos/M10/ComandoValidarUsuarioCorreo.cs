@@ -8,8 +8,9 @@ using DominioTangerine;
 
 namespace LogicaTangerine.Comandos.M10
 {
-    public class ComandoConsultarPorId : Comando<Entidad>
+    public class  ComandoValidarUsuarioCorreo : Comando<Entidad>
     {
+
         private Entidad empleado;
 
         public Entidad Empleado
@@ -18,7 +19,7 @@ namespace LogicaTangerine.Comandos.M10
             set { empleado = value; }
         }
 
-        public ComandoConsultarPorId(Entidad empleado)
+        public ComandoValidarUsuarioCorreo(Entidad empleado)
         {
             this.empleado = empleado;
         }
@@ -27,8 +28,8 @@ namespace LogicaTangerine.Comandos.M10
         {
             try
             {
-                IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleadoId();
-                Entidad daoEmp = daoEmpleado.ConsultarXId(empleado);
+                IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObtenerUsuarioCorreo();
+                Entidad daoEmp = daoEmpleado.ObtenerUsuarioCorreo(empleado);
                 return daoEmp;
             }
             catch (Exception e)

@@ -73,6 +73,7 @@
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoConsultarPorId.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M10\ComandoValidarUsuarioCorreo.cs" />
     <Compile Include="Comandos\M1\ComandoConsultarUsuario.cs" />
     <Compile Include="Comandos\M1\ComandoGenerarNuevaContraseña.cs" />
     <Compile Include="Comandos\M1\ComandoValidarCorreo.cs" />

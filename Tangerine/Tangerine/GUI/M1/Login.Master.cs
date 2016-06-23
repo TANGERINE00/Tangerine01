@@ -24,8 +24,8 @@ namespace Tangerine.GUI.M1
     public partial class Login1 : System.Web.UI.MasterPage, IContratoInicio
     {
        // LogicaM1 _logicaM1 = new LogicaM1();
-        string _usuario = String.Empty;
-        string _contrasena = String.Empty;
+        //string _usuario = String.Empty;
+        //string _contrasena = String.Empty;
         //LogicaProyecto proyectoLogic = new LogicaProyecto();
         //bool facturaExistente = false;
         //int montoFactura = 0;
@@ -67,22 +67,22 @@ namespace Tangerine.GUI.M1
         {
             this.presentador = new PresentadorInicio(this);
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            //if (HttpContext.Current.Session["User"] + "" != "")
-            //    HttpContext.Current.Session.Abandon();
-            presentador.ValidarSesion();
-            
 
-        }
         /// <summary>
-        /// Metodo resultante de accionar el acceder, realiza la conexion con LogicaTangerine para validar las entradas
+        /// Carga la ventana Login
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            presentador.ValidarSesion();
+            
+        }
+       
         public void ValidarUsuario(object sender, EventArgs e)
         {
             presentador.ValidarElUsuario();
+
             //Usuario nuevoUsuario = new Usuario();
             //_usuario = userIni.Value.ToString();
             //_contrasena = passwordIni.Value.ToString();
@@ -157,7 +157,6 @@ namespace Tangerine.GUI.M1
               //    mensaje.Text = "Error en el inicio de sesión";
               //    Response.Redirect("Login.aspx");
               //}
-
 
 
         }

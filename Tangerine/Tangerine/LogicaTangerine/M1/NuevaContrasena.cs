@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace LogicaTangerine.M1
 {
-    class NuevaContrasena
+    public class NuevaContrasena
     {
         public string NuevaContrasenaGenerar()
         {
