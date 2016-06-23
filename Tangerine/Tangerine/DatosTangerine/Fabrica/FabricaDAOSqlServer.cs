@@ -223,6 +223,14 @@ namespace DatosTangerine.Fabrica
         }
 
         /// <summary>
+        /// Metodo que trae el usuario
+        /// </summary>
+        /// <returns></returns>
+        public static IDAOEmpleado ObtenerUsuarioCorreo()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
+
         /// Metodo que agrega un empleado
         /// </summary>
         /// <returns></returns>
@@ -231,7 +239,6 @@ namespace DatosTangerine.Fabrica
         {
             return new DAO.M10.DAOEmpleado();
         }
-
 
         #endregion
 

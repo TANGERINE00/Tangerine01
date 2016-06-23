@@ -67,7 +67,11 @@
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="LoggerException.cs" />
+    <Compile Include="M10\AgregarEmpleadoException.cs" />
+    <Compile Include="M10\BaseDatosException.cs" />
+    <Compile Include="M10\ConsultarEmpleadoException.cs" />
     <Compile Include="M10\ExceptionDatabase.cs" />
+    <Compile Include="M10\ModificarEstatusException.cs" />
     <Compile Include="M10\NullArgumentException.cs" />
     <Compile Include="M10\WrongFormatException.cs" />
     <Compile Include="M2\ExceptionModificarRol.cs" />

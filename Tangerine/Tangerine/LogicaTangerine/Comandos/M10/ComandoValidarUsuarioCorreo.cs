@@ -5,14 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
-using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
-    public class ComandoConsultarPorId : Comando<Entidad>
+    public class  ComandoValidarUsuarioCorreo : Comando<Entidad>
     {
+
         private Entidad empleado;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public Entidad Empleado
         {
             get { return empleado; }
@@ -20,27 +23,23 @@ namespace LogicaTangerine.Comandos.M10
         }
 
         /// <summary>
-        /// Constructor de la clase
+        /// Metodo para ejecutar el comando
         /// </summary>
         /// <param name="empleado"></param>
-        public ComandoConsultarPorId(Entidad empleado)
+        public ComandoValidarUsuarioCorreo(Entidad empleado)
         {
             this.empleado = empleado;
         }
 
-        /// <summary>
-        /// Metodo para ejecutar el comando
-        /// </summary>
-        /// <returns></returns>
         public override Entidad Ejecutar()
         {
             try
             {
-                IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleadoId();
-                Entidad daoEmp = daoEmpleado.ConsultarXId(empleado);
+                IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObtenerUsuarioCorreo();
+                Entidad daoEmp = daoEmpleado.ObtenerUsuarioCorreo(empleado);
                 return daoEmp;
             }
-            catch (ConsultarEmpleadoException e)
+            catch (Exception e)
             {
                 throw e;
             }

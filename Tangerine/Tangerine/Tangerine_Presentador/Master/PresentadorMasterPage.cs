@@ -56,8 +56,7 @@ namespace Tangerine_Presentador.Master
                         Comando<List<string>> comandoL = 
                             LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoVerificarAccesoAOpciones(nombreRol);
                         List<string> bloqueos = comandoL.Ejecutar();
-                        
-                        //List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones(nombreRol);
+                       
 
                         foreach (string s in bloqueos)
                         {

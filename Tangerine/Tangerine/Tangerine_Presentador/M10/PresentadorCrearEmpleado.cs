@@ -9,6 +9,7 @@ using DominioTangerine;
 using LogicaTangerine;
 using System.Globalization;
 using DominioTangerine.Entidades.M10;
+using ExcepcionesTangerine.M10;
 namespace Tangerine_Presentador.M10
 {
     public class PresentadorCrearEmpleado
@@ -165,44 +166,53 @@ namespace Tangerine_Presentador.M10
         /// </summary>
         public void AgregarEmpleado()
         {
-       
 
-            Entidad Parametro = DominioTangerine.Fabrica.FabricaEntidades.AgregarEmpledoM10();
+            try
+            {
 
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_nombre = Vista.ItextFirstName.Text;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondName.Text;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName.Text;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName.Text;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_genero = Vista.IcomboGenero.SelectedItem.Text
-            .ToString();
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula.Text);
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac = 
-            DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture);
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_activo = active;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_nivel_estudio =
-            Vista.IcomboNivelEstudio.SelectedItem.Text.ToString();
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson;
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion=NuevaDireccion();
-            
+                Entidad Parametro = DominioTangerine.Fabrica.FabricaEntidades.AgregarEmpledoM10();
 
-            //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto 
-            //Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.
-            ComandoAgregarEmpleado(Parametro);
-            Confirmacion = comando.Ejecutar();
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_nombre = Vista.ItextFirstName.Text;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondName.Text;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName.Text;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName.Text;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_genero = Vista.IcomboGenero.SelectedItem.Text
+                .ToString();
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula.Text);
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac =
+                DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_activo = active;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_nivel_estudio =
+                Vista.IcomboNivelEstudio.SelectedItem.Text.ToString();
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson;
+
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion = NuevaDireccion();
+
+
+                //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto 
+                //Propuesta 'p'.
+                LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.
+                ComandoAgregarEmpleado(Parametro);
+                Confirmacion = comando.Ejecutar();
+
+            }
+
+            catch (AgregarEmpleadoException ex)
+            {
+                throw (ex); 
+            }
         }
     }
 }

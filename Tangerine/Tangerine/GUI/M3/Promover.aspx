@@ -29,8 +29,6 @@
                 </div><!-- /.box-header -->
                 <!-- table start -->
 					
- 
-                    
                      <div class="box-body" runat="server">
                        <div class="row">
                           <div class="form-group col-md-6" runat="server">
