@@ -70,11 +70,13 @@
                         <input class="form-control" id="cliente_id" runat="server" disabled="disabled">
                     </div>
 
-                    <div class="form-group">
+                 <div class="form-group">
                         <label>Objeto del proyecto</label>
-                        <label for="descripcion">Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"  /> 
-
+                        
+                        <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z ,.()]+$"  class="form-control" 
+                            id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" 
+                            oninput="setCustomValidity()" onchange="validarTextArea(this.id)"></textarea>
+			
                     </div>
                   
 
@@ -84,41 +86,37 @@
                                 <tr>
                                     <th>ID</th>
                                     <th style="width: 530px">Requerimiento</th>
-                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <asp:Literal runat="server" ID="requerimientos"> </asp:Literal>>
                         </table>
                     </div>
 
+  <div class="form-group date">
+                        <label>Fecha estimada Incio:</label>
 
-            <div class="form-group date">
-                    <label>Fecha estimada Incio:</label>
-
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                       <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
                                 onchange="setFechasMesesYDias()" clientidmode="static">
-                    </div>
-                    <!-- /.input group -->
-                </div>
-
-
-
-                <div class="form-group date">
-                    <label>Fecha estimada Final:</label>
-
-                    <div class="input-group">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
                         </div>
-                      <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
+
+
+
+               <div class="form-group date">
+                        <label>Fecha estimada Final:</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
                                 onchange="setFechasCustom()" clientidmode="static" >
+                        </div>
+                        <!-- /.input group -->
                     </div>
-                    <!-- /.input group -->
-                </div>
 
 
                 <!-- /.box-body -->
@@ -140,12 +138,11 @@
 
                         </div>
                         <!-- /btn-group -->
-                         <input type="text" class="form-control" ID="textoDuracion" name="duracion" runat="server" 
-                                pattern="^[0-9]*$" title="Introduzca un numero" required clientidmode="static"
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                           <input type="text" class="form-control" ID="textoDuracion" name="duracion" runat="server" 
+                                pattern="^[0-9]{1,3}$" title="Introduzca un numero" required clientidmode="static"
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 3 digitos)')" 
                                 oninput="setCustomValidity('')" 
-                                onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')">
-                    </div>
+                                onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')"> </div>
 
                 </div>
 
@@ -164,8 +161,11 @@
                                 </select>
                         </div>
                         <!-- /btn-group -->
-                        <input type="text" class="form-control" id="textoCosto" runat="server">
-                    </div>
+                         <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" 
+                                pattern="^[0-9]{1,10}$" title="Costo de la propuesta" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 10 digitos)')" 
+                                oninput="setCustomValidity('')">
+                     </div>
 
                 </div>
 
@@ -190,12 +190,12 @@
                 <%-- Cuota combo--%>
 
                 <div class="form-group">
-                    <label>Cantidad Cuotas</label>
-                    <div class="dropdown" runat="server" id="cuota">
-                         <input type="text" pattern="^[0-9]*$" title="Numero de cuotas" class="form-control" 
-                                id="comboCuota" name="cantidadCuotas" runat="server" clientidmode="static">
+                        <label>Cantidad Cuotas</label>
+                        <div class="dropdown" runat="server" id="cuota">
+                            <input type="text" pattern="^[0-9]{1,2}$" title="Numero de cuotas (maximo 2 numeros)" class="form-control" 
+                                id="cantidadCuotas" name="cantidadCuotas" runat="server" clientidmode="static">
+                        </div>
                     </div>
-                </div>
 
 
 

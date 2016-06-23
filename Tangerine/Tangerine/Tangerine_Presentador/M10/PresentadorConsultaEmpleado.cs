@@ -9,6 +9,7 @@ using DominioTangerine;
 using Tangerine_Contratos;
 using Tangerine_Presentador.M10;
 using System.Web;
+using ExcepcionesTangerine.M10;
 
 namespace Tangerine_Presentador.M10
 {
@@ -115,9 +116,9 @@ namespace Tangerine_Presentador.M10
                 if (HttpContext.Current.Session["Rol"] + "" != "Programador")
                     vista.button += ResourceGUIM10.VentanaAgregarEmpleado;
             }
-            catch (Exception ex)
+            catch (ConsultarEmpleadoException ex)
             {
-                throw ex;
+                throw (ex);
             }                                                                                                          
         }
                                                                                                                        
@@ -137,9 +138,9 @@ namespace Tangerine_Presentador.M10
 
             }
 
-            catch (Exception ex)
+            catch (ModificarEstatusException ex)
             {
-                throw ex;
+                throw (ex);
             }  
         }
     }

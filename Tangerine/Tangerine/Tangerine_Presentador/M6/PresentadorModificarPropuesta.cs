@@ -11,6 +11,7 @@ using DominioTangerine.Entidades.M6;
 using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 
 namespace Tangerine_Presentador.M6
@@ -47,36 +48,45 @@ namespace Tangerine_Presentador.M6
         public void ModificarPropuesta()
         {
 
-            _nombcodigoPropuesta = vista.IdPropuesta;
-            _descripcion = vista.Descripcion;
-            _Tipoduracion = vista.ComboDuracion;
-            _duracion = vista.TextoDuracion;
-            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "M/dd/yyyy", null);
-            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "M/dd/yyyy", null);
-            _moneda = vista.TipoCosto;
-            _costo = int.Parse(vista.TextoCosto);
-            _acuerdo = vista.FormaPago;
-            _estatusW = vista.ComboStatus;
-            _idCompañia = vista.IdCompania;
-
             try
             {
-                _entregaCant = Int32.Parse(vista.ComboCuota);
+                _nombcodigoPropuesta = vista.IdPropuesta;
+                _descripcion = vista.Descripcion;
+                _Tipoduracion = vista.ComboDuracion;
+                _duracion = vista.TextoDuracion;
+                _fechaI = DateTime.ParseExact(vista.DatePickerUno, "M/dd/yyyy", null);
+                _fechaF = DateTime.ParseExact(vista.DatePickerDos, "M/dd/yyyy", null);
+                _moneda = vista.TipoCosto;
+                _costo = int.Parse(vista.TextoCosto);
+                _acuerdo = vista.FormaPago;
+                _estatusW = vista.ComboStatus;
+                _idCompañia = vista.IdCompania;
+
+                try
+                {
+                    _entregaCant = Int32.Parse(vista.ComboCuota);
+                }
+                catch (Exception)
+                {
+                    _entregaCant = 0;
+                }
+
+                //Creación del Objeto Propuesta.
+                Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
+                     _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+
+                //Creación y Ejecución del Objeto Comando de Modificar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarPropuesta(p);
+                comando.Ejecutar();
+
+                //  ModificarRequerimiento();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                _entregaCant = 0;
+                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
-
-            //Creación del Objeto Propuesta.
-            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
-                 _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
-
-            //Creación y Ejecución del Objeto Comando de Modificar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarPropuesta(p);
-            comando.Ejecutar();
-
-            //  ModificarRequerimiento();
+            
         }
 
 
@@ -103,6 +113,8 @@ namespace Tangerine_Presentador.M6
             vista.DatePickerDos = arreglo[0];
 
             vista.ComboStatus = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus;
+
+            vista.ComboCuota = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Entrega.ToString();
             
             _idCompañia = vista.IdCompania;
         }

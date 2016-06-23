@@ -19,16 +19,6 @@ namespace Tangerine.GUI.M6
 {
     public partial class ModificarPropuesta : System.Web.UI.Page, IContratoModificarPropuesta
     {
-
-        /*
-        public Propuesta Prueba;
-        LogicaM4 logicacompania = new LogicaM4();
-        public List<Requerimiento> req;
-        public bool modi;
-        
-        */
-
-        string idPropuesta;
         PresentadorModificarPropuesta presenter;
 
         public ModificarPropuesta()
@@ -40,24 +30,21 @@ namespace Tangerine.GUI.M6
         {
             if (!IsPostBack)
             {
-                //idPropuesta = Request.QueryString.Get("id");
                 presenter.llenarVista();
             } 
         }
 
         protected void ModificarPropuesta_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 presenter.ModificarPropuesta();
                 Server.Transfer("ConsultarPropuesta.aspx", true);
-            //}
-            //catch (Exception)
-            //{
-           //     Response.Redirect("../M6/ConsultarPropuesta.aspx");
-            //}
-            
-            
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+            }
         }
 
         #region Contrato
@@ -144,8 +131,8 @@ namespace Tangerine.GUI.M6
         
         public string ComboCuota
         {
-            get { return comboCuota.Value; }
-            set { comboCuota.Value = value; }
+            get { return cantidadCuotas.Value; }
+            set { cantidadCuotas.Value = value; }
         }
         
         public string ComboStatus

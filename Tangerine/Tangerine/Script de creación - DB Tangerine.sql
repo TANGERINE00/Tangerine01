@@ -778,16 +778,20 @@ GO
 
 ------------------Consultar llamdas a cliente potencial----------------------
 CREATE procedure M3_listar_Seguimento_llamadas
-@id_cliente int
+@idClientePotencial int,
+@tipo varchar(15)
 AS
-	BEGIN
-		SELECT Se.seg_fecha AS seg_fecha, Se.seg_motivo AS seg_motivo
-		FROM Cliente_Potencial Cp, Seguimiento Se
-		WHERE Cp.cli_pot_id=Se.fk_cli_pot
-	  			and Se.fk_cli_pot=@id_cliente
+BEGIN
+SELECT Se.seg_id AS seg_id, Se.seg_fecha AS seg_fecha, 
+  Se.seg_motivo AS seg_motivo, Se.seg_tipo AS seg_tipo, 
+  Se.fk_cli_pot AS fk_cli_pot 
+FROM Cliente_Potencial Cp, Seguimiento Se
+WHERE Cp.cli_pot_id=Se.fk_cli_pot
+ 	and Se.fk_cli_pot=@idClientePotencial
+ 	and Se.seg_tipo=@tipo
 
-	END;
-	go
+END;
+
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
@@ -1453,10 +1457,10 @@ CREATE PROCEDURE M7_ConsultarNombrePropuestaID
      @IdPropuestaPrpu int
 
 AS
-	BEGIN
+BEGIN
 		SELECT prop_nombre
-		FROM PROPUESTA
-		WHERE prop_id = @IdPropuestaPrpu;
+		FROM PROPUESTA, PROYECTO
+		WHERE proyecto.fk_propuesta_id=PROPUESTA.prop_id and proy_id = @IdPropuestaPrpu;
 	END
 GO
 

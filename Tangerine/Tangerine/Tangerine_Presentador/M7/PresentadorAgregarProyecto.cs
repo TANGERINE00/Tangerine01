@@ -11,6 +11,7 @@ using DominioTangerine.Entidades.M7;
 using DominioTangerine.Fabrica;
 using LogicaTangerine.Fabrica;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Tangerine_Presentador.M7
 {
@@ -28,6 +29,9 @@ namespace Tangerine_Presentador.M7
         static List<Entidad> listaProgramadores = new List<Entidad>();
         static List<Entidad> contactos = new List<Entidad>();
         static List<Entidad> programadores = new List<Entidad>();
+        static DateTime _fechaIni;
+        static DateTime _fechaFin;
+        static Double _costo;
         #endregion
 
         /// <summary>
@@ -39,19 +43,12 @@ namespace Tangerine_Presentador.M7
             _vista = vista;
         }
 
-        /// <summary>
-        /// Método que se ejecuta al hacer click en el botón
-        /// agregar proyecto en la vista
-        /// </summary>
-        public void agregarProyecto()
+        public bool  Validaciones()
         {
             listaProgramadores.Clear();
             listaContactos.Clear();
-            ///Se capturan los datos de la vista para crear un proyecto.
-            DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
-            DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
-            Double _costo = Convert.ToDouble(_vista.Costo);
 
+                     
             ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
             for (int i = 0; i < _vista.inputPersonal.Items.Count; i++)
             {
@@ -70,8 +67,26 @@ namespace Tangerine_Presentador.M7
                 }
             }
 
+            if ( (listaContactos.Count == 0) || (listaProgramadores.Count == 0))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        /// <summary>
+        /// Método que se ejecuta al hacer click en el botón
+        /// agregar proyecto en la vista
+        /// </summary>
+        public void agregarProyecto()
+        {
+
+            if (Validaciones()) {
 
 
+             _costo = Convert.ToDouble(_vista.Costo);
             ///Se crea un nuevo proyecto con la información de la vista.
             Entidad nuevoProyecto = FabricaEntidades.CrearProyectoConListas(_vista.NombreProyecto,
                                     _vista.CodigoProyecto, _fechaIni, _fechaFin, _costo, propuesta.Descripcion,
@@ -92,7 +107,9 @@ namespace Tangerine_Presentador.M7
 
             //Se crea un nuevo comando para agregar los contactos en el proyecto.
             Comando<bool> comandoContactos = FabricaComandos.ObtenerComandoAgregarContactos(nuevoProyecto);
-            comandoContactos.Ejecutar();       
+            comandoContactos.Ejecutar();
+            }
+
         }
 
         /// <summary>
@@ -193,10 +210,24 @@ namespace Tangerine_Presentador.M7
         /// </summary>
         public void AgregarPersonal()
         {
+            
+            ///Se capturan los datos de la vista para crear un proyecto.
+            _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
+            _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
+
+            if (_fechaFin < _fechaIni) 
+            {
+                MessageBox.Show("Rango de fechas inválido", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+            else { 
             _vista.btnAgregarPersonal.Enabled = false;
             _vista.columna2.Visible = true;
             _vista.BtnGenerar.Enabled = true;
+            }
         }
+
+       
     }
 
 
