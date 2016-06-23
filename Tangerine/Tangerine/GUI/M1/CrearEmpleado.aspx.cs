@@ -20,7 +20,7 @@ namespace Tangerine.GUI.M1
         private PresentadorCrearEmpleado presentador;
         string active = "Activo";
         Hashtable elementos = new Hashtable();
-        
+
 
         public CrearEmpleado()
         {
@@ -77,13 +77,13 @@ namespace Tangerine.GUI.M1
             {
                 presentador.AgregarEmpleado();
 
-                Response.Redirect("../M1/EmpleadosAdmin.aspx");
+                Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=0");
 
             }
 
 
         }
-       
+
 
         private Cargo jobForEmployee()
         {
@@ -129,7 +129,7 @@ namespace Tangerine.GUI.M1
         {
             LogicaM10 componentes = new LogicaM10();
             int x = 1;
-            SelectedListCountry.Items.Insert(0, "Seleccione un pais");                                                 
+            SelectedListCountry.Items.Insert(0, "Seleccione un pais");
             foreach (LugarDireccion paises in componentes.ItemsForListCountry())
             {
                 SelectedListCountry.Items.Insert(x, paises.LugNombre);
@@ -190,7 +190,7 @@ namespace Tangerine.GUI.M1
         TextBox IContratoCrearEmpleado.ItextSecondName
         {
             get { return SecondName; }
-            set { SecondName= value; }
+            set { SecondName = value; }
         }
         TextBox IContratoCrearEmpleado.ItextFirstLastName
         {
@@ -200,7 +200,7 @@ namespace Tangerine.GUI.M1
         TextBox IContratoCrearEmpleado.ItextSecondLastName
         {
             get { return SecondLastName; }
-            set { SecondLastName= value; }
+            set { SecondLastName = value; }
         }
         String IContratoCrearEmpleado.ItextDateEmployee
         {
@@ -246,6 +246,6 @@ namespace Tangerine.GUI.M1
 
         #endregion
 
-       
+
     }
 }

@@ -33,6 +33,7 @@ namespace DominioTangerine.Entidades.M10
         private string emp_telefono;      
         private string address;
         private List<Entidad> addressComplete = new List<Entidad>();
+      //private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
         public CargoM10 jobs;
         private List<Proyecto> listProjects = new List<Proyecto>();
         private List<LugarDireccion> listaDireccion = new List<LugarDireccion>();
@@ -56,7 +57,7 @@ namespace DominioTangerine.Entidades.M10
         //private string empFechaFin;
         //private string empDireccion;
 
-        private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
+        
 
         #endregion
 
@@ -313,17 +314,17 @@ namespace DominioTangerine.Entidades.M10
         }
 
 
-        public List<LugarDireccion> AddressComplete
-        {
-            get
-            {
-                return this.addressComplete;
-            }
-            set
-            {
-                this.addressComplete = value;
-            }
-        }
+        //public List<LugarDireccion> AddressComplete
+        //{
+        //    get
+        //    {
+        //        return this.addressComplete;
+        //    }
+        //    set
+        //    {
+        //        this.addressComplete = value;
+        //    }
+        //}
 
 
         public string Emp_Direccion
@@ -351,11 +352,11 @@ namespace DominioTangerine.Entidades.M10
         }
 
 
-        public List<Entidad> AddressComplete
-        {
-            get { return addressComplete; }
-            set { addressComplete = value; }
-        }
+        //public List<Entidad> AddressComplete
+        //{
+        //    get { return addressComplete; }
+        //    set { addressComplete = value; }
+        //}
 
 
         #endregion
@@ -449,7 +450,7 @@ namespace DominioTangerine.Entidades.M10
 
         //#endregion
 
-        #endregion
+        //#endregion
 
     }
 }
