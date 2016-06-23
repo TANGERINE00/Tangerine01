@@ -80,7 +80,9 @@ namespace Tangerine_Presentador.M8
                     + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
-
+        /// <summary>
+        /// Método para llenar la informacion de la factura en objeto
+        /// </summary>
         public Facturacion meterParametrosVistaEnObjeto1()
         {
             try

@@ -14,11 +14,11 @@ namespace Tangerine_Contratos.M1
         DropDownList IcomboPais { get; set; }
         DropDownList IcomboCargo { get; set; }
         DropDownList IcomboEstado { get; set; }
-        String ItextCedula { get; set; }
-        String ItextFirstName { get; set; }
-        String ItextSecondNamee { get; set; }
-        String ItextFirstLastName { get; set; }
-        String ItextSecondLastName { get; set; }
+        TextBox ItextCedula { get; set; }
+        TextBox ItextFirstName { get; set; }
+        TextBox ItextSecondName { get; set; }
+        TextBox ItextFirstLastName { get; set; }
+        TextBox ItextSecondLastName { get; set; }
         String ItextDateEmployee { get; set; }
         String ItextDateJob { get; set; }
         String ItextJobMode { get; set; }

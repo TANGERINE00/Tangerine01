@@ -119,29 +119,31 @@ namespace Tangerine.GUI.M1
                   //}
 
                   //------------------------TERCERA ENTREGA-----------------------------
-                  //ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =
-                  //    (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
-                  //List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
+                  ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =
+                      (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
+                  List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
+                  foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
+                  {
+                      ComandoCalcularPagoMensual _comandoCalcular = 
+                          (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
+                      int montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
 
-                  //foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
-                  //{
-                  //    ComandoCalcularPagoMensual _comandoCalcular = (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
-                  //    montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
+                      Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
+                          montoFactura, montoFactura, ResourceGUI8.moneda, ResourceGUI8.fact, 0, theProyecto.Id,
+                          theProyecto.Idresponsable);
 
-                  //    Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
-                  //        montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Id,
-                  //        theProyecto.Idresponsable);
+                      ComandoSearchExistingBill _comandoBill = 
+                          (ComandoSearchExistingBill)FabricaComandos.CrearSearchExistingBill(factura);
+                      bool facturaExistente = _comandoBill.Ejecutar();
 
-                  //    ComandoSearchExistingBill _comandoBill = (ComandoSearchExistingBill)FabricaComandos.CrearSearchExistingBill(factura);
-                  //    facturaExistente = _comandoBill.Ejecutar();
-
-                  //    if (facturaExistente == false)
-                  //    {
-                  //        ComandoAgregarFactura _comandoAgregar = (ComandoAgregarFactura)FabricaComandos.CrearAgregarFactura(factura);
-                  //        _comandoAgregar.Ejecutar();
-                  //    }
-                  //    facturaExistente = false;
-                  //}
+                      if (facturaExistente == false)
+                      {
+                          ComandoAgregarFactura _comandoAgregar = 
+                              (ComandoAgregarFactura)FabricaComandos.CrearAgregarFactura(factura);
+                          _comandoAgregar.Ejecutar();
+                      }
+                      facturaExistente = false;
+                  }
 
                    //AQUI TERMINA EL CODIGO PARA GENERAR LA FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
                    //HECHO POR EL MÓDULO 7 Y MÓDULO 8
