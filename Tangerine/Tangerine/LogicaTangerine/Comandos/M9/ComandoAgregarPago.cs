@@ -38,7 +38,7 @@ namespace LogicaTangerine.Comandos.M9
 
             try
             {
-                Pago.Agregar(this._laEntidad);
+                
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                       ResourceComandoM9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return Pago.Agregar(this._laEntidad);
