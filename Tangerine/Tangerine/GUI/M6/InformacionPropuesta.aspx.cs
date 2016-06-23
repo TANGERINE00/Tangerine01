@@ -119,11 +119,20 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.QueryString["id"];
-
-            if (!IsPostBack)
+            try
             {
-                presentadorInformacion.consultarPropuesta(id);
+                string id = Request.QueryString["id"];
+
+                if (!IsPostBack)
+                {
+                    presentadorInformacion.consultarPropuesta(id);
+                }
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+
             }
         }
     }

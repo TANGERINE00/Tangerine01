@@ -85,7 +85,7 @@ namespace Tangerine.GUI.M8
         {
 
             if (_presentador.enviarCorreo())
-                Server.Transfer("ConsultarFacturaM8.aspx");
+                Server.Transfer(ResourceGUIM8.volver);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
-using DatosTangerine.M2;
+//using DatosTangerine.M2;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
@@ -63,7 +63,7 @@ namespace LogicaTangerine.M1
         ///<param name="usuario">String de nombre de Usuario</param>
         ///<param name="contrasena">String de contraseña de Usuario</param>
         ///<returns>true, si los datos estan en el formato correcto y el usuario existe</returns>
-        public bool ValidarUsuario(Cuenta lacuentaL)
+       /* public bool ValidarUsuario(Cuenta lacuentaL)
         {
             List<String> campos = new List<String>();
 
@@ -80,7 +80,7 @@ namespace LogicaTangerine.M1
                 return false;
             }
 
-        }
+        }*/
 
         ///<sumary>
         ///Metodo que valida que las credenciales de login coincidan con
@@ -89,13 +89,13 @@ namespace LogicaTangerine.M1
         ///<param name="nombreUsuario">String de nombre de Usuario</param>
         ///<param name="clave">String de contraseña de Usuario</param>
         ///<returns>true, si el usuario existe</returns>
-        public bool ConsultarUsuario(Cuenta cuenta)
+       /* public bool ConsultarUsuario(Cuenta cuenta)
         {
             try
             {
                 Usuario theUsuario = new Usuario(cuenta.Nombre_usuario, cuenta.Contrasena);
                 theUsuario.Contrasenia = theUsuario.GetMD5(cuenta.Contrasena);
-                theUsuario = BDUsuario.ObtenerDatoUsuario(theUsuario);
+                //theUsuario = BDUsuario.ObtenerDatoUsuario(theUsuario);
 
                 if (theUsuario.Activo != null)
                 {
@@ -110,7 +110,7 @@ namespace LogicaTangerine.M1
             {
                 throw ex;
             }
-        }
+        }*/
 
         ///<sumary>
         ///Metodo que valida que las credenciales de login coincidan con
@@ -146,7 +146,7 @@ namespace LogicaTangerine.M1
         ///<param name="nombreUsuario">String de nombre de Usuario</param>
         ///<param name="clave">String de contraseña de Usuario</param>
         ///<returns>true, si el usuario existe</returns>
-        public string GenerarNuevaContrasena(string correo, string nombreUsuario)
+       /* public string GenerarNuevaContrasena(string correo, string nombreUsuario)
         {
             try
             {
@@ -171,7 +171,7 @@ namespace LogicaTangerine.M1
             {
                 throw ex;
             }
-        }
+        }*/
 
         public void EnviarCorreo(string correoDestino, string contenido)
         {
