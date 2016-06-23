@@ -213,10 +213,41 @@ namespace PruebasUnitarias.M3
 
             comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarClientePotencial(elCliente3);
             Assert.IsTrue(comandoRespuesta.Ejecutar());
+            elCliente3.Id = comandoNumero.Ejecutar();
+
 
             comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente3);
             comandoRespuesta.Ejecutar();
 
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para promover un cliente por ID
+        /// </summary>
+        [Test]
+        public void TestComandoPromoverClientePotencial()
+        {
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(elCliente3);
+            comandoRespuesta.Ejecutar();
+
+            comandoNumero = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoUltimoIdClientePotencial();
+            elCliente3.Id = comandoNumero.Ejecutar();
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoPromoverClientePotencial(elCliente3);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
+
+            comandoBuscar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarClientePotencial(elCliente3);
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)comandoBuscar.Ejecutar();
+
+            Assert.AreEqual(elCliente3.NombreClientePotencial, elCliente2.NombreClientePotencial);
+            Assert.AreEqual(elCliente3.RifClientePotencial, elCliente2.RifClientePotencial);
+            Assert.AreEqual(elCliente3.EmailClientePotencial, elCliente2.EmailClientePotencial);
+            Assert.AreEqual(elCliente3.PresupuestoAnual_inversion, elCliente2.PresupuestoAnual_inversion);
+
+            Assert.AreEqual(2, elCliente2.Status);
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente3);
+            comandoRespuesta.Ejecutar();
         }
     }
 }
