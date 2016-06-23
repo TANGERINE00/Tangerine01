@@ -33,117 +33,18 @@ namespace Tangerine.GUI.M6
         {
             this.presenter = new PresentadorModificarPropuesta(this);
         }
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             company = Request.QueryString.Get("id");
             presenter.llenarVista();
-       //     TraerCompania(company);
-       //     
-       //     btn_ConsultaReq(prueba);
-
-
-          //  volver.Attributes.Add("href", "ConsultarPropuesta.aspx");
-
-
-/*
-            if (!IsPostBack)
-            {
-
-                foreach (Requerimiento elRequerimiento in req)
-                {
-                    requerimiento += RecursosGUI_M6.AbrirTR;
-
-                    requerimiento += RecursosGUI_M6.AbrirTD + elRequerimiento.CodigoRequerimiento.ToString() + RecursosGUI_M6.CerrarTD;
-                    requerimiento += RecursosGUI_M6.AbrirTD + elRequerimiento.Descripcion.ToString() + RecursosGUI_M6.CerrarTD;
-
-
-                    requerimiento += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.btn_Modificar + RecursosGUI_M6.CerrarTD;
-                    requerimiento += RecursosGUI_M6.AbrirTD + RecursosGUI_M6.btn_eliminar + RecursosGUI_M6.CerrarTD;
-
-                    requerimiento += RecursosGUI_M6.CerrarTR;
-
-                }
-            }
- * */
-
-          
-
+   
         }
 
-
-
-
-
-
-        /// <summary>
-        /// Metodo de la acción modificar de la vista de listar propuesta. 
-        /// </summary>
-        /// <param name="idPropuesta"></param>
-
-
-     /*   public void TraerCompania(String idPropuesta)
-        {
-
-            LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
-
-            Prueba = logicaPropuesta.TraerPropuesta(idPropuesta);
-
-            Compania lacompania = new Compania();
-
-            lacompania = logicacompania.ConsultCompany(Int32.Parse(Prueba.IdCompañia));
-            cliente_id.Value = lacompania.NombreCompania;
-
-        } */
-
-        /// <summary>
-        /// Metodo para cargar el o los requerimientos asociados a la propuesta seleccionada en la pantalla de listar. 
-        /// </summary>
-        /// <param name="idPropuesta"></param>
-
-   /*     public void btn_ConsultaReq(String idPropuesta)
-        {
-
-            LogicaRequerimiento logreq = new LogicaRequerimiento();
-
-            req = logreq.TraerRequerimientoPropuesta(idPropuesta);
-
-        } */
-        /// <summary>
-        /// Metodo para modificar el requerimiento desde el modal
-        /// </summary>
-        /// <param name="idRequerimiento"></param>
-        /// <param name="descripcion"></param>
-
-        /*
-        public void llenarReq(String idRequerimiento, String descripcion)
-        {
-            Requerimiento vistaReq = new Requerimiento();
-            LogicaRequerimiento logica = new LogicaRequerimiento();
-            vistaReq.Descripcion = descripcion;
-            vistaReq.CodigoRequerimiento = idRequerimiento;
-            modi = logica.ModRequerimiento(vistaReq);
-
-        } */
+  
         protected void botonModificarPro_Click(object sender, EventArgs e)
         {
-           /* Propuesta propuestas = new Propuesta();
-
-            propuestas.Nombre = prueba;
-            propuestas.Descripcion = descripcion.Value;
-            propuestas.TipoDuracion = comboDuracion.SelectedValue;
-            propuestas.Acuerdopago = formaPago.SelectedValue;
-            propuestas.CantDuracion = comboCuota.SelectedValue;
-            propuestas.Estatus = comboEstatus.SelectedValue;
-            propuestas.Moneda = comboTipoCosto.SelectedValue;
-            propuestas.Feincio = DateTime.ParseExact(datepicker1.Value, "MM/dd/yyyy", null);
-            propuestas.Fefinal = DateTime.ParseExact(datepicker2.Value, "MM/dd/yyyy", null);
-            propuestas.Costo = int.Parse(textoCosto.Value);
-
-
-            LogicaPropuesta propuesta = new LogicaPropuesta();
-            propuesta.ModificarPropuesta(propuestas);
-
-            */
+           
             presenter.ModificarPropuesta();
 
             Server.Transfer("ConsultarPropuesta.aspx", true);   
@@ -161,8 +62,6 @@ namespace Tangerine.GUI.M6
             }
         }
 
-
-
         public string ContenedorCompania
         {
             get { return cliente_id.Value; }
@@ -175,52 +74,56 @@ namespace Tangerine.GUI.M6
         public string Descripcion
         {
             get { return descripcion.Value; }
-            set { descripcion.Value = value; }
+            set { descripcion.Value = value;}
 
         }
         
-        public DropDownList ComboDuracion
+        public string ComboDuracion
         {
-            get { return comboDuracion; }
-            set { comboDuracion = value; }
+            get { return comboDuracion.Value; }
+            set { comboDuracion.Value = value; }
         }
         public string TextoDuracion
         {
-            get { return textoDuracion.Value; }
-
+          
+          get { return textoDuracion.Value; }
+            set { textoDuracion.Value = value; }
         }
         public string DatePickerUno
         {
             get { return datepicker1.Value; }
+            set { datepicker1.Value = value; }
         }
         public string DatePickerDos
         {
             get { return datepicker2.Value; }
+            set { datepicker2.Value = value; }
         }
-        public DropDownList TipoCosto
+        public string TipoCosto
         {
-            get { return comboTipoCosto; }
-            set { comboTipoCosto = value; }
+            get { return comboTipoCosto.Value; }
+            set { comboTipoCosto.Value = value; }
         }
 
         public string TextoCosto
         {
             get { return textoCosto.Value; }
+            set { textoCosto.Value = value; }
         }
-        public DropDownList FormaPago
+        public string FormaPago
         {
-            get { return formaPago; }
-            set { formaPago = value; }
+            get { return formaPago.Value; }
+            set { formaPago.Value = value; }
         }
-        public DropDownList ComboCuota
+        public string ComboCuota
         {
-            get { return comboCuota; }
-            set { comboCuota = value; }
+            get { return comboCuota.Value; }
+            set { comboCuota.Value = value; }
         }
-        public DropDownList ComboStatus
+        public string ComboStatus
         {
-            get { return comboEstatus; }
-            set { comboEstatus = value; }
+            get { return comboEstatus.Value; }
+            set { comboEstatus.Value = value; }
         }
 
 

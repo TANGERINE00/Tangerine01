@@ -33,8 +33,8 @@ namespace Tangerine_Presentador.M7
             Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
             ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = id;
 
-            Comando<Entidad> comando = 
-                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdproyecto(parametro);
+            Comando<Entidad> comando =
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyecto(parametro);
             proyecto = comando.Ejecutar();
 
             Comando<List<Entidad>> comando1 = 
@@ -56,6 +56,9 @@ namespace Tangerine_Presentador.M7
             Comando<Entidad> comando5 = 
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyectoContacto(parametro);
             Entidad contactoEmp = comando5.Ejecutar();
+
+            Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+            List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
 
             try
             {
@@ -303,11 +306,6 @@ namespace Tangerine_Presentador.M7
                     vista.inputPersonal.Items.Remove(li);
                 }
             }
-        }
-
-        public void RenderCalendario(DayRenderEventArgs e, Entidad proyecto)
-        {
-
         }
 
         public void MoverDerecha()

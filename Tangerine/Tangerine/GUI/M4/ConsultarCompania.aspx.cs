@@ -15,6 +15,7 @@ namespace Tangerine.GUI.M4
     {
         #region CargarPresentador
         Tangerine_Presentador.M4.PresentadorConsultarCompania Presentador;
+        string error;
 
         public ConsultarCompania()
         {
@@ -35,6 +36,17 @@ namespace Tangerine.GUI.M4
                 tabla = value;
             }
         }
+        public string msjError
+        {
+            get
+            {
+                return error;
+            }
+            set
+            {
+                error = value;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -46,29 +58,23 @@ namespace Tangerine.GUI.M4
         {
            if (!IsPostBack)
             {
-                Presentador.ImprimirCompania();
-                /*Compania laCompania;
-                int idComp, typeHab;
                 try
                 {
-                    typeHab = int.Parse(Request.QueryString["typeHab"]);
-                    idComp = int.Parse(Request.QueryString["idComp"]);
-                    laCompania = prueba.ConsultCompany(idComp);
-                    if (typeHab == 1)
-                    {
-                        prueba.EnableCompany(laCompania);
-                      
-                    }
-                    if (typeHab == 0)
-                    {
-                        prueba.DisableCompany(laCompania);
-                    }
+                    if(Presentador.BotonHabilitarInhabilitar(int.Parse(Request.QueryString["typeHab"]), int.Parse(Request.QueryString["idComp"])))
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('"+ msjError +"')", true); 
                 }
-                catch
+                catch 
+                { 
+                }
+                try
                 {
+                    if(Presentador.ImprimirCompania(HttpContext.Current.Session["Rol"].ToString()))
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
                 }
-
-                imprimirTabla();   */  
+               catch
+               {
+               }
+            
             }
         }
     }

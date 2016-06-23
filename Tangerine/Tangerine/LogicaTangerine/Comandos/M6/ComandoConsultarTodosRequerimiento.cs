@@ -29,7 +29,7 @@ namespace LogicaTangerine.Comandos.M6
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
                 return daoRequerimiento.ConsultarTodos();
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }

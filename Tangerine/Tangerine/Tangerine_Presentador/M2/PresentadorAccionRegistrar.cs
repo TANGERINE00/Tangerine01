@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M2;
+using Tangerine_Presentador.M2;
 
 namespace Tangerine_Presentador.M2
 {
@@ -62,6 +63,22 @@ namespace Tangerine_Presentador.M2
             LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(_vista.usuario);
             respuesta = comando.Ejecutar();
             return respuesta;
+        }
+
+        /// <summary>
+        /// Método que contigura el div de alerta de la vista
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void alerta(string msj, int typeMsg)
+        {
+            if (typeMsg == 1)
+                _vista.alertaClase = ResourceGUIM2.AlertSuccess;
+            else
+                _vista.alertaClase = ResourceGUIM2.AlertDanger;
+
+            _vista.alertaRol = ResourceGUIM2.Alert;
+            _vista.alerta = ResourceGUIM2.AlertShowSu1 + msj + ResourceGUIM2.AlertShowSu2;
         }
 
     }

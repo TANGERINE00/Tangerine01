@@ -27,25 +27,28 @@
                 <!--Nombre-->
                 <div id="Div1" class="form-group" runat="server">
                     <label for="InputNombre">Nombre</label>
-                    <input runat="server" type="text" class="form-control" id="nombre" name="nombre" 
-                                placeholder="Introduzca nombre de la compañía" maxlength="50" required>
+                    <input runat="server" type="text" class="form-control" 
+                        pattern="^[a-zA-Z'.\s]{1,40}$" 
+                        id="nombre" name="nombre" placeholder="Introduzca nombre de la compañía" 
+                        maxlength="30" title="Utilice caracteres alfanuméricos" required>
                 </div>
-                    
                     
                 <!--RIF-->
                 <div id="Div2" class="form-group" runat="server">
                     <label for="InputRIF">RIF</label>
-                    <input runat="server" type="text" class="form-control" 
-                                id="rif" name="rif" 
-                                placeholder="Introduzca RIF de la compañía.    e.g: J-236861967-6" required>
+                    <input runat="server" type="text" class="form-control"
+                        pattern="^[J]+[-]+([0-9]{7,10})+[-]+([0-9]{1,1})$" 
+                        id="rif" name="rif" title="Ej: J-23232343-5"
+                        placeholder="Introduzca RIF de la compañía.    e.g: J-236861967-6" required>
                 </div>
                   
                 <!--Email-->
                 <div id="Div3" class="form-group" runat="server">
                     <label for="InputEmail">Correo Electrónico</label>
-                    <input runat="server" type="text" class="form-control" 
-                                id="email" name="email"
-                                placeholder="Introduzca email de la compañía.    e.g: mail@ejemplo.com" maxlength="50" required/>
+                    <input runat="server" type="text" class="form-control"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+                        id="email" name="email" title="Ej: correo@gmail.com"
+                        placeholder="Introduzca email de la compañía.  e.g: mail@ejemplo.com" maxlength="50" required/>
                 </div>
                                       
 	            <!--Presupuesto-->

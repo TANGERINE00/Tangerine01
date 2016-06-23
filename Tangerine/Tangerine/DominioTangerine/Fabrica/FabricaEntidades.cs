@@ -503,40 +503,59 @@ namespace DominioTangerine.Fabrica
         #region Modulo 6
 
             #region Instancia Propuesta
+            /// <summary>
+            /// Se crea la instancia sin atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta sin atributos</returns>
             static public Entidad ObtenerPropuestaVacia()
             {
                 return new DominioTangerine.Entidades.M6.Propuesta();
             }
 
-            static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, 
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta con atributos(sin codigo)</returns>
+            static public Entidad ObtenerPropuesta( string nombre, string descripcion, string _tipoDu, string duracion, 
                 string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, DateTime fefinal, 
-                int costo, string compañia)
+                int costo, string compañia )
             {
-                return new DominioTangerine.Entidades.M6.Propuesta(nombre, descripcion, _tipoDu, duracion, acuerdopago, 
-                       estatus, moneda, entrega, feincio, fefinal, costo, compañia);
+                return new DominioTangerine.Entidades.M6.Propuesta( nombre, descripcion, _tipoDu, duracion, acuerdopago, 
+                       estatus, moneda, entrega, feincio, fefinal, costo, compañia );
             }
 
-            static public Entidad ObtenerPropuesta(string codigo, string nombre, string descripcion, string _tipoDu, 
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta con atributos</returns>
+            static public Entidad ObtenerPropuesta( string codigo, string nombre, string descripcion, string _tipoDu, 
                 string duracion, string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, 
-                DateTime fefinal, int costo, string compañia)
+                DateTime fefinal, int costo, string compañia )
             {
                 return new DominioTangerine.Entidades.M6.Propuesta(codigo, nombre, descripcion, _tipoDu, duracion, 
                     acuerdopago, estatus, moneda, entrega, feincio, fefinal, costo, compañia);
             }
 
-            static public Entidad ObtenerPropuesta(string codigoP, 
-                List<DominioTangerine.Entidades.M6.Requerimiento> listaRequerimiento)
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta con lista de requerimientos vacia</returns>
+            static public Entidad ObtenerPropuesta( string codigoP, 
+                List<DominioTangerine.Entidades.M6.Requerimiento> listaRequerimiento )
             {
-                return new DominioTangerine.Entidades.M6.Propuesta(codigoP, listaRequerimiento);
+                return new DominioTangerine.Entidades.M6.Propuesta( codigoP, listaRequerimiento );
             }
 
             #endregion
 
             #region Instancia Requerimiento
-
-            static public Entidad ObtenerRequerimiento(string codreq, string descripr, string codpro)
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de requerimiento con atributos</returns>
+            static public Entidad ObtenerRequerimiento( string codreq, string descripr, string codpro )
             {
-                return new DominioTangerine.Entidades.M6.Requerimiento(codreq, descripr, codpro);
+                return new DominioTangerine.Entidades.M6.Requerimiento( codreq, descripr, codpro );
             }
 
             #endregion
