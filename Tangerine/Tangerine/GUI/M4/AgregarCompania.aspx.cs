@@ -158,7 +158,6 @@ namespace Tangerine.GUI.M4
             if (!IsPostBack)
             {
                 Presentador.CargarLugares();
-                //llenarComboBoxLugar();
             }
             
         }
@@ -176,27 +175,6 @@ namespace Tangerine.GUI.M4
             else
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('"+ msjError +"')", true); 
 
-        }
-
-        /// <summary>
-        /// Método de carga de lugares tipo ciudad en un combobox.
-        /// </summary>
-        /// <param name=""></param>
-        /// <returns></returns>
-        protected void llenarComboBoxLugar()
-        {
-            List<LugarDireccion> listPlace = logica.getPlaces();
-
-            try
-            {
-                foreach (LugarDireccion thePlace in listPlace)
-                {
-                    InputDireccion1.Items.Add(thePlace.LugNombre);
-                }
-            }
-            catch (Exception ex)
-            {
-            }
         }
     }
 }
