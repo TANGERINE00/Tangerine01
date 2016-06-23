@@ -88,17 +88,7 @@ namespace DatosTangerine.DAO.M7
 
             return listProyecto;
         }
-
-        public List<Entidad> ContactProyectoPorEmpleado(Entidad empleado)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Entidad> ContactProyectoPorGerente(Entidad empleado)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Entidad ContactNombrePropuestaId(Entidad parametro)
         {
             Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();

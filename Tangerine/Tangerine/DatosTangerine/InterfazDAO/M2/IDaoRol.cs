@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M2
 {
-    public interface IDAORol : IDao<Entidad, bool, Entidad>
+    public interface IDAORol : IDao
     {
         /// <summary>
         /// Método para modificar el rol del usuario

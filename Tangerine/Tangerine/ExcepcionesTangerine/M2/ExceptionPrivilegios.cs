@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesTangerine.M2
 {
-    public class ExcepcionPrivilegios : ExceptionsTangerine
+    public class ExceptionPrivilegios : ExceptionsTangerine
     {
         /// <summary>
         /// Contructor por defecto de la clase
         /// </summary>
-        public ExcepcionPrivilegios()
+        public ExceptionPrivilegios()
         {
         }
 
@@ -19,7 +19,7 @@ namespace ExcepcionesTangerine.M2
         /// Constructor que recibe el mensaje que se quiere mostrar
         /// </summary>
         /// <param name="message"></param>
-        public ExcepcionPrivilegios (string message )
+        public ExceptionPrivilegios (string message )
             : base( message )
         {
         }
@@ -29,7 +29,7 @@ namespace ExcepcionesTangerine.M2
         /// </summary>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExcepcionPrivilegios( string message, Exception inner )
+        public ExceptionPrivilegios( string message, Exception inner )
             : base( message, inner )
         {
         }
@@ -40,7 +40,7 @@ namespace ExcepcionesTangerine.M2
         /// <param name="codigo"></param>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExcepcionPrivilegios( string codigo, string message, Exception inner )
+        public ExceptionPrivilegios( string codigo, string message, Exception inner )
             : base( codigo, message, inner )
         {
         }

@@ -622,10 +622,7 @@ namespace LogicaTangerine.Fabrica
         /// </summary>
         /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
         /// <returns>comando con entidad tipo proyecto</returns>
-        public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
-        {
-            return new ComandoConsultarXIdProyecto(proyecto);
-        }
+
 
         /// <summary>
         /// Método para instancear el ComandoConsultarXIdProyectoContacto

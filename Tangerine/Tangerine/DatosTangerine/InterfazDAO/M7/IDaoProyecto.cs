@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M7
 {
-    public interface IDaoProyecto : IDao<Entidad, bool, Entidad>
+    public interface IDaoProyecto : IDao
     {
 
         List<Entidad> ContactProyectoxAcuerdoPago();
-
-        List<Entidad> ContactProyectoPorEmpleado(Entidad empleado);
-
-        List<Entidad> ContactProyectoPorGerente (Entidad empleado);
 
         Entidad ContactNombrePropuestaId(Entidad proupesta);
 

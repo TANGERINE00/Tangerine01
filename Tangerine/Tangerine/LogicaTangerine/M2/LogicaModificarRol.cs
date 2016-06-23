@@ -33,7 +33,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionModificarRol( "Error al ejecutar " +
                                                                          "ModificarRol()", ex );
             }
 
@@ -56,7 +56,7 @@ namespace LogicaTangerine.M2
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.M2.ExcepcionModificarRol( "Error al ejecutar " +
+                throw new ExcepcionesTangerine.M2.ExceptionModificarRol( "Error al ejecutar " +
                                                                          "ObtenerUsuario()", ex );
             }
 

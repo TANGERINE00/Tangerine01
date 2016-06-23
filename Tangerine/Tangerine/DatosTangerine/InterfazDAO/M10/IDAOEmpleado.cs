@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M10
 {
-    public interface IDAOEmpleado : IDao<Entidad, Boolean , Entidad>
+    public interface IDAOEmpleado : IDao
     {
         /// <summary> Firma de Método para agregar un empleado </summary>
         /// <param name="elEmpleado"> de tipo Empleado</param>
