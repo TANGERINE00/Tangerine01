@@ -127,15 +127,16 @@ namespace Tangerine_Presentador.M10
         }
         public void AgregarEmpleado()
         {
+       
 
             Entidad Parametro = DominioTangerine.Fabrica.FabricaEntidades.AgregarEmpledoM10();
 
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_nombre = Vista.ItextFirstName;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondNamee;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_nombre = Vista.ItextFirstName.Text;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondName.Text;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName.Text;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName.Text;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_genero = Vista.IcomboGenero.SelectedItem.Text.ToString();
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula);
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula.Text);
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac = DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture);
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_activo = active;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_nivel_estudio = Vista.IcomboNivelEstudio.SelectedItem.Text.ToString();

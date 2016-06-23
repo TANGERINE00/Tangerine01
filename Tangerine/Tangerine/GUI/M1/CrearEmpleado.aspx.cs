@@ -20,6 +20,7 @@ namespace Tangerine.GUI.M1
         private PresentadorCrearEmpleado presentador;
         string active = "Activo";
         Hashtable elementos = new Hashtable();
+        
 
         public CrearEmpleado()
         {
@@ -72,11 +73,16 @@ namespace Tangerine.GUI.M1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            presentador.AgregarEmpleado();
-            
-            Response.Redirect("../M1/EmpleadosAdmin.aspx");
-        }
+            if (Page.IsValid)
+            {
+                presentador.AgregarEmpleado();
 
+                Response.Redirect("../M1/EmpleadosAdmin.aspx");
+
+            }
+
+
+        }
        
 
         private Cargo jobForEmployee()
@@ -123,7 +129,7 @@ namespace Tangerine.GUI.M1
         {
             LogicaM10 componentes = new LogicaM10();
             int x = 1;
-            SelectedListCountry.Items.Insert(0, "Seleccione un pais");
+            SelectedListCountry.Items.Insert(0, "Seleccione un pais");                                                 
             foreach (LugarDireccion paises in componentes.ItemsForListCountry())
             {
                 SelectedListCountry.Items.Insert(x, paises.LugNombre);
@@ -168,31 +174,33 @@ namespace Tangerine.GUI.M1
             set { SelectedListState = value; }
         }
 
-        String IContratoCrearEmpleado.ItextCedula
+        TextBox IContratoCrearEmpleado.ItextCedula
         {
-            get { return Cedula.Value; }
-            set { Cedula.Value = value; }
+            get { return Cedula2; }
+            set { Cedula2 = value; }
         }
 
-        String IContratoCrearEmpleado.ItextFirstName
+
+
+        TextBox IContratoCrearEmpleado.ItextFirstName
         {
-            get { return FirstName.Value; }
-            set { FirstName.Value = value; }
+            get { return PrimerNombre; }
+            set { PrimerNombre = value; }
         }
-        String IContratoCrearEmpleado.ItextSecondNamee
+        TextBox IContratoCrearEmpleado.ItextSecondName
         {
-            get { return SecondNamee.Value; }
-            set { SecondNamee.Value = value; }
+            get { return SecondName; }
+            set { SecondName= value; }
         }
-        String IContratoCrearEmpleado.ItextFirstLastName
+        TextBox IContratoCrearEmpleado.ItextFirstLastName
         {
-            get { return FirstLastName.Value; }
-            set { FirstLastName.Value = value; }
+            get { return FirstLastName; }
+            set { FirstLastName = value; }
         }
-        String IContratoCrearEmpleado.ItextSecondLastName
+        TextBox IContratoCrearEmpleado.ItextSecondLastName
         {
-            get { return SecondLastName.Value; }
-            set { SecondLastName.Value = value; }
+            get { return SecondLastName; }
+            set { SecondLastName= value; }
         }
         String IContratoCrearEmpleado.ItextDateEmployee
         {
@@ -237,5 +245,7 @@ namespace Tangerine.GUI.M1
 
 
         #endregion
+
+       
     }
 }

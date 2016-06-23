@@ -25,41 +25,135 @@
                 <div class="col-xs-12 col-md-6 col-lg-6">
                   <h4>Datos Personales</h4>
                   <div class="form-group ">
-                    <label for="Cedula">Cédula</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="Cedula" class="form-control" maxlength="9" placeholder="Introduzca cédula" required>
-                      <asp:RegularExpressionValidator id="RegularExpressionValidator1"
-                            ControlToValidate="Cedula"
-                            ValidationExpression="\d+"
-                            Display="Static"
-                            EnableClientScript="true"
-                            ErrorMessage="Por favor inserte un valor numerico" ForeColor="Red"
-                            runat="server"/>
+                    <label>Cédula</label><label style="color: red;">*</label>
+                           
+                      <asp:TextBox id="Cedula2" runat="server"  CssClass="form-control" maxlength="9" placeholder
+                          ="Introduzca cédula"></asp:TextBox>
+
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1"
+                          ControlToValidate="Cedula2"
+                          ErrorMessage="Por favor inserte un valor numerico" ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RangeValidator ID="RangeValidator2"                           
+                            ControlToValidate = "Cedula2"                            
+                            ErrorMessage = "La cedula tiene que ser entre 1 y 100000000" 
+                            ForeColor="Red"
+                            Type="Integer"
+                            MaximumValue = "100000000" MinimumValue = "1" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RangeValidator>
+                      
                   </div>
                   <div class="form-group ">
                     <label for="FirstName">Primer Nombre</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="FirstName" class="form-control" maxlenght="20" placeholder="Introduzca primer nombre" required>
+                    <asp:TextBox id="PrimerNombre" runat="server"  CssClass="form-control" maxlength="20" placeholder=
+                        "Introduzca primer nombre"></asp:TextBox>
+                        
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator2"
+                          ControlToValidate="PrimerNombre"
+                          ErrorMessage="Por favor inserte un nombre"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RegularExpressionValidator 
+                            ID="RegularExpression1"                           
+                            ControlToValidate = "PrimerNombre"                            
+                            ErrorMessage = "Por favor inserte un nombre válido" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,20}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>
+                        
                   </div>
                   <div class="form-group ">
                     <label for="SecondName">Segundo Nombre</label>
-                    <input type="text" runat="server" id="SecondNamee" class="form-control" maxlenght="20" placeholder="Segundo Nombre">
+                    <asp:TextBox id="SecondName" runat="server"  CssClass="form-control" maxlength="20" placeholder=
+                        "Introduzca segundo nombre"></asp:TextBox>
+                            
+                      <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator2"                           
+                            ControlToValidate = "SecondName"                            
+                            ErrorMessage = "Por favor inserte un segundo nombre válido" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,20}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>
+                      
                   </div>
                   <div class="form-group ">
                     <label for="FirstLastName">Primer Apellido</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="FirstLastName" class="form-control" maxlenght="20" placeholder="Primer Apellido" required>
+                    <%--<input type="text" runat="server" id="FirstLastName" class="form-control" maxlenght="20" placeholder="Primer Apellido" >--%>
+                    <asp:TextBox id="FirstLastName" runat="server"  CssClass="form-control" maxlength="20" placeholder=
+                        "Introduzca primer apellido"></asp:TextBox>
+                        
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator4"
+                          ControlToValidate="FirstLastName"
+                          ErrorMessage="Por favor inserte primer apellido"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator4"                           
+                            ControlToValidate = "FirstLastName"                            
+                            ErrorMessage = "Por favor inserte un apellido válido" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,20}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>                  
+                  
                   </div>
                   <div class="form-group ">
-                    <label for="SecondName">Segundo Nombre</label>
-                    <input type="text" runat="server" id="SecondLastName" class="form-control" maxlenght="20" placeholder="Segundo Apellido">
+                    <label for="SecondLastName">Segundo Apellido</label>
+                  
+                    <asp:TextBox id="SecondLastName" runat="server"  CssClass="form-control" maxlength="20" placeholder=
+                        "Introduzca segundo apellido"></asp:TextBox>
+                            
+                      <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator5"                           
+                            ControlToValidate = "SecondLastName"                            
+                            ErrorMessage = "Por favor inserte un segundo nombre válido" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,20}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>
+                  
+                  
                   </div>
                   <div class="form-group ">
                     <label for="SelectedListGender">Genero</label> <label for="Requerido" style="color: red;">*</label>
                     <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListGender">
                     </asp:DropDownList>
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8"
+                          ControlToValidate="SelectedListGender"
+                          ErrorMessage="Por favor seleccione un genero"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado" 
+                          InitialValue = "Seleccione Genero"                    
+                          runat="server">
+                        </asp:requiredfieldvalidator>
+
+                      
                   </div>
                    <div class="form-group">
                     <label for="DateEmployee">Fecha de Nacimiento</label> <label for="Requerido" style="color: red;">*</label>
                         <div class="form-control input-group date" data-provide="datepicker">
-                          <input type="text" class="form-control" placeholder="fecha de nacimiento" id="DateEmployee" runat="server" required>
+                          <input type="text" class="form-control" placeholder="fecha de nacimiento" id="DateEmployee" runat="server" >
                           <div class="input-group-addon">
                               <span class="glyphicon glyphicon-th"></span>
                           </div>
@@ -81,6 +175,16 @@
                     <label for="LevelListStudy">Nivel de estudio</label> <label for="Requerido" style="color: red;">*</label>
                         <asp:DropDownList runat="server" CssClass="form-control" ID="LevelListStudy">
                         </asp:DropDownList> 
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9"
+                          ControlToValidate="LevelListStudy"
+                          ErrorMessage="Por favor seleccione un nivel de estudio"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado" 
+                          InitialValue = "Seleccione Nivel"                    
+                          runat="server">
+                        </asp:requiredfieldvalidator>
+
                    </div>
 
                </div>
@@ -91,7 +195,7 @@
                   <div class="form-group">
                     <label for="DateJob">Fecha de contratación</label> <label for="Requerido" style="color: red;">*</label>
                         <div class="form-control input-group date" data-provide="datepicker">
-                          <input type="text" class="form-control" placeholder="fecha de contratacion" id="DateJob" runat="server" required>
+                          <input type="text" class="form-control" placeholder="fecha de contratacion" id="DateJob" runat="server" >
                           <div class="input-group-addon">
                               <span class="glyphicon glyphicon-th"></span>
                           </div>
@@ -109,6 +213,17 @@
                                 <label for="SelectedListJob">Cargo</label> <label for="Requerido" style="color: red;">*</label>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListJob" OnTextChanged="SelectedJob_Change" AutoPostBack="true">
                                 </asp:DropDownList>
+
+                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator12"
+                                      ControlToValidate="SelectedListJob"
+                                      ErrorMessage="Por favor seleccione un cargo"
+                                      ForeColor="Red"
+                                      validationgroup="GrupoEmpleado" 
+                                      InitialValue = "Seleccionar un cargo"                  
+                                      runat="server">
+                                </asp:requiredfieldvalidator>
+
+
                             </div>
                           <div class="form-group">
                                 <textarea class="form-control" rows="3" runat="server" id="JobSummary" placeholder="Descripcion de cargo" disabled></textarea>
@@ -119,11 +234,11 @@
 
                   <div class="form-group">
                     <label for="JobMode">Modalidad del Contrato</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="JobMode" class="form-control" placeholder="Ej: Medio tiempo, tiempo completo, etc" required>
+                    <input type="text" runat="server" id="JobMode" class="form-control" placeholder="Ej: Medio tiempo, tiempo completo, etc" >
                   </div>
                   <div class="form-group">
                     <label for="SalaryJob">Sueldo base</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="SalaryJob" class="form-control" placeholder="BsF." required>
+                    <input type="text" runat="server" id="SalaryJob" class="form-control" placeholder="BsF." >
                       
                   </div>
                 </div>
@@ -139,29 +254,50 @@
                                 <label for="SelectedListCountry">País</label> <label for="Requerido" style="color: red;">*</label>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListCountry" OnTextChanged="SelectedCountry_Change" AutoPostBack="true">
                                 </asp:DropDownList>
+
+                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator10"
+                                      ControlToValidate="SelectedListCountry"
+                                      ErrorMessage="Por favor seleccione un país"
+                                      ForeColor="Red"
+                                      validationgroup="GrupoEmpleado" 
+                                      InitialValue =  "Seleccionar un país"                    
+                                      runat="server">
+                                </asp:requiredfieldvalidator>
+
                             </div>
                             <div class="form-group ">
                                 <label for="SelectedListState">Estado</label> <label for="Requerido" style="color: red;">*</label>
                                 <asp:DropDownList runat="server" CssClass="form-control" ID="SelectedListState">
-                                </asp:DropDownList>
+                                 </asp:DropDownList>
+
+                                  <asp:RequiredFieldValidator ID="RequiredFieldValidator11"
+                                      ControlToValidate="SelectedListState"
+                                      ErrorMessage="Por favor seleccione un estado"
+                                      ForeColor="Red"
+                                      validationgroup="GrupoEmpleado" 
+                                      InitialValue =  "Seleccionar un estado"                    
+                                      runat="server">
+                                </asp:requiredfieldvalidator>
+
+                                
                             </div>
                         </ContentTemplate>
                     </asp:UpdatePanel>
 
                   <div class="form-group ">
                     <label for="CityAddress">Ciudad</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="CityAddress" class="form-control" maxlenght="30" placeholder="Ciudad, parroquia o provincia" required>
+                    <input type="text" runat="server" id="CityAddress" class="form-control" maxlenght="30" placeholder="Ciudad, parroquia o provincia" >
                   </div>
                   <div class="form-group ">
                     <label for="AddressEspecific">Dirección de habitación</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="AddresEspecific" class="form-control" maxlenght="50" placeholder="Habitacion" required>
+                    <input type="text" runat="server" id="AddresEspecific" class="form-control" maxlenght="50" placeholder="Habitacion" >
                   </div>       
                 </div> 
                 <div class="col-xs-12 col-md-6 col-lg-6">
                     <h4>Datos de Contacto</h4>
                     <div class="form-group ">
                         <label for="EmailPerson">Correo personal</label> <label for="Requerido" style="color: red;">*</label>
-                        <input type="text" runat="server" id="EmailPerson" maxlenght="15" class="form-control" placeholder="correo@dominio.com" required>
+                        <input type="text" runat="server" id="EmailPerson" maxlenght="15" class="form-control" placeholder="correo@dominio.com" >
                         <asp:RegularExpressionValidator 
                             ID="regexEmailValid" 
                             runat="server" 
@@ -173,11 +309,12 @@
                     </div> 
                     <div class="form-group ">
                         <label for="PhonePerson">Teléfono</label> <label for="Requerido" style="color: red;">*</label>
-                        <input type="text" runat="server" id="PhonePerson" class="form-control" maxlenght="20" placeholder="Telefono" required>
+                        <input type="text" runat="server" id="PhonePerson" class="form-control" maxlenght="20" placeholder="Telefono" >
                     </div> 
                 </div>           
         </div> 
-        <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button><br /><br />      
+        <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" causesvalidation="true"  validationgroup="GrupoEmpleado" OnClick="btnaceptar_Click" type="submit"  runat="server" Text = "Agregar" ></asp:Button><br /><br />  
+          
     </form>
     </div>
     </div>
