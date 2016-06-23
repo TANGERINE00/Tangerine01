@@ -104,7 +104,7 @@ namespace DatosTangerine.DAO.M2
                 catch ( Exception ex )
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                    throw new ExceptionM2Tangerine( RecursoGeneralBD.Mensaje_Generico_Error , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la operacion" , ex );
                 }
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -195,7 +195,7 @@ namespace DatosTangerine.DAO.M2
                 catch ( Exception ex )
                 {
                     Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                    throw new ExceptionM2Tangerine( RecursoGeneralBD.Mensaje_Generico_Error , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la operacion" , ex );
                 }
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -264,7 +264,7 @@ namespace DatosTangerine.DAO.M2
                 catch ( Exception ex )
                 {
                     Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                    throw new ExceptionM2Tangerine( RecursoGeneralBD.Mensaje_Generico_Error , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la operacion" , ex );
                 }
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -317,16 +317,17 @@ namespace DatosTangerine.DAO.M2
                 catch ( SqlException ex )
                 {
                     Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                    throw new ExceptionM2Tangerine("DS-202", "Error al momento de realizar la conexion", ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la conexion" , ex );
                 }
                 catch ( NullReferenceException ex )
                 {
                     Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                    throw new ExceptionM2Tangerine( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error de referencia a un valor null" , ex );
                 }
                 catch ( Exception ex )
                 {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la operacion" , ex );
                 }
 
                 return rol;
