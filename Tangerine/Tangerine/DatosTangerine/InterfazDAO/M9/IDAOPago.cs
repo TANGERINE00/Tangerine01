@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M9
 {
-   public interface IDAOPago : IDao<Entidad, bool, Entidad>
+    public interface IDAOPago : IDao
     {
 
         //bool Agregar (Entidad pagoParam);

@@ -40,7 +40,7 @@ namespace LogicaTangerine.Comandos.M2
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionRegistro("Error al ejecutar ComandoAgregarUsuario", ex);
+                throw new ExceptionRegistro("Error al ejecutar ComandoAgregarUsuario", ex);
             }
         }
     }
