@@ -48,8 +48,8 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="menus"></param>
-        public RolM2( string nombre, ListaGenericaM2<MenuM2> menu )
-            :this(nombre)
+        public RolM2( string nombre , ListaGenericaM2<MenuM2> menu )
+               :this( nombre )
         {
             _menu = menu;
         }

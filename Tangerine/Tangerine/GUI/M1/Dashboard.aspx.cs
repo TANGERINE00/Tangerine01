@@ -7,77 +7,46 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine.M7;
 using LogicaTangerine.M10;
+using Tangerine_Contratos.M1;
+using Tangerine_Presentador.M1;
 
 namespace Tangerine.GUI.M1
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class Dashboard : System.Web.UI.Page, IcontratoDashboard
     {
-        LogicaProyecto logicaM7 = new LogicaProyecto();
-        int _empleadoId;
-        List<Proyecto> listaProyectos = new List<Proyecto>();
+      
+        PresentadorDashboard presentador;
 
-        private String dataProyecto
+        #region Contrato
+        public Literal VistaForm
         {
             get
             {
-                return this.FormViewProjects.Text;
+                return FormViewProjects;
             }
             set
             {
-                this.FormViewProjects.Text = value;
+                FormViewProjects = value;
             }
         }
+
+        #endregion
+
+        public Dashboard()
+        {
+            this.presentador = new PresentadorDashboard(this);
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolAdministrador)) ||
-                        ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolGerente))))
-                    listaProyectos = logicaM7.consultarProyectos();
-                else
-                {
-                    if (HttpContext.Current.Session["Rol"] + "" == "Programador")
-                    {
-                        _empleadoId = Int32.Parse(HttpContext.Current.Session["UserID"] + "");
-                        listaProyectos = logicaM7.consultarProyectosDeUnTrabajador(_empleadoId);
-                    }
-                }
-                dataProyecto = LlenarProyectos(listaProyectos);
+                presentador.CargarDashBoard();
+               
             }
         }
 
-        public string LlenarProyectos(List<Proyecto> listaProyectos)
-        {
-            string _proyectos = String.Empty;
-            int cantidad=0;
-            List<Proyecto> listaProyectosOrdenada = listaProyectos.OrderByDescending(o => o.Fechainicio).ToList();
-            
-            foreach (Proyecto proyecto in listaProyectosOrdenada)
-            {
-                //Proyecto
-                if (cantidad < int.Parse(ResourceGUIM1.MaxProyectos))
-                {
-                    _proyectos += ResourceGUIM1.PanelProyectoAbrir +
-                      ResourceGUIM1.LabelNombreProyecto + proyecto.Idproyecto +
-                      ResourceGUIM1.LabelNombreProyectoCerrar + proyecto.Nombre +
-                      ResourceGUIM1.LabelNombreProyectoCerrar2 +
-                      ResourceGUIM1.LabelDescProyecto + proyecto.Descripcion +
-                      ResourceGUIM1.LabelFechaProyectoInicio +
-                        proyecto.Fechainicio.ToString(ResourceGUIM1.FormatoFecha) +
-                      ResourceGUIM1.LabelFechaProyectoFin +
-                        proyecto.Fechaestimadafin.ToString(ResourceGUIM1.FormatoFecha) +
-                      ResourceGUIM1.PanelProyectoCerrar;
-                    cantidad++;
-                }
-            }
-
-            if (listaProyectos.Count == 0)
-            {
-                _proyectos += ResourceGUIM1.MensajeSinProyecto;
-            }
-                
-
-            return _proyectos;
-        }
+      
     }
 }

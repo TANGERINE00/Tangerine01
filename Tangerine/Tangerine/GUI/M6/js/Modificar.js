@@ -8,12 +8,20 @@ $(document).ready(function () {
 
     })
 
-    var date = new Date();
+});
 
-    document.getElementById("datepicker1").value = date.toLocaleDateString('en-US');
-    document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
+$(window).load(function () {
+    
+    var fechaInicio = document.getElementById("datepicker1");
+    var fechaFin = document.getElementById("datepicker2");
 
-    document.getElementById("datepicker2").readOnly = true;
+    var res = fechaInicio.value.split("/");
+    var newDate = res[1] + "/" + res[0] + "/" + res[2];
+    fechaInicio.value = newDate;
+
+    var res = fechaFin.value.split("/");
+    var newDate = res[1] + "/" + res[0] + "/" + res[2];
+    fechaFin.value = newDate;
 
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
@@ -22,7 +30,7 @@ $(document).ready(function () {
     else if (document.getElementById("formaPago").value == "Por cuotas") {
         document.getElementById("cantidadCuotas").readOnly = false;
     }
-
+   
 });
 
 

@@ -255,5 +255,64 @@ namespace DatosTangerine.DAO.M7
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Metodo para consultar todos los empleados asociados a un proyecto en la base de datos.
+        /// </summary>
+        ///  <param name="parametro">objeto de tipo proyecto con el ID para buscar en BD</param>
+        ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
+        /// <returns>Lista de Empleados asociados al proyecto</returns>
+        public List<Entidad> ObtenerListaContactos(Entidad proyecto)
+        {
+
+            List<Entidad> listContacto = new List<Entidad>();
+
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+
+                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                            proyecto.Id.ToString(), false);
+                parameters.Add(theParam);
+
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = EjecutarStoredProcedureTuplas(Resource_M7.ContactProyectoContacto, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad contacto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
+
+                    int PEIdEmpleado = int.Parse(row[Resource_M7.PCIdContacto].ToString());
+                    //creo un objeto de tipo Contacto con los datos del id y lo guardo
+
+                    ((DominioTangerine.Entidades.M7.Contacto)contacto).Id =
+                                        int.Parse(row[Resource_M7.PCIdContacto].ToString());
+                    listContacto.Add(contacto);
+
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
+            }
+            return listContacto;
+        }
     }
 }

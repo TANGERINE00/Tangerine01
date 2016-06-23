@@ -83,9 +83,10 @@ namespace DominioTangerine.Fabrica
             /// <param name="activo"></param>
             /// <param name="rol"></param>
             /// <returns>Retorna una instancia de Usuario con usuario, contraseña, activo y rol</returns>
-            static public Entidad crearUsuarioConUsuarioContrasenaActivoRol( string usuario , string contrasena , string activo , RolM2 rol )
+            static public Entidad crearUsuarioConUsuarioContrasenaActivoRol( string usuario , string contrasena , string activo ,
+                                                                             RolM2 rol )
             {
-                return new UsuarioM2( usuario , contrasena , activo , rol);
+                return new UsuarioM2( usuario , contrasena , activo , rol );
             }
 
             /// <summary>
@@ -101,7 +102,8 @@ namespace DominioTangerine.Fabrica
             static public Entidad crearUsuarioCompleto( string inputUsuario , string inputContrasena , DateTime inputFechaCreacion , 
                                                         string inputActivo , RolM2 inputRol , int inputfFichaEmpleado )
             {
-                return new UsuarioM2( inputUsuario , inputContrasena , inputFechaCreacion , inputActivo , inputRol , inputfFichaEmpleado );
+                return new UsuarioM2( inputUsuario , inputContrasena , inputFechaCreacion , inputActivo , inputRol ,
+                                      inputfFichaEmpleado );
             }
 
             /// <summary>
@@ -157,7 +159,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="nombre"></param>
             /// <param name="menu"></param>
             /// <returns>Devuelve la instancia de la clase RolM2 con el nombre y el menu</returns>
-            static public Entidad crearRolCompleto( string nombre , ListaGenericaM2<MenuM2> menu)
+            static public Entidad crearRolCompleto( string nombre , ListaGenericaM2<MenuM2> menu )
             {
                 return new RolM2( nombre , menu );
             }

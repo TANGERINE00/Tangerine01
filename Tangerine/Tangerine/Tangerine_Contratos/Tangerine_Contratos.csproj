@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="M10\IContratoConsultaEmpleados.cs" />
     <Compile Include="M10\IContratoVerEmpleados.cs" />
+    <Compile Include="M1\IcontratoDashboard.cs" />
     <Compile Include="M1\IContratoInicio.cs" />
     <Compile Include="M10\IContratoCrearEmpleado.cs" />
     <Compile Include="M1\IContratoRecuperarContraenia.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="M2\IContratoCambiarRol.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />
     <Compile Include="M3\IContratoAgregarClientePotencial.cs" />
+    <Compile Include="M3\IContratoAgregarSeguimiento.cs" />
     <Compile Include="M3\IContratoConsultarClientePotencial.cs" />
     <Compile Include="M3\IContratoHistoriaClientePotencial.cs" />
     <Compile Include="M3\IContratoListarClientePotencial.cs" />

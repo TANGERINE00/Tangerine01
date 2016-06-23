@@ -7,6 +7,7 @@ using Tangerine_Contratos.M6;
 using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
+using System.Windows.Forms;
 
 namespace Tangerine_Presentador.M6
 {
@@ -31,13 +32,16 @@ namespace Tangerine_Presentador.M6
 
         public void consultarPropuesta(string id)
         {
+
+            if (!id.Equals("0") || id != null)
+            { 
             Entidad _propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
                 id, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
 
             Comando<Entidad> cmdConsultar = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(_propuesta);
 
             _propuesta = cmdConsultar.Ejecutar();
- 
+           
             try
             {
                 vistaInformacion.Codigo.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Nombre;
@@ -58,7 +62,9 @@ namespace Tangerine_Presentador.M6
             }
             catch (Exception ex)
             {
-               
+                MessageBox.Show("Error Realizando el Llenado de la vista, por favor Actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
             }
         }
         /// <summary>

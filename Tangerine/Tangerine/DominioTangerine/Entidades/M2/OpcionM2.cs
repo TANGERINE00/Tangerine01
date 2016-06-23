@@ -29,7 +29,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="url"></param>
-        public OpcionM2( string nombre, string url )
+        public OpcionM2( string nombre , string url )
         {
             _nombre = nombre;
             _url = url;

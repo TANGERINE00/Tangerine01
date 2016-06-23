@@ -7,6 +7,7 @@ using Tangerine_Contratos.M3;
 using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
+using ExcepcionesTangerine;
 
 namespace Tangerine_Presentador.M3
 {
@@ -60,6 +61,7 @@ namespace Tangerine_Presentador.M3
                         ResourceInterfaz.BotonContacto + elCliente.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                         ResourceInterfaz.BotonPromover + elCliente.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                         ResourceInterfaz.BotonSeguimiento+elCliente.IdClientePotencial+ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonAgregar+elCliente.IdClientePotencial+ResourceInterfaz.BotonCerrar+
                         ResourceInterfaz.CloseDiv + ResourceInterfaz.CerrarTD;
 
                     vista.ClientePotencial.Text += ResourceInterfaz.CerrarTR;
@@ -68,9 +70,9 @@ namespace Tangerine_Presentador.M3
                 }
 
             }
-            catch(Exception ex)
+            catch(ExceptionTGConBD ex)
             {
-                throw ex;
+                throw new ExceptionsTangerine("Dal-01", "Error con conexion", ex);
             }
         }
     }

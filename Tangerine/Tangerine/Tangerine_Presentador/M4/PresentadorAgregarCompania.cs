@@ -17,11 +17,19 @@ namespace Tangerine_Presentador.M4
     {
         IContratoAgregarCompania _vista;
         List<Entidad> Lugares;
+
+        /// <summary>
+        /// Constructor que permite inicializar la vista dentro del presentador
+        /// </summary>
         public PresentadorAgregarCompania(IContratoAgregarCompania vista)
         {
             this._vista = vista;
         }
 
+
+        /// <summary>
+        /// Metodo que permite agregar una compania con los datos ingresados por pantalla
+        /// </summary>
         public Boolean AgregarCompania() 
         {
             try
@@ -47,6 +55,10 @@ namespace Tangerine_Presentador.M4
             }
 
         }
+
+        /// <summary>
+        /// Metodo que permite cargar los lugares registrados dentro de la base de datos para el comboBox de lugar
+        /// </summary>
 
         public void CargarLugares() {
             try

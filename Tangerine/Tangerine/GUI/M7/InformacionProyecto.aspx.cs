@@ -10,6 +10,7 @@ using LogicaTangerine.M10;
 using LogicaTangerine.M5;
 using Tangerine_Presentador.M7;
 using Tangerine_Contratos.M7;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M7
 {
@@ -17,6 +18,7 @@ namespace Tangerine.GUI.M7
 
     {
         PresentadorInformacionProyecto presentador;
+        int Proyectoid;
 
         public InformacionProyecto()
         {
@@ -148,11 +150,17 @@ namespace Tangerine.GUI.M7
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Proyectoid = int.Parse(Request.QueryString["idCont"]);
-
-            if (!IsPostBack)
+            try
             {
-                presentador.CargarInformacionProyecto(Proyectoid);
+                Proyectoid = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idCont"], false)); 
+                if (!IsPostBack)
+                {
+                    presentador.CargarInformacionProyecto(Proyectoid);
+                }
+            }
+            catch
+            {
+                Response.Redirect("ConsultaProyecto.aspx");
             }
         }
     }

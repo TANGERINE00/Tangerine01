@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="CargarPago1.aspx.cs" 
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" 
+    CodeBehind="CargarPago1.aspx.cs" 
     Inherits="Tangerine.GUI.M9.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -106,9 +107,10 @@
                        </select>
                 </div>
                     <div class="form-group" runat="server">
-                            <label for="input_cliente">Codigo de aprobacion</label><label for="Requerido" style="color: red;">*</label>
+                            <label for="input_cliente">Codigo de aprobacion</label>
+                            <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" 
-                             pattern=\d{10}
+                             pattern=\d{6}
                             
                                 id="codAprobacion" name="codAprobacion" 
                                 placeholder="Introduzca el numero de codigo de aprobacion  " required>
