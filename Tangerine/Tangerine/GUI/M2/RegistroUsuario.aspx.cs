@@ -16,7 +16,7 @@ namespace Tangerine.GUI.M2
     {
         private PresentadorRegistroUsuario _presentador;
         string error;
-        bool errorManejo;
+        private bool errorManejo;
 
         /// <summary>
         /// Constructor de PresentadorRegistroUsuario

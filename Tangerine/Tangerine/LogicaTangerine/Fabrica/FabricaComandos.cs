@@ -871,6 +871,16 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarPagos(compania);
         }
 
+        /// <summary>
+        /// Metodo para crear comando que permite eliminar un pago
+        /// </summary>
+        /// <param name="entidad">Entidad que se va a eliminar</param>
+        /// <returns>Objeto ComandoEliminarPago</returns>
+        public static Comando<Boolean> EliminarPago (Entidad entidad)
+        {
+            return new ComandoEliminarPago(entidad);
+        }
+
         #endregion
 
         #region Modulo 10

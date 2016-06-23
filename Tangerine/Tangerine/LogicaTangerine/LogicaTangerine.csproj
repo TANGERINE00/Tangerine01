@@ -102,6 +102,7 @@
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoPromoverClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoSeguimientoDeLlamadas.cs" />
     <Compile Include="Comandos\M3\ComandoUltimoIdClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
@@ -177,6 +178,7 @@
     </Compile>
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Comandos\M9\ComandoConsultarPagos.cs" />
+    <Compile Include="Comandos\M9\ComandoEliminarPago.cs" />
     <Compile Include="Comandos\M9\ResourceComandoM9.Designer.cs">
       <DependentUpon>ResourceComandoM9.resx</DependentUpon>
       <AutoGen>True</AutoGen>
