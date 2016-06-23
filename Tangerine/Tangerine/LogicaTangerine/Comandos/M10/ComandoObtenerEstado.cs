@@ -13,12 +13,19 @@ namespace LogicaTangerine.Comandos.M10
     {
         private Entidad Lugar;
 
-
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="pais"></param>
         public ComandoObtenerEstado(Entidad pais)
         {
             this.Lugar = pais;
         }
 
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override List<Entidad> Ejecutar()
         {
             try
