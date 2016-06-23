@@ -124,7 +124,7 @@ namespace PruebasUnitarias.M7
              Entidad proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
              ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id = id;
 
-             Comando<Entidad> comandoProyecto = FabricaComandos.ObtenerComandoConsultarXIdproyecto(proyecto);
+             Comando<Entidad> comandoProyecto = FabricaComandos.ObtenerComandoConsultarXIdProyecto(proyecto);
              Entidad resultado = comandoProyecto.Ejecutar();
              Assert.IsTrue(id == ((DominioTangerine.Entidades.M7.Proyecto)resultado).Id);
          }

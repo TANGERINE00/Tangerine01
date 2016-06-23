@@ -126,6 +126,7 @@
     <Compile Include="Comandos\M6\ComandoConsultarNumeroRequerimientos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarContactos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarEmpleados.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoUltimoIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoModificarProyecto.cs" />
@@ -138,7 +139,6 @@
     <Compile Include="Comandos\M7\ComandoGenerarCodigoProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />
-    <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarEmpleadosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarTodosGerentes.cs" />
