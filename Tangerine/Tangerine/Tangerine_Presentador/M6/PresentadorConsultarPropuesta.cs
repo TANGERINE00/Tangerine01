@@ -14,12 +14,17 @@ namespace Tangerine_Presentador.M6
     {
         IContratoConsultarPropuesta vistaConsultar;
 
+        /// <summary>
+        /// Constructor por defecto de la clase
+        /// </summary>
+        /// <param name="vista">Vista con los metodos implementados de IContratoInformacionPropuesta</param>
+
         public PresentadorConsultarPropuesta(IContratoConsultarPropuesta vista)
         {
             this.vistaConsultar = vista;
         }
 
-
+     
         public string propuesta
         {
             get
@@ -32,6 +37,9 @@ namespace Tangerine_Presentador.M6
                 this.vistaConsultar.Tabla.Text = value;
             }
         }
+        /// <summary>
+        /// Metodo que consulta las propuestas propuesta
+        /// </summary>
 
 
         public void consultarPropuestas()
@@ -82,7 +90,10 @@ namespace Tangerine_Presentador.M6
             } 
         }
 
-
+        /// <summary>
+        /// Metodo que imprime los botones de accion
+        /// </summary>
+        /// <param name="laPropuesta"></param>
         public void imprimirBotones(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
             propuesta += RecursosPresentadorPropuesta.AbrirTD2
@@ -116,7 +127,10 @@ namespace Tangerine_Presentador.M6
             }
         }
 
-
+        /// <summary>
+        /// Metodo que imprime la moneda de las propuestas
+        /// </summary>
+        /// <param name="laPropuesta"></param>
         public void imprimirMoneda(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
             if (laPropuesta.Moneda.Equals("Bolivar"))
