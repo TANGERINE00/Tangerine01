@@ -23,6 +23,8 @@ namespace DatosTangerine.InterfazDAO.M10
 
         List<Entidad> ObtenerEstados(Entidad parametro);
 
+        Entidad ObtenerUsuarioCorreo(Entidad usuario);
+
 
 
     }

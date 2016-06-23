@@ -37,6 +37,10 @@ namespace Tangerine_Presentador.M1
         }
 
 
+
+        /// <summary>
+        /// Metodo que valida la sesion en curso
+        /// </summary>
         public void ValidarSesion()
         {
             if (HttpContext.Current.Session["User"] + "" != "")
@@ -46,16 +50,19 @@ namespace Tangerine_Presentador.M1
 
         }
 
+        /// <summary>
+        /// Metodo que valida la sesion del usuario
+        /// </summary>
         public void ValidarElUsuario()
         {
 
             UsuarioM2 usuarioEncrip = new UsuarioM2();
             _usuario = _iMaster.userInput.ToString();
             _contraseña = usuarioEncrip.GetMD5(_iMaster.passwordInput.ToString());
-            
+
             //Creación del Objeto Usuario.
             Entidad user =
-            DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena(_usuario,_contraseña);
+            DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena(_usuario, _contraseña);
 
             //Creación y Ejecución del Objeto Comando de Agregar Usuario
             Comando<Entidad> cmdConsultar = LogicaTangerine.Fabrica.FabricaComandos.consultarUsuarioLogin(user);
