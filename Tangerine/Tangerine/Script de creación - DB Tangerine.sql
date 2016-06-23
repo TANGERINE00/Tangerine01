@@ -1692,12 +1692,12 @@ GO
 -----------------------------------
 
 CREATE PROCEDURE M9_EliminarPago
-@idpago int
+@cod int
 
 AS
  BEGIN
 	DELETE FROM PAGO 
-	WHERE pag_id = @idpago
+	WHERE pag_cod = @cod
 	END;
 GO
 
