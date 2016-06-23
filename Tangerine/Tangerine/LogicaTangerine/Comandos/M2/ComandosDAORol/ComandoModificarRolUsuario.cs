@@ -39,8 +39,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             }
             catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                throw new ExcepcionModificarRol("Error al ejecutar ComandoModificarRolUsuario", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return resultado;   

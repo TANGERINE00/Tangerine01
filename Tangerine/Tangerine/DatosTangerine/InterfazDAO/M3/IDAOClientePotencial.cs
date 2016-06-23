@@ -7,12 +7,13 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M3
 {
-    public interface IDAOClientePotencial : IDao<Entidad, bool, Entidad>
+    public interface IDAOClientePotencial : IDao
     {
         bool Activar(Entidad parametro);
         bool Desactivar(Entidad parametro);
         bool Promover(Entidad parametro);
         int ConsultarIdUltimoClientePotencial();
         bool Eliminar(Entidad parametro);
+        List<Entidad> ConsultarLlamadasXId(Entidad parametro);
     }
 }

@@ -295,10 +295,5 @@ namespace Tangerine.GUI.M7
             presentador.MoverDerecha();
         }
 
-        protected void textInputFechaEstimada_DayRender(object sender, DayRenderEventArgs e)
-        {
-            presentador.RenderCalendario(e, presentador.Proyecto);
-        }
-
     }
 }

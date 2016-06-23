@@ -24,7 +24,8 @@ namespace Tangerine_Presentador.M7
              Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
              ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = id;
 
-             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdproyecto(parametro);
+             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyecto(parametro);
+                                                                          
              Entidad proyecto = comando.Ejecutar();
 
              Comando<List<Entidad>> comando1 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
@@ -81,8 +82,9 @@ namespace Tangerine_Presentador.M7
             Dictionary<int, string> listaContactos = new Dictionary<int, string>();
             foreach (Entidad contacto in contactos)
             {
-                listaContactos.Add(((DominioTangerine.Entidades.M7.Contacto)contacto).Id, (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) + 
-                                " " +((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
+                listaContactos.Add(((DominioTangerine.Entidades.M7.Contacto)contacto).Id, 
+                    (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) + 
+                    " " +((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
             }
             vista.inputEncargado.DataSource = listaContactos;
             vista.inputEncargado.DataTextField = RecursoPresentadorM7.Value;

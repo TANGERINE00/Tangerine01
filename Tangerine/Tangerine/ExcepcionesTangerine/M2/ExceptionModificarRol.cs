@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesTangerine.M2
 {
-    public class ExcepcionRegistro : ExceptionsTangerine
+    public class ExceptionModificarRol : ExceptionsTangerine
     {
         /// <summary>
         /// Contructor por defecto de la clase
         /// </summary>
-        public ExcepcionRegistro()
+        public ExceptionModificarRol()
         {
 
         }
@@ -20,7 +20,7 @@ namespace ExcepcionesTangerine.M2
         /// Constructor que recibe el mensaje que se quiere mostrar
         /// </summary>
         /// <param name="message"></param>
-        public ExcepcionRegistro( string message )
+        public ExceptionModificarRol( string message )
             : base ( message )
         {
 
@@ -31,7 +31,7 @@ namespace ExcepcionesTangerine.M2
         /// </summary>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExcepcionRegistro( string message, Exception inner )
+        public ExceptionModificarRol( string message, Exception inner )
             : base( message, inner )
         {
 
@@ -43,8 +43,8 @@ namespace ExcepcionesTangerine.M2
         /// <param name="codigo"></param>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExcepcionRegistro( string codigo, string message, Exception inner )
-            : base(codigo, message, inner)
+        public ExceptionModificarRol( string codigo, string message, Exception inner )
+            : base( codigo, message, inner )
         {
 
         }
@@ -55,7 +55,7 @@ namespace ExcepcionesTangerine.M2
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format( "[ExcepcionRegistro: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion );
+            return string.Format( "[ExcepcionModificarRol: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion );
         }
     }
 }

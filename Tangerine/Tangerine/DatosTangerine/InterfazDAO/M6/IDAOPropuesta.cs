@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M6
 {
-    public interface IDAOPropuesta : IDao<Entidad, bool, Entidad>
+    public interface IDAOPropuesta : IDao
     {
    
         Boolean BorrarPropuesta(string nombrePropuesta);

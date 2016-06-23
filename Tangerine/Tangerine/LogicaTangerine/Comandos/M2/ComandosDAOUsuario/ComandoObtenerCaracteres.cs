@@ -55,10 +55,10 @@ namespace LogicaTangerine.Comandos.M2
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionM2Tangerine("Ingreso de un argumento con valor invalido", ex);
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM2Tangerine("Error al ejecutar ComandoObtenerCaracteres", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return caracteres;

@@ -50,19 +50,19 @@ namespace Tangerine_Presentador.M6
 
             _nombcodigoPropuesta = vista.ContenedorCompania;
             _descripcion = vista.Descripcion;
-            _Tipoduracion = vista.ComboDuracion.SelectedItem.Text;
-            _duracion = vista.ComboDuracion.SelectedItem.Text;
-            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "MM/dd/yyyy", null);
-            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "MM/dd/yyyy", null);
-            _moneda = vista.TipoCosto.SelectedItem.Text;
+            _Tipoduracion = vista.ComboDuracion;
+            _duracion = vista.TextoDuracion;
+            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "dd/MM/yyyy", null);
+            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "dd/MM/yyyy", null);
+            _moneda = vista.TipoCosto;
             _costo = int.Parse(vista.TextoCosto);
-            _acuerdo = vista.FormaPago.SelectedItem.Text;
-            _estatusW = vista.ComboStatus.SelectedItem.Text;
+            _acuerdo = vista.FormaPago;
+            _estatusW = vista.ComboStatus;
             _idCompañia = vista.IdCompania;
 
             try
             {
-                _entregaCant = Int32.Parse(vista.ComboCuota.SelectedItem.Text);
+                _entregaCant = Int32.Parse(vista.ComboCuota);
             }
             catch (Exception)
             {
@@ -80,49 +80,32 @@ namespace Tangerine_Presentador.M6
           //  ModificarRequerimiento();
         }
         
-        private void llenarComboDuracion()
+
+
+
+        public void llenarDatosPropuesta(Entidad propuesta)
         {
-            vista.ComboDuracion.Items.Add("Meses");
-            vista.ComboDuracion.Items.Add("Dias");
-            vista.ComboDuracion.Items.Add("Horas");
+            String[] arreglo;
+            
+            vista.Descripcion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Descripcion;
+
+            vista.ComboDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion;
+            vista.TextoDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).CantDuracion;
+
+            vista.TipoCosto= ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Moneda;
+            vista.TextoCosto = (((DominioTangerine.Entidades.M6.Propuesta)propuesta).Costo).ToString();
+
+            vista.FormaPago= ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Acuerdopago;
+            arreglo = ((((DominioTangerine.Entidades.M6.Propuesta)propuesta).Feincio).ToString()).Split(' ');
+            vista.DatePickerUno = arreglo[0];
+            arreglo = ((((DominioTangerine.Entidades.M6.Propuesta)propuesta).Fefinal).ToString()).Split(' ');
+            vista.DatePickerDos = arreglo[0];
+
+            vista.ComboStatus = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus;
+            _idCompañia = vista.IdCompania;
         }
 
-
-        private void llenarComboTipoCosto()
-        {
-            vista.TipoCosto.Items.Add("Bolivar");
-            vista.TipoCosto.Items.Add("Dolar");
-            vista.TipoCosto.Items.Add("Euro");
-            vista.TipoCosto.Items.Add("Bitcoin");
-        }
-
-
-        private void llenarComboEstatus()
-        {
-            vista.ComboStatus.Items.Add("Pendiente");
-            vista.ComboStatus.Items.Add("Aprobado");
-            vista.ComboStatus.Items.Add("Cerrado");
-
-        }
-
-        private void llenarComboCuota()
-        {
-            vista.ComboCuota.Items.Add("");
-            vista.ComboCuota.Items.Add("1");
-            vista.ComboCuota.Items.Add("2");
-            vista.ComboCuota.Items.Add("3");
-            vista.ComboCuota.Items.Add("4");
-
-        }
-
-        private void llenarComboFpago()
-        {
-            vista.FormaPago.Items.Add("Mensual");
-            vista.FormaPago.Items.Add("Por cuotas");
-
-
-        }
-        public void imprimirRequerimientos(Entidad _propuesta)
+       public void imprimirRequerimientos(Entidad _propuesta)
         {
             List<Entidad> _requerimientos;
             Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
@@ -148,53 +131,40 @@ namespace Tangerine_Presentador.M6
        public void ModificarRequerimiento(String idRequerimiento, String descripcion, String idPropuesta)
         {
             DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(idRequerimiento,descripcion,idPropuesta);
-           // elRequerimiento.Descripcion = descripcion;
+           
             elRequerimiento.Id = int.Parse(idRequerimiento);
+       
            //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
             LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
             Confirmacion = comando.Ejecutar();
-        /*
-        */
-        }
         
-        public void TraerCompania(String idPropuesta)
+        }
+
+
+           public void TraerCompania(String idPropuesta)
         {
             //Creo una propuesta
-            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(vista.IdCompania, _descripcion,
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(idPropuesta, _descripcion,
             _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
             LogicaTangerine.Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
             //Consulto la propuesta
-            propuesta = (DominioTangerine.Entidades.M6.Propuesta)comando.Ejecutar();
-
+            propuesta = comando.Ejecutar();
+           
             Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia), null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
             //Consulto la compañia de esa propuesta
             comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
             compañia = comando.Ejecutar();
             //Extraigo el nombre de la compañia y lleno el contenedor
             vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
-            imprimirRequerimientos(propuesta);
             
-            /* Logica Vieja   
-          * LogicaPropuesta logicaPropuesta = new LogicaPropuesta();
+               
+            imprimirRequerimientos(propuesta);
+            llenarDatosPropuesta(propuesta);
 
-            Prueba = logicaPropuesta.TraerPropuesta(idPropuesta);
-
-          /*  Compania lacompania = new Compania();
-
-            lacompania = logicacompania.ConsultCompany(Int32.Parse(Prueba.IdCompañia));
-            vista.ContenedorCompania = lacompania.NombreCompania;
-            */
         }
 
         public void llenarVista() {
-
-            TraerCompania(vista.IdCompania);
-            llenarComboDuracion();
-            llenarComboTipoCosto();
-            llenarComboEstatus();
-            llenarComboCuota();
-            llenarComboFpago();
-
+           TraerCompania(vista.IdCompania);
         }
     }
 }

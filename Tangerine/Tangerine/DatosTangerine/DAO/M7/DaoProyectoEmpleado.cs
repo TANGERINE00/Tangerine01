@@ -34,7 +34,8 @@ namespace DatosTangerine.DAO.M7
                 //Las segunda linea  tienenque repetirse tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
                 List<Parametro> parameters = new List<Parametro>();
-                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                        ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
@@ -94,26 +95,43 @@ namespace DatosTangerine.DAO.M7
                 {
                     Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
                     Entidad cargo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id = int.Parse(row[Resource_M7.EmpIdEmpleado].ToString());
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_nombre = row[Resource_M7.EmpPNombre].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_nombre = row[Resource_M7.EmpSNombre].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_apellido = row[Resource_M7.EmpPApellido].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_apellido = row[Resource_M7.EmpSApellido].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_cedula = int.Parse(row[Resource_M7.EmpCedula].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id = 
+                                        int.Parse(row[Resource_M7.EmpIdEmpleado].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_nombre = 
+                                        row[Resource_M7.EmpPNombre].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_nombre = 
+                                        row[Resource_M7.EmpSNombre].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_apellido = 
+                                        row[Resource_M7.EmpPApellido].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_apellido = 
+                                        row[Resource_M7.EmpSApellido].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_cedula = 
+                                        int.Parse(row[Resource_M7.EmpCedula].ToString());
 
                     ((DominioTangerine.Entidades.M7.Empleado)empleado).Job = cargo;
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Nombre = row[Resource_M7.EmpCargo].ToString();
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Sueldo = double.Parse(row[Resource_M7.EmpSueldo].ToString());
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaContratacion = DateTime.Parse(row[Resource_M7.EmpFechaInicio].ToString());
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaFin = row[Resource_M7.EmpFechaFin].ToString();
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Nombre = 
+                                        row[Resource_M7.EmpCargo].ToString();
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Sueldo = 
+                                        double.Parse(row[Resource_M7.EmpSueldo].ToString());
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaContratacion = 
+                                        DateTime.Parse(row[Resource_M7.EmpFechaInicio].ToString());
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaFin = 
+                                        row[Resource_M7.EmpFechaFin].ToString();
 
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_activo = row[Resource_M7.EmpActivo].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = int.Parse(row[Resource_M7.EmpLugId].ToString());
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_genero = row[Resource_M7.EmpGenero].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_nivel_estudio = row[Resource_M7.EmpEstudio].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_email = row[Resource_M7.EmpEmail].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_fecha_nac = DateTime.Parse(row[Resource_M7.EmpFecha].ToString());
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = int.Parse(row[Resource_M7.EmpLugId].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_activo =
+                                        row[Resource_M7.EmpActivo].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = 
+                                        int.Parse(row[Resource_M7.EmpLugId].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_genero = 
+                                        row[Resource_M7.EmpGenero].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_nivel_estudio =
+                                        row[Resource_M7.EmpEstudio].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_email = 
+                                        row[Resource_M7.EmpEmail].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_fecha_nac = 
+                                        DateTime.Parse(row[Resource_M7.EmpFecha].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = 
+                                        int.Parse(row[Resource_M7.EmpLugId].ToString());
 
                     listEmpleado.Add(empleado);
                 }
@@ -151,7 +169,7 @@ namespace DatosTangerine.DAO.M7
         ///  <param name="parametro">objeto de tipo proyecto con el ID para buscar en BD</param>
         ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
         /// <returns>Lista de Empleados asociados al proyecto</returns>
-        public bool ObtenerListaEmpleados(Entidad proyecto)
+        public List<Entidad> ObtenerListaEmpleados(Entidad proyecto)
         {
 
             List<Entidad> listEmpleado = new List<Entidad>();
@@ -160,7 +178,8 @@ namespace DatosTangerine.DAO.M7
             {
                 List<Parametro> parameters = new List<Parametro>();
 
-                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, proyecto.Id.ToString(), false);
+                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, 
+                                            proyecto.Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -174,11 +193,11 @@ namespace DatosTangerine.DAO.M7
                     int PEIdEmpleado = int.Parse(row[Resource_M7.PEIdEmpleado].ToString());
                     //creo un objeto de tipo Contacto con los datos del id y lo guardo
 
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_num_ficha = int.Parse(row[Resource_M7.PEIdEmpleado].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_num_ficha = 
+                                        int.Parse(row[Resource_M7.PEIdEmpleado].ToString());
                     listEmpleado.Add(empleado);
 
                 }
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).set_empleados(listEmpleado);
             }
             catch (ArgumentNullException ex)
             {
@@ -200,7 +219,7 @@ namespace DatosTangerine.DAO.M7
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
             }
-            return true;
+            return listEmpleado;
         }
 
         /// <summary>
@@ -219,10 +238,12 @@ namespace DatosTangerine.DAO.M7
                     //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                     //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
-                    Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                    Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
                     parameters.Add(theParam);
 
-                    theParam = new Parametro(Resource_M7.ParamPEIdEmpleado, SqlDbType.Int, ((DominioTangerine.Entidades.M7.Empleado)empleado).Id.ToString(), false);
+                    theParam = new Parametro(Resource_M7.ParamPEIdEmpleado, SqlDbType.Int,
+                                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id.ToString(), false);
                     parameters.Add(theParam);
 
                     //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
@@ -261,11 +282,13 @@ namespace DatosTangerine.DAO.M7
             {
                 List<Parametro> parameters;
                 Parametro theParam = new Parametro();
-                DominioTangerine.Entidades.M7.Proyecto elProyecto = (DominioTangerine.Entidades.M7.Proyecto)entProyecto;
+                DominioTangerine.Entidades.M7.Proyecto elProyecto = 
+                                    (DominioTangerine.Entidades.M7.Proyecto)entProyecto;
 
                 foreach (Entidad entidad in elProyecto.get_empleados())
                     {
-                        DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)entidad;
+                        DominioTangerine.Entidades.M10.EmpleadoM10 empleado =
+                                            (DominioTangerine.Entidades.M10.EmpleadoM10)entidad;
                         
             
                         try
@@ -276,10 +299,12 @@ namespace DatosTangerine.DAO.M7
 
 
 
-                            theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int, elProyecto.Id.ToString(), false);
+                            theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                            elProyecto.Id.ToString(), false);
                             parameters.Add(theParam);
 
-                            theParam = new Parametro(Resource_M7.ParamPEIdEmpleado, SqlDbType.Int, empleado.emp_id.ToString(), false);
+                            theParam = new Parametro(Resource_M7.ParamPEIdEmpleado, SqlDbType.Int,
+                                            empleado.emp_id.ToString(), false);
                             parameters.Add(theParam);
 
 
@@ -351,26 +376,43 @@ namespace DatosTangerine.DAO.M7
                 {
                     Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
                     Entidad cargo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id = int.Parse(row[Resource_M7.EmpIdEmpleado].ToString());
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_nombre = row[Resource_M7.EmpPNombre].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_nombre = row[Resource_M7.EmpSNombre].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_apellido = row[Resource_M7.EmpPApellido].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_apellido = row[Resource_M7.EmpSApellido].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_cedula = int.Parse(row[Resource_M7.EmpCedula].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id = 
+                                        int.Parse(row[Resource_M7.EmpIdEmpleado].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_nombre = 
+                                        row[Resource_M7.EmpPNombre].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_nombre = 
+                                        row[Resource_M7.EmpSNombre].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_p_apellido = 
+                                        row[Resource_M7.EmpPApellido].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_s_apellido = 
+                                        row[Resource_M7.EmpSApellido].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_cedula = 
+                                        int.Parse(row[Resource_M7.EmpCedula].ToString());
 
                     ((DominioTangerine.Entidades.M7.Empleado)empleado).Job = cargo;
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Nombre = row[Resource_M7.EmpCargo].ToString();
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Sueldo = double.Parse(row[Resource_M7.EmpSueldo].ToString());
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaContratacion = DateTime.Parse(row[Resource_M7.EmpFechaInicio].ToString());
-                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaFin = row[Resource_M7.EmpFechaFin].ToString();
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Nombre = 
+                                        row[Resource_M7.EmpCargo].ToString();
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).Sueldo = 
+                                        double.Parse(row[Resource_M7.EmpSueldo].ToString());
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaContratacion = 
+                                        DateTime.Parse(row[Resource_M7.EmpFechaInicio].ToString());
+                    ((DominioTangerine.Entidades.M7.Cargo)cargo).FechaFin = 
+                                        row[Resource_M7.EmpFechaFin].ToString();
 
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_activo = row[Resource_M7.EmpActivo].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = int.Parse(row[Resource_M7.EmpLugId].ToString());
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_genero = row[Resource_M7.EmpGenero].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_nivel_estudio = row[Resource_M7.EmpEstudio].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_email = row[Resource_M7.EmpEmail].ToString();
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_fecha_nac = DateTime.Parse(row[Resource_M7.EmpFecha].ToString());
-                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = int.Parse(row[Resource_M7.EmpLugId].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_activo =
+                                        row[Resource_M7.EmpActivo].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = 
+                                        int.Parse(row[Resource_M7.EmpLugId].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_genero = 
+                                        row[Resource_M7.EmpGenero].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_nivel_estudio = 
+                                        row[Resource_M7.EmpEstudio].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_email = 
+                                        row[Resource_M7.EmpEmail].ToString();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Emp_fecha_nac = 
+                                        DateTime.Parse(row[Resource_M7.EmpFecha].ToString());
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Fk_lug_dir_id = 
+                                        int.Parse(row[Resource_M7.EmpLugId].ToString());
 
                     listEmpleado.Add(empleado);
                 }

@@ -94,9 +94,9 @@ namespace Tangerine.GUI.M5
         {
             try
             {
-                return int.Parse(Request.QueryString[ResourceGUIM5.idCont]);
+                return int.Parse( Request.QueryString[ ResourceGUIM5.idCont ] );
             }
-            catch (ArgumentNullException ex)
+            catch ( ArgumentNullException ex )
             {
                 //No se hace nada ya que IdCont es opcional
             }
@@ -108,9 +108,9 @@ namespace Tangerine.GUI.M5
         {
             try
             {
-                return int.Parse(Request.QueryString[ResourceGUIM5.Status]);
+                return int.Parse( Request.QueryString[ ResourceGUIM5.Status ] );
             }
-            catch (ArgumentNullException ex)
+            catch ( ArgumentNullException ex )
             {
                 //No se hace nada ya que IdCont es opcional
             }
@@ -130,8 +130,11 @@ namespace Tangerine.GUI.M5
         /// </summary>
         protected void Page_Load( object sender, EventArgs e )
         {
-            presentador = new PresentadorConsultarContactos( this );
-            presentador.CargarPagina();
+            if (!IsPostBack)
+            {
+                presentador = new PresentadorConsultarContactos( this );
+                presentador.CargarPagina();
+            }
         }
     }
 }

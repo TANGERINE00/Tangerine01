@@ -10,19 +10,26 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoAgregarPropuesta : Comando<bool>
     {
-        public ComandoAgregarPropuesta(Entidad laPropuesta) 
+        /// <summary>
+        /// Constructor, recibe parametro de tipo propuesta
+        /// </summary>
+        /// <param name="laPropuesta">objeto de tipo propuesta</param>
+        public ComandoAgregarPropuesta( Entidad laPropuesta ) 
         {
              _laEntidad = laPropuesta;
         }
-
+        /// <summary>
+        /// Método para utilizar el metodo AgregarPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna true si fue satisfactoria la insercion</returns>
         public override bool Ejecutar()
         {
             try
             {
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-                return daoPropuesta.Agregar(_laEntidad);
+                return daoPropuesta.Agregar( _laEntidad );
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }

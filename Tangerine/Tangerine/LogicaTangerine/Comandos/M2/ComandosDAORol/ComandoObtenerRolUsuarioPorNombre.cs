@@ -37,10 +37,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
                 resultado = rolDAO.ObtenerRolUsuarioPorNombre(_nombreoRol);
                 return resultado;
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM2Tangerine("Error al ejecutar ComandoObtenerRolUsuario", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
         }

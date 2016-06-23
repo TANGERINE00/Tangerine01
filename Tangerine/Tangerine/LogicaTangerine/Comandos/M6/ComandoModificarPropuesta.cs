@@ -10,19 +10,27 @@ namespace LogicaTangerine.Comandos.M6
 {
     class ComandoModificarPropuesta : Comando<bool>
     {
-        public ComandoModificarPropuesta(Entidad laPropuesta) 
+        /// <summary>
+        /// Constructor, recibe parametro de tipo propuesta
+        /// </summary>
+        /// <param name="laPropuesta">objeto de tipo propuesta</param>
+        public ComandoModificarPropuesta( Entidad laPropuesta ) 
         {
              _laEntidad = laPropuesta;
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo ModificarPropuesta en capa de datos.
+        /// </summary>
+        /// <returns>Retorna true si fue satisfactoria la modificacion</returns>
         public override bool Ejecutar()
         {
             try
             {
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-                return daoPropuesta.Modificar(_laEntidad);
+                return daoPropuesta.Modificar( _laEntidad );
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }

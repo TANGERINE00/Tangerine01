@@ -27,6 +27,18 @@ namespace Tangerine.GUI.M8
         #endregion
         
         #region contrato
+        /*public string numero
+        {
+            get
+            {
+                return Request.QueryString[ResourceGUIM8.idF];
+            }
+
+            set
+            {
+                Request.QueryString[ResourceGUIM8.idF] = value;
+            }
+        }*/
 
         public string destinatario
         {
@@ -66,6 +78,21 @@ namespace Tangerine.GUI.M8
                 this.textMensaje_M8.Value = value;
             }
         }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM8.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
         //public static Facturacion theFactura = null;
@@ -74,9 +101,10 @@ namespace Tangerine.GUI.M8
         string _mensaje = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idFac = int.Parse(Request.QueryString[ResourceGUIM8.idF]);
+            //this.numero = Request.QueryString[ResourceGUIM8.idF];
             if (!IsPostBack)
             {
+                _presentador.correofactura();
                 //LogicaM8 facturaLogic = new LogicaM8();
                 //LogicaM4 companiaLogic = new LogicaM4();
                 //theFactura = facturaLogic.SearchFactura(idFac);

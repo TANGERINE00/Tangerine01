@@ -44,10 +44,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
                 LogicaTangerine.Comando<Boolean> commandModificarRolUsuario = FabricaComandos.obtenerComandoModificarRolUsuario( usuario );
                 resultado = commandModificarRolUsuario.Ejecutar();
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionModificarRol("Error al ejecutar ComandoModificarRol", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
 
             return resultado;

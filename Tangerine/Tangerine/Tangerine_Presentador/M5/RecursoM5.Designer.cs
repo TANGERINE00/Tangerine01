@@ -250,6 +250,33 @@ namespace Tangerine_Presentador.M5 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error en la base de datos, por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorBaseDeDatos {
+            get {
+                return ResourceManager.GetString("ErrorBaseDeDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al consultar contacto(s), por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorConsultarContacto {
+            get {
+                return ResourceManager.GetString("ErrorConsultarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al eliminar el contacto, por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorEliminarContacto {
+            get {
+                return ResourceManager.GetString("ErrorEliminarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Lead: .
         /// </summary>
         internal static string Lead {

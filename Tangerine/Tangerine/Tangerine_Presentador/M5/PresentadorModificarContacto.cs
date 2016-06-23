@@ -37,6 +37,22 @@ namespace Tangerine_Presentador.M5
         }
 
         /// <summary>
+        /// Método que contigura el div de alerta de la vista
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void Alerta( string msj, int typeMsg )
+        {
+            if ( typeMsg == 1 )
+                _vista.alertaClase = RecursoM5.AlertSuccess;
+            else
+                _vista.alertaClase = RecursoM5.AlertDanger;
+
+            _vista.alertaRol = RecursoM5.Alert;
+            _vista.alerta = RecursoM5.AlertShowSu1 + msj + RecursoM5.AlertShowSu2;
+        }
+
+        /// <summary>
         /// Método que carga los datos del contacto a modificar en la vista
         /// </summary>
         public void NoPostPagina()
@@ -61,11 +77,11 @@ namespace Tangerine_Presentador.M5
             }
             catch ( ConsultarContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( ex.Mensaje + ", por favor intente de nuevo.", 0 );
             }
             catch ( BaseDeDatosContactoException ex ) 
             {
-                //Muestro en pantalla el error
+                Alerta( ex.Mensaje + ", por favor intente de nuevo.", 0 );
             }
         }
 
@@ -88,11 +104,11 @@ namespace Tangerine_Presentador.M5
             }
             catch( ModificarContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( ex.Mensaje + ", por favor intente de nuevo.", 0 );
             }
             catch( BaseDeDatosContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( ex.Mensaje + ", por favor intente de nuevo.", 0 );
             }
         }
     }
