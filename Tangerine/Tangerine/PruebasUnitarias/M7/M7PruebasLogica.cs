@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LogicaTangerine.M7;
 using DominioTangerine;
 using LogicaTangerine;
 using LogicaTangerine.Fabrica;
@@ -15,7 +14,6 @@ namespace PruebasUnitarias.M7
     class M7PruebasLogica
     {
         Entidad _proyecto;
-        private LogicaProyecto _Logi;
         //private List<Entidad> _proyectos;
         int id;
         int IdGerente;
@@ -27,7 +25,6 @@ namespace PruebasUnitarias.M7
 
         [SetUp]
         public void setup() {
-            _Logi = new LogicaProyecto();
             _proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
 
             ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Id = 1;
@@ -84,7 +81,6 @@ namespace PruebasUnitarias.M7
             _proyecto = null;
             contactos = null;
             empleados = null;
-            _Logi = null;
 
         
         }
