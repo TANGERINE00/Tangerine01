@@ -101,16 +101,23 @@ function doSearch() {
 function validarTextArea(textArea)
 {
     var textArea = document.getElementById(textArea);
+    var compania = document.getElementById("comboCompañia");
 
     var regex = new RegExp("^[A-z ,.()]+$");
 
     var resultado = regex.test(textArea.value);
 
     if (resultado == false) {
+        alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
+        textArea.value = "";
         textArea.style.borderColor = "red";
     }
     else {
         textArea.style.borderColor = "#ccc";
+    }
+
+    if (compania.value == "Selecione un cliente") {
+        alert('Seleccione una compañía!');
     }
 }
 

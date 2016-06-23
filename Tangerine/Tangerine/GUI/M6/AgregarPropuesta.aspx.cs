@@ -38,8 +38,16 @@ namespace Tangerine.GUI.M6
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            presenter.agregarPropuesta();
-            Server.Transfer("ConsultarPropuesta.aspx", true);
+            try
+            {
+                presenter.agregarPropuesta();
+                Server.Transfer("ConsultarPropuesta.aspx", true);
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+            }
+            
         }
 
        

@@ -236,6 +236,11 @@ namespace DatosTangerine.DAO.M9
             return listaPagos;
         }
 
+        /// <summary>
+        /// Metodo para eliminar un pago
+        /// </summary>
+        /// <param name="parametro">Entidad con el pago que se va a eliminar</param>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool EliminarPago(Entidad parametro)
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -244,19 +249,36 @@ namespace DatosTangerine.DAO.M9
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
                 theParam = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, elPago.codPago.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
                 EjecutarStoredProcedure(RecursoDAOPago.EliminarPago, parameters);
 
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
 
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                    RecursoDAOPago.MensajeErrorNull, ex);
+
             }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                    RecursoDAOPago.MensajeErrorFormato, ex);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
     

@@ -105,6 +105,7 @@
     <Compile Include="M6\PruebasDAOPropuesta.cs" />
     <Compile Include="M6\PruebasDAORequerimiento.cs" />
     <Compile Include="M7\M7PruebasLogica.cs" />
+    <Compile Include="M7\PruebaDAOProyecto.cs" />
     <Compile Include="M7\PruebasDatos.cs" />
     <Compile Include="M8\PruebasDatosFactura.cs" />
     <Compile Include="M8\PruebasLogicaFactura.cs" />
