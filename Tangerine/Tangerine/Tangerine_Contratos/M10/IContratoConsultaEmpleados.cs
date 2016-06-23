@@ -9,10 +9,9 @@ namespace Tangerine_Contratos.M10
 {
     public interface IContratoConsultaEmpleados
     {
-        Literal Tabla { get; set;}
+         Literal Tabla { get; set;}
 
          String button {get; set;}
-
      }
 
     }

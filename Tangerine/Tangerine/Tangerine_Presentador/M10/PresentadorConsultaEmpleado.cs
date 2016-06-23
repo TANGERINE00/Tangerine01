@@ -15,13 +15,14 @@ namespace Tangerine_Presentador.M10
     public class PresentadorConsultaEmpleado
     {
         IContratoConsultaEmpleados vista;
-        Boolean Confirmacion;
+        
 
         public PresentadorConsultaEmpleado(IContratoConsultaEmpleados vista)
         {
             this.vista = vista;
         }
 
+        
 
         /// <summary>
         ///Metodo para la accion de consulta de empleados  
@@ -31,33 +32,39 @@ namespace Tangerine_Presentador.M10
             try
             {
                 LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado comando =
-                (LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado)LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+                (LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado)LogicaTangerine.Fabrica.FabricaComandos
+                .ConsultarEmpleados();
                 
                 List<Entidad> listaEntidad = comando.Ejecutar();
                 foreach (Entidad empleados in listaEntidad)
                 {
-                    DominioTangerine.Entidades.M10.EmpleadoM10 emp=(DominioTangerine.Entidades.M10.EmpleadoM10)empleados;
+                    DominioTangerine.Entidades.M10.EmpleadoM10 emp=
+                    (DominioTangerine.Entidades.M10.EmpleadoM10)empleados;
                     
                     
                     vista.Tabla.Text += ResourceGUIM10.AbrirTR;
                     //Nombres
                     vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_nombre.ToString() + ResourceGUIM10.CerrarTD;
+                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_nombre.ToString() + ResourceGUIM10
+                    .CerrarTD;
 
                      
                     //Apellidos
                     vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_apellido.ToString() + ResourceGUIM10.CerrarTD;
+                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_p_apellido.ToString() + ResourceGUIM10
+                    .CerrarTD;
 
 
                     //Cedula
                     vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
-                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_cedula.ToString() + ResourceGUIM10.CerrarTD;
+                    ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_cedula.ToString() + ResourceGUIM10
+                    .CerrarTD;
 
 
                     ////Cargo
                     vista.Tabla.Text += ResourceGUIM10.AbrirTD + 
-                    (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).Nombre.ToString() + ResourceGUIM10.CerrarTD;
+                    (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).Nombre.ToString() + ResourceGUIM10
+                    .CerrarTD;
 
 
                    //Sueldo base
@@ -67,7 +74,8 @@ namespace Tangerine_Presentador.M10
 
                    //Fecha de contratacion
                     vista.Tabla.Text += ResourceGUIM10.AbrirTD
-                    + (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).FechaContratacion.ToString("dd/MM/yyyy")
+                    + (((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).jobs).FechaContratacion.
+                    ToString("dd/MM/yyyy")
                     + ResourceGUIM10.CerrarTD;
 
 
@@ -77,7 +85,7 @@ namespace Tangerine_Presentador.M10
                                     vista.Tabla.Text += ResourceGUIM10.AbrirTD + ResourceGUIM10.AbrirActivo
                                     + ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_activo.ToString() +
                                     ResourceGUIM10.CerrarActivo + ResourceGUIM10.CerrarTD;
-                        else
+                    else
                                 
                         
                                      vista.Tabla.Text += ResourceGUIM10.AbrirTD + ResourceGUIM10.AbrirInactivo
@@ -96,8 +104,8 @@ namespace Tangerine_Presentador.M10
 
                     //Estatus Activo/Inactivo
                     if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                        vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir + 
-                        ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
+                        vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir+
+                        ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id.ToString() +
                         ResourceGUIM10.BotonStatusEmpCerrar;
 
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
@@ -110,23 +118,29 @@ namespace Tangerine_Presentador.M10
             catch (Exception ex)
             {
                 throw ex;
-            }
+            }                                                                                                          
         }
-
-
-
-
+                                                                                                                       
         /// <summary>
-        /// Metodo para la accion del booton de activar o desactivar empelado
+        /// Metodo para la accion del boton de activar o desactivar empelado                                           
         /// </summary>
         /// <param name="id"></param>
-        public void CambiarEstatus(int id) 
+        public void CambiarEstatus(int id)
         {
-            Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
-            estatusId.Id= id;
+            try
+            {
+                Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados();
+                estatusId.Id = id;
 
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);
-            comando.Ejecutar();
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);
+                comando.Ejecutar();
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }  
         }
     }
    

@@ -117,6 +117,7 @@ drop procedure M9_AgregarPago;
 drop procedure M9_CambioStatus;
 drop Procedure M9_ConsultarPago;
 drop procedure M9_historico_pago_por_compania;
+drop procedure M9_EliminarPago
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;

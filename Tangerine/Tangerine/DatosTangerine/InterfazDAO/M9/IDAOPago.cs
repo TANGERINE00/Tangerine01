@@ -16,6 +16,8 @@ namespace DatosTangerine.InterfazDAO.M9
         bool CargarStatus(int factura, int status);
 
         List<Entidad> ConsultarPagosCompania(Entidad parametro);
+
+        bool EliminarPago(Entidad parametro);
     
     }
 }

@@ -3,6 +3,7 @@ using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
 using DominioTangerine.Entidades.M5;
 using DominioTangerine.Fabrica;
+using ExcepcionesTangerine.M5;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -31,9 +32,9 @@ namespace PruebasUnitarias.M5
         [SetUp]
         public void init()
         {
-            _contacto = FabricaEntidades.crearContactoSinId("pruebaNombre", "pruebaApellido",
+            _contacto = FabricaEntidades.crearContactoSinId( "pruebaNombre", "pruebaApellido",
                                                              "pruebaDepartamento", "pruebaCargo",
-                                                             "pruebaTelefono", "pruebaCorreo", 1, 1);
+                                                             "pruebaTelefono", "pruebaCorreo", 1, 1 );
             _listaContactos = new List<Entidad>();
 
             _daoContacto = FabricaDAOSqlServer.crearDAOContacto();
@@ -63,12 +64,12 @@ namespace PruebasUnitarias.M5
         [Test]
         public void PruebaDAOContactoAgregar()
         {
-            _respuesta = _daoContacto.Agregar(_contacto);
-            Assert.True(_respuesta);
+            _respuesta = _daoContacto.Agregar( _contacto );
+            Assert.True( _respuesta );
 
             _listaContactos = _daoContacto.ConsultarTodos();
             _contadorContactos = _listaContactos.Count;
-            Assert.AreEqual(_contadorContactos, 5);
+            Assert.AreEqual( _contadorContactos, 5 );
         }
 
         /// <summary>
@@ -79,12 +80,12 @@ namespace PruebasUnitarias.M5
         {
             _contacto.Id = 2;
 
-            _respuesta = _daoContacto.Eliminar(_contacto);
-            Assert.True(_respuesta);
+            _respuesta = _daoContacto.Eliminar( _contacto );
+            Assert.True( _respuesta );
 
             _listaContactos = _daoContacto.ConsultarTodos();
             _contadorContactos = _listaContactos.Count;
-            Assert.AreEqual(_contadorContactos, 4);
+            Assert.AreEqual( _contadorContactos, 4 );
         }
 
         /// <summary>
@@ -94,21 +95,21 @@ namespace PruebasUnitarias.M5
         public void PruebaDAOContactoModificar()
         {
             Entidad _contactoModificar;
-            _contactoModificar = FabricaEntidades.crearContactoSinId("nombre modificado", "igual",
+            _contactoModificar = FabricaEntidades.crearContactoSinId( "nombre modificado", "igual",
                                                                       "igual", "igual",
-                                                                      "igual", "igual", 1, 1);
+                                                                      "igual", "igual", 1, 1 );
             _contactoModificar.Id = 3;
 
-            Entidad contactoConsulta = _daoContacto.ConsultarXId(_contactoModificar);
-            ContactoM5 nuevo = (ContactoM5)contactoConsulta;
-            Assert.AreEqual(nuevo.Nombre, "Maria");
+            Entidad contactoConsulta = _daoContacto.ConsultarXId( _contactoModificar );
+            ContactoM5 nuevo = ( ContactoM5 ) contactoConsulta;
+            Assert.AreEqual( nuevo.Nombre, "Maria" );
 
-            _respuesta = _daoContacto.Modificar(_contactoModificar);
-            Assert.True(_respuesta);
+            _respuesta = _daoContacto.Modificar( _contactoModificar );
+            Assert.True( _respuesta );
 
-            contactoConsulta = _daoContacto.ConsultarXId(_contactoModificar);
-            nuevo = (ContactoM5)contactoConsulta;
-            Assert.AreEqual(nuevo.Nombre, "nombre modificado");
+            contactoConsulta = _daoContacto.ConsultarXId( _contactoModificar );
+            nuevo = ( ContactoM5 ) contactoConsulta;
+            Assert.AreEqual( nuevo.Nombre, "nombre modificado" );
         }
 
         /// <summary>
@@ -120,9 +121,9 @@ namespace PruebasUnitarias.M5
             Entidad contacto = FabricaEntidades.crearContactoVacio();
             contacto.Id = 3;
 
-            contacto = _daoContacto.ConsultarXId(contacto);
-            ContactoM5 nuevo = (ContactoM5)contacto;
-            Assert.AreEqual(nuevo.Nombre, "Maria");
+            contacto = _daoContacto.ConsultarXId( contacto );
+            ContactoM5 nuevo = ( ContactoM5 ) contacto;
+            Assert.AreEqual( nuevo.Nombre, "Maria" );
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace PruebasUnitarias.M5
             _listaContactos = _daoContacto.ConsultarTodos();
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual(_contadorContactos, 5);
+            Assert.AreEqual( _contadorContactos, 5 );
         }
 
         /// <summary>
@@ -143,10 +144,10 @@ namespace PruebasUnitarias.M5
         [Test]
         public void PruebaDAOContactoContactosPorCompania()
         {
-            _listaContactos = _daoContacto.ContactosPorCompania(1, 1);
+            _listaContactos = _daoContacto.ContactosPorCompania( 1, 1 );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual(_contadorContactos, 5);
+            Assert.AreEqual( _contadorContactos, 5 );
         }
 
         /// <summary>
@@ -159,13 +160,13 @@ namespace PruebasUnitarias.M5
             proyecto.Id = 1;
             _contacto.Id = 3;
 
-            _respuesta = _daoContacto.AgregarContactoAProyecto(_contacto, proyecto);
-            Assert.True(_respuesta);
+            _respuesta = _daoContacto.AgregarContactoAProyecto( _contacto, proyecto );
+            Assert.True( _respuesta );
 
-            _listaContactos = _daoContacto.ContactosPorProyecto(proyecto);
+            _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual(_contadorContactos, 1);
+            Assert.AreEqual( _contadorContactos, 1 );
         }
 
         /// <summary>
@@ -177,10 +178,10 @@ namespace PruebasUnitarias.M5
             Entidad proyecto = FabricaEntidades.ObtenerProyecto();
             proyecto.Id = 1;
 
-            _listaContactos = _daoContacto.ContactosPorProyecto(proyecto);
+            _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual(_contadorContactos, 1);
+            Assert.AreEqual( _contadorContactos, 1 );
         }
 
         /// <summary>
@@ -193,13 +194,13 @@ namespace PruebasUnitarias.M5
             proyecto.Id = 1;
             _contacto.Id = 3;
 
-            _respuesta = _daoContacto.EliminarContactoDeProyecto(_contacto, proyecto);
-            Assert.True(_respuesta);
+            _respuesta = _daoContacto.EliminarContactoDeProyecto( _contacto, proyecto );
+            Assert.True( _respuesta );
 
-            _listaContactos = _daoContacto.ContactosPorProyecto(proyecto);
+            _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual(_contadorContactos, 0);
+            Assert.AreEqual( _contadorContactos, 0 );
         }
 
         /// <summary>
@@ -211,11 +212,126 @@ namespace PruebasUnitarias.M5
             Entidad proyecto = FabricaEntidades.ObtenerProyecto();
             proyecto.Id = 1;
 
-            _listaContactos = _daoContacto.ContactosNoPertenecenAProyecto(proyecto);
+            _listaContactos = _daoContacto.ContactosNoPertenecenAProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual(_contadorContactos, 4);
+            Assert.AreEqual( _contadorContactos, 4 );
         }
+
+        // Pruebas de Excepciones 
+
+        /// <summary>
+        /// Metodo para probar NullReferenceException en el método Agregar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ ExpectedException( typeof( AgregarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoAgregarNull()
+        {
+            Entidad contacto = null;
+            _respuesta = _daoContacto.Agregar( contacto );
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceException en el método Eliminar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ ExpectedException( typeof( EliminarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOConactoEliminarNull()
+        {
+            Entidad contacto = null;
+            _respuesta = _daoContacto.Eliminar( contacto );
+
+        }
+        /// <summary>
+        /// Método para probar NullReferenceException en el método Modificar() de DAOContacto
+        /// </summary>
+        /// 
+        [Test]
+        [ ExpectedException( typeof( ModificarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoModificarNull()
+        {
+            Entidad contacto = null;
+            _respuesta = _daoContacto.Modificar( contacto );
+
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceException en el método ConsultarXId() de DAOContacto
+        /// </summary>
+        /// 
+        [Test]
+        [ ExpectedException( typeof( ConsultarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoConsultarXIdNull()
+        {
+            Entidad contacto = null;
+            Entidad contactoxid = _daoContacto.ConsultarXId( contacto );
+
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceExcepcion en el método AgregarContactoAProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ ExpectedException( typeof( AgregarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoAgregarContactoAProyectoNull()
+        {
+            Entidad contacto = null;
+            Entidad proyecto = null;
+            _respuesta = _daoContacto.AgregarContactoAProyecto( contacto, proyecto );
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceExcepcion en el método ContactosPorProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ ExpectedException( typeof( ConsultarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoContactosPorProyectoNull()
+        {
+            Entidad proyecto = null;
+            _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
+
+        }
+
+        /// <summary>
+        /// Método para probar el método EliminarContactoDeProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ ExpectedException( typeof( EliminarContactoException ),
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoEliminarContactoDeProyectoNull()
+        {
+            Entidad contacto = null;
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            proyecto.Id = 1;
+
+            _respuesta = _daoContacto.EliminarContactoDeProyecto( contacto, proyecto );
+
+        }
+        /// <summary>
+        /// Método para probar el método ContactosNoPertenecenAProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ ExpectedException( typeof( ConsultarContactoException ), 
+                             ExpectedMessage = "Ingreso de un argumento con valor invalido" ) ]
+        public void PruebaDAOContactoContactosNoPertenecenAProyectoNull()
+
+        {
+            Entidad proyecto = null;
+            _listaContactos = _daoContacto.ContactosNoPertenecenAProyecto( proyecto );
+
+        }
+
         #endregion
+
     }
+
+
 }
+
+

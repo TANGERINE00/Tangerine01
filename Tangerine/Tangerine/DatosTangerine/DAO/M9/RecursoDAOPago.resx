@@ -192,4 +192,13 @@
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
   </data>
+  <data name="MensajeFinInfoLoggerError" xml:space="preserve">
+    <value>Salida del Método, No exitoso</value>
+  </data>
+  <data name="EliminarPago" xml:space="preserve">
+    <value>M9_EliminarPago</value>
+  </data>
+  <data name="ParamIdPago" xml:space="preserve">
+    <value>@idpago</value>
+  </data>
 </root>

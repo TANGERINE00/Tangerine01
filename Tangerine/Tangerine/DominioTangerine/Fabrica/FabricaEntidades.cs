@@ -278,6 +278,21 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email, presupuesto, status);
             }
             #endregion
+
+            #region Metodo para instaciar llamadas
+            public static Entidad CrearSeguimientoXLlamada()
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente();
+            }
+            #endregion
+
+            #region Metodo para instaciar llamadas constructor completo
+            public static Entidad CrearSeguimientoXLlamada(int id, DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo,fk);
+            }
+            #endregion
+
         #endregion
 
         #region Modulo 4
@@ -709,16 +724,39 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 9
 
+        /// <summary>
+        /// Metodo que instancia la clase Pago vacia 
+        /// </summary>
+        /// <returns>Objeto Pago instanciado</returns>
         public static Entidad ObtenerPago_M9 ()
             {
                 return new DominioTangerine.Entidades.M9.Pago();
             }
+        /// <summary>
+        /// Metodo que instancia la clase Pago con 5 atributos
+        /// </summary>
+        /// <param name="_idFactura">Entero, Id de la factura que se va a pagar</param>
+        /// <param name="_fechaPago">DateTime, Fecha en la que se realiza el pago</param>
+        /// <param name="_montoPago">Double, Monto por el que se realiza el pago</param>
+        /// <param name="_monedaPago">String, Moneda en la que se realiza el pago</param>
+        /// <param name="_codPago">Entero, Codigo de 10 digitos para confirmar el pago</param>
+        /// <returns>Objeto Pago instanciado</returns>
         public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, double _montoPago, 
             string _monedaPago, int _codPago)
         {
             return new DominioTangerine.Entidades.M9.Pago(_idFactura,_fechaPago, _montoPago, _monedaPago, _codPago);
         }
 
+        /// <summary>
+        /// Metodo para instanciar la clase pago con 6 atributos
+        /// </summary>
+        /// <param name="monedaPago">String, Moneda en la que se realiza el pago</param>
+        /// <param name="montoPago">Double, Monto por el que se realiza el pago</param>
+        /// <param name="formaPago">String, Forma en la que se realiza el pago</param>
+        /// <param name="codPago">Entero, Codigo de 10 digitos para confirmar el pago</param>
+        /// <param name="fechaPago">DateTime, Fecha en la que se realizo el pago</param>
+        /// <param name="idFactura">Entero, Id de la factura que se va a pagar</param>
+        /// <returns>Objeto Pago instanciado</returns>
         public static Entidad ObtenerPago_M9(string monedaPago, double montoPago, string formaPago, int codPago, 
             DateTime fechaPago,
           int idFactura)
@@ -728,6 +766,15 @@ namespace DominioTangerine.Fabrica
         }
 
        
+        /// <summary>
+        /// Metodo para instanciar la clase pago con 5 atributos
+        /// </summary>
+        /// <param name="codPago">Entero, Codigo de 10 digitos para confirmar el pago</param>
+        /// <param name="montoPago">Double, Monto por el que se realiza el pago</param>
+        /// <param name="monedaPago">String, Moneda en la que se realiza el pago</param>
+        /// <param name="formaPago">String, Forma en la que se realiza el pago</param>
+        /// <param name="idFactura">Entero, Id de la factura que se va a pagar</param>
+        /// <returns>Objeto Pago instanciado</returns>
         public static Entidad ObtenerPago_M9(int codPago, double montoPago, string monedaPago, string formaPago, 
             int idFactura)
         {
@@ -743,8 +790,6 @@ namespace DominioTangerine.Fabrica
         // Metodo para instanciar empleados sin atributos
         // </summary>
         /// <returns></returns>
-
-
 
         public static Entidad ConsultarEmpleados(int id)
         {

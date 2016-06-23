@@ -24,7 +24,7 @@ namespace DatosTangerine.DAO.M9
         /// Metodo para Agregar un Pago a la BD
         /// </summary>
         /// <param name="pagoParam">Entidad con la informacion que se va a agregar a la BD</param>
-        /// <returns></returns>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool Agregar (Entidad pagoParam)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -64,6 +64,8 @@ namespace DatosTangerine.DAO.M9
                 }
                 else
                 {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                       RecursoDAOPago.MensajeFinInfoLoggerError, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
             }
@@ -96,7 +98,7 @@ namespace DatosTangerine.DAO.M9
         /// </summary>
         /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
         /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
-        /// <returns></returns>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool CargarStatus (int factura, int status)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -121,6 +123,8 @@ namespace DatosTangerine.DAO.M9
                 }
                 else
                 {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                      RecursoDAOPago.MensajeFinInfoLoggerError, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
 
@@ -153,9 +157,12 @@ namespace DatosTangerine.DAO.M9
         /// </summary>
         /// <param name="parametro">Entidad, parametro con id de la compania que se va realizar la busqueda de pagos
         /// </param>
-        /// <returns></returns>
+        /// <returns>Lista de Entidades con los pagos realizados por una compania</returns>
         public List<Entidad> ConsultarPagosCompania(Entidad parametro)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                RecursoDAOPago.MensajeInicioInfoLogger,
+                                System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             Entidad theCompany = (DominioTangerine.Entidades.M4.CompaniaM4)parametro;
             Parametro theParam = new Parametro();
@@ -224,7 +231,33 @@ namespace DatosTangerine.DAO.M9
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                      RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listaPagos;
+        }
+
+        public bool EliminarPago(Entidad parametro)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            DominioTangerine.Entidades.M9.Pago elPago = (DominioTangerine.Entidades.M9.Pago)parametro;
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, elPago.codPago.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
+                EjecutarStoredProcedure(RecursoDAOPago.EliminarPago, parameters);
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return true;
         }
     
         public Boolean Modificar (Entidad e)

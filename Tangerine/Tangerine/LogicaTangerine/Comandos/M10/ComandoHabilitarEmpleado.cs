@@ -10,11 +10,11 @@ namespace LogicaTangerine.Comandos.M10
 {
     public class ComandoHabilitarEmpleado: Comando<bool>
     {
-        public ComandoHabilitarEmpleado(Entidad estatus)
+        public ComandoHabilitarEmpleado(Entidad parametro)
 
         {
-            elEstatus=estatus;
-        }
+            LaEntidad=parametro;
+        }                                                                                                              
                
 
         public override bool Ejecutar()
@@ -22,16 +22,13 @@ namespace LogicaTangerine.Comandos.M10
             try
             {
                 IDAOEmpleado daoEstatus = DatosTangerine.Fabrica.FabricaDAOSqlServer.EstatusDAOEmpleado();
-                return daoEstatus.CambiarEstatus(elEstatus);
+                return daoEstatus.CambiarEstatus(this.LaEntidad);
             }
             catch (Exception e)
             {
                 throw e;
             }
         }
-   
-    public Entidad elEstatus {get;set;}
-    
     }
 }
 
