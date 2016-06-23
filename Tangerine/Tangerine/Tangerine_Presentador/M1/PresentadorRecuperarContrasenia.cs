@@ -27,7 +27,9 @@ namespace Tangerine_Presentador.M1
             _vista = vista;
         }
 
-
+        /// <summary>
+        /// Metodo que Valida al usuario y si existe crea una nueva contraseña
+        /// </summary>
         public void RecuperarContraseña()
         {
             try
