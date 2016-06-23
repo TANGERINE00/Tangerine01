@@ -76,6 +76,7 @@
 
                         <div class="box-footer" runat="server">
                             <asp:Button ID="buttonGenerar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Generar" OnClientClick="return confirm('¿Seguro que desea generar esta factura?');" OnClick="buttonGenerarFactura_Click"></asp:Button>
+                            <a Style="margin-top: 5%; width:105px;" href="ConsultaProyecto.aspx" class="btn btn-default" type="submit">Cancelar</a>
                         </div>
 
 
