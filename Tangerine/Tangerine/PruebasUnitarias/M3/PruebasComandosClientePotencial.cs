@@ -20,6 +20,7 @@ namespace PruebasUnitarias.M3
         private Boolean respuesta;
         private List<Entidad> losClientes;
         private LogicaTangerine.Comando<bool> comandoRespuesta;
+        private LogicaTangerine.Comando<int> comandoNumero;
 
         #endregion
 
@@ -57,6 +58,12 @@ namespace PruebasUnitarias.M3
         public void TestComandoAgregarClientePotencial()
         {
             comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(elCliente1);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
+
+            comandoNumero = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoUltimoIdClientePotencial();
+            elCliente1.Id = comandoNumero.Ejecutar();
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente1);
             Assert.IsTrue(comandoRespuesta.Ejecutar());
         }
     }

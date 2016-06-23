@@ -258,6 +258,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoEliminarClientePotencial(cliente);
         }
+
+        public static Comando<int> ObtenerComandoUltimoIdClientePotencial()
+        {
+            return new ComandoUltimoIdClientePotencial();
+        }
         #endregion
 
         #region Modulo 4
