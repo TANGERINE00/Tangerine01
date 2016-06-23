@@ -9,7 +9,7 @@ using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3
 {
-    class ComandoSeguimientoDeLlamadas:Comando<List<Entidad>>
+    public class ComandoSeguimientoDeLlamadas:Comando<List<Entidad>>
     {
 
         /// <summary>

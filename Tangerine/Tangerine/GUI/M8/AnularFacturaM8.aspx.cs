@@ -123,7 +123,6 @@ namespace Tangerine.GUI.M8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //int idFac = int.Parse(Request.QueryString[ResourceGUIM8.idF]);
             this.numero = Request.QueryString[ResourceGUIM8.idF];
 
             if (!IsPostBack)
@@ -135,7 +134,6 @@ namespace Tangerine.GUI.M8
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
         {
             _presentador.anularFactura();
-            //Server.Transfer("ConsultarFacturaM8.aspx");
             Server.Transfer(ResourceGUIM8.redirectHome);
         }
     }

@@ -142,4 +142,10 @@
   <data name="Mensaje_Generico_Error" xml:space="preserve">
     <value>No se pudo completar la operacion</value>
   </data>
+  <data name="SysName" xml:space="preserve">
+    <value>Sistema Tangerine</value>
+  </data>
+  <data name="systemmail" xml:space="preserve">
+    <value>sistematangerine.dev@gmail.com</value>
+  </data>
 </root>

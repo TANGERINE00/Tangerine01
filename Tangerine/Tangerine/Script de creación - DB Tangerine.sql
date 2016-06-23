@@ -59,7 +59,7 @@ create table CARGO_EMPLEADO
 	car_emp_fecha_cont date not null,
 	car_emp_fecha_fin date,
 	car_emp_modalidad varchar(20) not null,
-	car_emp_sueldo numeric(6,3) not null,
+	car_emp_sueldo numeric(18,0) not null,
 	fk_car_id int not null,
 	fk_emp_num_ficha int not null,
 

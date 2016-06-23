@@ -330,4 +330,13 @@
   <data name="saludos" xml:space="preserve">
     <value>Saludos Cordiales, estimados:</value>
   </data>
+  <data name="bolivares" xml:space="preserve">
+    <value>Bolivares</value>
+  </data>
+  <data name="dolares" xml:space="preserve">
+    <value>Dolares</value>
+  </data>
+  <data name="euros" xml:space="preserve">
+    <value>Euros</value>
+  </data>
 </root>

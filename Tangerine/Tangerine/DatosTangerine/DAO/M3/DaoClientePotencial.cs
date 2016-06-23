@@ -302,7 +302,7 @@ namespace DatosTangerine.DAO.M3
             parametro.Id.ToString(), false);
             parameters.Add(theParam);
 
-            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.Int,
+            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar,
             "Llamada", false);
             parameters.Add(theParam);
 

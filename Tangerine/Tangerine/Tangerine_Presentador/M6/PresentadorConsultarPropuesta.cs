@@ -62,9 +62,12 @@ namespace Tangerine_Presentador.M6
                     DominioTangerine.Entidades.M4.CompaniaM4 laCompania = (DominioTangerine.Entidades.M4.CompaniaM4)_laCompania; 
 
                     propuesta += RecursosPresentadorPropuesta.AbrirTR;
-                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.CerrarTD;
-                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laCompania.NombreCompania.ToString() + RecursosPresentadorPropuesta.CerrarTD;
-                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Feincio.ToShortDateString() + RecursosPresentadorPropuesta.CerrarTD;
+                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Nombre.ToString() 
+                    + RecursosPresentadorPropuesta.CerrarTD;
+                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laCompania.NombreCompania.ToString() + 
+                        RecursosPresentadorPropuesta.CerrarTD;
+                    propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Feincio.ToShortDateString() +
+                        RecursosPresentadorPropuesta.CerrarTD;
 
                     imprimirStatus(laPropuesta);
 
@@ -83,8 +86,10 @@ namespace Tangerine_Presentador.M6
         public void imprimirBotones(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
             propuesta += RecursosPresentadorPropuesta.AbrirTD2
-                        + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.botonCerra
-                        + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + RecursosPresentadorPropuesta.botonCerra;
+                        + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() +
+                        RecursosPresentadorPropuesta.botonCerra
+                        + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + 
+                        RecursosPresentadorPropuesta.botonCerra;
             propuesta += RecursosPresentadorPropuesta.CerrarTD;
             propuesta += RecursosPresentadorPropuesta.CerrarTR;
         }
@@ -94,17 +99,20 @@ namespace Tangerine_Presentador.M6
         {
             if (laPropuesta.Estatus.Equals("Aprobado"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.aprobado + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.aprobado +
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
 
             if (laPropuesta.Estatus.Equals("Pendiente"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.pendiente + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.pendiente +
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
 
             if (laPropuesta.Estatus.Equals("Cerrado"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.cerrado + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.cerrado +
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
         }
 
@@ -113,22 +121,26 @@ namespace Tangerine_Presentador.M6
         {
             if (laPropuesta.Moneda.Equals("Bolivar"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bolivar + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bolivar + 
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
 
             if (laPropuesta.Moneda.Equals("Dolar"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.dolar + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.dolar +
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
 
             if (laPropuesta.Moneda.Equals("Euro"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.euro + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.euro + 
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
 
             if (laPropuesta.Moneda.Equals("Bitcoin"))
             {
-                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bitcoin + RecursosPresentadorPropuesta.CerrarTD;
+                propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bitcoin +
+                    RecursosPresentadorPropuesta.CerrarTD;
             }
 
             propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Costo + RecursosPresentadorPropuesta.CerrarTD;

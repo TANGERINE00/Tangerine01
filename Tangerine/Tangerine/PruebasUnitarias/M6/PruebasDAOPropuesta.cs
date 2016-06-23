@@ -32,9 +32,11 @@ namespace PruebasUnitarias.M6
         {
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
-            laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
+            laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba",
+            "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
             dao=DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-            elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
+            elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1",
+            "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
         [TearDown]
         public void Clean()
@@ -86,7 +88,9 @@ namespace PruebasUnitarias.M6
         {
             //Se inserta la propuesta
             Assert.IsTrue(dao.Agregar(laPropuesta));
-            laPropuesta2 = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPruebaModificada", "MesesModificados", "3", "AcuerdoM", "PendientePruebaModif", "Dolar", 1, Date1, Date2, 100, "1");
+            laPropuesta2 = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", 
+            "DescripcionProPuestaPruebaModificada", "MesesModificados", "3", "AcuerdoM", "PendientePruebaModif", "Dolar",
+            1, Date1, Date2, 100, "1");
             //Se modifica la propuesta
             Assert.IsTrue(dao.Modificar(laPropuesta2));
             laPropuesta3 = (DominioTangerine.Entidades.M6.Propuesta)dao.ConsultarXId(laPropuesta);

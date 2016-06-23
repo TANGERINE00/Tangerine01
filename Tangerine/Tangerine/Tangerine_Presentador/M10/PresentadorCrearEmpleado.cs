@@ -15,7 +15,19 @@ namespace Tangerine_Presentador.M10
     {
         private string active = "Activo";
         private IContratoCrearEmpleado Vista;
+        Boolean Confirmacion;
 
+        private List<DominioTangerine.Entidades.M10.LugarDireccion> NuevaDireccion()
+        {
+            List<DominioTangerine.Entidades.M10.LugarDireccion> direccion = new List<DominioTangerine.Entidades.M10.LugarDireccion>();
+
+            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboPais.SelectedItem.Text.ToString(), "Pais"));
+            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboEstado.SelectedItem.Text.ToString(), "Estado"));
+            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.ItextCityAddress, "Ciudad"));
+            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.ItextAddresEspecific, "Direccion"));
+
+            return direccion;
+        }
         public PresentadorCrearEmpleado(IContratoCrearEmpleado Vista)
         {
             this.Vista = Vista;
@@ -23,9 +35,9 @@ namespace Tangerine_Presentador.M10
 
         public void LlenarComboEmpleado()
         {
-            Vista.IcomboGenero.Items.Insert(0,"Seleccione Genero");
+            Vista.IcomboGenero.Items.Insert(0, "Seleccione Genero");
             Vista.IcomboGenero.Items.Insert(1, "Femenino");
-            Vista.IcomboGenero.Items.Insert(2, "Masculino");            
+            Vista.IcomboGenero.Items.Insert(2, "Masculino");
         }
         public void LlenarComboNivelEstudio()
         {
@@ -39,12 +51,12 @@ namespace Tangerine_Presentador.M10
 
         private CargoM10 jobForEmployee()
         {
-            return new CargoM10(Vista.IcomboCargo.SelectedItem.Text.ToString(), 
+            return new CargoM10(Vista.IcomboCargo.SelectedItem.Text.ToString(),
                        DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                        Vista.ItextJobMode, Double.Parse(Vista.ItextSalaryJob));
         }
         public void ObtenerPaises()
-        {            
+        {
             LogicaTangerine.Comandos.M10.ComandoObtenerPais comando =
             (LogicaTangerine.Comandos.M10.ComandoObtenerPais)LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaPaises();
 
@@ -56,14 +68,14 @@ namespace Tangerine_Presentador.M10
             foreach (Entidad row in listaLugar)
             {
                 DominioTangerine.Entidades.M10.LugarDireccion Pais = (DominioTangerine.Entidades.M10.LugarDireccion)row;
-                options.Add(Pais.Id.ToString(),Pais.LugNombre);
+                options.Add(Pais.Id.ToString(), Pais.LugNombre);
 
             }
 
             Vista.IcomboPais.DataSource = options;
-            Vista.IcomboPais.DataTextField ="value";
+            Vista.IcomboPais.DataTextField = "value";
             Vista.IcomboPais.DataValueField = "key";
-            Vista.IcomboPais.DataBind(); 
+            Vista.IcomboPais.DataBind();
         }
         public void ObtenerCargos()
         {
@@ -86,13 +98,13 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboCargo.DataTextField = "value";
             Vista.IcomboCargo.DataValueField = "key";
             Vista.IcomboCargo.DataBind();
-            
+
         }
         public void SelectedPaisChanged()
         {
             string country = Vista.IcomboPais.SelectedItem.Text;
             Entidad Parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEstadoM10();
-            ((DominioTangerine.Entidades.M10.LugarDireccion)Parametro).LugNombre =  Vista.IcomboPais.SelectedItem.Text;
+            ((DominioTangerine.Entidades.M10.LugarDireccion)Parametro).LugNombre = Vista.IcomboPais.SelectedItem.Text;
 
             Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaEstado(Parametro);
 
@@ -111,56 +123,46 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboEstado.DataTextField = "value";
             Vista.IcomboEstado.DataValueField = "key";
             Vista.IcomboEstado.DataBind();
-            
+
         }
         public void AgregarEmpleado()
         {
-            
+       
 
             Entidad Parametro = DominioTangerine.Fabrica.FabricaEntidades.AgregarEmpledoM10();
-            
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_nombre = Vista.ItextFirstName;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondNamee;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName;
+
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_nombre = Vista.ItextFirstName.Text;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondName.Text;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName.Text;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName.Text;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_genero = Vista.IcomboGenero.SelectedItem.Text.ToString();
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula);
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac =DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy",CultureInfo.InvariantCulture);
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula.Text);
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac = DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture);
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_activo = active;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_nivel_estudio = Vista.IcomboNivelEstudio.SelectedItem.Text.ToString();
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Job = jobForEmployee();
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Job = j;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro). = Vista.;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson;
+            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
+            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion=NuevaDireccion();
+            
 
-
-
+            //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto Propuesta 'p'.
+            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado(Parametro);
+            Confirmacion = comando.Ejecutar();
+            //p = new DominioTangerine.Entidades.M10.EmpleadoM10();
 
 
             //LogicaM10 logicEmployee = new LogicaM10();
-            
+
             //logicEmployee.AddNewEmpleado(empleado);
             //Response.Redirect("../M1/EmpleadosAdmin.aspx");
-            
-            
+
+
             //string country = Vista.IcomboPais.SelectedItem.Text;
-           
-            
+
+
 
             //Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaEstado(Parametro);
 
