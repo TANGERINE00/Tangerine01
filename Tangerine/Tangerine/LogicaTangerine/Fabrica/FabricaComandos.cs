@@ -263,6 +263,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoUltimoIdClientePotencial();
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoLlamadas(Entidad cliente)
+        {
+            return new ComandoSeguimientoDeLlamadas(cliente);
+        }
         #endregion
 
         #region Modulo 4
