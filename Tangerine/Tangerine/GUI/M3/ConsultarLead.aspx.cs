@@ -113,10 +113,17 @@ namespace Tangerine.GUI.M3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
-            if (!IsPostBack)
+            try
             {
-                presentador.Llenar(idClientePotencial);
+                int idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
+                if (!IsPostBack)
+                {
+                    presentador.Llenar(idClientePotencial);
+                }
+            }
+            catch
+            {
+                Response.Redirect("Listar.aspx");
             }
         }
     }

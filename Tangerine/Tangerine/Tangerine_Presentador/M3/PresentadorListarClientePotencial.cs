@@ -7,6 +7,7 @@ using Tangerine_Contratos.M3;
 using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
+using ExcepcionesTangerine;
 
 namespace Tangerine_Presentador.M3
 {
@@ -68,9 +69,9 @@ namespace Tangerine_Presentador.M3
                 }
 
             }
-            catch(Exception ex)
+            catch(ExceptionTGConBD ex)
             {
-                throw ex;
+                throw new ExceptionsTangerine("Dal-01", "Error con conexion", ex);
             }
         }
     }
