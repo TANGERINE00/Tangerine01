@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
-    <li><a href="EmpleadosAdmin.aspx" > Gestión de empleados</a></li>
+    <li><a href="EmpleadosAdmin.aspx?EmployeeId=0" > Gestión de empleados</a></li>
     <li class="active"> Ver empleado</li>
 </asp:Content>
 

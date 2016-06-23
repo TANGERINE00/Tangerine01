@@ -302,7 +302,7 @@ namespace DatosTangerine.DAO.M3
             parametro.Id.ToString(), false);
             parameters.Add(theParam);
 
-            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.Int,
+            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar,
             "Llamada", false);
             parameters.Add(theParam);
 
@@ -317,6 +317,43 @@ namespace DatosTangerine.DAO.M3
                 int fkLead = int.Parse(row[ResourceClientePotencial.fkCliente].ToString());
 
                 Entidad registroHistoria = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXLlamada(idHistoria, fechaHistoria, tipoHistoria, motivoHistoria, fkLead);
+
+                objetoListaHistorico.Add(registroHistoria);
+
+            }
+
+            return objetoListaHistorico;
+        }
+
+        public List<Entidad> ConsultarVistaXId(Entidad parametro)
+        {
+            List<Entidad> objetoListaHistorico = new List<Entidad>();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+
+            theConnection.Conectar();
+
+            theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
+            parametro.Id.ToString(), false);
+            parameters.Add(theParam);
+
+            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar,
+            "Visita", false);
+            parameters.Add(theParam);
+
+            DataTable data = theConnection.EjecutarStoredProcedureTuplas(ResourceClientePotencial.ConsultarSegumientoLlamadas, parameters);
+
+            foreach (DataRow row in data.Rows)
+            {
+                int idHistoria = int.Parse(row[ResourceClientePotencial.idSeguimiento].ToString());
+                String tipoHistoria = row[ResourceClientePotencial.tipoSeguimiento].ToString();
+                String motivoHistoria = row[ResourceClientePotencial.motivoRegistro].ToString();
+                DateTime fechaHistoria = DateTime.Parse(row[ResourceClientePotencial.fechaRegistro].ToString());
+                int fkLead = int.Parse(row[ResourceClientePotencial.fkCliente].ToString());
+
+                Entidad registroHistoria = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXVisitas(idHistoria, fechaHistoria, tipoHistoria, motivoHistoria, fkLead);
 
                 objetoListaHistorico.Add(registroHistoria);
 

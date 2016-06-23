@@ -27,7 +27,11 @@ namespace LogicaTangerine.M6
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Metodo para traer una lista de requerimientos asociados a una propuesta
+        /// </summary>
+        /// <param name="id">id de la propuesta</param>
+        /// <returns>lista de requerimientos</returns>
         public List<Requerimiento> TraerRequerimientoPropuesta(String id)
         {
             return BDPropuesta.ConsultarRequerimientosPorPropuesta(id);
@@ -35,7 +39,11 @@ namespace LogicaTangerine.M6
 
 
 
-
+        /// <summary>
+        /// Metodo para modificar un requerimiento
+        /// </summary>
+        /// <param name="requerimiento">Requerimiento a modificar</param>
+        /// <returns>true si la accion fue completada correctamente</returns>
         public bool ModRequerimiento(Requerimiento requerimiento)
         {
             return BDPropuesta.Modificar_Requerimiento(requerimiento);

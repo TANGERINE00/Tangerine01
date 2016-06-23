@@ -124,6 +124,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bolivares.
+        /// </summary>
+        internal static string bolivares {
+            get {
+                return ResourceManager.GetString("bolivares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Anular&quot;  class=&quot;btn btn-danger glyphicon glyphicon-ban-circle&quot; href=&quot;AnularFacturaM8.aspx?idFac=.
         /// </summary>
         internal static string BotonAnular {
@@ -430,6 +439,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dolares.
+        /// </summary>
+        internal static string dolares {
+            get {
+                return ResourceManager.GetString("dolares", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   .
         /// </summary>
         internal static string espacio {
@@ -453,6 +471,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string Euro {
             get {
                 return ResourceManager.GetString("Euro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Euros.
+        /// </summary>
+        internal static string euros {
+            get {
+                return ResourceManager.GetString("euros", resourceCulture);
             }
         }
         

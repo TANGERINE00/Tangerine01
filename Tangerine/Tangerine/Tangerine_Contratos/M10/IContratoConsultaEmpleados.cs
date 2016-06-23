@@ -9,10 +9,15 @@ namespace Tangerine_Contratos.M10
 {
     public interface IContratoConsultaEmpleados
     {
-        Literal Tabla { get; set;}
+        /// <summary>
+        /// Encabezado de la tabla de consultar empleados
+        /// </summary>
+         Literal Tabla { get; set;}
 
+        /// <summary>
+        /// Encabezado boton de ver empleado
+        /// </summary>
          String button {get; set;}
-
      }
 
     }

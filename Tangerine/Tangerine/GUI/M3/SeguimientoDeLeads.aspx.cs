@@ -133,6 +133,8 @@ namespace Tangerine.GUI.M3
             if (!IsPostBack)
             {
                 presentador.Llenar(idClientePotencial);
+                presentador.ObtenerHistoricoLlamadas(idClientePotencial);
+                presentador.ObtenerHistoricoVisitas(idClientePotencial);
             }
             
         }

@@ -263,6 +263,16 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoUltimoIdClientePotencial();
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoLlamadas(Entidad cliente)
+        {
+            return new ComandoSeguimientoDeLlamadas(cliente);
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoVisitas(Entidad cliente)
+        {
+            return new ComandoSeguimientoDeVisitas(cliente);
+        }
         #endregion
 
         #region Modulo 4
@@ -871,6 +881,16 @@ namespace LogicaTangerine.Fabrica
             return new ComandoConsultarPagos(compania);
         }
 
+        /// <summary>
+        /// Metodo para crear comando que permite eliminar un pago
+        /// </summary>
+        /// <param name="entidad">Entidad que se va a eliminar</param>
+        /// <returns>Objeto ComandoEliminarPago</returns>
+        public static Comando<Boolean> EliminarPago (Entidad entidad)
+        {
+            return new ComandoEliminarPago(entidad);
+        }
+
         #endregion
 
         #region Modulo 10
@@ -897,6 +917,12 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoObtenerEstado(Pais);
         }
+
+        public static Comando<bool> ComandoAgregarEmpleado(Entidad empleado)
+        {
+            return new LogicaTangerine.Comandos.M10.ComandoAgregarEmpleado(empleado);
+        }
+
 
         public static Comando<bool> HabilitarEmpleado(Entidad estatus)
         {

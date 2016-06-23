@@ -15,8 +15,9 @@ namespace Tangerine.GUI.M8
 {
     public partial class ConsultarFacturaM8 : System.Web.UI.Page, IContratoConsultarFactura
     {
-        PresentadorConsultaFactura _presentador;
-
+        
+        #region contrato        
+        
         public string facturasCreadas
         {
             get
@@ -43,18 +44,23 @@ namespace Tangerine.GUI.M8
         {
             set { alert.InnerHtml = value; }
         }
+#endregion
+
+        #region presentador
+        PresentadorConsultaFactura _presentador;
 
         public ConsultarFacturaM8()
         {
             _presentador = new PresentadorConsultaFactura(this);
         }
-
+        #endregion        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                 //Esto ocurre cuando se modifica una factura, se muestra mensaje a usuario
-                string _estado = Request.QueryString["estado"];
+                string _estado = Request.QueryString[ResourceGUIM8.estado];
                 if (_estado != null)
                     _presentador.Alerta(_estado);
             }

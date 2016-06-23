@@ -15,6 +15,12 @@ namespace Tangerine_Contratos.M6
             get;
             set;
         }
+
+        string IdPropuesta
+        {
+            get;
+
+        }
         string ContenedorCompania
         {
             get;

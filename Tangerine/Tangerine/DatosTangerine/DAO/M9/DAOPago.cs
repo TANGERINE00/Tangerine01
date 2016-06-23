@@ -235,6 +235,52 @@ namespace DatosTangerine.DAO.M9
                       RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listaPagos;
         }
+
+        /// <summary>
+        /// Metodo para eliminar un pago
+        /// </summary>
+        /// <param name="parametro">Entidad con el pago que se va a eliminar</param>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
+        public bool EliminarPago(Entidad parametro)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            DominioTangerine.Entidades.M9.Pago elPago = (DominioTangerine.Entidades.M9.Pago)parametro;
+            Parametro theParam = new Parametro();
+
+            try
+            {
+
+                theParam = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, elPago.codPago.ToString(), false);
+                parameters.Add(theParam);
+
+                EjecutarStoredProcedure(RecursoDAOPago.EliminarPago, parameters);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                    RecursoDAOPago.MensajeErrorNull, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                    RecursoDAOPago.MensajeErrorFormato, ex);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return true;
+        }
     
         public Boolean Modificar (Entidad e)
         {

@@ -221,6 +221,18 @@ namespace DatosTangerine.Fabrica
         {
             return new DAO.M10.DAOEmpleado();
         }
+
+        /// <summary>
+        /// Metodo que agrega un empleado
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado CrearDAOEmpleado()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
+
+
         #endregion
 
     }

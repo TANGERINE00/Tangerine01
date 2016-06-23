@@ -9,22 +9,14 @@ using System.Data.SqlClient;
 using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
-//using DominioTangerine.DominioTangerine.Entidades.M10;
 using ExcepcionesTangerine;
+using System.Collections;
 
 namespace DatosTangerine.DAO.M10
 {
     public class DAOEmpleado : DAOGeneral, IDAOEmpleado
     {
-        /// <summary>
-        /// Metodo para agregar un empleado a la base de datos 
-        /// </summary>
-        /// <param name="elEmpleado"></param>
-        /// <returns></returns>
-        public bool AgregarEmpleado(DominioTangerine.Empleado elEmpleado)
-        {
-            throw new NotImplementedException();
-        }
+        
 
 
         public List<DominioTangerine.Empleado> ListarEmpleados()
@@ -55,7 +47,7 @@ namespace DatosTangerine.DAO.M10
             {
 
                 parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar,
-                              ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false));
+                              ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Id.ToString(), false));
 
                 List<Resultado> results = EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
 
@@ -97,17 +89,68 @@ namespace DatosTangerine.DAO.M10
 
             return true;
         }
-
-        public bool Agregar(DominioTangerine.Entidad parametro)
-        {
-            throw new NotImplementedException();
-        }
+              
 
         public bool Modificar(DominioTangerine.Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Metodo para obtener una tabla Hash con la direccion completa de un empleado 
+        /// </summary>
+        /// <param name="list">Objeto de tipo Empleado</param>
+        /// <returns>Objeto de tipo Hashtable</returns>
+        public static Hashtable listElementos(DominioTangerine.Entidades.M10.EmpleadoM10 list)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            Hashtable elementos = new Hashtable();
+            try
+            {
+                foreach (DominioTangerine.Entidades.M10.LugarDireccion elemento in list.ListaDireccion)
+                {
+                    elementos.Add(elemento.LugTipo, elemento.LugNombre);
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return elementos;
+        }
 
 
         /// <summary>
@@ -158,14 +201,14 @@ namespace DatosTangerine.DAO.M10
                     String empFechaFin = row[ResourceEmpleado.EmpFechaFin].ToString();
                     String empDireccion = row[ResourceEmpleado.EmpDireccion].ToString();
 
-                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoXid(empCargo, empSalario,
-                                              empFechaInicio,empFechaFin);
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoXid(empCargo,
+                                            empSalario, empFechaInicio, empFechaFin);
 
                     empleadoFinal = DominioTangerine.Fabrica.FabricaEntidades.ListarEmpleadoId(empId, empPNombre,
                                                     empSNombre, empPApellido, empSApellido,
                                                     empGenero, empCedula, empFecha, empActivo, empNivelEstudio,
-                                                    empEmailEmployee, empLugId, cargoEmpleado, empSalario, empFechaInicio,
-                                                    empFechaFin, empDireccion);
+                                                    empEmailEmployee, empLugId, cargoEmpleado, empSalario,
+                                                    empFechaInicio, empFechaFin, empDireccion);
     
             }
             catch (ArgumentNullException ex)
@@ -231,7 +274,8 @@ namespace DatosTangerine.DAO.M10
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleado, parameters);
+                DataTable dt = theConnection.EjecutarStoredProcedureTuplas(ResourceEmpleado.ConsultarEmpleado,
+                               parameters);
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -258,12 +302,14 @@ namespace DatosTangerine.DAO.M10
 
                     //Creo un objeto de tipo Entidad con los datos de la fila
 
-                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo, empCargoDescripcion,
-                                            empContratacion);
+                    Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo,
+                        empCargoDescripcion, empContratacion);
+                                            
 
-                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados(empId, empPNombre, empSNombre,
-                    empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad,
-                    empSalario,cargoEmpleado);
+                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados
+                    (empId, empPNombre, empSNombre,
+                     empPApellido, empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio,
+                     empModalidad, empSalario, cargoEmpleado);
 
 
                     listEmpleado.Add(empleado);
@@ -334,8 +380,10 @@ namespace DatosTangerine.DAO.M10
                 {
                     Entidad pais = DominioTangerine.Fabrica.FabricaEntidades.ObtenerLugar();
 
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).Id = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).LugNombre = (row[ResourceComplemento.ItemCountryText].ToString());
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).Id = int.Parse(row[ResourceComplemento.
+                    ItemCountryValue].ToString());
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)pais).LugNombre = (row[ResourceComplemento.
+                    ItemCountryText].ToString());
 
                     listPais.Add(pais);
                 }
@@ -408,8 +456,10 @@ namespace DatosTangerine.DAO.M10
                 {
                     Entidad Estado=DominioTangerine.Fabrica.FabricaEntidades.ObtenerLugar();
 
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).Id = int.Parse(row[ResourceComplemento.ItemCountryValue].ToString());
-                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).LugNombre = (row[ResourceComplemento.ItemCountryText].ToString());                   
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).Id = int.Parse(row[ResourceComplemento.
+                    ItemCountryValue].ToString());
+                    ((DominioTangerine.Entidades.M10.LugarDireccion)Estado).LugNombre = (row[ResourceComplemento.
+                    ItemCountryText].ToString());                   
 
                     estados.Add(Estado);
                 }
@@ -481,8 +531,10 @@ namespace DatosTangerine.DAO.M10
                     
                     Entidad cargo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargoM10();
 
-                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Car_id = int.Parse(row[ResourceComplemento.ItemJobValue].ToString());
-                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Nombre = (row[ResourceComplemento.ItemJobText].ToString());
+                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Car_id = int.Parse(row[ResourceComplemento.
+                    ItemJobValue].ToString());
+                    ((DominioTangerine.Entidades.M10.CargoM10)cargo).Nombre = (row[ResourceComplemento.ItemJobText].
+                    ToString());
 
                     listCargo.Add(cargo);
                 }
@@ -525,7 +577,88 @@ namespace DatosTangerine.DAO.M10
 
             return listCargo;
         }
-    
+
+
+        /// <summary>
+        /// Metodo para agregar un empleado nuevo en la base de datos.
+        /// </summary>
+        /// <param name="Objeto_Empleado">Objeto de tipo Empleado para agregar en la base de datos</param>
+        /// <returns>true si fue agregado</returns>
+        public bool Agregar(Entidad elEmpleado)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            DominioTangerine.Entidades.M10.EmpleadoM10 Objeto_Empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)elEmpleado;
+            
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro parametro = new Parametro();
+            Hashtable elementos = new Hashtable();
+            
+            try
+            {
+                elementos = listElementos(Objeto_Empleado);
+                parameters.Add(new Parametro("@pNombre", SqlDbType.VarChar, Objeto_Empleado.Emp_p_nombre, false));
+                parameters.Add(new Parametro("@sNombre", SqlDbType.VarChar, Objeto_Empleado.Emp_s_nombre, false));
+                parameters.Add(new Parametro("@pApellido", SqlDbType.VarChar, Objeto_Empleado.Emp_p_apellido, false));
+                parameters.Add(new Parametro("@sApellido", SqlDbType.VarChar, Objeto_Empleado.Emp_s_apellido, false));
+                parameters.Add(new Parametro("@genero", SqlDbType.VarChar, Objeto_Empleado.Emp_genero, false));
+                parameters.Add(new Parametro("@cedula", SqlDbType.Int, Objeto_Empleado.Emp_cedula.ToString(), false));
+                parameters.Add(new Parametro("@fechaNacimiento", SqlDbType.DateTime, Objeto_Empleado.Emp_fecha_nac.ToString("dd/MM/yyyy"), false));
+                parameters.Add(new Parametro("@activo", SqlDbType.VarChar, Objeto_Empleado.Emp_activo, false));
+                parameters.Add(new Parametro("@nivelEstudio", SqlDbType.VarChar, Objeto_Empleado.Emp_nivel_estudio, false));
+                parameters.Add(new Parametro("@correo", SqlDbType.VarChar, Objeto_Empleado.Emp_email, false));
+                parameters.Add(new Parametro("@cargo", SqlDbType.VarChar, Objeto_Empleado.jobs.Nombre, false));
+                parameters.Add(new Parametro("@fechContrato", SqlDbType.DateTime, Objeto_Empleado.jobs.FechaContratacion.ToString("dd/MM/yyyy"), false));
+                parameters.Add(new Parametro("@modalidad", SqlDbType.VarChar, Objeto_Empleado.jobs.Modalidad, false));
+                parameters.Add(new Parametro("@sueldo", SqlDbType.Int, Objeto_Empleado.jobs.Sueldo.ToString(), false));
+
+                parameters.Add(new Parametro("@estado", SqlDbType.VarChar, elementos["Estado"].ToString(), false));
+                parameters.Add(new Parametro("@ciudad", SqlDbType.VarChar, elementos["Ciudad"].ToString(), false));
+                parameters.Add(new Parametro("@direccion", SqlDbType.VarChar, elementos["Direccion"].ToString(), false));
+
+                //Se manda a ejecutar el stored procedure
+                List<Resultado> resultado = EjecutarStoredProcedure(ResourceEmpleado.AddNewEmpleado, parameters);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
+        }
+
     }
     }
 

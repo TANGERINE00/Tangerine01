@@ -20,5 +20,8 @@ namespace DatosTangerine.InterfazDAO.M7
 
         String GenerarCodigoProyecto(Entidad parametro);
 
+        int ConsultarNumeroProyectos();
+
+        bool BorrarProyecto(int proyID);
     }
 }
