@@ -9,14 +9,13 @@ using DatosTangerine.InterfazDAO.M3;
 
 namespace LogicaTangerine.Comandos.M3
 {
-    public class ComandoSeguimientoDeLlamadas: Comando<List<Entidad>>
+    public class ComandoSeguimientoDeVisitas : Comando<List<Entidad>>
     {
-
-        /// <summary>
+         /// <summary>
         /// Constructor del comando
         /// </summary>
         /// <param name="parametro">Cliente Potencial a consultar</param>
-        public ComandoSeguimientoDeLlamadas(Entidad parametro)
+        public ComandoSeguimientoDeVisitas (Entidad parametro)
         {
             LaEntidad = parametro;
         }
@@ -26,7 +25,7 @@ namespace LogicaTangerine.Comandos.M3
             try
             {
                 IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
-                return daoClientePotencial.ConsultarLlamadasXId(this.LaEntidad);
+                return daoClientePotencial.ConsultarVistaXId(this.LaEntidad);
             }
             catch (Exception e)
             {
