@@ -147,7 +147,6 @@
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\Dashboard.aspx" />
-    <Content Include="GUI\M1\EjemploM1.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
@@ -1007,13 +1006,6 @@
     </Compile>
     <Compile Include="GUI\M1\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\EmpleadosAdmin.aspx.cs">
       <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>

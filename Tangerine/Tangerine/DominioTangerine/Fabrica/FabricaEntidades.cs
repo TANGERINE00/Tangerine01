@@ -791,8 +791,6 @@ namespace DominioTangerine.Fabrica
         // </summary>
         /// <returns></returns>
 
-
-
         public static Entidad ConsultarEmpleados(int id)
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10(id);
