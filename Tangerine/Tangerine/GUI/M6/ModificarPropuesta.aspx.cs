@@ -28,10 +28,18 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            try
             {
-                presenter.llenarVista();
-            } 
+                if (!IsPostBack)
+                {
+                    presenter.llenarVista();
+                } 
+            }
+            catch 
+            {
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+            }
+           
         }
 
         protected void ModificarPropuesta_Click(object sender, EventArgs e)
@@ -76,7 +84,18 @@ namespace Tangerine.GUI.M6
 
         public string IdPropuesta
         {
-            get { return Request.QueryString.Get("id"); }
+            get 
+            {
+                try
+                {
+                    return Request.QueryString.Get("id");
+                }
+                catch (Exception e)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    return null;
+                }
+            }
         }
         
         public string Descripcion
