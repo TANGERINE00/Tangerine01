@@ -34,7 +34,7 @@ namespace LogicaTangerine.Comandos.M2
             {
                 DominioTangerine.Entidad usuario;
                 IDAOUsuarios ObtenerUsuario = FabricaDAOSqlServer.crearDaoUsuario();
-                usuario = ObtenerUsuario.ObtenerUsuarioDeEmpleado(_theEmpleado);
+                usuario = ObtenerUsuario.ObtenerUsuarioDeEmpleado( _theEmpleado );
                 return usuario;
             }
             catch ( Exception ex )

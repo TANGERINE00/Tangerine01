@@ -19,7 +19,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
         /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
         /// <param name="usuario"></param>
-        public ComandoConsultarDatosUsuarioLogin(DominioTangerine.Entidad usuario)
+        public ComandoConsultarDatosUsuarioLogin( DominioTangerine.Entidad usuario )
         {
             _theUsuario = usuario;
         }
@@ -34,7 +34,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             {
                 DominioTangerine.Entidad usuario;
                 IDAOUsuarios ObtenerUsuario = FabricaDAOSqlServer.crearDaoUsuario();
-                usuario = ObtenerUsuario.ObtenerDatoUsuario(_theUsuario);
+                usuario = ObtenerUsuario.ObtenerDatoUsuario( _theUsuario );
                 return usuario;
             }
             catch ( Exception ex )

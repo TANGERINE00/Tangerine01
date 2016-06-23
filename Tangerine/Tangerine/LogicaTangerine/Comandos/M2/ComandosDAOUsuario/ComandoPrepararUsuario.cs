@@ -43,10 +43,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             try
             {
                 DominioTangerine.Entidad theRol = DominioTangerine.Fabrica.FabricaEntidades.crearRolNombre( _rolUsuario );
-                DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
-                DominioTangerine.Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto(_usuarioNombre, 
-                                                                    _contrasenaUsuario, DateTime.Now, "Activo", rol, _fichaEmpleado);
-                DominioTangerine.Entidades.M2.UsuarioM2 usuario = (DominioTangerine.Entidades.M2.UsuarioM2)theUsuario;
+                DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 )theRol;
+                DominioTangerine.Entidad theUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto( _usuarioNombre , 
+                                                      _contrasenaUsuario , DateTime.Now , "Activo" , rol , _fichaEmpleado );
+                DominioTangerine.Entidades.M2.UsuarioM2 usuario = ( DominioTangerine.Entidades.M2.UsuarioM2 )theUsuario;
                 usuario.contrasena = usuario.GetMD5( usuario.contrasena );
                 LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( usuario );
                 resultado = commandAgregarUsuario.Ejecutar();
@@ -55,7 +55,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Error en datos, posiblemente ficha no existente" , ex );
             }
             return resultado;
         }

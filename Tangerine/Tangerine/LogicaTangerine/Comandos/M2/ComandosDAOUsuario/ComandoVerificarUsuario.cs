@@ -34,7 +34,7 @@ namespace LogicaTangerine.Comandos.M2
             {
                 bool resultado;
                 IDAOUsuarios UsuarioVerify = FabricaDAOSqlServer.crearDaoUsuario();
-                resultado = UsuarioVerify.VerificarUsuarioPorFichaEmpleado(_fichaEmpleado);
+                resultado = UsuarioVerify.VerificarUsuarioPorFichaEmpleado( _fichaEmpleado );
                 return resultado;
             }
             catch ( Exception ex )

@@ -34,7 +34,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             {
                 DominioTangerine.Entidad resultado;
                 IDAORol rolDAO = FabricaDAOSqlServer.crearDaoRol();
-                resultado = rolDAO.ObtenerRolUsuarioPorNombre(_nombreoRol);
+                resultado = rolDAO.ObtenerRolUsuarioPorNombre( _nombreoRol );
                 return resultado;
             }
             catch ( Exception ex )

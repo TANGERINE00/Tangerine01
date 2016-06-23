@@ -258,6 +258,12 @@ namespace Tangerine_Presentador.M7
             
             DateTime inicio = DateTime.ParseExact(vista.textInputFechaInicio.Text.ToString(), "dd/MM/yyyy", null);
 
+            if (vista.FechaFin == "")
+            {
+                MessageBox.Show("Debe seleccionar una fecha fin para el proyecto", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             DateTime nuevaFechaFin = DateTime.ParseExact(vista.FechaFin, "dd/MM/yyyy", null);
 
             if (inicio > nuevaFechaFin)
@@ -368,7 +374,12 @@ namespace Tangerine_Presentador.M7
                         int.Parse(vista.idCompania.Text) + "&IdProyecto=" +
                         int.Parse(vista.idProyecto.Text) + "&Monto=" + monto);
                 }
-
+                else 
+                {
+                    MessageBox.Show("Proyecto Modificado con Exito",
+                    "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    HttpContext.Current.Response.Redirect("../M7/ConsultaProyecto.aspx");
+                }
                 
 
             }

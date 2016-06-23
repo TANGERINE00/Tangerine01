@@ -126,8 +126,8 @@ namespace PruebasUnitarias.M2
             LogicaTangerine.Comando<DominioTangerine.Entidad> commandObtenerRolUsuario
                 = FabricaComandos.obtenerComandoObtenerRolUsuario( 2 );
             DominioTangerine.Entidad theRol = commandObtenerRolUsuario.Ejecutar();
-            DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
-            Assert.IsNotNull(rol);
+            DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 )theRol;
+            Assert.IsNotNull( rol );
         }
 
         /// <summary>
