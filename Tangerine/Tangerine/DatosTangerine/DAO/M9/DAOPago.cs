@@ -64,6 +64,8 @@ namespace DatosTangerine.DAO.M9
                 }
                 else
                 {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                       RecursoDAOPago.MensajeFinInfoLoggerError, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
             }
@@ -121,6 +123,8 @@ namespace DatosTangerine.DAO.M9
                 }
                 else
                 {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                      RecursoDAOPago.MensajeFinInfoLoggerError, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
 
@@ -156,6 +160,9 @@ namespace DatosTangerine.DAO.M9
         /// <returns></returns>
         public List<Entidad> ConsultarPagosCompania(Entidad parametro)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                RecursoDAOPago.MensajeInicioInfoLogger,
+                                System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             Entidad theCompany = (DominioTangerine.Entidades.M4.CompaniaM4)parametro;
             Parametro theParam = new Parametro();
@@ -224,6 +231,8 @@ namespace DatosTangerine.DAO.M9
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                      RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listaPagos;
         }
     
