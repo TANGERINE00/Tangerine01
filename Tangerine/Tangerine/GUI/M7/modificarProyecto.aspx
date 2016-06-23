@@ -59,8 +59,17 @@
 
                         <div class="form-group">
                             <label for="InputFechaEstimada">Fecha Estimada de culminación *</label> <br />
-                            <asp:Calendar runat="server" ID="textInputFechaEstimada" SelectionMode="DayWeekMonth"></asp:Calendar>
-                        </div>
+                            
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input class="form-control pull-right" id="datepicker1" type="text" runat="server"
+                                    clientidmode="static" placeholder="mm/dd/yyyy" required
+                                    pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+                                    data-date-format="dd/mm/yyyy">
+                             </div>
+                         </div>
 
                         <div class="form-group">
                             <label for="InputCosto">Costo estimado *</label> <br />
@@ -93,6 +102,7 @@
                     <div class="form-group">
                         <label for="labelGerete_M7">Gerente de proyecto *</label><br />
                         <asp:DropDownList runat="server" Id="inputGerente" CssClass="form-control"></asp:DropDownList>
+                        <asp:TextBox runat="server" id="gteAct" ReadOnly="true" Visible="false"></asp:TextBox>
                     </div>
 
                     <div class="form-group">

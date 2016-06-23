@@ -745,4 +745,16 @@
   <data name="BorrarProyecto" xml:space="preserve">
     <value>M7_BorrarProyecto</value>
   </data>
+  <data name="AgregarHistoricoGerente" xml:space="preserve">
+    <value>M7_HistoricoGerentes</value>
+  </data>
+  <data name="ConsultarGerentes" xml:space="preserve">
+    <value>M7_ConsultarHistoricoGerente</value>
+  </data>
+  <data name="Fk_IdEmp" xml:space="preserve">
+    <value>fk_id_empleado</value>
+  </data>
+  <data name="ParamIdProyecto" xml:space="preserve">
+    <value>@IdProyecto</value>
+  </data>
 </root>

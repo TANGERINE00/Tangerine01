@@ -130,7 +130,9 @@
     <Compile Include="Comandos\M6\ComandoConsultarNumeroRequerimientos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarContactos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarEmpleados.cs" />
+    <Compile Include="Comandos\M7\ComandoAgregarHistoricoGerente.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarHistoricoGerente.cs" />
     <Compile Include="Comandos\M7\ComandoUltimoIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoModificarProyecto.cs" />
