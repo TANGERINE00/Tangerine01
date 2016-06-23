@@ -18,5 +18,14 @@ namespace Tangerine_Contratos.M2
             get;
             set;
         }
+
+        /// <summary>
+        /// Mensaje de error
+        /// </summary>
+        string msjError
+        {
+            get;
+            set;
+        }
     }
 }

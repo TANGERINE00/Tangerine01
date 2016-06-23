@@ -45,6 +45,8 @@ namespace Tangerine_Presentador.M7
         /// </summary>
         public void agregarProyecto()
         {
+            listaProgramadores.Clear();
+            listaContactos.Clear();
             ///Se capturan los datos de la vista para crear un proyecto.
             DateTime _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
             DateTime _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
@@ -122,10 +124,7 @@ namespace Tangerine_Presentador.M7
         public void CargarInformacionPropuesta(object sender)
         {
             {
-                _vista.inputEncargado.Items.Clear();
-                _vista.inputGerente.Items.Clear();
-                _vista.inputPersonal.Items.Clear();
-
+                ClearItems();
 
                 _idPropuesta = ((DropDownList)sender).SelectedIndex;
 
@@ -173,6 +172,18 @@ namespace Tangerine_Presentador.M7
                 }
 
             }
+        }
+
+        private void ClearItems()
+        {
+            _vista.inputEncargado.Items.Clear();
+            _vista.inputGerente.Items.Clear();
+            _vista.inputPersonal.Items.Clear();
+            listaProgramadores.Clear();
+            listaContactos.Clear();
+            programadores.Clear();
+            contactos.Clear();
+
         }
 
         /// <summary>

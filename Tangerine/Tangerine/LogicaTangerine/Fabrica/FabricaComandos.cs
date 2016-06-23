@@ -253,6 +253,16 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoAgregarClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoEliminarClientePotencial(Entidad cliente)
+        {
+            return new ComandoEliminarClientePotencial(cliente);
+        }
+
+        public static Comando<int> ObtenerComandoUltimoIdClientePotencial()
+        {
+            return new ComandoUltimoIdClientePotencial();
+        }
         #endregion
 
         #region Modulo 4
@@ -842,6 +852,11 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 9
 
+        /// <summary>
+        /// Metodo para crear el comando que permite Agregar un pago
+        /// </summary>
+        /// <param name="entidad">Entidad con la informacion que sera agregada a la BD</param>
+        /// <returns>Regresa el objeto ComandoAgregarPago para poder ejecutarlo</returns>
         public static Comandos.M9.ComandoAgregarPago cargarPago(Entidad entidad)
         {
             return new Comandos.M9.ComandoAgregarPago(entidad);
@@ -850,7 +865,7 @@ namespace LogicaTangerine.Fabrica
         /// metodo para crear comando que permite consultar todos los pagos de una compania
         /// </summary>
         /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
+        /// <returns>Regresa el objeto ComandoConsultarPagos para poder ejecutarlo</returns>
         public static Comando<List<Entidad>> ConsultarPagosCompania(Entidad compania)
         {
             return new ComandoConsultarPagos(compania);

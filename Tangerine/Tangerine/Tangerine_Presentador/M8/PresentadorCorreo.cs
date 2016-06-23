@@ -35,7 +35,7 @@ namespace Tangerine_Presentador.M8
                 Comando<Entidad> _elComando = FabricaComandos.CrearConsultarXIdFactura(_laFactura);
                 _laFactura = (Facturacion)_elComando.Ejecutar();
 
-                _laFactura.Id = int.Parse(this.vista.numero);
+                //_laFactura.Id = int.Parse(this.vista.numero);
                 compania.Id = _laFactura.idCompaniaFactura;
                 proyecto.Id = _laFactura.idProyectoFactura;
 
