@@ -17,15 +17,10 @@ namespace DatosTangerine.DAO.M7
     {
         #region IDAO Proyecto
 
-        public bool DeleteProyecto(Entidad proyecto)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Entidad> ContactProyectoxAcuerdoPago()
         {
-        List<Parametro> parameters = new List<Parametro>();
-           List<Entidad> listProyecto = new List<Entidad>();
+            List<Parametro> parameters = new List<Parametro>();
+            List<Entidad> listProyecto = new List<Entidad>();
 
             try
             {
@@ -37,33 +32,33 @@ namespace DatosTangerine.DAO.M7
                 {
                     Entidad proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
 
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id =
                                         int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre =
                                         row[ResourceProyecto.ProyNombre].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo =
                                         row[ResourceProyecto.ProyCodigo].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio =
                                         DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin =
                                         DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo =
                                         double.Parse(row[ResourceProyecto.ProyCosto].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion =
                                         row[ResourceProyecto.ProyDescripcion].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion =
                                         row[ResourceProyecto.ProyRealizacion].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus =
                                         row[ResourceProyecto.ProyEstatus].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon =
                                         row[ResourceProyecto.ProyRazon].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago =
                                         row[ResourceProyecto.ProyAcuerdoPago].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta =
                                         int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable =
                                         int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente =
                                         int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                     listProyecto.Add(proyecto);
@@ -94,16 +89,6 @@ namespace DatosTangerine.DAO.M7
             return listProyecto;
         }
         
-        public List<Entidad> ContactProyectoPorEmpleado(Entidad empleado)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Entidad> ContactProyectoPorGerente(Entidad empleado)
-        {
-            throw new NotImplementedException();
-        }
-
         public Entidad ContactNombrePropuestaId(Entidad parametro)
         {
             Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();
@@ -111,7 +96,7 @@ namespace DatosTangerine.DAO.M7
             {
                 List<Parametro> parameters = new List<Parametro>();
 
-                Parametro theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int, 
+                Parametro theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int,
                                         ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
                 parameters.Add(theParam);
 
@@ -272,7 +257,7 @@ namespace DatosTangerine.DAO.M7
                                 theProyecto.Nombre.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar,
                                 theProyecto.Codigo.ToString(), false);
                 parameters.Add(theParam);
 
@@ -280,11 +265,11 @@ namespace DatosTangerine.DAO.M7
                                 theProyecto.Fechainicio.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date, 
+                theParam = new Parametro(ResourceProyecto.ParamFechaEstFin, SqlDbType.Date,
                                 theProyecto.Fechaestimadafin.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, 
+                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int,
                                 theProyecto.Costo.ToString(), false);
                 parameters.Add(theParam);
 
@@ -292,31 +277,31 @@ namespace DatosTangerine.DAO.M7
                                 theProyecto.Descripcion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamRealizacion, SqlDbType.VarChar,
                                 theProyecto.Realizacion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar,
                                 theProyecto.Estatus.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar,
                                 theProyecto.Razon.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamAcuerdoPago, SqlDbType.VarChar,
                                 theProyecto.Acuerdopago.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int, 
+                theParam = new Parametro(ResourceProyecto.ParamIdPropuesta, SqlDbType.Int,
                                 theProyecto.Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, 
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int,
                                 theProyecto.Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int, 
+                theParam = new Parametro(ResourceProyecto.ParamIdGerente, SqlDbType.Int,
                                 theProyecto.Idgerente.ToString(), false);
                 parameters.Add(theParam);
 
@@ -372,7 +357,7 @@ namespace DatosTangerine.DAO.M7
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Nombre.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamCodigo, SqlDbType.VarChar,
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Codigo.ToString(), false);
                 parameters.Add(theParam);
 
@@ -384,7 +369,7 @@ namespace DatosTangerine.DAO.M7
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Fechaestimadafin.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int, 
+                theParam = new Parametro(ResourceProyecto.ParamCosto, SqlDbType.Int,
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Costo.ToString(), false);
                 parameters.Add(theParam);
 
@@ -396,11 +381,11 @@ namespace DatosTangerine.DAO.M7
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Realizacion.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamEstatus, SqlDbType.VarChar,
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Estatus.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar, 
+                theParam = new Parametro(ResourceProyecto.ParamRazon, SqlDbType.VarChar,
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Razon.ToString(), false);
                 parameters.Add(theParam);
 
@@ -412,7 +397,7 @@ namespace DatosTangerine.DAO.M7
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idpropuesta.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int, 
+                theParam = new Parametro(ResourceProyecto.ParamIdCompania, SqlDbType.Int,
                                 ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idresponsable.ToString(), false);
                 parameters.Add(theParam);
 
@@ -461,9 +446,9 @@ namespace DatosTangerine.DAO.M7
             Entidad proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
             try
             {
-                List<Parametro> parameters = new List<Parametro>(); 
+                List<Parametro> parameters = new List<Parametro>();
 
-                Parametro theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int, 
+                Parametro theParam = new Parametro(ResourceProyecto.ParamId_Proyecto, SqlDbType.Int,
                                             ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
                 parameters.Add(theParam);
 
@@ -471,33 +456,33 @@ namespace DatosTangerine.DAO.M7
                 DataTable dt = EjecutarStoredProcedureTuplas(ResourceProyecto.ContactProyecto, parameters);
                 //Guardar los datos 
                 DataRow row = dt.Rows[0];
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id =
                                     int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre =
                                     row[ResourceProyecto.ProyNombre].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo =
                                     row[ResourceProyecto.ProyCodigo].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio =
                                     DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin =
                                     DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo =
                                     double.Parse(row[ResourceProyecto.ProyCosto].ToString());
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion =
                                     row[ResourceProyecto.ProyDescripcion].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion =
                                     row[ResourceProyecto.ProyRealizacion].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus =
                                     row[ResourceProyecto.ProyEstatus].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon =
                                     row[ResourceProyecto.ProyRazon].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago =
                                     row[ResourceProyecto.ProyAcuerdoPago].ToString();
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta =
                                     int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable =
                                     int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente = 
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente =
                                     int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
             }
             catch (ArgumentNullException ex)
@@ -531,8 +516,8 @@ namespace DatosTangerine.DAO.M7
         /// <returns>Lista de Proyectos</returns>
         public List<Entidad> ConsultarTodos()
         {
-           List<Parametro> parameters = new List<Parametro>();
-           List<Entidad> listProyecto = new List<Entidad>();
+            List<Parametro> parameters = new List<Parametro>();
+            List<Entidad> listProyecto = new List<Entidad>();
 
             try
             {
@@ -545,31 +530,31 @@ namespace DatosTangerine.DAO.M7
                     Entidad proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
                     ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id =
                                     int.Parse(row[ResourceProyecto.ProyIdProyecto].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre =
                                     row[ResourceProyecto.ProyNombre].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo =
                                     row[ResourceProyecto.ProyCodigo].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio =
                                     DateTime.Parse(row[ResourceProyecto.ProyFechaInicio].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin =
                                     DateTime.Parse(row[ResourceProyecto.ProyFechaEstFin].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo =
                                     double.Parse(row[ResourceProyecto.ProyCosto].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Descripcion =
                                     row[ResourceProyecto.ProyDescripcion].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion =
                                     row[ResourceProyecto.ProyRealizacion].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus =
                                     row[ResourceProyecto.ProyEstatus].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon =
                                     row[ResourceProyecto.ProyRazon].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago =
                                     row[ResourceProyecto.ProyAcuerdoPago].ToString();
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta =
                                     int.Parse(row[ResourceProyecto.ProyIdPropuesta].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idresponsable =
                                     int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
-                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente = 
+                    ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente =
                                     int.Parse(row[ResourceProyecto.ProyIdCompania].ToString());
 
                     listProyecto.Add(proyecto);

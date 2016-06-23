@@ -14,7 +14,7 @@ namespace LogicaTangerine.Comandos.M6
         /// Constructor, recibe parametro de tipo requerimiento
         /// </summary>
         /// <param name="elRequerimiento">objeto de tipo requerimiento</param>
-        public ComandoAgregarRequerimiento(Entidad elRequerimiento) 
+        public ComandoAgregarRequerimiento( Entidad elRequerimiento ) 
         {
              _laEntidad = elRequerimiento;
         }
@@ -27,7 +27,7 @@ namespace LogicaTangerine.Comandos.M6
             try
             {
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
-                return daoRequerimiento.Agregar(_laEntidad);
+                return daoRequerimiento.Agregar( _laEntidad );
             }
             catch (Exception e)
             {

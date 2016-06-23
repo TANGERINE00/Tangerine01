@@ -14,7 +14,7 @@ namespace LogicaTangerine.Comandos.M6
         /// Constructor, recibe parametro de tipo propuesta
         /// </summary>
         /// <param name="laPropuesta">objeto de tipo propuesta</param>
-        public ComandoConsultarXIdPropuesta(Entidad laPropuesta)
+        public ComandoConsultarXIdPropuesta( Entidad laPropuesta )
         {
             _laEntidad = laPropuesta;
         }
@@ -28,7 +28,7 @@ namespace LogicaTangerine.Comandos.M6
             try
             {
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
-                return daoPropuesta.ConsultarXId(_laEntidad);
+                return daoPropuesta.ConsultarXId( _laEntidad );
             }
             catch (Exception e)
             {
