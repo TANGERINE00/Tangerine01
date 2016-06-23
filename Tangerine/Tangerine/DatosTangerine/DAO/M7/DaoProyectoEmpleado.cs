@@ -69,6 +69,103 @@ namespace DatosTangerine.DAO.M7
             return true;
         }
 
+        public List<Entidad> ConsultarHistoricoGerente(Entidad proyecto)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                Resource_M7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            List<Parametro> parameters = new List<Parametro>();
+
+            Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                        proyecto.Id.ToString(), false);
+            parameters.Add(theParam);
+
+            DataTable dt = EjecutarStoredProcedureTuplas(Resource_M7.ConsultarGerentes, parameters);
+            List<Entidad> listEmpleado = new List<Entidad>();
+            try 
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
+                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id =
+                                            int.Parse(row[Resource_M7.Fk_IdEmp].ToString());
+
+                    listEmpleado.Add(empleado);
+                }
+            }
+            
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                Resource_M7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listEmpleado;
+        }
+
+        public bool AgregarHistoricoGerente(Entidad proyecto, Entidad empleado)
+        {
+            {
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+                    //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                    //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+
+                    Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    theParam = new Parametro(Resource_M7.ParamIdGerente, SqlDbType.Int,
+                                    ((DominioTangerine.Entidades.M7.Empleado)empleado).Id.ToString(), false);
+                    parameters.Add(theParam);
+
+                    //Se manda a ejecutar en BDConexion el stored procedure M7_AgregarProyecto y todos los parametros que recibe
+                    List<Resultado> results = EjecutarStoredProcedure(Resource_M7.AgregarHistoricoGerente, parameters);
+
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+                }
+                catch (FormatException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+                }
+                catch (SqlException ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+                }
+                catch (Exception ex)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                    throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
+                }
+
+            }
+            return true;
+        }
+
         /// <summary>
         /// Metodo para consultar todos los empleados de tipo programador en la base de datos.
         /// </summary>

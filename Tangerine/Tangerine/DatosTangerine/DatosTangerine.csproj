@@ -154,18 +154,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceClientePotencial.resx</DependentUpon>
     </Compile>
-    <Compile Include="M4\BDCompania.cs" />
-    <Compile Include="M4\BDLugarDireccion.cs" />
-    <Compile Include="M4\ResourcePlace.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourcePlace.resx</DependentUpon>
-    </Compile>
-    <Compile Include="M4\ResourceCompany.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceCompany.resx</DependentUpon>
-    </Compile>
     <Compile Include="M5\ResourceContact.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,14 +269,6 @@
     <EmbeddedResource Include="DAO\M3\ResourceClientePotencial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceClientePotencial.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M4\ResourcePlace.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourcePlace.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M4\ResourceCompany.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceCompany.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M5\ResourceContact.resx">
       <Generator>ResXFileCodeGenerator</Generator>

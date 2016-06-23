@@ -27,6 +27,7 @@ namespace Tangerine.GUI.M7
         }
 
         #region Contrato
+        
 
         TextBox IContratoModificarProyecto.realizacion
         {
@@ -37,6 +38,18 @@ namespace Tangerine.GUI.M7
             set
             {
                 realizacion = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.gteAct
+        {
+            get
+            {
+                return gteAct;
+            }
+            set
+            {
+                gteAct = value;
             }
         }
 
@@ -85,18 +98,6 @@ namespace Tangerine.GUI.M7
             set
             {
                 textInputFechaInicio = value;
-            }
-        }
-
-        Calendar IContratoModificarProyecto.textInputFechaEstimada
-        {
-            get
-            {
-                return textInputFechaEstimada; ;
-            }
-            set
-            {
-                textInputFechaEstimada = value;
             }
         }
 
@@ -272,6 +273,18 @@ namespace Tangerine.GUI.M7
         public string alerta
         {
             set { alert.InnerHtml = value; }
+        }
+
+        public string FechaFin
+        {
+            get
+            {
+                return datepicker1.Value;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
         #endregion

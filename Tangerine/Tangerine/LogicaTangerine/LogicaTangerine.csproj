@@ -131,7 +131,9 @@
     <Compile Include="Comandos\M6\ComandoConsultarNumeroRequerimientos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarContactos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarEmpleados.cs" />
+    <Compile Include="Comandos\M7\ComandoAgregarHistoricoGerente.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarHistoricoGerente.cs" />
     <Compile Include="Comandos\M7\ComandoUltimoIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoModificarProyecto.cs" />
@@ -200,12 +202,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceLogicaM1.resx</DependentUpon>
     </Compile>
-    <Compile Include="M4\LogicaM4.cs" />
-    <Compile Include="M4\LogicResourcesM4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LogicResourcesM4.resx</DependentUpon>
-    </Compile>
     <Compile Include="M5\LogicResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,10 +232,6 @@
     <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M4\LogicResourcesM4.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>LogicResourcesM4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M5\LogicResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

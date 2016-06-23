@@ -145,9 +145,11 @@ namespace Tangerine_Presentador.M6
                 }
             }
             catch (Exception e)
-            {
-                ///
+            {  
+                MessageBox.Show("Error Cargando las compañias.", "Error", MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
             }
+            
 
         }
 
