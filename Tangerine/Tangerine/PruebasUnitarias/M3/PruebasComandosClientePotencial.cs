@@ -22,6 +22,7 @@ namespace PruebasUnitarias.M3
         private LogicaTangerine.Comando<bool> comandoRespuesta;
         private LogicaTangerine.Comando<int> comandoNumero;
         private LogicaTangerine.Comando<Entidad> comandoBuscar;
+        private LogicaTangerine.Comando<List<Entidad>> comandoLista;
 
         #endregion
 
@@ -156,6 +157,66 @@ namespace PruebasUnitarias.M3
 
             comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente3);
             comandoRespuesta.Ejecutar();
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para desactivar un cliente por ID
+        /// </summary>
+        [Test]
+        public void TestComandoEliminarClientePotencial()
+        {
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(elCliente3);
+            comandoRespuesta.Ejecutar();
+
+            comandoNumero = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoUltimoIdClientePotencial();
+            elCliente3.Id = comandoNumero.Ejecutar();
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente3);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para listar los clientes potenciales
+        /// </summary>
+        [Test]
+        public void TestComandoListarClientePotencial()
+        {
+            comandoLista = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosClientePotencial();
+            losClientes = comandoLista.Ejecutar();
+            Assert.NotNull(losClientes);
+            foreach (Entidad cliente in losClientes)
+            {
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).EmailClientePotencial);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NombreClientePotencial);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NumeroLlamadas);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NumeroVisitas);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).PresupuestoAnual_inversion);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).RifClientePotencial);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).Status);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).IdClientePotencial);
+            }
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para modificar los clientes potenciales
+        /// </summary>
+        [Test]
+        public void TestComandoModificarClientePotencial()
+        {
+            comandoLista = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosClientePotencial();
+            losClientes = comandoLista.Ejecutar();
+            Assert.NotNull(losClientes);
+            foreach (Entidad cliente in losClientes)
+            {
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).EmailClientePotencial);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NombreClientePotencial);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NumeroLlamadas);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NumeroVisitas);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).PresupuestoAnual_inversion);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).RifClientePotencial);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).Status);
+                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).IdClientePotencial);
+            }
         }
     }
 }
