@@ -124,7 +124,7 @@
     <value>M9_CambioStatus</value>
   </data>
   <data name="ConsultarHistoricoPagos" xml:space="preserve">
-    <value>M9_historico_pago_por_compania</value>
+    <value>M9_HistoricoPagoCompania</value>
   </data>
   <data name="FacFechaEmision" xml:space="preserve">
     <value>fac_fecha_emision</value>
