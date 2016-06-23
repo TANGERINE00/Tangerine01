@@ -34,7 +34,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="contrasena"></param>
-        public UsuarioM2( string usuario, string contrasena )
+        public UsuarioM2( string usuario , string contrasena )
         {
             _usuario = usuario;
             _contrasena = contrasena;
@@ -45,7 +45,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="usuario"></param>
         /// <param name="rol"></param>
-        public UsuarioM2( string usuario, RolM2 rol )
+        public UsuarioM2( string usuario , RolM2 rol )
         {
             _usuario = usuario;
             _rol = rol;
@@ -57,8 +57,8 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="usuario"></param>
         /// <param name="contrasena"></param>
         /// <param name="activo"></param>
-        public UsuarioM2( string usuario, string contrasena, string activo )
-               :this( usuario, contrasena )
+        public UsuarioM2( string usuario , string contrasena , string activo )
+               :this( usuario , contrasena )
         {
             _activo = activo;
         }
@@ -70,8 +70,8 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="contrasena"></param>
         /// <param name="activo"></param>
         /// <param name="rol"></param>
-        public UsuarioM2( string usuario, string contrasena, string activo, RolM2 rol )
-               :this( usuario, contrasena, activo )
+        public UsuarioM2( string usuario , string contrasena , string activo , RolM2 rol )
+               :this( usuario , contrasena , activo )
         {
             _rol = rol;
         }
@@ -85,8 +85,8 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="activo"></param>
         /// <param name="rol"></param>
         /// <param name="fichaEmpleado"></param>
-        public UsuarioM2( string usuario, string contrasena, DateTime fechaCreacion, string activo, RolM2 rol, int fichaEmpleado )
-               :this( usuario, contrasena, activo, rol )
+        public UsuarioM2( string usuario , string contrasena , DateTime fechaCreacion , string activo , RolM2 rol , int fichaEmpleado )
+               :this( usuario , contrasena , activo , rol )
         {
             _fechaCreacion = fechaCreacion;
             _fichaEmpleado = fichaEmpleado;
@@ -102,7 +102,8 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="activo"></param>
         /// <param name="rol"></param>
         /// <param name="fichaEmpleado"></param>
-        public UsuarioM2( int id , string usuario, string contrasena, DateTime fechaCreacion, string activo, RolM2 rol, int fichaEmpleado )
+        public UsuarioM2( int id , string usuario , string contrasena , DateTime fechaCreacion , string activo , RolM2 rol ,
+                          int fichaEmpleado )
                :this ( usuario , contrasena , activo , rol )
         {
             Id = id;
@@ -192,11 +193,11 @@ namespace DominioTangerine.Entidades.M2
 
             StringBuilder sb = new StringBuilder();
 
-            byte[] stream = md5.ComputeHash(encoding.GetBytes(contrasena));
+            byte[] stream = md5.ComputeHash( encoding.GetBytes( contrasena ) );
 
-            for (int i = 0; i < stream.Length; i++)
+            for ( int i = 0 ; i < stream.Length ; i++ )
             {
-                sb.AppendFormat("{0:x2}", stream[i]);
+                sb.AppendFormat( "{0:x2}" , stream[i] );
             }
 
             return sb.ToString();

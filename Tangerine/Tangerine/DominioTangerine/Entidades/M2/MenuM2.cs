@@ -39,7 +39,7 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         /// <param name="nombre"></param>
         /// <param name="opciones"></param>
-        public MenuM2( string nombre, ListaGenericaM2<OpcionM2> opciones )
+        public MenuM2( string nombre , ListaGenericaM2<OpcionM2> opciones )
                :this ( nombre ) 
         {
             _opciones = opciones;
@@ -78,10 +78,10 @@ namespace DominioTangerine.Entidades.M2
         /// </summary>
         public void imprimirListaDeOpciones()
         {
-            foreach (OpcionM2 o in _opciones)
+            foreach ( OpcionM2 o in _opciones )
             {
-                System.Diagnostics.Debug.WriteLine("Opcion: " + o.nombre);
-                System.Diagnostics.Debug.WriteLine("Url: " + o.url);
+                System.Diagnostics.Debug.WriteLine( "Opcion: " + o.nombre );
+                System.Diagnostics.Debug.WriteLine( "Url: " + o.url );
             }
         }
 
