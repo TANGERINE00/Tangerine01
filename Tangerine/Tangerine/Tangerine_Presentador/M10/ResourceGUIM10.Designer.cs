@@ -115,7 +115,7 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Activar/Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?id=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Activar/Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
         /// </summary>
         internal static string BotonStatusEmpAbrir {
             get {

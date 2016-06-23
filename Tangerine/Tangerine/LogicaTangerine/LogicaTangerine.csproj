@@ -178,6 +178,7 @@
     </Compile>
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Comandos\M9\ComandoConsultarPagos.cs" />
+    <Compile Include="Comandos\M9\ComandoEliminarPago.cs" />
     <Compile Include="Comandos\M9\ResourceComandoM9.Designer.cs">
       <DependentUpon>ResourceComandoM9.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -228,7 +229,6 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="M5\LogicaM5.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Comandos\M5\RecursoComandosM5.resx">

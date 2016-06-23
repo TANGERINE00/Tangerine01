@@ -34,6 +34,13 @@ namespace Tangerine_Presentador.M7
              Comando<Entidad> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(parametro);
              Entidad propuesta = comando2.Ejecutar();
 
+             Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
+             List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
+
+             Comando<List<Entidad>> comando4 =
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProgramadores();
+             List<Entidad> programadores = comando4.Ejecutar();
+
               try
               {
                    vista.NombrePropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
@@ -46,35 +53,45 @@ namespace Tangerine_Presentador.M7
                    vista.Estatus.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus;
 
                    llenarCombo(contactos);
+                   llenarComboPersonal(programadores, listaEmpleados);
 
-                   /*-->> Proyecto Proyecto = new Proyecto();
-                   LogicaProyecto LogicaM7 = new LogicaProyecto();
-                   -->> Proyecto = LogicaM7.consultarProyecto(Proyectoid);
-                   -->> ContactosProyecto = LogicaM5.GetContactsProyect(Proyecto);
-                   ProgramadoresProyecto = LogicaM7.obtenerListaEmpleados(Proyecto);
-                   -->> NombrePropuesta.Text = LogicaM7.ConsultarNombrePropuestaID(Proyecto.Idpropuesta);
-                   NombreProyecto.Text = Proyecto.Nombre;
-                   CodigoProyecto.Text = Proyecto.Codigo;
-                   FechaInicio.Text = Proyecto.Fechainicio.ToString("dd/MM/yyyy");
-                   FechaFin.Text = Proyecto.Fechaestimadafin.ToString("dd/MM/yyyy");
-                   Costo.Text = Proyecto.Costo.ToString();
-                   Porcentaje.Text = Proyecto.Realizacion;
-                   Estatus.Text = Proyecto.Estatus;
-                   for (int i = 0; i < ProgramadoresProyecto.Count; i++)
-                   {
-                       inputPersonal.Items.Add(ProgramadoresProyecto[i].emp_p_nombre + " " + ProgramadoresProyecto[i].emp_p_apellido);
-                   }
-
-                   for (int i = 0; i < ContactosProyecto.Count; i++)
-                   {
-                       inputEncargado.Items.Add(ContactosProyecto[i].Nombre + " " + ContactosProyecto[i].Apellido);
-                   }*/
               }
 
               catch (Exception ex)
               {
                   throw ex;
               }
+         }
+
+         private void llenarComboPersonal(List<Entidad> programadores, List<Entidad> actuales)
+         {
+             List<Entidad> noAsignados = new List<Entidad>();
+             List<Entidad> Asignados = new List<Entidad>();
+
+             foreach (Entidad actual in actuales)
+             {
+                 foreach (Entidad programador in programadores)
+                 {
+                     if (((DominioTangerine.Entidades.M7.Empleado)programador).Id ==
+                                             ((DominioTangerine.Entidades.M7.Empleado)actual).emp_num_ficha)
+                     {
+                         Asignados.Add(programador);
+                         programadores.Remove(programador);
+                         break;
+                     }
+                 }
+             }
+             Dictionary<int, string> listaEmpleados = new Dictionary<int, string>();
+             foreach (Entidad empleado in Asignados)
+             {
+                 listaEmpleados.Add(((DominioTangerine.Entidades.M7.Empleado)empleado).Id,
+                     (((DominioTangerine.Entidades.M7.Empleado)empleado).emp_p_nombre) +
+                     " " + ((DominioTangerine.Entidades.M7.Empleado)empleado).emp_p_apellido);
+             }
+             vista.inputPersonal.DataSource = listaEmpleados;
+             vista.inputPersonal.DataTextField = RecursoPresentadorM7.Value;
+             vista.inputPersonal.DataValueField = RecursoPresentadorM7.Key;
+             vista.inputPersonal.DataBind();
          }
 
         private void llenarCombo(List<Entidad> contactos)

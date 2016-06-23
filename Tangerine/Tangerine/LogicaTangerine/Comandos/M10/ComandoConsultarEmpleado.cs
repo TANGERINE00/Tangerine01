@@ -23,7 +23,8 @@ namespace LogicaTangerine.Comandos.M10
         {
             try
             {
-                IDAOEmpleado daoEmpleado =(DatosTangerine.DAO.M10.DAOEmpleado) DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleado();
+                IDAOEmpleado daoEmpleado =(DatosTangerine.DAO.M10.DAOEmpleado) DatosTangerine.Fabrica.
+                FabricaDAOSqlServer.ConsultarDAOEmpleado();
                 return daoEmpleado.ConsultarTodos();
             }
             catch (AgregarContactoException ex)
