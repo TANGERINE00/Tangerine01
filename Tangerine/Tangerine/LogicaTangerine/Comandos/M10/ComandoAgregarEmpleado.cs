@@ -14,12 +14,20 @@ using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
+    /// <summary>
+    /// Constructor de la clase
+    /// </summary>
     class ComandoAgregarEmpleado:Comando<bool>
     {
         public ComandoAgregarEmpleado(Entidad Empleado)
         {
             elEmpleado = Empleado;
         }
+
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override bool Ejecutar()
         {
             try

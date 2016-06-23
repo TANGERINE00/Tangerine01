@@ -15,11 +15,19 @@ namespace LogicaTangerine.Comandos.M10
     {
         private Entidad empleado;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public ComandoConsultarEmpleado()
         {
             
             this.empleado = empleado;
         }
+
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override List<Entidad> Ejecutar()
         {
             try
