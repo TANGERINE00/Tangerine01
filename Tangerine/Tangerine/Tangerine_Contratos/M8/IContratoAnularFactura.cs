@@ -15,5 +15,8 @@ namespace Tangerine_Contratos.M8
         string descripcion { get; set; }
         string monto { get; set; }
         string moneda { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
     }
 }

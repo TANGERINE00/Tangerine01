@@ -22,6 +22,13 @@ namespace Tangerine_Presentador.M8
             this.vista = vista;
         }
 
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
+        }
+
         public void cargarFactura()
         {
             try
