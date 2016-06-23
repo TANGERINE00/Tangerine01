@@ -809,6 +809,61 @@ WHERE Cp.cli_pot_id=Se.fk_cli_pot
 END;
 GO
 
+CREATE procedure M3_Agrgar_Seguimento
+@fecha date,
+@tipo varchar(15),
+@motivo varchar(255),
+@fk int
+AS
+BEGIN
+DECLARE @idLead int;
+DECLARE @llamadas int;
+DECLARE @visitas int;
+DECLARE @tipoRegistro varchar(15);
+
+SET @tipoRegistro= @tipo;
+
+SET @idLead = (select Count(SE.seg_id)
+  from seguimiento SE);
+   
+   SET @llamadas =(select CP.cli_pot_num_llamadas
+from Cliente_Potencial CP
+where CP.cli_pot_id=@fk);
+   
+   SET @visitas =(select CP.cli_pot_num_visitas
+from Cliente_Potencial CP
+where CP.cli_pot_id=@fk);
+   
+   IF (@idLead <= 0)
+Begin
+SET @idLead=1;
+END;
+   
+   IF (@idLead > 0)
+BEGIN
+SET @idLead = @idLead + 1;
+END;
+
+INSERT INTO Seguimiento VALUES (@idLead,@fecha,@tipo,@motivo,@fk);
+commit;
+
+IF @tipoRegistro='Llamada'
+BEGIN
+update Cliente_Potencial
+SET cli_pot_num_llamadas= @llamadas +1
+where cli_pot_id=@fk;
+END;
+
+IF @tipoRegistro='Visita'
+BEGIN
+update Cliente_Potencial
+SET cli_pot_num_visitas=@visitas +1
+where cli_pot_id=@fk;
+END;
+
+END;
+go
+
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
