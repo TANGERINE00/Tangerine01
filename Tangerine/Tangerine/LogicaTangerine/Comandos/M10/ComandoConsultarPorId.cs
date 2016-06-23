@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
+using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
@@ -31,7 +32,7 @@ namespace LogicaTangerine.Comandos.M10
                 Entidad daoEmp = daoEmpleado.ConsultarXId(empleado);
                 return daoEmp;
             }
-            catch (Exception e)
+            catch (ConsultarEmpleadoException e)
             {
                 throw e;
             }
