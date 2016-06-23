@@ -122,5 +122,23 @@ namespace LogicaTangerine.Comandos.M8 {
                 return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistema Tangerine.
+        /// </summary>
+        internal static string SysName {
+            get {
+                return ResourceManager.GetString("SysName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sistematangerine.dev@gmail.com.
+        /// </summary>
+        internal static string systemmail {
+            get {
+                return ResourceManager.GetString("systemmail", resourceCulture);
+            }
+        }
     }
 }

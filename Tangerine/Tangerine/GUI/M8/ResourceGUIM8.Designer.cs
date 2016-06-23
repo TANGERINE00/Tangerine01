@@ -268,6 +268,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to estado.
+        /// </summary>
+        internal static string estado {
+            get {
+                return ResourceManager.GetString("estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IdCompania.
         /// </summary>
         internal static string idC {
