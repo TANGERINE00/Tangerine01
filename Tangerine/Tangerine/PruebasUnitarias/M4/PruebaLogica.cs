@@ -321,8 +321,10 @@ namespace PruebasUnitarias.M4
                 Comando < bool > Comand2 = FabricaComandos.CrearModificarCompania(
                     DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),
                     "Prueba De Datos1", "J-134214513", "asd@asdd.com", "3439485", "ADD", new DateTime(2015, 12, 12), 0, 10000, 60, 3));
-                Assert.IsTrue(Comand.Ejecutar());
-                Comando<Entidad> Comand3 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+                Assert.IsTrue(Comand2.Ejecutar());
+                Comando<Entidad> Comand3 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(
+                    daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", 
+                    new DateTime(2015, 2, 10), 1, 100, 30, 1));
                 theCompany2 = Comand3.Ejecutar();
                 Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).Id == daoCompania.ConsultLastCompanyId());
                 Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).NombreCompania == "Prueba De Datos1");
