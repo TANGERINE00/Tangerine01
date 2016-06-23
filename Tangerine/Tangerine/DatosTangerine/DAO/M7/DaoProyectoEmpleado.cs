@@ -169,7 +169,7 @@ namespace DatosTangerine.DAO.M7
         ///  <param name="parametro">objeto de tipo proyecto con el ID para buscar en BD</param>
         ///  <param name="parametros">objeto de tipo lista parametro para la captura de los campos</param>
         /// <returns>Lista de Empleados asociados al proyecto</returns>
-        public bool ObtenerListaEmpleados(Entidad proyecto)
+        public List<Entidad> ObtenerListaEmpleados(Entidad proyecto)
         {
 
             List<Entidad> listEmpleado = new List<Entidad>();
@@ -198,7 +198,6 @@ namespace DatosTangerine.DAO.M7
                     listEmpleado.Add(empleado);
 
                 }
-                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).set_empleados(listEmpleado);
             }
             catch (ArgumentNullException ex)
             {
@@ -220,7 +219,7 @@ namespace DatosTangerine.DAO.M7
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
             }
-            return true;
+            return listEmpleado;
         }
 
         /// <summary>
