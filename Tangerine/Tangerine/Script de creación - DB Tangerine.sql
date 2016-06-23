@@ -15,7 +15,7 @@
 		fk_lug_dir_id
 	) references LUGAR_DIRECCION(lug_dir_id)
 );
-
+	
 create table EMPLEADO
 (
 	emp_num_ficha int not null,

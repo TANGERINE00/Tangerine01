@@ -37,7 +37,11 @@ namespace Tangerine.GUI.M9
         }
 
 
-
+        /// <summary>
+        /// Metodo para cargar los pagos realizados por una empresa 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             int idComp = int.Parse(Request.QueryString.Get("id"));
