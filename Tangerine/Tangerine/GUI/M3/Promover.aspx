@@ -75,21 +75,9 @@
                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Promover_Click" Text ="Promover"   ></asp:Button>
                 </form>
                     </div>
-
-   
-
-            
                     
 				</div>	
 			
             </div>
 		</div>
-        
-
-
- 
- 
-    
-
-
 </asp:Content>
