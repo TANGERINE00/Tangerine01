@@ -25,6 +25,13 @@ namespace Tangerine_Presentador.M3
             vista.Tipo.Items.Insert(1, "Llamada");
             vista.Tipo.Items.Insert(2, "Visita");
             vista.Tipo.DataBind();
+
         }
+
+        public void MostrarFechaDeRegistro()
+        {
+            vista.Fecha = DateTime.Now.ToString();
+        }
+
     }
 }

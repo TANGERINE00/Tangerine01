@@ -13,5 +13,6 @@ namespace Tangerine_Contratos.M3
         //DateTime Fecha { get; set; }
         String Fecha { get; set; }
         String Motivo { get; set; }
+        String Opcion { get; set; }
     }
 }

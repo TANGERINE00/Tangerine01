@@ -13,6 +13,7 @@ namespace Tangerine.GUI.M3
     public partial class AgregarSequimiento : System.Web.UI.Page, IContratoAgregarSeguimiento
     {
         PresentadorAgregarSeguimiento presentador;
+        private String opcion;
 
         public AgregarSequimiento()
         {
@@ -20,6 +21,17 @@ namespace Tangerine.GUI.M3
         }
 
         #region Contrato
+        public String Opcion
+        {
+            get 
+            {
+                return this.opcion;
+            }
+            set
+            {
+                this.opcion = value;
+            }
+        }
         public DropDownList Tipo
         {
             get 
@@ -75,25 +87,14 @@ namespace Tangerine.GUI.M3
             int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
             if (!IsPostBack)
             {
-                //MostratOpcionesDeSeguimiento();
                 presentador.CargarTipoDeSeguimiento();
-                this.fechaActual.Value = DateTime.Now.ToString();
-               
+                presentador.MostrarFechaDeRegistro();
             }
         }
 
         protected void SelectedType_Change(object sender, EventArgs e)
         {
-            /*try
-            {
-                JobSummary.InnerText = "";
-                JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
-            }
-            catch (Exception ex)
-            {
-                JobSummary.InnerText = "";
-            }*/
-
+            opcion = SelecteTipo.SelectedItem.Text.ToString();
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
@@ -101,14 +102,5 @@ namespace Tangerine.GUI.M3
 
         }
 
-       /* private void MostratOpcionesDeSeguimiento()
-        {
-            SelecteTipo.Items.Insert(0, "Seleccione una opción");
-            SelecteTipo.Items.Insert(1, "Llamada");
-            SelecteTipo.Items.Insert(2, "Visita");
-            SelecteTipo.DataBind();
-        }*/
-
-        
     }
 }

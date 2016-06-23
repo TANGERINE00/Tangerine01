@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-xs-12">
                             <div class="form-group">
-                            <label for="SelectedListJob">Motivo del seguimiento</label>
+                            <label for="Descripcion">Motivo del seguimiento</label>
                             <textarea class="form-control" rows="3" runat="server" id="motivo" placeholder="Motivo (solo 150 caracteres)"></textarea>
                          </div>
                         </div>
