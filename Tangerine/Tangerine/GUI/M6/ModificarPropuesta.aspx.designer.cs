@@ -49,24 +49,6 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.WebControls.Literal requerimientos;
         
         /// <summary>
-        /// datepicker1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker1;
-        
-        /// <summary>
-        /// datepicker2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker2;
-        
-        /// <summary>
         /// comboDuracion control.
         /// </summary>
         /// <remarks>
@@ -83,6 +65,24 @@ namespace Tangerine.GUI.M6 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText textoDuracion;
+        
+        /// <summary>
+        /// datepicker1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker1;
+        
+        /// <summary>
+        /// datepicker2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker2;
         
         /// <summary>
         /// comboTipoCosto control.
