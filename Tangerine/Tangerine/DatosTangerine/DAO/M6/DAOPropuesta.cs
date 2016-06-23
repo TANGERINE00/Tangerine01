@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M6;
 using DominioTangerine;
 using DominioTangerine.Entidades.M6;
@@ -27,7 +26,7 @@ namespace DatosTangerine.DAO.M6
         public bool Agregar( Entidad laPropuesta )
         {
             Logger.EscribirInfo ( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+                RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             DominioTangerine.Entidades.M6.Propuesta propuesta = ( DominioTangerine.Entidades.M6.Propuesta ) laPropuesta;
 
@@ -38,45 +37,45 @@ namespace DatosTangerine.DAO.M6
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                parametro = new Parametro( RecursosPropuesta.ParamNombreProp, SqlDbType.VarChar, propuesta.Nombre, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamNombreProp, SqlDbType.VarChar, propuesta.Nombre, false);
                 parametros.Add( parametro );
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                parametro = new Parametro ( RecursosPropuesta.ParamDescriProp, SqlDbType.VarChar, propuesta.Descripcion, false);
+                parametro = new Parametro( RecursoDAOPropuesta.ParamDescriProp, SqlDbType.VarChar, propuesta.Descripcion, false);
                 parametros.Add( parametro );
 
-                parametro = new Parametro ( RecursosPropuesta.ParamTipoDuProp, SqlDbType.VarChar, propuesta.TipoDuracion, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamTipoDuProp, SqlDbType.VarChar, propuesta.TipoDuracion, false);
                 parametros.Add( parametro );
 
-                parametro = new Parametro ( RecursosPropuesta.ParamDuracProp, SqlDbType.VarChar, propuesta.CantDuracion, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamDuracProp, SqlDbType.VarChar, propuesta.CantDuracion, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro (RecursosPropuesta.ParamFechaIProp, SqlDbType.Date, propuesta.Feincio.ToString(), false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamFechaIProp, SqlDbType.Date, propuesta.Feincio.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro ( RecursosPropuesta.ParamFechaFProp, SqlDbType.Date, propuesta.Fefinal.ToString(), false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamFechaFProp, SqlDbType.Date, propuesta.Fefinal.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro ( RecursosPropuesta.ParamEstatusProp, SqlDbType.VarChar, propuesta.Estatus, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamEstatusProp, SqlDbType.VarChar, propuesta.Estatus, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro ( RecursosPropuesta.ParamMonedaProp, SqlDbType.VarChar, propuesta.Moneda, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamMonedaProp, SqlDbType.VarChar, propuesta.Moneda, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro ( RecursosPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, propuesta.Acuerdopago, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, propuesta.Acuerdopago, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro ( RecursosPropuesta.ParamCantidaProp, SqlDbType.Int, propuesta.Entrega.ToString(), false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamCantidaProp, SqlDbType.Int, propuesta.Entrega.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro (RecursosPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro ( RecursosPropuesta.ParamIdCompa, SqlDbType.Int, propuesta.IdCompañia.ToString(), false);
+                parametro = new Parametro( RecursoDAOPropuesta.ParamIdCompa, SqlDbType.Int, propuesta.IdCompañia.ToString(), false);
                 parametros.Add(parametro);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarPropuesta y todos los parametros que recibe
-                List<Resultado> resultado = EjecutarStoredProcedure( RecursosPropuesta.AgregarPropuesta, parametros );
+                List<Resultado> resultado = EjecutarStoredProcedure( RecursoDAOPropuesta.AgregarPropuesta, parametros);
             }
             catch ( SqlException ex )
             {
@@ -105,7 +104,7 @@ namespace DatosTangerine.DAO.M6
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+                RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             return true;
         }
@@ -119,7 +118,7 @@ namespace DatosTangerine.DAO.M6
         public Boolean Modificar( Entidad laPropuesta )
         {
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+               RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             DominioTangerine.Entidades.M6.Propuesta propuesta = ( DominioTangerine.Entidades.M6.Propuesta )laPropuesta;
 
@@ -131,39 +130,39 @@ namespace DatosTangerine.DAO.M6
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
 
-                theParam = new Parametro ( RecursosPropuesta.ParamPropnombre, SqlDbType.VarChar, propuesta.Nombre, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamPropnombre, SqlDbType.VarChar, propuesta.Nombre, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamDescriProp, SqlDbType.VarChar, propuesta.Descripcion, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamDescriProp, SqlDbType.VarChar, propuesta.Descripcion, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamTipoDuProp, SqlDbType.VarChar, propuesta.TipoDuracion, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamTipoDuProp, SqlDbType.VarChar, propuesta.TipoDuracion, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamDuracProp, SqlDbType.VarChar, propuesta.CantDuracion, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamDuracProp, SqlDbType.VarChar, propuesta.CantDuracion, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, propuesta.Acuerdopago, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamAcuerdoProp, SqlDbType.VarChar, propuesta.Acuerdopago, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamEstatusProp, SqlDbType.VarChar, propuesta.Estatus, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamEstatusProp, SqlDbType.VarChar, propuesta.Estatus, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamMonedaProp, SqlDbType.VarChar, propuesta.Moneda, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamMonedaProp, SqlDbType.VarChar, propuesta.Moneda, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamFechaIProp, SqlDbType.Date, propuesta.Feincio.ToString(), false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamFechaIProp, SqlDbType.Date, propuesta.Feincio.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamFechaFProp, SqlDbType.Date, propuesta.Fefinal.ToString(), false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamFechaFProp, SqlDbType.Date, propuesta.Fefinal.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro ( RecursosPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false );
+                theParam = new Parametro( RecursoDAOPropuesta.ParamCostoProp, SqlDbType.Int, propuesta.Costo.ToString(), false);
                 parameters.Add(theParam);
 
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = EjecutarStoredProcedure( RecursosPropuesta.Modificar_Propuesta, parameters );
+                List<Resultado> results = EjecutarStoredProcedure(RecursoDAOPropuesta.Modificar_Propuesta, parameters);
 
             }
             catch ( SqlException ex )
@@ -192,7 +191,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return true;
         }
 
@@ -205,7 +204,7 @@ namespace DatosTangerine.DAO.M6
         public Entidad ConsultarXId( Entidad id )
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
             List<Parametro> parametros = new List<Parametro>();
             
@@ -213,28 +212,28 @@ namespace DatosTangerine.DAO.M6
 
             try
             {
-                Parametro parametro = new Parametro( RecursosPropuesta.Prop_Nombre, SqlDbType.VarChar, 
+                Parametro parametro = new Parametro( RecursoDAOPropuesta.Prop_Nombre, SqlDbType.VarChar, 
                     ( ( DominioTangerine.Entidades.M6.Propuesta )id ).Nombre, false );
                 parametros.Add(parametro);
 
-                DataTable dataTablePropuestas = EjecutarStoredProcedureTuplas( RecursosPropuesta.ConsultarPropuestaNombre, 
+                DataTable dataTablePropuestas = EjecutarStoredProcedureTuplas( RecursoDAOPropuesta.ConsultarPropuestaNombre, 
                     parametros );
 
                 DataRow fila = dataTablePropuestas.Rows[0];
 
                 propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
                     ((DominioTangerine.Entidades.M6.Propuesta)id).Nombre,
-                    fila[RecursosPropuesta.PropDescripcion].ToString(), 
-                    fila[RecursosPropuesta.PropTipoDuracion].ToString(), 
-                    fila[RecursosPropuesta.PropDuracion].ToString(), 
-                    fila[RecursosPropuesta.PropAcuerdo].ToString(), 
-                    fila[RecursosPropuesta.PropEstatus].ToString(), 
-                    fila[RecursosPropuesta.PropMoneda].ToString(), 
-                    Convert.ToInt32(fila[RecursosPropuesta.PropCantidad]), 
-                    Convert.ToDateTime(fila[RecursosPropuesta.PropFechaIni]), 
-                    Convert.ToDateTime(fila[RecursosPropuesta.PropFechaFin]), 
-                    Convert.ToInt32(fila[RecursosPropuesta.PropCosto]), 
-                    fila[RecursosPropuesta.PropIdCompania].ToString() );
+                    fila[RecursoDAOPropuesta.PropDescripcion].ToString(), 
+                    fila[RecursoDAOPropuesta.PropTipoDuracion].ToString(), 
+                    fila[RecursoDAOPropuesta.PropDuracion].ToString(), 
+                    fila[RecursoDAOPropuesta.PropAcuerdo].ToString(), 
+                    fila[RecursoDAOPropuesta.PropEstatus].ToString(), 
+                    fila[RecursoDAOPropuesta.PropMoneda].ToString(), 
+                    Convert.ToInt32(fila[RecursoDAOPropuesta.PropCantidad]), 
+                    Convert.ToDateTime(fila[RecursoDAOPropuesta.PropFechaIni]), 
+                    Convert.ToDateTime(fila[RecursoDAOPropuesta.PropFechaFin]), 
+                    Convert.ToInt32(fila[RecursoDAOPropuesta.PropCosto]), 
+                    fila[RecursoDAOPropuesta.PropIdCompania].ToString() );
             }
             catch ( SqlException ex )
             {
@@ -262,7 +261,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return propuesta;
         }
 
@@ -274,7 +273,7 @@ namespace DatosTangerine.DAO.M6
         public List<Entidad>ConsultarTodos()
         {
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             List<Parametro> parametros = new List<Parametro>();
             List<Entidad> listaPropuesta = new List<Entidad>();
@@ -284,23 +283,23 @@ namespace DatosTangerine.DAO.M6
                 Conectar();
 
                 //Guardo la tabla que me regresa el procedimiento de consultar propuestas
-                DataTable dt = EjecutarStoredProcedureTuplas( RecursosPropuesta.ConsultarTodasPropuestas, parametros );
+                DataTable dt = EjecutarStoredProcedureTuplas( RecursoDAOPropuesta.ConsultarTodasPropuestas, parametros );
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach ( DataRow row in dt.Rows )
                 {
-                    String conNombre = row[RecursosPropuesta.PropNombre].ToString();
-                    String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
-                    String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
-                    String conDuracion = row[RecursosPropuesta.PropDuracion].ToString();
-                    String conAcuerdo = row[RecursosPropuesta.PropAcuerdo].ToString();
-                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
-                    String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
-                    int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
-                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
-                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
-                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
-                    String conFkComp = row[RecursosPropuesta.PropIdCompania].ToString();
+                    String conNombre = row[RecursoDAOPropuesta.PropNombre].ToString();
+                    String conDescripcion = row[RecursoDAOPropuesta.PropDescripcion].ToString();
+                    String contipoDuracion = row[RecursoDAOPropuesta.PropTipoDuracion].ToString();
+                    String conDuracion = row[RecursoDAOPropuesta.PropDuracion].ToString();
+                    String conAcuerdo = row[RecursoDAOPropuesta.PropAcuerdo].ToString();
+                    String conEstatus = row[RecursoDAOPropuesta.PropEstatus].ToString();
+                    String conMoneda = row[RecursoDAOPropuesta.PropMoneda].ToString();
+                    int conEntregas = Convert.ToInt32(row[RecursoDAOPropuesta.PropCantidad]);
+                    DateTime conFechaIni = Convert.ToDateTime(row[RecursoDAOPropuesta.PropFechaIni]);
+                    DateTime conFechaFin = Convert.ToDateTime(row[RecursoDAOPropuesta.PropFechaFin]);
+                    int conCosto = Convert.ToInt32(row[RecursoDAOPropuesta.PropCosto]);
+                    String conFkComp = row[RecursoDAOPropuesta.PropIdCompania].ToString();
 
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
                     Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta( conNombre, 
@@ -337,7 +336,7 @@ namespace DatosTangerine.DAO.M6
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             return listaPropuesta;
         }
@@ -394,7 +393,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return mayorId;
         }
 
@@ -445,7 +444,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return numero;
         }
 
@@ -457,7 +456,7 @@ namespace DatosTangerine.DAO.M6
         public Boolean BorrarPropuesta( string nombrePropuesta )
         {
            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
-               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+               RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             List<Parametro> parameters = new List<Parametro>();
             Parametro theParam = new Parametro();
@@ -466,11 +465,11 @@ namespace DatosTangerine.DAO.M6
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro ( RecursosPropuesta.Prop_Nombre, SqlDbType.VarChar, nombrePropuesta, false );
+                theParam = new Parametro ( RecursoDAOPropuesta.Prop_Nombre, SqlDbType.VarChar, nombrePropuesta, false );
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = EjecutarStoredProcedure( RecursosPropuesta.EliminarPropuesta, parameters );
+                List<Resultado> results = EjecutarStoredProcedure( RecursoDAOPropuesta.EliminarPropuesta, parameters );
 
             }
             catch ( SqlException ex )
@@ -499,7 +498,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             return true;
         }
@@ -512,7 +511,7 @@ namespace DatosTangerine.DAO.M6
         public List<Entidad>PropuestaProyecto()
         {
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+                RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             List<Parametro> parametros = new List<Parametro>();
             List<Entidad> listaPropuesta = new List<Entidad>();
@@ -522,24 +521,24 @@ namespace DatosTangerine.DAO.M6
                 Conectar();
 
                 //Guardo la tabla que me regresa el procedimiento de consultar propuestas
-                DataTable dt = EjecutarStoredProcedureTuplas( RecursosPropuesta.ConsultarPropuesta, parametros );
+                DataTable dt = EjecutarStoredProcedureTuplas( RecursoDAOPropuesta.ConsultarPropuesta, parametros );
 
                 //Por cada fila de la tabla voy a guardar los datos 
                 foreach ( DataRow row in dt.Rows )
                 {
-                    String codigonumP = row[RecursosPropuesta.PropCodigo].ToString();
-                    String conNombre = row[RecursosPropuesta.PropNombre].ToString();
-                    String conDescripcion = row[RecursosPropuesta.PropDescripcion].ToString();
-                    String contipoDuracion = row[RecursosPropuesta.PropTipoDuracion].ToString();
-                    String conDuracion = row[RecursosPropuesta.PropDuracion].ToString();
-                    String conAcuerdo = row[RecursosPropuesta.PropAcuerdo].ToString();
-                    String conEstatus = row[RecursosPropuesta.PropEstatus].ToString();
-                    String conMoneda = row[RecursosPropuesta.PropMoneda].ToString();
-                    int conEntregas = Convert.ToInt32(row[RecursosPropuesta.PropCantidad]);
-                    DateTime conFechaIni = Convert.ToDateTime(row[RecursosPropuesta.PropFechaIni]);
-                    DateTime conFechaFin = Convert.ToDateTime(row[RecursosPropuesta.PropFechaFin]);
-                    int conCosto = Convert.ToInt32(row[RecursosPropuesta.PropCosto]);
-                    String conFkComp = row[RecursosPropuesta.PropIdCompania].ToString();
+                    String codigonumP = row[RecursoDAOPropuesta.PropCodigo].ToString();
+                    String conNombre = row[RecursoDAOPropuesta.PropNombre].ToString();
+                    String conDescripcion = row[RecursoDAOPropuesta.PropDescripcion].ToString();
+                    String contipoDuracion = row[RecursoDAOPropuesta.PropTipoDuracion].ToString();
+                    String conDuracion = row[RecursoDAOPropuesta.PropDuracion].ToString();
+                    String conAcuerdo = row[RecursoDAOPropuesta.PropAcuerdo].ToString();
+                    String conEstatus = row[RecursoDAOPropuesta.PropEstatus].ToString();
+                    String conMoneda = row[RecursoDAOPropuesta.PropMoneda].ToString();
+                    int conEntregas = Convert.ToInt32(row[RecursoDAOPropuesta.PropCantidad]);
+                    DateTime conFechaIni = Convert.ToDateTime(row[RecursoDAOPropuesta.PropFechaIni]);
+                    DateTime conFechaFin = Convert.ToDateTime(row[RecursoDAOPropuesta.PropFechaFin]);
+                    int conCosto = Convert.ToInt32(row[RecursoDAOPropuesta.PropCosto]);
+                    String conFkComp = row[RecursoDAOPropuesta.PropIdCompania].ToString();
 
                     //Creo un objeto de tipo Propuesta con los datos de la fila y lo guardo en una lista de propuestas
                     Entidad propuestas = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(codigonumP, conNombre, 
@@ -574,7 +573,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+                RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             return listaPropuesta;
         }

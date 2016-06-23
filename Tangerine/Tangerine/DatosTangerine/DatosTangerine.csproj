@@ -173,12 +173,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceContact.resx</DependentUpon>
     </Compile>
-    <Compile Include="M6\BDPropuesta.cs" />
-    <Compile Include="M6\RecursosPropuesta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPropuesta.resx</DependentUpon>
-    </Compile>
     <Compile Include="M7\BDEmpleadoProyecto.cs" />
     <Compile Include="M7\BDProyecto.cs" />
     <Compile Include="M7\BDProyectoContanto.cs" />
@@ -303,10 +297,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceContact.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M6\RecursosPropuesta.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPropuesta.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M7\ResourceProyecto.resx">
       <Generator>ResXFileCodeGenerator</Generator>
