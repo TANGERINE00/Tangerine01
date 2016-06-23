@@ -98,6 +98,7 @@
     <Compile Include="Comandos\M3\ComandoAgregarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoEliminarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoPromoverClientePotencial.cs" />
