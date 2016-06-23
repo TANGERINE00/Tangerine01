@@ -6,13 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M3
 {
     public partial class SeguimientoDeLeads : System.Web.UI.Page, IContratoHistoriaClientePotencial
     {
         PresentadorHistorialDeSeguimiento presentador;
-
+        int idClientePotencial;
         public SeguimientoDeLeads()
         {
             presentador = new PresentadorHistorialDeSeguimiento(this);
@@ -129,11 +130,12 @@ namespace Tangerine.GUI.M3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
             if (!IsPostBack)
             {
                 presentador.Llenar(idClientePotencial);
                 presentador.ObtenerHistoricoLlamadas(idClientePotencial);
+                presentador.ObtenerHistoricoVisitas(idClientePotencial);
             }
             
         }

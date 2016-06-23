@@ -10,15 +10,24 @@ using DominioTangerine.Entidades.M7;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
 using DatosTangerine.InterfazDAO.M10;
+using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
+    /// <summary>
+    /// Constructor de la clase
+    /// </summary>
     class ComandoAgregarEmpleado:Comando<bool>
     {
         public ComandoAgregarEmpleado(Entidad Empleado)
         {
             elEmpleado = Empleado;
         }
+
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override bool Ejecutar()
         {
             try
@@ -26,19 +35,11 @@ namespace LogicaTangerine.Comandos.M10
                 IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOEmpleado();
                 return daoEmpleado.Agregar(elEmpleado);
             }
-            catch (Exception e)
+            catch (AgregarEmpleadoException e)
             {
                 throw e;
             }
         }
-
-       
-        //public override Boolean Ejecutar()
-        //{
-
-        //    DAOEmpleado E = FabricaDAOSqlServer.CrearDAOEmpleado();
-        //    return E.Agregar(elEmpleado);
-        //}
 
         public Entidad elEmpleado { get; set; }
     }

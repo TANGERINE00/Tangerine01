@@ -8,6 +8,7 @@ using LogicaTangerine;
 using DominioTangerine;
 using Tangerine_Contratos;
 using Tangerine_Presentador.M10;
+using ExcepcionesTangerine.M10;
 
 namespace Tangerine_Presentador.M10
 {
@@ -163,9 +164,9 @@ namespace Tangerine_Presentador.M10
 
             }
 
-            catch
+            catch (ConsultarEmpleadoException ex)
             {
-
+                throw (ex);
             }
         }
 

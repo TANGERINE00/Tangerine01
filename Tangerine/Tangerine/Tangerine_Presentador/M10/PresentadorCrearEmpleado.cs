@@ -9,6 +9,7 @@ using DominioTangerine;
 using LogicaTangerine;
 using System.Globalization;
 using DominioTangerine.Entidades.M10;
+using ExcepcionesTangerine.M10;
 namespace Tangerine_Presentador.M10
 {
     public class PresentadorCrearEmpleado
@@ -17,14 +18,20 @@ namespace Tangerine_Presentador.M10
         private IContratoCrearEmpleado Vista;
         Boolean Confirmacion;
 
+
+
         private List<DominioTangerine.Entidades.M10.LugarDireccion> NuevaDireccion()
         {
-            List<DominioTangerine.Entidades.M10.LugarDireccion> direccion = new List<DominioTangerine.Entidades.M10.LugarDireccion>();
+            List<DominioTangerine.Entidades.M10.LugarDireccion> direccion = new List<DominioTangerine.Entidades.M10.
+            LugarDireccion>();
+
 
             direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboPais.SelectedItem.Text.ToString(), "Pais"));
             direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboEstado.SelectedItem.Text.ToString(), "Estado"));
             direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.ItextCityAddress.Text, "Ciudad"));
             direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.ItextAddresEspecific.Text, "Direccion"));
+
+            
 
             return direccion;
         }
@@ -33,12 +40,19 @@ namespace Tangerine_Presentador.M10
             this.Vista = Vista;
         }
 
+        /// <summary>
+        /// Metodo para llenar combo del genero del empleado a agregar
+        /// </summary>
         public void LlenarComboEmpleado()
         {
             Vista.IcomboGenero.Items.Insert(0, "Seleccione Genero");
             Vista.IcomboGenero.Items.Insert(1, "Femenino");
             Vista.IcomboGenero.Items.Insert(2, "Masculino");
         }
+
+        /// <summary>
+        /// Metodo para llenar combo del nivel de estudio del empleado
+        /// </summary>
         public void LlenarComboNivelEstudio()
         {
             Vista.IcomboNivelEstudio.Items.Insert(0, "Seleccione Nivel");
@@ -49,16 +63,25 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboNivelEstudio.Items.Insert(2, "Título Universitario");
         }
 
+        /// <summary>
+        /// Metodo para llenar un cargo con los atributos de la vista
+        /// </summary>
+        /// <returns></returns>
         private CargoM10 jobForEmployee()
         {
             return new CargoM10(Vista.IcomboCargo.SelectedItem.Text.ToString(),
                        DateTime.ParseExact(Vista.ItextDateJob.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                        Vista.ItextJobMode.Text, Double.Parse(Vista.ItextSalaryJob.Text));
         }
+
+        /// <summary>
+        /// Metodo para obtener pais
+        /// </summary>
         public void ObtenerPaises()
         {
             LogicaTangerine.Comandos.M10.ComandoObtenerPais comando =
-            (LogicaTangerine.Comandos.M10.ComandoObtenerPais)LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaPaises();
+            (LogicaTangerine.Comandos.M10.ComandoObtenerPais)LogicaTangerine.Fabrica.FabricaComandos.
+            ObtenerFabricaPaises();
 
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("0", "Seleccionar un país");
@@ -77,10 +100,15 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboPais.DataValueField = "key";
             Vista.IcomboPais.DataBind();
         }
+
+        /// <summary>
+        /// Metodo para obtener cargos a asignar al empleado que se esta agregando
+        /// </summary>
         public void ObtenerCargos()
         {
             LogicaTangerine.Comandos.M10.ComandoObtenerCargo comando =
-            (LogicaTangerine.Comandos.M10.ComandoObtenerCargo)LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaCargo();
+            (LogicaTangerine.Comandos.M10.ComandoObtenerCargo)LogicaTangerine.Fabrica.FabricaComandos.
+            ObtenerFabricaCargo();
 
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("0", "Seleccionar un cargo");
@@ -100,6 +128,10 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboCargo.DataBind();
 
         }
+
+        /// <summary>
+        /// Metodo para la seleccion del pais con los combos anidados de estado segun pais seleccionado
+        /// </summary>
         public void SelectedPaisChanged()
         {
             string country = Vista.IcomboPais.SelectedItem.Text;
@@ -115,7 +147,8 @@ namespace Tangerine_Presentador.M10
 
             foreach (Entidad row in listaEstado)
             {
-                DominioTangerine.Entidades.M10.LugarDireccion Pais = (DominioTangerine.Entidades.M10.LugarDireccion)row;
+                DominioTangerine.Entidades.M10.LugarDireccion Pais = 
+                (DominioTangerine.Entidades.M10.LugarDireccion)row;
                 options.Add(Pais.Id.ToString(), Pais.LugNombre);
             }
 
@@ -125,9 +158,16 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboEstado.DataBind();
 
         }
+
+        /// <summary>
+        /// Metodo para la accion del agregar empleado 
+        /// </summary>
         public void AgregarEmpleado()
         {
        
+            try
+            {
+
 
             Entidad Parametro = DominioTangerine.Fabrica.FabricaEntidades.AgregarEmpledoM10();
 
@@ -143,45 +183,20 @@ namespace Tangerine_Presentador.M10
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson.Text;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson.Text;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
-            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
+            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion=NuevaDireccion();
             
 
-            //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado(Parametro);
-            Confirmacion = comando.Ejecutar();
-            //p = new DominioTangerine.Entidades.M10.EmpleadoM10();
+            
+               
 
+            }
 
-            //LogicaM10 logicEmployee = new LogicaM10();
-
-            //logicEmployee.AddNewEmpleado(empleado);
-            //Response.Redirect("../M1/EmpleadosAdmin.aspx");
-
-
-            //string country = Vista.IcomboPais.SelectedItem.Text;
-
-
-
-            //Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaEstado(Parametro);
-
-            //Dictionary<string, string> options = new Dictionary<string, string>();
-            //options.Add("0", "Seleccionar un estado");
-
-            //List<Entidad> listaEstado = comando.Ejecutar();
-
-            //foreach (Entidad row in listaEstado)
-            //{
-            //    DominioTangerine.Entidades.M10.LugarDireccion Pais = (DominioTangerine.Entidades.M10.LugarDireccion)row;
-            //    options.Add(Pais.Id.ToString(), Pais.LugNombre);
-            //}
-
-            //Vista.IcomboEstado.DataSource = options;
-            //Vista.IcomboEstado.DataTextField = "value";
-            //Vista.IcomboEstado.DataValueField = "key";
-            //Vista.IcomboEstado.DataBind();
-
+            catch (AgregarEmpleadoException ex)
+            {
+                throw (ex); 
+            }
         }
     }
 }

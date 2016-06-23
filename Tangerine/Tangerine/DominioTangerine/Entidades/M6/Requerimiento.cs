@@ -26,33 +26,53 @@ namespace DominioTangerine.Entidades.M6
 
         #region Propiedades
 
+        /// <summary>
+        /// Get del Codigo del Requerimiento
+        /// </summary>
+       
         public string CodigoRequerimiento
         {
             get { return _codigoRequerimiento; }
-            //set { _codigoRequerimiento = value; }
-        }
 
+        }
+        /// <summary>
+        /// Get de la descripcion del Requerimiento
+        /// </summary>
+       
         public string Descripcion
         {
             get { return _descripcion; }
-            //set { _descripcion = value; }
-        }
 
+        }
+        /// <summary>
+        /// Get del Codigo de la propuesta en Requerimiento
+        /// </summary>
+       
         public string CodigoPropuesta
         {
             get { return _codigoPropuesta; }
-            //set { _codigoPropuesta = value; }
+
         }
 
         #endregion
 
         #region Constructor
 
+        /// <summary>
+        /// Constructor por defecto del Requerimiento sin parametros
+        /// </summary>
+       
         public Requerimiento()
         {
 
         }
-
+        /// <summary>
+        /// Sobrecarga del constructor 
+        /// </summary>
+        /// <param name="codreq"></param>
+        /// <param name="descripr"></param>
+        /// <param name="codpro"></param>
+       
         public Requerimiento(string codreq, string descripr, string codpro)
         {
             this._codigoRequerimiento = codreq;

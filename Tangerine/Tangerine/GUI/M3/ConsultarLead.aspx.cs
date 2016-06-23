@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M3
 {
@@ -112,7 +113,7 @@ namespace Tangerine.GUI.M3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            int idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
             if (!IsPostBack)
             {
                 presentador.Llenar(idClientePotencial);
