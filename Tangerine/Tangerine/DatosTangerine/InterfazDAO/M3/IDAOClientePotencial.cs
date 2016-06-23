@@ -15,5 +15,6 @@ namespace DatosTangerine.InterfazDAO.M3
         int ConsultarIdUltimoClientePotencial();
         bool Eliminar(Entidad parametro);
         List<Entidad> ConsultarLlamadasXId(Entidad parametro);
+        List<Entidad> ConsultarVistaXId(Entidad parametro);
     }
 }

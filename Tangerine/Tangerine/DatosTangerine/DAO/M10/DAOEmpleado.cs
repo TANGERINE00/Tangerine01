@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
-//using DominioTangerine.DominioTangerine.Entidades.M10;
 using ExcepcionesTangerine;
 using System.Collections;
 

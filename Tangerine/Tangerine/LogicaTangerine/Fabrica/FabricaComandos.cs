@@ -268,6 +268,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoSeguimientoDeLlamadas(cliente);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoVisitas(Entidad cliente)
+        {
+            return new ComandoSeguimientoDeVisitas(cliente);
+        }
         #endregion
 
         #region Modulo 4
@@ -851,6 +856,16 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> CrearSearchExistingBill(Entidad factura)
         {
             return new ComandoSearchExistingBill(factura);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que permite mandar correos
+        /// </summary>
+        /// <param name="correo">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEnviarCorreoGmail(Entidad correo)
+        {
+            return new ComandoEnviarCorreoGmail(correo);
         }
 
         #endregion

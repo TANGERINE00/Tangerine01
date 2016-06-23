@@ -235,16 +235,10 @@ namespace DatosTangerine.DAO.M3
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros 
-                //reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, 
-                //el tipo de dato, el valor, false)
                 theParam = new Parametro(ResourceClientePotencial.AidClientePotencial,
                     SqlDbType.Int, elClientePot.IdClientePotencial.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure 
-                //M5_AgregarContacto y todos los parametros que recibe
                 List<Resultado> results =
                     theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_eliminarClientePotencialDef, parameters);
 
@@ -317,6 +311,43 @@ namespace DatosTangerine.DAO.M3
                 int fkLead = int.Parse(row[ResourceClientePotencial.fkCliente].ToString());
 
                 Entidad registroHistoria = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXLlamada(idHistoria, fechaHistoria, tipoHistoria, motivoHistoria, fkLead);
+
+                objetoListaHistorico.Add(registroHistoria);
+
+            }
+
+            return objetoListaHistorico;
+        }
+
+        public List<Entidad> ConsultarVistaXId(Entidad parametro)
+        {
+            List<Entidad> objetoListaHistorico = new List<Entidad>();
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+
+            theConnection.Conectar();
+
+            theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
+            parametro.Id.ToString(), false);
+            parameters.Add(theParam);
+
+            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar,
+            "Visita", false);
+            parameters.Add(theParam);
+
+            DataTable data = theConnection.EjecutarStoredProcedureTuplas(ResourceClientePotencial.ConsultarSegumientoLlamadas, parameters);
+
+            foreach (DataRow row in data.Rows)
+            {
+                int idHistoria = int.Parse(row[ResourceClientePotencial.idSeguimiento].ToString());
+                String tipoHistoria = row[ResourceClientePotencial.tipoSeguimiento].ToString();
+                String motivoHistoria = row[ResourceClientePotencial.motivoRegistro].ToString();
+                DateTime fechaHistoria = DateTime.Parse(row[ResourceClientePotencial.fechaRegistro].ToString());
+                int fkLead = int.Parse(row[ResourceClientePotencial.fkCliente].ToString());
+
+                Entidad registroHistoria = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXVisitas(idHistoria, fechaHistoria, tipoHistoria, motivoHistoria, fkLead);
 
                 objetoListaHistorico.Add(registroHistoria);
 
