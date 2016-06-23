@@ -49,10 +49,9 @@ namespace Tangerine_Presentador.M6
             
             Comando<Entidad> cmdConsultarCompania;
 
-            List<Entidad> listaPropuestas = cmdConsultarPropuestas.Ejecutar();
-
             try
             {
+                List<Entidad> listaPropuestas = cmdConsultarPropuestas.Ejecutar();
                 foreach (Entidad _laPropuesta in listaPropuestas)
                 {
                     //Creo un objeto de tipo Propuesta para poder obtener el fk de id de compania.
@@ -87,7 +86,7 @@ namespace Tangerine_Presentador.M6
             } 
             catch (Exception ex)
             {
-                MessageBox.Show("Error Realizando el Llenado de las Tablas, por favor Actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
+                MessageBox.Show("Error realizando el llenado de la tabla, por favor actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             } 
         }
@@ -127,10 +126,6 @@ namespace Tangerine_Presentador.M6
                 propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.cerrado +
                     RecursosPresentadorPropuesta.CerrarTD;
             }
-            else {
-                MessageBox.Show("Error No existe el Estatus.", "Error", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
         }
 
         /// <summary>
@@ -161,11 +156,6 @@ namespace Tangerine_Presentador.M6
             {
                 propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bitcoin +
                     RecursosPresentadorPropuesta.CerrarTD;
-            }
-            else
-            {
-                MessageBox.Show("Error No existe la moneda", "Error", MessageBoxButtons.OK,
-                 MessageBoxIcon.Error);
             }
             propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Costo + RecursosPresentadorPropuesta.CerrarTD;
         }

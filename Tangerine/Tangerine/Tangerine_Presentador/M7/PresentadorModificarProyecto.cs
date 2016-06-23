@@ -374,7 +374,12 @@ namespace Tangerine_Presentador.M7
                         int.Parse(vista.idCompania.Text) + "&IdProyecto=" +
                         int.Parse(vista.idProyecto.Text) + "&Monto=" + monto);
                 }
-
+                else 
+                {
+                    MessageBox.Show("Proyecto Modificado con Exito",
+                    "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    HttpContext.Current.Response.Redirect("../M7/ConsultaProyecto.aspx");
+                }
                 
 
             }
