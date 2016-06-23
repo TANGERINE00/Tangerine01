@@ -14,34 +14,35 @@
     <li class="active">Contactar</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    Factura N° <asp:Literal runat="server" ID="textNumeroFactura"></asp:Literal>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="alert" runat="server">
     </div>
     <div class="row">
         <!-- left column -->
-        <div class="col-md-6" runat="server">
+        <div id="Div1" class="col-md-6" runat="server">
             <!-- general form elements -->
-            <div class="box box-primary" runat="server">
-                <div class="box-header with-border" runat="server">
+            <div id="Div2" class="box box-primary" runat="server">
+                <div id="Div3" class="box-header with-border" runat="server">
                     <h3 class="box-title">Redactar Correo</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" runat="server">
-                    <div class="box-body" runat="server">
+                <form id="Form1" role="form" runat="server">
+                    <div id="Div4" class="box-body" runat="server">
                         <!--Destinatario-->
-                        <div class="form-group" runat="server">
+                        <div id="Div5" class="form-group" runat="server">
                             <label for="labelDestinatario_M8">Para</label>
-                            <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8" disabled="disabled">
+                            <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8">
                         </div>
                         <!--Asunto-->
-                        <div class="form-group" runat="server">
+                        <div id="Div6" class="form-group" runat="server">
                             <label for="labelAsunto_M8">Asunto</label>
                             <input type="text" runat="server" class="form-control" id="textAsunto_M8" name="textAsunto_M8" disabled="disabled">
                         </div>
                         <!--Mensaje-->
-                        <div class="form-group" runat="server">
+                        <div id="Div7" class="form-group" runat="server">
                             <label for="labelMensaje_M8">Mensaje</label>
                             <%--<input type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" placeholder="Ingrese el Mensaje">--%>
                             <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" rows="4" cols="50">
@@ -75,8 +76,9 @@
                             <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">
                         </div> --%>
 
-                        <div class="form-group" runat="server">
-                            <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo" OnClick="buttonEnviarCorreo_Click"></asp:Button>
+                        <div id="Div8" class="form-group" runat="server" style="text-align:center;">
+                            <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%; margin-right:15px;" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo" OnClick="buttonEnviarCorreo_Click"></asp:Button>
+                            <a Style="margin-top: 5%; width:105px;" href="ConsultarFacturaM8.aspx" class="btn btn-default" type="submit">Cancelar</a>
                         </div>
 
                     </div>
