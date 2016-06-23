@@ -12,10 +12,6 @@ namespace DatosTangerine.InterfazDAO.M7
 
         List<Entidad> ContactProyectoxAcuerdoPago();
 
-        List<Entidad> ContactProyectoPorEmpleado(Entidad empleado);
-
-        List<Entidad> ContactProyectoPorGerente (Entidad empleado);
-
         Entidad ContactNombrePropuestaId(Entidad proupesta);
 
         int ContactMaxIdProyecto();

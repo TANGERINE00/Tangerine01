@@ -15,12 +15,13 @@ namespace Tangerine_Contratos.M5
         string item_cargo { get; set; }
         string input_departamento { get; set; }
         string input_telefono { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
         int GetTypeComp();
         int GetIdComp();
         void btnaceptar_Click( object sender, EventArgs e );
         string CargarBotonVolver( int typeComp, int idComp );
         void BotonAceptar( int typeComp, int idComp );
-
-
     }
 }
