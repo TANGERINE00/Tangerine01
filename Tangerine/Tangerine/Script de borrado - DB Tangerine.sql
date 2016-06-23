@@ -43,7 +43,8 @@ drop procedure M3_consultar_cliente_potencial;
 drop procedure M3_modificar_clientePotencialF;
 drop procedure M3_activar_cliente_potencial;
 drop procedure M3_eliminar_cliente_potencial_def;
-drop procedure M3_ConsultarIdUltimoLead
+drop procedure M3_ConsultarIdUltimoLead;
+drop procedure M3_listar_Seguimento_llamadas;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;

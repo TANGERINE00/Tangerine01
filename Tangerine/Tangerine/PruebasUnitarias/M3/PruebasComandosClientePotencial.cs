@@ -16,7 +16,7 @@ namespace PruebasUnitarias.M3
     {
         #region Atributos
 
-        private DominioTangerine.Entidades.M3.ClientePotencial elCliente1, elCliente2, elCliente3, elCliente4;
+        private DominioTangerine.Entidades.M3.ClientePotencial elCliente1, elCliente2, elCliente3, elCliente4, elCliente5;
         private Boolean respuesta;
         private List<Entidad> losClientes;
         private LogicaTangerine.Comando<bool> comandoRespuesta;
@@ -203,20 +203,20 @@ namespace PruebasUnitarias.M3
         [Test]
         public void TestComandoModificarClientePotencial()
         {
-            comandoLista = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosClientePotencial();
-            losClientes = comandoLista.Ejecutar();
-            Assert.NotNull(losClientes);
-            foreach (Entidad cliente in losClientes)
-            {
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).EmailClientePotencial);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NombreClientePotencial);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NumeroLlamadas);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).NumeroVisitas);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).PresupuestoAnual_inversion);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).RifClientePotencial);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).Status);
-                Assert.NotNull(((DominioTangerine.Entidades.M3.ClientePotencial)cliente).IdClientePotencial);
-            }
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(elCliente3);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
+
+            comandoNumero = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoUltimoIdClientePotencial();
+            elCliente3.Id = comandoNumero.Ejecutar();
+
+            elCliente3.NombreClientePotencial = "cambio";
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarClientePotencial(elCliente3);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente3);
+            comandoRespuesta.Ejecutar();
+
         }
     }
 }
