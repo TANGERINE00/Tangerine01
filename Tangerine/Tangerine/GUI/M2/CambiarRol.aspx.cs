@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaTangerine.M2;
 using DominioTangerine;
 using Tangerine_Contratos.M2;
 using Tangerine_Presentador.M2;
