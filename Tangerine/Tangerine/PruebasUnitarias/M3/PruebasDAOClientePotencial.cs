@@ -20,6 +20,7 @@ namespace PruebasUnitarias.M3
         private Boolean respuesta;
         private List<Entidad> losClientes;
         private DatosTangerine.InterfazDAO.M3.IDAOClientePotencial daoCliente;
+        private List<Entidad> llamadas, visitas;
         #endregion
 
         #region SetUp y TearDown
@@ -183,6 +184,46 @@ namespace PruebasUnitarias.M3
             Assert.AreEqual(2, elCliente2.Status);
 
             daoCliente.Eliminar(elCliente1);
+
+        }
+
+        /// <summary>
+        /// Método para probar el Listar llamadas de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestDaoListarLlamadasClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+            elCliente1.Id = 1;
+            llamadas = daoCliente.ConsultarLlamadasXId(elCliente1);
+
+            Assert.NotNull(llamadas);
+
+            foreach (Entidad seguimiento in llamadas)
+            {
+                Assert.NotNull(((SeguimientoCliente)seguimiento).Id);
+                Assert.AreEqual("Llamada", ((SeguimientoCliente)seguimiento).TipoHistoria);
+            }
+
+        }
+
+        /// <summary>
+        /// Método para probar el Listar visitas de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestDaoListarVisitasClientePotencial()
+        {
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+            elCliente1.Id = 1;
+            visitas = daoCliente.ConsultarVistaXId(elCliente1);
+
+            Assert.NotNull(visitas);
+
+            foreach (Entidad seguimiento in visitas)
+            {
+                Assert.NotNull(((SeguimientoCliente)seguimiento).Id);
+                Assert.AreEqual("Visita", ((SeguimientoCliente)seguimiento).TipoHistoria);
+            }
 
         }
     }
