@@ -61,7 +61,7 @@ namespace LogicaTangerine.Comandos.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TGE_00_001.
+        ///   Looks up a localized string similar to DS-900.
         /// </summary>
         internal static string Codigo {
             get {
@@ -138,6 +138,15 @@ namespace LogicaTangerine.Comandos.M9 {
         internal static string MensajeFinInfoLogger {
             get {
                 return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MensajeGenerico {
+            get {
+                return ResourceManager.GetString("MensajeGenerico", resourceCulture);
             }
         }
         

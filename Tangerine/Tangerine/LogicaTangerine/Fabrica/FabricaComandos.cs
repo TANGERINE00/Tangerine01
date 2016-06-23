@@ -253,6 +253,16 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoAgregarClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoEliminarClientePotencial(Entidad cliente)
+        {
+            return new ComandoEliminarClientePotencial(cliente);
+        }
+
+        public static Comando<int> ObtenerComandoUltimoIdClientePotencial()
+        {
+            return new ComandoUltimoIdClientePotencial();
+        }
         #endregion
 
         #region Modulo 4
