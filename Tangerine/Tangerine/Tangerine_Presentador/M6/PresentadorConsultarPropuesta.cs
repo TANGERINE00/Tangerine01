@@ -7,6 +7,7 @@ using Tangerine_Contratos.M6;
 using LogicaTangerine;
 using DominioTangerine;
 using System.Web;
+using System.Windows.Forms;
 
 namespace Tangerine_Presentador.M6
 {
@@ -86,7 +87,8 @@ namespace Tangerine_Presentador.M6
             } 
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error Realizando el Llenado de las Tablas, por favor Actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             } 
         }
 
@@ -125,6 +127,10 @@ namespace Tangerine_Presentador.M6
                 propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.cerrado +
                     RecursosPresentadorPropuesta.CerrarTD;
             }
+            else {
+                MessageBox.Show("Error No existe el Estatus.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -156,7 +162,11 @@ namespace Tangerine_Presentador.M6
                 propuesta += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.bitcoin +
                     RecursosPresentadorPropuesta.CerrarTD;
             }
-
+            else
+            {
+                MessageBox.Show("Error No existe la moneda", "Error", MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
+            }
             propuesta += RecursosPresentadorPropuesta.AbrirTD + laPropuesta.Costo + RecursosPresentadorPropuesta.CerrarTD;
         }
     }

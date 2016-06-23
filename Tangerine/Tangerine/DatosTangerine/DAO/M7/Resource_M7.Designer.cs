@@ -142,6 +142,15 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_HistoricoGerentes.
+        /// </summary>
+        internal static string AgregarHistoricoGerente {
+            get {
+                return ResourceManager.GetString("AgregarHistoricoGerente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M7_BorrarProyecto.
         /// </summary>
         internal static string BorrarProyecto {
@@ -309,6 +318,15 @@ namespace DatosTangerine.DAO.M7 {
         internal static string ConsultarGerente {
             get {
                 return ResourceManager.GetString("ConsultarGerente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarHistoricoGerente.
+        /// </summary>
+        internal static string ConsultarGerentes {
+            get {
+                return ResourceManager.GetString("ConsultarGerentes", resourceCulture);
             }
         }
         
@@ -822,6 +840,15 @@ namespace DatosTangerine.DAO.M7 {
         internal static string FillSelectState1 {
             get {
                 return ResourceManager.GetString("FillSelectState1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fk_id_empleado.
+        /// </summary>
+        internal static string Fk_IdEmp {
+            get {
+                return ResourceManager.GetString("Fk_IdEmp", resourceCulture);
             }
         }
         
@@ -1371,6 +1398,15 @@ namespace DatosTangerine.DAO.M7 {
         internal static string ParamIdProy {
             get {
                 return ResourceManager.GetString("ParamIdProy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @IdProyecto.
+        /// </summary>
+        internal static string ParamIdProyecto {
+            get {
+                return ResourceManager.GetString("ParamIdProyecto", resourceCulture);
             }
         }
         

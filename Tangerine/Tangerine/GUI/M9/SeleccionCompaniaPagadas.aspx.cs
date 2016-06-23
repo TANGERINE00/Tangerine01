@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M4;
 
 namespace Tangerine.GUI.M9
 {
@@ -32,34 +31,35 @@ namespace Tangerine.GUI.M9
         /// No recibe ningun parametro, solo muestra el listado de las companias que tiene proyectos.
         protected void Page_Load(object sender, EventArgs e)
         {
-            LogicaM4 prueba = new LogicaM4();
+
 
             if (!IsPostBack)
             {
-                List<Compania> listCompany = prueba.ConsultCompanies();
+                Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarTodasCompania();
+                List<Entidad> listCompany = comando.Ejecutar();
 
                 try
                 {
-                    foreach (Compania theCompany in listCompany)
+                    foreach (Entidad theCompany in listCompany)
                     {
                         company2 += ResourceLogicaM9.OpenTR;
 
-                        company2 += ResourceLogicaM9.OpenTD + theCompany.NombreCompania.ToString() + ResourceLogicaM9.CloseTD;
-                        company2 += ResourceLogicaM9.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceLogicaM9.CloseTD;
-                        company2 += ResourceLogicaM9.OpenTD + theCompany.RifCompania + ResourceLogicaM9.CloseTD;
-                        company2 += ResourceLogicaM9.OpenTD + theCompany.FechaRegistroCompania.ToShortDateString() + ResourceLogicaM9.CloseTD;
-                        if (theCompany.StatusCompania.Equals(1))
+                        company2 += ResourceLogicaM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).NombreCompania.ToString() + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).AcronimoCompania.ToString() + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).RifCompania + ResourceLogicaM9.CloseTD;
+                        company2 += ResourceLogicaM9.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).FechaRegistroCompania.ToShortDateString() + ResourceLogicaM9.CloseTD;
+                        if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(1))
                         {
                             company2 += ResourceLogicaM9.OpenTD + ResourceLogicaM9.habilitado + ResourceLogicaM9.CloseTD;
                         }
-                        else if (theCompany.StatusCompania.Equals(0))
+                        else if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(0))
                         {
                             company2 += ResourceLogicaM9.OpenTD + ResourceLogicaM9.inhabilitado + ResourceLogicaM9.CloseTD;
                         }
 
                         //Boton para cargar las facturas asociadas a cada compañia
 
-                        company2 += ResourceLogicaM9.boton2 + theCompany.IdCompania + ResourceLogicaM9.boton_cerrar_id;                   
+                        company2 += ResourceLogicaM9.boton2 + ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).Id + ResourceLogicaM9.boton_cerrar_id;                   
                     }
                 }
                 catch (Exception ex)

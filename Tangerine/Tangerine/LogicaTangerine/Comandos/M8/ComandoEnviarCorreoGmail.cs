@@ -21,6 +21,20 @@ namespace LogicaTangerine.Comandos.M8
             LaEntidad = parametro;
         }
 
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Metodo que ejecuta el comando
         /// </summary>
@@ -35,36 +49,25 @@ namespace LogicaTangerine.Comandos.M8
                 MailMessage mnsj = new MailMessage();
 
                 mnsj.Subject = _datosCorreo.asunto;
-
-                string destino;
-                int j = 0;
-                _datosCorreo.destinatario += ",";
-                for (int i = 0; i <= _datosCorreo.destinatario.Length; i++)
-                {
-                    if (_datosCorreo.destinatario[i].ToString() == ",")
-                    {
-                        destino = _datosCorreo.destinatario.Substring(j, i);
-                        j = i + 2;
-                        i++;
-                        mnsj.To.Add(new MailAddress(destino));
-                    }
-                }
-
-
-                //mnsj.To.Add(new MailAddress(_datosCorreo.destinatario));
-
                 mnsj.From = new MailAddress(ResourceLogicaM8.systemmail, ResourceLogicaM8.SysName);
+                mnsj.Body = _datosCorreo.mensjae;
 
+
+
+                string[] mailArray = _datosCorreo.destinatario.Split(',');
+                List<string> mailsList = new List<string>(mailArray.Length);
+                mailsList.AddRange(mailArray);
+                mailsList.Reverse();
+
+                foreach (String value in mailsList)
+                {
+                    IsValid(value);
+                    mnsj.To.Add(value);
+                    cr.mandarCorreo(mnsj);
+                }
                 /* Si deseamos Adjuntar algún archivo*/
                 //mnsj.Attachments.Add(new Attachment("C:\\archivo.pdf"));
 
-                mnsj.Body = _datosCorreo.mensjae;
-
-                /* Enviar */
-                cr.mandarCorreo(mnsj);
-                //Enviado = true;
-
-                //MessageBox.Show("El Mail se ha Enviado Correctamente", "Listo!!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return true;
             }
             catch (Exception ex)

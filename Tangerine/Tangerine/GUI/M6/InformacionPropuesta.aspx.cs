@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M4;
 using Tangerine_Contratos.M6;
 using Tangerine_Presentador.M6;
 using System.Diagnostics;
@@ -120,11 +119,20 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.QueryString["id"];
-
-            if (!IsPostBack)
+            try
             {
-                presentadorInformacion.consultarPropuesta(id);
+                string id = Request.QueryString["id"];
+
+                if (!IsPostBack)
+                {
+                    presentadorInformacion.consultarPropuesta(id);
+                }
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+
             }
         }
     }

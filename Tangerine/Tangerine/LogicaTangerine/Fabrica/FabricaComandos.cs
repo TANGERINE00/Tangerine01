@@ -755,6 +755,26 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoConsultarEmpleadosXIdProyecto(proyecto);
         }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarHistoricoGerente.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregara el historico.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<bool> ObtenerComandoAgregarHistoricoGerente(Entidad proyecto, Entidad empleado)
+        {
+            return new ComandoAgregarHistoricoGerente(proyecto, empleado);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarContactos.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los contactos.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoGerente(Entidad proyecto)
+        {
+            return new ComandoConsultarHistoricoGerente(proyecto);
+        }
         #endregion
 
         #region Modulo 8

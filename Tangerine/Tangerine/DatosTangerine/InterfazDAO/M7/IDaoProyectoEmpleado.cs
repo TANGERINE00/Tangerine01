@@ -33,5 +33,16 @@ namespace DatosTangerine.InterfazDAO.M7
         /// <param name="empleado"> entidad de tipo empleado </param>
         /// <returns> Retorna true cuando se agrega exitosamente </returns>
         Boolean AgregarProyectoEmpleados(Entidad proyecto, Entidad empleado);
+
+        /// <summary> Firma de Método para consultar el historico de gerentes de un proyecto </summary>
+        /// <param name="proyecto"> entidad de tipo proyecto </param>
+        /// <returns> Retorna lista de entidades tipo empleados </returns>
+        List<Entidad> ConsultarHistoricoGerente(Entidad proyecto);
+
+        /// <summary> Firma de Método para agregar historico de un gerente a un proyecto </summary>
+        /// <param name="proyecto"> entidad de tipo proyecto </param>
+        /// <param name="empleado"> entidad de tipo empleado </param>
+        /// <returns> Retorna true cuando se agrega exitosamente </returns>
+        Boolean AgregarHistoricoGerente(Entidad proyecto, Entidad empleado);
     }
 }
