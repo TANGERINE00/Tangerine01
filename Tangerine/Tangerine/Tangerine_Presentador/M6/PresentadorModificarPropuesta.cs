@@ -49,7 +49,7 @@ namespace Tangerine_Presentador.M6
         public void ModificarPropuesta()
         {
 
-            _nombcodigoPropuesta = vista.ContenedorCompania;
+            _nombcodigoPropuesta = vista.IdPropuesta;
             _descripcion = vista.Descripcion;
             _Tipoduracion = vista.ComboDuracion;
             _duracion = vista.TextoDuracion;
@@ -71,7 +71,7 @@ namespace Tangerine_Presentador.M6
             }
 
             //Creación del Objeto Propuesta.
-            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta("GNFRNCO160622044206", _descripcion,
+            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
                  _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
 
             //Creación y Ejecución del Objeto Comando de Modificar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.

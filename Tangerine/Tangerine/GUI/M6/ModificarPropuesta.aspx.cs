@@ -40,7 +40,7 @@ namespace Tangerine.GUI.M6
         {
             if (!IsPostBack)
             {
-                idPropuesta = Request.QueryString.Get("id");
+                //idPropuesta = Request.QueryString.Get("id");
                 presenter.llenarVista();
             } 
         }
@@ -89,7 +89,7 @@ namespace Tangerine.GUI.M6
 
         public string IdPropuesta
         {
-            get { return idPropuesta; }
+            get { return Request.QueryString.Get("id"); }
         }
         
         public string Descripcion
