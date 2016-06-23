@@ -1457,10 +1457,10 @@ CREATE PROCEDURE M7_ConsultarNombrePropuestaID
      @IdPropuestaPrpu int
 
 AS
-	BEGIN
+BEGIN
 		SELECT prop_nombre
-		FROM PROPUESTA
-		WHERE prop_id = @IdPropuestaPrpu;
+		FROM PROPUESTA, PROYECTO
+		WHERE proyecto.fk_propuesta_id=PROPUESTA.prop_id and proy_id = @IdPropuestaPrpu;
 	END
 GO
 

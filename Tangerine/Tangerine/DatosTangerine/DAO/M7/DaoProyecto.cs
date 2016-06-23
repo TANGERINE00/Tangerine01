@@ -97,7 +97,7 @@ namespace DatosTangerine.DAO.M7
                 List<Parametro> parameters = new List<Parametro>();
 
                 Parametro theParam = new Parametro(ResourceProyecto.ParamIdPropuestaPrpu, SqlDbType.Int,
-                                        ((DominioTangerine.Entidades.M7.Proyecto)parametro).Idpropuesta.ToString(), false);
+                                        ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar Proyecto

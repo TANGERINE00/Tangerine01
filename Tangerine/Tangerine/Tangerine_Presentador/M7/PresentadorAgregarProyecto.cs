@@ -29,9 +29,9 @@ namespace Tangerine_Presentador.M7
         static List<Entidad> listaProgramadores = new List<Entidad>();
         static List<Entidad> contactos = new List<Entidad>();
         static List<Entidad> programadores = new List<Entidad>();
-        DateTime _fechaIni;
-        DateTime _fechaFin;
-        Double _costo;
+        static DateTime _fechaIni;
+        static DateTime _fechaFin;
+        static Double _costo;
         #endregion
 
         /// <summary>
