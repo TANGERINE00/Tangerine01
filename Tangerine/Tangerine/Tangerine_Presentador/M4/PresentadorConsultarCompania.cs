@@ -19,6 +19,9 @@ namespace Tangerine_Presentador.M4
         IContratoConsultarCompania _vista;
         Entidad _entidad;
 
+        /// <summary>
+        /// Constructor que permite inicializar la vista dentro del presentador
+        /// </summary>
         public PresentadorConsultarCompania(IContratoConsultarCompania vista)
         {
 
@@ -28,6 +31,9 @@ namespace Tangerine_Presentador.M4
         #endregion
 
         #region CargarInformacionCompania
+        /// <summary>
+        /// Metodo que permite inahilitar una compania
+        /// </summary>
 
         public Boolean BotonHabilitarInhabilitar(int typeHab, int idComp) 
         {
@@ -55,6 +61,10 @@ namespace Tangerine_Presentador.M4
                 return false;
             }
         }
+
+        /// <summary>
+        /// Metodo que muestra las companias por pantalla
+        /// </summary>
 
         public Boolean ImprimirCompania(string Rol) 
         {
@@ -93,6 +103,9 @@ namespace Tangerine_Presentador.M4
             }
         }
 
+        /// <summary>
+        /// Metodo que muestra los botones que se encuentran en la pantalla dependiendo del usuario logueado
+        /// </summary>
         public void imprimirBotonesAccion(Entidad theCompany, string Rol)
         {
             if (Rol.Equals("Administrador") || Rol.Equals("Gerente"))
