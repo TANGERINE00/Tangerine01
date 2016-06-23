@@ -13,12 +13,19 @@ namespace LogicaTangerine.Comandos.M10
 
         private Entidad empleado;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public Entidad Empleado
         {
             get { return empleado; }
             set { empleado = value; }
         }
 
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <param name="empleado"></param>
         public ComandoValidarUsuarioCorreo(Entidad empleado)
         {
             this.empleado = empleado;

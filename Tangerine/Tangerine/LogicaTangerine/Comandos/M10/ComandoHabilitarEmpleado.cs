@@ -11,13 +11,20 @@ namespace LogicaTangerine.Comandos.M10
 {
     public class ComandoHabilitarEmpleado: Comando<bool>
     {
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="parametro"></param>
         public ComandoHabilitarEmpleado(Entidad parametro)
 
         {
             LaEntidad=parametro;
         }                                                                                                              
                
-
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override bool Ejecutar()
         {
             try
