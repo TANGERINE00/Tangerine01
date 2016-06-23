@@ -1691,7 +1691,15 @@ GO
 ------Fin Stored Procedure M9------
 -----------------------------------
 
+CREATE PROCEDURE M9_EliminarPago
+@cod int
 
+AS
+ BEGIN
+	DELETE FROM PAGO 
+	WHERE pag_cod = @cod
+	END;
+GO
 
 
 -----------------------------------

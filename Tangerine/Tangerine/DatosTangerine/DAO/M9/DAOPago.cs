@@ -235,6 +235,30 @@ namespace DatosTangerine.DAO.M9
                       RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listaPagos;
         }
+
+        public bool EliminarPago(Entidad parametro)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            DominioTangerine.Entidades.M9.Pago elPago = (DominioTangerine.Entidades.M9.Pago)parametro;
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                theParam = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, elPago.codPago.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
+                EjecutarStoredProcedure(RecursoDAOPago.EliminarPago, parameters);
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return true;
+        }
     
         public Boolean Modificar (Entidad e)
         {
