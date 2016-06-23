@@ -30,10 +30,35 @@ namespace DominioTangerine.Entidades.M10
         private string emp_Direccion;
         private int emp_LugId;
         private string emp_cargo;
+        private string emp_telefono;      
         private string address;
+        private List<Entidad> addressComplete = new List<Entidad>();
+      //private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
         public CargoM10 jobs;
         private List<Proyecto> listProjects = new List<Proyecto>();
-        private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
+        private List<LugarDireccion> listaDireccion = new List<LugarDireccion>();
+
+        
+        //private int empId;
+        //private string empPNombre;
+        //private string empSNombre;
+        //private string empPApellido;
+        //private string empSApellido;
+        //private string empGenero;
+        //private int empCedula;
+        //private DateTime empFecha;
+        //private string empActivo;
+        //private string empNivelEstudio;
+        //private string empEmailEmployee;
+        //private int empLugId;
+        //private string empCargo;
+        //private double empSalario;
+        //private string empFechaInicio;
+        //private string empFechaFin;
+        //private string empDireccion;
+
+        
+
         #endregion
 
         #region constructores
@@ -96,6 +121,17 @@ namespace DominioTangerine.Entidades.M10
 
 
         #region Get's Set's
+               
+        public List<LugarDireccion> ListaDireccion
+        {
+            get { return listaDireccion; }
+            set { listaDireccion = value; }
+        }
+        public string Emp_telefono
+        {
+            get { return emp_telefono; }
+            set { emp_telefono = value; }
+        }
         public int Emp_num_ficha
         {
             get
@@ -277,17 +313,19 @@ namespace DominioTangerine.Entidades.M10
             }
         }
 
-        public List<LugarDireccion> AddressComplete
-        {
-            get
-            {
-                return this.addressComplete;
-            }
-            set
-            {
-                this.addressComplete = value;
-            }
-        }
+
+        //public List<LugarDireccion> AddressComplete
+        //{
+        //    get
+        //    {
+        //        return this.addressComplete;
+        //    }
+        //    set
+        //    {
+        //        this.addressComplete = value;
+        //    }
+        //}
+
 
         public string Emp_Direccion
         {
@@ -312,6 +350,107 @@ namespace DominioTangerine.Entidades.M10
             get { return emp_FechaFin; }
             set { emp_FechaFin = value; }
         }
+
+
+        //public List<Entidad> AddressComplete
+        //{
+        //    get { return addressComplete; }
+        //    set { addressComplete = value; }
+        //}
+
+
         #endregion
+
+                
+        //#region Get's Set's
+        //public string Address
+        //{
+        //    get { return address; }
+        //    set { address = value; }
+        //}
+
+
+        //public string EmpPNombre
+        //{
+        //    get { return empPNombre; }
+        //    set { empPNombre = value; }
+        //}
+
+
+        //public string EmpSNombre
+        //{
+        //    get { return empSNombre; }
+        //    set { empSNombre = value; }
+        //}
+
+
+        //public string EmpPApellido
+        //{
+        //    get { return empPApellido; }
+        //    set { empPApellido = value; }
+        //}
+
+
+        //public string EmpSApellido
+        //{
+        //    get { return empSApellido; }
+        //    set { empSApellido = value; }
+        //}
+
+
+        //public string EmpActivo
+        //{
+        //    get { return empActivo; }
+        //    set { empActivo = value; }
+        //}
+
+
+        //public string EmpEmail
+        //{
+        //    get { return empEmail; }
+        //    set { empEmail = value; }
+        //}
+
+
+        //public string EmpGenero
+        //{
+        //    get { return empGenero; }
+        //    set { empGenero = value; }
+        //}
+        //private string empEstudio;
+
+        //public string EmpEstudio
+        //{
+        //    get { return empEstudio; }
+        //    set { empEstudio = value; }
+        //}
+        //public string EmpModalidad
+        //{
+        //    get { return empModalidad; }
+        //    set { empModalidad = value; }
+        //}
+
+        //public int EmpCedula
+        //{
+        //    get { return empCedula; }
+        //    set { empCedula = value; }
+        //}
+        //public int EmpId
+        //{
+        //    get { return empId; }
+        //    set { empId = value; }
+        //}
+        //public int EmpNumFicha
+        //{
+        //    get { return empNumFicha; }
+        //    set { empNumFicha = value; }
+        //}
+
+
+
+        //#endregion
+
+        //#endregion
+
     }
 }
