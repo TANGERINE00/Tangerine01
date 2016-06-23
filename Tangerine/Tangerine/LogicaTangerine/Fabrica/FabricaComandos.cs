@@ -904,30 +904,58 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 10
+        /// <summary>
+        /// Metodo para instanciar el ComandoConsultarEmpleado
+        /// </summary>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ConsultarEmpleados()
         {
             return new ComandoConsultarEmpleado();
         }
 
-
+        /// <summary>
+        /// Metodo para instanciar el ComandoConsultarPorId
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
         public static Comando<Entidad> ConsultarIdEmpleado(Entidad empleado)
         {
             return new ComandoConsultarPorId(empleado);
         }
 
+        /// <summary>
+        /// Metodo para instanciar el ComandoObtenerPais
+        /// </summary>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ObtenerFabricaPaises()
         {
             return new ComandoObtenerPais();
         }
+
+        /// <summary>
+        /// Metodo para instanciar ComandoObtenerCargo
+        /// </summary>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ObtenerFabricaCargo()
         {
             return new ComandoObtenerCargo();
         }
+
+        /// <summary>
+        /// Metodo para instanciar ComandoObtenerEstado
+        /// </summary>
+        /// <param name="Pais"></param>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ObtenerFabricaEstado(Entidad Pais)
         {
             return new ComandoObtenerEstado(Pais);
         }
 
+        /// <summary>
+        /// Metodo para instanciar ComandoAgregarEmpleado
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
         public static Comando<bool> ComandoAgregarEmpleado(Entidad empleado)
         {
             return new LogicaTangerine.Comandos.M10.ComandoAgregarEmpleado(empleado);

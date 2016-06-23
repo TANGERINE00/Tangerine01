@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M3;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M3
 {
@@ -119,10 +119,17 @@ namespace Tangerine.GUI.M3
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            idClientePotencial = int.Parse(Request.QueryString["idclp"]);
-            if (!IsPostBack)
+            try
             {
-                presentadorMostrar.Llenar(idClientePotencial);
+                idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
+                if (!IsPostBack)
+                {
+                    presentadorMostrar.Llenar(idClientePotencial);
+                }
+            }
+            catch
+            {
+                Response.Redirect("Listar.aspx");
             }
         }
     

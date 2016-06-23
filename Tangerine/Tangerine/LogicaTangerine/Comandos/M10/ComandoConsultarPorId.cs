@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
+using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
@@ -18,11 +19,19 @@ namespace LogicaTangerine.Comandos.M10
             set { empleado = value; }
         }
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="empleado"></param>
         public ComandoConsultarPorId(Entidad empleado)
         {
             this.empleado = empleado;
         }
 
+        /// <summary>
+        /// Metodo para ejecutar el comando
+        /// </summary>
+        /// <returns></returns>
         public override Entidad Ejecutar()
         {
             try
@@ -31,7 +40,7 @@ namespace LogicaTangerine.Comandos.M10
                 Entidad daoEmp = daoEmpleado.ConsultarXId(empleado);
                 return daoEmp;
             }
-            catch (Exception e)
+            catch (ConsultarEmpleadoException e)
             {
                 throw e;
             }
