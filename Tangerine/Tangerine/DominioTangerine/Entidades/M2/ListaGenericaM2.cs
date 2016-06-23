@@ -35,7 +35,7 @@ namespace DominioTangerine.Entidades.M2
         /// <param name="elemento"></param>
         public void agregarElemento( T elemento )
         {
-            _listaGenerica.Add(elemento);
+            _listaGenerica.Add( elemento );
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace DominioTangerine.Entidades.M2
         /// <returns>Retorna un valor booleano que indica si el elemento fue eliminado o no</returns>
         public bool eliminarElemento( T elemento )
         {
-            return _listaGenerica.Remove(elemento);
+            return _listaGenerica.Remove( elemento );
         }
 
         /// <summary>
