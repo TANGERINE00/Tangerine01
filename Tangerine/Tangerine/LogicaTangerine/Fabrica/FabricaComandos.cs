@@ -127,9 +127,9 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
-            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin(DominioTangerine.Entidad usuario)
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin( DominioTangerine.Entidad usuario )
             {
-                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin(usuario);
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin( usuario );
             }
 
             #endregion
@@ -173,7 +173,7 @@ namespace LogicaTangerine.Fabrica
             /// <param name="nombreMenu"></param>
             /// <param name="codigoRol"></param>
             /// <returns>Retorna una una instancia a ObtenerRolUsuarioPorNombre</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre(string nombreRol)
+            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre( string nombreRol )
             {
                 return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre( nombreRol );
             }

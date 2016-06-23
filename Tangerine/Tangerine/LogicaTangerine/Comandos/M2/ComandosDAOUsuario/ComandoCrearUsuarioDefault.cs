@@ -50,10 +50,10 @@ namespace LogicaTangerine.Comandos.M2
                 //Obtiene los 4 primeros caracteres del apellido
                 usuarioNuevo = usuarioNuevo + commandObtenerApellido.Ejecutar();
             }
-            catch (NullReferenceException ex)
+            catch ( NullReferenceException ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM2Tangerine("Ingreso de un argumento con valor invalido", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "Ingreso de un argumento con valor invalido" , ex );
             }
             catch ( Exception ex )
             {

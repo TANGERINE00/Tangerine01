@@ -34,7 +34,7 @@ namespace LogicaTangerine.Comandos.M2
             {
                 bool resultado;
                 IDAOUsuarios UsuarioAdd = FabricaDAOSqlServer.crearDaoUsuario();
-                resultado = UsuarioAdd.Agregar(_usuario);
+                resultado = UsuarioAdd.Agregar( _usuario );
                 return resultado;
             }
             catch ( Exception ex )

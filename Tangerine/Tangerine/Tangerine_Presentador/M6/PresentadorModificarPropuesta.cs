@@ -83,8 +83,8 @@ namespace Tangerine_Presentador.M6
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
             
         }
@@ -125,67 +125,88 @@ namespace Tangerine_Presentador.M6
             List<Entidad> _requerimientos;
             Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
 
-            _requerimientos = cmdConsultarRequerimientos.Ejecutar();
-
-            foreach (Entidad _elRequerimiento in _requerimientos)
+            try
             {
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTR;
+                _requerimientos = cmdConsultarRequerimientos.Ejecutar();
 
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
-                    ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + 
-                    RecursosPresentadorPropuesta.CerrarTD;
+                foreach (Entidad _elRequerimiento in _requerimientos)
+                {
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTR;
 
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
-                    ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() + 
-                    RecursosPresentadorPropuesta.CerrarTD;
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() +
+                        RecursosPresentadorPropuesta.CerrarTD;
 
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
-                    RecursosPresentadorPropuesta.btn_Modificar + RecursosPresentadorPropuesta.CerrarTD;
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() +
+                        RecursosPresentadorPropuesta.CerrarTD;
 
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
-                    RecursosPresentadorPropuesta.btn_eliminar + RecursosPresentadorPropuesta.CerrarTD;
-
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
+            
         }
 
 
         public void ModificarRequerimiento(String idRequerimiento, String descripcion, String idPropuesta)
         {
-            DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(idRequerimiento, descripcion, idPropuesta);
+            try
+            {
+                DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(idRequerimiento, descripcion, idPropuesta);
 
-            elRequerimiento.Id = int.Parse(idRequerimiento);
+                elRequerimiento.Id = int.Parse(idRequerimiento);
 
-            //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
-            comando.Ejecutar();
+                //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
+                comando.Ejecutar();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
+            
 
         }
 
 
         public void TraerCompania(String idPropuesta)
         {
-            //Creo una propuesta
-            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
-                idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
-            
-            Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
-            
-            //Consulto la propuesta
-            propuesta = comando.Ejecutar();
+            try
+            {
+                //Creo una propuesta
+                Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                    idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
 
-            Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia), 
-                null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
-            
-            //Consulto la compañia de esa propuesta
-            comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
-            compañia = comando.Ejecutar();
-            
-            //Extraigo el nombre de la compañia y lleno el contenedor
-            vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
+                Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
 
-            imprimirRequerimientos(propuesta);
-            llenarDatosPropuesta(propuesta);
+                //Consulto la propuesta
+                propuesta = comando.Ejecutar();
+
+                Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),
+                    null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
+
+                //Consulto la compañia de esa propuesta
+                comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
+                compañia = comando.Ejecutar();
+
+                //Extraigo el nombre de la compañia y lleno el contenedor
+                vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
+
+                imprimirRequerimientos(propuesta);
+                llenarDatosPropuesta(propuesta);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+            }
+            
         }
 
 

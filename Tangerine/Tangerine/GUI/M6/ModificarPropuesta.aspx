@@ -92,31 +92,7 @@
                         </table>
                     </div>
 
-  <div class="form-group date">
-                        <label>Fecha estimada Incio:</label>
-
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
-                                onchange="setFechasMesesYDias()" clientidmode="static">
-                        </div>
-
-
-
-               <div class="form-group date">
-                        <label>Fecha estimada Final:</label>
-
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
-                                onchange="setFechasCustom()" clientidmode="static" >
-                        </div>
-                        <!-- /.input group -->
-                    </div>
+                
 
 
                 <!-- /.box-body -->
@@ -145,6 +121,35 @@
                                 onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')"> </div>
 
                 </div>
+
+
+                    <div class="form-group date">
+                        <label>Fecha estimada Incio:</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="datepicker1" type="text" runat="server" 
+                                onchange="setFechasMesesYDias()" clientidmode="static">
+                        </div>
+                    <!-- /.input group -->
+                </div>
+
+
+
+               <div class="form-group date">
+                        <label>Fecha estimada Final:</label>
+
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
+                                onchange="setFechasCustom()" clientidmode="static" >
+                        </div>
+                        <!-- /.input group -->
+                    </div>
 
 
                 <div class="input-group input-group">
@@ -213,8 +218,8 @@
                     </div>
                 </div>
                 
-                <Br></Br>
-                <Br></Br>
+                <Br>
+                <Br>
                 
                 
                 <div class="box-footer" runat="server">                   
