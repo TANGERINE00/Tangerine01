@@ -69,19 +69,19 @@ namespace Tangerine_Presentador.M8
                 vista.textDireccion = compania.TelefonoCompania;
                 vista.textRif = compania.RifCompania;
 
-                if (_laFactura.tipoMoneda == "Dolares")
+                if (_laFactura.tipoMoneda == RecursoPresentadorM8.dolares)
                 {
                     vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.Dolar;
                     vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal 
                         + _laFactura.montoFactura + RecursoPresentadorM8.Dolar;
                 }
-                if (_laFactura.tipoMoneda == "Euros")
+                if (_laFactura.tipoMoneda == RecursoPresentadorM8.euros)
                 {
                     vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.Euro;
                     vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal
                         + _laFactura.montoFactura + RecursoPresentadorM8.Euro;
                 }
-                if (_laFactura.tipoMoneda == "Bolivares")
+                if (_laFactura.tipoMoneda == RecursoPresentadorM8.bolivares)
                 {
                     vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.BS;
                     vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal
