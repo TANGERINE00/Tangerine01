@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M1
         protected void Activar_Empleado(object sender, EventArgs e)
         {
             int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
-            //presentador1.CambiarEstatus(Empleadoid);
+            
         }
 
     }

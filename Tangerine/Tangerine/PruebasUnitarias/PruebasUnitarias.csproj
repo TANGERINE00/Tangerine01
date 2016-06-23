@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="M10\M10PruebasLogica.cs" />
+    <Compile Include="M10\PruebasDAOEmpleado.cs" />
     <Compile Include="M10\PruebasDatos.cs" />
     <Compile Include="M1\M1PruebasLogica.cs" />
     <Compile Include="M2\PruebaComandosDAORol.cs" />
