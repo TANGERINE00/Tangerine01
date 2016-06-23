@@ -10,7 +10,6 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine.Entidades.M4;
-using DatosTangerine.M4;
 using System.Data.SqlClient;
 using ExcepcionesTangerine.M9;
 using ExcepcionesTangerine;

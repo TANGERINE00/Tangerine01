@@ -457,6 +457,22 @@ create table Seguimiento
 	) references CLIENTE_POTENCIAL(cli_pot_id)
 );
 
+create table HISTORICO_GERENTES
+(
+	fk_id_empleado int not null,
+	fk_id_proyecto int not null,
+
+	constraint pk_id_empleado foreign key
+	(
+		fk_id_empleado
+	) references EMPLEADO(emp_num_ficha),
+
+	constraint pk_id_proyecto foreign key
+	(
+		fk_id_proyecto
+	) references PROYECTO(proy_id)
+);
+
 GO
 
 --------Stored Procedure M2---------------------------------------------------------------------------------------------------
@@ -791,6 +807,7 @@ WHERE Cp.cli_pot_id=Se.fk_cli_pot
  	and Se.seg_tipo=@tipo
 
 END;
+GO
 
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
@@ -1350,6 +1367,27 @@ AS
  	END;
 GO
 
+---- StoredProcedure Agregar HistoricoGerentes ----
+CREATE PROCEDURE M7_HistoricoGerentes
+    @IdGerente int,
+    @IdProyecto int
+AS
+	BEGIN
+    	INSERT INTO HISTORICO_GERENTES(fk_id_empleado,fk_id_proyecto)
+		VALUES(@IdGerente,@IdProyecto);
+ 	END;
+GO
+
+---- StoredProcedure Consultar HistoricoGerentes ----
+CREATE PROCEDURE M7_ConsultarHistoricoGerente
+	@IdProyecto int
+
+AS
+	BEGIN
+		SELECT fk_id_empleado AS fk_id_empleado
+		FROM HISTORICO_GERENTES WHERE fk_id_proyecto = @IdProyecto;
+	END
+GO
 
 ---- StoredProcedure Consultar ProyectoContacto ----
 CREATE PROCEDURE M7_ConsultarProyectoContacto

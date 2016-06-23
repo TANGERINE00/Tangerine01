@@ -37,7 +37,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             {
                 DominioTangerine.Entidad opciones;
                 IDAORol OpcionesUsuario = FabricaDAOSqlServer.crearDaoRol();
-                opciones = OpcionesUsuario.ObtenerOpciones(_nombreMenu, _codigoRol);
+                opciones = OpcionesUsuario.ObtenerOpciones( _nombreMenu , _codigoRol );
                 return opciones;
             }
             catch ( Exception ex )

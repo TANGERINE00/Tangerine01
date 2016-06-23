@@ -103,13 +103,13 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox textInputFechaInicio;
         
         /// <summary>
-        /// textInputFechaEstimada control.
+        /// datepicker1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar textInputFechaEstimada;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker1;
         
         /// <summary>
         /// textInputCosto control.
@@ -191,6 +191,15 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList inputGerente;
+        
+        /// <summary>
+        /// gteAct control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox gteAct;
         
         /// <summary>
         /// GerentesPasados control.

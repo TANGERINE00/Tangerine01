@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioTangerine;
+using DatosTangerine.DAO.M6;
 using DatosTangerine.M7;
-using DatosTangerine.M6;
 using DatosTangerine.M5;
 using LogicaTangerine.M10;
+using DominioTangerine.Entidades.M6;
 
 namespace LogicaTangerine.M7
 {
@@ -16,7 +17,7 @@ namespace LogicaTangerine.M7
         BDProyecto _Pro = new BDProyecto();
         BDEmpleadoProyecto _Empl = new BDEmpleadoProyecto();
         BDProyectoContanto _Cont = new BDProyectoContanto();
-        BDPropuesta _Prop = new BDPropuesta();
+        //BDPropuesta _Prop = new BDPropuesta();
         LogicaM10 logicaM10 = new LogicaM10();
         /// <summary>
         /// Metodo que agrega o crea nuevos proyectos
@@ -181,11 +182,12 @@ namespace LogicaTangerine.M7
         /// Metodo que devuelve todas las propuestas  aprobadas
         /// </summary>
         /// <returns>lista que contiene propuestas aprobadas</returns>
+        /*
         public List<Propuesta> ConsultarPropuestasAprobadas()
         {
-            return _Prop.PropuestaProyecto();
+            //return _Prop.PropuestaProyecto();
         }
-
+        */
 
         /// <summary>
         /// Metodo que genera el codigo predeterminado de un proyecto

@@ -38,21 +38,22 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
             try
             {
                 Comando<DominioTangerine.Entidad> theComando = FabricaComandos.obtenerComandoObtenerRolUsuarioPorNombre( _nombreRol );
-                LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre comando = ( LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre )theComando;
+                LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre comando
+                    = ( LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre )theComando;
                 DominioTangerine.Entidad theRol = comando.Ejecutar();
                 DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 )theRol;
 
-                foreach (DominioTangerine.Entidades.M2.MenuM2 m in rol.menu)
+                foreach ( DominioTangerine.Entidades.M2.MenuM2 m in rol.menu )
                 {
-                    foreach (DominioTangerine.Entidades.M2.OpcionM2 o in m.opciones)
+                    foreach ( DominioTangerine.Entidades.M2.OpcionM2 o in m.opciones )
                     {
                         string[] opcionSeparada = o.url.Split('/');
                         int tamanoOpcion = opcionSeparada.Length;
 
-                        if (tamanoOpcion >= 2)
+                        if ( tamanoOpcion >= 2 )
                         {
-                            if (opcionSeparada[tamanoOpcion - 1].Equals(paginaSeparada[tamanoPagina - 1])
-                                 && opcionSeparada[tamanoOpcion - 2].Equals(paginaSeparada[tamanoPagina - 2]))
+                            if ( opcionSeparada[ tamanoOpcion - 1 ].Equals( paginaSeparada[ tamanoPagina - 1 ] )
+                                 && opcionSeparada[tamanoOpcion - 2].Equals( paginaSeparada[ tamanoPagina - 2 ]) )
                             {
                                 resultado = true;
                                 return resultado;

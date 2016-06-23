@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
         /// Constructor que recibe un parametro codigo rol
         /// </summary>
         /// <param name="usuario"></param>
-        public ComandoObtenerRolUsuario(int codigoRol)
+        public ComandoObtenerRolUsuario( int codigoRol )
         {
             _codigoRol = codigoRol;
         }
@@ -33,7 +33,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             {
                 DominioTangerine.Entidad resultado;
                 IDAORol rolDAO = FabricaDAOSqlServer.crearDaoRol();
-                resultado = rolDAO.ObtenerRolUsuario(_codigoRol);
+                resultado = rolDAO.ObtenerRolUsuario( _codigoRol );
                 return resultado;
             }
             catch ( Exception ex )

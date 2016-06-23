@@ -1,7 +1,5 @@
-﻿using DatosTangerine.M2;
-using DominioTangerine;
+﻿using DominioTangerine;
 using DominioTangerine.Entidades.M1;
-using LogicaTangerine.M2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
