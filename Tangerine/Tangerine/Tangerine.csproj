@@ -179,6 +179,7 @@
     <Content Include="GUI\M6\js\modulo6.js" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
+    <Content Include="GUI\M6\ModificarRequerimiento.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\ConsultaProyecto.aspx" />
@@ -1258,6 +1259,13 @@
     </Compile>
     <Compile Include="GUI\M6\InformacionPropuesta.aspx.designer.cs">
       <DependentUpon>InformacionPropuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarRequerimiento.aspx.cs">
+      <DependentUpon>ModificarRequerimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarRequerimiento.aspx.designer.cs">
+      <DependentUpon>ModificarRequerimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\ModificarPropuesta.aspx.cs">
       <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
