@@ -25273,4 +25273,31 @@ ClientConnectionId:2de8edfa-f0bc-413e-abb9-ffe697c6bf66
 2016-06-23 07:39:22,104 INFO  DAORol - Metodo: ObtenerRolUsuario
 2016-06-23 07:39:22,125 INFO  DAORol - *******************************************************
 2016-06-23 07:39:22,125 INFO  DAORol - Clase: DAORol
-2016-06-23 07:39:22,125 INFO  DAORol - Mensaje: Salida del Método
+2016-06-23 07:39:22,125 INFO  DAORol - Mensaje: Salida del Método2016-06-23 09:35:24,840 INFO  DAORol - *******************************************************
+2016-06-23 09:35:24,860 INFO  DAORol - Clase: DAORol
+2016-06-23 09:35:24,860 INFO  DAORol - Mensaje: Salida del Método
+2016-06-23 09:35:24,860 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-23 09:35:24,873 INFO  DAOUsuario - *******************************************************
+2016-06-23 09:35:24,873 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-23 09:35:24,873 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-23 09:35:24,873 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-23 09:35:24,940 INFO  DAORol - *******************************************************
+2016-06-23 09:35:24,940 INFO  DAORol - Clase: DAORol
+2016-06-23 09:35:24,940 INFO  DAORol - Mensaje: Salida del Método
+2016-06-23 09:35:24,940 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-23 09:35:24,947 INFO  DAORol - *******************************************************
+2016-06-23 09:35:24,947 INFO  DAORol - Clase: DAORol
+2016-06-23 09:35:24,947 INFO  DAORol - Mensaje: Salida del Método
+2016-06-23 09:35:24,947 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-23 09:35:29,443 INFO  DAOPropuesta - *******************************************************
+2016-06-23 09:35:29,443 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-23 09:35:29,443 INFO  DAOPropuesta - Mensaje: Entrada en el Método
+2016-06-23 09:35:29,443 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-23 09:35:29,501 INFO  DAOPropuesta - *******************************************************
+2016-06-23 09:35:29,502 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-23 09:35:29,502 INFO  DAOPropuesta - Mensaje: Salida del Método
+2016-06-23 09:35:29,502 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-23 09:35:29,510 INFO  DaoCompania - *******************************************************
+2016-06-23 09:35:29,510 INFO  DaoCompania - Clase: DaoCompania
+2016-06-23 09:35:29,510 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-23 09:35:29,510 INFO  DaoCompania - Metodo: ConsultarXId
