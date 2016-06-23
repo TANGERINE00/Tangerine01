@@ -200,9 +200,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceLogicaM1.resx</DependentUpon>
     </Compile>
-    <Compile Include="M2\LogicaAgregarUsuario.cs" />
-    <Compile Include="M2\LogicaModificarRol.cs" />
-    <Compile Include="M2\LogicaPrivilegios.cs" />
     <Compile Include="M4\LogicaM4.cs" />
     <Compile Include="M4\LogicResourcesM4.Designer.cs">
       <AutoGen>True</AutoGen>
