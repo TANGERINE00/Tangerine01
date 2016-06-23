@@ -24,6 +24,19 @@ namespace Tangerine_Presentador.M8
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
+        }
+
+        /// <summary>
+        /// Método para llenar los elementos de la factura 
+        /// </summary>
         public void llenarGenerar()
         {
             try
@@ -56,6 +69,9 @@ namespace Tangerine_Presentador.M8
             }
         }
 
+        /// <summary>
+        /// Método para llenar los generar la factura 
+        /// </summary>
         public void GenerarFactura()
         {
             try
