@@ -7,7 +7,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M4
 {
-    public interface IDaoLugarDireccion : IDao<Entidad, Boolean, Entidad>
+    public interface IDaoLugarDireccion : IDao
     {
 
         List<Entidad> ConsultCityPlaces();

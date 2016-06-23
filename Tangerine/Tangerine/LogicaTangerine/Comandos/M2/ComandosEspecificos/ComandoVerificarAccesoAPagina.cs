@@ -64,7 +64,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
             catch (IndexOutOfRangeException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionPrivilegios("Error al ejecutar ComandoVerificarAccesoAPagina", ex);
+                throw new ExceptionPrivilegios("Error al ejecutar ComandoVerificarAccesoAPagina", ex);
             }
             catch (Exception ex)
             {

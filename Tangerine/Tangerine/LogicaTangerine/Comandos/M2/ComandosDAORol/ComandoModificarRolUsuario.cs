@@ -40,7 +40,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
             catch ( Exception ex )
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                throw new ExcepcionModificarRol("Error al ejecutar ComandoModificarRolUsuario", ex);
+                throw new ExceptionModificarRol("Error al ejecutar ComandoModificarRolUsuario", ex);
             }
 
             return resultado;   
