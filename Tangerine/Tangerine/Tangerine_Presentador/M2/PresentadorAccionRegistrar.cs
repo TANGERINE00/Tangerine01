@@ -47,10 +47,18 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Registra el usuario en la Base de Datos
         /// </summary>
-        public void registrar()
+        public bool registrar()
         {
-            LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario( _vista.usuario, _vista.contrasena, _vista.comboRol, _numFicha);            
-            theComando.Ejecutar();
+            try
+            {
+                LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario(_vista.usuario, _vista.contrasena, _vista.comboRol, _numFicha);
+                return theComando.Ejecutar();
+            }
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
         }
 
         /// <summary>
@@ -64,22 +72,5 @@ namespace Tangerine_Presentador.M2
             respuesta = comando.Ejecutar();
             return respuesta;
         }
-
-        /// <summary>
-        /// Método que contigura el div de alerta de la vista
-        /// </summary>
-        /// <param name="msj"></param>
-        /// <param name="typeMsg"></param>
-        public void alerta(string msj, int typeMsg)
-        {
-            if (typeMsg == 1)
-                _vista.alertaClase = ResourceGUIM2.AlertSuccess;
-            else
-                _vista.alertaClase = ResourceGUIM2.AlertDanger;
-
-            _vista.alertaRol = ResourceGUIM2.Alert;
-            _vista.alerta = ResourceGUIM2.AlertShowSu1 + msj + ResourceGUIM2.AlertShowSu2;
-        }
-
     }
 }

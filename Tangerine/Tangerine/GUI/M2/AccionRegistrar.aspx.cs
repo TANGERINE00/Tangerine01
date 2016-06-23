@@ -17,6 +17,7 @@ namespace Tangerine.GUI.M2
     {
         private PresentadorAccionRegistrar presentador;
         private bool existenciaUsuario;
+        string error;
 
         #region Contrato
 
@@ -57,27 +58,18 @@ namespace Tangerine.GUI.M2
             }
             
             /// <summary>
-            /// Método para las excepciones
+            /// Manejo de errores
             /// </summary>
-            public string alertaClase
+            public string msjError
             {
-                set { alert.Attributes[ResourceM2.alertClase] = value; }
-            }
-
-            /// <summary>
-            /// Método para las excepciones
-            /// </summary>
-            public string alertaRol
-            {
-                set { alert.Attributes[ResourceM2.alertRole] = value; }
-            }
-            
-            /// <summary>
-            /// Método para las excepciones
-            /// </summary>
-            public string alerta
-            {
-                set { alert.InnerHtml = value; }
+                get
+                {
+                    return error;
+                }
+                set
+                {
+                    error = value;
+                }
             }
 
         #endregion
@@ -117,8 +109,14 @@ namespace Tangerine.GUI.M2
 
             if (!existenciaUsuario)
             {
-                presentador.registrar();
-                Response.Redirect("../M2/RegistroUsuario.aspx");
+                if (presentador.registrar())
+                {
+                    Response.Redirect("../M2/RegistroUsuario.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                }
             }
             else
             {
