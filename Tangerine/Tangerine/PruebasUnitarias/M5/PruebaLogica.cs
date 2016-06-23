@@ -336,6 +336,17 @@ namespace PruebasUnitarias.M5
 
         }
 
+        /// <summary>
+        /// Método para probar el comando ComandoConsultarContactosPorCompania de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void PruebaComandoConsultarContactosPorCompaniaEx()
+        {
+            Entidad compania = null;
+            _comandoLista = FabricaComandos.CrearComandoConsultarContactosPorCompania(compania, 1);
+            _listaContactos = _comandoLista.Ejecutar();
+        }
         #endregion
     }
 }

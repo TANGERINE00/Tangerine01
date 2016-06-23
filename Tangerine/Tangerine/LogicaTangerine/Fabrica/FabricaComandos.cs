@@ -268,6 +268,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoSeguimientoDeLlamadas(cliente);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoVisitas(Entidad cliente)
+        {
+            return new ComandoSeguimientoDeVisitas(cliente);
+        }
         #endregion
 
         #region Modulo 4
