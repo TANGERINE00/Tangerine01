@@ -38,7 +38,7 @@ namespace LogicaTangerine.Comandos.M8
 
                 mnsj.To.Add(new MailAddress(theEmail.destinatario));
 
-                mnsj.From = new MailAddress("sistematangerine.dev@gmail.com", "Sistema Tangerine");
+                mnsj.From = new MailAddress(ResourceLogicaM8.systemmail, ResourceLogicaM8.SysName);
 
                 /* Si deseamos Adjuntar algún archivo*/
                 //mnsj.Attachments.Add(new Attachment("C:\\archivo.pdf"));

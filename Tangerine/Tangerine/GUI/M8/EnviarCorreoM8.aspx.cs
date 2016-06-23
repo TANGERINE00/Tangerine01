@@ -127,7 +127,7 @@ namespace Tangerine.GUI.M8
 
             //CorreoM8 correo = new CorreoM8();
             //correo.enviarCorreoGmail(_asunto, _destinatario, _mensaje);
-            Server.Transfer("ConsultarFacturaM8.aspx");
+            Server.Transfer(ResourceGUIM8.redirectHome);
         }
     }
 }
