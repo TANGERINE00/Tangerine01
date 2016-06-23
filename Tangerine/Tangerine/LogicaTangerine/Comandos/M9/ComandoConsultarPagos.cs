@@ -41,22 +41,22 @@ namespace LogicaTangerine.Comandos.M9
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.NullArgumentException(ResourceComandoM9.Codigo,
-                    ResourceComandoM9.Mensaje, ex);
+                throw new ExcepcionesTangerine.M4.NullArgumentException(ResourceComandoM9.CodigoErrorNull,
+                    ResourceComandoM9.MensajeErrorNull, ex);
                 
             }
-            //catch (FormatException ex)
-            //{
-            //    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-            //    throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceComandoM9.,
-            //         ResourceComandoM9.Mensaje_Error_Formato, ex);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-            //    throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceComandoM9.Mensaje_Generico_Error, ex);
-            //}
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceComandoM9.CodigoErrorFormato,
+                     ResourceComandoM9.MensajeErrorFormato, ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceComandoM9.MensajeGenerico, ex);
+            }
         }
     }
 }
