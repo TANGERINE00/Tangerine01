@@ -11,10 +11,8 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine.Entidades.M4;
 using DatosTangerine.M4;
-
 using System.Data.SqlClient;
 using ExcepcionesTangerine.M9;
-
 using ExcepcionesTangerine;
 
 namespace DatosTangerine.DAO.M9
@@ -29,7 +27,9 @@ namespace DatosTangerine.DAO.M9
         /// <returns></returns>
         public bool Agregar (Entidad pagoParam)
         {
-
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                RecursoDAOPago.MensajeInicioInfoLogger,
+                                System.Reflection.MethodBase.GetCurrentMethod().Name);
            try
             {
                 DominioTangerine.Entidades.M9.Pago pago = (DominioTangerine.Entidades.M9.Pago)pagoParam;
@@ -57,6 +57,9 @@ namespace DatosTangerine.DAO.M9
                 if (resultados != null)
                 {
                     CargarStatus(pago.idFactura, 1);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                               RecursoDAOPago.MensajeFinInfoLogger,
+                               System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
                 else
@@ -64,6 +67,22 @@ namespace DatosTangerine.DAO.M9
                     return false;
                 }
             }
+               
+           catch (ArgumentNullException ex)
+           {
+
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                   RecursoDAOPago.MensajeErrorNull, ex);
+
+           }
+           catch(FormatException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                   RecursoDAOPago.MensajeErrorFormato, ex);
+
+           }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -80,24 +99,54 @@ namespace DatosTangerine.DAO.M9
         /// <returns></returns>
         public bool CargarStatus (int factura, int status)
         {
-            List<Parametro> parametros = new List<Parametro>();
-
-            Parametro parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, factura.ToString(),
-                false);
-            parametros.Add(parametro);
-            parametro = new Parametro(RecursoDAOPago.ParamStatus, SqlDbType.Int, status.ToString(),false);
-            parametros.Add(parametro);
-
-            List<Resultado> resultados =  EjecutarStoredProcedure(RecursoDAOPago.CambiarStatus, parametros);
-            if (resultados!=null)
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                                RecursoDAOPago.MensajeInicioInfoLogger,
+                                System.Reflection.MethodBase.GetCurrentMethod().Name);
+            try
             {
-                return true;
+                List<Parametro> parametros = new List<Parametro>();
+
+                Parametro parametro = new Parametro(RecursoDAOPago.ParamIdFactura, SqlDbType.Int, factura.ToString(),
+                    false);
+                parametros.Add(parametro);
+                parametro = new Parametro(RecursoDAOPago.ParamStatus, SqlDbType.Int, status.ToString(), false);
+                parametros.Add(parametro);
+
+                List<Resultado> resultados = EjecutarStoredProcedure(RecursoDAOPago.CambiarStatus, parametros);
+                if (resultados != null)
+                {
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                        RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
-            else
+            catch (ArgumentNullException ex)
             {
-                return false;
+
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                    RecursoDAOPago.MensajeErrorNull, ex);
+
             }
-        }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                    RecursoDAOPago.MensajeErrorFormato, ex);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL, ex);
+            }
+            }
         
         /// <summary>
         /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizaos por una compania
@@ -140,24 +189,28 @@ namespace DatosTangerine.DAO.M9
 
 
             }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-            }
+                      catch (ArgumentNullException ex)
+           {
+
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                   RecursoDAOPago.MensajeErrorNull, ex);
+
+           }
+           catch(FormatException ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                   RecursoDAOPago.MensajeErrorFormato, ex);
+
+           }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL,ex);
             }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceCompany.Codigo_Error_Formato,
-                     ResourceCompany.Mensaje_Error_Formato, ex);
-            }
+            
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -169,7 +222,7 @@ namespace DatosTangerine.DAO.M9
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            ResourceCompany.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listaPagos;
         }

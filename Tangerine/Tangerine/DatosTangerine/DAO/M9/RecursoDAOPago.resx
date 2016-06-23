@@ -142,10 +142,10 @@
     <value>pag_monto</value>
   </data>
   <data name="CodigoErrorSQL" xml:space="preserve">
-    <value>"901"</value>
+    <value>DS-901</value>
   </data>
   <data name="MensajeErrorSQL" xml:space="preserve">
-    <value>"Error al realizar la conexion"</value>
+    <value>Error al realizar la conexion</value>
   </data>
   <data name="ParamCod" xml:space="preserve">
     <value>@cod</value>
@@ -171,7 +171,25 @@
   <data name="ParamStatus" xml:space="preserve">
     <value>@status</value>
   </data>
+  <data name="CodigoErrorFormato" xml:space="preserve">
+    <value>DS-902</value>
+  </data>
+  <data name="CodigoErrorNull" xml:space="preserve">
+    <value>DS-903</value>
+  </data>
+  <data name="MensajeErrorFormato" xml:space="preserve">
+    <value>Error de Formato</value>
+  </data>
+  <data name="MensajeErrorNull" xml:space="preserve">
+    <value>Error, elemento Null</value>
+  </data>
   <data name="PagoCod" xml:space="preserve">
     <value>pag_cod</value>
+  </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida exitosa del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
   </data>
 </root>
