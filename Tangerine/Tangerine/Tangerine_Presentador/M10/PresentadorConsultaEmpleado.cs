@@ -15,13 +15,14 @@ namespace Tangerine_Presentador.M10
     public class PresentadorConsultaEmpleado
     {
         IContratoConsultaEmpleados vista;
-        Boolean Confirmacion;
+        
 
         public PresentadorConsultaEmpleado(IContratoConsultaEmpleados vista)
         {
             this.vista = vista;
         }
 
+        
 
         /// <summary>
         ///Metodo para la accion de consulta de empleados  
@@ -104,7 +105,7 @@ namespace Tangerine_Presentador.M10
                     //Estatus Activo/Inactivo
                     if (HttpContext.Current.Session["Rol"] + "" != "Programador")
                         vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir+
-                        ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id +
+                        ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id.ToString() +
                         ResourceGUIM10.BotonStatusEmpCerrar;
 
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
@@ -124,13 +125,22 @@ namespace Tangerine_Presentador.M10
         /// Metodo para la accion del boton de activar o desactivar empelado                                           
         /// </summary>
         /// <param name="id"></param>
-        public void CambiarEstatus(int id) 
+        public void CambiarEstatus(int id)
         {
-            Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
-            estatusId.Id= id;
+            try
+            {
+                Entidad estatusId = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados();
+                estatusId.Id = id;
 
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);              
-            comando.Ejecutar();
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.HabilitarEmpleado(estatusId);
+                comando.Ejecutar();
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }  
         }
     }
    

@@ -55,7 +55,7 @@ namespace DatosTangerine.DAO.M10
             {
 
                 parameters.Add(new Parametro(ResourceEmpleado.ParamFicha, SqlDbType.VarChar,
-                              ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false));
+                              ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).Id.ToString(), false));
 
                 List<Resultado> results = EjecutarStoredProcedure(ResourceEmpleado.EstatusEmpleado, parameters);
 
