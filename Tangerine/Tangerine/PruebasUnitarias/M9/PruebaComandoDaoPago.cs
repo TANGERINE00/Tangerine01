@@ -72,7 +72,8 @@ namespace PruebasUnitarias.M9
             Assert.IsNotNull(comandoAgregarPago);
             Assert.IsTrue(resultado);
             LogicaTangerine.Comando<Boolean> comandoEliminarPago = FabricaComandos.EliminarPago(elPago);
-            resultado = comandoEliminarPago.Ejecutar();       
+            resultado = comandoEliminarPago.Ejecutar();
+            Assert.IsTrue(resultado);
 
         }
 

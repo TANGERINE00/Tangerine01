@@ -73,6 +73,7 @@ namespace PruebasUnitarias.M9
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).idFactura == 1);
 
             answer = daoPago.EliminarPago(elPago);
+            Assert.IsTrue(answer);
         }
         [Test]
         public void TestCambiarStatus()
