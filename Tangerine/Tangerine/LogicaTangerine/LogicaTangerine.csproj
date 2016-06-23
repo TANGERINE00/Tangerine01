@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Comandos\M9\ComandoConsultarPagos.cs" />
+    <Compile Include="Comandos\M9\ComandoEliminarPago.cs" />
     <Compile Include="Comandos\M9\ResourceComandoM9.Designer.cs">
       <DependentUpon>ResourceComandoM9.resx</DependentUpon>
       <AutoGen>True</AutoGen>
