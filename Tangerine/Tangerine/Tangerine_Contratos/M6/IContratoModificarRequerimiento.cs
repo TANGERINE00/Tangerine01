@@ -7,70 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine_Contratos.M6
 {
-    public interface IContratoAgregarPropuesta
+    public interface IContratoModificarRequerimiento
     {
 
 
 
-        DropDownList ComboCompania
-        {
-            get;
-            set;
-        }
-        string IdCompania
-        {
-            get;
-            set;
-        }
-        string Descripcion
-        {
-            get;
-        }
-        string ArrPrecondicion
-        {
-            get;
-        }
-        string ComboDuracion
-        {
-            get;
-            set;
-        }
-
-        string TextoDuracion
-        {
-            get;
-        }
-        string DatePickerUno
-        {
-            get;
-        }
-        string DatePickerDos
-        {
-            get;
-        }
-        DropDownList TipoCosto
-        {
-            get;
-            set;
-        }
-
-        string TextoCosto
-        {
-            get;
-        }
-        string FormaPago
-        {
-            get;
-            set;
-        }
-        string CantidadCuotas
-        {
-            get;
-        }
-        DropDownList ComboStatus
-        {
-            get;
-            set;
-        }
+      
     }
 }
