@@ -168,7 +168,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceCompany.resx</DependentUpon>
     </Compile>
-    <Compile Include="M5\BDContacto.cs" />
     <Compile Include="M5\ResourceContact.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

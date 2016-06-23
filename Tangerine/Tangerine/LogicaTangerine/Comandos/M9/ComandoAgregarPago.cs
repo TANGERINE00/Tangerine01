@@ -28,7 +28,7 @@ namespace LogicaTangerine.Comandos.M9
         /// <summary>
         /// Método para crear la instancia de la clase DaoPago y agregar el pago
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Regresa un Booleano indicando si el metodo se ejecuto exitosamente o no</returns>
         public override Boolean Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -38,7 +38,7 @@ namespace LogicaTangerine.Comandos.M9
 
             try
             {
-                Pago.Agregar(this._laEntidad);
+                
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                       ResourceComandoM9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return Pago.Agregar(this._laEntidad);

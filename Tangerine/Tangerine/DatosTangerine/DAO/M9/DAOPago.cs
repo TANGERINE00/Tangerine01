@@ -24,7 +24,7 @@ namespace DatosTangerine.DAO.M9
         /// Metodo para Agregar un Pago a la BD
         /// </summary>
         /// <param name="pagoParam">Entidad con la informacion que se va a agregar a la BD</param>
-        /// <returns></returns>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool Agregar (Entidad pagoParam)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -98,7 +98,7 @@ namespace DatosTangerine.DAO.M9
         /// </summary>
         /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
         /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
-        /// <returns></returns>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool CargarStatus (int factura, int status)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -157,7 +157,7 @@ namespace DatosTangerine.DAO.M9
         /// </summary>
         /// <param name="parametro">Entidad, parametro con id de la compania que se va realizar la busqueda de pagos
         /// </param>
-        /// <returns></returns>
+        /// <returns>Lista de Entidades con los pagos realizados por una compania</returns>
         public List<Entidad> ConsultarPagosCompania(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -234,6 +234,52 @@ namespace DatosTangerine.DAO.M9
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                       RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return listaPagos;
+        }
+
+        /// <summary>
+        /// Metodo para eliminar un pago
+        /// </summary>
+        /// <param name="parametro">Entidad con el pago que se va a eliminar</param>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
+        public bool EliminarPago(Entidad parametro)
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            DominioTangerine.Entidades.M9.Pago elPago = (DominioTangerine.Entidades.M9.Pago)parametro;
+            Parametro theParam = new Parametro();
+
+            try
+            {
+
+                theParam = new Parametro(RecursoDAOPago.ParamCod, SqlDbType.Int, elPago.codPago.ToString(), false);
+                parameters.Add(theParam);
+
+                EjecutarStoredProcedure(RecursoDAOPago.EliminarPago, parameters);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                    RecursoDAOPago.MensajeErrorNull, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                    RecursoDAOPago.MensajeErrorFormato, ex);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            return true;
         }
     
         public Boolean Modificar (Entidad e)
