@@ -37,10 +37,10 @@ namespace LogicaTangerine.Comandos.M2
                 resultado = UsuarioAdd.Agregar(_usuario);
                 return resultado;
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionRegistro("Error al ejecutar ComandoAgregarUsuario", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
         }
     }

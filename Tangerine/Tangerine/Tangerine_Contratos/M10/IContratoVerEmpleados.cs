@@ -9,6 +9,9 @@ namespace Tangerine_Contratos.M10
 {
     public interface IContratoVerEmpleados
     {
+        /// <summary>
+        /// Encabezado formulario ver empleado
+        /// </summary>
         Literal FormViewEmployees { get; set; }
     }
 }

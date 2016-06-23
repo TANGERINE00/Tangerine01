@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M7
 {
-    public interface IDaoProyectoEmpleado : IDao<Entidad, bool, Entidad>
+    public interface IDaoProyectoEmpleado : IDao
     {
         /// <summary> Firma de Método para consultar el contacto de un proyecto </summary>
         /// <param name="proyecto"> entidad de tipo proyecto </param>
@@ -23,7 +23,10 @@ namespace DatosTangerine.InterfazDAO.M7
         /// <returns> Retorna Lista de Entidad Empleado </returns>
         List<Entidad> ConsultarTodosProgramadores();
 
-        bool ObtenerListaEmpleados(Entidad proyecto);
+        /// <summary> Firma de Método para los empleados asociados a un proyecto </summary>
+        /// <param name="proyecto"> entidad de tipo proyecto </param>
+        /// <returns> Retorna lista de entidades tipo empleados </returns>
+        List<Entidad> ObtenerListaEmpleados(Entidad proyecto);
 
         /// <summary> Firma de Método para agregar asociacion entre empleado y un proyecto </summary>
         /// <param name="proyecto"> entidad de tipo proyecto </param>

@@ -739,4 +739,10 @@
   <data name="UsuFKRol" xml:space="preserve">
     <value>fk_rol_id</value>
   </data>
+  <data name="NumeroProyectos" xml:space="preserve">
+    <value>M7_ConsultarNumeroProyectos</value>
+  </data>
+  <data name="BorrarProyecto" xml:space="preserve">
+    <value>M7_BorrarProyecto</value>
+  </data>
 </root>

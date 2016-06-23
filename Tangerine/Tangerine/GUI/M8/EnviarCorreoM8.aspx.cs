@@ -8,83 +8,85 @@ using DominioTangerine;
 //using DatosTangerine.M8;
 //using LogicaTangerine.M8;
 using LogicaTangerine.M4;
+using Tangerine_Presentador.M8;
+using Tangerine_Contratos.M8;
 
 namespace Tangerine.GUI.M8
 {
-    public partial class EnviarCorreoM8 : System.Web.UI.Page
+    public partial class EnviarCorreoM8 : System.Web.UI.Page, IContratoCorreo
     {
-        //public static Facturacion theFactura = null;
-        string _destinatario = String.Empty;
-        string _asunto = String.Empty;
-        string _mensaje = String.Empty;
 
-        public string Destinatario
+        #region presentador
+        PresentadorCorreo _presentador;
+
+        public EnviarCorreoM8()
         {
-            get
-            {
-                return this.textDestinatario_M8.Value;
-            }
+            _presentador = new PresentadorCorreo(this);
+        }
+        #endregion
 
-            set
-            {
-                this.textDestinatario_M8.Value = value;
-            }
+        #region contrato
+        public string numero
+        {
+            get { return this.textNumeroFactura.Text; }
+            set { this.textNumeroFactura.Text = value; }
         }
 
-        public string Asunto
+        public string destinatario
         {
-            get
-            {
-                return this.textAsunto_M8.Value;
-            }
-
-            set
-            {
-                this.textAsunto_M8.Value = value;
-            }
+            get { return this.textDestinatario_M8.Value; }
+            set { this.textDestinatario_M8.Value = value; }
         }
 
-        public string Mensaje
+        public string asunto
         {
-            get
-            {
-                return this.textMensaje_M8.Value;
-            }
-
-            set
-            {
-                this.textMensaje_M8.Value = value;
-            }
+            get { return this.textAsunto_M8.Value; }
+            set { this.textAsunto_M8.Value = value; }
         }
+
+        public string mensaje
+        {
+            get { return this.textMensaje_M8.Value; }
+            set { this.textMensaje_M8.Value = value; }
+        }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM8.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+        #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idFac = int.Parse(Request.QueryString["idFac"]);
-            if (!IsPostBack)
+            try
             {
-                //LogicaM8 facturaLogic = new LogicaM8();
-                //LogicaM4 companiaLogic = new LogicaM4();
-                //theFactura = facturaLogic.SearchFactura(idFac);
-
-                //Compania compania = companiaLogic.ConsultCompany(int.Parse(theFactura.idCompaniaFactura.ToString()));
-                //Destinatario = compania.EmailCompania;
-                //Proyecto proyecto = facturaLogic.SearchProyectoFactura(int.Parse(theFactura.idProyectoFactura.ToString()));
-                //Asunto = "Recordatorio de Pago - Proyecto: " + proyecto.Nombre + "";
-                //Mensaje += "Saludos Cordiales, Compañia: " + compania.NombreCompania + ".\n";
-                //Mensaje += "Se le recuerda que tiene una factura por pagar, por un monto de: " + theFactura.montoFactura.ToString() + " "
-                //            + theFactura.tipoMoneda + ".";
+                textNumeroFactura.Text = Request.QueryString[ResourceGUIM8.idFac]; ;
+                if (!IsPostBack)
+                {
+                    _presentador.correofactura();
+                }
+            }
+            catch
+            {
+                Response.Redirect(ResourceGUIM8.volver);
             }
         }
 
         protected void buttonEnviarCorreo_Click(object sender, EventArgs e)
         {
-            _destinatario = textDestinatario_M8.Value;
-            _asunto = textAsunto_M8.Value;
-            _mensaje = textMensaje_M8.Value;
 
-            //CorreoM8 correo = new CorreoM8();
-            //correo.enviarCorreoGmail(_asunto, _destinatario, _mensaje);
-            Server.Transfer("ConsultarFacturaM8.aspx");
+            if (_presentador.enviarCorreo())
+                Server.Transfer("ConsultarFacturaM8.aspx");
         }
     }
 }

@@ -20,7 +20,6 @@ namespace PruebasUnitarias.M3
         private Boolean respuesta;
         private List<Entidad> losClientes;
         private DatosTangerine.InterfazDAO.M3.IDAOClientePotencial daoCliente;
-
         #endregion
 
         #region SetUp y TearDown
@@ -44,6 +43,9 @@ namespace PruebasUnitarias.M3
         public void clean()
         {
             elCliente1 = null;
+            elCliente2 = null;
+            elCliente3 = null;
+            elCliente4 = null;
         }
         #endregion
 

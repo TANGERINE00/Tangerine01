@@ -34,16 +34,15 @@
                         <div class="form-group">
                             <label for="InputPropuesta">Propuesta Aprobada *</label> </br>
                             <asp:TextBox runat="server" id="inputPropuesta" ReadOnly="true" CssClass="form-control"></asp:TextBox>
-                            <asp:TextBox runat="server" id="idPropuesta" ReadOnly="true" Visible="false"></asp:TextBox>
-                            <asp:TextBox runat="server" id="descripcion" ReadOnly="true" Visible="false"></asp:TextBox>
                             <asp:TextBox runat="server" id="acuerdoPago" ReadOnly="true" Visible="false"></asp:TextBox>
-                            <asp:TextBox runat="server" id="idCompania" ReadOnly="true" Visible="false"></asp:TextBox>
+                            
 
                         </div>
 
                         <div class="form-group">
                             <label for="InputNombreProyecto">Nombre de proyecto *</label> </br>
                             <asp:TextBox runat="server" ID="textInputNombreProyecto" ReadOnly="true" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox runat="server" id="idCompania" ReadOnly="true" Visible="false"></asp:TextBox>
                             <asp:TextBox runat="server" ID="idProyecto" ReadOnly="true" visible="false"></asp:TextBox>
                         </div>
 
@@ -54,17 +53,19 @@
 
                         <div class="form-group">
                             <label for="InputFechaInicio">Fecha de inicio *</label></br>
+                            <asp:TextBox runat="server" id="idPropuesta" ReadOnly="true" Visible="false"></asp:TextBox>
                             <asp:TextBox runat="server" ID="textInputFechaInicio" ReadOnly="true" CssClass="form-control"></asp:TextBox>
                         </div>
 
                         <div class="form-group">
                             <label for="InputFechaEstimada">Fecha Estimada de culminación *</label> <br />
-                            <asp:Calendar runat="server" ID="textInputFechaEstimada" SelectionMode="DayWeekMonth" OnDayRender="textInputFechaEstimada_DayRender"></asp:Calendar>
+                            <asp:Calendar runat="server" ID="textInputFechaEstimada" SelectionMode="DayWeekMonth"></asp:Calendar>
                         </div>
 
                         <div class="form-group">
                             <label for="InputCosto">Costo estimado *</label> <br />
                             <asp:TextBox runat="server" ID="textInputCosto" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox runat="server" id="realizacion" ReadOnly="true" Visible="false"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="textInputCosto" runat="server" ErrorMessage="Solo Numeros y Hasta 2 Decimales" ValidationExpression="\d+(\.\d{1,2})?"></asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator ID="ValidarCostoEstimado" runat="server" ControlToValidate="textInputCosto" ErrorMessage="Debe ingresar un costo" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
@@ -72,6 +73,7 @@
                         <div class="form-group">
                             <label for="InputPorcentaje">Porcentaje de realizacion *</label> <br />
                             <asp:TextBox runat="server" ID="textInputPorcentaje" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox runat="server" id="descripcion" ReadOnly="true" Visible="false"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="textInputPorcentaje" runat="server" ErrorMessage="Solo Numeros del 1 al 100" ValidationExpression="^[1-9][0-9]?$|^100$"></asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator ID="ValidarPorcentaje" runat="server" ControlToValidate="textInputPorcentaje" ErrorMessage="Debe ingresar un porcentaje de realizacion" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>

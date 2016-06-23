@@ -26,6 +26,18 @@ namespace Tangerine.GUI.M7
 
         #region Contrato
 
+        TextBox IContratoModificarProyecto.realizacion
+        {
+            get
+            {
+                return realizacion;
+            }
+            set
+            {
+                realizacion = value;
+            }
+        }
+
         TextBox IContratoModificarProyecto.inputPropuesta
         {
             get
@@ -293,11 +305,6 @@ namespace Tangerine.GUI.M7
         protected void bDerecho_Click(object sender, EventArgs e)
         {
             presentador.MoverDerecha();
-        }
-
-        protected void textInputFechaEstimada_DayRender(object sender, DayRenderEventArgs e)
-        {
-            presentador.RenderCalendario(e, presentador.Proyecto);
         }
 
     }

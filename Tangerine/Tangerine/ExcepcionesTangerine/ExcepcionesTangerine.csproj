@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.5\lib\net10-full\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -70,9 +70,9 @@
     <Compile Include="M10\ExceptionDatabase.cs" />
     <Compile Include="M10\NullArgumentException.cs" />
     <Compile Include="M10\WrongFormatException.cs" />
-    <Compile Include="M2\ExcepcionModificarRol.cs" />
-    <Compile Include="M2\ExcepcionRegistro.cs" />
-    <Compile Include="M2\ExcepcionPrivilegios.cs" />
+    <Compile Include="M2\ExceptionModificarRol.cs" />
+    <Compile Include="M2\ExceptionRegistro.cs" />
+    <Compile Include="M2\ExceptionPrivilegios.cs" />
     <Compile Include="M2\ExceptionM2Tangerine.cs" />
     <Compile Include="M3\ExceptionDataBaseLeads.cs" />
     <Compile Include="M3\NullArgumentExceptionLeads.cs" />

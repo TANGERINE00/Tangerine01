@@ -59,6 +59,21 @@ namespace Tangerine.GUI.M5
             set { this.cargoLB.Value = value; }
         }
 
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM5.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM5.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
         public int GetTypeComp()
         {
             try 

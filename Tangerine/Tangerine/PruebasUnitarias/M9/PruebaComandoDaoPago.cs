@@ -17,11 +17,11 @@ namespace PruebasUnitarias.M9
     public class PruebaComandoDaoPago
     {
         #region Atributos
-
         public bool answer;
         public Entidad elPago;
         public Entidad elPago1;
-        public Entidad elPago2;
+        public Entidad factura;
+        public Entidad compania;
 
 
         #endregion
@@ -36,6 +36,8 @@ namespace PruebasUnitarias.M9
         public void init()
         {
             elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1111111111, 12000, "EUR", "Deposito", 1);
+            compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
+
         }
 
 
@@ -47,7 +49,8 @@ namespace PruebasUnitarias.M9
         {
             elPago = null;
             elPago1 = null;
-            elPago2 = null;
+            factura = null;
+            compania = null;
 
         }
 
@@ -68,10 +71,24 @@ namespace PruebasUnitarias.M9
             resultado = comandoAgregarPago.Ejecutar();
             Assert.IsNotNull(comandoAgregarPago);
             Assert.IsTrue(resultado);
-         
+            LogicaTangerine.Comando<Boolean> comandoEliminarPago = FabricaComandos.EliminarPago(elPago);
+            resultado = comandoEliminarPago.Ejecutar();
+            Assert.IsTrue(resultado);
 
         }
 
+        [Test]
+        public void TestComandoPagosCompania()
+        {
+            ((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id = 1;
+            LogicaTangerine.Comando<List<Entidad>> comandoPagosCompania = FabricaComandos.
+                ConsultarPagosCompania(compania);
+            List<Entidad> Fact = comandoPagosCompania.Ejecutar();
+            Assert.IsNotNull(comandoPagosCompania);
+            Assert.IsNotNull(Fact);
+
+
+        }
         #endregion
 
     }

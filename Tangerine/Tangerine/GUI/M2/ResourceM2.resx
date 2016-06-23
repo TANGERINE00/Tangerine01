@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="IdC" xml:space="preserve">
-    <value>IdCompania</value>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
   </data>
 </root>

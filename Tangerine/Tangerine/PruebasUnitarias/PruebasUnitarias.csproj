@@ -88,8 +88,7 @@
     <Compile Include="M2\PruebaDAORol.cs" />
     <Compile Include="M2\PruebaDAOUsuario.cs" />
     <Compile Include="M2\PruebasComandosEspecificos.cs" />
-    <Compile Include="M3\PruebaClientePotencialLogica.cs" />
-    <Compile Include="M3\PruebaClientePotencial.cs" />
+    <Compile Include="M3\PruebasComandosClientePotencial.cs" />
     <Compile Include="M3\PruebasDAOClientePotencial.cs" />
     <Compile Include="M4\PruebaDatos.cs" />
     <Compile Include="M4\PruebaLogica.cs" />
@@ -104,6 +103,7 @@
     <Compile Include="M6\PruebasDAOPropuesta.cs" />
     <Compile Include="M6\PruebasDAORequerimiento.cs" />
     <Compile Include="M7\M7PruebasLogica.cs" />
+    <Compile Include="M7\PruebaDAOProyecto.cs" />
     <Compile Include="M7\PruebasDatos.cs" />
     <Compile Include="M8\PruebasDatosFactura.cs" />
     <Compile Include="M8\PruebasLogicaFactura.cs" />

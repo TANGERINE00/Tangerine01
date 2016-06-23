@@ -61,15 +61,15 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
                     }
                 }
             }
-            catch (IndexOutOfRangeException ex)
+            catch ( IndexOutOfRangeException ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionPrivilegios("Error al ejecutar ComandoVerificarAccesoAPagina", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Error, indice fuera de rango" , ex );
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM2Tangerine("Error al ejecutar ComandoVerificarAccesoAPagina", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202", "Metodo no implementado" , ex );
             }
             return resultado;
         }

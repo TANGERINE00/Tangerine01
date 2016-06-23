@@ -77,11 +77,6 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new AgregarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
             catch( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
@@ -132,12 +127,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new EliminarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new EliminarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -212,12 +202,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ModificarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ModificarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -286,12 +271,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ConsultarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -350,17 +330,7 @@ namespace DatosTangerine.DAO.M5
                 }
 
             }
-            catch ( NullReferenceException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
-            }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ConsultarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -435,12 +405,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ConsultarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ConsultarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            } 
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -498,12 +463,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new AgregarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -577,12 +537,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ConsultarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex);
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex);
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex);
@@ -640,12 +595,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new EliminarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new EliminarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
@@ -719,12 +669,7 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ConsultarContactoException( "DS-505", "Ingreso de un argumento con valor invalido", ex );
             }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ConsultarContactoException( "DS-505", "Ingreso de datos con un formato invalido", ex );
-            }
-            catch ( SqlException ex )
+            catch ( ExceptionTGConBD ex )
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );

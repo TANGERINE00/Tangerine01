@@ -145,7 +145,7 @@
     <value>&lt;a title="Involucrados" class="btn btn-info glyphicon glyphicon-user"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonMail" xml:space="preserve">
-    <value>&lt;a title="Mail" class="btn btn-primary glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idFac=</value>
+    <value>&lt;a title="Correo" class="btn btn-default glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idFac=</value>
   </data>
   <data name="BotonMail1" xml:space="preserve">
     <value>&lt;a title="Mail" class="btn btn-primary glyphicon glyphicon-envelope" href="EnviarCorreoM8.aspx?idCompania=</value>
@@ -295,7 +295,7 @@
     <value>La factura ha sido modificada</value>
   </data>
   <data name="BotonFactura" xml:space="preserve">
-    <value>&lt;a title="Factura"  class="btn btn-primary glyphicon glyphicon-file" href="Factura.aspx?idFac=</value>
+    <value>&lt;a title="Factura"  class="btn btn-info glyphicon glyphicon-file" href="Factura.aspx?idFac=</value>
   </data>
   <data name="TipoFecha" xml:space="preserve">
     <value>dd/mm/yyyy</value>
@@ -311,5 +311,32 @@
   </data>
   <data name="Euro" xml:space="preserve">
     <value>€</value>
+  </data>
+  <data name="blank" xml:space="preserve">
+    <value>.\n</value>
+  </data>
+  <data name="espacio" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="punto" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="recordar" xml:space="preserve">
+    <value>Se le recuerda que tiene una factura por pagar, por un monto de:</value>
+  </data>
+  <data name="recordatorio" xml:space="preserve">
+    <value>Recordatorio de Pago - Proyecto:</value>
+  </data>
+  <data name="saludos" xml:space="preserve">
+    <value>Saludos Cordiales, estimados:</value>
+  </data>
+  <data name="bolivares" xml:space="preserve">
+    <value>Bolivares</value>
+  </data>
+  <data name="dolares" xml:space="preserve">
+    <value>Dolares</value>
+  </data>
+  <data name="euros" xml:space="preserve">
+    <value>Euros</value>
   </data>
 </root>

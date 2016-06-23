@@ -18,6 +18,11 @@ namespace Tangerine.GUI.M8
     {
 
         #region Implementacion de Contrato
+        public string moneda
+        {
+            get { return this.textTipoMoneda_M8.Value; }
+            set { this.textTipoMoneda_M8.Value = value; }
+        }
 
         public string fecha
         {

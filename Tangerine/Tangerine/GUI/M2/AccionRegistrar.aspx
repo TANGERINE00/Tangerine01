@@ -16,7 +16,8 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <div id="alert" runat="server">
+    </div>
     <div class="row">
         <!-- left column -->
         <div class="col-md-6">
@@ -37,12 +38,12 @@
 
                         <div class="form-group">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" maxlength="20" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
                         </div>
 
                         <div class="form-group">
                             <label for="labelContraseña_M2">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9_.-]*$" required oninvalid="setCustomValidity('Campo inválido o vacío')">
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" maxlength="10" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
                         </div>
 
                         <div class="form-group" runat="server">

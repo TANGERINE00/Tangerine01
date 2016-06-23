@@ -257,3 +257,5 @@ Tangerine/Tangerine/Log.xml
 Tangerine/Tangerine/PruebasUnitarias/App.config
 Tangerine/Tangerine/Log.xml
 *.config
+*.config
+Tangerine/Tangerine/Web.config

@@ -153,9 +153,9 @@
                 <i></i> <span>Gestion de Leads</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar Lead</a></li>
-                <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Consultar Lead</a></li>
-                <li id="SeguimientoDeLeads" runat="server"><a href="../M3/SeguimientoDeLeads.aspx"><i class="fa fa-circle-o"></i>Seguimiento</a></li>
+                <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar nuevo Lead</a></li>
+                <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Administrar Leads</a></li>
+i>Seguimiento</a></li>
               </ul>                
             </li>
             <li class="treeview" id="GestionDeCompañias" runat="server">
@@ -214,7 +214,7 @@
                 <i></i> <span>Gestion de Empleados</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="Empleados" runat="server"><a href="../M1/EmpleadosAdmin.aspx" ><i class="fa fa-circle-o"></i> Empleados</a></li>
+                <li id="Empleados" runat="server"><a href="../M1/EmpleadosAdmin.aspx?EmployeeId=0" ><i class="fa fa-circle-o"></i> Empleados</a></li>
                 <!--<li id="Cargos" runat="server"><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>-->
               </ul>
             </li>
@@ -487,6 +487,15 @@
           "ordering": true,
           "info": true,
           "autoWidth": false
+        });
+
+        $('#example3').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
         });
 
         $('#reservation').daterangepicker();

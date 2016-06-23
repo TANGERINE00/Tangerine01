@@ -278,6 +278,34 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email, presupuesto, status);
             }
             #endregion
+
+            #region Metodo para instaciar llamadas
+            public static Entidad CrearSeguimientoXLlamada()
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente();
+            }
+            #endregion
+
+            #region Metodo para instaciar llamadas constructor completo
+            public static Entidad CrearSeguimientoXLlamada(int id, DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo,fk);
+            }
+            #endregion
+
+            #region Metodo para instaciar visitas
+            public static Entidad CrearSeguimientoXVisitas()
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente();
+            }
+            #endregion
+
+            #region Metodo para instaciar visitas constructor completo
+            public static Entidad CrearSeguimientoXVisitas(int id, DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo, fk);
+            }
+            #endregion
         #endregion
 
         #region Modulo 4
@@ -503,40 +531,59 @@ namespace DominioTangerine.Fabrica
         #region Modulo 6
 
             #region Instancia Propuesta
+            /// <summary>
+            /// Se crea la instancia sin atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta sin atributos</returns>
             static public Entidad ObtenerPropuestaVacia()
             {
                 return new DominioTangerine.Entidades.M6.Propuesta();
             }
 
-            static public Entidad ObtenerPropuesta(string nombre, string descripcion, string _tipoDu, string duracion, 
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta con atributos(sin codigo)</returns>
+            static public Entidad ObtenerPropuesta( string nombre, string descripcion, string _tipoDu, string duracion, 
                 string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, DateTime fefinal, 
-                int costo, string compañia)
+                int costo, string compañia )
             {
-                return new DominioTangerine.Entidades.M6.Propuesta(nombre, descripcion, _tipoDu, duracion, acuerdopago, 
-                       estatus, moneda, entrega, feincio, fefinal, costo, compañia);
+                return new DominioTangerine.Entidades.M6.Propuesta( nombre, descripcion, _tipoDu, duracion, acuerdopago, 
+                       estatus, moneda, entrega, feincio, fefinal, costo, compañia );
             }
 
-            static public Entidad ObtenerPropuesta(string codigo, string nombre, string descripcion, string _tipoDu, 
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta con atributos</returns>
+            static public Entidad ObtenerPropuesta( string codigo, string nombre, string descripcion, string _tipoDu, 
                 string duracion, string acuerdopago, string estatus, string moneda, int entrega, DateTime feincio, 
-                DateTime fefinal, int costo, string compañia)
+                DateTime fefinal, int costo, string compañia )
             {
                 return new DominioTangerine.Entidades.M6.Propuesta(codigo, nombre, descripcion, _tipoDu, duracion, 
                     acuerdopago, estatus, moneda, entrega, feincio, fefinal, costo, compañia);
             }
 
-            static public Entidad ObtenerPropuesta(string codigoP, 
-                List<DominioTangerine.Entidades.M6.Requerimiento> listaRequerimiento)
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de Propuesta con lista de requerimientos vacia</returns>
+            static public Entidad ObtenerPropuesta( string codigoP, 
+                List<DominioTangerine.Entidades.M6.Requerimiento> listaRequerimiento )
             {
-                return new DominioTangerine.Entidades.M6.Propuesta(codigoP, listaRequerimiento);
+                return new DominioTangerine.Entidades.M6.Propuesta( codigoP, listaRequerimiento );
             }
 
             #endregion
 
             #region Instancia Requerimiento
-
-            static public Entidad ObtenerRequerimiento(string codreq, string descripr, string codpro)
+            /// <summary>
+            /// Se crea la instancia con atributos
+            /// </summary>
+            /// <returns>Retorna una instancia de requerimiento con atributos</returns>
+            static public Entidad ObtenerRequerimiento( string codreq, string descripr, string codpro )
             {
-                return new DominioTangerine.Entidades.M6.Requerimiento(codreq, descripr, codpro);
+                return new DominioTangerine.Entidades.M6.Requerimiento( codreq, descripr, codpro );
             }
 
             #endregion
@@ -690,23 +737,59 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 9
 
+        /// <summary>
+        /// Metodo que instancia la clase Pago vacia 
+        /// </summary>
+        /// <returns>Objeto Pago instanciado</returns>
         public static Entidad ObtenerPago_M9 ()
             {
                 return new DominioTangerine.Entidades.M9.Pago();
             }
-        public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, double _montoPago, string _monedaPago, int _codPago)
+        /// <summary>
+        /// Metodo que instancia la clase Pago con 5 atributos
+        /// </summary>
+        /// <param name="_idFactura">Entero, Id de la factura que se va a pagar</param>
+        /// <param name="_fechaPago">DateTime, Fecha en la que se realiza el pago</param>
+        /// <param name="_montoPago">Double, Monto por el que se realiza el pago</param>
+        /// <param name="_monedaPago">String, Moneda en la que se realiza el pago</param>
+        /// <param name="_codPago">Entero, Codigo de 10 digitos para confirmar el pago</param>
+        /// <returns>Objeto Pago instanciado</returns>
+        public static Entidad ObtenerPago_M9(int _idFactura, DateTime _fechaPago, double _montoPago, 
+            string _monedaPago, int _codPago)
         {
             return new DominioTangerine.Entidades.M9.Pago(_idFactura,_fechaPago, _montoPago, _monedaPago, _codPago);
         }
 
-        public static Entidad ObtenerPago_M9(string monedaPago, double montoPago, string formaPago, int codPago, DateTime fechaPago,
+        /// <summary>
+        /// Metodo para instanciar la clase pago con 6 atributos
+        /// </summary>
+        /// <param name="monedaPago">String, Moneda en la que se realiza el pago</param>
+        /// <param name="montoPago">Double, Monto por el que se realiza el pago</param>
+        /// <param name="formaPago">String, Forma en la que se realiza el pago</param>
+        /// <param name="codPago">Entero, Codigo de 10 digitos para confirmar el pago</param>
+        /// <param name="fechaPago">DateTime, Fecha en la que se realizo el pago</param>
+        /// <param name="idFactura">Entero, Id de la factura que se va a pagar</param>
+        /// <returns>Objeto Pago instanciado</returns>
+        public static Entidad ObtenerPago_M9(string monedaPago, double montoPago, string formaPago, int codPago, 
+            DateTime fechaPago,
           int idFactura)
         {
-            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, idFactura);
+            return new DominioTangerine.Entidades.M9.Pago(monedaPago, montoPago, formaPago, codPago, fechaPago, 
+                idFactura);
         }
 
        
-        public static Entidad ObtenerPago_M9(int codPago, double montoPago, string monedaPago, string formaPago, int idFactura)
+        /// <summary>
+        /// Metodo para instanciar la clase pago con 5 atributos
+        /// </summary>
+        /// <param name="codPago">Entero, Codigo de 10 digitos para confirmar el pago</param>
+        /// <param name="montoPago">Double, Monto por el que se realiza el pago</param>
+        /// <param name="monedaPago">String, Moneda en la que se realiza el pago</param>
+        /// <param name="formaPago">String, Forma en la que se realiza el pago</param>
+        /// <param name="idFactura">Entero, Id de la factura que se va a pagar</param>
+        /// <returns>Objeto Pago instanciado</returns>
+        public static Entidad ObtenerPago_M9(int codPago, double montoPago, string monedaPago, string formaPago, 
+            int idFactura)
         {
             return new DominioTangerine.Entidades.M9.Pago(codPago, montoPago, monedaPago, formaPago, idFactura);
         }
@@ -715,10 +798,10 @@ namespace DominioTangerine.Fabrica
         #endregion
 
         #region Modulo 10
-
-        /// <summary>
-        /// Metodo para instanciar empleados sin atributos
-        /// </summary>
+        #region Metodo para instanciar empleados sin atributos
+        // <summary>
+        // Metodo para instanciar empleados sin atributos
+        // </summary>
         /// <returns></returns>
 
         public static Entidad ConsultarEmpleados(int id)
@@ -726,10 +809,12 @@ namespace DominioTangerine.Fabrica
             return new DominioTangerine.Entidades.M10.EmpleadoM10(id);
         }
 
+
         public static Entidad ConsultarEmpleados() 
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
+        #endregion
 
         public static Entidad ObtenerLugar()
         {
@@ -769,8 +854,6 @@ namespace DominioTangerine.Fabrica
                     empSApellido, empCedula, empFecha, empActivo, empEmail, empGenero, empEstudio, empModalidad, empSalario, cargo));
 
         }
-
-       
 
         public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
                                                string empSApellido, string empGenero, int empCedula, DateTime empFecha,

@@ -85,7 +85,9 @@
                     <div class="form-group">
                         <label>Objeto del proyecto</label>
                         
-                        <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z]+$"  class="form-control" id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" oninput="setCustomValidity('')"></textarea>
+                        <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z ,.()]+$"  class="form-control" 
+                            id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" 
+                            oninput="setCustomValidity()" onchange="validarTextArea(this.id)"></textarea>
 			
                     </div>
 
@@ -96,10 +98,10 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-11 col-md-11 col-lg-11" style="margin-left:-30px;">  
-                                        <input runat="server" placeholder="Requerimiento" type="text" 
-                                            pattern="^[A-z]+$" class="form-control precondicion" id="precondicion_0" 
-                                            name="precondicion_0" 
-                                            required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" 
+                                        <input runat="server" placeholder="Requerimiento" type="text" title="Descripcion"
+                                            pattern="^[A-z ,.()]+$" class="form-control precondicion" id="precondicion_0" 
+                                            name="precondicion_0" required 
+                                            oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" 
                                             oninput="setCustomValidity('')" />
                                     </div>            
                                     <div class="col-sm-1 col-md-1 col-lg-1" style="margin-left:-20px;">     
@@ -131,8 +133,8 @@
                             <!-- /btn-group -->
                             
                             <input type="text" class="form-control" ID="textoDuracion" name="duracion" runat="server" 
-                                pattern="^[0-9]*$" title="Introduzca un numero" required clientidmode="static"
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                pattern="^[0-9]{1,3}$" title="Introduzca un numero" required clientidmode="static"
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 3 digitos)')" 
                                 oninput="setCustomValidity('')" 
                                 onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')">
                         </div>
@@ -179,8 +181,8 @@
                             </div>
                             <!-- /btn-group -->
                             <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" 
-                                pattern="^[0-9]*$" title="Costo de la propuesta" required 
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                pattern="^[0-9]{1,10}$" title="Costo de la propuesta" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 10 digitos)')" 
                                 oninput="setCustomValidity('')">
                         </div>
 
@@ -202,7 +204,7 @@
                     <div class="form-group">
                         <label>Cantidad Cuotas</label>
                         <div class="dropdown" runat="server" id="cuota">
-                            <input type="text" pattern="^[0-9]*$" title="Numero de cuotas" class="form-control" 
+                            <input type="text" pattern="^[0-9]{1,2}$" title="Numero de cuotas (maximo 2 numeros)" class="form-control" 
                                 id="cantidadCuotas" name="cantidadCuotas" runat="server" clientidmode="static">
                         </div>
                     </div>

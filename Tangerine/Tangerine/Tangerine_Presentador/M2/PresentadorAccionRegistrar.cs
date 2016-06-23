@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M2;
+using Tangerine_Presentador.M2;
 
 namespace Tangerine_Presentador.M2
 {
@@ -46,10 +47,18 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Registra el usuario en la Base de Datos
         /// </summary>
-        public void registrar()
+        public bool registrar()
         {
-            LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario( _vista.usuario, _vista.contrasena, _vista.comboRol, _numFicha);            
-            theComando.Ejecutar();
+            try
+            {
+                LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario(_vista.usuario, _vista.contrasena, _vista.comboRol, _numFicha);
+                return theComando.Ejecutar();
+            }
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
         }
 
         /// <summary>
@@ -63,6 +72,5 @@ namespace Tangerine_Presentador.M2
             respuesta = comando.Ejecutar();
             return respuesta;
         }
-
     }
 }

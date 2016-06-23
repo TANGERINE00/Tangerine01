@@ -168,7 +168,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceCompany.resx</DependentUpon>
     </Compile>
-    <Compile Include="M5\BDContacto.cs" />
     <Compile Include="M5\ResourceContact.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,7 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <HintPath>..\..\..\..\..\..\Desktop\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.2.0.4\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

@@ -38,10 +38,18 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Asigna un nuevo rol al usuario en cuestión
         /// </summary>
-        public void asignar()
+        public bool asignar()
         {
-            LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoModificarRol(_vista.usuario, _vista.comboBoxRol);
-            theComando.Ejecutar();
+            try
+            {
+                LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoModificarRol(_vista.usuario, _vista.comboBoxRol);
+                return theComando.Ejecutar();
+            }
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            {
+                _vista.msjError = ex.Message;
+                return false;
+            }
         }
     }
 }

@@ -157,8 +157,6 @@ namespace DatosTangerine.Fabrica
         /// Metodo que instancia al objeto DAOPago
         /// </summary>
         /// <returns>Retorna el objeto DAOPago</returns>
-
-
         public static IDAOPago CrearDAOPago()
 
         {
@@ -173,48 +171,51 @@ namespace DatosTangerine.Fabrica
         /// Metodo que crea la instacia de DAO Empleado
         /// </summary>
         /// <returns></returns>
-
         public static IDAOEmpleado  ConsultarDAOEmpleado()
         {
             return new DAO.M10.DAOEmpleado();
         }
 
-
+        /// <summary>
+        /// Metodo que crea la instacia de DAO Empleado consultar por id
+        /// </summary>
+        /// <returns></returns>
         public static IDAOEmpleado ConsultarDAOEmpleadoId()
         {
             return new DAO.M10.DAOEmpleado(); 
         }
 
+        /// <summary>
+        ///Metodo que crea la instacia de DAO Empleado para habilitar/inhabilitar un empleado
+        /// </summary>
+        /// <returns></returns>
         public static IDAOEmpleado EstatusDAOEmpleado()
         {
             return new DAO.M10.DAOEmpleado();
         }
 
         /// <summary>
-        /// Metodo que trae todos los paises
+        ///Metodo que crea la instacia de DAO Empleado Obtener paises
         /// </summary>
         /// <returns></returns>
-
         public static IDAOEmpleado ObtenerIDaoPaises()
         {
             return new DAO.M10.DAOEmpleado();
         }       
 
          /// <summary>
-        /// Metodo que trae todos los cargos
+        ///Metodo que crea la instacia de DAO Empleado para los cargos
         /// </summary>
         /// <returns></returns>
-
         public static IDAOEmpleado ObtenerIDaoCargo()
         {
             return new DAO.M10.DAOEmpleado();
         }
 
         /// <summary>
-        /// Metodo que trae todos los estados de un pais
+        /// Metodo que crea la instacia de DAO Empleado para los estados
         /// </summary>
         /// <returns></returns>
-
         public static IDAOEmpleado ObtenerIDaoEstados()
 
         {
@@ -229,6 +230,16 @@ namespace DatosTangerine.Fabrica
         {
             return new DAO.M10.DAOEmpleado();
         }
+
+        /// Metodo que agrega un empleado
+        /// </summary>
+        /// <returns></returns>
+
+        public static IDAOEmpleado CrearDAOEmpleado()
+        {
+            return new DAO.M10.DAOEmpleado();
+        }
+
         #endregion
 
     }

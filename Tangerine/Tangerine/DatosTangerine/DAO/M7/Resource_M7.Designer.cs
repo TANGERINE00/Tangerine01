@@ -142,6 +142,15 @@ namespace DatosTangerine.DAO.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M7_BorrarProyecto.
+        /// </summary>
+        internal static string BorrarProyecto {
+            get {
+                return ResourceManager.GetString("BorrarProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M5_ModificarContacto.
         /// </summary>
         internal static string ChangeContact {
@@ -993,6 +1002,15 @@ namespace DatosTangerine.DAO.M7 {
         internal static string NombreBD {
             get {
                 return ResourceManager.GetString("NombreBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M7_ConsultarNumeroProyectos.
+        /// </summary>
+        internal static string NumeroProyectos {
+            get {
+                return ResourceManager.GetString("NumeroProyectos", resourceCulture);
             }
         }
         

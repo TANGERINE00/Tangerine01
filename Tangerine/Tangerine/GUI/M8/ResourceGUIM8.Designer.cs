@@ -259,11 +259,20 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to dd/MM/yyyy.
+        ///   Looks up a localized string similar to dd/mm/yyyy.
         /// </summary>
         internal static string dateTipe {
             get {
                 return ResourceManager.GetString("dateTipe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to estado.
+        /// </summary>
+        internal static string estado {
+            get {
+                return ResourceManager.GetString("estado", resourceCulture);
             }
         }
         

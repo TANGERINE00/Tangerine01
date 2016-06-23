@@ -59,7 +59,7 @@ create table CARGO_EMPLEADO
 	car_emp_fecha_cont date not null,
 	car_emp_fecha_fin date,
 	car_emp_modalidad varchar(20) not null,
-	car_emp_sueldo numeric(6,3) not null,
+	car_emp_sueldo numeric(18,0) not null,
 	fk_car_id int not null,
 	fk_emp_num_ficha int not null,
 
@@ -611,17 +611,17 @@ CREATE PROCEDURE M2_ConsultarUsuarioPorNombre
 AS
 	BEGIN
 		SELECT  Employee.emp_num_ficha as emp_num_ficha, Employee.emp_p_nombre as emp_p_nombre,
-				Employee.emp_s_nombre as emp_s_nombre,Employee.emp_p_apellido as emp_p_apellido, 
-				Employee.emp_s_apellido as emp_s_apellido,Employee.emp_cedula as emp_cedula, 
+				Employee.emp_s_nombre as emp_s_nombre,Employee.emp_p_apellido as emp_p_apellido,
+				Employee.emp_s_apellido as emp_s_apellido,Employee.emp_cedula as emp_cedula,
 				Employee.emp_fecha_nac as emp_fecha_nac,Employee.emp_activo as emp_activo,
-				Employee.emp_email as emp_email, Employee.emp_genero as emp_genero, 
+				Employee.emp_email as emp_email, Employee.emp_genero as emp_genero,
 				Employee.emp_nivel_estudio as emp_nivel_estudio,
 				Job.car_nombre as car_nombre, Job.car_descripcion as car_descripcion,
-				JobEmployee.car_emp_fecha_cont as car_emp_fecha_cont, 
+				JobEmployee.car_emp_fecha_cont as car_emp_fecha_cont,
 				JobEmployee.car_emp_modalidad as car_emp_modalidad,
-				JobEmployee.car_emp_sueldo as car_emp_sueldo     
+				JobEmployee.car_emp_sueldo as car_emp_sueldo
 			FROM EMPLEADO Employee, CARGO_EMPLEADO JobEmployee, CARGO job, USUARIO Usu, ROL Ro
-		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha 
+		WHERE Employee.emp_num_ficha=JobEmployee.fk_emp_num_ficha
 			  and JobEmployee.fk_car_id=Job.car_id
 			  and Ro.rol_id = Usu.fk_rol_id
 			  and Employee.emp_num_ficha = Usu.fk_emp_num_ficha
@@ -631,6 +631,7 @@ GO
 ---------------------------------------------------------------------------------------------------------
 --------Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
+
 
 -------  Store Procedure agregar cliente_potencial -----------------------------------
 
@@ -771,10 +772,22 @@ GO
 CREATE PROCEDURE M3_ConsultarIdUltimoLead
 AS
  BEGIN
-     SELECT MAX(cli_pot_id) cli_pot_id FROM CLIENTE_POTENCIAL; 
+     SELECT MAX(cli_pot_id) cli_pot_id FROM CLIENTE_POTENCIAL;
  end;
 GO
 
+------------------Consultar llamdas a cliente potencial----------------------
+CREATE procedure M3_listar_Seguimento_llamadas
+@id_cliente int
+AS
+	BEGIN
+		SELECT Se.seg_fecha AS seg_fecha, Se.seg_motivo AS seg_motivo
+		FROM Cliente_Potencial Cp, Seguimiento Se
+		WHERE Cp.cli_pot_id=Se.fk_cli_pot
+	  			and Se.fk_cli_pot=@id_cliente
+
+	END;
+	go
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
@@ -942,7 +955,9 @@ AS
  BEGIN
     INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead)
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);
+
  end;
+
 GO
 --Consultar un contacto por su id
 CREATE PROCEDURE M5_ConsultarContactoId
@@ -963,6 +978,7 @@ AS
  BEGIN
     INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id)
 	VALUES(@id_contacto,@id_proyecto);
+
  end;
 GO
 --Eliminar a contacto_proyecto
@@ -972,6 +988,7 @@ CREATE PROCEDURE M5_EliminarContactoProyecto
 AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;
+
  end;
 GO
 --Eliminar de contacto y contacto_proyecto por id
@@ -981,6 +998,7 @@ AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id;
 	DELETE FROM CONTACTO WHERE con_id = @id;
+
  END;
 GO
 --Modificar un contacto
@@ -997,6 +1015,7 @@ AS
     update CONTACTO set con_nombre = @nombre, con_apellido = @apellido, con_departamento = @departamento,
     con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
     where con_id = @id;
+
  end;
 GO
 --Consultar todos los contactos
@@ -1451,6 +1470,23 @@ AS
 	END
 GO
 
+---ConsultarNumeroProyectos(Para pruebas) ----
+CREATE PROCEDURE M7_ConsultarNumeroProyectos
+AS
+ BEGIN
+     SELECT COUNT(proy_id) proy_id FROM PROYECTO;
+ end;
+GO
+
+--- StoredProsedure borrar proyecto ----
+CREATE PROCEDURE M7_BorrarProyecto
+	@proy_id int
+AS
+	BEGIN
+		DELETE FROM PROYECTO
+ 		WHERE proy_id = @proy_id;
+	END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M7------
 -----------------------------------
@@ -1673,7 +1709,15 @@ GO
 ------Fin Stored Procedure M9------
 -----------------------------------
 
+CREATE PROCEDURE M9_EliminarPago
+@cod int
 
+AS
+ BEGIN
+	DELETE FROM PAGO 
+	WHERE pag_cod = @cod
+	END;
+GO
 
 
 -----------------------------------

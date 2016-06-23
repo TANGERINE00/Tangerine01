@@ -9,6 +9,7 @@ using LogicaTangerine;
 using LogicaTangerine.M4;
 using Tangerine_Contratos.M4;
 using Tangerine_Presentador.M4;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M4
 {
@@ -122,7 +123,6 @@ namespace Tangerine.GUI.M4
                 InputPlazoPago1.Value = value;
             }
         }
-
         public DropDownList direccion
         {
             get
@@ -155,12 +155,18 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
                 if (!IsPostBack)
                 {
-                    if(!Presentador.CargarCompania(int.Parse(Request.QueryString["idComp"])))
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
+                    if (!Presentador.CargarCompania(int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idComp"], false))))
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
                 }
-       
+            }
+            catch (Exception ex) 
+            {
+                Response.Redirect("../M1/DashBoard.aspx");
+            }
         }
 
         /// <summary>

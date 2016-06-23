@@ -32,7 +32,8 @@ function agregarPrecondicion() {
     child.innerHTML = "<button type=\"button\" class=\"btn btn-danger btn-circle glyphicon glyphicon-remove\" onclick=\"eliminarCampo(this)\"></button>";
     codigo = "<div class=\"form-group\">" +
 			"    <div class=\"col-sm-11 col-md-11 col-lg-11\" style=\"margin-left:-30px;\"> " +
-			"        <input type=\"text\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\"/>" +
+			"        <input type=\"text\" runat\"server\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\" required" +
+            "           oninvalid=\"setCustomValidity('Campo obligatorio, no puede tener numeros ni simbolos')\" oninput=\"setCustomValidity('')\" title=\"Descripcion\" pattern=\"^[A-z ,.()]+$\" />" +
 			"    </div>" +
 			"    <div class=\"col-sm-1 col-md-1 col-lg-1\" style=\"margin-left:-20px;\" >" +
 			"        <button type=\"button\" class=\"btn btn-default btn-circle glyphicon glyphicon-plus\" onclick=\"agregarPrecondicion()\"></button>" +
@@ -41,8 +42,6 @@ function agregarPrecondicion() {
     $("#div-precondiciones").append(codigo);
     actualizarIdPrecondiciones();
 
-    //var reach_array = $('#div-precondiciones').find('input');
-    //console.log(reach_array.length);
 }
 
 function eliminarCampo(caller) {
@@ -96,6 +95,29 @@ function doSearch() {
         } else {
             tableReg.rows[i].style.display = 'none';
         }
+    }
+}
+
+function validarTextArea(textArea)
+{
+    var textArea = document.getElementById(textArea);
+    var compania = document.getElementById("comboCompañia");
+
+    var regex = new RegExp("^[A-z ,.()]+$");
+
+    var resultado = regex.test(textArea.value);
+
+    if (resultado == false) {
+        alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
+        textArea.value = "";
+        textArea.style.borderColor = "red";
+    }
+    else {
+        textArea.style.borderColor = "#ccc";
+    }
+
+    if (compania.value == "Selecione un cliente") {
+        alert('Seleccione una compañía!');
     }
 }
 
@@ -163,6 +185,7 @@ function setFechas(i1, date1, date2, select1)
     }
 }
 
+//Inhabilitar campo dependiendo de la modalidad
 function setCuotas()
 {
     if (document.getElementById("formaPago").value == "Mensual") {
@@ -184,7 +207,14 @@ function setFechasMesesYDias()
 
     var fechaInicio = new Date(_fechaInicio.value);
     var fechaFin = new Date();
+    var hoy = new Date();
 
+    //Validacion de fecha inicio "mayor" o "igual" a HOY.
+    if (fechaInicio < hoy) {
+        _fechaInicio.value = hoy.toLocaleDateString('en-US');
+    }
+
+    //Validar que exista una duracion para poder empezar a validar
     if (diasASumar > 0)
     {
         if (select1.value == "Meses")
@@ -202,34 +232,22 @@ function setFechasMesesYDias()
             _fechaFin.value = fechaFin.toLocaleDateString('en-US');
         }
     }
-    else if (select1.value == "Custom")
-    {
+    //Validaciones en caso de que la modalidad sea Custom
+    else if (select1.value == "Custom") {
         var fechaAux = new Date(_fechaFin.value);
 
-        var diaInicio = fechaInicio.getDate();
-        var diaFin = fechaAux.getDate();
-        var mesInicio = fechaInicio.getMonth() + 1;
-        var mesFin = fechaAux.getMonth() + 1;
-        var anoInicio = fechaInicio.getFullYear();
-        var anoFin = fechaAux.getFullYear();
-
-        //Validacion de fecha inicio "mayor" o "igual" a HOY.
         //Validacion de fecha de inicio sea "menor" a la fecha de fin.
-        if (anoInicio <= anoFin){
-            if (mesInicio <= mesFin){
-                if (diaInicio <= diaFin){
-                    //
-                }
-            }
-            else{
-                _fechaFin.value = _fechaInicio.value;
-            }
-        }
-        else{
+        if (fechaInicio > fechaAux) {
             _fechaFin.value = _fechaInicio.value;
         }
-        //Validacion de fecha de fin "mayor" a la fecha de inicio.
 
+        //Validacion de fecha de fin "mayor" a la fecha de inicio.
+        if (fechaFin < fechaAux) {
+            _fechaFin.value = _fechaInicio.value;
+        }
+    }
+    else {
+        _fechaInicio.value = hoy.toLocaleDateString('en-US');
     }
 }
 
@@ -241,31 +259,10 @@ function setFechasCustom()
 
     var fechaInicio = new Date(_fechaInicio.value);
     var fechaFin = new Date();
-
     var fechaAux = new Date(_fechaFin.value);
 
-    var diaInicio = fechaInicio.getDate();
-    var diaFin = fechaAux.getDate();
-    var mesInicio = fechaInicio.getMonth() + 1;
-    var mesFin = fechaAux.getMonth() + 1;
-    var anoInicio = fechaInicio.getFullYear();
-    var anoFin = fechaAux.getFullYear();
-
     //Validacion de que la fecha de inicio sea "menor" a la fecha de fin.
-    if (anoInicio <= anoFin){
-        if (mesInicio <= mesFin){
-            if (diaInicio <= diaFin){
-                //
-            }
-            else{
-                _fechaFin.value = _fechaInicio.value;
-            }
-        }
-        else{
-            _fechaFin.value = _fechaInicio.value;
-        }
-    }
-    else{
+    if (fechaInicio > fechaAux) {
         _fechaFin.value = _fechaInicio.value;
     }
 

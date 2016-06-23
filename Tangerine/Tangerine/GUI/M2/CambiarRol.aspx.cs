@@ -14,6 +14,8 @@ namespace Tangerine.GUI.M2
     public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
         private PresentadorCambioRol _presentador;
+        string error;
+        private bool errorManejo;
 
         /// <summary>
         /// Constructor de PresentadorCambioRol
@@ -37,6 +39,15 @@ namespace Tangerine.GUI.M2
                 { this.tabla.Text = value; }
             }
 
+            /// <summary>
+            /// Mensaje de error
+            /// </summary>
+            public string msjError
+            {
+                get { return error; }
+                set { error = value;}
+            }
+
         #endregion
 
         /// <summary>
@@ -48,7 +59,12 @@ namespace Tangerine.GUI.M2
         {
             if (!IsPostBack)
             {
-                _presentador.iniciarVista();
+                errorManejo = _presentador.iniciarVista();
+
+                if (!errorManejo)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                }
             }
         }
     }

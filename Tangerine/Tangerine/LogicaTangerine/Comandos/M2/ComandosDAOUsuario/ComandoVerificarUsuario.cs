@@ -37,10 +37,10 @@ namespace LogicaTangerine.Comandos.M2
                 resultado = UsuarioVerify.VerificarUsuarioPorFichaEmpleado(_fichaEmpleado);
                 return resultado;
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM2Tangerine("Error al ejecutar ComandoPrepararUsuario", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
             }
         }
     }

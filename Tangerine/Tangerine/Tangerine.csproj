@@ -44,7 +44,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\ActiproSoftware.Shared.Net20.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>packages\log4net.2.0.5\lib\net10-full\log4net.dll</HintPath>
+      <HintPath>packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=3.0.5797.27550, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -147,7 +147,6 @@
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\Dashboard.aspx" />
-    <Content Include="GUI\M1\EjemploM1.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
@@ -1008,13 +1007,6 @@
     <Compile Include="GUI\M1\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\M1\EmpleadosAdmin.aspx.cs">
       <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1056,6 +1048,11 @@
     </Compile>
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\ResourceGUI8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUI8.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\ResourceGUIM1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1101,6 +1098,11 @@
     </Compile>
     <Compile Include="GUI\M2\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M2\ResourceM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceM2.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\ActivarLead.aspx.cs">
       <DependentUpon>ActivarLead.aspx</DependentUpon>
@@ -1533,6 +1535,7 @@
     <Content Include="GUI\Master\Tangerine.Master" />
     <Content Include="GUI\M1\Login.Master" />
     <Content Include="packages\NUnit.2.6.4\NUnit.2.6.4.nupkg" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\JUHYGTF.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1542,9 +1545,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\M1\ResourceGUI8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUI8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M1\ResourceGUIM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\M2\ResourceM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\M3\ResourceInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>

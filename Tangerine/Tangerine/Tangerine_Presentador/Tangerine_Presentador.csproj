@@ -65,6 +65,7 @@
     <Compile Include="M3\PresentadorAgregarClientePotencial.cs" />
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorHistorialDeSeguimiento.cs" />
     <Compile Include="M3\PresentadorListarClientePotencial.cs" />
     <Compile Include="M3\PresentadorModificarClientePotencial.cs" />
     <Compile Include="M3\PresentadorPromoverClientePotencial.cs" />
@@ -109,6 +110,7 @@
       <DependentUpon>RecursoPresentadorM7.resx</DependentUpon>
     </Compile>
     <Compile Include="M8\PresentadorAnularFactura.cs" />
+    <Compile Include="M8\PresentadorCorreo.cs" />
     <Compile Include="M8\PresentadorFactura.cs" />
     <Compile Include="M8\PresentadorGenerarFactura.cs" />
     <Compile Include="M8\PresentadorConsultaFactura.cs" />

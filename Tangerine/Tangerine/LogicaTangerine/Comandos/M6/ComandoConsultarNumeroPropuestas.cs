@@ -10,10 +10,18 @@ namespace LogicaTangerine.Comandos.M6
 {
     public class ComandoConsultarNumeroPropuestas : Comando<int>
     {
+        /// <summary>
+        /// Constructor, recibe parametro de tipo requerimiento
+        /// </summary>
+        /// <param name="elRequerimiento">objeto de tipo requerimiento</param>
         public ComandoConsultarNumeroPropuestas()
         {
         }
 
+        /// <summary>
+        /// Método para utilizar el metodo ConsultarNumeroPropuestas en capa de datos.
+        /// </summary>
+        /// <returns>Retorna numero de propuestas registradas</returns>
         public override int Ejecutar()
         {
             try
@@ -21,7 +29,7 @@ namespace LogicaTangerine.Comandos.M6
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
                 return daoPropuesta.ConsultarNumeroPropuestas();
             }
-            catch (Exception e)
+            catch ( Exception e )
             {
                 throw e;
             }

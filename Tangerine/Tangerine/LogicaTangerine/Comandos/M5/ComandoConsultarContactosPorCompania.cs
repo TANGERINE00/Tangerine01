@@ -3,6 +3,7 @@ using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
 using DominioTangerine.Entidades.M4;
 using ExcepcionesTangerine;
+using ExcepcionesTangerine.M5;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,12 +33,27 @@ namespace LogicaTangerine.Comandos.M5
         /// <returns></returns>
         public override List<Entidad> Ejecutar()
         {
-            List<Entidad> listaContactos = new List<Entidad>();
+            try
+            {
+                List<Entidad> listaContactos = new List<Entidad>();
 
-            IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
-            listaContactos = daoContacto.ContactosPorCompania( _tipoCompania, _laEntidad.Id );
+                IDAOContacto daoContacto = FabricaDAOSqlServer.crearDAOContacto();
+                listaContactos = daoContacto.ContactosPorCompania( _tipoCompania, _laEntidad.Id );
 
-            return listaContactos;
+                return listaContactos;
+            }
+            catch (NullReferenceException ex)
+            {
+                throw ex;
+            }
+            catch ( ConsultarContactoException ex )
+            {
+                throw ex;
+            }
+            catch ( BaseDeDatosContactoException ex )
+            {
+                throw ex;
+            }
         }
     }
 }

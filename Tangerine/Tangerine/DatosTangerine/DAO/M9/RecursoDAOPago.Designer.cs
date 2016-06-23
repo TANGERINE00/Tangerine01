@@ -79,7 +79,25 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;901&quot;.
+        ///   Looks up a localized string similar to DS-902.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DS-903.
+        /// </summary>
+        internal static string CodigoErrorNull {
+            get {
+                return ResourceManager.GetString("CodigoErrorNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DS-901.
         /// </summary>
         internal static string CodigoErrorSQL {
             get {
@@ -93,6 +111,15 @@ namespace DatosTangerine.DAO.M9 {
         internal static string ConsultarHistoricoPagos {
             get {
                 return ResourceManager.GetString("ConsultarHistoricoPagos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M9_EliminarPago.
+        /// </summary>
+        internal static string EliminarPago {
+            get {
+                return ResourceManager.GetString("EliminarPago", resourceCulture);
             }
         }
         
@@ -115,11 +142,56 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Error al realizar la conexion&quot;.
+        ///   Looks up a localized string similar to Error de Formato.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, elemento Null.
+        /// </summary>
+        internal static string MensajeErrorNull {
+            get {
+                return ResourceManager.GetString("MensajeErrorNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al realizar la conexion.
         /// </summary>
         internal static string MensajeErrorSQL {
             get {
                 return ResourceManager.GetString("MensajeErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida exitosa del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método, No exitoso.
+        /// </summary>
+        internal static string MensajeFinInfoLoggerError {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLoggerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
         
@@ -201,6 +273,15 @@ namespace DatosTangerine.DAO.M9 {
         internal static string ParamIdFactura {
             get {
                 return ResourceManager.GetString("ParamIdFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idpago.
+        /// </summary>
+        internal static string ParamIdPago {
+            get {
+                return ResourceManager.GetString("ParamIdPago", resourceCulture);
             }
         }
         

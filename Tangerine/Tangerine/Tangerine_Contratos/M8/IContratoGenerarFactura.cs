@@ -8,6 +8,7 @@ namespace Tangerine_Contratos.M8
 {
     public interface IContratoGenerarFactura
     {
+        string moneda { get; set; }
         string fecha { get; set; }
         string compania { get; set; }
         string proyecto { get; set; }

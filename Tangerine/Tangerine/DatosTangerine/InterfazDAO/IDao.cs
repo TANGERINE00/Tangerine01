@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO
 {
-    public interface IDao<Parametro, Resultado1, Resultado2>
+    public interface IDao
     {
-        Resultado1 Agregar(Parametro parametro);
-        Resultado1 Modificar(Parametro parametro);
-        Resultado2 ConsultarXId(Parametro parametro);
-        List<Resultado2> ConsultarTodos();  
+        bool Agregar(DominioTangerine.Entidad parametro);
+        bool Modificar(DominioTangerine.Entidad parametro);
+        DominioTangerine.Entidad ConsultarXId(DominioTangerine.Entidad parametro);
+        List<Entidad> ConsultarTodos();  
     }
 }

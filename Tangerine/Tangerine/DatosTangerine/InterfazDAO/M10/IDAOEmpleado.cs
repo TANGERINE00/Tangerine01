@@ -8,24 +8,50 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M10
 {
-    public interface IDAOEmpleado : IDao<Entidad, Boolean , Entidad>
+
+    public interface IDAOEmpleado : IDao
     {
-        
-        bool AgregarEmpleado(Empleado elEmpleado);
-        
-        List<Entidad> ConsultarTodos();
-        
-        bool CambiarEstatus(Entidad empleadoEstatus);       
+            /// <summary>
+            /// Firma metodo para consultar todos los empleados
+            /// </summary>
+            /// <returns></returns>
+            List<Entidad> ConsultarTodos();
 
-        List<Entidad> ObtenerPaises();
+            /// <summary>
+            /// Firma de Método para modificar todos los empleados por su estatus
+            /// </summary>
+            /// <param name="empleadoEstatus"></param>
+            /// <returns>Retorna true si fue habilitado o inhabilitado exitosamente</returns>
+            bool CambiarEstatus(Entidad empleadoEstatus);
 
-        List<Entidad> ObtenerCargos();
+            /// <summary>
+            /// Firma de Metodo para obtener los paises
+            /// </summary>
+            /// <returns>Retorna los paises</returns>
+            List<Entidad> ObtenerPaises();
 
-        List<Entidad> ObtenerEstados(Entidad parametro);
+            /// <summary>
+            /// Firma de Metodo para obtener los cargos 
+            /// </summary>
+            /// <returns>Retorna los cargos existentes</returns>
+            List<Entidad> ObtenerCargos();
 
-        Entidad ObtenerUsuarioCorreo(Entidad usuario);
+
+            /// <summary>
+            /// Firma de Metodo para obtener los estados
+            /// </summary>
+            /// <param name="parametro"></param>
+            /// <returns></returns>
+            List<Entidad> ObtenerEstados(Entidad parametro);
+
+            /// <summary>
+            /// Firma de Metodo para obtener usuario 
+            /// </summary>
+            /// <param name="parametro"></param>
+            /// <returns></returns>
+            Entidad ObtenerUsuarioCorreo(Entidad usuario);
 
 
 
+        }
     }
-}
