@@ -21,7 +21,7 @@ namespace ExcepcionesTangerine.M2
         /// </summary>
         /// <param name="message"></param>
         public ExceptionRegistro( string message )
-            : base ( message )
+               :base ( message )
         {
 
         }
@@ -31,8 +31,8 @@ namespace ExcepcionesTangerine.M2
         /// </summary>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExceptionRegistro( string message, Exception inner )
-            : base( message, inner )
+        public ExceptionRegistro( string message , Exception inner )
+               :base( message , inner )
         {
 
         }
@@ -43,8 +43,8 @@ namespace ExcepcionesTangerine.M2
         /// <param name="codigo"></param>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExceptionRegistro( string codigo, string message, Exception inner )
-            : base(codigo, message, inner)
+        public ExceptionRegistro( string codigo , string message , Exception inner )
+               :base( codigo , message , inner )
         {
 
         }
@@ -55,7 +55,7 @@ namespace ExcepcionesTangerine.M2
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format( "[ExcepcionRegistro: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion );
+            return string.Format( "[ExcepcionRegistro: (Mensaje = {0}) (Excepción={1})]" , Mensaje , Excepcion );
         }
     }
 }

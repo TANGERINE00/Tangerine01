@@ -13,15 +13,17 @@ namespace ExcepcionesTangerine.M2
         /// </summary>
         public ExceptionPrivilegios()
         {
+
         }
 
         /// <summary>
         /// Constructor que recibe el mensaje que se quiere mostrar
         /// </summary>
         /// <param name="message"></param>
-        public ExceptionPrivilegios (string message )
-            : base( message )
+        public ExceptionPrivilegios( string message )
+               :base( message )
         {
+
         }
 
         /// <summary>
@@ -29,9 +31,10 @@ namespace ExcepcionesTangerine.M2
         /// </summary>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExceptionPrivilegios( string message, Exception inner )
-            : base( message, inner )
+        public ExceptionPrivilegios( string message , Exception inner )
+               :base( message , inner )
         {
+
         }
 
         /// <summary>
@@ -40,8 +43,8 @@ namespace ExcepcionesTangerine.M2
         /// <param name="codigo"></param>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public ExceptionPrivilegios( string codigo, string message, Exception inner )
-            : base( codigo, message, inner )
+        public ExceptionPrivilegios( string codigo , string message , Exception inner )
+               :base( codigo , message , inner )
         {
         }
 
@@ -51,7 +54,7 @@ namespace ExcepcionesTangerine.M2
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format( "[ExcepcionPrivilegios: (Mensaje = {0}) (Excepción={1})]", Mensaje, Excepcion );
+            return string.Format( "[ExcepcionPrivilegios: (Mensaje = {0}) (Excepción={1})]" , Mensaje , Excepcion );
         }
     }
 }
