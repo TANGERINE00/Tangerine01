@@ -139,15 +139,6 @@ namespace Tangerine.GUI.M3 {
         protected global::System.Web.UI.WebControls.Literal visitas;
         
         /// <summary>
-        /// Control Div6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div6;
-        
-        /// <summary>
         /// Control ListaLlamadas.
         /// </summary>
         /// <remarks>
