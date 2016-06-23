@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,7 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using Tangerine_Contratos.M4;
 using Tangerine_Presentador.M4;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M4
 {
@@ -155,11 +157,16 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int i = int.Parse(Request.QueryString["idComp"]);
+            try 
+            {
             if (!IsPostBack)
-                if(!_presentador.CargarInformacionCompania(i))
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
-                
+                if(!_presentador.CargarInformacionCompania(int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idComp"],false))))
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("../M1/DashBoard.aspx");
+            }
         }
         #endregion
     }

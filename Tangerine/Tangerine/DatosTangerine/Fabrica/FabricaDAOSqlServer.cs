@@ -157,8 +157,6 @@ namespace DatosTangerine.Fabrica
         /// Metodo que instancia al objeto DAOPago
         /// </summary>
         /// <returns>Retorna el objeto DAOPago</returns>
-
-
         public static IDAOPago CrearDAOPago()
 
         {

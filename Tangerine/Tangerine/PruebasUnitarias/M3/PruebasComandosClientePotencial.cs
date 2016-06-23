@@ -67,10 +67,37 @@ namespace PruebasUnitarias.M3
             comandoBuscar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarClientePotencial(elCliente1);
             elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)comandoBuscar.Ejecutar();
 
-            Assert.AreEqual(elCliente1.NombreClientePotencial,elCliente2.NombreClientePotencial);
-            
+            Assert.AreEqual(elCliente1.NombreClientePotencial, elCliente2.NombreClientePotencial);
+            Assert.AreEqual(elCliente1.RifClientePotencial, elCliente2.RifClientePotencial);
+            Assert.AreEqual(elCliente1.EmailClientePotencial, elCliente2.EmailClientePotencial);
+            Assert.AreEqual(elCliente1.PresupuestoAnual_inversion, elCliente2.PresupuestoAnual_inversion);
+
             comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente1);
             Assert.IsTrue(comandoRespuesta.Ejecutar());
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para consultar un cliente por ID
+        /// </summary>
+        [Test]
+        public void TestComandoConsultarXIdClientePotencial()
+        {
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(elCliente1);
+            comandoRespuesta.Ejecutar();
+
+            comandoNumero = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoUltimoIdClientePotencial();
+            elCliente1.Id = comandoNumero.Ejecutar();
+
+            comandoBuscar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarClientePotencial(elCliente1);
+            elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)comandoBuscar.Ejecutar();
+
+            Assert.AreEqual(elCliente1.NombreClientePotencial, elCliente2.NombreClientePotencial);
+            Assert.AreEqual(elCliente1.RifClientePotencial, elCliente2.RifClientePotencial);
+            Assert.AreEqual(elCliente1.EmailClientePotencial, elCliente2.EmailClientePotencial);
+            Assert.AreEqual(elCliente1.PresupuestoAnual_inversion, elCliente2.PresupuestoAnual_inversion);
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente1);
+            comandoRespuesta.Ejecutar();
         }
     }
 }
