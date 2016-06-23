@@ -88,8 +88,8 @@ namespace Tangerine.GUI.M1
         private Cargo jobForEmployee()
         {
             return new Cargo(SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value,
-                                    DateTime.ParseExact(DateJob.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                    JobMode.Value, Double.Parse(SalaryJob.Value));
+                                    DateTime.ParseExact(DateJob.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture),
+                                    JobMode.Text, Double.Parse(SalaryJob.Text));
 
         }
 
@@ -202,45 +202,45 @@ namespace Tangerine.GUI.M1
             get { return SecondLastName; }
             set { SecondLastName = value; }
         }
-        String IContratoCrearEmpleado.ItextDateEmployee
+        TextBox IContratoCrearEmpleado.ItextDateEmployee
         {
-            get { return DateEmployee.Value; }
-            set { DateEmployee.Value = value; }
+            get { return DateEmployee; }
+            set { DateEmployee= value; }
         }
-        String IContratoCrearEmpleado.ItextDateJob
+        TextBox IContratoCrearEmpleado.ItextDateJob
         {
-            get { return DateJob.Value; }
-            set { DateJob.Value = value; }
+            get { return DateJob; }
+            set { DateJob= value; }
         }
-        String IContratoCrearEmpleado.ItextJobMode
+        TextBox IContratoCrearEmpleado.ItextJobMode
         {
-            get { return JobMode.Value; }
-            set { JobMode.Value = value; }
+            get { return JobMode; }
+            set { JobMode= value; }
         }
-        String IContratoCrearEmpleado.ItextSalaryJob
+        TextBox IContratoCrearEmpleado.ItextSalaryJob
         {
-            get { return SalaryJob.Value; }
-            set { SalaryJob.Value = value; }
+            get { return SalaryJob; }
+            set { SalaryJob = value; }
         }
-        String IContratoCrearEmpleado.ItextCityAddress
+        TextBox IContratoCrearEmpleado.ItextCityAddress
         {
-            get { return CityAddress.Value; }
-            set { CityAddress.Value = value; }
+            get { return CityAddress; }
+            set { CityAddress= value; }
         }
-        String IContratoCrearEmpleado.ItextAddresEspecific
+        TextBox IContratoCrearEmpleado.ItextAddresEspecific
         {
-            get { return AddresEspecific.Value; }
-            set { AddresEspecific.Value = value; }
+            get { return AddresEspecific; }
+            set { AddresEspecific= value; }
         }
-        String IContratoCrearEmpleado.ItextEmailPerson
+        TextBox IContratoCrearEmpleado.ItextEmailPerson
         {
-            get { return EmailPerson.Value; }
-            set { EmailPerson.Value = value; }
+            get { return EmailPerson; }
+            set { EmailPerson= value; }
         }
-        String IContratoCrearEmpleado.ItextPhonePerson
+        TextBox IContratoCrearEmpleado.ItextPhonePerson
         {
-            get { return PhonePerson.Value; }
-            set { PhonePerson.Value = value; }
+            get { return PhonePerson; }
+            set { PhonePerson = value; }
         }
 
 

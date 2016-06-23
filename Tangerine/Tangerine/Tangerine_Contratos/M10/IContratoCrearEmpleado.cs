@@ -19,14 +19,14 @@ namespace Tangerine_Contratos.M1
         TextBox ItextSecondName { get; set; }
         TextBox ItextFirstLastName { get; set; }
         TextBox ItextSecondLastName { get; set; }
-        String ItextDateEmployee { get; set; }
-        String ItextDateJob { get; set; }
-        String ItextJobMode { get; set; }
-        String ItextSalaryJob { get; set; }
-        String ItextCityAddress { get; set; }
-        String ItextAddresEspecific { get; set; }
-        String ItextEmailPerson { get; set; }
-        String ItextPhonePerson { get; set; }
+        TextBox ItextDateEmployee { get; set; }
+        TextBox ItextDateJob { get; set; }
+        TextBox ItextJobMode { get; set; }
+        TextBox ItextSalaryJob { get; set; }
+        TextBox ItextCityAddress { get; set; }
+        TextBox ItextAddresEspecific { get; set; }
+        TextBox ItextEmailPerson { get; set; }
+        TextBox ItextPhonePerson { get; set; }
         
     }
 }
