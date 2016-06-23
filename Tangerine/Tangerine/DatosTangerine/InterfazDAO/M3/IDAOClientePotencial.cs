@@ -14,5 +14,6 @@ namespace DatosTangerine.InterfazDAO.M3
         bool Promover(Entidad parametro);
         int ConsultarIdUltimoClientePotencial();
         bool Eliminar(Entidad parametro);
+        List<Entidad> ConsultarLlamadasXId(Entidad parametro);
     }
 }

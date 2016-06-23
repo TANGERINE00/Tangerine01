@@ -278,6 +278,21 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.ClientePotencial(nombre, rif, email, presupuesto, status);
             }
             #endregion
+
+            #region Metodo para instaciar llamadas
+            public static Entidad CrearSeguimientoXLlamada()
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente();
+            }
+            #endregion
+
+            #region Metodo para instaciar llamadas constructor completo
+            public static Entidad CrearSeguimientoXLlamada(int id, DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo,fk);
+            }
+            #endregion
+
         #endregion
 
         #region Modulo 4
