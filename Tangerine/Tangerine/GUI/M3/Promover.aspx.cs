@@ -6,9 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M3;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M3
 {
@@ -118,67 +118,24 @@ namespace Tangerine.GUI.M3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            idClientePotencial = int.Parse(Request.QueryString["idclp"]);
-            if (!IsPostBack)
+            try
             {
-                presentadorMostrar.Llenar(idClientePotencial);
+                idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
+                if (!IsPostBack)
+                {
+                    presentadorMostrar.Llenar(idClientePotencial);
+                }
             }
-            //LogicaM3 prueba = new LogicaM3();
-            //int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
-            //if (!IsPostBack)
-            //{
-            //    //ClientePotencial elClientePotencial = prueba.BuscarClientePotencial(idClientePotencial);
-
-            //    try
-            //    {
-
-
-            //        Name = elClientePotencial.NombreClientePotencial;
-            //        RIF = elClientePotencial.RifClientePotencial;
-            //        Correo = elClientePotencial.EmailClientePotencial;
-            //        Presupuesto = elClientePotencial.PresupuestoAnual_inversion.ToString();
-            //        Llamadas = elClientePotencial.NumeroLlamadas.ToString();
-            //        Visitas = elClientePotencial.NumeroVisitas.ToString();
-            //        if (elClientePotencial.Status == 0)
-            //        {
-            //            Status = ResourceInterfaz.Inactivo + ResourceInterfaz.CloseSpanInact;
-
-            //        }
-            //        if (elClientePotencial.Status == 1)
-            //        {
-            //            Status = ResourceInterfaz.Activo + ResourceInterfaz.CloseSpanAct;
-            //        }
-            //        if (elClientePotencial.Status == 2)
-            //        {
-            //            Status = ResourceInterfaz.Promovido + ResourceInterfaz.CloseSpanProm;
-            //        }
-
-
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //    }
-
-            //}
+            catch
+            {
+                Response.Redirect("Listar.aspx");
+            }
         }
 
         protected void Promover_Click(object sender, EventArgs e)
         {
-            //Cuidado , recordar cambiar luego del this , el id que tenga la interfaz 
-
-            // String nombre = this.idnombre.Value;
-            // int id = Int32.Parse(Request.QueryString["idEmp"]);
-            ////int idClip = int.Parse(Request.QueryString["idclp"]);
-
-            //LogicaEmpleado logica = new LogicaEmpleado();
-            ////LogicaM3 logica = new LogicaM3();
-
-            //logica.PromoverclientePotencial(logica.BuscarClientePotencial(idClip));
             presentadorPromover.Promover(idClientePotencial);
             Response.Redirect("Listar.aspx");
-
         }
     }
 }

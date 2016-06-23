@@ -22,7 +22,8 @@
       
 
     <div class="row">
-
+    <div id="alert" runat="server" style="width:530px">
+    </div>
         <!-- form start -->
         <form role="form" runat="server" id="generar_proyecto" method="post">
             <!-- left column -->
@@ -73,7 +74,7 @@
                             <input class="form-control pull-right" id="datepicker1" type="text" runat="server"
                                  clientidmode="static" placeholder="mm/dd/yyyy" required
                                  pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
-                                 data-date-format="dd/mm/yyyy" readonly="">
+                                 data-date-format="dd/mm/yyyy">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -89,7 +90,7 @@
                             <input class="form-control pull-right" id="datepicker2" type="text" runat="server" 
                                 clientidmode="static"  placeholder="mm/dd/yyyy" required 
                                 pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
-                                data-date-format="dd/mm/yyyy" readonly="" >
+                                data-date-format="dd/mm/yyyy">
                         </div>
                         <!-- /.input group -->
                     </div>
@@ -172,7 +173,7 @@
                             <label for="inputPersonal">Personal Responsable *</label>
 
                             <select multiple="true" class="form-control" id="inputPersonal" 
-                            name="inputPersonal" runat="server">
+                            name="inputPersonal" runat="server" required>
                             </select>
                         </div>
                         <div class="form-group">
@@ -180,7 +181,7 @@
                           
                         </div>
                              <select multiple="true" class="form-control" id="inputEncargado" 
-                             name="inputEncargado" runat="server">
+                             name="inputEncargado" runat="server" required>
                             </select>
                           
                         <hr />

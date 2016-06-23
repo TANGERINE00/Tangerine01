@@ -8,8 +8,22 @@ $(document).ready(function () {
 
     })
 
-});
+    var date = new Date();
 
+    document.getElementById("datepicker1").value = date.toLocaleDateString('en-US');
+    document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
+
+    document.getElementById("datepicker2").readOnly = true;
+
+    if (document.getElementById("formaPago").value == "Mensual") {
+        document.getElementById("cantidadCuotas").value = "";
+        document.getElementById("cantidadCuotas").readOnly = true;
+    }
+    else if (document.getElementById("formaPago").value == "Por cuotas") {
+        document.getElementById("cantidadCuotas").readOnly = false;
+    }
+
+});
 
 
 function GetRequerimiento(id) {
@@ -20,16 +34,23 @@ function GetRequerimiento(id) {
 
 function validarTextArea(textArea) {
     var textArea = document.getElementById(textArea);
+    var compania = document.getElementById("comboCompañia");
 
     var regex = new RegExp("^[A-z ,.()]+$");
 
     var resultado = regex.test(textArea.value);
 
     if (resultado == false) {
+        alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
+        textArea.value = "";
         textArea.style.borderColor = "red";
     }
     else {
         textArea.style.borderColor = "#ccc";
+    }
+
+    if (compania.value == "Selecione un cliente") {
+        alert('Seleccione una compañía!');
     }
 }
 

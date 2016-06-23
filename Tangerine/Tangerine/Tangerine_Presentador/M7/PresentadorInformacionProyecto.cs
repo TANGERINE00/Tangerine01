@@ -99,9 +99,12 @@ namespace Tangerine_Presentador.M7
             Dictionary<int, string> listaContactos = new Dictionary<int, string>();
             foreach (Entidad contacto in contactos)
             {
-                listaContactos.Add(((DominioTangerine.Entidades.M7.Contacto)contacto).Id, 
-                    (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) + 
-                    " " +((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
+                Comando<Entidad> comandoContacto = LogicaTangerine.Fabrica.FabricaComandos.CrearComandoConsultarContacto(contacto);
+                Entidad elContacto = comandoContacto.Ejecutar();
+
+                listaContactos.Add(((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Id, 
+                    (((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Nombre) +
+                    " " + ((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Apellido);
             }
             vista.inputEncargado.DataSource = listaContactos;
             vista.inputEncargado.DataTextField = RecursoPresentadorM7.Value;

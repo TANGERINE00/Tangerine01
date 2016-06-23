@@ -110,7 +110,7 @@ namespace Tangerine_Presentador.M6
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString(), "Campos Invalidos", MessageBoxButtons.OK,
+                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             }
         }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M2;
 using DominioTangerine;
-using LogicaTangerine.M2;
+
 
 namespace Tangerine_Presentador.M2
 {

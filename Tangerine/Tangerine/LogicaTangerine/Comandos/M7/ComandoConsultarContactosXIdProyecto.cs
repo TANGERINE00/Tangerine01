@@ -36,7 +36,7 @@ namespace LogicaTangerine.Comandos.M7
             try
             {
                 IDaoProyectoContacto daoProyectoContacto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyectoContacto();
-                List<Entidad> contactoResult = daoProyectoContacto.ContactCompany(Contacto);
+                List<Entidad> contactoResult = daoProyectoContacto.ObtenerListaContactos(Contacto);
                 return contactoResult;
             }
             catch (Exception e)

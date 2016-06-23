@@ -23,6 +23,7 @@ namespace PruebasUnitarias.M3
         private LogicaTangerine.Comando<int> comandoNumero;
         private LogicaTangerine.Comando<Entidad> comandoBuscar;
         private LogicaTangerine.Comando<List<Entidad>> comandoLista;
+        private List<Entidad> llamadas, visitas;
 
         #endregion
 
@@ -37,7 +38,10 @@ namespace PruebasUnitarias.M3
             elCliente2 = new DominioTangerine.Entidades.M3.ClientePotencial();
             elCliente3 = new DominioTangerine.Entidades.M3.ClientePotencial("Test2Cambio", "J-121212-F", "cambio@gmail.com", 746, 1);
             elCliente4 = new DominioTangerine.Entidades.M3.ClientePotencial("Test3", "J-121212-F", "prueba@gmail.com", 121212, 0);
+            elCliente5 = new DominioTangerine.Entidades.M3.ClientePotencial();
             losClientes = new List<Entidad>();
+            llamadas = new List<Entidad>();
+            visitas = new List<Entidad>();
         }
 
         /// <summary>
@@ -50,6 +54,9 @@ namespace PruebasUnitarias.M3
             elCliente2 = null;
             elCliente3 = null;
             elCliente4 = null;
+            losClientes = null;
+            llamadas = null;
+            visitas = null;
         }
         #endregion
 
@@ -248,6 +255,40 @@ namespace PruebasUnitarias.M3
 
             comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente3);
             comandoRespuesta.Ejecutar();
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para listar las llamadas a un cliente potencial
+        /// </summary>
+        [Test]
+        public void TestComandoSeguimientoDeLlamadas()
+        {
+            elCliente5.Id = 1;
+            comandoLista = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarHistoricoLlamadas(elCliente5);
+            llamadas = comandoLista.Ejecutar();
+            Assert.NotNull(llamadas);
+            foreach (Entidad seguimiento in llamadas)
+            {
+                Assert.NotNull(((SeguimientoCliente)seguimiento).Id);
+                Assert.AreEqual("Llamada" ,((SeguimientoCliente)seguimiento).TipoHistoria);
+            }
+        }
+
+        /// <summary>
+        /// Método para probar el Comando para listar las visitas a un cliente potencial
+        /// </summary>
+        [Test]
+        public void TestComandoSeguimientoDeVisitas()
+        {
+            elCliente5.Id = 1;
+            comandoLista = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarHistoricoVisitas(elCliente5);
+            visitas = comandoLista.Ejecutar();
+            Assert.NotNull(visitas);
+            foreach (Entidad seguimiento in visitas)
+            {
+                Assert.NotNull(((SeguimientoCliente)seguimiento).Id);
+                Assert.AreEqual("Visita", ((SeguimientoCliente)seguimiento).TipoHistoria);
+            }
         }
     }
 }

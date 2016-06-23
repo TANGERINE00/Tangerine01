@@ -65,6 +65,7 @@ namespace Tangerine_Presentador.M8
                 lafactura.idCompaniaFactura = int.Parse(this.vista.compania);
                 lafactura.idProyectoFactura = int.Parse(this.vista.proyecto);
                 lafactura.fechaFactura = Convert.ToDateTime(this.vista.fecha);
+                lafactura.tipoMoneda = this.vista.moneda;
                 lafactura.montoFactura = int.Parse(this.vista.monto);
                 //lafactura.tipoMoneda;
                 Comando<bool> comandoGenerar = FabricaComandos.CrearAgregarFactura(lafactura);

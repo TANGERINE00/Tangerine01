@@ -1,7 +1,5 @@
-﻿using DatosTangerine.M2;
-using DominioTangerine;
+﻿using DominioTangerine;
 using DominioTangerine.Entidades.M1;
-using LogicaTangerine.M2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +24,9 @@ namespace Tangerine_Presentador.Master
         }
 
 
+        /// <summary>
+        /// Metodo que Carga la sesion y la mantiene en ella
+        /// </summary>
         public void CargarSesion()
         {
             if (HttpContext.Current.Session["User"] == null)
@@ -56,8 +57,7 @@ namespace Tangerine_Presentador.Master
                         Comando<List<string>> comandoL = 
                             LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoVerificarAccesoAOpciones(nombreRol);
                         List<string> bloqueos = comandoL.Ejecutar();
-                        
-                        //List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones(nombreRol);
+                       
 
                         foreach (string s in bloqueos)
                         {
@@ -85,6 +85,9 @@ namespace Tangerine_Presentador.Master
                 _iMaster.sesionUsuario = "Usuario";
         }
 
+        /// <summary>
+        /// Metodo que cierra la sesion
+        /// </summary>
          public void CerrarSesionP()
         {
             Util._theGlobalUser = null;

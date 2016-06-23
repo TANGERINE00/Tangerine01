@@ -29,21 +29,36 @@ namespace LogicaTangerine.Comandos.M8
         {
             try
             {
-                DatosCorreo theEmail = (DatosCorreo)LaEntidad;
+                DatosCorreo _datosCorreo = (DatosCorreo)LaEntidad;
 
                 CorreoGmailM8 cr = new CorreoGmailM8();
                 MailMessage mnsj = new MailMessage();
 
-                mnsj.Subject = theEmail.asunto;
+                mnsj.Subject = _datosCorreo.asunto;
 
-                mnsj.To.Add(new MailAddress(theEmail.destinatario));
+                string destino;
+                int j = 0;
+                _datosCorreo.destinatario += ",";
+                for (int i = 0; i <= _datosCorreo.destinatario.Length; i++)
+                {
+                    if (_datosCorreo.destinatario[i].ToString() == ",")
+                    {
+                        destino = _datosCorreo.destinatario.Substring(j, i);
+                        j = i + 2;
+                        i++;
+                        mnsj.To.Add(new MailAddress(destino));
+                    }
+                }
+
+
+                //mnsj.To.Add(new MailAddress(_datosCorreo.destinatario));
 
                 mnsj.From = new MailAddress(ResourceLogicaM8.systemmail, ResourceLogicaM8.SysName);
 
                 /* Si deseamos Adjuntar algún archivo*/
                 //mnsj.Attachments.Add(new Attachment("C:\\archivo.pdf"));
 
-                mnsj.Body = theEmail.mensjae;
+                mnsj.Body = _datosCorreo.mensjae;
 
                 /* Enviar */
                 cr.mandarCorreo(mnsj);

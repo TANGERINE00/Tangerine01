@@ -50,7 +50,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="M1\PresentadorDashboard.cs" />
+    <Compile Include="M1\PresentadorRecuperarContrasenia.cs" />
     <Compile Include="M1\PresentadorInicio.cs" />
+    <Compile Include="M1\ResourceGUIM1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUIM1.resx</DependentUpon>
+    </Compile>
     <Compile Include="M2\PresentadorAsignarRol.cs" />
     <Compile Include="M2\PresentadorCambioRol.cs" />
     <Compile Include="M2\PresentadorAccionRegistrar.cs" />
@@ -62,6 +69,7 @@
     </Compile>
     <Compile Include="M3\PresentadorActivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorAgregarClientePotencial.cs" />
+    <Compile Include="M3\PresentadorAgregarSeguimiento.cs" />
     <Compile Include="M3\PresentadorConsultarClientePotencial.cs" />
     <Compile Include="M3\PresentadorDesactivarClientePotencial.cs" />
     <Compile Include="M3\PresentadorHistorialDeSeguimiento.cs" />
@@ -135,6 +143,10 @@
     <EmbeddedResource Include="M10\ResourceGUIM10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M1\ResourceGUIM1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUIM1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M2\ResourceGUIM2.resx">
       <Generator>ResXFileCodeGenerator</Generator>

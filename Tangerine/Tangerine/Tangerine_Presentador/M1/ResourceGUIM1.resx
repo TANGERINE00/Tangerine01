@@ -117,29 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Codigo" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en la conexion con la BD</comment>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
   </data>
-  <data name="Codigo_Error_Formato" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en el parseo</comment>
+  <data name="LabelCostoProyecto" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Costo: &lt;/label&gt;</value>
   </data>
-  <data name="Mensaje" xml:space="preserve">
-    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
-    <comment>Mensaje al dar error en la conexion con la BD</comment>
+  <data name="LabelDescProyecto" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Descripción:&lt;/label&gt;&lt;br&gt;</value>
   </data>
-  <data name="MensajeFinInfoLogger" xml:space="preserve">
-    <value>Salida Método</value>
+  <data name="LabelEstatus" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Estatus: &lt;/label&gt;</value>
   </data>
-  <data name="MensajeInicioInfoLogger" xml:space="preserve">
-    <value>Entrada Método</value>
+  <data name="LabelFechaProyectoFin" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Fecha estimada de fin: &lt;/label&gt;</value>
   </data>
-  <data name="Mensaje_Error_Formato" xml:space="preserve">
-    <value>Error de parseo</value>
-    <comment>Mensaje de error cuando no puede parsear</comment>
+  <data name="LabelFechaProyectoInicio" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Fecha de inicio: &lt;/label&gt;</value>
   </data>
-  <data name="Mensaje_Generico_Error" xml:space="preserve">
-    <value>No se pudo completar la operacion</value>
+  <data name="LabelNombreProyecto" xml:space="preserve">
+    <value>&lt;label&gt;Nombre de proyecto: &lt;/label&gt;&lt;a href="../M7/InformacionProyecto.aspx?idCont=</value>
+  </data>
+  <data name="LabelNombreProyectoCerrar" xml:space="preserve">
+    <value>"&gt;</value>
+  </data>
+  <data name="LabelNombreProyectoCerrar2" xml:space="preserve">
+    <value>&lt;/a&gt;</value>
+  </data>
+  <data name="MaxProyectos" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="MensajeSinProyecto" xml:space="preserve">
+    <value>&lt;label&gt;No hay proyectos registrados a la fecha&lt;/label&gt;</value>
+  </data>
+  <data name="PanelProyectoAbrir" xml:space="preserve">
+    <value>&lt;div class='container-fluid col-md-6'&gt;&lt;div class='box box-default'&gt;&lt;div class='container-fluid'&gt;&lt;br&gt;</value>
+  </data>
+  <data name="PanelProyectoCerrar" xml:space="preserve">
+    <value>&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="RolAdministrador" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="RolGerente" xml:space="preserve">
+    <value>Gerente</value>
+  </data>
+  <data name="RolProgramador" xml:space="preserve">
+    <value>Programador</value>
   </data>
 </root>

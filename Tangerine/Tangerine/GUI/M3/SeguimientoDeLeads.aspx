@@ -51,14 +51,6 @@
                         <div><h5><asp:Literal runat="server" ID="visitas"> </asp:Literal></h5></div>
                     </div> 
                 </div>
-                <div class="row">
-                    <div id="Div6" class="form-group col-md-3 col-lg-3 col-xs-12" runat="server">
-                        <button class="btn btn-primary btn-md " >
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            Agregar
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

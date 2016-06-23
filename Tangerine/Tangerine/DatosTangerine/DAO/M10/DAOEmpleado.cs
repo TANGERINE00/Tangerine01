@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
 using ExcepcionesTangerine;
 using System.Collections;
+using ExcepcionesTangerine.M10;
 
 namespace DatosTangerine.DAO.M10
 {
@@ -56,15 +56,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ModificarEstatusException("DS-101", "Argumento no valido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -125,8 +123,7 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -163,7 +160,7 @@ namespace DatosTangerine.DAO.M10
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            
+
 
             List<Parametro> parameters = new List<Parametro>();
             BDConexion Connection = new BDConexion();
@@ -172,6 +169,7 @@ namespace DatosTangerine.DAO.M10
 
             try
             {
+
                 
                 param = new Parametro("@id", SqlDbType.Int, 
                                      ((DominioTangerine.Entidades.M10.EmpleadoM10)empleado).emp_id.ToString(), false);
@@ -179,22 +177,22 @@ namespace DatosTangerine.DAO.M10
 
                 DataTable dataTable = EjecutarStoredProcedureTuplas(ResourceEmpleado.DetallarEmpleado, parameters);
 
-                    DataRow row = dataTable.Rows[0];
+                DataRow row = dataTable.Rows[0];
 
-                    int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
-                    String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
-                    String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
-                    String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
-                    String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
-                    String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
-                    int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
-                    DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
-                    String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
-                    int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
-                    String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
-                    String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
+                int empId = int.Parse(row[ResourceEmpleado.EmpIdEmpleado].ToString());
+                String empPNombre = row[ResourceEmpleado.EmpPNombre].ToString();
+                String empSNombre = row[ResourceEmpleado.EmpSNombre].ToString();
+                String empPApellido = row[ResourceEmpleado.EmpPApellido].ToString();
+                String empSApellido = row[ResourceEmpleado.EmpSApellido].ToString();
+                String empGenero = row[ResourceEmpleado.EmpGenero].ToString();
+                int empCedula = int.Parse(row[ResourceEmpleado.EmpCedula].ToString());
+                DateTime empFecha = DateTime.Parse(row[ResourceEmpleado.EmpFecha].ToString());
+                String empActivo = row[ResourceEmpleado.EmpActivo].ToString();
+                int empLugId = int.Parse(row[ResourceEmpleado.EmpLugId].ToString());
+                String empNivelEstudio = row[ResourceEmpleado.EmpEstudio].ToString();
+                String empEmailEmployee = row[ResourceEmpleado.EmpEmail].ToString();
 
-                    //Variables que son de la entidad Cargo 
+                //Variables que son de la entidad Cargo 
                     String empCargo = row[ResourceEmpleado.EmpCargo].ToString();
                     double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
                     String empFechaInicio = row[ResourceEmpleado.EmpFechaInicio].ToString();
@@ -210,20 +208,19 @@ namespace DatosTangerine.DAO.M10
                                                     empEmailEmployee, empLugId, cargoEmpleado, empSalario,
                                                     empFechaInicio, empFechaFin, empDireccion);
     
+
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -247,10 +244,10 @@ namespace DatosTangerine.DAO.M10
                 ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return empleadoFinal;
-           
-        
 
-    }
+        }
+
+    
         /// <summary>
         /// Metodo para consultar todos los empleados
         /// </summary>
@@ -320,15 +317,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -393,15 +388,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -469,15 +462,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -551,8 +542,7 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -580,6 +570,85 @@ namespace DatosTangerine.DAO.M10
 
 
         /// <summary>
+        /// Metodo obtener si un usuario esta activo
+        /// </summary>
+        /// <returns>Usuario</returns>
+        public Entidad ObtenerUsuarioCorreo(Entidad usuario)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
+
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion Connection = new BDConexion();
+            Parametro param = new Parametro();
+           
+
+            try
+            {
+
+              
+                param = new Parametro("@usuario", SqlDbType.VarChar, ((DominioTangerine.Entidades.M2.UsuarioM2)usuario).nombreUsuario.ToString(),false);
+                parameters.Add(param);
+
+                param = new Parametro("@correo", SqlDbType.VarChar,((DominioTangerine.Entidades.M2.UsuarioM2)usuario).contrasena.ToString(),false);
+                                  
+                parameters.Add(param);
+
+              
+                DataTable dataTable = EjecutarStoredProcedureTuplas(ResourceEmpleado.ObtenerCorreoUsuario, parameters);
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string usuAct = row[ResourceEmpleado.UsuActivo].ToString();
+
+                    ((DominioTangerine.Entidades.M2.UsuarioM2)usuario).activo = usuAct;
+
+                }
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M10.WrongFormatException(ResourceEmpleado.Codigo_Error_Formato,
+                     ResourceEmpleado.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return usuario;
+
+
+        }
+
+
         /// Metodo para agregar un empleado nuevo en la base de datos.
         /// </summary>
         /// <param name="Objeto_Empleado">Objeto de tipo Empleado para agregar en la base de datos</param>
@@ -625,15 +694,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new AgregarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -655,9 +722,10 @@ namespace DatosTangerine.DAO.M10
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceEmpleado.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+        
             return true;
         }
+
 
     }
     }

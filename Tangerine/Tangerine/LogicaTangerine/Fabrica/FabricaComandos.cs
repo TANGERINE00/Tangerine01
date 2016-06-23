@@ -878,6 +878,16 @@ namespace LogicaTangerine.Fabrica
             return new ComandoSearchExistingBill(factura);
         }
 
+        /// <summary>
+        /// metodo para crear comando que permite mandar correos
+        /// </summary>
+        /// <param name="correo">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> CrearComandoEnviarCorreoGmail(Entidad correo)
+        {
+            return new ComandoEnviarCorreoGmail(correo);
+        }
+
         #endregion
 
         #region Modulo 9
@@ -914,30 +924,58 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 10
+        /// <summary>
+        /// Metodo para instanciar el ComandoConsultarEmpleado
+        /// </summary>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ConsultarEmpleados()
         {
             return new ComandoConsultarEmpleado();
         }
 
-
+        /// <summary>
+        /// Metodo para instanciar el ComandoConsultarPorId
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
         public static Comando<Entidad> ConsultarIdEmpleado(Entidad empleado)
         {
             return new ComandoConsultarPorId(empleado);
         }
 
+        /// <summary>
+        /// Metodo para instanciar el ComandoObtenerPais
+        /// </summary>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ObtenerFabricaPaises()
         {
             return new ComandoObtenerPais();
         }
+
+        /// <summary>
+        /// Metodo para instanciar ComandoObtenerCargo
+        /// </summary>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ObtenerFabricaCargo()
         {
             return new ComandoObtenerCargo();
         }
+
+        /// <summary>
+        /// Metodo para instanciar ComandoObtenerEstado
+        /// </summary>
+        /// <param name="Pais"></param>
+        /// <returns></returns>
         public static Comando<List<Entidad>> ObtenerFabricaEstado(Entidad Pais)
         {
             return new ComandoObtenerEstado(Pais);
         }
 
+        /// <summary>
+        /// Metodo para instanciar ComandoAgregarEmpleado
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
         public static Comando<bool> ComandoAgregarEmpleado(Entidad empleado)
         {
             return new LogicaTangerine.Comandos.M10.ComandoAgregarEmpleado(empleado);
@@ -947,6 +985,21 @@ namespace LogicaTangerine.Fabrica
         public static Comando<bool> HabilitarEmpleado(Entidad estatus)
         {
             return new LogicaTangerine.Comandos.M10.ComandoHabilitarEmpleado(estatus);
+        }
+
+        public static Comando<Entidad> ConsultarUsuarioxCorreo (Entidad usuario)
+        {
+            return new LogicaTangerine.Comandos.M10.ComandoValidarUsuarioCorreo(usuario);
+        }
+
+        /// <summary>
+        /// metodo para crear comando que envia un correo
+        /// </summary>
+        /// <param name="correo">entidad sobre la cual se va a trabajar el comando</param>
+        /// <returns></returns>
+        public static Comando<bool> EnviarCorreoG(Entidad correo)
+        {
+            return new ComandoEnviarCorreoGmail(correo);
         }
 
         #endregion

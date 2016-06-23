@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M6;
 using LogicaTangerine.M4;
 using Tangerine_Contratos.M6;
 using Tangerine_Presentador.M6;
@@ -19,14 +18,6 @@ namespace Tangerine.GUI.M6
 {
     public partial class ModificarPropuesta : System.Web.UI.Page, IContratoModificarPropuesta
     {
-
-
-        public Propuesta Prueba;
-        LogicaM4 logicacompania = new LogicaM4();
-        public List<Requerimiento> req;
-        public bool modi;
-        string idPropuesta;
-
         PresentadorModificarPropuesta presenter;
 
         public ModificarPropuesta()
@@ -36,19 +27,26 @@ namespace Tangerine.GUI.M6
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            idPropuesta = Request.QueryString.Get("id");
-            presenter.llenarVista();
-
+            if (!IsPostBack)
+            {
+                presenter.llenarVista();
+            } 
         }
-
 
         protected void ModificarPropuesta_Click(object sender, EventArgs e)
         {
-            presenter.ModificarPropuesta();
-
-            Server.Transfer("ConsultarPropuesta.aspx", true);
+            try
+            {
+                presenter.ModificarPropuesta();
+                Server.Transfer("ConsultarPropuesta.aspx", true);
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+            }
         }
 
+        #region Contrato
         public Literal Requerimientos
         {
             get
@@ -77,8 +75,9 @@ namespace Tangerine.GUI.M6
 
         public string IdPropuesta
         {
-            get { return idPropuesta; }
+            get { return Request.QueryString.Get("id"); }
         }
+        
         public string Descripcion
         {
             get { return descripcion.Value; }
@@ -91,22 +90,26 @@ namespace Tangerine.GUI.M6
             get { return comboDuracion.Value; }
             set { comboDuracion.Value = value; }
         }
+        
         public string TextoDuracion
         {
 
             get { return textoDuracion.Value; }
             set { textoDuracion.Value = value; }
         }
+        
         public string DatePickerUno
         {
             get { return datepicker1.Value; }
             set { datepicker1.Value = value; }
         }
+        
         public string DatePickerDos
         {
             get { return datepicker2.Value; }
             set { datepicker2.Value = value; }
         }
+        
         public string TipoCosto
         {
             get { return comboTipoCosto.Value; }
@@ -118,24 +121,25 @@ namespace Tangerine.GUI.M6
             get { return textoCosto.Value; }
             set { textoCosto.Value = value; }
         }
+        
         public string FormaPago
         {
             get { return formaPago.Value; }
             set { formaPago.Value = value; }
         }
+        
         public string ComboCuota
         {
-            get { return comboCuota.Value; }
-            set { comboCuota.Value = value; }
+            get { return cantidadCuotas.Value; }
+            set { cantidadCuotas.Value = value; }
         }
+        
         public string ComboStatus
         {
             get { return comboEstatus.Value; }
             set { comboEstatus.Value = value; }
         }
-
-
-
-
+        #endregion
+    
     }
 }

@@ -97,6 +97,15 @@ namespace Tangerine_Presentador.M3 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-success glyphicon glyphicon-plus&quot;  style=&quot;margin-left:3px&quot; href=&quot;AgregarSequimiento.aspx?idclp=.
+        /// </summary>
+        internal static string BotonAgregar {
+            get {
+                return ResourceManager.GetString("BotonAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonCerrar {
