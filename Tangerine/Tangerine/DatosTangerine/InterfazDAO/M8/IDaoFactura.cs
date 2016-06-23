@@ -7,7 +7,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M8
 {
-    public interface IDaoFactura : IDao<Entidad, bool, Entidad>
+    public interface IDaoFactura : IDao
     {
         bool DeleteFactura(Entidad parametro);
 

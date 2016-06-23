@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M2
 {
-    public interface IDAOUsuarios : IDao<Entidad, bool, Entidad>
+    public interface IDAOUsuarios : IDao
     {
 
         /// <summary>

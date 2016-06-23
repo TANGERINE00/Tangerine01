@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M7
 {
-    public interface IDaoProyectoEmpleado : IDao<Entidad, bool, Entidad>
+    public interface IDaoProyectoEmpleado : IDao
     {
         /// <summary> Firma de Método para consultar el contacto de un proyecto </summary>
         /// <param name="proyecto"> entidad de tipo proyecto </param>
