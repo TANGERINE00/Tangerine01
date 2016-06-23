@@ -77,6 +77,10 @@ namespace Tangerine_Presentador.M5
             {
                 //Muestro en pantalla el error
             }
+            catch ( Exception ex )
+            {
+                //Muestro en pantalla el error
+            }
         }
 
         /// <summary>
@@ -96,11 +100,11 @@ namespace Tangerine_Presentador.M5
             }
             catch( EliminarContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( ex.Mensaje, 0 );
             }
             catch( BaseDeDatosContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( ex.Mensaje, 0 );
             }
         }
 
