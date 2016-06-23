@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using DatosTangerine;
+using LogicaTangerine.M7;
 using Tangerine_Presentador.M8;
 using Tangerine_Contratos.M8;
 

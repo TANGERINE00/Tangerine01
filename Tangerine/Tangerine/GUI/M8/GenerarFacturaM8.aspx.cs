@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
+using LogicaTangerine.M7;
 using Tangerine_Presentador.M8;
 using Tangerine_Contratos.M8;
 
@@ -82,6 +83,7 @@ namespace Tangerine.GUI.M8
         int _estatus = 0;
         static int _proyectoId = 0;
         static int _companiaId = 0;
+        LogicaProyecto logicaProyecto = new LogicaProyecto();
         //Proyecto proyecto = new Proyecto();
         //Compania compania = new Compania();
 
