@@ -28,11 +28,11 @@
 			        <div id="id_otro" runat="server" class="form-group">
 				        <div class="icon-addon addon-lg" style="margin-left: 10px;">
 					        <label>Nombre <a style="color:rgb(255, 0, 0);">*</a></label>
-					        <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="nombre" name ="nombre" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">
+					        <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]{1,50}$" class="form-control" id="nombre" name ="nombre" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos. Máximo 50 caracteres')" oninput="setCustomValidity('')">
 					        <label>Apellido <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]+$" class="form-control" id="apellido" name ="apellido" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[A-z]{1,50}$" class="form-control" id="apellido" name ="apellido" required oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos. Máximo 50 caracteres')" oninput="setCustomValidity('')">
 					        <label>Departamento <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9a-zA-Z ]+$" class="form-control" id="departamento" name ="departamento" required  oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos')" oninput="setCustomValidity('')">          
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9a-zA-Z ]{1,50}$" class="form-control" id="departamento" name ="departamento" required  oninvalid="setCustomValidity('Campo obligatorio, no puede tener números ni símbolos. Máximo 50 caracteres')" oninput="setCustomValidity('')">          
 					        <label>Cargo <a style="color:rgb(255, 0, 0);">*</a></label>
                             <select style="margin-bottom:3%" runat="server" class="form-control" id="cargoLB" name="cargosLB">
                                 <option>Gerente</option>
@@ -40,9 +40,9 @@
                                 <option>Programador</option>
                             </select>
                             <label>Telefono <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9]*$" class="form-control" id="telefono" name="telefono" required oninvalid="setCustomValidity('Campo obligatorio, introduzca solo números. Ej: 02129876543')" oninput="setCustomValidity('')">
+                            <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9]{1,50}$" class="form-control" id="telefono" name="telefono" required oninvalid="setCustomValidity('Campo obligatorio, introduzca solo números. Ej: 02129876543. Máximo 50 caracteres')" oninput="setCustomValidity('')">
                             <label>Correo <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input runat="server" type="text" pattern="[a-zA-Z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,4}$" class="form-control" id="correo" name="correo" required oninvalid="setCustomValidity('Campo obligatorio, debe tener un formato de correo. Ej: micorreo@yahoo.com, otrocorreo@gmail.com')" oninput="setCustomValidity('')">
+                            <input runat="server" type="text" pattern="[a-zA-Z0-9._-]{1,31}+@+[a-z0-9._-]{1,15}+.+[a-z]{2,4}$" class="form-control" id="correo" name="correo" required oninvalid="setCustomValidity('Campo obligatorio, debe tener un formato de correo. Ej: micorreo@yahoo.com, otrocorreo@gmail.com. Máximo 50 caracteres')" oninput="setCustomValidity('')">
                         </div>			
                     </div>
                     <div id="Div1" class="box-footer" runat="server">
