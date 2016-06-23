@@ -79,7 +79,25 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;901&quot;.
+        ///   Looks up a localized string similar to DS-902.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DS-903.
+        /// </summary>
+        internal static string CodigoErrorNull {
+            get {
+                return ResourceManager.GetString("CodigoErrorNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DS-901.
         /// </summary>
         internal static string CodigoErrorSQL {
             get {
@@ -115,11 +133,47 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;Error al realizar la conexion&quot;.
+        ///   Looks up a localized string similar to Error de Formato.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, elemento Null.
+        /// </summary>
+        internal static string MensajeErrorNull {
+            get {
+                return ResourceManager.GetString("MensajeErrorNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al realizar la conexion.
         /// </summary>
         internal static string MensajeErrorSQL {
             get {
                 return ResourceManager.GetString("MensajeErrorSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida exitosa del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
         

@@ -121,25 +121,32 @@
     <value>TGE_00_001</value>
     <comment>Codigo de error en la conexion con la BD</comment>
   </data>
-  <data name="Codigo_Error_Formato" xml:space="preserve">
-    <value>TGE_00_001</value>
-    <comment>Codigo de error en el parseo</comment>
+  <data name="CodigoErrorFormato" xml:space="preserve">
+    <value>DS-902</value>
+  </data>
+  <data name="CodigoErrorNull" xml:space="preserve">
+    <value>DS-903</value>
+  </data>
+  <data name="CodigoErrorSQL" xml:space="preserve">
+    <value>DS-901</value>
   </data>
   <data name="Mensaje" xml:space="preserve">
     <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
     <comment>Mensaje al dar error en la conexion con la BD</comment>
   </data>
+  <data name="MensajeErrorFormato" xml:space="preserve">
+    <value>Error de Formato</value>
+  </data>
+  <data name="MensajeErrorNull" xml:space="preserve">
+    <value>Error, elemento Null</value>
+  </data>
+  <data name="MensajeErrorSQL" xml:space="preserve">
+    <value>Error al realizar la conexion</value>
+  </data>
   <data name="MensajeFinInfoLogger" xml:space="preserve">
-    <value>Salida del Método</value>
+    <value>Salida exitosa del Método</value>
   </data>
   <data name="MensajeInicioInfoLogger" xml:space="preserve">
     <value>Entrada en el Método</value>
-  </data>
-  <data name="Mensaje_Error_Formato" xml:space="preserve">
-    <value>Error de parseo</value>
-    <comment>Mensaje de error cuando no puede parsear</comment>
-  </data>
-  <data name="Mensaje_Generico_Error" xml:space="preserve">
-    <value>No se pudo completar la operacion</value>
   </data>
 </root>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Tangerine_Contratos.M9;
 using LogicaTangerine;
 using DominioTangerine;
+using System.Windows.Forms;
 
 namespace Tangerine_Presentador.M9
 {
@@ -76,8 +77,22 @@ namespace Tangerine_Presentador.M9
                     }
 
                 }
-            catch (Exception e)
-                            { }
+            catch (ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine ex)
+            {
+                MessageBox.Show("Error, llene todos los campos", "Campos Vacios", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
+            catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)
+            {
+                MessageBox.Show("Error en la conexion a la Base de Datos", "Error de Conexion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine ex)
+            {
+                MessageBox.Show("Error, Formato Incorrecto en Codigo de Aprobacion", "Formato Incorrecto",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
