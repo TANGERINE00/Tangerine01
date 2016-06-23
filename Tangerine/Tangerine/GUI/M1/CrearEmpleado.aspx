@@ -92,7 +92,7 @@
                   </div>
                   <div class="form-group ">
                     <label for="FirstLastName">Primer Apellido</label> <label for="Requerido" style="color: red;">*</label>
-                    <%--<input type="text" runat="server" id="FirstLastName" class="form-control" maxlenght="20" placeholder="Primer Apellido" >--%>
+                   
                     <asp:TextBox id="FirstLastName" runat="server"  CssClass="form-control" maxlength="20" placeholder=
                         "Introduzca primer apellido"></asp:TextBox>
                         
@@ -153,23 +153,35 @@
                    <div class="form-group">
                     <label for="DateEmployee">Fecha de Nacimiento</label> <label for="Requerido" style="color: red;">*</label>
                         <div class="form-control input-group date" data-provide="datepicker">
-                          <input type="text" class="form-control" placeholder="fecha de nacimiento" id="DateEmployee" runat="server" >
-                          <div class="input-group-addon">
+                              <asp:TextBox id="DateEmployee" runat="server"  CssClass="form-control" maxlength="10" placeholder=
+                                  "fecha de nacimiento"></asp:TextBox>
+                            <div class="input-group-addon">
                               <span class="glyphicon glyphicon-th"></span>
                           </div>
                         </div>
-                       <asp:RegularExpressionValidator 
-                           runat="server" ControlToValidate="DateEmployee" 
-                           ValidationExpression="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d$"
-                           ErrorMessage="Invalid date format." />
-                       <!--
-                       <asp:CompareValidator
-                            id="dateValidator" runat="server" 
+                     
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator19"
+                          ControlToValidate="DateEmployee"
+                          ErrorMessage="Por favor seleccione una fecha" 
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+                        </asp:requiredfieldvalidator>
+
+                       
+
+                       <asp:RangeValidator ID="RangeValidator19"                           
+                            ControlToValidate = "DateEmployee"                            
+                            ErrorMessage = "Solo admite formato de fechas" 
+                            ForeColor="Red"
                             Type="Date"
-                            Operator="DataTypeCheck"
-                            ControlToValidate="DateEmployee" 
-                            ErrorMessage="Por favor introduzca una fecha válida.">
-                        </asp:CompareValidator>-->
+                            MinimumValue = "01-01-1916" 
+                            MaximumValue = "01-01-2001"  
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RangeValidator> 
+
+                       
                    </div>
                    <div class="form-group">
                     <label for="LevelListStudy">Nivel de estudio</label> <label for="Requerido" style="color: red;">*</label>
@@ -195,15 +207,34 @@
                   <div class="form-group">
                     <label for="DateJob">Fecha de contratación</label> <label for="Requerido" style="color: red;">*</label>
                         <div class="form-control input-group date" data-provide="datepicker">
-                          <input type="text" class="form-control" placeholder="fecha de contratacion" id="DateJob" runat="server" >
-                          <div class="input-group-addon">
+                          <asp:TextBox id="DateJob" runat="server"  CssClass="form-control" maxlength="10" placeholder=
+                                  "fecha de contratacion"></asp:TextBox>
+                            <div class="input-group-addon">
                               <span class="glyphicon glyphicon-th"></span>
                           </div>
                         </div>
-                       <asp:RegularExpressionValidator 
-                           runat="server" ControlToValidate="DateEmployee" 
-                           ValidationExpression="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d$"
-                           ErrorMessage="Invalid date format." />
+                       
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator21"
+                          ControlToValidate="DateJob"
+                          ErrorMessage="Por favor seleccione una fecha" 
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+                        </asp:requiredfieldvalidator>
+                                            
+
+                       <asp:RangeValidator ID="RangeValidator21"                           
+                            ControlToValidate = "DateJob"                            
+                            ErrorMessage = "Solo admite formato de fechas" 
+                            ForeColor="Red"
+                            Type="Date"
+                            MinimumValue = "23-06-2016" 
+                            MaximumValue = "23-06-2017"  
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RangeValidator> 
+
+
                   </div>
                   
                  <asp:ScriptManager ID="MainScriptManager" runat="server" />
@@ -234,11 +265,57 @@
 
                   <div class="form-group">
                     <label for="JobMode">Modalidad del Contrato</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="JobMode" class="form-control" placeholder="Ej: Medio tiempo, tiempo completo, etc" >
+<%--                    <input type="text" runat="server" id="JobMode" class="form-control" placeholder="Ej: Medio tiempo, tiempo completo, etc" >--%>
+                    <asp:TextBox id="JobMode" runat="server"  CssClass="form-control" maxlength="20" placeholder
+                          ="Ej: Medio tiempo, tiempo completo, etc" ></asp:TextBox>
+                      
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator13"
+                          ControlToValidate="JobMode"
+                          ErrorMessage="Por favor inserte un modo de empleo"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator13"                           
+                            ControlToValidate = "JobMode"                            
+                            ErrorMessage = "Por favor inserte un modo de emleo válido" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,20}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>
                   </div>
                   <div class="form-group">
                     <label for="SalaryJob">Sueldo base</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="SalaryJob" class="form-control" placeholder="BsF." >
+                   
+
+                      <asp:TextBox id="SalaryJob" runat="server"  CssClass="form-control" maxlength="9" placeholder
+                          ="BsF." ></asp:TextBox>
+
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator18"
+                          ControlToValidate="SalaryJob"
+                          ErrorMessage="Por favor inserte un valor numerico" ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RangeValidator ID="RangeValidator18"                           
+                            ControlToValidate = "SalaryJob"                            
+                            ErrorMessage = "El salario tiene que ser entre 1 y 100.000.000" 
+                            ForeColor="Red"
+                            Type="Integer"
+                            MaximumValue = "100000000" MinimumValue = "1" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RangeValidator>
+
+
+
+
                       
                   </div>
                 </div>
@@ -286,31 +363,111 @@
 
                   <div class="form-group ">
                     <label for="CityAddress">Ciudad</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="CityAddress" class="form-control" maxlenght="30" placeholder="Ciudad, parroquia o provincia" >
-                  </div>
+<%--                    <input type="text" runat="server" id="CityAddress" class="form-control" maxlenght="30" placeholder="Ciudad, parroquia o provincia" >--%>
+                    
+                      <asp:TextBox id="CityAddress" runat="server"  CssClass="form-control" maxlength="20" placeholder
+                          ="Ciudad, parroquia o provincia" ></asp:TextBox>
+                      
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator14"
+                          ControlToValidate="CityAddress"
+                          ErrorMessage="Por favor inserte una ciudad"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator14"                           
+                            ControlToValidate = "CityAddress"                            
+                            ErrorMessage = "Por favor inserte una ciudad válida" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,20}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>  
+                      
+                       </div>
                   <div class="form-group ">
                     <label for="AddressEspecific">Dirección de habitación</label> <label for="Requerido" style="color: red;">*</label>
-                    <input type="text" runat="server" id="AddresEspecific" class="form-control" maxlenght="50" placeholder="Habitacion" >
+                     
+                      <asp:TextBox id="AddresEspecific" runat="server"  CssClass="form-control" maxlength="50" placeholder
+                          ="Habitacion" ></asp:TextBox>
+                      
+                      <asp:RequiredFieldValidator ID="RequiredFieldValidator15"
+                          ControlToValidate="AddresEspecific"
+                          ErrorMessage="Por favor inserte una dirección"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+                        </asp:requiredfieldvalidator>
+                                     
+                         <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator15"                           
+                            ControlToValidate = "AddresEspecific"                            
+                            ErrorMessage = "Por favor inserte una dirección válida" 
+                            ForeColor="Red"                            
+                            ValidationExpression="[a-z A-Z ñáéíóú]{2,50}" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>               
+                  
+                  
                   </div>       
                 </div> 
                 <div class="col-xs-12 col-md-6 col-lg-6">
                     <h4>Datos de Contacto</h4>
                     <div class="form-group ">
                         <label for="EmailPerson">Correo personal</label> <label for="Requerido" style="color: red;">*</label>
-                        <input type="text" runat="server" id="EmailPerson" maxlenght="15" class="form-control" placeholder="correo@dominio.com" >
-                        <asp:RegularExpressionValidator 
-                            ID="regexEmailValid" 
-                            runat="server" 
-                            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
-                            ControlToValidate="EmailPerson" 
-                            ErrorMessage="Formato de correo invalido" 
-                            ForeColor="White">
-                        </asp:RegularExpressionValidator>
+
+                        <asp:TextBox id="EmailPerson" runat="server"  CssClass="form-control" maxlength="50" placeholder
+                          ="correo@dominio.com" ></asp:TextBox>
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator16"
+                          ControlToValidate="EmailPerson"
+                          ErrorMessage="Por favor inserte un correo"
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+                        </asp:requiredfieldvalidator>
+
+                         <asp:RegularExpressionValidator 
+                            ID="RegularExpressionValidator16"                           
+                            ControlToValidate = "EmailPerson"                            
+                            ErrorMessage = "Por favor inserte un correo válido" 
+                            ForeColor="Red"                            
+                            ValidationExpression="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RegularExpressionValidator>  
+                        
                     </div> 
                     <div class="form-group ">
                         <label for="PhonePerson">Teléfono</label> <label for="Requerido" style="color: red;">*</label>
-                        <input type="text" runat="server" id="PhonePerson" class="form-control" maxlenght="20" placeholder="Telefono" >
-                    </div> 
+                        <%--<input type="text" runat="server" id="PhonePerson" class="form-control" maxlenght="11" placeholder="Telefono" >--%>
+                        
+                         <asp:TextBox id="PhonePerson" runat="server"  CssClass="form-control" maxlength="11" placeholder
+                          ="Telefono" ></asp:TextBox>
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator17"
+                          ControlToValidate="PhonePerson"
+                          ErrorMessage="Por favor inserte un valor numerico" 
+                          ForeColor="Red"
+                          validationgroup="GrupoEmpleado"                         
+                          runat="server"> 
+                        </asp:requiredfieldvalidator>
+
+                         <asp:RangeValidator ID="RangeValidator17"                           
+                            ControlToValidate = "PhonePerson"                            
+                            ErrorMessage = "El teléfono tiene que ser entre 1 y 99999999999" 
+                            ForeColor="Red"
+                            Type="Double"
+                            MaximumValue = "99999999999" MinimumValue = "1" 
+                            validationgroup="GrupoEmpleado"
+                            runat = "server">                        
+                        </asp:RangeValidator> 
+                        
+                   </div> 
                 </div>           
         </div> 
         <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" causesvalidation="true"  validationgroup="GrupoEmpleado" OnClick="btnaceptar_Click" type="submit"  runat="server" Text = "Agregar" ></asp:Button><br /><br />  
