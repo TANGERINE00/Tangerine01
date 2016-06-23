@@ -19,6 +19,7 @@ namespace Tangerine_Presentador.M6
     {
         IContratoModificarPropuesta vista;
 
+        #region Atributos
         string _nombcodigoPropuesta = String.Empty;
         string _idCompañia = String.Empty;
         string _nombrecompañia = String.Empty;
@@ -34,16 +35,16 @@ namespace Tangerine_Presentador.M6
         int _entregaCant = 0;
         string _fdepago = String.Empty;
         string _estatusW;
-        Boolean Confirmacion;
         DominioTangerine.Entidades.M6.Propuesta lapropuesta;
         public List<DominioTangerine.Entidades.M6.Requerimiento> req;
         string requerimiento;
-
+        #endregion
 
         public PresentadorModificarPropuesta(IContratoModificarPropuesta vista)
         {
             this.vista = vista;
         }
+
 
         public void ModificarPropuesta()
         {
@@ -52,8 +53,8 @@ namespace Tangerine_Presentador.M6
             _descripcion = vista.Descripcion;
             _Tipoduracion = vista.ComboDuracion;
             _duracion = vista.TextoDuracion;
-            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "dd/MM/yyyy", null);
-            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "dd/MM/yyyy", null);
+            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "M/dd/yyyy", null);
+            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "M/dd/yyyy", null);
             _moneda = vista.TipoCosto;
             _costo = int.Parse(vista.TextoCosto);
             _acuerdo = vista.FormaPago;
@@ -69,17 +70,16 @@ namespace Tangerine_Presentador.M6
                 _entregaCant = 0;
             }
 
-
             //Creación del Objeto Propuesta.
-            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
+            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta("GNFRNCO160622044206", _descripcion,
                  _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+
             //Creación y Ejecución del Objeto Comando de Modificar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarPropuesta(p);
-            Confirmacion = comando.Ejecutar();
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarPropuesta(p);
+            comando.Ejecutar();
+
             //  ModificarRequerimiento();
         }
-
-
 
 
         public void llenarDatosPropuesta(Entidad propuesta)
@@ -89,20 +89,26 @@ namespace Tangerine_Presentador.M6
             vista.Descripcion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Descripcion;
 
             vista.ComboDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion;
+            
             vista.TextoDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).CantDuracion;
 
             vista.TipoCosto = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Moneda;
+            
             vista.TextoCosto = (((DominioTangerine.Entidades.M6.Propuesta)propuesta).Costo).ToString();
 
             vista.FormaPago = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Acuerdopago;
+            
             arreglo = ((((DominioTangerine.Entidades.M6.Propuesta)propuesta).Feincio).ToString()).Split(' ');
             vista.DatePickerUno = arreglo[0];
+            
             arreglo = ((((DominioTangerine.Entidades.M6.Propuesta)propuesta).Fefinal).ToString()).Split(' ');
             vista.DatePickerDos = arreglo[0];
 
             vista.ComboStatus = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).Estatus;
+            
             _idCompañia = vista.IdCompania;
         }
+
 
         public void imprimirRequerimientos(Entidad _propuesta)
         {
@@ -113,14 +119,21 @@ namespace Tangerine_Presentador.M6
 
             foreach (Entidad _elRequerimiento in _requerimientos)
             {
-
                 vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTR;
 
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + RecursosPresentadorPropuesta.CerrarTD;
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() + RecursosPresentadorPropuesta.CerrarTD;
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                    ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + 
+                    RecursosPresentadorPropuesta.CerrarTD;
 
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Modificar + RecursosPresentadorPropuesta.CerrarTD;
-                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_eliminar + RecursosPresentadorPropuesta.CerrarTD;
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                    ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() + 
+                    RecursosPresentadorPropuesta.CerrarTD;
+
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                    RecursosPresentadorPropuesta.btn_Modificar + RecursosPresentadorPropuesta.CerrarTD;
+
+                vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                    RecursosPresentadorPropuesta.btn_eliminar + RecursosPresentadorPropuesta.CerrarTD;
 
                 vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
             }
@@ -134,8 +147,8 @@ namespace Tangerine_Presentador.M6
             elRequerimiento.Id = int.Parse(idRequerimiento);
 
             //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
-            Confirmacion = comando.Ejecutar();
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
+            comando.Ejecutar();
 
         }
 
@@ -143,29 +156,33 @@ namespace Tangerine_Presentador.M6
         public void TraerCompania(String idPropuesta)
         {
             //Creo una propuesta
-
             Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
                 idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
-            LogicaTangerine.Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
+            
+            Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
+            
             //Consulto la propuesta
             propuesta = comando.Ejecutar();
 
-            Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia), null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
+            Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia), 
+                null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
+            
             //Consulto la compañia de esa propuesta
             comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
             compañia = comando.Ejecutar();
+            
             //Extraigo el nombre de la compañia y lleno el contenedor
             vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
 
-
             imprimirRequerimientos(propuesta);
             llenarDatosPropuesta(propuesta);
-
         }
+
 
         public void llenarVista()
         {
             TraerCompania(vista.IdPropuesta);
         }
+    
     }
 }
