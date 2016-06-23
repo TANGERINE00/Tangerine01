@@ -118,7 +118,11 @@ namespace Tangerine.GUI.M9
 
 
 
-       
+       /// <summary>
+       /// Metodo para cargar la informacion de la factura a pagar en la ventana
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             int identificador = int.Parse(Request.QueryString["id"]);

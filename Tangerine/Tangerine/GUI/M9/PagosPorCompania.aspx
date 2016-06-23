@@ -1,5 +1,6 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="PagosPorCompania.aspx.cs" Inherits="Tangerine.GUI.M9.PagosPorCompania" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" 
+    CodeBehind="PagosPorCompania.aspx.cs" Inherits="Tangerine.GUI.M9.PagosPorCompania" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
