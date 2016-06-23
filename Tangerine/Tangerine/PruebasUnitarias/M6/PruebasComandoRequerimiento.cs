@@ -33,8 +33,10 @@ namespace PruebasUnitarias.M6
         {
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
-            laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
-            elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
+            laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", 
+            "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
+            elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", 
+            "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
         [TearDown]
         public void Clean()
@@ -73,9 +75,12 @@ namespace PruebasUnitarias.M6
             //Pruebo que el requerimiento pertenece a la propuesta que acabo de agregar
             comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(laPropuesta);
             listaRequerimientos = comandoListEntidad.Ejecutar();
-            Assert.AreEqual("NombreRequerimiento1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
-            Assert.AreEqual("DescripcionRequerimientoPrueba1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).Descripcion);
-            Assert.AreEqual("NombrePropuestaPrueba", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoPropuesta);
+            Assert.AreEqual("NombreRequerimiento1", 
+            ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
+            Assert.AreEqual("DescripcionRequerimientoPrueba1",
+            ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).Descripcion);
+            Assert.AreEqual("NombrePropuestaPrueba", 
+            ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoPropuesta);
 
             //Elimino la propuesta de prueba junto con el requerimiento
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
@@ -88,7 +93,8 @@ namespace PruebasUnitarias.M6
         [Test]
         public void TestModificarRequerimiento()
         {
-            elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1Modificado", "NombrePropuestaPrueba");
+            elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1",
+            "DescripcionRequerimientoPrueba1Modificado", "NombrePropuestaPrueba");
             //Se inserta la propuesta
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
             Assert.IsTrue(comandoBool.Ejecutar());
@@ -101,9 +107,12 @@ namespace PruebasUnitarias.M6
             //Consulto el requerimiento modificado 
             comandoListEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(laPropuesta);
             listaRequerimientos = comandoListEntidad.Ejecutar();
-            Assert.AreEqual("NombreRequerimiento1", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
-            Assert.AreEqual("DescripcionRequerimientoPrueba1Modificado", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).Descripcion);
-            Assert.AreEqual("NombrePropuestaPrueba", ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoPropuesta);
+            Assert.AreEqual("NombreRequerimiento1", 
+            ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoRequerimiento);
+            Assert.AreEqual("DescripcionRequerimientoPrueba1Modificado", 
+            ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).Descripcion);
+            Assert.AreEqual("NombrePropuestaPrueba", 
+            ((DominioTangerine.Entidades.M6.Requerimiento)listaRequerimientos.ElementAt(0)).CodigoPropuesta);
 
             //Elimino la propuesta de prueba junto con el requerimiento
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);
@@ -116,8 +125,10 @@ namespace PruebasUnitarias.M6
         [Test]
         public void TestConsultarRequerimientosXPropuesta()
         {
-            elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba", "NombrePropuestaPrueba");
-            elRequerimiento3 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento2", "DescripcionRequerimientoPrueba2", "NombrePropuestaPrueba");
+            elRequerimiento2 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1",
+            "DescripcionRequerimientoPrueba", "NombrePropuestaPrueba");
+            elRequerimiento3 = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento2",
+            "DescripcionRequerimientoPrueba2", "NombrePropuestaPrueba");
             //Se inserta la propuesta
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
             Assert.IsTrue(comandoBool.Ejecutar());
@@ -132,7 +143,8 @@ namespace PruebasUnitarias.M6
             listaRequerimientos = comandoListEntidad.Ejecutar();
             foreach (Entidad requerimiento in listaRequerimientos)
             {
-                Assert.AreEqual(((DominioTangerine.Entidades.M6.Requerimiento)requerimiento).CodigoPropuesta, "NombrePropuestaPrueba");
+                Assert.AreEqual(((DominioTangerine.Entidades.M6.Requerimiento)requerimiento).CodigoPropuesta,
+                "NombrePropuestaPrueba");
             }
             //Elimino la propuesta de prueba junto con los requerimientos
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoBorrarPropuesta(laPropuesta);

@@ -3,6 +3,7 @@ using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
 using DominioTangerine.Entidades.M5;
 using DominioTangerine.Fabrica;
+using ExcepcionesTangerine.M5;
 using LogicaTangerine;
 using LogicaTangerine.Fabrica;
 using NUnit.Framework;
@@ -219,6 +220,132 @@ namespace PruebasUnitarias.M5
             _contadorContactos = _listaContactos.Count;
 
             Assert.AreEqual( _contadorContactos, 4 );
+        }
+
+        //////////////////////pruebas excepciones
+
+        /// <summary>
+        ///  Método para probar Excepciones en el comando ComandoAgregarContacto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(AgregarContactoException))]
+        public void PruebaComandoAgregarContactoEx()
+        {
+            Entidad _contactoAgregar = null;
+            _comandoBool = FabricaComandos.CrearComandoAgregarContacto(_contactoAgregar);
+            _respuesta = _comandoBool.Ejecutar();
+
+        }
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoEliminarContacto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(EliminarContactoException))]
+        public void PruebaComandoEliminarContactoEx()
+        {
+            Entidad _contactoEliminar = null; 
+            _comandoBool = FabricaComandos.CrearComandoEliminarContacto(_contactoEliminar);
+            _respuesta = _comandoBool.Ejecutar();
+
+        }
+
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoModificarContacto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(ModificarContactoException))]
+        public void PruebaComandoModificarContactoEx()
+        {
+            Entidad _contactoModificar;
+            _contactoModificar = null;
+            _comandoBool = FabricaComandos.CrearComandoModificarContacto(_contactoModificar);
+            _respuesta = _comandoBool.Ejecutar();
+
+
+        }
+
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoConsultarContacto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(ConsultarContactoException))]
+        public void PruebaComandoConsultarContactoEx()
+        {
+            Entidad contacto = null;
+            _comandoEntidad = FabricaComandos.CrearComandoConsultarContacto(contacto);
+            contacto = _comandoEntidad.Ejecutar();
+
+        }
+
+
+
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoAgregarContactoAProyecto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(AgregarContactoException))]
+        public void PruebaComandoAgregarContactoAProyectoEx()
+        {
+            _contacto = null;
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            proyecto.Id = 1;
+
+            _comandoBool = FabricaComandos.CrearComandoAgregarContactoAProyecto(_contacto, proyecto);
+            _respuesta = _comandoBool.Ejecutar();
+
+        }
+
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoConsultarContactosPorProyecto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(ConsultarContactoException))]
+        public void PruebaComandoConsultarContactosPorProyectoEx()
+        {
+            Entidad proyecto = null;
+            _comandoLista = FabricaComandos.CrearComandoConsultarContactosPorProyecto(proyecto);
+            _listaContactos = _comandoLista.Ejecutar();
+
+        }
+
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoEliminarContactoDeProyecto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(EliminarContactoException))]
+        public void PruebaComandoEliminarContactoDeProyectoEx()
+        {
+            Entidad proyecto = null;
+            _contacto.Id = 5;
+
+            _comandoBool = FabricaComandos.CrearComandoEliminarContactoDeProyecto(_contacto, proyecto);
+            _respuesta = _comandoBool.Ejecutar();
+
+        }
+
+        /// <summary>
+        /// Método para probar Excepciones en el comando ComandoConsultarContactosNoPertenecenAProyecto de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(ConsultarContactoException))]
+        public void PruebaComandoConsultarContactosNoPertenecenAProyectoEx()
+        {
+            Entidad proyecto = null;
+            _comandoLista = FabricaComandos.CrearComandoConsultarContactosNoPertenecenAProyecto(proyecto);
+            _listaContactos = _comandoLista.Ejecutar();
+
+        }
+
+        /// <summary>
+        /// Método para probar el comando ComandoConsultarContactosPorCompania de Comandos.M5
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void PruebaComandoConsultarContactosPorCompaniaEx()
+        {
+            Entidad compania = null;
+            _comandoLista = FabricaComandos.CrearComandoConsultarContactosPorCompania(compania, 1);
+            _listaContactos = _comandoLista.Ejecutar();
         }
         #endregion
     }

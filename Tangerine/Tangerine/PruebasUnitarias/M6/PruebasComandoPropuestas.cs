@@ -34,8 +34,10 @@ namespace PruebasUnitarias.M6
         {
             Date1 = new DateTime(2016, 6, 4);
             Date2 = new DateTime(2016, 7, 4);
-            laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
-            elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1", "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
+            laPropuesta = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba",
+            "DescripcionProPuestaPrueba", "Meses", "2", "acuerdo", "PendientePrueba", "Dolar", 1, Date1, Date2, 100, "1");
+            elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento("NombreRequerimiento1",               
+            "DescripcionRequerimientoPrueba1", "NombrePropuestaPrueba");
         }
         [TearDown]
         public void Clean()
@@ -98,7 +100,9 @@ namespace PruebasUnitarias.M6
             comandoEntidad = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(laPropuesta);
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(laPropuesta);
             Assert.IsTrue(comandoBool.Ejecutar());
-            laPropuesta2 = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", "DescripcionProPuestaPruebaModificada", "MesesModificados", "3", "AcuerdoM", "PendientePruebaModif", "Dolar", 1, Date1, Date2, 100, "1");
+            laPropuesta2 = new DominioTangerine.Entidades.M6.Propuesta("NombrePropuestaPrueba", 
+            "DescripcionProPuestaPruebaModificada", "MesesModificados", "3", "AcuerdoM", "PendientePruebaModif", "Dolar", 
+            1, Date1, Date2, 100, "1");
             //Se modifica la propuesta
             comandoBool = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarPropuesta(laPropuesta2);
             Assert.IsTrue(comandoBool.Ejecutar());

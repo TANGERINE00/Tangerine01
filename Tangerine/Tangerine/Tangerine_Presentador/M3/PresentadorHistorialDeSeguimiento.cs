@@ -54,6 +54,57 @@ namespace Tangerine_Presentador.M3
                 throw ex;
             }
         }
+
+        public void ObtenerHistoricoLlamadas(int idCliente)
+        {
+
+            Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXLlamada();
+            _entidad.Id = idCliente;
+
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarHistoricoLlamadas(_entidad);
+            List<Entidad> HistorialSeguimiento = comando.Ejecutar();
+
+            foreach (Entidad item in HistorialSeguimiento)
+            {
+
+                DominioTangerine.Entidades.M3.SeguimientoCliente historico = (DominioTangerine.Entidades.M3.SeguimientoCliente)item;
+
+                vista.SegumientoLLamadas.Text += ResourceInterfaz.AbrirTR;
+                vista.SegumientoLLamadas.Text += ResourceInterfaz.AbrirTD + historico.FechaHistoria.ToString() +
+                ResourceInterfaz.CerrarTD;
+
+                vista.SegumientoLLamadas.Text += ResourceInterfaz.AbrirTD + historico.MotivoHistoria.ToString() +
+                ResourceInterfaz.CerrarTD;
+
+                vista.SegumientoLLamadas.Text += ResourceInterfaz.CerrarTD;
+            }
+        }
+
+        public void ObtenerHistoricoVisitas(int idCliente)
+        {
+            Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXVisitas();
+            _entidad.Id = idCliente;
+
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarHistoricoVisitas(_entidad);
+            List<Entidad> HistorialSeguimiento = comando.Ejecutar();
+
+            foreach (Entidad item in HistorialSeguimiento)
+            {
+
+                DominioTangerine.Entidades.M3.SeguimientoCliente historico = (DominioTangerine.Entidades.M3.SeguimientoCliente)item;
+
+                vista.SeguimientoVisitas.Text += ResourceInterfaz.AbrirTR;
+                vista.SeguimientoVisitas.Text += ResourceInterfaz.AbrirTD + historico.FechaHistoria.ToString() +
+                ResourceInterfaz.CerrarTD;
+
+                vista.SeguimientoVisitas.Text += ResourceInterfaz.AbrirTD + historico.MotivoHistoria.ToString() +
+                ResourceInterfaz.CerrarTD;
+
+                vista.SeguimientoVisitas.Text += ResourceInterfaz.CerrarTD;
+            }
+        }
+
+
    
     }
 }

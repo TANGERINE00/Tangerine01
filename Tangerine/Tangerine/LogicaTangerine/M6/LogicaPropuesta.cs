@@ -53,6 +53,11 @@ namespace LogicaTangerine.M6
             }
         }
 
+        /// <summary>
+        /// Metodo para buscar una propuesta
+        /// </summary>
+        /// <param name="id">id de la propuesta</param>
+        /// <returns>Propuesta encontrada</returns>
         public Propuesta TraerPropuesta(String id) 
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -85,7 +90,11 @@ namespace LogicaTangerine.M6
             }
             
         }
-
+        /// <summary>
+        /// Metodo para eliminar una propuesta
+        /// </summary>
+        /// <param name="id">id de la propuesta</param>
+        /// <returns>True o false dependiendo de si se logro realizar la accion</returns>
         public Boolean BorrarPropuesta(String id)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

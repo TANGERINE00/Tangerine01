@@ -59,7 +59,7 @@ create table CARGO_EMPLEADO
 	car_emp_fecha_cont date not null,
 	car_emp_fecha_fin date,
 	car_emp_modalidad varchar(20) not null,
-	car_emp_sueldo numeric(6,3) not null,
+	car_emp_sueldo numeric(18,0) not null,
 	fk_car_id int not null,
 	fk_emp_num_ficha int not null,
 
@@ -787,6 +787,7 @@ AS
 	  			and Se.fk_cli_pot=@id_cliente
 
 	END;
+	go
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------
@@ -954,7 +955,7 @@ AS
  BEGIN
     INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead)
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);
- commit;
+
  end;
 
 GO
@@ -977,7 +978,7 @@ AS
  BEGIN
     INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id)
 	VALUES(@id_contacto,@id_proyecto);
- commit;
+
  end;
 GO
 --Eliminar a contacto_proyecto
@@ -987,7 +988,7 @@ CREATE PROCEDURE M5_EliminarContactoProyecto
 AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;
- commit;
+
  end;
 GO
 --Eliminar de contacto y contacto_proyecto por id
@@ -997,7 +998,7 @@ AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id;
 	DELETE FROM CONTACTO WHERE con_id = @id;
- commit;
+
  END;
 GO
 --Modificar un contacto
@@ -1014,7 +1015,7 @@ AS
     update CONTACTO set con_nombre = @nombre, con_apellido = @apellido, con_departamento = @departamento,
     con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
     where con_id = @id;
- commit;
+
  end;
 GO
 --Consultar todos los contactos
@@ -1469,6 +1470,23 @@ AS
 	END
 GO
 
+---ConsultarNumeroProyectos(Para pruebas) ----
+CREATE PROCEDURE M7_ConsultarNumeroProyectos
+AS
+ BEGIN
+     SELECT COUNT(proy_id) proy_id FROM PROYECTO;
+ end;
+GO
+
+--- StoredProsedure borrar proyecto ----
+CREATE PROCEDURE M7_BorrarProyecto
+	@proy_id int
+AS
+	BEGIN
+		DELETE FROM PROYECTO
+ 		WHERE proy_id = @proy_id;
+	END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M7------
 -----------------------------------

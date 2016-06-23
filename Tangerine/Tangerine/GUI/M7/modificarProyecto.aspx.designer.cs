@@ -40,24 +40,6 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox inputPropuesta;
         
         /// <summary>
-        /// idPropuesta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idPropuesta;
-        
-        /// <summary>
-        /// descripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descripcion;
-        
-        /// <summary>
         /// acuerdoPago control.
         /// </summary>
         /// <remarks>
@@ -67,15 +49,6 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox acuerdoPago;
         
         /// <summary>
-        /// idCompania control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idCompania;
-        
-        /// <summary>
         /// textInputNombreProyecto control.
         /// </summary>
         /// <remarks>
@@ -83,6 +56,15 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textInputNombreProyecto;
+        
+        /// <summary>
+        /// idCompania control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idCompania;
         
         /// <summary>
         /// idProyecto control.
@@ -101,6 +83,15 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textInputCodigo;
+        
+        /// <summary>
+        /// idPropuesta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idPropuesta;
         
         /// <summary>
         /// textInputFechaInicio control.
@@ -130,6 +121,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.WebControls.TextBox textInputCosto;
         
         /// <summary>
+        /// realizacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox realizacion;
+        
+        /// <summary>
         /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
@@ -155,6 +155,15 @@ namespace Tangerine.GUI.M7 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textInputPorcentaje;
+        
+        /// <summary>
+        /// descripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox descripcion;
         
         /// <summary>
         /// RegularExpressionValidator2 control.
