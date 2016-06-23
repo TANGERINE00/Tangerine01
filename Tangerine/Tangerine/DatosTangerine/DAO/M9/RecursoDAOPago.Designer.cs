@@ -169,6 +169,15 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Salida del Método, No exitoso.
+        /// </summary>
+        internal static string MensajeFinInfoLoggerError {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLoggerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entrada en el Método.
         /// </summary>
         internal static string MensajeInicioInfoLogger {
