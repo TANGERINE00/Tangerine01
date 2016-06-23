@@ -147,7 +147,6 @@
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\Dashboard.aspx" />
-    <Content Include="GUI\M1\EjemploM1.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
@@ -1008,13 +1007,6 @@
     <Compile Include="GUI\M1\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M1\EjemploM1.aspx.designer.cs">
-      <DependentUpon>EjemploM1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\M1\EmpleadosAdmin.aspx.cs">
       <DependentUpon>EmpleadosAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1056,6 +1048,11 @@
     </Compile>
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.designer.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M1\ResourceGUI8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceGUI8.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\ResourceGUIM1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1547,6 +1544,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\M1\ResourceGUI8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceGUI8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\M1\ResourceGUIM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceGUIM1.Designer.cs</LastGenOutput>
