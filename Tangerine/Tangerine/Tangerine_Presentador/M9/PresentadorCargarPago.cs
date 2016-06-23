@@ -59,12 +59,22 @@ namespace Tangerine_Presentador.M9
                 vista.moneda = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).tipoMoneda;
                 vista.numero = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).Id.ToString();
             }
-            catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)
+            catch (ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine ex)
             {
-                MessageBox.Show("Error en la conexion a la Base de Datos","Error de Conexion",
-                    MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Error, llene todos los campos", "Campos Vacios", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
 
+            catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)
+            {
+                MessageBox.Show("Error en la conexion a la Base de Datos", "Error de Conexion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine ex)
+            {
+                MessageBox.Show("Error, Formato Incorrecto en Codigo de Aprobacion", "Formato Incorrecto",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

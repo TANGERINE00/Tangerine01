@@ -47,16 +47,11 @@ namespace Tangerine_Contratos.M2
         /// <summary>
         /// Encabezado para excepciones
         /// </summary>
-        string alertaClase { set; }
+        string msjError
+        {
+            get;
+            set;
+        }
 
-        /// <summary>
-        /// Encabezado para excepciones
-        /// </summary>
-        string alertaRol { set; }
-
-        /// <summary>
-        /// Encabezado para excepciones
-        /// </summary>
-        string alerta { set; }
     }
 }

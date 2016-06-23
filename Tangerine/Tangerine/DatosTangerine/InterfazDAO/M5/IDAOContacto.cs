@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M5
 {
-    public interface IDAOContacto : IDao<Entidad, bool, Entidad>
+    public interface IDAOContacto : IDao
     {
         /// <summary>
         /// Firma de método Eliminar

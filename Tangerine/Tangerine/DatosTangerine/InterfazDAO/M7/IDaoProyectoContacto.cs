@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatosTangerine.InterfazDAO.M7
 {
-    public interface IDaoProyectoContacto : IDao<Entidad, bool, Entidad>
+    public interface IDaoProyectoContacto : IDao
     {
 
         List<Entidad> ContactCompany(Entidad contacto);

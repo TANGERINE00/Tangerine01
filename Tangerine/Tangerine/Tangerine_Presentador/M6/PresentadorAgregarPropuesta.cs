@@ -10,6 +10,7 @@ using DominioTangerine;
 using DominioTangerine.Entidades.M6;
 using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Tangerine_Presentador.M6
 {
@@ -47,63 +48,70 @@ namespace Tangerine_Presentador.M6
 
         public void agregarPropuesta()
         {
-            //Asignacion de los campos obtenidos de la Vista.
-            _upperText = vista.ComboCompania.SelectedItem.Text;
-            consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
-            _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
-            _descripcion = vista.Descripcion;
-            _Tipoduracion = vista.ComboDuracion;
-            _duracion = vista.TextoDuracion;
-            _fechaI = DateTime.ParseExact(vista.DatePickerUno, "M/dd/yyyy", null);
-
-            string prueba = vista.DatePickerDos;
-
-            _fechaF = DateTime.ParseExact(vista.DatePickerDos, "M/dd/yyyy", null);
-            _moneda = vista.TipoCosto.SelectedItem.Text;
-            _costo = int.Parse(vista.TextoCosto);
-            _acuerdo = vista.FormaPago;
-            _estatusW = vista.ComboStatus.SelectedItem.Text;
-            _idCompañia = vista.IdCompania;
-
-            if (vista.CantidadCuotas == "")
+            try
             {
-                _entregaCant = 0;
-            }
-            else
-            {
-                _entregaCant = Int32.Parse(vista.CantidadCuotas);
-            }
-            
+                //Asignacion de los campos obtenidos de la Vista.
+                _upperText = vista.ComboCompania.SelectedItem.Text;
+                consonantes = Regex.Replace(_upperText, "(?<!^)[aeuiAEIOU ](?!$)", "").Trim().ToUpper();
+                _nombcodigoPropuesta = consonantes + today.ToString("yyMMddhhmmss");
+                _descripcion = vista.Descripcion;
+                _Tipoduracion = vista.ComboDuracion;
+                _duracion = vista.TextoDuracion;
+                _fechaI = DateTime.ParseExact(vista.DatePickerUno, "M/dd/yyyy", null);
 
-            
-            //Creación del Objeto Propuesta.
-            Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
-            _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
+                string prueba = vista.DatePickerDos;
 
-            //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
-            Confirmacion = comando.Ejecutar();
-        
-            //El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
-            // agregados en la vista separados por un ';'.
-            _precondicion = vista.ArrPrecondicion.Split(';');
+                _fechaF = DateTime.ParseExact(vista.DatePickerDos, "M/dd/yyyy", null);
+                _moneda = vista.TipoCosto.SelectedItem.Text;
+                _costo = int.Parse(vista.TextoCosto);
+                _acuerdo = vista.FormaPago;
+                _estatusW = vista.ComboStatus.SelectedItem.Text;
+                _idCompañia = vista.IdCompania;
 
+                if (vista.CantidadCuotas == "")
+                {
+                    _entregaCant = 0;
+                }
+                else
+                {
+                    _entregaCant = Int32.Parse(vista.CantidadCuotas);
+                }
 
-            //Se recorre el arreglo.
-            for (int i = 0; i < _precondicion.Length - 1; i++)
-            {
-                int j = i + 1;
-                string codReq = consonantes + "_RF_" + j.ToString();
-                
-                //Debug.Print(_precondicion[i]);
-                  
                 //Creación del Objeto Propuesta.
-                Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
-                    codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
+                Entidad p = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(_nombcodigoPropuesta, _descripcion,
+                _Tipoduracion, _duracion, _acuerdo, _estatusW, _moneda, _entregaCant, _fechaI, _fechaF, _costo, _idCompañia);
 
-                //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto requerimiento.
-                Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
-                comando2.Ejecutar();
+                //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto Propuesta 'p'.
+                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
+                Confirmacion = comando.Ejecutar();
+
+                /*
+                 * El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
+                 * agregados en la vista separados por un ';'.
+                 */
+                _precondicion = vista.ArrPrecondicion.Split(';');
+
+                //Se recorre el arreglo.
+                for (int i = 0; i < _precondicion.Length - 1; i++)
+                {
+                    int j = i + 1;
+                    string codReq = consonantes + "_RF_" + j.ToString();
+
+                    //Debug.Print(_precondicion[i]);
+
+                    //Creación del Objeto Propuesta.
+                    Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                        codReq, _precondicion[i].ToString(), _nombcodigoPropuesta);
+
+                    //Creación y Ejecución del Objeto Comando de Agregar Propuesta, se le envia por parámetro el objeto requerimiento.
+                    Comando<bool> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarRequerimiento(requerimiento);
+                    comando2.Ejecutar();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error, llene correctamente los campos", "Campos Invalidos", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
         }
 
@@ -143,7 +151,6 @@ namespace Tangerine_Presentador.M6
 
         }
 
-         
         public void llenarComboTipoCosto()
         {
          
@@ -152,8 +159,7 @@ namespace Tangerine_Presentador.M6
             vista.TipoCosto.Items.Add("Euro");
             vista.TipoCosto.Items.Add("Bitcoin");
         }
-        
-        
+                
         public void llenarComboEstatus()
         {
             vista.ComboStatus.Items.Add("Pendiente");
@@ -161,7 +167,6 @@ namespace Tangerine_Presentador.M6
             vista.ComboStatus.Items.Add("Cerrado");
         }
  
-        
         public void llenarVista() 
         {
          cargarCompañias();
