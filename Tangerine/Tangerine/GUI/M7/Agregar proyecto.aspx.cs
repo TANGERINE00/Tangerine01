@@ -161,6 +161,7 @@ namespace Tangerine.GUI.M7
             {
                 this.btnAgregarPersonal = value;
             }
+
         }
         #endregion
 
@@ -219,7 +220,15 @@ namespace Tangerine.GUI.M7
         /// <param name="e"></param>
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
-            _presentador.agregarProyecto();
+            try
+            {
+                _presentador.agregarProyecto();
+                Server.Transfer("ConsultaProyecto.aspx", true);
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M7/ConsultaProyecto.aspx");
+            }
         }
 
 
