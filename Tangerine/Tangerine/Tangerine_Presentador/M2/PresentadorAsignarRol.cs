@@ -17,7 +17,7 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         /// <param name="vista"></param>
         /// <param name="numFicha"></param>
-        public PresentadorAsignarRol ( IContratoAsignarRol vista, int numFicha )
+        public PresentadorAsignarRol ( IContratoAsignarRol vista , int numFicha )
         {
             _vista = vista;
             _numFicha = numFicha;
@@ -28,9 +28,10 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void inicioVista()
         {
-            LogicaTangerine.Comando<DominioTangerine.Entidad> theComando = LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(_numFicha);          
+            LogicaTangerine.Comando<DominioTangerine.Entidad> theComando =
+                LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario( _numFicha );          
             DominioTangerine.Entidad theUser = theComando.Ejecutar();
-            DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
+            DominioTangerine.Entidades.M2.UsuarioM2 user = ( DominioTangerine.Entidades.M2.UsuarioM2 )theUser;
             _vista.usuario = user.nombreUsuario;
             _vista.comboBoxRol = user.rol.nombre;
         }
@@ -42,10 +43,11 @@ namespace Tangerine_Presentador.M2
         {
             try
             {
-                LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoModificarRol(_vista.usuario, _vista.comboBoxRol);
+                LogicaTangerine.Comando<Boolean> theComando =
+                    LogicaTangerine.Fabrica.FabricaComandos.obtenerComandoModificarRol( _vista.usuario , _vista.comboBoxRol );
                 return theComando.Ejecutar();
             }
-            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
                 _vista.msjError = ex.Message;
                 return false;
