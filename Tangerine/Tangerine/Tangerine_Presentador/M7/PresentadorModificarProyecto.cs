@@ -57,7 +57,7 @@ namespace Tangerine_Presentador.M7
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyectoContacto(parametro);
             Entidad contactoEmp = comando5.Ejecutar();
 
-            Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ConsultarEmpleados();
+            Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
             List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
 
             try
@@ -65,7 +65,7 @@ namespace Tangerine_Presentador.M7
                 llenarComboEstatus(proyecto);
                 llenarInputEncargados(contactos, contactoEmp);
                 llenarComboGerentes(gerentes, proyecto);
-                llenarInputPersonal(programadores,programadores);
+                llenarInputPersonal(programadores, listaEmpleados);
 
                 vista.idPropuesta.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta.ToString();
                 vista.inputPropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
@@ -160,13 +160,38 @@ namespace Tangerine_Presentador.M7
 
         private void llenarInputPersonal(List<Entidad> programadores, List<Entidad> actuales)
         {
-            foreach (Entidad programador in programadores)
-            {
-                vista.inputPersonal.Items.Add(((DominioTangerine.Entidades.M7.Empleado)programador).Id +
-                                                "-" + ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_nombre +
-                                                " " + ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_apellido);
+            List<Entidad> noAsignados = new List<Entidad>();
+            List<Entidad> Asignados = new List<Entidad>();
 
+            foreach (Entidad actual in actuales)
+            {
+                foreach (Entidad programador in programadores)
+                {
+                    if (((DominioTangerine.Entidades.M7.Empleado)programador).Id ==
+                                            ((DominioTangerine.Entidades.M7.Empleado)actual).emp_num_ficha)
+                    {
+                        programadores.Remove(programador);
+                        Asignados.Add(programador);
+                        break;
+                    }
+                }
             }
+
+            foreach(Entidad programador in programadores)
+            {
+                vista.inputPersonalNoActivo.Items.Add(((DominioTangerine.Entidades.M7.Empleado)programador).Id.ToString() + "-" +
+                    ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_nombre + " " +
+                    ((DominioTangerine.Entidades.M7.Empleado)programador).emp_p_apellido);
+            }
+
+            foreach (Entidad actual in Asignados)
+            {
+                vista.inputPersonal.Items.Add(((DominioTangerine.Entidades.M7.Empleado)actual).Id.ToString() + "-" +
+                    ((DominioTangerine.Entidades.M7.Empleado)actual).emp_p_nombre + " " +
+                    ((DominioTangerine.Entidades.M7.Empleado)actual).emp_p_apellido);
+            }
+            
+
         }
 
 
@@ -193,15 +218,15 @@ namespace Tangerine_Presentador.M7
             string mes = vista.textInputFechaEstimada.SelectedDate.Month.ToString();
             string ano = vista.textInputFechaEstimada.SelectedDate.Year.ToString();
             string seleccionada = dia + "/" + mes + "/" + ano;
-            DateTime seleccionada2 = DateTime.Parse(seleccionada);
-            DateTime exsitente = DateTime.Parse(vista.textInputFechaInicio.Text.ToString());
+            //DateTime seleccionada2 = DateTime.Parse(seleccionada);
+            //DateTime exsitente = DateTime.Parse(vista.textInputFechaInicio.Text.ToString());
 
-            if (exsitente > seleccionada2)
-            {
-                MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                vista.textInputFechaEstimada.Focus();
-                return false;
-            }
+            //if (exsitente > seleccionada2)
+            //{
+            //    MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    vista.textInputFechaEstimada.Focus();
+            //    return false;
+            //}
 
             //if (int.Parse(vista.textInputFechaInicio.Text) > int.Parse(vista.textInputFechaEstimada.SelectedDate.ToString("dd/MM/yyyy")))
             //{
