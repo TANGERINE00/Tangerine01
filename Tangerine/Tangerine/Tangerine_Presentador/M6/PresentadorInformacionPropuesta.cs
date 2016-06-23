@@ -108,20 +108,27 @@ namespace Tangerine_Presentador.M6
         /// <param name="_propuesta"></param>
         public void imprimirRequerimientos(Entidad _propuesta)
         {
-            List<Entidad> _requerimientos;
-            Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
+            try {
+                List<Entidad> _requerimientos;
+                Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
 
-            _requerimientos = cmdConsultarRequerimientos.Ejecutar();
+                _requerimientos = cmdConsultarRequerimientos.Ejecutar();
 
-            foreach (Entidad _elRequerimiento in _requerimientos)
+                foreach (Entidad _elRequerimiento in _requerimientos)
+                {
+                    vistaInformacion.Requerimientos.Text += 
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString();
+
+                    vistaInformacion.Requerimientos.Text += " - Descripción: "
+                        + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString();
+
+                    vistaInformacion.Requerimientos.Text += RecursosPresentadorPropuesta.Salto + RecursosPresentadorPropuesta.Salto;
+            }
+            }
+            catch (Exception e)
             {
-                vistaInformacion.Requerimientos.Text += 
-                    ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString();
-
-                vistaInformacion.Requerimientos.Text += " - Descripción: "
-                    + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString();
-
-                vistaInformacion.Requerimientos.Text += RecursosPresentadorPropuesta.Salto + RecursosPresentadorPropuesta.Salto;
+                MessageBox.Show("Error realizando el llenado de la tabla, por favor actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
         }
         /// <summary>
