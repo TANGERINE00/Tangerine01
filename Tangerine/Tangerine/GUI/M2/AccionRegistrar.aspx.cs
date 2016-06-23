@@ -1,5 +1,4 @@
-﻿using LogicaTangerine.M2;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -79,7 +78,7 @@ namespace Tangerine.GUI.M2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load( object sender , EventArgs e )
         {
             try
             {
@@ -103,24 +102,26 @@ namespace Tangerine.GUI.M2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnCrear_Click(object sender, EventArgs e)
+        protected void btnCrear_Click( object sender , EventArgs e )
         {
             existenciaUsuario = presentador.usuarioExistente();
 
-            if (!existenciaUsuario)
+            if ( !existenciaUsuario )
             {
-                if (presentador.registrar())
+                if ( presentador.registrar() )
                 {
                     Response.Redirect("../M2/RegistroUsuario.aspx");
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts",
+                                                         "javascript:alert('" + msjError + "')" , true );
                 }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('Nombre de usuario ya existente, intente otro.')", true); 
+                ScriptManager.RegisterStartupScript( this , this.GetType(), "alerts" ,
+                                                     "javascript:alert('Nombre de usuario ya existente, intente otro.')" , true ); 
             }
 
         }

@@ -10,6 +10,7 @@ using LogicaTangerine.M5;
 using Tangerine_Presentador.M7;
 using Tangerine_Contratos.M7;
 using LogicaTangerine.M10;
+using System.Web.Security.AntiXss;
 
 
 namespace Tangerine.GUI.M7
@@ -18,6 +19,7 @@ namespace Tangerine.GUI.M7
     {
 
         PresentadorModificarProyecto presentador;
+        int Proyectoid;
 
         public modificarProyecto()
         {
@@ -25,6 +27,7 @@ namespace Tangerine.GUI.M7
         }
 
         #region Contrato
+        
 
         TextBox IContratoModificarProyecto.realizacion
         {
@@ -35,6 +38,18 @@ namespace Tangerine.GUI.M7
             set
             {
                 realizacion = value;
+            }
+        }
+
+        TextBox IContratoModificarProyecto.gteAct
+        {
+            get
+            {
+                return gteAct;
+            }
+            set
+            {
+                gteAct = value;
             }
         }
 
@@ -83,18 +98,6 @@ namespace Tangerine.GUI.M7
             set
             {
                 textInputFechaInicio = value;
-            }
-        }
-
-        Calendar IContratoModificarProyecto.textInputFechaEstimada
-        {
-            get
-            {
-                return textInputFechaEstimada; ;
-            }
-            set
-            {
-                textInputFechaEstimada = value;
             }
         }
 
@@ -272,17 +275,36 @@ namespace Tangerine.GUI.M7
             set { alert.InnerHtml = value; }
         }
 
+        public string FechaFin
+        {
+            get
+            {
+                return datepicker1.Value;
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Proyectoid = int.Parse(Request.QueryString["idCont"]);
-
-            if (!IsPostBack)
+            try
             {
-                presentador.CargarProyecto(Proyectoid);
+                Proyectoid = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idCont"], false));
+                if (!IsPostBack)
+                {
+                     presentador.CargarProyecto(Proyectoid);
+                }
             }
-        }
+            catch
+            {
+                Response.Redirect("ConsultaProyecto.aspx");
+            }
+
+         }
 
         protected void Modificar_Datos(object sender, EventArgs e)
         {

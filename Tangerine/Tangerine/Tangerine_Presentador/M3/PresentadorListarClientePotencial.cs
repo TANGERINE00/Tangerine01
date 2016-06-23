@@ -61,6 +61,7 @@ namespace Tangerine_Presentador.M3
                         ResourceInterfaz.BotonContacto + elCliente.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                         ResourceInterfaz.BotonPromover + elCliente.IdClientePotencial + ResourceInterfaz.BotonCerrar +
                         ResourceInterfaz.BotonSeguimiento+elCliente.IdClientePotencial+ResourceInterfaz.BotonCerrar +
+                        ResourceInterfaz.BotonAgregar+elCliente.IdClientePotencial+ResourceInterfaz.BotonCerrar+
                         ResourceInterfaz.CloseDiv + ResourceInterfaz.CerrarTD;
 
                     vista.ClientePotencial.Text += ResourceInterfaz.CerrarTR;

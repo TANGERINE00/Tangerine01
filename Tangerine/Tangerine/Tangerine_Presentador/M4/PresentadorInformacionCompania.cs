@@ -16,7 +16,10 @@ namespace Tangerine_Presentador.M4
         #region InicializarVista
         IContratoInformacionCompania _vista;
         Entidad _entidad;
-        
+
+        /// <summary>
+        /// Constructor que permite inicializar la vista dentro del presentador
+        /// </summary>
 
         public PresentadorInformacionCompania(IContratoInformacionCompania vista)
         {
@@ -28,6 +31,10 @@ namespace Tangerine_Presentador.M4
         #endregion
 
         #region CargarInformacionCompania
+
+        /// <summary>
+        /// Metodo que permite cargar toda la informacion de una compania en especifico por pantalla
+        /// </summary>
         public Boolean CargarInformacionCompania(int id)
         {
             try

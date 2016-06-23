@@ -19,7 +19,7 @@ namespace DominioTangerine.Entidades.M8
         #region Get´s Set´s
 
         /// <summary>
-        /// Metodo para setear y obtener el tipo de moneda de la factura
+        /// Metodo para setear y obtener el asunto del correo
         /// </summary>
         /// <returns>Retorna el tipo de moneda de la factura</returns>
         public String asunto
@@ -29,7 +29,7 @@ namespace DominioTangerine.Entidades.M8
         }
 
         /// <summary>
-        /// Metodo para setear y obtener el tipo de moneda de la factura
+        /// Metodo para setear y obtener el destinatario del correo
         /// </summary>
         /// <returns>Retorna el tipo de moneda de la factura</returns>
         public String destinatario
@@ -39,7 +39,7 @@ namespace DominioTangerine.Entidades.M8
         }
 
         /// <summary>
-        /// Metodo para setear y obtener el tipo de moneda de la factura
+        /// Metodo para setear y obtener el mensaje del correo
         /// </summary>
         /// <returns>Retorna el tipo de moneda de la factura</returns>
         public String mensjae

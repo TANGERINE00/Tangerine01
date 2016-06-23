@@ -59,9 +59,9 @@ namespace PruebasUnitarias.M2
         {
             List<String> listaResultado;
             LogicaTangerine.Comando<List<String>> commandVerificarAccesoAOpciones =
-                FabricaComandos.obtenerComandoVerificarAccesoAOpciones("Gerente");
+                FabricaComandos.obtenerComandoVerificarAccesoAOpciones( "Gerente" );
             listaResultado = commandVerificarAccesoAOpciones.Ejecutar();
-            Assert.IsNotEmpty(listaResultado);
+            Assert.IsNotEmpty( listaResultado );
         }
 
         /// <summary>
@@ -72,9 +72,9 @@ namespace PruebasUnitarias.M2
         {
             bool resultado;
             LogicaTangerine.Comando<Boolean> commandVerificarAccesoAPagina =
-                FabricaComandos.obtenerComandoVerificarAccesoAPagina("../../GUI/M2/RegistroUsuario.aspx", "Programador");
+                FabricaComandos.obtenerComandoVerificarAccesoAPagina( "../../GUI/M2/RegistroUsuario.aspx" , "Programador" );
             resultado = commandVerificarAccesoAPagina.Ejecutar();
-            Assert.IsNotNull(resultado);
+            Assert.IsNotNull( resultado );
         }
 
         #endregion

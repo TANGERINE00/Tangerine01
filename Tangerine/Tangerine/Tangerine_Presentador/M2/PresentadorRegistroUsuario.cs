@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M2;
 using DominioTangerine;
-using LogicaTangerine.M2;
+
 
 namespace Tangerine_Presentador.M2
 {
@@ -17,7 +17,7 @@ namespace Tangerine_Presentador.M2
         /// Constructor del presentador de la vista Registrar Usuario
         /// </summary>
         /// <param name="vista"></param>
-        public PresentadorRegistroUsuario(IContratoRegistroUsuario vista)
+        public PresentadorRegistroUsuario( IContratoRegistroUsuario vista )
         {
             _vista = vista;
         }
@@ -35,7 +35,8 @@ namespace Tangerine_Presentador.M2
                 foreach (Entidad theEmpleado in listaDeEmpleados)
                 {
                     DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)theEmpleado;
-                    LogicaTangerine.Comando<Boolean> theComandoVerificar = LogicaTangerine.Fabrica.FabricaComandos.verificarUsuario(empleado.emp_id);
+                    LogicaTangerine.Comando<Boolean> theComandoVerificar =
+                        LogicaTangerine.Fabrica.FabricaComandos.verificarUsuario( empleado.emp_id );
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTR;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.emp_id.ToString() + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
@@ -43,22 +44,24 @@ namespace Tangerine_Presentador.M2
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.jobs.Nombre + ResourceGUIM2.CloseTD;
 
-                    if (!theComandoVerificar.Ejecutar())
+                    if ( !theComandoVerificar.Ejecutar() )
                     {
-                        _vista.tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegNuevaVentana + empleado.emp_id + ResourceGUIM2.NombreEmpleado
-                                                + empleado.emp_p_nombre + ResourceGUIM2.ApellidoEmpleado + empleado.emp_p_apellido
-                                                + ResourceGUIM2.RolEmpleado + empleado.jobs.Nombre + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
+                        _vista.tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegNuevaVentana + empleado.emp_id +
+                                                ResourceGUIM2.NombreEmpleado + empleado.emp_p_nombre + ResourceGUIM2.ApellidoEmpleado +
+                                                empleado.emp_p_apellido + ResourceGUIM2.RolEmpleado + empleado.jobs.Nombre +
+                                                ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                     }
                     else
                     {
-                        _vista.tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegBlock + ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
+                        _vista.tablaEmpleado += ResourceGUIM2.OpenTD + ResourceGUIM2.BotonRegBlock +
+                                                ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
                     }
 
                     _vista.tablaEmpleado += ResourceGUIM2.CloseTR;
                 }
                 return true;
             }
-            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
                 _vista.msjError = ex.Message;
                 return false;

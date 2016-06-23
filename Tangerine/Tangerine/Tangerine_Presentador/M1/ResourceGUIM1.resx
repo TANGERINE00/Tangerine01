@@ -117,19 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ConsultCityPlaces" xml:space="preserve">
-    <value>M4_ConsultarLugar</value>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
   </data>
-  <data name="LugIdPlace" xml:space="preserve">
-    <value>lug_dir_id</value>
+  <data name="LabelCostoProyecto" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Costo: &lt;/label&gt;</value>
   </data>
-  <data name="LugLugIdPlace" xml:space="preserve">
-    <value>fk_lug_dir_id</value>
+  <data name="LabelDescProyecto" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Descripción:&lt;/label&gt;&lt;br&gt;</value>
   </data>
-  <data name="LugNamePlace" xml:space="preserve">
-    <value>lug_dir_nombre</value>
+  <data name="LabelEstatus" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Estatus: &lt;/label&gt;</value>
   </data>
-  <data name="LugTypePlace" xml:space="preserve">
-    <value>lug_dir_tipo</value>
+  <data name="LabelFechaProyectoFin" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Fecha estimada de fin: &lt;/label&gt;</value>
+  </data>
+  <data name="LabelFechaProyectoInicio" xml:space="preserve">
+    <value>&lt;br&gt;&lt;label&gt;Fecha de inicio: &lt;/label&gt;</value>
+  </data>
+  <data name="LabelNombreProyecto" xml:space="preserve">
+    <value>&lt;label&gt;Nombre de proyecto: &lt;/label&gt;&lt;a href="../M7/InformacionProyecto.aspx?idCont=</value>
+  </data>
+  <data name="LabelNombreProyectoCerrar" xml:space="preserve">
+    <value>"&gt;</value>
+  </data>
+  <data name="LabelNombreProyectoCerrar2" xml:space="preserve">
+    <value>&lt;/a&gt;</value>
+  </data>
+  <data name="MaxProyectos" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="MensajeSinProyecto" xml:space="preserve">
+    <value>&lt;label&gt;No hay proyectos registrados a la fecha&lt;/label&gt;</value>
+  </data>
+  <data name="PanelProyectoAbrir" xml:space="preserve">
+    <value>&lt;div class='container-fluid col-md-6'&gt;&lt;div class='box box-default'&gt;&lt;div class='container-fluid'&gt;&lt;br&gt;</value>
+  </data>
+  <data name="PanelProyectoCerrar" xml:space="preserve">
+    <value>&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="RolAdministrador" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="RolGerente" xml:space="preserve">
+    <value>Gerente</value>
+  </data>
+  <data name="RolProgramador" xml:space="preserve">
+    <value>Programador</value>
   </data>
 </root>

@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LogicaTangerine.M4;
 using DominioTangerine.Fabrica;
 using DominioTangerine.Entidades.M4;
 using DominioTangerine;
-using DatosTangerine.M4;
 using LogicaTangerine.Fabrica;
 using LogicaTangerine;
 
@@ -319,14 +317,16 @@ namespace PruebasUnitarias.M4
             Assert.IsTrue(Comand.Ejecutar());
             
                 Comando < bool > Comand2 = FabricaComandos.CrearModificarCompania(
-                    DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), 
-                    "Prueba", "J-111114513", "asd@asdd.com", "3439485", "ADD", new DateTime(2015, 12, 12), 0, 10000, 60, 3));
-                Assert.IsTrue(Comand.Ejecutar());
-                Comando<Entidad> Comand3 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+                    DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),
+                    "Prueba De Datos1", "J-134214513", "asd@asdd.com", "3439485", "ADD", new DateTime(2015, 12, 12), 0, 10000, 60, 3));
+                Assert.IsTrue(Comand2.Ejecutar());
+                Comando<Entidad> Comand3 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(
+                    daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", 
+                    new DateTime(2015, 2, 10), 1, 100, 30, 1));
                 theCompany2 = Comand3.Ejecutar();
                 Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).Id == daoCompania.ConsultLastCompanyId());
-                Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).NombreCompania == "Prueba");
-                Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).RifCompania == "J-111114513");
+                Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).NombreCompania == "Prueba De Datos1");
+                Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).RifCompania == "J-134214513");
                 Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).EmailCompania == "asd@asdd.com");
                 Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).TelefonoCompania == "3439485");
                 Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).AcronimoCompania == "ADD");

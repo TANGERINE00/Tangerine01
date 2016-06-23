@@ -42,15 +42,15 @@ namespace Tangerine_Presentador.M9
 
                 if (listaP.Count() < 1)
                 {
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
 
                 }
@@ -90,6 +90,11 @@ namespace Tangerine_Presentador.M9
            {
                MessageBox.Show("Error, Formato Incorrecto en Codigo de Aprobacion", "Formato Incorrecto",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show("La operacion no pudo ser completada", "Error", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
            }
 
         }

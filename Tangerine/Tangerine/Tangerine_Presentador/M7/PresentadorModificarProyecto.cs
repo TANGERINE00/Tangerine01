@@ -59,6 +59,10 @@ namespace Tangerine_Presentador.M7
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyectoContacto(parametro);
             Entidad contactoEmp = comando5.Ejecutar();
 
+            Comando<List<Entidad>> comando6 =
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarHistoricoGerente(parametro);
+            List<Entidad> GerentesHist = comando6.Ejecutar();
+
             Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
             List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
 
@@ -68,6 +72,7 @@ namespace Tangerine_Presentador.M7
                 llenarInputEncargados(contactos, contactoEmp);
                 llenarComboGerentes(gerentes, proyecto);
                 llenarInputPersonal(programadores, listaEmpleados);
+                llenarInputGerentesPasados(GerentesHist, gerentes);
 
                 vista.idPropuesta.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idpropuesta.ToString();
                 vista.inputPropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
@@ -82,6 +87,7 @@ namespace Tangerine_Presentador.M7
                 vista.idCompania.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idcompania.ToString();
                 vista.text10.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon;
                 vista.realizacion.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion;
+                vista.gteAct.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente.ToString();
 
             }
             catch (Exception ex)
@@ -89,6 +95,7 @@ namespace Tangerine_Presentador.M7
                 throw ex;
             }
         }
+
 
         private void llenarComboEstatus(Entidad proyecto)
         {
@@ -122,6 +129,7 @@ namespace Tangerine_Presentador.M7
             vista.inputEstatus.DataBind();
         }
 
+
         private void llenarInputEncargados(List<Entidad> contactos, Entidad contactoEmp)
         {
             int index = 0;
@@ -145,6 +153,34 @@ namespace Tangerine_Presentador.M7
             }
         }
 
+
+        private void llenarInputGerentesPasados(List<Entidad> GerentesHist, List<Entidad> gerentes)
+        {
+            List<Entidad> noAsignados = new List<Entidad>();
+            List<Entidad> Asignados = new List<Entidad>();
+
+            foreach (Entidad actual in GerentesHist)
+            {
+                foreach (Entidad programador in gerentes)
+                {
+                    if (((DominioTangerine.Entidades.M7.Empleado)programador).Id ==
+                                            ((DominioTangerine.Entidades.M7.Empleado)actual).Id)
+                    {
+                        Asignados.Add(programador);
+                        gerentes.Remove(programador);
+                        break;
+                    }
+                }
+            }
+            foreach (Entidad actual in Asignados)
+            {
+                vista.GerentesPasados.Items.Add(((DominioTangerine.Entidades.M7.Empleado)actual).Id.ToString() + "-" +
+                    ((DominioTangerine.Entidades.M7.Empleado)actual).emp_p_nombre + " " +
+                    ((DominioTangerine.Entidades.M7.Empleado)actual).emp_p_apellido);
+            }
+
+        }
+
         private void llenarComboGerentes(List<Entidad> gerentes, Entidad proyecto)
         {
             Dictionary<int, string> listaGerentes = new Dictionary<int, string>();
@@ -160,6 +196,7 @@ namespace Tangerine_Presentador.M7
             vista.inputGerente.SelectedIndex = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente;
             vista.inputGerente.DataBind();
         }
+
 
         private void llenarInputPersonal(List<Entidad> programadores, List<Entidad> actuales)
         {
@@ -215,26 +252,25 @@ namespace Tangerine_Presentador.M7
             }
         }
 
+
         public bool Validaciones()
         {
-            string dia = vista.textInputFechaEstimada.SelectedDate.Day.ToString();
-            string mes = vista.textInputFechaEstimada.SelectedDate.Month.ToString();
-            string ano = vista.textInputFechaEstimada.SelectedDate.Year.ToString();
-            string seleccionada = dia + "/" + mes + "/" + ano;
-            //DateTime seleccionada2 = DateTime.Parse(seleccionada);
-            //DateTime exsitente = DateTime.Parse(vista.textInputFechaInicio.Text.ToString());
+            
+            DateTime inicio = DateTime.ParseExact(vista.textInputFechaInicio.Text.ToString(), "dd/MM/yyyy", null);
 
-            //if (exsitente > seleccionada2)
-            //{
-            //    MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    vista.textInputFechaEstimada.Focus();
-            //    return false;
-            //}
+            if (vista.FechaFin == "")
+            {
+                MessageBox.Show("Debe seleccionar una fecha fin para el proyecto", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
-            //if (int.Parse(vista.textInputFechaInicio.Text) > int.Parse(vista.textInputFechaEstimada.SelectedDate.ToString("dd/MM/yyyy")))
-            //{
-            //    return false;
-            //}
+            DateTime nuevaFechaFin = DateTime.ParseExact(vista.FechaFin, "dd/MM/yyyy", null);
+
+            if (inicio > nuevaFechaFin)
+            {
+               MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               return false;
+            }
 
             if (vista.inputPersonal.Items.Count <= 0)
             {
@@ -248,25 +284,16 @@ namespace Tangerine_Presentador.M7
             return true;
         }
 
-        public bool ModificarDatos() 
+
+                public bool ModificarDatos() 
         {
-            DateTime diaNulo = DateTime.Parse("1/1/0001");
             try
             {
                 Entidad _proyecto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Id = int.Parse(vista.idProyecto.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Nombre = vista.textInputNombreProyecto.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Codigo = vista.textInputCodigo.Text;
-
-                if (vista.textInputFechaEstimada.SelectedDate == diaNulo)
-                {
-                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin;
-                }
-                else
-                {
-                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = vista.textInputFechaEstimada.SelectedDate;
-                }
-
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = DateTime.ParseExact(vista.FechaFin, "dd/MM/yyyy", null);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Costo = int.Parse(vista.textInputCosto.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.textInputPorcentaje.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = 
@@ -300,6 +327,31 @@ namespace Tangerine_Presentador.M7
                     }
                 }
 
+                if (vista.gteAct.Text != vista.inputGerente.SelectedValue)
+                {
+                    foreach (ListItem anterior in vista.GerentesPasados.Items)
+                    {
+                        string valor = anterior.Value;
+                        String[] substrings = valor.Split('-');
+                        if (vista.inputGerente.SelectedValue != substrings[0])
+                        {
+                            Entidad nuevo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
+                            ((DominioTangerine.Entidades.M7.Empleado)nuevo).Id = int.Parse(vista.inputGerente.SelectedValue);
+                            Comando<Boolean> comandoGte =
+                                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarHistoricoGerente(_proyecto, nuevo);
+                            Boolean resulto = comandoGte.Ejecutar();
+                            break;
+                        }
+                    }
+                    if(vista.GerentesPasados.Items.Count <= 0)
+                    {
+                        Entidad nuevo = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
+                        ((DominioTangerine.Entidades.M7.Empleado)nuevo).Id = int.Parse(vista.gteAct.Text);
+                        Comando<Boolean> comandoGte =
+                            LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarHistoricoGerente(_proyecto, nuevo);
+                        Boolean resulto = comandoGte.Ejecutar();
+                    }
+                }
 
                 List<Entidad> _trabajadores = new List<Entidad>();
 
@@ -314,8 +366,6 @@ namespace Tangerine_Presentador.M7
                     LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
                 Boolean ejecutado = comando.Ejecutar();
 
-
-
                 if ( double.Parse(vista.realizacion.Text) < double.Parse(vista.textInputPorcentaje.Text))
                 {
                     double monto = calcularPago(double.Parse(vista.realizacion.Text), double.Parse(vista.textInputPorcentaje.Text), double.Parse(vista.textInputCosto.Text));
@@ -324,6 +374,8 @@ namespace Tangerine_Presentador.M7
                         int.Parse(vista.idCompania.Text) + "&IdProyecto=" +
                         int.Parse(vista.idProyecto.Text) + "&Monto=" + monto);
                 }
+
+                
 
             }
             catch (Exception e)

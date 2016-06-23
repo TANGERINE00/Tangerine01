@@ -1,6 +1,4 @@
-﻿using DatosTangerine.M2;
-using DominioTangerine;
-using LogicaTangerine.M2;
+﻿using DominioTangerine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,60 +60,13 @@ namespace Tangerine.GUI.Master
         protected void Page_Load( object sender, EventArgs e )
         {
            presentador.CargarSesion();
-            //if (HttpContext.Current.Session["User"] == null)
-            //    Response.Redirect("../M1/Login.aspx");
-            //else
-            //{
-            //    if ((Util.MASTER_FLAG) && (HttpContext.Current.Session["Rol"] != null))
-            //    {
-            //        Uri thisPageUrl = Request.Url;
-            //        string pathDePaginaActal = thisPageUrl.AbsolutePath;
-            //        string nombreRol = HttpContext.Current.Session["Rol"].ToString();
-
-
-
-
-
-            //        bool privilegioAcceso = LogicaPrivilegios.VerificarAccesoAPagina(pathDePaginaActal, nombreRol);
-
-            //        if (privilegioAcceso)
-            //        {
-            //            Response.Redirect("../M1/Dashboard.aspx");
-            //        }
-            //        else
-            //        {
-            //            List<string> bloqueos = LogicaPrivilegios.VerificarAccesoAOpciones(nombreRol);
-
-            //            foreach (string s in bloqueos)
-            //            {
-            //                System.Diagnostics.Debug.WriteLine(s);
-            //                this.FindControl(s).Visible = false;
-            //            }
-            //        }
-            //    }
-            //}
-
-
-            //if (HttpContext.Current.Session["User"] != null)
-            //    usuarioSesion.InnerText = HttpContext.Current.Session["User"] + "";
-
-            //if (HttpContext.Current.Session["User"] != null)
-            //{
-            //    usuarioSesion.InnerText = HttpContext.Current.Session["User"] + "";
-            //    UsuarioDetalle.InnerText = HttpContext.Current.Session["Rol"] + "";
-            //    fechaUsuario.InnerText = HttpContext.Current.Session["Date"] + "";
-            //}
-
-            //else
-            //    usuarioSesion.InnerText = "Usuario";
+            
         }
 
         public void CerrarSesion( object sender, EventArgs e )
         {
            presentador.CerrarSesionP();
-            //Util._theGlobalUser = null;
-            //HttpContext.Current.Session.Abandon();
-            //Response.Redirect("../M1/Login.aspx");
+            
         }
 
       

@@ -149,35 +149,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceEmpleado.resx</DependentUpon>
     </Compile>
-    <Compile Include="M2\BDUsuario.cs" />
-    <Compile Include="M2\ResourceUser.Designer.cs" />
     <Compile Include="DAO\M3\ResourceClientePotencial.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceClientePotencial.resx</DependentUpon>
     </Compile>
-    <Compile Include="M4\BDCompania.cs" />
-    <Compile Include="M4\BDLugarDireccion.cs" />
-    <Compile Include="M4\ResourcePlace.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourcePlace.resx</DependentUpon>
-    </Compile>
-    <Compile Include="M4\ResourceCompany.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ResourceCompany.resx</DependentUpon>
-    </Compile>
     <Compile Include="M5\ResourceContact.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceContact.resx</DependentUpon>
-    </Compile>
-    <Compile Include="M6\BDPropuesta.cs" />
-    <Compile Include="M6\RecursosPropuesta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPropuesta.resx</DependentUpon>
     </Compile>
     <Compile Include="M7\BDEmpleadoProyecto.cs" />
     <Compile Include="M7\BDProyecto.cs" />
@@ -199,8 +179,9 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.4\log4net.2.0.4\lib\net10-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -286,27 +267,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceEmpleado.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="M2\ResourceUser.resx" />
     <EmbeddedResource Include="DAO\M3\ResourceClientePotencial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceClientePotencial.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M4\ResourcePlace.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourcePlace.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M4\ResourceCompany.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ResourceCompany.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M5\ResourceContact.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceContact.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M6\RecursosPropuesta.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPropuesta.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M7\ResourceProyecto.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -80,8 +80,8 @@ namespace PruebasUnitarias.M2
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
             answer = daoUsuario.Agregar(elUsuario);
-            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),
-                                                                                        "Activo", elRol1, 1);
+            elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                       "Activo" , elRol1 , 1 );
             IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
             DominioTangerine.Entidad theResultado = daoRol.ObtenerRolUsuario( 2 );
             DominioTangerine.Entidades.M2.RolM2 resultado = ( DominioTangerine.Entidades.M2.RolM2 )theResultado;
@@ -96,8 +96,8 @@ namespace PruebasUnitarias.M2
         {
            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
            answer = daoUsuario.Agregar(elUsuario);
-           elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel", "1234", new DateTime(2015, 2, 10),
-                                                                                      "Activo", elRol1, 1);
+           elUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("Daniel" , "1234" , new DateTime(2015, 2, 10) ,
+                                                                                      "Activo" , elRol1 , 1 );
            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario = ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario;
            IDAORol daoRol = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoRol();
            DominioTangerine.Entidad theResultado = daoRol.ObtenerOpciones( "Gestión de Pagos" , 2 );

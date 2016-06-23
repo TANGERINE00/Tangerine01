@@ -24,7 +24,8 @@ namespace Tangerine_Presentador.M2
         /// <param name="nombreUser"></param>
         /// <param name="apellidoUser"></param>
         /// <param name="rol"></param>
-        public PresentadorAccionRegistrar(IContratoAccionRegistrar vista, int numFicha, string nombreUser, string apellidoUser,string rol)
+        public PresentadorAccionRegistrar( IContratoAccionRegistrar vista , int numFicha , string nombreUser , string apellidoUser ,
+                                           string rol )
         {
             _vista = vista;
             _numFicha = numFicha;
@@ -40,7 +41,8 @@ namespace Tangerine_Presentador.M2
         {
             _vista.ficha = _numFicha.ToString();
             _vista.comboRol = _rol;
-            LogicaTangerine.Comando<String> theComando = LogicaTangerine.Fabrica.FabricaComandos.crearUsuario(_nombreUser,_apellidoUser);
+            LogicaTangerine.Comando<String> theComando =
+                LogicaTangerine.Fabrica.FabricaComandos.crearUsuario( _nombreUser , _apellidoUser );
             _vista.usuario = theComando.Ejecutar();
         }
 
@@ -51,10 +53,11 @@ namespace Tangerine_Presentador.M2
         {
             try
             {
-                LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario(_vista.usuario, _vista.contrasena, _vista.comboRol, _numFicha);
+                LogicaTangerine.Comando<Boolean> theComando = LogicaTangerine.Fabrica.FabricaComandos.prepararUsuario( _vista.usuario ,
+                                                              _vista.contrasena , _vista.comboRol , _numFicha );
                 return theComando.Ejecutar();
             }
-            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
                 _vista.msjError = ex.Message;
                 return false;
@@ -68,7 +71,7 @@ namespace Tangerine_Presentador.M2
         public bool usuarioExistente()
         {
             bool respuesta = false;
-            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(_vista.usuario);
+            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.usuario );
             respuesta = comando.Ejecutar();
             return respuesta;
         }

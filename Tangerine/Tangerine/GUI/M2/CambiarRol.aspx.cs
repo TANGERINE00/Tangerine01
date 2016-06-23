@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaTangerine.M2;
 using DominioTangerine;
 using Tangerine_Contratos.M2;
 using Tangerine_Presentador.M2;
@@ -22,7 +21,7 @@ namespace Tangerine.GUI.M2
         /// </summary>
         public CambiarRol()
         {
-            _presentador = new PresentadorCambioRol(this);
+            _presentador = new PresentadorCambioRol( this );
         }
 
         #region Contrato
@@ -45,7 +44,7 @@ namespace Tangerine.GUI.M2
             public string msjError
             {
                 get { return error; }
-                set { error = value;}
+                set { error = value; }
             }
 
         #endregion
@@ -55,15 +54,16 @@ namespace Tangerine.GUI.M2
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load( object sender , EventArgs e )
         {
-            if (!IsPostBack)
+            if ( !IsPostBack )
             {
                 errorManejo = _presentador.iniciarVista();
 
-                if (!errorManejo)
+                if ( !errorManejo )
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts" ,
+                                                         "javascript:alert('" + msjError + "')" , true );
                 }
             }
         }

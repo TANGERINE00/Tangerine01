@@ -1,7 +1,5 @@
 ﻿using DatosTangerine.M10;
-using DatosTangerine.M2;
 using DominioTangerine;
-using LogicaTangerine.M2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,15 +57,16 @@ namespace Tangerine.GUI.M2
         {
             try
             {
-                presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol( this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idEmpleado"], false)) );
-                if (!IsPostBack)
+                presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol( this,
+                                  int.Parse( AntiXssEncoder.HtmlEncode(Request.QueryString["idEmpleado"] , false ) ) );
+                if ( !IsPostBack )
                 {
                     presentador.inicioVista();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect( "../M1/DashBoard.aspx" );
             }
 
         }
@@ -83,11 +82,12 @@ namespace Tangerine.GUI.M2
 
             if (validacionUsuario)
             {
-                Response.Redirect("../M2/CambiarRol.aspx");
+                Response.Redirect( "../M2/CambiarRol.aspx" );
             }
             else 
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                ScriptManager.RegisterStartupScript( this , this.GetType() ,
+                                                     "alerts" , "javascript:alert('" + msjError + "')" , true );
             }
            
         }

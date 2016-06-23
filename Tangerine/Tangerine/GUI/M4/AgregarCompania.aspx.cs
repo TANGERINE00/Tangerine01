@@ -1,6 +1,5 @@
 ﻿using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M4;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +14,6 @@ namespace Tangerine.GUI.M4
 {
     public partial class AgregarCompania : System.Web.UI.Page , IContratoAgregarCompania
     {
-        LogicaM4 logica = new LogicaM4();
         PresentadorAgregarCompania Presentador;
         string error;
 

@@ -85,8 +85,9 @@ namespace Tangerine_Presentador.M8
         {
             try
             {
-                //vista.destinatario = this.vista.destinatario;
-                vista.destinatario = "istvanbokor8@gmail.com, istvanbokor7@hotmail.com";
+                vista.destinatario = this.vista.destinatario;
+                //vista.destinatario = "istvanbokor8@gmail.com, istvanbokor7@hotmail.com";
+                //vista.destinatario = "carr235@gmail.com";
                 vista.asunto = this.vista.asunto;
                 vista.mensaje = this.vista.mensaje;
 

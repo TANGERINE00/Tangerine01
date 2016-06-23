@@ -46,7 +46,7 @@ namespace PruebasUnitarias.M2
         public void clean()
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
-            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( daoUsuario.ConsultLastUserID() ,"Daniel" ,
+            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( daoUsuario.ConsultLastUserID() , "Daniel" ,
                                                                             "1234" , new DateTime(2015, 2, 10) , "Activo" , elRol , 1   );
             DominioTangerine.Entidades.M2.UsuarioM2 theUsuario2 = ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario2;
             answer = daoUsuario.BorrarUsuario( theUsuario2.Id );
@@ -67,8 +67,8 @@ namespace PruebasUnitarias.M2
         {
             IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
             answer = daoUsuario.Agregar( elUsuario );
-            elUsuario1 = daoUsuario.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( daoUsuario.ConsultLastUserID() ,
-                                                                "GianJose" , "1234" , new DateTime(2015, 2, 10) , "Activo" , elRol , 1 ));
+            elUsuario1 = daoUsuario.ConsultarXId( DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( daoUsuario.ConsultLastUserID() ,
+                                                  "GianJose" , "1234" , new DateTime(2015, 2, 10) , "Activo" , elRol , 1 ) );
             Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario1 ).Id == daoUsuario.ConsultLastUserID() );
             Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario1 ).nombreUsuario == "Daniel" );
             Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario1 ).contrasena == "1234" );
