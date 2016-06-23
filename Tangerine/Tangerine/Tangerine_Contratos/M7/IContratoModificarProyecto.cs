@@ -108,5 +108,10 @@ namespace Tangerine_Contratos.M7
         /// Encabezado del TextBox de descripcion del proyecto del proyecto
         /// </summary>
         TextBox descripcion { get; set; }
+
+        /// <summary>
+        /// Encabezado del TextBox de porcentaje de realizacion del proyecto del proyecto
+        /// </summary>
+        TextBox realizacion { get; set; }
     }
 }

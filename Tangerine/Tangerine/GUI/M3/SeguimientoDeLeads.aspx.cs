@@ -134,6 +134,7 @@ namespace Tangerine.GUI.M3
             {
                 presentador.Llenar(idClientePotencial);
                 presentador.ObtenerHistoricoLlamadas(idClientePotencial);
+                presentador.ObtenerHistoricoVisitas(idClientePotencial);
             }
             
         }

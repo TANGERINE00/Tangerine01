@@ -20,6 +20,9 @@ namespace Tangerine.GUI.M6
     {
         
         PresentadorAgregarPropuesta presenter;
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
 
         public AgregarPropuesta()
         {
@@ -35,6 +38,9 @@ namespace Tangerine.GUI.M6
             }
         }
 
+        /// <summary>
+        /// Accion del boton a presionar "Agregar"
+        /// </summary>
 
         protected void btnagregar_Click(object sender, EventArgs e)
         {

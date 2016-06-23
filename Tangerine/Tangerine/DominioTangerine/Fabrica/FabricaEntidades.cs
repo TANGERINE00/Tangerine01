@@ -293,6 +293,19 @@ namespace DominioTangerine.Fabrica
             }
             #endregion
 
+            #region Metodo para instaciar visitas
+            public static Entidad CrearSeguimientoXVisitas()
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente();
+            }
+            #endregion
+
+            #region Metodo para instaciar visitas constructor completo
+            public static Entidad CrearSeguimientoXVisitas(int id, DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo, fk);
+            }
+            #endregion
         #endregion
 
         #region Modulo 4
