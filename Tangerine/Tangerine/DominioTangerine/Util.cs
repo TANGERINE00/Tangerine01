@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,4 +12,4 @@ namespace DominioTangerine
 
         public static bool MASTER_FLAG = true;
     }
-}
+}*/
