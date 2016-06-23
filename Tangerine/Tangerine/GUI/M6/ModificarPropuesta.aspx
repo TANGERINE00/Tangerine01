@@ -66,13 +66,15 @@
                 <div class="box-body">
 
                     <div class="form-group">
-                        <label for="input_cliente">Cliente (compañía contratante)</label>
-                        <input type="input_cliente" class="form-control" id="cliente_id" runat="server" disabled="disabled">
+                       <label for="cliente_id">Cliente (compañía contratante)</label>
+                        <input class="form-control" id="cliente_id" runat="server" disabled="disabled">
                     </div>
 
                     <div class="form-group">
                         <label>Objeto del proyecto</label>
-                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"> </textarea>
+                        <label for="descripcion">Objeto del proyecto</label>
+                        <textarea class="form-control" rows="3" placeholder="Escribir ..." id="descripcion" runat="server"  /> 
+
                     </div>
                   
 
@@ -220,7 +222,7 @@
 
                     <asp:Button ID="botonModificarPro" class="btn btn-primary"
                         type="submit" runat="server"
-                        Text="Modificar" OnClick="botonModificarPro_Click"></asp:Button>
+                        Text="Modificar" OnClick="ModificarPropuesta_Click"></asp:Button>
                  
                         <a href="ConsultarPropuesta.aspx" class="btn btn-default pull-right">Regresar</a>               
                     

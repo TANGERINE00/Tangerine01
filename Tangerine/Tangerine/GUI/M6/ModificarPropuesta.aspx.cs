@@ -19,38 +19,37 @@ namespace Tangerine.GUI.M6
 {
     public partial class ModificarPropuesta : System.Web.UI.Page, IContratoModificarPropuesta
     {
-     
+
 
         public Propuesta Prueba;
         LogicaM4 logicacompania = new LogicaM4();
         public List<Requerimiento> req;
         public bool modi;
-        string company;
+        string idPropuesta;
 
-         PresentadorModificarPropuesta presenter;
+        PresentadorModificarPropuesta presenter;
 
         public ModificarPropuesta()
         {
             this.presenter = new PresentadorModificarPropuesta(this);
         }
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            company = Request.QueryString.Get("id");
+            idPropuesta = Request.QueryString.Get("id");
             presenter.llenarVista();
-   
+
         }
 
-  
-        protected void botonModificarPro_Click(object sender, EventArgs e)
+
+        protected void ModificarPropuesta_Click(object sender, EventArgs e)
         {
-           
             presenter.ModificarPropuesta();
 
-            Server.Transfer("ConsultarPropuesta.aspx", true);   
+            Server.Transfer("ConsultarPropuesta.aspx", true);
         }
 
-       public Literal Requerimientos
+        public Literal Requerimientos
         {
             get
             {
@@ -65,19 +64,28 @@ namespace Tangerine.GUI.M6
         public string ContenedorCompania
         {
             get { return cliente_id.Value; }
-            set { cliente_id.Value = value;  }
+            set { cliente_id.Value = value; }
         }
 
-        public string IdCompania {
-            get { return company; }
+        public string IdCompania
+        {
+            get
+            {
+                return cliente_id.Value;
+            }
+        }
+
+        public string IdPropuesta
+        {
+            get { return idPropuesta; }
         }
         public string Descripcion
         {
             get { return descripcion.Value; }
-            set { descripcion.Value = value;}
+            set { descripcion.Value = value; }
 
         }
-        
+
         public string ComboDuracion
         {
             get { return comboDuracion.Value; }
@@ -85,8 +93,8 @@ namespace Tangerine.GUI.M6
         }
         public string TextoDuracion
         {
-          
-          get { return textoDuracion.Value; }
+
+            get { return textoDuracion.Value; }
             set { textoDuracion.Value = value; }
         }
         public string DatePickerUno

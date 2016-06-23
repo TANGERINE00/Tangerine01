@@ -28,7 +28,7 @@ namespace Tangerine.GUI.M6 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cliente_id;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cliente_id;
         
         /// <summary>
         /// Control descripcion.
