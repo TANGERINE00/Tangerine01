@@ -32,14 +32,6 @@ namespace LogicaTangerine.Comandos.M10
             }
         }
 
-       
-        //public override Boolean Ejecutar()
-        //{
-
-        //    DAOEmpleado E = FabricaDAOSqlServer.CrearDAOEmpleado();
-        //    return E.Agregar(elEmpleado);
-        //}
-
         public Entidad elEmpleado { get; set; }
     }
 }
