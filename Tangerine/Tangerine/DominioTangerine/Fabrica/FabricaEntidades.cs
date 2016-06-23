@@ -842,8 +842,6 @@ namespace DominioTangerine.Fabrica
 
         }
 
-       
-
         public static Entidad ListarEmpleadoId(int empId, string empPNombre, string empSNombre, string empPApellido,
                                                string empSApellido, string empGenero, int empCedula, DateTime empFecha,
                                                string empActivo, string empNivelEstudio, string empEmailEmployee,

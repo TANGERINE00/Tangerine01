@@ -11,25 +11,11 @@ namespace DatosTangerine.InterfazDAO.M10
 
     public interface IDAOEmpleado : IDao
     {
-
-        //List<Entidad> ConsultarXId(Entidad empleado);    
-
-
-        //bool AgregarEmpleado(Empleado elEmpleado);
-
-
-        List<Entidad> ConsultarTodos();
-
-        
-            /// <summary> Firma de Método para agregar un empleado </summary>
-            /// <param name="elEmpleado"> de tipo Empleado</param>
-            /// <returns>Retorna true cuando se agrega exitosamente</returns>
-            //bool AgregarEmpleado(Empleado elEmpleado);
-
-            /// <summary> Firma de Método para consultar todos los empleados </summary>
-            /// <param></param>
+            /// <summary>
+            /// Firma metodo para consultar todos los empleados
+            /// </summary>
             /// <returns></returns>
-           // List<Entidad> ConsultarTodos();
+            List<Entidad> ConsultarTodos();
 
             /// <summary>
             /// Firma de Método para modificar todos los empleados por su estatus
