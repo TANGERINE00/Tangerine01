@@ -8,7 +8,7 @@ using DominioTangerine;
 
 namespace DatosTangerine.InterfazDAO.M6
 {
-    public interface IDAORequerimiento : IDao<Entidad, bool, Entidad>
+    public interface IDAORequerimiento : IDao
     {
 
         List<Entidad> ConsultarRequerimientosXPropuesta(String id);

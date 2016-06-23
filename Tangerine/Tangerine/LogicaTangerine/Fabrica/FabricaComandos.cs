@@ -253,6 +253,16 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoAgregarClientePotencial(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoEliminarClientePotencial(Entidad cliente)
+        {
+            return new ComandoEliminarClientePotencial(cliente);
+        }
+
+        public static Comando<int> ObtenerComandoUltimoIdClientePotencial()
+        {
+            return new ComandoUltimoIdClientePotencial();
+        }
         #endregion
 
         #region Modulo 4
@@ -622,10 +632,7 @@ namespace LogicaTangerine.Fabrica
         /// </summary>
         /// <param name="proyecto">entidad de tipo proyecto sobre la cual se va a trabajar el comando</param>
         /// <returns>comando con entidad tipo proyecto</returns>
-        public static Comando<Entidad> ObtenerComandoConsultarXIdproyecto(Entidad proyecto)
-        {
-            return new ComandoConsultarXIdProyecto(proyecto);
-        }
+
 
         /// <summary>
         /// Método para instancear el ComandoConsultarXIdProyectoContacto
@@ -728,6 +735,16 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoAgregarContactos(proyecto);
         }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarContactos.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los contactos.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<List<Entidad>> ObtenerComandoConsultarEmpleadosXIdProyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarEmpleadosXIdProyecto(proyecto);
+        }
         #endregion
 
         #region Modulo 8
@@ -763,16 +780,6 @@ namespace LogicaTangerine.Fabrica
         }
 
         /// <summary>
-        /// metodo para crear comando que permite consultar una compania dada una factura
-        /// </summary>
-        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
-        public static Comando<Entidad> CrearConsultarCompaniaFactura(Entidad factura)
-        {
-            return new ComandoConsultarCompaniaFactura(factura);
-        }
-
-        /// <summary>
         /// metodo para crear comando que permite consultar todas las facturas de una compania
         /// </summary>
         /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
@@ -790,16 +797,6 @@ namespace LogicaTangerine.Fabrica
         public static Comando<List<Entidad>> CrearConsultarFacturasPagadasCompania(Entidad compania)
         {
             return new ComandoConsultarFacturasPagadasCompania(compania);
-        }
-
-        /// <summary>
-        /// metodo para crear comando que permite consultar el proyecto de una factura
-        /// </summary>
-        /// <param name="factura">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
-        public static Comando<Entidad> CrearConsultarProyectoFactura(Entidad factura)
-        {
-            return new ComandoConsultarProyectoFactura(factura);
         }
 
         /// <summary>
@@ -855,6 +852,11 @@ namespace LogicaTangerine.Fabrica
 
         #region Modulo 9
 
+        /// <summary>
+        /// Metodo para crear el comando que permite Agregar un pago
+        /// </summary>
+        /// <param name="entidad">Entidad con la informacion que sera agregada a la BD</param>
+        /// <returns>Regresa el objeto ComandoAgregarPago para poder ejecutarlo</returns>
         public static Comandos.M9.ComandoAgregarPago cargarPago(Entidad entidad)
         {
             return new Comandos.M9.ComandoAgregarPago(entidad);
@@ -863,7 +865,7 @@ namespace LogicaTangerine.Fabrica
         /// metodo para crear comando que permite consultar todos los pagos de una compania
         /// </summary>
         /// <param name="compania">entidad sobre la cual se va a trabajar el comando</param>
-        /// <returns></returns>
+        /// <returns>Regresa el objeto ComandoConsultarPagos para poder ejecutarlo</returns>
         public static Comando<List<Entidad>> ConsultarPagosCompania(Entidad compania)
         {
             return new ComandoConsultarPagos(compania);

@@ -35,9 +35,6 @@ cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','w
 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
 cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,1);
 
-insert into Seguimiento values (1,'20/06/2016','Llamada','Solicitud de cita', 10);
-insert into Seguimiento values (2,'21/06/2016','Llamada','Confirmacion de cita', 10);
-insert into Seguimiento values (3,'22/06/2016','Visita','Primera reunion para recoleccion de información', 10);
 ------------------------------------------------------------------------------------------------------------------
 -- COMPANIAS --
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
@@ -51,81 +48,81 @@ values ('Prueba', 'J-756487568', 'prueba@gmail.com', '0412-2362151', 'TEST', '12
 
 insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
 values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
--- FIN COMPANIAS --
+-- FIN COMPANIAS -- 
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (1,'Modulo de gestion de empleados','Se tratara de un modulo de gestion de empleados','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (1,'GNFRNCO160622044206','Se tratara de un modulo de gestion de empleados','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (2,'Modulo de gestion de empresas','Se tratara de un modulo de gestion de empresas','Meses','4','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (2,'GNFRNCO160622043543','Se tratara de un modulo de gestion de empresas','Meses','4','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (3,'Modulo de gestion de contactos','Se tratara de un modulo de gestion de contactos','Meses','4','Mensual','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (3,'GNFRNCO164534532222','Se tratara de un modulo de gestion de contactos','Meses','4','Mensual','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (4,'Modulo de gestion de listas','Se tratara de un modulo de gestion de listas','Meses','4','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (4,'GNFRNCO160345340407','Se tratara de un modulo de gestion de listas','Meses','4','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (5,'Modulo de gestion de Roles','Se tratara de un modulo de gestion de Roles','Dias','4','Por cuotas','Aprobado','Euro',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (5,'GNFRNCO164535312322','Se tratara de un modulo de gestion de Roles','Dias','4','Por cuotas','Aprobado','Euro',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (6,'Modulo de gestion de Usuarios','Se tratara de un modulo de gestion de Ususarios','Dias','5','Por cuotas','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+VALUES (6,'GNFRNCO342342132377','Se tratara de un modulo de gestion de Ususarios','Dias','5','Por cuotas','Aprobado','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 SET IDENTITY_INSERT PROPUESTA ON
 insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (7,'Modulo de prueba','Se tratara de un modulo de gestion de pruebas','Dias','8','Por cuotas','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
-SET IDENTITY_INSERT PROPUESTA OFF
-
-
-
-
-
-SET IDENTITY_INSERT PROPUESTA ON
-insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (8,'Sistema gestion de cuentas','Se tratara de un modulo de gestion de transacciones','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
-SET IDENTITY_INSERT PROPUESTA OFF
-
-
-SET IDENTITY_INSERT PROPUESTA ON
-insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (10,'Modulo tarjetas Innominadas','Se trata de creacion de tarjetas' ,'Dias','24','Mensual','Pendiente','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),15000,3);
-SET IDENTITY_INSERT PROPUESTA OFF
-
-SET IDENTITY_INSERT PROPUESTA ON
-insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-VALUES (11,'Modulo centro de contacto','Modulo de gestion de usuarios','Meses','8','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),2000,4);
+VALUES (7,'GNFRNCO091393209444','Se tratara de un modulo de gestion de pruebas','Dias','8','Por cuotas','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
 SET IDENTITY_INSERT PROPUESTA OFF
 
 
 
 
 
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (8,'GNFRNCO324565345341','Se tratara de un modulo de gestion de transacciones','Meses','3','Mensual','Aprobado','Bolivar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,1);
+SET IDENTITY_INSERT PROPUESTA OFF
 
-INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id)
+
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (10,'GNFRNCO40919320322','Se trata de creacion de tarjetas' ,'Dias','24','Mensual','Pendiente','Dolar',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),15000,3);
+SET IDENTITY_INSERT PROPUESTA OFF
+
+SET IDENTITY_INSERT PROPUESTA ON
+insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
+VALUES (11,'GNFRNCO34532342343','Modulo de gestion de usuarios','Meses','8','Mensual','Aprobado','Bitcoin',5,convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),2000,4);
+SET IDENTITY_INSERT PROPUESTA OFF
+
+
+
+
+
+
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (1,20183273,'Masculino','Armando','Pedro','Perez','Sanchez',convert(VARCHAR(10),'02-04-1990',110),'bajo','giantufano@gmail.com','Activo',8);
 
-INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id)
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (2,10465723,'Masculino','Jose','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',8);
 
-INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id)
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (3,18529272,'Femenino','Karla','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',9);
 
-INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id)
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (4,10465723,'Masculino','Ramon','Manuel','Armas','De la casa',convert(VARCHAR(10),'12-06-1994',110),'medio','giantufano@gmail.com','Activo',10);
 
-INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id)
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (5,18529272,'Femenino','Petra','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',8);
 
 
@@ -146,32 +143,32 @@ VALUES('Pedro','Caballero','Finanzas','Gerente','04162345678','giantufano@gmail.
 
 SET IDENTITY_INSERT PROYECTO ON
 GO
-insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id)
+insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
 VALUES (1,'ProyectoDS','CodigoPDS',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de empleados','60','En desarrollo','','Mensual',1,1,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 SET IDENTITY_INSERT PROYECTO ON
 GO
-insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id)
+insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
 VALUES (2,'ProyectoEMP','CodigoEMP',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de empresas','60','Cancelado','','Mensual',2,1,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 SET IDENTITY_INSERT PROYECTO ON
 GO
-insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id)
+insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
 VALUES (3,'ProyectoCON','CodigoCON',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de contactos','60','Completado','','Mensual',3,1,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 SET IDENTITY_INSERT PROYECTO ON
 GO
-insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id)
+insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
 VALUES (4,'ProyectoLIS','CodigoLIS',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de listas','60','Completado a destiempo','','Por Entregas',4,1,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 SET IDENTITY_INSERT PROYECTO ON
 GO
-insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id)
-VALUES (5,'ProyectoNFL','CodigoNFL',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de la NFL','60','En desarrollo','','Mensual',4,2,1);
+insert into dbo.PROYECTO(proy_id, proy_nombre, proy_codigo, proy_fecha_inicio, proy_fecha_est_fin, proy_costo, proy_descripcion, proy_realizacion, proy_estatus, proy_razon, proy_acuerdo_pago, fk_propuesta_id, fk_com_id, fk_gerente_id) 
+VALUES (5,'ProyectoNFL','CodigoNFL',convert(VARCHAR(10),'10-03-2016',110),convert(VARCHAR(10),'10-08-2016',110),10000,'Se tratara de un modulo de gestion de la NFL','60','En desarrollo','','Mensual',5,2,1);
 SET IDENTITY_INSERT PROYECTO OFF
 
 
@@ -197,25 +194,25 @@ VALUES(3,4);
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
 VALUES (1,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Dolares','Proyecto de diseño',0,1,1);
 SET IDENTITY_INSERT FACTURA OFF
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
 VALUES (2,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Bolivares','Proyecto de calidad',0,1,2);
 SET IDENTITY_INSERT FACTURA OFF
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
 VALUES (3,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Euros','Analisis Inicial',2,1,3);
 SET IDENTITY_INSERT FACTURA OFF
 
 SET IDENTITY_INSERT FACTURA ON
 GO
-insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id)
+insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
 VALUES (4,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Dolares','Analisis Final',1,1,4);
 SET IDENTITY_INSERT FACTURA OFF
 
@@ -342,7 +339,7 @@ INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
      VALUES
            ('prueba1',
            'descripcion1',
-           'Modulo de prueba',
+           'GNFRNCO160622044206',
            7);
 
 INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
@@ -353,7 +350,7 @@ INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
      VALUES
            ('prueba2',
            'descripcion2',
-           'Modulo de prueba',
+           'GNFRNCO160622044206',
            7);
 INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
            ([req_codigo]
@@ -363,7 +360,7 @@ INSERT INTO [BDTangerine].[dbo].[REQUERIMIENTO]
      VALUES
            ('prueba3',
            'descripcion3',
-           'Modulo de prueba',
+           'GNFRNCO160622044206',
            7);
 --------------------------FIN DE INSERTS DE REQUERIMIENTOS---------------------------
 
@@ -388,7 +385,7 @@ insert into CARGO_EMPLEADO values(
 insert into cargo_empleado values ('12/06/2013', null, 'Medio Tiempo',20.1,2,4);
 insert into cargo_empleado values ('01/04/2012', null, 'Medio Tiempo',50,1,5);
 
-INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id)
+INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 VALUES (10,1221212,'Masculino','Antonio','Juan','Garcia','Gobea',convert(VARCHAR(10),'09-10-1992',110),'alto','antonio11346@gmail.com','Activo',8);
 
 

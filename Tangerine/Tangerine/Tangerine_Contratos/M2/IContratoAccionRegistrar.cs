@@ -43,5 +43,15 @@ namespace Tangerine_Contratos.M2
             get;
             set;
         }
+
+        /// <summary>
+        /// Encabezado para excepciones
+        /// </summary>
+        string msjError
+        {
+            get;
+            set;
+        }
+
     }
 }

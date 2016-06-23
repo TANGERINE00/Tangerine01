@@ -98,9 +98,11 @@
     <Compile Include="Comandos\M3\ComandoAgregarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoEliminarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoPromoverClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoUltimoIdClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
     <Compile Include="Comandos\M4\ComandoConsultarLugarXID.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Comandos\M6\ComandoConsultarNumeroRequerimientos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarContactos.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarEmpleados.cs" />
+    <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoUltimoIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoAgregarProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoModificarProyecto.cs" />
@@ -138,7 +141,6 @@
     <Compile Include="Comandos\M7\ComandoGenerarCodigoProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoCalcularPagoMensual.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarAcuerdoPagoMensual.cs" />
-    <Compile Include="Comandos\M7\ComandoConsultarContactoNombrePropuestaId.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarContactosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarEmpleadosXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarTodosGerentes.cs" />
@@ -157,11 +159,9 @@
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />
-    <Compile Include="Comandos\M8\ComandoConsultarProyectoFactura.cs" />
     <Compile Include="Comandos\M8\ComandoAgregarFactura.cs" />
     <Compile Include="Comandos\M8\ComandoAnularFactura.cs" />
     <Compile Include="Comandos\M8\ComandoBuscarMontoRestanteFactura.cs" />
-    <Compile Include="Comandos\M8\ComandoConsultarCompaniaFactura.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarFacturasCompania.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarFacturasPagadasCompania.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarTodosFactura.cs" />

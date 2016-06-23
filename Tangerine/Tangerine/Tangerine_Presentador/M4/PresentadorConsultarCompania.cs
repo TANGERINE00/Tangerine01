@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Tangerine_Contratos.M4;
 using LogicaTangerine;
 using DominioTangerine;
+using ExcepcionesTangerine.M4;
 
 namespace Tangerine_Presentador.M4
 {
@@ -28,33 +29,34 @@ namespace Tangerine_Presentador.M4
 
         #region CargarInformacionCompania
 
-       /* public void CargarCompania() 
+        public Boolean BotonHabilitarInhabilitar(int typeHab, int idComp) 
         {
-            Compania laCompania;
-            int idComp, typeHab;
             try
             {
-                typeHab = int.Parse(Request.QueryString["typeHab"]);
-                idComp = int.Parse(Request.QueryString["idComp"]);
-                laCompania = prueba.ConsultCompany(idComp);
+                Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                ((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id = idComp;
+                
                 if (typeHab == 1)
                 {
-                    prueba.EnableCompany(laCompania);
+                    Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearHabilitarCompania(compania);
+                    comando.Ejecutar();
 
                 }
                 if (typeHab == 0)
                 {
-                    prueba.DisableCompany(laCompania);
+                    Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearDeshabilitarCompania(compania);
+                    comando.Ejecutar();
                 }
+                return true;
             }
-            catch
+            catch (ExceptionM4Tangerine ex)
             {
+                _vista.msjError = ex.Message;
+                return false;
             }
+        }
 
-            imprimirTabla();  
-        }*/
-
-        public void ImprimirCompania() 
+        public Boolean ImprimirCompania(string Rol) 
         {
             try
             {
@@ -65,11 +67,9 @@ namespace Tangerine_Presentador.M4
                 {
                     _vista.Tabla.Text += RecursosPresentadorM4.OpenTR;
                     _vista.Tabla.Text += RecursosPresentadorM4.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)company).NombreCompania.ToString() + RecursosPresentadorM4.CloseTD;
-                    //company += ResourceGUIM4.OpenTD + theCompany.AcronimoCompania.ToString() + ResourceGUIM4.CloseTD;
                     _vista.Tabla.Text += RecursosPresentadorM4.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)company).RifCompania + RecursosPresentadorM4.CloseTD;
                     _vista.Tabla.Text += RecursosPresentadorM4.OpenTD + ((DominioTangerine.Entidades.M4.CompaniaM4)company).TelefonoCompania + RecursosPresentadorM4.CloseTD;
-                    //company += ResourceGUIM4.OpenTD + theCompany.FechaRegistroCompania.ToString() + ResourceGUIM4.CloseTD;
-
+               
                     if (((DominioTangerine.Entidades.M4.CompaniaM4)company).StatusCompania.Equals(1))
                     {
                         _vista.Tabla.Text += RecursosPresentadorM4.OpenTD + RecursosPresentadorM4.habilitado + ((DominioTangerine.Entidades.M4.CompaniaM4)company).Id +
@@ -82,20 +82,21 @@ namespace Tangerine_Presentador.M4
                     }
 
                     //Acciones de cada compania  
-                    imprimirBotonesAccion(company);
+                    imprimirBotonesAccion(company,Rol);
                 }
+                return true;
             }
-            catch(Exception ex)
+            catch (ExceptionM4Tangerine ex)
             {
-                throw ex;
+                _vista.msjError = ex.Message;
+                return false;
             }
         }
 
-        public void imprimirBotonesAccion(Entidad theCompany)
+        public void imprimirBotonesAccion(Entidad theCompany, string Rol)
         {
-            /*if (HttpContext.Current.Session["Rol"].Equals("Administrador") ||
-                        HttpContext.Current.Session["Rol"].Equals("Gerente"))
-            {*/
+            if (Rol.Equals("Administrador") || Rol.Equals("Gerente"))
+            {
                 _vista.Tabla.Text += RecursosPresentadorM4.OpenTD + RecursosPresentadorM4.OpenDivRow +
                 RecursosPresentadorM4.OpenBotonInfo + theCompany.Id + //Boton Info 
                 RecursosPresentadorM4.CloseBotonParametro + RecursosPresentadorM4.OpenBotonEdit + theCompany.Id + //Boton Edit 
@@ -106,18 +107,16 @@ namespace Tangerine_Presentador.M4
                 RecursosPresentadorM4.CloseTD;
 
                 _vista.Tabla.Text += RecursosPresentadorM4.CloseTR;
-           // }
-           /* else if (HttpContext.Current.Session["Rol"].Equals("Programador") ||
-                     HttpContext.Current.Session["Rol"].Equals("Director"))
+            }
+            else if (Rol.Equals("Programador") || Rol.Equals("Director"))
             {
                 _vista.Tabla.Text += RecursosPresentadorM4.OpenTD + RecursosPresentadorM4.OpenDivRow +
                 RecursosPresentadorM4.OpenBotonInfo + theCompany.Id + //Boton Info 
                 RecursosPresentadorM4.CloseBotonParametro + RecursosPresentadorM4.BotonInvol + theCompany.Id + //Boton Contacto
                 RecursosPresentadorM4.CloseBotonParametro + RecursosPresentadorM4.CloseDiv +
                 RecursosPresentadorM4.CloseTD;
-
                 _vista.Tabla.Text += RecursosPresentadorM4.CloseTR;
-            }*/
+            }
         }
         #endregion
     }

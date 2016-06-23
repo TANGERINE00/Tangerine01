@@ -10,12 +10,14 @@ using System.Web.UI.WebControls;
 using Tangerine_Contratos.M2;
 using Tangerine_Presentador.M2;
 
+
 namespace Tangerine.GUI.M2
 {
     public partial class AccionRegistrar : System.Web.UI.Page, IContratoAccionRegistrar
     {
         private PresentadorAccionRegistrar presentador;
         private bool existenciaUsuario;
+        string error;
 
         #region Contrato
 
@@ -53,6 +55,21 @@ namespace Tangerine.GUI.M2
             {
                 get { return textFicha_M2.Value; }
                 set { textFicha_M2.Value = value; }
+            }
+            
+            /// <summary>
+            /// Manejo de errores
+            /// </summary>
+            public string msjError
+            {
+                get
+                {
+                    return error;
+                }
+                set
+                {
+                    error = value;
+                }
             }
 
         #endregion
@@ -92,8 +109,14 @@ namespace Tangerine.GUI.M2
 
             if (!existenciaUsuario)
             {
-                presentador.registrar();
-                Response.Redirect("../M2/RegistroUsuario.aspx");
+                if (presentador.registrar())
+                {
+                    Response.Redirect("../M2/RegistroUsuario.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                }
             }
             else
             {

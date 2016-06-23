@@ -65,14 +65,9 @@ namespace Tangerine_Presentador.M4
                 entidad = comando1.Ejecutar();
                 Comando<List<Entidad>> comando2 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
                 Lugares = comando2.Ejecutar();
-                int i=0;
-                    foreach (Entidad Lugar in Lugares)
-                    {
-                        DominioTangerine.Entidades.M4.LugarDireccionM4 lugar2 = (DominioTangerine.Entidades.M4.LugarDireccionM4)Lugar;
-                        if (i == _vista.inputDireccion1.SelectedIndex)
-                            _idLugar = lugar2.LugId;
-                        i++;
-                    }
+                for (int j = 0; j < Lugares.Count; j++)
+                    if (j == _vista.inputDireccion1.SelectedIndex)
+                        _idLugar = ((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugId;    
                 if (_vista.inputPresupuesto1.Equals(""))
                     _vista.inputPresupuesto1 = "0";
                 DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(id,_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),

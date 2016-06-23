@@ -117,39 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Codigo" xml:space="preserve">
-    <value>DS-900</value>
-    <comment>Codigo de error en la conexion con la BD</comment>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
   </data>
-  <data name="CodigoErrorFormato" xml:space="preserve">
-    <value>DS-902</value>
-  </data>
-  <data name="CodigoErrorNull" xml:space="preserve">
-    <value>DS-903</value>
-  </data>
-  <data name="CodigoErrorSQL" xml:space="preserve">
-    <value>DS-901</value>
-  </data>
-  <data name="Mensaje" xml:space="preserve">
-    <value>Error con la Conexion en la Base de Datos, no se pudo abrir la conexion</value>
-    <comment>Mensaje al dar error en la conexion con la BD</comment>
-  </data>
-  <data name="MensajeErrorFormato" xml:space="preserve">
-    <value>Error de Formato</value>
-  </data>
-  <data name="MensajeErrorNull" xml:space="preserve">
-    <value>Error, elemento Null</value>
-  </data>
-  <data name="MensajeErrorSQL" xml:space="preserve">
-    <value>Error al realizar la conexion</value>
-  </data>
-  <data name="MensajeFinInfoLogger" xml:space="preserve">
-    <value>Salida exitosa del Método</value>
-  </data>
-  <data name="MensajeGenerico" xml:space="preserve">
-    <value />
-  </data>
-  <data name="MensajeInicioInfoLogger" xml:space="preserve">
-    <value>Entrada en el Método</value>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
   </data>
 </root>

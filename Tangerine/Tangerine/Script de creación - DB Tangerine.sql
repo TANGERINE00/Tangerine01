@@ -954,7 +954,9 @@ AS
  BEGIN
     INSERT INTO CONTACTO(con_nombre, con_apellido, con_departamento, con_cargo, con_telefono, con_correo, con_tipo_emp, fk_id_com_lead)
 	VALUES(@nombre,	@apellido, @departamento, @cargo, @telefono, @correo, @tipo_comp, @id_empresa);
+ commit;
  end;
+
 GO
 --Consultar un contacto por su id
 CREATE PROCEDURE M5_ConsultarContactoId
@@ -975,6 +977,7 @@ AS
  BEGIN
     INSERT INTO CONTACTO_PROYECTO(fk_con_id, fk_proy_id)
 	VALUES(@id_contacto,@id_proyecto);
+ commit;
  end;
 GO
 --Eliminar a contacto_proyecto
@@ -984,6 +987,7 @@ CREATE PROCEDURE M5_EliminarContactoProyecto
 AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id_contacto AND fk_proy_id = @id_proyecto;
+ commit;
  end;
 GO
 --Eliminar de contacto y contacto_proyecto por id
@@ -993,6 +997,7 @@ AS
  BEGIN
     DELETE FROM CONTACTO_PROYECTO WHERE fk_con_id = @id;
 	DELETE FROM CONTACTO WHERE con_id = @id;
+ commit;
  END;
 GO
 --Modificar un contacto
@@ -1009,6 +1014,7 @@ AS
     update CONTACTO set con_nombre = @nombre, con_apellido = @apellido, con_departamento = @departamento,
     con_cargo = @cargo, con_telefono = @telefono, con_correo = @correo
     where con_id = @id;
+ commit;
  end;
 GO
 --Consultar todos los contactos
