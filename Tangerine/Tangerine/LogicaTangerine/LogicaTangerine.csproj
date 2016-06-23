@@ -102,6 +102,7 @@
     <Compile Include="Comandos\M3\ComandoListarTodosClientesPotenciales.cs" />
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoPromoverClientePotencial.cs" />
+    <Compile Include="Comandos\M3\ComandoSeguimientoDeLlamadas.cs" />
     <Compile Include="Comandos\M3\ComandoUltimoIdClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />

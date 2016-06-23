@@ -3,6 +3,7 @@ using DatosTangerine.InterfazDAO.M5;
 using DominioTangerine;
 using DominioTangerine.Entidades.M5;
 using DominioTangerine.Fabrica;
+using ExcepcionesTangerine.M5;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -216,6 +217,113 @@ namespace PruebasUnitarias.M5
 
             Assert.AreEqual(_contadorContactos, 4);
         }
+
+        // Pruebas de Excepciones 
+
+        /// <summary>
+        /// Metodo para probar NullReferenceException en el método Agregar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(AgregarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoAgregarNull()
+        {
+            Entidad contacto = null;
+            _respuesta = _daoContacto.Agregar(contacto);
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceException en el método Eliminar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(EliminarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOConactoEliminarNull()
+        {
+            Entidad contacto = null;
+            _respuesta = _daoContacto.Eliminar(contacto);
+
+        }
+        /// <summary>
+        /// Método para probar NullReferenceException en el método Modificar() de DAOContacto
+        /// </summary>
+        /// 
+        [Test]
+        [ExpectedException(typeof(ModificarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoModificarNull()
+        {
+            Entidad contacto = null;
+            _respuesta = _daoContacto.Modificar(contacto);
+
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceException en el método ConsultarXId() de DAOContacto
+        /// </summary>
+        /// 
+        [Test]
+        [ExpectedException(typeof(ConsultarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoConsultarXIdNull()
+        {
+            Entidad contacto = null;
+            Entidad contactoxid = _daoContacto.ConsultarXId(contacto);
+
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceExcepcion en el método AgregarContactoAProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(AgregarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoAgregarContactoAProyectoNull()
+        {
+            Entidad contacto = null;
+            Entidad proyecto = null;
+            _respuesta = _daoContacto.AgregarContactoAProyecto(contacto, proyecto);
+        }
+
+        /// <summary>
+        /// Método para probar NullReferenceExcepcion en el método ContactosPorProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(ConsultarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoContactosPorProyectoNull()
+        {
+            Entidad proyecto = null;
+            _listaContactos = _daoContacto.ContactosPorProyecto(proyecto);
+
+        }
+
+        /// <summary>
+        /// Método para probar el método EliminarContactoDeProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(EliminarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoEliminarContactoDeProyectoNull()
+        {
+            Entidad contacto = null;
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            proyecto.Id = 1;
+
+            _respuesta = _daoContacto.EliminarContactoDeProyecto(contacto, proyecto);
+
+        }
+        /// <summary>
+        /// Método para probar el método ContactosNoPertenecenAProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException(typeof(ConsultarContactoException), ExpectedMessage = "Ingreso de un argumento con valor invalido")]
+        public void PruebaDAOContactoContactosNoPertenecenAProyectoNull()
+
+        {
+            Entidad proyecto = null;
+            _listaContactos = _daoContacto.ContactosNoPertenecenAProyecto(proyecto);
+
+        }
+
         #endregion
+
     }
+
+
 }
+
+
