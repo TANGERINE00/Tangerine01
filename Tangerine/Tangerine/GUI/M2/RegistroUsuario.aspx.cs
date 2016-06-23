@@ -15,6 +15,8 @@ namespace Tangerine.GUI.M2
     public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
         private PresentadorRegistroUsuario _presentador;
+        string error;
+        private bool errorManejo;
 
         /// <summary>
         /// Constructor de PresentadorRegistroUsuario
@@ -41,6 +43,21 @@ namespace Tangerine.GUI.M2
                 }
             }
 
+            /// <summary>
+            /// Manejo de errores
+            /// </summary>
+            public string msjError
+            {
+                get
+                {
+                    return error;
+                }
+                set
+                {
+                    error = value;
+                }
+            }
+
         #endregion
 
         /// <summary>
@@ -52,7 +69,11 @@ namespace Tangerine.GUI.M2
         {
             if (!IsPostBack)
             {
-                _presentador.inicioVista();
+                errorManejo = _presentador.inicioVista();
+                if(!errorManejo)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                }
             }
         }
     }

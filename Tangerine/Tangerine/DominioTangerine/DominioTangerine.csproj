@@ -66,6 +66,7 @@
     <Compile Include="Entidades\M2\RolM2.cs" />
     <Compile Include="Entidades\M2\UsuarioM2.cs" />
     <Compile Include="Entidades\M3\ClientePotencial.cs" />
+    <Compile Include="Entidades\M3\SeguimientoCliente.cs" />
     <Compile Include="Entidades\M4\CompaniaM4.cs" />
     <Compile Include="Entidades\M4\LugarDireccionM4.cs" />
     <Compile Include="Entidades\M5\ContactoM5.cs" />

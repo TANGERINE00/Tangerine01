@@ -735,6 +735,16 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoAgregarContactos(proyecto);
         }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarContactos.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los contactos.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<List<Entidad>> ObtenerComandoConsultarEmpleadosXIdProyecto(Entidad proyecto)
+        {
+            return new ComandoConsultarEmpleadosXIdProyecto(proyecto);
+        }
         #endregion
 
         #region Modulo 8

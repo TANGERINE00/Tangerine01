@@ -38,12 +38,12 @@
 
                         <div class="form-group">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
+                            <input type="text" class="form-control" id="userDefault" placeholder="Usuario" maxlength="20" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
                         </div>
 
                         <div class="form-group">
                             <label for="labelContraseña_M2">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
+                            <input type="password" class="form-control" id="passwordDefault" placeholder="contraseña" maxlength="10" runat="server" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
                         </div>
 
                         <div class="form-group" runat="server">
