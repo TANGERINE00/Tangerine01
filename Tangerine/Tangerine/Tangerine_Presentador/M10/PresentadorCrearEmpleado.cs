@@ -183,12 +183,14 @@ namespace Tangerine_Presentador.M10
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson.Text;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson.Text;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
-            ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
+            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress.Text;
+            //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific.Text;
             ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion=NuevaDireccion();
-            
 
-            
+
+            //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto Propuesta 'p'.
+            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado(Parametro);
+            Confirmacion = comando.Ejecutar();
                
 
             }

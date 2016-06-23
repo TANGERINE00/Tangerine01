@@ -124,18 +124,7 @@ namespace Tangerine.GUI.M1
             }
 
         }
-
-        private void FillSelectedListCountry()
-        {
-            LogicaM10 componentes = new LogicaM10();
-            int x = 1;
-            SelectedListCountry.Items.Insert(0, "Seleccione un pais");
-            foreach (LugarDireccion paises in componentes.ItemsForListCountry())
-            {
-                SelectedListCountry.Items.Insert(x, paises.LugNombre);
-                x++;
-            }
-        }
+        
 
         private void FillSelectedListState()
         {
