@@ -1753,7 +1753,7 @@ GO
 
 
 ---- StoredProcedure HISTORICO Pago ----
-CREATE PROCEDURE M9_historico_pago_por_compania
+CREATE PROCEDURE M9_HistoricoPagoCompania
 @id_compania int
 AS
 	BEGIN

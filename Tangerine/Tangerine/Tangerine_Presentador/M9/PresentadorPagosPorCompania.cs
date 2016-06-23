@@ -42,15 +42,15 @@ namespace Tangerine_Presentador.M9
 
                 if (listaP.Count() < 1)
                 {
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
-                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociadas" + 
+                    vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
                         RecursoPresentadorM9.CloseTD;
 
                 }

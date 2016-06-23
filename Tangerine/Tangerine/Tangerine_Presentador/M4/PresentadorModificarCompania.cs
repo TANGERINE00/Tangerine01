@@ -17,10 +17,18 @@ namespace Tangerine_Presentador.M4
     {
         IContratoAgregarCompania _vista;
         List<Entidad> Lugares;
+
+        /// <summary>
+        /// Constructor que permite inicializar la vista dentro del presentador
+        /// </summary>
         public PresentadorModificarCompania(IContratoAgregarCompania vista)
         {
             this._vista = vista;
         }
+
+        /// <summary>
+        /// Metodo que permite cargar una compania en especifico por pantalla para ser modificada
+        /// </summary>
 
         public Boolean CargarCompania(int id)
         {
@@ -52,6 +60,10 @@ namespace Tangerine_Presentador.M4
                 return false;
             }
         }
+
+        /// <summary>
+        /// Metodo que permite modificar la compania previamente consultada
+        /// </summary>
 
         public Boolean ModificarCompania(int id) 
         {
@@ -85,6 +97,9 @@ namespace Tangerine_Presentador.M4
             }
         }
 
+        /// <summary>
+        /// Metodo que permite cargar los lugares registrados dentro de la base de datos para el comboBox de lugar
+        /// </summary>
         public void CargarLugares() {
             Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXNombreID();
             Lugares = comando.Ejecutar();
