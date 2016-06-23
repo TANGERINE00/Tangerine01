@@ -34,15 +34,16 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
             try
             {
                 Comando<DominioTangerine.Entidad> theComando = FabricaComandos.obtenerComandoObtenerRolUsuarioPorNombre( _nombreRol );
-                LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre comando = (LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre)theComando;
+                LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre comando
+                    = ( LogicaTangerine.Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre )theComando;
                 DominioTangerine.Entidad theRol = comando.Ejecutar();
-                DominioTangerine.Entidades.M2.RolM2 rol = (DominioTangerine.Entidades.M2.RolM2)theRol;
+                DominioTangerine.Entidades.M2.RolM2 rol = ( DominioTangerine.Entidades.M2.RolM2 )theRol;
 
-                foreach (DominioTangerine.Entidades.M2.MenuM2 m in rol.menu)
+                foreach ( DominioTangerine.Entidades.M2.MenuM2 m in rol.menu )
                 {
-                    foreach (DominioTangerine.Entidades.M2.OpcionM2 o in m.opciones)
+                    foreach ( DominioTangerine.Entidades.M2.OpcionM2 o in m.opciones )
                     {
-                        lista.Add(o.nombre);
+                        lista.Add( o.nombre );
                     }
                 }
             }
