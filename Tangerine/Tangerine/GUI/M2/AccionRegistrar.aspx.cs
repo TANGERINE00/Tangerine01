@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using Tangerine_Contratos.M2;
 using Tangerine_Presentador.M2;
 
+
 namespace Tangerine.GUI.M2
 {
     public partial class AccionRegistrar : System.Web.UI.Page, IContratoAccionRegistrar
@@ -53,6 +54,30 @@ namespace Tangerine.GUI.M2
             {
                 get { return textFicha_M2.Value; }
                 set { textFicha_M2.Value = value; }
+            }
+            
+            /// <summary>
+            /// Método para las excepciones
+            /// </summary>
+            public string alertaClase
+            {
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Método para las excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+            
+            /// <summary>
+            /// Método para las excepciones
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
             }
 
         #endregion

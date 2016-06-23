@@ -157,11 +157,9 @@
     <Compile Include="Comandos\M7\ComandoConsultarTodosProyectos.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyecto.cs" />
     <Compile Include="Comandos\M7\ComandoConsultarXIdProyectoContacto.cs" />
-    <Compile Include="Comandos\M8\ComandoConsultarProyectoFactura.cs" />
     <Compile Include="Comandos\M8\ComandoAgregarFactura.cs" />
     <Compile Include="Comandos\M8\ComandoAnularFactura.cs" />
     <Compile Include="Comandos\M8\ComandoBuscarMontoRestanteFactura.cs" />
-    <Compile Include="Comandos\M8\ComandoConsultarCompaniaFactura.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarFacturasCompania.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarFacturasPagadasCompania.cs" />
     <Compile Include="Comandos\M8\ComandoConsultarTodosFactura.cs" />

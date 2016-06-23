@@ -49,24 +49,6 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.WebControls.Literal requerimientos;
         
         /// <summary>
-        /// Control idreq_input.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText idreq_input;
-        
-        /// <summary>
-        /// Control input_requerimiento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea input_requerimiento;
-        
-        /// <summary>
         /// Control datepicker1.
         /// </summary>
         /// <remarks>
@@ -91,7 +73,7 @@ namespace Tangerine.GUI.M6 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboDuracion;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect comboDuracion;
         
         /// <summary>
         /// Control textoDuracion.
@@ -109,7 +91,7 @@ namespace Tangerine.GUI.M6 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboTipoCosto;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect comboTipoCosto;
         
         /// <summary>
         /// Control textoCosto.
@@ -130,13 +112,22 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl fpago2;
         
         /// <summary>
+        /// Control fpago.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fpago;
+        
+        /// <summary>
         /// Control formaPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList formaPago;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect formaPago;
         
         /// <summary>
         /// Control cuota.
@@ -154,7 +145,7 @@ namespace Tangerine.GUI.M6 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboCuota;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText comboCuota;
         
         /// <summary>
         /// Control contenedorEstatus.
@@ -172,7 +163,7 @@ namespace Tangerine.GUI.M6 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboEstatus;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect comboEstatus;
         
         /// <summary>
         /// Control botonModificarPro.
