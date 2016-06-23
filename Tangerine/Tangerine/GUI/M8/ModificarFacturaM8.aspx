@@ -82,6 +82,7 @@
             <!-- /.box -->
 
         </div>
+        </div>
         <!--/.col (left) -->
         <!-- right column -->
         <div class="col-md-6">

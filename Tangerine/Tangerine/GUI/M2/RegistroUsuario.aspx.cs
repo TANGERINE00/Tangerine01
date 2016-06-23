@@ -22,7 +22,7 @@ namespace Tangerine.GUI.M2
         /// </summary>
         public RegistroUsuario()
         {
-            _presentador = new PresentadorRegistroUsuario(this);
+            _presentador = new PresentadorRegistroUsuario( this );
         }
 
         #region Contrato
@@ -71,7 +71,8 @@ namespace Tangerine.GUI.M2
                 errorManejo = _presentador.inicioVista();
                 if(!errorManejo)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts" ,
+                                                         "javascript:alert('" + msjError + "')" , true );
                 }
             }
         }

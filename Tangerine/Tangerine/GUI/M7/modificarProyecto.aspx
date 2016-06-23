@@ -65,7 +65,7 @@
                                     <i class="fa fa-calendar"></i>
                                 </div>
                                 <input class="form-control pull-right" id="datepicker1" type="text" runat="server"
-                                    clientidmode="static" placeholder="mm/dd/yyyy" required
+                                    clientidmode="static" placeholder="dd/mm/yyyy" required
                                     pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
                                     data-date-format="dd/mm/yyyy">
                              </div>

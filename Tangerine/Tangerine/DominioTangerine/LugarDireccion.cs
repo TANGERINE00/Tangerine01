@@ -4,6 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
+/* no se ha podido eliminar esta clase debido a que el m10 esta haciendo referencia al mismo en vez de hacer referencia 
+ * a la clase lugardireccionM4 encontrada en la carpeta entidades hora 10:00 am jueves 23/06/16 */
+
+
 namespace DominioTangerine
 {
     public class LugarDireccion

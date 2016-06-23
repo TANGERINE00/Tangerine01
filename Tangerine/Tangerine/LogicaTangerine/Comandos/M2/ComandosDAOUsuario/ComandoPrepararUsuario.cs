@@ -55,7 +55,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
-                throw new ExceptionM2Tangerine( "DS-202" , "Metodo no implementado" , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Error en datos, posiblemente ficha no existente" , ex );
             }
             return resultado;
         }
