@@ -35,9 +35,7 @@ namespace Tangerine_Presentador.M6
         int _entregaCant = 0;
         string _fdepago = String.Empty;
         string _estatusW;
-        DominioTangerine.Entidades.M6.Propuesta lapropuesta;
         public List<DominioTangerine.Entidades.M6.Requerimiento> req;
-        string requerimiento;
         #endregion
 
         public PresentadorModificarPropuesta(IContratoModificarPropuesta vista)
