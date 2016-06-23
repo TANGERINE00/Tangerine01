@@ -50,6 +50,7 @@
     <Compile Include="M2\IContratoCambiarRol.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />
     <Compile Include="M3\IContratoAgregarClientePotencial.cs" />
+    <Compile Include="M3\IContratoAgregarSeguimiento.cs" />
     <Compile Include="M3\IContratoConsultarClientePotencial.cs" />
     <Compile Include="M3\IContratoHistoriaClientePotencial.cs" />
     <Compile Include="M3\IContratoListarClientePotencial.cs" />
