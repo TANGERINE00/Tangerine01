@@ -1457,6 +1457,23 @@ AS
 	END
 GO
 
+---ConsultarNumeroProyectos(Para pruebas) ----
+CREATE PROCEDURE M7_ConsultarNumeroProyectos
+AS
+ BEGIN
+     SELECT COUNT(proy_id) proy_id FROM PROYECTO;
+ end;
+GO
+
+--- StoredProsedure borrar proyecto ----
+CREATE PROCEDURE M7_BorrarProyecto
+	@proy_id int
+AS
+	BEGIN
+		DELETE FROM PROYECTO
+ 		WHERE proy_id = @proy_id;
+	END;
+GO
 -----------------------------------
 ------Fin Stored Procedure M7------
 -----------------------------------
