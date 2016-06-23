@@ -1,5 +1,4 @@
 ﻿using DatosTangerine.M10;
-using DatosTangerine.M2;
 using DominioTangerine;
 using System;
 using System.Collections.Generic;

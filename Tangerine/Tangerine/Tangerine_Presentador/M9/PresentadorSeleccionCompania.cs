@@ -93,6 +93,11 @@ namespace Tangerine_Presentador.M9
                 MessageBox.Show("Error, Formato Incorrecto en Codigo de Aprobacion", "Formato Incorrecto",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La operacion no pudo ser completada", "Error", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+            }
 
 
         }
