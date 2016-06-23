@@ -18,7 +18,7 @@ namespace Tangerine.GUI.M1
     {
         private PresentadorConsultaEmpleado presentador;
       
-        private int Empleadoid=0;
+        
         public string empleado
         {
             get
@@ -63,17 +63,13 @@ namespace Tangerine.GUI.M1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
+            int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
             presentador.CambiarEstatus(Empleadoid);
             
             if (!IsPostBack)
             {                
                 presentador.cargarConsultarEmpleados();
-
-                //if (Empleadoid != 0)
-                //{
-                //    presentador.CambiarEstatus(Empleadoid);
-                //}                
+              
             }
 
            
