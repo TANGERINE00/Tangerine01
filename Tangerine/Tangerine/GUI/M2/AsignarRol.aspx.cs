@@ -16,6 +16,8 @@ namespace Tangerine.GUI.M2
     public partial class AsignarRol : System.Web.UI.Page, IContratoAsignarRol
     {
         private Tangerine_Presentador.M2.PresentadorAsignarRol presentador;
+        private bool validacionUsuario;
+        string error;
 
         #region Contrato
 
@@ -35,6 +37,12 @@ namespace Tangerine.GUI.M2
         {
             get { return textRol_M2.Value; }
             set { textRol_M2.Value = value; }
+        }
+
+        public string msjError
+        {
+            get { return error;}
+            set { error = value; }
         }
 
         #endregion
@@ -68,8 +76,17 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void buttonAsignar_Click(object sender, EventArgs e)
         {
-            presentador.asignar();
-            Response.Redirect("../M2/CambiarRol.aspx");
+            validacionUsuario = presentador.asignar();
+
+            if (validacionUsuario)
+            {
+                Response.Redirect("../M2/CambiarRol.aspx");
+            }
+            else 
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
+            }
+           
         }
     }
 }

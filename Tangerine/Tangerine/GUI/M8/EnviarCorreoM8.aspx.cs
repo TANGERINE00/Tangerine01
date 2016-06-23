@@ -27,7 +27,7 @@ namespace Tangerine.GUI.M8
         #endregion
         
         #region contrato
-        public string numero
+        /*public string numero
         {
             get
             {
@@ -38,7 +38,7 @@ namespace Tangerine.GUI.M8
             {
                 Request.QueryString[ResourceGUIM8.idF] = value;
             }
-        }
+        }*/
 
         public string destinatario
         {
@@ -101,7 +101,7 @@ namespace Tangerine.GUI.M8
         string _mensaje = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.numero = Request.QueryString[ResourceGUIM8.idF];
+            //this.numero = Request.QueryString[ResourceGUIM8.idF];
             if (!IsPostBack)
             {
                 _presentador.correofactura();
