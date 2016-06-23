@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
 using ExcepcionesTangerine;

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DatosTangerine.M6;
 using DatosTangerine.InterfazDAO.M6;
 using DominioTangerine;
 using DominioTangerine.Entidades.M6;
@@ -27,7 +26,7 @@ namespace DatosTangerine.DAO.M6
         public bool Agregar( Entidad elRequerimiento )
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
-                RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+                RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             DominioTangerine.Entidades.M6.Requerimiento requerimiento = ( DominioTangerine.Entidades.M6.Requerimiento)elRequerimiento;
 
@@ -38,18 +37,18 @@ namespace DatosTangerine.DAO.M6
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                parametro = new Parametro( RecursosPropuesta.ParamCodigoReq, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false );
+                parametro = new Parametro( RecursoDAOPropuesta.ParamCodigoReq, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false );
                 parametros.Add(parametro);
 
                 //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                parametro = new Parametro( RecursosPropuesta.ParamDescriReq, SqlDbType.VarChar, requerimiento.Descripcion, false );
+                parametro = new Parametro(RecursoDAOPropuesta.ParamDescriReq, SqlDbType.VarChar, requerimiento.Descripcion, false);
                 parametros.Add(parametro);
 
-                parametro = new Parametro( RecursosPropuesta.ParamIdPropuestaReq, SqlDbType.VarChar, requerimiento.CodigoPropuesta, false );
+                parametro = new Parametro(RecursoDAOPropuesta.ParamIdPropuestaReq, SqlDbType.VarChar, requerimiento.CodigoPropuesta, false);
                 parametros.Add(parametro);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M6_AgregarRequerimiento y todos los parametros que recibe
-                List<Resultado> resultado = EjecutarStoredProcedure( RecursosPropuesta.AgregarRequerimiento, parametros );
+                List<Resultado> resultado = EjecutarStoredProcedure(RecursoDAOPropuesta.AgregarRequerimiento, parametros);
 
             }
             catch ( SqlException ex )
@@ -77,7 +76,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return true;
         }
 
@@ -90,7 +89,7 @@ namespace DatosTangerine.DAO.M6
         public Boolean Modificar( Entidad elRequerimiento )
         {
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, 
-               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+               RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             DominioTangerine.Entidades.M6.Requerimiento requerimiento = ( DominioTangerine.Entidades.M6.Requerimiento)elRequerimiento;
             List<Parametro> parameters = new List<Parametro>();
@@ -100,13 +99,13 @@ namespace DatosTangerine.DAO.M6
             {
                 //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
                 //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro( RecursosPropuesta.ReqDescripcion, SqlDbType.VarChar, requerimiento.Descripcion, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ReqDescripcion, SqlDbType.VarChar, requerimiento.Descripcion, false );
                 parameters.Add(theParam);
 
-                theParam = new Parametro( RecursosPropuesta.ReqPropNombre, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false );
+                theParam = new Parametro( RecursoDAOPropuesta.ReqPropNombre, SqlDbType.VarChar, requerimiento.CodigoRequerimiento, false );
                 parameters.Add(theParam);
 
-                List<Resultado> results = EjecutarStoredProcedure( RecursosPropuesta.Modificar_Requerimiento, parameters );
+                List<Resultado> results = EjecutarStoredProcedure( RecursoDAOPropuesta.Modificar_Requerimiento, parameters );
 
             }
             catch ( SqlException ex )
@@ -134,7 +133,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return true;
         }
 
@@ -194,7 +193,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );   
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );   
             return requerimiento;
         }
 
@@ -259,7 +258,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return mayorId;
         }
 
@@ -309,7 +308,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return numero;
         }
 
@@ -367,7 +366,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return listaRequerimientos;
         }
 
@@ -379,7 +378,7 @@ namespace DatosTangerine.DAO.M6
         public Boolean EliminarRequerimiento( Entidad elRequerimiento )
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-               RecursosPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+               RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
 
             DominioTangerine.Entidades.M6.Requerimiento requerimiento = ( DominioTangerine.Entidades.M6.Requerimiento )elRequerimiento;
             List<Parametro> parameters = new List<Parametro>();
@@ -420,7 +419,7 @@ namespace DatosTangerine.DAO.M6
                 RecursoDAORequerimiento.MensajeExceptionGenerica, ex );
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
+            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
             return true;
         }
         

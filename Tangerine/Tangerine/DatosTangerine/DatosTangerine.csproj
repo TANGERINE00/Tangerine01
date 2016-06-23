@@ -149,8 +149,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceEmpleado.resx</DependentUpon>
     </Compile>
-    <Compile Include="M2\BDUsuario.cs" />
-    <Compile Include="M2\ResourceUser.Designer.cs" />
     <Compile Include="DAO\M3\ResourceClientePotencial.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,12 +170,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceContact.resx</DependentUpon>
-    </Compile>
-    <Compile Include="M6\BDPropuesta.cs" />
-    <Compile Include="M6\RecursosPropuesta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosPropuesta.resx</DependentUpon>
     </Compile>
     <Compile Include="M7\BDEmpleadoProyecto.cs" />
     <Compile Include="M7\BDProyecto.cs" />
@@ -286,7 +278,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceEmpleado.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="M2\ResourceUser.resx" />
     <EmbeddedResource Include="DAO\M3\ResourceClientePotencial.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceClientePotencial.Designer.cs</LastGenOutput>
@@ -303,10 +294,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceContact.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M6\RecursosPropuesta.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosPropuesta.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="M7\ResourceProyecto.resx">
       <Generator>ResXFileCodeGenerator</Generator>
