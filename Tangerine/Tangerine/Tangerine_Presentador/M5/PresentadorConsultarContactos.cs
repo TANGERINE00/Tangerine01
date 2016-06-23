@@ -20,7 +20,7 @@ namespace Tangerine_Presentador.M5
     public class PresentadorConsultarContactos
     {
         private IContratoConsultarContactos _vista;
-
+        private int estadoActual = 0;
         /// <summary>
         /// Constructor de la clase
         /// </summary>
@@ -71,11 +71,11 @@ namespace Tangerine_Presentador.M5
             }
             catch( ConsultarContactoException ex )
             {
-                //Muestro en pantalla el error
+                estadoActual = 6;
             }
             catch( BaseDeDatosContactoException ex )
             {
-                //Muestro en pantalla el error
+                estadoActual = 4;
             }
             catch ( Exception ex )
             {
@@ -92,19 +92,22 @@ namespace Tangerine_Presentador.M5
             {
                 int id = _vista.IdCont();
 
-                Entidad contacto = FabricaEntidades.crearContactoVacio();
-                contacto.Id= id;
+                if( id != 0 )
+                {
+                    Entidad contacto = FabricaEntidades.crearContactoVacio();
+                    contacto.Id= id;
 
-                Comando<bool> comandoBool = FabricaComandos.CrearComandoEliminarContacto( contacto );
-                comandoBool.Ejecutar();
+                    Comando<bool> comandoBool = FabricaComandos.CrearComandoEliminarContacto( contacto );
+                    comandoBool.Ejecutar();
+                }
             }
             catch( EliminarContactoException ex )
             {
-                Alerta( ex.Mensaje, 0 );
+                estadoActual = 5;
             }
             catch( BaseDeDatosContactoException ex )
             {
-                Alerta( ex.Mensaje, 0 );
+                estadoActual = 4;
             }
         }
 
@@ -131,9 +134,7 @@ namespace Tangerine_Presentador.M5
         {
             try
             {
-                int status = _vista.StatusAccion();
-
-                switch (status)
+                switch ( estadoActual )
                 {
                     case 1:
                         Alerta( RecursoM5.ContactoAgregado, int.Parse(RecursoM5.StatusAgregado) );
@@ -143,6 +144,15 @@ namespace Tangerine_Presentador.M5
                         break;
                     case 3:
                         Alerta( RecursoM5.ContactoEliminado, int.Parse(RecursoM5.StatusAgregado) );
+                        break;
+                    case 4:
+                        Alerta( RecursoM5.ErrorBaseDeDatos, 0 );
+                        break;
+                    case 5:
+                        Alerta( RecursoM5.ErrorEliminarContacto, 0 );
+                        break;
+                    case 6:
+                        Alerta( RecursoM5.ErrorConsultarContacto, 0 );
                         break;
                 }
             }
@@ -211,11 +221,11 @@ namespace Tangerine_Presentador.M5
             }
             catch ( ConsultarContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( RecursoM5.ErrorConsultarContacto, 0 );
             }
             catch( BaseDeDatosContactoException ex )
             {
-                //Muestro en pantalla el error
+                Alerta( RecursoM5.ErrorBaseDeDatos, 0 );
             }
         }
 
@@ -224,10 +234,18 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void CargarPagina()
         {
-            CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
-            EliminarContacto();
-            Alertas();
-            LlenarTablaContactos();
+            try
+            {
+                estadoActual = _vista.StatusAccion();
+                CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
+                EliminarContacto();
+                Alertas();
+                LlenarTablaContactos();
+            }
+            catch (Exception ex) 
+            {
+                ////No se hace nada,  ya que el status no es un parametro obligatorio
+            }
         }
     }
 }

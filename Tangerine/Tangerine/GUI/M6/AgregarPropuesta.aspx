@@ -133,8 +133,8 @@
                             <!-- /btn-group -->
                             
                             <input type="text" class="form-control" ID="textoDuracion" name="duracion" runat="server" 
-                                pattern="^[0-9]*$" title="Introduzca un numero" required clientidmode="static"
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                pattern="^[0-9]{1,3}$" title="Introduzca un numero" required clientidmode="static"
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 3 digitos)')" 
                                 oninput="setCustomValidity('')" 
                                 onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')">
                         </div>
@@ -181,8 +181,8 @@
                             </div>
                             <!-- /btn-group -->
                             <input type="text" class="form-control" id="textoCosto" name="costo" runat="server" 
-                                pattern="^[0-9]*$" title="Costo de la propuesta" required 
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números')" 
+                                pattern="^[0-9]{1,10}$" title="Costo de la propuesta" required 
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 10 digitos)')" 
                                 oninput="setCustomValidity('')">
                         </div>
 
@@ -204,7 +204,7 @@
                     <div class="form-group">
                         <label>Cantidad Cuotas</label>
                         <div class="dropdown" runat="server" id="cuota">
-                            <input type="text" pattern="^[0-9]*$" title="Numero de cuotas" class="form-control" 
+                            <input type="text" pattern="^[0-9]{1,2}$" title="Numero de cuotas (maximo 2 numeros)" class="form-control" 
                                 id="cantidadCuotas" name="cantidadCuotas" runat="server" clientidmode="static">
                         </div>
                     </div>

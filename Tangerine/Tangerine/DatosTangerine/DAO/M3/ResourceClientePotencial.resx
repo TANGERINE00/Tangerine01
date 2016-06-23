@@ -225,4 +225,25 @@
   <data name="ConsultarUltimoId" xml:space="preserve">
     <value>M3_ConsultarIdUltimoLead</value>
   </data>
+  <data name="ConsultarSegumientoLlamadas" xml:space="preserve">
+    <value>M3_listar_Seguimento_llamadas</value>
+  </data>
+  <data name="fechaRegistro" xml:space="preserve">
+    <value>seg_fecha</value>
+  </data>
+  <data name="motivoRegistro" xml:space="preserve">
+    <value>seg_motivo</value>
+  </data>
+  <data name="ChekTipo" xml:space="preserve">
+    <value>@tipo</value>
+  </data>
+  <data name="fkCliente" xml:space="preserve">
+    <value>fk_cli_pot</value>
+  </data>
+  <data name="idSeguimiento" xml:space="preserve">
+    <value>seg_id</value>
+  </data>
+  <data name="tipoSeguimiento" xml:space="preserve">
+    <value>seg_tipo</value>
+  </data>
 </root>

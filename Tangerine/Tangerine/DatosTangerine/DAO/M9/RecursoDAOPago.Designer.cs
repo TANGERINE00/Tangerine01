@@ -115,6 +115,15 @@ namespace DatosTangerine.DAO.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M9_EliminarPago.
+        /// </summary>
+        internal static string EliminarPago {
+            get {
+                return ResourceManager.GetString("EliminarPago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fac_fecha_emision.
         /// </summary>
         internal static string FacFechaEmision {
@@ -165,6 +174,15 @@ namespace DatosTangerine.DAO.M9 {
         internal static string MensajeFinInfoLogger {
             get {
                 return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método, No exitoso.
+        /// </summary>
+        internal static string MensajeFinInfoLoggerError {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLoggerError", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace DatosTangerine.DAO.M9 {
         internal static string ParamIdFactura {
             get {
                 return ResourceManager.GetString("ParamIdFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @idpago.
+        /// </summary>
+        internal static string ParamIdPago {
+            get {
+                return ResourceManager.GetString("ParamIdPago", resourceCulture);
             }
         }
         

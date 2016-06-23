@@ -11,10 +11,16 @@ using ExcepcionesTangerine;
 
 namespace LogicaTangerine.Comandos.M9
 {
+   /// <summary>
+   /// Comando para Agregar Pago
+   /// </summary>
     public class ComandoAgregarPago : Comando<Boolean>
     {
 
-
+        /// <summary>
+        /// Constructor del Comando Agregar Pago
+        /// </summary>
+        /// <param name="entidad">Entidad, parametro que sera asignado para utilizar su valor</param>
         public ComandoAgregarPago (Entidad entidad)
         {
             this._laEntidad = entidad;
@@ -22,16 +28,19 @@ namespace LogicaTangerine.Comandos.M9
         /// <summary>
         /// Método para crear la instancia de la clase DaoPago y agregar el pago
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Regresa un Booleano indicando si el metodo se ejecuto exitosamente o no</returns>
         public override Boolean Ejecutar()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                       ResourceComandoM9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             IDAOPago Pago = FabricaDAOSqlServer.CrearDAOPago();
 
 
             try
             {
-                Pago.Agregar(this._laEntidad);
-
+                
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                      ResourceComandoM9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return Pago.Agregar(this._laEntidad);
             }
             catch (ArgumentNullException ex)

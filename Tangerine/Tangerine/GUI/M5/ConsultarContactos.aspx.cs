@@ -130,8 +130,11 @@ namespace Tangerine.GUI.M5
         /// </summary>
         protected void Page_Load( object sender, EventArgs e )
         {
-            presentador = new PresentadorConsultarContactos( this );
-            presentador.CargarPagina();
+            if (!IsPostBack)
+            {
+                presentador = new PresentadorConsultarContactos( this );
+                presentador.CargarPagina();
+            }
         }
     }
 }
