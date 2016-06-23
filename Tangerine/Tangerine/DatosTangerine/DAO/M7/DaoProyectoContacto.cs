@@ -16,16 +16,7 @@ namespace DatosTangerine.DAO.M7
     public class DaoProyectoContacto : DAOGeneral, IDaoProyectoContacto
     {
         #region IDAO Proyecto Contacto
-        public bool ContactProyectoContacto(Entidad proyecto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Boolean DeleteProyectoContacto(Entidad proyecto)
-        {
-            throw new NotImplementedException();
-        }
-
+ 
         public List<Entidad> ContactCompany(Entidad contacto) 
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,

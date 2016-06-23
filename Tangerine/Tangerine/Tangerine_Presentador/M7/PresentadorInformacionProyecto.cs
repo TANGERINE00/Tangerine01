@@ -24,7 +24,8 @@ namespace Tangerine_Presentador.M7
              Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
              ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = id;
 
-             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdproyecto(parametro);
+             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyecto(parametro);
+                                                                          
              Entidad proyecto = comando.Ejecutar();
 
              Comando<List<Entidad>> comando1 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);

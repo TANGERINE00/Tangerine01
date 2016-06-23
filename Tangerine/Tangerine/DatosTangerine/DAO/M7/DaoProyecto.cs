@@ -17,11 +17,6 @@ namespace DatosTangerine.DAO.M7
     {
         #region IDAO Proyecto
 
-        public bool DeleteProyecto(Entidad proyecto)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Entidad> ContactProyectoxAcuerdoPago()
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -93,17 +88,7 @@ namespace DatosTangerine.DAO.M7
 
             return listProyecto;
         }
-
-        public List<Entidad> ContactProyectoPorEmpleado(Entidad empleado)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Entidad> ContactProyectoPorGerente(Entidad empleado)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Entidad ContactNombrePropuestaId(Entidad parametro)
         {
             Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();
