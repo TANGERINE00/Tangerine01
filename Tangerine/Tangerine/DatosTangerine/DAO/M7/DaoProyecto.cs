@@ -214,7 +214,8 @@ namespace DatosTangerine.DAO.M7
             {
                 DominioTangerine.Entidades.M6.Propuesta P = (DominioTangerine.Entidades.M6.Propuesta)parametro;
                 String nombre = P.Nombre;
-                return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + DateTime.Today.Year;
+                return "Proy-" + nombre[0] + nombre[1] + nombre[2] + nombre[3] + nombre[4] +
+                    nombre[5] + P.Feincio.Day.ToString() + "-" +DateTime.Today.Year;
             }
             catch (ArgumentNullException ex)
             {

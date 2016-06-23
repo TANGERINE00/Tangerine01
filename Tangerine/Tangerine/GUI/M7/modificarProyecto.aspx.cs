@@ -26,6 +26,18 @@ namespace Tangerine.GUI.M7
 
         #region Contrato
 
+        TextBox IContratoModificarProyecto.realizacion
+        {
+            get
+            {
+                return realizacion;
+            }
+            set
+            {
+                realizacion = value;
+            }
+        }
+
         TextBox IContratoModificarProyecto.inputPropuesta
         {
             get

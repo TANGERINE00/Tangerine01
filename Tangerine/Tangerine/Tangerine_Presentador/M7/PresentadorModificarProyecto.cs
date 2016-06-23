@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Tangerine_Contratos.M7;
+using System.Web;
+using System.Web.UI;
 
 namespace Tangerine_Presentador.M7
 {
@@ -79,6 +81,7 @@ namespace Tangerine_Presentador.M7
                 vista.acuerdoPago.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Acuerdopago;
                 vista.idCompania.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idcompania.ToString();
                 vista.text10.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Razon;
+                vista.realizacion.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion;
 
             }
             catch (Exception ex)
@@ -311,6 +314,17 @@ namespace Tangerine_Presentador.M7
                     LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarProyecto(_propuesta, _proyecto, _trabajadores);
                 Boolean ejecutado = comando.Ejecutar();
 
+
+
+                if ( double.Parse(vista.realizacion.Text) < double.Parse(vista.textInputPorcentaje.Text))
+                {
+                    double monto = calcularPago(double.Parse(vista.realizacion.Text), double.Parse(vista.textInputPorcentaje.Text), double.Parse(vista.textInputCosto.Text));
+
+                    HttpContext.Current.Response.Redirect("../M8/GenerarFacturaM8.aspx?IdCompania=" +
+                        int.Parse(vista.idCompania.Text) + "&IdProyecto=" +
+                        int.Parse(vista.idProyecto.Text) + "&Monto=" + monto);
+                }
+
             }
             catch (Exception e)
             {
@@ -318,6 +332,12 @@ namespace Tangerine_Presentador.M7
             }
 
             return true;
+        }
+
+        public double calcularPago(double por_viejo, double por_nuevo, double monto)
+        {
+            double por_cobro = por_nuevo - por_viejo;
+            return monto * (por_cobro / 100);
         }
 
         public void MoverIzquierda()

@@ -18,6 +18,11 @@ namespace Tangerine.GUI.M6
     {
         PresentadorConsultarPropuesta presentadorConsultar;
 
+
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+
         public ConsultarPropuesta()
         {
             this.presentadorConsultar = new PresentadorConsultarPropuesta(this);

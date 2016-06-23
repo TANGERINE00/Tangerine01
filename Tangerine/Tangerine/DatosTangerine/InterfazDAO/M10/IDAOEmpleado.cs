@@ -44,6 +44,14 @@ namespace DatosTangerine.InterfazDAO.M10
             /// <returns></returns>
             List<Entidad> ObtenerEstados(Entidad parametro);
 
+            /// <summary>
+            /// Firma de Metodo para obtener usuario 
+            /// </summary>
+            /// <param name="parametro"></param>
+            /// <returns></returns>
+            Entidad ObtenerUsuarioCorreo(Entidad usuario);
+
+
 
         }
     }

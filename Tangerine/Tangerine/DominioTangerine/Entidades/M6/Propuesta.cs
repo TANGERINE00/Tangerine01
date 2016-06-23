@@ -61,59 +61,95 @@ namespace DominioTangerine.Entidades.M6
 
         #region Propiedades
 
+        /// <summary>
+        /// Get del codigo de la Propuesta
+        /// </summary>
+
         public String CodigoP
         {
             get { return _codigoP; }
         }
+
+        /// <summary>
+        /// Get del nombre de la Propuesta
+        /// </summary>
         public String Nombre
         {
             get { return _nombre; }
         }
+        /// <summary>
+        /// Get  de la descripcion de la Propuesta
+        /// </summary>
         public String Descripcion
         {
             get { return _descripcion; }
         }
-
+        /// <summary>
+        /// Get  de la forma de pago de la Propuesta
+        /// </summary>
         public String Acuerdopago
         {
             get { return _acuerdopago; }
          }
+        /// <summary>
+        /// Get  del estado de la Propuesta
+        /// </summary>
         public String Estatus
         {
             get { return _estatus; }
 
         }
+        /// <summary>
+        /// Get  de la moneda de la Propuesta
+        /// </summary>
         public String Moneda
         {
             get { return _moneda; }
 
         }
+        /// <summary>
+        /// Get  de la entrega de la Propuesta
+        /// </summary>
         public int Entrega
         {
             get { return _entrega; }
 
         }
+        /// <summary>
+        /// Get  de la fecha de inicio de la Propuesta
+        /// </summary>
         public DateTime Feincio
         {
             get { return _feincio; }
 
         }
+        /// <summary>
+        /// Get  de la fecha tope de la Propuesta
+        /// </summary>
         public DateTime Fefinal
         {
             get { return _fefinal; }
 
         }
+        /// <summary>
+        /// Get  del costo de la Propuesta
+        /// </summary>
         public int Costo
         {
             get { return _costo; }
         }
 
+        /// <summary>
+        /// Get  de la compañia asociada a la Propuesta
+        /// </summary>
         public String IdCompañia
         {
             get { return _idCompañia; }
         }
 
-
+        /// <summary>
+        /// Get  de los requerimientos de la Propuesta
+        /// </summary>
         public List<Requerimiento> ListaRequerimiento
         {
             get { return _listaRequerimiento; }
@@ -163,7 +199,7 @@ namespace DominioTangerine.Entidades.M6
         }
 
         /// <summary>
-        /// Constructos metodo PropuestaProyecto disenado para el Modulo_7
+        /// Constructor Propuesta
         /// </summary>
         /// <param name="codigo"></param>
         /// <param name="nombre"></param>
@@ -197,7 +233,13 @@ namespace DominioTangerine.Entidades.M6
             this._idCompañia = compañia;
 
         }
+        /// <summary>
+        /// Constructor Propuesta Requerimiento
+        /// </summary>
+        /// <param name="codigoP"></param>
+        /// <param name="listaRequerimiento"></param>
 
+    
         public Propuesta(string codigoP, List<Requerimiento> listaRequerimiento)
         {
             this._codigoP = codigoP;

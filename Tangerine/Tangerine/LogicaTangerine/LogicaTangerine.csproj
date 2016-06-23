@@ -73,6 +73,7 @@
     <Compile Include="Comandos\M10\ComandoConsultarEmpleado.cs" />
     <Compile Include="Comandos\M10\ComandoConsultarPorId.cs" />
     <Compile Include="Comandos\M10\ComandoHabilitarEmpleado.cs" />
+    <Compile Include="Comandos\M10\ComandoValidarUsuarioCorreo.cs" />
     <Compile Include="Comandos\M1\ComandoConsultarUsuario.cs" />
     <Compile Include="Comandos\M1\ComandoGenerarNuevaContraseña.cs" />
     <Compile Include="Comandos\M1\ComandoValidarCorreo.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Comandos\M3\ComandoModificarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoPromoverClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoSeguimientoDeLlamadas.cs" />
+    <Compile Include="Comandos\M3\ComandoSeguimientoDeVisitas.cs" />
     <Compile Include="Comandos\M3\ComandoUltimoIdClientePotencial.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarCompania.cs" />
     <Compile Include="Comandos\M4\ComandoAgregarLugar.cs" />
