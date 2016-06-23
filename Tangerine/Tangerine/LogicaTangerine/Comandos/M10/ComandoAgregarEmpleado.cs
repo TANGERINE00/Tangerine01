@@ -10,6 +10,7 @@ using DominioTangerine.Entidades.M7;
 using DominioTangerine.Fabrica;
 using DominioTangerine;
 using DatosTangerine.InterfazDAO.M10;
+using ExcepcionesTangerine.M10;
 
 namespace LogicaTangerine.Comandos.M10
 {
@@ -26,7 +27,7 @@ namespace LogicaTangerine.Comandos.M10
                 IDAOEmpleado daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOEmpleado();
                 return daoEmpleado.Agregar(elEmpleado);
             }
-            catch (Exception e)
+            catch (AgregarEmpleadoException e)
             {
                 throw e;
             }

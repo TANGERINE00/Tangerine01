@@ -11,6 +11,7 @@ using DatosTangerine.InterfazDAO.M10;
 using DominioTangerine;
 using ExcepcionesTangerine;
 using System.Collections;
+using ExcepcionesTangerine.M10;
 
 namespace DatosTangerine.DAO.M10
 {
@@ -56,15 +57,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ModificarEstatusException("DS-101", "Argumento no valido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -125,8 +124,7 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -217,15 +215,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -322,15 +318,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -395,15 +389,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -471,15 +463,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ConsultarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -553,8 +543,7 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
@@ -706,15 +695,13 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M10.NullArgumentException(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new AgregarEmpleadoException("DS-101", "Ingreso de un argumento con valor invalido", ex);
             }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new BaseDatosException("DS-101", "Error con la base de datos", ex);
             }
             catch (FormatException ex)
             {
