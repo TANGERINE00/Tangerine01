@@ -39,19 +39,19 @@ namespace Tangerine.GUI.M1
             #endregion
         }
 
-        protected void SelectedJob_Change(object sender, EventArgs e)
-        {
-            try
-            {
-                JobSummary.InnerText = "";
-                JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
-            }
-            catch (Exception ex)
-            {
-                JobSummary.InnerText = "";
-            }
+        //protected void SelectedJob_Change(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        JobSummary.InnerText = "";
+        //        JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        JobSummary.InnerText = "";
+        //    }
 
-        }
+        //}
 
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
@@ -76,7 +76,6 @@ namespace Tangerine.GUI.M1
             if (Page.IsValid)
             {
                 presentador.AgregarEmpleado();
-
                 Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=0");
 
             }
@@ -84,14 +83,7 @@ namespace Tangerine.GUI.M1
 
         }
 
-
-        private Cargo jobForEmployee()
-        {
-            return new Cargo(SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value,
-                                    DateTime.ParseExact(DateJob.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                    JobMode.Text, Double.Parse(SalaryJob.Text));
-
-        }
+              
 
         private void FillSelectedListGender()
         {
@@ -163,74 +155,73 @@ namespace Tangerine.GUI.M1
             set { SelectedListState = value; }
         }
 
-        TextBox IContratoCrearEmpleado.ItextCedula
+        String IContratoCrearEmpleado.ItextCedula
         {
-            get { return Cedula2; }
-            set { Cedula2 = value; }
+            get { return Cedula.Value; }
+            set { Cedula.Value = value; }
         }
 
+        String IContratoCrearEmpleado.ItextFirstName
+        {
+            get { return FirstName.Value; }
+            set { FirstName.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextSecondNamee
+        {
+            get { return SecondNamee.Value; }
+            set { SecondNamee.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextFirstLastName
+        {
+            get { return FirstLastName.Value; }
+            set { FirstLastName.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextSecondLastName
+        {
+            get { return SecondLastName.Value; }
+            set { SecondLastName.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextDateEmployee
+        {
+            get { return DateEmployee.Value; }
+            set { DateEmployee.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextDateJob
+        {
+            get { return DateJob.Value; }
+            set { DateJob.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextJobMode
+        {
+            get { return JobMode.Value; }
+            set { JobMode.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextSalaryJob
+        {
+            get { return SalaryJob.Value; }
+            set { SalaryJob.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextCityAddress
+        {
+            get { return CityAddress.Value; }
+            set { CityAddress.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextAddresEspecific
+        {
+            get { return AddresEspecific.Value; }
+            set { AddresEspecific.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextEmailPerson
+        {
+            get { return EmailPerson.Value; }
+            set { EmailPerson.Value = value; }
+        }
+        String IContratoCrearEmpleado.ItextPhonePerson
+        {
+            get { return PhonePerson.Value; }
+            set { PhonePerson.Value = value; }
+        }
 
-
-        TextBox IContratoCrearEmpleado.ItextFirstName
-        {
-            get { return PrimerNombre; }
-            set { PrimerNombre = value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextSecondName
-        {
-            get { return SecondName; }
-            set { SecondName = value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextFirstLastName
-        {
-            get { return FirstLastName; }
-            set { FirstLastName = value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextSecondLastName
-        {
-            get { return SecondLastName; }
-            set { SecondLastName = value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextDateEmployee
-        {
-            get { return DateEmployee; }
-            set { DateEmployee= value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextDateJob
-        {
-            get { return DateJob; }
-            set { DateJob= value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextJobMode
-        {
-            get { return JobMode; }
-            set { JobMode= value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextSalaryJob
-        {
-            get { return SalaryJob; }
-            set { SalaryJob = value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextCityAddress
-        {
-            get { return CityAddress; }
-            set { CityAddress= value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextAddresEspecific
-        {
-            get { return AddresEspecific; }
-            set { AddresEspecific= value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextEmailPerson
-        {
-            get { return EmailPerson; }
-            set { EmailPerson= value; }
-        }
-        TextBox IContratoCrearEmpleado.ItextPhonePerson
-        {
-            get { return PhonePerson; }
-            set { PhonePerson = value; }
-        }
 
 
         #endregion

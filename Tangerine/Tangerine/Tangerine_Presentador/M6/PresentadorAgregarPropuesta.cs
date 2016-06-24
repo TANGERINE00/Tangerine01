@@ -122,12 +122,13 @@ namespace Tangerine_Presentador.M6
                     comando2.Ejecutar();
                 }
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                //Alerta(e.Message + ", por favor intente de nuevo.", 0);
-                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error);
-                
+                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
             }
         }
 
@@ -159,10 +160,13 @@ namespace Tangerine_Presentador.M6
                     }     
                 }
             }
-            catch (Exception e)
-            {  
-                MessageBox.Show("Error Cargando las compañias.", "Error", MessageBoxButtons.OK,
-                 MessageBoxIcon.Error);
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
             }
             
 
