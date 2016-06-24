@@ -44,6 +44,7 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboGenero.Items.Insert(0, "Seleccione Genero");
             Vista.IcomboGenero.Items.Insert(1, "Femenino");
             Vista.IcomboGenero.Items.Insert(2, "Masculino");
+            Vista.IcomboEstado.Items.Insert(0, "Seleccione Estado");
         }
 
         /// <summary>

@@ -43,17 +43,17 @@ namespace Tangerine.GUI.M1
             }
         }
 
-        public string button
-        {
-            get
-            {
-                return this.nuevoempleado.Text;
-            }
-            set
-            {
-                this.nuevoempleado.Text = value;
-            }
-        }
+        //public string button
+        //{
+        //    get
+        //    {
+        //        return this.nuevoempleado.Text;
+        //    }
+        //    set
+        //    {
+        //        this.nuevoempleado.Text = value;
+        //    }
+        //}
 
          public EmpleadosAdmin()
         {

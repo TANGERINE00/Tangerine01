@@ -24,13 +24,9 @@
                 </div><!-- /.box-header -->
                 
                 <div class="box-body table-responsive no-padding">
-                    <form role="form" name="consultar" id="consultar"> 
+                    <form role="form" name="consultar" id="consultar">
                     
-                        <div style="float:right; padding-top:5px; padding-right:5px;">
-                          <a style="margin-right:10px;">Agregar nuevo empleado</a>
-                          <asp:Literal runat="server" ID="nuevoempleado"></asp:Literal>
-              
-                        </div><br><br>
+                        
                         <div style="float:right; padding-top:5px; padding-right:5px;">
                             <a style="margin-right:10px;">Buscador</a>
                             <input id="searchTerm" type="text" onkeyup="doSearch()"/>

@@ -17,7 +17,7 @@ namespace Tangerine_Contratos.M10
         /// <summary>
         /// Encabezado boton de ver empleado
         /// </summary>
-         String button {get; set;}
+     //    String button {get; set;}
      }
 
     }

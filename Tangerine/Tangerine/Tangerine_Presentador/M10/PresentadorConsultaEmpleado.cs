@@ -113,8 +113,8 @@ namespace Tangerine_Presentador.M10
                     vista.Tabla.Text += ResourceGUIM10.CerrarTR;
                 }
 
-                if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                    vista.button += ResourceGUIM10.VentanaAgregarEmpleado;
+                //if (HttpContext.Current.Session["Rol"] + "" != "Programador")
+                //    vista.button += ResourceGUIM10.VentanaAgregarEmpleado;
             }
             catch (ConsultarEmpleadoException ex)
             {

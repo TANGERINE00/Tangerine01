@@ -82,7 +82,7 @@ namespace Tangerine.GUI.M1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText DateEmployee;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateEmployee;
         
         /// <summary>
         /// LevelListStudy control.
@@ -100,7 +100,7 @@ namespace Tangerine.GUI.M1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText DateJob;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl DateJob;
         
         /// <summary>
         /// MainScriptManager control.

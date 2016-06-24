@@ -13,15 +13,6 @@ namespace Tangerine.GUI.M1 {
     public partial class EmpleadosAdmin {
         
         /// <summary>
-        /// nuevoempleado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal nuevoempleado;
-        
-        /// <summary>
         /// tabla control.
         /// </summary>
         /// <remarks>

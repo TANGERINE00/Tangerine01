@@ -283,6 +283,15 @@ namespace Tangerine.GUI.Master {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Empleados;
         
         /// <summary>
+        /// AgregarEmpleados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AgregarEmpleados;
+        
+        /// <summary>
         /// Cargos control.
         /// </summary>
         /// <remarks>

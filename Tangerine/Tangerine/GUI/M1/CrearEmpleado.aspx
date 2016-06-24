@@ -62,7 +62,8 @@
                
                  <div class="form-group ">
                   <label for="FirstLastName">Primer Apellido</label> <label for="Requerido" style="color: red;">*</label>
-                  <input type="text" runat="server" id="FirstLastName" class="form-control" maxlenght="20" placeholder="Primer Apellido" oninput="setCustomValidity('')" pattern="^[a-zA-Záéíóúñ\s]*$" 
+                  <input type="text" runat="server" id="FirstLastName" class="form-control" maxlenght="20" 
+                      placeholder="Primer Apellido" oninput="setCustomValidity('')" pattern="^[a-zA-Záéíóúñ\s]*$" 
                       required oninvalid="setCustomValidity('Campo inválido o vacío')">
                </div>
                 
@@ -82,12 +83,14 @@
                </div>
 
                <%--<Fecha de Nacimiento>--%> 
-             <div class="form-group">
+             <div class="form-group date">
                   <label for="DateEmployee">Fecha de Nacimiento</label> <label for="Requerido" style="color: red;">*</label>
-                  <div class="form-control input-group date" data-provide="datepicker">
-                     <input type="text" class="form-control" placeholder="fecha de nacimiento" id="DateEmployee" runat="server" required>
+                  <div class="form-control input-group date">
+                     <input type="date" class="form-control" placeholder="fecha de nacimiento" id="DateEmployee"
+                         runat="server" min="1916-01-01" max="2001-01-01" oninput="setCustomValidity('')"
+                         required oninvalid="setCustomValidity('Porfavor colocar una fecha entre 1916 y 2001')">
                      <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
+                        <i class="fa fa-calendar"></i>
                      </div>
                   </div>
                  </div>
@@ -110,17 +113,15 @@
                 <%--<Fecha de Contratación>--%> 
               <div class="form-group">
                   <label for="DateJob">Fecha de contratación</label> <label for="Requerido" style="color: red;">*</label>
-                  <div class="form-control input-group date" data-provide="datepicker">
-                     <input type="text" class="form-control" placeholder="fecha de contratacion" id="DateJob" runat="server" required>
+                  <div class="form-control input-group date">
+                     <input type="date" class="form-control" placeholder="fecha de contratacion" id="DateJob" 
+                         runat="server"  min="1976-01-01" max="2016-12-31" oninput="setCustomValidity('')"
+                         required oninvalid="setCustomValidity('Porfavor colocar una fecha entre 1976 y 2016')">
                      <div class="input-group-addon">
-                        <span class="glyphicon glyphicon-th"></span>
+                        <i class="fa fa-calendar"></i>
                      </div>
                   </div>
-                  <asp:RegularExpressionValidator 
-                     runat="server" ControlToValidate="DateEmployee" 
-                     ValidationExpression="^(0[1-9]|1[012])[-/.](0[1-9]|[12][0-9]|3[01])[-/.](19|20)\d\d$"
-                     ErrorMessage="Invalid date format." />
-               </div>
+                 </div>
 
                 
 

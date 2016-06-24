@@ -20,6 +20,8 @@ namespace Tangerine.GUI.M1
         private PresentadorCrearEmpleado presentador;
         string active = "Activo";
         Hashtable elementos = new Hashtable();
+        private string[] Substrings;
+        private string fecha;
 
 
         public CrearEmpleado()
@@ -183,12 +185,22 @@ namespace Tangerine.GUI.M1
         }
         String IContratoCrearEmpleado.ItextDateEmployee
         {
-            get { return DateEmployee.Value; }
+            get
+            {               
+                Substrings = DateEmployee.Value.ToString().Split('-');
+                fecha = Substrings[1] + '/' + Substrings[2] + '/' + Substrings[0];
+                return fecha; 
+            }
             set { DateEmployee.Value = value; }
         }
         String IContratoCrearEmpleado.ItextDateJob
         {
-            get { return DateJob.Value; }
+            get
+            {
+                Substrings = DateEmployee.Value.ToString().Split('-');
+                fecha = Substrings[1] + '/' + Substrings[2] + '/' + Substrings[0];
+                return fecha;
+            }
             set { DateJob.Value = value; }
         }
         String IContratoCrearEmpleado.ItextJobMode
