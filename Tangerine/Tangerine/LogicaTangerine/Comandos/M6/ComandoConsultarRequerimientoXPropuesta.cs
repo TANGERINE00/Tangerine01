@@ -31,9 +31,13 @@ namespace LogicaTangerine.Comandos.M6
                 DominioTangerine.Entidades.M6.Propuesta propuesta = ( DominioTangerine.Entidades.M6.Propuesta )_laEntidad;
                 return daoRequerimiento.ConsultarRequerimientosXPropuesta(propuesta.Nombre);
             }
-            catch ( Exception e )
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                throw e;
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                throw ex;
             }
         }
     }

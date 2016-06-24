@@ -30,9 +30,13 @@ namespace LogicaTangerine.Comandos.M6
                 IDAOPropuesta daoPropuesta = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPropuesta();
                 return daoPropuesta.Modificar( _laEntidad );
             }
-            catch ( Exception e )
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                throw e;
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                throw ex;
             }
         }
     }
