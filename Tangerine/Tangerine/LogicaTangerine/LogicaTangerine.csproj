@@ -202,12 +202,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceLogicaM1.resx</DependentUpon>
     </Compile>
-    <Compile Include="M5\LogicResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LogicResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="M7\LogicaProyecto.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -232,10 +226,6 @@
     <EmbeddedResource Include="M1\ResourceLogicaM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResourceLogicaM1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="M5\LogicResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>LogicResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

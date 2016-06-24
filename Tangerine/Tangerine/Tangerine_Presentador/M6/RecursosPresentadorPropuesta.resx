@@ -167,11 +167,11 @@
   <data name="botonCerra" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
-  <data name="btn_eliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove-sign" data-toggle="modal" data-target="#modal-delete" href="#"&gt;&lt;/a&gt;</value>
+  <data name="btn_Oeliminar" xml:space="preserve">
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left:-5px;"  href="ConsultarPropuesta.aspx</value>
   </data>
-  <data name="btn_Modificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil mod_req" data-toggle="modal" data-target="#modal-update" href="#"&gt;&lt;/a&gt;</value>
+  <data name="btn_OModificar" xml:space="preserve">
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-pencil" type="submit" runat="server" style="margin-left:3px;"  href="ConsultarPropuesta.aspx</value>
   </data>
   <data name="cerrado" xml:space="preserve">
     <value>&lt;span class="label label-danger"&gt;Cerrado&lt;/span&gt;</value>
@@ -182,5 +182,20 @@
   </data>
   <data name="Salto" xml:space="preserve">
     <value>&lt;br&gt;</value>
+  </data>
+  <data name="Alert" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="AlertDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertShowSu1" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertShowSu2" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="AlertSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
   </data>
 </root>

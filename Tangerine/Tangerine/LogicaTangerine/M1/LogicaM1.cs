@@ -111,7 +111,7 @@ namespace LogicaTangerine.M1
                 throw ex;
             }
         }*/
-
+/*
         ///<sumary>
         ///Metodo que valida que las credenciales de login coincidan con
         ///un Usuario dentro de la base de datos
@@ -137,7 +137,7 @@ namespace LogicaTangerine.M1
             {
                 throw ex;
             }
-        }
+        }*/
 
         ///<sumary>
         ///Metodo que valida que las credenciales de login coincidan con
