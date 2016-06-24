@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M4;
 using Tangerine_Contratos.M6;
 using Tangerine_Presentador.M6;
 using System.Diagnostics;
@@ -19,15 +18,14 @@ namespace Tangerine.GUI.M6
     {
         
         PresentadorAgregarPropuesta presenter;
+        
         /// <summary>
         /// Constructor de la vista
         /// </summary>
-
         public AgregarPropuesta()
         {
             this.presenter = new PresentadorAgregarPropuesta(this);
         }
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,7 +38,6 @@ namespace Tangerine.GUI.M6
         /// <summary>
         /// Accion del boton a presionar "Agregar"
         /// </summary>
-
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             try
@@ -55,7 +52,7 @@ namespace Tangerine.GUI.M6
             
         }
 
-       
+        #region Contrato
         public DropDownList ComboCompania 
         {
             get { return comboCompañia; }
@@ -116,6 +113,22 @@ namespace Tangerine.GUI.M6
             get { return comboEstatus; }
             set { comboEstatus=value; }
         }
+        
+        //REVISAR ADAPTACION
+        public string alertaClase
+        {
+            set { alert.Attributes[RecursosGUI_M6.alertClase] = value; }
+        }
 
+        public string alertaRol
+        {
+            set { alert.Attributes[RecursosGUI_M6.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+        #endregion
     }
 }

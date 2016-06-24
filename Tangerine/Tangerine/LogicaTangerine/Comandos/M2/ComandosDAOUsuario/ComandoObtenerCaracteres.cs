@@ -34,26 +34,26 @@ namespace LogicaTangerine.Comandos.M2
             string caracteres = "";
             try
             {
-                char[] cadenaSeparada = new char[_cadena.Length];
+                char[] cadenaSeparada = new char[ _cadena.Length ];
 
-                using (StringReader reader = new StringReader( _cadena ))
+                using ( StringReader reader = new StringReader( _cadena ) )
                 {
-                    reader.ReadAsync( cadenaSeparada, 0, _cadena.Length );
+                    reader.ReadAsync( cadenaSeparada , 0 , _cadena.Length );
                 }
 
-                for (int i = 0; i < _cadena.Length; i++)
+                for ( int i = 0 ; i < _cadena.Length ; i++ )
                 {
-                    caracteres = caracteres + cadenaSeparada[i];
-                    if (i == ( _cantidad - 1 ))
+                    caracteres = caracteres + cadenaSeparada[ i ];
+                    if ( i == ( _cantidad - 1 ) )
                     {
                         break;
                     }
                 }
             }
-            catch (NullReferenceException ex)
+            catch ( NullReferenceException ex )
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM2Tangerine("Ingreso de un argumento con valor invalido", ex);
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "Ingreso de un argumento con valor invalido" , ex );
             }
             catch ( Exception ex )
             {

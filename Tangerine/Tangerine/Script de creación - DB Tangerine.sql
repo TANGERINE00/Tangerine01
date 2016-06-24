@@ -15,7 +15,7 @@
 		fk_lug_dir_id
 	) references LUGAR_DIRECCION(lug_dir_id)
 );
-
+	
 create table EMPLEADO
 (
 	emp_num_ficha int not null,
@@ -457,6 +457,22 @@ create table Seguimiento
 	) references CLIENTE_POTENCIAL(cli_pot_id)
 );
 
+create table HISTORICO_GERENTES
+(
+	fk_id_empleado int not null,
+	fk_id_proyecto int not null,
+
+	constraint pk_id_empleado foreign key
+	(
+		fk_id_empleado
+	) references EMPLEADO(emp_num_ficha),
+
+	constraint pk_id_proyecto foreign key
+	(
+		fk_id_proyecto
+	) references PROYECTO(proy_id)
+);
+
 GO
 
 --------Stored Procedure M2---------------------------------------------------------------------------------------------------
@@ -791,6 +807,62 @@ WHERE Cp.cli_pot_id=Se.fk_cli_pot
  	and Se.seg_tipo=@tipo
 
 END;
+GO
+
+CREATE procedure M3_Agrgar_Seguimento
+@fecha date,
+@tipo varchar(15),
+@motivo varchar(255),
+@fk int
+AS
+BEGIN
+DECLARE @idLead int;
+DECLARE @llamadas int;
+DECLARE @visitas int;
+DECLARE @tipoRegistro varchar(15);
+
+SET @tipoRegistro= @tipo;
+
+SET @idLead = (select Count(SE.seg_id)
+  from seguimiento SE);
+   
+   SET @llamadas =(select CP.cli_pot_num_llamadas
+from Cliente_Potencial CP
+where CP.cli_pot_id=@fk);
+   
+   SET @visitas =(select CP.cli_pot_num_visitas
+from Cliente_Potencial CP
+where CP.cli_pot_id=@fk);
+   
+   IF (@idLead <= 0)
+Begin
+SET @idLead=1;
+END;
+   
+   IF (@idLead > 0)
+BEGIN
+SET @idLead = @idLead + 1;
+END;
+
+INSERT INTO Seguimiento VALUES (@idLead,@fecha,@tipo,@motivo,@fk);
+commit;
+
+IF @tipoRegistro='Llamada'
+BEGIN
+update Cliente_Potencial
+SET cli_pot_num_llamadas= @llamadas +1
+where cli_pot_id=@fk;
+END;
+
+IF @tipoRegistro='Visita'
+BEGIN
+update Cliente_Potencial
+SET cli_pot_num_visitas=@visitas +1
+where cli_pot_id=@fk;
+END;
+
+END;
+go
 
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
@@ -1350,6 +1422,27 @@ AS
  	END;
 GO
 
+---- StoredProcedure Agregar HistoricoGerentes ----
+CREATE PROCEDURE M7_HistoricoGerentes
+    @IdGerente int,
+    @IdProyecto int
+AS
+	BEGIN
+    	INSERT INTO HISTORICO_GERENTES(fk_id_empleado,fk_id_proyecto)
+		VALUES(@IdGerente,@IdProyecto);
+ 	END;
+GO
+
+---- StoredProcedure Consultar HistoricoGerentes ----
+CREATE PROCEDURE M7_ConsultarHistoricoGerente
+	@IdProyecto int
+
+AS
+	BEGIN
+		SELECT fk_id_empleado AS fk_id_empleado
+		FROM HISTORICO_GERENTES WHERE fk_id_proyecto = @IdProyecto;
+	END
+GO
 
 ---- StoredProcedure Consultar ProyectoContacto ----
 CREATE PROCEDURE M7_ConsultarProyectoContacto

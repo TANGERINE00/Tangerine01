@@ -16,6 +16,8 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="alert" runat="server">
+    </div>
     <div class="row">
         <!-- left column -->
         <div class="col-md-6" runat="server">
@@ -98,6 +100,7 @@
 
                             <div class="form-group" runat="server">
                                 <asp:Button ID="buttonAnular_M8" Style="margin-top: 5%" class="btn btn-danger" type="submit" runat="server" Text="Anular" OnClientClick="return confirm('¿Seguro que desea anular la factura?');" OnClick="buttonAnularFactura_Click"></asp:Button>
+                                <a Style="margin-top: 5%; width:105px;" href="ConsultarFacturaM8.aspx" class="btn btn-default" type="submit">Cancelar</a>
                             </div>
                         </div>
 
@@ -111,6 +114,7 @@
             </div>
             <!-- /.box -->
 
+        </div>
         </div>
     <!--/.col (left) -->
     <!-- right column -->

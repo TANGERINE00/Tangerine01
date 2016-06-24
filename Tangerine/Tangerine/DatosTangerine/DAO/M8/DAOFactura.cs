@@ -7,8 +7,6 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using DominioTangerine;
-using DatosTangerine.M4;
-using DatosTangerine.M7;
 using ExcepcionesTangerine;
 using DominioTangerine.Entidades.M8;
 using DatosTangerine.InterfazDAO.M8;

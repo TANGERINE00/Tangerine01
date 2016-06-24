@@ -6,8 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using DatosTangerine;
-using LogicaTangerine.M4;
-using LogicaTangerine.M7;
 using Tangerine_Presentador.M8;
 using Tangerine_Contratos.M8;
 
@@ -107,6 +105,21 @@ namespace Tangerine.GUI.M8
                 this.TipoMoneda.Text = value;
             }
         }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM8.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
         #region presentador
@@ -123,12 +136,18 @@ namespace Tangerine.GUI.M8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.numero = Request.QueryString[ResourceGUIM8.idF];
-
-            if (!IsPostBack)
+            try 
+            { 
+                this.numero = Request.QueryString[ResourceGUIM8.idF];
+                if (!IsPostBack)
+                {
+                    _presentador.cargarFactura();                
+                }  
+            }
+            catch
             {
-                _presentador.cargarFactura();                
-            }  
+                Response.Redirect(ResourceGUIM8.volver);
+            }
         }
 
         protected void buttonAnularFactura_Click(object sender, EventArgs e)

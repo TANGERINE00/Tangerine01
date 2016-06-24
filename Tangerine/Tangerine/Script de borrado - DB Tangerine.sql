@@ -2,23 +2,24 @@ drop table pago;
 drop table factura;
 drop table contacto_proyecto;
 drop table empleado_proyecto;
-drop table proyecto;
 drop table requerimiento;
-drop table propuesta;
 drop table contacto;
 drop table telefono;
-drop table compania;
 drop table seguimiento;
 drop table cliente_potencial;
 drop table usuario;
 drop table cargo_empleado;
 drop table cargo;
-drop table empleado;
-drop table lugar_direccion;
+drop table HISTORICO_GERENTES;
 drop table rol_opcion;
 drop table rol;
 drop table opcion;
 drop table menu;
+drop table proyecto;
+drop table propuesta;
+drop table compania;
+drop table empleado;
+drop table lugar_direccion;
 
 drop procedure M2_ObtenerOpciones;
 drop procedure M2_ObtenerRolUsuario;
@@ -45,6 +46,7 @@ drop procedure M3_activar_cliente_potencial;
 drop procedure M3_eliminar_cliente_potencial_def;
 drop procedure M3_ConsultarIdUltimoLead;
 drop procedure M3_listar_Seguimento_llamadas;
+drop procedure M3_Agrgar_Seguimento;
 
 drop procedure M4_AgregarCompania;
 drop procedure M4_ConsultarCompania;
@@ -101,7 +103,9 @@ drop procedure M7_COnsultarProyectosPorGerente;
 drop procedure M7_ConsultarNombrePropuestaID;
 drop procedure M7_ConsultarMaxIdProyecto;
 drop procedure M7_ConsultarNumeroProyectos;
-drop procedure M7_BorrarProyecto
+drop procedure M7_BorrarProyecto;
+drop procedure M7_HistoricoGerentes;
+drop procedure M7_ConsultarHistoricoGerente;
 
 drop procedure M8_AgregarFactura;
 drop procedure M8_ConsultarFactura;
@@ -114,13 +118,13 @@ drop procedure M8_VerificarFacturasParaPagar;
 drop procedure M8_ConsultarMontoRestanteFactura;
 drop procedure M8_VerificarFacturaExistente;
 drop procedure M8_ConsultarFacturasPagadasCompania;
-drop procedure M8_EliminarFactura
+drop procedure M8_EliminarFactura;
 
 drop procedure M9_AgregarPago;
 drop procedure M9_CambioStatus;
 drop Procedure M9_ConsultarPago;
 drop procedure M9_HistoricoPagoCompania;
-drop procedure M9_EliminarPago
+drop procedure M9_EliminarPago;
 
 drop procedure M10_AgregarEmpleado;
 drop procedure M10_ConsultarEmpleado;

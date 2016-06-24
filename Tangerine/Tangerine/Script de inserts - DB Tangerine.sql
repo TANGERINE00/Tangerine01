@@ -215,6 +215,24 @@
 	insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
 	VALUES (4,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Dolares','Analisis Final',1,1,4);
 	SET IDENTITY_INSERT FACTURA OFF
+	
+	SET IDENTITY_INSERT FACTURA ON
+	GO
+	insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+	VALUES (5,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),100,100,'Euros','Analisis',1,1,4);
+	SET IDENTITY_INSERT FACTURA OFF
+	
+	SET IDENTITY_INSERT FACTURA ON
+	GO
+	insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+	VALUES (6,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),250,250,'Bolivares','Diseño',1,1,4);
+	SET IDENTITY_INSERT FACTURA OFF
+	
+	SET IDENTITY_INSERT FACTURA ON
+	GO
+	insert into dbo.FACTURA(fac_id, fac_fecha_emision, fac_fecha_ultimo_pago, fac_monto_total, fac_monto_restante, fac_tipo_moneda, fac_descripcion, fac_estatus, fk_proy_id, fk_compania_id) 
+	VALUES (7,convert(VARCHAR(10),'11-10-2015',110),convert(VARCHAR(10),'11-10-2015',110),1000,1000,'Bolivares','Diseño',0,1,2);
+	SET IDENTITY_INSERT FACTURA OFF
 
 	-----Inserts de Usuarios y Roles-------
 	insert into ROL values (1, 'Administrador');
@@ -327,7 +345,27 @@
 	           ,[pag_fecha]
 	           ,[fk_fac_id])
 	     VALUES
-	           ('Bolivares',250,'Deposito',1234543212,'06/05/2015',4);
+	           ('Bolivares',250,'Deposito',123454,'06/05/2015',4);
+			   
+	INSERT INTO [dbo].[PAGO]
+	           ([pag_moneda]
+	           ,[pag_monto]
+	           ,[pag_forma]
+	           ,[pag_cod]
+	           ,[pag_fecha]
+	           ,[fk_fac_id])
+	     VALUES
+	           ('Euros',100,'Deposito',225474,'06/05/2015',5);
+			   
+	INSERT INTO [dbo].[PAGO]
+	           ([pag_moneda]
+	           ,[pag_monto]
+	           ,[pag_forma]
+	           ,[pag_cod]
+	           ,[pag_fecha]
+	           ,[fk_fac_id])
+	     VALUES
+	           ('Euros',150,'Deposito',455774,'06/05/2015',6);
 
 
 	--------------------------INSERTS REQUERIMIENTOS---------------------------
@@ -396,19 +434,19 @@
 	-----inserts de seguimiento--------------
 	insert into SEGUIMIENTO values (1,convert(VARCHAR(10),'02-04-2016',110),'Visita','Reunion con gerentes',1);
 insert into SEGUIMIENTO values (2,convert(VARCHAR(10),'03-03-2016',110),'Visita','Reunion eventual',1);
-insert into SEGUIMIENTO values (3,convert(VARCHAR(10),'23-01-2016',110),'Visita','Visita al cliente semanal',1);
+insert into SEGUIMIENTO values (3,convert(VARCHAR(10),'11-01-2016',110),'Visita','Visita al cliente semanal',1);
 insert into SEGUIMIENTO values (4,convert(VARCHAR(10),'12-02-2016',110),'Visita','Reunion con personal',5);
 insert into SEGUIMIENTO values (5,convert(VARCHAR(10),'02-04-2016',110),'Visita','Visita quincenal',5);
-insert into SEGUIMIENTO values (6,convert(VARCHAR(10),'15-01-2016',110),'Visita','Reunion con gerentes',5);
+insert into SEGUIMIENTO values (6,convert(VARCHAR(10),'12-01-2016',110),'Visita','Reunion con gerentes',5);
 insert into SEGUIMIENTO values (7,convert(VARCHAR(10),'09-03-2016',110),'Visita','Reunion con personal',6);
 insert into SEGUIMIENTO values (8,convert(VARCHAR(10),'02-01-2016',110),'Visita','Reunion con gerentes',6);
 
 insert into SEGUIMIENTO values (9,convert(VARCHAR(10),'02-04-2016',110),'Llamada','Planificación de reunion',1);
 insert into SEGUIMIENTO values (10,convert(VARCHAR(10),'03-03-2016',110),'Llamada','Intercambio de información',1);
-insert into SEGUIMIENTO values (11,convert(VARCHAR(10),'23-01-2016',110),'Llamada','Llamada al cliente semanal',1);
+insert into SEGUIMIENTO values (11,convert(VARCHAR(10),'09-01-2016',110),'Llamada','Llamada al cliente semanal',1);
 insert into SEGUIMIENTO values (12,convert(VARCHAR(10),'12-02-2016',110),'Llamada','Llamada con personal',5);
 insert into SEGUIMIENTO values (13,convert(VARCHAR(10),'02-04-2016',110),'Llamada','Llamada quincenal',5);
-insert into SEGUIMIENTO values (14,convert(VARCHAR(10),'15-01-2016',110),'Llamada','Planificación con gerentes',5);
+insert into SEGUIMIENTO values (14,convert(VARCHAR(10),'11-01-2016',110),'Llamada','Planificación con gerentes',5);
 insert into SEGUIMIENTO values (15,convert(VARCHAR(10),'09-03-2016',110),'Llamada','Planificación con personal',6);
 insert into SEGUIMIENTO values (16,convert(VARCHAR(10),'02-01-2016',110),'Llamada','Planificación con gerentes',6);
 

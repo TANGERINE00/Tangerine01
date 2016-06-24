@@ -127,9 +127,9 @@ namespace LogicaTangerine.Fabrica
             /// </summary>
             /// <param name="usuario"></param>
             /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
-            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin(DominioTangerine.Entidad usuario)
+            public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin( DominioTangerine.Entidad usuario )
             {
-                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin(usuario);
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin( usuario );
             }
 
             #endregion
@@ -173,7 +173,7 @@ namespace LogicaTangerine.Fabrica
             /// <param name="nombreMenu"></param>
             /// <param name="codigoRol"></param>
             /// <returns>Retorna una una instancia a ObtenerRolUsuarioPorNombre</returns>
-            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre(string nombreRol)
+            public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre( string nombreRol )
             {
                 return new Comandos.M2.ComandosDAORol.ComandoObtenerRolUsuarioPorNombre( nombreRol );
             }
@@ -754,6 +754,26 @@ namespace LogicaTangerine.Fabrica
         public static Comando<List<Entidad>> ObtenerComandoConsultarEmpleadosXIdProyecto(Entidad proyecto)
         {
             return new ComandoConsultarEmpleadosXIdProyecto(proyecto);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarHistoricoGerente.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregara el historico.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<bool> ObtenerComandoAgregarHistoricoGerente(Entidad proyecto, Entidad empleado)
+        {
+            return new ComandoAgregarHistoricoGerente(proyecto, empleado);
+        }
+
+        /// <summary>
+        /// Método para crear una instancia del ComandoAgregarContactos.
+        /// </summary>
+        /// <param name="proyecto">Proyecto al cual se le agregaran los contactos.</param>
+        /// <returns>True si ha sido exitoso el insertar.</returns>
+        public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoGerente(Entidad proyecto)
+        {
+            return new ComandoConsultarHistoricoGerente(proyecto);
         }
         #endregion
 

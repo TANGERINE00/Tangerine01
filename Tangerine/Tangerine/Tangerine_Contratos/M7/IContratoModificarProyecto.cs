@@ -35,11 +35,6 @@ namespace Tangerine_Contratos.M7
         TextBox textInputFechaInicio { get; set; }
 
         /// <summary>
-        /// Encabezado del Calendar de fecha de fin estimada
-        /// </summary>
-        Calendar textInputFechaEstimada { get; set; }
-
-        /// <summary>
         /// Encabezado del TextBox de costo del proyecto
         /// </summary>
         TextBox textInputCosto { get; set; }
@@ -113,5 +108,17 @@ namespace Tangerine_Contratos.M7
         /// Encabezado del TextBox de porcentaje de realizacion del proyecto del proyecto
         /// </summary>
         TextBox realizacion { get; set; }
+
+        /// <summary>
+        /// Encabezado del calendario para seleccion fecha fin del proyecto
+        /// </summary>
+        String FechaFin { get; set; }
+
+        /// <summary>
+        /// Encabezado del TextBox de porcentaje de realizacion del proyecto del proyecto
+        /// </summary>
+        TextBox gteAct { get; set; }
+
+        
     }
 }

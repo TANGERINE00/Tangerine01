@@ -59,45 +59,18 @@ namespace Tangerine_Contratos.M1
         /// </summary>
         TextBox ItextSecondLastName { get; set; }
 
-        /// <summary>
-        /// Encabezado fecha de nacimiento
-        /// </summary>
-        String ItextDateEmployee { get; set; }
+        TextBox ItextDateEmployee { get; set; }
+        TextBox ItextDateJob { get; set; }
+        TextBox ItextJobMode { get; set; }
+        TextBox ItextSalaryJob { get; set; }
+        TextBox ItextCityAddress { get; set; }
+        TextBox ItextAddresEspecific { get; set; }
+        TextBox ItextEmailPerson { get; set; }
+        TextBox ItextPhonePerson { get; set; }
 
-        /// <summary>
-        /// Encabezado fecha de contratacion
-        /// </summary>
-        String ItextDateJob { get; set; }
 
-        /// <summary>
-        /// Encabezado modalidad de contrato
-        /// </summary>
-        String ItextJobMode { get; set; }
+        
 
-        /// <summary>
-        /// Encabezado del sueldo
-        /// </summary>
-        String ItextSalaryJob { get; set; }
-
-        /// <summary>
-        /// Encabezado direccion
-        /// </summary>
-        String ItextCityAddress { get; set; }
-
-        /// <summary>
-        /// Encabezado direccion especifica
-        /// </summary>
-        String ItextAddresEspecific { get; set; }
-
-        /// <summary>
-        /// Encabezado email
-        /// </summary>
-        String ItextEmailPerson { get; set; }
-
-        /// <summary>
-        /// Encabezado telefono
-        /// </summary>
-        String ItextPhonePerson { get; set; }
         
     }
 }

@@ -41,7 +41,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
                 RolM2 rol = new RolM2( _elRol );
                 UsuarioM2 usuario = new UsuarioM2( _elUsuario , rol );
 
-                LogicaTangerine.Comando<Boolean> commandModificarRolUsuario = FabricaComandos.obtenerComandoModificarRolUsuario( usuario );
+                LogicaTangerine.Comando<Boolean> commandModificarRolUsuario
+                    = FabricaComandos.obtenerComandoModificarRolUsuario( usuario );
                 resultado = commandModificarRolUsuario.Ejecutar();
             }
             catch ( Exception ex )
