@@ -36,7 +36,7 @@ namespace Tangerine.GUI.M6
         {
             try
             {
-                
+                presenter.ModificarRequerimiento();
             }
             catch (Exception)
             {
@@ -60,7 +60,7 @@ namespace Tangerine.GUI.M6
                     return null;
                 }
             }
-            set { requerimiento_id.Value = value; }
+            set { requerimiento_id.Value = Request.QueryString.Get("idReq"); }
 
         }
 
