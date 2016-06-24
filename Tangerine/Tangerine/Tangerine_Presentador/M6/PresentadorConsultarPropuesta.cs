@@ -83,12 +83,22 @@ namespace Tangerine_Presentador.M6
 
                     imprimirBotones(laPropuesta);
                 } 
-            } 
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error realizando el llenado de la tabla, por favor actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
-            } 
+            }
         }
 
         /// <summary>

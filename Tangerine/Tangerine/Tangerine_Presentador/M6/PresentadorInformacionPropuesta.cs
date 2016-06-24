@@ -60,9 +60,19 @@ namespace Tangerine_Presentador.M6
 
                 imprimirAcuerdo(_propuesta);
             }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Realizando el Llenado de la vista, por favor Actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             }
             }
