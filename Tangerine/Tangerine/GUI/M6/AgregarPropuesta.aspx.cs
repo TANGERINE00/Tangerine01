@@ -31,7 +31,13 @@ namespace Tangerine.GUI.M6
         {
             if (!IsPostBack)
             {
+                try {
                 presenter.llenarVista();
+                }catch (Exception)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                }
+
             }
         }
 

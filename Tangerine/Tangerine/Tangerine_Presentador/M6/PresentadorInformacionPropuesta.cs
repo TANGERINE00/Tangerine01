@@ -64,16 +64,19 @@ namespace Tangerine_Presentador.M6
             {
                 MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
                 MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
             }
             }
         }
@@ -118,7 +121,6 @@ namespace Tangerine_Presentador.M6
         /// <param name="_propuesta"></param>
         public void imprimirRequerimientos(Entidad _propuesta)
         {
-            try {
                 List<Entidad> _requerimientos;
                 Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
 
@@ -133,12 +135,6 @@ namespace Tangerine_Presentador.M6
                         + ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString();
 
                     vistaInformacion.Requerimientos.Text += RecursosPresentadorPropuesta.Salto + RecursosPresentadorPropuesta.Salto;
-            }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error realizando el llenado de la tabla, por favor actualice la pagina.", "Error en llenado", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
             }
         }
         /// <summary>
