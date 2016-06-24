@@ -214,7 +214,7 @@ namespace Tangerine_Presentador.M6 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:3px;&quot;  href=&quot;ConsultarPropuesta.aspx.
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:3px;&quot;  href=&quot;ModificarRequerimiento.aspx?idReq=.
         /// </summary>
         internal static string btn_OModificar {
             get {
@@ -264,6 +264,15 @@ namespace Tangerine_Presentador.M6 {
         internal static string euro {
             get {
                 return ResourceManager.GetString("euro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &amp;idPro=.
+        /// </summary>
+        internal static string intermedioBoton {
+            get {
+                return ResourceManager.GetString("intermedioBoton", resourceCulture);
             }
         }
         
