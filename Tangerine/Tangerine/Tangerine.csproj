@@ -182,6 +182,7 @@
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
+    <Content Include="GUI\M6\ModificarRequerimiento.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\ConsultaProyecto.aspx" />
     <Content Include="GUI\M7\InformacionProyecto.aspx" />
@@ -1274,6 +1275,13 @@
     </Compile>
     <Compile Include="GUI\M6\ModificarPropuesta.aspx.designer.cs">
       <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarRequerimiento.aspx.cs">
+      <DependentUpon>ModificarRequerimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarRequerimiento.aspx.designer.cs">
+      <DependentUpon>ModificarRequerimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\RecursosGUI_M6.Designer.cs">
       <AutoGen>True</AutoGen>
