@@ -6,20 +6,25 @@
     <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
-    Gestion de Propuesta
+     Gestion de Requerimiento
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
-    Agregar Propuesta
+   Modificar Requerimiento
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Gestión de Propuesta</a></li>
+     <li><a href="#">Modificar Propuesta</a></li>
     <li class="active">Modificar Requerimiento</li>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <style>
+        .box-body {
+        
+
+        }
         .main-footer {
             float: left;
             position: relative;
@@ -27,6 +32,7 @@
         }
         .content-wrapper {
             float: left;
+            width: 85%;
         }
         .input-group, .form-control {
             width: 95%;
@@ -52,10 +58,10 @@
         }
     </style>
 
-    <div id="alert" runat="server" style="width:530px">
+    <div id="alert" runat="server" style="width:100%">
     </div>
 
-    <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
+    <form role="form" name="modificar_requerimiento" id="modificar_requerimiento" method="post" runat="server">
 
         <div class="col-md-6" runat="server">
 
@@ -64,19 +70,26 @@
                 <!-- form start -->
 
                 <div class="box-body">
-                          
-                            <input type="text" class="form-control" ID="textoDuracion" name="duracion" runat="server" 
-                                pattern="^[0-9]{1,3}$" title="Introduzca un numero" required clientidmode="static"
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener números (maximo 3 digitos)')" 
-                                oninput="setCustomValidity('')" 
-                                onchange="setFechas(this.id, 'datepicker1', 'datepicker2', 'comboDuracion')">
-                     
+                     <div class="form-group">
+                       <label for="requerimiento_id">Id de Requerimiento</label>
+                        <input class="form-control" id="requerimiento_id" runat="server" disabled="disabled">
+                    </div>
+                   <div class ="form-group">       
+                    
+                       <label for="concepto">Concepto</label>
+                        <input type="text" class="form-control" ID="concepto" name="concepto" runat="server" 
+                                pattern="^[A-z ,.()]+$" title="Introduzca un Concepto" required clientidmode="static"
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener letras ')" 
+                                oninput="setCustomValidity('')">
+                    </div> 
                 </div>
 
                 <div class="box-footer" runat="server">
                     <asp:Button ID="btnagregar" class="btn btn-primary"
-                        OnClick="btnagregar_Click" OnClientClick="javascript:crearPrecondicionArr()" type="submit" runat="server"
-                        Text="Agregar"></asp:Button>
+                        OnClick="btnmodificar_Click"  type="submit" runat="server"
+                        Text="Modificar"></asp:Button>
+
+                    <a href="ConsultarPropuesta.aspx" class="btn btn-default pull-right">Regresar</a>  
                 </div>
 
             </div>

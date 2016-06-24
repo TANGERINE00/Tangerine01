@@ -142,8 +142,10 @@ namespace Tangerine_Presentador.M6
                         RecursosPresentadorPropuesta.CerrarTD;
 
 
-                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_OModificar + 
-                        RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD;;
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_OModificar +
+                       ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + RecursosPresentadorPropuesta.intermedioBoton+
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() + RecursosPresentadorPropuesta.botonCerra + 
+                        RecursosPresentadorPropuesta.CerrarTD;
                    
                     vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Oeliminar +
                         RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD; ;

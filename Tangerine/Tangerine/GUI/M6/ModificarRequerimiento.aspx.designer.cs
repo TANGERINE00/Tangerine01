@@ -22,22 +22,31 @@ namespace Tangerine.GUI.M6 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// Control agregar_propuesta.
+        /// Control modificar_requerimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_propuesta;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_requerimiento;
         
         /// <summary>
-        /// Control textoDuracion.
+        /// Control requerimiento_id.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText textoDuracion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText requerimiento_id;
+        
+        /// <summary>
+        /// Control concepto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText concepto;
         
         /// <summary>
         /// Control btnagregar.

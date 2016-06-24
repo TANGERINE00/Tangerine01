@@ -245,4 +245,7 @@
   <data name="ConsultarEmpleado" xml:space="preserve">
     <value>M2_ConsultarUsuarioPorNombre</value>
   </data>
+  <data name="ModificarNombreUsuario" xml:space="preserve">
+    <value>M2_ModificarUsuario</value>
+  </data>
 </root>

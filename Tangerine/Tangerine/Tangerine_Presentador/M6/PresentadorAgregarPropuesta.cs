@@ -124,11 +124,21 @@ namespace Tangerine_Presentador.M6
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
         }
 
@@ -162,11 +172,21 @@ namespace Tangerine_Presentador.M6
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                Alerta(ex.Mensaje + ", por favor intente de nuevo.", 0);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             
 

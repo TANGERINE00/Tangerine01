@@ -87,6 +87,7 @@
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarDatosUsuarioLogin.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoConsultarPorID.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarContrasena.cs" />
+    <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoModificarUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerCaracteres.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoObtenerUsuario.cs" />
     <Compile Include="Comandos\M2\ComandosDAOUsuario\ComandoPrepararUsuario.cs" />

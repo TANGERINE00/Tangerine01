@@ -148,7 +148,7 @@ namespace PruebasUnitarias.M6
                 laPropuesta2 = (DominioTangerine.Entidades.M6.Propuesta)comandoEntidad.Ejecutar();
             }
             //Se chequea que no haya sido encontrada.
-            catch (ExcepcionesTangerine.ExceptionsTangerine e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine)
             {
                 Assert.IsTrue(true);
             }

@@ -496,6 +496,16 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE M2_ModificarUsuario
+	@emp_num_ficha int,
+	@usuario [varchar](100)
+AS
+	BEGIN
+		UPDATE USUARIO SET usu_usuario = @usuario 
+		WHERE fk_emp_num_ficha = @emp_num_ficha;
+	END;
+GO
+
 CREATE PROCEDURE M2_BorrarUsuario
 	@usu_id int
 AS

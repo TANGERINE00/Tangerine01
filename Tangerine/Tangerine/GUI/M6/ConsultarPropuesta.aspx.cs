@@ -44,7 +44,13 @@ namespace Tangerine.GUI.M6
         {
             if (!IsPostBack)
             {
-                presentadorConsultar.consultarPropuestas();
+                try {
+                    presentadorConsultar.consultarPropuestas();
+                }
+                catch (Exception ex)
+                {
+                    Response.Redirect("../M1/Dashboard.aspx");
+                }
             }
         }
         
