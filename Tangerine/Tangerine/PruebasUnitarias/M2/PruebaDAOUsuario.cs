@@ -192,6 +192,18 @@ namespace PruebasUnitarias.M2
             Assert.IsTrue( resultado2 );
         }
 
+        /// <summary>
+        /// Método para probar el ModificarUsuario de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestModificarUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar( elUsuario );
+            bool resultado = daoUsuario.ModificarUsuario( 1 , "jose" );
+            Assert.IsTrue( resultado );
+        }
+
         #endregion
     }
 }

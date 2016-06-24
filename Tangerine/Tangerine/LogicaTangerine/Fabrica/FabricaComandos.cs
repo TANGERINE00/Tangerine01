@@ -131,6 +131,17 @@ namespace LogicaTangerine.Fabrica
             {
                 return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin( usuario );
             }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoModificarUsuario
+            /// </summary>
+            /// <param name="fichaEmpleado"></param>
+            /// <param name="nombreUsuario"></param>
+            /// <returns>Retorna una instancia a ComandoModificarUsuario</returns>
+            public static Comando<Boolean> modificarUsuario( int fichaEmpleado , string nombreUsuario )
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoModificarUsuario( fichaEmpleado , nombreUsuario );
+            }
 
             #endregion
 
