@@ -781,7 +781,7 @@ namespace DatosTangerine.M10
             return true;
         }
 
-        /// <summary>
+  /*      /// <summary>
         /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
         /// </summary>
         /// <param name="usuario"></param>
@@ -840,7 +840,7 @@ namespace DatosTangerine.M10
             }
 
             return usuario;
-        }
+        }*/
 
     }
 }

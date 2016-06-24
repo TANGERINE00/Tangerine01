@@ -86,6 +86,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th style="width: 530px">Requerimiento</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <asp:Literal runat="server" ID="requerimientos"> </asp:Literal>>

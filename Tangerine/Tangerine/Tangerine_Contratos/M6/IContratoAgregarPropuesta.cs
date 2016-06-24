@@ -72,5 +72,17 @@ namespace Tangerine_Contratos.M6
             get;
             set;
         }
+        string alertaClase 
+        { 
+            set; 
+        }
+        string alertaRol 
+        { 
+            set; 
+        }
+        string alerta 
+        { 
+            set; 
+        }
     }
 }

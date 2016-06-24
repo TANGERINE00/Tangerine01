@@ -90,7 +90,7 @@ namespace Tangerine_Presentador.Master
         /// </summary>
          public void CerrarSesionP()
         {
-            Util._theGlobalUser = null;
+            UtilM1._theGlobalUser = null;
             HttpContext.Current.Session.Abandon();
             HttpContext.Current.Response.Redirect("../M1/Login.aspx");
         }

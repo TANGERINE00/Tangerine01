@@ -27,7 +27,6 @@ namespace DominioTangerine
 
       private string address;
       public Cargo job;
-      private List<Proyecto> listProjects = new List<Proyecto>();
       private List<LugarDireccion> addressComplete = new List<LugarDireccion>();
 
       #endregion
@@ -316,17 +315,7 @@ namespace DominioTangerine
            }
        }
 
-       public List<Proyecto> ListProjects
-       {
-           get
-           {
-               return this.listProjects;
-           }
-           set
-           {
-               this.listProjects = value;
-           }
-       }
+
 
        public Cargo Job
        {

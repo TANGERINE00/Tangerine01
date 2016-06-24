@@ -34,7 +34,7 @@ namespace DominioTangerine.Entidades.M10
         private string address;
         private List<Entidad> addressComplete = new List<Entidad>();
         public CargoM10 jobs;
-        private List<Proyecto> listProjects = new List<Proyecto>();
+        private List<Entidad> listProjects = new List<Entidad>();
         private List<LugarDireccion> listaDireccion = new List<LugarDireccion>();
         #endregion
 
@@ -265,7 +265,7 @@ namespace DominioTangerine.Entidades.M10
             }
         }
 
-        public List<Proyecto> ListProjects
+        public List<Entidad> ListProjects
         {
             get
             {

@@ -25,41 +25,35 @@
             position: relative;
             width: 100%;
         }
-
         .content-wrapper {
             float: left;
         }
-
         .input-group, .form-control {
             width: 95%;
         }
-
         .date {
             width: 48.5% !important;
             float: left;
         }
-
         #div-precondiciones {
             margin-bottom: 20px;
         }
-
-            #div-precondiciones .form-group {
+        #div-precondiciones .form-group {
                 padding: 15px 0;
             }
-
         @media only screen and (max-width: 550px) {
             .date {
                 width: 100% !important;
                 float: left;
             }
         }
-
         .dropdown .btn {
             width: 95%;
         }
     </style>
 
-
+    <div id="alert" runat="server" style="width:530px">
+    </div>
 
     <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
 

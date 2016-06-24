@@ -47,7 +47,8 @@
 
                                 pattern="([0-9]{1,3})([^'\x22])$"
                                 id="numFactura" name="numFactura" 
-                                placeholder="Introduzca el numero de factura correspondiente.e.g: 1" disabled="disabled">
+                                placeholder="Introduzca el numero de factura correspondiente.e.g: 1" 
+                                disabled="disabled">
                         </div>
 
 
@@ -79,7 +80,8 @@
                                  pattern="([a-z0-9.%+-])([A-Z])([^'\x22]){3,20}" 
                             
                                 id="monedaPago" name="monedaPago" 
-                                placeholder="Introduzca el nombre del proyecto.. e.g: USD , MXN , EUR " disabled="disabled">
+                                placeholder="Introduzca el nombre del proyecto.. e.g: USD , MXN , EUR " 
+                                disabled="disabled">
                         </div>
 
 
@@ -90,7 +92,8 @@
                                  pattern="([0-9]{1,10})([^'\x22])$" 
                             
                                 id="montoFactura" name="montoFactura" 
-                                placeholder="Introduzca el nombre del proyecto.. e.g: USD , MXN , EUR " disabled="disabled">
+                                placeholder="Introduzca el nombre del proyecto.. e.g: USD , MXN , EUR " 
+                                disabled="disabled">
                         </div>
 
 
@@ -122,7 +125,8 @@
              
 
             <div class="box-foot">
-                <asp:Button id="btnagregar" class="btn btn-primary" OnClick="btnagregar_Click" type="submit" runat="server" Text = "Agregar"></asp:Button>
+                <asp:Button id="btnagregar" class="btn btn-primary" OnClick="btnagregar_Click" type="submit" 
+                    runat="server" Text = "Agregar"></asp:Button>
                     
                
             </div>
