@@ -72,7 +72,7 @@
                     <%--<Fecha de Nacimiento>--%> 
                     <div class="form-group date">
                         <label for="DateEmployee">Fecha de Nacimiento</label> <label for="Requerido" style="color: red;">*</label>
-                        <div class="form-control input-group date">
+                        <div class="form-control input-group date ">
                             <input type="date" class="form-control" placeholder="fecha de nacimiento" id="DateEmployee"
                                 runat="server" min="1916-01-01" max="2001-01-01" oninput="setCustomValidity('')"
                                 required oninvalid="setCustomValidity('Porfavor colocar una fecha entre 1916 y 2001')">

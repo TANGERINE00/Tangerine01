@@ -214,8 +214,9 @@ i>Seguimiento</a></li>
                 <i></i> <span>Gestion de Empleados</span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="Empleados" runat="server"><a href="../M1/EmpleadosAdmin.aspx?EmployeeId=0" ><i class="fa fa-circle-o"></i> Consultar Empleados</a></li>
-                <li id="AgregarEmpleados" runat="server"><a href="../M1/crearempleado.aspx?" ><i class="fa fa-circle-o"></i> Agregar Empleado</a></li>
+                  <li id="AgregarEmpleados" runat="server"><a href="../M1/crearempleado.aspx?" ><i class="fa fa-circle-o"></i> Agregar Empleado</a></li>
+                  <li id="Empleados" runat="server"><a href="../M1/EmpleadosAdmin.aspx?EmployeeId=0" ><i class="fa fa-circle-o"></i> Consultar Empleados</a></li>
+                
                   <!--<li id="Cargos" runat="server"><a href="../M10/AdminCargo.aspx" ><i class="fa fa-circle-o"></i> Cargos</a></li>-->
               </ul>
             </li>

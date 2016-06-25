@@ -1890,7 +1890,7 @@ CREATE PROCEDURE [dbo].[M10_AgregarEmpleado]
 	-----------------------cargo
 	@fechContrato Date,
 	@modalidad [varchar](150),
-	@sueldo numeric(6,3),
+	@sueldo numeric(18,0),
 	---------------------------cargo empleado
 	@estado [varchar](150),
 	@ciudad [varchar](150),
