@@ -143,7 +143,7 @@
                   <a href="#"><i class="fa fa-circle-o"></i>  <i class="fa fa-angle-left pull-right"></i> Usuario</a>
                   <ul class="treeview-menu">
                     <li id="RegistrarUsuario" runat="server"><a href="../M2/RegistroUsuario.aspx"><i class="fa fa-circle-o"></i> Registrar Usuario</a></li>
-                    <li id="ModificarRol" runat="server"><a href="../M2/CambiarRol.aspx"><i class="fa fa-circle-o"></i> Modificar Rol</a></li>
+                    <li id="ModificarRol" runat="server"><a href="../M2/CambiarRol.aspx"><i class="fa fa-circle-o"></i> Modificar Usuario</a></li>
                   </ul>
                 </li>
               </ul>

@@ -97,7 +97,7 @@ namespace Tangerine.GUI.M2
                 }
                 else
                 {
-                    presentador.Alerta( "Nombre de usuario ya existente , intente otro." );
+                    presentador.Alerta( "Nombre de usuario ya existente, intente otro." );
                 }
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
