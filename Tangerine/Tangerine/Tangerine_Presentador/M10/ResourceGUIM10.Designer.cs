@@ -115,20 +115,38 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Activar/Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
         /// </summary>
-        internal static string BotonStatusEmpAbrir {
+        internal static string BotonStatusDeshabilitarAbrir {
             get {
-                return ResourceManager.GetString("BotonStatusEmpAbrir", resourceCulture);
+                return ResourceManager.GetString("BotonStatusDeshabilitarAbrir", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-remove-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-remove&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
         /// </summary>
-        internal static string BotonStatusEmpCerrar {
+        internal static string BotonStatusDeshabilitarCerrar {
             get {
-                return ResourceManager.GetString("BotonStatusEmpCerrar", resourceCulture);
+                return ResourceManager.GetString("BotonStatusDeshabilitarCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Activar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
+        /// </summary>
+        internal static string BotonStatusHabilitarAbrir {
+            get {
+                return ResourceManager.GetString("BotonStatusHabilitarAbrir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-success &quot;&gt;&lt;span class=&quot;glyphicon glyphicon-ok&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonStatusHabilitarCerrar {
+            get {
+                return ResourceManager.GetString("BotonStatusHabilitarCerrar", resourceCulture);
             }
         }
         
