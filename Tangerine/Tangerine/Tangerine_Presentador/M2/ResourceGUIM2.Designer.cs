@@ -151,7 +151,7 @@ namespace Tangerine_Presentador.M2 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a href=&quot;#&quot;  title=&quot;Modificar Rol&quot; runat =&quot;server&quot; class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; disabled.
+        ///   Looks up a localized string similar to &lt;a href=&quot;#&quot;  title=&quot;Modificar Rol&quot; runat =&quot;server&quot; class=&quot;btn btn-success glyphicon glyphicon-pencil&quot; disabled.
         /// </summary>
         internal static string Botonblock {
             get {
@@ -169,7 +169,7 @@ namespace Tangerine_Presentador.M2 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Usuario&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-cog&quot; style=&quot;margin-left:3px;&quot; href=&quot;CambiarUsuario.aspx?idEmpleado=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Usuario&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-user&quot; style=&quot;margin-left:3px;&quot; href=&quot;CambiarUsuario.aspx?idEmpleado=.
         /// </summary>
         internal static string BotonModificar {
             get {
@@ -178,7 +178,7 @@ namespace Tangerine_Presentador.M2 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Usuario&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-cog&quot; style=&quot;margin-left:3px;&quot; disabled.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Usuario&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-user&quot; style=&quot;margin-left:3px;&quot; disabled.
         /// </summary>
         internal static string BotonModificarBlock {
             get {
@@ -340,7 +340,7 @@ namespace Tangerine_Presentador.M2 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Rol&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-pencil&quot; href=&quot;AsignarRol.aspx?idEmpleado= .
+        ///   Looks up a localized string similar to &lt;a title=&quot;Modificar Rol&quot; runat =&quot;server&quot;class=&quot;btn btn-success glyphicon glyphicon-pencil&quot; href=&quot;AsignarRol.aspx?idEmpleado= .
         /// </summary>
         internal static string llamadoNuevaPagina {
             get {
