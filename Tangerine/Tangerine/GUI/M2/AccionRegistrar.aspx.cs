@@ -71,6 +71,30 @@ namespace Tangerine.GUI.M2
                 }
             }
 
+            /// <summary>
+            /// Clase de alerta, para excepciones
+            /// </summary>
+            public string alertaClase
+            {
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
+            }
+
         #endregion
 
         /// <summary>
@@ -112,16 +136,10 @@ namespace Tangerine.GUI.M2
                 {
                     Response.Redirect("../M2/RegistroUsuario.aspx");
                 }
-                else
-                {
-                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts",
-                                                         "javascript:alert('" + msjError + "')" , true );
-                }
             }
             else
             {
-                ScriptManager.RegisterStartupScript( this , this.GetType(), "alerts" ,
-                                                     "javascript:alert('Nombre de usuario ya existente, intente otro.')" , true ); 
+                presentador.Alerta("Nombre de usuario ya existente, intente otro.");
             }
 
         }
