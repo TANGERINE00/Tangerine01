@@ -55,6 +55,20 @@ namespace Tangerine.GUI.M1
             set { mensaje.Text = value; }
         }
 
+        public string errorLoginText
+        {
+            get { return errorLogin.InnerText; }
+            set { errorLogin.InnerText = value; }
+        }
+
+        public Boolean errorLoginAlert
+        {
+            get { return errorLogin.Visible; }
+            set { errorLogin.Visible = value; }
+        }
+
+        
+
         #endregion
 
         public Login1()
