@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security.AntiXss;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -76,13 +77,13 @@ namespace Tangerine.GUI.M2
             try
             {
                 //Esto ocurre cuando se modifica una factura, se muestra mensaje a usuario
-                string _estado = Request.QueryString[ResourceM2.estado];
+                string _estado = AntiXssEncoder.HtmlEncode( Request.QueryString[ResourceM2.estado], false );
                 if (_estado != null)
                     _presentador.Alerta(_estado);
             }
             catch
             {
-                //No hago nada, no es obligatorio el parametro
+                Response.Redirect(ResourceM2.RedirectPageLoad);
             }
 
             if (!IsPostBack)

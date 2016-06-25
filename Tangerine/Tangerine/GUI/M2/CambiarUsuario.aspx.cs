@@ -72,7 +72,7 @@ namespace Tangerine.GUI.M2
             try
             {
                 presentador = new Tangerine_Presentador.M2.PresentadorCambiarUsuario( this ,
-                                  int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString["idEmpleado"] , false ) ) );
+                                  int.Parse( AntiXssEncoder.HtmlEncode( Request.QueryString[ResourceM2.IDEmpleado] , false ) ) );
                 if (!IsPostBack)
                 {
                     presentador.inicioVista();
@@ -80,10 +80,15 @@ namespace Tangerine.GUI.M2
             }
             catch ( Exception ex )
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect( ResourceM2.RedirectPageLoad );
             }
         }
 
+        /// <summary>
+        /// Asignar cambio de nombre usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttonAsignar_Click( object sender , EventArgs e )
         {
             try
@@ -93,16 +98,16 @@ namespace Tangerine.GUI.M2
                 if ( !existenciaUsuario )
                 {
                     presentador.asignar();
-                    Response.Redirect("../M2/CambiarRol.aspx?estado=2");
+                    Response.Redirect( ResourceM2.RedirectBtnAsignarCambiarUsuario );
                 }
                 else
                 {
-                    presentador.Alerta( "Nombre de usuario ya existente, intente otro." );
+                    presentador.Alerta( ResourceM2.AlertaBtnModificar );
                 }
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
-                presentador.Alerta("Error en datos, por favor, intente otra vez.");
+                presentador.Alerta( ResourceM2.AlertaBtnAsignar );
             }
         }
     }

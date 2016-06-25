@@ -54,10 +54,10 @@ namespace Tangerine_Presentador.M2
                 _vista.ficha = _numFicha.ToString();
                 _vista.comboRol = _rol;
                 LogicaTangerine.Comando<String> theComando =
-                    LogicaTangerine.Fabrica.FabricaComandos.crearUsuario(_nombreUser, _apellidoUser);
+                    LogicaTangerine.Fabrica.FabricaComandos.crearUsuario( _nombreUser , _apellidoUser );
                 _vista.usuario = theComando.Ejecutar();
             }
-            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
@@ -97,11 +97,11 @@ namespace Tangerine_Presentador.M2
             try
             {
                 bool respuesta = false;
-                LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(_vista.usuario);
+                LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.usuario );
                 respuesta = comando.Ejecutar();
                 return respuesta;
             }
-            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;

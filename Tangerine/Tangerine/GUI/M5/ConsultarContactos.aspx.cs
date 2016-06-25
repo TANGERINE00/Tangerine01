@@ -95,10 +95,8 @@ namespace Tangerine.GUI.M5
             }
             catch ( ArgumentNullException ex )
             {
-                //No se hace nada ya que IdCont es opcional
+                return 0;
             }
-
-            return 0;
         }
 
         public int StatusAccion()
@@ -109,18 +107,23 @@ namespace Tangerine.GUI.M5
             }
             catch ( ArgumentNullException ex )
             {
-                //No se hace nada ya que IdCont es opcional
+                return 0;
             }
-
-            return 0;
         }
-
+        #endregion
+        
+        /// <summary>
+        /// Método que configura el boton para agregar un nuevo contacto.
+        /// </summary>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
+        /// <returns></returns>
         public string CargarBotonNuevoContacto( int typeComp, int idComp )
         {
             return this.button += ResourceGUIM5.VentanaAgregarContacto + typeComp.ToString()
                     + ResourceGUIM5.ParametroIdComp + idComp.ToString() + ResourceGUIM5.FinalAgregarContacto;
         }
-        #endregion
+        
 
         /// <summary>
         /// Metodo de carga de los elementos de la ventana.
