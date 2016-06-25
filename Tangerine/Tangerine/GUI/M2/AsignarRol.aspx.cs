@@ -72,7 +72,7 @@ namespace Tangerine.GUI.M2
             try
             {
                 presentador = new Tangerine_Presentador.M2.PresentadorAsignarRol( this,
-                                  int.Parse( AntiXssEncoder.HtmlEncode(Request.QueryString["idEmpleado"] , false ) ) );
+                                  int.Parse( AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.IDEmpleado] , false ) ) );
                 if ( !IsPostBack )
                 {
                     presentador.inicioVista();
@@ -80,7 +80,7 @@ namespace Tangerine.GUI.M2
             }
             catch ( Exception ex )
             {
-                Response.Redirect( "../M1/DashBoard.aspx" );
+                Response.Redirect( ResourceM2.RedirectPageLoad );
             }
 
         }
@@ -98,12 +98,12 @@ namespace Tangerine.GUI.M2
 
                 if (validacionUsuario)
                 {
-                    Response.Redirect("../M2/CambiarRol.aspx?estado=1");
+                    Response.Redirect( ResourceM2.RedirectBtnAsignarAsignarRol );
                 }
             }
             catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
             {
-                presentador.Alerta("Error en datos, por favor, intente otra vez.");
+                presentador.Alerta( ResourceM2.AlertaBtnAsignar );
             }
            
         }

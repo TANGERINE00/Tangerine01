@@ -90,18 +90,18 @@ namespace Tangerine.GUI.M2
         {
             try
             {
-                presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idFicha"], false)),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Nombre"], false),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Rol"], false));
+                presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.IDFicha], false)),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.Nombre], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.Apellido], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.Rol], false));
                 if (!IsPostBack)
                 {
                     presentador.inicioVista();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect( ResourceM2.RedirectPageLoad );
             }
         }
 
@@ -118,12 +118,12 @@ namespace Tangerine.GUI.M2
             {
                 if ( presentador.registrar() )
                 {
-                    Response.Redirect("../M2/RegistroUsuario.aspx?estado=1");
+                    Response.Redirect(ResourceM2.RedirectBtnCrearAccionRegistar);
                 }
             }
             else
             {
-                presentador.Alerta("Nombre de usuario ya existente, intente otro.");
+                presentador.Alerta(ResourceM2.AlertaBtnCrear);
             }
 
         }

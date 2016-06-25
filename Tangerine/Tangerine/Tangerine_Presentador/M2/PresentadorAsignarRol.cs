@@ -43,7 +43,7 @@ namespace Tangerine_Presentador.M2
                 LogicaTangerine.Comando<DominioTangerine.Entidad> theComando =
                             LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(_numFicha);
                 DominioTangerine.Entidad theUser = theComando.Ejecutar();
-                DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
+                DominioTangerine.Entidades.M2.UsuarioM2 user = ( DominioTangerine.Entidades.M2.UsuarioM2 )theUser;
                 _vista.usuario = user.nombreUsuario;
                 _vista.comboBoxRol = user.rol.nombre;
             }
