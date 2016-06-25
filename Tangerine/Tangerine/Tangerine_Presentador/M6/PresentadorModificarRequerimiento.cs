@@ -34,9 +34,10 @@ namespace Tangerine_Presentador.M6
         {
             try
             {
-             DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(vista.IdRequerimiento, vista.Concepto, vista.IdPropuesta);
-
-                elRequerimiento.Id = int.Parse(vista.IdRequerimiento);
+                Entidad elRequerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(vista.IdRequerimiento, vista.Concepto,
+                    vista.IdPropuesta);
+                    
+                
 
              //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
@@ -53,7 +54,38 @@ namespace Tangerine_Presentador.M6
 
         public void llenarDatosRequerimiento()
         {
-          //   vista.ComboDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion;          
+
+            string debug = vista.IdRequerimiento;
+            List<Entidad> _requerimientos;   
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                    vista.IdPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+
+
+     
+
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(propuesta);
+
+               try
+               {
+                   _requerimientos = comando.Ejecutar();
+
+                   foreach (Entidad _elRequerimiento in _requerimientos)
+                   {
+                       if (vista.IdRequerimiento.Equals(((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString()))
+                      {
+                          vista.Concepto = ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString();
+                          vista.IdRequerimiento = ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString();
+                      }
+                   }
+               }
+               catch (Exception e)
+               {
+                   MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+               }
+           
+                
+        
         }
  
 
