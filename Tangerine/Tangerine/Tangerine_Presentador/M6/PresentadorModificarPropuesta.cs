@@ -81,10 +81,23 @@ namespace Tangerine_Presentador.M6
 
                 //  ModificarRequerimiento();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             
         }
@@ -124,9 +137,6 @@ namespace Tangerine_Presentador.M6
         {
             List<Entidad> _requerimientos;
             Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
-
-            try
-            {
                 _requerimientos = cmdConsultarRequerimientos.Ejecutar();
 
                 foreach (Entidad _elRequerimiento in _requerimientos)
@@ -153,12 +163,6 @@ namespace Tangerine_Presentador.M6
 
                     vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
                 }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
             
         }
 
@@ -175,10 +179,23 @@ namespace Tangerine_Presentador.M6
                 Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
                 comando.Ejecutar();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             
 
@@ -208,10 +225,23 @@ namespace Tangerine_Presentador.M6
                     }
                 }
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
           
         }
@@ -219,8 +249,6 @@ namespace Tangerine_Presentador.M6
 
         public void TraerCompania(String idPropuesta)
         {
-            try
-            {
                 //Creo una propuesta
                 Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
                     idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
@@ -242,19 +270,33 @@ namespace Tangerine_Presentador.M6
 
                 imprimirRequerimientos(propuesta);
                 llenarDatosPropuesta(propuesta);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-            }
             
         }
 
 
         public void llenarVista()
         {
-            TraerCompania(vista.IdPropuesta);
+            try {
+                TraerCompania(vista.IdPropuesta);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }   
         }
     
     }
