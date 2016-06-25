@@ -158,6 +158,7 @@
     <Content Include="GUI\M2\AccionRegistrar.aspx" />
     <Content Include="GUI\M2\AsignarRol.aspx" />
     <Content Include="GUI\M2\CambiarRol.aspx" />
+    <Content Include="GUI\M2\CambiarUsuario.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
     <Content Include="GUI\M3\ActivarLead.aspx" />
     <Content Include="GUI\M3\AgregarLeads.aspx" />
@@ -1095,6 +1096,13 @@
     </Compile>
     <Compile Include="GUI\M2\CambiarRol.aspx.designer.cs">
       <DependentUpon>CambiarRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M2\CambiarUsuario.aspx.cs">
+      <DependentUpon>CambiarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\CambiarUsuario.aspx.designer.cs">
+      <DependentUpon>CambiarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M2\RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>

@@ -169,7 +169,7 @@ namespace Tangerine_Presentador.M2 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Modificar Usuario&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-cog&quot; style=&quot;margin-left:3px;&quot; href=&quot;AsignarRol.aspx?idEmpleado=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Modificar Usuario&quot; runat =&quot;server&quot;class=&quot;btn btn-primary glyphicon glyphicon-cog&quot; style=&quot;margin-left:3px;&quot; href=&quot;CambiarUsuario.aspx?idEmpleado=.
         /// </summary>
         internal static string BotonModificar {
             get {

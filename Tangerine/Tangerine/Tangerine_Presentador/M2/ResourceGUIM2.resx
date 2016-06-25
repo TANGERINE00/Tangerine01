@@ -244,7 +244,7 @@
     <value>El usuario ha sido creado exitosamente.</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a title="Modificar Usuario" runat ="server"class="btn btn-primary glyphicon glyphicon-cog" style="margin-left:3px;" href="AsignarRol.aspx?idEmpleado=</value>
+    <value>&lt;a title="Modificar Usuario" runat ="server"class="btn btn-primary glyphicon glyphicon-cog" style="margin-left:3px;" href="CambiarUsuario.aspx?idEmpleado=</value>
   </data>
   <data name="BotonModificarBlock" xml:space="preserve">
     <value>&lt;a title="Modificar Usuario" runat ="server"class="btn btn-primary glyphicon glyphicon-cog" style="margin-left:3px;" disabled</value>
