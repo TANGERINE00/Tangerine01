@@ -57,21 +57,6 @@ namespace Tangerine.GUI.M2
             }
             
             /// <summary>
-            /// Manejo de errores
-            /// </summary>
-            public string msjError
-            {
-                get
-                {
-                    return error;
-                }
-                set
-                {
-                    error = value;
-                }
-            }
-
-            /// <summary>
             /// Clase de alerta, para excepciones
             /// </summary>
             public string alertaClase
