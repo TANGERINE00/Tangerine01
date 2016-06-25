@@ -142,6 +142,15 @@ namespace LogicaTangerine.Fabrica
             {
                 return new Comandos.M2.ComandosDAOUsuario.ComandoModificarUsuario( fichaEmpleado , nombreUsuario );
             }
+            
+            /// <summary>
+            /// Método utilizado para devolver una instancia del ComandoConsultarUltimoIDEmpleado
+            /// </summary>
+            /// <returns>Retorna una instancia a ComandoConsultarUltimoIDEmpleado</returns>
+            public static Comando<int> consultarIDUltimoEmpleado()
+            {
+                return new Comandos.M2.ComandosDAOUsuario.ComandoConsultarUltimoIDEmpleado();
+            }
 
             #endregion
 

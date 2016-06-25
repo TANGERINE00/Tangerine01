@@ -36,6 +36,7 @@ drop procedure M2_ConsultarUsuario;
 drop procedure M2_BorrarUsuario;
 drop procedure M2_ConsultarUsuarioPorNombre;
 drop procedure M2_ModificarUsuario;
+drop procedure M2_ConsultarIdUltimoEmpleado;
 
 drop procedure M3_agregar_clientePotencial;
 drop procedure M3_listar_cliente_potencial;

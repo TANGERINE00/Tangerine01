@@ -14,7 +14,7 @@ namespace Tangerine.GUI.M2
     public partial class CambiarUsuario : System.Web.UI.Page, IContratoCambiarUsuario
     {
         private Tangerine_Presentador.M2.PresentadorCambiarUsuario presentador;
-        private bool existenciaUsuario;
+        private bool existenciaUsuario, lastEmployeID;
 
         #region Contrato
 
@@ -94,11 +94,19 @@ namespace Tangerine.GUI.M2
             try
             {
                 existenciaUsuario = presentador.usuarioExistente();
+                lastEmployeID = presentador.ultimoIDEmpleado();
 
                 if ( !existenciaUsuario )
                 {
-                    presentador.asignar();
-                    Response.Redirect( ResourceM2.RedirectBtnAsignarCambiarUsuario );
+                    if ( lastEmployeID )
+                    {
+                        presentador.asignar();
+                        Response.Redirect( ResourceM2.RedirectBtnAsignarCambiarUsuario );
+                    }
+                    else
+                    {
+                        presentador.Alerta( ResourceM2.AlertaFichaEmpleado );
+                    }
                 }
                 else
                 {

@@ -248,4 +248,10 @@
   <data name="ModificarNombreUsuario" xml:space="preserve">
     <value>M2_ModificarUsuario</value>
   </data>
+  <data name="ConsultLastEmployeID" xml:space="preserve">
+    <value>M2_ConsultarIdUltimoEmpleado</value>
+  </data>
+  <data name="fichaEmpleado" xml:space="preserve">
+    <value>emp_num_ficha</value>
+  </data>
 </root>
