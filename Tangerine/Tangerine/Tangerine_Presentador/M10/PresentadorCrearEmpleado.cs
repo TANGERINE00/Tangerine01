@@ -41,10 +41,10 @@ namespace Tangerine_Presentador.M10
         /// </summary>
         public void LlenarComboEmpleado()
         {
-            Vista.IcomboGenero.Items.Insert(0, "Seleccione Genero");
+            Vista.IcomboGenero.Items.Insert(0, "Seleccione un Genero");
             Vista.IcomboGenero.Items.Insert(1, "Femenino");
             Vista.IcomboGenero.Items.Insert(2, "Masculino");
-            Vista.IcomboEstado.Items.Insert(0, "Seleccione Estado");
+            //Vista.IcomboEstado.Items.Insert(0, "Seleccione Estado");
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Tangerine_Presentador.M10
         /// </summary>
         public void LlenarComboNivelEstudio()
         {
-            Vista.IcomboNivelEstudio.Items.Insert(0, "Seleccione Nivel");
+            Vista.IcomboNivelEstudio.Items.Insert(0, "Seleccione un Nivel");
             Vista.IcomboNivelEstudio.Items.Insert(1, "Bachiller");
             Vista.IcomboNivelEstudio.Items.Insert(2, "Técnico Superior Incompleto");
             Vista.IcomboNivelEstudio.Items.Insert(3, "Técnico Superior");
@@ -81,7 +81,7 @@ namespace Tangerine_Presentador.M10
             ObtenerFabricaPaises();
 
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("0", "Seleccionar un país");
+            options.Add("0", "Seleccione un país");
 
             List<Entidad> listaLugar = comando.Ejecutar();
 
@@ -108,7 +108,7 @@ namespace Tangerine_Presentador.M10
             ObtenerFabricaCargo();
 
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("0", "Seleccionar un cargo");
+            options.Add("0", "Seleccione un cargo");
 
             List<Entidad> listaCargo = comando.Ejecutar();
 
@@ -138,7 +138,7 @@ namespace Tangerine_Presentador.M10
             Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerFabricaEstado(Parametro);
 
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("0", "Seleccionar un estado");
+            options.Add("0", "Seleccione un estado");
 
             List<Entidad> listaEstado = comando.Ejecutar();
 
