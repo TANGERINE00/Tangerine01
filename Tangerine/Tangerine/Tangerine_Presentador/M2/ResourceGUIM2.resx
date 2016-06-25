@@ -240,7 +240,7 @@
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
   </data>
-  <data name="MsjModificado" xml:space="preserve">
+  <data name="MsjCreado" xml:space="preserve">
     <value>El usuario ha sido creado exitosamente.</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
@@ -248,5 +248,8 @@
   </data>
   <data name="BotonModificarBlock" xml:space="preserve">
     <value>&lt;a title="Modificar Usuario" runat ="server"class="btn btn-primary glyphicon glyphicon-cog" style="margin-left:3px;" disabled</value>
+  </data>
+  <data name="MsjRolModificado" xml:space="preserve">
+    <value>El rol ha sido modificado exitosamente.</value>
   </data>
 </root>

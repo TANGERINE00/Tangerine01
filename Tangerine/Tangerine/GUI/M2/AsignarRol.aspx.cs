@@ -98,7 +98,7 @@ namespace Tangerine.GUI.M2
 
                 if (validacionUsuario)
                 {
-                    Response.Redirect("../M2/CambiarRol.aspx");
+                    Response.Redirect("../M2/CambiarRol.aspx?estado=1");
                 }
             }
             catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
