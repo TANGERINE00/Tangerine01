@@ -84,6 +84,11 @@ namespace Tangerine.GUI.M2
             }
         }
 
+        /// <summary>
+        /// Asignar cambio de nombre usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttonAsignar_Click( object sender , EventArgs e )
         {
             try
