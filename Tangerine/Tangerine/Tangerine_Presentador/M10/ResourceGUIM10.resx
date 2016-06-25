@@ -132,11 +132,11 @@
   <data name="BotonModificarEmpCerrar" xml:space="preserve">
     <value>" type="button" class="btn btn-default"&gt;&lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonStatusEmpAbrir" xml:space="preserve">
-    <value>&lt;a title="Activar/Inactivar" href="EmpleadosAdmin.aspx?EmployeeId=</value>
+  <data name="BotonStatusHabilitarAbrir" xml:space="preserve">
+    <value>&lt;a title="Activar" href="EmpleadosAdmin.aspx?EmployeeId=</value>
   </data>
-  <data name="BotonStatusEmpCerrar" xml:space="preserve">
-    <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove-circle"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="BotonStatusHabilitarCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-success "&gt;&lt;span class="glyphicon glyphicon-ok"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonVerEmpAbrir" xml:space="preserve">
     <value>&lt;a title="Información" href="VerEmpleado.aspx?EmployeeId=</value>
@@ -197,5 +197,11 @@
   </data>
   <data name="OpenLabel" xml:space="preserve">
     <value>&lt;label&gt;</value>
+  </data>
+  <data name="BotonStatusDeshabilitarAbrir" xml:space="preserve">
+    <value>&lt;a title="Inactivar" href="EmpleadosAdmin.aspx?EmployeeId=</value>
+  </data>
+  <data name="BotonStatusDeshabilitarCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
 </root>
