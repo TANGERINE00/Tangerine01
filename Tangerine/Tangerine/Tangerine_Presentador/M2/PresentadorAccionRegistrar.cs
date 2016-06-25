@@ -94,10 +94,21 @@ namespace Tangerine_Presentador.M2
         /// <returns></returns>
         public bool usuarioExistente()
         {
-            bool respuesta = false;
-            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.usuario );
-            respuesta = comando.Ejecutar();
-            return respuesta;
+            try
+            {
+                bool respuesta = false;
+                LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario(_vista.usuario);
+                respuesta = comando.Ejecutar();
+                return respuesta;
+            }
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                    + ResourceGUIM2.alertaHtmlFinal;
+                return true;
+            }
         }
     }
 }
