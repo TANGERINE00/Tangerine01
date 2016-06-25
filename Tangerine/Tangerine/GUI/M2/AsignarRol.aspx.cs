@@ -46,6 +46,30 @@ namespace Tangerine.GUI.M2
                 set { error = value; }
             }
 
+            /// <summary>
+            /// Clase de alerta, para excepciones
+            /// </summary>
+            public string alertaClase
+            {
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
+            }
+
         #endregion
 
         /// <summary>

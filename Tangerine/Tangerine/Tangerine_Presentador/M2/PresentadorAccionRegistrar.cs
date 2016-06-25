@@ -37,7 +37,7 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Método para manejar los errores y mensajes a interfaz
         /// </summary>
-        public void Alerta(string msj)
+        public void Alerta( string msj )
         {
             _vista.alertaClase = ResourceGUIM2.alertaError;
             _vista.alertaRol = ResourceGUIM2.tipoAlerta;
