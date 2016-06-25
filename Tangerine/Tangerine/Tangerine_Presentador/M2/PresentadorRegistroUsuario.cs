@@ -31,7 +31,7 @@ namespace Tangerine_Presentador.M2
             {
                 _vista.alertaClase = ResourceGUIM2.alertaModificado;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
-                _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjModificado + ResourceGUIM2.alertaHtmlFinal;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjCreado + ResourceGUIM2.alertaHtmlFinal;
             }
             else
             {
