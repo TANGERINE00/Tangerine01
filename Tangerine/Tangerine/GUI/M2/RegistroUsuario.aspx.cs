@@ -14,7 +14,6 @@ namespace Tangerine.GUI.M2
     public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
         private PresentadorRegistroUsuario _presentador;
-        string error;
 
         /// <summary>
         /// Constructor de PresentadorRegistroUsuario
@@ -38,21 +37,6 @@ namespace Tangerine.GUI.M2
                 set
                 {
                     this.tabla.Text = value;
-                }
-            }
-
-            /// <summary>
-            /// Manejo de errores
-            /// </summary>
-            public string msjError
-            {
-                get
-                {
-                    return error;
-                }
-                set
-                {
-                    error = value;
                 }
             }
 
