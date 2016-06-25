@@ -27,11 +27,26 @@ namespace Tangerine_Contratos.M2
         }
 
         /// <summary>
-        /// Encabezado para excepciones
+        /// Clase de alerta, para excepciones
         /// </summary>
-        string msjError
+        string alertaClase
         {
-            get;
+            set;
+        }
+
+        /// <summary>
+        /// Alerta rol, para excepciones
+        /// </summary>
+        string alertaRol
+        {
+            set;
+        }
+
+        /// <summary>
+        /// Alerta, para excepciones
+        /// </summary>
+        string alerta
+        {
             set;
         }
     }

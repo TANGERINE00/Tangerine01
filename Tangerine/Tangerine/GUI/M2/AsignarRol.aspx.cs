@@ -15,7 +15,6 @@ namespace Tangerine.GUI.M2
     {
         private Tangerine_Presentador.M2.PresentadorAsignarRol presentador;
         private bool validacionUsuario;
-        string error;
 
         #region Contrato
 
@@ -38,12 +37,27 @@ namespace Tangerine.GUI.M2
             }
 
             /// <summary>
-            /// Mensaje error.
+            /// Clase de alerta, para excepciones
             /// </summary>
-            public string msjError
+            public string alertaClase
             {
-                get { return error;}
-                set { error = value; }
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
             }
 
         #endregion
@@ -78,16 +92,18 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void buttonAsignar_Click( object sender, EventArgs e )
         {
-            validacionUsuario = presentador.asignar();
+            try
+            {
+                validacionUsuario = presentador.asignar();
 
-            if (validacionUsuario)
-            {
-                Response.Redirect( "../M2/CambiarRol.aspx" );
+                if (validacionUsuario)
+                {
+                    Response.Redirect("../M2/CambiarRol.aspx");
+                }
             }
-            else 
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
             {
-                ScriptManager.RegisterStartupScript( this , this.GetType() ,
-                                                     "alerts" , "javascript:alert('" + msjError + "')" , true );
+                presentador.Alerta("Error en datos, por favor, intente otra vez.");
             }
            
         }

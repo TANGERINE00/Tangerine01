@@ -24,16 +24,37 @@ namespace Tangerine_Presentador.M2
         }
 
         /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta( string msj )
+        {
+            _vista.alertaClase = ResourceGUIM2.alertaError;
+            _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+            _vista.alerta = ResourceGUIM2.alertaHtml + msj + ResourceGUIM2.alertaHtmlFinal;
+        }
+
+        /// <summary>
         /// Inicio de vista de la página de Asignar Rol
         /// </summary>
         public void inicioVista()
         {
-            LogicaTangerine.Comando<DominioTangerine.Entidad> theComando =
-                LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario( _numFicha );          
-            DominioTangerine.Entidad theUser = theComando.Ejecutar();
-            DominioTangerine.Entidades.M2.UsuarioM2 user = ( DominioTangerine.Entidades.M2.UsuarioM2 )theUser;
-            _vista.usuario = user.nombreUsuario;
-            _vista.comboBoxRol = user.rol.nombre;
+            try
+            {
+                LogicaTangerine.Comando<DominioTangerine.Entidad> theComando =
+                            LogicaTangerine.Fabrica.FabricaComandos.obtenerUsuario(_numFicha);
+                DominioTangerine.Entidad theUser = theComando.Ejecutar();
+                DominioTangerine.Entidades.M2.UsuarioM2 user = (DominioTangerine.Entidades.M2.UsuarioM2)theUser;
+                _vista.usuario = user.nombreUsuario;
+                _vista.comboBoxRol = user.rol.nombre;
+            }
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine ex)
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                    + ResourceGUIM2.alertaHtmlFinal;
+            }
+
         }
 
         /// <summary>
@@ -49,7 +70,10 @@ namespace Tangerine_Presentador.M2
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
-                _vista.msjError = ex.Message;
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                    + ResourceGUIM2.alertaHtmlFinal;
                 return false;
             }
         }

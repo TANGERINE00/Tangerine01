@@ -16,7 +16,6 @@ namespace Tangerine.GUI.M2
     {
         private PresentadorAccionRegistrar presentador;
         private bool existenciaUsuario;
-        string error;
 
         #region Contrato
 
@@ -57,18 +56,27 @@ namespace Tangerine.GUI.M2
             }
             
             /// <summary>
-            /// Manejo de errores
+            /// Clase de alerta, para excepciones
             /// </summary>
-            public string msjError
+            public string alertaClase
             {
-                get
-                {
-                    return error;
-                }
-                set
-                {
-                    error = value;
-                }
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
             }
 
         #endregion
@@ -112,16 +120,10 @@ namespace Tangerine.GUI.M2
                 {
                     Response.Redirect("../M2/RegistroUsuario.aspx");
                 }
-                else
-                {
-                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts",
-                                                         "javascript:alert('" + msjError + "')" , true );
-                }
             }
             else
             {
-                ScriptManager.RegisterStartupScript( this , this.GetType(), "alerts" ,
-                                                     "javascript:alert('Nombre de usuario ya existente, intente otro.')" , true ); 
+                presentador.Alerta("Nombre de usuario ya existente, intente otro.");
             }
 
         }
