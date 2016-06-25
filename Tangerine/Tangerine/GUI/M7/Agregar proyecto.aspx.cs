@@ -160,7 +160,20 @@ namespace Tangerine.GUI.M7
             {
                 this.btnAgregarPersonal = value;
             }
+        }
+        public string alertaClase
+        {
+            set { alert.Attributes["class"] = value; }
+        }
 
+        public string alertaRol
+        {
+            set { alert.Attributes["role"] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
         }
         #endregion
 
@@ -221,8 +234,10 @@ namespace Tangerine.GUI.M7
         {
             try
             {
-                _presentador.agregarProyecto();
-                Server.Transfer("ConsultaProyecto.aspx", true);
+                if (_presentador.agregarProyecto())
+                {
+                    Server.Transfer("ConsultaProyecto.aspx", true);
+                }
             }
             catch (Exception)
             {
