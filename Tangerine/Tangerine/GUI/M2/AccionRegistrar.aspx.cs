@@ -16,7 +16,6 @@ namespace Tangerine.GUI.M2
     {
         private PresentadorAccionRegistrar presentador;
         private bool existenciaUsuario;
-        string error;
 
         #region Contrato
 
