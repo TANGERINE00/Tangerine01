@@ -123,6 +123,9 @@
   <data name="alertRole" xml:space="preserve">
     <value>role</value>
   </data>
+  <data name="alertUsuario" xml:space="preserve">
+    <value>user</value>
+  </data>
   <data name="estado" xml:space="preserve">
     <value>estado</value>
   </data>

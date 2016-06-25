@@ -33,12 +33,12 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelFicha_M2">Ficha del Empleado</label>
-                            <input type="text" runat="server" class="form-control" id="textFichaEmpleado_M2" name="textFichaEmpleado_M2" placeholder="Ficha Empleado">
+                            <input type="text" runat="server" class="form-control" id="textFichaEmpleado_M2" name="textFichaEmpleado_M2" placeholder="Ficha Empleado" disabled="disabled">
                         </div>
 
                         <div class="form-group" runat="server">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" runat="server" class="form-control" id="textUsuario_M2" name="textUsuario_M2" placeholder="Usuario" disabled="disabled">
+                            <input type="text" runat="server" class="form-control" id="textUsuario_M2" name="textUsuario_M2" placeholder="Usuario">
                         </div>
 
                         <div class="box-footer" runat="server">

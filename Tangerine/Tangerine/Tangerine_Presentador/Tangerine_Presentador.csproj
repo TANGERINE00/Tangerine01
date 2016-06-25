@@ -59,6 +59,7 @@
       <DependentUpon>ResourceGUIM1.resx</DependentUpon>
     </Compile>
     <Compile Include="M2\PresentadorAsignarRol.cs" />
+    <Compile Include="M2\PresentadorCambiarUsuario.cs" />
     <Compile Include="M2\PresentadorCambioRol.cs" />
     <Compile Include="M2\PresentadorAccionRegistrar.cs" />
     <Compile Include="M2\PresentadorRegistroUsuario.cs" />
