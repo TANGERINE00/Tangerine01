@@ -331,6 +331,15 @@ namespace Tangerine_Presentador.M2 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El usuario ha sido creado exitosamente..
+        /// </summary>
+        internal static string MsjModificado {
+            get {
+                return ResourceManager.GetString("MsjModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;Nombre=.
         /// </summary>
         internal static string NombreEmpleado {

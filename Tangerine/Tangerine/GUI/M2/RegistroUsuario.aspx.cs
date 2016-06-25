@@ -15,7 +15,6 @@ namespace Tangerine.GUI.M2
     {
         private PresentadorRegistroUsuario _presentador;
         string error;
-        private bool errorManejo;
 
         /// <summary>
         /// Constructor de PresentadorRegistroUsuario
@@ -57,6 +56,30 @@ namespace Tangerine.GUI.M2
                 }
             }
 
+            /// <summary>
+            /// Clase de alerta, para excepciones
+            /// </summary>
+            public string alertaClase
+            {
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
+            }
+
         #endregion
 
         /// <summary>
@@ -66,14 +89,21 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
+            try
+            {
+                //Esto ocurre cuando se modifica una factura, se muestra mensaje a usuario
+                string _estado = Request.QueryString[ResourceM2.estado];
+                if (_estado != null)
+                    _presentador.Alerta(_estado);
+            }
+            catch
+            {
+                //No hago nada, no es obligatorio el parametro
+            }
+
             if (!IsPostBack)
             {
-                errorManejo = _presentador.inicioVista();
-                if(!errorManejo)
-                {
-                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts" ,
-                                                         "javascript:alert('" + msjError + "')" , true );
-                }
+               _presentador.inicioVista();
             }
         }
     }

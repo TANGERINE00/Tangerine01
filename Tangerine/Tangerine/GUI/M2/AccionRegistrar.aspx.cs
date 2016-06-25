@@ -118,7 +118,7 @@ namespace Tangerine.GUI.M2
             {
                 if ( presentador.registrar() )
                 {
-                    Response.Redirect("../M2/RegistroUsuario.aspx");
+                    Response.Redirect("../M2/RegistroUsuario.aspx?estado=1");
                 }
             }
             else
