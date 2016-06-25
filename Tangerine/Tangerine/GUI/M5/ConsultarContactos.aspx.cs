@@ -95,10 +95,8 @@ namespace Tangerine.GUI.M5
             }
             catch ( ArgumentNullException ex )
             {
-                //No se hace nada ya que IdCont es opcional
+                return 0;
             }
-
-            return 0;
         }
 
         public int StatusAccion()
@@ -109,10 +107,8 @@ namespace Tangerine.GUI.M5
             }
             catch ( ArgumentNullException ex )
             {
-                //No se hace nada ya que IdCont es opcional
+                return 0;
             }
-
-            return 0;
         }
         #endregion
         
