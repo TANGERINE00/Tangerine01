@@ -252,4 +252,7 @@
   <data name="MsjRolModificado" xml:space="preserve">
     <value>El rol ha sido modificado exitosamente.</value>
   </data>
+  <data name="MsjModificadoUser" xml:space="preserve">
+    <value>El nombre de usuario ha sido modificado exitosamente.</value>
+  </data>
 </root>

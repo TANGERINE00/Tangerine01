@@ -38,11 +38,11 @@
 
                         <div class="form-group" runat="server">
                             <label for="labelUsuario_M2">Usuario</label>
-                            <input type="text" runat="server" class="form-control" id="textUsuario_M2" name="textUsuario_M2" placeholder="Usuario" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
+                            <input type="text" runat="server" class="form-control" id="textUsuario_M2" name="textUsuario_M2" placeholder="Usuario" maxlength="20" oninput="setCustomValidity('')" pattern="^[a-zA-Z0-9]*$" required oninvalid="setCustomValidity('Campo obligatorio, solo se admiten letras y números')">
                         </div>
 
                         <div class="box-footer" runat="server">
-                            <asp:Button ID="buttonAsignar_M2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Asignar" OnClientClick="return confirm('¿Seguro que desea modificar el rol?');" OnClick="buttonAsignar_Click"></asp:Button>
+                            <asp:Button ID="buttonAsignar_M2" Style="margin-top: 5%" class="btn btn-primary" type="submit" runat="server" Text="Asignar" OnClientClick="return confirm('¿Seguro que desea modificar el nombre de usuario?');" OnClick="buttonAsignar_Click"></asp:Button>
                         </div>
 
 

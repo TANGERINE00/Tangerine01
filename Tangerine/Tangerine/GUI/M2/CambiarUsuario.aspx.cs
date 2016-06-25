@@ -93,7 +93,7 @@ namespace Tangerine.GUI.M2
                 if ( !existenciaUsuario )
                 {
                     presentador.asignar();
-                    Response.Redirect("../M2/CambiarRol.aspx");
+                    Response.Redirect("../M2/CambiarRol.aspx?estado=2");
                 }
                 else
                 {

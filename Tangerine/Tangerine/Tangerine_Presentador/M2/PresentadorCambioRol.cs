@@ -24,13 +24,19 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Método para manejar los errores y mensajes a interfaz
         /// </summary>
-        public void Alerta(string msj)
+        public void Alerta( string msj )
         {
-            if (msj == "1")
+            if ( msj == "1" )
             {
                 _vista.alertaClase = ResourceGUIM2.alertaModificado;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
                 _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjRolModificado + ResourceGUIM2.alertaHtmlFinal;
+            }
+            else if ( msj == "2" )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaModificado;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjModificadoUser + ResourceGUIM2.alertaHtmlFinal;
             }
             else
             {
