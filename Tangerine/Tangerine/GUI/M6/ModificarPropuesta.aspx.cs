@@ -53,6 +53,20 @@ namespace Tangerine.GUI.M6
             }
         }
 
+        protected void EliminarRequerimiento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //presenter.EliminarRequerimiento(idRequerimiento, descripcion, idPropuesta);
+                Server.Transfer("ConsultarPropuesta.aspx", true);
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+            }
+
+        }
+
         #region Contrato
         public Literal Requerimientos
         {
