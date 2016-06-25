@@ -184,6 +184,26 @@ namespace Tangerine_Presentador.M6
         }
 
 
+        public void EliminarRequerimiento(string idRequerimiento, string descripcion, string idPropuesta)
+        {
+            try
+            {
+                Entidad _requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
+                    idRequerimiento, descripcion, idPropuesta);
+
+                Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
+                    _requerimiento);
+
+                cmdEliminarReq.Ejecutar();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public void TraerCompania(String idPropuesta)
         {
             try
