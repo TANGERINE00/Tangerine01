@@ -15,9 +15,13 @@ namespace Tangerine_Contratos.M10
          Literal Tabla { get; set;}
 
         /// <summary>
-        /// Encabezado boton de ver empleado
+        /// Clase para las alertas
         /// </summary>
-     //    String button {get; set;}
+         string alertaVista
+         {
+             set;
+         }
+
      }
 
     }

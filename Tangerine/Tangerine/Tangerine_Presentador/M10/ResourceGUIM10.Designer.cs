@@ -97,6 +97,42 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alerta.
+        /// </summary>
+        internal static string Alerta {
+            get {
+                return ResourceManager.GetString("Alerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alerta.
+        /// </summary>
+        internal static string AlertaTipo {
+            get {
+                return ResourceManager.GetString("AlertaTipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string AlertaVista {
+            get {
+                return ResourceManager.GetString("AlertaVista", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertaVistaFinal {
+            get {
+                return ResourceManager.GetString("AlertaVistaFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot; href=&quot;ModificarEmpleado.aspx?EmployeeId=.
         /// </summary>
         internal static string BotonModificarEmpAbrir {
@@ -246,6 +282,15 @@ namespace Tangerine_Presentador.M10 {
         internal static string Coma {
             get {
                 return ResourceManager.GetString("Coma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string ErrorAlerta {
+            get {
+                return ResourceManager.GetString("ErrorAlerta", resourceCulture);
             }
         }
         

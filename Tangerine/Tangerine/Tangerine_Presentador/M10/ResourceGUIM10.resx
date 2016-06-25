@@ -204,4 +204,19 @@
   <data name="BotonStatusDeshabilitarCerrar" xml:space="preserve">
     <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
+  <data name="Alerta" xml:space="preserve">
+    <value>alerta</value>
+  </data>
+  <data name="AlertaTipo" xml:space="preserve">
+    <value>alerta</value>
+  </data>
+  <data name="AlertaVista" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertaVistaFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="ErrorAlerta" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
 </root>
