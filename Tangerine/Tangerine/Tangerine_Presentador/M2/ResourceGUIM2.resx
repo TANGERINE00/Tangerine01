@@ -121,7 +121,7 @@
     <value>&amp;Apellido=</value>
   </data>
   <data name="Botonblock" xml:space="preserve">
-    <value>&lt;a href="#"  tittle="Modificar" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
+    <value>&lt;a href="#"  title="Modificar Rol" runat ="server" class="btn btn-primary glyphicon glyphicon-pencil" disabled</value>
   </data>
   <data name="BotonModif" xml:space="preserve">
     <value>&lt;a tittle="modificar" class="btn btn-default btn-xs" id="</value>
@@ -130,10 +130,10 @@
     <value>&lt;a href="javascript:ajaxRes()" tittle ="registrar" runat ="server"  class="btn btn-success btn-xs" &gt;&lt;span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonRegBlock" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" disabled</value>
+    <value>&lt;a title="Asignar Usuario" runat ="server"class="btn btn-success glyphicon glyphicon-plus" disabled</value>
   </data>
   <data name="BotonRegNuevaVentana" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-success glyphicon glyphicon-plus" href="AccionRegistrar.aspx?idFicha=</value>
+    <value>&lt;a title="Asignar Usuario" runat ="server"class="btn btn-success glyphicon glyphicon-plus" href="AccionRegistrar.aspx?idFicha=</value>
   </data>
   <data name="CloseBotonModify" xml:space="preserve">
     <value>"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalC" onclick="ClickCambiar"&gt;&lt;/span&gt;&lt;/a&gt;</value>
@@ -178,7 +178,7 @@
     <value>&lt;a href="javascript:ajaxRes()"  tittle="modificar" runat ="server" class="btn btn-primary btn-xs"&gt;&lt;span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModal" &gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="llamadoNuevaPagina" xml:space="preserve">
-    <value>&lt;a  tittle="Asignar" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
+    <value>&lt;a title="Modificar Rol" runat ="server"class="btn btn-primary glyphicon glyphicon-pencil" href="AsignarRol.aspx?idEmpleado= </value>
   </data>
   <data name="NombreEmpleado" xml:space="preserve">
     <value>&amp;Nombre=</value>
@@ -242,5 +242,11 @@
   </data>
   <data name="MsjModificado" xml:space="preserve">
     <value>El usuario ha sido creado exitosamente.</value>
+  </data>
+  <data name="BotonModificar" xml:space="preserve">
+    <value>&lt;a title="Modificar Usuario" runat ="server"class="btn btn-primary glyphicon glyphicon-cog" style="margin-left:3px;" href="AsignarRol.aspx?idEmpleado=</value>
+  </data>
+  <data name="BotonModificarBlock" xml:space="preserve">
+    <value>&lt;a title="Modificar Usuario" runat ="server"class="btn btn-primary glyphicon glyphicon-cog" style="margin-left:3px;" disabled</value>
   </data>
 </root>

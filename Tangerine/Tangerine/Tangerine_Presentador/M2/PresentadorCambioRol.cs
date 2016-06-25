@@ -47,8 +47,9 @@ namespace Tangerine_Presentador.M2
                     {
                         _vista.empleado += ResourceGUIM2.OpenTD + user.nombreUsuario + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.OpenTD + user.rol.nombre + ResourceGUIM2.CloseTD;
-                        _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id
-                                          + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id + 
+                                           ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.BotonModificar + empleador.emp_id +
+                                           ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.CloseTR;
                     }
                     else
@@ -56,6 +57,7 @@ namespace Tangerine_Presentador.M2
                         _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock +
+                                           ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.BotonModificarBlock +
                                            ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.CloseTR;
                     }
