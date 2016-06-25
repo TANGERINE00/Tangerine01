@@ -37,6 +37,7 @@ namespace Tangerine.GUI.M6
             try
             {
                 presenter.ModificarRequerimiento();
+                Response.Redirect("../M6/ConsultarPropuesta.aspx");
             }
             catch (Exception)
             {
@@ -60,7 +61,7 @@ namespace Tangerine.GUI.M6
                     return null;
                 }
             }
-            set { requerimiento_id.Value = Request.QueryString.Get("idReq"); }
+            set { requerimiento_id.Value = value; }
 
         }
 

@@ -57,7 +57,10 @@ namespace Tangerine.GUI.M6
         {
             try
             {
-                //presenter.EliminarRequerimiento(idRequerimiento, descripcion, idPropuesta);
+                Button btn = sender as Button;
+                string debug = btn.ID;
+
+                presenter.EliminarRequerimiento(btn.ID);
                 Server.Transfer("ConsultarPropuesta.aspx", true);
             }
             catch (Exception)

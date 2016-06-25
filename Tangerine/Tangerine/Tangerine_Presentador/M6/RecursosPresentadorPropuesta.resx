@@ -168,7 +168,7 @@
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="btn_Oeliminar" xml:space="preserve">
-    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="submit" runat="server" style="margin-left:-5px;"  href="ConsultarPropuesta.aspx</value>
+    <value>&lt;a class="btn btn-danger glyphicon glyphicon-remove" type="button" runat="server" style="margin-left:3px;"  OnClick="EliminarRequerimiento_Click" id="</value>
   </data>
   <data name="btn_OModificar" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-pencil" type="submit" runat="server" style="margin-left:3px;"  href="ModificarRequerimiento.aspx?idReq=</value>

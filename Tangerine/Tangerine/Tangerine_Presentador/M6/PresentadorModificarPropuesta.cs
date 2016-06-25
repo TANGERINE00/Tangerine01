@@ -118,7 +118,7 @@ namespace Tangerine_Presentador.M6
             
             _idCompañia = vista.IdCompania;
         }
-
+        
 
         public void imprimirRequerimientos(Entidad _propuesta)
         {
@@ -147,7 +147,8 @@ namespace Tangerine_Presentador.M6
                         ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() + RecursosPresentadorPropuesta.botonCerra + 
                         RecursosPresentadorPropuesta.CerrarTD;
                    
-                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Oeliminar +
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Oeliminar + 
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString()+
                         RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD; ;
 
                     vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
@@ -184,23 +185,35 @@ namespace Tangerine_Presentador.M6
         }
 
 
-        public void EliminarRequerimiento(string idRequerimiento, string descripcion, string idPropuesta)
+        public void EliminarRequerimiento(string idRequerimiento)
         {
+            List<Entidad> _requerimientos;
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                    vista.IdPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(propuesta);
+
             try
             {
-                Entidad _requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
-                    idRequerimiento, descripcion, idPropuesta);
+                _requerimientos = comando.Ejecutar();
 
-                Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
-                    _requerimiento);
+                foreach (Entidad _elRequerimiento in _requerimientos)
+                {
+                    if (idRequerimiento.Equals(_elRequerimiento.Id))
+                    {
+                        Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
+                        _elRequerimiento);
 
-                cmdEliminarReq.Ejecutar();
+                        cmdEliminarReq.Ejecutar();
+                    }
+                }
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
+          
         }
 
 

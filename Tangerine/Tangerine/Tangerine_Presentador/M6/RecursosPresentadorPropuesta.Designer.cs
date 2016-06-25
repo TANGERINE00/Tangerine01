@@ -205,7 +205,7 @@ namespace Tangerine_Presentador.M6 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:-5px;&quot;  href=&quot;ConsultarPropuesta.aspx.
+        ///   Busca una cadena traducida similar a &lt;a class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; type=&quot;button&quot; runat=&quot;server&quot; style=&quot;margin-left:3px;&quot;  OnClick=&quot;EliminarRequerimiento_Click&quot; id=&quot;.
         /// </summary>
         internal static string btn_Oeliminar {
             get {
