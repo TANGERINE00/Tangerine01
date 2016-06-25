@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inicio de Sesión</title>
+    <title>Tangerine - Inicio de Sesión</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -38,10 +38,15 @@
             <div class="login-logo">
                 <b>Tangerine</b> SYSTEM
             </div>
+            <div class="col-md-4 login-form">
+                <div class="alert alert-danger" id="errorLogin" runat="server">
+                </div>
+            </div>
 
             <div class="col-md-4 login-form">
-               
-                <form class="form-horizontal"  method="post" action="#" role="login" id="loginUser" runat="server">
+
+
+                <form class="form-horizontal" method="post" action="#" role="login" id="loginUser" runat="server">
                     <div class="form-group">
                         <input type="text" class="form-control login-field" value="" placeholder="Usuario" id="userIni" runat="server">
                         <label for="login-name" class="login-name"><i class="glyphicon glyphicon-user"></i></label>

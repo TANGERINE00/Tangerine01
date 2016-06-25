@@ -14,6 +14,10 @@ namespace Tangerine_Contratos.M1
 
         string mensajeVista { get; set; }
 
+        string errorLoginText { get; set; }
+
+        Boolean errorLoginAlert { get; set; }
+
 
     }
 }
