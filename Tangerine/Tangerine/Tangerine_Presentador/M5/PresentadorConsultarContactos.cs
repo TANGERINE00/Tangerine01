@@ -5,7 +5,6 @@ using DominioTangerine.Fabrica;
 using ExcepcionesTangerine.M5;
 using LogicaTangerine;
 using LogicaTangerine.Fabrica;
-using LogicaTangerine.M5;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,7 +76,7 @@ namespace Tangerine_Presentador.M5
             }
             catch ( Exception ex )
             {
-                //Muestro en pantalla el error
+                Alerta( RecursoM5.ErrorConsultarCompania, 0 );
             }
         }
 
@@ -130,34 +129,27 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void Alertas()
         {
-            try
+            switch ( estadoActual )
             {
-                switch ( estadoActual )
-                {
-                    case 1:
-                        Alerta( RecursoM5.ContactoAgregado, int.Parse(RecursoM5.StatusAgregado) );
-                        break;
-                    case 2:
-                        Alerta( RecursoM5.ContactoModificado, int.Parse(RecursoM5.StatusAgregado) );
-                        break;
-                    case 3:
-                        Alerta( RecursoM5.ContactoEliminado, int.Parse(RecursoM5.StatusAgregado) );
-                        break;
-                    case 4:
-                        Alerta( RecursoM5.ErrorBaseDeDatos, 0 );
-                        break;
-                    case 5:
-                        Alerta( RecursoM5.ErrorEliminarContacto, 0 );
-                        break;
-                    case 6:
-                        Alerta( RecursoM5.ErrorConsultarContacto, 0 );
-                        break;
-                }
+                case 1:
+                    Alerta( RecursoM5.ContactoAgregado, int.Parse( RecursoM5.StatusAgregado ) );
+                    break;
+                case 2:
+                    Alerta( RecursoM5.ContactoModificado, int.Parse( RecursoM5.StatusAgregado ) );
+                    break;
+                case 3:
+                    Alerta( RecursoM5.ContactoEliminado, int.Parse( RecursoM5.StatusAgregado ) );
+                    break;
+                case 4:
+                    Alerta( RecursoM5.ErrorBaseDeDatos, 0 );
+                    break;
+                case 5:
+                    Alerta( RecursoM5.ErrorEliminarContacto, 0 );
+                    break;
+                case 6:
+                    Alerta( RecursoM5.ErrorConsultarContacto, 0 );
+                    break;
             }
-            catch (Exception ex)
-            {
-                //No se hace nada,  ya que el status no es un parametro obligatorio
-            } 
         }
 
         /// <summary>
@@ -189,7 +181,7 @@ namespace Tangerine_Presentador.M5
             }
             catch( Exception ex )
             {
-                //Muestro en pantalla el error
+                Alerta( RecursoM5.ErrorLlenarTabla, 0 );
             }
         }
 
@@ -232,18 +224,11 @@ namespace Tangerine_Presentador.M5
         /// </summary>
         public void CargarPagina()
         {
-            try
-            {
-                estadoActual = _vista.StatusAccion();
-                CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
-                EliminarContacto();
-                Alertas();
-                LlenarTablaContactos();
-            }
-            catch (Exception ex) 
-            {
-                ////No se hace nada,  ya que el status no es un parametro obligatorio
-            }
+            estadoActual = _vista.StatusAccion();
+            CargarBotonVolver( _vista.getTypeComp(), _vista.getIdComp() );
+            EliminarContacto();
+            Alertas();
+            LlenarTablaContactos();
         }
     }
 }

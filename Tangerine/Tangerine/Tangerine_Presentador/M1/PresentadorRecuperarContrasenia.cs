@@ -17,10 +17,7 @@ namespace Tangerine_Presentador.M1
     {
         private IContratoRecuperarContrasenia _vista;
 
-        #region Variables
-        string _usuario = String.Empty;
-        string _correo = String.Empty;
-        #endregion
+       
 
         public PresentadorRecuperarContrasenia(IContratoRecuperarContrasenia vista)
         {
@@ -52,14 +49,18 @@ namespace Tangerine_Presentador.M1
                     ((DominioTangerine.Entidades.M2.UsuarioM2)p).contrasena = GetMD5(nueva);
                     bool resultado2;
 
-                    LogicaTangerine.Comando<Boolean> commandModificarContrasena = FabricaComandos.modificarContrasenaUsuario(p);
+                    LogicaTangerine.Comando<Boolean> commandModificarContrasena = 
+                                                     FabricaComandos.modificarContrasenaUsuario(p);
+
                     resultado2 = commandModificarContrasena.Ejecutar();
 
                     if (resultado2)
                     {
                         _vista.elmensaje = "Su nueva contraseña es: " + nueva +
                             " Ingrese al sistema para cambiarla por una propia.";
+
                         string asunto = "Tangerine - Cambio de contraseña";
+
                         Entidad datoCorreo =
                             DominioTangerine.Fabrica.FabricaEntidades.ObtenerDatosCorreo(asunto, _vista.elcorreo, _vista.elmensaje);
 

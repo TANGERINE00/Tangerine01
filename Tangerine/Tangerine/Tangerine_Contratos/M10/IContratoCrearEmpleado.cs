@@ -37,27 +37,27 @@ namespace Tangerine_Contratos.M1
         /// <summary>
         /// Encabezado textbox para la cedula
         /// </summary>
-        TextBox ItextCedula { get; set; }
+        String ItextCedula { get; set; }
 
         /// <summary>
         /// Encabezado textbox para el primer nombre
         /// </summary>
-        TextBox ItextFirstName { get; set; }
+        String ItextFirstName { get; set; }
 
         /// <summary>
         /// Encabezado textbox para el segundo nombre
         /// </summary>
-        TextBox ItextSecondName { get; set; }
+        String ItextSecondNamee { get; set; }
 
         /// <summary>
         /// Encabezado textbox primer apellido
         /// </summary>
-        TextBox ItextFirstLastName { get; set; }
+        String ItextFirstLastName { get; set; }
 
         /// <summary>
         /// Encabezado segundo apellido
         /// </summary>
-        TextBox ItextSecondLastName { get; set; }
+        String ItextSecondLastName { get; set; }
 
         /// <summary>
         /// Encabezado fecha de nacimiento
@@ -65,39 +65,43 @@ namespace Tangerine_Contratos.M1
         String ItextDateEmployee { get; set; }
 
         /// <summary>
-        /// Encabezado fecha de contratacion
+        /// Encabezado Fecha de contratación
         /// </summary>
         String ItextDateJob { get; set; }
 
         /// <summary>
-        /// Encabezado modalidad de contrato
+        /// Encabezado Modalidad de Trabajo
         /// </summary>
         String ItextJobMode { get; set; }
 
         /// <summary>
-        /// Encabezado del sueldo
+        /// Encabezado salario
         /// </summary>
         String ItextSalaryJob { get; set; }
 
         /// <summary>
-        /// Encabezado direccion
+        /// Encabezado Ciudad
         /// </summary>
         String ItextCityAddress { get; set; }
 
         /// <summary>
-        /// Encabezado direccion especifica
+        /// Encabezado direccion
         /// </summary>
         String ItextAddresEspecific { get; set; }
 
         /// <summary>
-        /// Encabezado email
+        /// Encabezado Email
         /// </summary>
         String ItextEmailPerson { get; set; }
 
         /// <summary>
-        /// Encabezado telefono
+        /// Encabezado Telefono
         /// </summary>
         String ItextPhonePerson { get; set; }
+
+
+        
+
         
     }
 }

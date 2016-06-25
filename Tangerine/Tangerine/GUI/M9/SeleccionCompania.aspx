@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="SeleccionCompania.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm5" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" 
+    CodeBehind="SeleccionCompania.aspx.cs" Inherits="Tangerine.GUI.M9.WebForm5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
@@ -73,7 +74,8 @@
                                 <td>ibm@gmail.com</td>
                                 <td>22/12/2012</td>
                                 <td><span class="label label-success">Habilitada</span></td>
-                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
+                                <th style="text-align: center;"><a class="btn btn-primary glyphicon glyphicon-info-sign" 
+                                type="submit" runat="server" href="FacturasPorPagar.aspx"></a></th>
                             </tr> -->
  
                     </table>

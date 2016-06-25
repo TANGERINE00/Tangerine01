@@ -192,6 +192,22 @@ namespace PruebasUnitarias.M2
             Assert.IsTrue( resultado2 );
         }
 
+        /// <summary>
+        /// Método para probar el ModificarUsuario de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestModificarUsuario()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar( elUsuario );
+            bool resultado = daoUsuario.ModificarUsuario( 1 , "jose" );
+            Assert.IsTrue( resultado );
+            elUsuario1 = daoUsuario.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID(daoUsuario.ConsultLastUserID(),
+                                      "GianJose", "1234", new DateTime(2015, 2, 10), "Activo", elRol, 1));
+            Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario1 ).fichaEmpleado == 1 );
+            Assert.IsTrue( ( ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario1 ).nombreUsuario == "jose");
+        }
+
         #endregion
     }
 }

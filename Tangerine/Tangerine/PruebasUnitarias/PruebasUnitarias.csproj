@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="M10\M10PruebasLogica.cs" />
     <Compile Include="M10\PruebasDAOEmpleado.cs" />
+    <Compile Include="M10\PruebaLogica.cs" />
     <Compile Include="M10\PruebasDatos.cs" />
     <Compile Include="M1\M1PruebasLogica.cs" />
     <Compile Include="M2\PruebaComandosDAORol.cs" />
@@ -102,7 +103,6 @@
     <Compile Include="M7\M7PruebasLogica.cs" />
     <Compile Include="M7\PruebaDAOProyecto.cs" />
     <Compile Include="M7\PruebaDAOProyectoContacto.cs" />
-    <Compile Include="M7\PruebasDatos.cs" />
     <Compile Include="M8\PruebasDatosFactura.cs" />
     <Compile Include="M8\PruebasLogicaFactura.cs" />
     <Compile Include="M9\PruebaComandoDaoPago.cs" />

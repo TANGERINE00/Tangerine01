@@ -25,41 +25,35 @@
             position: relative;
             width: 100%;
         }
-
         .content-wrapper {
             float: left;
         }
-
         .input-group, .form-control {
             width: 95%;
         }
-
         .date {
             width: 48.5% !important;
             float: left;
         }
-
         #div-precondiciones {
             margin-bottom: 20px;
         }
-
-            #div-precondiciones .form-group {
+        #div-precondiciones .form-group {
                 padding: 15px 0;
             }
-
         @media only screen and (max-width: 550px) {
             .date {
                 width: 100% !important;
                 float: left;
             }
         }
-
         .dropdown .btn {
             width: 95%;
         }
     </style>
 
-
+    <div id="alert" runat="server" style="width:530px">
+    </div>
 
     <form role="form" name="agregar_propuesta" id="agregar_propuesta" method="post" runat="server">
 
@@ -73,7 +67,7 @@
 
                     <div class="form-group">
 
-                        <label>Cliente (compañía contratante)</label>
+                        <label>Cliente (compañía contratante)</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
 
                         <div class="dropdown" runat="server" id="contenedorCompañias">
                             <asp:DropDownList ID="comboCompañia" class="btn btn-default dropdown-toggle" runat="server">
@@ -83,7 +77,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Objeto del proyecto</label>
+                        <label>Objeto del proyecto</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                         
                         <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z ,.()]+$"  class="form-control" 
                             id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" 
@@ -92,7 +86,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Alcance del Proyecto</label>
+                        <label>Alcance del Proyecto</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                         <div class="form-group">
                             <div id="div-precondiciones" class="col-sm-12 col-md-12 col-lg-12">
 
@@ -116,7 +110,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
+                        <label for="input_horas">Duracion del Proyecto</label>
+                        <label style="color: red; font-size:18px; margin-left:10px;"> * </label>
 
                         <div class="input-group input-group">
                             <div class="input-group-btn">
@@ -170,7 +165,8 @@
 
 
                     <div class="form-group">
-                        <label for="input_horas" style="width: 100%; float: left; display: block;">Costo del Proyecto</label>
+                        <label for="input_horas">Costo del Proyecto</label>
+                        <label style="color: red; font-size:18px; margin-left:10px;"> * </label>
 
                         <div class="input-group input-group">
                             <div class="input-group-btn">
@@ -189,7 +185,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Forma de Pago</label>
+                        <label>Forma de Pago</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                         <div class="dropdown" runat="server" id="fpago">
                             <select ID="formaPago" class="btn btn-default dropdown-toggle" runat="server" 
                                 onchange="setCuotas()" clientidmode="static">
@@ -212,7 +208,7 @@
 
 
                     <div class="form-group">
-                        <label>Estatus</label>
+                        <label>Estatus</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                         <div class="dropdown" runat="server" id="contenedorEstatus">
                             <asp:DropDownList ID="comboEstatus" class="btn btn-default dropdown-toggle" runat="server">
                             </asp:DropDownList>

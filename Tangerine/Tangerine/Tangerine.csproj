@@ -147,6 +147,7 @@
     <Content Include="GUI\M10\AdminCargo.aspx" />
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
+    <Content Include="GUI\M1\css\Estilos.css" />
     <Content Include="GUI\M1\Dashboard.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\Login.aspx" />
@@ -157,6 +158,7 @@
     <Content Include="GUI\M2\AccionRegistrar.aspx" />
     <Content Include="GUI\M2\AsignarRol.aspx" />
     <Content Include="GUI\M2\CambiarRol.aspx" />
+    <Content Include="GUI\M2\CambiarUsuario.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
     <Content Include="GUI\M3\ActivarLead.aspx" />
     <Content Include="GUI\M3\AgregarLeads.aspx" />
@@ -182,6 +184,7 @@
     <Content Include="GUI\M6\EjemploM6.aspx" />
     <Content Include="GUI\M6\AgregarPropuesta.aspx" />
     <Content Include="GUI\M6\ModificarPropuesta.aspx" />
+    <Content Include="GUI\M6\ModificarRequerimiento.aspx" />
     <Content Include="GUI\M7\Agregar proyecto.aspx" />
     <Content Include="GUI\M7\ConsultaProyecto.aspx" />
     <Content Include="GUI\M7\InformacionProyecto.aspx" />
@@ -1094,6 +1097,13 @@
     <Compile Include="GUI\M2\CambiarRol.aspx.designer.cs">
       <DependentUpon>CambiarRol.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\CambiarUsuario.aspx.cs">
+      <DependentUpon>CambiarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\CambiarUsuario.aspx.designer.cs">
+      <DependentUpon>CambiarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M2\RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1274,6 +1284,13 @@
     </Compile>
     <Compile Include="GUI\M6\ModificarPropuesta.aspx.designer.cs">
       <DependentUpon>ModificarPropuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarRequerimiento.aspx.cs">
+      <DependentUpon>ModificarRequerimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\ModificarRequerimiento.aspx.designer.cs">
+      <DependentUpon>ModificarRequerimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\RecursosGUI_M6.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1627,6 +1644,7 @@
       <LastGenOutput>ResourceLogicaM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

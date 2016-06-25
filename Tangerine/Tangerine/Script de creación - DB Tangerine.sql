@@ -15,7 +15,7 @@
 		fk_lug_dir_id
 	) references LUGAR_DIRECCION(lug_dir_id)
 );
-
+	
 create table EMPLEADO
 (
 	emp_num_ficha int not null,
@@ -496,6 +496,16 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE M2_ModificarUsuario
+	@emp_num_ficha int,
+	@usuario [varchar](100)
+AS
+	BEGIN
+		UPDATE USUARIO SET usu_usuario = @usuario 
+		WHERE fk_emp_num_ficha = @emp_num_ficha;
+	END;
+GO
+
 CREATE PROCEDURE M2_BorrarUsuario
 	@usu_id int
 AS
@@ -808,6 +818,61 @@ WHERE Cp.cli_pot_id=Se.fk_cli_pot
 
 END;
 GO
+
+CREATE procedure M3_Agrgar_Seguimento
+@fecha date,
+@tipo varchar(15),
+@motivo varchar(255),
+@fk int
+AS
+BEGIN
+DECLARE @idLead int;
+DECLARE @llamadas int;
+DECLARE @visitas int;
+DECLARE @tipoRegistro varchar(15);
+
+SET @tipoRegistro= @tipo;
+
+SET @idLead = (select Count(SE.seg_id)
+  from seguimiento SE);
+   
+   SET @llamadas =(select CP.cli_pot_num_llamadas
+from Cliente_Potencial CP
+where CP.cli_pot_id=@fk);
+   
+   SET @visitas =(select CP.cli_pot_num_visitas
+from Cliente_Potencial CP
+where CP.cli_pot_id=@fk);
+   
+   IF (@idLead <= 0)
+Begin
+SET @idLead=1;
+END;
+   
+   IF (@idLead > 0)
+BEGIN
+SET @idLead = @idLead + 1;
+END;
+
+INSERT INTO Seguimiento VALUES (@idLead,@fecha,@tipo,@motivo,@fk);
+commit;
+
+IF @tipoRegistro='Llamada'
+BEGIN
+update Cliente_Potencial
+SET cli_pot_num_llamadas= @llamadas +1
+where cli_pot_id=@fk;
+END;
+
+IF @tipoRegistro='Visita'
+BEGIN
+update Cliente_Potencial
+SET cli_pot_num_visitas=@visitas +1
+where cli_pot_id=@fk;
+END;
+
+END;
+go
 
 ---------------------------------------------------------------------------------------------------------
 --------FIN Stored Procedure M3------------------------------------------------------------------------------
@@ -1825,7 +1890,7 @@ CREATE PROCEDURE [dbo].[M10_AgregarEmpleado]
 	-----------------------cargo
 	@fechContrato Date,
 	@modalidad [varchar](150),
-	@sueldo numeric(6,3),
+	@sueldo numeric(18,0),
 	---------------------------cargo empleado
 	@estado [varchar](150),
 	@ciudad [varchar](150),

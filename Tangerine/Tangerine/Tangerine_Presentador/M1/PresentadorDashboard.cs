@@ -57,8 +57,8 @@ namespace Tangerine_Presentador.M1
                         Int32.Parse(HttpContext.Current.Session["UserID"] + "");
                     
 
-                    Comando<List<Entidad>> comandoConsultarEmpleados = 
-                        LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
+                    Comando<List<Entidad>> comandoConsultarEmpleados =
+                        LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProyectos();
                     List<Entidad> listaEntidad = comandoConsultarEmpleados.Ejecutar();
                     listaFinal = listaEntidad;
                 }

@@ -100,7 +100,7 @@ namespace DatosTangerine.DAO.M6
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                RecursoGeneralBD.Mensaje_Generico_Error, ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -187,8 +187,8 @@ namespace DatosTangerine.DAO.M6
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
@@ -257,8 +257,8 @@ namespace DatosTangerine.DAO.M6
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
@@ -331,8 +331,8 @@ namespace DatosTangerine.DAO.M6
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -389,8 +389,8 @@ namespace DatosTangerine.DAO.M6
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
@@ -440,8 +440,8 @@ namespace DatosTangerine.DAO.M6
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
@@ -494,8 +494,8 @@ namespace DatosTangerine.DAO.M6
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
@@ -569,8 +569,8 @@ namespace DatosTangerine.DAO.M6
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeExceptionGenerica, ex );
+                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
+                RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );

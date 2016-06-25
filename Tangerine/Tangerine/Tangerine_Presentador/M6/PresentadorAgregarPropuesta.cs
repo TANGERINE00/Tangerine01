@@ -18,6 +18,7 @@ namespace Tangerine_Presentador.M6
     // Este método agrega tanto Propuestas como sus requerimientos asociados.
     public class PresentadorAgregarPropuesta
     {
+        #region Atributos
         IContratoAgregarPropuesta vista;
         Boolean Confirmacion;
         String consonantes;
@@ -39,12 +40,28 @@ namespace Tangerine_Presentador.M6
         string _estatusW;
         DateTime today = DateTime.Now;
         String[] _precondicion;
+        #endregion
 
         public PresentadorAgregarPropuesta(IContratoAgregarPropuesta vista)
         {
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método que contigura el div de alerta de la vista            REVISAR!
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void Alerta(string msj, int typeMsg)
+        {
+            if (typeMsg == 1)
+                vista.alertaClase = RecursosPresentadorPropuesta.AlertSuccess;
+            else
+                vista.alertaClase = RecursosPresentadorPropuesta.AlertDanger;
+
+            vista.alertaRol = RecursosPresentadorPropuesta.Alert;
+            vista.alerta = RecursosPresentadorPropuesta.AlertShowSu1 + msj + RecursosPresentadorPropuesta.AlertShowSu2;
+        }
 
         public void agregarPropuesta()
         {
@@ -85,10 +102,9 @@ namespace Tangerine_Presentador.M6
                 Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarPropuesta(p);
                 Confirmacion = comando.Ejecutar();
 
-                /*
-                 * El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
-                 * agregados en la vista separados por un ';'.
-                 */
+                
+                 //El atributo _precondicion recibe un arreglo de strings. ArrPrecondicion es un String que contiene todos los requerimientos
+                 //agregados en la vista separados por un ';'.
                 _precondicion = vista.ArrPrecondicion.Split(';');
 
                 //Se recorre el arreglo.
@@ -96,8 +112,6 @@ namespace Tangerine_Presentador.M6
                 {
                     int j = i + 1;
                     string codReq = consonantes + "_RF_" + j.ToString();
-
-                    //Debug.Print(_precondicion[i]);
 
                     //Creación del Objeto Propuesta.
                     Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
@@ -108,13 +122,25 @@ namespace Tangerine_Presentador.M6
                     comando2.Ejecutar();
                 }
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
         }
-
 
         public void cargarCompañias()
          {
@@ -144,10 +170,23 @@ namespace Tangerine_Presentador.M6
                     }     
                 }
             }
-            catch (Exception e)
-            {  
-                MessageBox.Show("Error Cargando las compañias.", "Error", MessageBoxButtons.OK,
-                 MessageBoxIcon.Error);
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             
 

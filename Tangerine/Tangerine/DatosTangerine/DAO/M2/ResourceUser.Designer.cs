@@ -142,6 +142,15 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M2_ModificarUsuario.
+        /// </summary>
+        internal static string ModificarNombreUsuario {
+            get {
+                return ResourceManager.GetString("ModificarNombreUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M2_ModificarRolUsuario.
         /// </summary>
         internal static string ModificarRolUsuario {

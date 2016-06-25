@@ -49,6 +49,7 @@
     <Compile Include="M2\IContratoAccionRegistrar.cs" />
     <Compile Include="M2\IContratoAsignarRol.cs" />
     <Compile Include="M2\IContratoCambiarRol.cs" />
+    <Compile Include="M2\IContratoCambiarUsuario.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />
     <Compile Include="M3\IContratoAgregarClientePotencial.cs" />
     <Compile Include="M3\IContratoAgregarSeguimiento.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="M5\IContratoAgregarContacto.cs" />
     <Compile Include="M5\IContratoConsultarContactos.cs" />
     <Compile Include="M5\IContratoModificarContacto.cs" />
+    <Compile Include="M6\IContratoModificarRequerimiento.cs" />
     <Compile Include="M6\IContratoAgregarPropuesta.cs" />
     <Compile Include="M6\IContratoInformacionPropuesta.cs" />
     <Compile Include="M6\IContratoModificarPropuesta.cs" />

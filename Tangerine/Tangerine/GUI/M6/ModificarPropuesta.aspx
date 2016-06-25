@@ -71,7 +71,7 @@
                     </div>
 
                  <div class="form-group">
-                        <label>Objeto del proyecto</label>
+                        <label>Objeto del proyecto</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                         
                         <textarea  rows="3" placeholder="Escribir ..." runat="server" pattern="^[A-z ,.()]+$"  class="form-control" 
                             id="descripcion" name="descripcion" required oninvalid="setCustomValidity('Campo obligatorio')" 
@@ -86,6 +86,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th style="width: 530px">Requerimiento</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <asp:Literal runat="server" ID="requerimientos"> </asp:Literal>>
@@ -98,7 +99,8 @@
                 <!-- /.box-body -->
 
                 <div class="form-group">
-                    <label for="input_horas" style="width: 100%; float: left; display: block;">Duracion del Proyecto</label>
+                    <label for="input_horas">Duracion del Proyecto</label>
+                    <label style="color: red; font-size:18px; margin-left:10px;"> * </label>
 
                     <div class="input-group input-group">
                         <div class="input-group-btn">
@@ -153,7 +155,8 @@
 
 
                 <div class="input-group input-group">
-                    <label for="comboTipoCosto" style="width: 100%; float: left; display: block;">Costo del Proyecto</label>
+                    <label for="comboTipoCosto">Costo del Proyecto</label>
+                    <label style="color: red; font-size:18px; margin-left:10px;"> * </label>
 
                     <div class="input-group input-group">
                         <div class="input-group-btn">
@@ -180,7 +183,7 @@
                 <%-- Forma de pago combo--%>
 
                 <div class="form-group">
-                    <label>Forma de Pago</label>
+                    <label>Forma de Pago</label><label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                     <div class="dropdown" runat="server" id="fpago2">
                        <div class="dropdown" runat="server" id="fpago">
                             <select ID="formaPago" class="btn btn-default dropdown-toggle" runat="server" 
@@ -206,7 +209,8 @@
 
                 <%-- Estatus combo--%>
                 <div class="input-group input-group">
-                    <label for="comboEstatus" style="width: 100%; float: left; display: block;">Estatus</label>
+                    <label for="comboEstatus">Estatus</label>
+                    <label style="color: red; font-size:18px; margin-left:10px;"> * </label>
                     <div class="dropdown" runat="server" id="contenedorEstatus">
                          <select ID="comboEstatus" class="btn btn-default dropdown-toggle" runat="server" 
                                  clientidmode="static">

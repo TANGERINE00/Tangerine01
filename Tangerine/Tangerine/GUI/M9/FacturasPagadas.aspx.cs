@@ -12,7 +12,6 @@ namespace Tangerine.GUI.M9
     public partial class WebForm6 : System.Web.UI.Page
     {
 
-        //LogicaM8 prueba = new LogicaM8();
 
         public string factura
         {

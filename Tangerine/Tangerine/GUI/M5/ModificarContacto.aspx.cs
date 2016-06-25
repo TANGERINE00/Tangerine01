@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
 using LogicaTangerine;
-using LogicaTangerine.M5;
 using Tangerine_Contratos.M5;
 using Tangerine_Presentador.M5;
 using System.Web.Security.AntiXss;
@@ -16,7 +15,7 @@ namespace Tangerine.GUI.M5
     public partial class Modificar : System.Web.UI.Page, IContratoModificarContacto
     {
         private PresentadorModificarContacto presentador;
-
+        #region Atributos
         public string botonVolver
         {
             get { return this.volver.Text; }
@@ -115,19 +114,37 @@ namespace Tangerine.GUI.M5
 
             return 0;
         }
+        #endregion
 
+        /// <summary>
+        /// Carga el boton volver, configurado para regresar con los datos de la pagina anterior 
+        /// </summary>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
+        /// <returns></returns>
         public string CargarBotonVolver( int typeComp, int idComp )
         {
             return this.botonVolver = ResourceGUIM5.BotonVolver + typeComp + ResourceGUIM5.BotonVolver2 + idComp
                                       + ResourceGUIM5.BotonVolver3;
         }
 
+        /// <summary>
+        /// Método que se ejecuta luego hacer la accion de agregar el contacto. Regresa a la pagina anterior,
+        /// indicando si se agregó o no el contacto.
+        /// </summary>
+        /// <param name="typeComp"></param>
+        /// <param name="idComp"></param>
         public void BotonAceptar( int typeComp, int idComp )
         {
             Server.Transfer( ResourceGUIM5.hrefConsultarContacto + typeComp + ResourceGUIM5.BotonVolver2 + idComp
                              + ResourceGUIM5.BotonVolver4 + ResourceGUIM5.StatusModificado );
         }
 
+        /// <summary>
+        /// Método que se ejecuta al cargar la página
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
             presentador = new PresentadorModificarContacto( this );
@@ -138,6 +155,11 @@ namespace Tangerine.GUI.M5
             }
         }
 
+        /// <summary>
+        /// Método que se ejecuta al hacer click en el boton modificar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnmodificar_Click( object sender, EventArgs e )
         {
             presentador.ModificarContacto();

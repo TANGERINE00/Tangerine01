@@ -7,14 +7,13 @@ using System.Web.UI.WebControls;
 using DominioTangerine;
 using Tangerine_Contratos.M2;
 using Tangerine_Presentador.M2;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M2
 {
     public partial class CambiarRol : System.Web.UI.Page, IContratoCambiarRol
     {
         private PresentadorCambioRol _presentador;
-        string error;
-        private bool errorManejo;
 
         /// <summary>
         /// Constructor de PresentadorCambioRol
@@ -39,12 +38,27 @@ namespace Tangerine.GUI.M2
             }
 
             /// <summary>
-            /// Mensaje de error
+            /// Clase de alerta, para excepciones
             /// </summary>
-            public string msjError
+            public string alertaClase
             {
-                get { return error; }
-                set { error = value; }
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
             }
 
         #endregion
@@ -56,15 +70,21 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load( object sender , EventArgs e )
         {
+            try
+            {
+                //Esto ocurre cuando se modifica una factura, se muestra mensaje a usuario
+                string _estado = AntiXssEncoder.HtmlEncode( Request.QueryString[ResourceM2.estado], false );
+                if (_estado != null)
+                    _presentador.Alerta(_estado);
+            }
+            catch
+            {
+                Response.Redirect(ResourceM2.RedirectPageLoad);
+            }
+
             if ( !IsPostBack )
             {
-                errorManejo = _presentador.iniciarVista();
-
-                if ( !errorManejo )
-                {
-                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts" ,
-                                                         "javascript:alert('" + msjError + "')" , true );
-                }
+                _presentador.iniciarVista();
             }
         }
     }

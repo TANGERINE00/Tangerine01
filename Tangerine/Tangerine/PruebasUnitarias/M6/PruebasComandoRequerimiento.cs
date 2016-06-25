@@ -173,7 +173,7 @@ namespace PruebasUnitarias.M6
                 elRequerimiento = (DominioTangerine.Entidades.M6.Requerimiento)comandoEntidad.Ejecutar();
             }
             //Se chequea que no haya sido encontrada.
-            catch (ExcepcionesTangerine.ExceptionsTangerine e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine)
             {
                 Assert.IsTrue(true);
             }

@@ -30,9 +30,13 @@ namespace LogicaTangerine.Comandos.M6
                 IDAORequerimiento daoRequerimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAORequerimiento();
                 return daoRequerimiento.ConsultarXId( _laEntidad );
             }
-            catch ( Exception e )
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                throw e;
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                throw ex;
             }
         }
     }

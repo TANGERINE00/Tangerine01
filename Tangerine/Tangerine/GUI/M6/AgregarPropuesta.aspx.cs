@@ -18,28 +18,32 @@ namespace Tangerine.GUI.M6
     {
         
         PresentadorAgregarPropuesta presenter;
+        
         /// <summary>
         /// Constructor de la vista
         /// </summary>
-
         public AgregarPropuesta()
         {
             this.presenter = new PresentadorAgregarPropuesta(this);
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                try {
                 presenter.llenarVista();
+                }catch (Exception)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                }
+
             }
         }
 
         /// <summary>
         /// Accion del boton a presionar "Agregar"
         /// </summary>
-
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             try
@@ -54,7 +58,7 @@ namespace Tangerine.GUI.M6
             
         }
 
-       
+        #region Contrato
         public DropDownList ComboCompania 
         {
             get { return comboCompañia; }
@@ -115,6 +119,22 @@ namespace Tangerine.GUI.M6
             get { return comboEstatus; }
             set { comboEstatus=value; }
         }
+        
+        //REVISAR ADAPTACION
+        public string alertaClase
+        {
+            set { alert.Attributes[RecursosGUI_M6.alertClase] = value; }
+        }
 
+        public string alertaRol
+        {
+            set { alert.Attributes[RecursosGUI_M6.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+        #endregion
     }
 }

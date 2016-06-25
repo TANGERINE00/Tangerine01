@@ -20,6 +20,8 @@ namespace Tangerine.GUI.M1
         private PresentadorCrearEmpleado presentador;
         string active = "Activo";
         Hashtable elementos = new Hashtable();
+        private string[] Substrings;
+        private string fecha;
 
 
         public CrearEmpleado()
@@ -39,19 +41,19 @@ namespace Tangerine.GUI.M1
             #endregion
         }
 
-        protected void SelectedJob_Change(object sender, EventArgs e)
-        {
-            try
-            {
-                JobSummary.InnerText = "";
-                JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
-            }
-            catch (Exception ex)
-            {
-                JobSummary.InnerText = "";
-            }
+        //protected void SelectedJob_Change(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        JobSummary.InnerText = "";
+        //        JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        JobSummary.InnerText = "";
+        //    }
 
-        }
+        //}
 
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
@@ -76,7 +78,6 @@ namespace Tangerine.GUI.M1
             if (Page.IsValid)
             {
                 presentador.AgregarEmpleado();
-
                 Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=0");
 
             }
@@ -84,14 +85,7 @@ namespace Tangerine.GUI.M1
 
         }
 
-
-        private Cargo jobForEmployee()
-        {
-            return new Cargo(SelectedListJob.SelectedItem.Text.ToString(), JobSummary.Value,
-                                    DateTime.ParseExact(DateJob.Value, "MM/dd/yyyy", CultureInfo.InvariantCulture),
-                                    JobMode.Value, Double.Parse(SalaryJob.Value));
-
-        }
+              
 
         private void FillSelectedListGender()
         {
@@ -124,18 +118,7 @@ namespace Tangerine.GUI.M1
             }
 
         }
-
-        private void FillSelectedListCountry()
-        {
-            LogicaM10 componentes = new LogicaM10();
-            int x = 1;
-            SelectedListCountry.Items.Insert(0, "Seleccione un pais");
-            foreach (LugarDireccion paises in componentes.ItemsForListCountry())
-            {
-                SelectedListCountry.Items.Insert(x, paises.LugNombre);
-                x++;
-            }
-        }
+        
 
         private void FillSelectedListState()
         {
@@ -174,42 +157,50 @@ namespace Tangerine.GUI.M1
             set { SelectedListState = value; }
         }
 
-        TextBox IContratoCrearEmpleado.ItextCedula
+        String IContratoCrearEmpleado.ItextCedula
         {
-            get { return Cedula2; }
-            set { Cedula2 = value; }
+            get { return Cedula.Value; }
+            set { Cedula.Value = value; }
         }
 
-
-
-        TextBox IContratoCrearEmpleado.ItextFirstName
+        String IContratoCrearEmpleado.ItextFirstName
         {
-            get { return PrimerNombre; }
-            set { PrimerNombre = value; }
+            get { return FirstName.Value; }
+            set { FirstName.Value = value; }
         }
-        TextBox IContratoCrearEmpleado.ItextSecondName
+        String IContratoCrearEmpleado.ItextSecondNamee
         {
-            get { return SecondName; }
-            set { SecondName = value; }
+            get { return SecondNamee.Value; }
+            set { SecondNamee.Value = value; }
         }
-        TextBox IContratoCrearEmpleado.ItextFirstLastName
+        String IContratoCrearEmpleado.ItextFirstLastName
         {
-            get { return FirstLastName; }
-            set { FirstLastName = value; }
+            get { return FirstLastName.Value; }
+            set { FirstLastName.Value = value; }
         }
-        TextBox IContratoCrearEmpleado.ItextSecondLastName
+        String IContratoCrearEmpleado.ItextSecondLastName
         {
-            get { return SecondLastName; }
-            set { SecondLastName = value; }
+            get { return SecondLastName.Value; }
+            set { SecondLastName.Value = value; }
         }
         String IContratoCrearEmpleado.ItextDateEmployee
         {
-            get { return DateEmployee.Value; }
+            get
+            {               
+                Substrings = DateEmployee.Value.ToString().Split('-');
+                fecha = Substrings[1] + '/' + Substrings[2] + '/' + Substrings[0];
+                return fecha; 
+            }
             set { DateEmployee.Value = value; }
         }
         String IContratoCrearEmpleado.ItextDateJob
         {
-            get { return DateJob.Value; }
+            get
+            {
+                Substrings = DateEmployee.Value.ToString().Split('-');
+                fecha = Substrings[1] + '/' + Substrings[2] + '/' + Substrings[0];
+                return fecha;
+            }
             set { DateJob.Value = value; }
         }
         String IContratoCrearEmpleado.ItextJobMode
@@ -242,6 +233,7 @@ namespace Tangerine.GUI.M1
             get { return PhonePerson.Value; }
             set { PhonePerson.Value = value; }
         }
+
 
 
         #endregion

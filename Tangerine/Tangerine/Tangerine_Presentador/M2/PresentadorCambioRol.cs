@@ -22,9 +22,34 @@ namespace Tangerine_Presentador.M2
         }
 
         /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta( string msj )
+        {
+            if ( msj == "1" )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaModificado;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjRolModificado + ResourceGUIM2.alertaHtmlFinal;
+            }
+            else if ( msj == "2" )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaModificado;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjModificadoUser + ResourceGUIM2.alertaHtmlFinal;
+            }
+            else
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + msj + ResourceGUIM2.alertaHtmlFinal;
+            }
+        }
+
+        /// <summary>
         /// Carga en la tabla todos los empleados
         /// </summary>
-        public bool iniciarVista()
+        public void iniciarVista()
         {
             try
             {
@@ -47,8 +72,9 @@ namespace Tangerine_Presentador.M2
                     {
                         _vista.empleado += ResourceGUIM2.OpenTD + user.nombreUsuario + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.OpenTD + user.rol.nombre + ResourceGUIM2.CloseTD;
-                        _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id
-                                          + ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
+                        _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.llamadoNuevaPagina + empleador.emp_id + 
+                                           ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.BotonModificar + empleador.emp_id +
+                                           ResourceGUIM2.CloseBotonParametro + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.CloseTR;
                     }
                     else
@@ -56,16 +82,18 @@ namespace Tangerine_Presentador.M2
                         _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.OpenTD + " " + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.OpenTD + ResourceGUIM2.Botonblock +
+                                           ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.BotonModificarBlock +
                                            ResourceGUIM2.CloseBotonParametroDesactivado + ResourceGUIM2.CloseTD;
                         _vista.empleado += ResourceGUIM2.CloseTR;
                     }
                 }
-                return true;
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
-                _vista.msjError = ex.Message;
-                return false;
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                                + ResourceGUIM2.alertaHtmlFinal;
             }
 
         }

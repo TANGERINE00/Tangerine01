@@ -16,7 +16,6 @@ namespace Tangerine.GUI.M2
     {
         private PresentadorAccionRegistrar presentador;
         private bool existenciaUsuario;
-        string error;
 
         #region Contrato
 
@@ -57,18 +56,27 @@ namespace Tangerine.GUI.M2
             }
             
             /// <summary>
-            /// Manejo de errores
+            /// Clase de alerta, para excepciones
             /// </summary>
-            public string msjError
+            public string alertaClase
             {
-                get
-                {
-                    return error;
-                }
-                set
-                {
-                    error = value;
-                }
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
             }
 
         #endregion
@@ -82,18 +90,18 @@ namespace Tangerine.GUI.M2
         {
             try
             {
-                presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idFicha"], false)),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Nombre"], false),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Apellido"], false),
-                                                             AntiXssEncoder.HtmlEncode(Request.QueryString["Rol"], false));
+                presentador = new PresentadorAccionRegistrar(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.IDFicha], false)),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.Nombre], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.Apellido], false),
+                                                             AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceM2.Rol], false));
                 if (!IsPostBack)
                 {
                     presentador.inicioVista();
                 }
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect( ResourceM2.RedirectPageLoad );
             }
         }
 
@@ -110,18 +118,12 @@ namespace Tangerine.GUI.M2
             {
                 if ( presentador.registrar() )
                 {
-                    Response.Redirect("../M2/RegistroUsuario.aspx");
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts",
-                                                         "javascript:alert('" + msjError + "')" , true );
+                    Response.Redirect(ResourceM2.RedirectBtnCrearAccionRegistar);
                 }
             }
             else
             {
-                ScriptManager.RegisterStartupScript( this , this.GetType(), "alerts" ,
-                                                     "javascript:alert('Nombre de usuario ya existente, intente otro.')" , true ); 
+                presentador.Alerta(ResourceM2.AlertaBtnCrear);
             }
 
         }
