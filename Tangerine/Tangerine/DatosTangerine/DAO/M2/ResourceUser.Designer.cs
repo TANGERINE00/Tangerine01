@@ -97,6 +97,15 @@ namespace DatosTangerine.DAO.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M2_ConsultarIdUltimoEmpleado.
+        /// </summary>
+        internal static string ConsultLastEmployeID {
+            get {
+                return ResourceManager.GetString("ConsultLastEmployeID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a M2_ConsultarIdUltimoUsuario.
         /// </summary>
         internal static string ConsultLastUserID {
@@ -111,6 +120,15 @@ namespace DatosTangerine.DAO.M2 {
         internal static string ConsultUser {
             get {
                 return ResourceManager.GetString("ConsultUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a emp_num_ficha.
+        /// </summary>
+        internal static string fichaEmpleado {
+            get {
+                return ResourceManager.GetString("fichaEmpleado", resourceCulture);
             }
         }
         

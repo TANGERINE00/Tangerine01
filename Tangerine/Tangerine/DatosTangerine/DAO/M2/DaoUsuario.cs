@@ -549,6 +549,60 @@ namespace DatosTangerine.DAO.M2
 
                 return ultimoID;
             }
+            
+            /// <summary>
+            /// Método que permite consultar el ID del ultimo empleado en la base de datos
+            /// </summary>
+            /// <returns>Retorna el ID del ultimo empleado</returns>
+            public int ConsultLastEmployeID()
+            {
+                Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name ,
+                                     ResourceUser.MensajeInicioInfoLogger , System.Reflection.MethodBase.GetCurrentMethod().Name );
+                int ultimoID = 0;
+                try
+                {
+                    List<Parametro> parameters = new List<Parametro>();
+
+                    //Guardo la tabla que me regresa el procedimiento de consultar Proyecto
+                    DataTable dt = EjecutarStoredProcedureTuplas(ResourceUser.ConsultLastEmployeID, parameters);
+                    //Guardar los datos 
+                    DataRow row = dt.Rows[0];
+
+                    ultimoID = int.Parse( row[ ResourceUser.fichaEmpleado ].ToString() );
+
+                }
+                catch ( ArgumentNullException ex )
+                {
+                    Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Ingreso de un argumento con valor invalido" , ex );
+                }
+                catch ( FormatException ex )
+                {
+                    Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Ingreso de datos con un formato invalido" , ex );
+                }
+                catch ( ExceptionTGConBD ex )
+                {
+                    Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error con la base de datos" , ex );
+                }
+                catch ( SqlException ex )
+                {
+                    Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la conexion" , ex );
+                }
+                catch ( Exception ex )
+                {
+                    Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                    throw new ExceptionM2Tangerine( "DS-202" , "Error al momento de realizar la operacion" , ex );
+                }
+
+                Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name ,
+                                     ResourceUser.MensajeFinInfoLogger ,
+                                     System.Reflection.MethodBase.GetCurrentMethod().Name );
+
+                return ultimoID;
+            }
 
             /// <summary>
             /// Borrar usuario por el Id de un usuario

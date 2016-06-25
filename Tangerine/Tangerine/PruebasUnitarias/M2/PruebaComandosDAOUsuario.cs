@@ -101,7 +101,7 @@ namespace PruebasUnitarias.M2
         /// Método para probar el ComandoConsultarPorID de ComandosDAOUsuario
         /// </summary>
         [Test]
-        public void TestConsultarPorID()
+        public void TestComandoConsultarPorID()
         {
             bool resultado;
             LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario1 );
@@ -125,6 +125,21 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el ComandoConsultarUltimoIDEmpleado de ComandosDAOUsuario
+        /// </summary>
+        [Test]
+        public void TestComandoConsultarUltimoIDEmpleado()
+        {
+            bool resultado;
+            LogicaTangerine.Comando<Boolean> commandAgregarUsuario = FabricaComandos.agregarUsuario( elUsuario1 );
+            resultado = commandAgregarUsuario.Ejecutar();
+            Assert.IsTrue( resultado );
+            LogicaTangerine.Comando<int> commandConsultarUltimoIDEmpleado = FabricaComandos.consultarIDUltimoEmpleado();
+            int lastID = commandConsultarUltimoIDEmpleado.Ejecutar();
+            Assert.IsTrue(lastID > 0);
+        }
+
+        /// <summary>
         /// Método para probar el ComandoCrearUsuarioDefault de ComandosDAOUsuario
         /// </summary>
         [Test]
@@ -137,6 +152,11 @@ namespace PruebasUnitarias.M2
             resultado2 = commandCrearUsuarioDefault2.Ejecutar();
             Assert.AreEqual( usuarioDefault , resultado );
             Assert.IsEmpty( resultado2 );
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            elUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompletoConID( daoUsuario.ConsultLastUserID() , "Daniel" ,
+                                                                              "1234" , new DateTime(2015, 2, 10) , "Activo" , elRol , 1 );
+            DominioTangerine.Entidades.M2.UsuarioM2 theUsuario2 = ( DominioTangerine.Entidades.M2.UsuarioM2 )elUsuario2;
+            answer = daoUsuario.BorrarUsuario( theUsuario2.Id );
         }
 
         /// <summary>

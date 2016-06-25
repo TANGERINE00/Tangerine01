@@ -27,7 +27,7 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void Alerta(string msj)
         {
-            if (msj == "1")
+            if ( msj == "1" )
             {
                 _vista.alertaClase = ResourceGUIM2.alertaModificado;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;

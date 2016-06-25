@@ -622,6 +622,13 @@ AS
  end;
 GO
 
+CREATE PROCEDURE M2_ConsultarIdUltimoEmpleado
+AS
+ BEGIN
+     SELECT MAX(emp_num_ficha) emp_num_ficha FROM EMPLEADO;
+ end;
+GO
+
 CREATE PROCEDURE M2_ConsultarUsuario
 	@id int
 AS
