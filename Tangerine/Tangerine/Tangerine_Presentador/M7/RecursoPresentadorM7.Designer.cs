@@ -61,6 +61,33 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string alertaError {
+            get {
+                return ResourceManager.GetString("alertaError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string alertaHtml {
+            get {
+                return ResourceManager.GetString("alertaHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string alertaHtmlFinal {
+            get {
+                return ResourceManager.GetString("alertaHtmlFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonInfo {
@@ -327,6 +354,15 @@ namespace Tangerine_Presentador.M7 {
         internal static string PropuestaAprovada {
             get {
                 return ResourceManager.GetString("PropuestaAprovada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string tipoAlerta {
+            get {
+                return ResourceManager.GetString("tipoAlerta", resourceCulture);
             }
         }
         

@@ -19,10 +19,8 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-      
-
     <div class="row">
-    <div id="alert" runat="server" style="width:530px">
+    <div id="alert" runat="server">
     </div>
         <!-- form start -->
         <form role="form" runat="server" id="generar_proyecto" method="post">
