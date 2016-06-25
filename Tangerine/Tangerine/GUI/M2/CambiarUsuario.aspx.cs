@@ -102,7 +102,7 @@ namespace Tangerine.GUI.M2
                 }
                 else
                 {
-                    presentador.Alerta( ResourceM2.AlertaBtnCrear );
+                    presentador.Alerta( ResourceM2.AlertaBtnModificar );
                 }
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )

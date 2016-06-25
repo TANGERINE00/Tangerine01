@@ -162,4 +162,7 @@
   <data name="Rol" xml:space="preserve">
     <value>Rol</value>
   </data>
+  <data name="AlertaBtnModificar" xml:space="preserve">
+    <value>Nombre de usuario ya existente, intente otro. Puede que el que esté ingresando ya sea el suyo.</value>
+  </data>
 </root>
