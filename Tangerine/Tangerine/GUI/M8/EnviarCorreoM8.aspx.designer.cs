@@ -130,6 +130,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea textMensaje_M8;
         
         /// <summary>
+        /// Div9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div9;
+        
+        /// <summary>
         /// Div8 control.
         /// </summary>
         /// <remarks>
