@@ -97,6 +97,7 @@
 
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
+                            <asp:Label runat="server" ID="tipoMoneda"> </asp:Label>
                             <input runat="server" type="text" class="form-control" id="textInputCosto" 
                                 name="textInputCosto" placeholder="0 Bs" Disabled="disabled">
                         </div>

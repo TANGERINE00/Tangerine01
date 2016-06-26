@@ -175,6 +175,18 @@ namespace Tangerine.GUI.M7
         {
             set { alert.InnerHtml = value; }
         }
+
+        public Label Moneda
+        {
+            get
+            {
+                return this.tipoMoneda;
+            }
+            set
+            {
+                this.tipoMoneda = value;
+            }
+        }
         #endregion
 
         /// <summary>
