@@ -20,36 +20,19 @@ namespace DominioTangerine.Entidades.M10
         #region Constructor
         public LugarDireccion() { }
 
-        public LugarDireccion(int lugId, string lugNombre)
-        {
-            this.lugId = lugId;
-            this.lugNombre = lugNombre;
-        }
-
-        public LugarDireccion(int lugId,string lugNombre, string lugTipo, int fk_lugId) 
-        {
-            this.lugId = lugId;
-            this.lugNombre = lugNombre;
-            this.lugTipo=lugTipo;
-            this.fk_lugId=fk_lugId;
-        }
-
-        public LugarDireccion(int lugId, string lugNombre, string lugTipo, int fk_lugId, 
-                              List<LugarDireccion> address)
-        {
-            this.lugId = lugId;
-            this.lugNombre = lugNombre;
-            this.lugTipo = lugTipo;
-            this.fk_lugId = fk_lugId;
-            this.address = address;
-        }
-
+        
         public LugarDireccion(string lugNombre, string lugTipo)
         {
             this.lugNombre = lugNombre;
             this.lugTipo = lugTipo;
         }
+
+        
         #endregion
+
+
+
+
 
         #region Get's Set's
         public int LugId

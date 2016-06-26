@@ -802,7 +802,7 @@ namespace DominioTangerine.Fabrica
         #region Modulo 10
         #region Metodo para instanciar empleados sin atributos
         // <summary>
-        // Metodo para instanciar empleados sin atributos
+        // Metodo para instanciar empleados
         // </summary>
         /// <returns></returns>
 
@@ -869,11 +869,33 @@ namespace DominioTangerine.Fabrica
                                                                    empLugId,  empCargo,  empSalario,  empFechaInicio,
                                                                    empFechaFin, empDireccion));
         }
-        #endregion
+
+        public static Entidad CrearEntidadEmpleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero, int empCedula,
+                     DateTime empFecha, string empActivo, string empEstudio, string empEmail,Entidad cargo, List<DominioTangerine.Entidades.M10.LugarDireccion> ListaLugar)
+        {
+            return(new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre, empSNombre, empPApellido,empSApellido, empGenero,empCedula,
+                     empFecha, empActivo, empEstudio, empEmail, cargo, ListaLugar));
+        }
+
+        public static Entidad CrearEntidadCargo(string name, string summaryJob, DateTime dateJob, string jobMode, Double Salary)
+        {
+            return (new DominioTangerine.Entidades.M10.CargoM10(name, summaryJob, dateJob, jobMode, Salary));
+        }
+
+        public static Entidad CrearDireccion()
+        {
+            return(new DominioTangerine.Entidades.M10.LugarDireccion());
+        }
 
         public static Entidad obtenerEntidad()
         {
             return new DominioTangerine.Entidades.M10.EmpleadoM10();
         }
+
+
+        #endregion
+
+       
+    
     }
 }

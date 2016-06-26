@@ -32,7 +32,7 @@ namespace PruebasUnitarias.M10
         [SetUp]
         public void init()
         {
-            theEmpleado = new Empleado();
+            
             theEmpleado = new Empleado();
             List<LugarDireccion> direccion = new List<LugarDireccion>();
             theCargo = new Cargo("Gerente", "Gerente de proyectos de software",
