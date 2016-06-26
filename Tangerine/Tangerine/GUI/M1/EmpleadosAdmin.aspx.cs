@@ -18,7 +18,7 @@ namespace Tangerine.GUI.M1
     {
         private PresentadorConsultaEmpleado presentador;
 
-        
+
         public string empleado
         {
             get
@@ -43,50 +43,37 @@ namespace Tangerine.GUI.M1
             }
         }
 
-       
 
 
-         public EmpleadosAdmin()
+
+        public EmpleadosAdmin()
         {
             this.presentador = new PresentadorConsultaEmpleado(this);
-            
+
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
-            presentador.CambiarEstatus(Empleadoid);
-
-            if (!IsPostBack)
-            {
-                presentador.cargarConsultarEmpleados();
-
-
             try
             {
-                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
+                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]); 
                 presentador.CambiarEstatus(Empleadoid);
-
-                if (!IsPostBack)
+                if (!IsPostBack) 
                 {
-                    presentador.cargarConsultarEmpleados();
-
+                    presentador.cargarConsultarEmpleados(); 
                 }
             }
             catch (Exception)
-            {
+            { 
                 Response.Redirect("../M1/Dashboard.aspx");
-
             }
-           
-
         }
 
         protected void Activar_Empleado(object sender, EventArgs e)
         {
             int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
-            
+
         }
 
     }
