@@ -15,11 +15,20 @@ namespace Tangerine_Presentador.M3
     {
         IContratoHistoriaClientePotencial vista;
 
+        /// <summary>
+        /// Constructor de la clase presentador
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorHistorialDeSeguimiento(IContratoHistoriaClientePotencial vista)
         {
             this.vista = vista;
         }
 
+
+        /// <summary>
+        /// Metodo que instancia y ejecuta el comando para consultar un cliente potencial
+        /// </summary>
+        /// <param name="idCliente"></param>
         public void Llenar(int idCliente)
         {
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.ObtenerClientePotencial();
@@ -56,6 +65,10 @@ namespace Tangerine_Presentador.M3
             }
         }
 
+        /// <summary>
+        /// Metodo que instancia y ejecuta el comando para consultar historial de llamadas de un cliente potencial
+        /// </summary>
+        /// <param name="idCliente"></param>
         public void ObtenerHistoricoLlamadas(int idCliente)
         {
 
@@ -81,6 +94,10 @@ namespace Tangerine_Presentador.M3
             }
         }
 
+        /// <summary>
+        /// Metodo que instancia y ejecuta el comando para consultar historial de visitas de un cliente potencial
+        /// </summary>
+        /// <param name="idCliente"></param>
         public void ObtenerHistoricoVisitas(int idCliente)
         {
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXVisitas();

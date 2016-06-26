@@ -14,6 +14,10 @@ namespace Tangerine.GUI.M3
     {
         PresentadorConsultarClientePotencial presentador;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <returns></returns>
         public ConsultarLead()
         {
             this.presentador = new PresentadorConsultarClientePotencial(this);
