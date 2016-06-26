@@ -55,6 +55,10 @@ namespace Tangerine_Presentador.M3
             }
         }
 
+        /// <summary>
+        /// Metodo que instancia y ejecuta el comando para modificar datos del cliente
+        /// </summary>
+        /// <param name="idCliente"></param>
         public void ModificarClientePotencial(int idCliente)
         {
             Entidad _entidad = 
