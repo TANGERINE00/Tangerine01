@@ -86,8 +86,6 @@ namespace Tangerine_Presentador.M8
             try
             {
                 vista.destinatario = this.vista.destinatario;
-                //vista.destinatario = "istvanbokor8@gmail.com, istvanbokor7@hotmail.com";
-                //vista.destinatario = "carr235@gmail.com";
                 vista.asunto = this.vista.asunto;
                 vista.mensaje = this.vista.mensaje;
 
@@ -95,9 +93,6 @@ namespace Tangerine_Presentador.M8
                     (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje);
 
                 Comando<bool> _comandoCorreo = FabricaComandos.CrearComandoEnviarCorreoGmail(_datosCorreo);
-
-                //CorreoM8 correo = new CorreoM8();
-                //correo.enviarCorreoGmail(_asunto, _destinatario, _mensaje);
 
                 return _comandoCorreo.Ejecutar(); ;
             }

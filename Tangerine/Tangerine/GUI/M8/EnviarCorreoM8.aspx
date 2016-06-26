@@ -48,34 +48,9 @@
                             <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" rows="4" cols="50">
                             </textarea>
                         </div>
-
-                        <%-- <div class="form-group" runat="server">
-                            <label for="labelProyecto_M8">Proyecto</label>
-                            <input type="text" runat="server" class="form-control" id="textProyecto_M8" name="textProyecto_M8" placeholder="Proyecto" disabled="disabled">
-                        </div> --%>
-
-                        <%-- <div class="form-group" runat="server">
-                            <label for="labelDescripcion_M8">Descripción</label>
-                            <input type="text" runat="server" class="form-control"
-                                   pattern="^[0-9a-zñA-ZÑ.- ]+$"
-                                   id="textDescripcion_M8" name="textDescripcion_M8" 
-                                   placeholder="Descripción" maxlength="50" required>
-                        </div> --%>
-
-                        <%--    <div class="form-group" runat="server">
-                      <label for="labelEstatus_M8">Estatus</label>
-                     <select runat="server" class="form-control" id="textEstatus_M8" name="textEstatus_M8"> 
-                     <option>Por Pagar</option>
-                     <option>Pagada</option>
-                     <option>Anulada</option> 
-                     </select>
-                    </div> --%>
-
-                        <%-- <div class="form-group" runat="server">
-                            <label for="labelMonto_M8">Monto</label>
-                            <input type="text" runat="server" class="form-control" id="textMonto_M8" name="textMonto_M8" placeholder="Monto" disabled="disabled">
-                        </div> --%>
-
+                        <div id="Div9" class="form-group" runat="server">
+                           <input type="file" name="adjuntar" id="adjuntar" class="btn btn-primary" value="adjuntar" onclick="buttonadjuntarCorreo_Click" style="margin-top: 5%; margin-right:15px;">
+                        </div>
                         <div id="Div8" class="form-group" runat="server" style="text-align:center;">
                             <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%; margin-right:15px;" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo" OnClick="buttonEnviarCorreo_Click"></asp:Button>
                             <a Style="margin-top: 5%; width:105px;" href="ConsultarFacturaM8.aspx" class="btn btn-default" type="submit">Cancelar</a>
