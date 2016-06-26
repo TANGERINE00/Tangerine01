@@ -5,10 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioTangerine;
-//using DatosTangerine.M8;
-//using LogicaTangerine.M8;
 using Tangerine_Presentador.M8;
 using Tangerine_Contratos.M8;
+using System.Web.UI.HtmlControls;
 
 namespace Tangerine.GUI.M8
 {
@@ -51,7 +50,7 @@ namespace Tangerine.GUI.M8
 
         public string adjunto
         {
-            get { return this.adjuntar.Value; }
+            get { return this.adjuntar.PostedFile.FileName; }
         }
         public string alertaClase
         {
