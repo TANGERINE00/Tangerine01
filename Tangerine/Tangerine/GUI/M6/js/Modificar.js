@@ -12,10 +12,13 @@ $(document).ready(function () {
 
 //La fecha viene en formato dd/mm/yyyy, se cambia a mm/dd//yyyy para que sirva.
 $(window).load(function () {
-    
+
     var fechaInicio = document.getElementById("datepicker1");
     var fechaFin = document.getElementById("datepicker2");
+    var s1 = document.getElementById("comboDuracion");
+    var input = document.getElementById("textoDuracion");
 
+    //Set fechas en formato MM/dd/yyyy
     var res = fechaInicio.value.split("/");
     var newDate = res[1] + "/" + res[0] + "/" + res[2];
     fechaInicio.value = newDate;
@@ -24,14 +27,30 @@ $(window).load(function () {
     var newDate = res[1] + "/" + res[0] + "/" + res[2];
     fechaFin.value = newDate;
 
+    //Set forma de pago
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").readOnly = true;
+        document.getElementById("cantidadCuotas").disabled = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas") {
-        document.getElementById("cantidadCuotas").readOnly = false;
+        document.getElementById("cantidadCuotas").disabled = false;
     }
-   
+
+    //Set datepickers
+    if (s1.value == "Meses") {
+        fechaFin.disabled = true;
+        input.disabled = false;
+    }
+    else if (s1.value == "Dias") {
+        fechaFin.disabled = true;
+        input.disabled = false;
+    }
+    else if (s1.value == "Custom") {
+        fechaFin.disabled = false;
+        input.value = "";
+        input.disabled = true;
+    }
+
 });
 
 
@@ -75,17 +94,17 @@ function enableDeFechas(s1, date1, date2, input) {
     input.value = "";
 
     if (s1.value == "Meses") {
-        date2.readOnly = true;
-        input.readOnly = false;
+        date2.disabled = true;
+        input.disabled = false;
     }
     else if (s1.value == "Dias") {
-        date2.readOnly = true;
-        input.readOnly = false;
+        date2.disabled = true;
+        input.disabled = false;
     }
     else if (s1.value == "Custom") {
-        date2.readOnly = false;
+        date2.disabled = false;
         input.value = "";
-        input.readOnly = true;
+        input.disabled = true;
     }
 
 }
@@ -124,10 +143,10 @@ function setFechas(i1, date1, date2, select1) {
 function setCuotas() {
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").readOnly = true;
+        document.getElementById("cantidadCuotas").disabled = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas") {
-        document.getElementById("cantidadCuotas").readOnly = false;
+        document.getElementById("cantidadCuotas").disabled = false;
     }
 }
 
@@ -227,6 +246,18 @@ function onBlurDeInputs(inputId) {
 }
 
 
+//Habilitar lectura de campos para modificar
+function activarLectura()
+{
+    document.getElementById("datepicker2").disabled = false;
+    document.getElementById("datepicker2").readOnly = true;
+
+    document.getElementById("cantidadCuotas").disabled = false;
+    document.getElementById("cantidadCuotas").readOnly = true;
+
+    document.getElementById("textoDuracion").disabled = false;
+    document.getElementById("textoDuracion").readOnly = true;
+}
 
 
 

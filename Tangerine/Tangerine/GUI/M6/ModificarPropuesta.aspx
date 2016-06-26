@@ -233,7 +233,8 @@
 
                     <asp:Button ID="botonModificarPro" class="btn btn-primary"
                         type="submit" runat="server"
-                        Text="Modificar" OnClick="ModificarPropuesta_Click"></asp:Button>
+                        Text="Modificar" OnClick="ModificarPropuesta_Click"
+                        OnClientClick="javascript:activarLectura()"></asp:Button>
                  
                         <a href="ConsultarPropuesta.aspx" class="btn btn-default pull-right">Regresar</a>               
                     

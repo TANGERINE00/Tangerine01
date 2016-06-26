@@ -6,15 +6,15 @@ $(document).ready(function () {
     document.getElementById("datepicker1").value = date.toLocaleDateString('en-US');
     document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
 
-    document.getElementById("datepicker2").readOnly = true;
+    document.getElementById("datepicker2").disabled = true;
 
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").readOnly = true;
+        document.getElementById("cantidadCuotas").disabled = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas")
     {
-        document.getElementById("cantidadCuotas").readOnly = false;
+        document.getElementById("cantidadCuotas").disabled = false;
     }
 });
 
@@ -62,18 +62,27 @@ function crearPrecondicionArr() {
     // escenarios = $("[id^=precondicion_]");
     $('.arrPrecondicion').val("");
     $('.precondicion').each(function () {
-     //   alert($(this).val());
+        //   alert($(this).val());
         values = values + $(this).val() + ";";
-     //   $('#precondicion_arr').val($('#precondicion_arr').val() + ";" + $(this).val());
+        //   $('#precondicion_arr').val($('#precondicion_arr').val() + ";" + $(this).val());
 
     });
     
-   // alert(values);
+    // alert(values);
     $('.arrPrecondicion').val(values);
-   /* for (i = 0; i < escenarios.length; i++) {
-        values += escenarios[i].value + ";";
-    }*/
+    /* for (i = 0; i < escenarios.length; i++) {
+         values += escenarios[i].value + ";";
+     }*/
     //$('#precondicion_arr').val(values);
+
+    document.getElementById("datepicker2").disabled = false;
+    document.getElementById("datepicker2").readOnly = true;
+
+    document.getElementById("cantidadCuotas").disabled = false;
+    document.getElementById("cantidadCuotas").readOnly = true;
+
+    document.getElementById("textoDuracion").disabled = false;
+    document.getElementById("textoDuracion").readOnly = true;
 
 }
 
@@ -133,19 +142,19 @@ function enableDeFechas(s1, date1, date2, input)
 
     if (s1.value == "Meses")
     {
-        date2.readOnly = true;
-        input.readOnly = false;
+        date2.disabled = true;
+        input.disabled = false;
     }
     else if (s1.value == "Dias")
     {
-        date2.readOnly = true;
-        input.readOnly = false;
+        date2.disabled = true;
+        input.disabled = false;
     }
     else if (s1.value == "Custom")
     {
-        date2.readOnly = false;
+        date2.disabled = false;
         input.value = "";
-        input.readOnly = true;
+        input.disabled = true;
     }
 
 }
@@ -187,10 +196,10 @@ function setCuotas()
 {
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").readOnly = true;
+        document.getElementById("cantidadCuotas").disabled = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas") {
-        document.getElementById("cantidadCuotas").readOnly = false;
+        document.getElementById("cantidadCuotas").disabled = false;
     }
 }
 
@@ -209,6 +218,7 @@ function setFechasMesesYDias()
     //Validacion de fecha inicio "mayor" o "igual" a HOY.
     if (fechaInicio < hoy) {
         _fechaInicio.value = hoy.toLocaleDateString('en-US');
+        alert("La fecha de inicio debe ser una fecha mayor o igual a HOY.");
     }
 
     //Validar que exista una duracion para poder empezar a validar
@@ -228,24 +238,27 @@ function setFechasMesesYDias()
 
             _fechaFin.value = fechaFin.toLocaleDateString('en-US');
         }
-    }
-    //Validaciones en caso de que la modalidad sea Custom
+    } 
+        //Validaciones en caso de que la modalidad sea Custom
     else if (select1.value == "Custom") {
         var fechaAux = new Date(_fechaFin.value);
 
         //Validacion de fecha de inicio sea "menor" a la fecha de fin.
         if (fechaInicio > fechaAux) {
             _fechaFin.value = _fechaInicio.value;
-        }
+            alert("La fecha de inicio indicada es MAYOR a la fecha de fin\npor favor vuelva a seleccionar las fechas.");
+        } 
 
         //Validacion de fecha de fin "mayor" a la fecha de inicio.
         if (fechaFin < fechaAux) {
             _fechaFin.value = _fechaInicio.value;
+            alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
         }
     }
     else {
         _fechaInicio.value = hoy.toLocaleDateString('en-US');
-    }
+        alert("Por favor indique una duracion.");
+    } 
 }
 
 //Cuando se modifica la Fecha de Fin
@@ -261,6 +274,8 @@ function setFechasCustom()
     //Validacion de que la fecha de inicio sea "menor" a la fecha de fin.
     if (fechaInicio > fechaAux) {
         _fechaFin.value = _fechaInicio.value;
+    } else {
+        alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
     }
 
 }
