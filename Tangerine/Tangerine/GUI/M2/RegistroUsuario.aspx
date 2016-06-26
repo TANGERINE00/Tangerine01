@@ -55,7 +55,6 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr style="font-size: 18px;">
-                                    <th>Número Ficha</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>
                                     <th>Cédula</th>
