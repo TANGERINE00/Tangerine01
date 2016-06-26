@@ -179,13 +179,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">
+    <ProjectReference Include="..\DominioTangerine\UCAB.DS2016.Tangerine.DominioTangerine.csproj">
       <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
-      <Name>DominioTangerine</Name>
+      <Name>UCAB.DS2016.Tangerine.DominioTangerine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+    <ProjectReference Include="..\ExcepcionesTangerine\UCAB.DS2016.Tangerine.ExcepcionesTangerine.csproj">
       <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
-      <Name>ExcepcionesTangerine</Name>
+      <Name>UCAB.DS2016.Tangerine.ExcepcionesTangerine</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -46,25 +46,25 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatosTangerine\DatosTangerine.csproj">
+    <ProjectReference Include="..\DatosTangerine\UCAB.DS2016.Tangerine.DatosTangerine.csproj">
       <Project>{aade4db2-ab86-432e-8d4d-31bc301e0dcf}</Project>
-      <Name>DatosTangerine</Name>
+      <Name>UCAB.DS2016.Tangerine.DatosTangerine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DominioTangerine\DominioTangerine.csproj">
+    <ProjectReference Include="..\DominioTangerine\UCAB.DS2016.Tangerine.DominioTangerine.csproj">
       <Project>{a2002cd8-967c-4f33-86ce-fe4b4a630bf2}</Project>
-      <Name>DominioTangerine</Name>
+      <Name>UCAB.DS2016.Tangerine.DominioTangerine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExcepcionesTangerine\ExcepcionesTangerine.csproj">
+    <ProjectReference Include="..\ExcepcionesTangerine\UCAB.DS2016.Tangerine.ExcepcionesTangerine.csproj">
       <Project>{d38bc132-01ea-4d21-9e1e-1e733bb744e7}</Project>
-      <Name>ExcepcionesTangerine</Name>
+      <Name>UCAB.DS2016.Tangerine.ExcepcionesTangerine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LogicaTangerine\LogicaTangerine.csproj">
+    <ProjectReference Include="..\LogicaTangerine\UCAB.DS2016.Tangerine.LogicaTangerine.csproj">
       <Project>{e0a749b2-762b-41a8-b134-064a6a4dfb07}</Project>
-      <Name>LogicaTangerine</Name>
+      <Name>UCAB.DS2016.Tangerine.LogicaTangerine</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tangerine.csproj">
+    <ProjectReference Include="..\UCAB.DS2016.Tangerine.csproj">
       <Project>{371135b0-df65-4be5-8814-8798b7f7e181}</Project>
-      <Name>Tangerine</Name>
+      <Name>UCAB.DS2016.Tangerine</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
