@@ -49,8 +49,11 @@
                             </textarea>
                         </div>
                         <div id="Div9" class="form-group" runat="server" style="">
-                          <input type="file" runat="server" name="adjuntar" id="adjuntar" class="btn btn-primary" style="margin-top: 5%; margin-right:15px; ">
-                             <%--<asp:FileUpload ID="adjuntar" name="adjuntar" runat="server" /> --%>
+                           <%--<input type="file" runat="server" name="adjuntar" id="adjuntar" class="btn btn-primary" style="margin-top: 5%; margin-right:15px; ">
+                            <asp:FileUpload ID="adjuntar" name="adjuntar" runat="server" /> --%>
+                                 <asp:FileUpload ID="fuImage" runat="server" /> 
+                                 <%--<asp:Button ID="btSubir" runat="server" onclick="btSubir_Click" Text="Subir Imagen" />--%>
+                                 <asp:Label ID="Label1" runat="server"></asp:Label>
                         </div>
                         <div id="Div8" class="form-group" runat="server" style="text-align:center;">
                             <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%; margin-right:15px;" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo" OnClick="buttonEnviarCorreo_Click"></asp:Button>

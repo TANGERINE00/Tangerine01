@@ -81,17 +81,22 @@ namespace Tangerine_Presentador.M8
             }
         }
 
-        public bool enviarCorreo()
+        public bool enviarCorreo(string adjunto)
         {
             try
             {
+              
+
+
+
+
                 vista.destinatario = this.vista.destinatario;
                 vista.asunto = this.vista.asunto;
                 vista.mensaje = this.vista.mensaje;
                 //vista.adjunto = this.vista.adjunto;
 
                 DatosCorreo _datosCorreo =
-                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje, this.vista.adjunto);
+                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje, adjunto);
 
                 Comando<bool> _comandoCorreo = FabricaComandos.CrearComandoEnviarCorreoGmail(_datosCorreo);
 
