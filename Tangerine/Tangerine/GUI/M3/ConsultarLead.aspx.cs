@@ -111,6 +111,12 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente potencial
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             try

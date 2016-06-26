@@ -17,6 +17,10 @@ namespace Tangerine.GUI.M3
         PresentadorModificarClientePotencial presentador;
         int idClip;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <returns></returns>
         public ModificarLead() 
         {
             presentador = new PresentadorModificarClientePotencial(this);
@@ -110,6 +114,13 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente potencial a modificar
+        /// Llama al presentador para mostrar
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -123,12 +134,16 @@ namespace Tangerine.GUI.M3
             catch
             {
                 Response.Redirect("Listar.aspx");
-            }
-        
-                  
+            }     
          }
 
-
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente potencial a activar
+        /// Llama al presentador para mostrar
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Modificar_Click(object sender, EventArgs e)
         {
             presentador.ModificarClientePotencial(idClip);

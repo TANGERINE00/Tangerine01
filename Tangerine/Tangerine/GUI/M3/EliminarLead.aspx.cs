@@ -18,6 +18,12 @@ namespace Tangerine.GUI.M3
         PresentadorDesactivarClientePotencial presentadorDesactivar;
         int idClientePotencial;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         public EliminarLead()
         {
             this.presentadorMostrar = new PresentadorConsultarClientePotencial(this);
@@ -116,7 +122,13 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
-        
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente potencial a desactivar
+        /// Llama al presentador para mostrar
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -132,9 +144,14 @@ namespace Tangerine.GUI.M3
                 Response.Redirect("Listar.aspx");
             }
         }
-    
-            
-          
+
+
+        /// <summary>
+        /// Método llama al presentador para borrar un cliente potencial dado su ID
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>  
         protected void Eliminar_Click(object sender, EventArgs e)
         {
             presentadorDesactivar.Desactivar(idClientePotencial);

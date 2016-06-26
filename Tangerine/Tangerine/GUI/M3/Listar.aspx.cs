@@ -16,6 +16,10 @@ namespace Tangerine.GUI.M3
     {
         PresentadorListarClientePotencial presentador;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <returns></returns>
         public Listar()
         {
             this.presentador = new PresentadorListarClientePotencial(this);
@@ -36,6 +40,12 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
+        /// <summary>
+        /// Método que llama al presentador para mostrar los clientes potenciales
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
