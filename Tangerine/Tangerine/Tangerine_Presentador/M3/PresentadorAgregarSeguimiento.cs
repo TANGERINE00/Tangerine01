@@ -14,11 +14,18 @@ namespace Tangerine_Presentador.M3
     {
         IContratoAgregarSeguimiento vista;
 
+        /// <summary>
+        /// Constructor de la clase presentador
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorAgregarSeguimiento(IContratoAgregarSeguimiento vista)
         {
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Metodo par cargar informacion en un como de tipo de registro de seguimiento
+        /// </summary>
         public void CargarTipoDeSeguimiento()
         {
             vista.Tipo.Items.Insert(0, "Seleccione una opción");
@@ -28,9 +35,22 @@ namespace Tangerine_Presentador.M3
 
         }
 
+        /// <summary>
+        /// Metodo para setear la fecha actual en la ue sera creada un registro de seguimiento
+        /// </summary>
         public void MostrarFechaDeRegistro()
         {
             vista.Fecha = DateTime.Now.ToString();
+        }
+
+        /// <summary>
+        /// Metodo que invoca al comando encargado de agrgar un nuevo registro de seguimiento
+        /// </summary>
+        public void Agregar()
+        {
+            Console.WriteLine(vista.Fecha);
+            Console.WriteLine(vista.Opcion);
+            Console.WriteLine(vista.Tipo);
         }
 
     }
