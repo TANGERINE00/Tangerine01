@@ -150,6 +150,7 @@
     <Content Include="GUI\M1\css\Estilos.css" />
     <Content Include="GUI\M1\Dashboard.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
+    <Content Include="GUI\M1\js\alertas.js" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
     <Content Include="GUI\M1\NuevaContraseña.aspx" />
