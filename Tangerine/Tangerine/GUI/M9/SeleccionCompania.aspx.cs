@@ -69,11 +69,11 @@ namespace Tangerine.GUI.M9
         {
             
             
-            if (!IsPostBack)
-            {
+            
+            
                 presentador.CargarPagina();
 
-            }
+            
             }
 
         }

@@ -96,10 +96,14 @@ namespace Tangerine_Presentador.M9
 
        catch (ExcepcionesTangerine.ExceptionsTangerine ex)
        {
-           vista.alertaClase = RecursoPresentadorM9.alertaError;
-           vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
-           vista.alerta = RecursoPresentadorM9.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
-               + RecursoPresentadorM9.alertaHtmlFinal;
+
+           MessageBox.Show("Error de formato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           throw new ExcepcionesTangerine.ExceptionsTangerine();
+           
+           //vista.alertaClase = RecursoPresentadorM9.alertaError;
+           //vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
+           //vista.alerta = RecursoPresentadorM9.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+           //    + RecursoPresentadorM9.alertaHtmlFinal;
 
        }
        

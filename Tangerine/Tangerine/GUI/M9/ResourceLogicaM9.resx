@@ -360,4 +360,7 @@
   <data name="StatusAgregado" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="StatusError" xml:space="preserve">
+    <value>2</value>
+  </data>
 </root>
