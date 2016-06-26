@@ -25,5 +25,6 @@ namespace Tangerine_Contratos.M7
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }
+        Label Moneda { get; set; }
     }
 }

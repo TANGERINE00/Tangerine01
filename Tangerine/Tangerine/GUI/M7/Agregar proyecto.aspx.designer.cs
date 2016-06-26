@@ -76,6 +76,15 @@ namespace Tangerine.GUI.M7 {
         protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker2;
         
         /// <summary>
+        /// tipoMoneda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tipoMoneda;
+        
+        /// <summary>
         /// textInputCosto control.
         /// </summary>
         /// <remarks>

@@ -222,4 +222,16 @@
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
   </data>
+  <data name="bitcoin" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-bitcoin"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="bolivar" xml:space="preserve">
+    <value>&lt;b style="color: #3c8dbc;"&gt;Bf &lt;/b&gt;</value>
+  </data>
+  <data name="dolar" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-usd"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="euro" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-euro"&gt;&lt;/a&gt;</value>
+  </data>
 </root>
