@@ -106,6 +106,15 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string AlertAdvertencia {
+            get {
+                return ResourceManager.GetString("AlertAdvertencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alerta.
         /// </summary>
         internal static string AlertaTipo {
@@ -129,6 +138,24 @@ namespace Tangerine_Presentador.M10 {
         internal static string AlertaVistaFinal {
             get {
                 return ResourceManager.GetString("AlertaVistaFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string AlertShowSu1 {
+            get {
+                return ResourceManager.GetString("AlertShowSu1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertShowSu2 {
+            get {
+                return ResourceManager.GetString("AlertShowSu2", resourceCulture);
             }
         }
         
@@ -286,6 +313,33 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El empleado seleccionado ha cambiado su Estatus a Activo.
+        /// </summary>
+        internal static string EmpleadoActivado {
+            get {
+                return ResourceManager.GetString("EmpleadoActivado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El empleado ha sido agregado exitosamente.
+        /// </summary>
+        internal static string EmpleadoAgregado {
+            get {
+                return ResourceManager.GetString("EmpleadoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El empleado seleccionado ha sido desactivado.
+        /// </summary>
+        internal static string EmpleadoDesactivado {
+            get {
+                return ResourceManager.GetString("EmpleadoDesactivado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
         internal static string ErrorAlerta {
@@ -295,11 +349,29 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error al consultar al empleado, por favor intente de nuevo.
+        /// </summary>
+        internal static string ErrorConsultarEmpleado {
+            get {
+                return ResourceManager.GetString("ErrorConsultarEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  .
         /// </summary>
         internal static string Espacio {
             get {
                 return ResourceManager.GetString("Espacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string ExitoAlerta {
+            get {
+                return ResourceManager.GetString("ExitoAlerta", resourceCulture);
             }
         }
         

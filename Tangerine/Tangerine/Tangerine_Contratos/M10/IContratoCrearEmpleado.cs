@@ -99,7 +99,10 @@ namespace Tangerine_Contratos.M1
         /// </summary>
         String ItextPhonePerson { get; set; }
 
-
+        /// <summary>
+        /// Clase para el manejo de alertas
+        /// </summary>
+      
         
 
         
