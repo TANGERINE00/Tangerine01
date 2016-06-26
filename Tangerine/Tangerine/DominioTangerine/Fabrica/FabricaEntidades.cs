@@ -373,12 +373,6 @@ namespace DominioTangerine.Fabrica
             }
             #endregion
      
-        
-        public static Entidad CrearEntidadLugarM4(int lugId, string lugNombre, string lugTipo, int fk_lugId)
-        {
-            return new LugarDireccionM4( lugId,  lugNombre, lugTipo, fk_lugId);
-        }
-
 
             #region instancias de la clase LugarDireccionM4
 
@@ -413,11 +407,11 @@ namespace DominioTangerine.Fabrica
             /// <param name="fk_lugId"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 con lugId,lugNombre, lugTipo y fk_lugId</returns>
 
-            static public Entidad crearLugarDireccionCuatroParametros(int lugId, string lugNombre, string lugTipo, int fk_lugId)
+            static public Entidad CrearLugarDireccionCuatroParametros(int lugId, string lugNombre, string lugTipo, int fk_lugId)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre , lugTipo , fk_lugId );
             }
-
+    
             /// <summary>
             /// Se crea la instancia de LugarDireccionM4 completa
             /// </summary>

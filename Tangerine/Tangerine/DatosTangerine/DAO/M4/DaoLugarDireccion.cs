@@ -59,7 +59,7 @@ namespace DatosTangerine.DAO.M4
                    String lugName = row[ResourcePlaceM4.LugNamePlace].ToString();
                    String lugTypePlace = row[ResourcePlaceM4.LugTypePlace].ToString();
                    int LugLugIdPlace = int.Parse(row[ResourcePlaceM4.LugLugIdPlace].ToString());
-                   thePlace = DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionCuatroParametros(lugId, lugName, lugTypePlace, LugLugIdPlace);
+                   thePlace = DominioTangerine.Fabrica.FabricaEntidades.CrearLugarDireccionCuatroParametros(lugId, lugName, lugTypePlace, LugLugIdPlace);
 
                
                return thePlace;
