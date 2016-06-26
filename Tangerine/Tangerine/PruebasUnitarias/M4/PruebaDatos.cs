@@ -42,6 +42,7 @@ namespace PruebasUnitarias.M4
         }
         #endregion
 
+        #region Pruebas Unitarias
         /// <summary>
         /// Prueba que permite verificar el insertar de una compañía en la base de datos.
         /// </summary>
@@ -266,10 +267,12 @@ namespace PruebasUnitarias.M4
             Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugNombre == "Zulia");
             Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugTipo == "Estado");
             Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).Fk_lugId == 1);
-            
+
         }
 
-      
+        #endregion
+
+
     }
 }
 

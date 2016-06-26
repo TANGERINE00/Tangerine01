@@ -45,7 +45,7 @@ namespace PruebasUnitarias.M4
         }
         #endregion
 
-        #region Tests
+        #region Pruebas Unitarias
 
         /// <summary>
         /// Prueba que permite verificar el agregar una compañía a la base de datos.
