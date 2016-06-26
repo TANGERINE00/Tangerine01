@@ -112,6 +112,20 @@ namespace Tangerine.GUI.M9
 
 
         }
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceLogicaM9.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceLogicaM9.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
 
