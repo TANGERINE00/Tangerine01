@@ -86,6 +86,13 @@ namespace Tangerine_Presentador.M2
                 _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
                                 + ResourceGUIM2.alertaHtmlFinal;
             }
+            catch ( ExcepcionesTangerine.ExceptionTGConBD e )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + e.Message + e.InnerException.Message
+                                + ResourceGUIM2.alertaHtmlFinal;
+            }
     
         }
     }
