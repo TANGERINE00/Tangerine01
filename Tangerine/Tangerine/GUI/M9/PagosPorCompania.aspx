@@ -18,6 +18,8 @@
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <div id="alert" runat="server">
+   </div>
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Consulta de pagos</h3>
