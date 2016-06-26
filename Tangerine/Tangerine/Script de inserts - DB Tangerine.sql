@@ -97,7 +97,7 @@
 
 	SET IDENTITY_INSERT PROPUESTA ON
 	insert into dbo.PROPUESTA(prop_id,prop_nombre, prop_descripcion, prop_tipoDuracion, prop_Duracion, prop_acuerdo_pago, prop_estatus, prop_moneda, prop_cant_entregas, prop_fecha_inicio, prop_fecha_fin, prop_costo, fk_com_id)
-	VALUES (10,'GNFRNCO40919320322','Se trata de creacion de tarjetas' ,'Dias','24','Mensual','Pendiente','Dolar',5,convert(VARCHAR(10),'10-01-2016',110),convert(VARCHAR(10),'25-10-2016',110),15000,3);
+	VALUES (10,'GNFRNCO40919320322','Se trata de creacion de tarjetas' ,'Dias','24','Mensual','Pendiente','Dolar',5,convert(VARCHAR(10),'10-01-2016',110),convert(VARCHAR(10),'10-10-2016',110),15000,3);
 	SET IDENTITY_INSERT PROPUESTA OFF
 
 	SET IDENTITY_INSERT PROPUESTA ON
