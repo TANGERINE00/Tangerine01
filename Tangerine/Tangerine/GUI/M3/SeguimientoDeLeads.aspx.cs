@@ -14,6 +14,10 @@ namespace Tangerine.GUI.M3
     {
         PresentadorHistorialDeSeguimiento presentador;
         int idClientePotencial;
+
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
         public SeguimientoDeLeads()
         {
             presentador = new PresentadorHistorialDeSeguimiento(this);
@@ -128,6 +132,12 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente e historico
+        /// de llama y visitas
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
