@@ -218,7 +218,7 @@ function setFechasMesesYDias()
     //Validacion de fecha inicio "mayor" o "igual" a HOY.
     if (fechaInicio < hoy) {
         _fechaInicio.value = hoy.toLocaleDateString('en-US');
-        alert("La fecha de inicio debe ser una fecha mayor o igual a HOY.");
+        //alert("La fecha de inicio debe ser una fecha mayor o igual a HOY.");
     }
 
     //Validar que exista una duracion para poder empezar a validar
@@ -246,18 +246,18 @@ function setFechasMesesYDias()
         //Validacion de fecha de inicio sea "menor" a la fecha de fin.
         if (fechaInicio > fechaAux) {
             _fechaFin.value = _fechaInicio.value;
-            alert("La fecha de inicio indicada es MAYOR a la fecha de fin\npor favor vuelva a seleccionar las fechas.");
+            //alert("La fecha de inicio indicada es MAYOR a la fecha de fin\npor favor vuelva a seleccionar las fechas.");
         } 
 
         //Validacion de fecha de fin "mayor" a la fecha de inicio.
         if (fechaFin < fechaAux) {
             _fechaFin.value = _fechaInicio.value;
-            alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
+            //alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
         }
     }
     else {
         _fechaInicio.value = hoy.toLocaleDateString('en-US');
-        alert("Por favor indique una duracion.");
+        //alert("Por favor indique una duracion.");
     } 
 }
 
@@ -274,10 +274,8 @@ function setFechasCustom()
     //Validacion de que la fecha de inicio sea "menor" a la fecha de fin.
     if (fechaInicio > fechaAux) {
         _fechaFin.value = _fechaInicio.value;
-    } else {
-        alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
-    }
-
+        //alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
+    } 
 }
 
 //Ayuda para el Usuario de saber si lo que introdujo es correcto
