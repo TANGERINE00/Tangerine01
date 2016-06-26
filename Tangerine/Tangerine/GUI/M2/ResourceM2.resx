@@ -117,10 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AlertaBtnAsignar" xml:space="preserve">
+    <value>Error en datos, por favor, intente otra vez.</value>
+  </data>
+  <data name="AlertaBtnCrear" xml:space="preserve">
+    <value>Nombre de usuario ya existente, intente otro.</value>
+  </data>
   <data name="alertClase" xml:space="preserve">
     <value>class</value>
   </data>
   <data name="alertRole" xml:space="preserve">
     <value>role</value>
+  </data>
+  <data name="alertUsuario" xml:space="preserve">
+    <value>user</value>
+  </data>
+  <data name="Apellido" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="estado" xml:space="preserve">
+    <value>estado</value>
+  </data>
+  <data name="IDEmpleado" xml:space="preserve">
+    <value>idEmpleado</value>
+  </data>
+  <data name="IDFicha" xml:space="preserve">
+    <value>idFicha</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="RedirectBtnAsignarAsignarRol" xml:space="preserve">
+    <value>../M2/CambiarRol.aspx?estado=1</value>
+  </data>
+  <data name="RedirectBtnAsignarCambiarUsuario" xml:space="preserve">
+    <value>../M2/CambiarRol.aspx?estado=2</value>
+  </data>
+  <data name="RedirectBtnCrearAccionRegistar" xml:space="preserve">
+    <value>../M2/RegistroUsuario.aspx?estado=1</value>
+  </data>
+  <data name="RedirectPageLoad" xml:space="preserve">
+    <value>../M1/DashBoard.aspx</value>
+  </data>
+  <data name="Rol" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="AlertaBtnModificar" xml:space="preserve">
+    <value>Nombre de usuario ya existente, intente otro. Puede que el que esté ingresando ya sea el suyo.</value>
+  </data>
+  <data name="AlertaFichaEmpleado" xml:space="preserve">
+    <value>Error en datos, este empleado no existe.</value>
   </data>
 </root>

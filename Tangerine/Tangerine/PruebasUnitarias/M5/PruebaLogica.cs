@@ -139,7 +139,7 @@ namespace PruebasUnitarias.M5
         [Test]
         public void PruebaComandoConsultarContactosPorCompania() 
         {
-            Entidad compania = FabricaEntidades.crearCompaniaVacia();
+            Entidad compania = FabricaEntidades.CrearCompaniaVacia();
             compania.Id = 1;
             _comandoLista = FabricaComandos.CrearComandoConsultarContactosPorCompania( compania, 1 );
             _listaContactos = _comandoLista.Ejecutar();

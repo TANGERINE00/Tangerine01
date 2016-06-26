@@ -317,7 +317,7 @@ namespace DominioTangerine.Fabrica
             /// Metodo que crea la instancia de la entidad CompaniaM4
             /// </summary>
             /// <returns>Retorna la instancia a la clase CompaniaM4</returns>
-            static public Entidad crearCompaniaVacia()
+            static public Entidad CrearCompaniaVacia()
             {
                 return new DominioTangerine.Entidades.M4.CompaniaM4();
             }
@@ -338,16 +338,16 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputIdLugar"></param>
             /// <returns>Retorna una instacion de CompaniaM4 con todos los atributos</returns>
 
-            static public Entidad crearCompaniaConId(int inputId, string inputNombre, string inputRif, string inputEmail, string inputTelefono,
-                                                                                    string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
-                                                                                    int inputPlazoPago, int inputIdLugar)
+            static public Entidad CrearCompaniaConId(int inputId, string inputNombre, string inputRif, string inputEmail,
+                string inputTelefono,string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
+                int inputPlazoPago, int inputIdLugar)
             {
                 return new DominioTangerine.Entidades.M4.CompaniaM4( inputId, inputNombre , inputRif , inputEmail ,
                                                                    inputTelefono , inputAcronimo , inputFechaRegistro , 
                                                                    inputStatus , inputPresupuesto , inputPlazoPago ,
                                                                    inputIdLugar );
             }
-
+        
             /// <summary>
             /// Se crea la instancia de la CompaniaM4 con todos sus atributos menos el id
             /// </summary>
@@ -363,7 +363,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputIdLugar"></param>
             /// <returns>Retorna una instacion de CompaniaM4 con todos los atributos menos el id</returns>
 
-            static public Entidad crearCompaniaSinId(string inputNombre, string inputRif, string inputEmail, string inputTelefono, 
+            static public Entidad CrearCompaniaSinId(string inputNombre, string inputRif, string inputEmail, string inputTelefono, 
                                                                                     string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, 
                                                                                     int inputPresupuesto, int inputPlazoPago, int inputIdLugar)
             {
@@ -373,38 +373,6 @@ namespace DominioTangerine.Fabrica
             }
             #endregion
      
-        
-        
-        public static Entidad CrearEntidadCompaniaM4 ()
-        {
-             return new CompaniaM4 ();
-        }
-
-        
-        
-        public static Entidad CrearEntidadCompaniaM4Llena(int inputId, string inputNombre, string inputRif, string inputEmail, 
-            string inputTelefono,string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
-            int inputPlazoPago, int inputIdLugar)
-        {
-            
-            return new CompaniaM4 (inputId,  inputNombre,  inputRif,  inputEmail, inputTelefono,
-                inputAcronimo,  inputFechaRegistro,  inputStatus, inputPresupuesto,inputPlazoPago,  inputIdLugar);
-        }
-
-        public static Entidad CrearEntidadLugarM4()
-        {
-            return new LugarDireccionM4();
-        }
-
-        public static Entidad CrearEntidadLugarM4(int lugId, string lugNombre, string lugTipo, int fk_lugId)
-        {
-            return new LugarDireccionM4( lugId,  lugNombre, lugTipo, fk_lugId);
-        }
-
-        public static Entidad CrearEntidadLugarM4(int lugId, string lugNombre)
-        {
-            return new LugarDireccionM4( lugId,  lugNombre);
-        }
 
             #region instancias de la clase LugarDireccionM4
 
@@ -413,7 +381,7 @@ namespace DominioTangerine.Fabrica
             /// </summary>
             /// <returns>Retorna la instancia a la clase LugarDireccionM4</returns>
 
-            static public Entidad crearLugarDireccionVacio()
+            static public Entidad CrearLugarDireccionVacio()
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4();
             }
@@ -425,11 +393,11 @@ namespace DominioTangerine.Fabrica
             /// <param name="lugNombre"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 con lugId y lugNombre</returns>
 
-            static public Entidad crearLugarDireccionConLugar(int lugId, string lugNombre)
+            static public Entidad CrearLugarDireccionConLugar(int lugId, string lugNombre)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre );
             }
-
+        
             /// <summary>
             /// Se crea la instancia de LugarDireccionM4 con lugId,lugNombre, lugTipo y fk_lugId
             /// </summary>
@@ -439,11 +407,11 @@ namespace DominioTangerine.Fabrica
             /// <param name="fk_lugId"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 con lugId,lugNombre, lugTipo y fk_lugId</returns>
 
-            static public Entidad crearLugarDireccionCuatroParametros(int lugId, string lugNombre, string lugTipo, int fk_lugId)
+            static public Entidad CrearLugarDireccionCuatroParametros(int lugId, string lugNombre, string lugTipo, int fk_lugId)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre , lugTipo , fk_lugId );
             }
-
+    
             /// <summary>
             /// Se crea la instancia de LugarDireccionM4 completa
             /// </summary>
@@ -454,7 +422,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="address"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 completa</returns>
 
-            static public Entidad crearLugarDireccionCompleto(int lugId, string lugNombre, string lugTipo, int fk_lugId,
+            static public Entidad CrearLugarDireccionCompleto(int lugId, string lugNombre, string lugTipo, int fk_lugId,
                                                                                                    List<DominioTangerine.Entidades.M4.LugarDireccionM4> address)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre , lugTipo , fk_lugId , 
@@ -468,7 +436,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="lugTipo"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 con lugNombre y lugTipo</returns>
 
-            static public Entidad crearLugarDireccionConLugarTipo(string lugNombre, string lugTipo)
+            static public Entidad CrearLugarDireccionConLugarTipo(string lugNombre, string lugTipo)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4(lugNombre, lugTipo );
             }
@@ -734,6 +702,11 @@ namespace DominioTangerine.Fabrica
         public static Entidad ObtenerDatosCorreo(string asunto, string destinatario, string mensaje)
         {
             return new DatosCorreo(asunto, destinatario, mensaje);
+        }
+
+        public static Entidad ObtenerDatosCorreo(string asunto, string destinatario, string mensaje, string adjunto)
+        {
+            return new DatosCorreo(asunto, destinatario, mensaje, adjunto);
         }
         #endregion
 

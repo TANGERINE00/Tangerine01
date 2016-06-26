@@ -23,6 +23,20 @@ namespace Tangerine.GUI.M9
                 this.presentador = new PresentadorSeleccionCompania(this);
 
             }
+        public string alertaClase
+            {
+                set { alert.Attributes[ResourceLogicaM9.alertClase] = value; }
+            }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceLogicaM9.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         public string company
         {
             get
@@ -35,6 +49,17 @@ namespace Tangerine.GUI.M9
                 this.tabla.Text = value;
             }
         }
+        public int StatusAccion()
+        {
+            try
+            {
+                return int.Parse(Request.QueryString[ResourceLogicaM9.Status]);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return 0;
+            }
+        }
 
         /// <summary>
         /// Metodo de carga de los elementos de la ventana.
@@ -44,11 +69,11 @@ namespace Tangerine.GUI.M9
         {
             
             
-            if (!IsPostBack)
-            {
-                presentador.LlenarCompanias();
+            
+            
+                presentador.CargarPagina();
 
-            }
+            
             }
 
         }

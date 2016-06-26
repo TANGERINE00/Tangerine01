@@ -20,7 +20,10 @@
 
 <div class="row">
     <div class="col-lg-6 col-md-6 col-xs-12">
-        <div class="box box-default">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                    <h3 class="box-title">Datos del Cliente</h3> 
+            </div>
             <form role="form" name="modificar_lead" id="modificar_lead" method="post"   runat="server">
             <div class="container-fluid">
 

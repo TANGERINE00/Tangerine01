@@ -49,6 +49,7 @@
     <Compile Include="M2\IContratoAccionRegistrar.cs" />
     <Compile Include="M2\IContratoAsignarRol.cs" />
     <Compile Include="M2\IContratoCambiarRol.cs" />
+    <Compile Include="M2\IContratoCambiarUsuario.cs" />
     <Compile Include="M2\IContratoRegistroUsuario.cs" />
     <Compile Include="M3\IContratoAgregarClientePotencial.cs" />
     <Compile Include="M3\IContratoAgregarSeguimiento.cs" />

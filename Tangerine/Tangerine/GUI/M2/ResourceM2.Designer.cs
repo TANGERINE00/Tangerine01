@@ -61,6 +61,42 @@ namespace Tangerine.GUI.M2 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error en datos, por favor, intente otra vez..
+        /// </summary>
+        internal static string AlertaBtnAsignar {
+            get {
+                return ResourceManager.GetString("AlertaBtnAsignar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de usuario ya existente, intente otro..
+        /// </summary>
+        internal static string AlertaBtnCrear {
+            get {
+                return ResourceManager.GetString("AlertaBtnCrear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de usuario ya existente, intente otro. Puede que el que esté ingresando ya sea el suyo..
+        /// </summary>
+        internal static string AlertaBtnModificar {
+            get {
+                return ResourceManager.GetString("AlertaBtnModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error en datos, este empleado no existe..
+        /// </summary>
+        internal static string AlertaFichaEmpleado {
+            get {
+                return ResourceManager.GetString("AlertaFichaEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a class.
         /// </summary>
         internal static string alertClase {
@@ -75,6 +111,105 @@ namespace Tangerine.GUI.M2 {
         internal static string alertRole {
             get {
                 return ResourceManager.GetString("alertRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a user.
+        /// </summary>
+        internal static string alertUsuario {
+            get {
+                return ResourceManager.GetString("alertUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apellido.
+        /// </summary>
+        internal static string Apellido {
+            get {
+                return ResourceManager.GetString("Apellido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a estado.
+        /// </summary>
+        internal static string estado {
+            get {
+                return ResourceManager.GetString("estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a idEmpleado.
+        /// </summary>
+        internal static string IDEmpleado {
+            get {
+                return ResourceManager.GetString("IDEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a idFicha.
+        /// </summary>
+        internal static string IDFicha {
+            get {
+                return ResourceManager.GetString("IDFicha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre.
+        /// </summary>
+        internal static string Nombre {
+            get {
+                return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ../M2/CambiarRol.aspx?estado=1.
+        /// </summary>
+        internal static string RedirectBtnAsignarAsignarRol {
+            get {
+                return ResourceManager.GetString("RedirectBtnAsignarAsignarRol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ../M2/CambiarRol.aspx?estado=2.
+        /// </summary>
+        internal static string RedirectBtnAsignarCambiarUsuario {
+            get {
+                return ResourceManager.GetString("RedirectBtnAsignarCambiarUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ../M2/RegistroUsuario.aspx?estado=1.
+        /// </summary>
+        internal static string RedirectBtnCrearAccionRegistar {
+            get {
+                return ResourceManager.GetString("RedirectBtnCrearAccionRegistar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ../M1/DashBoard.aspx.
+        /// </summary>
+        internal static string RedirectPageLoad {
+            get {
+                return ResourceManager.GetString("RedirectPageLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rol.
+        /// </summary>
+        internal static string Rol {
+            get {
+                return ResourceManager.GetString("Rol", resourceCulture);
             }
         }
     }

@@ -34,18 +34,32 @@ namespace Tangerine_Presentador.M6
         {
             try
             {
-             DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(vista.IdRequerimiento, vista.Concepto, vista.IdPropuesta);
-
-                elRequerimiento.Id = int.Parse(vista.IdRequerimiento);
+                Entidad elRequerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(vista.IdRequerimiento, vista.Concepto,
+                    vista.IdPropuesta);
+                    
+                
 
              //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
                comando.Ejecutar();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
 
 
@@ -53,13 +67,51 @@ namespace Tangerine_Presentador.M6
 
         public void llenarDatosRequerimiento()
         {
-          //   vista.ComboDuracion = ((DominioTangerine.Entidades.M6.Propuesta)propuesta).TipoDuracion;          
+
+            string debug = vista.IdRequerimiento;
+            List<Entidad> _requerimientos;   
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                    vista.IdPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(propuesta);
+                   _requerimientos = comando.Ejecutar();
+
+                   foreach (Entidad _elRequerimiento in _requerimientos)
+                   {
+                       if (vista.IdRequerimiento.Equals(((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString()))
+                      {
+                          vista.Concepto = ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString();
+                          vista.IdRequerimiento = ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString();
+                      }
+                   }    
+        
         }
  
 
         public void llenarVista()
         {
-            llenarDatosRequerimiento();
+            try
+            {
+                llenarDatosRequerimiento();
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
         }
     
     }

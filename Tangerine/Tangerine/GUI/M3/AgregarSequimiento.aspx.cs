@@ -15,6 +15,9 @@ namespace Tangerine.GUI.M3
         PresentadorAgregarSeguimiento presentador;
         private String opcion;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
         public AgregarSequimiento()
         {
             presentador = new PresentadorAgregarSeguimiento(this);
@@ -81,7 +84,13 @@ namespace Tangerine.GUI.M3
             }
         }
         #endregion
-        
+
+        /// <summary>
+        /// Método que carga la vista con el formulario para agregar un registro de seguimiento
+        /// Llama al presentador para manipular los datos del formulario
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
@@ -92,14 +101,25 @@ namespace Tangerine.GUI.M3
             }
         }
 
+        /// <summary>
+        /// Método que permite tomar n valor del tipo llamada o visita para un registro de 
+        /// seguiminto
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
         protected void SelectedType_Change(object sender, EventArgs e)
         {
             opcion = SelecteTipo.SelectedItem.Text.ToString();
         }
 
+        /// <summary>
+        /// Método que pasa la llamada de agregar un registro de seguimiento al presentador
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-
+            presentador.Agregar();
         }
 
     }

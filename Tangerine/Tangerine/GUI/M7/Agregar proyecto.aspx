@@ -19,10 +19,8 @@
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-      
-
     <div class="row">
-    <div id="alert" runat="server" style="width:530px">
+    <div id="alert" runat="server">
     </div>
         <!-- form start -->
         <form role="form" runat="server" id="generar_proyecto" method="post">
@@ -99,6 +97,7 @@
 
                         <div class="form-group" runat="server">
                             <label for="InputCosto">Costo estimado *</label>
+                            <asp:Label runat="server" ID="tipoMoneda"> </asp:Label>
                             <input runat="server" type="text" class="form-control" id="textInputCosto" 
                                 name="textInputCosto" placeholder="0 Bs" Disabled="disabled">
                         </div>

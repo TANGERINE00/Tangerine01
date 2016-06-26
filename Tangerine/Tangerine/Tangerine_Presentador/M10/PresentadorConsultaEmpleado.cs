@@ -23,10 +23,23 @@ namespace Tangerine_Presentador.M10
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Metodo para el manejo de alertas
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        //public void Alerta(string msj, int typeMsg)
+        //{
+        //    if (typeMsg == 1)
+        //        vista.alerta = ResourceGUIM10.ExitoAlerta;
+        //    else
+        //        vista.alerta = ResourceGUIM10.AlertAdvertencia;
+        //    vista.alerta = ResourceGUIM10.AlertShowSu1 + msj + ResourceGUIM10.AlertShowSu2;
+        //}
         
 
         /// <summary>
-        ///Metodo para la accion de consulta de empleados  
+        /// Metodo para la accion de consulta de empleados  
         /// </summary>
         public void cargarConsultarEmpleados()
         {
@@ -105,20 +118,25 @@ namespace Tangerine_Presentador.M10
 
                     //Estatus Activo/Inactivo
                     if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                        vista.Tabla.Text += ResourceGUIM10.BotonStatusEmpAbrir+
+                        vista.Tabla.Text += ResourceGUIM10.BotonStatusHabilitarAbrir+
                         ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id.ToString() +
-                        ResourceGUIM10.BotonStatusEmpCerrar;
+                        ResourceGUIM10.BotonStatusHabilitarCerrar;
+                        vista.Tabla.Text += ResourceGUIM10.BotonStatusDeshabilitarAbrir +
+                        ((DominioTangerine.Entidades.M10.EmpleadoM10)empleados).emp_id.ToString() +
+                        ResourceGUIM10.BotonStatusDeshabilitarCerrar;
 
                     vista.Tabla.Text += ResourceGUIM10.CerrarTD;
                     vista.Tabla.Text += ResourceGUIM10.CerrarTR;
                 }
 
-                //if (HttpContext.Current.Session["Rol"] + "" != "Programador")
-                //    vista.button += ResourceGUIM10.VentanaAgregarEmpleado;
+                
             }
             catch (ConsultarEmpleadoException ex)
             {
-                throw (ex);
+                //vista.alerta = ResourceGUIM10.ErrorAlerta;
+                //vista.alerta = ResourceGUIM10.AlertaVista + ex.Message + ex.InnerException.Message
+                //               + ResourceGUIM10.AlertaVistaFinal;
+                
             }                                                                                                          
         }
                                                                                                                        
@@ -140,7 +158,9 @@ namespace Tangerine_Presentador.M10
 
             catch (ModificarEstatusException ex)
             {
-                throw (ex);
+                //vista.alerta = ResourceGUIM10.ErrorAlerta;
+                //vista.alerta = ResourceGUIM10.AlertaVista + ex.Message + ex.InnerException.Message
+                //               + ResourceGUIM10.AlertaVistaFinal;
             }  
         }
     }

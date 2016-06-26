@@ -11,7 +11,8 @@
     <li class="active">Gestión de empleados</li>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+     <div id="alerta" runat="server">
+    </div>
     <!--<div class="container-fluid">-->
     <div class="row">
         <div class="col-md-12">

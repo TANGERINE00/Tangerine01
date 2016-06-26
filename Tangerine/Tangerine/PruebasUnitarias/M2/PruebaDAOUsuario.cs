@@ -180,6 +180,18 @@ namespace PruebasUnitarias.M2
         }
 
         /// <summary>
+        /// Método para probar el ConsultLastEmployeID de DAOUsuario
+        /// </summary>
+        [Test]
+        public void TestConsultLastEmployeID()
+        {
+            IDAOUsuarios daoUsuario = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoUsuario();
+            answer = daoUsuario.Agregar( elUsuario );
+            int lastID = daoUsuario.ConsultLastEmployeID();
+            Assert.IsTrue( lastID > 0 );
+        }
+
+        /// <summary>
         /// Método para probar el BorrarUsuario de DAOUsuario
         /// </summary>
         [Test]

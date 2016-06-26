@@ -23,6 +23,7 @@ namespace Tangerine.GUI.M1
         private string[] Substrings;
         private string fecha;
 
+        
 
         public CrearEmpleado()
         {

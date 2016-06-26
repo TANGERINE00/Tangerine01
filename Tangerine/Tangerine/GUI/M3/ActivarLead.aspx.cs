@@ -17,6 +17,10 @@ namespace Tangerine.GUI.M3
         PresentadorActivarClientePotencial presentadorActivar;
         int idClientePotencial;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <returns></returns>
         public ActivarLead()
         {
             this.presentadorMostrar = new PresentadorConsultarClientePotencial(this);
@@ -115,6 +119,13 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente potencial a activar
+        /// Llama al presentador para mostrar
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -131,6 +142,12 @@ namespace Tangerine.GUI.M3
             }
         }
 
+        /// <summary>
+        /// Metodo que llama al presentador para activar el cliente potencial
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
         protected void Activar_Click(object sender, EventArgs e)
         {
             presentadorActivar.Activar(idClientePotencial);

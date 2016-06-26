@@ -67,6 +67,11 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
                 throw new ExceptionM2Tangerine( "DS-202" , "Error, indice fuera de rango" , ex );
             }
+            catch ( ExceptionTGConBD ex )
+            {
+                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );
+                throw new ExceptionM2Tangerine( "DS-202" , "Error con la base de datos" , ex );
+            }
             catch ( Exception ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name , ex );

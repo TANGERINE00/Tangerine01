@@ -20,7 +20,7 @@
             <!-- left column -->
             <div class="col-md-6">
               <!-- general form elements -->
-              <div class="box box-primary">
+              <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">Información de Compañías</h3>
                     <div class="box-tools">    
@@ -68,7 +68,7 @@
                   <div class="box-footer" runat="server">
 
                 <form role="form" name="eliminar_lead" id="eliminar_lead" method="post"   runat="server">
-                   <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Eliminar_Click" Text = "Eliminar"   ></asp:Button>
+                   <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" href="Listar.aspx" type="submit" runat="server" OnClick="Eliminar_Click" Text = "Inactivar"   ></asp:Button>
                 </form>
                     </div>
                     

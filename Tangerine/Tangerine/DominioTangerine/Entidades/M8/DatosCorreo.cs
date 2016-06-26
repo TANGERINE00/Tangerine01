@@ -13,6 +13,7 @@ namespace DominioTangerine.Entidades.M8
         private String _asunto;
         private String _destinatario;
         private String _mensaje;
+        private String _adjunto;
 
         #endregion
 
@@ -48,6 +49,15 @@ namespace DominioTangerine.Entidades.M8
             set { _mensaje = value; }
         }
 
+        /// <summary>
+        /// Metodo para setear y obtener el archivo adjunto del correo
+        /// </summary>
+        /// <returns>Retorna el tipo de moneda de la factura</returns>
+        public String adjunto
+        {
+            get { return _adjunto; }
+            set { _adjunto = value; }
+        }
         #endregion
 
         #region metodos
@@ -60,17 +70,31 @@ namespace DominioTangerine.Entidades.M8
             this._asunto = String.Empty;
             this._destinatario = String.Empty;
             this._mensaje = String.Empty;
+            this._adjunto = String.Empty;
         }
 
         /// <summary>
-        /// Constructor por defecto.
+        /// Constructor sin adjunto.
         /// </summary>
-        public DatosCorreo(string asunto,string destinatario,string mensaje)
+        public DatosCorreo(string asunto, string destinatario, string mensaje)
             : base()
         {
             this._asunto = asunto;
             this._destinatario = destinatario;
             this._mensaje = mensaje;
+            this._adjunto = String.Empty;
+        }
+
+        /// <summary>
+        /// Constructor con todos los valores.
+        /// </summary>
+        public DatosCorreo(string asunto,string destinatario,string mensaje,string adjunto)
+            : base()
+        {
+            this._asunto = asunto;
+            this._destinatario = destinatario;
+            this._mensaje = mensaje;
+            this._adjunto = adjunto;
         }
 
         #endregion

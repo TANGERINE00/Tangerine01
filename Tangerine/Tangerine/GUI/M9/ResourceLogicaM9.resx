@@ -313,7 +313,7 @@
     <value>RIF:</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Status:</value>
+    <value>status</value>
   </data>
   <data name="Telefono" xml:space="preserve">
     <value>Teléfono:</value>
@@ -356,5 +356,11 @@
   </data>
   <data name="boton2" xml:space="preserve">
     <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" type="submit" runat="server" href="FacturasPagadas.aspx?id=</value>
+  </data>
+  <data name="StatusAgregado" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="StatusError" xml:space="preserve">
+    <value>2</value>
   </data>
 </root>

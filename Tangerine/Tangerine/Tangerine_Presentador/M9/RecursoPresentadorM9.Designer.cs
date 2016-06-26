@@ -178,6 +178,33 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertClose {
+            get {
+                return ResourceManager.GetString("AlertClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string AlertDanger {
+            get {
+                return ResourceManager.GetString("AlertDanger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string AlertOpen {
+            get {
+                return ResourceManager.GetString("AlertOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to role.
         /// </summary>
         internal static string alertRole {
@@ -192,6 +219,15 @@ namespace Tangerine_Presentador.M9 {
         internal static string alertRole1 {
             get {
                 return ResourceManager.GetString("alertRole1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string AlertSuccess {
+            get {
+                return ResourceManager.GetString("AlertSuccess", resourceCulture);
             }
         }
         
@@ -610,6 +646,15 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El Pago ha sido Agregado Correctamente.
+        /// </summary>
+        internal static string PagoAgregado {
+            get {
+                return ResourceManager.GetString("PagoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;idComp=.
         /// </summary>
         internal static string ParametroIdComp {
@@ -646,11 +691,11 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to 1.
         /// </summary>
-        internal static string String1 {
+        internal static string StatusAgregado {
             get {
-                return ResourceManager.GetString("String1", resourceCulture);
+                return ResourceManager.GetString("StatusAgregado", resourceCulture);
             }
         }
         

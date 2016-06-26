@@ -23,9 +23,28 @@ namespace Tangerine_Presentador.M2
         }
 
         /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta(string msj)
+        {
+            if ( msj == "1" )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaModificado;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ResourceGUIM2.MsjCreado + ResourceGUIM2.alertaHtmlFinal;
+            }
+            else
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + msj + ResourceGUIM2.alertaHtmlFinal;
+            }
+        }
+
+        /// <summary>
         /// Método que inicia la vista de la página registrar usuario
         /// </summary>
-        public bool inicioVista()
+        public void inicioVista()
         {
             try
             {
@@ -38,7 +57,6 @@ namespace Tangerine_Presentador.M2
                     LogicaTangerine.Comando<Boolean> theComandoVerificar =
                         LogicaTangerine.Fabrica.FabricaComandos.verificarUsuario( empleado.emp_id );
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTR;
-                    _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.emp_id.ToString() + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_apellido + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
@@ -59,12 +77,20 @@ namespace Tangerine_Presentador.M2
 
                     _vista.tablaEmpleado += ResourceGUIM2.CloseTR;
                 }
-                return true;
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
-                _vista.msjError = ex.Message;
-                return false;
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                                + ResourceGUIM2.alertaHtmlFinal;
+            }
+            catch ( ExcepcionesTangerine.ExceptionTGConBD e )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + e.Message + e.InnerException.Message
+                                + ResourceGUIM2.alertaHtmlFinal;
             }
     
         }

@@ -16,6 +16,11 @@ namespace Tangerine_Contratos.M6
             set;
         }
 
+        string reqABorrar
+        {
+            get;
+        }
+
         string IdPropuesta
         {
             get;

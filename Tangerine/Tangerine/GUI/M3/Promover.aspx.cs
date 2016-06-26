@@ -18,6 +18,10 @@ namespace Tangerine.GUI.M3
         PresentadorPromoverClientePotencial presentadorPromover;
         int idClientePotencial;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <returns></returns>
         public Promover()
         {
             this.presentadorMostrar = new PresentadorConsultarClientePotencial(this);
@@ -116,6 +120,13 @@ namespace Tangerine.GUI.M3
         }
         #endregion
 
+        /// <summary>
+        /// Método que carga la vista y muestra los datos del cliente potencial a promover
+        /// Llama al presentador para mostrar
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -132,6 +143,12 @@ namespace Tangerine.GUI.M3
             }
         }
 
+        /// <summary>
+        /// Método llama al metodo para promover a un cliente dado su ID
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void Promover_Click(object sender, EventArgs e)
         {
             presentadorPromover.Promover(idClientePotencial);

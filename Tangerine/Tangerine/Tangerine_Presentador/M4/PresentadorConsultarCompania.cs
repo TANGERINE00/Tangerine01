@@ -39,7 +39,7 @@ namespace Tangerine_Presentador.M4
         {
             try
             {
-                Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
                 ((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id = idComp;
                 
                 if (typeHab == 1)

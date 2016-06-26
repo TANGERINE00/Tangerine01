@@ -14,7 +14,7 @@ namespace Tangerine_Presentador.M9
     {
 
         IContratoSeleccionCompania vista;
-
+        private int estado = 0;
         /// <summary>
         /// Constructor del Presentador para implementar en GUI
         /// </summary>
@@ -24,6 +24,39 @@ namespace Tangerine_Presentador.M9
 
             this.vista = vista;
 
+        }
+        public void Alerta(string msj, int tipoMensaje)
+        {
+            if (tipoMensaje == 1)
+            {
+                vista.alertaClase = RecursoPresentadorM9.AlertSuccess;
+                vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
+                vista.alerta = RecursoPresentadorM9.AlertOpen + msj + RecursoPresentadorM9.AlertClose;
+       
+            }
+            else if (tipoMensaje == 2)
+            {
+                vista.alertaClase = RecursoPresentadorM9.AlertDanger;
+                vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
+                vista.alerta = RecursoPresentadorM9.AlertOpen + msj + RecursoPresentadorM9.AlertClose;
+
+            }
+         }
+ 
+
+        public void estadoActual()
+        {
+            switch(estado)
+            {
+                case 1:
+                Alerta(RecursoPresentadorM9.PagoAgregado, int.Parse(RecursoPresentadorM9.StatusAgregado));
+                break;
+                case 2:
+                Alerta("Error al agregar pago", 2);
+                break;
+
+
+            }
         }
     
         /// <summary>
@@ -77,30 +110,31 @@ namespace Tangerine_Presentador.M9
                     }
 
                 }
-            catch (ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine ex)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                MessageBox.Show("Error, llene todos los campos", "Campos Vacios", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+                vista.alertaClase = RecursoPresentadorM9.alertaError;
+                vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
+                vista.alerta = RecursoPresentadorM9.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM9.alertaHtmlFinal;
 
-            catch (ExcepcionesTangerine.M9.ExceptionDataBaseM9Tangerine ex)
-            {
-                MessageBox.Show("Error en la conexion a la Base de Datos", "Error de Conexion",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine ex)
-            {
-                MessageBox.Show("Error, Formato Incorrecto en Codigo de Aprobacion", "Formato Incorrecto",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("La operacion no pudo ser completada", "Error", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error);
             }
 
 
         }
+    
+    public void CargarPagina ()
+        {
+            estado = vista.StatusAccion();
+            estadoActual();
+            LlenarCompanias();
+
+
+        }
+    
+    
+    
+    
+    
     
     }
 }

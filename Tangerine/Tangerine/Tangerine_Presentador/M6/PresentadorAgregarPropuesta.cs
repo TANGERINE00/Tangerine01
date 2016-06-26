@@ -111,7 +111,7 @@ namespace Tangerine_Presentador.M6
                 for (int i = 0; i < _precondicion.Length - 1; i++)
                 {
                     int j = i + 1;
-                    string codReq = consonantes + "_RF_" + j.ToString();
+                    string codReq = "RF_" + today.ToString("yyMMddhhmmss") + j.ToString();
 
                     //Creación del Objeto Propuesta.
                     Entidad requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(

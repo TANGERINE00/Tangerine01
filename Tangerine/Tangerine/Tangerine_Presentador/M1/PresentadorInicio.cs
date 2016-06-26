@@ -43,6 +43,7 @@ namespace Tangerine_Presentador.M1
         /// </summary>
         public void ValidarSesion()
         {
+            _iMaster.errorLoginAlert = false;
             if (HttpContext.Current.Session["User"] + "" != "")
             {
                 HttpContext.Current.Session.Abandon();
@@ -55,61 +56,75 @@ namespace Tangerine_Presentador.M1
         /// </summary>
         public void ValidarElUsuario()
         {
-
-            UsuarioM2 usuarioEncrip = new UsuarioM2();
-            _usuario = _iMaster.userInput.ToString();
-            _contraseña = usuarioEncrip.GetMD5(_iMaster.passwordInput.ToString());
-
-            //Creación del Objeto Usuario.
-            Entidad user =
-            DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena(_usuario, _contraseña);
-
-            //Creación y Ejecución del Objeto Comando de Agregar Usuario
-            Comando<Entidad> cmdConsultar = LogicaTangerine.Fabrica.FabricaComandos.consultarUsuarioLogin(user);
-
-            user = cmdConsultar.Ejecutar();
-
-
-
-            if (((DominioTangerine.Entidades.M2.UsuarioM2)user).activo != null)
+            try
             {
-                UtilM1._theGlobalUser = ((DominioTangerine.Entidades.M2.UsuarioM2)user);
-                HttpContext.Current.Session["User"] = UtilM1._theGlobalUser.nombreUsuario;
-                HttpContext.Current.Session["UserID"] = UtilM1._theGlobalUser.fichaEmpleado;
-                HttpContext.Current.Session["Rol"] = UtilM1._theGlobalUser.rol.nombre;
-                HttpContext.Current.Session["Date"] = UtilM1._theGlobalUser.fechaCreacion.ToString("dd/MM/yyyy");
 
-                ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =
-                    (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
-                List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
 
-                foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
+
+                UsuarioM2 usuarioEncrip = new UsuarioM2();
+                _usuario = _iMaster.userInput.ToString();
+                _contraseña = usuarioEncrip.GetMD5(_iMaster.passwordInput.ToString());
+
+                //Creación del Objeto Usuario.
+                Entidad user =
+                DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena(_usuario, _contraseña);
+
+                //Creación y Ejecución del Objeto Comando de Agregar Usuario
+                Comando<Entidad> cmdConsultar = LogicaTangerine.Fabrica.FabricaComandos.consultarUsuarioLogin(user);
+
+                user = cmdConsultar.Ejecutar();
+
+
+
+                if (((DominioTangerine.Entidades.M2.UsuarioM2)user).activo != null)
                 {
-                    ComandoCalcularPagoMensual _comandoCalcular = (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
-                    montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
+                    UtilM1._theGlobalUser = ((DominioTangerine.Entidades.M2.UsuarioM2)user);
+                    HttpContext.Current.Session["User"] = UtilM1._theGlobalUser.nombreUsuario;
+                    HttpContext.Current.Session["UserID"] = UtilM1._theGlobalUser.fichaEmpleado;
+                    HttpContext.Current.Session["Rol"] = UtilM1._theGlobalUser.rol.nombre;
+                    HttpContext.Current.Session["Date"] = UtilM1._theGlobalUser.fechaCreacion.ToString("dd/MM/yyyy");
 
-                    Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
-                        montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Id,
-                        theProyecto.Idresponsable);
+                    ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =
+                        (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
+                    List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
 
-                    ComandoSearchExistingBill _comandoBill = (ComandoSearchExistingBill)FabricaComandos.CrearSearchExistingBill(factura);
-                    facturaExistente = _comandoBill.Ejecutar();
-
-                    if (facturaExistente == false)
+                    foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
                     {
-                        ComandoAgregarFactura _comandoAgregar = (ComandoAgregarFactura)FabricaComandos.CrearAgregarFactura(factura);
-                        _comandoAgregar.Ejecutar();
+                        ComandoCalcularPagoMensual _comandoCalcular = (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
+                        montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
+
+                        Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
+                            montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Id,
+                            theProyecto.Idresponsable);
+
+                        ComandoSearchExistingBill _comandoBill = (ComandoSearchExistingBill)FabricaComandos.CrearSearchExistingBill(factura);
+                        facturaExistente = _comandoBill.Ejecutar();
+
+                        if (facturaExistente == false)
+                        {
+                            ComandoAgregarFactura _comandoAgregar = (ComandoAgregarFactura)FabricaComandos.CrearAgregarFactura(factura);
+                            _comandoAgregar.Ejecutar();
+                        }
+                        facturaExistente = false;
                     }
-                    facturaExistente = false;
+
+                    HttpContext.Current.Response.Redirect("Dashboard.aspx");
+
+
                 }
-
-                HttpContext.Current.Response.Redirect("Dashboard.aspx");
-
-
+                else
+                {
+                    _iMaster.errorLoginAlert = true;
+                    _iMaster.errorLoginText = "Datos Incorrectos";
+                }
             }
-            else
+            catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine e)
             {
-                _iMaster.mensajeVista = "Error en el inicio de sesión";
+               // _iMaster.mensajeVista = "Error tratando de conectar a Base de Datos";
+                _iMaster.errorLoginAlert = true;
+                _iMaster.errorLoginText = "Error conexion Base de datos";
+              
+
             }
 
         }

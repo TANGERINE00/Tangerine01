@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security.AntiXss;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,8 +15,6 @@ namespace Tangerine.GUI.M2
     public partial class RegistroUsuario : System.Web.UI.Page, IContratoRegistroUsuario
     {
         private PresentadorRegistroUsuario _presentador;
-        string error;
-        private bool errorManejo;
 
         /// <summary>
         /// Constructor de PresentadorRegistroUsuario
@@ -43,18 +42,27 @@ namespace Tangerine.GUI.M2
             }
 
             /// <summary>
-            /// Manejo de errores
+            /// Clase de alerta, para excepciones
             /// </summary>
-            public string msjError
+            public string alertaClase
             {
-                get
-                {
-                    return error;
-                }
-                set
-                {
-                    error = value;
-                }
+                set { alert.Attributes[ResourceM2.alertClase] = value; }
+            }
+
+            /// <summary>
+            /// Atributos de alerta, para excepciones
+            /// </summary>
+            public string alertaRol
+            {
+                set { alert.Attributes[ResourceM2.alertRole] = value; }
+            }
+
+            /// <summary>
+            /// Alerta cuando hay una excepcion
+            /// </summary>
+            public string alerta
+            {
+                set { alert.InnerHtml = value; }
             }
 
         #endregion
@@ -66,14 +74,21 @@ namespace Tangerine.GUI.M2
         /// <param name="e"></param>
         protected void Page_Load( object sender, EventArgs e )
         {
+            try
+            {
+                //Esto ocurre cuando se modifica un usuario, se muestra mensaje a usuario
+                string _estado = AntiXssEncoder.HtmlEncode( Request.QueryString[ResourceM2.estado], false );
+                if (_estado != null)
+                    _presentador.Alerta(_estado);
+            }
+            catch
+            {
+                Response.Redirect(ResourceM2.RedirectPageLoad);
+            }
+
             if (!IsPostBack)
             {
-                errorManejo = _presentador.inicioVista();
-                if(!errorManejo)
-                {
-                    ScriptManager.RegisterStartupScript( this , this.GetType() , "alerts" ,
-                                                         "javascript:alert('" + msjError + "')" , true );
-                }
+               _presentador.inicioVista();
             }
         }
     }

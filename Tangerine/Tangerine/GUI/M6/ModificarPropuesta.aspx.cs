@@ -30,7 +30,7 @@ namespace Tangerine.GUI.M6
             {
                 if (!IsPostBack)
                 {
-                    presenter.llenarVista();
+                    presenter.LlenarVista();
                 } 
             }
             catch 
@@ -47,22 +47,13 @@ namespace Tangerine.GUI.M6
                 presenter.ModificarPropuesta();
                 Server.Transfer("ConsultarPropuesta.aspx", true);
             }
-            catch (Exception)
+            catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
                 Response.Redirect("../M6/ConsultarPropuesta.aspx");
             }
-        }
-
-        protected void EliminarRequerimiento_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //presenter.EliminarRequerimiento(idRequerimiento, descripcion, idPropuesta);
-                Server.Transfer("ConsultarPropuesta.aspx", true);
-            }
             catch (Exception)
             {
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("id") + "&idReq=0");
             }
 
         }
@@ -79,6 +70,22 @@ namespace Tangerine.GUI.M6
                 requerimientos = value;
             }
         }
+
+        public string reqABorrar
+        {
+            get
+            {
+                try
+                {
+                    return Request.QueryString.Get("idReq");
+                }
+                catch (Exception e)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    return null;
+                }
+            }
+        } 
 
         public string ContenedorCompania
         {

@@ -39,7 +39,7 @@ namespace Tangerine_Presentador.M8
             try
             {
                 Facturacion _laFactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
-                CompaniaM4 compania = (CompaniaM4)FabricaEntidades.CrearEntidadCompaniaM4();
+                CompaniaM4 compania = (CompaniaM4)FabricaEntidades.CrearCompaniaVacia();
                 DominioTangerine.Entidades.M7.Proyecto proyecto =
                     (DominioTangerine.Entidades.M7.Proyecto)FabricaEntidades.ObtenerProyecto();
 
@@ -86,18 +86,14 @@ namespace Tangerine_Presentador.M8
             try
             {
                 vista.destinatario = this.vista.destinatario;
-                //vista.destinatario = "istvanbokor8@gmail.com, istvanbokor7@hotmail.com";
-                //vista.destinatario = "carr235@gmail.com";
                 vista.asunto = this.vista.asunto;
                 vista.mensaje = this.vista.mensaje;
+                //vista.adjunto = this.vista.adjunto;
 
                 DatosCorreo _datosCorreo =
-                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje);
+                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje, this.vista.adjunto);
 
                 Comando<bool> _comandoCorreo = FabricaComandos.CrearComandoEnviarCorreoGmail(_datosCorreo);
-
-                //CorreoM8 correo = new CorreoM8();
-                //correo.enviarCorreoGmail(_asunto, _destinatario, _mensaje);
 
                 return _comandoCorreo.Ejecutar(); ;
             }

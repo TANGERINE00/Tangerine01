@@ -43,8 +43,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\ActiproSoftware.Shared.Net20.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -147,8 +146,10 @@
     <Content Include="GUI\M10\AdminCargo.aspx" />
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
+    <Content Include="GUI\M1\css\Estilos.css" />
     <Content Include="GUI\M1\Dashboard.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
+    <Content Include="GUI\M1\js\alertas.js" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
     <Content Include="GUI\M1\NuevaContraseña.aspx" />
@@ -157,8 +158,10 @@
     <Content Include="GUI\M2\AccionRegistrar.aspx" />
     <Content Include="GUI\M2\AsignarRol.aspx" />
     <Content Include="GUI\M2\CambiarRol.aspx" />
+    <Content Include="GUI\M2\CambiarUsuario.aspx" />
     <Content Include="GUI\M2\RegistroUsuario.aspx" />
     <Content Include="GUI\M3\ActivarLead.aspx" />
+    <Content Include="GUI\M3\AdministrarListaClientesPotenciales.aspx" />
     <Content Include="GUI\M3\AgregarLeads.aspx" />
     <Content Include="GUI\M3\AgregarSequimiento.aspx" />
     <Content Include="GUI\M3\ConsultarLead.aspx" />
@@ -1095,6 +1098,13 @@
     <Compile Include="GUI\M2\CambiarRol.aspx.designer.cs">
       <DependentUpon>CambiarRol.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\M2\CambiarUsuario.aspx.cs">
+      <DependentUpon>CambiarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M2\CambiarUsuario.aspx.designer.cs">
+      <DependentUpon>CambiarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\M2\RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1113,6 +1123,13 @@
     </Compile>
     <Compile Include="GUI\M3\ActivarLead.aspx.designer.cs">
       <DependentUpon>ActivarLead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M3\AdministrarListaClientesPotenciales.aspx.cs">
+      <DependentUpon>AdministrarListaClientesPotenciales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M3\AdministrarListaClientesPotenciales.aspx.designer.cs">
+      <DependentUpon>AdministrarListaClientesPotenciales.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M3\AgregarLeads.aspx.cs">
       <DependentUpon>AgregarLeads.aspx</DependentUpon>
@@ -1635,6 +1652,7 @@
       <LastGenOutput>ResourceLogicaM9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

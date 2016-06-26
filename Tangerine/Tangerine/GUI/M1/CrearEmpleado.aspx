@@ -15,7 +15,8 @@
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      
+       <div id="alerta" runat="server">
+    </div>
   <div class="box box-default">
     <div class="container-fluid">
         <form role="form" name="agregar_empleado" id="agregar_empleado" method="post"   runat="server">

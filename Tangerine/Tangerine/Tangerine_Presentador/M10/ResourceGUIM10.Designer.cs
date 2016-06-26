@@ -97,6 +97,69 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alerta.
+        /// </summary>
+        internal static string Alerta {
+            get {
+                return ResourceManager.GetString("Alerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string AlertAdvertencia {
+            get {
+                return ResourceManager.GetString("AlertAdvertencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alerta.
+        /// </summary>
+        internal static string AlertaTipo {
+            get {
+                return ResourceManager.GetString("AlertaTipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string AlertaVista {
+            get {
+                return ResourceManager.GetString("AlertaVista", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertaVistaFinal {
+            get {
+                return ResourceManager.GetString("AlertaVistaFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string AlertShowSu1 {
+            get {
+                return ResourceManager.GetString("AlertShowSu1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string AlertShowSu2 {
+            get {
+                return ResourceManager.GetString("AlertShowSu2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a title=&quot;Modificar&quot; href=&quot;ModificarEmpleado.aspx?EmployeeId=.
         /// </summary>
         internal static string BotonModificarEmpAbrir {
@@ -115,20 +178,38 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a title=&quot;Activar/Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
+        ///   Looks up a localized string similar to &lt;a title=&quot;Inactivar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
         /// </summary>
-        internal static string BotonStatusEmpAbrir {
+        internal static string BotonStatusDeshabilitarAbrir {
             get {
-                return ResourceManager.GetString("BotonStatusEmpAbrir", resourceCulture);
+                return ResourceManager.GetString("BotonStatusDeshabilitarAbrir", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-remove-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-remove&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
         /// </summary>
-        internal static string BotonStatusEmpCerrar {
+        internal static string BotonStatusDeshabilitarCerrar {
             get {
-                return ResourceManager.GetString("BotonStatusEmpCerrar", resourceCulture);
+                return ResourceManager.GetString("BotonStatusDeshabilitarCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a title=&quot;Activar&quot; href=&quot;EmpleadosAdmin.aspx?EmployeeId=.
+        /// </summary>
+        internal static string BotonStatusHabilitarAbrir {
+            get {
+                return ResourceManager.GetString("BotonStatusHabilitarAbrir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-success &quot;&gt;&lt;span class=&quot;glyphicon glyphicon-ok&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string BotonStatusHabilitarCerrar {
+            get {
+                return ResourceManager.GetString("BotonStatusHabilitarCerrar", resourceCulture);
             }
         }
         
@@ -232,11 +313,65 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El empleado seleccionado ha cambiado su Estatus a Activo.
+        /// </summary>
+        internal static string EmpleadoActivado {
+            get {
+                return ResourceManager.GetString("EmpleadoActivado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El empleado ha sido agregado exitosamente.
+        /// </summary>
+        internal static string EmpleadoAgregado {
+            get {
+                return ResourceManager.GetString("EmpleadoAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El empleado seleccionado ha sido desactivado.
+        /// </summary>
+        internal static string EmpleadoDesactivado {
+            get {
+                return ResourceManager.GetString("EmpleadoDesactivado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string ErrorAlerta {
+            get {
+                return ResourceManager.GetString("ErrorAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al consultar al empleado, por favor intente de nuevo.
+        /// </summary>
+        internal static string ErrorConsultarEmpleado {
+            get {
+                return ResourceManager.GetString("ErrorConsultarEmpleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  .
         /// </summary>
         internal static string Espacio {
             get {
                 return ResourceManager.GetString("Espacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string ExitoAlerta {
+            get {
+                return ResourceManager.GetString("ExitoAlerta", resourceCulture);
             }
         }
         

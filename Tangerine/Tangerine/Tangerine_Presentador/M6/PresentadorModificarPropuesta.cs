@@ -81,16 +81,29 @@ namespace Tangerine_Presentador.M6
 
                 //  ModificarRequerimiento();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error en campos de insercion, por favor realice el registro de nuevo.", "Campos Invalidos", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             
         }
 
 
-        public void llenarDatosPropuesta(Entidad propuesta)
+        public void LlenarDatosPropuesta(Entidad propuesta)
         {
             String[] arreglo;
 
@@ -118,15 +131,12 @@ namespace Tangerine_Presentador.M6
             
             _idCompañia = vista.IdCompania;
         }
+        
 
-
-        public void imprimirRequerimientos(Entidad _propuesta)
+        public void ImprimirRequerimientos(Entidad _propuesta)
         {
             List<Entidad> _requerimientos;
             Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
-
-            try
-            {
                 _requerimientos = cmdConsultarRequerimientos.Ejecutar();
 
                 foreach (Entidad _elRequerimiento in _requerimientos)
@@ -141,23 +151,22 @@ namespace Tangerine_Presentador.M6
                         ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() +
                         RecursosPresentadorPropuesta.CerrarTD;
 
-
-                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_OModificar +
-                       ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + RecursosPresentadorPropuesta.intermedioBoton+
-                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() + RecursosPresentadorPropuesta.botonCerra + 
-                        RecursosPresentadorPropuesta.CerrarTD;
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                        RecursosPresentadorPropuesta.btn_OModificar +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() +
+                        RecursosPresentadorPropuesta.intermedioBoton +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() + 
+                        RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD;
                    
-                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Oeliminar +
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                        RecursosPresentadorPropuesta.btn_Oeliminar + 
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString()+
+                        RecursosPresentadorPropuesta.intermedioBoton2 +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() +
                         RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD; ;
 
                     vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
                 }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
             
         }
 
@@ -174,74 +183,140 @@ namespace Tangerine_Presentador.M6
                 Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
                 comando.Ejecutar();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
             
 
         }
 
 
-        public void EliminarRequerimiento(string idRequerimiento, string descripcion, string idPropuesta)
+        public void EliminarRequerimiento(string idRequerimiento)
         {
+            List<Entidad> _requerimientos;
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                    vista.IdPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+
+            Comando<List<Entidad>> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(propuesta);
+
             try
             {
-                Entidad _requerimiento = DominioTangerine.Fabrica.FabricaEntidades.ObtenerRequerimiento(
-                    idRequerimiento, descripcion, idPropuesta);
+                _requerimientos = comando.Ejecutar();
 
-                Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
-                    _requerimiento);
+                if (_requerimientos.Count() > 1)
+                {
+                    foreach (Entidad _elRequerimiento in _requerimientos)
+                    {
+                        if (idRequerimiento.Equals(((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento))
+                        {
+                            Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
+                            _elRequerimiento);
 
-                cmdEliminarReq.Ejecutar();
+                            cmdEliminarReq.Ejecutar();
+                        }
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("No se puede eliminar este requerimiento debido a que\nno se puede tener una propuesta sin requerimientos.", "Eliminacion de Requerimientos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
-                MessageBox.Show("Error de ejecucion, por favor realice el registro de nuevo.", "Error de pagina", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
             }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+          
         }
 
 
         public void TraerCompania(String idPropuesta)
         {
-            try
+            //Creo una propuesta
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+ 
+            Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
+
+            //Consulto la propuesta 
+            propuesta = comando.Ejecutar();
+  
+            Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
+                int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),            
+                null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
+  
+            //Consulto la compañia de esa propuesta
+            comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
+            
+            compañia = comando.Ejecutar();
+
+            //Extraigo el nombre de la compañia y lleno el contenedor            
+            vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
+
+            if (vista.reqABorrar != "0")
             {
-                //Creo una propuesta
-                Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
-                    idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
-
-                Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
-
-                //Consulto la propuesta
-                propuesta = comando.Ejecutar();
-
-                Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),
-                    null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
-
-                //Consulto la compañia de esa propuesta
-                comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
-                compañia = comando.Ejecutar();
-
-                //Extraigo el nombre de la compañia y lleno el contenedor
-                vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
-
-                imprimirRequerimientos(propuesta);
-                llenarDatosPropuesta(propuesta);
+                EliminarRequerimiento(vista.reqABorrar);
             }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error carga de datos, por favor realice el registro de nuevo.", "Error de pagina", MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-            }
+            
+            ImprimirRequerimientos(propuesta);
+            
+            LlenarDatosPropuesta(propuesta);
             
         }
 
 
-        public void llenarVista()
+        public void LlenarVista()
         {
-            TraerCompania(vista.IdPropuesta);
+            try {
+                TraerCompania(vista.IdPropuesta);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                throw ex;
+            }   
         }
     
     }

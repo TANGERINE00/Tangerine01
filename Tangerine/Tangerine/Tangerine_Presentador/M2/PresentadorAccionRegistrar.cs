@@ -35,15 +35,36 @@ namespace Tangerine_Presentador.M2
         }
 
         /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta( string msj )
+        {
+            _vista.alertaClase = ResourceGUIM2.alertaError;
+            _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+            _vista.alerta = ResourceGUIM2.alertaHtml + msj + ResourceGUIM2.alertaHtmlFinal;
+        }
+
+        /// <summary>
         /// Metodo que inicializa la vista de AccionRegistrar generando un nombre usuario
         /// </summary>
         public void inicioVista()
         {
-            _vista.ficha = _numFicha.ToString();
-            _vista.comboRol = _rol;
-            LogicaTangerine.Comando<String> theComando =
-                LogicaTangerine.Fabrica.FabricaComandos.crearUsuario( _nombreUser , _apellidoUser );
-            _vista.usuario = theComando.Ejecutar();
+            try
+            {
+                _vista.ficha = _numFicha.ToString();
+                _vista.comboRol = _rol;
+                LogicaTangerine.Comando<String> theComando =
+                    LogicaTangerine.Fabrica.FabricaComandos.crearUsuario( _nombreUser , _apellidoUser );
+                _vista.usuario = theComando.Ejecutar();
+            }
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                    + ResourceGUIM2.alertaHtmlFinal;
+            }
+
         }
 
         /// <summary>
@@ -59,7 +80,10 @@ namespace Tangerine_Presentador.M2
             }
             catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
             {
-                _vista.msjError = ex.Message;
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                    + ResourceGUIM2.alertaHtmlFinal;
                 return false;
             }
         }
@@ -70,10 +94,21 @@ namespace Tangerine_Presentador.M2
         /// <returns></returns>
         public bool usuarioExistente()
         {
-            bool respuesta = false;
-            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.usuario );
-            respuesta = comando.Ejecutar();
-            return respuesta;
+            try
+            {
+                bool respuesta = false;
+                LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.usuario );
+                respuesta = comando.Ejecutar();
+                return respuesta;
+            }
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                    + ResourceGUIM2.alertaHtmlFinal;
+                return true;
+            }
         }
     }
 }

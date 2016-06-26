@@ -259,6 +259,15 @@ namespace Tangerine_Presentador.M5 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error al consultar compania, por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorConsultarCompania {
+            get {
+                return ResourceManager.GetString("ErrorConsultarCompania", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error al consultar contacto(s), por favor intente de nuevo..
         /// </summary>
         internal static string ErrorConsultarContacto {
@@ -273,6 +282,15 @@ namespace Tangerine_Presentador.M5 {
         internal static string ErrorEliminarContacto {
             get {
                 return ResourceManager.GetString("ErrorEliminarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al insertar información en la tabla, por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorLlenarTabla {
+            get {
+                return ResourceManager.GetString("ErrorLlenarTabla", resourceCulture);
             }
         }
         

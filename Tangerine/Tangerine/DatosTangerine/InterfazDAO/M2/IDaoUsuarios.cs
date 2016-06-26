@@ -53,6 +53,12 @@ namespace DatosTangerine.InterfazDAO.M2
         int ConsultLastUserID();
 
         /// <summary>
+        /// Encabezado del metodo para retornar el ultimo ID del empleado
+        /// </summary>
+        /// <returns></returns>
+        int ConsultLastEmployeID();
+
+        /// <summary>
         /// Encabezado del metodo para retornar el ultimo ID del usuario
         /// </summary>
         /// <param name="userID"></param>

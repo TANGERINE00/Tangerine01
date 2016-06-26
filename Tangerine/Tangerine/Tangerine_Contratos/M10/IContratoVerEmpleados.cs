@@ -13,5 +13,6 @@ namespace Tangerine_Contratos.M10
         /// Encabezado formulario ver empleado
         /// </summary>
         Literal FormViewEmployees { get; set; }
+
     }
 }

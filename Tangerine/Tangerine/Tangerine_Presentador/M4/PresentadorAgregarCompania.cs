@@ -42,7 +42,7 @@ namespace Tangerine_Presentador.M4
                 for (int j = 0; j < Lugares.Count; j++)
                     if (j==_vista.inputDireccion1.SelectedIndex)
                         _idLugar = ((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugId;         
-                DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaSinId(_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
+                DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaSinId(_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
                                                                                                 _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
                                                                                                 1, int.Parse(_vista.inputPresupuesto1), int.Parse(_vista.inputPlazoPago1), _idLugar);
                 Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearAgregarCompania(compania);

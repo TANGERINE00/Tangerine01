@@ -132,11 +132,11 @@
   <data name="BotonModificarEmpCerrar" xml:space="preserve">
     <value>" type="button" class="btn btn-default"&gt;&lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
-  <data name="BotonStatusEmpAbrir" xml:space="preserve">
-    <value>&lt;a title="Activar/Inactivar" href="EmpleadosAdmin.aspx?EmployeeId=</value>
+  <data name="BotonStatusHabilitarAbrir" xml:space="preserve">
+    <value>&lt;a title="Activar" href="EmpleadosAdmin.aspx?EmployeeId=</value>
   </data>
-  <data name="BotonStatusEmpCerrar" xml:space="preserve">
-    <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove-circle"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  <data name="BotonStatusHabilitarCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-success "&gt;&lt;span class="glyphicon glyphicon-ok"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonVerEmpAbrir" xml:space="preserve">
     <value>&lt;a title="Información" href="VerEmpleado.aspx?EmployeeId=</value>
@@ -197,5 +197,50 @@
   </data>
   <data name="OpenLabel" xml:space="preserve">
     <value>&lt;label&gt;</value>
+  </data>
+  <data name="BotonStatusDeshabilitarAbrir" xml:space="preserve">
+    <value>&lt;a title="Inactivar" href="EmpleadosAdmin.aspx?EmployeeId=</value>
+  </data>
+  <data name="BotonStatusDeshabilitarCerrar" xml:space="preserve">
+    <value>" type="button" class="btn btn-danger"&gt;&lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Alerta" xml:space="preserve">
+    <value>alerta</value>
+  </data>
+  <data name="AlertAdvertencia" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertaTipo" xml:space="preserve">
+    <value>alerta</value>
+  </data>
+  <data name="AlertaVista" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertaVistaFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="AlertShowSu1" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertShowSu2" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="EmpleadoActivado" xml:space="preserve">
+    <value>El empleado seleccionado ha cambiado su Estatus a Activo</value>
+  </data>
+  <data name="EmpleadoAgregado" xml:space="preserve">
+    <value>El empleado ha sido agregado exitosamente</value>
+  </data>
+  <data name="EmpleadoDesactivado" xml:space="preserve">
+    <value>El empleado seleccionado ha sido desactivado</value>
+  </data>
+  <data name="ErrorAlerta" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="ErrorConsultarEmpleado" xml:space="preserve">
+    <value>Error al consultar al empleado, por favor intente de nuevo</value>
+  </data>
+  <data name="ExitoAlerta" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
   </data>
 </root>

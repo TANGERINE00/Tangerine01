@@ -51,9 +51,13 @@ namespace Tangerine.GUI.M6
                 presenter.agregarPropuesta();
                 Server.Transfer("ConsultarPropuesta.aspx", true);
             }
-            catch (Exception)
+            catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
                 Response.Redirect("../M6/ConsultarPropuesta.aspx");
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M6/AgregarPropuesta.aspx");
             }
             
         }

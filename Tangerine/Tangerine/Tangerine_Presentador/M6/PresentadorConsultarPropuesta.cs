@@ -38,11 +38,10 @@ namespace Tangerine_Presentador.M6
                 this.vistaConsultar.Tabla.Text = value;
             }
         }
+
         /// <summary>
         /// Metodo que consulta las propuestas propuesta
         /// </summary>
-
-
         public void consultarPropuestas()
         {
             Comando <List<Entidad>> cmdConsultarPropuestas = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarTodosPropuesta();
@@ -59,7 +58,7 @@ namespace Tangerine_Presentador.M6
                     
                     //Creo objeto tipo Entidad(Compania) para luego pasarlo al comando de consulta y obtener los datos en BD.
                     //Inicializo el objeto solo con el Id (los demas campos en NULL).
-                    Entidad _laCompania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(
+                    Entidad _laCompania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
                         Int32.Parse(laPropuesta.IdCompañia), null, null, null, null, null, DateTime.Today, 0, 0, 0, 0);
 
                     cmdConsultarCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_laCompania);
@@ -107,12 +106,15 @@ namespace Tangerine_Presentador.M6
         /// <param name="laPropuesta"></param>
         public void imprimirBotones(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
-            propuesta += RecursosPresentadorPropuesta.AbrirTD2
-                        + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() +
-                        RecursosPresentadorPropuesta.botonCerra
-                        + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + 
-                        RecursosPresentadorPropuesta.botonCerra;
+            propuesta += RecursosPresentadorPropuesta.AbrirTD2 
+                + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() + 
+                RecursosPresentadorPropuesta.botonCerra
+                + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + 
+                RecursosPresentadorPropuesta.intermedioBoton3 +
+                RecursosPresentadorPropuesta.botonCerra;
+
             propuesta += RecursosPresentadorPropuesta.CerrarTD;
+
             propuesta += RecursosPresentadorPropuesta.CerrarTR;
         }
 
