@@ -47,10 +47,15 @@ namespace Tangerine.GUI.M6
                 presenter.ModificarPropuesta();
                 Server.Transfer("ConsultarPropuesta.aspx", true);
             }
-            catch (Exception)
+            catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
                 Response.Redirect("../M6/ConsultarPropuesta.aspx");
             }
+            catch (Exception)
+            {
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("id") + "&idReq=0");
+            }
+
         }
 
         #region Contrato
