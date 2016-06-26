@@ -10,6 +10,7 @@ $(document).ready(function () {
 
 });
 
+//La fecha viene en formato dd/mm/yyyy, se cambia a mm/dd//yyyy para que sirva.
 $(window).load(function () {
     
     var fechaInicio = document.getElementById("datepicker1");
@@ -44,21 +45,20 @@ function validarTextArea(textArea) {
     var textArea = document.getElementById(textArea);
     var compania = document.getElementById("comboCompañia");
 
-    var regex = new RegExp("^[A-z ,.()]+$");
+    var regex = new RegExp("^[A-z ,.()0-9]+$");
 
     var resultado = regex.test(textArea.value);
 
-    if (resultado == false) {
+    if (resultado == false && textArea.value != "") {
         alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
         textArea.value = "";
         textArea.style.borderColor = "red";
     }
-    else {
+    else if (resultado == false && textArea.value == "") {
         textArea.style.borderColor = "#ccc";
     }
-
-    if (compania.value == "Selecione un cliente") {
-        alert('Seleccione una compañía!');
+    else {
+        textArea.style.borderColor = "#00FF00"
     }
 }
 
@@ -197,7 +197,34 @@ function setFechasCustom() {
 
 }
 
+//Ayuda para el Usuario de saber si lo que introdujo es correcto
+function onBlurDeInputs(inputId) {
+    var input = document.getElementById(inputId);
 
+    var auxParaReq = inputId.split("_");
+    var textoId = auxParaReq[1];
+
+    if (inputId == "textoDuracion") {
+        regex = new RegExp("^[0-9]{1,3}[ ]{0,1}$");
+    } else if (textoId == "textoCosto") {
+        regex = new RegExp("^[0-9]{1,10}[ ]{0,1}$");
+    } else if (inputId == "cantidadCuotas") {
+        regex = new RegExp("^[0-9]{1,2}[ ]{0,1}$");
+    }
+
+    var resultado = regex.test(input.value);
+
+    if (resultado == false && input.value != "") {
+        input.style.borderColor = "red";
+    }
+    else if (resultado == false && input.value == "") {
+        input.style.borderColor = "#ccc";
+    }
+    else {
+        input.style.borderColor = "#00FF00"
+    }
+
+}
 
 
 
