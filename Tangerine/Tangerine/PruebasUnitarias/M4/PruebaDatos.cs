@@ -261,7 +261,7 @@ namespace PruebasUnitarias.M4
             answer = daoCompania.Agregar(lacompania);
             IDaoLugarDireccion daoLugarDireccion = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoLugarDireccion();
 
-            Entidad lugar = daoLugarDireccion.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionConLugar(3,"prueba"));
+            Entidad lugar = daoLugarDireccion.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.CrearLugarDireccionConLugar(3,"prueba"));
             
             Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugId == 3);
             Assert.IsTrue(((DominioTangerine.Entidades.M4.LugarDireccionM4)lugar).LugNombre == "Zulia");

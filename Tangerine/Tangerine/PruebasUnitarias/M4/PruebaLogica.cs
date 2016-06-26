@@ -31,7 +31,7 @@ namespace PruebasUnitarias.M4
         {
             theCompany = FabricaEntidades.CrearCompaniaConId(5,"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             theCompany1 = FabricaEntidades.CrearCompaniaConId(1,"CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-            Lugar1 = FabricaEntidades.CrearEntidadLugarM4(3,"Zulia");
+            Lugar1 = FabricaEntidades.CrearLugarDireccionConLugar(3,"Zulia");
         }
 
         [TearDown]

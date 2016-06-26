@@ -118,7 +118,7 @@ namespace DatosTangerine.DAO.M4
                    int lugId = int.Parse(row[ResourcePlaceM4.LugIdPlace].ToString());
                    String lugName = row[ResourcePlaceM4.LugNamePlace].ToString();
 
-                   Entidad thePlace = DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionConLugar(lugId, lugName);
+                   Entidad thePlace = DominioTangerine.Fabrica.FabricaEntidades.CrearLugarDireccionConLugar(lugId, lugName);
                    listPlace.Add(thePlace);
                }
                return listPlace;
