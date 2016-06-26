@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-default glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal"&gt;&lt;/a&gt;</value>
   </data>
@@ -209,5 +218,20 @@
   </data>
   <data name="Value" xml:space="preserve">
     <value>Value</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="bitcoin" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-bitcoin"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="bolivar" xml:space="preserve">
+    <value>&lt;b style="color: #3c8dbc;"&gt;Bf &lt;/b&gt;</value>
+  </data>
+  <data name="dolar" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-usd"&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="euro" xml:space="preserve">
+    <value>&lt;a class="glyphicon glyphicon-euro"&gt;&lt;/a&gt;</value>
   </data>
 </root>

@@ -22,5 +22,9 @@ namespace Tangerine_Contratos.M7
         HtmlGenericControl columna2 { get; set; }
         Button BtnGenerar { get; set; }
         Button btnAgregarPersonal { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
+        Label Moneda { get; set; }
     }
 }

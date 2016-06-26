@@ -39,11 +39,11 @@ namespace Tangerine_Presentador.M4
         {
             try
             {
-                _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
                 _entidad.Id = id;
                 Comando<Entidad> _comandoCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_entidad);
                 Entidad _company = _comandoCompania.Ejecutar();
-                Entidad _lugar = DominioTangerine.Fabrica.FabricaEntidades.crearLugarDireccionConLugar(((DominioTangerine.Entidades.M4.CompaniaM4)_company).IdLugar, "");
+                Entidad _lugar = DominioTangerine.Fabrica.FabricaEntidades.CrearLugarDireccionConLugar(((DominioTangerine.Entidades.M4.CompaniaM4)_company).IdLugar, "");
                 Comando<Entidad> _comandoLugar = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarLugarXID(_lugar);
                 _lugar = _comandoLugar.Ejecutar();
                 _vista.NombreCompania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_company).NombreCompania;

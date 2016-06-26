@@ -27,16 +27,19 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition login-page" style="background: #3c8dbc;">
-    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+<body>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M1/js/alertas.js") %>"></script>
+    </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
     <div id="login-main">
         <div class="container login-main">
             <div class="user-img">
                 <img src="/dist/img/tange.png" class="img-circle user-img img-thumbnail" alt="">
             </div>
-            <div class="login-logo">
-                <b>Tangerine</b> SYSTEM
+             <div class="login-logo">
+                <span style="color:whitesmoke" ><b>Tangerine</b> SYSTEM </span>  
             </div>
             <div class="col-md-4 login-form">
                 <div class="alert alert-danger" id="errorLogin" runat="server">
@@ -55,19 +58,15 @@
                     <div class="form-group">
                         <input type="password" class="form-control login-field" value="" placeholder="●●●●●" id="passwordIni" runat="server">
                         <label for="login-pass" class="login-pass"><i class="glyphicon glyphicon-lock"></i></label>
-                    </div>
+                    </div> 
 
                     <div class="form-group">
 
                         <button type="button" id="LoginButton" runat="server" name="go" class="btn btn-lg btn-block" onserverclick="ValidarUsuario">Ingresar</button>
                     </div>
 
-
-
-
-
                     <div class="form-group">
-                        <a class="login-link" href="RecuperarContraseñaPregunta.aspx">Olvido la Contraseña? </a>
+                        <a style="color:lightgray" class="login-link" href="RecuperarContraseñaPregunta.aspx">¿Olvido la Contraseña? </a>
                     </div>
                     <asp:Label ID="mensaje" runat="server" class="login-box-msg" Style="color: #FFFFFF;" />
                 </form>
@@ -75,11 +74,10 @@
             <!--login-form-->
 
 
-
+             <a>Copyright © 2016 Tangerine.</a>
         </div>
         <!--container-->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+       
     </div>
 
 
@@ -87,8 +85,7 @@
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <!-- iCheck -->
-    <script src="../../plugins/iCheck/icheck.min.js"></script>
+   
     <script>
         $(function () {
             $('input').iCheck({

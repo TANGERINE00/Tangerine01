@@ -86,7 +86,7 @@ namespace Tangerine_Presentador.M6
         /// <param name="_propuesta"></param>
         public void imprimirCompania(Entidad _propuesta)
         {
-            Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(
+            Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
                 Int32.Parse(((DominioTangerine.Entidades.M6.Propuesta)_propuesta).IdCompañia), null, null, null, null, null,
                 DateTime.Now, 0, 0, 0, 0);
 

@@ -36,7 +36,7 @@ namespace PruebasUnitarias.M9
         public void init()
         {
             elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1111111111, 12000, "EUR", "Deposito", 1);
-            compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
+            compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
 
         }
 

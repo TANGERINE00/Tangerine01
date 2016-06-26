@@ -29,23 +29,23 @@ namespace PruebasUnitarias.M4
         [SetUp]
         public void setup()
         {
-            theCompany = FabricaEntidades.CrearEntidadCompaniaM4Llena(5,"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-            theCompany1 = FabricaEntidades.CrearEntidadCompaniaM4Llena(1,"CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-            Lugar1 = FabricaEntidades.CrearEntidadLugarM4(3,"Zulia");
+            theCompany = FabricaEntidades.CrearCompaniaConId(5,"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            theCompany1 = FabricaEntidades.CrearCompaniaConId(1,"CompaniaPrueba4", "J-111111114", "asdd@asddddd.com", "34342344", "AAS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            Lugar1 = FabricaEntidades.CrearLugarDireccionConLugar(3,"Zulia");
         }
 
         [TearDown]
         public void clean()
         {
             DatosTangerine.InterfazDAO.M4.IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
-            theCompany2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            theCompany2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             answer = daoCompania.DeleteCompany(theCompany2);
             theCompany = null;
             theCompany1 = null;
         }
         #endregion
 
-        #region Tests
+        #region Pruebas Unitarias
 
         /// <summary>
         /// Prueba que permite verificar el agregar una compañía a la base de datos.
@@ -56,7 +56,7 @@ namespace PruebasUnitarias.M4
             DatosTangerine.InterfazDAO.M4.IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             Comando<bool> Comand = FabricaComandos.CrearAgregarCompania(theCompany);
             Assert.IsTrue(Comand.Ejecutar());
-            Comando<Entidad> Comand2 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+            Comando<Entidad> Comand2 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(),"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1));
             theCompany2 = Comand2.Ejecutar();
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).Id == daoCompania.ConsultLastCompanyId());
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).NombreCompania == "CompaniaPrueba3");
@@ -165,7 +165,7 @@ namespace PruebasUnitarias.M4
             DatosTangerine.InterfazDAO.M4.IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             Comando<bool> Comand = FabricaComandos.CrearAgregarCompania(theCompany);
             Assert.IsTrue(Comand.Ejecutar());
-            theCompany2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),
+            theCompany2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(),
                 "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             Comando<bool> Comand2 = FabricaComandos.CrearDeshabilitarCompania(theCompany2);
             Assert.IsTrue(Comand2.Ejecutar());
@@ -184,7 +184,7 @@ namespace PruebasUnitarias.M4
             DatosTangerine.InterfazDAO.M4.IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             Comando<bool> Comand = FabricaComandos.CrearAgregarCompania(theCompany);
             Assert.IsTrue(Comand.Ejecutar());
-            theCompany2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),
+            theCompany2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(),
                 "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             Comando<bool> Comand2 = FabricaComandos.CrearHabilitarCompania(theCompany2);
             Assert.IsTrue(Comand2.Ejecutar());
@@ -317,10 +317,10 @@ namespace PruebasUnitarias.M4
             Assert.IsTrue(Comand.Ejecutar());
             
                 Comando < bool > Comand2 = FabricaComandos.CrearModificarCompania(
-                    DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),
+                    DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(),
                     "Prueba De Datos1", "J-134214513", "asd@asdd.com", "3439485", "ADD", new DateTime(2015, 12, 12), 0, 10000, 60, 3));
                 Assert.IsTrue(Comand2.Ejecutar());
-                Comando<Entidad> Comand3 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(
+                Comando<Entidad> Comand3 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
                     daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", 
                     new DateTime(2015, 2, 10), 1, 100, 30, 1));
                 theCompany2 = Comand3.Ejecutar();

@@ -27,7 +27,7 @@ namespace Tangerine_Presentador.M2
         /// </summary>
         public void Alerta(string msj)
         {
-            if (msj == "1")
+            if ( msj == "1" )
             {
                 _vista.alertaClase = ResourceGUIM2.alertaModificado;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
@@ -57,7 +57,6 @@ namespace Tangerine_Presentador.M2
                     LogicaTangerine.Comando<Boolean> theComandoVerificar =
                         LogicaTangerine.Fabrica.FabricaComandos.verificarUsuario( empleado.emp_id );
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTR;
-                    _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.emp_id.ToString() + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_apellido + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
@@ -84,6 +83,13 @@ namespace Tangerine_Presentador.M2
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
                 _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
+                                + ResourceGUIM2.alertaHtmlFinal;
+            }
+            catch ( ExcepcionesTangerine.ExceptionTGConBD e )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaRol = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + e.Message + e.InnerException.Message
                                 + ResourceGUIM2.alertaHtmlFinal;
             }
     

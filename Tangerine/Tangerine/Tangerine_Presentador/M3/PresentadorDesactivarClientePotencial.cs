@@ -14,11 +14,21 @@ namespace Tangerine_Presentador.M3
     {
         IContratoConsultarClientePotencial vista;
 
+        /// <summary>
+        /// Constructor d la clase presentador 
+        /// </summary>
+        /// <param name="vista"></param>
+        /// <returns></returns>
         public PresentadorDesactivarClientePotencial(IContratoConsultarClientePotencial vista)
         {
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método que instancia y ejecuta el comando para desactivar a un cliente potencial
+        /// </summary>
+        /// <param name="idCliente"></param>
+        /// <returns></returns>
         public void Desactivar(int idCliente)
         {
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.ObtenerClientePotencial();

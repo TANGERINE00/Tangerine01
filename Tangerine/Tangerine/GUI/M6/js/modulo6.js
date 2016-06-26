@@ -6,15 +6,15 @@ $(document).ready(function () {
     document.getElementById("datepicker1").value = date.toLocaleDateString('en-US');
     document.getElementById("datepicker2").value = date.toLocaleDateString('en-US');
 
-    document.getElementById("datepicker2").readOnly = true;
+    document.getElementById("datepicker2").disabled = true;
 
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").readOnly = true;
+        document.getElementById("cantidadCuotas").disabled = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas")
     {
-        document.getElementById("cantidadCuotas").readOnly = false;
+        document.getElementById("cantidadCuotas").disabled = false;
     }
 });
 
@@ -32,8 +32,8 @@ function agregarPrecondicion() {
     child.innerHTML = "<button type=\"button\" class=\"btn btn-danger btn-circle glyphicon glyphicon-remove\" onclick=\"eliminarCampo(this)\"></button>";
     codigo = "<div class=\"form-group\">" +
 			"    <div class=\"col-sm-11 col-md-11 col-lg-11\" style=\"margin-left:-30px;\"> " +
-			"        <input type=\"text\" runat\"server\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\" required" +
-            "           oninvalid=\"setCustomValidity('Campo obligatorio, no puede tener numeros ni simbolos')\" oninput=\"setCustomValidity('')\" title=\"Descripcion\" pattern=\"^[A-z ,.()]+$\" />" +
+			"        <input type=\"text\" runat\"server\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\" required onblur = \"onBlurDeInputs(this.id)\"" +
+            "           oninvalid=\"setCustomValidity('Campo obligatorio, no puede tener numeros ni simbolos')\" oninput=\"setCustomValidity('')\" title=\"Descripcion\" pattern=\"^[A-z ,.()0-9]+$\" />" +
 			"    </div>" +
 			"    <div class=\"col-sm-1 col-md-1 col-lg-1\" style=\"margin-left:-20px;\" >" +
 			"        <button type=\"button\" class=\"btn btn-default btn-circle glyphicon glyphicon-plus\" onclick=\"agregarPrecondicion()\"></button>" +
@@ -41,7 +41,6 @@ function agregarPrecondicion() {
 			"</div>";
     $("#div-precondiciones").append(codigo);
     actualizarIdPrecondiciones();
-
 }
 
 function eliminarCampo(caller) {
@@ -63,18 +62,27 @@ function crearPrecondicionArr() {
     // escenarios = $("[id^=precondicion_]");
     $('.arrPrecondicion').val("");
     $('.precondicion').each(function () {
-     //   alert($(this).val());
+        //   alert($(this).val());
         values = values + $(this).val() + ";";
-     //   $('#precondicion_arr').val($('#precondicion_arr').val() + ";" + $(this).val());
+        //   $('#precondicion_arr').val($('#precondicion_arr').val() + ";" + $(this).val());
 
     });
     
-   // alert(values);
+    // alert(values);
     $('.arrPrecondicion').val(values);
-   /* for (i = 0; i < escenarios.length; i++) {
-        values += escenarios[i].value + ";";
-    }*/
+    /* for (i = 0; i < escenarios.length; i++) {
+         values += escenarios[i].value + ";";
+     }*/
     //$('#precondicion_arr').val(values);
+
+    document.getElementById("datepicker2").disabled = false;
+    document.getElementById("datepicker2").readOnly = true;
+
+    document.getElementById("cantidadCuotas").disabled = false;
+    document.getElementById("cantidadCuotas").readOnly = true;
+
+    document.getElementById("textoDuracion").disabled = false;
+    document.getElementById("textoDuracion").readOnly = true;
 
 }
 
@@ -101,23 +109,21 @@ function doSearch() {
 function validarTextArea(textArea)
 {
     var textArea = document.getElementById(textArea);
-    var compania = document.getElementById("comboCompañia");
-
-    var regex = new RegExp("^[A-z ,.()]+$");
+    
+    var regex = new RegExp("^[A-z ,.()0-9]+$");
 
     var resultado = regex.test(textArea.value);
 
-    if (resultado == false) {
+    if (resultado == false && textArea.value != "") {
         alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
         textArea.value = "";
         textArea.style.borderColor = "red";
     }
-    else {
+    else if (resultado == false && textArea.value == "") {
         textArea.style.borderColor = "#ccc";
     }
-
-    if (compania.value == "Selecione un cliente") {
-        alert('Seleccione una compañía!');
+    else {
+        textArea.style.borderColor = "#00FF00"
     }
 }
 
@@ -136,19 +142,19 @@ function enableDeFechas(s1, date1, date2, input)
 
     if (s1.value == "Meses")
     {
-        date2.readOnly = true;
-        input.readOnly = false;
+        date2.disabled = true;
+        input.disabled = false;
     }
     else if (s1.value == "Dias")
     {
-        date2.readOnly = true;
-        input.readOnly = false;
+        date2.disabled = true;
+        input.disabled = false;
     }
     else if (s1.value == "Custom")
     {
-        date2.readOnly = false;
+        date2.disabled = false;
         input.value = "";
-        input.readOnly = true;
+        input.disabled = true;
     }
 
 }
@@ -190,10 +196,10 @@ function setCuotas()
 {
     if (document.getElementById("formaPago").value == "Mensual") {
         document.getElementById("cantidadCuotas").value = "";
-        document.getElementById("cantidadCuotas").readOnly = true;
+        document.getElementById("cantidadCuotas").disabled = true;
     }
     else if (document.getElementById("formaPago").value == "Por cuotas") {
-        document.getElementById("cantidadCuotas").readOnly = false;
+        document.getElementById("cantidadCuotas").disabled = false;
     }
 }
 
@@ -212,6 +218,7 @@ function setFechasMesesYDias()
     //Validacion de fecha inicio "mayor" o "igual" a HOY.
     if (fechaInicio < hoy) {
         _fechaInicio.value = hoy.toLocaleDateString('en-US');
+        //alert("La fecha de inicio debe ser una fecha mayor o igual a HOY.");
     }
 
     //Validar que exista una duracion para poder empezar a validar
@@ -231,24 +238,27 @@ function setFechasMesesYDias()
 
             _fechaFin.value = fechaFin.toLocaleDateString('en-US');
         }
-    }
-    //Validaciones en caso de que la modalidad sea Custom
+    } 
+        //Validaciones en caso de que la modalidad sea Custom
     else if (select1.value == "Custom") {
         var fechaAux = new Date(_fechaFin.value);
 
         //Validacion de fecha de inicio sea "menor" a la fecha de fin.
         if (fechaInicio > fechaAux) {
             _fechaFin.value = _fechaInicio.value;
-        }
+            //alert("La fecha de inicio indicada es MAYOR a la fecha de fin\npor favor vuelva a seleccionar las fechas.");
+        } 
 
         //Validacion de fecha de fin "mayor" a la fecha de inicio.
         if (fechaFin < fechaAux) {
             _fechaFin.value = _fechaInicio.value;
+            //alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
         }
     }
     else {
         _fechaInicio.value = hoy.toLocaleDateString('en-US');
-    }
+        //alert("Por favor indique una duracion.");
+    } 
 }
 
 //Cuando se modifica la Fecha de Fin
@@ -264,6 +274,37 @@ function setFechasCustom()
     //Validacion de que la fecha de inicio sea "menor" a la fecha de fin.
     if (fechaInicio > fechaAux) {
         _fechaFin.value = _fechaInicio.value;
+        //alert("La fecha de fin indicada es MENOR a la fecha de inicio\npor favor vuelva a seleccionar las fechas.");
+    } 
+}
+
+//Ayuda para el Usuario de saber si lo que introdujo es correcto
+function onBlurDeInputs(inputId) {
+    var input = document.getElementById(inputId);
+
+    var auxParaReq = inputId.split("_");
+    var textoId = auxParaReq[1];
+
+    if (textoId == "precondicion") {
+        regex = new RegExp("^[A-z ,.()0-9]+$");
+    } else if (inputId == "textoDuracion") {
+        regex = new RegExp("^[0-9]{1,3}[ ]{0,1}$");
+    } else if (textoId == "textoCosto") {
+        regex = new RegExp("^[0-9]{1,10}[ ]{0,1}$");
+    } else if (inputId == "cantidadCuotas") {
+        regex = new RegExp("^[0-9]{1,2}[ ]{0,1}$");
+    }
+
+    var resultado = regex.test(input.value);
+    
+    if (resultado == false && input.value != "") {
+        input.style.borderColor = "red";
+    }
+    else if (resultado == false && input.value == "") {
+        input.style.borderColor = "#ccc";
+    }
+    else {
+        input.style.borderColor = "#00FF00"
     }
 
 }

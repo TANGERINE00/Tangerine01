@@ -14,11 +14,20 @@ namespace Tangerine_Presentador.M3
     {
         IContratoAgregarClientePotencial vista;
 
+        /// <summary>
+        /// Constructor d la clase presentador 
+        /// </summary>
+        /// <param name="vista"></param>
+        /// <returns></returns>
         public PresentadorAgregarClientePotencial(IContratoAgregarClientePotencial vista)
         {
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Método que instancia y ejecuta al comando para agregar un cliente potencial
+        /// </summary>
+        /// <returns></returns>
         public void Agregar()
         {
 

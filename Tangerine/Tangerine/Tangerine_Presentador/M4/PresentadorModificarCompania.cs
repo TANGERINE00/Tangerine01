@@ -35,7 +35,7 @@ namespace Tangerine_Presentador.M4
             try 
             { 
                 CargarLugares();
-                Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
                 entidad.Id = id;
                 Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(entidad);
                 entidad = comando.Ejecutar();
@@ -71,7 +71,7 @@ namespace Tangerine_Presentador.M4
             {
                
                 int _idLugar = 0;
-                Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4();
+                Entidad entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
                 entidad.Id = id;
                 Comando<Entidad> comando1 = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(entidad);
                 entidad = comando1.Ejecutar();
@@ -82,7 +82,7 @@ namespace Tangerine_Presentador.M4
                         _idLugar = ((DominioTangerine.Entidades.M4.LugarDireccionM4)Lugares[j]).LugId;    
                 if (_vista.inputPresupuesto1.Equals(""))
                     _vista.inputPresupuesto1 = "0";
-                DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(id,_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
+                DominioTangerine.Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(id,_vista.inputNombre1.ToString(), _vista.inputRIF1.ToString(), _vista.inputEmail1.ToString(),
                                                                                                 _vista.inputTelefono1.ToString(), _vista.inputAcronimo1.ToString(), System.DateTime.Today,
                                                                                                 ((DominioTangerine.Entidades.M4.CompaniaM4)entidad).StatusCompania, int.Parse(_vista.inputPresupuesto1),
                                                                                                 int.Parse(_vista.inputPlazoPago1), _idLugar);

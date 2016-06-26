@@ -318,7 +318,19 @@ namespace DatosTangerine.DAO.M4
           catch (ExceptionTGConBD ex)
           {
               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-              throw new ExceptionM4Tangerine("DS-404", "Nombre de la compania o rif ya utilizado", ex);
+              if (ex.Message.Equals("Error con la Conexion en la Base de Datos, no se pudo abrir la conexion")) 
+              {
+                  throw new ExceptionM4Tangerine("DS-404", "Error conexion base de datos", ex);
+              }
+              if (ex.Excepcion.Message.Contains("J-"))
+              {
+                  throw new ExceptionM4Tangerine("DS-404", "El rif ya se encuentra en uso", ex);
+              }
+              else
+              {
+                  throw new ExceptionM4Tangerine("DS-404", "Nombre de la compania ya se encuentra utilizado", ex);
+              }
+              
           }
            catch (Exception ex)
            {
@@ -413,7 +425,19 @@ namespace DatosTangerine.DAO.M4
            catch (ExceptionTGConBD ex)
            {
                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw new ExceptionM4Tangerine("DS-404", "Nombre de la compania o rif ya utilizado", ex);
+               if (ex.Message.Equals("Error con la Conexion en la Base de Datos, no se pudo abrir la conexion"))
+               {
+                   throw new ExceptionM4Tangerine("DS-404", "Error conexion base de datos", ex);
+               }
+               if (ex.Excepcion.Message.Contains("J-"))
+               {
+                   throw new ExceptionM4Tangerine("DS-404", "El rif ya se encuentra en uso", ex);
+               }
+               else
+               {
+                   throw new ExceptionM4Tangerine("DS-404", "Nombre de la compania ya se encuentra utilizado", ex);
+               }
+
            }
            catch (Exception ex)
            {
@@ -461,7 +485,7 @@ namespace DatosTangerine.DAO.M4
                int comIdPlace = int.Parse(row[ResourceCompanyM4.ComIdPlace].ToString());
 
                //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-               compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+               compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
                                                    comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
            }
            catch (ArgumentNullException ex)
@@ -527,7 +551,7 @@ namespace DatosTangerine.DAO.M4
                    int comIdPlace = int.Parse(row[ResourceCompanyM4.ComIdPlace].ToString());
 
                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
                                                                                 comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
                    
                    listCompany.Add(compania);
@@ -599,7 +623,7 @@ namespace DatosTangerine.DAO.M4
                    int comIdPlace = int.Parse(row[ResourceCompanyM4.ComIdPlace].ToString());
 
                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
                                                                                 comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
 
                    listCompany.Add(compania);

@@ -2,10 +2,10 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Recuperación de Contraseña | Tangerine</title>
+    <title>Tangerine - Inicio de Sesión</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
+    <link href="css/Estilos.css" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,55 +26,70 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body class="hold-transition login-page" style="background: #3c8dbc;">
-    <div class="login-box" >
-    
-        <div class="login-logo">
-          <a href="#"><h1>Tangerine</h1></a>
-        </div>
-
-        <div class="login-box-body " style=" background: black; box-shadow:  0px 0px 40px #000000;">
-          <p class="login-box-msg" style="color:#FFFFFF">Introduzca su correo personal y usuario</p>
-
-          <form method="post" style="text-align: center;" id="enviarEmail" runat="server">
-            <div class="form-group has-feedback">
-              <input type="email" id="correo" runat="server" maxlength="30" class="form-control" placeholder="Correo personal">
-                <asp:RegularExpressionValidator 
-                    ID="regexEmailValid" 
-                    runat="server" 
-                    ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
-                    ControlToValidate="correo" 
-                    ErrorMessage="Formato de correo invalido" 
-                    ForeColor="White">
-                </asp:RegularExpressionValidator>
-            
-              <input type="text" id="usuario" runat="server" maxlength="30" class="form-control" placeholder="Nombre de Usuario">
-            <br />
-            <div class="row">
-              <div class="col-xs-6 col-md-6 col-lg-6">
-                <!--<a href="NuevaContraseña.aspx" type="button" class="btn btn-default">Aceptar</a>-->
-                <button type="button" id="correoButton" runat="server" class="btn btn-default" onserverclick="Validar_Correo">Enviar</button>
-                
-              </div>
-              <div class="col-xs-6 col-md-6 col-lg-6">
-                <a href="../M1/Login.aspx" type="button" class="btn btn-default">Volver</a>
-              </div>
-              <asp:label id="mensaje" runat="server" class="login-box-msg" style="color:#FFFFFF;"/>
+</head>
+<body>
+    <div id="login-main">
+        <div class="container login-main">
+            <div class="user-img">
+                <img src="/dist/img/tange.png" class="img-circle user-img img-thumbnail" alt="">
             </div>
+            <div class="login-logo">
+                <span style="color:white" ><b>Tangerine</b> SYSTEM </span>  
             </div>
-          </form>
-          <!-- /.social-auth-links -->
-          
+
+            <div class="col-md-4 login-form">
+                <p class="login-box-msg" style="color: #FFFFFF">Introduzca su correo personal y usuario</p>
+               
+            </div>
+
+
+
+            <div class="col-md-4 login-form">
+
+
+                <form class="form-horizontal" method="post" id="enviarEmail" runat="server">
+                    <div class="form-group">
+
+                        <input type="email" class="form-control login-field" value="" placeholder="Correo" id="correo" runat="server">
+                        <label for="login-name" class="login-name"><i class="fa fa-envelope"></i></label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control login-field" value="" placeholder="Usuario" id="usuario" runat="server">
+                        <label for="login-pass" class="login-pass"><i class="glyphicon glyphicon-user"></i></label>
+                    </div>
+
+                    <div class="form-group">
+
+                        <button type="button" id="LoginButton" runat="server" name="go" class="btn btn-lg btn-block" onserverclick="Validar_Correo">Aceptar</button>
+                    </div>
+
+                    <asp:Label ID="mensaje" runat="server" class="login-box-msg" Style="color: #FFFFFF;" />
+                      <asp:RegularExpressionValidator
+                            ID="regexEmailValid"
+                            runat="server"
+                            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                            ControlToValidate="correo"
+                            ErrorMessage="Formato de correo invalido"
+                            ForeColor="White">
+                        </asp:RegularExpressionValidator>
+                </form>
+            </div>
+            <!--login-form-->
+
+
+            <a>Copyright © 2016 Tangerine.</a>
         </div>
-     </div>
+        <!--container-->
+
+    </div>
+
 
     <!-- jQuery 2.1.4 -->
     <script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <!-- iCheck -->
-    <script src="../../plugins/iCheck/icheck.min.js"></script>
+
     <script>
         $(function () {
             $('input').iCheck({
@@ -83,6 +99,5 @@
             });
         });
     </script>
-  </body>
+</body>
 </html>
-

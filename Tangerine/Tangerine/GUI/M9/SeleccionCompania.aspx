@@ -9,13 +9,15 @@
     Lista de compañias
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+    <li><a href="/GUI/M1/Dashboard.aspx"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Gestión de Pagos</a></li>
     <li class="active">Seleccion de compañia</li>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
+   <div id="alert" runat="server">
+   </div>
     <div class="row">
             <!-- left column -->
             <div class="col-md-12">

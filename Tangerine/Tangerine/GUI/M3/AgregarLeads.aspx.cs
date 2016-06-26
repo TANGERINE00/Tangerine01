@@ -18,6 +18,10 @@ namespace Tangerine.GUI.M3
         bool accionEnBd;
         PresentadorAgregarClientePotencial presentador;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
+        /// <returns></returns>
         public AgregarLeads()
         {
             presentador = new PresentadorAgregarClientePotencial(this);
@@ -91,6 +95,13 @@ namespace Tangerine.GUI.M3
             
         }
 
+        /// <summary>
+        /// Método que se encarga de llamar al presentador para
+        /// agregar a un cliente potencial
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="sender"></param>
+        /// <returns></returns>
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             presentador.Agregar();

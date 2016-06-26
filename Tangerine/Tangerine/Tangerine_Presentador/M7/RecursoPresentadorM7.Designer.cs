@@ -61,6 +61,51 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string alertaError {
+            get {
+                return ResourceManager.GetString("alertaError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string alertaHtml {
+            get {
+                return ResourceManager.GetString("alertaHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string alertaHtmlFinal {
+            get {
+                return ResourceManager.GetString("alertaHtmlFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-bitcoin&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string bitcoin {
+            get {
+                return ResourceManager.GetString("bitcoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;b style=&quot;color: #3c8dbc;&quot;&gt;Bf &lt;/b&gt;.
+        /// </summary>
+        internal static string bolivar {
+            get {
+                return ResourceManager.GetString("bolivar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonInfo {
@@ -178,11 +223,29 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-usd&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string dolar {
+            get {
+                return ResourceManager.GetString("dolar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estatus:.
         /// </summary>
         internal static string Estatus {
             get {
                 return ResourceManager.GetString("Estatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string euro {
+            get {
+                return ResourceManager.GetString("euro", resourceCulture);
             }
         }
         
@@ -327,6 +390,15 @@ namespace Tangerine_Presentador.M7 {
         internal static string PropuestaAprovada {
             get {
                 return ResourceManager.GetString("PropuestaAprovada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string tipoAlerta {
+            get {
+                return ResourceManager.GetString("tipoAlerta", resourceCulture);
             }
         }
         

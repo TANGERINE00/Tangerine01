@@ -165,4 +165,7 @@
   <data name="AlertaBtnModificar" xml:space="preserve">
     <value>Nombre de usuario ya existente, intente otro. Puede que el que esté ingresando ya sea el suyo.</value>
   </data>
+  <data name="AlertaFichaEmpleado" xml:space="preserve">
+    <value>Error en datos, este empleado no existe.</value>
+  </data>
 </root>

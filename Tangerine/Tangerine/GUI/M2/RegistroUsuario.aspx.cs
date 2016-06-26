@@ -76,7 +76,7 @@ namespace Tangerine.GUI.M2
         {
             try
             {
-                //Esto ocurre cuando se modifica una factura, se muestra mensaje a usuario
+                //Esto ocurre cuando se modifica un usuario, se muestra mensaje a usuario
                 string _estado = AntiXssEncoder.HtmlEncode( Request.QueryString[ResourceM2.estado], false );
                 if (_estado != null)
                     _presentador.Alerta(_estado);

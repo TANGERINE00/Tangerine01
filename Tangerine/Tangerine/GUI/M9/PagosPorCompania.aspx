@@ -11,13 +11,15 @@
     Lista de Pagos
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+    <li><a href="/GUI/M1/Dashboard.aspx"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Gestión de Pagos</a></li>
     <li><a href="SeleccionCompania.aspx">Seleccion de compania</a></li>
     <li class="active">Consulta de pagos realizados</li>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   <div id="alert" runat="server">
+   </div>
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Consulta de pagos</h3>

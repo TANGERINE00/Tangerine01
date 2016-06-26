@@ -79,12 +79,29 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Verificar si el nombre de usuario ya existe en la BD.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Retorna un valor booleano indicando si el usuario ya existe</returns>
         public bool usuarioExistente()
         {
             bool respuesta = false;
             LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.nombreUsuario );
             respuesta = comando.Ejecutar();
+            return respuesta;
+        }
+
+        /// <summary>
+        /// Verifica el ID del ultimo empleado de la BD
+        /// </summary>
+        /// <returns>Retorna el ID del ultimo empleado</returns>
+        public bool ultimoIDEmpleado()
+        {   
+            bool respuesta = true;
+            int resultado;
+            LogicaTangerine.Comando<int> comando = LogicaTangerine.Fabrica.FabricaComandos.consultarIDUltimoEmpleado();
+            resultado = comando.Ejecutar();
+            if ( int.Parse( _vista.fichaEmpleado ) > resultado )
+            {
+                respuesta = false;
+            }
             return respuesta;
         }
     }

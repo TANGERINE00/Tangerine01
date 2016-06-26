@@ -42,7 +42,7 @@ namespace PruebasUnitarias.M8
             _fecha = new DateTime(2016, 01, 02);
             _laFactura = (Facturacion)FabricaEntidades.ObtenerFacturacion(_fecha, _fecha, 100, 101,
                 "Dolares", "Proyecto de diseño", 0, 1, 1);
-            _laCompania = (CompaniaM4)FabricaEntidades.crearCompaniaConId(1, "CompaniaPrueba3",
+            _laCompania = (CompaniaM4)FabricaEntidades.CrearCompaniaConId(1, "CompaniaPrueba3",
                 "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
         }
 

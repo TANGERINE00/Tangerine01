@@ -9,20 +9,19 @@ using DatosTangerine;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
 
-
 namespace Tangerine.GUI.M3
 {
-    public partial class Listar : System.Web.UI.Page, IContratoListarClientePotencial
+    public partial class AdministrarListaClientesPotenciales : System.Web.UI.Page, IContratoListarClientePotencial
     {
-        PresentadorListarClientePotencial presentador;
+        PresentadorAdminClientePotencial presentador;
 
         /// <summary>
         /// Constructor de la vista
         /// </summary>
         /// <returns></returns>
-        public Listar()
+        public AdministrarListaClientesPotenciales()
         {
-            this.presentador = new PresentadorListarClientePotencial(this);
+            this.presentador = new PresentadorAdminClientePotencial(this);
         }
 
         #region Contrato
@@ -52,9 +51,6 @@ namespace Tangerine.GUI.M3
             {
                 presentador.Llenar();
             }
-
         }
     }
 }
-  
- 
