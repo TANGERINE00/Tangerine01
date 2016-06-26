@@ -45,7 +45,7 @@ namespace Tangerine.GUI.M6
             }
             catch (Exception)
             {
-                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("idReq") + "&idReq=0");
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("idPro") + "&idReq=0");
             }
         }
 
