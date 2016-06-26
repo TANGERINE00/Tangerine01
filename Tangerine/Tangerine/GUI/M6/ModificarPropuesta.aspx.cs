@@ -30,7 +30,7 @@ namespace Tangerine.GUI.M6
             {
                 if (!IsPostBack)
                 {
-                    presenter.llenarVista();
+                    presenter.LlenarVista();
                 } 
             }
             catch 
@@ -53,23 +53,6 @@ namespace Tangerine.GUI.M6
             }
         }
 
-        protected void EliminarRequerimiento_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Button btn = sender as Button;
-                string debug = btn.ID;
-
-                presenter.EliminarRequerimiento(btn.ID);
-                Server.Transfer("ConsultarPropuesta.aspx", true);
-            }
-            catch (Exception)
-            {
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
-            }
-
-        }
-
         #region Contrato
         public Literal Requerimientos
         {
@@ -82,6 +65,22 @@ namespace Tangerine.GUI.M6
                 requerimientos = value;
             }
         }
+
+        public string reqABorrar
+        {
+            get
+            {
+                try
+                {
+                    return Request.QueryString.Get("idReq");
+                }
+                catch (Exception e)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    return null;
+                }
+            }
+        } 
 
         public string ContenedorCompania
         {
