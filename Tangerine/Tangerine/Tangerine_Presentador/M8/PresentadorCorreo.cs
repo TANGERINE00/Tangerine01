@@ -91,7 +91,7 @@ namespace Tangerine_Presentador.M8
                 //vista.adjunto = this.vista.adjunto;
 
                 DatosCorreo _datosCorreo =
-                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje);
+                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje, this.vista.adjunto);
 
                 Comando<bool> _comandoCorreo = FabricaComandos.CrearComandoEnviarCorreoGmail(_datosCorreo);
 
