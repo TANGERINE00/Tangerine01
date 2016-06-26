@@ -363,7 +363,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputIdLugar"></param>
             /// <returns>Retorna una instacion de CompaniaM4 con todos los atributos menos el id</returns>
 
-            static public Entidad crearCompaniaSinId(string inputNombre, string inputRif, string inputEmail, string inputTelefono, 
+            static public Entidad CrearCompaniaSinId(string inputNombre, string inputRif, string inputEmail, string inputTelefono, 
                                                                                     string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, 
                                                                                     int inputPresupuesto, int inputPlazoPago, int inputIdLugar)
             {
@@ -422,7 +422,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="address"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 completa</returns>
 
-            static public Entidad crearLugarDireccionCompleto(int lugId, string lugNombre, string lugTipo, int fk_lugId,
+            static public Entidad CrearLugarDireccionCompleto(int lugId, string lugNombre, string lugTipo, int fk_lugId,
                                                                                                    List<DominioTangerine.Entidades.M4.LugarDireccionM4> address)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4( lugId , lugNombre , lugTipo , fk_lugId , 
@@ -436,7 +436,7 @@ namespace DominioTangerine.Fabrica
             /// <param name="lugTipo"></param>
             /// <returns>Retorna una instacion de LugarDireccionM4 con lugNombre y lugTipo</returns>
 
-            static public Entidad crearLugarDireccionConLugarTipo(string lugNombre, string lugTipo)
+            static public Entidad CrearLugarDireccionConLugarTipo(string lugNombre, string lugTipo)
             {
                 return new DominioTangerine.Entidades.M4.LugarDireccionM4(lugNombre, lugTipo );
             }

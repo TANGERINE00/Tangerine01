@@ -24,8 +24,8 @@ namespace PruebasUnitarias.M4
         [SetUp]
         public void init()
         {
-            lacompania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaSinId("Touch", "J-111111111", "asd@asd.com", "3434234", "ASD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
-            lacompania1 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaSinId("CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            lacompania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaSinId("Touch", "J-111111111", "asd@asd.com", "3434234", "ASD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            lacompania1 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaSinId("CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
          
         }
 
