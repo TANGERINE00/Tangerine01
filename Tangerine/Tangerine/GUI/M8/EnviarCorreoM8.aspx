@@ -48,8 +48,9 @@
                             <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" rows="4" cols="50">
                             </textarea>
                         </div>
-                        <div id="Div9" class="form-group" runat="server">
-                           <input type="file" name="adjuntar" id="adjuntar" class="btn btn-primary" value="adjuntar" onclick="buttonadjuntarCorreo_Click" style="margin-top: 5%; margin-right:15px;">
+                        <div id="Div9" class="form-group" runat="server" style="">
+                          <input type="file" runat="server" name="adjuntar" id="adjuntar" class="btn btn-primary" style="margin-top: 5%; margin-right:15px; ">
+                             <%--<asp:FileUpload ID="adjuntar" name="adjuntar" runat="server" /> --%>
                         </div>
                         <div id="Div8" class="form-group" runat="server" style="text-align:center;">
                             <asp:Button ID="buttonEnviar_M8" Style="margin-top: 5%; margin-right:15px;" class="btn btn-primary" type="submit" runat="server" Text="Enviar Correo" OnClick="buttonEnviarCorreo_Click"></asp:Button>

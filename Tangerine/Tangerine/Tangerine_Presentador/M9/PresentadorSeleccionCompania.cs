@@ -28,13 +28,20 @@ namespace Tangerine_Presentador.M9
         public void Alerta(string msj, int tipoMensaje)
         {
             if (tipoMensaje == 1)
+            {
                 vista.alertaClase = RecursoPresentadorM9.AlertSuccess;
-            else
+                vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
+                vista.alerta = RecursoPresentadorM9.AlertOpen + msj + RecursoPresentadorM9.AlertClose;
+       
+            }
+            else if (tipoMensaje == 2)
+            {
                 vista.alertaClase = RecursoPresentadorM9.AlertDanger;
+                vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
+                vista.alerta = RecursoPresentadorM9.AlertOpen + msj + RecursoPresentadorM9.AlertClose;
 
-            vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
-            vista.alerta = RecursoPresentadorM9.AlertOpen + msj + RecursoPresentadorM9.AlertClose;
-        }
+            }
+         }
  
 
         public void estadoActual()
@@ -43,6 +50,9 @@ namespace Tangerine_Presentador.M9
             {
                 case 1:
                 Alerta(RecursoPresentadorM9.PagoAgregado, int.Parse(RecursoPresentadorM9.StatusAgregado));
+                break;
+                case 2:
+                Alerta("Error al agregar pago", 2);
                 break;
 
 

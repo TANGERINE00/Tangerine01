@@ -10,7 +10,7 @@
     Cargar pago
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
-    <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+    <li><a href="/GUI/M1/Dashboard.aspx"><i class="fa fa-home"></i>Home</a></li>
     <li><a href="#">Gestión de Pagos</a></li>
     <li><a href="SeleccionCompania.aspx">Seleccion de compania</a></li>
     <li><a href="FacturasPorPagar.aspx">Consulta facturas por pagar</a></li>

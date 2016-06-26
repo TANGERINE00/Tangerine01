@@ -81,6 +81,23 @@ namespace Tangerine_Presentador.M7
 
                 _vista.Costo = propuesta.Costo.ToString();
 
+                if (propuesta.Moneda == "Bitcoin")
+                {
+                    _vista.Moneda.Text = RecursoPresentadorM7.bitcoin;
+                }
+                else if (propuesta.Moneda == "Euro")
+                {
+                    _vista.Moneda.Text = RecursoPresentadorM7.euro;
+                }
+                else if (propuesta.Moneda == "Dolar")
+                {
+                    _vista.Moneda.Text = RecursoPresentadorM7.dolar;
+                }
+                else if (propuesta.Moneda == "Bolivar")
+                {
+                    _vista.Moneda.Text = RecursoPresentadorM7.bolivar;
+                }
+
                 Comando<String> comandoGenerarCodigo = FabricaComandos.ObtenerComandoGenerarCodigoProyecto(entPropuesta);
                 String codigo = comandoGenerarCodigo.Ejecutar();
                 _vista.CodigoProyecto = codigo;

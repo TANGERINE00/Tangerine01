@@ -763,6 +763,15 @@ namespace Tangerine.GUI.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string StatusError {
+            get {
+                return ResourceManager.GetString("StatusError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teléfono:.
         /// </summary>
         internal static string Telefono {

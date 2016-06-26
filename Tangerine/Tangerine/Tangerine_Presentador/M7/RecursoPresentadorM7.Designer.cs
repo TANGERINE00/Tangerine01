@@ -88,6 +88,24 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-bitcoin&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string bitcoin {
+            get {
+                return ResourceManager.GetString("bitcoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;b style=&quot;color: #3c8dbc;&quot;&gt;Bf &lt;/b&gt;.
+        /// </summary>
+        internal static string bolivar {
+            get {
+                return ResourceManager.GetString("bolivar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#myModal&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonInfo {
@@ -205,11 +223,29 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-usd&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string dolar {
+            get {
+                return ResourceManager.GetString("dolar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estatus:.
         /// </summary>
         internal static string Estatus {
             get {
                 return ResourceManager.GetString("Estatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-euro&quot;&gt;&lt;/a&gt;.
+        /// </summary>
+        internal static string euro {
+            get {
+                return ResourceManager.GetString("euro", resourceCulture);
             }
         }
         

@@ -148,8 +148,15 @@ namespace Tangerine.GUI.M9
         /// Metodo para tomar los valores de la vista y guardarlos en BD luego de apretar el boton agregar.
         public void btnagregar_Click(object sender, EventArgs e)
         {
-            presentador.AgregarPago();
-            Server.Transfer("SeleccionCompania.aspx?status="+ResourceLogicaM9.StatusAgregado, true);
+            try
+            {
+                presentador.AgregarPago();
+                Server.Transfer("SeleccionCompania.aspx?status=" + ResourceLogicaM9.StatusAgregado, true);
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                Server.Transfer("SeleccionCompania.aspx?status=" + ResourceLogicaM9.StatusError, true);
+            }
         }
 
     }
