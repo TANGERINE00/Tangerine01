@@ -346,56 +346,6 @@ namespace DatosTangerine.DAO.M6
 
         #region IDAOPropuesta
 
-        /// <summary>
-        /// Método para consultar el último id de propuesta en la base de datos.
-        /// </summary>
-        /// <returns>Retorna el ultimo id de propuesta registrada.</returns>
-        public int ConsultarIdUltimaPropuesta()
-        {
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursoDAOPropuesta.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
-            int mayorId = 0;
-            try
-            {
-                List<Parametro> parameters = new List<Parametro>();
-
-                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
-                DataTable dt = EjecutarStoredProcedureTuplas( RecursoDAOPropuesta.ConsultarIdUltimaPropuesta, parameters );
-                //Guardar los datos 
-                DataRow row = dt.Rows[0];
-
-                mayorId = int.Parse( row[RecursoDAOPropuesta.PropCodigo].ToString() );
-
-            }
-            catch ( SqlException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeSqlException, ex );
-            }
-            catch ( ArgumentNullException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeArgumentNullException, ex );
-            }
-            catch ( FormatException ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionTGConBD( RecursoDAOPropuesta.CodigoModulo, 
-                RecursoDAOPropuesta.MensajeFormatException, ex );
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ExcepcionesTangerine.ExceptionsTangerine( RecursoDAOPropuesta.CodigoModulo,
-                RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            }
-            Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursoDAOPropuesta.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name );
-            return mayorId;
-        }
 
         /// <summary>
         /// Método para consultar la cantidad de propuestas en la base de datos.

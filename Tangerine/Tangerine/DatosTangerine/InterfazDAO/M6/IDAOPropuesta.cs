@@ -15,8 +15,6 @@ namespace DatosTangerine.InterfazDAO.M6
 
         List<Entidad> PropuestaProyecto();
 
-        int ConsultarIdUltimaPropuesta();
-
         int ConsultarNumeroPropuestas();
     }
 }

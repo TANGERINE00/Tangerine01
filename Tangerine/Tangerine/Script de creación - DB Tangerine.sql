@@ -1236,15 +1236,6 @@ END;
 
 GO
 
---- ConsultarIdUltimaPropuesta(Para pruebas) ----
-CREATE PROCEDURE M6_ConsultarIdUltimaPropuesta
-AS
- BEGIN
-     SELECT MAX(prop_id) prop_id FROM PROPUESTA;
- end;
-
-GO
-
 -- Modificar Requerimiento
 CREATE PROCEDURE M6_ModificarRequerimiento
 @req_descripcion [varchar] (200),
@@ -1319,13 +1310,6 @@ AS
  END;
 GO
 
----ConsultarIdUltimoRequerimiento(Para pruebas) ----
-CREATE PROCEDURE M6_ConsultarIdUltimoRequerimiento
-AS
- BEGIN
-     SELECT MAX(req_id) req_id FROM REQUERIMIENTO;
- end;
-GO
 ---ConsultarNumeroPropuestas(Para pruebas) ----
 CREATE PROCEDURE M6_ConsultarNumeroPropuestas
 AS
