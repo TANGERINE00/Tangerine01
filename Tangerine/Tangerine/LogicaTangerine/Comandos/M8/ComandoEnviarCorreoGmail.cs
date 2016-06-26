@@ -52,7 +52,7 @@ namespace LogicaTangerine.Comandos.M8
                 mnsj.From = new MailAddress(ResourceLogicaM8.systemmail, ResourceLogicaM8.SysName);
                 mnsj.Body = _datosCorreo.mensjae;
                 /* Si deseamos Adjuntar algún archivo*/
-                mnsj.Attachments.Add(new Attachment("C:\\archivo.pdf"));
+                //mnsj.Attachments.Add(new Attachment("C:\\archivo.pdf"));
 
                 string[] mailArray = _datosCorreo.destinatario.Split(',');
                 List<string> mailsList = new List<string>(mailArray.Length);

@@ -139,6 +139,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div9;
         
         /// <summary>
+        /// adjuntar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile adjuntar;
+        
+        /// <summary>
         /// Div8 control.
         /// </summary>
         /// <remarks>

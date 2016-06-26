@@ -49,6 +49,10 @@ namespace Tangerine.GUI.M8
             set { this.textMensaje_M8.Value = value; }
         }
 
+        public string adjunto
+        {
+            get { return this.adjuntar.Value; }
+        }
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
