@@ -56,6 +56,7 @@ namespace PruebasUnitarias.M4
             DatosTangerine.InterfazDAO.M4.IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             Comando<bool> Comand = FabricaComandos.CrearAgregarCompania(theCompany);
             Assert.IsTrue(Comand.Ejecutar());
+            Comando<Entidad> Comand2 = FabricaComandos.CrearConsultarCompania(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(),"CompaniaPrueba3", "J-111111113", "asd@asdddd.com", "3434234", "ASS", new DateTime(2015, 2, 10), 1, 100, 30, 1));
             theCompany2 = Comand2.Ejecutar();
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).Id == daoCompania.ConsultLastCompanyId());
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)theCompany2).NombreCompania == "CompaniaPrueba3");
