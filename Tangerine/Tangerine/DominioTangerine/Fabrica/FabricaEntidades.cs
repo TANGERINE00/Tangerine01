@@ -703,6 +703,11 @@ namespace DominioTangerine.Fabrica
         {
             return new DatosCorreo(asunto, destinatario, mensaje);
         }
+
+        public static Entidad ObtenerDatosCorreo(string asunto, string destinatario, string mensaje, string adjunto)
+        {
+            return new DatosCorreo(asunto, destinatario, mensaje, adjunto);
+        }
         #endregion
 
         #region Modulo 9

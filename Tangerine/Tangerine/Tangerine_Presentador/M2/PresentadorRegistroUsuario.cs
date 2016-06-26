@@ -57,7 +57,6 @@ namespace Tangerine_Presentador.M2
                     LogicaTangerine.Comando<Boolean> theComandoVerificar =
                         LogicaTangerine.Fabrica.FabricaComandos.verificarUsuario( empleado.emp_id );
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTR;
-                    _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.emp_id.ToString() + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_nombre + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_p_apellido + ResourceGUIM2.CloseTD;
                     _vista.tablaEmpleado += ResourceGUIM2.OpenTD + empleado.Emp_cedula + ResourceGUIM2.CloseTD;
