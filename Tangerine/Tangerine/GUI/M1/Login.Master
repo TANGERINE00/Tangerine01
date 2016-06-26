@@ -28,7 +28,10 @@
     <![endif]-->
 </head>
 <body class="hold-transition login-page" style="background: #3c8dbc;">
-    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M1/js/alertas.js") %>"></script>
+    </asp:ContentPlaceHolder>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
     <div id="login-main">
         <div class="container login-main">

@@ -114,7 +114,8 @@ namespace Tangerine_Presentador.M1
                 }
                 else
                 {
-                    _iMaster.mensajeVista = "Error en el inicio de sesión";
+                    _iMaster.errorLoginAlert = true;
+                    _iMaster.errorLoginText = "Datos Incorrectos";
                 }
             }
             catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine e)
