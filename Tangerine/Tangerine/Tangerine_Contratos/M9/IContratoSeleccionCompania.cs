@@ -10,6 +10,10 @@ namespace Tangerine_Contratos.M9
     {
 
         string company { get; set; }
+        string alertaClase { set;}
+        string alertaRol { set; }
+        string alerta { set; }
+        int StatusAccion();
     
     }
 }
