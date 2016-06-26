@@ -10,7 +10,7 @@
 namespace Tangerine.GUI.M3 {
     
     
-    public partial class Listar {
+    public partial class AdministrarListaClientesPotenciales {
         
         /// <summary>
         /// Control Lista.

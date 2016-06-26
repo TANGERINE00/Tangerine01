@@ -1,8 +1,4 @@
-﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="Listar.aspx.cs" Inherits="Tangerine.GUI.M3.Listar" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
-</asp:Content>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/Tangerine.Master" AutoEventWireup="true" CodeBehind="AdministrarListaClientesPotenciales.aspx.cs" Inherits="Tangerine.GUI.M3.AdministrarListaClientesPotenciales" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
     Gestión de leads
 </asp:Content>
@@ -89,5 +85,3 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
 
 </asp:Content>
-
-
