@@ -153,9 +153,9 @@
                 <i></i> <span>Gestion de Leads</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar nuevo Lead</a></li>
-                <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Administrar Leads</a></li>
-i>Seguimiento</a></li>
+                <li id="RegistrarLead" runat="server"><a href="../M3/AgregarLeads.aspx"><i class="fa fa-circle-o"></i>Registrar Nuevo Lead</a></li>
+                <li id="ConsultarLead" runat="server"><a href="../M3/Listar.aspx"><i class="fa fa-circle-o"></i>Consulta Sobre lead</a></li>
+                <li id="AdministrarLead" runat="server"><a href="../M3/AdministrarListaClientesPotenciales.aspx"><i class="fa fa-circle-o"></i>Administrar Leads</a></li>
               </ul>                
             </li>
             <li class="treeview" id="GestionDeCompañias" runat="server">

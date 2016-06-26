@@ -112,6 +112,20 @@ namespace Tangerine.GUI.M9
 
 
         }
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceLogicaM9.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceLogicaM9.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
 
@@ -135,7 +149,7 @@ namespace Tangerine.GUI.M9
         public void btnagregar_Click(object sender, EventArgs e)
         {
             presentador.AgregarPago();
-            Server.Transfer("SeleccionCompania.aspx", true);
+            Server.Transfer("SeleccionCompania.aspx?status="+ResourceLogicaM9.StatusAgregado, true);
         }
 
     }

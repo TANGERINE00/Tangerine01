@@ -297,9 +297,6 @@
   <data name="Status" xml:space="preserve">
     <value>Status:</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="Telefono" xml:space="preserve">
     <value>Teléfono:</value>
   </data>
@@ -323,5 +320,23 @@
   </data>
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
+  </data>
+  <data name="AlertClose" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="AlertDanger" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="AlertOpen" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="AlertSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="PagoAgregado" xml:space="preserve">
+    <value>El Pago ha sido Agregado Correctamente</value>
+  </data>
+  <data name="StatusAgregado" xml:space="preserve">
+    <value>1</value>
   </data>
 </root>

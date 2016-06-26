@@ -21,7 +21,7 @@
             <!-- left column -->
             <div class="col-md-6">
               <!-- general form elements -->
-              <div class="box box-primary">
+              <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">Información de Compañías</h3>
                     <div class="box-tools">    

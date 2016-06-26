@@ -10,6 +10,9 @@ namespace Tangerine_Contratos.M9
    public interface IContratoFacturasPorPagar
     {
        string factura { get; set; }
+       string alertaClase { set; }
+       string alertaRol { set; }
+       string alerta { set; }
 
    }
 }

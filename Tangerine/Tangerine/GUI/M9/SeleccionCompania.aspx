@@ -16,6 +16,8 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content7" ContentPlaceHolderID="contenidoCentral" runat="server">
+   <div id="alert" runat="server">
+   </div>
     <div class="row">
             <!-- left column -->
             <div class="col-md-12">
