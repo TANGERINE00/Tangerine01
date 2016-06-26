@@ -32,7 +32,7 @@ function agregarPrecondicion() {
     child.innerHTML = "<button type=\"button\" class=\"btn btn-danger btn-circle glyphicon glyphicon-remove\" onclick=\"eliminarCampo(this)\"></button>";
     codigo = "<div class=\"form-group\">" +
 			"    <div class=\"col-sm-11 col-md-11 col-lg-11\" style=\"margin-left:-30px;\"> " +
-			"        <input type=\"text\" runat\"server\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\" required" +
+			"        <input type=\"text\" runat\"server\" placeholder=\"Requerimiento\" class=\"form-control precondicion\" id=\"precondicion_n\" name=\"precondicion_n\" required onblur = \"onBlurDeInputs(this.id)\"" +
             "           oninvalid=\"setCustomValidity('Campo obligatorio, no puede tener numeros ni simbolos')\" oninput=\"setCustomValidity('')\" title=\"Descripcion\" pattern=\"^[A-z ,.()]+$\" />" +
 			"    </div>" +
 			"    <div class=\"col-sm-1 col-md-1 col-lg-1\" style=\"margin-left:-20px;\" >" +
@@ -41,7 +41,6 @@ function agregarPrecondicion() {
 			"</div>";
     $("#div-precondiciones").append(codigo);
     actualizarIdPrecondiciones();
-
 }
 
 function eliminarCampo(caller) {
@@ -101,23 +100,21 @@ function doSearch() {
 function validarTextArea(textArea)
 {
     var textArea = document.getElementById(textArea);
-    var compania = document.getElementById("comboCompañia");
-
-    var regex = new RegExp("^[A-z ,.()]+$");
+    
+    var regex = new RegExp("^[A-z ,.()0-9]+$");
 
     var resultado = regex.test(textArea.value);
 
-    if (resultado == false) {
+    if (resultado == false && textArea.value != "") {
         alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
         textArea.value = "";
         textArea.style.borderColor = "red";
     }
-    else {
+    else if (resultado == false && textArea.value == "") {
         textArea.style.borderColor = "#ccc";
     }
-
-    if (compania.value == "Selecione un cliente") {
-        alert('Seleccione una compañía!');
+    else {
+        textArea.style.borderColor = "#00FF00"
     }
 }
 
@@ -264,6 +261,37 @@ function setFechasCustom()
     //Validacion de que la fecha de inicio sea "menor" a la fecha de fin.
     if (fechaInicio > fechaAux) {
         _fechaFin.value = _fechaInicio.value;
+    }
+
+}
+
+//Ayuda para el Usuario de saber si lo que introdujo es correcto
+function onBlurDeInputs(inputId) {
+    var input = document.getElementById(inputId);
+
+    var auxParaReq = inputId.split("_");
+    var textoId = auxParaReq[1];
+
+    if (textoId == "precondicion") {
+        regex = new RegExp("^[A-z ,.()0-9]+$");
+    } else if (inputId == "textoDuracion") {
+        regex = new RegExp("^[0-9]{1,3}[ ]{0,1}$");
+    } else if (textoId == "textoCosto") {
+        regex = new RegExp("^[0-9]{1,10}[ ]{0,1}$");
+    } else if (inputId == "cantidadCuotas") {
+        regex = new RegExp("^[0-9]{1,2}[ ]{0,1}$");
+    }
+
+    var resultado = regex.test(input.value);
+    
+    if (resultado == false && input.value != "") {
+        input.style.borderColor = "red";
+    }
+    else if (resultado == false && input.value == "") {
+        input.style.borderColor = "#ccc";
+    }
+    else {
+        input.style.borderColor = "#00FF00"
     }
 
 }

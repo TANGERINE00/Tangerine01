@@ -63,15 +63,21 @@ namespace Tangerine.GUI.M1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
-            presentador.CambiarEstatus(Empleadoid);
-            
-            if (!IsPostBack)
-            {                
-                presentador.cargarConsultarEmpleados();
-              
-            }
+            try
+            {
+                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
+                presentador.CambiarEstatus(Empleadoid);
 
+                if (!IsPostBack)
+                {
+                    presentador.cargarConsultarEmpleados();
+
+                }
+            }
+            catch (Exception)
+            {
+                Response.Redirect("../M1/Dashboard.aspx");
+            }
            
 
         }
