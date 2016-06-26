@@ -103,7 +103,7 @@ namespace Tangerine_Presentador.M6
         }
 
 
-        public void llenarDatosPropuesta(Entidad propuesta)
+        public void LlenarDatosPropuesta(Entidad propuesta)
         {
             String[] arreglo;
 
@@ -133,7 +133,7 @@ namespace Tangerine_Presentador.M6
         }
         
 
-        public void imprimirRequerimientos(Entidad _propuesta)
+        public void ImprimirRequerimientos(Entidad _propuesta)
         {
             List<Entidad> _requerimientos;
             Comando<List<Entidad>> cmdConsultarRequerimientos = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarRequerimientoXPropuesta(_propuesta);
@@ -151,14 +151,18 @@ namespace Tangerine_Presentador.M6
                         ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).Descripcion.ToString() +
                         RecursosPresentadorPropuesta.CerrarTD;
 
-
-                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_OModificar +
-                       ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() + RecursosPresentadorPropuesta.intermedioBoton+
-                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() + RecursosPresentadorPropuesta.botonCerra + 
-                        RecursosPresentadorPropuesta.CerrarTD;
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                        RecursosPresentadorPropuesta.btn_OModificar +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString() +
+                        RecursosPresentadorPropuesta.intermedioBoton +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() + 
+                        RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD;
                    
-                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + RecursosPresentadorPropuesta.btn_Oeliminar + 
+                    vista.Requerimientos.Text += RecursosPresentadorPropuesta.AbrirTD + 
+                        RecursosPresentadorPropuesta.btn_Oeliminar + 
                         ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento.ToString()+
+                        RecursosPresentadorPropuesta.intermedioBoton2 +
+                        ((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoPropuesta.ToString() +
                         RecursosPresentadorPropuesta.botonCerra + RecursosPresentadorPropuesta.CerrarTD; ;
 
                     vista.Requerimientos.Text += RecursosPresentadorPropuesta.CerrarTR;
@@ -214,15 +218,23 @@ namespace Tangerine_Presentador.M6
             {
                 _requerimientos = comando.Ejecutar();
 
-                foreach (Entidad _elRequerimiento in _requerimientos)
+                if (_requerimientos.Count() > 1)
                 {
-                    if (idRequerimiento.Equals(_elRequerimiento.Id))
+                    foreach (Entidad _elRequerimiento in _requerimientos)
                     {
-                        Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
-                        _elRequerimiento);
+                        if (idRequerimiento.Equals(((DominioTangerine.Entidades.M6.Requerimiento)_elRequerimiento).CodigoRequerimiento))
+                        {
+                            Comando<bool> cmdEliminarReq = LogicaTangerine.Fabrica.FabricaComandos.ComandoEliminarRequerimiento(
+                            _elRequerimiento);
 
-                        cmdEliminarReq.Ejecutar();
+                            cmdEliminarReq.Ejecutar();
+                        }
                     }
+                }
+                else 
+                {
+                    MessageBox.Show("No se puede eliminar este requerimiento debido a que\nno se puede tener una propuesta sin requerimientos.", "Eliminacion de Requerimientos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
@@ -249,32 +261,40 @@ namespace Tangerine_Presentador.M6
 
         public void TraerCompania(String idPropuesta)
         {
-                //Creo una propuesta
-                Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
-                    idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+            //Creo una propuesta
+            Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta(
+                idPropuesta, null, null, null, null, null, null, 0, DateTime.Now, DateTime.Now, 0, null);
+ 
+            Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
 
-                Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarXIdPropuesta(propuesta);
+            //Consulto la propuesta 
+            propuesta = comando.Ejecutar();
+  
+            Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
+                int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),            
+                null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
+  
+            //Consulto la compañia de esa propuesta
+            comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
+            
+            compañia = comando.Ejecutar();
 
-                //Consulto la propuesta
-                propuesta = comando.Ejecutar();
+            //Extraigo el nombre de la compañia y lleno el contenedor            
+            vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
 
-                Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),
-                    null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
-
-                //Consulto la compañia de esa propuesta
-                comando = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(compañia);
-                compañia = comando.Ejecutar();
-
-                //Extraigo el nombre de la compañia y lleno el contenedor
-                vista.ContenedorCompania = ((DominioTangerine.Entidades.M4.CompaniaM4)compañia).NombreCompania;
-
-                imprimirRequerimientos(propuesta);
-                llenarDatosPropuesta(propuesta);
+            if (vista.reqABorrar != "0")
+            {
+                EliminarRequerimiento(vista.reqABorrar);
+            }
+            
+            ImprimirRequerimientos(propuesta);
+            
+            LlenarDatosPropuesta(propuesta);
             
         }
 
 
-        public void llenarVista()
+        public void LlenarVista()
         {
             try {
                 TraerCompania(vista.IdPropuesta);

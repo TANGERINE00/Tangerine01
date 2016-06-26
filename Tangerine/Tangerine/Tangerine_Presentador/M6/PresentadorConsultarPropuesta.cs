@@ -38,11 +38,10 @@ namespace Tangerine_Presentador.M6
                 this.vistaConsultar.Tabla.Text = value;
             }
         }
+
         /// <summary>
         /// Metodo que consulta las propuestas propuesta
         /// </summary>
-
-
         public void consultarPropuestas()
         {
             Comando <List<Entidad>> cmdConsultarPropuestas = LogicaTangerine.Fabrica.FabricaComandos.ComandoConsultarTodosPropuesta();
@@ -107,12 +106,15 @@ namespace Tangerine_Presentador.M6
         /// <param name="laPropuesta"></param>
         public void imprimirBotones(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
-            propuesta += RecursosPresentadorPropuesta.AbrirTD2
-                        + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() +
-                        RecursosPresentadorPropuesta.botonCerra
-                        + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + 
-                        RecursosPresentadorPropuesta.botonCerra;
+            propuesta += RecursosPresentadorPropuesta.AbrirTD2 
+                + RecursosPresentadorPropuesta.botonConsultar + laPropuesta.Nombre.ToString() + 
+                RecursosPresentadorPropuesta.botonCerra
+                + RecursosPresentadorPropuesta.botonModificar + laPropuesta.Nombre.ToString() + 
+                RecursosPresentadorPropuesta.intermedioBoton3 +
+                RecursosPresentadorPropuesta.botonCerra;
+
             propuesta += RecursosPresentadorPropuesta.CerrarTD;
+
             propuesta += RecursosPresentadorPropuesta.CerrarTR;
         }
 
