@@ -258,7 +258,7 @@ namespace Tangerine_Presentador.M6
                 //Consulto la propuesta
                 propuesta = comando.Ejecutar();
 
-                Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearEntidadCompaniaM4Llena(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),
+                Entidad compañia = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(int.Parse(((DominioTangerine.Entidades.M6.Propuesta)propuesta).IdCompañia),
                     null, null, null, null, null, DateTime.Now, 0, 0, 0, 0);
 
                 //Consulto la compañia de esa propuesta

@@ -485,7 +485,7 @@ namespace DatosTangerine.DAO.M4
                int comIdPlace = int.Parse(row[ResourceCompanyM4.ComIdPlace].ToString());
 
                //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-               compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+               compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
                                                    comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
            }
            catch (ArgumentNullException ex)
@@ -551,7 +551,7 @@ namespace DatosTangerine.DAO.M4
                    int comIdPlace = int.Parse(row[ResourceCompanyM4.ComIdPlace].ToString());
 
                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
                                                                                 comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
                    
                    listCompany.Add(compania);
@@ -623,7 +623,7 @@ namespace DatosTangerine.DAO.M4
                    int comIdPlace = int.Parse(row[ResourceCompanyM4.ComIdPlace].ToString());
 
                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
+                   Entidad compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(comId, comName, comRif, comEmail, comTelephone, comAcronym,
                                                                                 comRegisterDate, comStatus, comBudget, comDeadline, comIdPlace);
 
                    listCompany.Add(compania);

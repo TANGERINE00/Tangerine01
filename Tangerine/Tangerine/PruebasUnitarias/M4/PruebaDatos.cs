@@ -33,7 +33,7 @@ namespace PruebasUnitarias.M4
         public void clean()
         {
             IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
-            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             answer = daoCompania.DeleteCompany(lacompania2);
             lacompania = null;
             lacompania1 = null;
@@ -53,7 +53,7 @@ namespace PruebasUnitarias.M4
             //Inserto una compañía.
             answer = daoCompania.Agregar(lacompania);
 
-            lacompania1 = daoCompania.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(),"CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+            lacompania1 = daoCompania.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(),"CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)lacompania1).Id == daoCompania.ConsultLastCompanyId());
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)lacompania1).NombreCompania == "Touch");
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)lacompania1).RifCompania == "J-111111111");
@@ -77,8 +77,8 @@ namespace PruebasUnitarias.M4
             IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             //Inserto una compañía.
             answer = daoCompania.Agregar(lacompania);
-            answer1 = daoCompania.Modificar(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
-            lacompania1 = daoCompania.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+            answer1 = daoCompania.Modificar(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+            lacompania1 = daoCompania.ConsultarXId(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)lacompania1).Id == daoCompania.ConsultLastCompanyId());
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)lacompania1).NombreCompania == "CompaniaPrueba3");
             Assert.IsTrue(((DominioTangerine.Entidades.M4.CompaniaM4)lacompania1).RifCompania == "J-111134112");
@@ -100,7 +100,7 @@ namespace PruebasUnitarias.M4
         {
             IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             answer = daoCompania.Agregar(lacompania1);
-            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueb43", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueb43", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             //Aplico el metodo para consultar la companía agregada anteriormente.
             lacompania1 = daoCompania.ConsultarXId(lacompania2);
             //Comparo que el id de la companía creada coincide con el id de la compañía consultada.
@@ -164,7 +164,7 @@ namespace PruebasUnitarias.M4
         {
             IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             answer = daoCompania.Agregar(lacompania);
-            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueb43", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueb43", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             answer1 = daoCompania.DisableCompany(lacompania2);
             //Compruebo que el metodo de inhabilitación finalizó correctamente.
             lacompania2 = daoCompania.ConsultarXId(lacompania2);
@@ -178,7 +178,7 @@ namespace PruebasUnitarias.M4
         {
             IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             answer = daoCompania.Agregar(lacompania);
-            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueb43", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
+            lacompania2 = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueb43", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1);
             answer1 = daoCompania.EnableCompany(lacompania2);
             //Compruebo que el metodo de inhabilitación finalizó correctamente.
             lacompania2 = daoCompania.ConsultarXId(lacompania2);
@@ -225,7 +225,7 @@ namespace PruebasUnitarias.M4
             IDaoCompania daoCompania = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDaoCompania();
             answer = daoCompania.Agregar(lacompania);
             answer1 = daoCompania.Agregar(lacompania1);
-            answer = daoCompania.DeleteCompany(DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
+            answer = daoCompania.DeleteCompany(DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(daoCompania.ConsultLastCompanyId(), "CompaniaPrueba3", "J-111134112", "affdd@asdd.com", "34342344", "ADD", new DateTime(2015, 2, 10), 1, 100, 30, 1));
             Assert.IsTrue(answer);
     
         }

@@ -30,7 +30,7 @@ namespace Tangerine_Presentador.M9
             {
             DominioTangerine.Entidades.M4.CompaniaM4 comp =
                 (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.
-                crearCompaniaVacia();
+                CrearCompaniaVacia();
             comp.Id = idComp;
             Comando<List<Entidad>> comandoListaPagos =
                 LogicaTangerine.Fabrica.FabricaComandos.ConsultarPagosCompania(comp);

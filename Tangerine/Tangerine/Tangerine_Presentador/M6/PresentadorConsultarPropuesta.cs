@@ -59,7 +59,7 @@ namespace Tangerine_Presentador.M6
                     
                     //Creo objeto tipo Entidad(Compania) para luego pasarlo al comando de consulta y obtener los datos en BD.
                     //Inicializo el objeto solo con el Id (los demas campos en NULL).
-                    Entidad _laCompania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaConId(
+                    Entidad _laCompania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
                         Int32.Parse(laPropuesta.IdCompañia), null, null, null, null, null, DateTime.Today, 0, 0, 0, 0);
 
                     cmdConsultarCompania = LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarCompania(_laCompania);

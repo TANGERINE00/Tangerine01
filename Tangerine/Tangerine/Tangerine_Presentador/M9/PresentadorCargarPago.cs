@@ -44,7 +44,7 @@ namespace Tangerine_Presentador.M9
 
             DominioTangerine.Entidades.M4.CompaniaM4 compania =
                 (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.
-                crearCompaniaVacia();
+                CrearCompaniaVacia();
 
             compania.Id = ((DominioTangerine.Entidades.M8.Facturacion)facturaPagar).idCompaniaFactura;
 

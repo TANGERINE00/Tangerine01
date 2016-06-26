@@ -39,7 +39,7 @@ namespace Tangerine_Presentador.M8
             try
             {
                 Facturacion _laFactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
-                CompaniaM4 compania = (CompaniaM4)FabricaEntidades.CrearEntidadCompaniaM4();
+                CompaniaM4 compania = (CompaniaM4)FabricaEntidades.CrearCompaniaVacia();
                 DominioTangerine.Entidades.M7.Proyecto proyecto =
                     (DominioTangerine.Entidades.M7.Proyecto)FabricaEntidades.ObtenerProyecto();
 

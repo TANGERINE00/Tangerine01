@@ -317,7 +317,7 @@ namespace DominioTangerine.Fabrica
             /// Metodo que crea la instancia de la entidad CompaniaM4
             /// </summary>
             /// <returns>Retorna la instancia a la clase CompaniaM4</returns>
-            static public Entidad crearCompaniaVacia()
+            static public Entidad CrearCompaniaVacia()
             {
                 return new DominioTangerine.Entidades.M4.CompaniaM4();
             }
@@ -338,16 +338,16 @@ namespace DominioTangerine.Fabrica
             /// <param name="inputIdLugar"></param>
             /// <returns>Retorna una instacion de CompaniaM4 con todos los atributos</returns>
 
-            static public Entidad crearCompaniaConId(int inputId, string inputNombre, string inputRif, string inputEmail, string inputTelefono,
-                                                                                    string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
-                                                                                    int inputPlazoPago, int inputIdLugar)
+            static public Entidad CrearCompaniaConId(int inputId, string inputNombre, string inputRif, string inputEmail,
+                string inputTelefono,string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
+                int inputPlazoPago, int inputIdLugar)
             {
                 return new DominioTangerine.Entidades.M4.CompaniaM4( inputId, inputNombre , inputRif , inputEmail ,
                                                                    inputTelefono , inputAcronimo , inputFechaRegistro , 
                                                                    inputStatus , inputPresupuesto , inputPlazoPago ,
                                                                    inputIdLugar );
             }
-
+        
             /// <summary>
             /// Se crea la instancia de la CompaniaM4 con todos sus atributos menos el id
             /// </summary>
@@ -374,22 +374,6 @@ namespace DominioTangerine.Fabrica
             #endregion
      
         
-        
-        public static Entidad CrearEntidadCompaniaM4 ()
-        {
-             return new CompaniaM4 ();
-        }
-
-        
-        
-        public static Entidad CrearEntidadCompaniaM4Llena(int inputId, string inputNombre, string inputRif, string inputEmail, 
-            string inputTelefono,string inputAcronimo, DateTime inputFechaRegistro, int inputStatus, int inputPresupuesto,
-            int inputPlazoPago, int inputIdLugar)
-        {
-            
-            return new CompaniaM4 (inputId,  inputNombre,  inputRif,  inputEmail, inputTelefono,
-                inputAcronimo,  inputFechaRegistro,  inputStatus, inputPresupuesto,inputPlazoPago,  inputIdLugar);
-        }
 
         public static Entidad CrearEntidadLugarM4()
         {

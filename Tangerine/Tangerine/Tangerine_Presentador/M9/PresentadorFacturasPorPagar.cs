@@ -33,7 +33,7 @@ namespace Tangerine_Presentador.M9
             //capturo el id de la compania que se esta enviando por el URL
             DominioTangerine.Entidades.M4.CompaniaM4 comp =
                 (DominioTangerine.Entidades.M4.CompaniaM4)DominioTangerine.Fabrica.FabricaEntidades.
-                crearCompaniaVacia();
+                CrearCompaniaVacia();
             comp.Id = idComp;
             Comando<List<Entidad>> comandoListaFactura =
                 LogicaTangerine.Fabrica.FabricaComandos.CrearConsultarFacturasCompania(comp);

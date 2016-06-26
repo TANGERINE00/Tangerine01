@@ -38,7 +38,7 @@ namespace Tangerine_Presentador.M5
             {
                 if ( typeComp == 1 )
                 {
-                    Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                    Entidad compania = FabricaEntidades.CrearCompaniaVacia();
                     compania.Id = idComp;
 
                     Comando<Entidad> comandoEntidad = FabricaComandos.CrearConsultarCompania( compania );
@@ -192,7 +192,7 @@ namespace Tangerine_Presentador.M5
         {
             try
             {
-                Entidad compania = FabricaEntidades.crearCompaniaVacia();
+                Entidad compania = FabricaEntidades.CrearCompaniaVacia();
                 compania.Id = _vista.getIdComp();
 
                 Comando<List<Entidad>> comandoLista = 

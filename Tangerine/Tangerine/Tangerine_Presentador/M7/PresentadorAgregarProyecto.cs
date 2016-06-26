@@ -85,7 +85,7 @@ namespace Tangerine_Presentador.M7
                 String codigo = comandoGenerarCodigo.Ejecutar();
                 _vista.CodigoProyecto = codigo;
 
-                Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.crearCompaniaVacia();
+                Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
                 ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).Id = Int32.Parse(propuesta.IdCompañia);
                 Comando<List<Entidad>> comandoConsultarContacto =
                                     FabricaComandos.CrearComandoConsultarContactosPorCompania(_compania, 1);

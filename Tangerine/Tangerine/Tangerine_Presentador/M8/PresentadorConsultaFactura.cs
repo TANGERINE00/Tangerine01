@@ -52,7 +52,7 @@ namespace Tangerine_Presentador.M8
             {
                 Comando<List<Entidad>> comando = FabricaComandos.CrearConsultarTodosFactura();
                 List<Entidad> listaEntidad = comando.Ejecutar();
-                CompaniaM4 _laCompania = (CompaniaM4)FabricaEntidades.crearCompaniaVacia();
+                CompaniaM4 _laCompania = (CompaniaM4)FabricaEntidades.CrearCompaniaVacia();
                 DominioTangerine.Entidades.M7.Proyecto _elProyecto =
                     (DominioTangerine.Entidades.M7.Proyecto)FabricaEntidades.ObtenerProyecto();
 
