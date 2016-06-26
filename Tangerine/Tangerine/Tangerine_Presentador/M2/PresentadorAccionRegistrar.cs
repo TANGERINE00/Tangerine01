@@ -61,8 +61,7 @@ namespace Tangerine_Presentador.M2
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
-                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
-                    + ResourceGUIM2.alertaHtmlFinal;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
             }
 
         }
@@ -82,8 +81,7 @@ namespace Tangerine_Presentador.M2
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
-                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
-                    + ResourceGUIM2.alertaHtmlFinal;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
                 return false;
             }
         }
@@ -105,8 +103,7 @@ namespace Tangerine_Presentador.M2
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaRol = ResourceGUIM2.tipoAlerta;
-                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message
-                    + ResourceGUIM2.alertaHtmlFinal;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
                 return true;
             }
         }
