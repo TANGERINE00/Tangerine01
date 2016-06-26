@@ -76,14 +76,12 @@ drop procedure M5_ConsultarTodosContactos;
 drop procedure M6_AgregarPropuesta;
 drop procedure M6_ListaPropuestaProyecto;
 drop procedure M6_ModificarPropuesta;
-drop procedure M6_ConsultarIdUltimaPropuesta
 drop procedure M6_ModificarRequerimiento;
 drop procedure M6_ListarRequerimientos;
 drop procedure M6_AgregarRequerimiento;
 drop procedure M6_ConsultarPropuestaNombre;
 drop procedure M6_ConsultarPropuestas;
 drop procedure M6_EliminarPropuesta;
-drop procedure M6_ConsultarIdUltimoRequerimiento;
 drop procedure M6_ConsultarNumeroPropuestas;
 drop procedure M6_ConsultarNumeroRequerimientos;
 drop procedure M6_EliminarRequerimiento;
