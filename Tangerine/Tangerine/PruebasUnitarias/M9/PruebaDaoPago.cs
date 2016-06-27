@@ -56,7 +56,7 @@ namespace PruebasUnitarias.M9
 
         #endregion
         /// <summary>
-        /// Método para probar el Agregar de DAOPago
+        /// Método que permite verificar el agregar un pago en la base de datos
         /// </summary>
         [Test]
         public void TestAgregar()
@@ -75,6 +75,10 @@ namespace PruebasUnitarias.M9
             answer = daoPago.EliminarPago(elPago);
             Assert.IsTrue(answer);
         }
+
+        /// <summary>
+        /// Método que permite verificar el cambio de status de una factura
+        /// </summary>
         [Test]
         public void TestCambiarStatus()
         {

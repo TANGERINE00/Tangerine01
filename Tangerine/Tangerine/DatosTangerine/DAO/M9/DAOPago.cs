@@ -105,12 +105,7 @@ namespace DatosTangerine.DAO.M9
            }
         }
     
-        /// <summary>
-        /// Metodo para cambiar el Status de la factura a pagada
-        /// </summary>
-        /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
-        /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
-        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
+ 
        
     
         public Boolean Modificar (Entidad e)
@@ -130,6 +125,12 @@ namespace DatosTangerine.DAO.M9
         #endregion
 
         #region IDAOPago
+        /// <summary>
+        /// Metodo para cambiar el Status de la factura a pagada
+        /// </summary>
+        /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
+        /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool CargarStatus(int factura, int status)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -191,7 +192,7 @@ namespace DatosTangerine.DAO.M9
         
 
         /// <summary>
-        /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizaos por una compania
+        /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizados por una compania
         /// </summary>
         /// <param name="parametro">Entidad, parametro con id de la compania que se va realizar la busqueda de pagos
         /// </param>

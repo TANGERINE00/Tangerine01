@@ -115,10 +115,10 @@
                             <label for="input_cliente">Codigo de aprobacion</label>
                             <label for="Requerido" style="color: red;">*</label>
                             <input runat="server" type="text" class="form-control" 
-                             pattern=\d{6}
-                            
-                                id="codAprobacion" name="codAprobacion" 
-                                placeholder="Introduzca el numero de codigo de aprobacion  " required>
+                             pattern=\d{6} 
+                                
+                                id="codAprobacion" name="codAprobacion" tittle="numero de seis digitos"
+                                placeholder="Introduzca el codigo de aprobacion de seis (6) digitos" required>
                         </div>
 
 
