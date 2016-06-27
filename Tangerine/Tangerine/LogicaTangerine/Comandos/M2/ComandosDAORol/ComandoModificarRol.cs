@@ -20,8 +20,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
         /// <summary>
         /// Constructor que recibe dos parametros de tipo string
         /// </summary>
-        /// <param name="elUsuario"></param>
-        /// <param name="elRol"></param>
+        /// <param name="elUsuario">El usuario</param>
+        /// <param name="elRol">El rol del usuario</param>
         public ComandoModificarRol( string elUsuario , string elRol )
         {
             _elUsuario = elUsuario;
