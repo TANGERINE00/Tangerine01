@@ -57,14 +57,14 @@ namespace Tangerine_Presentador.M8
 
         }
 
-        public void anularFactura()
+        public Boolean anularFactura()
         {
             try
             {
                 Facturacion lafactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
                 lafactura.Id = int.Parse(this.vista.numero);
                 Comando<bool> comandoAnular = FabricaComandos.CrearAnularFactura(lafactura);
-                comandoAnular.Ejecutar();
+                return comandoAnular.Ejecutar();
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
@@ -72,6 +72,7 @@ namespace Tangerine_Presentador.M8
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
                 vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
                     + RecursoPresentadorM8.alertaHtmlFinal;
+                return false;
             }
         }
     }
