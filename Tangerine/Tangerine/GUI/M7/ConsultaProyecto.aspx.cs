@@ -33,11 +33,34 @@ namespace Tangerine.GUI.M7
                 tablaProyectos = value;
             }
         }
+        public string alertaClase
+        {
+            set { alert.Attributes["class"] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes["role"] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                string _estado = Request.QueryString["estado"];
+                if (_estado != null)
+                    presentador.Alerta(_estado);
+            }
+            catch
+            {
+                //No hago nada, no es obligatorio el parametro
+            }
             if (!IsPostBack)
             {
                 presentador.cargarConsultarProyectos();

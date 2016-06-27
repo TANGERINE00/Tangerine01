@@ -145,9 +145,14 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 8
 
+        /// <summary>
+        /// Método que crea la instancia de DAO Factura
+        /// </summary>
+        /// <returns>Retorna la instancia a la clase DaoFactura</returns>
         public static IDaoFactura ObtenerDAOFactura()
         {
-            return new DAO.M8.DAOFactura();
+            IDaoFactura _IDaoFactura = new DAO.M8.DAOFactura();
+            return _IDaoFactura;
         }
 
         #endregion

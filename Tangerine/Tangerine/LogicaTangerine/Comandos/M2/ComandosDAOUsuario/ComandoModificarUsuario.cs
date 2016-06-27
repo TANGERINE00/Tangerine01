@@ -19,8 +19,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
         /// <summary>
         /// Constructor que recibe un parametro del tipo int y otro del tipo string
         /// </summary>
-        /// <param name="fichaEmpleado"></param>
-        /// <param name="nombreUsuario"></param>
+        /// <param name="fichaEmpleado">Es la ficha del empleado</param>
+        /// <param name="nombreUsuario">Es el nombre del usuario</param>
         public ComandoModificarUsuario( int fichaEmpleado , string nombreUsuario )
         {
             _fichaEmpleado = fichaEmpleado;

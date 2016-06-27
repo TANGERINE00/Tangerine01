@@ -19,6 +19,10 @@ namespace Tangerine_Presentador.M8
     {
         IContratoConsultarFactura vista;
 
+        /// <summary>
+        /// Constructor de la clase, que recibe la vista
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorConsultaFactura(IContratoConsultarFactura vista)
         {
             this.vista = vista;
@@ -26,6 +30,8 @@ namespace Tangerine_Presentador.M8
 
         /// <summary>
         /// Método para manejar los errores y mensajes a interfaz
+        /// <param name="msj">Mensaje a mostrar a interfaz</param>
+        /// Son respuestas positivas sobre acciones del usuario
         /// </summary>
         public void Alerta(string msj)
         {
@@ -33,29 +39,28 @@ namespace Tangerine_Presentador.M8
             {
                 vista.alertaClase = RecursoPresentadorM8.alertaModificado;
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado + RecursoPresentadorM8.alertaHtmlFinal;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado 
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
             if (msj == RecursoPresentadorM8.codigoAnular)
             {
                 vista.alertaClase = RecursoPresentadorM8.alertaModificado;
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjMAnulado + RecursoPresentadorM8.alertaHtmlFinal;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjMAnulado 
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
             if (msj == RecursoPresentadorM8.codigoCorreo)
             {
                 vista.alertaClase = RecursoPresentadorM8.alertaModificado;
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjCorreo + RecursoPresentadorM8.alertaHtmlFinal;
-            }
-            else
-            {
-                vista.alertaClase = RecursoPresentadorM8.alertaError;
-                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjCorreo 
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
 
-
+        /// <summary>
+        /// Método para cargar la tabla con las facturas existentes
+        /// </summary>
         public void cargarConsultarFacturas()
         {
             bool pagada = false;
@@ -74,7 +79,8 @@ namespace Tangerine_Presentador.M8
                     _elProyecto.Id = laFactura.idProyectoFactura;
                     Comando<Entidad> _comandoCompania = FabricaComandos.CrearConsultarCompania(_laCompania);
                     _laCompania = (CompaniaM4)_comandoCompania.Ejecutar();
-                    Comando<Entidad> _comandoProyecto = FabricaComandos.ObtenerComandoConsultarXIdProyecto(_elProyecto);
+                    Comando<Entidad> _comandoProyecto = 
+                        FabricaComandos.ObtenerComandoConsultarXIdProyecto(_elProyecto);
                     _elProyecto = (DominioTangerine.Entidades.M7.Proyecto)_comandoProyecto.Ejecutar();
 
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTr;
@@ -120,20 +126,30 @@ namespace Tangerine_Presentador.M8
                     if (pagada == true || anulada == true)
                     {
                         vista.facturasCreadas +=
-                            RecursoPresentadorM8.BotonModifInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonAnularInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonPagarInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura + RecursoPresentadorM8.CloseBotonParametro;
+                            RecursoPresentadorM8.BotonModifInhabilitado + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonAnularInhabilitado + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonPagarInhabilitado + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura 
+                            + RecursoPresentadorM8.CloseBotonParametro;
                     }
                     else
                     {
                         vista.facturasCreadas +=
-                            RecursoPresentadorM8.BotonModif + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonAnular + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonPagar + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
-                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura + RecursoPresentadorM8.CloseBotonParametro;
+                            RecursoPresentadorM8.BotonModif + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonAnular + laFactura.Id.ToString()
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonPagar + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() 
+                            + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura 
+                            + RecursoPresentadorM8.CloseBotonParametro;
                     }
                     vista.facturasCreadas += RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.CloseTr;

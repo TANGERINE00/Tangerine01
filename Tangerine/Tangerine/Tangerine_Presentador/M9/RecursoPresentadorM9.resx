@@ -127,7 +127,7 @@
     <value>&lt;span </value>
   </data>
   <data name="AbrirTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
+    <value>&lt;td style="text-align: center;"&gt;</value>
   </data>
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
@@ -198,7 +198,7 @@
   <data name="Closeh4" xml:space="preserve">
     <value>&lt;/h4&gt;</value>
   </data>
-  <data name="CloseTD" xml:space="preserve">
+  <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
   </data>
   <data name="CloseTR" xml:space="preserve">
@@ -232,7 +232,7 @@
     <value>&lt;td&gt;&lt;span class="label label-success"&gt;Pagada&lt;/span&gt;&lt;/td&gt;</value>
   </data>
   <data name="EtiquetaPorPagar" xml:space="preserve">
-    <value>&lt;td&gt;&lt;span class="label label-warning"&gt;Por pagar&lt;/span&gt;&lt;/td&gt;</value>
+    <value>&lt;td  style="text-align: center;"&gt;&lt;span class="label label-warning"&gt;Por pagar&lt;/span&gt;&lt;/td&gt;</value>
   </data>
   <data name="Fecha" xml:space="preserve">
     <value>Fecha:</value>
@@ -278,9 +278,6 @@
   </data>
   <data name="Openh4" xml:space="preserve">
     <value>&lt;h4&gt;</value>
-  </data>
-  <data name="OpenTD" xml:space="preserve">
-    <value>&lt;td&gt;</value>
   </data>
   <data name="OpenTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>

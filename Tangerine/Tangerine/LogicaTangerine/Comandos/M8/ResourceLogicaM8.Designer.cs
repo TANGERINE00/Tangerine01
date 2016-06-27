@@ -61,7 +61,7 @@ namespace LogicaTangerine.Comandos.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TGE_00_001.
+        ///   Looks up a localized string similar to Logica M8.
         /// </summary>
         internal static string Codigo {
             get {

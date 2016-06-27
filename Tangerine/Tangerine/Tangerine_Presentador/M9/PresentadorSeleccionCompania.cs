@@ -74,27 +74,27 @@ namespace Tangerine_Presentador.M9
                     {
                         vista.company += RecursoPresentadorM9.OpenTR;
 
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).NombreCompania + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).AcronimoCompania.ToString() + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).RifCompania + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).FechaRegistroCompania.ToShortDateString() + 
-                            RecursoPresentadorM9.CloseTD;
+                            RecursoPresentadorM9.CerrarTD;
                         if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(1))
                         {
-                            vista.company += RecursoPresentadorM9.OpenTD + RecursoPresentadorM9.habilitado + 
-                                RecursoPresentadorM9.CloseTD;
+                            vista.company += RecursoPresentadorM9.AbrirTD + RecursoPresentadorM9.habilitado + 
+                                RecursoPresentadorM9.CerrarTD;
                         }
                         else if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(0))
                         {
-                            vista.company += RecursoPresentadorM9.OpenTD + RecursoPresentadorM9.inhabilitado + 
-                                RecursoPresentadorM9.CloseTD;
+                            vista.company += RecursoPresentadorM9.AbrirTD + RecursoPresentadorM9.inhabilitado + 
+                                RecursoPresentadorM9.CerrarTD;
                         }
 
                         //Boton para cargar las facturas asociadas a cada compañia

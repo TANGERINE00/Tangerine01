@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2
         /// <summary>
         /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
-        /// <param name="usuario"></param>
+        /// <param name="usuario">Es el objeto que se quiere agregar</param>
         public ComandoAgregarUsuario( DominioTangerine.Entidad usuario )
         {
             _usuario = usuario;
