@@ -151,7 +151,8 @@ namespace DatosTangerine.Fabrica
         /// <returns>Retorna la instancia a la clase DaoFactura</returns>
         public static IDaoFactura ObtenerDAOFactura()
         {
-            return new DAO.M8.DAOFactura();
+            IDaoFactura _IDaoFactura = new DAO.M8.DAOFactura();
+            return _IDaoFactura;
         }
 
         #endregion

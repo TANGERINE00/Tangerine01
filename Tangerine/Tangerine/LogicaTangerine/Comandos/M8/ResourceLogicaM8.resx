@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Codigo" xml:space="preserve">
-    <value>TGE_00_001</value>
+    <value>Logica M8</value>
     <comment>Codigo de error en la conexion con la BD</comment>
   </data>
   <data name="Codigo_Error_Formato" xml:space="preserve">

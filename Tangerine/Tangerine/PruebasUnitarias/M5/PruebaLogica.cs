@@ -151,6 +151,19 @@ namespace PruebasUnitarias.M5
         }
 
         /// <summary>
+        /// Método para probar el comando ComandoConsultarTodosContactos de Comandos.M5
+        /// </summary>
+        [Test]
+        public void PruebaComandoConsultarTodosProyectos() 
+        {
+            _comandoLista = FabricaComandos.CrearComandoConsultarTodosContactos();
+            _listaContactos = _comandoLista.Ejecutar();
+            _contadorContactos = _listaContactos.Count;
+
+            Assert.AreEqual(_contadorContactos, 6);
+        }
+
+        /// <summary>
         /// Método para probar el comando ComandoConsultarContactosPorCompania de Comandos.M5
         /// </summary>
         [Test]

@@ -19,6 +19,31 @@ namespace Tangerine_Presentador.M7
             this.vista = vista;
         }
 
+        public void Alerta(string msj)
+        {
+            if (msj == "1")
+            {
+                vista.alertaClase = RecursoPresentadorM7.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + RecursoPresentadorM7.MsjAgregado
+                    + RecursoPresentadorM7.alertaHtmlFinal;
+            }
+            else if (msj == "2")
+            {
+                vista.alertaClase = RecursoPresentadorM7.alertaError;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + RecursoPresentadorM7.MsjError
+                    + RecursoPresentadorM7.alertaHtmlFinal;
+            }
+            else
+            {
+                vista.alertaClase = RecursoPresentadorM7.alertaError;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + "error"
+                    + RecursoPresentadorM7.alertaHtmlFinal; ;
+            }
+        }
+
         public void cargarConsultarProyectos()
         {
             try

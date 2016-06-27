@@ -67,7 +67,7 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>Número</th>
+                                    <th>N° Factura</th>
                                     <th>Compañía</th>
                                     <th>Proyecto</th>
                                     <th>Descripción</th>
