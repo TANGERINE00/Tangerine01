@@ -385,6 +385,24 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string codigoAnular {
+            get {
+                return ResourceManager.GetString("codigoAnular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string codigoMod {
+            get {
+                return ResourceManager.GetString("codigoMod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ,.
         /// </summary>
         internal static string Coma {
@@ -516,6 +534,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string MontoTotal {
             get {
                 return ResourceManager.GetString("MontoTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La factura ha sido anulada..
+        /// </summary>
+        internal static string MsjMAnulado {
+            get {
+                return ResourceManager.GetString("MsjMAnulado", resourceCulture);
             }
         }
         

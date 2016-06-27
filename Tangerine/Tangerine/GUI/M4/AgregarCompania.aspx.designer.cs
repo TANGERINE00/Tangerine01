@@ -13,6 +13,15 @@ namespace Tangerine.GUI.M4 {
     public partial class AgregarCompania {
         
         /// <summary>
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
         /// Control agregar_compania.
         /// </summary>
         /// <remarks>

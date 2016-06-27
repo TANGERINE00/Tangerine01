@@ -16,6 +16,7 @@ namespace Tangerine_Presentador.M10
     public class PresentadorConsultaEmpleado
     {
         IContratoConsultaEmpleados vista;
+        private int estadoActual = 0;
         
 
         public PresentadorConsultaEmpleado(IContratoConsultaEmpleados vista)
@@ -23,26 +24,14 @@ namespace Tangerine_Presentador.M10
             this.vista = vista;
         }
 
-        /// <summary>
-        /// Metodo para el manejo de alertas
-        /// </summary>
-        /// <param name="msj"></param>
-        /// <param name="typeMsg"></param>
-        //public void Alerta(string msj, int typeMsg)
-        //{
-        //    if (typeMsg == 1)
-        //        vista.alerta = ResourceGUIM10.ExitoAlerta;
-        //    else
-        //        vista.alerta = ResourceGUIM10.AlertAdvertencia;
-        //    vista.alerta = ResourceGUIM10.AlertShowSu1 + msj + ResourceGUIM10.AlertShowSu2;
-        //}
-        
 
         /// <summary>
         /// Metodo para la accion de consulta de empleados  
         /// </summary>
         public void cargarConsultarEmpleados()
         {
+
+            
             try
             {
                 LogicaTangerine.Comandos.M10.ComandoConsultarEmpleado comando =
@@ -131,13 +120,14 @@ namespace Tangerine_Presentador.M10
 
                 
             }
-            catch (ConsultarEmpleadoException ex)
+            catch (ConsultarEmpleadoException )
             {
-                //vista.alerta = ResourceGUIM10.ErrorAlerta;
-                //vista.alerta = ResourceGUIM10.AlertaVista + ex.Message + ex.InnerException.Message
-                //               + ResourceGUIM10.AlertaVistaFinal;
-                
-            }                                                                                                          
+                estadoActual = 2;
+            }
+            catch (BaseDatosException )
+            {
+                estadoActual = 3;
+            }                                                                                                      
         }
                                                                                                                        
         /// <summary>
@@ -158,11 +148,52 @@ namespace Tangerine_Presentador.M10
 
             catch (ModificarEstatusException ex)
             {
-                //vista.alerta = ResourceGUIM10.ErrorAlerta;
-                //vista.alerta = ResourceGUIM10.AlertaVista + ex.Message + ex.InnerException.Message
-                //               + ResourceGUIM10.AlertaVistaFinal;
+                
             }  
         }
+
+
+        /// <summary>
+        /// Método que contigura el div de alerta de la vista
+        /// </summary>
+        /// <param name="msj"></param>
+        /// <param name="typeMsg"></param>
+        public void AlertaMensaje(string msj, int typeMsg)
+        {
+            if (typeMsg == 1)
+                vista.alertaClase = ResourceGUIM10.ExitoAlerta;
+            else
+                vista.alertaClase = ResourceGUIM10.AlertAdvertencia;
+
+            vista.alertaRol = ResourceGUIM10.Alerta;
+            vista.alertas = ResourceGUIM10.AlertShowSu1 + msj + ResourceGUIM10.AlertShowSu2;
+        }
+
+        public void AlertasCase()
+        {
+            int Empleadoid = int.Parse(HttpContext.Current.Request.QueryString["EmployeeId"]);
+
+            switch (Empleadoid)
+            {
+                case 1:
+                    AlertaMensaje(ResourceGUIM10.EmpleadoAgregado, int.Parse(ResourceGUIM10.StatusAgregado));
+                    break;
+               
+                case 2:
+                    AlertaMensaje(ResourceGUIM10.ErrorEmpleado, 0);
+                    break;
+                case 3:
+                    AlertaMensaje(ResourceGUIM10.ErrorBaseDeDatos, 0);
+                    break;
+            }
+        }
+
+
+
+
+
+
+
     }
    
     }

@@ -151,8 +151,11 @@ namespace Tangerine.GUI.M8
         }
 
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
-        {
-            _presentador.anularFactura();
+        {            
+            if (_presentador.anularFactura())
+            {
+                Response.Redirect(ResourceGUIM8.volverAnular);
+            }
             Server.Transfer(ResourceGUIM8.redirectHome);
         }
     }
