@@ -158,8 +158,8 @@ namespace Tangerine_Presentador.M7
         {
             ///Se capturan los datos de la vista para crear un proyecto.
             _costo = Convert.ToDouble(_vista.Costo);
-            _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "dd/MM/yyyy", null);
-            _fechaFin = DateTime.ParseExact(_vista.FechaFin, "dd/MM/yyyy", null);
+            _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "MM/dd/yyyy", null);
+            _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
 
             if (_fechaFin < _fechaIni)
             {
