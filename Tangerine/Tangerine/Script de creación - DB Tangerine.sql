@@ -837,7 +837,7 @@ DECLARE @idLead int;
 DECLARE @llamadas int;
 DECLARE @visitas int;
 DECLARE @tipoRegistro varchar(15);
-
+begin transaction
 SET @tipoRegistro= @tipo;
 
 SET @idLead = (select Count(SE.seg_id)
