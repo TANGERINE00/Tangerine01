@@ -56,7 +56,7 @@ namespace DatosTangerine.DAO.M2
                                             ( ( DominioTangerine.Entidades.M2.UsuarioM2 )theUsuario ).rol.nombre , false );
                     parameters.Add( theParam );
 
-                    //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
+                    //Se manda a ejecutar en BDConexion el stored procedure
                     List<Resultado> results = EjecutarStoredProcedure( ResourceUser.AgregarUsuario , parameters );
 
                 }
