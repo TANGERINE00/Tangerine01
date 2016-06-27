@@ -14,6 +14,7 @@ namespace Tangerine.GUI.M3
     {
         PresentadorAgregarSeguimiento presentador;
         private String opcion;
+        private int idCliente;
 
         /// <summary>
         /// Constructor de la vista
@@ -93,7 +94,7 @@ namespace Tangerine.GUI.M3
         /// <param name="sender"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idClientePotencial = int.Parse(Request.QueryString["idclp"]);
+            this.idCliente = int.Parse(Request.QueryString["idclp"]);
             if (!IsPostBack)
             {
                 presentador.CargarTipoDeSeguimiento();
@@ -119,7 +120,7 @@ namespace Tangerine.GUI.M3
         /// <param name="sender"></param>
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            presentador.Agregar();
+            presentador.Agregar(this.idCliente);
         }
 
     }
