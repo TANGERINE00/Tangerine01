@@ -75,7 +75,7 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw ex; //aqui el error
+                throw ex; 
             }
             catch (Exception ex)
             {
