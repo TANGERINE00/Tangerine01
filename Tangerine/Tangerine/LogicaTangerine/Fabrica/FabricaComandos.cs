@@ -867,7 +867,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<bool> CrearAgregarFactura(Entidad factura)
         {
-            return new ComandoAgregarFactura(factura);
+            Comando<bool> respuesta = new ComandoAgregarFactura(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -877,7 +878,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<bool> CrearAnularFactura(Entidad factura)
         {
-            return new ComandoAnularFactura(factura);
+            Comando<bool> respuesta = new ComandoAnularFactura(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -887,7 +889,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<double> CrearBuscarMontoRestanteFactura(Entidad factura)
         {
-            return new ComandoBuscarMontoRestanteFactura(factura);
+            Comando<double> respuesta = new ComandoBuscarMontoRestanteFactura(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -897,7 +900,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<List<Entidad>> CrearConsultarFacturasCompania(Entidad compania)
         {
-            return new ComandoConsultarFacturasCompania(compania);
+            Comando<List<Entidad>> respuesta = new ComandoConsultarFacturasCompania(compania);
+            return respuesta;
         }
 
         /// <summary>
@@ -907,7 +911,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<List<Entidad>> CrearConsultarFacturasPagadasCompania(Entidad compania)
         {
-            return new ComandoConsultarFacturasPagadasCompania(compania);
+            Comando<List<Entidad>> respuesta = new ComandoConsultarFacturasPagadasCompania(compania);
+            return respuesta;
         }
 
         /// <summary>
@@ -916,7 +921,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<List<Entidad>> CrearConsultarTodosFactura()
         {
-            return new ComandoConsultarTodosFactura();
+            Comando<List<Entidad>> respuesta = new ComandoConsultarTodosFactura();
+            return respuesta;
         }
 
         /// <summary>
@@ -926,7 +932,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<Entidad> CrearConsultarXIdFactura(Entidad factura)
         {
-            return new ComandoConsultarXIdFactura(factura);
+            Comando<Entidad> respuesta = new ComandoConsultarXIdFactura(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -936,7 +943,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<bool> CrearEliminarFactura(Entidad factura)
         {
-            return new ComandoEliminarFactura(factura);
+            Comando<bool> respuesta = new ComandoEliminarFactura(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -946,7 +954,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<bool> CrearModificarFactura(Entidad factura)
         {
-            return new ComandoModificarFactura(factura);
+            Comando<bool> respuesta = new ComandoModificarFactura(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -956,7 +965,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<bool> CrearSearchExistingBill(Entidad factura)
         {
-            return new ComandoSearchExistingBill(factura);
+            Comando<bool> respuesta = new ComandoSearchExistingBill(factura);
+            return respuesta;
         }
 
         /// <summary>
@@ -966,7 +976,8 @@ namespace LogicaTangerine.Fabrica
         /// <returns></returns>
         public static Comando<bool> CrearComandoEnviarCorreoGmail(Entidad correo)
         {
-            return new ComandoEnviarCorreoGmail(correo);
+            Comando<bool> respuesta = new ComandoEnviarCorreoGmail(correo);
+            return respuesta;
         }
 
         #endregion
