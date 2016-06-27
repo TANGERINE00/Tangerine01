@@ -34,7 +34,7 @@
                 <img src="/dist/img/tange.png" class="img-circle user-img img-thumbnail" alt="">
             </div>
             <div class="login-logo">
-                <span style="color:white" ><b>Tangerine</b> SYSTEM </span>  
+                <span style="color:white; text-shadow:0 0 5px #333" ><b>Tangerine</b> SYSTEM </span>  
             </div>
 
             <div class="col-md-4 login-form">
@@ -60,19 +60,19 @@
                     </div>
 
                     <div class="form-group">
-
-                        <button type="button" id="LoginButton" runat="server" name="go" class="btn btn-lg btn-block" onserverclick="Validar_Correo">Aceptar</button>
+                        <button type="button" id="LoginButton" runat="server" name="go" class="btn btn-lg btn-block btn-wiggle" onserverclick="Validar_Correo">Aceptar</button>
+                        <button type="button" id="volverLogin" runat="server" name="go" class="btn btn-lg btn-block btn-wiggle" onserverclick="Validar_Correo">Volver</button>
                     </div>
 
                     <asp:Label ID="mensaje" runat="server" class="login-box-msg" Style="color: #FFFFFF;" />
-                      <asp:RegularExpressionValidator
-                            ID="regexEmailValid"
-                            runat="server"
-                            ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                            ControlToValidate="correo"
-                            ErrorMessage="Formato de correo invalido"
-                            ForeColor="White">
-                        </asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator
+                        ID="regexEmailValid"
+                        runat="server"
+                        ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                        ControlToValidate="correo"
+                        ErrorMessage="Formato de correo invalido"
+                        ForeColor="White">
+                    </asp:RegularExpressionValidator>
                 </form>
             </div>
             <!--login-form-->
@@ -97,6 +97,14 @@
                 radioClass: 'iradio_square-blue',
                 increaseArea: '20%' // optional
             });
+        });
+        var ancho = $('.form-group').width();
+        $('input[type="email"]').css("width", ancho);
+        $('input[type="text"]').css("width", ancho);
+        $(window).resize(function () {
+            var ancho = $('.form-group').width();
+            $('input[type="email"]').css("width", ancho);
+            $('input[type="text"]').css("width", ancho);
         });
     </script>
 </body>
