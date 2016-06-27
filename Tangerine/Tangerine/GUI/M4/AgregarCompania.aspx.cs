@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Windows;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Windows;
 using Tangerine_Contratos.M4;
 using Tangerine_Presentador.M4;
 
@@ -144,6 +145,30 @@ namespace Tangerine.GUI.M4
                error = value;
            }
        }
+
+
+       /// <summary>
+       /// Clase de alerta, para excepciones
+       /// </summary>
+       public string alertaClase
+       {
+           set { alert.Attributes[ResourceGUIM4.alertClase] = value; }
+       }
+
+       /// <summary>
+       /// Atributos de alerta, para excepciones
+       /// </summary>
+       public string alertaRol
+       {
+           set { alert.Attributes[ResourceGUIM4.alertRol] = value; }
+       }
+       /// <summary>
+       /// Alerta cuando hay una excepcion
+       /// </summary>
+       public string alerta
+       {
+           set { alert.InnerHtml = value; }
+       }
         #endregion
 
         /// <summary>
@@ -167,12 +192,11 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnagregar_Click(object sender, EventArgs e)
         {
-            
-            if(Presentador.AgregarCompania())
+
+            if (Presentador.AgregarCompania())
                 Server.Transfer("ConsultarCompania.aspx", true);
             else
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('"+ msjError +"')", true); 
-
+                Presentador.Alerta(msjError);
         }
     }
 }
