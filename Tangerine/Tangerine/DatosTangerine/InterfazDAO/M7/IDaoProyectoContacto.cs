@@ -12,5 +12,6 @@ namespace DatosTangerine.InterfazDAO.M7
 
         List<Entidad> ContactCompany(Entidad contacto);
         List<Entidad> ObtenerListaContactos(Entidad proyecto);
+        Boolean ElimminarContactos(Entidad proyecto);
     }
 }

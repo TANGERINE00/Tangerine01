@@ -16,6 +16,11 @@ namespace DatosTangerine.DAO.M7
     public class DaoProyectoContacto : DAOGeneral, IDaoProyectoContacto
     {
         #region IDAO Proyecto Contacto
+
+        public bool ElimminarContactos(Entidad proyecto)
+        {
+            throw new NotImplementedException();
+        }
  
         public List<Entidad> ContactCompany(Entidad contacto) 
         {

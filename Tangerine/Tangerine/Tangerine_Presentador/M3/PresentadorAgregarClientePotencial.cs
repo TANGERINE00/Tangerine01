@@ -34,9 +34,14 @@ namespace Tangerine_Presentador.M3
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(vista.NombreEtiqueta,
                                                                                               vista.RifEtiqueta, vista.CorreoElectronico,
                                                                                               vista.PresupuestoInversion,1);
-            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(_entidad);
 
-            vista.AccionSobreBd = comando.Ejecutar() ? true : false;
+            /* pedire el comandopara validar el objeto usare un constructor solo con nombre, rif , correo*/
+            Comando<Entidad> comandoVerificar = LogicaTangerine.Fabrica.FabricaComandos.ComandoObtenerClientePorVerificar(_entidad);
+
+            comandoVerificar.Ejecutar();
+            /*Comando<bool> comandoAgregar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(_entidad);
+
+            vista.AccionSobreBd = comandoAgregar.Ejecutar() ? true : false;*/
         }
 
     }

@@ -27,26 +27,31 @@ namespace Tangerine.GUI.M8
             get { return this.textFecha_M8.Value; }
             set { this.textFecha_M8.Value = value; }
         }
+
         public string compania
         {
             get { return this.textCompania_M8.Value; }
             set { this.textCompania_M8.Value = value; }
         }
+
         public string proyecto
         {
             get { return this.textProyecto_M8.Value; }
             set { this.textProyecto_M8.Value = value; }
         }
+
         public string descripcion
         {
             get { return this.textDescripcion_M8.Value; }
             set { this.textDescripcion_M8.Value = value; }
         }
+
         public string monto
         {
             get { return this.textMonto_M8.Value; }
             set { this.textMonto_M8.Value = value; }
         }
+
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
@@ -61,6 +66,16 @@ namespace Tangerine.GUI.M8
         {
             set { alert.InnerHtml = value; }
         }
+
+        DateTime _fechaEmision = DateTime.Now;
+        DateTime _fechaUltimoPago = DateTime.Now;
+        static int _montoTotal = 0;
+        int _montoRestante = 0;
+        string _tipoMoneda = String.Empty;
+        string _Descripcion = String.Empty;
+        int _estatus = 0;
+        static int _proyectoId = 0;
+        static int _companiaId = 0;
         #endregion
 
         #region Constructor
@@ -73,18 +88,14 @@ namespace Tangerine.GUI.M8
 
         #endregion
 
-        DateTime _fechaEmision = DateTime.Now;
-        DateTime _fechaUltimoPago = DateTime.Now;
-        static int _montoTotal = 0;
-        int _montoRestante = 0;
-        string _tipoMoneda = String.Empty;
-        string _Descripcion = String.Empty;
-        int _estatus = 0;
-        static int _proyectoId = 0;
-        static int _companiaId = 0;
-        //Proyecto proyecto = new Proyecto();
-        //Compania compania = new Compania();
-
+        /// <summary>
+        /// Carga la ventana Generar Factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="idC">Id de la compania del proyecto</param>
+        /// <param name="idP">Id del proyecto</param>
+        /// <param name="amount">Monto para hacer la factura</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             this.compania = Request.QueryString[ResourceGUIM8.idC];
@@ -92,11 +103,7 @@ namespace Tangerine.GUI.M8
             this.fecha = DateTime.Now.ToString(ResourceGUIM8.dateTipe);
             this.monto = Request.QueryString[ResourceGUIM8.amount];
             this.
-            _presentador.llenarGenerar();/*
-            compania = logicaCompania.ConsultCompany(_companiaId);
-            textCompania_M8.Value = compania.NombreCompania;
-            proyecto = logicaProyecto.consultarProyecto(_proyectoId);
-            textProyecto_M8.Value = proyecto.Nombre;*/
+            _presentador.llenarGenerar();
         }
 
         /// <summary>
@@ -110,27 +117,6 @@ namespace Tangerine.GUI.M8
             this.proyecto = Request.QueryString[ResourceGUIM8.idP];
             _presentador.GenerarFactura();
             Response.Redirect(ResourceGUIM8.volverModificado);
-            /* if (textDescripcion_M8.Value.Equals(""))
-             {
-                 string script = "<script type=\"text/javascript\">alert('No puede dejar el campo de descripción vacío.');</script>";
-                 ClientScript.RegisterClientScriptBlock(this.GetType(), "Waring", script);
-             }
-             else
-             {*/
-
-            //    _Descripcion = textDescripcion_M8.Value;
-            //    _fechaEmision = DateTime.Parse(textFecha_M8.Value);
-            //    _fechaUltimoPago = DateTime.Parse(textFecha_M8.Value);
-            //    int _companiaId = int.Parse(Request.QueryString["IdCompania"]);
-            //    int _proyectoId = int.Parse(Request.QueryString["IdProyecto"]);
-            //    _tipoMoneda = textTipoMoneda_M8.Value;
-            //    Facturacion factura = new Facturacion(_fechaEmision, _fechaUltimoPago, int.Parse(Request.QueryString["Monto"]), int.Parse(Request.QueryString["Monto"]), _tipoMoneda, _Descripcion, 0, _proyectoId, _companiaId);
-            //    LogicaM8 facturaLogic = new LogicaM8();
-            //    facturaLogic.AddNewFactura(factura);
-            //    Server.Transfer("ConsultarFacturaM8.aspx");
-            ////}
-
-
         }
     }
 }
