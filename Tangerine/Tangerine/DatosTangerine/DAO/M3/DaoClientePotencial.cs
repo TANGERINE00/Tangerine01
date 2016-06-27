@@ -75,6 +75,7 @@ namespace DatosTangerine.DAO.M3
 
             return true;
         }
+        
         public bool Desactivar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -355,7 +356,78 @@ namespace DatosTangerine.DAO.M3
 
             return objetoListaHistorico;
         }
-        
+
+        public bool AgregarSeguimientoDeCliente(Entidad parametro)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            DominioTangerine.Entidades.M3.SeguimientoCliente seguimiento = (DominioTangerine.Entidades.M3.SeguimientoCliente)parametro;
+            List<Parametro> parameters = new List<Parametro>();
+            BDConexion theConnection = new BDConexion();
+            Parametro theParam = new Parametro();
+
+            try
+            {
+                theParam = new Parametro(ResourceClientePotencial.FechaSeguimiento, SqlDbType.DateTime,
+                   seguimiento.FechaHistoria.ToString(), false);
+
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar, seguimiento.TipoHistoria, false);
+
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceClientePotencial.MotivoSeguimiento, SqlDbType.VarChar, seguimiento.MotivoHistoria, false);
+                parameters.Add(theParam);
+
+                theParam = new Parametro(ResourceClientePotencial.ClienteSeguimiento, SqlDbType.Int,
+                    seguimiento.FkCliente.ToString(), false);
+
+                parameters.Add(theParam);
+
+
+                List<Resultado> resultado = EjecutarStoredProcedure(ResourceClientePotencial.SP_NuevoSeguimiento, parameters);
+            }
+
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M3.WrongFormatExceptionLeads(ResourceClientePotencial.Codigo_Error_Formato,
+                    ResourceClientePotencial.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceClientePotencial.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
+        }
         #endregion
 
         #region DAO General

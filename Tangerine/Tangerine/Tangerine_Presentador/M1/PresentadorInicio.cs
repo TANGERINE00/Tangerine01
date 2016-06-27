@@ -120,7 +120,7 @@ namespace Tangerine_Presentador.M1
             }
             catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine e)
             {
-               // _iMaster.mensajeVista = "Error tratando de conectar a Base de Datos";
+               
                 _iMaster.errorLoginAlert = true;
                 _iMaster.errorLoginText = "Error conexion Base de datos";
               

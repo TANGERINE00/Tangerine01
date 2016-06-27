@@ -340,6 +340,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ~/Facturas.
+        /// </summary>
+        internal static string path {
+            get {
+                return ResourceManager.GetString("path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-warning&quot;&gt;Por Pagar&lt;/span&gt;.
         /// </summary>
         internal static string porPagar {

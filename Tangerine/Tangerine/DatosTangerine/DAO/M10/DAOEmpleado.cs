@@ -75,7 +75,7 @@ namespace DatosTangerine.DAO.M10
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw ex; //aqui el error
+                throw ex; 
             }
             catch (Exception ex)
             {
@@ -589,10 +589,12 @@ namespace DatosTangerine.DAO.M10
             {
 
               
-                param = new Parametro("@usuario", SqlDbType.VarChar, ((DominioTangerine.Entidades.M2.UsuarioM2)usuario).nombreUsuario.ToString(),false);
+                param = new Parametro("@usuario", SqlDbType.VarChar, ((DominioTangerine.Entidades.M2.UsuarioM2)usuario)
+                .nombreUsuario.ToString(),false);
                 parameters.Add(param);
 
-                param = new Parametro("@correo", SqlDbType.VarChar,((DominioTangerine.Entidades.M2.UsuarioM2)usuario).contrasena.ToString(),false);
+                param = new Parametro("@correo", SqlDbType.VarChar,((DominioTangerine.Entidades.M2.UsuarioM2)usuario)
+                .contrasena.ToString(),false);
                                   
                 parameters.Add(param);
 
@@ -658,7 +660,8 @@ namespace DatosTangerine.DAO.M10
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceEmpleado.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            DominioTangerine.Entidades.M10.EmpleadoM10 Objeto_Empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)elEmpleado;
+            DominioTangerine.Entidades.M10.EmpleadoM10 Objeto_Empleado = 
+            (DominioTangerine.Entidades.M10.EmpleadoM10)elEmpleado;
             
             List<Parametro> parameters = new List<Parametro>();
             Parametro parametro = new Parametro();
@@ -673,12 +676,14 @@ namespace DatosTangerine.DAO.M10
                 parameters.Add(new Parametro("@sApellido", SqlDbType.VarChar, Objeto_Empleado.Emp_s_apellido, false));
                 parameters.Add(new Parametro("@genero", SqlDbType.VarChar, Objeto_Empleado.Emp_genero, false));
                 parameters.Add(new Parametro("@cedula", SqlDbType.Int, Objeto_Empleado.Emp_cedula.ToString(), false));
-                parameters.Add(new Parametro("@fechaNacimiento", SqlDbType.DateTime, Objeto_Empleado.Emp_fecha_nac.ToString("dd/MM/yyyy"), false));
+                parameters.Add(new Parametro("@fechaNacimiento", SqlDbType.DateTime, Objeto_Empleado.Emp_fecha_nac.
+                ToString("dd/MM/yyyy"), false));
                 parameters.Add(new Parametro("@activo", SqlDbType.VarChar, Objeto_Empleado.Emp_activo, false));
                 parameters.Add(new Parametro("@nivelEstudio", SqlDbType.VarChar, Objeto_Empleado.Emp_nivel_estudio, false));
                 parameters.Add(new Parametro("@correo", SqlDbType.VarChar, Objeto_Empleado.Emp_email, false));
                 parameters.Add(new Parametro("@cargo", SqlDbType.VarChar, Objeto_Empleado.jobs.Nombre, false));
-                parameters.Add(new Parametro("@fechContrato", SqlDbType.DateTime, Objeto_Empleado.jobs.FechaContratacion.ToString("dd/MM/yyyy"), false));
+                parameters.Add(new Parametro("@fechContrato", SqlDbType.DateTime, Objeto_Empleado.jobs.FechaContratacion.
+                ToString("dd/MM/yyyy"), false));
                 parameters.Add(new Parametro("@modalidad", SqlDbType.VarChar, Objeto_Empleado.jobs.Modalidad, false));
                 parameters.Add(new Parametro("@sueldo", SqlDbType.Int, Objeto_Empleado.jobs.Sueldo.ToString(), false));
 

@@ -35,35 +35,48 @@ namespace Tangerine_Presentador.M1
         /// </summary>
         public void CargarDashBoard()
         {
-            List<Entidad> listaFinal = new List<Entidad>();
-         
-
-            if ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolAdministrador)) ||
-                        ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolGerente))))
+            try
             {
-                Comando<List<Entidad>> comando =
-                    LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProyectos();
-                List<Entidad> listaEntidad = comando.Ejecutar();
-                listaFinal = listaEntidad;
-            }
 
 
-            else
-            {
-                if (HttpContext.Current.Session["Rol"] + "" == "Programador")
+                List<Entidad> listaFinal = new List<Entidad>();
+
+
+                if ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolAdministrador)) ||
+                            ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolGerente))))
                 {
-                    Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
-                    ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = 
-                        Int32.Parse(HttpContext.Current.Session["UserID"] + "");
-                    
-
-                    Comando<List<Entidad>> comandoConsultarEmpleados =
+                    Comando<List<Entidad>> comando =
                         LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProyectos();
-                    List<Entidad> listaEntidad = comandoConsultarEmpleados.Ejecutar();
+                    List<Entidad> listaEntidad = comando.Ejecutar();
                     listaFinal = listaEntidad;
                 }
+
+
+                else
+                {
+                    if (HttpContext.Current.Session["Rol"] + "" == "Programador")
+                    {
+                        Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
+                        ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id =
+                            Int32.Parse(HttpContext.Current.Session["UserID"] + "");
+
+
+                        Comando<List<Entidad>> comandoConsultarEmpleados =
+                            LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProyectos();
+                        List<Entidad> listaEntidad = comandoConsultarEmpleados.Ejecutar();
+                        listaFinal = listaEntidad;
+                    }
+                }
+                _vista.VistaForm.Text = LLenarLosProyectos(listaFinal);
             }
-            _vista.VistaForm.Text = LLenarLosProyectos(listaFinal);
+            catch (ExcepcionesTangerine.ExceptionTGConBD)
+            {
+                HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
+            }
+            catch (Exception)
+            {
+                HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
+            }
         }           
 
 

@@ -12,14 +12,8 @@ namespace LogicaTangerine.Comandos.M3
     public class ComandoUltimoIdClientePotencial : Comando<int>
     {
         /// <summary>
-        /// Constructor del comando
+        /// Método que permite ejecutar el comando para consultar el id del ultimo cliente insertado
         /// </summary>
-        /// <param name="parametro">Cliente Potencial a activar</param>
-        public ComandoUltimoIdClientePotencial()
-        {
-            
-        }
-
         public override int Ejecutar()
         {
             try

@@ -44,6 +44,22 @@ namespace Tangerine.GUI.M1
         }
 
 
+        public string alertaClase
+        {
+            set { alerta.Attributes[ResourceGUIM10.alertaC] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alerta.Attributes[ResourceGUIM10.alertaR] = value; }
+        }
+
+        public string alertas
+        {
+            set { alerta.InnerHtml = value; }
+        }
+
+
 
 
         public EmpleadosAdmin()
@@ -57,7 +73,8 @@ namespace Tangerine.GUI.M1
 
             try
             {
-                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]); 
+                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
+                presentador.AlertasCase();
                 presentador.CambiarEstatus(Empleadoid);
                 if (!IsPostBack) 
                 {

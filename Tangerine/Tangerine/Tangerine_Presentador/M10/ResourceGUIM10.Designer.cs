@@ -142,7 +142,7 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alerta&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
         /// </summary>
         internal static string AlertShowSu1 {
             get {
@@ -223,7 +223,7 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &quot;type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:3px; class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonVerEmpCerrar {
             get {
@@ -349,11 +349,29 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error al consultar al empleado, por favor intente de nuevo.
+        ///   Looks up a localized string similar to Error en la base de datos, por favor intente de nuevo..
         /// </summary>
-        internal static string ErrorConsultarEmpleado {
+        internal static string ErrorBaseDeDatos {
             get {
-                return ResourceManager.GetString("ErrorConsultarEmpleado", resourceCulture);
+                return ResourceManager.GetString("ErrorBaseDeDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al eliminar el contacto, por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorEliminarContacto {
+            get {
+                return ResourceManager.GetString("ErrorEliminarContacto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error al consultar empleado, por favor intente de nuevo..
+        /// </summary>
+        internal static string ErrorEmpleado {
+            get {
+                return ResourceManager.GetString("ErrorEmpleado", resourceCulture);
             }
         }
         
@@ -426,6 +444,24 @@ namespace Tangerine_Presentador.M10 {
         internal static string OpenLabel {
             get {
                 return ResourceManager.GetString("OpenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string StatusAgregado {
+            get {
+                return ResourceManager.GetString("StatusAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

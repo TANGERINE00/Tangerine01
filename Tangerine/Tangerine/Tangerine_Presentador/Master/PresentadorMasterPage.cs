@@ -91,12 +91,12 @@ namespace Tangerine_Presentador.Master
             catch (ExcepcionesTangerine.M10.BaseDatosException e)
             {
                 HttpContext.Current.Session.Abandon();
-                HttpContext.Current.Response.Redirect("../M1/Login.aspx");
+                HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
             }
             catch (Exception e)
             {
                 HttpContext.Current.Session.Abandon();
-                HttpContext.Current.Response.Redirect("../M1/Login.aspx");
+                HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
             }
         }
 

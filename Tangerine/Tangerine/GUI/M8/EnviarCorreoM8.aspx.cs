@@ -108,7 +108,7 @@ namespace Tangerine.GUI.M8
         void SaveFile(HttpPostedFile file)
         {
             // Specify the path to save the uploaded file to.
-            string savePath = Server.MapPath("~/Facturas") + System.IO.Path.DirectorySeparatorChar;
+            string savePath = Server.MapPath(ResourceGUIM8.path) + System.IO.Path.DirectorySeparatorChar;
 
             // Get the name of the file to upload.
             string fileName = file.FileName;
