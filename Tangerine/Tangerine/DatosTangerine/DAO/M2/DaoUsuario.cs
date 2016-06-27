@@ -23,7 +23,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método para agregar un usuario
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Es el objeto que se va a agregar a la BD</param>
             /// <returns>Retorna true si se agrega en la BD</returns>
             public bool Agregar( Entidad theUsuario )
             {
@@ -96,7 +96,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método para modificar un usuario
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Es el objeto que se va a modificar en la BD</param>
             /// <returns>Retorna el objeto en la base de datos</returns>
             public bool Modificar( Entidad theUsuario )
             {
@@ -106,7 +106,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método para consultar un usuario por id
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Es el objeto que se va a consultar en la BD</param>
             /// <returns>Retorna la consulta</returns>
             public Entidad ConsultarXId( Entidad theUsuario )
             {
@@ -191,7 +191,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Verificar si el usuario por su ficha
             /// </summary>
-            /// <param name="fichaEmpleado"></param>
+            /// <param name="fichaEmpleado">Es la ficha del empleado que se quiere verificar</param>
             /// <returns>Si existe True, si no, False</returns>
             public bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado )
             {
@@ -247,7 +247,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método usado para verificar si el usuario existe en el sistema
             /// </summary>
-            /// <param name="nombreUsuario"></param>
+            /// <param name="nombreUsuario">Es el nombre de usuario cuya existencia sera verificada</param>
             /// <returns>Retorna una valor booleano indicando la disponibilidad del usuario</returns>
             public bool VerificarExistenciaUsuario( string nombreUsuario )
             {
@@ -304,7 +304,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que retorna el usuario y rol de un empleado
             /// </summary>
-            /// <param name="num_empleado"></param>
+            /// <param name="num_empleado">Es la ficha del empleado para devolver su usuario y rol</param>
             /// <returns>Retorna el usuario de un empleado</returns>
             public Entidad ObtenerUsuarioDeEmpleado( int num_empleado )
             {
@@ -369,7 +369,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Es el objeto del cual que quieren obtener los datos</param>
             /// <returns>Los datos del usuario</returns>
             public Entidad ObtenerDatoUsuario( Entidad theUsuario )
             {
@@ -444,7 +444,7 @@ namespace DatosTangerine.DAO.M2
             /// del usuario y llama al método que ejecuta el Stored Procedure (El objeto usuario debe tener 
             /// agregada la contraseña nueva).
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Es el objeto al cual se le quiere modificar la contraseña</param>
             /// <returns>true se es exitoso y false si es fallido</returns>
             public bool ModificarContraseniaUsuario( Entidad theUsuario )
             {
@@ -607,7 +607,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Borrar usuario por el Id de un usuario
             /// </summary>
-            /// <param name="userID"></param>
+            /// <param name="userID">Es el ID del usuario que se va a borrar de la BD</param>
             /// <returns>Retorna true si es elimanado exitosamente</returns>
             public bool BorrarUsuario( int userID )
             {
@@ -663,8 +663,8 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método para modificar el nombre de usuario de un empleado
             /// </summary>
-            /// <param name="fichaEmpleado"></param>
-            /// <param name="nombreUsuario"></param>
+            /// <param name="fichaEmpleado">Es la ficha del empleado que se va a buscar</param>
+            /// <param name="nombreUsuario">Es el nombre del usuario que se va a modificar</param>
             /// <returns></returns>
             public bool ModificarUsuario( int fichaEmpleado , string nombreUsuario )
             {
