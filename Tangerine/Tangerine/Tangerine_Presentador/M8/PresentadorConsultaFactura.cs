@@ -130,9 +130,12 @@ namespace Tangerine_Presentador.M8
 
                 }
             }
-            catch (Exception ex)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
     }

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/modulo6.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveUrl("~/GUI/M6/js/Requerimiento.js") %>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
      Gestion de Requerimiento
@@ -78,9 +78,10 @@
                     
                        <label for="concepto">Concepto</label>
                         <input type="text" class="form-control" ID="concepto" name="concepto" runat="server" 
-                                pattern="^[A-z ,.()]+$" title="Introduzca un Concepto" required clientidmode="static"
-                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener letras ')" 
-                                oninput="setCustomValidity('')">
+                                pattern="^[A-z ,.()0-9]+$" title="Introduzca un Concepto" required clientidmode="static"
+                                oninvalid="setCustomValidity('Campo obligatorio, solo puede tener letras y numeros')" 
+                                oninput="setCustomValidity('')" onblur="onBlurDeInputs(this.id)">
+
                     </div> 
                 </div>
 

@@ -42,7 +42,7 @@
                             <label>Telefono <a style="color:rgb(255, 0, 0);">*</a></label>
                             <input style="margin-bottom:3%" runat="server" type="text" pattern="^[0-9]{1,50}$" class="form-control" id="telefono" name="telefono" required oninvalid="setCustomValidity('Campo obligatorio, introduzca solo números. Ej: 02129876543. Máximo 50 caracteres')" oninput="setCustomValidity('')">
                             <label>Correo <a style="color:rgb(255, 0, 0);">*</a></label>
-                            <input runat="server" type="text" pattern="[a-zA-Z0-9._-]{1,31}+@+[a-z0-9._-]{1,15}+.+[a-z]{2,4}$" class="form-control" id="correo" name="correo" required oninvalid="setCustomValidity('Campo obligatorio, debe tener un formato de correo. Ej: micorreo@yahoo.com, otrocorreo@gmail.com. Máximo 50 caracteres')" oninput="setCustomValidity('')">
+                            <input runat="server" type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" id="correo" name="correo" required oninvalid="setCustomValidity('Campo obligatorio, debe tener un formato de correo. Ej: micorreo@yahoo.com, otrocorreo@gmail.com. Máximo 50 caracteres')" oninput="setCustomValidity('')">
                         </div>	
                     </div>
                     <div id="Div1" class="box-footer" runat="server">

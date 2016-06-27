@@ -497,7 +497,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Funcion que permite buscar todas las facturas asociadas a una compañia
         /// </summary>
-        /// <param name="idCompania"></param>
+        /// <param name="parametro"></param>
         /// <returns>Retorna la lista con todas las facturas</returns>
         public List<Entidad> ContactFacturasCompania(Entidad parametro)
         {
@@ -578,7 +578,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Funcion que permite buscar todas las facturas pagadas asociadas a una compañia
         /// </summary>
-        /// <param name="idCompania"></param>
+        /// <param name="parametro"></param>
         /// <returns>Retorna la lista con todas las facturas</returns>
         public List<Entidad> ContactFacturasPagadasCompania(Entidad parametro)
         {
@@ -658,7 +658,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Metodo para consultar el monto restante de una factura por id
         /// </summary>
-        /// <param name="idFactura"></param>
+        /// <param name="parametro"></param>
         /// <returns>Devuelve el monto restante de una factura por id</returns>
         public double ContactMontoRestanteFactura(Entidad parametro)
         {
@@ -722,9 +722,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Metodo que permite buscar si ya existe una factura para una fecha, proyecto y compañia dada
         /// </summary>
-        /// <param name="fechaEmision"></param>
-        /// <param name="idProyecto"></param>
-        /// <param name="idCompania"></param>
+        /// <param name="parametro"></param>
         /// <returns>Retorna un valor booleano para saber si ya existe la factura especifica</returns>
         public bool CheckExistingInvoice(Entidad parametro)
         {

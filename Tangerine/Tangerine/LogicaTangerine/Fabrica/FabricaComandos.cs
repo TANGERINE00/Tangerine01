@@ -293,6 +293,11 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoSeguimientoDeVisitas(cliente);
         }
+
+        public static Comando<bool> ObtenerComandoAgregarSeguimiento(Entidad registroSeguimiento)
+        {
+            return new ComandoAgregarSeguimiento(registroSeguimiento);
+        }
         #endregion
 
         #region Modulo 4
