@@ -51,6 +51,10 @@ namespace Tangerine_Presentador.M3
             
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoDeCliente(DateTime.Parse(vista.Fecha),
                 vista.Opcion, vista.Motivo, idCliente);
+
+            Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarSeguimiento(_entidad);
+            comando.Ejecutar();
+            
         }
 
     }
