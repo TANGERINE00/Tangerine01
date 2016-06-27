@@ -88,6 +88,15 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string alertaModificado {
+            get {
+                return ResourceManager.GetString("alertaModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;glyphicon glyphicon-bitcoin&quot;&gt;&lt;/a&gt;.
         /// </summary>
         internal static string bitcoin {
@@ -286,6 +295,33 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El proyecto ha sido agregado.
+        /// </summary>
+        internal static string MsjAgregado {
+            get {
+                return ResourceManager.GetString("MsjAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ha ocurrido un error.
+        /// </summary>
+        internal static string MsjError {
+            get {
+                return ResourceManager.GetString("MsjError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El proyecto ha sido modificado.
+        /// </summary>
+        internal static string MsjModificado {
+            get {
+                return ResourceManager.GetString("MsjModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nombre:.
         /// </summary>
         internal static string NombreProyecto {
@@ -390,6 +426,15 @@ namespace Tangerine_Presentador.M7 {
         internal static string PropuestaAprovada {
             get {
                 return ResourceManager.GetString("PropuestaAprovada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         
