@@ -385,6 +385,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=3.
+        /// </summary>
+        internal static string volverCorreo {
+            get {
+                return ResourceManager.GetString("volverCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ConsultarFacturaM8.aspx?estado=1.
         /// </summary>
         internal static string volverModificado {
