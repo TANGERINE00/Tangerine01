@@ -127,6 +127,7 @@
     <Compile Include="Comandos\M5\ComandoConsultarContactosNoPertenecenAProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoConsultarContactosPorCompania.cs" />
     <Compile Include="Comandos\M5\ComandoConsultarContactosPorProyecto.cs" />
+    <Compile Include="Comandos\M5\ComandoConsultarTodosContactos.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContacto.cs" />
     <Compile Include="Comandos\M5\ComandoEliminarContactoDeProyecto.cs" />
     <Compile Include="Comandos\M5\ComandoModificarContacto.cs" />

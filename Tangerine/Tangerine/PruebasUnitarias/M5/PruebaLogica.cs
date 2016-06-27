@@ -72,6 +72,23 @@ namespace PruebasUnitarias.M5
             _listaContactos = _daoContacto.ConsultarTodos();
             _contadorContactos = _listaContactos.Count;
             Assert.AreEqual( _contadorContactos, 6 );
+
+            ContactoM5 contacto = ( ContactoM5 ) _contacto;
+            bool verificar = false;
+
+            foreach ( Entidad e in _listaContactos )
+            {
+                ContactoM5 c = ( ContactoM5 ) e;
+
+                if( c.Nombre.Equals( contacto.Nombre ) && c.Apellido.Equals( contacto.Apellido ) 
+                    && c.Telefono.Equals( contacto.Telefono ) && c.Correo.Equals( contacto.Correo ) 
+                    && c.Departamento.Equals( contacto.Departamento ) && c.Cargo.Equals( contacto.Cargo )
+                    && c.TipoCompañia.Equals( contacto.TipoCompañia ) && c.IdCompañia.Equals( contacto.IdCompañia ) )
+                {
+                    verificar = true;
+                }
+            }
+            Assert.IsTrue( verificar );
         }
 
         /// <summary>
