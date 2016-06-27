@@ -57,7 +57,7 @@ namespace Tangerine_Presentador.M8
 
                 vista.compania = compania.NombreCompania;
                 vista.proyecto = proyecto.Nombre;
-                vista.fecha = this.vista.fecha;
+                vista.fecha = DateTime.Now.ToString(RecursoPresentadorM8.dateTipe);
                 vista.monto = this.vista.monto;
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)

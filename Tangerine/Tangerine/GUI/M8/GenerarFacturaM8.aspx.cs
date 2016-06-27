@@ -99,10 +99,8 @@ namespace Tangerine.GUI.M8
         protected void Page_Load(object sender, EventArgs e)
         {
             this.compania = Request.QueryString[ResourceGUIM8.idC];
-            this.proyecto = Request.QueryString[ResourceGUIM8.idP];
-            this.fecha = DateTime.Now.ToString(ResourceGUIM8.dateTipe);
+            this.proyecto = Request.QueryString[ResourceGUIM8.idP];            
             this.monto = Request.QueryString[ResourceGUIM8.amount];
-            this.
             _presentador.llenarGenerar();
         }
 
