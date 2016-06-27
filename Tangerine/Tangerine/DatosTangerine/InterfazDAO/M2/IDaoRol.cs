@@ -11,9 +11,9 @@ namespace DatosTangerine.InterfazDAO.M2
     public interface IDAORol : IDao
     {
         /// <summary>
-        /// Método para modificar el rol del usuario
+        /// Metodo para modificar el rol del usuario
         /// </summary>
-        /// <param name="rol"></param>
+        /// <param name="usuario"></param>
         /// <returns>Retorna true cuando el rol del usuario se modifico exitosamente</returns>
         bool ModificarRolUsuario( Entidad usuario );
 

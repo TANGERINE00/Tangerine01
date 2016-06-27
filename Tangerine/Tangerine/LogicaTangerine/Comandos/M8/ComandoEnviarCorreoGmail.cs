@@ -58,10 +58,8 @@ namespace LogicaTangerine.Comandos.M8
                 mnsj.From = new MailAddress(ResourceLogicaM8.systemmail, ResourceLogicaM8.SysName);
                 mnsj.Body = _datosCorreo.mensjae;
                 /* Si deseamos Adjuntar algún archivo*/
-                //if (_datosCorreo.adjunto != null)
-                //    mnsj.Attachments.Add(new Attachment(_datosCorreo.adjunto));
-                //A M1 LOGIN, LE FALLA EN ESTA LINEA, EL ERROR DICE POR ALGO DEL FILENAME, ASUMIMOS QUE ENTRA EN EL IF 
-                // Y LUEGO DA EL ERROR TRATANDO DE BUSCAR EL ARCHIVO.
+                if (_datosCorreo.adjunto != String.Empty)
+                    mnsj.Attachments.Add(new Attachment(_datosCorreo.adjunto));
 
                 string[] mailArray = _datosCorreo.destinatario.Split(',');
                 List<string> mailsList = new List<string>(mailArray.Length);
@@ -72,9 +70,8 @@ namespace LogicaTangerine.Comandos.M8
                 {
                     IsValid(value);
                     mnsj.To.Add(value);
-                    cr.mandarCorreo(mnsj);
                 }
-               
+                cr.mandarCorreo(mnsj);
 
                 return true;
             }

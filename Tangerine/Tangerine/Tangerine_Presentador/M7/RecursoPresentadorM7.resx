@@ -234,4 +234,19 @@
   <data name="euro" xml:space="preserve">
     <value>&lt;a class="glyphicon glyphicon-euro"&gt;&lt;/a&gt;</value>
   </data>
+  <data name="alertaModificado" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="MsjAgregado" xml:space="preserve">
+    <value>El proyecto ha sido agregado</value>
+  </data>
+  <data name="MsjError" xml:space="preserve">
+    <value>Ha ocurrido un error</value>
+  </data>
+  <data name="MsjModificado" xml:space="preserve">
+    <value>El proyecto ha sido modificado</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
 </root>

@@ -313,7 +313,7 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;th style=&quot;text-align: center;&quot;&gt;&lt;a class=&quot;btn btn-primary glyphicon glyphicon-check&quot; type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;CargarPago1.aspx?id=.
+        ///   Looks up a localized string similar to &lt;th title=&quot;Registrar Pago&quot; style=&quot;text-align: center;&quot;&gt;&lt;a class=&quot;btn btn-primary glyphicon glyphicon-check&quot; type=&quot;submit&quot; runat=&quot;server&quot; href=&quot;CargarPago1.aspx?id=.
         /// </summary>
         internal static string botonPagarAbrir {
             get {

@@ -199,10 +199,17 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnmodificar_Click(object sender, EventArgs e)
         {
-            if (Presentador.ModificarCompania(int.Parse(Request.QueryString["idComp"])))
-                Server.Transfer("ConsultarCompania.aspx", true);
-            else
-                Presentador.Alerta(msjError);
+            try
+            {
+                if (Presentador.ModificarCompania(int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idComp"], false))))
+                    Server.Transfer("ConsultarCompania.aspx", true);
+                else
+                    Presentador.Alerta(msjError);
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("../M1/DashBoard.aspx");
+            }
         }
 
         /// <summary>
