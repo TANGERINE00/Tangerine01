@@ -21,6 +21,9 @@ namespace LogicaTangerine.Comandos.M3
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Metodo que permite la ejecución del comando para consultar las llamadas a un cliente potencial
+        /// </summary>
         public override List<Entidad> Ejecutar()
         {
             try

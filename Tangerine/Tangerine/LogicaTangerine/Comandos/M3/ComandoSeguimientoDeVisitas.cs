@@ -20,6 +20,10 @@ namespace LogicaTangerine.Comandos.M3
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Método que permite la 
+        /// </summary>
+        /// <param name="contacto"></param>
         public override List<Entidad> Ejecutar()
         {
             try
