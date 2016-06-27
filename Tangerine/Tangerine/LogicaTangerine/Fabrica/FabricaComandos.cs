@@ -345,6 +345,15 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoAgregarSeguimiento(registroSeguimiento);
         }
+
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoBuscarExistenciaDeCliente
+        /// </summary>
+        /// <param name="cliente"></param>
+        public static Comando<Entidad> ComandoObtenerClientePorVerificar(Entidad cliente)
+        {
+            return new ComandoBuscarExistenciaDeCliente(cliente);
+        }
         #endregion
 
         #region Modulo 4
