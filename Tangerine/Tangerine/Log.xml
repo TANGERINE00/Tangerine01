@@ -27637,3 +27637,583 @@ Error Number:-1,State:0,Class:20
 2016-06-26 12:57:13,089 INFO  DAORol - Clase: DAORol
 2016-06-26 12:57:13,089 INFO  DAORol - Mensaje: Salida del Método
 2016-06-26 12:57:13,089 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:28:58,039 INFO  DaoCompania - *******************************************************
+2016-06-26 18:28:58,049 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:28:58,049 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:28:58,049 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:29:13,321 ERROR DaoCompania - *******************************************************
+2016-06-26 18:29:13,321 ERROR DaoCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-26 18:29:13,357 ERROR DaoCompania - Origen: DatosTangerine
+2016-06-26 18:29:13,358 ERROR DaoCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-26 18:29:13,358 ERROR DaoCompania - StackTrace:    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M4.DaoCompania.ConsultarTodos() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M4\DaoCompania.cs:línea 536
+2016-06-26 18:29:13,358 ERROR DaoCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2016-06-26 18:31:05,423 INFO  DaoCompania - *******************************************************
+2016-06-26 18:31:05,429 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:31:05,429 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:31:05,429 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:31:22,677 ERROR DaoCompania - *******************************************************
+2016-06-26 18:31:22,677 ERROR DaoCompania - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-26 18:31:22,679 ERROR DaoCompania - Origen: DatosTangerine
+2016-06-26 18:31:22,679 ERROR DaoCompania - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-26 18:31:22,679 ERROR DaoCompania - StackTrace:    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M4.DaoCompania.ConsultarTodos() en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\M4\DaoCompania.cs:línea 536
+2016-06-26 18:31:22,680 ERROR DaoCompania - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Named Pipes Provider, error: 40 - No se pudo abrir una conexión con SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): El sistema no puede encontrar el archivo especificado
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2016-06-26 18:41:46,975 INFO  DaoCompania - *******************************************************
+2016-06-26 18:41:46,982 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:41:46,982 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:41:46,982 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:42:12,197 INFO  DAORol - *******************************************************
+2016-06-26 18:42:12,197 INFO  DAORol - Clase: DAORol
+2016-06-26 18:42:12,197 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:42:12,197 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:42:12,200 INFO  DAOUsuario - *******************************************************
+2016-06-26 18:42:12,200 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-26 18:42:12,200 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-26 18:42:12,200 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-26 18:42:12,455 INFO  DAORol - *******************************************************
+2016-06-26 18:42:12,455 INFO  DAORol - Clase: DAORol
+2016-06-26 18:42:12,455 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:42:12,455 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:42:12,481 INFO  DAORol - *******************************************************
+2016-06-26 18:42:12,481 INFO  DAORol - Clase: DAORol
+2016-06-26 18:42:12,481 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:42:12,482 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:02,416 INFO  DaoCompania - *******************************************************
+2016-06-26 18:43:02,417 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:43:02,417 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:43:02,417 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:43:02,473 INFO  DAORol - *******************************************************
+2016-06-26 18:43:02,473 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:02,473 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:02,473 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:02,494 INFO  DAORol - *******************************************************
+2016-06-26 18:43:02,495 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:02,495 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:02,495 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:06,166 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 18:43:06,166 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 18:43:06,166 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 18:43:06,166 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 18:43:06,169 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:06,169 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:06,169 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 18:43:06,169 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:06,247 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:06,247 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:06,247 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:06,247 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:06,249 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:06,249 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:06,249 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:06,249 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:06,285 INFO  DAORol - *******************************************************
+2016-06-26 18:43:06,285 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:06,285 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:06,285 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:06,320 INFO  DAORol - *******************************************************
+2016-06-26 18:43:06,321 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:06,321 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:06,321 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:12,244 INFO  DaoCompania - *******************************************************
+2016-06-26 18:43:12,244 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:43:12,244 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:43:12,244 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:43:12,285 INFO  DAORol - *******************************************************
+2016-06-26 18:43:12,285 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:12,285 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:12,285 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:12,311 INFO  DAORol - *******************************************************
+2016-06-26 18:43:12,311 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:12,311 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:12,311 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:14,249 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 18:43:14,249 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 18:43:14,249 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 18:43:14,249 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 18:43:14,251 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:14,251 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:14,251 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 18:43:14,251 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:14,266 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:14,267 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:14,267 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:14,267 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:14,269 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:14,269 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:14,269 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:14,269 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:14,295 INFO  DAORol - *******************************************************
+2016-06-26 18:43:14,295 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:14,295 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:14,295 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:14,325 INFO  DAORol - *******************************************************
+2016-06-26 18:43:14,325 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:14,325 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:14,325 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:16,534 INFO  DaoCompania - *******************************************************
+2016-06-26 18:43:16,534 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:43:16,534 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:43:16,534 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:43:16,584 INFO  DAORol - *******************************************************
+2016-06-26 18:43:16,584 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:16,584 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:16,584 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:16,609 INFO  DAORol - *******************************************************
+2016-06-26 18:43:16,609 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:16,609 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:16,609 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:17,787 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 18:43:17,787 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 18:43:17,787 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 18:43:17,787 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 18:43:17,788 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:17,788 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:17,788 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 18:43:17,789 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:17,820 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:17,821 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:17,821 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:17,821 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:17,822 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:17,822 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:17,822 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:17,822 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:17,911 INFO  DAORol - *******************************************************
+2016-06-26 18:43:17,911 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:17,911 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:17,911 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:17,948 INFO  DAORol - *******************************************************
+2016-06-26 18:43:17,948 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:17,948 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:17,948 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:19,583 INFO  DaoCompania - *******************************************************
+2016-06-26 18:43:19,584 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:43:19,584 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:43:19,584 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:43:19,698 INFO  DAORol - *******************************************************
+2016-06-26 18:43:19,699 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:19,699 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:19,699 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:19,731 INFO  DAORol - *******************************************************
+2016-06-26 18:43:19,731 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:19,731 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:19,731 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:21,239 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 18:43:21,239 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 18:43:21,239 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 18:43:21,239 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 18:43:21,239 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:21,239 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:21,239 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 18:43:21,239 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:21,278 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:21,279 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:21,279 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:21,279 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:21,280 INFO  DAOPago - *******************************************************
+2016-06-26 18:43:21,281 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:43:21,281 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:43:21,281 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:43:21,315 INFO  DAORol - *******************************************************
+2016-06-26 18:43:21,315 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:21,315 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:21,315 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:21,362 INFO  DAORol - *******************************************************
+2016-06-26 18:43:21,362 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:21,362 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:21,362 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:23,573 INFO  DaoCompania - *******************************************************
+2016-06-26 18:43:23,573 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:43:23,573 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:43:23,573 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:43:23,700 INFO  DAORol - *******************************************************
+2016-06-26 18:43:23,700 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:23,700 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:23,700 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:43:23,777 INFO  DAORol - *******************************************************
+2016-06-26 18:43:23,777 INFO  DAORol - Clase: DAORol
+2016-06-26 18:43:23,777 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:43:23,777 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:42,473 INFO  ComandoConsultarFacturasCompania - *******************************************************
+2016-06-26 18:44:42,474 INFO  ComandoConsultarFacturasCompania - Clase: ComandoConsultarFacturasCompania
+2016-06-26 18:44:42,474 INFO  ComandoConsultarFacturasCompania - Mensaje: Entrada en el Método
+2016-06-26 18:44:42,474 INFO  ComandoConsultarFacturasCompania - Metodo: Ejecutar
+2016-06-26 18:44:42,619 INFO  DAOFactura - *******************************************************
+2016-06-26 18:44:42,619 INFO  DAOFactura - Clase: DAOFactura
+2016-06-26 18:44:42,619 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-26 18:44:42,620 INFO  DAOFactura - Metodo: ContactFacturasCompania
+2016-06-26 18:44:42,665 INFO  DAORol - *******************************************************
+2016-06-26 18:44:42,665 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:42,665 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:42,665 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:42,691 INFO  DAORol - *******************************************************
+2016-06-26 18:44:42,691 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:42,691 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:42,691 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:44,442 INFO  DaoCompania - *******************************************************
+2016-06-26 18:44:44,442 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:44:44,442 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:44:44,442 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:44:44,559 INFO  DAORol - *******************************************************
+2016-06-26 18:44:44,559 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:44,559 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:44,559 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:44,715 INFO  DAORol - *******************************************************
+2016-06-26 18:44:44,715 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:44,715 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:44,715 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:46,083 INFO  ComandoConsultarFacturasCompania - *******************************************************
+2016-06-26 18:44:46,083 INFO  ComandoConsultarFacturasCompania - Clase: ComandoConsultarFacturasCompania
+2016-06-26 18:44:46,083 INFO  ComandoConsultarFacturasCompania - Mensaje: Entrada en el Método
+2016-06-26 18:44:46,083 INFO  ComandoConsultarFacturasCompania - Metodo: Ejecutar
+2016-06-26 18:44:46,137 INFO  DAOFactura - *******************************************************
+2016-06-26 18:44:46,137 INFO  DAOFactura - Clase: DAOFactura
+2016-06-26 18:44:46,137 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-26 18:44:46,137 INFO  DAOFactura - Metodo: ContactFacturasCompania
+2016-06-26 18:44:46,232 INFO  DAORol - *******************************************************
+2016-06-26 18:44:46,232 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:46,232 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:46,232 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:46,267 INFO  DAORol - *******************************************************
+2016-06-26 18:44:46,268 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:46,268 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:46,268 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:51,356 INFO  DaoCompania - *******************************************************
+2016-06-26 18:44:51,356 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:44:51,357 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:44:51,357 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:44:51,403 INFO  DAORol - *******************************************************
+2016-06-26 18:44:51,403 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:51,404 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:51,404 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:44:51,437 INFO  DAORol - *******************************************************
+2016-06-26 18:44:51,437 INFO  DAORol - Clase: DAORol
+2016-06-26 18:44:51,437 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:44:51,437 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:45:02,319 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 18:45:02,319 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 18:45:02,319 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 18:45:02,319 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 18:45:02,324 INFO  DAOPago - *******************************************************
+2016-06-26 18:45:02,324 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:45:02,324 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 18:45:02,324 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:45:02,336 INFO  DAOPago - *******************************************************
+2016-06-26 18:45:02,336 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:45:02,336 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:45:02,336 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:45:02,337 INFO  DAOPago - *******************************************************
+2016-06-26 18:45:02,337 INFO  DAOPago - Clase: DAOPago
+2016-06-26 18:45:02,337 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 18:45:02,337 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 18:45:02,374 INFO  DAORol - *******************************************************
+2016-06-26 18:45:02,374 INFO  DAORol - Clase: DAORol
+2016-06-26 18:45:02,374 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:45:02,374 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:45:02,404 INFO  DAORol - *******************************************************
+2016-06-26 18:45:02,404 INFO  DAORol - Clase: DAORol
+2016-06-26 18:45:02,404 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:45:02,404 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:45:05,495 INFO  DaoCompania - *******************************************************
+2016-06-26 18:45:05,495 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 18:45:05,495 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 18:45:05,495 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 18:45:05,529 INFO  DAORol - *******************************************************
+2016-06-26 18:45:05,529 INFO  DAORol - Clase: DAORol
+2016-06-26 18:45:05,529 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:45:05,529 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 18:45:05,561 INFO  DAORol - *******************************************************
+2016-06-26 18:45:05,561 INFO  DAORol - Clase: DAORol
+2016-06-26 18:45:05,561 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 18:45:05,561 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:04:47,155 INFO  DaoCompania - *******************************************************
+2016-06-26 19:04:47,163 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:04:47,163 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:04:47,163 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:05:10,784 INFO  DAORol - *******************************************************
+2016-06-26 19:05:10,785 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:10,785 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:10,785 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:10,786 INFO  DAOUsuario - *******************************************************
+2016-06-26 19:05:10,786 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-26 19:05:10,786 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-26 19:05:10,786 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-26 19:05:11,044 INFO  DAORol - *******************************************************
+2016-06-26 19:05:11,044 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:11,044 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:11,044 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:11,085 INFO  DAORol - *******************************************************
+2016-06-26 19:05:11,085 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:11,085 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:11,085 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:17,369 INFO  DaoCompania - *******************************************************
+2016-06-26 19:05:17,369 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:05:17,369 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:05:17,369 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:05:17,411 INFO  DAORol - *******************************************************
+2016-06-26 19:05:17,411 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:17,411 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:17,411 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:17,455 INFO  DAORol - *******************************************************
+2016-06-26 19:05:17,455 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:17,455 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:17,455 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:19,563 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 19:05:19,563 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 19:05:19,563 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 19:05:19,563 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 19:05:19,569 INFO  DAOPago - *******************************************************
+2016-06-26 19:05:19,569 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:05:19,569 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 19:05:19,569 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:05:19,612 INFO  DAOPago - *******************************************************
+2016-06-26 19:05:19,612 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:05:19,612 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:05:19,612 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:05:19,614 INFO  DAOPago - *******************************************************
+2016-06-26 19:05:19,614 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:05:19,614 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:05:19,614 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:05:19,649 INFO  DAORol - *******************************************************
+2016-06-26 19:05:19,649 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:19,649 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:19,649 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:19,681 INFO  DAORol - *******************************************************
+2016-06-26 19:05:19,681 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:19,681 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:19,681 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:22,430 INFO  DaoCompania - *******************************************************
+2016-06-26 19:05:22,430 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:05:22,430 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:05:22,430 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:05:22,465 INFO  DAORol - *******************************************************
+2016-06-26 19:05:22,465 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:22,465 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:22,465 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:05:22,489 INFO  DAORol - *******************************************************
+2016-06-26 19:05:22,489 INFO  DAORol - Clase: DAORol
+2016-06-26 19:05:22,489 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:05:22,489 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:26:16,580 INFO  DaoCompania - *******************************************************
+2016-06-26 19:26:16,586 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:26:16,586 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:26:16,586 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:28:46,321 INFO  DAORol - *******************************************************
+2016-06-26 19:28:46,321 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:46,321 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:46,321 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:46,323 INFO  DAOUsuario - *******************************************************
+2016-06-26 19:28:46,323 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-26 19:28:46,323 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-26 19:28:46,323 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-26 19:28:46,581 INFO  DAORol - *******************************************************
+2016-06-26 19:28:46,581 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:46,581 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:46,581 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:46,614 INFO  DAORol - *******************************************************
+2016-06-26 19:28:46,615 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:46,615 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:46,615 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:54,935 INFO  DaoCompania - *******************************************************
+2016-06-26 19:28:54,936 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:28:54,936 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:28:54,936 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:28:54,969 INFO  DAORol - *******************************************************
+2016-06-26 19:28:54,969 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:54,969 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:54,969 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:54,989 INFO  DAORol - *******************************************************
+2016-06-26 19:28:54,989 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:54,989 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:54,990 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:57,444 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 19:28:57,444 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 19:28:57,444 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 19:28:57,444 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 19:28:57,448 INFO  DAOPago - *******************************************************
+2016-06-26 19:28:57,448 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:28:57,448 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 19:28:57,448 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:28:57,477 INFO  DAOPago - *******************************************************
+2016-06-26 19:28:57,477 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:28:57,477 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:28:57,477 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:28:57,478 INFO  DAOPago - *******************************************************
+2016-06-26 19:28:57,478 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:28:57,478 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:28:57,479 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:28:57,512 INFO  DAORol - *******************************************************
+2016-06-26 19:28:57,512 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:57,512 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:57,512 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:57,538 INFO  DAORol - *******************************************************
+2016-06-26 19:28:57,538 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:57,538 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:57,538 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:59,785 INFO  DaoCompania - *******************************************************
+2016-06-26 19:28:59,785 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:28:59,785 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:28:59,785 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:28:59,821 INFO  DAORol - *******************************************************
+2016-06-26 19:28:59,821 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:59,821 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:59,821 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:28:59,841 INFO  DAORol - *******************************************************
+2016-06-26 19:28:59,841 INFO  DAORol - Clase: DAORol
+2016-06-26 19:28:59,841 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:28:59,841 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:01,285 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 19:29:01,285 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 19:29:01,285 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 19:29:01,285 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 19:29:01,287 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:01,287 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:01,287 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 19:29:01,287 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:01,301 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:01,302 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:01,302 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:29:01,302 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:01,303 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:01,303 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:01,303 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:29:01,303 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:01,340 INFO  DAORol - *******************************************************
+2016-06-26 19:29:01,340 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:01,340 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:01,340 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:01,369 INFO  DAORol - *******************************************************
+2016-06-26 19:29:01,369 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:01,369 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:01,369 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:03,647 INFO  DaoCompania - *******************************************************
+2016-06-26 19:29:03,647 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:29:03,647 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:29:03,647 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:29:03,687 INFO  DAORol - *******************************************************
+2016-06-26 19:29:03,687 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:03,687 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:03,687 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:03,717 INFO  DAORol - *******************************************************
+2016-06-26 19:29:03,717 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:03,717 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:03,717 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:04,835 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 19:29:04,835 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 19:29:04,835 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 19:29:04,835 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 19:29:04,838 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:04,838 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:04,838 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 19:29:04,838 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:04,853 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:04,853 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:04,853 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:29:04,853 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:04,855 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:04,855 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:04,855 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:29:04,855 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:04,891 INFO  DAORol - *******************************************************
+2016-06-26 19:29:04,891 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:04,891 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:04,891 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:04,930 INFO  DAORol - *******************************************************
+2016-06-26 19:29:04,930 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:04,930 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:04,930 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:07,044 INFO  DaoCompania - *******************************************************
+2016-06-26 19:29:07,044 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 19:29:07,044 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 19:29:07,044 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-26 19:29:07,084 INFO  DAORol - *******************************************************
+2016-06-26 19:29:07,084 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:07,084 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:07,084 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:07,110 INFO  DAORol - *******************************************************
+2016-06-26 19:29:07,110 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:07,110 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:07,110 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:08,271 INFO  ComandoConsultarPagos - *******************************************************
+2016-06-26 19:29:08,271 INFO  ComandoConsultarPagos - Clase: ComandoConsultarPagos
+2016-06-26 19:29:08,271 INFO  ComandoConsultarPagos - Mensaje: Entrada en el Método
+2016-06-26 19:29:08,271 INFO  ComandoConsultarPagos - Metodo: Ejecutar
+2016-06-26 19:29:08,274 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:08,274 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:08,274 INFO  DAOPago - Mensaje: Entrada en el Método
+2016-06-26 19:29:08,274 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:08,292 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:08,292 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:08,292 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:29:08,292 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:08,293 INFO  DAOPago - *******************************************************
+2016-06-26 19:29:08,293 INFO  DAOPago - Clase: DAOPago
+2016-06-26 19:29:08,293 INFO  DAOPago - Mensaje: Salida exitosa del Método
+2016-06-26 19:29:08,293 INFO  DAOPago - Metodo: ConsultarPagosCompania
+2016-06-26 19:29:08,324 INFO  DAORol - *******************************************************
+2016-06-26 19:29:08,324 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:08,324 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:08,324 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:29:08,348 INFO  DAORol - *******************************************************
+2016-06-26 19:29:08,348 INFO  DAORol - Clase: DAORol
+2016-06-26 19:29:08,348 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:29:08,348 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:34:52,504 INFO  ComandoConsultarFacturasCompania - *******************************************************
+2016-06-26 19:34:52,504 INFO  ComandoConsultarFacturasCompania - Clase: ComandoConsultarFacturasCompania
+2016-06-26 19:34:52,504 INFO  ComandoConsultarFacturasCompania - Mensaje: Entrada en el Método
+2016-06-26 19:34:52,504 INFO  ComandoConsultarFacturasCompania - Metodo: Ejecutar
+2016-06-26 19:34:52,582 INFO  DAOFactura - *******************************************************
+2016-06-26 19:34:52,582 INFO  DAOFactura - Clase: DAOFactura
+2016-06-26 19:34:52,582 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-26 19:34:52,582 INFO  DAOFactura - Metodo: ContactFacturasCompania
+2016-06-26 19:34:52,626 INFO  DAORol - *******************************************************
+2016-06-26 19:34:52,626 INFO  DAORol - Clase: DAORol
+2016-06-26 19:34:52,626 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:34:52,626 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 19:34:52,663 INFO  DAORol - *******************************************************
+2016-06-26 19:34:52,663 INFO  DAORol - Clase: DAORol
+2016-06-26 19:34:52,663 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 19:34:52,663 INFO  DAORol - Metodo: ObtenerRolUsuario
