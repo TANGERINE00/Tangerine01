@@ -63,7 +63,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método para modificar el rol del usuario
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="theUsuario"></param>
             /// <returns>Retorna true cuando el rol del usuario se modifico exitosamente</returns>
             public bool ModificarRolUsuario( Entidad theUsuario )
             {
