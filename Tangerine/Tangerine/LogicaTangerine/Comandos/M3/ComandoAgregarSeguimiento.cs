@@ -11,15 +11,29 @@ namespace LogicaTangerine.Comandos.M3
 {
     public class ComandoAgregarSeguimiento:Comando<bool>
     {
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="contacto"></param>
         public ComandoAgregarSeguimiento(Entidad parametro)
         {
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Método que ejecuta el comando para agregar un seguimiento
+        /// </summary>
         public override bool Ejecutar()
         {
-            Console.WriteLine("Invoco el DAO");
-            return true;
+            try
+            {
+                IDAOClientePotencial daoClientePotencial = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+                return daoClientePotencial.AgregarSeguimiento(this.LaEntidad);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

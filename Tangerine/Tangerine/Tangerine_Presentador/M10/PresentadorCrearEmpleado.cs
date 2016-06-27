@@ -23,10 +23,13 @@ namespace Tangerine_Presentador.M10
 
         private List<DominioTangerine.Entidades.M10.LugarDireccion> NuevaDireccion()
         {
-            List<DominioTangerine.Entidades.M10.LugarDireccion> direccion = new List<DominioTangerine.Entidades.M10.LugarDireccion>();
+            List<DominioTangerine.Entidades.M10.LugarDireccion> direccion = new List<DominioTangerine.Entidades.M10.
+            LugarDireccion>();
 
-            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboPais.SelectedItem.Text.ToString(), "Pais"));
-            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboEstado.SelectedItem.Text.ToString(), "Estado"));
+            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboPais.SelectedItem.Text.
+            ToString(), "Pais"));
+            direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.IcomboEstado.SelectedItem.Text.
+            ToString(), "Estado"));
             direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.ItextCityAddress, "Ciudad"));
             direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion(Vista.ItextAddresEspecific, "Direccion"));
 
@@ -45,7 +48,7 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboGenero.Items.Insert(0, "Seleccione un Genero");
             Vista.IcomboGenero.Items.Insert(1, "Femenino");
             Vista.IcomboGenero.Items.Insert(2, "Masculino");
-            //Vista.IcomboEstado.Items.Insert(0, "Seleccione Estado");
+            
         }
 
         /// <summary>
@@ -171,21 +174,23 @@ namespace Tangerine_Presentador.M10
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_nombre = Vista.ItextSecondNamee;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_p_apellido = Vista.ItextFirstLastName;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_s_apellido = Vista.ItextSecondLastName;
-                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_genero = Vista.IcomboGenero.SelectedItem.Text.ToString();
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_genero = Vista.IcomboGenero.SelectedItem.
+                Text.ToString();
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_cedula = int.Parse(Vista.ItextCedula);
-                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac = DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_fecha_nac = DateTime.ParseExact
+                (Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture);
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_activo = active;
-                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_nivel_estudio = Vista.IcomboNivelEstudio.SelectedItem.Text.ToString();
+                ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_nivel_estudio = Vista.IcomboNivelEstudio.
+                SelectedItem.Text.ToString();
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson;
-                //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
-                //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion = NuevaDireccion();
 
 
-            //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto Propuesta 'p'.
-            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado(Parametro);
+            //Creación y Ejecución del Objeto Comando de Agregar Empleado.
+            LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado
+            (Parametro);
             Confirmacion = comando.Ejecutar();
 
             HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=1");
