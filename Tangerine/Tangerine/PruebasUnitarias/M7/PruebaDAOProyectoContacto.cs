@@ -18,15 +18,12 @@ namespace PruebasUnitarias.M7
         public Entidad _theProject, _checkTheProject, _checkTheProject2, _laPropuesta;
         private List<Entidad> _empleados;
         private List<Entidad> _contactos;
-        private List<Entidad> _proyectos;
         public bool _answer;
         public DateTime _fechaInicio;
         public DateTime _fechaFin;
         DatosTangerine.InterfazDAO.M7.IDaoProyecto _daoProyecto;
         DatosTangerine.InterfazDAO.M7.IDaoProyectoContacto _daoProyectoContacto;
         DatosTangerine.InterfazDAO.M5.IDAOContacto _daoContacto;
-        int _contador;
-        int _cantidad;
         int _ultimoId;
         #endregion
 
@@ -53,8 +50,6 @@ namespace PruebasUnitarias.M7
                 _empleados.Add(a);
 
             }
-
-            //((DominioTangerine.Entidades.M7.Proyecto)_theProject).set_empleados(_empleados);
 
             for (int i = 4; i <= 5; i++)
             {

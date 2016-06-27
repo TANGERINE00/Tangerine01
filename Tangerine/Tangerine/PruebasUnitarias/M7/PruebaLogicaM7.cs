@@ -1,5 +1,6 @@
 ﻿using DominioTangerine;
 using DominioTangerine.Fabrica;
+using ExcepcionesTangerine.M7;
 using LogicaTangerine;
 using LogicaTangerine.Fabrica;
 using NUnit.Framework;
@@ -16,18 +17,20 @@ namespace PruebasUnitarias.M7
     {
 
         #region Atributos
-        private Entidad _theProject, _checkTheProject, _checkTheProject2, _laPropuesta;
-        private List<Entidad> _listaEntidad;
+        private Entidad _theProject, _checkTheProject, _laPropuesta;
+        private List<Entidad> _listaEntidad, _empleados, _contactos;
         private bool _answer;
         private DateTime _fechaInicio;
         private DateTime _fechaFin;
         private DatosTangerine.InterfazDAO.M7.IDaoProyecto _daoProyecto;
+        DatosTangerine.InterfazDAO.M5.IDAOContacto _daoContacto;
         private int _contador;
         private int _cantidad;
         private int _ultimoId;
         private Comando<Entidad> _comandoEntidad;
         private Comando<bool> _comandoBool;
         private Comando<String> _comandoString;
+        private Comando<Double> _comandoDouble;
         private Comando<List<Entidad>> _comandoLista;
         #endregion
 
@@ -35,12 +38,33 @@ namespace PruebasUnitarias.M7
         [SetUp]
         public void init()
         {
-            _fechaInicio = new DateTime(2016, 6, 4);
-            _fechaFin = new DateTime(2016, 7, 4);
+            _empleados = new List<Entidad>();
+            _contactos = new List<Entidad>();
+            _fechaInicio = new DateTime();
+            _fechaFin = new DateTime();
+            _fechaInicio = DateTime.ParseExact("06/04/2016", "MM/dd/yyyy", null);
+            _fechaFin = DateTime.ParseExact("08/05/2016", "MM/dd/yyyy", null);
             _daoProyecto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyecto();
+            _daoContacto = DatosTangerine.Fabrica.FabricaDAOSqlServer.crearDAOContacto();
             _theProject = DominioTangerine.Fabrica.FabricaEntidades.CrearProyecto("El proyecto nuevo",
                                    "el-pr1234", _fechaInicio, _fechaFin, 100000, "este es un proyecto de prueba",
                                    "20", "En desarrollo", "Razon de cambio", "Mensual", 1, 1, 1);
+
+
+            for (int i = 4; i <= 5; i++)
+            {
+                Entidad a = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEmpleado();
+                ((DominioTangerine.Entidades.M7.Empleado)a).emp_num_ficha = i;
+                _empleados.Add(a);
+
+            }
+
+            for (int i = 4; i <= 5; i++)
+            {
+                Entidad a = DominioTangerine.Fabrica.FabricaEntidades.crearContactoConId(i, "Istvan", "Bokor",
+                    "Departamento", "Gerente", "7654321", "asd@as.com", 1, 1);
+                _contactos.Add(a);
+            }
 
         }
         [TearDown]
@@ -48,7 +72,6 @@ namespace PruebasUnitarias.M7
         {
             _theProject = null;
             _checkTheProject = null;
-            _checkTheProject2 = null;
             _daoProyecto = null;
             _laPropuesta = null;
             _contador = 0;
@@ -221,10 +244,59 @@ namespace PruebasUnitarias.M7
             }
         }
 
+        [Test]
+        public void TestComandoCalcularPagoMensual()
+        {
+            _comandoDouble = FabricaComandos.ObtenerComandoCalcularPagoMesual(_theProject);
+            Double monto = _comandoDouble.Ejecutar();
+
+            Assert.AreEqual(Math.Truncate(monto), 48387);
+        }
+
+        [Test]
+        public void testComandoAgregarContactos()
+        {
+            _comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(_theProject);
+            Assert.True(_comandoBool.Ejecutar());
+
+            _ultimoId = _daoProyecto.ContactMaxIdProyecto();
+            _theProject.Id = _ultimoId;
+
+            _comandoLista = FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(_theProject);
+            _listaEntidad = _comandoLista.Ejecutar();
+
+            Assert.IsEmpty(_listaEntidad);
+
+            //Se le asocia una lista de contactos al proyecto
+            ((DominioTangerine.Entidades.M7.Proyecto)_theProject).set_contactos(_contactos);
 
 
+            _comandoBool = FabricaComandos.ObtenerComandoAgregarContactos(_theProject);
+            Assert.IsTrue(_comandoBool.Ejecutar());
+
+            _comandoLista = FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(_theProject);
+            _listaEntidad = _comandoLista.Ejecutar();
+
+            Assert.IsNotEmpty(_listaEntidad);
+
+            foreach (Entidad contacto in _contactos)
+            {
+                _daoContacto.EliminarContactoDeProyecto(contacto, _theProject);
+            }
+            _answer = _daoProyecto.BorrarProyecto(_ultimoId);
+
+        }
         #endregion
 
+        [Test]
+        [ExpectedException(typeof(ExceptionM7Tangerine))]
+        public void PruebaComandoAgregarProyectoException()
+        {
+            _theProject = null;
+            _comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(_theProject);
+            _answer = _comandoBool.Ejecutar();
+
+        }
 
     }
 }
