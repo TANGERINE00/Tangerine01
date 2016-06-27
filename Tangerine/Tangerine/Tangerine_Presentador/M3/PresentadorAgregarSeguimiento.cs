@@ -46,11 +46,11 @@ namespace Tangerine_Presentador.M3
         /// <summary>
         /// Metodo que invoca al comando encargado de agrgar un nuevo registro de seguimiento
         /// </summary>
-        public void Agregar()
+        public void Agregar(int idCliente)
         {
-            Console.WriteLine(vista.Fecha);
-            Console.WriteLine(vista.Opcion);
-            Console.WriteLine(vista.Tipo);
+            
+            Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoDeCliente(DateTime.Parse(vista.Fecha),
+                vista.Opcion, vista.Motivo, idCliente);
         }
 
     }
