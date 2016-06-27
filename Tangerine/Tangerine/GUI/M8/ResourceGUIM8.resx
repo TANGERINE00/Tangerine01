@@ -225,4 +225,7 @@
   <data name="volverAnular" xml:space="preserve">
     <value>ConsultarFacturaM8.aspx?estado=2</value>
   </data>
+  <data name="path" xml:space="preserve">
+    <value>~/Facturas</value>
+  </data>
 </root>
