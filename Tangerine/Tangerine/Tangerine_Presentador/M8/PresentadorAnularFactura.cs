@@ -47,9 +47,12 @@ namespace Tangerine_Presentador.M8
                 vista.monto = lafactura.montoFactura.ToString();
                 vista.moneda = lafactura.tipoMoneda;
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
 
         }
@@ -63,9 +66,12 @@ namespace Tangerine_Presentador.M8
                 Comando<bool> comandoAnular = FabricaComandos.CrearAnularFactura(lafactura);
                 comandoAnular.Ejecutar();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
     }
