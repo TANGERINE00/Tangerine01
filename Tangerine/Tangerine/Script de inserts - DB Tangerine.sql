@@ -47,7 +47,7 @@
 	values ('Prueba', 'J-756487568', 'istvanbokor8@gmail.com', '0412-2362151', 'TEST', '12/12/2016', 1, 90000000, 60, 6);
 
 	insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-	values ('Tangerine', 'J-345234612', 'istvanbokor7@hotmail.com, '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
+	values ('Tangerine', 'J-345234612', 'istvanbokor7@hotmail.com', '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
 	-- FIN COMPANIAS -- 
 
 	SET IDENTITY_INSERT PROPUESTA ON
