@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using DatosTangerine.DAO.M9;
 using DatosTangerine.InterfazDAO.M9;
 using DominioTangerine;
 using NUnit.Framework;
 using DominioTangerine.Entidades.M9;
 using LogicaTangerine.Fabrica;
+using LogicaTangerine;
 
 
 namespace PruebasUnitarias.M9
@@ -22,6 +22,9 @@ namespace PruebasUnitarias.M9
         public Entidad elPago1;
         public Entidad factura;
         public Entidad compania;
+        Comando<Entidad> _comandoEntidad;
+        Comando<bool> _comandoBool;
+        Comando<List<Entidad>> _comandoList;
 
 
         #endregion
@@ -64,18 +67,31 @@ namespace PruebasUnitarias.M9
         /// Método para probar el Comando de Agregar un Pago en la base de datos
         /// </summary>
         [Test]
-        public void TestComandoAgregarPago()
+        /*public void TestComandoAgregarPago()
         {
-            bool resultado;
+
             LogicaTangerine.Comando<Boolean> comandoAgregarPago = FabricaComandos.cargarPago(elPago);
-            resultado = comandoAgregarPago.Ejecutar();
+            answer = comandoAgregarPago.Ejecutar();
+
+            _comandoList = FabricaComandos.();
+            _listaFactura = _comandoList.Ejecutar();
+            _laFactura = (Facturacion)_listaFactura[_listaFactura.Count - 1];
+
+
             Assert.IsNotNull(comandoAgregarPago);
             Assert.IsTrue(resultado);
+
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 1111111111);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).montoPago == 12000);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).monedaPago == "EUR");
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).formaPago == "Deposito");
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).idFactura == 1);
+
             LogicaTangerine.Comando<Boolean> comandoEliminarPago = FabricaComandos.EliminarPago(elPago);
             resultado = comandoEliminarPago.Ejecutar();
             Assert.IsTrue(resultado);
 
-        }
+        }*/
 
 
         /// <summary>

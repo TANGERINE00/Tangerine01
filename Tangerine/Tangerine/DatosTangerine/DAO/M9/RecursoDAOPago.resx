@@ -207,4 +207,13 @@
   <data name="MensajeGeneral" xml:space="preserve">
     <value>Operacion No Completada</value>
   </data>
+  <data name="ConsultarPagos" xml:space="preserve">
+    <value>M9_ConsultarPagos</value>
+  </data>
+  <data name="FK_Fac_id" xml:space="preserve">
+    <value>fk_fac_id</value>
+  </data>
+  <data name="PagoForma" xml:space="preserve">
+    <value>pag_forma</value>
+  </data>
 </root>

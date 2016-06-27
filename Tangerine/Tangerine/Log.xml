@@ -31534,3 +31534,35 @@ Error Number:-1,State:0,Class:20
 2016-06-27 17:17:50,987 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 17:17:50,987 INFO  DAORol - Metodo: ObtenerRolUsuario
 >>>>>>> 738591aca2496667191ade55a18e088497d57113
+2016-06-27 18:53:08,046 INFO  DaoCompania - *******************************************************
+2016-06-27 18:53:08,058 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 18:53:08,058 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 18:53:08,058 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-27 18:53:28,111 INFO  DAORol - *******************************************************
+2016-06-27 18:53:28,111 INFO  DAORol - Clase: DAORol
+2016-06-27 18:53:28,111 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 18:53:28,111 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 18:53:28,112 INFO  DAOUsuario - *******************************************************
+2016-06-27 18:53:28,112 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 18:53:28,112 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 18:53:28,112 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 18:53:28,755 INFO  DAORol - *******************************************************
+2016-06-27 18:53:28,755 INFO  DAORol - Clase: DAORol
+2016-06-27 18:53:28,755 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 18:53:28,755 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 18:53:28,824 INFO  DAORol - *******************************************************
+2016-06-27 18:53:28,824 INFO  DAORol - Clase: DAORol
+2016-06-27 18:53:28,824 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 18:53:28,824 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 18:53:31,532 INFO  DaoCompania - *******************************************************
+2016-06-27 18:53:31,532 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 18:53:31,532 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 18:53:31,532 INFO  DaoCompania - Metodo: ConsultarTodos
+2016-06-27 18:53:31,580 INFO  DAORol - *******************************************************
+2016-06-27 18:53:31,580 INFO  DAORol - Clase: DAORol
+2016-06-27 18:53:31,580 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 18:53:31,580 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 18:53:31,615 INFO  DAORol - *******************************************************
+2016-06-27 18:53:31,615 INFO  DAORol - Clase: DAORol
+2016-06-27 18:53:31,615 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 18:53:31,615 INFO  DAORol - Metodo: ObtenerRolUsuario
