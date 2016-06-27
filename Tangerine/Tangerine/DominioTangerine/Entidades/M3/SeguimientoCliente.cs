@@ -95,9 +95,9 @@ namespace DominioTangerine.Entidades.M3
             this.fkCliente = fk;
         }
 
-        public SeguimientoCliente(String tipo, String motivo, int fk)
+        public SeguimientoCliente(DateTime fecha, String tipo, String motivo, int fk)
         {
-            this.fechaHistoria = DateTime.Now;
+            this.fechaHistoria = fecha;
             this.tipoHistoria = tipo;
             this.motivoHistoria = motivo;
             this.fkCliente = fk;

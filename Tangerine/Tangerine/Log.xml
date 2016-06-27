@@ -27637,3 +27637,163 @@ Error Number:-1,State:0,Class:20
 2016-06-26 12:57:13,089 INFO  DAORol - Clase: DAORol
 2016-06-26 12:57:13,089 INFO  DAORol - Mensaje: Salida del Método
 2016-06-26 12:57:13,089 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:08,465 INFO  DAORol - *******************************************************
+2016-06-26 20:52:08,481 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:08,481 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:08,481 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:08,505 INFO  DAOUsuario - *******************************************************
+2016-06-26 20:52:08,505 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-26 20:52:08,505 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-26 20:52:08,505 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-26 20:52:08,950 INFO  DAORol - *******************************************************
+2016-06-26 20:52:08,950 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:08,950 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:08,950 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:08,990 INFO  DAORol - *******************************************************
+2016-06-26 20:52:08,990 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:08,990 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:08,990 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:14,221 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 20:52:14,221 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 20:52:14,221 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-26 20:52:14,221 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-26 20:52:14,265 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 20:52:14,265 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 20:52:14,265 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-26 20:52:14,265 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-26 20:52:14,327 INFO  DAORol - *******************************************************
+2016-06-26 20:52:14,327 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:14,327 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:14,331 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:14,375 INFO  DAORol - *******************************************************
+2016-06-26 20:52:14,375 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:14,375 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:14,375 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:20,662 INFO  DAOPropuesta - *******************************************************
+2016-06-26 20:52:20,662 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-26 20:52:20,662 INFO  DAOPropuesta - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,662 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-26 20:52:20,686 INFO  DAOPropuesta - *******************************************************
+2016-06-26 20:52:20,686 INFO  DAOPropuesta - Clase: DAOPropuesta
+2016-06-26 20:52:20,686 INFO  DAOPropuesta - Mensaje: Salida del Método
+2016-06-26 20:52:20,686 INFO  DAOPropuesta - Metodo: ConsultarTodos
+2016-06-26 20:52:20,702 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,702 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,702 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,702 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,730 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,730 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,730 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,730 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,742 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,742 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,742 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,742 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,758 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,758 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,758 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,758 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,774 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,774 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,774 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,774 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,790 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,790 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,790 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,790 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,806 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,806 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,806 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,806 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,822 INFO  DaoCompania - *******************************************************
+2016-06-26 20:52:20,822 INFO  DaoCompania - Clase: DaoCompania
+2016-06-26 20:52:20,822 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-26 20:52:20,822 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-26 20:52:20,854 INFO  DAORol - *******************************************************
+2016-06-26 20:52:20,854 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:20,854 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:20,854 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:20,880 INFO  DAORol - *******************************************************
+2016-06-26 20:52:20,880 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:20,880 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:20,880 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:25,129 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 20:52:25,129 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 20:52:25,129 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-26 20:52:25,129 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-26 20:52:25,145 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 20:52:25,145 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 20:52:25,145 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-26 20:52:25,145 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-26 20:52:25,173 INFO  DAORol - *******************************************************
+2016-06-26 20:52:25,173 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:25,173 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:25,173 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:25,193 INFO  DAORol - *******************************************************
+2016-06-26 20:52:25,193 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:25,193 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:25,193 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:33,416 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 20:52:33,416 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 20:52:33,416 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-26 20:52:33,416 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-26 20:52:33,468 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 20:52:33,468 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 20:52:33,468 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-26 20:52:33,468 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-26 20:52:33,625 INFO  DAORol - *******************************************************
+2016-06-26 20:52:33,625 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:33,625 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:33,625 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 20:52:33,697 INFO  DAORol - *******************************************************
+2016-06-26 20:52:33,697 INFO  DAORol - Clase: DAORol
+2016-06-26 20:52:33,697 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 20:52:33,697 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:07:54,113 INFO  DAORol - *******************************************************
+2016-06-26 21:07:54,125 INFO  DAORol - Clase: DAORol
+2016-06-26 21:07:54,125 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:07:54,125 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:07:54,149 INFO  DAOUsuario - *******************************************************
+2016-06-26 21:07:54,153 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-26 21:07:54,153 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-26 21:07:54,153 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-26 21:07:54,514 INFO  DAORol - *******************************************************
+2016-06-26 21:07:54,514 INFO  DAORol - Clase: DAORol
+2016-06-26 21:07:54,514 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:07:54,514 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:07:54,550 INFO  DAORol - *******************************************************
+2016-06-26 21:07:54,550 INFO  DAORol - Clase: DAORol
+2016-06-26 21:07:54,550 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:07:54,550 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:08:00,092 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 21:08:00,092 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 21:08:00,092 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-26 21:08:00,092 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-26 21:08:00,124 INFO  DaoClientePotencial - *******************************************************
+2016-06-26 21:08:00,124 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-26 21:08:00,124 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-26 21:08:00,124 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-26 21:08:00,156 INFO  DAORol - *******************************************************
+2016-06-26 21:08:00,156 INFO  DAORol - Clase: DAORol
+2016-06-26 21:08:00,156 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:08:00,156 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:08:00,180 INFO  DAORol - *******************************************************
+2016-06-26 21:08:00,180 INFO  DAORol - Clase: DAORol
+2016-06-26 21:08:00,180 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:08:00,180 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:08:03,625 INFO  DAORol - *******************************************************
+2016-06-26 21:08:03,625 INFO  DAORol - Clase: DAORol
+2016-06-26 21:08:03,625 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:08:03,625 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:08:03,686 INFO  DAORol - *******************************************************
+2016-06-26 21:08:03,686 INFO  DAORol - Clase: DAORol
+2016-06-26 21:08:03,686 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:08:03,686 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:08:23,721 INFO  DAORol - *******************************************************
+2016-06-26 21:08:23,721 INFO  DAORol - Clase: DAORol
+2016-06-26 21:08:23,721 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:08:23,721 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-26 21:08:23,745 INFO  DAORol - *******************************************************
+2016-06-26 21:08:23,745 INFO  DAORol - Clase: DAORol
+2016-06-26 21:08:23,745 INFO  DAORol - Mensaje: Salida del Método
+2016-06-26 21:08:23,745 INFO  DAORol - Metodo: ObtenerRolUsuario
