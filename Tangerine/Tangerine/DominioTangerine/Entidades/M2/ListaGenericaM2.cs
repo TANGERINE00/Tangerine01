@@ -32,7 +32,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Método para agregar un elemento a la lista
         /// </summary>
-        /// <param name="elemento"></param>
+        /// <param name="elemento">Es el elemento que se quiere agregar</param>
         public void agregarElemento( T elemento )
         {
             _listaGenerica.Add( elemento );
@@ -41,7 +41,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Método para eliminar un elemento de la lista
         /// </summary>
-        /// <param name="elemento"></param>
+        /// <param name="elemento">Es el elemento que se quiere eliminar</param>
         /// <returns>Retorna un valor booleano que indica si el elemento fue eliminado o no</returns>
         public bool eliminarElemento( T elemento )
         {
