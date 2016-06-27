@@ -38,16 +38,16 @@
 	------------------------------------------------------------------------------------------------------------------
 	-- COMPANIAS --
 	insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-	values ('GianFran CO', 'J-236861976', 'giantufano@gmail.com', '0412-2362151', 'GFC', '12/12/2016', 1, 10000000, 30, 5);
+	values ('GianFran CO', 'J-236861976', 'istvanbokor8@gmail.com', '0412-2362151', 'GFC', '12/12/2016', 1, 10000000, 30, 5);
 
 	insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-	values ('Coca-Cola', 'J-951329766', 'merchan1395@gmail.com', '0412-2362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
+	values ('Coca-Cola', 'J-951329766', 'istvanbokor7@hotmail.com', '0412-2362151', 'CC', '12/12/2016', 0, 20000000, 40, 5);
 
 	insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-	values ('Prueba', 'J-756487568', 'prueba@gmail.com', '0412-2362151', 'TEST', '12/12/2016', 1, 90000000, 60, 6);
+	values ('Prueba', 'J-756487568', 'istvanbokor8@gmail.com', '0412-2362151', 'TEST', '12/12/2016', 1, 90000000, 60, 6);
 
 	insert into Compania (com_nombre, com_rif, com_email, com_telefono, com_acronimo, com_fecha_registro, com_status, com_presupuesto, com_plazo_pago, fk_lug_dir_id)
-	values ('Tangerine', 'J-345234612', 'tangerine00@gmail.com', '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
+	values ('Tangerine', 'J-345234612', 'istvanbokor7@hotmail.com, '0412-2362151', 'TGN', '12/12/2016', 0, 10000000, 120, 7);
 	-- FIN COMPANIAS -- 
 
 	SET IDENTITY_INSERT PROPUESTA ON
