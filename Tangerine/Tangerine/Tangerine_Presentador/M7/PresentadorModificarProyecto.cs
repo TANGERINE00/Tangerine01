@@ -329,10 +329,10 @@ namespace Tangerine_Presentador.M7
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Codigo = vista.textInputCodigo.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechaestimadafin = DateTime.ParseExact(vista.FechaFin, "dd/MM/yyyy", null);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Costo = int.Parse(vista.textInputCosto.Text);
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.textInputPorcentaje.Text;
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = 
-                    vista.inputEstatus.SelectedItem.ToString();
 
+                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus =
+                    vista.inputEstatus.SelectedItem.ToString();
+                
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Razon = vista.text10.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idgerente = 
                     int.Parse(vista.inputGerente.SelectedValue);
@@ -342,7 +342,6 @@ namespace Tangerine_Presentador.M7
 
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idpropuesta = int.Parse(vista.idPropuesta.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Descripcion = vista.descripcion.Text;
-                ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Acuerdopago = vista.acuerdoPago.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Acuerdopago = vista.acuerdoPago.Text;
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idcompania = int.Parse(vista.idCompania.Text);
 
@@ -363,6 +362,28 @@ namespace Tangerine_Presentador.M7
                         ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idresponsable = int.Parse(substrings[0]);
                     }
                 }
+
+
+                if (vista.inputEstatus.Text == "Completado")
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = "100";
+                }
+                else
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.inputEstatus.Text;
+                }
+
+
+                if (vista.realizacion.Text == "100")
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = "Completado";
+                }
+                else
+                {
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus =
+                        vista.inputEstatus.SelectedItem.ToString();
+                }
+
 
                 if (vista.gteAct.Text != vista.inputGerente.SelectedValue)
                 {
@@ -415,7 +436,8 @@ namespace Tangerine_Presentador.M7
                 {
                     MessageBox.Show("Proyecto Modificado con Exito",
                     "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    HttpContext.Current.Response.Redirect("../M7/ConsultaProyecto.aspx");
+                    HttpContext.Current.Response.Redirect("../M7/InformacionProyecto.aspx?idCont=" +
+                                                                int.Parse(vista.idProyecto.Text) );
                 }
                 
 
