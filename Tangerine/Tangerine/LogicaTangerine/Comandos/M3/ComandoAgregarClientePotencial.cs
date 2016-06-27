@@ -11,11 +11,19 @@ namespace LogicaTangerine.Comandos.M3
 {
     class ComandoAgregarClientePotencial:Comando<bool>
     {
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="parametro"></param>
         public ComandoAgregarClientePotencial(Entidad parametro) 
         {
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Método que ejecuta el comando para agregar a un cliente potencial
+        /// </summary>
+        /// <param name="contacto"></param>
         public override bool Ejecutar()
         {
             try 
