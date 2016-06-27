@@ -248,12 +248,12 @@ namespace Tangerine.GUI.M7
             {
                 if (_presentador.agregarProyecto())
                 {
-                    Server.Transfer("ConsultaProyecto.aspx", true);
+                    Server.Transfer("ConsultaProyecto.aspx?estado=1", true);
                 }
             }
-            catch (Exception)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                Response.Redirect("../M7/ConsultaProyecto.aspx");
+                Server.Transfer("ConsultaProyecto.aspx?estado=2", true);
             }
         }
 
