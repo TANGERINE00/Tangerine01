@@ -35,6 +35,13 @@ namespace Tangerine_Presentador.M7
                 vista.alerta = RecursoPresentadorM7.alertaHtml + RecursoPresentadorM7.MsjError
                     + RecursoPresentadorM7.alertaHtmlFinal;
             }
+            else if (msj == "3")
+            {
+                vista.alertaClase = RecursoPresentadorM7.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + RecursoPresentadorM7.MsjModificado
+                    + RecursoPresentadorM7.alertaHtmlFinal;
+            }
             else
             {
                 vista.alertaClase = RecursoPresentadorM7.alertaError;
