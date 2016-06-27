@@ -147,12 +147,13 @@
     <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\css\Estilos.css" />
+    <Content Include="GUI\M1\css\PagError.css" />
     <Content Include="GUI\M1\Dashboard.aspx" />
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\js\alertas.js" />
     <Content Include="GUI\M1\Login.aspx" />
     <Content Include="GUI\M1\ModificarEmpleado.aspx" />
-    <Content Include="GUI\M1\NuevaContraseña.aspx" />
+    <Content Include="GUI\M1\PaginaError.aspx" />
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
     <Content Include="GUI\M2\AccionRegistrar.aspx" />
@@ -1042,12 +1043,12 @@
     <Compile Include="GUI\M1\ModificarEmpleado.aspx.designer.cs">
       <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\M1\NuevaContraseña.aspx.cs">
-      <DependentUpon>NuevaContraseña.aspx</DependentUpon>
+    <Compile Include="GUI\M1\PaginaError.aspx.cs">
+      <DependentUpon>PaginaError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\M1\NuevaContraseña.aspx.designer.cs">
-      <DependentUpon>NuevaContraseña.aspx</DependentUpon>
+    <Compile Include="GUI\M1\PaginaError.aspx.designer.cs">
+      <DependentUpon>PaginaError.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\RecuperarContraseñaPregunta.aspx.cs">
       <DependentUpon>RecuperarContraseñaPregunta.aspx</DependentUpon>
