@@ -358,6 +358,9 @@ namespace Tangerine_Presentador.M7
                     if (item.Selected)
                     {
                         _encargadoNombre = item.Text.ToString();
+                        Char delimiter = '-';
+                        String[] substrings = _encargadoNombre.Split(delimiter);
+                        ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idresponsable = int.Parse(substrings[0]);
                     }
                 }
 

@@ -53,6 +53,7 @@ namespace Tangerine.GUI.M8
             get { return this.Label1.Text; }
             set { this.Label1.Text = value; }
         }
+
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
