@@ -53,6 +53,7 @@ namespace Tangerine.GUI.M8
             get { return this.Label1.Text; }
             set { this.Label1.Text = value; }
         }
+
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
@@ -91,18 +92,10 @@ namespace Tangerine.GUI.M8
         protected void buttonEnviarCorreo_Click(object sender, EventArgs e)
         {
             if (fuImage.HasFile)
-            {
                 SaveFile(fuImage.PostedFile);
-                // SaveAs method of PostedFile property used
-                // to save the file at specified rooted path
-                //fuImage.PostedFile.SaveAs(Server.MapPath("~/Facturas") + System.IO.Path.DirectorySeparatorChar + fuImage.PostedFile.FileName);
-                
-                // success message
-                //adjunto = Server.MapPath("~/Facturas") + System.IO.Path.DirectorySeparatorChar + fuImage.PostedFile.FileName;
-            }
 
-            if (_presentador.enviarCorreo(adjunto))
-                Server.Transfer(ResourceGUIM8.volver);
+            if (_presentador.enviarCorreo())
+                Server.Transfer(ResourceGUIM8.volverCorreo);
         }
 
         void SaveFile(HttpPostedFile file)
@@ -132,27 +125,15 @@ namespace Tangerine.GUI.M8
                     pathToCheck = savePath + tempfileName;
                     counter++;
                 }
-
                 fileName = tempfileName;
-
-                // Notify the user that the file name was changed.
-                //UploadStatusLabel.Text = "A file with the same name already exists." + "<br />Your file was saved as " + fileName;
-                int i = 1;
             }
-            else
-            {
-                // Notify the user that the file was saved successfully.
-                //UploadStatusLabel.Text = "Your file was uploaded successfully.";
-                int i = 1;
-            }
-
+            adjunto = fileName;
             // Append the name of the file to upload to the path.
             savePath += fileName;
 
             // Call the SaveAs method to save the uploaded
             // file to the specified directory.
             file.SaveAs(savePath);
-            adjunto = savePath;
 
         }
     }

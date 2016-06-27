@@ -394,6 +394,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string codigoCorreo {
+            get {
+                return ResourceManager.GetString("codigoCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1.
         /// </summary>
         internal static string codigoMod {
@@ -534,6 +543,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string MontoTotal {
             get {
                 return ResourceManager.GetString("MontoTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El correo se ha enviado.
+        /// </summary>
+        internal static string MsjCorreo {
+            get {
+                return ResourceManager.GetString("MsjCorreo", resourceCulture);
             }
         }
         
@@ -723,6 +741,15 @@ namespace Tangerine_Presentador.M8 {
         internal static string recordatorio {
             get {
                 return ResourceManager.GetString("recordatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C:\Users\Istvan\Documents\GitHub\Tangerine01\Tangerine\Tangerine\Facturas\.
+        /// </summary>
+        internal static string rutaFacturas {
+            get {
+                return ResourceManager.GetString("rutaFacturas", resourceCulture);
             }
         }
         

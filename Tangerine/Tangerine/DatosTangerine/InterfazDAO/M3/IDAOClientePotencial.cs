@@ -16,6 +16,7 @@ namespace DatosTangerine.InterfazDAO.M3
         bool Eliminar(Entidad parametro);
         List<Entidad> ConsultarLlamadasXId(Entidad parametro);
         List<Entidad> ConsultarVistaXId(Entidad parametro);
-        bool AgregarSeguimiento(Entidad parametro);
+        bool AgregarSeguimientoDeCliente(Entidad parametro);
+
     }
 }

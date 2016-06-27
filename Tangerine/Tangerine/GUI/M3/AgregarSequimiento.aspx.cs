@@ -121,6 +121,7 @@ namespace Tangerine.GUI.M3
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             presentador.Agregar(this.idCliente);
+            Server.Transfer("AdministrarListaClientesPotenciales.aspx");
         }
 
     }
