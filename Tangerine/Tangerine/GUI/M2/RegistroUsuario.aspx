@@ -10,8 +10,8 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Breadcrumps" runat="server">
     <li><a href="#"><i class="fa fa-home"></i></a></li>
-    <li><a href="#">Ejemplo</a></li>
-    <li class="active">Página en blanco</li>
+    <li><a href="#">Usuario</a></li>
+    <li class="active">Registro</li>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

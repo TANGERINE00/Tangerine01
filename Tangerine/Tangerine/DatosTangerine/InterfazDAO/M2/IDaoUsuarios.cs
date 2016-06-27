@@ -12,9 +12,9 @@ namespace DatosTangerine.InterfazDAO.M2
     {
 
         /// <summary>
-        /// Encabezado de verificar si el usuario por su ficha
+        /// Encabezado para verificar si el usuario por su ficha
         /// </summary>
-        /// <param name="theUsuario"></param>
+        /// <param name="fichaEmpleado"></param>
         /// <returns>Devuelve true si existe, si no, false</returns>
         bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado );
 
@@ -28,7 +28,7 @@ namespace DatosTangerine.InterfazDAO.M2
         /// <summary>
         /// Encabezado de metodo que retorna el usuario y rol de un empleado
         /// </summary>
-        /// <param name="theEmpleado"></param>
+        /// <param name="num_empleado"></param>
         /// <returns>Retorna el usuario de un empleado</returns>
         Entidad ObtenerUsuarioDeEmpleado( int num_empleado );
 

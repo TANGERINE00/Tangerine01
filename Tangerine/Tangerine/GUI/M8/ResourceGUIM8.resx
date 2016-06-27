@@ -228,4 +228,7 @@
   <data name="path" xml:space="preserve">
     <value>~/Facturas</value>
   </data>
+  <data name="volverCorreo" xml:space="preserve">
+    <value>ConsultarFacturaM8.aspx?estado=3</value>
+  </data>
 </root>
