@@ -90,7 +90,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -178,7 +178,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -253,7 +253,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -329,7 +329,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -391,7 +391,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -479,7 +479,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -560,7 +560,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -640,7 +640,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -704,7 +704,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -773,7 +773,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
