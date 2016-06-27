@@ -98,10 +98,17 @@ namespace Tangerine.GUI.M8
         /// <param name="amount">Monto para hacer la factura</param>
         protected void Page_Load(object sender, EventArgs e)
         {
+            try 
+            {
             this.compania = Request.QueryString[ResourceGUIM8.idC];
             this.proyecto = Request.QueryString[ResourceGUIM8.idP];            
             this.monto = Request.QueryString[ResourceGUIM8.amount];
             _presentador.llenarGenerar();
+            }
+            catch
+            {
+                Response.Redirect(ResourceGUIM8.volver);
+            }
         }
 
         /// <summary>
