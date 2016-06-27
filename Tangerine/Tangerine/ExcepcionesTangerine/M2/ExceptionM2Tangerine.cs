@@ -11,9 +11,9 @@ namespace ExcepcionesTangerine.M2
         /// <summary>
         /// Constructor de la clase de excepciones de Tangerine del Módulo 2
         /// </summary>
-        /// <param name="codigo"></param>
-        /// <param name="mjs"></param>
-        /// <param name="inner"></param>
+        /// <param name="codigo">Codigo de la excepcion</param>
+        /// <param name="mjs">Mensaje de error</param>
+        /// <param name="inner">Inner del mensaje</param>
         public ExceptionM2Tangerine( String codigo , String mjs , Exception inner ) 
                :base( mjs , inner ) 
         {
@@ -23,8 +23,8 @@ namespace ExcepcionesTangerine.M2
         /// <summary>
         /// Constructor de la clase de excepciones de Tangerine del Módulo 2
         /// </summary>
-        /// <param name="mjs"></param>
-        /// <param name="inner"></param>
+        /// <param name="mjs">Mensaje de error</param>
+        /// <param name="inner">Inner del mensaje</param>
         public ExceptionM2Tangerine( String mjs , Exception inner ) 
                :base( mjs , inner )
         {
