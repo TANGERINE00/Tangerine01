@@ -225,7 +225,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAPagina
             /// </summary>
-            /// <param name="paginaAVerificar">Es la pagina que se quiere verificar</param>
+            /// <param name="paginaAVerificar">Es la pagina a la cual se le quiere verificar el acceso</param>
             /// <param name="nombreRol">Es el nombre del rol</param>
             /// <returns>Retorna una una instancia a ComandoVerificarAccesoAPagina</returns>
             public static Comando<Boolean> obtenerComandoVerificarAccesoAPagina( String paginaAVerificar , String nombreRol)
