@@ -54,7 +54,7 @@ namespace Tangerine.GUI.M7
             }
             set
             {
-                throw new NotImplementedException();
+                this.datepicker1.Value = value.ToString();
             }
         }
 
@@ -66,7 +66,7 @@ namespace Tangerine.GUI.M7
             }
             set
             {
-                throw new NotImplementedException();
+                this.datepicker2.Value = value.ToString();
             }
         }
 

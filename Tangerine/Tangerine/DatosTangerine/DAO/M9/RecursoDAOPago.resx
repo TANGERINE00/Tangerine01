@@ -201,4 +201,10 @@
   <data name="ParamIdPago" xml:space="preserve">
     <value>@idpago</value>
   </data>
+  <data name="CodigoGeneral" xml:space="preserve">
+    <value>DS-900</value>
+  </data>
+  <data name="MensajeGeneral" xml:space="preserve">
+    <value>Operacion No Completada</value>
+  </data>
 </root>
