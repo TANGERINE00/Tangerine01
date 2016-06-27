@@ -69,12 +69,6 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.AddNewFactura, parameters);
 
             }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
-            }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -157,12 +151,6 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.ChangeFactura, parameters);
 
             }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
-            }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -232,12 +220,6 @@ namespace DatosTangerine.DAO.M8
                 theFactura.Id = facId;
 
             }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
-            }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -264,7 +246,6 @@ namespace DatosTangerine.DAO.M8
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            
             return theFactura;
         }
 
@@ -307,12 +288,6 @@ namespace DatosTangerine.DAO.M8
                 }
 
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -369,12 +344,6 @@ namespace DatosTangerine.DAO.M8
                 //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
                 EjecutarStoredProcedure(ResourceFactura.DeleteFactura, parameters);
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -458,12 +427,6 @@ namespace DatosTangerine.DAO.M8
                 EjecutarStoredProcedure(ResourceFactura.AnnularFactura, parameters);
 
             }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
-            }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -539,12 +502,6 @@ namespace DatosTangerine.DAO.M8
 
 
             }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
-            }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -619,12 +576,6 @@ namespace DatosTangerine.DAO.M8
 
 
             }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
-            }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -682,12 +633,6 @@ namespace DatosTangerine.DAO.M8
 
                 montoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
  
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -751,12 +696,6 @@ namespace DatosTangerine.DAO.M8
                 {
                     resultado = true;
                 }
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
