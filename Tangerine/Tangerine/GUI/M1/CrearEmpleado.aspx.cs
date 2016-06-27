@@ -79,7 +79,7 @@ namespace Tangerine.GUI.M1
             if (Page.IsValid)
             {
                 presentador.AgregarEmpleado();
-                Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=0");
+               
 
             }
 
