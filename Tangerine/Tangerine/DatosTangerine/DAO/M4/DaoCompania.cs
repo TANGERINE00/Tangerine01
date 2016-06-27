@@ -318,7 +318,9 @@ namespace DatosTangerine.DAO.M4
           catch (ExceptionTGConBD ex)
           {
               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-              if (ex.Message.Equals("Error con la Conexion en la Base de Datos, no se pudo abrir la conexion")) 
+              if (ex.Excepcion.Message.Contains("The server was not found or was not accessible") ||
+              ex.Excepcion.Message.Contains("SQL Server service has been paused."))
+
               {
                   throw new ExceptionM4Tangerine("DS-404", "Error conexion base de datos", ex);
               }

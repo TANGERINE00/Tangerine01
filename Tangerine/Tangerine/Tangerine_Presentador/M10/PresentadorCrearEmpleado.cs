@@ -10,6 +10,7 @@ using LogicaTangerine;
 using System.Globalization;
 using DominioTangerine.Entidades.M10;
 using ExcepcionesTangerine.M10;
+using System.Web;
 namespace Tangerine_Presentador.M10
 {
     public class PresentadorCrearEmpleado
@@ -44,7 +45,7 @@ namespace Tangerine_Presentador.M10
             Vista.IcomboGenero.Items.Insert(0, "Seleccione un Genero");
             Vista.IcomboGenero.Items.Insert(1, "Femenino");
             Vista.IcomboGenero.Items.Insert(2, "Masculino");
-            //Vista.IcomboEstado.Items.Insert(0, "Seleccione Estado");
+            
         }
 
         /// <summary>
@@ -178,21 +179,27 @@ namespace Tangerine_Presentador.M10
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson;
-                //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
-                //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion = NuevaDireccion();
 
 
-            //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto Propuesta 'p'.
+            //Creación y Ejecución del Objeto Comando de Agregar Empleado.
             LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado(Parametro);
             Confirmacion = comando.Ejecutar();
+
+            HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=1");
                
 
             }
 
             catch (AgregarEmpleadoException ex)
             {
-                throw (ex); 
+                HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=3");
+               
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=2");
+
             }
         }
     }

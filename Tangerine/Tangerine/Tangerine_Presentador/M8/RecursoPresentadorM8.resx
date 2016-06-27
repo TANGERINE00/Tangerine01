@@ -339,4 +339,13 @@
   <data name="euros" xml:space="preserve">
     <value>Euros</value>
   </data>
+  <data name="codigoAnular" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="codigoMod" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MsjMAnulado" xml:space="preserve">
+    <value>La factura ha sido anulada.</value>
+  </data>
 </root>

@@ -27,6 +27,16 @@ namespace Tangerine_Presentador.M4
         }
 
         /// <summary>
+        /// Método para manejar los errores y mensajes a interfaz
+        /// </summary>
+        public void Alerta(string msj)
+        {
+            _vista.alertaClase = RecursosPresentadorM4.alertaError;
+            _vista.alertaRol = RecursosPresentadorM4.tipoAlerta;
+            _vista.alerta = RecursosPresentadorM4.AlertShowSu1 + msj + RecursosPresentadorM4.AlertShowSu2;
+        }
+
+        /// <summary>
         /// Metodo que permite cargar una compania en especifico por pantalla para ser modificada
         /// </summary>
 
