@@ -140,12 +140,19 @@ namespace Tangerine.GUI.M3
         /// <param name="sender"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
-            if (!IsPostBack)
+            try
             {
-                presentador.Llenar(idClientePotencial);
-                presentador.ObtenerHistoricoLlamadas(idClientePotencial);
-                presentador.ObtenerHistoricoVisitas(idClientePotencial);
+                idClientePotencial = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
+                if (!IsPostBack)
+                {
+                    presentador.Llenar(idClientePotencial);
+                    presentador.ObtenerHistoricoLlamadas(idClientePotencial);
+                    presentador.ObtenerHistoricoVisitas(idClientePotencial);
+                }
+            }
+            catch
+            {
+                Response.Redirect(ResourceInterfaz.Dashboard);
             }
             
         }

@@ -27,7 +27,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase RolM2 con ID
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">El id de un rol</param>
         public RolM2( int id )
         {
             Id = id;
@@ -36,7 +36,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase RolM2 con nombre
         /// </summary>
-        /// <param name="nombre"></param>
+        /// <param name="nombre">El nombre de un rol</param>
         public RolM2( string nombre )
         {
             _nombre = nombre;
@@ -46,8 +46,8 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase RolM2 con todos sus atributos
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="menus"></param>
+        /// <param name="nombre">El nombre de un rol</param>
+        /// <param name="menus">Lista de menu del sistema</param>
         public RolM2( string nombre , ListaGenericaM2<MenuM2> menu )
                :this( nombre )
         {

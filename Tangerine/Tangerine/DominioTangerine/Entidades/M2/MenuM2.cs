@@ -27,7 +27,7 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor que recibe el nombre del menu
         /// </summary>
-        /// <param name="nombre"></param>
+        /// <param name="nombre">Nombre del menu</param>
         public MenuM2( string nombre )
         {
             _nombre = nombre;
@@ -37,8 +37,8 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor con todos los atributos
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="opciones"></param>
+        /// <param name="nombre">Nombre del menu</param>
+        /// <param name="opciones">Lista de opciones del sistema</param>
         public MenuM2( string nombre , ListaGenericaM2<OpcionM2> opciones )
                :this ( nombre ) 
         {
