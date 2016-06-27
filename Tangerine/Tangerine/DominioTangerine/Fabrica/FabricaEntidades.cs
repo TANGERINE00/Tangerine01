@@ -843,16 +843,16 @@ namespace DominioTangerine.Fabrica
                                                                    empFechaFin, empDireccion));
         }
 
-        public static Entidad CrearEntidadEmpleado(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero, int empCedula,
-                     DateTime empFecha, string empActivo, string empEstudio, string empEmail,Entidad cargo, List<DominioTangerine.Entidades.M10.LugarDireccion> ListaLugar)
+        public static Entidad CrearEntidadEmpleado(string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero, int empCedula,
+                     DateTime empFecha, string empActivo, string empEstudio, string empEmail,Entidad cargo, string telefono, List<DominioTangerine.Entidades.M10.LugarDireccion> ListaLugar)
         {
-            return(new DominioTangerine.Entidades.M10.EmpleadoM10(empId, empPNombre, empSNombre, empPApellido,empSApellido, empGenero,empCedula,
-                     empFecha, empActivo, empEstudio, empEmail, cargo, ListaLugar));
+            return(new DominioTangerine.Entidades.M10.EmpleadoM10(empPNombre, empSNombre, empPApellido,empSApellido, empGenero,empCedula,
+                     empFecha, empActivo, empEstudio, empEmail, cargo,telefono, ListaLugar));
         }
 
-        public static Entidad CrearEntidadCargo(string name, string summaryJob, DateTime dateJob, string jobMode, Double Salary)
+        public static Entidad CrearEntidadCargo(string name, DateTime dateJob, string jobMode, Double Salary)
         {
-            return (new DominioTangerine.Entidades.M10.CargoM10(name, summaryJob, dateJob, jobMode, Salary));
+            return (new DominioTangerine.Entidades.M10.CargoM10(name, dateJob, jobMode, Salary));
         }
 
         public static Entidad CrearDireccion()

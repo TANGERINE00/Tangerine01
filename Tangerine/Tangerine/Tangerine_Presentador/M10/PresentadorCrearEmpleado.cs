@@ -178,8 +178,6 @@ namespace Tangerine_Presentador.M10
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_email = Vista.ItextEmailPerson;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Jobs = jobForEmployee();
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_telefono = Vista.ItextPhonePerson;
-                //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Emp_Direccion = Vista.ItextCityAddress;
-                //((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).Adrress = Vista.ItextAddresEspecific;
                 ((DominioTangerine.Entidades.M10.EmpleadoM10)Parametro).ListaDireccion = NuevaDireccion();
 
 

@@ -54,53 +54,9 @@ namespace DominioTangerine.Entidades.M10
             this.fechaIni = dateIni;
             this.fechaFin = dateFin;
             this.sueldo = salary;
-        }
-
-        public CargoM10(int carId, string nombre, string descripcion)
-        {
-            this.car_id = carId;
-            this.nombre = nombre;
-            this.descripcion = descripcion;
-        }
-        public CargoM10 (int fk_car_id, int fk_emp_num_ficha,  DateTime dateIni, DateTime dateFin, 
-                     string mode, double salary)
-        {
-            this.fk_car_id = fk_car_id;
-            this.fk_emp_num_ficha = fk_emp_num_ficha;
-            this.fechaContratacion = dateIni;
-            this.fechaFinContrato = dateFin;
-            this.modalidad = mode;
-            this.sueldo = salary;
-        }
-
-        public CargoM10(int carId, string nombre, string descripcion, int fk_car_id, 
-                     int fk_emp_num_ficha, DateTime dateIni, DateTime dateFin,
-                     string mode, double salary)
-        {
-            this.car_id = carId;
-            this.nombre = nombre;
-            this.descripcion = descripcion;
-            this.fk_car_id = fk_car_id;
-            this.fk_emp_num_ficha = fk_emp_num_ficha;
-            this.fechaContratacion = dateIni;
-            this.fechaFinContrato = dateFin;
-            this.modalidad = mode;
-            this.sueldo = salary;
-        }
-
-        public CargoM10(int carId, string nombre, string descripcion, int fk_car_id,
-                     int fk_emp_num_ficha, DateTime dateIni,
-                     string mode, double salary)
-        {
-            this.car_id = carId;
-            this.nombre = nombre;
-            this.descripcion = descripcion;
-            this.fk_car_id = fk_car_id;
-            this.fk_emp_num_ficha = fk_emp_num_ficha;
-            this.fechaContratacion = dateIni;
-            this.modalidad = mode;
-            this.sueldo = salary;
-        }
+        }          
+    
+               
 
         /*cargo de creacion con empleado*/
         public CargoM10(string name, string summaryJob, DateTime dateJob, string jobMode, Double Salary)

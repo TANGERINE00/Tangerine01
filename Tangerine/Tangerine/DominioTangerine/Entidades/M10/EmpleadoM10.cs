@@ -102,12 +102,10 @@ namespace DominioTangerine.Entidades.M10
 
 
 
-        public EmpleadoM10(int empId, string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero, int empCedula,
-                     DateTime empFecha, string empActivo, string empEstudio, string empEmail,Entidad cargo, List<LugarDireccion> ListaLugar) 
+        public EmpleadoM10(string empPNombre, string empSNombre, string empPApellido, string empSApellido, string empGenero, int empCedula,
+                     DateTime empFecha, string empActivo, string empEstudio, string empEmail, Entidad cargo, string telefono, List<LugarDireccion> ListaLugar) 
                   
-        {
-
-            this.emp_id = empId;
+        { 
             this.emp_p_nombre = empPNombre;
             this.emp_s_nombre = empSNombre;
             this.emp_p_apellido = empPApellido;
@@ -120,6 +118,7 @@ namespace DominioTangerine.Entidades.M10
             this.emp_estudio = empEstudio;
             this.ListaDireccion = ListaLugar;
             this.jobs = (CargoM10)cargo;
+            this.Emp_telefono = telefono;
         }
 
 
