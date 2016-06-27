@@ -220,7 +220,7 @@
     <value>&lt;/div&gt;</value>
   </data>
   <data name="AlertShowSu1" xml:space="preserve">
-    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alerta" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
   </data>
   <data name="AlertShowSu2" xml:space="preserve">
     <value>&lt;/div&gt;</value>
@@ -237,10 +237,22 @@
   <data name="ErrorAlerta" xml:space="preserve">
     <value>alert alert-danger alert-dismissible</value>
   </data>
-  <data name="ErrorConsultarEmpleado" xml:space="preserve">
-    <value>Error al consultar al empleado, por favor intente de nuevo</value>
+  <data name="ErrorEmpleado" xml:space="preserve">
+    <value>Error al consultar empleado, por favor intente de nuevo.</value>
   </data>
   <data name="ExitoAlerta" xml:space="preserve">
     <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="StatusAgregado" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ErrorBaseDeDatos" xml:space="preserve">
+    <value>Error en la base de datos, por favor intente de nuevo.</value>
+  </data>
+  <data name="ErrorEliminarContacto" xml:space="preserve">
+    <value>Error al eliminar el contacto, por favor intente de nuevo.</value>
   </data>
 </root>

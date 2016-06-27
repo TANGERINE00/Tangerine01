@@ -10,6 +10,7 @@ using LogicaTangerine;
 using System.Globalization;
 using DominioTangerine.Entidades.M10;
 using ExcepcionesTangerine.M10;
+using System.Web;
 namespace Tangerine_Presentador.M10
 {
     public class PresentadorCrearEmpleado
@@ -186,13 +187,21 @@ namespace Tangerine_Presentador.M10
             //Creación y Ejecución del Objeto Comando de Agregar Empleado, se le envia por parámetro el objeto Propuesta 'p'.
             LogicaTangerine.Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoAgregarEmpleado(Parametro);
             Confirmacion = comando.Ejecutar();
+
+            HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=1");
                
 
             }
 
             catch (AgregarEmpleadoException ex)
             {
-                throw (ex); 
+                HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=3");
+               
+            }
+            catch (Exception ex)
+            {
+                HttpContext.Current.Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=2");
+
             }
         }
     }
