@@ -17,7 +17,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
         /// <summary>
         /// Constructor que recibe un parametro codigo rol
         /// </summary>
-        /// <param name="usuario"></param>
+        /// <param name="codigoRol">codigo del rol a usar</param>
         public ComandoObtenerRolUsuario( int codigoRol )
         {
             _codigoRol = codigoRol;

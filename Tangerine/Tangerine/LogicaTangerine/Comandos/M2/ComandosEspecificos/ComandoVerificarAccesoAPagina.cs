@@ -16,8 +16,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
         /// <summary>
         /// Constructor que recibe dos parametros del tipo string
         /// </summary>
-        /// <param name="paginaAVerificar"></param>
-        /// <param name="nombreRol"></param>
+        /// <param name="paginaAVerificar">Verificacion de la pagina de ingreso</param>
+        /// <param name="nombreRol">Nombre del rol</param>
         public ComandoVerificarAccesoAPagina( string paginaAVerificar , string nombreRol )
         {
             _paginaAVerificar = paginaAVerificar;

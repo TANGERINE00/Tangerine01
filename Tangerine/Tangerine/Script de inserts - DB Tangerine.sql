@@ -125,6 +125,19 @@
 	INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
 	VALUES (5,18529272,'Femenino','Petra','Andrea','Gonzales','Sanchez',convert(VARCHAR(10),'09-10-1992',110),'alto','giantufano@gmail.com','Activo',8);
 
+	INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
+	VALUES (6,17356102,'Femenino','Jimena','Andreina','Useche','Padron',convert(VARCHAR(10),'02-03-1989',110),'alto','giantufano@gmail.com','Activo',8);
+
+	INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
+	VALUES (7,13450902,'Masculino','Gabriel','Alejandro','Osorio','Saval',convert(VARCHAR(10),'05-02-1990',110),'medio','giantufano@gmail.com','Activo',8);
+
+	INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
+	VALUES (8,19086028,'Masculino','Jesus','Alberto','Rivas','Escolar',convert(VARCHAR(10),'01-09-1991',110),'medio','giantufano@gmail.com','Activo',8);
+
+	INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
+	VALUES (10,1221212,'Masculino','Antonio','Juan','Garcia','Gobea',convert(VARCHAR(10),'09-10-1992',110),'alto','antonio11346@gmail.com','Activo',8);
+
+
 
 	INSERT INTO dbo.CONTACTO(con_nombre,con_apellido,con_departamento,con_cargo,con_telefono,con_correo,con_tipo_emp,fk_id_com_lead)
 	VALUES('Oscar','Armas','Finanzas','Gerente','04162345678','giantufano@gmail.com',1,1);
@@ -175,22 +188,27 @@
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
 	VALUES(2,1);
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
-	VALUES(3,1);
+	VALUES(4,1);
 
-	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
-	VALUES(2,2);
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
 	VALUES(3,2);
-
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
-	VALUES(2,3);
+	VALUES(4,2);
+
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
 	VALUES(3,3);
+	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
+	VALUES(4,3);
+	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
+	VALUES(8,3);
 
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
-	VALUES(2,4);
+	VALUES(8,4);
 	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
-	VALUES(3,4);
+	VALUES(2,4);
+
+	INSERT INTO dbo.EMPLEADO_PROYECTO(fk_emp_num_ficha,fk_proy_id)
+	VALUES(4,5);
 
 	SET IDENTITY_INSERT FACTURA ON
 	GO
@@ -420,13 +438,23 @@
 	'01/01/2016',null,'Tiempo Completo',20.1,2,3
 	);
 
-	insert into cargo_empleado values ('12/06/2013', null, 'Medio Tiempo',20.1,2,4);
-	insert into cargo_empleado values ('01/04/2012', null, 'Medio Tiempo',50,1,5);
+	insert into cargo_empleado values ('12/06/2013', null, 'Medio Tiempo',25,2,4);
+	insert into cargo_empleado values ('12/04/2012', null, 'Medio Tiempo',35,1,5);
+	insert into cargo_empleado values ('04/11/2012', null, 'Medio Tiempo',45,1,6);
+	insert into cargo_empleado values ('10/10/2013', null, 'Medio Tiempo',65,1,7);
+	insert into cargo_empleado values ('09/04/2011', null, 'Medio Tiempo',70,2,8);
 
-	INSERT INTO dbo.EMPLEADO(emp_num_ficha,emp_cedula, emp_genero, emp_p_nombre, emp_s_nombre, emp_p_apellido, emp_s_apellido, emp_fecha_nac, emp_nivel_estudio, emp_email, emp_activo, fk_lug_dir_id) 
-	VALUES (10,1221212,'Masculino','Antonio','Juan','Garcia','Gobea',convert(VARCHAR(10),'09-10-1992',110),'alto','antonio11346@gmail.com','Activo',8);
+	insert into contacto_proyecto values (1,1);
+	insert into contacto_proyecto values (2,1);
+	insert into contacto_proyecto values (3,1);
+	insert into contacto_proyecto values (1,2);
+	insert into contacto_proyecto values (5,2);
+	insert into contacto_proyecto values (4,3);
+	insert into contacto_proyecto values (1,4);
+	insert into contacto_proyecto values (4,4);
+	insert into contacto_proyecto values (2,5);
 
-
+	
 	insert into USUARIO values (5, 'toniojua', '81dc9bdb52d04dc20036dbd8313ed055', CONVERT(DATE, '07/05/2016'), 'Activo', 4, 10);
 
 	--------------------Fin de inserts de cargos---------
