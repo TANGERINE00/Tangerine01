@@ -73,8 +73,8 @@ namespace Tangerine_Presentador.M9
       /// <summary>
       /// Metodo para agregar un pago y cambiar status de una factura
       /// </summary>
-       public void AgregarPago()
-   {
+      public void AgregarPago()
+       {
 
        try
        {
@@ -100,18 +100,10 @@ namespace Tangerine_Presentador.M9
            MessageBox.Show("Error de formato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
            throw new ExcepcionesTangerine.ExceptionsTangerine();
            
-           //vista.alertaClase = RecursoPresentadorM9.alertaError;
-           //vista.alertaRol = RecursoPresentadorM9.tipoAlerta;
-           //vista.alerta = RecursoPresentadorM9.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
-           //    + RecursoPresentadorM9.alertaHtmlFinal;
 
        }
        
-
-
-
-   }
-   
+     }
    
    }
     
