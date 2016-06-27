@@ -88,7 +88,7 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;td&gt;.
+        ///   Looks up a localized string similar to &lt;td style=&quot;text-align: center;&quot;&gt;.
         /// </summary>
         internal static string AbrirTD {
             get {
@@ -340,6 +340,15 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;/td&gt;.
+        /// </summary>
+        internal static string CerrarTD {
+            get {
+                return ResourceManager.GetString("CerrarTD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;/tr&gt;.
         /// </summary>
         internal static string CerrarTR {
@@ -372,15 +381,6 @@ namespace Tangerine_Presentador.M9 {
         internal static string Closeh4 {
             get {
                 return ResourceManager.GetString("Closeh4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;/td&gt;.
-        /// </summary>
-        internal static string CloseTD {
-            get {
-                return ResourceManager.GetString("CloseTD", resourceCulture);
             }
         }
         
@@ -475,7 +475,7 @@ namespace Tangerine_Presentador.M9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;td&gt;&lt;span class=&quot;label label-warning&quot;&gt;Por pagar&lt;/span&gt;&lt;/td&gt;.
+        ///   Looks up a localized string similar to &lt;td  style=&quot;text-align: center;&quot;&gt;&lt;span class=&quot;label label-warning&quot;&gt;Por pagar&lt;/span&gt;&lt;/td&gt;.
         /// </summary>
         internal static string EtiquetaPorPagar {
             get {
@@ -624,15 +624,6 @@ namespace Tangerine_Presentador.M9 {
         internal static string Openh4 {
             get {
                 return ResourceManager.GetString("Openh4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;td&gt;.
-        /// </summary>
-        internal static string OpenTD {
-            get {
-                return ResourceManager.GetString("OpenTD", resourceCulture);
             }
         }
         
