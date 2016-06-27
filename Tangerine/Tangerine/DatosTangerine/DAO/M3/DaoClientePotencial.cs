@@ -95,8 +95,8 @@ namespace DatosTangerine.DAO.M3
                 theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
                 elClientePotencial.IdClientePotencial.ToString(), false);
                 parameters.Add(theParam);
-                
-                List<Resultado> results = 
+
+                List<Resultado> results =
                     theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_eliminarClientePotencial, parameters);
 
             }
@@ -154,9 +154,9 @@ namespace DatosTangerine.DAO.M3
                 elClientePotencial.IdClientePotencial.ToString(), false);
                 parameters.Add(theParam);
 
-                List<Resultado> results = 
+                List<Resultado> results =
                     theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_promoverClientePotencial, parameters);
-  
+
             }
             catch (ArgumentNullException ex)
             {
@@ -445,7 +445,7 @@ namespace DatosTangerine.DAO.M3
 
             return objetoListaHistorico;
         }
-        
+
         #endregion
 
         #region DAO General
@@ -488,7 +488,7 @@ namespace DatosTangerine.DAO.M3
                 parameters.Add(theParam);
 
                 //Se manda a ejecutar en BDConexion el stored procedure M5_AgregarContacto y todos los parametros que recibe
-                List<Resultado> results = 
+                List<Resultado> results =
                     theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_agregar_clientePotencial, parameters);
 
             }
@@ -569,7 +569,7 @@ namespace DatosTangerine.DAO.M3
                 elClientePotencial.NumeroVisitas.ToString(), false);
                 parameters.Add(theParam);
 
-                List<Resultado> results = 
+                List<Resultado> results =
                     theConnection.EjecutarStoredProcedure(ResourceClientePotencial.SP_modificarClientePotencial, parameters);
 
             }
@@ -613,7 +613,7 @@ namespace DatosTangerine.DAO.M3
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ResourceClientePotencial.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            
+
             ClientePotencial cliente = (ClientePotencial)parametro;
             List<Parametro> parameters = new List<Parametro>();
             BDConexion theConnection = new BDConexion();
@@ -630,9 +630,9 @@ namespace DatosTangerine.DAO.M3
                 cliente.Id.ToString(), false);
                 parameters.Add(theParam);
 
-                DataTable dt = 
+                DataTable dt =
                     theConnection.EjecutarStoredProcedureTuplas(ResourceClientePotencial.SP_consultarClientePotencial, parameters);
- 
+
                 foreach (DataRow row in dt.Rows)
                 {
 
@@ -711,19 +711,19 @@ namespace DatosTangerine.DAO.M3
                 {
                     Entidad clientePotencial = DominioTangerine.Fabrica.FabricaEntidades.ObtenerClientePotencial();
 
-                    ((ClientePotencial)clientePotencial).IdClientePotencial = 
+                    ((ClientePotencial)clientePotencial).IdClientePotencial =
                         Int32.Parse(row[ResourceClientePotencial.idClientePotencial].ToString());
 
-                    ((ClientePotencial)clientePotencial).NombreClientePotencial = 
+                    ((ClientePotencial)clientePotencial).NombreClientePotencial =
                         row[ResourceClientePotencial.nombreClientePotencial].ToString();
 
-                    ((ClientePotencial)clientePotencial).RifClientePotencial = 
+                    ((ClientePotencial)clientePotencial).RifClientePotencial =
                         row[ResourceClientePotencial.rifClientePotencial].ToString();
 
-                    ((ClientePotencial)clientePotencial).EmailClientePotencial = 
+                    ((ClientePotencial)clientePotencial).EmailClientePotencial =
                         row[ResourceClientePotencial.emailClientePotencial].ToString();
 
-                    ((ClientePotencial)clientePotencial).PresupuestoAnual_inversion = 
+                    ((ClientePotencial)clientePotencial).PresupuestoAnual_inversion =
                         float.Parse(row[ResourceClientePotencial.presupuestoAnual_inversion].ToString());
 
                     ((ClientePotencial)clientePotencial).Status = Int32.Parse(row[ResourceClientePotencial.status].ToString());
