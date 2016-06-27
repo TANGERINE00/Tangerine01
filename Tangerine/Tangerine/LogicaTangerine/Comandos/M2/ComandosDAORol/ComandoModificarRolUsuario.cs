@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
         /// <summary>
         /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
-        /// <param name="theUsuario"></param>
+        /// <param name="theUsuario">El usuario</param>
         public ComandoModificarRolUsuario( DominioTangerine.Entidad theUsuario )
         {
             _theUsuario = theUsuario;

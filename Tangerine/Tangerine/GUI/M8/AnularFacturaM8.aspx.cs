@@ -120,6 +120,10 @@ namespace Tangerine.GUI.M8
         {
             set { alert.InnerHtml = value; }
         }
+
+        DateTime _fechaEmision = DateTime.Now;
+
+        DateTime _fechaUltimoPago = DateTime.Now;
         #endregion
 
         #region presentador
@@ -131,9 +135,12 @@ namespace Tangerine.GUI.M8
         }
         #endregion
 
-        DateTime _fechaEmision = DateTime.Now;
-        DateTime _fechaUltimoPago = DateTime.Now;
-
+        /// <summary>
+        /// Carga la ventana AnularFactura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="idF">Representa el Id de la Entidad Factura</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try 
@@ -150,6 +157,11 @@ namespace Tangerine.GUI.M8
             }
         }
 
+        /// <summary>
+        /// Accion del Boton Anular, que va a anular la factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttonAnularFactura_Click(object sender, EventArgs e)
         {            
             if (_presentador.anularFactura())

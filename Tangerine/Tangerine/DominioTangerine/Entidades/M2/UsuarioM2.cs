@@ -32,8 +32,8 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase Usuario con usuario y contraseña
         /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="contrasena"></param>
+        /// <param name="usuario">Es el nombre de usuario</param>
+        /// <param name="contrasena">Es la contraseña</param>
         public UsuarioM2( string usuario , string contrasena )
         {
             _usuario = usuario;
@@ -43,8 +43,8 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase Usuario con usuario y rol
         /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="rol"></param>
+        /// <param name="usuario">Es el nombre de usuario</param>
+        /// <param name="rol">Es el rol</param>
         public UsuarioM2( string usuario , RolM2 rol )
         {
             _usuario = usuario;
@@ -54,9 +54,9 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase Usuario con usuario, contraseña y activo
         /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="contrasena"></param>
-        /// <param name="activo"></param>
+        /// <param name="usuario">Es el nombre de usuario</param>
+        /// <param name="contrasena">Es la contraseña</param>
+        /// <param name="activo">Es el estatus</param>
         public UsuarioM2( string usuario , string contrasena , string activo )
                :this( usuario , contrasena )
         {
@@ -66,10 +66,10 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase Usuario con usuario, contraseña, activo y rol
         /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="contrasena"></param>
-        /// <param name="activo"></param>
-        /// <param name="rol"></param>
+        /// <param name="usuario">Es el nombre de usuario</param>
+        /// <param name="contrasena">Es la contraseña</param>
+        /// <param name="activo">Es el estatus</param>
+        /// <param name="rol">Es el rol</param>
         public UsuarioM2( string usuario , string contrasena , string activo , RolM2 rol )
                :this( usuario , contrasena , activo )
         {
@@ -79,12 +79,12 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase Usuario con todos sus atributos sin id
         /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="contrasena"></param>
-        /// <param name="fechaCreacion"></param>
-        /// <param name="activo"></param>
-        /// <param name="rol"></param>
-        /// <param name="fichaEmpleado"></param>
+        /// <param name="usuario">Es el nombre de usuario</param>
+        /// <param name="contrasena">Es la contraseña</param>
+        /// <param name="fechaCreacion">Es su fecha de creacion</param>
+        /// <param name="activo">Es el estatus</param>
+        /// <param name="rol">Es el rol</param>
+        /// <param name="fichaEmpleado">Es la ficha del empleado</param>
         public UsuarioM2( string usuario , string contrasena , DateTime fechaCreacion , string activo , RolM2 rol , int fichaEmpleado )
                :this( usuario , contrasena , activo , rol )
         {
@@ -95,13 +95,13 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor de la clase Usuario con todos sus atributos y con id
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="usuario"></param>
-        /// <param name="contrasena"></param>
-        /// <param name="fechaCreacion"></param>
-        /// <param name="activo"></param>
-        /// <param name="rol"></param>
-        /// <param name="fichaEmpleado"></param>
+        /// <param name="id">Es el id del usuario</param>
+        /// <param name="usuario">Es el nombre de usuario</param>
+        /// <param name="contrasena">Es la contraseña</param>
+        /// <param name="fechaCreacion">Es su fecha de creacion</param>
+        /// <param name="activo">Es el estatus</param>
+        /// <param name="rol">Es el rol</param>
+        /// <param name="fichaEmpleado">Es la ficha del empleado</param>
         public UsuarioM2( int id , string usuario , string contrasena , DateTime fechaCreacion , string activo , RolM2 rol ,
                           int fichaEmpleado )
                :this ( usuario , contrasena , activo , rol )
@@ -183,7 +183,7 @@ namespace DominioTangerine.Entidades.M2
         /// Método para encriptar la contraseña del usuario, se utiliza al crear el usuario y en el login para comparar
         /// la contraseña colocada y la contraseña real
         /// </summary>
-        /// <param name="contrasena"></param>
+        /// <param name="contrasena">Es la contraseña que se quiere encriptar</param>
         /// <returns></returns>
         public string GetMD5( string contrasena )
         {

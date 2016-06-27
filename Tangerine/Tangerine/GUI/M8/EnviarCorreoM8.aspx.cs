@@ -73,6 +73,12 @@ namespace Tangerine.GUI.M8
 
         #endregion
 
+        /// <summary>
+        /// Carga la ventana Enviar Correo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="idFac">Id de la factura</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -89,6 +95,11 @@ namespace Tangerine.GUI.M8
             }
         }
 
+        /// <summary>
+        /// Boton para enviar el correo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void buttonEnviarCorreo_Click(object sender, EventArgs e)
         {
             if (fuImage.HasFile)
@@ -98,6 +109,10 @@ namespace Tangerine.GUI.M8
                 Server.Transfer(ResourceGUIM8.volverCorreo);
         }
 
+        /// <summary>
+        /// Metodo para guardar el archivo adjunto
+        /// </summary>
+        /// <param name="file">Archivo a enviar por correo</param>
         void SaveFile(HttpPostedFile file)
         {
             // Specify the path to save the uploaded file to.

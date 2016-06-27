@@ -28,7 +28,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoAgregarUsuario
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="usuario">Es el objeto que se quiere agregar</param>
             /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
             public static Comando<Boolean> agregarUsuario( DominioTangerine.Entidad usuario )
             {
@@ -38,7 +38,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoVerificarUsuario
             /// </summary>
-            /// <param name="fichaEmpleado"></param>
+            /// <param name="fichaEmpleado">Es la ficha del empleado</param>
             /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
             public static Comando<Boolean> verificarUsuario( int fichaEmpleado )
             {
@@ -48,7 +48,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoValidarUsuario
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="usuario">Es el nombre del usuario</param>
             /// <returns>Retorna una instancia a ComandoValidarUsuario</returns>
             public static Comando<Boolean> validarUsuario( string usuario )
             {
@@ -58,8 +58,8 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoObtenerCaracteres
             /// </summary>
-            /// <param name="cadena"></param>
-            /// <param name="cantidad"></param>
+            /// <param name="cadena">Es la cadena que se quiere obtener</param>
+            /// <param name="cantidad">Es la cantidad de la cadena</param>
             /// <returns>Retorna una instancia a ComandoObtenerCaracteres</returns>
             public static Comando<String> obtenerCaracteres( String cadena , int cantidad )
             {
@@ -69,8 +69,8 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoUsuarioDefault
             /// </summary>
-            /// <param name="nombre"></param>
-            /// <param name="apellido"></param>
+            /// <param name="nombre">Es el nombre del usuario</param>
+            /// <param name="apellido">Es el apellido del usuario</param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
             public static Comando<String> crearUsuario( string nombre , string apellido )
             {
@@ -80,7 +80,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoObtenerUsuario
             /// </summary>
-            /// <param name="theEmpleado"></param>
+            /// <param name="theEmpleado">Es el numero del empleado</param>
             /// <returns>Retorna una instancia a ComandoUsuarioDefault</returns>
             public static Comando<DominioTangerine.Entidad> obtenerUsuario( int theEmpleado )
             {
@@ -90,7 +90,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoConsultarPorID
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="usuario">Es el objeto que se quiere consultar</param>
             /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
             public static Comando<DominioTangerine.Entidad> consultarUsuarioPorID( DominioTangerine.Entidad usuario )
             {
@@ -100,7 +100,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoModificarContrasena
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="usuario">Es el objeto que se quiere modificar</param>
             /// <returns>Retorna una instancia a ComandoModificarContrasena</returns>
             public static Comando<Boolean> modificarContrasenaUsuario( DominioTangerine.Entidad usuario )
             {
@@ -110,10 +110,10 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoPrepararUsuario
             /// </summary>
-            /// <param name="usuarioNombre"></param>
-            /// <param name="contrasenaUsuario"></param>
-            /// <param name="rolUsuario"></param>
-            /// <param name="fichaEmpleado"></param>
+            /// <param name="usuarioNombre">Es el nombre de usuario</param>
+            /// <param name="contrasenaUsuario">Es la contraseña de usuario</param>
+            /// <param name="rolUsuario">Es el rol</param>
+            /// <param name="fichaEmpleado">Es la ficha del empleado</param>
             /// <returns>Retorna una instancia a ComandoPrepararUsuario</returns>
             public static Comando<Boolean> prepararUsuario( String usuarioNombre , String contrasenaUsuario , 
                                                             String rolUsuario , int fichaEmpleado)
@@ -125,7 +125,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoConsultaUsuarioLogin
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="usuario">Es el objeto que se quiere consultar</param>
             /// <returns>Retorna una instancia a ComandoConsultarPorID</returns>
             public static Comando<DominioTangerine.Entidad> consultarUsuarioLogin( DominioTangerine.Entidad usuario )
             {
@@ -135,8 +135,8 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia del ComandoModificarUsuario
             /// </summary>
-            /// <param name="fichaEmpleado"></param>
-            /// <param name="nombreUsuario"></param>
+            /// <param name="fichaEmpleado">Es la ficha del empleado</param>
+            /// <param name="nombreUsuario">Es el nombre del usuario</param>
             /// <returns>Retorna una instancia a ComandoModificarUsuario</returns>
             public static Comando<Boolean> modificarUsuario( int fichaEmpleado , string nombreUsuario )
             {
@@ -159,7 +159,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoModificarRolUsuario
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Es el objeto al cual se le quiere modificar el rol</param>
             /// <returns>Retorna una una instancia a ComandoAgregarUsuario</returns>
             public static Comando<Boolean> obtenerComandoModificarRolUsuario( DominioTangerine.Entidad theUsuario )
             {
@@ -169,7 +169,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoObtenerRolUsuario
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="codigoRol">Es el codigo del rol</param>
             /// <returns>Retorna una una instancia a ObtenerRolUsuario</returns>
             public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuario( int codigoRol )
             {
@@ -179,8 +179,8 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoObtenerOpciones
             /// </summary>
-            /// <param name="nombreMenu"></param>
-            /// <param name="codigoRol"></param>
+            /// <param name="nombreMenu">Es el nombre del menu</param>
+            /// <param name="codigoRol">Es el codigo del rol</param>
             /// <returns>Retorna una una instancia a ObtenerOpciones</returns>
             public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerOpciones( string nombreMenu , int codigoRol )
             {
@@ -190,8 +190,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoObtenerRolUsuarioPorNombre
             /// </summary>
-            /// <param name="nombreMenu"></param>
-            /// <param name="codigoRol"></param>
+            /// <param name="nombreRol">Es el nombre del rol</param>
             /// <returns>Retorna una una instancia a ObtenerRolUsuarioPorNombre</returns>
             public static Comando<DominioTangerine.Entidad> obtenerComandoObtenerRolUsuarioPorNombre( string nombreRol )
             {
@@ -201,8 +200,8 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoModificarRol
             /// </summary>
-            /// <param name="elUsuario"></param>
-            /// <param name="elRol"></param>
+            /// <param name="elUsuario">Es el nombre del usuario</param>
+            /// <param name="elRol">Es el nombre del rol</param>
             /// <returns>Retorna una una instancia a ComandoModificarRol</returns>
             public static Comando<Boolean> obtenerComandoModificarRol( string elUsuario , string elRol )
             {
@@ -216,7 +215,7 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAOpciones
             /// </summary>
-            /// <param name="nombreRol"></param>
+            /// <param name="nombreRol">Es el nombre del rol</param>
             /// <returns>Retorna una una instancia a ComandoVerificarAccesoAOpciones</returns>
             public static Comando<List<String>> obtenerComandoVerificarAccesoAOpciones( String nombreRol )
             {
@@ -226,8 +225,8 @@ namespace LogicaTangerine.Fabrica
             /// <summary>
             /// Método utilizado para devolver una instancia de la clase ComandoVerificarAccesoAPagina
             /// </summary>
-            /// <param name="paginaAVerificar"></param>
-            /// <param name="nombreRol"></param>
+            /// <param name="paginaAVerificar">Es la pagina a la cual se le quiere verificar el acceso</param>
+            /// <param name="nombreRol">Es el nombre del rol</param>
             /// <returns>Retorna una una instancia a ComandoVerificarAccesoAPagina</returns>
             public static Comando<Boolean> obtenerComandoVerificarAccesoAPagina( String paginaAVerificar , String nombreRol)
             {

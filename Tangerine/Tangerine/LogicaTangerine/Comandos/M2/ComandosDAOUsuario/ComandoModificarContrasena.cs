@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
         /// <summary>
         /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
-        /// <param name="theUsuario"></param>
+        /// <param name="theUsuario">Es el objeto que se quiere modificar</param>
         public ComandoModificarContrasena( DominioTangerine.Entidad theUsuario )
         {
             _theUsuario = theUsuario;

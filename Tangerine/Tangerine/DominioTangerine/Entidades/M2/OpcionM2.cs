@@ -27,8 +27,8 @@ namespace DominioTangerine.Entidades.M2
         /// <summary>
         /// Constructor con todos los atributos
         /// </summary>
-        /// <param name="nombre"></param>
-        /// <param name="url"></param>
+        /// <param name="nombre">Es el nombre de la opcion</param>
+        /// <param name="url">Es el url de la opcion</param>
         public OpcionM2( string nombre , string url )
         {
             _nombre = nombre;

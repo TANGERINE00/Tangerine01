@@ -41,7 +41,11 @@
                         <div class="col-lg-12 col-md-12 col-xs-12">
                             <div class="form-group">
                             <label for="Descripcion">Motivo del seguimiento</label>
-                            <textarea class="form-control" rows="3" runat="server" id="motivo" placeholder="Motivo (solo 150 caracteres)"></textarea>
+                            <textarea class="form-control" rows="3" runat="server" id="motivo" 
+                                pattern="^[a-zA-Z'.\s]{1,40}$"
+                                required oninvalid="setCustomValidity('Campo obligatorio')" 
+                                oninput="setCustomValidity()" onchange="validarTextArea(this.id)"
+                                placeholder="Motivo (solo 150 caracteres)" maxlength="150"></textarea>
                          </div>
                         </div>
                     </div>
@@ -51,4 +55,26 @@
         </div>
     </div>
 </div>
+    <script type="text/javascript">
+        function validarTextArea(textArea) {
+            var textArea = document.getElementById(textArea);
+            var compania = document.getElementById("comboCompañia");
+
+            var regex = new RegExp("^[A-z ,.()0-9]+$");
+
+            var resultado = regex.test(textArea.value);
+
+            if (resultado == false && textArea.value != "") {
+                alert('El texto ingresado en el campo de text es invalido.\n\nPor favor ingrese su descripcion de nuevo.');
+                textArea.value = "";
+                textArea.style.borderColor = "red";
+            }
+            else if (resultado == false && textArea.value == "") {
+                textArea.style.borderColor = "#ccc";
+            }
+            else {
+                textArea.style.borderColor = "#00FF00"
+            }
+        }
+    </script>
 </asp:Content>
