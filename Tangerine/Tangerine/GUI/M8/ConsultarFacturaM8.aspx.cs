@@ -14,7 +14,7 @@ namespace Tangerine.GUI.M8
     public partial class ConsultarFacturaM8 : System.Web.UI.Page, IContratoConsultarFactura
     {
         
-        #region contrato        
+        #region contrato
         
         public string facturasCreadas
         {
@@ -53,6 +53,13 @@ namespace Tangerine.GUI.M8
         }
         #endregion        
         
+        /// <summary>
+        /// Carga la ventana Consultar Factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="estado">Para manejar la alerta a UI de acciones positivas en otras ventanas,
+        /// no obligatorio</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
