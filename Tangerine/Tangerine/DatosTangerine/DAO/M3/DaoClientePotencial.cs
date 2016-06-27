@@ -384,32 +384,60 @@ namespace DatosTangerine.DAO.M3
 
 
             theConnection.Conectar();
-
-            theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
-            parametro.Id.ToString(), false);
-            parameters.Add(theParam);
-
-            theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar,
-            "Visita", false);
-            parameters.Add(theParam);
-
-            DataTable data = 
-                theConnection.EjecutarStoredProcedureTuplas(ResourceClientePotencial.ConsultarSegumientoLlamadas, parameters);
-
-            foreach (DataRow row in data.Rows)
+            try
             {
-                int idHistoria = int.Parse(row[ResourceClientePotencial.idSeguimiento].ToString());
-                String tipoHistoria = row[ResourceClientePotencial.tipoSeguimiento].ToString();
-                String motivoHistoria = row[ResourceClientePotencial.motivoRegistro].ToString();
-                DateTime fechaHistoria = DateTime.Parse(row[ResourceClientePotencial.fechaRegistro].ToString());
-                int fkLead = int.Parse(row[ResourceClientePotencial.fkCliente].ToString());
+                theParam = new Parametro(ResourceClientePotencial.AidClientePotencial, SqlDbType.Int,
+                parametro.Id.ToString(), false);
+                parameters.Add(theParam);
 
-                Entidad registroHistoria = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXVisitas(idHistoria, fechaHistoria, tipoHistoria, motivoHistoria, fkLead);
+                theParam = new Parametro(ResourceClientePotencial.ChekTipo, SqlDbType.VarChar,
+                "Visita", false);
+                parameters.Add(theParam);
 
-                objetoListaHistorico.Add(registroHistoria);
+                DataTable data =
+                    theConnection.EjecutarStoredProcedureTuplas(ResourceClientePotencial.ConsultarSegumientoLlamadas, parameters);
 
+                foreach (DataRow row in data.Rows)
+                {
+                    int idHistoria = int.Parse(row[ResourceClientePotencial.idSeguimiento].ToString());
+                    String tipoHistoria = row[ResourceClientePotencial.tipoSeguimiento].ToString();
+                    String motivoHistoria = row[ResourceClientePotencial.motivoRegistro].ToString();
+                    DateTime fechaHistoria = DateTime.Parse(row[ResourceClientePotencial.fechaRegistro].ToString());
+                    int fkLead = int.Parse(row[ResourceClientePotencial.fkCliente].ToString());
+
+                    Entidad registroHistoria = DominioTangerine.Fabrica.FabricaEntidades.CrearSeguimientoXVisitas(idHistoria, fechaHistoria, tipoHistoria, motivoHistoria, fkLead);
+
+                    objetoListaHistorico.Add(registroHistoria);
+
+                }
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
+                throw new ExcepcionesTangerine.M3.NullArgumentExceptionLeads(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.ExceptionTGConBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                ResourceClientePotencial.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return objetoListaHistorico;
         }
 
