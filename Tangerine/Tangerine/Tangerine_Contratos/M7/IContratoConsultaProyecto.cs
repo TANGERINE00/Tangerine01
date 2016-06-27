@@ -13,6 +13,8 @@ namespace Tangerine_Contratos.M7
         /// Encabezado del Literal donde se carga la tabla a mostrar
         /// </summary>
         Literal Tabla { get; set; }
- 
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
     }
 }

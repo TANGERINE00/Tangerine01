@@ -21,8 +21,6 @@ namespace LogicaTangerine.Comandos.M8
         /// </summary>
         /// DEBE CONTENER LOS SIGUIENTES DATOS
         /// <param name="parametro">Factura -> fechaFactura</param>
-        /// <param name="parametro">Factura -> idProyectoFactura</param>
-        /// <param name="parametro">Factura -> idCompaniaFactura</param>
         public ComandoSearchExistingBill(Entidad parametro)
         {
             LaEntidad = parametro;
@@ -40,7 +38,8 @@ namespace LogicaTangerine.Comandos.M8
                 , ResourceLogicaM8.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 IDaoFactura daoFactura = FabricaDAOSqlServer.ObtenerDAOFactura();
-                return daoFactura.CheckExistingInvoice(this.LaEntidad);
+                bool respuesta = daoFactura.CheckExistingInvoice(this.LaEntidad);
+                return respuesta;
             }
             catch (ArgumentNullException ex)
             {
@@ -52,7 +51,7 @@ namespace LogicaTangerine.Comandos.M8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo,
                      ResourceLogicaM8.Mensaje_Error_Formato, ex);
             }
             catch (Exception ex)

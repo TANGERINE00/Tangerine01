@@ -20,6 +20,10 @@ namespace LogicaTangerine.Comandos.M3
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Método que ejecuta el comando para desactivar a un cliente potencial
+        /// </summary>
+        /// <param name="contacto"></param>
         public override bool Ejecutar()
         {
             try

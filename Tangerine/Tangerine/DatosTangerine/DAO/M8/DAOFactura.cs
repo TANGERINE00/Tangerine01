@@ -33,9 +33,8 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-
-                //Parametro recibe (nombre del SEGUNDO parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), 
+                theParam = new Parametro
+                    (ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), 
                         false);
                 parameters.Add(theParam);
 
@@ -43,37 +42,38 @@ namespace DatosTangerine.DAO.M8
                         theFactura.fechaUltimoPagoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int,
+                    theFactura.montoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(),
+                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int,
+                    theFactura.montoRestanteFactura.ToString(),
                         false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar, theFactura.tipoMoneda, false);
+                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar,
+                    theFactura.tipoMoneda, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar,
+                    theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int,
+                    theFactura.estatusFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int,
+                    theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int,
+                    theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
+                //Se manda a ejecutar el stored procedure M8_AgregarFactura y todos los parametros que recibe
                 EjecutarStoredProcedure(ResourceFactura.AddNewFactura, parameters);
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -90,7 +90,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -118,12 +118,12 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int,
+                    theFactura.Id.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(),
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime,
+                    theFactura.fechaFactura.ToString(),
                         false);
                 parameters.Add(theParam);
 
@@ -131,37 +131,38 @@ namespace DatosTangerine.DAO.M8
                         theFactura.fechaUltimoPagoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int,
+                    theFactura.montoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(), 
+                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int,
+                    theFactura.montoRestanteFactura.ToString(), 
                         false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar, theFactura.tipoMoneda, false);
+                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar,
+                    theFactura.tipoMoneda, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar,
+                    theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int,
+                    theFactura.estatusFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int,
+                    theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int,
+                    theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M8_ModificarFactura y todos los parametros que recibe
+                //Se manda a ejecutar el stored procedure M8_ModificarFactura y todos los parametros que recibe
                 EjecutarStoredProcedure(ResourceFactura.ChangeFactura, parameters);
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -178,7 +179,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -206,7 +207,8 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int,
+                    theFactura.Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -227,16 +229,10 @@ namespace DatosTangerine.DAO.M8
                 int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                 //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda,
-                        facDescripcion, facEstatus, facIdProyecto, facIdCompania);
+                theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante,
+                    facTipoMoneda, facDescripcion, facEstatus, facIdProyecto, facIdCompania);
                 theFactura.Id = facId;
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -253,7 +249,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -264,7 +260,6 @@ namespace DatosTangerine.DAO.M8
             }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             ResourceFactura.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            
             return theFactura;
         }
 
@@ -299,20 +294,14 @@ namespace DatosTangerine.DAO.M8
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
                     //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
-                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante,
-                        facTipoMoneda, facDescripcion, facEstatus, facIdProyecto, facIdCompania);
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto,
+                        facMontoRestante, facTipoMoneda, facDescripcion, facEstatus, facIdProyecto, facIdCompania);
                     theFactura.Id = facId;
 
                     listFactura.Add(theFactura);
                 }
 
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -329,7 +318,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -361,20 +350,13 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int,
+                    theFactura.Id.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M8_AgregarFactura y todos los parametros que recibe
+                //Se manda a ejecutar el stored procedure M8_AgregarFactura y todos los parametros que recibe
                 EjecutarStoredProcedure(ResourceFactura.DeleteFactura, parameters);
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -391,7 +373,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -419,50 +401,49 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int,
+                    theFactura.Id.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime, theFactura.fechaFactura.ToString(), 
-                        false);
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.DateTime,
+                    theFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 theParam = new Parametro(ResourceFactura.ParamFecha_Ultimo_Pago, SqlDbType.DateTime, 
                         theFactura.fechaUltimoPagoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int, theFactura.montoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamMonto_Total, SqlDbType.Int,
+                    theFactura.montoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int, theFactura.montoRestanteFactura.ToString(),
-                        false);
+                theParam = new Parametro(ResourceFactura.ParamMonto_Restante, SqlDbType.Int,
+                    theFactura.montoRestanteFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar, theFactura.tipoMoneda, false);
+                theParam = new Parametro(ResourceFactura.ParamTipo_Moneda, SqlDbType.VarChar,
+                    theFactura.tipoMoneda, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar, theFactura.descripcionFactura, false);
+                theParam = new Parametro(ResourceFactura.ParamDescripcion, SqlDbType.VarChar,
+                    theFactura.descripcionFactura, false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int, theFactura.estatusFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamEstatus, SqlDbType.Int,
+                    theFactura.estatusFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, theFactura.idProyectoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int,
+                    theFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int,
+                    theFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                //Se manda a ejecutar en BDConexion el stored procedure M8_AnnularFactura y todos los parametros que recibe
+                //Se manda a ejecutar el stored procedure M8_AnnularFactura y todos los parametros que recibe
                 EjecutarStoredProcedure(ResourceFactura.AnnularFactura, parameters);
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -479,7 +460,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -497,7 +478,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Funcion que permite buscar todas las facturas asociadas a una compañia
         /// </summary>
-        /// <param name="idCompania"></param>
+        /// <param name="parametro"></param>
         /// <returns>Retorna la lista con todas las facturas</returns>
         public List<Entidad> ContactFacturasCompania(Entidad parametro)
         {
@@ -509,7 +490,8 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int,
+                    theCompany.Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -530,20 +512,14 @@ namespace DatosTangerine.DAO.M8
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
-                    theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, facTipoMoneda, 
-                        facDescripcion, facEstatus, facIdProyecto, facIdCompania);
+                    theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante,
+                        facTipoMoneda, facDescripcion, facEstatus, facIdProyecto, facIdCompania);
                     theFactura.Id = facId;
 
                     listFactura.Add(theFactura);
                 }
 
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -560,7 +536,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -578,7 +554,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Funcion que permite buscar todas las facturas pagadas asociadas a una compañia
         /// </summary>
-        /// <param name="idCompania"></param>
+        /// <param name="parametro"></param>
         /// <returns>Retorna la lista con todas las facturas</returns>
         public List<Entidad> ContactFacturasPagadasCompania(Entidad parametro)
         {
@@ -589,11 +565,13 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int,
+                    theCompany.Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
-                DataTable dt = EjecutarStoredProcedureTuplas(ResourceFactura.ContactFacturasPagadasCompania, parameters);
+                DataTable dt = EjecutarStoredProcedureTuplas(ResourceFactura.ContactFacturasPagadasCompania,
+                    parameters);
 
                 //Guardar los datos 
                 foreach (DataRow row in dt.Rows)
@@ -610,20 +588,14 @@ namespace DatosTangerine.DAO.M8
                     int facIdProyecto = int.Parse(row[ResourceFactura.FacIdProyecto].ToString());
                     int facIdCompania = int.Parse(row[ResourceFactura.FacIdCompania].ToString());
 
-                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto, facMontoRestante, 
-                        facTipoMoneda, facDescripcion, facEstatus, facIdProyecto, facIdCompania);
+                    Facturacion theFactura = new Facturacion(facId, facFecha, facFechaUltimoPago, facMonto,
+                        facMontoRestante, facTipoMoneda, facDescripcion, facEstatus, facIdProyecto, facIdCompania);
                     theFactura.Id = facId;
 
                     listFactura.Add(theFactura);
                 }
 
 
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -640,7 +612,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -658,7 +630,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Metodo para consultar el monto restante de una factura por id
         /// </summary>
-        /// <param name="idFactura"></param>
+        /// <param name="parametro"></param>
         /// <returns>Devuelve el monto restante de una factura por id</returns>
         public double ContactMontoRestanteFactura(Entidad parametro)
         {
@@ -669,9 +641,8 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
-                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
-                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int, theFactura.Id.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdFactura, SqlDbType.Int,
+                    theFactura.Id.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar el monto restante de la factura
@@ -682,12 +653,6 @@ namespace DatosTangerine.DAO.M8
 
                 montoRestante = double.Parse(row[ResourceFactura.FacMontoRestante].ToString());
  
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -704,7 +669,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)
@@ -722,9 +687,7 @@ namespace DatosTangerine.DAO.M8
         /// <summary>
         /// Metodo que permite buscar si ya existe una factura para una fecha, proyecto y compañia dada
         /// </summary>
-        /// <param name="fechaEmision"></param>
-        /// <param name="idProyecto"></param>
-        /// <param name="idCompania"></param>
+        /// <param name="parametro"></param>
         /// <returns>Retorna un valor booleano para saber si ya existe la factura especifica</returns>
         public bool CheckExistingInvoice(Entidad parametro)
         {
@@ -736,13 +699,16 @@ namespace DatosTangerine.DAO.M8
 
             try
             {
-                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.Date, TheFactura.fechaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamFecha_Emision, SqlDbType.Date,
+                    TheFactura.fechaFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int, TheFactura.idProyectoFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdProyecto, SqlDbType.Int,
+                    TheFactura.idProyectoFactura.ToString(), false);
                 parameters.Add(theParam);
 
-                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int, TheFactura.idCompaniaFactura.ToString(), false);
+                theParam = new Parametro(ResourceFactura.ParamIdCompania, SqlDbType.Int,
+                    TheFactura.idCompaniaFactura.ToString(), false);
                 parameters.Add(theParam);
 
                 //Guardo la tabla que me regresa el procedimiento de consultar contactos
@@ -753,12 +719,6 @@ namespace DatosTangerine.DAO.M8
                 {
                     resultado = true;
                 }
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M8.ExceptionDataBase(ResourceFactura.Codigo,
-                    ResourceFactura.MensajeSQL, ex);
             }
             catch (FormatException ex)
             {
@@ -775,7 +735,7 @@ namespace DatosTangerine.DAO.M8
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceFactura.Codigo,
                    ResourceFactura.MensajeSQL, ex);
             }
             catch (Exception ex)

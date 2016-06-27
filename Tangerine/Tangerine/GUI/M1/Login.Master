@@ -94,6 +94,14 @@
                 increaseArea: '20%' // optional
             });
         });
+        var ancho = $('.form-group').width();
+        $('input[type="text"]').css("width", ancho);
+        $('input[type="password"]').css("width", ancho);
+        $(window).resize(function () {
+            var ancho = $('.form-group').width();
+            $('input[type="text"]').css("width", ancho);
+            $('input[type="password"]').css("width", ancho);
+        });
     </script>
 </body>
 </html>

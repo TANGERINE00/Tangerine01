@@ -12,6 +12,7 @@ using LogicaTangerine.M10;
 using Tangerine_Contratos.M10;
 using Tangerine_Presentador.M10;
 using Tangerine_Contratos.M1;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M1
 {
@@ -42,20 +43,7 @@ namespace Tangerine.GUI.M1
             #endregion
         }
 
-        //protected void SelectedJob_Change(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        JobSummary.InnerText = "";
-        //        JobSummary.InnerText += elementos[SelectedListJob.SelectedItem.Text].ToString();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        JobSummary.InnerText = "";
-        //    }
-
-        //}
-
+       
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
 
@@ -76,14 +64,27 @@ namespace Tangerine.GUI.M1
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            try
             {
-                presentador.AgregarEmpleado();
-                Response.Redirect("../M1/EmpleadosAdmin.aspx?EmployeeId=0");
+                //presentador = new PresentadorCrearEmpleado(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.IDFicha], false)),
+                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Nombre], false),
+                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Apellido], false),
+                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Rol], false), 
+                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Rol], false));
+
+                if (Page.IsValid)
+                {
+                    presentador.AgregarEmpleado();
+
+
+                }
 
             }
 
+            catch 
+            {
 
+            }
         }
 
               

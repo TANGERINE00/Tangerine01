@@ -58,5 +58,8 @@ namespace Tangerine_Contratos.M4
         /// Encabezado acronimo del mensaje de error al momento de ocurrir una excepcion
         /// </summary>
         string msjError { get; set; }
+        string alertaClase { set; }
+        string alerta { set; }
+        string alertaRol{ set; }
     }
 }

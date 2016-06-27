@@ -29,11 +29,23 @@ namespace Tangerine_Presentador.M8
         /// </summary>
         public void Alerta(string msj)
         {
-            if (msj == "1")
+            if (msj == RecursoPresentadorM8.codigoMod)
             {
                 vista.alertaClase = RecursoPresentadorM8.alertaModificado;
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
                 vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            if (msj == RecursoPresentadorM8.codigoAnular)
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjMAnulado + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            if (msj == RecursoPresentadorM8.codigoCorreo)
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjCorreo + RecursoPresentadorM8.alertaHtmlFinal;
             }
             else
             {
@@ -66,21 +78,21 @@ namespace Tangerine_Presentador.M8
                     _elProyecto = (DominioTangerine.Entidades.M7.Proyecto)_comandoProyecto.Ejecutar();
 
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTr;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.Id.ToString() 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.Id.ToString()
                         + RecursoPresentadorM8.CloseTd;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + _laCompania.NombreCompania 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + _laCompania.NombreCompania
                         + RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.OpenTD + _elProyecto.Nombre
                         + RecursoPresentadorM8.CloseTd;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.descripcionFactura.ToString() 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.descripcionFactura.ToString()
                         + RecursoPresentadorM8.CloseTd;
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD +
                         laFactura.fechaFactura.ToString(RecursoPresentadorM8.dateTipe) + RecursoPresentadorM8.CloseTd;
-                    
+
                     //Equals cero para factura "Por Pagar"
                     if (laFactura.estatusFactura.Equals(0))
                     {
-                        vista.facturasCreadas += RecursoPresentadorM8.OpenTD + RecursoPresentadorM8.porPagar 
+                        vista.facturasCreadas += RecursoPresentadorM8.OpenTD + RecursoPresentadorM8.porPagar
                             + RecursoPresentadorM8.CloseTd;
 
                     }
@@ -88,18 +100,18 @@ namespace Tangerine_Presentador.M8
                     else if (laFactura.estatusFactura.Equals(1))
                     {
                         pagada = true;
-                        vista.facturasCreadas += RecursoPresentadorM8.OpenTD + RecursoPresentadorM8.pagada 
+                        vista.facturasCreadas += RecursoPresentadorM8.OpenTD + RecursoPresentadorM8.pagada
                             + RecursoPresentadorM8.CloseTd;
                     }
                     //Equals dos para factura "Anulada"
                     else if (laFactura.estatusFactura.Equals(2))
                     {
                         anulada = true;
-                        vista.facturasCreadas += RecursoPresentadorM8.OpenTD + RecursoPresentadorM8.anulada 
+                        vista.facturasCreadas += RecursoPresentadorM8.OpenTD + RecursoPresentadorM8.anulada
                             + RecursoPresentadorM8.CloseTd;
                     }
 
-                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.tipoMoneda.ToString() 
+                    vista.facturasCreadas += RecursoPresentadorM8.OpenTD + laFactura.tipoMoneda.ToString()
                         + RecursoPresentadorM8.CloseTd;
 
                     //Acciones de cada contacto
@@ -107,21 +119,21 @@ namespace Tangerine_Presentador.M8
 
                     if (pagada == true || anulada == true)
                     {
-                        vista.facturasCreadas += 
-                            RecursoPresentadorM8.BotonModifInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonAnularInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonPagarInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura + RecursoPresentadorM8.CloseBotonParametro; 
+                        vista.facturasCreadas +=
+                            RecursoPresentadorM8.BotonModifInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonAnularInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonPagarInhabilitado + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura + RecursoPresentadorM8.CloseBotonParametro;
                     }
                     else
                     {
-                        vista.facturasCreadas += 
-                            RecursoPresentadorM8.BotonModif + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonAnular + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonPagar + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro 
-                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura + RecursoPresentadorM8.CloseBotonParametro; 
+                        vista.facturasCreadas +=
+                            RecursoPresentadorM8.BotonModif + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonAnular + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonPagar + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonFactura + laFactura.Id.ToString() + RecursoPresentadorM8.CloseBotonParametro
+                            + RecursoPresentadorM8.BotonMail + laFactura.idCompaniaFactura + RecursoPresentadorM8.CloseBotonParametro;
                     }
                     vista.facturasCreadas += RecursoPresentadorM8.CloseTd;
                     vista.facturasCreadas += RecursoPresentadorM8.CloseTr;
@@ -130,9 +142,12 @@ namespace Tangerine_Presentador.M8
 
                 }
             }
-            catch (Exception ex)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
     }

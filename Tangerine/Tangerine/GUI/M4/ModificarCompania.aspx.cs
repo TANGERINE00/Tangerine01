@@ -144,6 +144,30 @@ namespace Tangerine.GUI.M4
                 error = value;
             }
         }
+
+
+        /// <summary>
+        /// Clase de alerta, para excepciones
+        /// </summary>
+        public string alertaClase
+        {
+            set { alert.Attributes[ResourceGUIM4.alertClase] = value; }
+        }
+
+        /// <summary>
+        /// Atributos de alerta, para excepciones
+        /// </summary>
+        public string alertaRol
+        {
+            set { alert.Attributes[ResourceGUIM4.alertRol] = value; }
+        }
+        /// <summary>
+        /// Alerta cuando hay una excepcion
+        /// </summary>
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
 
@@ -175,10 +199,17 @@ namespace Tangerine.GUI.M4
         /// <returns></returns>
         protected void btnmodificar_Click(object sender, EventArgs e)
         {
-            if (Presentador.ModificarCompania(int.Parse(Request.QueryString["idComp"])))
-                Server.Transfer("ConsultarCompania.aspx", true);
-            else
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true); 
+            try
+            {
+                if (Presentador.ModificarCompania(int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idComp"], false))))
+                    Server.Transfer("ConsultarCompania.aspx", true);
+                else
+                    Presentador.Alerta(msjError);
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("../M1/DashBoard.aspx");
+            }
         }
 
         /// <summary>

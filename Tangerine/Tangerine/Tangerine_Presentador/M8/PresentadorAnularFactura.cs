@@ -47,25 +47,32 @@ namespace Tangerine_Presentador.M8
                 vista.monto = lafactura.montoFactura.ToString();
                 vista.moneda = lafactura.tipoMoneda;
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
 
         }
 
-        public void anularFactura()
+        public Boolean anularFactura()
         {
             try
             {
                 Facturacion lafactura = (Facturacion)FabricaEntidades.ObtenerFacturacion();
                 lafactura.Id = int.Parse(this.vista.numero);
                 Comando<bool> comandoAnular = FabricaComandos.CrearAnularFactura(lafactura);
-                comandoAnular.Ejecutar();
+                return comandoAnular.Ejecutar();
             }
-            catch (Exception e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+                return false;
             }
         }
     }

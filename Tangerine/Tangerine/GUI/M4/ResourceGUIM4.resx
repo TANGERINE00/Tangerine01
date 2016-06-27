@@ -224,4 +224,10 @@
   <data name="Presupuesto" xml:space="preserve">
     <value>Presupuesto Actual:</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRol" xml:space="preserve">
+    <value>role</value>
+  </data>
 </root>

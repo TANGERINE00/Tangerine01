@@ -339,4 +339,22 @@
   <data name="euros" xml:space="preserve">
     <value>Euros</value>
   </data>
+  <data name="codigoAnular" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="codigoMod" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="MsjMAnulado" xml:space="preserve">
+    <value>La factura ha sido anulada.</value>
+  </data>
+  <data name="rutaFacturas" xml:space="preserve">
+    <value>C:\Users\Istvan\Documents\GitHub\Tangerine01\Tangerine\Tangerine\Facturas\</value>
+  </data>
+  <data name="codigoCorreo" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="MsjCorreo" xml:space="preserve">
+    <value>El correo se ha enviado</value>
+  </data>
 </root>

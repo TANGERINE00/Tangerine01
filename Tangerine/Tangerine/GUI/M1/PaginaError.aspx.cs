@@ -7,11 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace Tangerine.GUI.M1
 {
-    public partial class NuevaContraseña : System.Web.UI.Page
+    public partial class PaginaError : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+       
     }
 }

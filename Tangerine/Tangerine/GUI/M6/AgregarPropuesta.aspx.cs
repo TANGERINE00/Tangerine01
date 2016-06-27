@@ -32,11 +32,14 @@ namespace Tangerine.GUI.M6
         {
             if (!IsPostBack)
             {
-                try {
-                presenter.llenarVista();
-                }catch (Exception)
+                try 
                 {
-                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    presenter.llenarVista();
+                }
+                catch (Exception)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
                 }
 
             }
@@ -50,18 +53,18 @@ namespace Tangerine.GUI.M6
             try
             {
                 presenter.agregarPropuesta();
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception)
             {
-                Response.Redirect("../M6/AgregarPropuesta.aspx");
-            }
-            finally 
-            {
-                Server.Transfer("ConsultarPropuesta.aspx", true);
+                Response.Redirect("../M6/AgregarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             
         }

@@ -308,6 +308,11 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo, fk);
             }
             #endregion
+
+            public static Entidad CrearSeguimientoDeCliente(DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(fecha, tipo, motivo, fk);
+            }
         #endregion
 
         #region Modulo 4
@@ -668,11 +673,26 @@ namespace DominioTangerine.Fabrica
 
         #region Modulo 8
 
+        /// <summary>
+        /// Constructor de datos correo vacio.
+        /// </summary>
         public static Entidad ObtenerFacturacion()
         {
             return new Facturacion();
         }
 
+        /// <summary>
+        /// Constructor de Facturacion sin id de Entidad.
+        /// </summary>
+        /// <param name="fecha">Fecha de creacion</param>
+        /// <param name="fechaUltimoPago">Fecha del ultimo pago</param>
+        /// <param name="monto">Monto de la factura</param>
+        /// <param name="montoRestante">Monto restante por pagar</param>
+        /// <param name="tipoMoneda">Moneda de la factura</param>
+        /// <param name="descripcion">Descripcion de la factura</param>
+        /// <param name="estatus">Estado de la factura(0 ppagar, 1 pagado, 2 anulada)</param>
+        /// <param name="idProyecto">Id del proyecto de la factura</param>
+        /// <param name="idCompania">Id de la compania del proyecto y factura</param>
         public static Entidad ObtenerFacturacion(DateTime fecha, DateTime fechaUltimoPago, double monto,
             double montoRestante, String tipoMoneda, String descripcion, int estatus, int idProyecto, int idCompania)
         {
@@ -680,6 +700,19 @@ namespace DominioTangerine.Fabrica
                 descripcion, estatus, idProyecto, idCompania);
         }
 
+        /// <summary>
+        /// Constructor de Facturacion con todos los atributos.
+        /// </summary>
+        /// <param name="facturaId">Id de la entidad</param>
+        /// <param name="fecha">Fecha de creacion</param>
+        /// <param name="fechaUltimoPago">Fecha del ultimo pago</param>
+        /// <param name="monto">Monto de la factura</param>
+        /// <param name="montoRestante">Monto restante por pagar</param>
+        /// <param name="tipoMoneda">Moneda de la factura</param>
+        /// <param name="descripcion">Descripcion de la factura</param>
+        /// <param name="estatus">Estado de la factura(0 ppagar, 1 pagado, 2 anulada)</param>
+        /// <param name="idProyecto">Id del proyecto de la factura</param>
+        /// <param name="idCompania">Id de la compania del proyecto y factura</param>
         public static Entidad ObtenerFacturacion(int facturaId, int idNumeroFactura, DateTime fecha,
             DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion,
             int estatus, int idProyecto, int idCompania)
@@ -688,22 +721,40 @@ namespace DominioTangerine.Fabrica
                 descripcion, estatus, idProyecto, idCompania);
         }
 
-        //-----------Correo------------
+        /// <summary>
+        /// Constructor de CorreoGmailM8.
+        /// </summary>
         public static Entidad ObtenerCorreoGmailM8()
         {
             return new CorreoGmailM8();
         }
 
+        /// <summary>
+        /// Constructor de datos correo vacio.
+        /// </summary>
         public static Entidad ObtenerDatosCorreo()
         {
             return new DatosCorreo();
         }
 
+        /// <summary>
+        /// Constructor de datos correo sin archivo adjunto.
+        /// </summary>
+        /// <param name="asunto">Asunto del mensaje</param>
+        /// <param name="destinatario">Destinatarios del mensaje</param>
+        /// <param name="mensaje">Contenido del mensaje</param>
         public static Entidad ObtenerDatosCorreo(string asunto, string destinatario, string mensaje)
         {
             return new DatosCorreo(asunto, destinatario, mensaje);
         }
 
+        /// <summary>
+        /// Constructor de datos correo con todos sus atributos.
+        /// </summary>
+        /// <param name="asunto">Asunto del mensaje</param>
+        /// <param name="destinatario">Destinatarios del mensaje</param>
+        /// <param name="mensaje">Contenido del mensaje</param>
+        /// <param name="adjunto">Archivo adjunto del mensaje</param>
         public static Entidad ObtenerDatosCorreo(string asunto, string destinatario, string mensaje, string adjunto)
         {
             return new DatosCorreo(asunto, destinatario, mensaje, adjunto);
