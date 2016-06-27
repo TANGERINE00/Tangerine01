@@ -223,7 +223,7 @@ namespace Tangerine_Presentador.M10 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-search&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
+        ///   Looks up a localized string similar to &quot;type=&quot;submit&quot; runat=&quot;server&quot; style=&quot;margin-left:3px; class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot;&gt;&lt;/span&gt;&lt;/a&gt;.
         /// </summary>
         internal static string BotonVerEmpCerrar {
             get {
