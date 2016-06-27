@@ -259,7 +259,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to dd/mm/yyyy.
+        ///   Looks up a localized string similar to dd/MM/yyyy.
         /// </summary>
         internal static string dateTipe {
             get {

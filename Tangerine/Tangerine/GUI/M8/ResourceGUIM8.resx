@@ -217,7 +217,7 @@
     <value>Monto</value>
   </data>
   <data name="dateTipe" xml:space="preserve">
-    <value>dd/mm/yyyy</value>
+    <value>dd/MM/yyyy</value>
   </data>
   <data name="estado" xml:space="preserve">
     <value>estado</value>

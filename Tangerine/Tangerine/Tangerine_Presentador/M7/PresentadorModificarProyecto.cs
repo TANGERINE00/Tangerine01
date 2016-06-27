@@ -277,8 +277,7 @@ namespace Tangerine_Presentador.M7
             }
             else
             {
-
-                return true;
+                return false;
             }
         }
 
@@ -292,7 +291,10 @@ namespace Tangerine_Presentador.M7
 
             if (vista.FechaFin == "")
             {
-                MessageBox.Show("Debe seleccionar una fecha fin para el proyecto", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                vista.alertaClase = RecursoPresentadorM7.alertaError;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + "Debe seleccionar una fecha fin para el proyecto"
+                                + RecursoPresentadorM7.alertaHtmlFinal;
                 return false;
             }
 
@@ -300,15 +302,19 @@ namespace Tangerine_Presentador.M7
 
             if (inicio > nuevaFechaFin)
             {
-               MessageBox.Show("Debe seleccionar una fecha fin mayor a la fecha de inicio", "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               return false;
+                vista.alertaClase = RecursoPresentadorM7.alertaError;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + "Error: Rango de fechas inválido. Fecha Fin debe ser mayor a Fecha Inicio"
+                                + RecursoPresentadorM7.alertaHtmlFinal;
+                return false;
             }
 
             if (vista.inputPersonal.Items.Count <= 0)
             {
-                MessageBox.Show("Debe seleccionar por lo menos una persona para trabajar en el proyecto",
-                    "Tangerine TG", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                vista.inputPersonal.Focus();
+               vista.alertaClase = RecursoPresentadorM7.alertaError;
+                vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                vista.alerta = RecursoPresentadorM7.alertaHtml + "Debe seleccionar al menos un empleado"
+                                + RecursoPresentadorM7.alertaHtmlFinal;
                 return false;
             }
 
