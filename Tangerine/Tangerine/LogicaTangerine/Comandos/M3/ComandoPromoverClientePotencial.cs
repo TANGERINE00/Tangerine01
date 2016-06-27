@@ -20,6 +20,9 @@ namespace LogicaTangerine.Comandos.M3
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Método que permite la ejecucion del comando para promover a un cliente potencial
+        /// </summary>
         public override bool Ejecutar()
         {
             try

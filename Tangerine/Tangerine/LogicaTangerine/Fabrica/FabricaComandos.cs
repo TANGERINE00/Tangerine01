@@ -239,59 +239,111 @@ namespace LogicaTangerine.Fabrica
         #endregion
 
         #region Modulo 3
+
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoListarTodosClientesPotenciales
+        /// </summary>
         public static Comando<List<Entidad>> ObtenerComandoConsultarTodosClientePotencial()
         {
             return new ComandoListarTodosClientesPotenciales();
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoConsultarClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<Entidad> ObtenerComandoConsultarClientePotencial(Entidad cliente)
         {
             return new ComandoConsultarClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoModificarClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<bool> ObtenerComandoModificarClientePotencial(Entidad cliente)
         {
             return new ComandoModificarClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoDesctivarClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<bool> ObtenerComandoDesactivarClientePotencial(Entidad cliente)
         {
             return new ComandoDesactivarClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoActivarClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<bool> ObtenerComandoActivarClientePotencial(Entidad cliente)
         {
             return new ComandoActivarClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoPromoverClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<bool> ObtenerComandoPromoverClientePotencial(Entidad cliente)
         {
             return new ComandoPromoverClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoAgregarClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<bool> ObtenerComandoAgregarClientePotencial(Entidad cliente)
         {
             return new ComandoAgregarClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoEliminarClientePotencial
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<bool> ObtenerComandoEliminarClientePotencial(Entidad cliente)
         {
             return new ComandoEliminarClientePotencial(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoConsultarUltimoIdClientePotencial
+        /// </summary>
         public static Comando<int> ObtenerComandoUltimoIdClientePotencial()
         {
             return new ComandoUltimoIdClientePotencial();
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoSeguimientoDeLlamadas
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoLlamadas(Entidad cliente)
         {
             return new ComandoSeguimientoDeLlamadas(cliente);
         }
 
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoSeguimientoDeVisitas
+        /// </summary>
+        /// <param name="cliente"></param>
         public static Comando<List<Entidad>> ObtenerComandoConsultarHistoricoVisitas(Entidad cliente)
         {
             return new ComandoSeguimientoDeVisitas(cliente);
+        }
+
+        /// <summary>
+        /// Método que crea una instancia de la clase ComandoAgregarSeguimiento
+        /// </summary>
+        /// <param name="cliente"></param>
+        public static Comando<bool> ObtenerComandoAgregarSeguimiento(Entidad registroSeguimiento)
+        {
+            return new ComandoAgregarSeguimiento(registroSeguimiento);
         }
         #endregion
 

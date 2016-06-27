@@ -204,4 +204,10 @@
   <data name="AlertaBtnAgregar" xml:space="preserve">
     <value>El empleado ya existe, por favor intente nuevamente</value>
   </data>
+  <data name="alertaC" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertaR" xml:space="preserve">
+    <value>role</value>
+  </data>
 </root>

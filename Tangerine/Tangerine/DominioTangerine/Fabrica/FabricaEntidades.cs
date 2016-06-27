@@ -308,6 +308,11 @@ namespace DominioTangerine.Fabrica
                 return new DominioTangerine.Entidades.M3.SeguimientoCliente(id, fecha, tipo, motivo, fk);
             }
             #endregion
+
+            public static Entidad CrearSeguimientoDeCliente(DateTime fecha, String tipo, String motivo, int fk)
+            {
+                return new DominioTangerine.Entidades.M3.SeguimientoCliente(fecha, tipo, motivo, fk);
+            }
         #endregion
 
         #region Modulo 4

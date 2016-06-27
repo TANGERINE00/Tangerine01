@@ -12,6 +12,7 @@ using Tangerine_Presentador.M6;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
+
 namespace Tangerine.GUI.M6
 {
     public partial class AgregarPropuesta : System.Web.UI.Page, IContratoAgregarPropuesta
@@ -31,11 +32,14 @@ namespace Tangerine.GUI.M6
         {
             if (!IsPostBack)
             {
-                try {
-                presenter.llenarVista();
-                }catch (Exception)
+                try 
                 {
-                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    presenter.llenarVista();
+                }
+                catch (Exception)
+                {
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
                 }
 
             }
@@ -49,15 +53,18 @@ namespace Tangerine.GUI.M6
             try
             {
                 presenter.agregarPropuesta();
-                Server.Transfer("ConsultarPropuesta.aspx", true);
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception)
             {
-                Response.Redirect("../M6/AgregarPropuesta.aspx");
+                Response.Redirect("../M6/AgregarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             
         }

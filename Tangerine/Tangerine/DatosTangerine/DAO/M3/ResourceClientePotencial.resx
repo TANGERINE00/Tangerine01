@@ -246,4 +246,16 @@
   <data name="tipoSeguimiento" xml:space="preserve">
     <value>seg_tipo</value>
   </data>
+  <data name="ClienteSeguimiento" xml:space="preserve">
+    <value>@fk</value>
+  </data>
+  <data name="FechaSeguimiento" xml:space="preserve">
+    <value>@fecha</value>
+  </data>
+  <data name="MotivoSeguimiento" xml:space="preserve">
+    <value>@motivo</value>
+  </data>
+  <data name="SP_NuevoSeguimiento" xml:space="preserve">
+    <value>M3_Agrgar_Seguimento</value>
+  </data>
 </root>

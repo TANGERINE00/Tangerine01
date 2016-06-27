@@ -51,7 +51,7 @@ namespace Tangerine_Presentador.M2
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaUsuario = ResourceGUIM2.tipoAlerta;
-                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message + ResourceGUIM2.alertaHtmlFinal;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
             }
 
         }
@@ -71,7 +71,7 @@ namespace Tangerine_Presentador.M2
             {
                 _vista.alertaClase = ResourceGUIM2.alertaError;
                 _vista.alertaUsuario = ResourceGUIM2.tipoAlerta;
-                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ex.InnerException.Message + ResourceGUIM2.alertaHtmlFinal;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
                 return false;
             }
         }
@@ -82,10 +82,21 @@ namespace Tangerine_Presentador.M2
         /// <returns>Retorna un valor booleano indicando si el usuario ya existe</returns>
         public bool usuarioExistente()
         {
-            bool respuesta = false;
-            LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.nombreUsuario );
-            respuesta = comando.Ejecutar();
-            return respuesta;
+            try
+            {
+                bool respuesta = false;
+                LogicaTangerine.Comando<Boolean> comando = LogicaTangerine.Fabrica.FabricaComandos.validarUsuario( _vista.nombreUsuario );
+                respuesta = comando.Ejecutar();
+                return respuesta;
+            }
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaUsuario = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
+                return false;
+            }
+
         }
 
         /// <summary>
@@ -94,15 +105,25 @@ namespace Tangerine_Presentador.M2
         /// <returns>Retorna el ID del ultimo empleado</returns>
         public bool ultimoIDEmpleado()
         {   
-            bool respuesta = true;
-            int resultado;
-            LogicaTangerine.Comando<int> comando = LogicaTangerine.Fabrica.FabricaComandos.consultarIDUltimoEmpleado();
-            resultado = comando.Ejecutar();
-            if ( int.Parse( _vista.fichaEmpleado ) > resultado )
+            try
             {
-                respuesta = false;
+                bool respuesta = true;
+                int resultado;
+                LogicaTangerine.Comando<int> comando = LogicaTangerine.Fabrica.FabricaComandos.consultarIDUltimoEmpleado();
+                resultado = comando.Ejecutar();
+                if ( int.Parse( _vista.fichaEmpleado ) > resultado )
+                {
+                    respuesta = false;
+                }
+                return respuesta;
             }
-            return respuesta;
+            catch ( ExcepcionesTangerine.M2.ExceptionM2Tangerine ex )
+            {
+                _vista.alertaClase = ResourceGUIM2.alertaError;
+                _vista.alertaUsuario = ResourceGUIM2.tipoAlerta;
+                _vista.alerta = ResourceGUIM2.alertaHtml + ex.Message + ResourceGUIM2.alertaHtmlFinal;
+                return false;
+            }
         }
     }
 }

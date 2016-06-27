@@ -56,7 +56,7 @@ namespace DatosTangerine.DAO.M2
                                             ( ( DominioTangerine.Entidades.M2.UsuarioM2 )theUsuario ).rol.nombre , false );
                     parameters.Add( theParam );
 
-                    //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
+                    //Se manda a ejecutar en BDConexion el stored procedure
                     List<Resultado> results = EjecutarStoredProcedure( ResourceUser.AgregarUsuario , parameters );
 
                 }
@@ -191,7 +191,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Verificar si el usuario por su ficha
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="fichaEmpleado"></param>
             /// <returns>Si existe True, si no, False</returns>
             public bool VerificarUsuarioPorFichaEmpleado( int fichaEmpleado )
             {
@@ -304,7 +304,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que retorna el usuario y rol de un empleado
             /// </summary>
-            /// <param name="empleado"></param>
+            /// <param name="num_empleado"></param>
             /// <returns>Retorna el usuario de un empleado</returns>
             public Entidad ObtenerUsuarioDeEmpleado( int num_empleado )
             {
@@ -369,7 +369,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que obtiene los datos de un usuario teniendo como entrada su usuario y contraseña
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="theUsuario"></param>
             /// <returns>Los datos del usuario</returns>
             public Entidad ObtenerDatoUsuario( Entidad theUsuario )
             {
@@ -444,7 +444,7 @@ namespace DatosTangerine.DAO.M2
             /// del usuario y llama al método que ejecuta el Stored Procedure (El objeto usuario debe tener 
             /// agregada la contraseña nueva).
             /// </summary>
-            /// <param name="usuario"></param>
+            /// <param name="theUsuario"></param>
             /// <returns>true se es exitoso y false si es fallido</returns>
             public bool ModificarContraseniaUsuario( Entidad theUsuario )
             {
@@ -683,7 +683,7 @@ namespace DatosTangerine.DAO.M2
                     theParam = new Parametro( ResourceUser.ParametroUsuario , SqlDbType.VarChar, nombreUsuario , false );
                     parameters.Add(theParam);
 
-                    //Se manda a ejecutar en BDConexion el stored procedure M4_AgregarCompania y todos los parametros que recibe
+                    //Se manda a ejecutar en BDConexion el stored procedure
                     List<Resultado> results = EjecutarStoredProcedure( ResourceUser.ModificarNombreUsuario , parameters );
 
                 }

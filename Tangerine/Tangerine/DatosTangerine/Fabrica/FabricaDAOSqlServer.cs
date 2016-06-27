@@ -46,9 +46,9 @@ namespace DatosTangerine.Fabrica
 
         #region Modulo 3
         /// <summary>
-        /// Método que crea la instancia de DAO Lead
+        /// Método que crea la instancia de DAO ClientePotencial
         /// </summary>
-        /// <returns>Retorna la instancia a la clase DaoLead</returns>
+        /// <returns>Retorna la instancia a la clase DaoClientePotencial</returns>
         static public IDAOClientePotencial CrearDaoClientePotencial()
         {
             return new DAO.M3.DaoClientePotencial();

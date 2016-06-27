@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Titulo" runat="server">
-    Modificacion de rol de Usuario
+    Modificacion de Usuario
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Subtitulo" runat="server">
 </asp:Content>
@@ -11,7 +11,7 @@
     <li><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
     <li><a href="#">Configuración</a></li>
     <li><a href="#">Usuario</a></li>
-    <li class="active">Modificar Rol</li>
+    <li class="active">Modificar Usuario</li>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>

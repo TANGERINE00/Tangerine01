@@ -14,7 +14,7 @@ namespace PruebasUnitarias.M7
     [TestFixture]
     class PruebaDAOProyecto
     {
-        #region
+        #region Atributos
         public Entidad _theProject, _checkTheProject, _checkTheProject2, _laPropuesta;
         private List<Entidad> _proyectos;
         public bool _answer;
@@ -52,20 +52,18 @@ namespace PruebasUnitarias.M7
 
         #endregion
 
-
+        #region Pruebas Unitarias M7
         /// <summary>
         /// Prueba Unitaria para la agregación de un proyecto en la BD.
         /// </summary>
         [Test]
         public void testAgregarProyecto()
         {
-            _contador = _daoProyecto.ConsultarNumeroProyectos();
-
-            IDaoProyecto daoProyecto = DatosTangerine.Fabrica.FabricaDAOSqlServer.ObetenerDaoProyecto();
-          
+            _contador = _daoProyecto.ConsultarTodos().Count;
+        
 
             Assert.IsTrue(_daoProyecto.Agregar(_theProject));
-            Assert.AreEqual(_daoProyecto.ConsultarNumeroProyectos(), _contador + 1);
+            Assert.AreEqual(_daoProyecto.ConsultarTodos().Count, _contador + 1);
 
             _ultimoId = _daoProyecto.ContactMaxIdProyecto();
             _theProject.Id = _ultimoId;
@@ -99,12 +97,12 @@ namespace PruebasUnitarias.M7
         public void TestEliminarProyecto()
         {
             //Cantidad de proyectos en la BD.
-            _contador = _daoProyecto.ConsultarNumeroProyectos();
+            _contador = _daoProyecto.ConsultarTodos().Count;
             
             Assert.IsTrue(_daoProyecto.Agregar(_theProject));
 
             //La cantidad de proyectos en la BD aumenta en 1
-            Assert.AreEqual(_daoProyecto.ConsultarNumeroProyectos(), _contador+1);
+            Assert.AreEqual(_daoProyecto.ConsultarTodos().Count, _contador + 1);
             _ultimoId = _daoProyecto.ContactMaxIdProyecto();
             _theProject.Id = _ultimoId;
 
@@ -112,7 +110,7 @@ namespace PruebasUnitarias.M7
             Assert.IsTrue(_daoProyecto.BorrarProyecto(_ultimoId));
            
             //La cantidad de poyectos en la BD disminuye en 1
-            Assert.AreEqual(_daoProyecto.ConsultarNumeroProyectos(), _contador);
+            Assert.AreEqual(_daoProyecto.ConsultarTodos().Count, _contador);
 
 
             try
@@ -203,7 +201,7 @@ namespace PruebasUnitarias.M7
         public void TestConsultarTodos()
         {
             //Se consulta la cantidad de proyectos en la BD
-            _cantidad = _daoProyecto.ConsultarNumeroProyectos();
+            _cantidad = _daoProyecto.ConsultarTodos().Count;
 
             //Se obtiene la lista de todos los proyectos
             _proyectos = _daoProyecto.ConsultarTodos();
@@ -250,8 +248,8 @@ namespace PruebasUnitarias.M7
              //answer obtiene true si se inserta el contacto, si no, deberia agarrar un excepcion
 
              Assert.IsTrue(((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre == "GNFRNCO160622044206");
-          }
+         }
 
-  
+        #endregion
     }
 }

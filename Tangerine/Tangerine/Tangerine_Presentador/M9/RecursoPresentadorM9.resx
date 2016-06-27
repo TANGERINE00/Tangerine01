@@ -187,7 +187,7 @@
     <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" data-toggle="modal" data-target="#myModalE"&gt;&lt;/a&gt;</value>
   </data>
   <data name="botonPagarAbrir" xml:space="preserve">
-    <value>&lt;th style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx?id=</value>
+    <value>&lt;th title="Registrar Pago" style="text-align: center;"&gt;&lt;a class="btn btn-primary glyphicon glyphicon-check" type="submit" runat="server" href="CargarPago1.aspx?id=</value>
   </data>
   <data name="CloseDiv" xml:space="preserve">
     <value>&lt;/div&gt;</value>

@@ -68,6 +68,7 @@ namespace Tangerine_Presentador.M8
                 vista.mensaje = RecursoPresentadorM8.saludos + compania.NombreCompania + RecursoPresentadorM8.blank +
                                 RecursoPresentadorM8.recordar + _laFactura.montoFactura.ToString() + " " + _laFactura.tipoMoneda +
                                 RecursoPresentadorM8.punto;
+                vista.adjunto = String.Empty;
 
 
 
@@ -81,22 +82,17 @@ namespace Tangerine_Presentador.M8
             }
         }
 
-        public bool enviarCorreo(string adjunto)
+        public bool enviarCorreo()
         {
             try
             {
-              
-
-
-
-
-                vista.destinatario = this.vista.destinatario;
-                vista.asunto = this.vista.asunto;
-                vista.mensaje = this.vista.mensaje;
-                //vista.adjunto = this.vista.adjunto;
-
                 DatosCorreo _datosCorreo =
-                    (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje, adjunto);
+                        (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje);
+
+                if (vista.adjunto != String.Empty)
+                {
+                    _datosCorreo.adjunto = RecursoPresentadorM8.rutaFacturas + vista.adjunto;
+                }
 
                 Comando<bool> _comandoCorreo = FabricaComandos.CrearComandoEnviarCorreoGmail(_datosCorreo);
 

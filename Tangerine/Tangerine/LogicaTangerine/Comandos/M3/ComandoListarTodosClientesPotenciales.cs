@@ -11,6 +11,9 @@ namespace LogicaTangerine.Comandos.M3
 {
     public class ComandoListarTodosClientesPotenciales : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Método que ejecuta el comando para consultar todos los clientes potenciales
+        /// </summary>
         public override List<Entidad> Ejecutar()
         {
             try

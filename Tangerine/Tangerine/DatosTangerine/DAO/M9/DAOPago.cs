@@ -18,7 +18,8 @@ namespace DatosTangerine.DAO.M9
 {
     public class DAOPago : DAOGeneral , IDAOPago
     {
-    
+
+        #region IDAO
         /// <summary>
         /// Metodo para Agregar un Pago a la BD
         /// </summary>
@@ -90,6 +91,18 @@ namespace DatosTangerine.DAO.M9
                 throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
                     RecursoDAOPago.MensajeErrorSQL,ex);
             }
+           catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                  RecursoDAOPago.MensajeErrorSQL, ex);
+           }
+           catch (Exception ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPago.CodigoGeneral,
+                   RecursoDAOPago.MensajeGeneral, ex);
+           }
         }
     
         /// <summary>
@@ -98,7 +111,26 @@ namespace DatosTangerine.DAO.M9
         /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
         /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
         /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
-        public bool CargarStatus (int factura, int status)
+       
+    
+        public Boolean Modificar (Entidad e)
+        {
+          throw new NotImplementedException();
+        }
+
+        public Entidad ConsultarXId(Entidad id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Entidad> ConsultarTodos()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region IDAOPago
+        public bool CargarStatus(int factura, int status)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                                 RecursoDAOPago.MensajeInicioInfoLogger,
@@ -149,8 +181,15 @@ namespace DatosTangerine.DAO.M9
                 throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
                     RecursoDAOPago.MensajeErrorSQL, ex);
             }
-            }
+            catch (Exception ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPago.CodigoGeneral,
+                   RecursoDAOPago.MensajeGeneral, ex);
+           }
+        }
         
+
         /// <summary>
         /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizaos por una compania
         /// </summary>
@@ -167,10 +206,10 @@ namespace DatosTangerine.DAO.M9
             Parametro theParam = new Parametro();
             List<Entidad> listaPagos = new List<Entidad>();
 
-            
+
             try
             {
-                theParam = new Parametro(RecursoDAOPago.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(), 
+                theParam = new Parametro(RecursoDAOPago.ParamIdCompania, SqlDbType.Int, theCompany.Id.ToString(),
                     false);
                 parameters.Add(theParam);
 
@@ -188,35 +227,35 @@ namespace DatosTangerine.DAO.M9
                     int PagoCodAprob = int.Parse(row[RecursoDAOPago.PagoCod].ToString());
 
                     Entidad pago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(facId, PagoFecha,
-                        PagoMonto, PagoMoneda,PagoCodAprob);
+                        PagoMonto, PagoMoneda, PagoCodAprob);
 
                     listaPagos.Add(pago);
                 }
 
 
             }
-                      catch (ArgumentNullException ex)
-           {
+            catch (ArgumentNullException ex)
+            {
 
-               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
-                   RecursoDAOPago.MensajeErrorNull, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                    RecursoDAOPago.MensajeErrorNull, ex);
 
-           }
-           catch(FormatException ex)
-           {
-               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-               throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
-                   RecursoDAOPago.MensajeErrorFormato, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                    RecursoDAOPago.MensajeErrorFormato, ex);
 
-           }
+            }
             catch (SqlException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
-                    RecursoDAOPago.MensajeErrorSQL,ex);
+                    RecursoDAOPago.MensajeErrorSQL, ex);
             }
-            
+
             catch (ExcepcionesTangerine.ExceptionTGConBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
@@ -227,11 +266,13 @@ namespace DatosTangerine.DAO.M9
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
+
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
             RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                       RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             return listaPagos;
         }
 
@@ -242,6 +283,9 @@ namespace DatosTangerine.DAO.M9
         /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool EliminarPago(Entidad parametro)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                               RecursoDAOPago.MensajeInicioInfoLogger,
+                               System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Parametro> parameters = new List<Parametro>();
             DominioTangerine.Entidades.M9.Pago elPago = (DominioTangerine.Entidades.M9.Pago)parametro;
             Parametro theParam = new Parametro();
@@ -276,26 +320,19 @@ namespace DatosTangerine.DAO.M9
                 throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
                     RecursoDAOPago.MensajeErrorSQL, ex);
             }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPago.CodigoGeneral,
+                    RecursoDAOPago.MensajeGeneral, ex);
+            }
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
-    
-        public Boolean Modificar (Entidad e)
-        {
-          throw new NotImplementedException();
-        }
 
-        public Entidad ConsultarXId(Entidad id)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
 
-        public List<Entidad> ConsultarTodos()
-        {
-            throw new NotImplementedException();
-        }
-    
     }
 
 }

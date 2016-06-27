@@ -29,7 +29,8 @@ namespace Tangerine.GUI.M6
             }
             catch
             {
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
         protected void btnmodificar_Click(object sender, EventArgs e)
@@ -37,15 +38,18 @@ namespace Tangerine.GUI.M6
             try
             {
                 presenter.ModificarRequerimiento();
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
-                Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch (Exception)
             {
-                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("idPro") + "&idReq=0");
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("idPro") + "&idReq=0", false);
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 
@@ -60,7 +64,8 @@ namespace Tangerine.GUI.M6
                 }
                 catch (Exception e)
                 {
-                    Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
                     return null;
                 }
             }
@@ -78,7 +83,8 @@ namespace Tangerine.GUI.M6
                }
                catch (Exception e)
                {
-                   Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                   Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                   Context.ApplicationInstance.CompleteRequest();
                    return null;
                }
            }

@@ -14,14 +14,20 @@ namespace Tangerine_Contratos.M10
         /// </summary>
          Literal Tabla { get; set;}
 
-         //string alertaVista
-         //{
-         //    set;
-         //}
+        /// <summary>
+        /// Clase alerta
+        /// </summary>
+         string alertaClase { set; }
 
-         /// <summary>
-         /// Clase alerta
-         /// </summary>
+        /// <summary>
+        /// Clase alerta rol
+        /// </summary>
+         string alertaRol { set; }
+
+        /// <summary>
+        /// Clase para las alertas
+        /// </summary>
+         string alertas { set; }
        
      }
 
