@@ -157,7 +157,7 @@
     <value>../M2/RegistroUsuario.aspx?estado=1</value>
   </data>
   <data name="RedirectPageLoad" xml:space="preserve">
-    <value>../M1/DashBoard.aspx</value>
+    <value>../M1/PaginaError.aspx</value>
   </data>
   <data name="Rol" xml:space="preserve">
     <value>Rol</value>

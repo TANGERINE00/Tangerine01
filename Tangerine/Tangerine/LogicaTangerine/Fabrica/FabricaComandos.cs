@@ -572,6 +572,15 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoModificarContacto( contacto );
         }
+
+        /// <summary>
+        /// Método para instancear el ComandoConsultarTodosContactos
+        /// </summary>
+        /// <returns></returns>
+        public static Comando<List<Entidad>> CrearComandoConsultarTodosContactos() 
+        {
+            return new ComandoConsultarTodosContactos();
+        }
         #endregion
 
         #region Modulo 6
