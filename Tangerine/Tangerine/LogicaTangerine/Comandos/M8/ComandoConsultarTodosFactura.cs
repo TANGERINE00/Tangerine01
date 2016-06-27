@@ -27,7 +27,8 @@ namespace LogicaTangerine.Comandos.M8
                 , ResourceLogicaM8.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 IDaoFactura daoFactura = FabricaDAOSqlServer.ObtenerDAOFactura();
-                return daoFactura.ConsultarTodos();
+                List<Entidad> respuesta = daoFactura.ConsultarTodos();
+                return respuesta;
             }
             catch (ArgumentNullException ex)
             {
@@ -39,7 +40,7 @@ namespace LogicaTangerine.Comandos.M8
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo_Error_Formato,
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo,
                      ResourceLogicaM8.Mensaje_Error_Formato, ex);
             }
             catch (Exception ex)
