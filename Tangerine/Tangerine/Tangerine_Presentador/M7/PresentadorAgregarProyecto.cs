@@ -30,6 +30,7 @@ namespace Tangerine_Presentador.M7
         private static List<Entidad> contactos = new List<Entidad>();
         private static List<Entidad> programadores = new List<Entidad>();
         private static DateTime _fechaIni;
+        private static DateTime _fechaIniPropuesta;
         private static DateTime _fechaFin;
         private static Double _costo;
         #endregion
@@ -98,6 +99,9 @@ namespace Tangerine_Presentador.M7
                     _vista.Moneda.Text = RecursoPresentadorM7.bolivar;
                 }
 
+                _vista.FechaInicio = propuesta.Feincio.ToString("MM'/'dd'/'yyyy");
+                _vista.FechaFin = propuesta.Fefinal.ToString("MM'/'dd'/'yyyy");
+
                 Comando<String> comandoGenerarCodigo = FabricaComandos.ObtenerComandoGenerarCodigoProyecto(entPropuesta);
                 String codigo = comandoGenerarCodigo.Ejecutar();
                 _vista.CodigoProyecto = codigo;
@@ -165,10 +169,20 @@ namespace Tangerine_Presentador.M7
             {
                 _vista.alertaClase = RecursoPresentadorM7.alertaError;
                 _vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
-                _vista.alerta = RecursoPresentadorM7.alertaHtml + "Error: Rango de fechas inválido"
+                _vista.alerta = RecursoPresentadorM7.alertaHtml + "Error: Rango de fechas inválido. Fecha Fin debe ser mayor a Fecha Inicio"
                                 + RecursoPresentadorM7.alertaHtmlFinal;
                 return false;
             }
+
+            if (_fechaIni < propuesta.Feincio)
+            {
+                _vista.alertaClase = RecursoPresentadorM7.alertaError;
+                _vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
+                _vista.alerta = RecursoPresentadorM7.alertaHtml + "Error: El proyecto no puede empezar antes de la fecha propuesta."
+                                + RecursoPresentadorM7.alertaHtmlFinal;
+                return false;
+            }
+
 
             ///Se guarda en una lista el personal responsable seleccionado para el proyecto.
             for (int i = 0; i < _vista.inputPersonal.Items.Count; i++)

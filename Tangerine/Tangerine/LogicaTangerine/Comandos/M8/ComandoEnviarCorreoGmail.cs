@@ -21,6 +21,11 @@ namespace LogicaTangerine.Comandos.M8
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Validacion del Correo
+        /// </summary>
+        /// <param name="emailaddress"></param>
+        /// <returns></returns>
         public bool IsValid(string emailaddress)
         {
             try
@@ -29,9 +34,10 @@ namespace LogicaTangerine.Comandos.M8
 
                 return true;
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
-                return false;
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo_Error_Formato,
+                     ResourceLogicaM8.Mensaje_Error_Formato, ex);
             }
         }
 
@@ -52,8 +58,10 @@ namespace LogicaTangerine.Comandos.M8
                 mnsj.From = new MailAddress(ResourceLogicaM8.systemmail, ResourceLogicaM8.SysName);
                 mnsj.Body = _datosCorreo.mensjae;
                 /* Si deseamos Adjuntar algún archivo*/
-                if (_datosCorreo.adjunto != null)
-                    mnsj.Attachments.Add(new Attachment(_datosCorreo.adjunto));
+                //if (_datosCorreo.adjunto != null)
+                //    mnsj.Attachments.Add(new Attachment(_datosCorreo.adjunto));
+                //A M1 LOGIN, LE FALLA EN ESTA LINEA, EL ERROR DICE POR ALGO DEL FILENAME, ASUMIMOS QUE ENTRA EN EL IF 
+                // Y LUEGO DA EL ERROR TRATANDO DE BUSCAR EL ARCHIVO.
 
                 string[] mailArray = _datosCorreo.destinatario.Split(',');
                 List<string> mailsList = new List<string>(mailArray.Length);
@@ -70,10 +78,23 @@ namespace LogicaTangerine.Comandos.M8
 
                 return true;
             }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M4.NullArgumentException(ResourceLogicaM8.Codigo,
+                    ResourceLogicaM8.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo_Error_Formato,
+                     ResourceLogicaM8.Mensaje_Error_Formato, ex);
+            }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
-                return false;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
             }
         }
     }

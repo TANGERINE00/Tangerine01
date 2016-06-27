@@ -234,46 +234,6 @@ namespace DatosTangerine.DAO.M7
             }
         }
 
-        public int ConsultarNumeroProyectos()
-        {
-
-            int numero = 0;
-            try
-            {
-                List<Parametro> parameters = new List<Parametro>();
-
-                //Guardo la tabla que me regresa el procedimiento de consultar ultimo id de propuesta
-                DataTable dt = EjecutarStoredProcedureTuplas(Resource_M7.NumeroProyectos, parameters);
-                //Guardar los datos 
-                DataRow row = dt.Rows[0];
-
-                numero = int.Parse(row[Resource_M7.ProyIdProyecto].ToString());
-
-            }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
-            }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
-            }
-            catch (SqlException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
-            }
-
-            return numero;
-        }
-
         public bool BorrarProyecto(int proyID)
         {
 

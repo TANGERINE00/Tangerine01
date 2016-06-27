@@ -20,6 +20,9 @@ namespace LogicaTangerine.Comandos.M3
             LaEntidad = parametro;
         }
 
+        /// <summary>
+        /// Método que se encarga de ejecutar el comando para eliminar a un cliente potencial
+        /// </summary>
         public override bool Ejecutar()
         {
             try
