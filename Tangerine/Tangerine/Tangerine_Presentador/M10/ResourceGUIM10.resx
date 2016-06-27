@@ -142,7 +142,7 @@
     <value>&lt;a title="Información" href="VerEmpleado.aspx?EmployeeId=</value>
   </data>
   <data name="BotonVerEmpCerrar" xml:space="preserve">
-    <value>" type="button" class="btn btn-primary"&gt;&lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;&lt;/a&gt;</value>
+    <value>"type="submit" runat="server" style="margin-left:3px; class="btn btn-primary"&gt;&lt;span class="btn btn-default glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;&lt;/a&gt;</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
