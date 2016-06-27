@@ -74,8 +74,11 @@ namespace DominioTangerine.Entidades.M8
         }
 
         /// <summary>
-        /// Constructor sin adjunto.
+        /// Constructor sin url de archivo adjunto.
         /// </summary>
+        /// <param name="asunto"></param>
+        /// <param name="destinatario"></param>
+        /// <param name="mensaje"></param>
         public DatosCorreo(string asunto, string destinatario, string mensaje)
             : base()
         {
@@ -86,8 +89,12 @@ namespace DominioTangerine.Entidades.M8
         }
 
         /// <summary>
-        /// Constructor con todos los valores.
+        /// Constructor con todos los atributos.
         /// </summary>
+        /// <param name="asunto"></param>
+        /// <param name="destinatario"></param>
+        /// <param name="mensaje"></param>
+        /// <param name="adjunto"></param>
         public DatosCorreo(string asunto,string destinatario,string mensaje,string adjunto)
             : base()
         {
