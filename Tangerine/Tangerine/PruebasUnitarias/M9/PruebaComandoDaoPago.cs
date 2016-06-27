@@ -61,7 +61,7 @@ namespace PruebasUnitarias.M9
         #region Test
 
         /// <summary>
-        /// Método para probar el ComandoAgregarPago de ComandosDAOPago
+        /// Método para probar el Comando de Agregar un Pago en la base de datos
         /// </summary>
         [Test]
         public void TestComandoAgregarPago()
@@ -77,6 +77,10 @@ namespace PruebasUnitarias.M9
 
         }
 
+
+        /// <summary>
+        /// Método que permite verificar el Comando que consulta los pagos hechos por una compañia
+        /// </summary>
         [Test]
         public void TestComandoPagosCompania()
         {
