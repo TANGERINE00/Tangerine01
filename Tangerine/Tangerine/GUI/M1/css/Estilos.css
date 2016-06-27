@@ -1,7 +1,7 @@
 ﻿/*login*/
 
 #login-main {
-  background-image: url('../../../dist/img/blueWall.jpg');
+   background-image: url('../../../dist/img/blueWall.jpg');
   height: 100%;
   background-size: cover;
   position: fixed;
