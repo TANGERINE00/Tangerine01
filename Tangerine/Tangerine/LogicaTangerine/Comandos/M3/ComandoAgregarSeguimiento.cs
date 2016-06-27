@@ -18,8 +18,18 @@ namespace LogicaTangerine.Comandos.M3
 
         public override bool Ejecutar()
         {
-            Console.WriteLine("Invoco el DAO");
-            return true;
+            //Console.WriteLine("Invoco el DAO");
+            //return true;
+
+            try
+            {
+                IDAOClientePotencial seguimiento = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+                return seguimiento.AgregarSeguimientoDeCliente(this.LaEntidad);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }
