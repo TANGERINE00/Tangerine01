@@ -51,11 +51,18 @@ namespace Tangerine.GUI.M7
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string _estado = Request.QueryString["estado"];
-
+            try
+            {
+                string _estado = Request.QueryString["estado"];
+                if (_estado != null)
+                    presentador.Alerta(_estado);
+            }
+            catch
+            {
+                //No hago nada, no es obligatorio el parametro
+            }
             if (!IsPostBack)
             {
-                presentador.Alerta(_estado);
                 presentador.cargarConsultarProyectos();
             }
         }

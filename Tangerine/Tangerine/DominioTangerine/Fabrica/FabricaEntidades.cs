@@ -44,8 +44,8 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario y contraseña
             /// </summary>
-            /// <param name="usuario"></param>
-            /// <param name="contrasena"></param>
+            /// <param name="usuario">Es el nombre de usuario</param>
+            /// <param name="contrasena">Es la contraseña</param>
             /// <returns>Retorna una instancia de Usuario con usuario y contraseña</returns>
             static public Entidad crearUsuarioConUsuarioYContrasena( string usuario , string contrasena )
             {
@@ -55,8 +55,8 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario y rol
             /// </summary>
-            /// <param name="usuario"></param>
-            /// <param name="rol"></param>
+            /// <param name="usuario">Es el nombre de usuario</param>
+            /// <param name="rol">Es el rol</param>
             /// <returns>Retorna una instancia de Usuario con usuario y rol</returns>
             static public Entidad crearUsuarioConUsuarioRol( string usuario , RolM2 rol )
             {
@@ -66,9 +66,9 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario, contrasena y activo
             /// </summary>
-            /// <param name="usuario"></param>
-            /// <param name="contrasena"></param>
-            /// <param name="activo"></param>
+            /// <param name="usuario">Es el nombre de usuario</param>
+            /// <param name="contrasena">Es la contraseña</param>
+            /// <param name="activo">Es el estatus</param>
             /// <returns>Retorna una instancia de Usuario con usuario, contraseña y activo</returns>
             static public Entidad crearUsuarioConUsuarioContrasenaActivo( string usuario , string contrasena , string activo )
             {
@@ -78,10 +78,10 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia con usuario, contrasena, activo y Rol
             /// </summary>
-            /// <param name="usuario"></param>
-            /// <param name="contrasena"></param>
-            /// <param name="activo"></param>
-            /// <param name="rol"></param>
+            /// <param name="usuario">Es el nombre de usuario</param>
+            /// <param name="contrasena">Es la contraseña</param>
+            /// <param name="activo">Es el estatus</param>
+            /// <param name="rol">Es el rol</param>
             /// <returns>Retorna una instancia de Usuario con usuario, contraseña, activo y rol</returns>
             static public Entidad crearUsuarioConUsuarioContrasenaActivoRol( string usuario , string contrasena , string activo ,
                                                                              RolM2 rol )
@@ -92,12 +92,12 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia del usuario con todos sus atributos
             /// </summary>
-            /// <param name="inputUsuario"></param>
-            /// <param name="inputContrasena"></param>
-            /// <param name="inputFechaCreacion"></param>
-            /// <param name="inputActivo"></param>
-            /// <param name="inputRol"></param>
-            /// <param name="inputfFichaEmpleado"></param>
+            /// <param name="inputUsuario">Es el nombre del usuario</param>
+            /// <param name="inputContrasena">Es la contraseña</param>
+            /// <param name="inputFechaCreacion">Es su fecha de creacion</param>
+            /// <param name="inputActivo">Es el estatus</param>
+            /// <param name="inputRol">Es el rol</param>
+            /// <param name="inputfFichaEmpleado">Es el numero del empleado</param>
             /// <returns>Retorna una instancia de Usuario con todos los atributos</returns>
             static public Entidad crearUsuarioCompleto( string inputUsuario , string inputContrasena , DateTime inputFechaCreacion , 
                                                         string inputActivo , RolM2 inputRol , int inputfFichaEmpleado )
@@ -109,13 +109,13 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia del usuario con todos sus atributos y el id
             /// </summary>
-            /// <param name="inputID"></param>
-            /// <param name="inputUsuario"></param>
-            /// <param name="inputContrasena"></param>
-            /// <param name="inputFechaCreacion"></param>
-            /// <param name="inputActivo"></param>
-            /// <param name="inputRol"></param>
-            /// <param name="inputfFichaEmpleado"></param>
+            /// <param name="inputID">Es el id del usuario</param>
+            /// <param name="inputUsuario">Es el nombre del usuario</param>
+            /// <param name="inputContrasena">Es la contraseña</param>
+            /// <param name="inputFechaCreacion">Es su fecha de creacion</param>
+            /// <param name="inputActivo">Es el estatus</param>
+            /// <param name="inputRol">Es el rol</param>
+            /// <param name="inputfFichaEmpleado">Es el numero del empleado</param>
             /// <returns>Retorna una instancia de Usuario con todos los atributos y el id</returns>
             static public Entidad crearUsuarioCompletoConID( int inputID , string inputUsuario , string inputContrasena , 
                                                              DateTime inputFechaCreacion , string inputActivo , RolM2 inputRol , 
@@ -137,7 +137,12 @@ namespace DominioTangerine.Fabrica
             {
                 return new RolM2();
             }
-
+            
+            /// <summary>
+            /// Se crea la instancia de RolM2 con ID
+            /// </summary>
+            /// <param name="ID">Es el id del rol</param>
+            /// <returns></returns>
             static public Entidad crearRolConID( int ID )
             {
                 return new RolM2( ID );
@@ -146,7 +151,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de RolM2 con nombre
             /// </summary>
-            /// <param name="nombre"></param>
+            /// <param name="nombre">Es el nombre del rol</param>
             /// <returns>Devuelve la instancia de la clase RolM2 con el nombre</returns>
             static public Entidad crearRolNombre( string nombre )
             {
@@ -156,8 +161,8 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de RolM2 con todos sus atributos
             /// </summary>
-            /// <param name="nombre"></param>
-            /// <param name="menu"></param>
+            /// <param name="nombre">Es el nombre del rol</param>
+            /// <param name="menu">Es el menu al que podra acceder dicho rol</param>
             /// <returns>Devuelve la instancia de la clase RolM2 con el nombre y el menu</returns>
             static public Entidad crearRolCompleto( string nombre , ListaGenericaM2<MenuM2> menu )
             {
@@ -180,8 +185,8 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de OpcionM2 con todos sus atributos
             /// </summary>
-            /// <param name="nombre"></param>
-            /// <param name="url"></param>
+            /// <param name="nombre">Es el nombre de la opcion</param>
+            /// <param name="url">Es el url de la pagina de la opcion</param>
             /// <returns>Devuelve la instancia de la clase OpcionM2 con el nombre y el url</returns>
             static public Entidad crearOpcionCompleta( string nombre , string url )
             {
@@ -204,7 +209,7 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de MenuM2 con nombre
             /// </summary>
-            /// <param name="nombre"></param>
+            /// <param name="nombre">Es el nombre del menu</param>
             /// <returns>Devuelve la instancia de la clase MenuM2 con el nombre</returns>
             static public Entidad crearMenuNombre( string nombre )
             {
@@ -214,8 +219,8 @@ namespace DominioTangerine.Fabrica
             /// <summary>
             /// Se crea la instancia de MenuM2 con todos sus atributos
             /// </summary>
-            /// <param name="nombre"></param>
-            /// <param name="opciones"></param>
+            /// <param name="nombre">Es el nombre del menu</param>
+            /// <param name="opciones">Son las opciones de ese menu</param>
             /// <returns>Devuelve la instancia de la clase MenuM2 con el nombre y las opciones</returns>
             static public Entidad crearMenuCompleto( string nombre , ListaGenericaM2<OpcionM2> opciones )
             {
@@ -919,7 +924,5 @@ namespace DominioTangerine.Fabrica
 
         #endregion
 
-       
-    
     }
 }
