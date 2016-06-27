@@ -21,8 +21,6 @@ namespace LogicaTangerine.Comandos.M8
         /// </summary>
         /// DEBE CONTENER LOS SIGUIENTES DATOS
         /// <param name="parametro">Factura -> fechaFactura</param>
-        /// <param name="parametro">Factura -> idProyectoFactura</param>
-        /// <param name="parametro">Factura -> idCompaniaFactura</param>
         public ComandoSearchExistingBill(Entidad parametro)
         {
             LaEntidad = parametro;
