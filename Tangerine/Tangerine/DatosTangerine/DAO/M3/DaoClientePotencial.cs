@@ -428,6 +428,7 @@ namespace DatosTangerine.DAO.M3
 
             return true;
         }
+
         #endregion
 
         #region DAO General

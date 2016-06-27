@@ -30,18 +30,50 @@ namespace Tangerine_Presentador.M3
         /// <returns></returns>
         public void Agregar()
         {
-
+            bool valor;
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(vista.NombreEtiqueta,
                                                                                               vista.RifEtiqueta, vista.CorreoElectronico,
                                                                                               vista.PresupuestoInversion,1);
 
-            /* pedire el comandopara validar el objeto usare un constructor solo con nombre, rif , correo*/
-            Comando<Entidad> comandoVerificar = LogicaTangerine.Fabrica.FabricaComandos.ComandoObtenerClientePorVerificar(_entidad);
+            Comando<bool> comandoAgregar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(_entidad);
 
-            comandoVerificar.Ejecutar();
-            /*Comando<bool> comandoAgregar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(_entidad);
+            valor = VerificarDatosDeCliente(vista.NombreEtiqueta, vista.CorreoElectronico, vista.RifEtiqueta);            
+            if (valor)
+                vista.AccionSobreBd = comandoAgregar.Ejecutar() ? true : false;
+            else
+                vista.AccionSobreBd= false;
+        }
 
-            vista.AccionSobreBd = comandoAgregar.Ejecutar() ? true : false;*/
+        /// <summary>
+        /// Método que verifica la existencia del cliente
+        /// </summary>
+        /// <returns>bool</returns>
+        private bool VerificarDatosDeCliente(String nombre, String correo, String rif)
+        {
+            bool seAgrega = true;
+            Comando<List<Entidad>> comando =
+                    LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosClientePotencial();
+            List<Entidad> list = comando.Ejecutar();
+
+            foreach (Entidad item in list)
+            {
+                DominioTangerine.Entidades.M3.ClientePotencial cliente = (DominioTangerine.Entidades.M3.ClientePotencial)item;
+
+                if (cliente.NombreClientePotencial.Equals(nombre))
+                    seAgrega = false;
+
+                if (cliente.RifClientePotencial.Equals(rif))
+                    seAgrega = false;
+
+                if (cliente.EmailClientePotencial.Equals(correo))
+                    seAgrega = false;
+
+                if (!seAgrega)
+                    break;
+                
+            }
+
+            return seAgrega;
         }
 
     }
