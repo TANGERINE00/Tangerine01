@@ -90,6 +90,18 @@ namespace DatosTangerine.DAO.M9
                 throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
                     RecursoDAOPago.MensajeErrorSQL,ex);
             }
+           catch (ExcepcionesTangerine.ExceptionTGConBD ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoGeneralBD.Codigo,
+                  RecursoDAOPago.MensajeErrorSQL, ex);
+           }
+           catch (Exception ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPago.CodigoGeneral,
+                   RecursoDAOPago.MensajeGeneral, ex);
+           }
         }
     
         /// <summary>

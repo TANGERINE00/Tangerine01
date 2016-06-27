@@ -43,7 +43,7 @@ namespace Tangerine_Presentador.M7
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyecto(parametro);
             proyecto = comando.Ejecutar();
 
-            Comando<List<Entidad>> comando1 = 
+            Comando<List<Entidad>> comando1 =
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
             List<Entidad> contactos = comando1.Ejecutar();
 
@@ -69,6 +69,10 @@ namespace Tangerine_Presentador.M7
 
             Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
             List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
+
+            //Comando<List<Entidad>> comandoConsultarContacto =
+            //  LogicaTangerine.Fabrica.FabricaComandos.CrearComandoConsultarContactosPorCompania(_compania, 1);
+            //List<Entidad> listaContacto = comandoConsultarContacto.Ejecutar();
 
             try
             {
@@ -144,24 +148,24 @@ namespace Tangerine_Presentador.M7
         private void llenarInputEncargados(List<Entidad> contactos, Entidad contactoEmp)
         {
             int index = 0;
+
             foreach (Entidad contacto in contactos)
-            { 
-                if (contacto.Id == contactoEmp.Id)
+            {
+                Comando<Entidad> comandoContacto = LogicaTangerine.Fabrica.FabricaComandos.CrearComandoConsultarContacto(contacto);
+                Entidad elContacto = comandoContacto.Ejecutar();
+
+                vista.imputEncargado.Items.Add(((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Id +"-"+
+                    (((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Nombre) +
+                    " " + ((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Apellido);
+
+                if (((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Id == ((DominioTangerine.Entidades.M7.Contacto)contactoEmp).Id)
                 {
-                    vista.imputEncargado.Items.Add((((DominioTangerine.Entidades.M7.Contacto)contacto).Id) +
-                                    "-" + (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) +
-                                    " " + ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
                     vista.imputEncargado.SelectedIndex = index;
-                    index++;
                 }
-                else
-                {
-                    vista.imputEncargado.Items.Add((((DominioTangerine.Entidades.M7.Contacto)contacto).Id) +
-                                    "-" + (((DominioTangerine.Entidades.M7.Contacto)contacto).Nombre) +
-                                    " " + ((DominioTangerine.Entidades.M7.Contacto)contacto).Apellido);
-                    index++;
-                }
+
+                index++;
             }
+            
         }
 
         /// <summary>
@@ -260,7 +264,7 @@ namespace Tangerine_Presentador.M7
 
 
         /// <summary>
-        /// Metodo para recibir del boton modificar
+        /// Metodo para recibir el accionar del boton modificar
         /// </summary>
         public bool EventoClick_Modificar()
         {
@@ -334,7 +338,7 @@ namespace Tangerine_Presentador.M7
                     int.Parse(vista.inputGerente.SelectedValue);
 
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Fechainicio =
-                    Convert.ToDateTime(vista.textInputFechaInicio.Text.ToString());
+                    DateTime.ParseExact(vista.textInputFechaInicio.Text.ToString(), "dd/MM/yyyy", null);
 
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idpropuesta = int.Parse(vista.idPropuesta.Text);
                 ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Descripcion = vista.descripcion.Text;

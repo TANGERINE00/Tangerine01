@@ -29,11 +29,17 @@ namespace Tangerine_Presentador.M8
         /// </summary>
         public void Alerta(string msj)
         {
-            if (msj == "1")
+            if (msj == RecursoPresentadorM8.codigoMod)
             {
                 vista.alertaClase = RecursoPresentadorM8.alertaModificado;
                 vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
                 vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjModificado + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            if (msj == RecursoPresentadorM8.codigoAnular)
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaModificado;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + RecursoPresentadorM8.MsjMAnulado + RecursoPresentadorM8.alertaHtmlFinal;
             }
             else
             {
@@ -130,9 +136,12 @@ namespace Tangerine_Presentador.M8
 
                 }
             }
-            catch (Exception ex)
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
     }
