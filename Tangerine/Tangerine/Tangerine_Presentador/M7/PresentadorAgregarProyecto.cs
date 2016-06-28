@@ -12,6 +12,7 @@ using DominioTangerine.Fabrica;
 using LogicaTangerine.Fabrica;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using ExcepcionesTangerine;
 
 namespace Tangerine_Presentador.M7
 {
@@ -102,7 +103,8 @@ namespace Tangerine_Presentador.M7
                 _vista.FechaInicio = propuesta.Feincio.ToString(RecursoPresentadorM7.DateFormat);
                 _vista.FechaFin = propuesta.Fefinal.ToString(RecursoPresentadorM7.DateFormat);
 
-                Comando<String> comandoGenerarCodigo = FabricaComandos.ObtenerComandoGenerarCodigoProyecto(entPropuesta);
+                Comando<String> comandoGenerarCodigo = 
+                    FabricaComandos.ObtenerComandoGenerarCodigoProyecto(entPropuesta);
                 String codigo = comandoGenerarCodigo.Ejecutar();
                 _vista.CodigoProyecto = codigo;
 
@@ -114,7 +116,8 @@ namespace Tangerine_Presentador.M7
 
                 foreach (Entidad entidad in listaContacto)
                 {
-                    DominioTangerine.Entidades.M5.ContactoM5 contacto = (DominioTangerine.Entidades.M5.ContactoM5)entidad;
+                    DominioTangerine.Entidades.M5.ContactoM5 contacto = 
+                        (DominioTangerine.Entidades.M5.ContactoM5)entidad;
                     _vista.inputEncargado.Items.Add(contacto.Nombre + " " + contacto.Apellido);
                     contactos.Add(entidad);
                 }
@@ -125,7 +128,8 @@ namespace Tangerine_Presentador.M7
                 foreach (Entidad entidad in listaEmpleados)
                 {
 
-                    DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)entidad;
+                    DominioTangerine.Entidades.M10.EmpleadoM10 empleado = 
+                        (DominioTangerine.Entidades.M10.EmpleadoM10)entidad;
 
                     if (empleado.jobs.Nombre == RecursoPresentadorM7.CargoGerente)
                     {
@@ -217,9 +221,9 @@ namespace Tangerine_Presentador.M7
                 {
                     ///Se crea un nuevo proyecto con la información de la vista.
                     Entidad nuevoProyecto = FabricaEntidades.CrearProyectoConListas(_vista.NombreProyecto,
-                                                _vista.CodigoProyecto, _fechaIni, _fechaFin, _costo, propuesta.Descripcion,
-                                                "0", "En desarrollo", "", propuesta.Acuerdopago, int.Parse(propuesta.CodigoP),
-                                                int.Parse(propuesta.IdCompañia), 1, listaProgramadores, listaContactos);
+                                       _vista.CodigoProyecto, _fechaIni, _fechaFin, _costo, propuesta.Descripcion,
+                                       "0", "En desarrollo", "", propuesta.Acuerdopago, int.Parse(propuesta.CodigoP),
+                                       int.Parse(propuesta.IdCompañia), 1, listaProgramadores, listaContactos);
 
                     ///Se crea un nuevo comando para agregar el proyecto en la base de datos y se ejecuta.
                     Comando<bool> comandoBool = FabricaComandos.ObtenerComandoAgregarProyecto(nuevoProyecto);
@@ -240,6 +244,8 @@ namespace Tangerine_Presentador.M7
                 }
                 catch (ExcepcionesTangerine.M7.ExceptionM7Tangerine ex)
                 {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                     _vista.alertaClase = RecursoPresentadorM7.alertaError;
                     _vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
                     _vista.alerta = RecursoPresentadorM7.alertaHtml + ex.Message + ex.InnerException.Message

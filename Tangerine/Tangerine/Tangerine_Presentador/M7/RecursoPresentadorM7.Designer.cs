@@ -376,7 +376,7 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to En Desarrollo.
+        ///   Looks up a localized string similar to En desarrollo.
         /// </summary>
         internal static string EstatusDesarrollo {
             get {

@@ -34,7 +34,10 @@
                         <!--Destinatario-->
                         <div id="Div5" class="form-group" runat="server">
                             <label for="labelDestinatario_M8">Para</label>
-                            <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8">
+                            <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8"
+                                pattern="^[0-9a-zñA-ZÑ@-._]+$"
+                                oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolosni espacios en blanco')" 
+                                oninput="setCustomValidity('')">
                         </div>
                         <!--Asunto-->
                         <div id="Div6" class="form-group" runat="server">
@@ -44,15 +47,12 @@
                         <!--Mensaje-->
                         <div id="Div7" class="form-group" runat="server">
                             <label for="labelMensaje_M8">Mensaje</label>
-                            <%--<input type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" placeholder="Ingrese el Mensaje">--%>
-                            <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" rows="4" cols="50">
+                            <textarea type="text" runat="server" class="form-control" id="textMensaje_M8" name="textMensaje_M8" rows="4" 
+                                cols="50" disabled>
                             </textarea>
                         </div>
                         <div id="Div9" class="form-group" runat="server" style="">
-                           <%--<input type="file" runat="server" name="adjuntar" id="adjuntar" class="btn btn-primary" style="margin-top: 5%; margin-right:15px; ">
-                            <asp:FileUpload ID="adjuntar" name="adjuntar" runat="server" /> --%>
                                  <asp:FileUpload ID="fuImage" runat="server" /> 
-                                 <%--<asp:Button ID="btSubir" runat="server" onclick="btSubir_Click" Text="Subir Imagen" />--%>
                                  <asp:Label ID="Label1" runat="server"></asp:Label>
                         </div>
                         <div id="Div8" class="form-group" runat="server" style="text-align:center;">

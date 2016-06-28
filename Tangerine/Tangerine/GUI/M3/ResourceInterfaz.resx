@@ -180,4 +180,26 @@
   <data name="Dashboard" xml:space="preserve">
     <value>../M1/Dashboard.aspx</value>
   </data>
+  <data name="AlertModificar" xml:space="preserve">
+    <value>&lt;div class='alert alert-danger'&gt;
+    &lt;h4&gt;Incorrecto!&lt;/h4&gt;&amp;nbsp
+    No se pudo procesar los nuevos datos del cliente&lt;br&gt;
+    1- Algunos datos ya existen (repetidos)&lt;br&gt;
+    2- Imposible conectar con la Base de datos
+&lt;/div&gt;</value>
+  </data>
+  <data name="AlertAgregar" xml:space="preserve">
+    <value>&lt;div class='alert alert-danger'&gt;
+    &lt;h4&gt;Incorrecto!&lt;/h4&gt;&amp;nbsp
+    No se pudo procesar los datos del cliente&lt;br&gt;
+    1- Algunos datos ya existen (repetidos)&lt;br&gt;
+    2- Imposible conectar con la Base de datos
+&lt;/div&gt;</value>
+  </data>
+  <data name="AlertGenerico" xml:space="preserve">
+    <value>&lt;div class='alert alert-danger'&gt;
+    &lt;h4&gt;Incorrecto!&lt;/h4&gt;&amp;nbsp
+    No se pudo procesar el registro de seguimiento&lt;br&gt;
+&lt;/div&gt;</value>
+  </data>
 </root>
