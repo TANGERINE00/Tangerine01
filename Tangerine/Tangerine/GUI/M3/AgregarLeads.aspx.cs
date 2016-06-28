@@ -112,7 +112,7 @@ namespace Tangerine.GUI.M3
             }
             else
             {
-                Response.Write("<script type='text/javascript'> alert('El cliente no pudo ser creado') </script>");
+               this.alert.InnerHtml = ResourceInterfaz.AlertAgregar;
             }
         }
     }

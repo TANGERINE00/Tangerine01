@@ -331,7 +331,7 @@ namespace Tangerine_Presentador.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Habilitar&quot;  class=&quot;btn btn-success glyphicon glyphicon-ok&quot; style=&quot;margin-left:3px;&quot; href=&quot;ConsultarCompania.aspx?typeHab=1&amp;idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Habilitar&quot;  class=&quot;btn btn-success glyphicon glyphicon-ok&quot; style=&quot;margin-left:3px;&quot; href=&quot;../M4/ConsultarCompania.aspx?typeHab=1&amp;idComp=.
         /// </summary>
         internal static string OpenBotonHab {
             get {
@@ -340,7 +340,7 @@ namespace Tangerine_Presentador.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left:3px;&quot;OnClick=&quot;MostrarInfo&quot;href=&quot;InformacionCompania.aspx?idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Informacion&quot; class=&quot;btn btn-default glyphicon glyphicon-info-sign&quot; style=&quot;margin-left:3px;&quot;OnClick=&quot;MostrarInfo&quot;href=&quot;../M4/InformacionCompania.aspx?idComp=.
         /// </summary>
         internal static string OpenBotonInfo {
             get {
@@ -349,7 +349,7 @@ namespace Tangerine_Presentador.M4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &lt;a title=&quot;Inhabilitar&quot; class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; style=&quot;margin-left:3px;&quot; href=&quot;ConsultarCompania.aspx?typeHab=0&amp;idComp=.
+        ///   Busca una cadena traducida similar a &lt;a title=&quot;Inhabilitar&quot; class=&quot;btn btn-danger glyphicon glyphicon-remove&quot; style=&quot;margin-left:3px;&quot; href=&quot;../M4/ConsultarCompania.aspx?typeHab=0&amp;idComp=.
         /// </summary>
         internal static string OpenBotonInhab {
             get {

@@ -194,7 +194,7 @@ namespace Tangerine.GUI.M4
         {
 
             if (Presentador.AgregarCompania())
-                Server.Transfer("ConsultarCompania.aspx", true);
+                Response.Redirect("../M4/ConsultarCompania.aspx", false);
             else
                 Presentador.Alerta(msjError);
         }
