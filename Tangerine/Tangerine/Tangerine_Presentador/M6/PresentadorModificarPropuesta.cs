@@ -39,12 +39,18 @@ namespace Tangerine_Presentador.M6
         public List<DominioTangerine.Entidades.M6.Requerimiento> req;
         #endregion
 
+        /// <summary>
+        /// Constructor por defecto de la clase
+        /// </summary>
+        /// <param name="vista">Vista con los metodos implementados de IContratoModificarPropuesta</param>
         public PresentadorModificarPropuesta(IContratoModificarPropuesta vista)
         {
             this.vista = vista;
         }
 
-
+        /// <summary>
+        /// Metodo que modifica una propuesta
+        /// </summary>
         public void ModificarPropuesta()
         {
 
@@ -102,7 +108,10 @@ namespace Tangerine_Presentador.M6
             
         }
 
-
+        /// <summary>
+        /// Metodo que pinta en pantalla los datos de una propuesta
+        /// </summary>
+        /// <param name="propuesta">entidad propuesta</param>
         public void LlenarDatosPropuesta(Entidad propuesta)
         {
             String[] arreglo;
@@ -131,8 +140,11 @@ namespace Tangerine_Presentador.M6
             
             _idCompañia = vista.IdCompania;
         }
-        
 
+        /// <summary>
+        /// Metodo que pinta en pantalla los requerimientos de una propuesta
+        /// </summary>
+        /// <param name="propuesta">entidad propuesta</param>
         public void ImprimirRequerimientos(Entidad _propuesta)
         {
             List<Entidad> _requerimientos;
@@ -170,42 +182,10 @@ namespace Tangerine_Presentador.M6
             
         }
 
-
-        public void ModificarRequerimiento(String idRequerimiento, String descripcion, String idPropuesta)
-        {
-            try
-            {
-                DominioTangerine.Entidades.M6.Requerimiento elRequerimiento = new DominioTangerine.Entidades.M6.Requerimiento(idRequerimiento, descripcion, idPropuesta);
-
-                elRequerimiento.Id = int.Parse(idRequerimiento);
-
-                //Creación y Ejecución del Objeto Comando de Modificar Requerimiento, se le envia por parámetro el objeto Propuesta 'p'.
-                Comando<bool> comando = LogicaTangerine.Fabrica.FabricaComandos.ComandoModificarRequerimiento(elRequerimiento);
-                comando.Ejecutar();
-            }
-            catch (ExcepcionesTangerine.ExceptionTGConBD ex)
-            {
-                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-                throw ex;
-            }
-            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
-            {
-                MessageBox.Show(ex.Mensaje + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ", por favor intente de nuevo.", "Error", MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-                throw ex;
-            }
-            
-
-        }
-
-
+        /// <summary>
+        /// Metodo que elimina un requerimiento
+        /// </summary>
+        /// <param name="idRequerimiento">id del requerimiento que se quiere borrar</param>
         public void EliminarRequerimiento(string idRequerimiento)
         {
             List<Entidad> _requerimientos;
@@ -258,7 +238,10 @@ namespace Tangerine_Presentador.M6
           
         }
 
-
+        /// <summary>
+        /// Metodo que pinta en pantalla la compania a la que pertenece la propuesta.
+        /// </summary>
+        /// <param name="idPropuesta">id de la propuesta</param>
         public void TraerCompania(String idPropuesta)
         {
             //Creo una propuesta
@@ -293,7 +276,9 @@ namespace Tangerine_Presentador.M6
             
         }
 
-
+        /// <summary>
+        /// Metodo inicial para la carga de datos de una propuesta
+        /// </summary>
         public void LlenarVista()
         {
             try {

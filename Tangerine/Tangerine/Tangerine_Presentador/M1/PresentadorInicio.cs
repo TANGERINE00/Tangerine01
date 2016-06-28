@@ -107,21 +107,21 @@ namespace Tangerine_Presentador.M1
                         facturaExistente = false;
                     }
 
-                    HttpContext.Current.Response.Redirect("Dashboard.aspx");
+                    HttpContext.Current.Response.Redirect(ResourceGUIM1.Dashboard);
 
 
                 }
                 else
                 {
                     _iMaster.errorLoginAlert = true;
-                    _iMaster.errorLoginText = "Datos Incorrectos";
+                    _iMaster.errorLoginText = ResourceGUIM1.Incorrecto;
                 }
             }
             catch (ExcepcionesTangerine.M2.ExceptionM2Tangerine e)
             {
                
                 _iMaster.errorLoginAlert = true;
-                _iMaster.errorLoginText = "Error conexion Base de datos";
+                _iMaster.errorLoginText = ResourceGUIM1.ErrorBD;
               
 
             }

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DatosTangerine.DAO.M3;
-using DatosTangerine.InterfazDAO.M3;
-using DominioTangerine;
-using NUnit.Framework;
 using DominioTangerine.Entidades.M3;
+using NUnit.Framework;
+using Tangerine_Presentador.M3;
+using Tangerine_Contratos.M3;
 
 namespace PruebasUnitarias.M3
 {
@@ -15,14 +12,10 @@ namespace PruebasUnitarias.M3
     public class PruebasPresentadorClientePotencial
     {
         #region Atributos
-
-        private ClientePotencial elCliente1, elCliente2, elCliente3, elCliente4;
-        private Boolean respuesta;
-        private List<Entidad> losClientes;
-        private DatosTangerine.InterfazDAO.M3.IDAOClientePotencial daoCliente;
-        private List<Entidad> llamadas, visitas;
-        private SeguimientoCliente elSeguimiento;
-
+        private PresentadorAgregarClientePotencial presentadorAgregar;
+        private IContratoAgregarClientePotencial contratoAgregar;
+        private LogicaTangerine.Comando<bool> comandoRespuesta;
+        private ClientePotencial elCliente1;
         #endregion
 
         #region SetUp y TearDown
@@ -32,13 +25,9 @@ namespace PruebasUnitarias.M3
         [SetUp]
         public void Init()
         {
-            elCliente1 = new ClientePotencial("Test2", "J-121212-F", "prueba@gmail.com", 121212, 1);
-            elCliente2 = new ClientePotencial();
-            elCliente3 = new ClientePotencial("Test2Cambio", "J-121212-F", "cambio@gmail.com", 746, 1);
-            elCliente4 = new ClientePotencial("Test3", "J-121212-F", "prueba@gmail.com", 121212, 0);
-            losClientes = new List<Entidad>();
-            elSeguimiento = new SeguimientoCliente(new DateTime(2016, 05, 02), "Llamada", "Prueba de seguimiento", 5);
-
+            elCliente1 = new DominioTangerine.Entidades.M3.ClientePotencial("Prueba", "J-121212121212-4", "prueba@gmail.com", 121212, 1);
+            
+            presentadorAgregar = new PresentadorAgregarClientePotencial(contratoAgregar);
         }
 
         /// <summary>
@@ -48,9 +37,7 @@ namespace PruebasUnitarias.M3
         public void Clean()
         {
             elCliente1 = null;
-            elCliente2 = null;
-            elCliente3 = null;
-            elCliente4 = null;
+            presentadorAgregar = null;
         }
         #endregion
 
@@ -60,8 +47,14 @@ namespace PruebasUnitarias.M3
         [Test]
         public void TestPresentadorClientePotencial()
         {
-            
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(elCliente1);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
 
+            Assert.False(presentadorAgregar.VerificarDatosDeCliente("Prueba",
+                "J-121212121212-4", "prueba@gmail.com"));
+
+            comandoRespuesta = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoEliminarClientePotencial(elCliente1);
+            Assert.IsTrue(comandoRespuesta.Ejecutar());
         }
     }
 }

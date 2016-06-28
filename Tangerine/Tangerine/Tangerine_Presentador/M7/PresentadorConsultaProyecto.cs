@@ -19,6 +19,10 @@ namespace Tangerine_Presentador.M7
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Metodo para mostrar las notificaciones en la parte superior de la vista
+        /// </summary>
+        /// <param name="msj">valor con el cual se determina la notificacion a mostrar</param>
         public void Alerta(string msj)
         {
             if (msj == RecursoPresentadorM7.CodMsjAgregado)
@@ -51,6 +55,9 @@ namespace Tangerine_Presentador.M7
             }
         }
 
+        /// <summary>
+        /// Metodo para llamar a los comandos necesarios para carga toda la informacion de todos los proyectos existentes
+        /// </summary>
         public void cargarConsultarProyectos()
         {
             try

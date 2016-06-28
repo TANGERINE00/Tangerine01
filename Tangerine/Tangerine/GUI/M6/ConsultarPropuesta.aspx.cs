@@ -20,7 +20,6 @@ namespace Tangerine.GUI.M6
         /// <summary>
         /// Constructor de la vista
         /// </summary>
-
         public ConsultarPropuesta()
         {
             this.presentadorConsultar = new PresentadorConsultarPropuesta(this);
@@ -39,7 +38,9 @@ namespace Tangerine.GUI.M6
             }
         }
 
-
+        /// <summary>
+        /// Carga inicial de la pagina
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

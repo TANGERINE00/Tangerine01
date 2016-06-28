@@ -61,6 +61,15 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to EmployeeId.
+        /// </summary>
+        internal static string Empleado {
+            get {
+                return ResourceManager.GetString("Empleado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error conexion Base de datos.
         /// </summary>
         internal static string ErrorBD {
@@ -174,6 +183,15 @@ namespace Tangerine.GUI.M1 {
         internal static string MensajeSinProyecto {
             get {
                 return ResourceManager.GetString("MensajeSinProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../M1/PaginaError.aspx.
+        /// </summary>
+        internal static string PaginaError {
+            get {
+                return ResourceManager.GetString("PaginaError", resourceCulture);
             }
         }
         
