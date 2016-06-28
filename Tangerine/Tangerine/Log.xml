@@ -35324,3 +35324,123 @@ Error Number:-1,State:0,Class:20
 2016-06-27 22:20:08,749 INFO  DAORol - Clase: DAORol
 2016-06-27 22:20:08,749 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 22:20:08,749 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:23,060 INFO  DAORol - *******************************************************
+2016-06-27 23:28:23,066 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:23,066 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:23,066 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:23,072 INFO  DAOUsuario - *******************************************************
+2016-06-27 23:28:23,073 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 23:28:23,073 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 23:28:23,073 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 23:28:23,159 INFO  DAORol - *******************************************************
+2016-06-27 23:28:23,159 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:23,159 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:23,159 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:23,164 INFO  DAORol - *******************************************************
+2016-06-27 23:28:23,164 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:23,164 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:23,164 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:26,483 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-27 23:28:26,483 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-27 23:28:26,483 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-27 23:28:26,483 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-27 23:28:26,491 INFO  DAOFactura - *******************************************************
+2016-06-27 23:28:26,491 INFO  DAOFactura - Clase: DAOFactura
+2016-06-27 23:28:26,491 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-27 23:28:26,491 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-27 23:28:26,495 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:26,496 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:26,496 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:26,496 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:26,507 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:26,507 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:26,507 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:26,507 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:26,511 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:26,511 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:26,511 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:26,511 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:26,515 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:26,515 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:26,515 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:26,515 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:26,523 INFO  DAORol - *******************************************************
+2016-06-27 23:28:26,523 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:26,523 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:26,523 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:26,527 INFO  DAORol - *******************************************************
+2016-06-27 23:28:26,527 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:26,527 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:26,527 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:28,344 INFO  ComandoConsultarXIdFactura - *******************************************************
+2016-06-27 23:28:28,344 INFO  ComandoConsultarXIdFactura - Clase: ComandoConsultarXIdFactura
+2016-06-27 23:28:28,344 INFO  ComandoConsultarXIdFactura - Mensaje: Entrada en el Método
+2016-06-27 23:28:28,344 INFO  ComandoConsultarXIdFactura - Metodo: Ejecutar
+2016-06-27 23:28:28,350 INFO  DAOFactura - *******************************************************
+2016-06-27 23:28:28,350 INFO  DAOFactura - Clase: DAOFactura
+2016-06-27 23:28:28,350 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-27 23:28:28,350 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-27 23:28:28,354 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:28,354 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:28,354 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:28,354 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:28,362 INFO  DAORol - *******************************************************
+2016-06-27 23:28:28,362 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:28,362 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:28,362 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:28,366 INFO  DAORol - *******************************************************
+2016-06-27 23:28:28,366 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:28,366 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:28,366 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:32,982 INFO  ComandoConsultarTodosFactura - *******************************************************
+2016-06-27 23:28:32,982 INFO  ComandoConsultarTodosFactura - Clase: ComandoConsultarTodosFactura
+2016-06-27 23:28:32,982 INFO  ComandoConsultarTodosFactura - Mensaje: Entrada en el Método
+2016-06-27 23:28:32,982 INFO  ComandoConsultarTodosFactura - Metodo: Ejecutar
+2016-06-27 23:28:32,987 INFO  DAOFactura - *******************************************************
+2016-06-27 23:28:32,988 INFO  DAOFactura - Clase: DAOFactura
+2016-06-27 23:28:32,988 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-27 23:28:32,988 INFO  DAOFactura - Metodo: ConsultarTodos
+2016-06-27 23:28:32,992 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:32,993 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:32,993 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:32,993 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:32,998 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:32,998 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:32,998 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:32,998 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:33,004 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:33,004 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:33,004 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:33,004 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:33,011 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:33,011 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:33,011 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:33,011 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:33,020 INFO  DAORol - *******************************************************
+2016-06-27 23:28:33,021 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:33,021 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:33,021 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:33,026 INFO  DAORol - *******************************************************
+2016-06-27 23:28:33,026 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:33,026 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:33,026 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:34,747 INFO  ComandoConsultarXIdFactura - *******************************************************
+2016-06-27 23:28:34,748 INFO  ComandoConsultarXIdFactura - Clase: ComandoConsultarXIdFactura
+2016-06-27 23:28:34,748 INFO  ComandoConsultarXIdFactura - Mensaje: Entrada en el Método
+2016-06-27 23:28:34,748 INFO  ComandoConsultarXIdFactura - Metodo: Ejecutar
+2016-06-27 23:28:34,752 INFO  DAOFactura - *******************************************************
+2016-06-27 23:28:34,752 INFO  DAOFactura - Clase: DAOFactura
+2016-06-27 23:28:34,752 INFO  DAOFactura - Mensaje: Salida del Método
+2016-06-27 23:28:34,752 INFO  DAOFactura - Metodo: ConsultarXId
+2016-06-27 23:28:34,757 INFO  DaoCompania - *******************************************************
+2016-06-27 23:28:34,757 INFO  DaoCompania - Clase: DaoCompania
+2016-06-27 23:28:34,757 INFO  DaoCompania - Mensaje: Entrada en el Método
+2016-06-27 23:28:34,757 INFO  DaoCompania - Metodo: ConsultarXId
+2016-06-27 23:28:34,765 INFO  DAORol - *******************************************************
+2016-06-27 23:28:34,765 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:34,765 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:34,765 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 23:28:34,769 INFO  DAORol - *******************************************************
+2016-06-27 23:28:34,770 INFO  DAORol - Clase: DAORol
+2016-06-27 23:28:34,770 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 23:28:34,770 INFO  DAORol - Metodo: ObtenerRolUsuario

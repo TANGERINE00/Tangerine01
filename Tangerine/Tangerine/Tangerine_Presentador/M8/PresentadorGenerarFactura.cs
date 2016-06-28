@@ -103,7 +103,6 @@ namespace Tangerine_Presentador.M8
         {
             try
             {
-
                 Comando<List<Entidad>> _comandoList;
                 Facturacion _laFactura;
                 List<Entidad> _listaFactura;
