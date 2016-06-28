@@ -851,7 +851,7 @@ where CP.cli_pot_id=@fk);
 from Cliente_Potencial CP
 where CP.cli_pot_id=@fk);
    
-   IF (@idLead <= 0)
+   IF (@idLead is null 0)
 Begin
 SET @idLead=1;
 END;
