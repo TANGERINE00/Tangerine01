@@ -14,6 +14,8 @@ using DatosTangerine.InterfazDAO.M2;
 using System.Globalization;
 using DominioTangerine.Entidades.M2;
 using DatosTangerine.Fabrica;
+using LogicaTangerine;
+using LogicaTangerine.Fabrica;
 
 namespace PruebasUnitarias.M10
 {
@@ -36,6 +38,8 @@ namespace PruebasUnitarias.M10
         private Double Salario;
         private string Telefono;
         public Empleado theEmpleado;
+        private Entidad theEmpleado2;
+        private Entidad theEmpleado3;
         private DominioTangerine.Entidades.M10.EmpleadoM10 elEmpleado1, elEmpleado2, elEmpleado3, elEmpleado4;
         public bool respuesta;
         public List<Entidad> listEmpleados;
@@ -49,13 +53,16 @@ namespace PruebasUnitarias.M10
         private IDAOUsuarios daoUsuario;
         private Entidad empleado;
         private int contadorEmpleados;
-        private int contadorPaises;
-        private int contadorEstados;
+        private int contadorPaises;       
         private int contadorCargos;
-        private Entidad ElUsuario;
-        private Entidad ElUsuario2;
+        private Entidad ElUsuario;       
         private Entidad ElUsuarioActivo;
         private Entidad ElRol;
+        private Comando<Boolean> ComandoBooleano;
+        private bool Confirma;
+        private Comando<List<Entidad>> ComandoLista;
+        private List<Entidad> ListaEmpleado;
+        private Comando<Entidad> ComandoEntidad;
         #endregion
 
         #region SetUp y TearDown
@@ -79,12 +86,17 @@ namespace PruebasUnitarias.M10
                                        DateTime.ParseExact("04/01/2016", "MM/dd/yyyy", CultureInfo.InvariantCulture),
                                        "Tiempo completo", Salario);
 
-          
+            Direccion = new List<DominioTangerine.Entidades.M10.LugarDireccion>();
+            Direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion("Venezuela", "Pais"));
+            Direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion("Distrito Capital", "Estado"));
+            Direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion("Caracas", "Ciudad"));
+            Direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion("Plaza Sucre", "Direccion"));
 
             ElRol = (RolM2)FabricaEntidades.crearRolNombre("Administrador");
-            ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma@gmail.com", "leojma", new DateTime(2015, 2, 10),
-                                                                                      "Activo", ((RolM2)ElRol), 1);
-            ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("leojma@gmail.com", "leojma");
+            ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma@gmail.com", "leojma", 
+                new DateTime(2015, 2, 10),"Activo", ((RolM2)ElRol), 1);
+            ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena
+                             ("leojma@gmail.com", "leojma");
             
 
 
@@ -95,14 +107,14 @@ namespace PruebasUnitarias.M10
                                                status, estudio, correo, elCargo, Telefono,
                                                Direccion);
             listEmpleados = new List<Entidad>();
-
             listLugar = new List<Entidad>();
-
             daoEmpleado = FabricaDAOSqlServer.CrearDAOEmpleado();
-
             respuesta = false;
-
             contadorEmpleados = 0;
+           
+            //Se agrega un empleado
+            ComandoBooleano = FabricaComandos.ComandoAgregarEmpleado(empleado);
+            Confirma = ComandoBooleano.Ejecutar();
             
         }
 
@@ -120,8 +132,7 @@ namespace PruebasUnitarias.M10
             estudio = null;
             correo = null;
             ElRol = null;
-            ElUsuario = null;
-            ElUsuario2 = null;
+            ElUsuario = null;           
             listCargo = null;
             listEmpleados = null;
             listLugar = null;
@@ -135,52 +146,73 @@ namespace PruebasUnitarias.M10
         /// <summary>
         /// Prueba unitaria para el metodo consultar por id
         /// </summary>
-        [Test]
+        //[Test]
 
-        public void TestConsultarXIdEmpleadoDAO()
-        {
-            empleado = FabricaEntidades.ConsultarEmpleados();
-            empleado.Id = 2;
+        //public void TestConsultarXIdEmpleadoDAO()
+        //{         
 
-            empleado = daoEmpleado.ConsultarXId(empleado);
-            EmpleadoM10 nuevo = (EmpleadoM10)empleado;
-            Assert.AreEqual(nuevo.emp_p_nombre, "Jose");
-        }
+        //    //Consulta todos los empleados
+        //    ComandoLista = FabricaComandos.ConsultarEmpleados();
+        //    ListaEmpleado = ComandoLista.Ejecutar();
+
+        //    //Me traigo el ultimo el empleado insertado
+        //    theEmpleado2 = (EmpleadoM10)ListaEmpleado[(ListaEmpleado.Count) - 1];
+
+
+        //    //Envio ese empleado para que lo consulte por id
+
+        //    theEmpleado3 = daoEmpleado.ConsultarXId(empleado);
+
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado3).emp_id, ((EmpleadoM10)theEmpleado2).emp_id);
+        //    Assert.IsNotEmpty(ComandoLista.Ejecutar());
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_nombre, "Eduardo");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_nombre, "Jose");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_apellido, "Pacheco");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_apellido, "Aguirre");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_genero, "Masculino");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_cedula.ToString(), "19162756");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_fecha_nac.ToString(), "10/8/1989 12:00:00 a. m.");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_activo, "Activo");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_nivel_estudio, "Bachiller");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_email, "eddcold@mail.com");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Nombre, "Gerente");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.FechaContratacion.ToString(), "1/4/2016 12:00:00 a. m.");
+        //    Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Modalidad, "Tiempo completo");
+
+        //}
 
         /// <summary>
         /// Prueba unitaria para el metodo Agregar Empleado
         /// </summary>
         /// 
         [Test]
-        public void TestAgregarEmpleadoDAO() 
+        public void TestAgregarEmpleadoDAO()
         {
             respuesta = daoEmpleado.Agregar(empleado);
             Assert.True(respuesta);
 
-            listEmpleados = daoEmpleado.ConsultarTodos();
-            contadorEmpleados = listEmpleados.Count;
-            Assert.AreEqual(contadorEmpleados, 3);
 
-            EmpleadoM10 empleados = (EmpleadoM10)empleado;
-            bool verificar = false;
+                    
+            ComandoLista = FabricaComandos.ConsultarEmpleados();
+            ListaEmpleado = ComandoLista.Ejecutar();
 
-            foreach (Entidad e in listEmpleados)
-            {
-                EmpleadoM10 ep = (EmpleadoM10)e;
+            theEmpleado2 = (EmpleadoM10)ListaEmpleado[((ListaEmpleado.Count) - 1)];
 
-                if (ep.emp_p_nombre.Equals(empleados.emp_p_nombre) && ep.emp_s_nombre.Equals(empleados.emp_s_nombre) &&
-                ep.emp_p_apellido.Equals(empleados.emp_p_apellido) && ep.emp_s_apellido.Equals(empleados.emp_s_apellido)
-                && ep.emp_genero.Equals(empleados.emp_genero) && ep.emp_cedula.Equals(empleados.emp_cedula) &&
-                    ep.emp_fecha_nac.Equals(empleados.emp_fecha_nac) && ep.emp_estudio.Equals(empleados.emp_estudio) &&
-                    ep.emp_email.Equals(empleados.emp_email) && ep.jobs.Nombre.Equals(empleados.jobs.Nombre) &&
-                    ep.jobs.FechaContratacion.Equals(empleados.jobs.FechaContratacion) &&
-                    ep.emp_modalidad.Equals(empleados.emp_modalidad) && ep.emp_salario.Equals(empleados.emp_salario))
-                {
-                    verificar = true;
-                }
-            }
+            Assert.IsTrue(ComandoBooleano.Ejecutar());
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_nombre, "Eduardo");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_nombre, "Jose");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_apellido, "Pacheco");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_apellido, "Aguirre");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_genero, "Masculino");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_cedula.ToString(), "19162756");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_fecha_nac.ToString(), "10/8/1989 12:00:00 a. m.");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_activo, "Activo");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_nivel_estudio, "Bachiller");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_email, "eddcold@mail.com");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Nombre, "Gerente");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.FechaContratacion.ToString(), "1/4/2016 12:00:00 a. m.");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Modalidad, "Tiempo completo");
 
-            Assert.IsTrue(verificar);
         }
 
         /// <summary>
@@ -190,9 +222,25 @@ namespace PruebasUnitarias.M10
         public void TestConsultarTodosDAO() 
         {
             listEmpleados = daoEmpleado.ConsultarTodos();
-            contadorEmpleados = listEmpleados.Count;
 
-            Assert.AreEqual(contadorEmpleados, 26);
+            theEmpleado2 = (EmpleadoM10)listEmpleados[(ListaEmpleado.Count) - 1];
+
+            Assert.IsNotEmpty(listEmpleados);
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_nombre, "Eduardo");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_nombre, "Jose");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_apellido, "Pacheco");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_apellido, "Aguirre");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_genero, "Masculino");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_cedula.ToString(), "19162756");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_fecha_nac.ToString(), "10/8/1989 12:00:00 a. m.");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_activo, "Activo");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_nivel_estudio, "Bachiller");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_email, "eddcold@mail.com");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Nombre, "Gerente");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.FechaContratacion.ToString(), "1/4/2016 12:00:00 a. m.");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Modalidad, "Tiempo completo");
+            
+
         }
 
 
