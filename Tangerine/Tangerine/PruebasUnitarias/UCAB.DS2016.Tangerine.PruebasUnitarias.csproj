@@ -62,6 +62,14 @@
       <Project>{e0a749b2-762b-41a8-b134-064a6a4dfb07}</Project>
       <Name>UCAB.DS2016.Tangerine.LogicaTangerine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tangerine_Contratos\UCAB.DS2016.Tangerine.Tangerine_Contratos.csproj">
+      <Project>{9f9e2132-7a2f-4f67-9b94-a82e2b50669e}</Project>
+      <Name>UCAB.DS2016.Tangerine.Tangerine_Contratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tangerine_Presentador\UCAB.DS2016.Tangerine.Tangerine_Presentador.csproj">
+      <Project>{fd1b8ade-2c12-46eb-bf46-f8016eb1f85b}</Project>
+      <Name>UCAB.DS2016.Tangerine.Tangerine_Presentador</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UCAB.DS2016.Tangerine.csproj">
       <Project>{371135b0-df65-4be5-8814-8798b7f7e181}</Project>
       <Name>UCAB.DS2016.Tangerine</Name>
