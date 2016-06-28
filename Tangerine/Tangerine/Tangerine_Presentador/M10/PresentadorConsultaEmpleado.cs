@@ -175,11 +175,11 @@ namespace Tangerine_Presentador.M10
 
             switch (Empleadoid)
             {
-                case 1:
+                case 2:
                     AlertaMensaje(ResourceGUIM10.EmpleadoAgregado, int.Parse(ResourceGUIM10.StatusAgregado));
                     break;
                
-                case 2:
+                case 1:
                     AlertaMensaje(ResourceGUIM10.ErrorEmpleado, 0);
                     break;
                 case 3:
