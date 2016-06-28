@@ -183,7 +183,7 @@ namespace PruebasUnitarias.M5
             _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual( _contadorContactos, 1 );
+            Assert.AreEqual( _contadorContactos, 3 );
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace PruebasUnitarias.M5
             _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual( _contadorContactos, 1 );
+            Assert.AreEqual( _contadorContactos, 3 );
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace PruebasUnitarias.M5
             _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual( _contadorContactos, 0 );
+            Assert.AreEqual( _contadorContactos, 1 );
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace PruebasUnitarias.M5
             _listaContactos = _daoContacto.ContactosNoPertenecenAProyecto( proyecto );
             _contadorContactos = _listaContactos.Count;
 
-            Assert.AreEqual( _contadorContactos, 4 );
+            Assert.AreEqual( _contadorContactos, 3 );
         }
 
         // Pruebas de Excepciones 

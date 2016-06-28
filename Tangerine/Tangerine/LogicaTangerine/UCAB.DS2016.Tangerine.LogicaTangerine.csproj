@@ -184,6 +184,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Comandos\M9\ComandoPagosTodos.cs" />
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Comandos\M9\ComandoConsultarPagos.cs" />
     <Compile Include="Comandos\M9\ComandoEliminarPago.cs" />

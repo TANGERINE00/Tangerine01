@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using DatosTangerine.DAO.M9;
 using DatosTangerine.InterfazDAO.M9;
 using DominioTangerine;
 using NUnit.Framework;
 using DominioTangerine.Entidades.M9;
 using LogicaTangerine.Fabrica;
+using LogicaTangerine;
 
 
 namespace PruebasUnitarias.M9
@@ -17,11 +17,15 @@ namespace PruebasUnitarias.M9
     public class PruebaComandoDaoPago
     {
         #region Atributos
-        public bool answer;
-        public Entidad elPago;
-        public Entidad elPago1;
-        public Entidad factura;
-        public Entidad compania;
+        private bool answer;
+        private Entidad elPago;
+        private Entidad elPago1;
+        private Entidad factura;
+        private Entidad compania;
+        private List<Entidad> listaPagos;
+        Comando<Entidad> _comandoEntidad;
+        Comando<bool> _comandoBool;
+        Comando<List<Entidad>> _comandoList;
 
 
         #endregion
@@ -35,7 +39,7 @@ namespace PruebasUnitarias.M9
         [SetUp]
         public void init()
         {
-            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1111111111, 12000, "EUR", "Deposito", 1);
+            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(123456, 12000, "EUR", "Deposito", 1);
             compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
 
         }
@@ -61,22 +65,39 @@ namespace PruebasUnitarias.M9
         #region Test
 
         /// <summary>
-        /// Método para probar el ComandoAgregarPago de ComandosDAOPago
+        /// Método para probar el Comando de Agregar un Pago en la base de datos
         /// </summary>
         [Test]
         public void TestComandoAgregarPago()
         {
-            bool resultado;
+
             LogicaTangerine.Comando<Boolean> comandoAgregarPago = FabricaComandos.cargarPago(elPago);
-            resultado = comandoAgregarPago.Ejecutar();
+            answer = comandoAgregarPago.Ejecutar();
+
+            _comandoList = FabricaComandos.ConsultarPagosTodos();
+            listaPagos = _comandoList.Ejecutar();
+            elPago = (Pago)listaPagos[listaPagos.Count - 1];
+
+
             Assert.IsNotNull(comandoAgregarPago);
-            Assert.IsTrue(resultado);
+            Assert.IsTrue(answer);
+
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 123456);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).montoPago == 12000);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).monedaPago == "EUR");
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).formaPago == "Deposito");
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).idFactura == 1);
+
             LogicaTangerine.Comando<Boolean> comandoEliminarPago = FabricaComandos.EliminarPago(elPago);
-            resultado = comandoEliminarPago.Ejecutar();
-            Assert.IsTrue(resultado);
+            answer = comandoEliminarPago.Ejecutar();
+            Assert.IsTrue(answer);
 
         }
 
+
+        /// <summary>
+        /// Método que permite verificar el Comando que consulta los pagos hechos por una compañia
+        /// </summary>
         [Test]
         public void TestComandoPagosCompania()
         {

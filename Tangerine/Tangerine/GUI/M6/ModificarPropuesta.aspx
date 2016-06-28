@@ -90,11 +90,19 @@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
+                            
                             <asp:Literal runat="server" ID="requerimientos"> </asp:Literal>>
                         </table>
                     </div>
 
-                
+                    <div class="form-group" style="padding-bottom:30px; margin-top:-15px; margin-left:-305px;">
+                        <div class="col-sm-1 col-md-1 col-lg-1" style="float:right;"> 
+			                <a type="button"
+                                class="btn btn-default btn-circle glyphicon glyphicon-plus" 
+                                href="AgregarRequerimientos.aspx?id=<%= HttpContext.Current.Request.QueryString.Get("id") %>"></a>
+                               
+			            </div>
+                    </div>
 
 
                 <!-- /.box-body -->

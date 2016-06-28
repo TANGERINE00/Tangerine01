@@ -102,6 +102,11 @@
                                     <tfoot>
                                         <tr>
                                             <td colspan="4" style="text-align:right;">
+                                                <asp:Literal runat="server" ID="textIva_M8"></asp:Literal>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" style="text-align:right;">
                                                 <asp:Literal runat="server" ID="textTipoMoneda_M8"></asp:Literal>
                                             </td>
                                         </tr>

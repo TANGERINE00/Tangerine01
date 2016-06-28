@@ -78,6 +78,13 @@ namespace Tangerine.GUI.M8
 
         #endregion
 
+        /// <summary>
+        /// Carga la ventana Modificar Factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="IdFac">Para manejar la alerta a UI de acciones positivas en otras ventanas,
+        /// no obligatorio</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try

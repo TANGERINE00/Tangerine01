@@ -61,6 +61,8 @@ namespace Tangerine_Presentador.M3
         /// <param name="idCliente"></param>
         public void ModificarClientePotencial(int idCliente)
         {
+            bool modificable = true;
+
             Entidad _entidad = 
                 DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(idCliente,
                                                                                     vista.NombreEtiqueta,
@@ -72,7 +74,44 @@ namespace Tangerine_Presentador.M3
             Comando<bool> comando = 
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarClientePotencial(_entidad);
 
-            vista.AccionSobreBd= comando.Ejecutar() ? true : false;
+            modificable = VerificarDatosDeCliente(vista.NombreEtiqueta, vista.CorreoElectronico, vista.RifEtiqueta);
+
+            if (modificable)
+                vista.AccionSobreBd = comando.Ejecutar() ? true : false;
+            else
+                vista.AccionSobreBd = false;
+        }
+
+        /// <summary>
+        /// Método que verifica la existencia del cliente
+        /// </summary>
+        /// <returns>bool</returns>
+        private bool VerificarDatosDeCliente(String nombre, String correo, String rif)
+        {
+            bool seAgrega = true;
+            Comando<List<Entidad>> comando =
+                    LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosClientePotencial();
+            List<Entidad> list = comando.Ejecutar();
+
+            foreach (Entidad item in list)
+            {
+                DominioTangerine.Entidades.M3.ClientePotencial cliente = (DominioTangerine.Entidades.M3.ClientePotencial)item;
+
+                if (cliente.NombreClientePotencial.Equals(nombre))
+                    seAgrega = false;
+
+                if (cliente.RifClientePotencial.Equals(rif))
+                    seAgrega = false;
+
+                if (cliente.EmailClientePotencial.Equals(correo))
+                    seAgrega = false;
+
+                if (!seAgrega)
+                    break;
+
+            }
+
+            return seAgrega;
         }
 
 

@@ -357,4 +357,7 @@
   <data name="MsjCorreo" xml:space="preserve">
     <value>El correo se ha enviado</value>
   </data>
+  <data name="Iva" xml:space="preserve">
+    <value>IVA :</value>
+  </data>
 </root>

@@ -21,6 +21,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
 
         }
 
+        /// <summary>
+        /// Mètodo para ejecutar la logica del ComandoConsultarUltimoIDEmpleado
+        /// </summary>
+        /// <returns>Retorna el ID del ultimo empleado</returns>
         public override int Ejecutar()
         {
             try

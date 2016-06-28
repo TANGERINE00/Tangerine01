@@ -70,7 +70,7 @@
                     <label for="llamadas"># LLamadas</label> 
                     <label for="Requerido" style="color: red;">*</label>
                     <input type="number" runat="server" id="numLlamadas" class="form-control" 
-                        maxlength="20" placeholder="# de llamadas" required>
+                        maxlength="20" placeholder="# de llamadas" required disabled>
                 </div>
 
                 <!--Numero de visitas-->
@@ -78,7 +78,7 @@
                     <label for="visitas"># Visitas</label> 
                     <label for="Requerido" style="color: red;">*</label>
                     <input type="number" runat="server" id="visitas" class="form-control" 
-                        maxlength="20" placeholder="# de visitas" required>
+                        maxlength="20" placeholder="# de visitas" required disabled>
                </div>
 
                 <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary" 

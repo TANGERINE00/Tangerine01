@@ -270,3 +270,21 @@ input[type=checkbox]:checked + label:before {
     padding-bottom: 20px!important;
   }
 }
+
+#volverLogin, #LoginButton {
+    width: 47.5% !important;
+    float: left !important;
+}
+
+#volverLogin {
+    margin-left: 5%;
+    margin-top: 0;
+    background-color: #68fe61 !important;
+}
+
+.login-box-msg {
+    clear:both; 
+    display:block;
+    width: 100%;
+    margin-top: 20px;
+}

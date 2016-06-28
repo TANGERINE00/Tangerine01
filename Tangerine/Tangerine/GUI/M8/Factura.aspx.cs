@@ -54,6 +54,10 @@ namespace Tangerine.GUI.M8
         {
             set { this.textTipoMoneda_M8.Text = value; }
         }
+        public string textIva
+        {
+            set { this.textIva_M8.Text = value; }
+        }
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
@@ -78,6 +82,13 @@ namespace Tangerine.GUI.M8
 
         #endregion
 
+        /// <summary>
+        /// Carga la ventana Ver Factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="idFac">Para manejar la alerta a UI de acciones positivas en otras ventanas,
+        /// no obligatorio</param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -85,24 +96,10 @@ namespace Tangerine.GUI.M8
                 textNumeroFactura = Request.QueryString[ResourceGUIM8.idFac]; ;
                 if (!IsPostBack)
                 {
-                    _presentador.llenarModificar();
+                    _presentador.llenarFactura();
                 }
             }
             catch
-            {
-                Response.Redirect(ResourceGUIM8.volver);
-            }
-        }
-
-        /// <summary>
-        /// Evento que se dispara con el boton de modificar factura
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void buttonModificarFactura_Click(object sender, EventArgs e)
-        {
-            Boolean validar = _presentador.ModificarFactura();
-            if (validar)
             {
                 Response.Redirect(ResourceGUIM8.volver);
             }
