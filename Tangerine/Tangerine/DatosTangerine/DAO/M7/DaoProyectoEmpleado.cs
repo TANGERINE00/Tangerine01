@@ -69,6 +69,12 @@ namespace DatosTangerine.DAO.M7
             return true;
         }
 
+        /// <summary>
+        /// Método para consultar el historico de gerentes
+        /// asociados a un proyecto.
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public List<Entidad> ConsultarHistoricoGerente(Entidad proyecto)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -120,6 +126,13 @@ namespace DatosTangerine.DAO.M7
             return listEmpleado;
         }
 
+        /// <summary>
+        /// Método para agregar un gerente al historico 
+        /// de un proyecto.
+        /// </summary>
+        /// <param name="proyecto"></param>
+        /// <param name="empleado"></param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public bool AgregarHistoricoGerente(Entidad proyecto, Entidad empleado)
         {
             {
@@ -374,6 +387,12 @@ namespace DatosTangerine.DAO.M7
         #endregion
 
         #region DAO
+        /// <summary>
+        /// Método para agregar una lista de empleados
+        /// a un proyectos de la BD.
+        /// </summary>
+        /// <param name="entProyecto"></param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public bool Agregar(Entidad entProyecto)
         {
             {
@@ -436,11 +455,24 @@ namespace DatosTangerine.DAO.M7
             }
         }
 
+        /// <summary>
+        /// Método general heredado de IDao
+        /// No implementado en este modulo
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public bool Modificar(Entidad parametro)
         {
             throw new NotImplementedException();
         }
 
+
+        /// <summary>
+        /// Método general heredado de IDao
+        /// No implementado en este modulo
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns></returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
             throw new NotImplementedException();

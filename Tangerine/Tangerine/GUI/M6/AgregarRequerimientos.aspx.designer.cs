@@ -7,72 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M1 {
+namespace Tangerine.GUI.M6 {
     
     
-    public partial class Login1 {
+    public partial class AgregarRequerimientos {
         
         /// <summary>
-        /// head control.
+        /// alert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// agregar_requerimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_requerimiento;
         
         /// <summary>
-        /// errorLogin control.
+        /// precondicion_0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorLogin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText precondicion_0;
         
         /// <summary>
-        /// loginUser control.
+        /// arrPrecondicion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm loginUser;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden arrPrecondicion;
         
         /// <summary>
-        /// userIni control.
+        /// btnagregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userIni;
-        
-        /// <summary>
-        /// passwordIni control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordIni;
-        
-        /// <summary>
-        /// mensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mensaje;
+        protected global::System.Web.UI.WebControls.Button btnagregar;
     }
 }

@@ -16,12 +16,63 @@ namespace DatosTangerine.DAO.M7
     public class DaoProyectoContacto : DAOGeneral, IDaoProyectoContacto
     {
         #region IDAO Proyecto Contacto
-
+        /// <summary>
+        /// Método para eliminar los contactos de un proyecto.
+        /// </summary>
+        /// <param name="proyecto">Proyecto del cual serán eliminados
+        /// los contactos asignados.</param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public bool ElimminarContactos(Entidad proyecto)
         {
-            throw new NotImplementedException();
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                Resource_M7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                List<Parametro> parameters = new List<Parametro>();
+                //Las dos lineas siguientes tienen que repetirlas tantas veces como parametros reciba su stored procedure a llamar
+                //Parametro recibe (nombre del primer parametro en su stored procedure, el tipo de dato, el valor, false)
+                Parametro theParam = new Parametro(Resource_M7.ParamId_Proyecto, SqlDbType.Int,
+                                            ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Id.ToString(), false);
+                parameters.Add(theParam);
+
+                //Se manda a ejecutar en BDConexion el stored procedure M7_EliminarProyecto y todos los parametros que recibe
+                List<Resultado> results = EjecutarStoredProcedure(Resource_M7.DeleteProyectoContacto, parameters);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-701", "Ingreso de un argumento con valor invalido", ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-702", "Ingreso de datos con un formato invalido", ex);
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-703", "Error al momento de realizar la conexion", ex);
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionM7Tangerine("DS-704", "Error al momento de realizar la operacion ", ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                Resource_M7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+
+            return true;
         }
- 
+
+        /// <summary>
+        /// Método que consulta los contactos de una compania
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns>Lista de contactos pertenecientes a una compañia</returns>
         public List<Entidad> ContactCompany(Entidad contacto) 
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -256,6 +307,12 @@ namespace DatosTangerine.DAO.M7
 
         #endregion
 
+        /// <summary>
+        /// Método general heradado de IDao
+        /// para consultar todos los contactos.
+        /// No implementado en este modulo.
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();

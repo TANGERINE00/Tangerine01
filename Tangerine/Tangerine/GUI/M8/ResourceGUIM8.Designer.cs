@@ -259,7 +259,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to dd/mm/yyyy.
+        ///   Looks up a localized string similar to dd/MM/yyyy.
         /// </summary>
         internal static string dateTipe {
             get {
@@ -273,6 +273,15 @@ namespace Tangerine.GUI.M8 {
         internal static string estado {
             get {
                 return ResourceManager.GetString("estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Factura.aspx?idFac=.
+        /// </summary>
+        internal static string Factura {
+            get {
+                return ResourceManager.GetString("Factura", resourceCulture);
             }
         }
         

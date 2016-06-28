@@ -18,22 +18,23 @@
 	cli_pot_num_visitas,cli_pot_status) values ('Skynet','J12345678','skynet@gmail.com',15120,0,0,1);
 
 	insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-	cli_pot_num_visitas,cli_pot_status) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,2,3,1);
+	cli_pot_num_visitas,cli_pot_status) values ('Cyberdyne','J2945677','cyberdynesystems@gmail.com',18120,0,0,1);
 
 	 insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-	 cli_pot_num_visitas,cli_pot_status) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,1,2,0);
+	 cli_pot_num_visitas,cli_pot_status) values ('Umbrella Corp','J99123557','umbrellacorp@gmail.com',20450,0,0,0);
 
 	insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-	cli_pot_num_visitas,cli_pot_status) values ('TerraSave','J25674897','terrasave@gmail.com',17020,3,3,1);
+	cli_pot_num_visitas,cli_pot_status) values ('TerraSave','J25674897','terrasave@gmail.com',17020,0,0,1);
 
 	insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-	cli_pot_num_visitas,cli_pot_status) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,1,2,1);
+	cli_pot_num_visitas,cli_pot_status) values ('LexCorp','J34554334','lexCorp@gmail.com',12020,0,0,1);
 
 	insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-	cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,1,2,1);
+	cli_pot_num_visitas,cli_pot_status) values ('Weyland_yutani_corp','J34114334','weyland@gmail.com',12020,0,0,1);
 
 	insert into cliente_potencial(cli_pot_nombre,cli_pot_rif,cli_pot_email,cli_pot_pres_anual_inv,cli_pot_num_llamadas,
-	cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,1,2,1);
+	cli_pot_num_visitas,cli_pot_status) values ('WilPharma','J45675811','wpcorp@gmail.com',18020,0,0,1);
+
 
 	------------------------------------------------------------------------------------------------------------------
 	-- COMPANIAS --
@@ -459,23 +460,3 @@
 
 	--------------------Fin de inserts de cargos---------
 	
-	-----inserts de seguimiento--------------
-	insert into SEGUIMIENTO values (1,convert(VARCHAR(10),'02-04-2016',110),'Visita','Reunion con gerentes',1);
-insert into SEGUIMIENTO values (2,convert(VARCHAR(10),'03-03-2016',110),'Visita','Reunion eventual',1);
-insert into SEGUIMIENTO values (3,convert(VARCHAR(10),'11-01-2016',110),'Visita','Visita al cliente semanal',1);
-insert into SEGUIMIENTO values (4,convert(VARCHAR(10),'12-02-2016',110),'Visita','Reunion con personal',5);
-insert into SEGUIMIENTO values (5,convert(VARCHAR(10),'02-04-2016',110),'Visita','Visita quincenal',5);
-insert into SEGUIMIENTO values (6,convert(VARCHAR(10),'12-01-2016',110),'Visita','Reunion con gerentes',5);
-insert into SEGUIMIENTO values (7,convert(VARCHAR(10),'09-03-2016',110),'Visita','Reunion con personal',6);
-insert into SEGUIMIENTO values (8,convert(VARCHAR(10),'02-01-2016',110),'Visita','Reunion con gerentes',6);
-
-insert into SEGUIMIENTO values (9,convert(VARCHAR(10),'02-04-2016',110),'Llamada','Planificación de reunion',1);
-insert into SEGUIMIENTO values (10,convert(VARCHAR(10),'03-03-2016',110),'Llamada','Intercambio de información',1);
-insert into SEGUIMIENTO values (11,convert(VARCHAR(10),'09-01-2016',110),'Llamada','Llamada al cliente semanal',1);
-insert into SEGUIMIENTO values (12,convert(VARCHAR(10),'12-02-2016',110),'Llamada','Llamada con personal',5);
-insert into SEGUIMIENTO values (13,convert(VARCHAR(10),'02-04-2016',110),'Llamada','Llamada quincenal',5);
-insert into SEGUIMIENTO values (14,convert(VARCHAR(10),'11-01-2016',110),'Llamada','Planificación con gerentes',5);
-insert into SEGUIMIENTO values (15,convert(VARCHAR(10),'09-03-2016',110),'Llamada','Planificación con personal',6);
-insert into SEGUIMIENTO values (16,convert(VARCHAR(10),'02-01-2016',110),'Llamada','Planificación con gerentes',6);
-
--------------------------------------------------

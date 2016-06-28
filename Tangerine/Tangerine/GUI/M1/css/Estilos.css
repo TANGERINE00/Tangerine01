@@ -279,7 +279,7 @@ input[type=checkbox]:checked + label:before {
 #volverLogin {
     margin-left: 5%;
     margin-top: 0;
-    background-color: #68fe61 !important;
+    background-color: gray !important;
 }
 
 .login-box-msg {

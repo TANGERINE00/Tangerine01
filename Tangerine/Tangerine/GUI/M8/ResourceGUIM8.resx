@@ -217,7 +217,7 @@
     <value>Monto</value>
   </data>
   <data name="dateTipe" xml:space="preserve">
-    <value>dd/mm/yyyy</value>
+    <value>dd/MM/yyyy</value>
   </data>
   <data name="estado" xml:space="preserve">
     <value>estado</value>
@@ -230,5 +230,8 @@
   </data>
   <data name="volverCorreo" xml:space="preserve">
     <value>ConsultarFacturaM8.aspx?estado=3</value>
+  </data>
+  <data name="Factura" xml:space="preserve">
+    <value>Factura.aspx?idFac=</value>
   </data>
 </root>

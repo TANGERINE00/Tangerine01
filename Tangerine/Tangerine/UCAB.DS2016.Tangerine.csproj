@@ -140,11 +140,6 @@
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="Gruntfile.js" />
-    <Content Include="GUI\M10\AdminContrato.aspx" />
-    <Content Include="GUI\M10\CrearContrato.aspx" />
-    <Content Include="GUI\M10\EjemploM10.aspx" />
-    <Content Include="GUI\M10\AdminCargo.aspx" />
-    <Content Include="GUI\M10\CrearCargo.aspx" />
     <Content Include="GUI\M1\CrearEmpleado.aspx" />
     <Content Include="GUI\M1\css\Estilos.css" />
     <Content Include="GUI\M1\css\PagError.css" />
@@ -152,7 +147,6 @@
     <Content Include="GUI\M1\EmpleadosAdmin.aspx" />
     <Content Include="GUI\M1\js\alertas.js" />
     <Content Include="GUI\M1\Login.aspx" />
-    <Content Include="GUI\M1\ModificarEmpleado.aspx" />
     <Content Include="GUI\M1\PaginaError.aspx" />
     <Content Include="GUI\M1\RecuperarContraseñaPregunta.aspx" />
     <Content Include="GUI\M1\VerEmpleado.aspx" />
@@ -179,8 +173,10 @@
     <Content Include="GUI\M5\AgregarContacto.aspx" />
     <Content Include="GUI\M5\ConsultarContactos.aspx" />
     <Content Include="GUI\M5\ModificarContacto.aspx" />
+    <Content Include="GUI\M6\AgregarRequerimientos.aspx" />
     <Content Include="GUI\M6\ConsultarPropuesta.aspx" />
     <Content Include="GUI\M6\InformacionPropuesta.aspx" />
+    <Content Include="GUI\M6\js\AgregarReq.js" />
     <Content Include="GUI\M6\js\Modificar.js" />
     <Content Include="GUI\M6\js\modulo6.js" />
     <Content Include="GUI\M6\EjemploM6.aspx" />
@@ -966,41 +962,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\M10\AdminContrato.aspx.cs">
-      <DependentUpon>AdminContrato.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M10\AdminContrato.aspx.designer.cs">
-      <DependentUpon>AdminContrato.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M10\CrearContrato.aspx.cs">
-      <DependentUpon>CrearContrato.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M10\CrearContrato.aspx.designer.cs">
-      <DependentUpon>CrearContrato.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M10\EjemploM10.aspx.cs">
-      <DependentUpon>EjemploM10.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M10\EjemploM10.aspx.designer.cs">
-      <DependentUpon>EjemploM10.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M10\AdminCargo.aspx.cs">
-      <DependentUpon>AdminCargo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M10\AdminCargo.aspx.designer.cs">
-      <DependentUpon>AdminCargo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M10\CrearCargo.aspx.cs">
-      <DependentUpon>CrearCargo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M10\CrearCargo.aspx.designer.cs">
-      <DependentUpon>CrearCargo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\M1\CrearEmpleado.aspx.cs">
       <DependentUpon>CrearEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1035,13 +996,6 @@
     </Compile>
     <Compile Include="GUI\M1\Login.Master.designer.cs">
       <DependentUpon>Login.Master</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\M1\ModificarEmpleado.aspx.cs">
-      <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\M1\ModificarEmpleado.aspx.designer.cs">
-      <DependentUpon>ModificarEmpleado.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M1\PaginaError.aspx.cs">
       <DependentUpon>PaginaError.aspx</DependentUpon>
@@ -1259,6 +1213,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceGUIM5.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\M6\AgregarRequerimientos.aspx.cs">
+      <DependentUpon>AgregarRequerimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\M6\AgregarRequerimientos.aspx.designer.cs">
+      <DependentUpon>AgregarRequerimientos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\M6\ConsultarPropuesta.aspx.cs">
       <DependentUpon>ConsultarPropuesta.aspx</DependentUpon>

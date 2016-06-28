@@ -105,6 +105,10 @@ namespace DatosTangerine.DAO.M9
            }
         }
 
+        /// <summary>
+        /// Método para consultar todos los pagos
+        /// </summary>
+        /// <returns>Devuelve una lista con todos los pagos</returns>
         public List<Entidad> ConsultarTodos()
         {
             List<Parametro> parameters = new List<Parametro>();
