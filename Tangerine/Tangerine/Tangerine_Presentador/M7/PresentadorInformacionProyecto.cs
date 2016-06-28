@@ -41,6 +41,10 @@ namespace Tangerine_Presentador.M7
                  LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(parametro);
              Entidad propuesta = comando2.Ejecutar();
 
+             Comando<List<Entidad>> comando3 =
+                LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosGerentes();
+             List<Entidad> gerentes = comando3.Ejecutar();
+
              Comando<List<Entidad>> comandoConsultarEmpleados = 
                  LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
              List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
@@ -64,6 +68,7 @@ namespace Tangerine_Presentador.M7
 
                  llenarCombo(contactos);
                  llenarComboPersonal(programadores, listaEmpleados);
+                 llenarComboGerente(gerentes, proyecto);
 
              }
 
@@ -110,6 +115,30 @@ namespace Tangerine_Presentador.M7
          }
 
          /// <summary>
+         /// Metodo para llenar combobox con el gerente del proyecto
+         /// </summary>
+         /// <param name="contactos">Lista de entidad contacto con todos los contactos existente para el proyecto</param>
+         private void llenarComboGerente(List<Entidad> todos, Entidad proyecto)
+         {
+             Dictionary<int, string> listaGerente = new Dictionary<int, string>();
+             foreach (Entidad contacto in todos)
+             {
+                 if (contacto.Id == ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Idgerente)
+                 {
+                     listaGerente.Add(contacto.Id,
+                        (((DominioTangerine.Entidades.M7.Empleado)contacto).emp_p_nombre) +
+                        " " + ((DominioTangerine.Entidades.M7.Empleado)contacto).emp_p_apellido);
+
+                 }
+
+             }
+             vista.InputGerente.DataSource = listaGerente;
+             vista.InputGerente.DataTextField = RecursoPresentadorM7.Value;
+             vista.InputGerente.DataValueField = RecursoPresentadorM7.Key;
+             vista.InputGerente.DataBind();
+         }
+
+         /// <summary>
          /// Metodo para llenar combobox con los contactos del proyecto
          /// </summary>
          /// <param name="contactos">Lista de entidad contacto con todos los contactos existente para el proyecto</param>
@@ -131,5 +160,6 @@ namespace Tangerine_Presentador.M7
             vista.inputEncargado.DataValueField = RecursoPresentadorM7.Key;
             vista.inputEncargado.DataBind();
         }
+
     }
 }
