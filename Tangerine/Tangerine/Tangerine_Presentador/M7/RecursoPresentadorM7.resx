@@ -324,4 +324,7 @@
   <data name="RedirectInfoProyecto" xml:space="preserve">
     <value>../M7/InformacionProyecto.aspx?idCont=</value>
   </data>
+  <data name="DateFormat3" xml:space="preserve">
+    <value>dd/MM/yyyy</value>
+  </data>
 </root>
