@@ -30,12 +30,7 @@
                 <!-- form start -->
                 <form role="form" runat="server" method="post" name="generar_factura" id="generar_factura">
                     <div class="box-body" runat="server">
-
-                        <%--<div class="form-group" runat ="server">
-                      <label for="labelNumeroFactura_M8">Número Factura</label>
-                      <input type="text" runat="server" class="form-control" id="textNumeroFactura_M8" name="textNumeroFactura_M8" placeholder="Número Factura"  >
-                    </div>--%>
-
+                        
                         <div class="form-group" runat="server">
                             <label for="labelFecha_M8">Fecha</label>
                             <input type="text" runat="server" class="form-control" id="textFecha_M8" name="textFecha_M8" placeholder="dd/mm/yyyy" disabled="disabled">
@@ -54,7 +49,8 @@
                         <div class="form-group" runat="server">
                             <label for="labelDescripcion_M8">Descripción</label>
                             <input type="text" runat="server" class="form-control"
-                                pattern="^[0-9a-zñA-ZÑ.- ]+$"
+                                pattern="^[0-9a-zñA-ZÑ ]+$"
+                                oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolos')" oninput="setCustomValidity('')"
                                 id="textDescripcion_M8" name="textDescripcion_M8"
                                 placeholder="Descripción" maxlength="50" required>
                         </div>
