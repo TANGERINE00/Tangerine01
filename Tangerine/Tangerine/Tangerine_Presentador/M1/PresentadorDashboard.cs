@@ -77,9 +77,11 @@ namespace Tangerine_Presentador.M1
             {
                 HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
             }
-        }           
+        }
 
-
+        /// <summary>
+        /// Metodo que llena en una lista todos los proyectos
+        /// </summary>
         public string LLenarLosProyectos (List<Entidad> listaProyectos )
         {
           string _proyectos = String.Empty;

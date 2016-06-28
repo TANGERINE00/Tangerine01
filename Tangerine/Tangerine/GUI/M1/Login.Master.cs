@@ -55,12 +55,18 @@ namespace Tangerine.GUI.M1
             set { mensaje.Text = value; }
         }
 
+        /// <summary>
+        /// Encabezado del textBox del mensaje de error
+        /// </summary>
         public string errorLoginText
         {
             get { return errorLogin.InnerText; }
             set { errorLogin.InnerText = value; }
         }
 
+        /// <summary>
+        /// Booleano que obtiene el estado de la alerta
+        /// </summary>
         public Boolean errorLoginAlert
         {
             get { return errorLogin.Visible; }
@@ -86,60 +92,15 @@ namespace Tangerine.GUI.M1
             presentador.ValidarSesion();
             
         }
-       
+
+        /// <summary>
+        /// Metodo que valida las credenciales del usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ValidarUsuario(object sender, EventArgs e)
         {
             presentador.ValidarElUsuario();
-
-
-                  #region Generación de facturas mensuales
-                  // AQUI EMPIEZA EL CODIGO PARA GENERAR LAS FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
-
-                  //------------------------SEGUNDA ENTREGA----------------------------
-                  //List<Proyecto> listProyecto = proyectoLogic.consultarAcuerdoPagoMensual();
-                  //foreach (Proyecto theProyecto in listProyecto)
-                  //{
-                  //    montoFactura = Convert.ToInt32(proyectoLogic.calcularPagoMesual(theProyecto));
-                  //    Facturacion factura = new Facturacion(DateTime.Now, DateTime.Now, montoFactura, montoFactura, "Bolivares", "Facturación Mensual", 0, theProyecto.Idproyecto, theProyecto.Idresponsable);
-                  //    LogicaM8 facturaLogic = new LogicaM8();
-                  //    facturaExistente = facturaLogic.SearchExistingBill(DateTime.Now, theProyecto.Idproyecto, theProyecto.Idresponsable);
-                  //    if (facturaExistente == false)
-                  //    {
-                  //        facturaLogic.AddNewFactura(factura);
-                  //    }
-                  //    facturaExistente = false;
-                  //}
-
-                  //------------------------TERCERA ENTREGA-----------------------------
-                  //ComandoConsultarAcuerdoPagoMensual _comandoAcuerdo =
-                  //    (ComandoConsultarAcuerdoPagoMensual)FabricaComandos.ObtenerComandoConsultarAcuerdoPagoMensual();
-                  //List<Entidad> listProyecto = _comandoAcuerdo.Ejecutar();
-                  //foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
-                  //{
-                  //    ComandoCalcularPagoMensual _comandoCalcular = 
-                  //        (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
-                  //    int montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
-
-                  //    Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
-                  //        montoFactura, montoFactura, ResourceGUI8.moneda, ResourceGUI8.fact, 0, theProyecto.Id,
-                  //        theProyecto.Idresponsable);
-
-                  //    ComandoSearchExistingBill _comandoBill = 
-                  //        (ComandoSearchExistingBill)FabricaComandos.CrearSearchExistingBill(factura);
-                  //    bool facturaExistente = _comandoBill.Ejecutar();
-
-                  //    if (facturaExistente == false)
-                  //    {
-                  //        ComandoAgregarFactura _comandoAgregar = 
-                  //            (ComandoAgregarFactura)FabricaComandos.CrearAgregarFactura(factura);
-                  //        _comandoAgregar.Ejecutar();
-                  //    }
-                  //    facturaExistente = false;
-                  //}
-
-                   //AQUI TERMINA EL CODIGO PARA GENERAR LA FACTURAS DE PROYECTOS CON FORMA DE PAGO MENSUAL
-                   //HECHO POR EL MÓDULO 7 Y MÓDULO 8
-                  #endregion
 
         }
     }

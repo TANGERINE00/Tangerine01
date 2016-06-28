@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DominioTangerine.Entidades.M1;
 using DominioTangerine;
 using LogicaTangerine;
 using System.Threading.Tasks;
 using Tangerine_Contratos.M1;
 using System.Web;
 using DominioTangerine.Entidades.M2;
+using DominioTangerine.Entidades.M1;
 using LogicaTangerine.Comandos.M8;
 using DominioTangerine.Entidades.M8;
 using LogicaTangerine.Comandos.M7;
@@ -59,8 +59,6 @@ namespace Tangerine_Presentador.M1
             try
             {
 
-
-
                 UsuarioM2 usuarioEncrip = new UsuarioM2();
                 _usuario = _iMaster.userInput.ToString();
                 _contraseña = usuarioEncrip.GetMD5(_iMaster.passwordInput.ToString());
@@ -90,7 +88,8 @@ namespace Tangerine_Presentador.M1
 
                     foreach (DominioTangerine.Entidades.M7.Proyecto theProyecto in listProyecto)
                     {
-                        ComandoCalcularPagoMensual _comandoCalcular = (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
+                        ComandoCalcularPagoMensual _comandoCalcular = 
+                            (ComandoCalcularPagoMensual)FabricaComandos.ObtenerComandoCalcularPagoMesual(theProyecto);
                         montoFactura = Convert.ToInt32(_comandoCalcular.Ejecutar());
 
                         Facturacion factura = (Facturacion)FabricaEntidades.ObtenerFacturacion(DateTime.Now, DateTime.Now,
