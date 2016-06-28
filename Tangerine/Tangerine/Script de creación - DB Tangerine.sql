@@ -1823,6 +1823,7 @@ AS
 		SELECT  fk_fac_id, pag_fecha,pag_monto,pag_moneda, pag_cod
                 FROM pago
 	END;
+GO	
 
 ---- StoredProcedure HISTORICO Pago ----
 CREATE PROCEDURE M9_HistoricoPagoCompania
