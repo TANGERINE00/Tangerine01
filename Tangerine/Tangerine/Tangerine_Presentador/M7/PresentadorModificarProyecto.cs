@@ -381,8 +381,7 @@ namespace Tangerine_Presentador.M7
 
 
 
-                if (vista.inputEstatus.Text == RecursoPresentadorM7.EstatusCompletado)
-
+              
                 if (vista.inputEstatus.SelectedItem.ToString() == RecursoPresentadorM7.EstatusCompletado)
 
                 {

@@ -113,6 +113,7 @@
     <Compile Include="M7\PruebaDAOProyectoContacto.cs" />
     <Compile Include="M7\PruebaLogicaM7.cs" />
     <Compile Include="M8\PruebasDatosFactura.cs" />
+    <Compile Include="M8\PruebasDominioFactura.cs" />
     <Compile Include="M8\PruebasLogicaFactura.cs" />
     <Compile Include="M9\PruebaComandoDaoPago.cs" />
     <Compile Include="M9\PruebaDaoPago.cs" />

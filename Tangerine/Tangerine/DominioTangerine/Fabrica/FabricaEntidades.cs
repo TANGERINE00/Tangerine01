@@ -718,7 +718,7 @@ namespace DominioTangerine.Fabrica
         /// <param name="estatus">Estado de la factura(0 ppagar, 1 pagado, 2 anulada)</param>
         /// <param name="idProyecto">Id del proyecto de la factura</param>
         /// <param name="idCompania">Id de la compania del proyecto y factura</param>
-        public static Entidad ObtenerFacturacion(int facturaId, int idNumeroFactura, DateTime fecha,
+        public static Entidad ObtenerFacturacion(int facturaId, DateTime fecha,
             DateTime fechaUltimoPago, double monto, double montoRestante, String tipoMoneda, String descripcion,
             int estatus, int idProyecto, int idCompania)
         {
