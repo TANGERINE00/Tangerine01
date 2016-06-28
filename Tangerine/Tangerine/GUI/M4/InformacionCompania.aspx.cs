@@ -165,7 +165,7 @@ namespace Tangerine.GUI.M4
             }
             catch (Exception ex)
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect("../M1/PaginaError.aspx");
             }
         }
         #endregion

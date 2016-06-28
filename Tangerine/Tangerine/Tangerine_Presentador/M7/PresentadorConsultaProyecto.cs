@@ -102,13 +102,13 @@ namespace Tangerine_Presentador.M7
                             RecursoPresentadorM7.Desarrollo +
                             RecursoPresentadorM7.CloseTd;
                     }
-                    if (((DominioTangerine.Entidades.M7.Proyecto)theProject).Estatus.ToString().Equals(RecursoPresentadorM7.Completado))
+                    if (((DominioTangerine.Entidades.M7.Proyecto)theProject).Estatus.ToString().Equals(RecursoPresentadorM7.EstatusCompletado))
                     {
                         vista.Tabla.Text += RecursoPresentadorM7.OpenTD + 
                             RecursoPresentadorM7.Completado +
                             RecursoPresentadorM7.CloseTd;
                     }
-                    if (((DominioTangerine.Entidades.M7.Proyecto)theProject).Estatus.ToString().Equals(RecursoPresentadorM7.CompletadoAdestiempo))
+                    if (((DominioTangerine.Entidades.M7.Proyecto)theProject).Estatus.ToString().Equals(RecursoPresentadorM7.EstatusCompletadoDestiempo))
                     {
                         vista.Tabla.Text += RecursoPresentadorM7.OpenTD +
                             RecursoPresentadorM7.CompletadoAdestiempo + 
