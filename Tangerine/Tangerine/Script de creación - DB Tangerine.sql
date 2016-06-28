@@ -840,7 +840,7 @@ DECLARE @tipoRegistro varchar(15);
 begin transaction
 SET @tipoRegistro= @tipo;
 
-SET @idLead = (select Count(SE.seg_id)
+SET @idLead = (select max(SE.seg_id)
   from seguimiento SE);
    
    SET @llamadas =(select CP.cli_pot_num_llamadas
