@@ -24,43 +24,49 @@ namespace Tangerine_Presentador.M7
              Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
              ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id = id;
 
-             Comando<Entidad> comando = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyecto(parametro);
+             Comando<Entidad> comando = 
+                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarXIdProyecto(parametro);
                                                                           
              Entidad proyecto = comando.Ejecutar();
 
-             Comando<List<Entidad>> comando1 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
+             Comando<List<Entidad>> comando1 = 
+                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarContactosXIdProyecto(parametro);
              List<Entidad> contactos = comando1.Ejecutar();
 
-             Comando<Entidad> comando2 = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(parametro);
+             Comando<Entidad> comando2 = 
+                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoContactNombrePropuestaId(parametro);
              Entidad propuesta = comando2.Ejecutar();
 
-             Comando<List<Entidad>> comandoConsultarEmpleados = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
+             Comando<List<Entidad>> comandoConsultarEmpleados = 
+                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarEmpleadosXIdProyecto(parametro);
              List<Entidad> listaEmpleados = comandoConsultarEmpleados.Ejecutar();
 
              Comando<List<Entidad>> comando4 =
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProgramadores();
              List<Entidad> programadores = comando4.Ejecutar();
 
-              try
-              {
-                   vista.NombrePropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
-                   vista.NombreProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre;
-                   vista.CodigoProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo;
-                   vista.FechaInicio.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio.ToString("dd/MM/yyyy");
-                   vista.FechaFin.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin.ToString("dd/MM/yyyy");
-                   vista.Costo.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo.ToString();
-                   vista.Porcentaje.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion;
-                   vista.Estatus.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus;
+             try
+             {
+                 vista.NombrePropuesta.Text = ((DominioTangerine.Entidades.M7.Propuesta)propuesta).Nombre;
+                 vista.NombreProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Nombre;
+                 vista.CodigoProyecto.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Codigo;
+                 vista.FechaInicio.Text =
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechainicio.ToString(RecursoPresentadorM7.DateFormat2);
+                 vista.FechaFin.Text =
+                ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Fechaestimadafin.ToString(RecursoPresentadorM7.DateFormat2);
+                 vista.Costo.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Costo.ToString();
+                 vista.Porcentaje.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Realizacion;
+                 vista.Estatus.Text = ((DominioTangerine.Entidades.M7.Proyecto)proyecto).Estatus;
 
-                   llenarCombo(contactos);
-                   llenarComboPersonal(programadores, listaEmpleados);
+                 llenarCombo(contactos);
+                 llenarComboPersonal(programadores, listaEmpleados);
 
-              }
+             }
 
-              catch (Exception ex)
-              {
-                  throw ex;
-              }
+             catch (Exception ex)
+             {
+                 throw ex;
+             }
          }
 
          private void llenarComboPersonal(List<Entidad> programadores, List<Entidad> actuales)
@@ -99,7 +105,8 @@ namespace Tangerine_Presentador.M7
             Dictionary<int, string> listaContactos = new Dictionary<int, string>();
             foreach (Entidad contacto in contactos)
             {
-                Comando<Entidad> comandoContacto = LogicaTangerine.Fabrica.FabricaComandos.CrearComandoConsultarContacto(contacto);
+                Comando<Entidad> comandoContacto = 
+                    LogicaTangerine.Fabrica.FabricaComandos.CrearComandoConsultarContacto(contacto);
                 Entidad elContacto = comandoContacto.Ejecutar();
 
                 listaContactos.Add(((DominioTangerine.Entidades.M5.ContactoM5)elContacto).Id, 
