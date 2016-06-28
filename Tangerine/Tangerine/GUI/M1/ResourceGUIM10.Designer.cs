@@ -268,6 +268,15 @@ namespace Tangerine.GUI.M1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ../M1/Dashboard.aspx.
+        /// </summary>
+        internal static string Dashboard {
+            get {
+                return ResourceManager.GetString("Dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  .
         /// </summary>
         internal static string Espacio {
@@ -282,6 +291,15 @@ namespace Tangerine.GUI.M1 {
         internal static string FormatoFecha {
             get {
                 return ResourceManager.GetString("FormatoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EmployeeId.
+        /// </summary>
+        internal static string IdEmpleado {
+            get {
+                return ResourceManager.GetString("IdEmpleado", resourceCulture);
             }
         }
         

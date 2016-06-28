@@ -210,4 +210,10 @@
   <data name="alertaR" xml:space="preserve">
     <value>role</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>../M1/Dashboard.aspx</value>
+  </data>
+  <data name="IdEmpleado" xml:space="preserve">
+    <value>EmployeeId</value>
+  </data>
 </root>
