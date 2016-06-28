@@ -17,18 +17,18 @@ namespace Tangerine_Presentador.M8
     {
         IContratoAnularFactura vista;
 
+        /// <summary>
+        /// Constructor de la clase, que recibe la vista
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorAnularFactura(IContratoAnularFactura vista)
         {
             this.vista = vista;
         }
 
-        public void Alerta(string msj)
-        {
-            vista.alertaClase = RecursoPresentadorM8.alertaError;
-            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-            vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
-        }
-
+        /// <summary>
+        /// Metodo para cargar los datos de la factura a UI
+        /// </summary>
         public void cargarFactura()
         {
             try
@@ -57,6 +57,9 @@ namespace Tangerine_Presentador.M8
 
         }
 
+        /// <summary>
+        /// Metodo para anular la factura
+        /// </summary>
         public Boolean anularFactura()
         {
             try

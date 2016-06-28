@@ -66,7 +66,7 @@ namespace DominioTangerine.Entidades.M10
           this.emp_activo = empActivo;
           this.emp_email = empEmail;
           this.emp_genero = empGenero;
-          this.emp_estudio = empEstudio;
+          this.Emp_nivel_estudio = empEstudio;
           this.emp_modalidad = empModalidad;
           this.emp_salario = empSalario;
           this.jobs =(CargoM10)cargo;
@@ -115,7 +115,7 @@ namespace DominioTangerine.Entidades.M10
             this.emp_activo = empActivo;
             this.emp_email = empEmail;
             this.emp_genero = empGenero;
-            this.emp_estudio = empEstudio;
+            this.Emp_nivel_estudio = empEstudio;
             this.ListaDireccion = ListaLugar;
             this.jobs = (CargoM10)cargo;
             this.Emp_telefono = telefono;

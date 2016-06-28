@@ -42,8 +42,8 @@ namespace Tangerine_Presentador.M1
                 List<Entidad> listaFinal = new List<Entidad>();
 
 
-                if ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolAdministrador)) ||
-                            ((HttpContext.Current.Session["Rol"] + "" == (ResourceGUIM1.RolGerente))))
+                if ((HttpContext.Current.Session[ResourceGUIM1.Rol] + "" == (ResourceGUIM1.RolAdministrador)) ||
+                            ((HttpContext.Current.Session[ResourceGUIM1.Rol] + "" == (ResourceGUIM1.RolGerente))))
                 {
                     Comando<List<Entidad>> comando =
                         LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoConsultarTodosProyectos();
@@ -54,11 +54,11 @@ namespace Tangerine_Presentador.M1
 
                 else
                 {
-                    if (HttpContext.Current.Session["Rol"] + "" == "Programador")
+                    if (HttpContext.Current.Session[ResourceGUIM1.Rol] + "" == ResourceGUIM1.RolProgramador)
                     {
                         Entidad parametro = DominioTangerine.Fabrica.FabricaEntidades.ObtenerProyecto();
                         ((DominioTangerine.Entidades.M7.Proyecto)parametro).Id =
-                            Int32.Parse(HttpContext.Current.Session["UserID"] + "");
+                            Int32.Parse(HttpContext.Current.Session[ResourceGUIM1.User] + "");
 
 
                         Comando<List<Entidad>> comandoConsultarEmpleados =
@@ -71,15 +71,18 @@ namespace Tangerine_Presentador.M1
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)
             {
-                HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
+                HttpContext.Current.Response.Redirect(ResourceGUIM1.PaginaError);
             }
             catch (Exception)
             {
-                HttpContext.Current.Response.Redirect("../M1/PaginaError.aspx");
+                HttpContext.Current.Response.Redirect(ResourceGUIM1.PaginaError);
+                
             }
-        }           
+        }
 
-
+        /// <summary>
+        /// Metodo que llena en una lista todos los proyectos
+        /// </summary>
         public string LLenarLosProyectos (List<Entidad> listaProyectos )
         {
           string _proyectos = String.Empty;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosTangerine.DAO.M9;
 using DatosTangerine.InterfazDAO.M9;
+using DatosTangerine.InterfazDAO;
 using DominioTangerine;
 using NUnit.Framework;
 using DominioTangerine.Entidades.M9;
@@ -19,13 +20,14 @@ namespace PruebasUnitarias.M9
     {
         #region Atributos
 
-        public bool answer;
-        public Entidad elPago;
-        public Entidad elPago1;
-        public Entidad factura;
-        public Entidad compania;
-        public IDAOPago daoPago;
-        public List<Entidad> listaPagos;
+        private bool answer;
+        private Entidad elPago;
+        private Entidad elPago1;
+        private Entidad factura;
+        private Entidad compania;
+        private IDAOPago daoPago;
+        private List<Entidad> listaPagos;
+        private List<Entidad> listaFacturas;
         #endregion
 
 
@@ -38,9 +40,9 @@ namespace PruebasUnitarias.M9
         public void init()
         {
             daoPago = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPago();
-            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(123456, 12000, "EUR", "Deposito", 1);
+            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1234567, 12000, "EUR", "Deposito", 1);
             compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
-
+            factura = DominioTangerine.Fabrica.FabricaEntidades.ObtenerFacturacion();
         }
 
         /// <summary>
@@ -50,6 +52,7 @@ namespace PruebasUnitarias.M9
         public void clean()
         {
             elPago = null;
+            elPago1 = null;
             factura = null;
             compania = null;
             daoPago = null;
@@ -68,7 +71,7 @@ namespace PruebasUnitarias.M9
             elPago = (Pago)listaPagos[listaPagos.Count - 1];
 
             Assert.IsTrue(answer);
-            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 123456);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 1234567);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).montoPago == 12000);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).monedaPago == "EUR");
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).formaPago == "Deposito");
@@ -84,20 +87,32 @@ namespace PruebasUnitarias.M9
         [Test]
         public void TestCambiarStatus()
         {
-
-            answer = daoPago.CargarStatus(1, 1);
-
-            Assert.IsTrue(answer);
-
-            answer = daoPago.CargarStatus(1, 0);
+            answer = daoPago.Agregar(elPago);
+            factura.Id = ((Pago)elPago).idFactura;
+            answer = daoPago.CargarStatus(((Pago)elPago).idFactura, 0);
+            DatosTangerine.InterfazDAO.M8.IDaoFactura daoFact = 
+                DatosTangerine.Fabrica.FabricaDAOSqlServer.ObtenerDAOFactura();
+            daoFact.ConsultarXId(factura);
+            Assert.IsTrue(((DominioTangerine.Entidades.M8.Facturacion)factura).estatusFactura==0);
+            daoPago.EliminarPago(elPago);
         }
 
         [Test]
         public void TestPagosCompania()
         {
-            
+            ((DominioTangerine.Entidades.M8.Facturacion)factura).Id = 1;
+            daoPago.Agregar(elPago);
             ((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id= 1;
-           Assert.IsNotNull(daoPago.ConsultarPagosCompania(compania));
+            ((DominioTangerine.Entidades.M8.Facturacion)factura).idCompaniaFactura = 1;
+            listaPagos = daoPago.ConsultarPagosCompania(compania);
+            elPago1 = (Pago)listaPagos[listaPagos.Count - 1];
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).codPago == 1234567);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).montoPago == 12000);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).monedaPago == "EUR");
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).idFactura == 1);
+            answer = daoPago.EliminarPago(elPago1);
+
+
 
         }
     }

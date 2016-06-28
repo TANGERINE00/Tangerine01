@@ -17,6 +17,11 @@ namespace DatosTangerine.DAO.M7
     {
         #region IDAO Proyecto
 
+        /// <summary>
+        /// Método que regresa todos los proyectos con
+        /// acuerdo de pago de tipo Mensual.
+        /// </summary>
+        /// <returns>Lista de proyecto de tipo entidad</returns>
         public List<Entidad> ContactProyectoxAcuerdoPago()
         {
             List<Parametro> parameters = new List<Parametro>();
@@ -89,6 +94,12 @@ namespace DatosTangerine.DAO.M7
             return listProyecto;
         }
 
+        /// <summary>
+        /// Método que consulta el nombre de una propuesta dado 
+        /// el ID del proyecto.
+        /// </summary>
+        /// <param name="parametro">Proyecto de tipo Entidad que contiene el ID a consultar</param>
+        /// <returns>Nombre propuesta</returns>
         public Entidad ContactNombrePropuestaId(Entidad parametro)
         {
             Entidad propuesta = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPropuesta();
@@ -132,6 +143,10 @@ namespace DatosTangerine.DAO.M7
             return propuesta;
         }
 
+        /// <summary>
+        /// Método para consultar el último ID insertado en la BD.
+        /// </summary>
+        /// <returns>Entero con el ID del último proyecto.</returns>
         public int ContactMaxIdProyecto()
         {
 
@@ -174,6 +189,11 @@ namespace DatosTangerine.DAO.M7
             return proyId;
         }
 
+        /// <summary>
+        /// Método que calcula el pago mensual para los proyectos.
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returnsMonto a pagar mensualmente</returns>
         public Double CalcularPagoMensual(Entidad parametro)
         {
             try
@@ -207,6 +227,12 @@ namespace DatosTangerine.DAO.M7
             }
         }
 
+        /// <summary>
+        /// Método que genera un código de proyecto
+        /// sugerido a la hora de crearlo.
+        /// </summary>
+        /// <param name="parametro"></param>
+        /// <returns>Código de proyecto</returns>
         public String GenerarCodigoProyecto(Entidad parametro)
         {
 
@@ -234,6 +260,11 @@ namespace DatosTangerine.DAO.M7
             }
         }
 
+        /// <summary>
+        /// Método para borrar un proyecto de la BD
+        /// </summary>
+        /// <param name="proyID">ID del proyecto a borrar.</param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public bool BorrarProyecto(int proyID)
         {
 
@@ -279,6 +310,11 @@ namespace DatosTangerine.DAO.M7
 
         #region DAO
 
+        /// <summary>
+        /// Método general para agregar un proyecto a la BD.
+        /// </summary>
+        /// <param name="proyecto">Proyecto a agregar a la BD.</param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public bool Agregar(Entidad proyecto)
         {
 
@@ -629,11 +665,7 @@ namespace DatosTangerine.DAO.M7
             return listProyecto;
         }
 
-        /// <summary>
-        /// Método para consultar la cantidad de proyectos en la base de datos.
-        /// </summary>
-        /// <returns>Retorna la cantidad de proyectos</returns>
-
+ 
 
         #endregion
     }

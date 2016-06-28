@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Empleado" xml:space="preserve">
+    <value>EmployeeId</value>
+  </data>
+  <data name="ErrorBD" xml:space="preserve">
+    <value>Error conexion Base de datos</value>
+  </data>
+  <data name="ErrorData" xml:space="preserve">
+    <value>Datos Incorrectos</value>
+  </data>
   <data name="FormatoFecha" xml:space="preserve">
     <value>dd/MM/yyyy</value>
   </data>
@@ -149,6 +158,9 @@
   </data>
   <data name="MensajeSinProyecto" xml:space="preserve">
     <value>&lt;label&gt;No hay proyectos registrados a la fecha&lt;/label&gt;</value>
+  </data>
+  <data name="PaginaError" xml:space="preserve">
+    <value>../M1/PaginaError.aspx</value>
   </data>
   <data name="PanelProyectoAbrir" xml:space="preserve">
     <value>&lt;div class='container-fluid col-md-6'&gt;&lt;div class='box box-default'&gt;&lt;div class='container-fluid'&gt;&lt;br&gt;</value>

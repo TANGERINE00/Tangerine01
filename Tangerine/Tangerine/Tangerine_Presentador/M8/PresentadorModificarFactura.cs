@@ -18,22 +18,14 @@ namespace Tangerine_Presentador.M8
     public class PresentadorModificarFactura
     {
         private IContratoModificarFactura vista;
-        private int idCompania;
-        private int idProyecto;
 
+        /// <summary>
+        /// Constructor de la clase, que recibe la vista
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorModificarFactura(IContratoModificarFactura laVista)
         {
             this.vista = laVista;
-        }
-
-        /// <summary>
-        /// Método para manejar los errores y mensajes a interfaz
-        /// </summary>
-        public void Alerta(string msj)
-        {
-            vista.alertaClase = RecursoPresentadorM8.alertaError;
-            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-            vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
         }
 
         /// <summary>
@@ -68,9 +60,6 @@ namespace Tangerine_Presentador.M8
                 vista.textMonto = _laFactura.montoFactura.ToString();
                 vista.textTipoMoneda = _laFactura.tipoMoneda;
                 vista.textFecha = _laFactura.fechaFactura.ToString(RecursoPresentadorM8.TipoFecha);
-
-                idCompania = compania.Id;
-                idProyecto = proyecto.Id;
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {

@@ -13,11 +13,17 @@ namespace Tangerine.GUI.M6
     {
         PresentadorAgregarRequerimientos presenter;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
         public AgregarRequerimientos()
         {
             this.presenter = new PresentadorAgregarRequerimientos(this);
         }
-        
+
+        /// <summary>
+        /// Carga inicial de la pagina.
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -33,13 +39,16 @@ namespace Tangerine.GUI.M6
                 Context.ApplicationInstance.CompleteRequest();
             }
         }
-        
+
+        /// <summary>
+        /// Accion del boton a presionar "Agregar"
+        /// </summary>
         protected void btnagregar_Click(object sender, EventArgs e)
         {
             try
             {
                 presenter.AgregarRequerimientos();
-                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("id") + "&idReq=0", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)

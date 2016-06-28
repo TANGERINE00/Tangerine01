@@ -62,9 +62,21 @@ namespace Tangerine.GUI.M1
 
         }
 
+        /// <summary>
+        /// Metodo para la Validacion del Correo
+        /// </summary>
         protected void Validar_Correo(object sender, EventArgs e)
         {
             presentador.RecuperarContraseña();
+
+        }
+
+        /// <summary>
+        /// Llamado al Boton para regresar al Login
+        /// </summary>
+        protected void VolverBtn(object sender, EventArgs e)
+        {
+            presentador.Regresar();
 
         }
     }

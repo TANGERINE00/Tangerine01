@@ -10,6 +10,7 @@ using LogicaTangerine.M10;
 using System.Globalization;
 using Tangerine_Contratos.M10;
 using Tangerine_Presentador.M10;
+using System.Web.Security.AntiXss;
 
 
 namespace Tangerine.GUI.M1
@@ -19,6 +20,7 @@ namespace Tangerine.GUI.M1
         private PresentadorConsultaEmpleado presentador;
 
 
+        #region Contrato
         public string empleado
         {
             get
@@ -59,6 +61,8 @@ namespace Tangerine.GUI.M1
             set { alerta.InnerHtml = value; }
         }
 
+        #endregion
+
 
 
 
@@ -68,12 +72,18 @@ namespace Tangerine.GUI.M1
 
         }
 
+        /// <summary>
+        /// Carga la ventana Consulta Empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
 
             try
             {
-                int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
+
+                int Empleadoid = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.IdEmpleado], false));
                 presentador.AlertasCase();
                 presentador.CambiarEstatus(Empleadoid);
                 if (!IsPostBack) 
@@ -82,14 +92,14 @@ namespace Tangerine.GUI.M1
                 }
             }
             catch (Exception)
-            { 
-                Response.Redirect("../M1/Dashboard.aspx");
+            {
+                Response.Redirect(ResourceGUIM10.Dashboard);
             }
         }
 
         protected void Activar_Empleado(object sender, EventArgs e)
         {
-            int Empleadoid = int.Parse(Request.QueryString["EmployeeId"]);
+            int Empleadoid = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.IdEmpleado], false));
 
         }
 

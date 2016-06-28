@@ -28,6 +28,7 @@ namespace PruebasUnitarias.M9
         Comando<List<Entidad>> _comandoList;
 
 
+
         #endregion
 
 
@@ -39,9 +40,9 @@ namespace PruebasUnitarias.M9
         [SetUp]
         public void init()
         {
-            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(123456, 12000, "EUR", "Deposito", 1);
+            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1234567, 12000, "EUR", "Deposito", 1);
             compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
-
+            factura = DominioTangerine.Fabrica.FabricaEntidades.ObtenerFacturacion();
         }
 
 
@@ -82,7 +83,7 @@ namespace PruebasUnitarias.M9
             Assert.IsNotNull(comandoAgregarPago);
             Assert.IsTrue(answer);
 
-            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 123456);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 1234567);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).montoPago == 12000);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).monedaPago == "EUR");
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).formaPago == "Deposito");
@@ -101,12 +102,20 @@ namespace PruebasUnitarias.M9
         [Test]
         public void TestComandoPagosCompania()
         {
+            ((DominioTangerine.Entidades.M8.Facturacion)factura).Id = 1;
             ((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id = 1;
+            LogicaTangerine.Comando<Boolean> comandoAgregarPago = FabricaComandos.cargarPago(elPago);
+            answer = comandoAgregarPago.Ejecutar();
             LogicaTangerine.Comando<List<Entidad>> comandoPagosCompania = FabricaComandos.
                 ConsultarPagosCompania(compania);
-            List<Entidad> Fact = comandoPagosCompania.Ejecutar();
-            Assert.IsNotNull(comandoPagosCompania);
-            Assert.IsNotNull(Fact);
+            listaPagos = comandoPagosCompania.Ejecutar();
+            elPago1 = (Pago)listaPagos[listaPagos.Count - 1];
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).codPago == 1234567);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).montoPago == 12000);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).monedaPago == "EUR");
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago1).idFactura == 1);
+            LogicaTangerine.Comando<Boolean> comandoEliminarPago = FabricaComandos.EliminarPago(elPago);
+            answer = comandoEliminarPago.Ejecutar();
 
 
         }

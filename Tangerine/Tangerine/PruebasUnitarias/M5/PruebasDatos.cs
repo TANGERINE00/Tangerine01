@@ -250,6 +250,18 @@ namespace PruebasUnitarias.M5
         }
 
         /// <summary>
+        /// Metodo para probar InvalidCastException en el método Agregar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( AgregarContactoException ),
+                            ExpectedMessage = "No se ha pasado un contacto como parámetro")]
+        public void PruebaDAOContactoAgregarCast()
+        {
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            _respuesta = _daoContacto.Agregar( proyecto );
+        }
+
+        /// <summary>
         /// Método para probar NullReferenceException en el método Eliminar() de DAOContacto
         /// </summary>
         [Test]
@@ -261,6 +273,19 @@ namespace PruebasUnitarias.M5
             _respuesta = _daoContacto.Eliminar( contacto );
 
         }
+
+        /// <summary>
+        /// Metodo para probar InvalidCastException en el método Eliminar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( EliminarContactoException ),
+                            ExpectedMessage = "No se ha pasado un contacto como parámetro" )]
+        public void PruebaDAOContactoEliminarCast()
+        {
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            _respuesta = _daoContacto.Eliminar( proyecto );
+        }
+
         /// <summary>
         /// Método para probar NullReferenceException en el método Modificar() de DAOContacto
         /// </summary>
@@ -273,6 +298,18 @@ namespace PruebasUnitarias.M5
             Entidad contacto = null;
             _respuesta = _daoContacto.Modificar( contacto );
 
+        }
+
+        /// <summary>
+        /// Metodo para probar InvalidCastException en el método Modificar() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( ModificarContactoException ),
+                            ExpectedMessage = "No se ha pasado un contacto como parámetro" )]
+        public void PruebaDAOContactoModificarCast()
+        {
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            _respuesta = _daoContacto.Modificar( proyecto );
         }
 
         /// <summary>
@@ -303,6 +340,18 @@ namespace PruebasUnitarias.M5
         }
 
         /// <summary>
+        /// Metodo para probar InvalidCastException en el método AgregarContactoAProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( AgregarContactoException ),
+                            ExpectedMessage = "No se ha pasado un parámetro válido")]
+        public void PruebaDAOContactoAgregarContactoAProyectoCast()
+        {
+            Entidad proyecto = FabricaEntidades.ObtenerProyecto();
+            _respuesta = _daoContacto.AgregarContactoAProyecto( proyecto, proyecto );
+        }
+
+        /// <summary>
         /// Método para probar NullReferenceExcepcion en el método ContactosPorProyecto() de DAOContacto
         /// </summary>
         [Test]
@@ -312,6 +361,19 @@ namespace PruebasUnitarias.M5
         {
             Entidad proyecto = null;
             _listaContactos = _daoContacto.ContactosPorProyecto( proyecto );
+
+        }
+
+        /// <summary>
+        /// Método para probar InvalidCastException en el método ContactosPorProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( ConsultarContactoException ),
+                            ExpectedMessage = "No se ha pasado un parámetro válido" )]
+        public void PruebaDAOContactoContactosPorProyectoCast()
+        {
+            Entidad contacto = FabricaEntidades.crearContactoVacio();
+            _listaContactos = _daoContacto.ContactosPorProyecto( contacto );
 
         }
 
@@ -330,6 +392,20 @@ namespace PruebasUnitarias.M5
             _respuesta = _daoContacto.EliminarContactoDeProyecto( contacto, proyecto );
 
         }
+
+        /// <summary>
+        /// Método para probar el método EliminarContactoDeProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( EliminarContactoException ),
+                            ExpectedMessage = "No se ha pasado un parámetro válido" )]
+        public void PruebaDAOContactoEliminarContactoDeProyectoCast()
+        {
+            Entidad contacto = FabricaEntidades.crearContactoVacio();
+            _respuesta = _daoContacto.EliminarContactoDeProyecto( contacto, contacto );
+
+        }
+
         /// <summary>
         /// Método para probar el método ContactosNoPertenecenAProyecto() de DAOContacto
         /// </summary>
@@ -344,6 +420,18 @@ namespace PruebasUnitarias.M5
 
         }
 
+        /// <summary>
+        /// Método para probar el método ContactosNoPertenecenAProyecto() de DAOContacto
+        /// </summary>
+        [Test]
+        [ExpectedException( typeof ( ConsultarContactoException ),
+                            ExpectedMessage = "No se ha pasado un parámetro válido" )]
+        public void PruebaDAOContactoContactosNoPertenecenAProyectoCast()
+        {
+            Entidad contacto = FabricaEntidades.crearContactoVacio();
+            _listaContactos = _daoContacto.ContactosNoPertenecenAProyecto( contacto );
+
+        }
         #endregion
 
     }

@@ -9,6 +9,7 @@ using LogicaTangerine.M1;
 using System.Security.Cryptography;
 using LogicaTangerine.Fabrica;
 using Tangerine_Contratos.M1;
+using System.Web;
 
 namespace Tangerine_Presentador.M1
 {
@@ -59,10 +60,11 @@ namespace Tangerine_Presentador.M1
                         _vista.elmensaje = "Su nueva contraseña es: " + nueva +
                             " Ingrese al sistema para cambiarla por una propia.";
 
-                        string asunto = "Tangerine - Cambio de contraseña";
+                        //string asunto = "Tangerine - Cambio de contraseña";
 
                         Entidad datoCorreo =
-                            DominioTangerine.Fabrica.FabricaEntidades.ObtenerDatosCorreo(asunto, _vista.elcorreo, _vista.elmensaje);
+                            DominioTangerine.Fabrica.FabricaEntidades.ObtenerDatosCorreo(ResourceGUIM1.CambioContraseña,
+                            _vista.elcorreo, _vista.elmensaje);
 
                         Comando<bool> cmdEnvio = LogicaTangerine.Fabrica.FabricaComandos.EnviarCorreoG(datoCorreo);
                         bool envio;
@@ -73,19 +75,23 @@ namespace Tangerine_Presentador.M1
                     }
                     else
                     {
-                        _vista.elmensaje = "Datos incorrectos, comuniquese con el administrador del sistema.";
+                        _vista.elmensaje = ResourceGUIM1.DatosIncorrectos;
                     }
 
                 }
                 else
                 {
-                    _vista.elmensaje = "Usuario invalido";
+                    _vista.elmensaje = ResourceGUIM1.UsuarioInvalido;
                 }
 
             }
-            catch(Exception e)
+            catch (ExcepcionesTangerine.ExceptionsTangerine)
             {
-                _vista.elmensaje = "Error Inesperado - Intente nuevamente";
+                _vista.elmensaje = ResourceGUIM1.ErrorInesperado;
+            }
+            catch(Exception)
+            {
+                _vista.elmensaje = ResourceGUIM1.ErrorInesperado;
             }
 
         }
@@ -140,6 +146,11 @@ namespace Tangerine_Presentador.M1
             }
 
             return sb.ToString();
+        }
+
+        public void Regresar ()
+        {
+            HttpContext.Current.Response.Redirect("Login.aspx");
         }
 
 
