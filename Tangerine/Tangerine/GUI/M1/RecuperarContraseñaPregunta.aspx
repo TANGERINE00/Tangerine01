@@ -61,7 +61,7 @@
 
                     <div class="form-group">
                         <button type="button" id="LoginButton" runat="server" name="go" class="btn btn-lg btn-block btn-wiggle" onserverclick="Validar_Correo">Aceptar</button>
-                        <button type="button" id="volverLogin" runat="server" name="go" class="btn btn-lg btn-block btn-wiggle" onserverclick="Validar_Correo">Volver</button>
+                        <button type="button" id="volverLogin" runat="server" name="go" class="btn btn-lg btn-block btn-wiggle"  onserverclick="VolverBtn">Volver</button>
                     </div>
 
                     <asp:Label ID="mensaje" runat="server" class="login-box-msg" Style="color: #FFFFFF;" />
