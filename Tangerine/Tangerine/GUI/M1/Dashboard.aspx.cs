@@ -17,6 +17,10 @@ namespace Tangerine.GUI.M1
         PresentadorDashboard presentador;
 
         #region Contrato
+
+        /// <summary>
+        /// Form de la lista de los proyectos
+        /// </summary>
         public Literal VistaForm
         {
             get
@@ -37,6 +41,11 @@ namespace Tangerine.GUI.M1
         }
 
 
+        /// <summary>
+        /// Carga la ventana Dashboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
