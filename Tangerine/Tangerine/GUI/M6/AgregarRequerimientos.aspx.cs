@@ -9,14 +9,13 @@ using Tangerine_Presentador.M6;
 
 namespace Tangerine.GUI.M6
 {
-    public partial class ModificarRequerimiento : System.Web.UI.Page, IContratoModificarRequerimiento
+    public partial class AgregarRequerimientos : System.Web.UI.Page, IContratoAgregarRequerimientos
     {
-        
-        PresentadorModificarRequerimiento presenter;
+        PresentadorAgregarRequerimientos presenter;
 
-        public ModificarRequerimiento()
+        public AgregarRequerimientos()
         {
-            this.presenter = new PresentadorModificarRequerimiento(this);
+            this.presenter = new PresentadorAgregarRequerimientos(this);
         }
         
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +24,7 @@ namespace Tangerine.GUI.M6
             {
                 if (!IsPostBack)
                 {
-                    presenter.llenarVista();
+                  //
                 }
             }
             catch
@@ -34,11 +33,12 @@ namespace Tangerine.GUI.M6
                 Context.ApplicationInstance.CompleteRequest();
             }
         }
-        protected void btnmodificar_Click(object sender, EventArgs e)
+        
+        protected void btnagregar_Click(object sender, EventArgs e)
         {
             try
             {
-                presenter.ModificarRequerimiento();
+                presenter.AgregarRequerimientos();
                 Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
@@ -49,19 +49,19 @@ namespace Tangerine.GUI.M6
             }
             catch (Exception)
             {
-                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("idPro") + "&idReq=0", false);
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("id") + "&idReq=0", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
         }
 
-
-       public string IdRequerimiento
+        #region Contrato
+        public string IdPropuesta
         {
             get
-            {
-                try
+            {   
+                try 
                 {
-                    return Request.QueryString.Get("idReq");
+                    return Request.QueryString.Get("id");
                 }
                 catch (Exception e)
                 {
@@ -70,31 +70,14 @@ namespace Tangerine.GUI.M6
                     return null;
                 }
             }
-            set { requerimiento_id.Value = value; }
-
         }
 
-       public string IdPropuesta
-       {
-           get
-           {
-               try
-               {
-                   return Request.QueryString.Get("idPro");
-               }
-               catch (Exception e)
-               {
-                   Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
-                   Context.ApplicationInstance.CompleteRequest();
-                   return null;
-               }
-           }
-       }
-       public string Concepto
+        public string ArrPrecondicion
         {
-            get { return concepto.Value; }
-            set { concepto.Value = value; }
+            get { return arrPrecondicion.Value; }
+
         }
-       
+        #endregion
+
     }
 }
