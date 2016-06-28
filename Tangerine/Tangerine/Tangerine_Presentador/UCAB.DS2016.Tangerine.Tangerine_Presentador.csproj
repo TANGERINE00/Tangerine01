@@ -100,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoM5.resx</DependentUpon>
     </Compile>
+    <Compile Include="M6\PresentadorAgregarRequerimientos.cs" />
     <Compile Include="M6\PresentadorInformacionPropuesta.cs" />
     <Compile Include="M6\PresentadorModificarRequerimiento.cs" />
     <Compile Include="M6\PresentadorModificarPropuesta.cs" />

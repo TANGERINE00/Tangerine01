@@ -1012,7 +1012,14 @@ namespace LogicaTangerine.Fabrica
         {
             return new ComandoEliminarPago(entidad);
         }
-
+        /// <summary>
+        /// Método para crear comando que permite consultar todos los pagos 
+        /// </summary>
+        /// <returns>Regresa el objeto ComandoPagosTodos para poder ejecutarlo</returns>
+        public static Comando<List<Entidad>> ConsultarPagosTodos()
+        {
+            return new ComandoPagosTodos();
+        }
         #endregion
 
         #region Modulo 10

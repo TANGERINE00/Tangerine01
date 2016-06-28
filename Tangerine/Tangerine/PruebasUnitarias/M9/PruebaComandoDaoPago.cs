@@ -17,11 +17,12 @@ namespace PruebasUnitarias.M9
     public class PruebaComandoDaoPago
     {
         #region Atributos
-        public bool answer;
-        public Entidad elPago;
-        public Entidad elPago1;
-        public Entidad factura;
-        public Entidad compania;
+        private bool answer;
+        private Entidad elPago;
+        private Entidad elPago1;
+        private Entidad factura;
+        private Entidad compania;
+        private List<Entidad> listaPagos;
         Comando<Entidad> _comandoEntidad;
         Comando<bool> _comandoBool;
         Comando<List<Entidad>> _comandoList;
@@ -38,7 +39,7 @@ namespace PruebasUnitarias.M9
         [SetUp]
         public void init()
         {
-            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1111111111, 12000, "EUR", "Deposito", 1);
+            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(123456, 12000, "EUR", "Deposito", 1);
             compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
 
         }
@@ -66,32 +67,32 @@ namespace PruebasUnitarias.M9
         /// <summary>
         /// Método para probar el Comando de Agregar un Pago en la base de datos
         /// </summary>
-       // [Test]
-        /*public void TestComandoAgregarPago()
+        [Test]
+        public void TestComandoAgregarPago()
         {
 
             LogicaTangerine.Comando<Boolean> comandoAgregarPago = FabricaComandos.cargarPago(elPago);
             answer = comandoAgregarPago.Ejecutar();
 
-            _comandoList = FabricaComandos.();
-            _listaFactura = _comandoList.Ejecutar();
-            _laFactura = (Facturacion)_listaFactura[_listaFactura.Count - 1];
+            _comandoList = FabricaComandos.ConsultarPagosTodos();
+            listaPagos = _comandoList.Ejecutar();
+            elPago = (Pago)listaPagos[listaPagos.Count - 1];
 
 
             Assert.IsNotNull(comandoAgregarPago);
-            Assert.IsTrue(resultado);
+            Assert.IsTrue(answer);
 
-            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 1111111111);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 123456);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).montoPago == 12000);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).monedaPago == "EUR");
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).formaPago == "Deposito");
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).idFactura == 1);
 
             LogicaTangerine.Comando<Boolean> comandoEliminarPago = FabricaComandos.EliminarPago(elPago);
-            resultado = comandoEliminarPago.Ejecutar();
-            Assert.IsTrue(resultado);
+            answer = comandoEliminarPago.Ejecutar();
+            Assert.IsTrue(answer);
 
-        }*/
+        }
 
 
         /// <summary>

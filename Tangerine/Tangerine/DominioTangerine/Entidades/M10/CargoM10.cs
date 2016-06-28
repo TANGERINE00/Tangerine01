@@ -40,12 +40,12 @@ namespace DominioTangerine.Entidades.M10
             this.sueldo = salario; 
         }
 
-        public CargoM10(string nombre, string descripcion, DateTime fecha)
+        public CargoM10(string nombre, string descripcion, DateTime fecha, string modalidad)
         {
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.fechaContratacion = fecha;
-            
+            this.Modalidad = modalidad;
         }
         
         public CargoM10(string cargo, double salary, string dateIni, string dateFin)

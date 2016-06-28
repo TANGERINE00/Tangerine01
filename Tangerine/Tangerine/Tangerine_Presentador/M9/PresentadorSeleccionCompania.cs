@@ -25,6 +25,11 @@ namespace Tangerine_Presentador.M9
             this.vista = vista;
 
         }
+        /// <summary>
+        /// Método que se encarga de mostrar mensaje de confirmación o error
+        /// </summary>
+        /// <param name="msj"></param>Mensaje que va a mostrar
+        /// <param name="tipoMensaje"></param>Define si el mensaje es exitoso o de error
         public void Alerta(string msj, int tipoMensaje)
         {
             if (tipoMensaje == 1)
@@ -43,7 +48,9 @@ namespace Tangerine_Presentador.M9
             }
          }
  
-
+        /// <summary>
+        /// Método que asigna los valores al mensaje a mostrar
+        /// </summary>
         public void estadoActual()
         {
             switch(estado)
@@ -121,20 +128,16 @@ namespace Tangerine_Presentador.M9
 
 
         }
-    
-    public void CargarPagina ()
-        {
-            estado = vista.StatusAccion();
-            estadoActual();
-            LlenarCompanias();
+        /// <summary>
+        /// Método que se encarga de cargar la información de la página
+        /// </summary>
+        public void CargarPagina ()
+            {
+                estado = vista.StatusAccion();
+                estadoActual();
+                LlenarCompanias();
 
+            } 
 
-        }
-    
-    
-    
-    
-    
-    
     }
 }

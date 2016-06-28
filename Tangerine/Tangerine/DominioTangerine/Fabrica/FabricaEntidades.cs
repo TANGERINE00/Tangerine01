@@ -865,9 +865,9 @@ namespace DominioTangerine.Fabrica
         }
 
   
-        public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion)
+        public static Entidad ObtenerCargo3(string empCargo, string empCargoDescripcion, DateTime empContratacion, string empModalidad)
         {
-            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empCargoDescripcion, empContratacion);
+            return new DominioTangerine.Entidades.M10.CargoM10(empCargo, empCargoDescripcion, empContratacion,empModalidad);
         }
 
         

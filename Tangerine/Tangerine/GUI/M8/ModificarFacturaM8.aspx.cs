@@ -111,7 +111,7 @@ namespace Tangerine.GUI.M8
             Boolean validar = _presentador.ModificarFactura();
             if (validar)
             {
-                Response.Redirect(ResourceGUIM8.volverModificado);
+                Response.Redirect(ResourceGUIM8.Factura + textNumeroFactura);
             }
         }
     }

@@ -94,6 +94,15 @@ namespace Tangerine.GUI.M8 {
         protected global::System.Web.UI.WebControls.Literal textMonto_M8;
         
         /// <summary>
+        /// textIva_M8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal textIva_M8;
+        
+        /// <summary>
         /// textTipoMoneda_M8 control.
         /// </summary>
         /// <remarks>
