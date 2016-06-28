@@ -28,6 +28,9 @@ namespace Tangerine.GUI.M6
             this.presenter = new PresentadorAgregarPropuesta(this);
         }
 
+        /// <summary>
+        /// Carga de la pagina principal
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

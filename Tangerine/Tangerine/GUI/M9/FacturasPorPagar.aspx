@@ -56,11 +56,11 @@
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>N° Factura</th>
-                            <th>Fecha Factura</th>
-                            <th>Estatus Factura</th>
-                            <th>Proyecto</th>
-                            <th>Monto</th>
+                            <th style="text-align: center;">N° Factura</th>
+                            <th style="text-align: center;">Fecha Factura</th>
+                            <th style="text-align: center;">Estatus Factura</th>
+                            <th style="text-align: center;">Proyecto</th>
+                            <th style="text-align: center;">Monto</th>
                             <th style="text-align: center;">Pagar</th>
                         </tr>
                     </thead>

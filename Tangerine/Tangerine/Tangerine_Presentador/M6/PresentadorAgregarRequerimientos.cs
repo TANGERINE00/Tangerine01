@@ -26,11 +26,18 @@ namespace Tangerine_Presentador.M6
         String[] _precondicion;
         #endregion
 
+        /// <summary>
+        /// Constructor por defecto de la clase
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorAgregarRequerimientos(IContratoAgregarRequerimientos vista)
         {
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Metodo encargado de agregar el requerimiento
+        /// </summary>
 
         public void AgregarRequerimientos()
         {

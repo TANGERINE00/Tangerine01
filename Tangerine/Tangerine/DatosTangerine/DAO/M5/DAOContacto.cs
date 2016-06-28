@@ -82,10 +82,10 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new AgregarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -133,10 +133,10 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new EliminarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new EliminarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -208,10 +208,10 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ModificarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new ModificarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -277,11 +277,6 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
-            }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                                  RecursosDAOContacto.MensajeFinInfoLogger,
@@ -335,11 +330,6 @@ namespace DatosTangerine.DAO.M5
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
-            }
-            catch ( Exception ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -411,11 +401,6 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
-            {
-                Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
-            }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                                  RecursosDAOContacto.MensajeFinInfoLogger,
@@ -469,10 +454,10 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new AgregarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -543,10 +528,10 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex);
 
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new ConsultarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -601,10 +586,10 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new EliminarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new EliminarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -675,10 +660,10 @@ namespace DatosTangerine.DAO.M5
                 throw new BaseDeDatosContactoException( "DS-505", "Error con la base de datos", ex );
 
             }
-            catch ( Exception ex )
+            catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new ConsultarContactoException( RecursoGeneralBD.Mensaje_Generico_Error, ex );
+                throw new ConsultarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
