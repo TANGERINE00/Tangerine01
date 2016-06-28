@@ -1820,9 +1820,10 @@ GO
 CREATE PROCEDURE M9_ConsultarPagos
 AS
 	BEGIN
-		SELECT  fk_fac_id, pag_fecha,pag_monto,pag_moneda, pag_cod
+		SELECT  fk_fac_id, pag_fecha,pag_monto,pag_moneda, pag_cod, pag_forma
                 FROM pago
 	END;
+GO	
 
 ---- StoredProcedure HISTORICO Pago ----
 CREATE PROCEDURE M9_HistoricoPagoCompania

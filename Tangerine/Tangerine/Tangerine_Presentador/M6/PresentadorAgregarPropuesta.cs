@@ -42,14 +42,17 @@ namespace Tangerine_Presentador.M6
         String[] _precondicion;
         #endregion
 
+        /// <summary>
+        /// Constructor por defecto de la clase
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorAgregarPropuesta(IContratoAgregarPropuesta vista)
         {
             this.vista = vista;
         }
 
         /// <summary>
-        /// Método que contigura el div de alerta de la vista            REVISAR!
-        /// </summary>
+        /// Método que contigura el div de alerta de la vista  
         /// <param name="msj"></param>
         /// <param name="typeMsg"></param>
         public void Alerta(string msj, int typeMsg)
@@ -62,6 +65,9 @@ namespace Tangerine_Presentador.M6
             vista.alertaRol = RecursosPresentadorPropuesta.Alert;
             vista.alerta = RecursosPresentadorPropuesta.AlertShowSu1 + msj + RecursosPresentadorPropuesta.AlertShowSu2;
         }
+        /// <summary>
+        ///Metodo que se encarga de agregar la propuesta
+        /// </summary>
 
         public void agregarPropuesta()
         {
@@ -141,6 +147,7 @@ namespace Tangerine_Presentador.M6
                 throw ex;
             }
         }
+   
 
         public void cargarCompañias()
          {
@@ -191,7 +198,9 @@ namespace Tangerine_Presentador.M6
             
 
         }
-
+        /// <summary>
+        ///Metodo que carga los select la moneda
+        /// </summary>
         public void llenarComboTipoCosto()
         {
          
@@ -200,14 +209,18 @@ namespace Tangerine_Presentador.M6
             vista.TipoCosto.Items.Add("Euro");
             vista.TipoCosto.Items.Add("Bitcoin");
         }
-                
+        /// <summary>
+        ///Metodo que carga los select de estado
+        /// </summary>
         public void llenarComboEstatus()
         {
             vista.ComboStatus.Items.Add("Pendiente");
             vista.ComboStatus.Items.Add("Aprobado");
             vista.ComboStatus.Items.Add("Cerrado");
         }
- 
+        /// <summary>
+        ///Fachada contenedora de los metodos encargados de pintar la vista
+        /// </summary>
         public void llenarVista() 
         {
          cargarCompañias();

@@ -48,7 +48,7 @@ namespace Tangerine_Presentador.M3
         /// Método que verifica la existencia del cliente
         /// </summary>
         /// <returns>bool</returns>
-        private bool VerificarDatosDeCliente(String nombre, String correo, String rif)
+        public bool VerificarDatosDeCliente(String nombre, String correo, String rif)
         {
             bool seAgrega = true;
             Comando<List<Entidad>> comando =
