@@ -136,7 +136,7 @@ namespace DatosTangerine.DAO.M5
             catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
+                throw new EliminarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -211,7 +211,7 @@ namespace DatosTangerine.DAO.M5
             catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
+                throw new ModificarContactoException( "DS-505", "No se ha pasado un contacto como parámetro", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -531,7 +531,7 @@ namespace DatosTangerine.DAO.M5
             catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
+                throw new ConsultarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -589,7 +589,7 @@ namespace DatosTangerine.DAO.M5
             catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
+                throw new EliminarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -663,7 +663,7 @@ namespace DatosTangerine.DAO.M5
             catch ( InvalidCastException ex )
             {
                 Logger.EscribirError( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex );
-                throw new AgregarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
+                throw new ConsultarContactoException( "DS-505", "No se ha pasado un parámetro válido", ex );
             }
 
             Logger.EscribirInfo( System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
