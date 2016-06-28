@@ -38,6 +38,7 @@ namespace PruebasUnitarias.M10
         private Entidad Pais;
         private Comando<Entidad> ComandoEntidad;
         private Comando<Boolean> ComandoBooleano;
+        private Comando<Boolean> ComandoUsuario;
         private Comando<List<Entidad>> ComandoLista;
         private List<Entidad> ListaEmpleado;
         private List<Entidad> listaCargo;
@@ -86,9 +87,15 @@ namespace PruebasUnitarias.M10
             ElRol = (RolM2)FabricaEntidades.crearRolNombre("Administrador");
             ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma@gmail.com", "leojma", new DateTime(2015, 2, 10),
                                                                                       "Activo", ((RolM2)ElRol), 1);
+            ComandoUsuario=FabricaComandos.agregarUsuario(ElUsuario);
+            Confirma=ComandoUsuario.Ejecutar();
 
-            ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("leojma@gmail.com", "leojma");
-            //ElUsuarioInactivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("lenon@gmail.com", "lenito22");
+            //ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("leojma@gmail.com", "leojma");
+            ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
+            ((DominioTangerine.Entidades.M2.UsuarioM2)ElUsuarioActivo).nombreUsuario = "leojma@gmail.com";
+            ((DominioTangerine.Entidades.M2.UsuarioM2)ElUsuarioActivo).contrasena = "leojma";
+            ElUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
+
 
 
             theEmpleado = (EmpleadoM10)FabricaEntidades.CrearEntidadEmpleado(pnombre, snombre, papellido,
@@ -100,11 +107,12 @@ namespace PruebasUnitarias.M10
 
             theEmpleado2 = FabricaEntidades.AgregarEmpledoM10();
 
-            //pais = "Venezuela";            
+            Pais = DominioTangerine.Fabrica.FabricaEntidades.ObtenerEstadoM10();
+            ((DominioTangerine.Entidades.M10.LugarDireccion)Pais).LugNombre = "Venezuela";            
 
             //Se agrega un empleado
             ComandoBooleano = FabricaComandos.ComandoAgregarEmpleado(theEmpleado);
-            bool Confirma = ComandoBooleano.Ejecutar();
+            Confirma = ComandoBooleano.Ejecutar();
         }
 
         [TearDown]
@@ -200,13 +208,19 @@ namespace PruebasUnitarias.M10
         [Test]
         public void TestComandoConsultarPorId()
         {            
-            //Consulta el Empleado por Id
-            ComandoEntidad = FabricaComandos.ConsultarIdEmpleado(theEmpleado);
+            //Consulta todos los empleados
+            ComandoLista = FabricaComandos.ConsultarEmpleados();
+            ListaEmpleado = ComandoLista.Ejecutar();
+
+            //Me traigo el ultimo el empleado insertado
             theEmpleado2 = (EmpleadoM10)ListaEmpleado[(ListaEmpleado.Count) - 1];
+           
+            //Envio ese empleado para que lo consulte por id
+            ComandoEntidad = FabricaComandos.ConsultarIdEmpleado(theEmpleado2);           
             theEmpleado3 = ComandoEntidad.Ejecutar();
 
-
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).emp_id, theEmpleado2.Id);
+          
+            Assert.AreEqual(((EmpleadoM10)theEmpleado3).emp_id, ((EmpleadoM10)theEmpleado2).emp_id);
             Assert.IsNotEmpty(ComandoLista.Ejecutar());    
             Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_nombre, "Eduardo");
             Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_nombre, "Jose");
@@ -299,9 +313,13 @@ namespace PruebasUnitarias.M10
         public void TestComandoValidarUsuarioCorreo()
         {
 
-            //Probar que el  Usuario es activo
+            //Probar que el  Usuario está activo
             ComandoEntidad = FabricaComandos.ConsultarUsuarioxCorreo(ElUsuarioActivo);
             ElUsuario2=ComandoEntidad.Ejecutar();
+
+
+            Console.WriteLine("Usuario2: " + ((UsuarioM2)ElUsuario2).activo);
+;
 
             Assert.IsNotNull(ElUsuario2);
             Assert.AreEqual(((UsuarioM2)ElUsuario2).activo, "Inactivo");

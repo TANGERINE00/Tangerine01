@@ -15,6 +15,9 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        
 <div class="row">
+    <div class="container-fluid">
+        <div id="alert" runat="server" style="width:100%"></div>
+    </div>
     <div class="col-lg-6 col-md-6 col-xs-12">
         <div class="box box-info">
             <br /><br />
