@@ -226,7 +226,7 @@
     <value>ConsultarFacturaM8.aspx?estado=2</value>
   </data>
   <data name="path" xml:space="preserve">
-    <value>~/Facturas</value>
+    <value>C:\Tangerine\web\m8\</value>
   </data>
   <data name="volverCorreo" xml:space="preserve">
     <value>ConsultarFacturaM8.aspx?estado=3</value>

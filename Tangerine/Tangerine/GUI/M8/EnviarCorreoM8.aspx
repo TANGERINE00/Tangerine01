@@ -33,7 +33,7 @@
                     <div id="Div4" class="box-body" runat="server">
                         <!--Destinatario-->
                         <div id="Div5" class="form-group" runat="server">
-                            <label for="labelDestinatario_M8">Para</label>
+                            <label for="labelDestinatario_M8">Para<a style="color:rgb(255, 0, 0);">*</a></label>
                             <input type="text" runat="server" class="form-control" id="textDestinatario_M8" name="textDestinatario_M8"
                                 pattern="^[0-9a-zñA-ZÑ.@,]+$"
                                 oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolos ni espacios en blanco')" 
