@@ -14,11 +14,17 @@ namespace Tangerine.GUI.M6
         
         PresentadorModificarRequerimiento presenter;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
         public ModificarRequerimiento()
         {
             this.presenter = new PresentadorModificarRequerimiento(this);
         }
-        
+
+        /// <summary>
+        /// Carga inicial de la pagina
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -34,6 +40,10 @@ namespace Tangerine.GUI.M6
                 Context.ApplicationInstance.CompleteRequest();
             }
         }
+
+        /// <summary>
+        /// Accion del boton a presionar "Modificar"
+        /// </summary>
         protected void btnmodificar_Click(object sender, EventArgs e)
         {
             try
@@ -54,8 +64,8 @@ namespace Tangerine.GUI.M6
             }
         }
 
-
-       public string IdRequerimiento
+        #region Contrato
+        public string IdRequerimiento
         {
             get
             {
@@ -95,6 +105,7 @@ namespace Tangerine.GUI.M6
             get { return concepto.Value; }
             set { concepto.Value = value; }
         }
-       
+        #endregion
+
     }
 }

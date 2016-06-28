@@ -122,7 +122,7 @@ drop procedure M8_EliminarFactura;
 
 drop procedure M9_AgregarPago;
 drop procedure M9_CambioStatus;
-drop Procedure M9_ConsultarPago;
+drop Procedure M9_ConsultarPagos;
 drop procedure M9_HistoricoPagoCompania;
 drop procedure M9_EliminarPago;
 

@@ -9,6 +9,8 @@ using DominioTangerine;
 using NUnit.Framework;
 using DominioTangerine.Entidades.M10;
 using System.Collections;
+using DominioTangerine.Fabrica;
+using DatosTangerine.InterfazDAO.M2;
 
 namespace PruebasUnitarias.M10
 {
@@ -18,15 +20,20 @@ namespace PruebasUnitarias.M10
         #region Atributos
         public Empleado theEmpleado;
         private DominioTangerine.Entidades.M10.EmpleadoM10 elEmpleado1, elEmpleado2, elEmpleado3, elEmpleado4;
-        public bool answer;
-        public List<Entidad> theEmpleados;
-        public List<Entidad> theDireccion;
-        public List<Entidad> theCargos;
-        public Hashtable listaHash;
-        public DominioTangerine.Entidades.M10.Cargo theCargo;
-        int empleadoId;
+        public bool respuesta;
+        public List<Entidad> listEmpleados;
+        public List<Entidad> listLugar;
+        public List<Entidad> listCargo;
+        public DominioTangerine.Entidades.M10.Cargo elCargo;
         public Empleado consultaEmpleado;
         public string pais;
+        private IDAOEmpleado daoEmpleado;
+        private IDAOUsuarios daoUsuario;
+        private Entidad empleado;
+        private int contadorEmpleados;
+        private int contadorPaises;
+        private int contadorEstados;
+        private int contadorCargos;
         #endregion
 
         #region SetUp y TearDown
@@ -34,11 +41,7 @@ namespace PruebasUnitarias.M10
         [SetUp]
         public void init()
         {
-            elEmpleado1 = new DominioTangerine.Entidades.M10.EmpleadoM10();
-            elEmpleado2 = new DominioTangerine.Entidades.M10.EmpleadoM10();
-            elEmpleado3 = new DominioTangerine.Entidades.M10.EmpleadoM10();
-            elEmpleado4 = new DominioTangerine.Entidades.M10.EmpleadoM10();
-            theEmpleados = new List<Entidad>();
+           
         }
 
         [TearDown]
@@ -55,41 +58,113 @@ namespace PruebasUnitarias.M10
 
 
         #region Test
+        /// <summary>
+        /// Prueba unitaria para el metodo consultar por id
+        /// </summary>
         [Test]
 
-        public void TestConsultarXIdEmpleado() 
+        public void TestConsultarXIdEmpleadoDAO()
         {
-            //daoEmpleado = DatosTangerine.Fabrica.FabricaDAOSqlServer.ConsultarDAOEmpleadoId();
+            Entidad empleado = FabricaEntidades.ConsultarEmpleados();
+            empleado.Id = 2;
 
-            //respuesta = daoEmpleado.Agregar(elCliente1);
-            //elCliente1.Id = daoCliente.ConsultarIdUltimoClientePotencial();
-            //elCliente2 = (DominioTangerine.Entidades.M3.ClientePotencial)daoCliente.ConsultarXId(elCliente1);
-
-            //Assert.AreEqual(elCliente2.NombreClientePotencial, elCliente1.NombreClientePotencial);
-            //Assert.AreEqual(elCliente2.RifClientePotencial, elCliente1.RifClientePotencial);
-            //Assert.AreEqual(elCliente2.EmailClientePotencial, elCliente1.EmailClientePotencial);
-            //Assert.AreEqual(elCliente2.PresupuestoAnual_inversion, elCliente1.PresupuestoAnual_inversion);
-            //Assert.AreEqual(elCliente2.Status, elCliente1.Status);
-
-            //daoCliente.Eliminar(elCliente1);
+            empleado = daoEmpleado.ConsultarXId(empleado);
+            EmpleadoM10 nuevo = (EmpleadoM10)empleado;
+            Assert.AreEqual(nuevo.emp_p_nombre, "Armando");
         }
 
         /// <summary>
         /// Prueba unitaria para el metodo Agregar Empleado
         /// </summary>
-        public void TestAgregarEmpleado() 
+        /// 
+        [Test]
+        public void TestAgregarEmpleadoDAO() 
         {
+            respuesta = daoEmpleado.Agregar(empleado);
+            Assert.True(respuesta);
 
+            listEmpleados = daoEmpleado.ConsultarTodos();
+            contadorEmpleados = listEmpleados.Count;
+            Assert.AreEqual(contadorEmpleados, 2);
+
+            EmpleadoM10 empleados = (EmpleadoM10)empleado;
+            bool verificar = false;
+
+            foreach (Entidad e in listEmpleados) 
+            {
+                EmpleadoM10 ep = (EmpleadoM10)e;
+
+                if (ep.emp_p_nombre.Equals(empleados.emp_p_nombre) && ep.emp_s_nombre.Equals(empleados.emp_s_nombre) &&
+                ep.emp_p_apellido.Equals(empleados.emp_p_apellido) && ep.emp_s_apellido.Equals(empleados.emp_s_apellido)
+                && ep.emp_genero.Equals(empleados.emp_genero) && ep.emp_cedula.Equals(empleados.emp_cedula) &&
+                    ep.emp_fecha_nac.Equals(empleados.emp_fecha_nac) && ep.emp_estudio.Equals(empleados.emp_estudio) &&
+                    ep.emp_email.Equals(empleados.emp_email) && ep.jobs.Nombre.Equals(empleados.jobs.Nombre) &&
+                    ep.jobs.FechaContratacion.Equals(empleados.jobs.FechaContratacion) &&
+                    ep.emp_modalidad.Equals(empleados.emp_modalidad) && ep.emp_salario.Equals(empleados.emp_salario) &&
+                    ep.Emp_Direccion.Equals(empleados.Emp_Direccion))
+                {
+                    verificar = true;
+                }
+            }
+
+            Assert.IsTrue(verificar);
+        }
+
+        /// <summary>
+        /// Prueba unitaria para el metodo consultar todos
+        /// </summary>
+        [Test]
+        public void TestConsultarTodosDAO() 
+        {
+            listEmpleados = daoEmpleado.ConsultarTodos();
+            contadorEmpleados = listEmpleados.Count;
+
+            Assert.AreEqual(contadorEmpleados, 3);
         }
 
 
-        public void TestActivarEmpleado() 
+        /// <summary>
+        /// Prueba unitaria para el metodo obtener paises
+        /// </summary>
+        [Test]
+        public void TestObtenerPaisesDAO() 
         {
+            listLugar = daoEmpleado.ObtenerPaises();
+            contadorPaises = listLugar.Count;
+
+            Assert.AreEqual(contadorPaises, 3);
+            
+        }
+
+        /// <summary>
+        /// Prueba unitaria para el metodo Obtener estados
+        /// </summary>
+        [Test]
+        public void TestObtenerEstadosDAO()
+        {
+            Entidad lugar = FabricaEntidades.ObtenerEstadoM10();
+            lugar.Id = 2;
+
+            listLugar = daoEmpleado.ObtenerEstados(lugar);
+            contadorPaises = listLugar.Count;
+
+            Assert.AreEqual(contadorEstados, 3);
 
         }
 
+        /// <summary>
+        /// Prueba unitaria para el metodo ObtenerCargo
+        /// </summary>
+        [Test]
+        public void TestObtenerCargoDAO() 
+        {
+            listCargo = daoEmpleado.ObtenerCargos();
+            contadorCargos = listCargo.Count;
 
+            Assert.AreEqual(contadorCargos, 3);
+        }
 
+      
 
         #endregion
 
