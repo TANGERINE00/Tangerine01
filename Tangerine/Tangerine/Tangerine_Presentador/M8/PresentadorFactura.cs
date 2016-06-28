@@ -39,7 +39,7 @@ namespace Tangerine_Presentador.M8
         /// <summary>
         /// Método para llenar la informacion de la factura
         /// </summary>
-        public void llenarModificar()
+        public void llenarFactura()
         {
             try
             {
@@ -71,21 +71,27 @@ namespace Tangerine_Presentador.M8
 
                 if (_laFactura.tipoMoneda == RecursoPresentadorM8.dolares)
                 {
-                    vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.Dolar;
+                    vista.textMonto = (_laFactura.montoFactura * 0.88).ToString() + RecursoPresentadorM8.Dolar;
                     vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal 
                         + _laFactura.montoFactura + RecursoPresentadorM8.Dolar;
+                    vista.textIva = RecursoPresentadorM8.Iva +
+                        (_laFactura.montoFactura * 0.12).ToString() + RecursoPresentadorM8.Dolar;
                 }
                 if (_laFactura.tipoMoneda == RecursoPresentadorM8.euros)
                 {
-                    vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.Euro;
+                    vista.textMonto = (_laFactura.montoFactura * 0.88).ToString() + RecursoPresentadorM8.Euro;
                     vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal
                         + _laFactura.montoFactura + RecursoPresentadorM8.Euro;
+                    vista.textIva = RecursoPresentadorM8.Iva +
+                        (_laFactura.montoFactura * 0.12).ToString() + RecursoPresentadorM8.Euro;
                 }
                 if (_laFactura.tipoMoneda == RecursoPresentadorM8.bolivares)
                 {
-                    vista.textMonto = _laFactura.montoFactura.ToString() + RecursoPresentadorM8.BS;
+                    vista.textMonto = (_laFactura.montoFactura * 0.88).ToString() + RecursoPresentadorM8.BS;
                     vista.textTipoMoneda = RecursoPresentadorM8.MontoTotal
                         + _laFactura.montoFactura + RecursoPresentadorM8.BS;
+                    vista.textIva = RecursoPresentadorM8.Iva +
+                        (_laFactura.montoFactura * 0.12).ToString() + RecursoPresentadorM8.BS;
                 }
                 idCompania = compania.Id;
                 idProyecto = proyecto.Id;
@@ -98,14 +104,5 @@ namespace Tangerine_Presentador.M8
                     + RecursoPresentadorM8.alertaHtmlFinal;
             }
         }
-
-        /// <summary>
-        /// Método para llenar la informacion de la factura
-        /// </summary>
-        public Boolean ModificarFactura()
-        {
-            return true;
-        }
-
     }
 }

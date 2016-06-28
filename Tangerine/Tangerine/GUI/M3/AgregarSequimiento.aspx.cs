@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Tangerine_Contratos.M3;
 using Tangerine_Presentador.M3;
-using System.Web;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M3
 {
@@ -94,11 +94,18 @@ namespace Tangerine.GUI.M3
         /// <param name="sender"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.idCliente = int.Parse(Request.QueryString["idclp"]);
-            if (!IsPostBack)
+            try
             {
-                presentador.CargarTipoDeSeguimiento();
-                presentador.MostrarFechaDeRegistro();
+                this.idCliente = int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idclp"], false));
+                if (!IsPostBack)
+                {
+                    presentador.CargarTipoDeSeguimiento();
+                    presentador.MostrarFechaDeRegistro();
+                }
+            }
+            catch
+            {
+                Response.Redirect(ResourceInterfaz.Dashboard);
             }
         }
 

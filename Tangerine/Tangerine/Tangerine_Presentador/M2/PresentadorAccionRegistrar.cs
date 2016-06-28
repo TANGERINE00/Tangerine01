@@ -19,11 +19,11 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Constructor de la clase, que recibe la vista, el numero ficha, nombre y apellido del empleado
         /// </summary>
-        /// <param name="vista"></param>
-        /// <param name="numFicha"></param>
-        /// <param name="nombreUser"></param>
-        /// <param name="apellidoUser"></param>
-        /// <param name="rol"></param>
+        /// <param name="vista">La vista de accion registra</param>
+        /// <param name="numFicha">El numero de ficha de un empleado</param>
+        /// <param name="nombreUser">El nombre del emepleado</param>
+        /// <param name="apellidoUser">El apellido del empleado</param>
+        /// <param name="rol">EL rol del empleado</param>
         public PresentadorAccionRegistrar( IContratoAccionRegistrar vista , int numFicha , string nombreUser , string apellidoUser ,
                                            string rol )
         {

@@ -9,6 +9,7 @@ using Tangerine_Presentador.M7;
 using Tangerine_Contratos.M7;
 using LogicaTangerine.M10;
 using System.Web.Security.AntiXss;
+using System.Web.UI.HtmlControls;
 
 
 namespace Tangerine.GUI.M7
@@ -175,7 +176,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                return inputPersonal;
+                return this.inputPersonal;
             }
             set
             {
@@ -223,7 +224,7 @@ namespace Tangerine.GUI.M7
         {
             get
             {
-                return inputPersonalNoActivo;
+                return this.inputPersonalNoActivo;
             }
             set
             {
@@ -268,6 +269,16 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        public string alertaClase
+        {
+            set { alert.Attributes["class"] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes["role"] = value; }
+        }
+
         public string alerta
         {
             set { alert.InnerHtml = value; }
@@ -307,13 +318,17 @@ namespace Tangerine.GUI.M7
         protected void Modificar_Datos(object sender, EventArgs e)
         {
             bool resultado = presentador.EventoClick_Modificar();
-            if (resultado.Equals(true))
+            try
             {
-                //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaModificada);
+                if (resultado.Equals(true))
+                {
+                    Server.Transfer("ConsultaProyecto.aspx?estado=3", true);
+                }
+
             }
-            else if (resultado.Equals(false))
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
-                //Response.Redirect(M10_RecursosInterfaz.ListaAsistenciaNoModificada);
+                Server.Transfer("ConsultaProyecto.aspx?estado=2", true);
             }
         }
 

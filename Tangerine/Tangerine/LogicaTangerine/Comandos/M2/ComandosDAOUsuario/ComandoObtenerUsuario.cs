@@ -18,7 +18,7 @@ namespace LogicaTangerine.Comandos.M2
         /// <summary>
         /// Constructor que recibe un parametro del tipo entidad
         /// </summary>
-        /// <param name="theEmpleado"></param>
+        /// <param name="theEmpleado">Es el numero del empleado</param>
         public ComandoObtenerUsuario( int numEmpleado )
         {
             _theEmpleado = numEmpleado;

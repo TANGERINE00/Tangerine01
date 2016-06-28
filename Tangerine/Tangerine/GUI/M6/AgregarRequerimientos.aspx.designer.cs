@@ -7,72 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tangerine.GUI.M1 {
+namespace Tangerine.GUI.M6 {
     
     
-    public partial class RecuperarContraseñaPregunta {
+    public partial class AgregarRequerimientos {
         
         /// <summary>
-        /// enviarEmail control.
+        /// alert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm enviarEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// correo control.
+        /// agregar_requerimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl correo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_requerimiento;
         
         /// <summary>
-        /// usuario control.
+        /// precondicion_0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText usuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText precondicion_0;
         
         /// <summary>
-        /// LoginButton control.
+        /// arrPrecondicion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton LoginButton;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden arrPrecondicion;
         
         /// <summary>
-        /// volverLogin control.
+        /// btnagregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton volverLogin;
-        
-        /// <summary>
-        /// mensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mensaje;
-        
-        /// <summary>
-        /// regexEmailValid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmailValid;
+        protected global::System.Web.UI.WebControls.Button btnagregar;
     }
 }

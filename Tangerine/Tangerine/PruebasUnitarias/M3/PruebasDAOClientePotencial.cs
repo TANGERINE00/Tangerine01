@@ -16,11 +16,13 @@ namespace PruebasUnitarias.M3
     {
         #region Atributos
 
-        private DominioTangerine.Entidades.M3.ClientePotencial elCliente1, elCliente2, elCliente3,elCliente4;
+        private ClientePotencial elCliente1, elCliente2, elCliente3,elCliente4;
         private Boolean respuesta;
         private List<Entidad> losClientes;
         private DatosTangerine.InterfazDAO.M3.IDAOClientePotencial daoCliente;
         private List<Entidad> llamadas, visitas;
+        private SeguimientoCliente elSeguimiento;
+             
         #endregion
 
         #region SetUp y TearDown
@@ -28,20 +30,22 @@ namespace PruebasUnitarias.M3
         /// SetUp para las pruebas de DAOClientePotencial
         /// </summary>
         [SetUp]
-        public void init()
+        public void Init()
         {
-            elCliente1 = new DominioTangerine.Entidades.M3.ClientePotencial("Test2", "J-121212-F","prueba@gmail.com",121212,1);
-            elCliente2 = new DominioTangerine.Entidades.M3.ClientePotencial();
-            elCliente3 = new DominioTangerine.Entidades.M3.ClientePotencial("Test2Cambio", "J-121212-F", "cambio@gmail.com", 746, 1);
-            elCliente4 = new DominioTangerine.Entidades.M3.ClientePotencial("Test3", "J-121212-F", "prueba@gmail.com", 121212, 0);
+            elCliente1 = new ClientePotencial("Test2", "J-121212-F","prueba@gmail.com",121212,1);
+            elCliente2 = new ClientePotencial();
+            elCliente3 = new ClientePotencial("Test2Cambio", "J-121212-F", "cambio@gmail.com", 746, 1);
+            elCliente4 = new ClientePotencial("Test3", "J-121212-F", "prueba@gmail.com", 121212, 0);
             losClientes = new List<Entidad>();
+            elSeguimiento = new SeguimientoCliente(new DateTime(2016,05,02),"Llamada","Prueba de seguimiento",5);
+
         }
 
         /// <summary>
         /// TearDown para las pruebas de DAOClientePotencial
         /// </summary>
         [TearDown]
-        public void clean()
+        public void Clean()
         {
             elCliente1 = null;
             elCliente2 = null;
@@ -224,6 +228,36 @@ namespace PruebasUnitarias.M3
                 Assert.NotNull(((SeguimientoCliente)seguimiento).Id);
                 Assert.AreEqual("Visita", ((SeguimientoCliente)seguimiento).TipoHistoria);
             }
+
+        }
+
+        /// <summary>
+        /// Método para probar el agregar seguimiento de DAOClientePotencial
+        /// </summary>
+        [Test]
+        public void TestDaoAgregarSeguimientoClientePotencial()
+        {
+            bool condicion = false;
+            daoCliente = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDaoClientePotencial();
+            elCliente1.Id = 5;
+
+            daoCliente.AgregarSeguimientoDeCliente(elSeguimiento);
+            llamadas = daoCliente.ConsultarLlamadasXId(elCliente1);
+
+            Assert.NotNull(llamadas);
+
+            foreach (Entidad seguimiento in llamadas)
+            {
+                Assert.NotNull(((SeguimientoCliente)seguimiento).Id);
+                Assert.AreEqual("Llamada", ((SeguimientoCliente)seguimiento).TipoHistoria);
+                if (((SeguimientoCliente)seguimiento).TipoHistoria == elSeguimiento.TipoHistoria &&
+                    ((SeguimientoCliente)seguimiento).MotivoHistoria == elSeguimiento.MotivoHistoria &&
+                    ((SeguimientoCliente)seguimiento).FkCliente == elSeguimiento.FkCliente)
+                {
+                    condicion = true;
+                }
+            }
+            Assert.IsTrue(condicion);
 
         }
     }

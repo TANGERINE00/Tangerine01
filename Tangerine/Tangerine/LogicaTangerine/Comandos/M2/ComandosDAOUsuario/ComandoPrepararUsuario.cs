@@ -21,10 +21,10 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAOUsuario
         /// <summary>
         /// Constructor que recibe tres parametros de tipo string y uno de tipo int
         /// </summary>
-        /// <param name="usuarioNombre"></param>
-        /// <param name="contrasenaUsuario"></param>
-        /// <param name="rolUsuario"></param>
-        /// <param name="fichaEmpleado"></param>
+        /// <param name="usuarioNombre">Es el nombre de usuario</param>
+        /// <param name="contrasenaUsuario">Es la contraseña del usuario</param>
+        /// <param name="rolUsuario">Es el rol de usuario</param>
+        /// <param name="fichaEmpleado">Es la ficha del empleado</param>
         public ComandoPrepararUsuario( String usuarioNombre , String contrasenaUsuario , String rolUsuario , int fichaEmpleado )
         {
             _usuarioNombre = usuarioNombre;

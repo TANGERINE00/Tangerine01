@@ -20,7 +20,7 @@ namespace DatosTangerine.DAO.M2
         /// <summary>
         /// Método para agregar un rol
         /// </summary>
-        /// <param name="theRol"></param>
+        /// <param name="theRol">Es el rol del usuario</param>
         /// <returns>Retorna el objeto en la base de datos</returns>
         public bool Agregar( Entidad theRol )
         {
@@ -30,7 +30,7 @@ namespace DatosTangerine.DAO.M2
         /// <summary>
         /// Método para modificar un rol
         /// </summary>
-        /// <param name="theRol"></param>
+        /// <param name="theRol">Es el rol del usuario</param>
         /// <returns>Retorna el objeto en la base de datos</returns>
         public bool Modificar( Entidad theRol )
         {
@@ -40,7 +40,7 @@ namespace DatosTangerine.DAO.M2
         /// <summary>
         /// Método para consultar un rol por id
         /// </summary>
-        /// <param name="theRol"></param>
+        /// <param name="theRol">Es el rol del usuario</param>
         /// <returns>Retorna la consulta</returns>
         public Entidad ConsultarXId( Entidad theRol )
         {
@@ -63,7 +63,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método para modificar el rol del usuario
             /// </summary>
-            /// <param name="theUsuario"></param>
+            /// <param name="theUsuario">Recibe un objeto de tipo Entidad que tiene los valores del usuario</param>
             /// <returns>Retorna true cuando el rol del usuario se modifico exitosamente</returns>
             public bool ModificarRolUsuario( Entidad theUsuario )
             {
@@ -117,7 +117,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que obtiene el rol y los menús que poseen opciones prohibidas para el usuario
             /// </summary>
-            /// <param name="codigoRol"></param>
+            /// <param name="codigoRol">Recibe el codigo de un rol de un usuario</param>
             /// <returns>El rol del usuario</returns>
             public Entidad ObtenerRolUsuario( int codigoRol )
             {
@@ -210,8 +210,8 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que devuelve las opciones de un menú prohibidas para un rol
             /// </summary>
-            /// <param name="nombreMenu"></param>
-            /// <param name="codigoRol"></param>
+            /// <param name="nombreMenu">Es el menu que proporcionara el sistema</param>
+            /// <param name="codigoRol">El codigo de un rol de un ususario especifico</param>
             /// <returns>Una lista con las opciones</returns>
             public Entidad ObtenerOpciones( string nombreMenu , int codigoRol )
             {
@@ -280,7 +280,7 @@ namespace DatosTangerine.DAO.M2
             /// <summary>
             /// Método que retorna el rol de un usuario con sus privilegios pasando como parámetro el nombre del rol
             /// </summary>
-            /// <param name="nombreRol"></param>
+            /// <param name="nombreRol">Un rol en especifico, por ejemplo, gerente</param>
             /// <returns>El rol del usuario por nombre</returns>
             public Entidad ObtenerRolUsuarioPorNombre( string nombreRol )
             {

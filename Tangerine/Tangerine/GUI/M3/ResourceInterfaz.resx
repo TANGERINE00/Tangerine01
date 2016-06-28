@@ -177,4 +177,7 @@
   <data name="Promovido" xml:space="preserve">
     <value>&lt;span class="label label-warning" id="p</value>
   </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>../M1/Dashboard.aspx</value>
+  </data>
 </root>

@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using ExcepcionesTangerine;
 using DominioTangerine;
 using DatosTangerine.Fabrica;
-using DatosTangerine.InterfazDAO.M8;
+using DatosTangerine.InterfazDAO.M9;
 
-namespace LogicaTangerine.Comandos.M8
+namespace LogicaTangerine.Comandos.M9
 {
     /// <summary>
-    /// Comando para consultar todas las factura
+    /// Comando para consultar todos los pagos
     /// </summary>
-    public class ComandoConsultarTodosFactura : Comando<List<Entidad>>
+    public class ComandoPagosTodos : Comando<List<Entidad>>
     {
+
         /// <summary>
         /// Metodo que ejecuta el comando
         /// </summary>
@@ -24,30 +25,33 @@ namespace LogicaTangerine.Comandos.M8
             try
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
-                , ResourceLogicaM8.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                , ResourceComandoM9.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                IDaoFactura daoFactura = FabricaDAOSqlServer.ObtenerDAOFactura();
-                List<Entidad> respuesta = daoFactura.ConsultarTodos();
+                IDAOPago daoPago = FabricaDAOSqlServer.CrearDAOPago();
+                List<Entidad> respuesta = daoPago.ConsultarTodos();
                 return respuesta;
             }
             catch (ArgumentNullException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesTangerine.M4.NullArgumentException(ResourceLogicaM8.Codigo,
-                    ResourceLogicaM8.Mensaje, ex);
+                throw new ExcepcionesTangerine.M4.NullArgumentException(ResourceComandoM9.CodigoErrorNull,
+                    ResourceComandoM9.MensajeErrorNull, ex);
+
             }
             catch (FormatException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceLogicaM8.Codigo,
-                     ResourceLogicaM8.Mensaje_Error_Formato, ex);
+                throw new ExcepcionesTangerine.M8.WrongFormatException(ResourceComandoM9.CodigoErrorFormato,
+                     ResourceComandoM9.MensajeErrorFormato, ex);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                throw new ExcepcionesTangerine.ExceptionsTangerine(ResourceComandoM9.MensajeGenerico, ex);
             }
         }
+
+
     }
 }

@@ -17,7 +17,7 @@ namespace LogicaTangerine.Comandos.M2.ComandosEspecificos
         /// <summary>
         /// Constructor que recibe un parametro del tipo string
         /// </summary>
-        /// <param name="nombreRol"></param>
+        /// <param name="nombreRol">Nombre del rol</param>
         public ComandoVerificarAccesoAOpciones( String nombreRol )
         {
             _nombreRol = nombreRol;

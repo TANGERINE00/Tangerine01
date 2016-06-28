@@ -1803,9 +1803,7 @@ AS
 
 GO
 
------------------------------------
-------Fin Stored Procedure M9------
------------------------------------
+---- StoredProcedure Eliminar pago ----
 
 CREATE PROCEDURE M9_EliminarPago
 @cod int
@@ -1817,34 +1815,14 @@ AS
 	END;
 GO
 
+---- StoredProcedure CONSULTAR Pagos ----
 
------------------------------------
---------Stored Procedure M9--------
------------------------------------
-
-
----- StoredProcedure CONSULTAR Pago ----
-
-CREATE PROCEDURE [dbo].[M9_ConsultarPago]
-	@id_Factura int
-
+CREATE PROCEDURE M9_ConsultarPagos
 AS
 	BEGIN
-		SELECT pag_monto as pag_monto, pag_fecha AS pag_fecha, pag_forma AS pag_forma, pag_cod AS pag_cod,
-			pag_moneda AS pag_moneda
-		FROM PAGO WHERE fk_fac_id = @id_Factura;
+		SELECT  fk_fac_id, pag_fecha,pag_monto,pag_moneda, pag_cod
+                FROM pago
 	END;
-
-GO
-
------------------------------------
-------Fin Stored Procedure M9------
------------------------------------
-
------------------------------------
---------Stored Procedure M9--------
------------------------------------
-
 
 ---- StoredProcedure HISTORICO Pago ----
 CREATE PROCEDURE M9_HistoricoPagoCompania

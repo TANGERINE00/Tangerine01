@@ -104,13 +104,72 @@ namespace DatosTangerine.DAO.M9
                    RecursoDAOPago.MensajeGeneral, ex);
            }
         }
-    
+
         /// <summary>
-        /// Metodo para cambiar el Status de la factura a pagada
+        /// Método para consultar todos los pagos
         /// </summary>
-        /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
-        /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
-        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
+        /// <returns>Devuelve una lista con todos los pagos</returns>
+        public List<Entidad> ConsultarTodos()
+        {
+            List<Parametro> parameters = new List<Parametro>();
+            Parametro theParam = new Parametro();
+            List<Entidad> listaPagos = new List<Entidad>();
+
+            try
+            {
+                //Guardo la tabla que me regresa el procedimiento de consultar contactos
+                DataTable dt = EjecutarStoredProcedureTuplas(RecursoDAOPago.ConsultarPagos, parameters);
+
+                //Guardar los datos 
+                foreach (DataRow row in dt.Rows)
+                {
+
+                    int facId = int.Parse(row[RecursoDAOPago.FK_Fac_id].ToString());
+                    int codPago = int.Parse(row[RecursoDAOPago.PagoCod].ToString());
+                    double montoPago = double.Parse(row[RecursoDAOPago.PagoMonto].ToString());
+                    String monedaPago = row[RecursoDAOPago.PagoMoneda].ToString();
+                    String formaPago = row[RecursoDAOPago.PagoForma].ToString();
+
+                    //Creo un objeto de tipo Compania con los datos de la fila y lo guardo.
+                    Pago elPago = new Pago(codPago, montoPago, monedaPago, formaPago, facId);
+
+                    listaPagos.Add(elPago);
+                }
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.NullArgumentExceptionM9Tangerine(RecursoDAOPago.CodigoErrorNull,
+                    RecursoDAOPago.MensajeErrorNull, ex);
+
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesTangerine.M9.WrongFormatExceptionM9Tangerine(RecursoDAOPago.CodigoErrorFormato,
+                    RecursoDAOPago.MensajeErrorFormato, ex);
+
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExceptionDataBaseM9Tangerine(RecursoDAOPago.CodigoErrorSQL,
+                    RecursoDAOPago.MensajeErrorSQL, ex);
+            }
+            catch (Exception ex)
+           {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+               throw new ExcepcionesTangerine.ExceptionsTangerine(RecursoDAOPago.CodigoGeneral,
+                   RecursoDAOPago.MensajeGeneral, ex);
+           }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+            RecursoDAOPago.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return listaPagos;
+        }
        
     
         public Boolean Modificar (Entidad e)
@@ -123,13 +182,15 @@ namespace DatosTangerine.DAO.M9
             throw new NotImplementedException();
         }
 
-        public List<Entidad> ConsultarTodos()
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         #region IDAOPago
+        /// <summary>
+        /// Metodo para cambiar el Status de la factura a pagada
+        /// </summary>
+        /// <param name="factura">Entero con el id de la factura que se va a cambiar el status</param>
+        /// <param name="status">Entero con el valor del status (valor 1) para indicar que la factura se pago</param>
+        /// <returns>Booleano que determina si el metodo se ejecuto con exito o no</returns>
         public bool CargarStatus(int factura, int status)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -191,7 +252,7 @@ namespace DatosTangerine.DAO.M9
         
 
         /// <summary>
-        /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizaos por una compania
+        /// Metodo del DAO para invocar Stored Procedure de todos los Pagos realizados por una compania
         /// </summary>
         /// <param name="parametro">Entidad, parametro con id de la compania que se va realizar la busqueda de pagos
         /// </param>

@@ -17,8 +17,8 @@ namespace LogicaTangerine.Comandos.M2
         /// <summary>
         /// Constructor que recibe los parametros cadena y cantidad
         /// </summary>
-        /// <param name="cadena"></param>
-        /// <param name="cantidad"></param>
+        /// <param name="cadena">Es la cadena de la cual quiero obtener caracteres</param>
+        /// <param name="cantidad">Es la cantidad de caracteres que se quiere obtener</param>
         public ComandoObtenerCaracteres( String cadena, int cantidad )
         {
             _cadena = cadena;

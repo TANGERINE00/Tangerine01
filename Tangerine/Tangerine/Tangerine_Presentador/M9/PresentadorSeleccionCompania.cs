@@ -25,6 +25,11 @@ namespace Tangerine_Presentador.M9
             this.vista = vista;
 
         }
+        /// <summary>
+        /// Método que se encarga de mostrar mensaje de confirmación o error
+        /// </summary>
+        /// <param name="msj"></param>Mensaje que va a mostrar
+        /// <param name="tipoMensaje"></param>Define si el mensaje es exitoso o de error
         public void Alerta(string msj, int tipoMensaje)
         {
             if (tipoMensaje == 1)
@@ -43,7 +48,9 @@ namespace Tangerine_Presentador.M9
             }
          }
  
-
+        /// <summary>
+        /// Método que asigna los valores al mensaje a mostrar
+        /// </summary>
         public void estadoActual()
         {
             switch(estado)
@@ -74,27 +81,27 @@ namespace Tangerine_Presentador.M9
                     {
                         vista.company += RecursoPresentadorM9.OpenTR;
 
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).NombreCompania + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).AcronimoCompania.ToString() + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).RifCompania + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.company += RecursoPresentadorM9.OpenTD + 
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.company += RecursoPresentadorM9.AbrirTD + 
                             ((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).FechaRegistroCompania.ToShortDateString() + 
-                            RecursoPresentadorM9.CloseTD;
+                            RecursoPresentadorM9.CerrarTD;
                         if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(1))
                         {
-                            vista.company += RecursoPresentadorM9.OpenTD + RecursoPresentadorM9.habilitado + 
-                                RecursoPresentadorM9.CloseTD;
+                            vista.company += RecursoPresentadorM9.AbrirTD + RecursoPresentadorM9.habilitado + 
+                                RecursoPresentadorM9.CerrarTD;
                         }
                         else if (((DominioTangerine.Entidades.M4.CompaniaM4)theCompany).StatusCompania.Equals(0))
                         {
-                            vista.company += RecursoPresentadorM9.OpenTD + RecursoPresentadorM9.inhabilitado + 
-                                RecursoPresentadorM9.CloseTD;
+                            vista.company += RecursoPresentadorM9.AbrirTD + RecursoPresentadorM9.inhabilitado + 
+                                RecursoPresentadorM9.CerrarTD;
                         }
 
                         //Boton para cargar las facturas asociadas a cada compañia
@@ -121,20 +128,16 @@ namespace Tangerine_Presentador.M9
 
 
         }
-    
-    public void CargarPagina ()
-        {
-            estado = vista.StatusAccion();
-            estadoActual();
-            LlenarCompanias();
+        /// <summary>
+        /// Método que se encarga de cargar la información de la página
+        /// </summary>
+        public void CargarPagina ()
+            {
+                estado = vista.StatusAccion();
+                estadoActual();
+                LlenarCompanias();
 
+            } 
 
-        }
-    
-    
-    
-    
-    
-    
     }
 }

@@ -24,7 +24,8 @@ namespace PruebasUnitarias.M9
         public Entidad elPago1;
         public Entidad factura;
         public Entidad compania;
-        // public List<Pago> listaPagos;
+        public IDAOPago daoPago;
+        public List<Entidad> listaPagos;
         #endregion
 
 
@@ -36,8 +37,8 @@ namespace PruebasUnitarias.M9
         [SetUp]
         public void init()
         {
-
-            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(1111111111, 12000, "EUR", "Deposito", 1);
+            daoPago = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPago();
+            elPago = DominioTangerine.Fabrica.FabricaEntidades.ObtenerPago_M9(123456, 12000, "EUR", "Deposito", 1);
             compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaVacia();
 
         }
@@ -49,24 +50,25 @@ namespace PruebasUnitarias.M9
         public void clean()
         {
             elPago = null;
-            elPago1 = null;
             factura = null;
             compania = null;
+            daoPago = null;
         }
 
         #endregion
         /// <summary>
-        /// Método para probar el Agregar de DAOPago
+        /// Método que permite verificar el agregar un pago en la base de datos
         /// </summary>
         [Test]
         public void TestAgregar()
         {
-            IDAOPago daoPago = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPago();
 
             answer = daoPago.Agregar(elPago);
+            listaPagos = daoPago.ConsultarTodos();
+            elPago = (Pago)listaPagos[listaPagos.Count - 1];
 
             Assert.IsTrue(answer);
-            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 1111111111);
+            Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).codPago == 123456);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).montoPago == 12000);
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).monedaPago == "EUR");
             Assert.IsTrue(((DominioTangerine.Entidades.M9.Pago)elPago).formaPago == "Deposito");
@@ -75,10 +77,13 @@ namespace PruebasUnitarias.M9
             answer = daoPago.EliminarPago(elPago);
             Assert.IsTrue(answer);
         }
+
+        /// <summary>
+        /// Método que permite verificar el cambio de status de una factura
+        /// </summary>
         [Test]
         public void TestCambiarStatus()
         {
-            IDAOPago daoPago = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPago();
 
             answer = daoPago.CargarStatus(1, 1);
 
@@ -90,8 +95,7 @@ namespace PruebasUnitarias.M9
         [Test]
         public void TestPagosCompania()
         {
-            IDAOPago daoPago = DatosTangerine.Fabrica.FabricaDAOSqlServer.CrearDAOPago();
-
+            
             ((DominioTangerine.Entidades.M4.CompaniaM4)compania).Id= 1;
            Assert.IsNotNull(daoPago.ConsultarPagosCompania(compania));
 
