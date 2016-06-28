@@ -153,13 +153,13 @@
     <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarCompania.aspx?idComp=</value>
   </data>
   <data name="OpenBotonHab" xml:space="preserve">
-    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=1&amp;idComp=</value>
+    <value>&lt;a title="Habilitar"  class="btn btn-success glyphicon glyphicon-ok" style="margin-left:3px;" href="../M4/ConsultarCompania.aspx?typeHab=1&amp;idComp=</value>
   </data>
   <data name="OpenBotonInfo" xml:space="preserve">
-    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px;"OnClick="MostrarInfo"href="InformacionCompania.aspx?idComp=</value>
+    <value>&lt;a title="Informacion" class="btn btn-default glyphicon glyphicon-info-sign" style="margin-left:3px;"OnClick="MostrarInfo"href="../M4/InformacionCompania.aspx?idComp=</value>
   </data>
   <data name="OpenBotonInhab" xml:space="preserve">
-    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="ConsultarCompania.aspx?typeHab=0&amp;idComp=</value>
+    <value>&lt;a title="Inhabilitar" class="btn btn-danger glyphicon glyphicon-remove" style="margin-left:3px;" href="../M4/ConsultarCompania.aspx?typeHab=0&amp;idComp=</value>
   </data>
   <data name="Acronimo" xml:space="preserve">
     <value>Acrónimo:</value>

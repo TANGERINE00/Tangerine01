@@ -61,11 +61,65 @@ namespace Tangerine_Presentador.M1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tangerine - Cambio de contraseña.
+        /// </summary>
+        internal static string CambioContraseña {
+            get {
+                return ResourceManager.GetString("CambioContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../M1/Dashboard.aspx.
+        /// </summary>
+        internal static string Dashboard {
+            get {
+                return ResourceManager.GetString("Dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datos incorrectos, comuniquese con el administrador del sistema..
+        /// </summary>
+        internal static string DatosIncorrectos {
+            get {
+                return ResourceManager.GetString("DatosIncorrectos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error conexion Base de datos.
+        /// </summary>
+        internal static string ErrorBD {
+            get {
+                return ResourceManager.GetString("ErrorBD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error Inesperado - Intente nuevamente.
+        /// </summary>
+        internal static string ErrorInesperado {
+            get {
+                return ResourceManager.GetString("ErrorInesperado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to dd/MM/yyyy.
         /// </summary>
         internal static string FormatoFecha {
             get {
                 return ResourceManager.GetString("FormatoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datos Incorrectos.
+        /// </summary>
+        internal static string Incorrecto {
+            get {
+                return ResourceManager.GetString("Incorrecto", resourceCulture);
             }
         }
         
@@ -160,6 +214,15 @@ namespace Tangerine_Presentador.M1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ../M1/PaginaError.aspx.
+        /// </summary>
+        internal static string PaginaError {
+            get {
+                return ResourceManager.GetString("PaginaError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&apos;container-fluid col-md-6&apos;&gt;&lt;div class=&apos;box box-default&apos;&gt;&lt;div class=&apos;container-fluid&apos;&gt;&lt;br&gt;.
         /// </summary>
         internal static string PanelProyectoAbrir {
@@ -174,6 +237,24 @@ namespace Tangerine_Presentador.M1 {
         internal static string PanelProyectoCerrar {
             get {
                 return ResourceManager.GetString("PanelProyectoCerrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Prueba {
+            get {
+                return ResourceManager.GetString("Prueba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rol.
+        /// </summary>
+        internal static string Rol {
+            get {
+                return ResourceManager.GetString("Rol", resourceCulture);
             }
         }
         
@@ -201,6 +282,24 @@ namespace Tangerine_Presentador.M1 {
         internal static string RolProgramador {
             get {
                 return ResourceManager.GetString("RolProgramador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UserID.
+        /// </summary>
+        internal static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario invalido.
+        /// </summary>
+        internal static string UsuarioInvalido {
+            get {
+                return ResourceManager.GetString("UsuarioInvalido", resourceCulture);
             }
         }
     }
