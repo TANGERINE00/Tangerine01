@@ -355,7 +355,7 @@ namespace Tangerine_Presentador.M7
                 ((DominioTangerine.Entidades.M7.Propuesta)_propuesta).Id = int.Parse(vista.idPropuesta.Text);
                 ((DominioTangerine.Entidades.M7.Propuesta)_propuesta).Nombre = vista.inputPropuesta.Text;
 
-                Entidad _contacto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
+                //Entidad _contacto = DominioTangerine.Fabrica.FabricaEntidades.ObtenerContacto();
 
                 string _encargadoNombre;
                 foreach (ListItem item in vista.imputEncargado.Items)
@@ -365,7 +365,13 @@ namespace Tangerine_Presentador.M7
                         _encargadoNombre = item.Text.ToString();
                         Char delimiter = '-';
                         String[] substrings = _encargadoNombre.Split(delimiter);
-                        ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Idresponsable = int.Parse(substrings[0]);
+
+                        List<Entidad> _contactos = new List<Entidad>();
+                        Entidad _contacto = DominioTangerine.Fabrica.FabricaEntidades.crearContactoVacio();
+
+                        ((DominioTangerine.Entidades.M5.ContactoM5)_contacto).Id = int.Parse(substrings[0]);
+                        _contactos.Add(_contacto);
+                        ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).set_contactos(_contactos);
                     }
                 }
 
@@ -376,11 +382,11 @@ namespace Tangerine_Presentador.M7
                 }
                 else
                 {
-                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.inputEstatus.Text;
+                    ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = vista.textInputPorcentaje.Text;
                 }
 
 
-                if (vista.realizacion.Text == "100")
+                if (vista.textInputPorcentaje.Text == "100")
                 {
                     ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Estatus = "Completado";
                 }
