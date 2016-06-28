@@ -376,7 +376,7 @@ namespace Tangerine_Presentador.M7
                 }
 
 
-                if (vista.inputEstatus.Text == "Completado")
+                if (vista.inputEstatus.SelectedItem.ToString() == "Completado")
                 {
                     ((DominioTangerine.Entidades.M7.Proyecto)_proyecto).Realizacion = "100";
                 }

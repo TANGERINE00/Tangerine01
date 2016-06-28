@@ -18,6 +18,10 @@ namespace Tangerine_Presentador.M7
             this.vista = vista;
         }
 
+         /// <summary>
+         /// Metodo para llamar a los comandos necesarios para carga toda la informacion del proyecto seleccionado
+         /// </summary>
+         /// <param name="id">Id del proyecto seleccionado </param>
          public void CargarInformacionProyecto(int id)
          {
 
@@ -63,6 +67,11 @@ namespace Tangerine_Presentador.M7
               }
          }
 
+         /// <summary>
+         /// Metodo para llenar combobox del personal activo
+         /// </summary>
+         /// <param name="programadores">Lista de entidad empleado con todos los programadores</param>
+         /// <param name="actuales">Lista de entidad empleado con los empleados activos</param></param>
          private void llenarComboPersonal(List<Entidad> programadores, List<Entidad> actuales)
          {
              List<Entidad> noAsignados = new List<Entidad>();
@@ -94,6 +103,10 @@ namespace Tangerine_Presentador.M7
              vista.inputPersonal.DataBind();
          }
 
+         /// <summary>
+         /// Metodo para llenar combobox con los contactos del proyecto
+         /// </summary>
+         /// <param name="contactos">Lista de entidad contacto con todos los contactos existente para el proyecto</param>
         private void llenarCombo(List<Entidad> contactos)
         {
             Dictionary<int, string> listaContactos = new Dictionary<int, string>();
