@@ -86,6 +86,7 @@ namespace PruebasUnitarias.M10
             ElRol = (RolM2)FabricaEntidades.crearRolNombre("Administrador");
             ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma@gmail.com", "leojma", new DateTime(2015, 2, 10),
                                                                                       "Activo", ((RolM2)ElRol), 1);
+
             ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("leojma@gmail.com", "leojma");
             //ElUsuarioInactivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("lenon@gmail.com", "lenito22");
 
