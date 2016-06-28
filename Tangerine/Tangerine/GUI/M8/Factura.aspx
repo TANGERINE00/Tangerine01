@@ -31,7 +31,7 @@
         <!-- left column -->
         <div id="Div1" class="col-md-6">
             <!-- general form elements -->
-            <div id="Div2" class="box box-primary" style="height:335px !important;">
+            <div id="Div2" class="box box-primary" style="height:350px !important;">
 
 
 
