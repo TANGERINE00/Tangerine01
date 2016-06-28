@@ -16,11 +16,36 @@ namespace Tangerine.GUI.M6
     {
         PresentadorInformacionPropuesta presentadorInformacion;
 
+        /// <summary>
+        /// Constructor de la Vista
+        /// </summary>
         public InformacionPropuesta()
         {
             this.presentadorInformacion = new PresentadorInformacionPropuesta(this);
         }
 
+        /// <summary>
+        /// Carga inicial de la pagina.
+        /// </summary>
+        protected void Page_Load(object sender, EventArgs e)
+        {
+                string id = Request.QueryString["id"];
+
+                if (!IsPostBack)
+                {
+                    try
+                    {
+                        presentadorInformacion.consultarPropuesta(id);
+                    }
+                    catch (Exception)
+                    {
+                        Response.Redirect("../M6/ConsultarPropuesta.aspx");
+                    }
+
+                }
+        }
+
+        #region Contrato
         public Label Codigo
         {
             get
@@ -116,23 +141,6 @@ namespace Tangerine.GUI.M6
                 acuerdopago = value;
             }
         }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-                string id = Request.QueryString["id"];
-
-                if (!IsPostBack)
-                {
-                    try
-                    {
-                        presentadorInformacion.consultarPropuesta(id);
-                    }
-                    catch (Exception)
-                    {
-                        Response.Redirect("../M6/ConsultarPropuesta.aspx");
-                    }
-
-                }
-        }
+        #endregion
     }
 }
