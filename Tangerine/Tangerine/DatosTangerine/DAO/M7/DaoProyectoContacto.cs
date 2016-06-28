@@ -16,7 +16,12 @@ namespace DatosTangerine.DAO.M7
     public class DaoProyectoContacto : DAOGeneral, IDaoProyectoContacto
     {
         #region IDAO Proyecto Contacto
-
+        /// <summary>
+        /// Método para eliminar los contactos de un proyecto.
+        /// </summary>
+        /// <param name="proyecto">Proyecto del cual serán eliminados
+        /// los contactos asignados.</param>
+        /// <returns>True si fue exitoso, false en caso contrario.</returns>
         public bool ElimminarContactos(Entidad proyecto)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -63,7 +68,11 @@ namespace DatosTangerine.DAO.M7
             return true;
         }
 
- 
+        /// <summary>
+        /// Método que consulta los contactos de una compania
+        /// </summary>
+        /// <param name="contacto"></param>
+        /// <returns>Lista de contactos pertenecientes a una compañia</returns>
         public List<Entidad> ContactCompany(Entidad contacto) 
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -298,6 +307,12 @@ namespace DatosTangerine.DAO.M7
 
         #endregion
 
+        /// <summary>
+        /// Método general heradado de IDao
+        /// para consultar todos los contactos.
+        /// No implementado en este modulo.
+        /// </summary>
+        /// <returns></returns>
         public List<Entidad> ConsultarTodos()
         {
             throw new NotImplementedException();
