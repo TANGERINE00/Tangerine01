@@ -49,7 +49,8 @@ namespace Tangerine.GUI.M6
             try
             {
                 presenter.ModificarRequerimiento();
-                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + 
+                    Request.QueryString.Get("idPro") + "&idReq=0", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)
@@ -59,7 +60,8 @@ namespace Tangerine.GUI.M6
             }
             catch (Exception)
             {
-                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("idPro") + "&idReq=0", false);
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + 
+                    Request.QueryString.Get("idPro") + "&idReq=0", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
         }

@@ -36,6 +36,18 @@ namespace Tangerine.GUI.M7
             }
         }
 
+        public DropDownList InputGerente
+        {
+            get
+            {
+                return inputGerente;
+            }
+            set
+            {
+               inputGerente = value;
+            }
+        }
+
         public Label NombreProyecto
         {
             get
@@ -161,5 +173,6 @@ namespace Tangerine.GUI.M7
                 Response.Redirect("ConsultaProyecto.aspx");
             }
         }
+
     }
 }

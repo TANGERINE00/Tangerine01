@@ -9,6 +9,7 @@ using Tangerine_Contratos.M7;
 using Tangerine_Presentador.M7;
 using DominioTangerine.Entidades.M7;
 using System.Web.UI.HtmlControls;
+using ExcepcionesTangerine;
 
 namespace Tangerine.GUI.M7
 {
@@ -253,6 +254,7 @@ namespace Tangerine.GUI.M7
             }
             catch (ExcepcionesTangerine.ExceptionsTangerine ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 Server.Transfer("ConsultaProyecto.aspx?estado=2", true);
             }
         }
