@@ -21,7 +21,7 @@
             <hr>
             <div class='_1'>LO SENTIMOS</div>
             <div class='_2'>LA PAGINA NO PUDO SER SOLICITADA</div>
-            <a class='btn'runat="server"  href='Login.aspx'>Volver al Login </a>
+            <a class='btn' href='Login.aspx'>Volver al Login </a>
 
         </div>
 </body>
