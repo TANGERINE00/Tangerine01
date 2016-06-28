@@ -67,5 +67,11 @@ namespace Tangerine.GUI.M1
             presentador.RecuperarContraseña();
 
         }
+
+        protected void VolverBtn(object sender, EventArgs e)
+        {
+            presentador.Regresar();
+
+        }
     }
 }

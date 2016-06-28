@@ -9,6 +9,7 @@ using LogicaTangerine.M1;
 using System.Security.Cryptography;
 using LogicaTangerine.Fabrica;
 using Tangerine_Contratos.M1;
+using System.Web;
 
 namespace Tangerine_Presentador.M1
 {
@@ -140,6 +141,11 @@ namespace Tangerine_Presentador.M1
             }
 
             return sb.ToString();
+        }
+
+        public void Regresar ()
+        {
+            HttpContext.Current.Response.Redirect("Login.aspx");
         }
 
 

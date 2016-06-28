@@ -66,7 +66,7 @@ namespace PruebasUnitarias.M9
         /// <summary>
         /// Método para probar el Comando de Agregar un Pago en la base de datos
         /// </summary>
-        [Test]
+       // [Test]
         /*public void TestComandoAgregarPago()
         {
 
