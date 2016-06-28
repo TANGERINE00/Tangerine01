@@ -54,6 +54,10 @@ namespace Tangerine.GUI.M8
         {
             set { this.textTipoMoneda_M8.Text = value; }
         }
+        public string textIva
+        {
+            set { this.textIva_M8.Text = value; }
+        }
         public string alertaClase
         {
             set { alert.Attributes[ResourceGUIM8.alertClase] = value; }
@@ -92,7 +96,7 @@ namespace Tangerine.GUI.M8
                 textNumeroFactura = Request.QueryString[ResourceGUIM8.idFac]; ;
                 if (!IsPostBack)
                 {
-                    _presentador.llenarModificar();
+                    _presentador.llenarFactura();
                 }
             }
             catch

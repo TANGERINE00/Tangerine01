@@ -529,6 +529,15 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IVA :.
+        /// </summary>
+        internal static string Iva {
+            get {
+                return ResourceManager.GetString("Iva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
