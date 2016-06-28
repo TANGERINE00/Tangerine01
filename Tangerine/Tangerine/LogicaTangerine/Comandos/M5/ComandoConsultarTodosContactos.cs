@@ -32,10 +32,6 @@ namespace LogicaTangerine.Comandos.M5
 
                 return listaContactos;
             }
-            catch ( ConsultarContactoException ex )
-            {
-                throw ex;
-            }
             catch ( BaseDeDatosContactoException ex )
             {
                 throw ex;
