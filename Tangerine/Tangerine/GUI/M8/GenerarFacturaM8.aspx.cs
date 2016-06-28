@@ -120,7 +120,7 @@ namespace Tangerine.GUI.M8
         protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
             _presentador.GenerarFactura();
-            Response.Redirect(ResourceGUIM8.volverModificado);
+            Response.Redirect(ResourceGUIM8.Factura + _presentador.UltimaFactura().ToString());
         }
     }
 }
