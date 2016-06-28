@@ -754,7 +754,7 @@ namespace Tangerine_Presentador.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Users\Istvan\Documents\GitHub\Tangerine01\Tangerine\Tangerine\Facturas\.
+        ///   Looks up a localized string similar to C:\Tangerine\web\m8\.
         /// </summary>
         internal static string rutaFacturas {
             get {

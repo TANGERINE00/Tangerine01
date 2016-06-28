@@ -96,5 +96,30 @@ namespace Tangerine_Presentador.M8
             }
         }
 
+        /// <summary>
+        /// Método para llenar los generar la factura 
+        /// </summary>
+        public int UltimaFactura()
+        {
+            try
+            {
+                Comando<List<Entidad>> _comandoList;
+                Facturacion _laFactura;
+                List<Entidad> _listaFactura;
+
+                _comandoList = FabricaComandos.CrearConsultarTodosFactura();
+                _listaFactura = _comandoList.Ejecutar();
+                _laFactura = (Facturacion)_listaFactura[_listaFactura.Count - 1];
+                return _laFactura.Id;
+            }
+            catch (ExcepcionesTangerine.ExceptionsTangerine ex)
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje + ex.Excepcion.InnerException.Message
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+                return 0;
+            }
+        }
     }
 }

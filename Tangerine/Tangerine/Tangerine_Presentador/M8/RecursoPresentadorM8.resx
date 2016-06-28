@@ -349,7 +349,7 @@
     <value>La factura ha sido anulada.</value>
   </data>
   <data name="rutaFacturas" xml:space="preserve">
-    <value>C:\Users\Istvan\Documents\GitHub\Tangerine01\Tangerine\Tangerine\Facturas\</value>
+    <value>C:\Tangerine\web\m8\</value>
   </data>
   <data name="codigoCorreo" xml:space="preserve">
     <value>3</value>

@@ -34,7 +34,7 @@
                 <br /><br />
                 <!-- Etiqueta -->
                 <div class="form-group ">
-                    <label for="nombre">Nombe</label> 
+                    <label for="nombre">Nombre</label> 
                     <label for="Requerido" style="color: red;">*</label>
                     <input type="text" runat="server" 
                         pattern="^[a-zA-Z'.\s]{1,40}$"

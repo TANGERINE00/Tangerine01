@@ -349,7 +349,7 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ~/Facturas.
+        ///   Looks up a localized string similar to /m8.
         /// </summary>
         internal static string path {
             get {
