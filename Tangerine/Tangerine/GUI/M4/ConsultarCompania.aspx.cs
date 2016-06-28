@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using System.Windows;
 using DominioTangerine;
 using LogicaTangerine;
 using Tangerine_Contratos.M4;
+using System.Web.Security.AntiXss;
 
 namespace Tangerine.GUI.M4
 {
@@ -59,11 +62,13 @@ namespace Tangerine.GUI.M4
             {
                 try
                 {
-                    if(Presentador.BotonHabilitarInhabilitar(int.Parse(Request.QueryString["typeHab"]), int.Parse(Request.QueryString["idComp"])))
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('"+ msjError +"')", true); 
+                    if (Presentador.BotonHabilitarInhabilitar(int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["typeHab"], false)), int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idComp"], false))))
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alerts", "javascript:alert('" + msjError + "')", true);
                 }
-                catch 
-                { 
+                catch (Exception ex)
+                {
+                    if(!ex.Message.Equals("Value cannot be null.\r\nParameter name: String"))
+                        Response.Redirect("../M1/PaginaError.aspx", false);
                 }
                 try
                 {
