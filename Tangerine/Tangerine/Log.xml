@@ -33832,7 +33832,727 @@ Error Number:-1,State:0,Class:20
 2016-06-27 20:53:56,712 INFO  DAORol - *******************************************************
 2016-06-27 20:53:56,712 INFO  DAORol - Clase: DAORol
 2016-06-27 20:53:56,712 INFO  DAORol - Mensaje: Salida del Método
-2016-06-27 20:53:56,712 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:56,712 INFO  DAORol - Metodo: ObtenerRolUsuari
+2016-06-27 22:22:47,230 INFO  DAORol - *******************************************************
+2016-06-27 22:22:47,236 INFO  DAORol - Clase: DAORol
+2016-06-27 22:22:47,236 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:22:47,236 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:22:47,245 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:22:47,245 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:22:47,245 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:22:47,245 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:22:47,355 INFO  DAORol - *******************************************************
+2016-06-27 22:22:47,355 INFO  DAORol - Clase: DAORol
+2016-06-27 22:22:47,355 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:22:47,355 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:22:47,363 INFO  DAORol - *******************************************************
+2016-06-27 22:22:47,363 INFO  DAORol - Clase: DAORol
+2016-06-27 22:22:47,363 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:22:47,363 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:22:50,770 INFO  DAORol - *******************************************************
+2016-06-27 22:22:50,770 INFO  DAORol - Clase: DAORol
+2016-06-27 22:22:50,770 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:22:50,770 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:22:50,774 INFO  DAORol - *******************************************************
+2016-06-27 22:22:50,774 INFO  DAORol - Clase: DAORol
+2016-06-27 22:22:50,774 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:22:50,774 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:23:05,192 INFO  DAORol - *******************************************************
+2016-06-27 22:23:05,192 INFO  DAORol - Clase: DAORol
+2016-06-27 22:23:05,192 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:23:05,192 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:23:05,207 INFO  DAORol - *******************************************************
+2016-06-27 22:23:05,207 INFO  DAORol - Clase: DAORol
+2016-06-27 22:23:05,207 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:23:05,207 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:23:15,293 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:15,293 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:15,293 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:23:15,293 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:23:15,305 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:15,305 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:15,305 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:23:15,305 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:23:15,314 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:15,314 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:15,314 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:23:15,314 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:23:15,320 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:15,320 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:15,320 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:23:15,320 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:23:15,325 INFO  DAOContacto - *******************************************************
+2016-06-27 22:23:15,325 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:23:15,325 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:23:15,325 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:23:15,335 INFO  DAORol - *******************************************************
+2016-06-27 22:23:15,335 INFO  DAORol - Clase: DAORol
+2016-06-27 22:23:15,335 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:23:15,335 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:23:15,340 INFO  DAORol - *******************************************************
+2016-06-27 22:23:15,340 INFO  DAORol - Clase: DAORol
+2016-06-27 22:23:15,340 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:23:15,340 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:23:36,998 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:36,998 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:36,998 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:23:36,998 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:23:37,012 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:37,013 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:37,013 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:23:37,013 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:23:37,018 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:37,018 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:37,018 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:23:37,018 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:23:37,024 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:23:37,024 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:23:37,024 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:23:37,024 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:23:37,028 INFO  DAOContacto - *******************************************************
+2016-06-27 22:23:37,028 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:23:37,028 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:23:37,028 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:23:37,041 INFO  DAORol - *******************************************************
+2016-06-27 22:23:37,041 INFO  DAORol - Clase: DAORol
+2016-06-27 22:23:37,041 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:23:37,041 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:23:37,050 INFO  DAORol - *******************************************************
+2016-06-27 22:23:37,050 INFO  DAORol - Clase: DAORol
+2016-06-27 22:23:37,050 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:23:37,050 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:27:03,980 INFO  DAORol - *******************************************************
+2016-06-27 22:27:03,985 INFO  DAORol - Clase: DAORol
+2016-06-27 22:27:03,985 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:27:03,985 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:27:03,992 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:27:03,992 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:27:03,992 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:27:03,992 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:27:04,508 INFO  DAORol - *******************************************************
+2016-06-27 22:27:04,508 INFO  DAORol - Clase: DAORol
+2016-06-27 22:27:04,508 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:27:04,508 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:27:04,516 INFO  DAORol - *******************************************************
+2016-06-27 22:27:04,516 INFO  DAORol - Clase: DAORol
+2016-06-27 22:27:04,516 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:27:04,516 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:27:14,645 INFO  DAORol - *******************************************************
+2016-06-27 22:27:14,646 INFO  DAORol - Clase: DAORol
+2016-06-27 22:27:14,646 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:27:14,646 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:27:14,651 INFO  DAORol - *******************************************************
+2016-06-27 22:27:14,651 INFO  DAORol - Clase: DAORol
+2016-06-27 22:27:14,651 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:27:14,651 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:28:27,783 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:28:27,783 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:28:27,783 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:28:27,783 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:28:27,816 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:28:27,816 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:28:27,816 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:28:27,816 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:28:27,824 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:28:27,824 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:28:27,824 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:28:27,824 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:28:27,833 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:28:27,833 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:28:27,833 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:28:27,833 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:28:27,840 INFO  DAOContacto - *******************************************************
+2016-06-27 22:28:27,840 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:28:27,840 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:28:27,840 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:28:27,856 INFO  DAORol - *******************************************************
+2016-06-27 22:28:27,856 INFO  DAORol - Clase: DAORol
+2016-06-27 22:28:27,856 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:28:27,856 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:28:27,861 INFO  DAORol - *******************************************************
+2016-06-27 22:28:27,861 INFO  DAORol - Clase: DAORol
+2016-06-27 22:28:27,861 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:28:27,861 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:50,597 INFO  DAORol - *******************************************************
+2016-06-27 22:32:50,602 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:50,602 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:50,602 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:50,608 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:32:50,608 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:32:50,608 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:32:50,608 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:32:50,693 INFO  DAORol - *******************************************************
+2016-06-27 22:32:50,693 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:50,693 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:50,693 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:50,701 INFO  DAORol - *******************************************************
+2016-06-27 22:32:50,702 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:50,702 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:50,702 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:53,522 INFO  DAORol - *******************************************************
+2016-06-27 22:32:53,522 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:53,522 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:53,522 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:53,528 INFO  DAORol - *******************************************************
+2016-06-27 22:32:53,529 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:53,529 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:53,529 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:56,034 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:56,035 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:56,035 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:32:56,035 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:32:56,044 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:56,044 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:56,044 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:32:56,044 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:32:56,052 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:56,052 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:56,052 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:32:56,052 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:32:56,058 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:56,058 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:56,058 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:32:56,058 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:32:56,068 INFO  DAOContacto - *******************************************************
+2016-06-27 22:32:56,068 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:32:56,068 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:32:56,068 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:32:56,131 INFO  DAORol - *******************************************************
+2016-06-27 22:32:56,131 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:56,131 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:56,131 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:56,137 INFO  DAORol - *******************************************************
+2016-06-27 22:32:56,137 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:56,137 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:56,137 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:58,660 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:58,660 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:58,660 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:32:58,660 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:32:58,672 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:58,672 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:58,672 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:32:58,672 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:32:58,677 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:58,677 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:58,677 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:32:58,677 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:32:58,693 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:32:58,693 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:32:58,693 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:32:58,693 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:32:58,700 INFO  DAOContacto - *******************************************************
+2016-06-27 22:32:58,700 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:32:58,700 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:32:58,700 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:32:58,768 INFO  DAORol - *******************************************************
+2016-06-27 22:32:58,768 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:58,768 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:58,768 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:32:58,776 INFO  DAORol - *******************************************************
+2016-06-27 22:32:58,776 INFO  DAORol - Clase: DAORol
+2016-06-27 22:32:58,776 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:32:58,776 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:33:01,360 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:01,360 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:01,360 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:33:01,360 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:33:01,381 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:01,381 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:01,381 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:33:01,381 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:33:01,386 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:01,386 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:01,386 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:33:01,387 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:33:01,392 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:01,392 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:01,392 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:33:01,392 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:33:01,456 INFO  DAORol - *******************************************************
+2016-06-27 22:33:01,456 INFO  DAORol - Clase: DAORol
+2016-06-27 22:33:01,456 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:33:01,456 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:33:01,462 INFO  DAORol - *******************************************************
+2016-06-27 22:33:01,462 INFO  DAORol - Clase: DAORol
+2016-06-27 22:33:01,462 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:33:01,462 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:33:22,525 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:22,525 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:22,525 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:33:22,525 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:33:22,534 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:22,534 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:22,534 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:33:22,534 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:33:22,540 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:22,540 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:22,540 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:33:22,540 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:33:22,545 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:33:22,545 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:33:22,545 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:33:22,545 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:33:31,313 INFO  DAOContacto - *******************************************************
+2016-06-27 22:33:31,313 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:33:31,313 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:33:31,313 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:34:11,093 INFO  DAORol - *******************************************************
+2016-06-27 22:34:11,094 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:11,094 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:11,094 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:11,104 INFO  DAORol - *******************************************************
+2016-06-27 22:34:11,104 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:11,104 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:11,104 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:49,036 INFO  DAORol - *******************************************************
+2016-06-27 22:34:49,043 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:49,043 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:49,043 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:49,052 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:34:49,052 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:34:49,052 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:34:49,053 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:34:49,146 INFO  DAORol - *******************************************************
+2016-06-27 22:34:49,147 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:49,147 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:49,147 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:49,152 INFO  DAORol - *******************************************************
+2016-06-27 22:34:49,152 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:49,152 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:49,152 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:52,137 INFO  DAORol - *******************************************************
+2016-06-27 22:34:52,137 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:52,137 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:52,137 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:52,142 INFO  DAORol - *******************************************************
+2016-06-27 22:34:52,142 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:52,142 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:52,142 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:56,850 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:34:56,850 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:34:56,850 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:34:56,850 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:34:56,862 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:34:56,862 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:34:56,862 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:34:56,862 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:34:56,872 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:34:56,873 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:34:56,873 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:34:56,873 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:34:56,878 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:34:56,878 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:34:56,878 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:34:56,878 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:34:58,379 INFO  DAOContacto - *******************************************************
+2016-06-27 22:34:58,379 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:34:58,379 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:34:58,379 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:34:59,138 INFO  DAORol - *******************************************************
+2016-06-27 22:34:59,138 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:59,138 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:59,138 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:34:59,146 INFO  DAORol - *******************************************************
+2016-06-27 22:34:59,146 INFO  DAORol - Clase: DAORol
+2016-06-27 22:34:59,146 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:34:59,146 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:00,082 INFO  DAORol - *******************************************************
+2016-06-27 22:36:00,089 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:00,090 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:00,090 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:00,097 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:36:00,097 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:36:00,097 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:36:00,097 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:36:00,179 INFO  DAORol - *******************************************************
+2016-06-27 22:36:00,179 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:00,179 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:00,179 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:00,186 INFO  DAORol - *******************************************************
+2016-06-27 22:36:00,186 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:00,186 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:00,186 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:03,520 INFO  DAORol - *******************************************************
+2016-06-27 22:36:03,521 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:03,521 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:03,521 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:03,525 INFO  DAORol - *******************************************************
+2016-06-27 22:36:03,525 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:03,525 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:03,525 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:08,545 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:08,545 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:08,545 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:36:08,545 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:36:08,558 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:08,558 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:08,558 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:36:08,558 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:36:08,567 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:08,567 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:08,567 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:36:08,567 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:36:08,575 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:08,575 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:08,575 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:36:08,575 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:36:09,719 INFO  DAOContacto - *******************************************************
+2016-06-27 22:36:09,719 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:36:09,719 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:36:09,719 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:36:10,315 INFO  DAORol - *******************************************************
+2016-06-27 22:36:10,315 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:10,315 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:10,315 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:10,320 INFO  DAORol - *******************************************************
+2016-06-27 22:36:10,320 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:10,320 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:10,320 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:23,972 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:23,972 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:23,972 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:36:23,972 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:36:23,981 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:23,982 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:23,982 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:36:23,982 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:36:23,990 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:23,990 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:23,990 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:36:23,990 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:36:23,995 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:36:23,995 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:36:23,995 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:36:23,995 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:36:33,266 INFO  DAOContacto - *******************************************************
+2016-06-27 22:36:33,266 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:36:33,266 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:36:33,266 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:36:34,041 INFO  DAORol - *******************************************************
+2016-06-27 22:36:34,041 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:34,041 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:34,041 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:36:34,048 INFO  DAORol - *******************************************************
+2016-06-27 22:36:34,048 INFO  DAORol - Clase: DAORol
+2016-06-27 22:36:34,048 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:36:34,048 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:08,186 INFO  DAORol - *******************************************************
+2016-06-27 22:37:08,191 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:08,191 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:08,191 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:08,198 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:37:08,198 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:37:08,198 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:37:08,198 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:37:08,280 INFO  DAORol - *******************************************************
+2016-06-27 22:37:08,280 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:08,280 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:08,280 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:08,289 INFO  DAORol - *******************************************************
+2016-06-27 22:37:08,289 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:08,289 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:08,289 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:10,576 INFO  DAORol - *******************************************************
+2016-06-27 22:37:10,577 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:10,577 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:10,577 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:10,582 INFO  DAORol - *******************************************************
+2016-06-27 22:37:10,582 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:10,582 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:10,582 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:15,234 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:37:15,234 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:37:15,234 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:37:15,234 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:37:15,244 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:37:15,244 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:37:15,244 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:37:15,244 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:37:15,253 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:37:15,253 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:37:15,253 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:37:15,253 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:37:15,260 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:37:15,260 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:37:15,260 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:37:15,260 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:37:17,997 INFO  DAOContacto - *******************************************************
+2016-06-27 22:37:17,997 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:37:17,997 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:37:17,997 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:37:18,697 INFO  DAORol - *******************************************************
+2016-06-27 22:37:18,697 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:18,697 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:18,697 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:37:18,705 INFO  DAORol - *******************************************************
+2016-06-27 22:37:18,706 INFO  DAORol - Clase: DAORol
+2016-06-27 22:37:18,706 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:37:18,706 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:38:55,511 INFO  DAORol - *******************************************************
+2016-06-27 22:38:55,517 INFO  DAORol - Clase: DAORol
+2016-06-27 22:38:55,517 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:38:55,517 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:38:55,524 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:38:55,524 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:38:55,524 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:38:55,524 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:38:55,610 INFO  DAORol - *******************************************************
+2016-06-27 22:38:55,610 INFO  DAORol - Clase: DAORol
+2016-06-27 22:38:55,610 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:38:55,610 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:38:55,618 INFO  DAORol - *******************************************************
+2016-06-27 22:38:55,618 INFO  DAORol - Clase: DAORol
+2016-06-27 22:38:55,618 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:38:55,618 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:38:58,057 INFO  DAORol - *******************************************************
+2016-06-27 22:38:58,057 INFO  DAORol - Clase: DAORol
+2016-06-27 22:38:58,057 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:38:58,057 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:38:58,075 INFO  DAORol - *******************************************************
+2016-06-27 22:38:58,075 INFO  DAORol - Clase: DAORol
+2016-06-27 22:38:58,075 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:38:58,075 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:02,824 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:02,824 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:02,824 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:39:02,824 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:39:02,838 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:02,838 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:02,838 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:39:02,838 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:39:02,846 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:02,846 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:02,846 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:39:02,846 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:39:02,854 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:02,854 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:02,854 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:39:02,854 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:39:03,869 INFO  DAOContacto - *******************************************************
+2016-06-27 22:39:03,869 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:39:03,869 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:39:03,869 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:39:05,259 INFO  DAORol - *******************************************************
+2016-06-27 22:39:05,259 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:05,259 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:05,259 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:05,266 INFO  DAORol - *******************************************************
+2016-06-27 22:39:05,266 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:05,266 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:05,266 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:44,518 INFO  DAORol - *******************************************************
+2016-06-27 22:39:44,523 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:44,523 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:44,523 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:44,531 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:39:44,531 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:39:44,531 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:39:44,531 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:39:44,616 INFO  DAORol - *******************************************************
+2016-06-27 22:39:44,616 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:44,616 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:44,616 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:44,624 INFO  DAORol - *******************************************************
+2016-06-27 22:39:44,624 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:44,624 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:44,624 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:47,279 INFO  DAORol - *******************************************************
+2016-06-27 22:39:47,279 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:47,279 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:47,279 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:47,284 INFO  DAORol - *******************************************************
+2016-06-27 22:39:47,284 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:47,284 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:47,284 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:52,995 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:52,995 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:52,995 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:39:52,995 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:39:53,008 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:53,008 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:53,008 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:39:53,008 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:39:53,019 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:53,019 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:53,019 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:39:53,019 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:39:53,024 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:39:53,024 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:39:53,024 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:39:53,024 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:39:54,188 INFO  DAOContacto - *******************************************************
+2016-06-27 22:39:54,188 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:39:54,188 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:39:54,188 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:39:54,649 INFO  DAORol - *******************************************************
+2016-06-27 22:39:54,649 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:54,649 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:54,649 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:39:54,657 INFO  DAORol - *******************************************************
+2016-06-27 22:39:54,657 INFO  DAORol - Clase: DAORol
+2016-06-27 22:39:54,657 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:39:54,657 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:38,542 INFO  DAORol - *******************************************************
+2016-06-27 22:40:38,547 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:38,547 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:38,547 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:38,554 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:40:38,554 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:40:38,554 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:40:38,554 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:40:38,639 INFO  DAORol - *******************************************************
+2016-06-27 22:40:38,639 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:38,639 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:38,639 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:38,644 INFO  DAORol - *******************************************************
+2016-06-27 22:40:38,644 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:38,644 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:38,644 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:42,197 INFO  DAORol - *******************************************************
+2016-06-27 22:40:42,198 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:42,198 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:42,198 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:42,204 INFO  DAORol - *******************************************************
+2016-06-27 22:40:42,204 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:42,204 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:42,204 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:48,167 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:40:48,167 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:40:48,167 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:40:48,167 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:40:48,178 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:40:48,178 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:40:48,178 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:40:48,178 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:40:48,188 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:40:48,188 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:40:48,188 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:40:48,189 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:40:48,194 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:40:48,194 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:40:48,194 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:40:48,194 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:40:49,153 INFO  DAOContacto - *******************************************************
+2016-06-27 22:40:49,153 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:40:49,153 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:40:49,153 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:40:53,874 INFO  DAORol - *******************************************************
+2016-06-27 22:40:53,874 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:53,874 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:53,874 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:40:53,880 INFO  DAORol - *******************************************************
+2016-06-27 22:40:53,880 INFO  DAORol - Clase: DAORol
+2016-06-27 22:40:53,880 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:40:53,880 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:23,634 INFO  DAORol - *******************************************************
+2016-06-27 22:41:23,638 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:23,638 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:23,638 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:23,650 INFO  DAOUsuario - *******************************************************
+2016-06-27 22:41:23,650 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 22:41:23,651 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 22:41:23,651 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 22:41:23,737 INFO  DAORol - *******************************************************
+2016-06-27 22:41:23,737 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:23,737 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:23,737 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:23,745 INFO  DAORol - *******************************************************
+2016-06-27 22:41:23,745 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:23,745 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:23,745 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:26,564 INFO  DAORol - *******************************************************
+2016-06-27 22:41:26,564 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:26,564 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:26,564 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:26,570 INFO  DAORol - *******************************************************
+2016-06-27 22:41:26,570 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:26,570 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:26,570 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:36,644 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:36,644 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:36,644 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:41:36,644 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:41:36,656 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:36,656 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:36,656 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:41:36,656 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:41:36,663 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:36,663 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:36,663 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:41:36,663 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:41:36,670 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:36,670 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:36,670 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:41:36,670 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:41:36,675 INFO  DAOContacto - *******************************************************
+2016-06-27 22:41:36,676 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:41:36,676 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:41:36,676 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:41:41,342 INFO  DAORol - *******************************************************
+2016-06-27 22:41:41,342 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:41,342 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:41,342 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:41,353 INFO  DAORol - *******************************************************
+2016-06-27 22:41:41,354 INFO  DAORol - Clase: DAORol
+2016-06-27 22:41:41,354 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:41:41,354 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:41:56,035 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:56,035 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:56,035 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:41:56,035 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:41:56,057 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:56,057 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:56,057 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:41:56,057 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:41:56,063 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:56,063 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:56,063 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:41:56,063 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:41:56,073 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:41:56,073 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:41:56,073 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:41:56,073 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:41:56,077 INFO  DAOContacto - *******************************************************
+2016-06-27 22:41:56,077 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:41:56,077 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:41:56,077 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:42:43,139 INFO  DAORol - *******************************************************
+2016-06-27 22:42:43,140 INFO  DAORol - Clase: DAORol
+2016-06-27 22:42:43,140 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:42:43,140 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:42:43,149 INFO  DAORol - *******************************************************
+2016-06-27 22:42:43,149 INFO  DAORol - Clase: DAORol
+2016-06-27 22:42:43,149 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:42:43,149 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:43:54,841 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:43:54,842 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:43:54,842 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:43:54,842 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:43:54,854 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:43:54,854 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:43:54,854 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:43:54,854 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodos
+2016-06-27 22:43:54,859 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:43:54,859 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:43:54,859 INFO  DaoProyectoEmpleado - Mensaje: Entrada en el Método
+2016-06-27 22:43:54,859 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:43:54,867 INFO  DaoProyectoEmpleado - *******************************************************
+2016-06-27 22:43:54,867 INFO  DaoProyectoEmpleado - Clase: DaoProyectoEmpleado
+2016-06-27 22:43:54,867 INFO  DaoProyectoEmpleado - Mensaje: Salida del Método
+2016-06-27 22:43:54,867 INFO  DaoProyectoEmpleado - Metodo: ConsultarTodosProgramadores
+2016-06-27 22:43:54,871 INFO  DAOContacto - *******************************************************
+2016-06-27 22:43:54,871 INFO  DAOContacto - Clase: DAOContacto
+2016-06-27 22:43:54,871 INFO  DAOContacto - Mensaje: Entrada en el Método
+2016-06-27 22:43:54,871 INFO  DAOContacto - Metodo: ConsultarXId
+2016-06-27 22:45:42,182 INFO  DAORol - *******************************************************
+2016-06-27 22:45:42,182 INFO  DAORol - Clase: DAORol
+2016-06-27 22:45:42,182 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:45:42,182 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 22:45:42,189 INFO  DAORol - *******************************************************
+2016-06-27 22:45:42,189 INFO  DAORol - Clase: DAORol
+2016-06-27 22:45:42,189 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 22:45:42,190 INFO  DAORol - Metodo: ObtenerRolUsuario
 2016-06-27 21:25:01,262 INFO  DaoClientePotencial - *******************************************************
 2016-06-27 21:25:01,270 INFO  DaoClientePotencial - Clase: DaoClientePotencial
 2016-06-27 21:25:01,270 INFO  DaoClientePotencial - Mensaje: Entrada Método
