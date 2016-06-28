@@ -85,15 +85,14 @@ namespace PruebasUnitarias.M10
             Direccion.Add(new DominioTangerine.Entidades.M10.LugarDireccion("Plaza Sucre", "Direccion"));
 
             ElRol = (RolM2)FabricaEntidades.crearRolNombre("Administrador");
-            ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma@gmail.com", "leojma", new DateTime(2015, 2, 10),
-                                                                                      "Activo", ((RolM2)ElRol), 1);
+            ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma", "1234",
+                new DateTime(2015, 2, 10), "Activo", ((RolM2)ElRol), 1);
             ComandoUsuario=FabricaComandos.agregarUsuario(ElUsuario);
             Confirma=ComandoUsuario.Ejecutar();
 
-            //ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("leojma@gmail.com", "leojma");
             ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
-            ((DominioTangerine.Entidades.M2.UsuarioM2)ElUsuarioActivo).nombreUsuario = "leojma@gmail.com";
-            ((DominioTangerine.Entidades.M2.UsuarioM2)ElUsuarioActivo).contrasena = "leojma";
+            ((UsuarioM2)ElUsuarioActivo).nombreUsuario = "toniojua";
+            ((UsuarioM2)ElUsuarioActivo).contrasena = "antonio11346@gmail.com";
             ElUsuario2 = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioVacio();
 
 
@@ -315,23 +314,12 @@ namespace PruebasUnitarias.M10
 
             //Probar que el  Usuario está activo
             ComandoEntidad = FabricaComandos.ConsultarUsuarioxCorreo(ElUsuarioActivo);
-            ElUsuario2=ComandoEntidad.Ejecutar();
+            ElUsuarioActivo = ComandoEntidad.Ejecutar();           ;
 
-
-            Console.WriteLine("Usuario2: " + ((UsuarioM2)ElUsuario2).activo);
-;
-
-            Assert.IsNotNull(ElUsuario2);
-            Assert.AreEqual(((UsuarioM2)ElUsuario2).activo, "Inactivo");
+            Assert.IsNotNull(ElUsuarioActivo);
+            Assert.AreEqual(((UsuarioM2)ElUsuarioActivo).activo, "Activo");   
             
-            
-            //Probar que el  Usuario es inactivo
-            ElUsuario2 = null;
-            ComandoEntidad = FabricaComandos.ConsultarUsuarioxCorreo(ElUsuarioActivo);
-            ElUsuario2 = ComandoEntidad.Ejecutar();
-
-            Assert.IsNotNull(ElUsuario2);
-            Assert.AreEqual(((UsuarioM2)ElUsuario2).activo, "Activo");
+           
         }
 
         #endregion
