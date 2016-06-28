@@ -74,7 +74,7 @@ namespace Tangerine_Presentador.M3
             Comando<bool> comando = 
                 LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoModificarClientePotencial(_entidad);
 
-            modificable = VerificarDatosDeCliente(vista.NombreEtiqueta, vista.CorreoElectronico, vista.RifEtiqueta);
+            modificable = VerificarDatosDeCliente(vista.NombreEtiqueta, vista.CorreoElectronico, vista.RifEtiqueta, idCliente);
 
             if (modificable)
                 vista.AccionSobreBd = comando.Ejecutar() ? true : false;
@@ -86,7 +86,7 @@ namespace Tangerine_Presentador.M3
         /// Método que verifica la existencia del cliente
         /// </summary>
         /// <returns>bool</returns>
-        private bool VerificarDatosDeCliente(String nombre, String correo, String rif)
+        private bool VerificarDatosDeCliente(String nombre, String correo, String rif, int idNuevoCliente)
         {
             bool seAgrega = true;
             Comando<List<Entidad>> comando =
@@ -96,18 +96,22 @@ namespace Tangerine_Presentador.M3
             foreach (Entidad item in list)
             {
                 DominioTangerine.Entidades.M3.ClientePotencial cliente = (DominioTangerine.Entidades.M3.ClientePotencial)item;
+                if (cliente.IdClientePotencial != idNuevoCliente)
+                {
+                    if (cliente.NombreClientePotencial.Equals(nombre))
+                        seAgrega = false;
 
-                if (cliente.NombreClientePotencial.Equals(nombre))
-                    seAgrega = false;
+                    if (cliente.RifClientePotencial.Equals(rif))
+                        seAgrega = false;
 
-                if (cliente.RifClientePotencial.Equals(rif))
-                    seAgrega = false;
+                    if (cliente.EmailClientePotencial.Equals(correo))
+                        seAgrega = false;
 
-                if (cliente.EmailClientePotencial.Equals(correo))
-                    seAgrega = false;
+                    if (!seAgrega)
+                        break;
+                }
 
-                if (!seAgrega)
-                    break;
+                
 
             }
 
