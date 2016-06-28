@@ -117,6 +117,12 @@
                                     <h5>
                                         <asp:DropDownList runat="server" ID="inputEncargado1"> </asp:DropDownList>
                                     </h5>
+
+                                    <h4>
+                                        <label for="inputLabelGerente">Gerente del proyecto</label></h4>
+                                    <h5>
+                                        <asp:DropDownList runat="server" ID="inputGerente"> </asp:DropDownList>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
