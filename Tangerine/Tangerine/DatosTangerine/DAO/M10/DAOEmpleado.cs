@@ -15,21 +15,8 @@ using ExcepcionesTangerine.M10;
 namespace DatosTangerine.DAO.M10
 {
     public class DAOEmpleado : DAOGeneral, IDAOEmpleado
-    {
+    {     
         
-
-
-        public List<DominioTangerine.Empleado> ListarEmpleados()
-        {
-
-            throw new NotImplementedException();
-        }
-
-
-        public DominioTangerine.Empleado ConsultarEmpleados(int employeeId)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Metodo para cambiar el estatus de un empleado
@@ -731,6 +718,7 @@ namespace DatosTangerine.DAO.M10
         
             return true;
         }
+
 
 
     }

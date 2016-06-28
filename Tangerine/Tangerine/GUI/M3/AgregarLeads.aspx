@@ -33,6 +33,7 @@
                 <!--Nombre-->
                 <div id="Div1" class="form-group" runat="server">
                     <label for="InputNombre">Nombre</label>
+                    <label for="Requerido" style="color: red;">*</label>
                     <input runat="server" type="text" class="form-control" 
                         pattern="^[a-zA-Z'.\s]{1,40}$" 
                         id="nombre" name="nombre" placeholder="Introduzca nombre de la compañía" 
@@ -42,6 +43,7 @@
                 <!--RIF-->
                 <div id="Div2" class="form-group" runat="server">
                     <label for="InputRIF">RIF</label>
+                    <label for="Requerido" style="color: red;">*</label>
                     <input runat="server" type="text" class="form-control"
                         pattern="^[J]+[-]+([0-9]{7,10})+[-]+([0-9]{1,1})$" 
                         id="rif" name="rif" title="Ej: J-23232343-5"
@@ -51,6 +53,7 @@
                 <!--Email-->
                 <div id="Div3" class="form-group" runat="server">
                     <label for="InputEmail">Correo Electrónico</label>
+                    <label for="Requerido" style="color: red;">*</label>
                     <input runat="server" type="text" class="form-control"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
                         id="email" name="email" title="Ej: correo@gmail.com"
@@ -60,6 +63,7 @@
 	            <!--Presupuesto-->
                 <div id="Div4" class="form-group" runat="server">
                     <label for="InputPresupuesto">Presupuesto Inicial de Inversion</label>
+                    <label for="Requerido" style="color: red;">*</label>
                     <input runat="server" type="number" class="form-control" 
                                 id="presupuesto" name="presupuesto" 
                                 placeholder="Introduzca el presupuesto anual de la Compañía" maxlength="10" required>
