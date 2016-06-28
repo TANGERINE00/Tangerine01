@@ -57,11 +57,11 @@
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>N° Factura</th>
-                            <th>Fecha de Pago</th>
-                            <th>Monto</th>
-                            <th>Moneda</th>
-                            <th>Codigo Aprobacion</th>
+                            <th style="text-align: center;">N° Factura</th>
+                            <th style="text-align: center;">Fecha de Pago</th>
+                            <th style="text-align: center;">Monto</th>
+                            <th style="text-align: center;">Moneda</th>
+                            <th style="text-align: center;">Codigo Aprobacion</th>
                         </tr>
                     </thead>
                     <tbody>
