@@ -19,21 +19,18 @@ namespace Tangerine_Presentador.M8
     {
         IContratoCorreo vista;
 
+        /// <summary>
+        /// Constructor de la clase, que recibe la vista
+        /// </summary>
+        /// <param name="vista"></param>
         public PresentadorCorreo(IContratoCorreo vista)
         {
             this.vista = vista;
         }
 
         /// <summary>
-        /// Método para manejar los errores y mensajes a interfaz
+        /// Método para setear los valores de los campos del correo
         /// </summary>
-        public void Alerta(string msj)
-        {
-            vista.alertaClase = RecursoPresentadorM8.alertaError;
-            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-            vista.alerta = RecursoPresentadorM8.alertaHtml + msj + RecursoPresentadorM8.alertaHtmlFinal;
-        }
-
         public void correofactura()
         {
             try
@@ -66,8 +63,8 @@ namespace Tangerine_Presentador.M8
                 vista.destinatario = compania.EmailCompania;
                 vista.asunto = RecursoPresentadorM8.recordatorio + proyecto.Nombre + RecursoPresentadorM8.punto;
                 vista.mensaje = RecursoPresentadorM8.saludos + compania.NombreCompania + RecursoPresentadorM8.blank +
-                                RecursoPresentadorM8.recordar + _laFactura.montoFactura.ToString() + " " + _laFactura.tipoMoneda +
-                                RecursoPresentadorM8.punto;
+                                RecursoPresentadorM8.recordar + _laFactura.montoFactura.ToString() 
+                                + _laFactura.tipoMoneda + RecursoPresentadorM8.punto;
                 vista.adjunto = String.Empty;
 
 
@@ -82,12 +79,16 @@ namespace Tangerine_Presentador.M8
             }
         }
 
+        /// <summary>
+        /// Método para enviar el correo con sus datos
+        /// </summary>
         public bool enviarCorreo()
         {
             try
             {
                 DatosCorreo _datosCorreo =
-                        (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario, vista.mensaje);
+                        (DatosCorreo)FabricaEntidades.ObtenerDatosCorreo(vista.asunto, vista.destinatario,
+                        vista.mensaje);
 
                 if (vista.adjunto != String.Empty)
                 {

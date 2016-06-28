@@ -19,7 +19,6 @@ namespace Tangerine_Presentador.M6
         /// Constructor por defecto de la clase
         /// </summary>
         /// <param name="vista">Vista con los metodos implementados de IContratoInformacionPropuesta</param>
-
         public PresentadorInformacionPropuesta(IContratoInformacionPropuesta vista)
         {
             this.vistaInformacion = vista;
@@ -28,8 +27,7 @@ namespace Tangerine_Presentador.M6
         /// <summary>
         /// Metodo que consulta una propuesta
         /// </summary>
-        /// <param name="id"></param>
-
+        /// <param name="id">Id de la propuesta que se desea consultar</param>
         public void consultarPropuesta(string id)
         {
 
@@ -80,10 +78,11 @@ namespace Tangerine_Presentador.M6
             }
             }
         }
+
         /// <summary>
         /// Metodo que imprime en la vista la informacion de la compañia de esa propuesta
         /// </summary>
-        /// <param name="_propuesta"></param>
+        /// <param name="_propuesta">entidad compañia</param>
         public void imprimirCompania(Entidad _propuesta)
         {
             Entidad _compania = DominioTangerine.Fabrica.FabricaEntidades.CrearCompaniaConId(
@@ -96,10 +95,11 @@ namespace Tangerine_Presentador.M6
 
             vistaInformacion.Compania.Text = ((DominioTangerine.Entidades.M4.CompaniaM4)_compania).NombreCompania;
         }
+
         /// <summary>
         /// Metodo que imprime el status de esta propuesta
         /// </summary>
-        /// <param name="_propuesta"></param>
+        /// <param name="_propuesta">entidad propuesta</param>
         public void imprimirStatus(Entidad _propuesta)
         {
             if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Estatus == "Aprobado")
@@ -115,10 +115,11 @@ namespace Tangerine_Presentador.M6
                 vistaInformacion.Status.Text = RecursosPresentadorPropuesta.pendiente;
             }
         }
+
         /// <summary>
         /// Metodo que imprime los requerimientos de esa propuesta
         /// </summary>
-        /// <param name="_propuesta"></param>
+        /// <param name="_propuesta">entidad propuesta</param>
         public void imprimirRequerimientos(Entidad _propuesta)
         {
                 List<Entidad> _requerimientos;
@@ -137,10 +138,11 @@ namespace Tangerine_Presentador.M6
                     vistaInformacion.Requerimientos.Text += RecursosPresentadorPropuesta.Salto + RecursosPresentadorPropuesta.Salto;
             }
         }
+
         /// <summary>
         /// Metodo que imprime la duracion de esa propuesta
         /// </summary>
-        /// <param name="_propuesta"></param>
+        /// <param name="_propuesta">entidad propuesta</param>
         public void imprimirDuracion(Entidad _propuesta)
         {
             vistaInformacion.Duracion.Text = ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).CantDuracion
@@ -150,6 +152,10 @@ namespace Tangerine_Presentador.M6
                     + ((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Fefinal.ToShortDateString();
         }
 
+        /// <summary>
+        /// Metodo que imprime el costo de esa propuesta
+        /// </summary>
+        /// <param name="_propuesta">entidad propuesta</param>
         public void imprimirCosto(Entidad _propuesta)
         {
             if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Moneda == "Bitcoin")
@@ -173,10 +179,11 @@ namespace Tangerine_Presentador.M6
                     + RecursosPresentadorPropuesta.bolivar;
             }
         }
+
         /// <summary>
         /// Metodo que imprime la forma de pago 
         /// </summary>
-        /// <param name="_propuesta"></param>
+        /// <param name="_propuesta">entidad propuesta</param>
         public void imprimirAcuerdo(Entidad _propuesta)
         {
             if (((DominioTangerine.Entidades.M6.Propuesta)_propuesta).Acuerdopago == "Mensual")

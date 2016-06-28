@@ -18,14 +18,17 @@ namespace Tangerine_Presentador.M6
         /// <summary>
         /// Constructor por defecto de la clase
         /// </summary>
-        /// <param name="vista">Vista con los metodos implementados de IContratoInformacionPropuesta</param>
+        /// <param name="vista">Vista con los metodos implementados de IContratoConsultarPropuesta</param>
 
         public PresentadorConsultarPropuesta(IContratoConsultarPropuesta vista)
         {
             this.vistaConsultar = vista;
         }
 
-     
+        /// <summary>
+        /// Get y set del string correspondiente a la tabla
+        /// </summary>
+        /// <param name="vista">Vista con los metodos implementados de IContratoConsultarPropuesta</param>
         public string propuesta
         {
             get
@@ -40,7 +43,7 @@ namespace Tangerine_Presentador.M6
         }
 
         /// <summary>
-        /// Metodo que consulta las propuestas propuesta
+        /// Metodo que consulta las propuestas 
         /// </summary>
         public void consultarPropuestas()
         {
@@ -118,7 +121,10 @@ namespace Tangerine_Presentador.M6
             propuesta += RecursosPresentadorPropuesta.CerrarTR;
         }
 
-
+        /// <summary>
+        /// Metodo que imprime el status de la propuesta
+        /// </summary>
+        /// <param name="laPropuesta"></param>
         public void imprimirStatus(DominioTangerine.Entidades.M6.Propuesta laPropuesta)
         {
             if (laPropuesta.Estatus.Equals("Aprobado"))

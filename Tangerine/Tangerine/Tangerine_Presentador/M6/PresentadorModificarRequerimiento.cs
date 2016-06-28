@@ -25,11 +25,18 @@ namespace Tangerine_Presentador.M6
         string _concepto = String.Empty;
         #endregion
 
+        /// <summary>
+        /// Constructor por defecto de la clase
+        /// </summary>
+        /// <param name="vista">Vista con los metodos implementados de IContratoModificarRequerimiento</param>
         public PresentadorModificarRequerimiento(IContratoModificarRequerimiento vista)
         {
             this.vista = vista;
         }
 
+        /// <summary>
+        /// Metodo que agrega los nuevos requerimientos
+        /// </summary>
         public void ModificarRequerimiento()
         {
             try
@@ -65,6 +72,9 @@ namespace Tangerine_Presentador.M6
 
         }
 
+        /// <summary>
+        /// Metodo que llena los campos de la vista con los datos del requerimiento
+        /// </summary>
         public void llenarDatosRequerimiento()
         {
 
@@ -86,8 +96,10 @@ namespace Tangerine_Presentador.M6
                    }    
         
         }
- 
 
+        /// <summary>
+        /// Metodo inicial para la carga de los datos del requerimiento.
+        /// </summary>
         public void llenarVista()
         {
             try

@@ -82,25 +82,25 @@ namespace Tangerine_Presentador.M7
 
                 _vista.Costo = propuesta.Costo.ToString();
 
-                if (propuesta.Moneda == "Bitcoin")
+                if (propuesta.Moneda == RecursoPresentadorM7.MonedaBitCoin)
                 {
                     _vista.Moneda.Text = RecursoPresentadorM7.bitcoin;
                 }
-                else if (propuesta.Moneda == "Euro")
+                else if (propuesta.Moneda == RecursoPresentadorM7.MonedaEuro)
                 {
                     _vista.Moneda.Text = RecursoPresentadorM7.euro;
                 }
-                else if (propuesta.Moneda == "Dolar")
+                else if (propuesta.Moneda == RecursoPresentadorM7.MonedaDolar)
                 {
                     _vista.Moneda.Text = RecursoPresentadorM7.dolar;
                 }
-                else if (propuesta.Moneda == "Bolivar")
+                else if (propuesta.Moneda == RecursoPresentadorM7.MonedaBolivar)
                 {
                     _vista.Moneda.Text = RecursoPresentadorM7.bolivar;
                 }
 
-                _vista.FechaInicio = propuesta.Feincio.ToString("MM'/'dd'/'yyyy");
-                _vista.FechaFin = propuesta.Fefinal.ToString("MM'/'dd'/'yyyy");
+                _vista.FechaInicio = propuesta.Feincio.ToString(RecursoPresentadorM7.DateFormat);
+                _vista.FechaFin = propuesta.Fefinal.ToString(RecursoPresentadorM7.DateFormat);
 
                 Comando<String> comandoGenerarCodigo = FabricaComandos.ObtenerComandoGenerarCodigoProyecto(entPropuesta);
                 String codigo = comandoGenerarCodigo.Ejecutar();
@@ -127,12 +127,12 @@ namespace Tangerine_Presentador.M7
 
                     DominioTangerine.Entidades.M10.EmpleadoM10 empleado = (DominioTangerine.Entidades.M10.EmpleadoM10)entidad;
 
-                    if (empleado.jobs.Nombre == "Gerente")
+                    if (empleado.jobs.Nombre == RecursoPresentadorM7.CargoGerente)
                     {
                         _vista.inputGerente.Items.Add(empleado.emp_p_nombre + " " + empleado.emp_p_apellido);
                     }
 
-                    if (empleado.jobs.Nombre == "Programador")
+                    if (empleado.jobs.Nombre == RecursoPresentadorM7.CargoProgramador)
                     {
                         _vista.inputPersonal.Items.Add(empleado.emp_p_nombre + " " + empleado.emp_p_apellido);
                         programadores.Add(entidad);
@@ -162,14 +162,14 @@ namespace Tangerine_Presentador.M7
         {
             ///Se capturan los datos de la vista para crear un proyecto.
             _costo = Convert.ToDouble(_vista.Costo);
-            _fechaIni = DateTime.ParseExact(_vista.FechaInicio, "MM/dd/yyyy", null);
-            _fechaFin = DateTime.ParseExact(_vista.FechaFin, "MM/dd/yyyy", null);
+            _fechaIni = DateTime.ParseExact(_vista.FechaInicio, RecursoPresentadorM7.DateFormat2, null);
+            _fechaFin = DateTime.ParseExact(_vista.FechaFin, RecursoPresentadorM7.DateFormat2, null);
 
             if (_fechaFin < _fechaIni)
             {
                 _vista.alertaClase = RecursoPresentadorM7.alertaError;
                 _vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
-                _vista.alerta = RecursoPresentadorM7.alertaHtml + "Error: Rango de fechas inválido. Fecha Fin debe ser mayor a Fecha Inicio"
+                _vista.alerta = RecursoPresentadorM7.alertaHtml + RecursoPresentadorM7.ErrorRangoFechas
                                 + RecursoPresentadorM7.alertaHtmlFinal;
                 return false;
             }
@@ -178,7 +178,7 @@ namespace Tangerine_Presentador.M7
             {
                 _vista.alertaClase = RecursoPresentadorM7.alertaError;
                 _vista.alertaRol = RecursoPresentadorM7.tipoAlerta;
-                _vista.alerta = RecursoPresentadorM7.alertaHtml + "Error: El proyecto no puede empezar antes de la fecha propuesta."
+                _vista.alerta = RecursoPresentadorM7.alertaHtml + RecursoPresentadorM7.ErrorFechaInicio
                                 + RecursoPresentadorM7.alertaHtmlFinal;
                 return false;
             }

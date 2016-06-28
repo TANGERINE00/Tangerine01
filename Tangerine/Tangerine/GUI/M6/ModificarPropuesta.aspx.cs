@@ -19,11 +19,17 @@ namespace Tangerine.GUI.M6
     {
         PresentadorModificarPropuesta presenter;
 
+        /// <summary>
+        /// Constructor de la vista
+        /// </summary>
         public ModificarPropuesta()
         {
             this.presenter = new PresentadorModificarPropuesta(this);
         }
 
+        /// <summary>
+        /// Carga inicial de la pagina
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -41,6 +47,9 @@ namespace Tangerine.GUI.M6
            
         }
 
+        /// <summary>
+        /// Accion del boton a presionar "Modificar"
+        /// </summary>
         protected void ModificarPropuesta_Click(object sender, EventArgs e)
         {
             try
