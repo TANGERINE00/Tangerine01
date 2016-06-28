@@ -85,7 +85,7 @@ namespace PruebasUnitarias.M10
             ElUsuario = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioCompleto("leojma@gmail.com", "leojma", new DateTime(2015, 2, 10),
                                                                                       "Activo", ((RolM2)ElRol), 1);
             ElUsuarioActivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("leojma@gmail.com", "leojma");
-            //ElUsuarioInactivo = DominioTangerine.Fabrica.FabricaEntidades.crearUsuarioConUsuarioYContrasena("lenon@gmail.com", "lenito22");
+            
 
 
             empleado = (EmpleadoM10)FabricaEntidades.CrearEntidadEmpleado(pnombre, snombre, papellido,
@@ -93,7 +93,7 @@ namespace PruebasUnitarias.M10
                                                cedula,
                                                fechaNac,
                                                status, estudio, correo, elCargo, Telefono,
-                                               Direccion); ;
+                                               Direccion);
             listEmpleados = new List<Entidad>();
 
             listLugar = new List<Entidad>();
@@ -125,7 +125,7 @@ namespace PruebasUnitarias.M10
             listCargo = null;
             listEmpleados = null;
             listLugar = null;
-
+            
         }
 
         #endregion
@@ -139,12 +139,12 @@ namespace PruebasUnitarias.M10
 
         public void TestConsultarXIdEmpleadoDAO()
         {
-            Entidad empleado = FabricaEntidades.ConsultarEmpleados();
-            empleado.Id = 5;
+            empleado = FabricaEntidades.ConsultarEmpleados();
+            empleado.Id = 2;
 
             empleado = daoEmpleado.ConsultarXId(empleado);
             EmpleadoM10 nuevo = (EmpleadoM10)empleado;
-            Assert.AreEqual(nuevo.emp_p_nombre, "Armando");
+            Assert.AreEqual(nuevo.emp_p_nombre, "Jose");
         }
 
         /// <summary>
@@ -159,12 +159,12 @@ namespace PruebasUnitarias.M10
 
             listEmpleados = daoEmpleado.ConsultarTodos();
             contadorEmpleados = listEmpleados.Count;
-            Assert.AreEqual(contadorEmpleados, 2);
+            Assert.AreEqual(contadorEmpleados, 3);
 
             EmpleadoM10 empleados = (EmpleadoM10)empleado;
             bool verificar = false;
 
-            foreach (Entidad e in listEmpleados) 
+            foreach (Entidad e in listEmpleados)
             {
                 EmpleadoM10 ep = (EmpleadoM10)e;
 
@@ -192,7 +192,7 @@ namespace PruebasUnitarias.M10
             listEmpleados = daoEmpleado.ConsultarTodos();
             contadorEmpleados = listEmpleados.Count;
 
-            Assert.AreEqual(contadorEmpleados, 6);
+            Assert.AreEqual(contadorEmpleados, 26);
         }
 
 
