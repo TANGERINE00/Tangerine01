@@ -9,8 +9,15 @@ namespace Tangerine_Contratos.M7
 {
     public interface IContratoModificarProyecto
     {
+        /// Encabezado del Label para las alertas
+        /// </summary>
+        string alertaClase { set; }
         /// <summary>
-        /// Mensajes de alerta
+        /// Encabezado del Label para las alertas
+        /// </summary>
+        string alertaRol { set; }
+        /// <summary>
+        /// Encabezado del Label para las alertas
         /// </summary>
         string alerta { set; }
         

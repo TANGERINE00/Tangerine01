@@ -19,8 +19,8 @@ namespace LogicaTangerine.Comandos.M2.ComandosDAORol
         /// <summary>
         /// Constructor que recibe dos parametros, uno del tipo string y otro int
         /// </summary>
-        /// <param name="nombreMenu"></param>
-        /// <param name="codigoRol"></param>
+        /// <param name="nombreMenu">Nombre del usuario</param>
+        /// <param name="codigoRol">Codigo del rol</param>
         public ComandoObtenerOpciones( string nombreMenu , int codigoRol )
         {
             _nombreMenu = nombreMenu;

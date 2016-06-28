@@ -15,8 +15,8 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Constructor que recibe la vista de CambiarUsuario y el numero de ficha del usuario en cuestión
         /// </summary>
-        /// <param name="vista"></param>
-        /// <param name="numFicha"></param>
+        /// <param name="vista">La vista de cambiar usuario</param>
+        /// <param name="numFicha">El numero de ficha de un empleado</param>
         public PresentadorCambiarUsuario( IContratoCambiarUsuario vista , int numFicha )
         {
             _vista = vista;

@@ -43,15 +43,15 @@ namespace Tangerine_Presentador.M9
                 if (listaP.Count() < 1)
                 {
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
-                        RecursoPresentadorM9.CloseTD;
+                        RecursoPresentadorM9.CerrarTD;
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
-                        RecursoPresentadorM9.CloseTD;
+                        RecursoPresentadorM9.CerrarTD;
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
-                        RecursoPresentadorM9.CloseTD;
+                        RecursoPresentadorM9.CerrarTD;
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
-                        RecursoPresentadorM9.CloseTD;
+                        RecursoPresentadorM9.CerrarTD;
                     vista.pago += RecursoPresentadorM9.AbrirTD + "No hay pagos asociados" + 
-                        RecursoPresentadorM9.CloseTD;
+                        RecursoPresentadorM9.CerrarTD;
 
                 }
                 else
@@ -62,12 +62,12 @@ namespace Tangerine_Presentador.M9
 
                         vista.pago += RecursoPresentadorM9.AbrirTR;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.idFactura + 
-                            RecursoPresentadorM9.CloseTD;
+                            RecursoPresentadorM9.CerrarTD;
                         vista.pago += RecursoPresentadorM9.AbrirTD + elPago.fechaPago.ToShortDateString() + 
-                            RecursoPresentadorM9.CloseTD;
-                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.montoPago + RecursoPresentadorM9.CloseTD;
-                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.monedaPago + RecursoPresentadorM9.CloseTD;
-                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.codPago + RecursoPresentadorM9.CloseTD;
+                            RecursoPresentadorM9.CerrarTD;
+                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.montoPago + RecursoPresentadorM9.CerrarTD;
+                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.monedaPago + RecursoPresentadorM9.CerrarTD;
+                        vista.pago += RecursoPresentadorM9.AbrirTD + elPago.codPago + RecursoPresentadorM9.CerrarTD;
                         vista.pago += RecursoPresentadorM9.CloseTR;
 
                     }
@@ -85,6 +85,6 @@ namespace Tangerine_Presentador.M9
            }
 
         }
-        }
+    }
 }
 

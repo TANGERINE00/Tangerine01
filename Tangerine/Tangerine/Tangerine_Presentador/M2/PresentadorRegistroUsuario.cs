@@ -16,7 +16,7 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Constructor del presentador de la vista Registrar Usuario
         /// </summary>
-        /// <param name="vista"></param>
+        /// <param name="vista">La vista de registrar usuario</param>
         public PresentadorRegistroUsuario( IContratoRegistroUsuario vista )
         {
             _vista = vista;

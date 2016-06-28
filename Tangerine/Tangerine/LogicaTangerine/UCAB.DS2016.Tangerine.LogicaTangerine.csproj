@@ -100,7 +100,6 @@
     <Compile Include="Comandos\M3\ComandoActivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoAgregarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoAgregarSeguimiento.cs" />
-    <Compile Include="Comandos\M3\ComandoBuscarExistenciaDeCliente.cs" />
     <Compile Include="Comandos\M3\ComandoConsultarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoDesactivarClientePotencial.cs" />
     <Compile Include="Comandos\M3\ComandoEliminarClientePotencial.cs" />
@@ -185,6 +184,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceLogicaM8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Comandos\M9\ComandoPagosTodos.cs" />
     <Compile Include="Comandos\M9\ComandoAgregarPago.cs" />
     <Compile Include="Comandos\M9\ComandoConsultarPagos.cs" />
     <Compile Include="Comandos\M9\ComandoEliminarPago.cs" />

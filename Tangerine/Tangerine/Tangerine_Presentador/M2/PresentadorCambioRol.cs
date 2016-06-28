@@ -15,7 +15,7 @@ namespace Tangerine_Presentador.M2
         /// <summary>
         /// Constructor que recibe la vista Cambio Rol
         /// </summary>
-        /// <param name="vista"></param>
+        /// <param name="vista">La vista de cambiar rol</param>
         public PresentadorCambioRol( IContratoCambiarRol vista )
         {
             _vista = vista;
