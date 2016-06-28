@@ -277,6 +277,15 @@ namespace Tangerine.GUI.M8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Factura.aspx?idFac=.
+        /// </summary>
+        internal static string Factura {
+            get {
+                return ResourceManager.GetString("Factura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to IdCompania.
         /// </summary>
         internal static string idC {

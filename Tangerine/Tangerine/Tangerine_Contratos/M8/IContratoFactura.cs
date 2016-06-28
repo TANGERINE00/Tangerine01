@@ -21,5 +21,6 @@ namespace Tangerine_Contratos.M8
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }
+        string textIva { set; }
     }
 }

@@ -18,13 +18,11 @@ namespace Tangerine.GUI.M1
 {
     public partial class CrearEmpleado : System.Web.UI.Page, IContratoCrearEmpleado
     {
-        private PresentadorCrearEmpleado presentador;
-        string active = "Activo";
-        Hashtable elementos = new Hashtable();
+        private PresentadorCrearEmpleado presentador;      
         private string[] Substrings;
         private string fecha;
 
-        
+
 
         public CrearEmpleado()
         {
@@ -34,7 +32,7 @@ namespace Tangerine.GUI.M1
         {
             #region LLENAR combo de genero
             if (!IsPostBack)
-            {
+            {                
                 presentador.LlenarComboEmpleado();
                 presentador.LlenarComboNivelEstudio();
                 presentador.ObtenerPaises();
@@ -43,7 +41,6 @@ namespace Tangerine.GUI.M1
             #endregion
         }
 
-       
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
 
@@ -52,81 +49,26 @@ namespace Tangerine.GUI.M1
 
         }
 
-        protected void SelectedState_Change(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void SelectedStudy_Change(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             try
             {
-                //presentador = new PresentadorCrearEmpleado(this, int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.IDFicha], false)),
-                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Nombre], false),
-                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Apellido], false),
-                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Rol], false), 
-                //                                            AntiXssEncoder.HtmlEncode(Request.QueryString[ResourceGUIM10.Rol], false));
-
+               
                 if (Page.IsValid)
                 {
                     presentador.AgregarEmpleado();
-
+                    
 
                 }
 
             }
 
-            catch 
+            catch
             {
 
             }
         }
 
-              
-
-        private void FillSelectedListGender()
-        {
-            SelectedListGender.Items.Insert(0, "Seleccione Genero");
-            SelectedListGender.Items.Insert(1, "Masculino");
-            SelectedListGender.Items.Insert(2, "Femenino");
-            SelectedListGender.DataBind();
-        }
-
-        private void FillLevelListStudy()
-        {
-            LevelListStudy.Items.Insert(0, "Seleccione Nivel de Estudio");
-            LevelListStudy.Items.Insert(1, "Universitario en proceso");
-            LevelListStudy.Items.Insert(2, "Universitario completado");
-            LevelListStudy.Items.Insert(3, "Bachiller");
-            LevelListStudy.DataBind();
-        }
-
-        private void FillSelectedListJob()
-        {
-            LogicaM10 componentes = new LogicaM10();
-            ;
-            int x = 1;
-            SelectedListJob.Items.Insert(0, "Seleccione un cargo");
-            foreach (Cargo cargos in componentes.ItemsForListJobs())
-            {
-                elementos.Add(cargos.Nombre, cargos.Descripcion);
-                SelectedListJob.Items.Insert(x, cargos.Nombre);
-                x++;
-            }
-
-        }
-        
-
-        private void FillSelectedListState()
-        {
-            SelectedListState.Items.Insert(0, "Seleccione un Estado");
-            SelectedListGender.DataBind();
-        }
 
         #region Contrato
 
@@ -188,10 +130,10 @@ namespace Tangerine.GUI.M1
         String IContratoCrearEmpleado.ItextDateEmployee
         {
             get
-            {               
+            {
                 Substrings = DateEmployee.Value.ToString().Split('-');
                 fecha = Substrings[1] + '/' + Substrings[2] + '/' + Substrings[0];
-                return fecha; 
+                return fecha;
             }
             set { DateEmployee.Value = value; }
         }

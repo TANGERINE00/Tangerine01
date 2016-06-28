@@ -295,12 +295,13 @@ namespace DatosTangerine.DAO.M10
                     DateTime empContratacion = DateTime.Parse(row[ResourceEmpleado.EmpFechaInicio].ToString());
                     String empModalidad = row[ResourceEmpleado.EmpModalidad].ToString();
                     double empSalario = double.Parse(row[ResourceEmpleado.EmpSueldo].ToString());
+                   
 
 
                     //Creo un objeto de tipo Entidad con los datos de la fila
 
                     Entidad cargoEmpleado = DominioTangerine.Fabrica.FabricaEntidades.ObtenerCargo3(empCargo,
-                        empCargoDescripcion, empContratacion);
+                        empCargoDescripcion, empContratacion,empModalidad);
                                             
 
                     Entidad empleado = DominioTangerine.Fabrica.FabricaEntidades.ConsultarEmpleados

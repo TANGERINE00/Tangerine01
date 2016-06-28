@@ -30,15 +30,15 @@ namespace Tangerine_Presentador.M3
         /// <returns></returns>
         public void Agregar()
         {
-            bool valor;
+            bool siAgrega;
             Entidad _entidad = DominioTangerine.Fabrica.FabricaEntidades.CrearClientePotencial(vista.NombreEtiqueta,
                                                                                               vista.RifEtiqueta, vista.CorreoElectronico,
                                                                                               vista.PresupuestoInversion,1);
 
             Comando<bool> comandoAgregar = LogicaTangerine.Fabrica.FabricaComandos.ObtenerComandoAgregarClientePotencial(_entidad);
 
-            valor = VerificarDatosDeCliente(vista.NombreEtiqueta, vista.CorreoElectronico, vista.RifEtiqueta);            
-            if (valor)
+            siAgrega = VerificarDatosDeCliente(vista.NombreEtiqueta, vista.CorreoElectronico, vista.RifEtiqueta);
+            if (siAgrega)
                 vista.AccionSobreBd = comandoAgregar.Ejecutar() ? true : false;
             else
                 vista.AccionSobreBd= false;
