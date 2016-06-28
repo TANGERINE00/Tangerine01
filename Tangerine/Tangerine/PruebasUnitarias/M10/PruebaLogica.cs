@@ -201,34 +201,26 @@ namespace PruebasUnitarias.M10
         {            
             //Consulta el Empleado por Id
             ComandoEntidad = FabricaComandos.ConsultarIdEmpleado(theEmpleado);
-            theEmpleado2 = (EmpleadoM10)ListaEmpleado[ListaEmpleado.Count - 1];
+            theEmpleado2 = (EmpleadoM10)ListaEmpleado[(ListaEmpleado.Count) - 1];
             theEmpleado3 = ComandoEntidad.Ejecutar();
 
 
             Assert.AreEqual(((EmpleadoM10)theEmpleado3).emp_id, theEmpleado2.Id);
-            Assert.IsNotEmpty(ComandoLista.Ejecutar());
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_p_nombre, "Eduardo");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_s_nombre, "José");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_p_apellido, "Pacheco");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_s_apellido, "Aguirre");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_genero, "Maculino");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_cedula, "19563263");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_fecha_nac, "08/10/1989");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_activo, "Activo");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_nivel_estudio, "Bachiller");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Emp_email, "eddcold@mail.com");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Jobs.Nombre, "Gerente");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Jobs.Descripcion, "Gerente de proyectos de software");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Jobs.FechaContratacion, "04/01/201");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).Jobs.Modalidad, "Tiempo completo");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[0].LugNombre, "Venezuela");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[0].LugTipo, "Pais");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[1].LugNombre, "Distrito Capital");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[1].LugTipo, "Estado");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[2].LugNombre, "Caracas");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[2].LugTipo, "Ciudad");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[3].LugNombre, "Plaza Sucre");
-            Assert.AreEqual(((EmpleadoM10)theEmpleado3).ListaDireccion[3].LugTipo, "Direccion");
+            Assert.IsNotEmpty(ComandoLista.Ejecutar());    
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_nombre, "Eduardo");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_nombre, "Jose");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_p_apellido, "Pacheco");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_s_apellido, "Aguirre");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_genero, "Masculino");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_cedula.ToString(), "19162756");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_fecha_nac.ToString(), "10/8/1989 12:00:00 a. m.");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_activo, "Activo");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_nivel_estudio, "Bachiller");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Emp_email, "eddcold@mail.com");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Nombre, "Gerente");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.FechaContratacion.ToString(), "1/4/2016 12:00:00 a. m.");
+            Assert.AreEqual(((EmpleadoM10)theEmpleado2).Jobs.Modalidad, "Tiempo completo");
+
 
         }
 
