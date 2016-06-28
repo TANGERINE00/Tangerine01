@@ -188,7 +188,7 @@ namespace Tangerine.GUI.M4
             }
             catch (Exception ex) 
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect("../M1/PaginaError.aspx",false);
             }
         }
 
@@ -202,13 +202,13 @@ namespace Tangerine.GUI.M4
             try
             {
                 if (Presentador.ModificarCompania(int.Parse(AntiXssEncoder.HtmlEncode(Request.QueryString["idComp"], false))))
-                    Server.Transfer("ConsultarCompania.aspx", true);
+                    Response.Redirect("../M4/ConsultarCompania.aspx", false);
                 else
                     Presentador.Alerta(msjError);
             }
             catch (Exception ex)
             {
-                Response.Redirect("../M1/DashBoard.aspx");
+                Response.Redirect("../M1/PaginaError.aspx",false);
             }
         }
 

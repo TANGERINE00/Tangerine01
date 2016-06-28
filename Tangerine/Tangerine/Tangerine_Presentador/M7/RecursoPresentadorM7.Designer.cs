@@ -286,6 +286,15 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dd/MM/yyyy.
+        /// </summary>
+        internal static string DateFormat3 {
+            get {
+                return ResourceManager.GetString("DateFormat3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-primary&quot;&gt;En Desarrollo&lt;/span&gt;.
         /// </summary>
         internal static string Desarrollo {
@@ -376,7 +385,7 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to En Desarrollo.
+        ///   Looks up a localized string similar to En desarrollo.
         /// </summary>
         internal static string EstatusDesarrollo {
             get {
