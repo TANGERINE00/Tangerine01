@@ -39,7 +39,7 @@ namespace Tangerine.GUI.M6
             try
             {
                 presenter.AgregarRequerimientos();
-                Response.Redirect("../M6/ConsultarPropuesta.aspx", false);
+                Response.Redirect("../M6/ModificarPropuesta.aspx?id=" + Request.QueryString.Get("id") + "&idReq=0", false);
                 Context.ApplicationInstance.CompleteRequest();
             }
             catch (ExcepcionesTangerine.ExceptionTGConBD)

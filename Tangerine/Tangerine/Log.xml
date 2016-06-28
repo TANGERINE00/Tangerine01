@@ -29560,8 +29560,6 @@ Error Number:-1,State:0,Class:20
 2016-06-27 06:36:06,436 INFO  DAORol - Clase: DAORol
 2016-06-27 06:36:06,436 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 06:36:06,436 INFO  DAORol - Metodo: ObtenerRolUsuario
-<<<<<<< HEAD
->>>>>>> a587dbc7eae9b477868fa5b0c883f209400500dc
 2016-06-27 14:29:24,724 INFO  DaoCompania - *******************************************************
 2016-06-27 14:29:24,733 INFO  DaoCompania - Clase: DaoCompania
 2016-06-27 14:29:24,733 INFO  DaoCompania - Mensaje: Entrada en el Método
@@ -30590,8 +30588,6 @@ Error Number:-1,State:0,Class:20
 2016-06-27 16:11:23,532 INFO  DAORol - Clase: DAORol
 2016-06-27 16:11:23,532 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 16:11:23,532 INFO  DAORol - Metodo: ObtenerRolUsuario
-=======
-<<<<<<< HEAD
 2016-06-27 14:18:55,033 INFO  DAORol - *******************************************************
 2016-06-27 14:18:55,059 INFO  DAORol - Clase: DAORol
 2016-06-27 14:18:55,059 INFO  DAORol - Mensaje: Salida del Método
@@ -31140,8 +31136,6 @@ Error Number:-1,State:0,Class:20
 2016-06-27 14:27:45,611 INFO  DAORol - Clase: DAORol
 2016-06-27 14:27:45,611 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 14:27:45,611 INFO  DAORol - Metodo: ObtenerRolUsuario
->>>>>>> 78c7d931b570dcd8581782bb43630db4a97b12a2
-<<<<<<< HEAD
 2016-06-27 16:19:07,043 INFO  DaoCompania - *******************************************************
 2016-06-27 16:19:07,050 INFO  DaoCompania - Clase: DaoCompania
 2016-06-27 16:19:07,050 INFO  DaoCompania - Mensaje: Entrada en el Método
@@ -31160,7 +31154,6 @@ Error Number:-1,State:0,Class:20
    en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
    en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
    en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData)
-=======
 2016-06-27 17:00:29,328 ERROR DAOUsuario - *******************************************************
 2016-06-27 17:00:29,337 ERROR DAOUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
 2016-06-27 17:00:29,339 ERROR DAOUsuario - Origen: DatosTangerine
@@ -31169,7 +31162,6 @@ Error Number:-1,State:0,Class:20
    en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\EDG-Repository 6\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 388
 2016-06-27 17:00:29,340 ERROR DAOUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
    en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
->>>>>>> 738591aca2496667191ade55a18e088497d57113
    en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
    en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
    en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
@@ -31182,7 +31174,6 @@ Error Number:-1,State:0,Class:20
    en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
    en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
    en System.Data.SqlClient.SqlConnection.Open()
-<<<<<<< HEAD
    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Usuario\Documents\IngInformatica\DesarrolloPS\Tangerine01\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 2016-06-27 16:20:16,130 INFO  DaoCompania - *******************************************************
@@ -31217,7 +31208,6 @@ ClientConnectionId:00000000-0000-0000-0000-000000000000
 2016-06-27 16:20:38,978 INFO  DAORol - Clase: DAORol
 2016-06-27 16:20:38,978 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 16:20:38,978 INFO  DAORol - Metodo: ObtenerRolUsuario
-=======
    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\EDG-Repository 6\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:-1,State:0,Class:20
@@ -31533,7 +31523,6 @@ Error Number:-1,State:0,Class:20
 2016-06-27 17:17:50,987 INFO  DAORol - Clase: DAORol
 2016-06-27 17:17:50,987 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 17:17:50,987 INFO  DAORol - Metodo: ObtenerRolUsuario
->>>>>>> 738591aca2496667191ade55a18e088497d57113
 2016-06-27 18:53:08,046 INFO  DaoCompania - *******************************************************
 2016-06-27 18:53:08,058 INFO  DaoCompania - Clase: DaoCompania
 2016-06-27 18:53:08,058 INFO  DaoCompania - Mensaje: Entrada en el Método
@@ -33166,3 +33155,681 @@ Error Number:-1,State:0,Class:20
 2016-06-27 21:13:19,733 INFO  DAORol - Clase: DAORol
 2016-06-27 21:13:19,733 INFO  DAORol - Mensaje: Salida del Método
 2016-06-27 21:13:19,733 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:09:05,228 ERROR DAOUsuario - *******************************************************
+2016-06-27 20:09:05,236 ERROR DAOUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-27 20:09:05,238 ERROR DAOUsuario - Origen: DatosTangerine
+2016-06-27 20:09:05,238 ERROR DAOUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-27 20:09:05,238 ERROR DAOUsuario - StackTrace:    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 388
+2016-06-27 20:09:05,239 ERROR DAOUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-27 20:09:05,288 ERROR ComandoConsultarDatosUsuarioLogin - *******************************************************
+2016-06-27 20:09:05,288 ERROR ComandoConsultarDatosUsuarioLogin - Mensaje: Error con la base de datos
+2016-06-27 20:09:05,290 ERROR ComandoConsultarDatosUsuarioLogin - Origen: DatosTangerine
+2016-06-27 20:09:05,290 ERROR ComandoConsultarDatosUsuarioLogin - Metodo: DominioTangerine.Entidad ObtenerDatoUsuario(DominioTangerine.Entidad)
+2016-06-27 20:09:05,290 ERROR ComandoConsultarDatosUsuarioLogin - StackTrace:    en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 422
+   en LogicaTangerine.Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin.Ejecutar() en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\LogicaTangerine\Comandos\M2\ComandosDAOUsuario\ComandoConsultarDatosUsuarioLogin.cs:línea 37
+2016-06-27 20:09:05,291 ERROR ComandoConsultarDatosUsuarioLogin - InnerException: ExcepcionesTangerine.ExceptionTGConBD: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion ---> System.Data.SqlClient.SqlException: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 388
+2016-06-27 20:10:01,862 ERROR DAOUsuario - *******************************************************
+2016-06-27 20:10:01,869 ERROR DAOUsuario - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-06-27 20:10:01,871 ERROR DAOUsuario - Origen: DatosTangerine
+2016-06-27 20:10:01,872 ERROR DAOUsuario - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosTangerine.Parametro])
+2016-06-27 20:10:01,872 ERROR DAOUsuario - StackTrace:    en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 388
+2016-06-27 20:10:01,872 ERROR DAOUsuario - InnerException: System.Data.SqlClient.SqlException (0x80131904): Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-06-27 20:10:01,920 ERROR ComandoConsultarDatosUsuarioLogin - *******************************************************
+2016-06-27 20:10:01,920 ERROR ComandoConsultarDatosUsuarioLogin - Mensaje: Error con la base de datos
+2016-06-27 20:10:01,922 ERROR ComandoConsultarDatosUsuarioLogin - Origen: DatosTangerine
+2016-06-27 20:10:01,922 ERROR ComandoConsultarDatosUsuarioLogin - Metodo: DominioTangerine.Entidad ObtenerDatoUsuario(DominioTangerine.Entidad)
+2016-06-27 20:10:01,922 ERROR ComandoConsultarDatosUsuarioLogin - StackTrace:    en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 422
+   en LogicaTangerine.Comandos.M2.ComandosDAOUsuario.ComandoConsultarDatosUsuarioLogin.Ejecutar() en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\LogicaTangerine\Comandos\M2\ComandosDAOUsuario\ComandoConsultarDatosUsuarioLogin.cs:línea 37
+2016-06-27 20:10:01,922 ERROR ComandoConsultarDatosUsuarioLogin - InnerException: ExcepcionesTangerine.ExceptionTGConBD: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion ---> System.Data.SqlClient.SqlException: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: SQL Network Interfaces, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 282
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en DatosTangerine.DAO.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\DAOGeneral.cs:línea 299
+   en DatosTangerine.DAO.M2.DAOUsuario.ObtenerDatoUsuario(Entidad theUsuario) en c:\Users\Edgar\Desktop\Edga_DESA\Tangerine\Tangerine\DatosTangerine\DAO\M2\DaoUsuario.cs:línea 388
+2016-06-27 20:46:37,233 INFO  DAORol - *******************************************************
+2016-06-27 20:46:37,241 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:37,241 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:37,241 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:37,255 INFO  DAOUsuario - *******************************************************
+2016-06-27 20:46:37,255 INFO  DAOUsuario - Clase: DAOUsuario
+2016-06-27 20:46:37,255 INFO  DAOUsuario - Mensaje: Salida del Método
+2016-06-27 20:46:37,255 INFO  DAOUsuario - Metodo: ObtenerDatoUsuario
+2016-06-27 20:46:37,630 INFO  DAORol - *******************************************************
+2016-06-27 20:46:37,631 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:37,631 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:37,631 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:37,655 INFO  DAORol - *******************************************************
+2016-06-27 20:46:37,656 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:37,656 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:37,656 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:47,712 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:46:47,712 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:46:47,712 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:46:47,712 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:46:47,744 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:46:47,744 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:46:47,744 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:46:47,744 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:46:47,785 INFO  DAORol - *******************************************************
+2016-06-27 20:46:47,785 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:47,785 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:47,785 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:47,802 INFO  DAORol - *******************************************************
+2016-06-27 20:46:47,802 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:47,802 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:47,802 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:48,350 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:46:48,350 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:46:48,350 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:46:48,350 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:46:48,368 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:46:48,368 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:46:48,368 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:46:48,368 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:46:48,389 INFO  DAORol - *******************************************************
+2016-06-27 20:46:48,389 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:48,389 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:48,389 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:48,408 INFO  DAORol - *******************************************************
+2016-06-27 20:46:48,408 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:48,409 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:48,409 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:51,310 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:46:51,310 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:46:51,310 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:46:51,310 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:46:51,332 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:46:51,332 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:46:51,332 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:46:51,332 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:46:51,359 INFO  DAORol - *******************************************************
+2016-06-27 20:46:51,359 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:51,359 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:51,359 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:46:51,382 INFO  DAORol - *******************************************************
+2016-06-27 20:46:51,382 INFO  DAORol - Clase: DAORol
+2016-06-27 20:46:51,382 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:46:51,382 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:47:08,752 INFO  DAORol - *******************************************************
+2016-06-27 20:47:08,752 INFO  DAORol - Clase: DAORol
+2016-06-27 20:47:08,752 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:47:08,752 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:47:08,772 INFO  DAORol - *******************************************************
+2016-06-27 20:47:08,772 INFO  DAORol - Clase: DAORol
+2016-06-27 20:47:08,773 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:47:08,773 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:47:16,644 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:16,644 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:16,644 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:47:16,644 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:47:16,657 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:16,657 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:16,657 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:47:16,657 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:47:36,137 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:36,137 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:36,137 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:47:36,137 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-27 20:47:36,272 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:36,272 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:36,272 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:47:36,272 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-27 20:47:36,302 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:36,302 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:36,302 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:47:36,302 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:47:36,438 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:36,438 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:36,438 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:47:36,438 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:47:36,480 INFO  DAORol - *******************************************************
+2016-06-27 20:47:36,481 INFO  DAORol - Clase: DAORol
+2016-06-27 20:47:36,481 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:47:36,481 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:47:36,507 INFO  DAORol - *******************************************************
+2016-06-27 20:47:36,507 INFO  DAORol - Clase: DAORol
+2016-06-27 20:47:36,507 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:47:36,507 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:47:49,242 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:49,242 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:49,242 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:47:49,242 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:47:49,252 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:47:49,252 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:47:49,253 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:47:49,253 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:47:49,274 INFO  DAORol - *******************************************************
+2016-06-27 20:47:49,274 INFO  DAORol - Clase: DAORol
+2016-06-27 20:47:49,274 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:47:49,274 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:47:49,295 INFO  DAORol - *******************************************************
+2016-06-27 20:47:49,295 INFO  DAORol - Clase: DAORol
+2016-06-27 20:47:49,295 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:47:49,295 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:48:08,967 INFO  DAORol - *******************************************************
+2016-06-27 20:48:08,967 INFO  DAORol - Clase: DAORol
+2016-06-27 20:48:08,967 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:48:08,967 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:48:09,010 INFO  DAORol - *******************************************************
+2016-06-27 20:48:09,010 INFO  DAORol - Clase: DAORol
+2016-06-27 20:48:09,010 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:48:09,010 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:48:13,715 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:13,715 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:13,715 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:48:13,715 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:48:13,725 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:13,725 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:13,725 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:48:13,725 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:48:21,240 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:21,240 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:21,240 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:48:21,240 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-27 20:48:21,248 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:21,249 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:21,249 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:48:21,249 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-27 20:48:21,256 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:21,256 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:21,256 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:48:21,256 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:48:21,272 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:21,272 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:21,272 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:48:21,272 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:48:21,293 INFO  DAORol - *******************************************************
+2016-06-27 20:48:21,293 INFO  DAORol - Clase: DAORol
+2016-06-27 20:48:21,293 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:48:21,293 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:48:21,312 INFO  DAORol - *******************************************************
+2016-06-27 20:48:21,312 INFO  DAORol - Clase: DAORol
+2016-06-27 20:48:21,312 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:48:21,312 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:48:53,421 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:53,421 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:53,421 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:48:53,421 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:48:53,434 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:48:53,434 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:48:53,434 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:48:53,434 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:48:53,453 INFO  DAORol - *******************************************************
+2016-06-27 20:48:53,453 INFO  DAORol - Clase: DAORol
+2016-06-27 20:48:53,453 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:48:53,453 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:48:53,469 INFO  DAORol - *******************************************************
+2016-06-27 20:48:53,469 INFO  DAORol - Clase: DAORol
+2016-06-27 20:48:53,469 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:48:53,469 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:05,109 INFO  DAORol - *******************************************************
+2016-06-27 20:49:05,109 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:05,109 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:05,109 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:05,127 INFO  DAORol - *******************************************************
+2016-06-27 20:49:05,127 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:05,127 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:05,127 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:08,701 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:08,701 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:08,701 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:49:08,701 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:49:08,713 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:08,713 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:08,713 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:49:08,713 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:49:34,895 INFO  DAORol - *******************************************************
+2016-06-27 20:49:34,895 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:34,895 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:34,896 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:34,916 INFO  DAORol - *******************************************************
+2016-06-27 20:49:34,916 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:34,917 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:34,917 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:36,682 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:36,682 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:36,682 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:49:36,682 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:49:36,693 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:36,693 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:36,693 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:49:36,693 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:49:42,545 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:42,545 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:42,545 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:49:42,545 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-27 20:49:42,553 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:42,553 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:42,553 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:49:42,553 INFO  DaoClientePotencial - Metodo: Modificar
+2016-06-27 20:49:42,561 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:42,561 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:42,561 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:49:42,562 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:49:42,574 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:49:42,574 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:49:42,574 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:49:42,574 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:49:42,593 INFO  DAORol - *******************************************************
+2016-06-27 20:49:42,593 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:42,593 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:42,593 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:42,610 INFO  DAORol - *******************************************************
+2016-06-27 20:49:42,610 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:42,611 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:42,611 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:53,092 INFO  DAORol - *******************************************************
+2016-06-27 20:49:53,092 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:53,092 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:53,092 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:53,111 INFO  DAORol - *******************************************************
+2016-06-27 20:49:53,112 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:53,112 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:53,112 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:53,628 INFO  DAORol - *******************************************************
+2016-06-27 20:49:53,628 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:53,628 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:53,628 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:49:53,658 INFO  DAORol - *******************************************************
+2016-06-27 20:49:53,658 INFO  DAORol - Clase: DAORol
+2016-06-27 20:49:53,658 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:49:53,658 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:50:55,975 INFO  DAORol - *******************************************************
+2016-06-27 20:50:55,975 INFO  DAORol - Clase: DAORol
+2016-06-27 20:50:55,975 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:50:55,975 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:50:56,001 INFO  DAORol - *******************************************************
+2016-06-27 20:50:56,001 INFO  DAORol - Clase: DAORol
+2016-06-27 20:50:56,002 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:50:56,002 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:50:56,037 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:50:56,037 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:50:56,037 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:50:56,037 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:50:56,052 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:50:56,052 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:50:56,052 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:50:56,052 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:50:56,058 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:50:56,058 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:50:56,059 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:50:56,059 INFO  DaoClientePotencial - Metodo: Agregar
+2016-06-27 20:50:56,073 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:50:56,074 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:50:56,074 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:50:56,074 INFO  DaoClientePotencial - Metodo: Agregar
+2016-06-27 20:50:56,079 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:50:56,079 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:50:56,079 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:50:56,079 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:50:56,093 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:50:56,093 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:50:56,093 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:50:56,093 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:50:56,115 INFO  DAORol - *******************************************************
+2016-06-27 20:50:56,115 INFO  DAORol - Clase: DAORol
+2016-06-27 20:50:56,115 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:50:56,115 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:50:56,137 INFO  DAORol - *******************************************************
+2016-06-27 20:50:56,138 INFO  DAORol - Clase: DAORol
+2016-06-27 20:50:56,138 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:50:56,138 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:51:13,795 INFO  DAORol - *******************************************************
+2016-06-27 20:51:13,795 INFO  DAORol - Clase: DAORol
+2016-06-27 20:51:13,795 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:51:13,795 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:51:13,819 INFO  DAORol - *******************************************************
+2016-06-27 20:51:13,819 INFO  DAORol - Clase: DAORol
+2016-06-27 20:51:13,819 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:51:13,819 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:51:32,093 INFO  DAORol - *******************************************************
+2016-06-27 20:51:32,093 INFO  DAORol - Clase: DAORol
+2016-06-27 20:51:32,093 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:51:32,093 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:51:32,122 INFO  DAORol - *******************************************************
+2016-06-27 20:51:32,122 INFO  DAORol - Clase: DAORol
+2016-06-27 20:51:32,122 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:51:32,122 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:51:32,156 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:51:32,156 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:51:32,156 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:51:32,156 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:51:32,170 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:51:32,170 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:51:32,170 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:51:32,170 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:00,516 INFO  DAORol - *******************************************************
+2016-06-27 20:52:00,516 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:00,516 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:00,516 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:00,538 INFO  DAORol - *******************************************************
+2016-06-27 20:52:00,538 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:00,538 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:00,538 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:00,572 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:00,572 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:00,572 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:00,572 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:00,585 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:00,585 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:00,585 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:00,585 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:00,590 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:00,590 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:00,590 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:00,590 INFO  DaoClientePotencial - Metodo: Agregar
+2016-06-27 20:52:00,638 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:00,638 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:00,638 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:00,638 INFO  DaoClientePotencial - Metodo: Agregar
+2016-06-27 20:52:00,644 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:00,644 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:00,644 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:00,644 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:00,659 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:00,659 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:00,659 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:00,659 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:00,681 INFO  DAORol - *******************************************************
+2016-06-27 20:52:00,681 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:00,681 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:00,681 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:00,702 INFO  DAORol - *******************************************************
+2016-06-27 20:52:00,702 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:00,702 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:00,702 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:23,893 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:23,893 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:23,893 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:23,893 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:23,908 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:23,908 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:23,908 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:23,908 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:23,928 INFO  DAORol - *******************************************************
+2016-06-27 20:52:23,928 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:23,928 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:23,928 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:23,944 INFO  DAORol - *******************************************************
+2016-06-27 20:52:23,944 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:23,944 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:23,945 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:26,882 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:26,882 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:26,882 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:26,882 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:26,893 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:26,894 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:26,894 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:26,894 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:26,913 INFO  DAORol - *******************************************************
+2016-06-27 20:52:26,913 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:26,913 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:26,913 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:26,930 INFO  DAORol - *******************************************************
+2016-06-27 20:52:26,930 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:26,930 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:26,930 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:29,637 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:29,638 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:29,638 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:29,638 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:29,648 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:29,648 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:29,648 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:29,648 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:29,666 INFO  DAORol - *******************************************************
+2016-06-27 20:52:29,667 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:29,667 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:29,667 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:29,684 INFO  DAORol - *******************************************************
+2016-06-27 20:52:29,684 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:29,684 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:29,684 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:31,951 INFO  DAORol - *******************************************************
+2016-06-27 20:52:31,951 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:31,951 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:31,951 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:31,966 INFO  DAORol - *******************************************************
+2016-06-27 20:52:31,967 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:31,967 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:31,967 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:32,001 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:32,002 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:32,002 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:32,002 INFO  DaoClientePotencial - Metodo: Desactivar
+2016-06-27 20:52:32,013 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:32,014 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:32,014 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:32,014 INFO  DaoClientePotencial - Metodo: Desactivar
+2016-06-27 20:52:32,073 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:32,073 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:32,073 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:32,073 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:32,083 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:32,083 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:32,083 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:32,083 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:32,103 INFO  DAORol - *******************************************************
+2016-06-27 20:52:32,103 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:32,103 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:32,103 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:32,123 INFO  DAORol - *******************************************************
+2016-06-27 20:52:32,123 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:32,123 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:32,123 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:35,592 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:35,592 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:35,592 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:35,592 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:35,602 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:35,602 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:35,602 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:35,602 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:35,622 INFO  DAORol - *******************************************************
+2016-06-27 20:52:35,622 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:35,622 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:35,622 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:35,640 INFO  DAORol - *******************************************************
+2016-06-27 20:52:35,640 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:35,640 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:35,640 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:37,977 INFO  DAORol - *******************************************************
+2016-06-27 20:52:37,978 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:37,978 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:37,978 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:37,995 INFO  DAORol - *******************************************************
+2016-06-27 20:52:37,995 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:37,995 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:37,995 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:38,031 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:38,031 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:38,031 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:38,031 INFO  DaoClientePotencial - Metodo: Activar
+2016-06-27 20:52:38,046 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:38,046 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:38,046 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:38,046 INFO  DaoClientePotencial - Metodo: Activar
+2016-06-27 20:52:38,110 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:38,110 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:38,110 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:38,110 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:38,124 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:38,124 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:38,124 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:38,124 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:38,147 INFO  DAORol - *******************************************************
+2016-06-27 20:52:38,147 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:38,147 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:38,147 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:38,167 INFO  DAORol - *******************************************************
+2016-06-27 20:52:38,167 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:38,167 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:38,167 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:44,926 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:44,927 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:44,927 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:44,927 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:44,938 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:44,938 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:44,938 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:44,938 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:52:44,960 INFO  DAORol - *******************************************************
+2016-06-27 20:52:44,960 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:44,960 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:44,960 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:44,981 INFO  DAORol - *******************************************************
+2016-06-27 20:52:44,981 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:44,981 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:44,981 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:53,935 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:53,935 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:53,935 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:52:53,935 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:53,947 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:53,948 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:53,948 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:53,948 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:52:53,970 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:53,970 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:53,970 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:53,970 INFO  DaoClientePotencial - Metodo: ConsultarLlamadasXId
+2016-06-27 20:52:53,986 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:52:53,986 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:52:53,986 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:52:53,986 INFO  DaoClientePotencial - Metodo: ConsultarVistaXId
+2016-06-27 20:52:54,002 INFO  DAORol - *******************************************************
+2016-06-27 20:52:54,002 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:54,002 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:54,002 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:52:54,020 INFO  DAORol - *******************************************************
+2016-06-27 20:52:54,020 INFO  DAORol - Clase: DAORol
+2016-06-27 20:52:54,020 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:52:54,020 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:00,272 INFO  DAORol - *******************************************************
+2016-06-27 20:53:00,272 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:00,272 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:00,272 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:00,303 INFO  DAORol - *******************************************************
+2016-06-27 20:53:00,303 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:00,303 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:00,303 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:53,440 INFO  DAORol - *******************************************************
+2016-06-27 20:53:53,441 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:53,441 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:53,441 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:53,484 INFO  DAORol - *******************************************************
+2016-06-27 20:53:53,484 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:53,484 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:53,484 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:53,521 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:53,521 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:53,521 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:53:53,521 INFO  DaoClientePotencial - Metodo: AgregarSeguimientoDeCliente
+2016-06-27 20:53:53,616 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:53,616 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:53,616 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:53:53,616 INFO  DaoClientePotencial - Metodo: AgregarSeguimientoDeCliente
+2016-06-27 20:53:53,630 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:53,631 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:53,631 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:53:53,631 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:53:53,668 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:53,668 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:53,668 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:53:53,668 INFO  DaoClientePotencial - Metodo: ConsultarTodos
+2016-06-27 20:53:53,726 INFO  DAORol - *******************************************************
+2016-06-27 20:53:53,726 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:53,726 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:53,726 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:53,768 INFO  DAORol - *******************************************************
+2016-06-27 20:53:53,768 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:53,768 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:53,768 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:56,629 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:56,629 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:56,629 INFO  DaoClientePotencial - Mensaje: Entrada Método
+2016-06-27 20:53:56,629 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:53:56,640 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:56,640 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:56,640 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:53:56,640 INFO  DaoClientePotencial - Metodo: ConsultarXId
+2016-06-27 20:53:56,667 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:56,667 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:56,667 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:53:56,667 INFO  DaoClientePotencial - Metodo: ConsultarLlamadasXId
+2016-06-27 20:53:56,677 INFO  DaoClientePotencial - *******************************************************
+2016-06-27 20:53:56,677 INFO  DaoClientePotencial - Clase: DaoClientePotencial
+2016-06-27 20:53:56,677 INFO  DaoClientePotencial - Mensaje: Fin Método
+2016-06-27 20:53:56,677 INFO  DaoClientePotencial - Metodo: ConsultarVistaXId
+2016-06-27 20:53:56,695 INFO  DAORol - *******************************************************
+2016-06-27 20:53:56,695 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:56,696 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:56,696 INFO  DAORol - Metodo: ObtenerRolUsuario
+2016-06-27 20:53:56,712 INFO  DAORol - *******************************************************
+2016-06-27 20:53:56,712 INFO  DAORol - Clase: DAORol
+2016-06-27 20:53:56,712 INFO  DAORol - Mensaje: Salida del Método
+2016-06-27 20:53:56,712 INFO  DAORol - Metodo: ObtenerRolUsuario

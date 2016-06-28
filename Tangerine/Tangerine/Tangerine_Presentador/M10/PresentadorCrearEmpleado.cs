@@ -11,6 +11,19 @@ using System.Globalization;
 using DominioTangerine.Entidades.M10;
 using ExcepcionesTangerine.M10;
 using System.Web;
+
+
+
+using DominioTangerine.Fabrica;
+using DominioTangerine.Entidades.M10;
+using DominioTangerine;
+using LogicaTangerine.Fabrica;
+using LogicaTangerine;
+using DominioTangerine.Entidades.M2;
+
+
+
+
 namespace Tangerine_Presentador.M10
 {
     public class PresentadorCrearEmpleado
@@ -18,8 +31,6 @@ namespace Tangerine_Presentador.M10
         private string active = "Activo";
         private IContratoCrearEmpleado Vista;
         Boolean Confirmacion;
-
-
 
         private List<DominioTangerine.Entidades.M10.LugarDireccion> NuevaDireccion()
         {
@@ -71,7 +82,7 @@ namespace Tangerine_Presentador.M10
         private CargoM10 jobForEmployee()
         {
             return new CargoM10(Vista.IcomboCargo.SelectedItem.Text.ToString(),
-                       DateTime.ParseExact(Vista.ItextDateEmployee, "MM/dd/yyyy", CultureInfo.InvariantCulture),
+                       DateTime.ParseExact(Vista.ItextDateJob, "MM/dd/yyyy", CultureInfo.InvariantCulture),
                        Vista.ItextJobMode, Double.Parse(Vista.ItextSalaryJob));
         }
 
@@ -209,5 +220,6 @@ namespace Tangerine_Presentador.M10
 
             }
         }
+
     }
 }

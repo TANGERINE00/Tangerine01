@@ -118,8 +118,6 @@ namespace Tangerine.GUI.M8
         /// <param name="e"></param>
         protected void buttonGenerarFactura_Click(object sender, EventArgs e)
         {
-            this.compania = Request.QueryString[ResourceGUIM8.idC];
-            this.proyecto = Request.QueryString[ResourceGUIM8.idP];
             _presentador.GenerarFactura();
             Response.Redirect(ResourceGUIM8.volverModificado);
         }
