@@ -145,7 +145,7 @@
     <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-pencil" style="margin-left:3px;" href="ModificarLead.aspx?idclp=</value>
   </data>
   <data name="BotonPromover" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-upload"  style="margin-left:3px" href="Promover.aspx?idclp=</value>
+    <value>&lt;a title="Promover" class="btn btn-default glyphicon glyphicon-upload"  style="margin-left:3px" href="Promover.aspx?idclp=</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
@@ -178,9 +178,9 @@
     <value>&lt;span class="label label-warning" id="p</value>
   </data>
   <data name="BotonSeguimiento" xml:space="preserve">
-    <value>&lt;a title="Modificar" class="btn btn-primary glyphicon glyphicon-list-alt" style="margin-left:3px;" href="SeguimientoDeLeads.aspx?idclp=</value>
+    <value>&lt;a title="Ver seguimiento" class="btn btn-primary glyphicon glyphicon-list-alt" style="margin-left:3px;" href="SeguimientoDeLeads.aspx?idclp=</value>
   </data>
   <data name="BotonAgregar" xml:space="preserve">
-    <value>&lt;a class="btn btn-success glyphicon glyphicon-plus"  style="margin-left:3px" href="AgregarSequimiento.aspx?idclp=</value>
+    <value>&lt;a title="Agregar seguimiento" class="btn btn-success glyphicon glyphicon-plus"  style="margin-left:3px" href="AgregarSequimiento.aspx?idclp=</value>
   </data>
 </root>
