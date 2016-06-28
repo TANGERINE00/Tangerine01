@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group" runat="server">
-                            <label for="labelDescripcion_M8">Descripción</label>
+                            <label for="labelDescripcion_M8">Descripción<a style="color:rgb(255, 0, 0);">*</a></label>
                             <input type="text" runat="server" class="form-control" pattern="^[0-9a-zA-Z ]+$" id="textDescripcion_M8" 
                                 name="textDescripcion_M8" maxlength="50" required 
                                 oninvalid="setCustomValidity('Campo obligatorio, no puede tener símbolos')" oninput="setCustomValidity('')">
