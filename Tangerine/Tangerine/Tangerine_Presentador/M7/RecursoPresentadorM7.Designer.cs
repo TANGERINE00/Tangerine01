@@ -142,6 +142,24 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gerente.
+        /// </summary>
+        internal static string CargoGerente {
+            get {
+                return ResourceManager.GetString("CargoGerente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Programador.
+        /// </summary>
+        internal static string CargoProgramador {
+            get {
+                return ResourceManager.GetString("CargoProgramador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &gt;&lt;/a&gt;.
         /// </summary>
         internal static string CloseBoton {
@@ -205,6 +223,33 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string CodMsjAgregado {
+            get {
+                return ResourceManager.GetString("CodMsjAgregado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string CodMsjError {
+            get {
+                return ResourceManager.GetString("CodMsjError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string CodMsjModificado {
+            get {
+                return ResourceManager.GetString("CodMsjModificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;span class=&quot;label label-success&quot;&gt;Completado&lt;/span&gt;.
         /// </summary>
         internal static string Completado {
@@ -219,6 +264,24 @@ namespace Tangerine_Presentador.M7 {
         internal static string CompletadoAdestiempo {
             get {
                 return ResourceManager.GetString("CompletadoAdestiempo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MM&apos;/&apos;dd&apos;/&apos;yyyy.
+        /// </summary>
+        internal static string DateFormat {
+            get {
+                return ResourceManager.GetString("DateFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MM/dd/yyyy.
+        /// </summary>
+        internal static string DateFormat2 {
+            get {
+                return ResourceManager.GetString("DateFormat2", resourceCulture);
             }
         }
         
@@ -241,11 +304,83 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Debe seleccionar al menos un empleado.
+        /// </summary>
+        internal static string ErrorEmpleadoVacio {
+            get {
+                return ResourceManager.GetString("ErrorEmpleadoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: El proyecto no puede empezar antes de la fecha propuesta..
+        /// </summary>
+        internal static string ErrorFechaInicio {
+            get {
+                return ResourceManager.GetString("ErrorFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debe seleccionar una fecha fin para el proyecto.
+        /// </summary>
+        internal static string ErrorFFinVacio {
+            get {
+                return ResourceManager.GetString("ErrorFFinVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Rango de fechas inválido. Fecha Fin debe ser mayor a Fecha Inicio..
+        /// </summary>
+        internal static string ErrorRangoFechas {
+            get {
+                return ResourceManager.GetString("ErrorRangoFechas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Estatus:.
         /// </summary>
         internal static string Estatus {
             get {
                 return ResourceManager.GetString("Estatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelado.
+        /// </summary>
+        internal static string EstatusCancelado {
+            get {
+                return ResourceManager.GetString("EstatusCancelado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completado.
+        /// </summary>
+        internal static string EstatusCompletado {
+            get {
+                return ResourceManager.GetString("EstatusCompletado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completado a destiempo.
+        /// </summary>
+        internal static string EstatusCompletadoDestiempo {
+            get {
+                return ResourceManager.GetString("EstatusCompletadoDestiempo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to En Desarrollo.
+        /// </summary>
+        internal static string EstatusDesarrollo {
+            get {
+                return ResourceManager.GetString("EstatusDesarrollo", resourceCulture);
             }
         }
         
@@ -286,11 +421,65 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;IdProyecto=.
+        /// </summary>
+        internal static string idProyecto {
+            get {
+                return ResourceManager.GetString("idProyecto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Key.
         /// </summary>
         internal static string Key {
             get {
                 return ResourceManager.GetString("Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitcoin.
+        /// </summary>
+        internal static string MonedaBitCoin {
+            get {
+                return ResourceManager.GetString("MonedaBitCoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bolivar.
+        /// </summary>
+        internal static string MonedaBolivar {
+            get {
+                return ResourceManager.GetString("MonedaBolivar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dolar.
+        /// </summary>
+        internal static string MonedaDolar {
+            get {
+                return ResourceManager.GetString("MonedaDolar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Euro.
+        /// </summary>
+        internal static string MonedaEuro {
+            get {
+                return ResourceManager.GetString("MonedaEuro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;Monto=.
+        /// </summary>
+        internal static string Monto {
+            get {
+                return ResourceManager.GetString("Monto", resourceCulture);
             }
         }
         
@@ -309,6 +498,15 @@ namespace Tangerine_Presentador.M7 {
         internal static string MsjError {
             get {
                 return ResourceManager.GetString("MsjError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Por favor vuelva a intentarlo.
+        /// </summary>
+        internal static string MsjErrorGenerico {
+            get {
+                return ResourceManager.GetString("MsjErrorGenerico", resourceCulture);
             }
         }
         
@@ -412,6 +610,15 @@ namespace Tangerine_Presentador.M7 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 100.
+        /// </summary>
+        internal static string PorcentajeCompleto {
+            get {
+                return ResourceManager.GetString("PorcentajeCompleto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PorcentajeRealizado:.
         /// </summary>
         internal static string PorcentajeDeRealizacion {
@@ -426,6 +633,24 @@ namespace Tangerine_Presentador.M7 {
         internal static string PropuestaAprovada {
             get {
                 return ResourceManager.GetString("PropuestaAprovada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../M8/GenerarFacturaM8.aspx?IdCompania=.
+        /// </summary>
+        internal static string RedirectFactura {
+            get {
+                return ResourceManager.GetString("RedirectFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../M7/InformacionProyecto.aspx?idCont=.
+        /// </summary>
+        internal static string RedirectInfoProyecto {
+            get {
+                return ResourceManager.GetString("RedirectInfoProyecto", resourceCulture);
             }
         }
         

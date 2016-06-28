@@ -154,7 +154,7 @@ namespace Tangerine.GUI.M3
             }
             else
             {
-                Response.Write("<script type='text/javascript'> alert('Los datos del Cliente no fueron procesados') </script>");
+                this.alert.InnerHtml = ResourceInterfaz.AlertModificar;
             }
         }
  

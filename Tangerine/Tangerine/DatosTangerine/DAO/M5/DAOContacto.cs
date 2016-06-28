@@ -29,11 +29,11 @@ namespace DatosTangerine.DAO.M5
 
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
-
-            ContactoM5 contacto = ( ContactoM5 ) nuevoContacto;
-
+            
             try
             {
+                ContactoM5 contacto = ( ContactoM5 ) nuevoContacto;
+            
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroNombre, SqlDbType.VarChar, contacto.Nombre,
                                            false );
@@ -109,10 +109,10 @@ namespace DatosTangerine.DAO.M5
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
 
-            ContactoM5 contacto = ( ContactoM5 ) contactoEliminar;
-
             try
             {
+                ContactoM5 contacto = ( ContactoM5 ) contactoEliminar;
+
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroId, SqlDbType.Int, contacto.Id.ToString(),
                                            false );
@@ -159,11 +159,11 @@ namespace DatosTangerine.DAO.M5
 
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
-
-            ContactoM5 contacto = ( ContactoM5 ) contactoModificar;
-
+            
             try
             {
+                ContactoM5 contacto = ( ContactoM5 ) contactoModificar;
+            
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroId, SqlDbType.Int, contacto.Id.ToString(),
                                            false );
@@ -423,13 +423,13 @@ namespace DatosTangerine.DAO.M5
 
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
-
-            ContactoM5 contacto = ( ContactoM5 ) contactoAgregar;
-            DominioTangerine.Entidades.M7.Proyecto proyecto = ( DominioTangerine.Entidades.M7.Proyecto ) 
-                                                              proyectoAgregar;
-
+            
             try
             {
+                ContactoM5 contacto = ( ContactoM5 ) contactoAgregar;
+                DominioTangerine.Entidades.M7.Proyecto proyecto = ( DominioTangerine.Entidades.M7.Proyecto ) 
+                                                                    proyectoAgregar;
+
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroIdContacto, SqlDbType.Int,
                                            contacto.Id.ToString(), false );
@@ -481,12 +481,12 @@ namespace DatosTangerine.DAO.M5
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
             List<Entidad> lista = new List<Entidad>();
-
-            DominioTangerine.Entidades.M7.Proyecto proyectoConsulta = ( DominioTangerine.Entidades.M7.Proyecto )
-                                                                      proyecto;
-
+            
             try
             {
+                DominioTangerine.Entidades.M7.Proyecto proyectoConsulta = ( DominioTangerine.Entidades.M7.Proyecto )
+                                                                            proyecto;
+            
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroIdProyecto, SqlDbType.Int,
                                            proyectoConsulta.Id.ToString(), false);
@@ -555,13 +555,13 @@ namespace DatosTangerine.DAO.M5
 
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
-
-            ContactoM5 contacto = ( ContactoM5 ) contactoEliminar;
-            DominioTangerine.Entidades.M7.Proyecto proyecto = ( DominioTangerine.Entidades.M7.Proyecto )
-                                                              proyectoEliminar;
-
+            
             try
             {
+                ContactoM5 contacto = ( ContactoM5 ) contactoEliminar;
+                DominioTangerine.Entidades.M7.Proyecto proyecto = ( DominioTangerine.Entidades.M7.Proyecto )
+                                                                    proyectoEliminar;
+
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroIdContacto, SqlDbType.Int,
                                            contacto.Id.ToString(), false );
@@ -613,12 +613,12 @@ namespace DatosTangerine.DAO.M5
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro();
             List<Entidad> lista = new List<Entidad>();
-
-            DominioTangerine.Entidades.M7.Proyecto proyectoConsulta = ( DominioTangerine.Entidades.M7.Proyecto )
-                                                                      proyecto;
-
+            
             try
             {
+                DominioTangerine.Entidades.M7.Proyecto proyectoConsulta = ( DominioTangerine.Entidades.M7.Proyecto )
+                                                                      proyecto;
+
                 //Se agregan los parámetro que recibe el stored procedure
                 parametro = new Parametro( RecursosDAOContacto.ParametroIdProyecto, SqlDbType.Int,
                                            proyectoConsulta.Id.ToString(), false );

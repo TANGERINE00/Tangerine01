@@ -28,6 +28,12 @@ namespace Tangerine.GUI.M1
         {
             presentador = new PresentadorCrearEmpleado(this);
         }
+
+        /// <summary>
+        /// Carga la ventana Registrar Empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             #region LLENAR combo de genero
@@ -41,6 +47,9 @@ namespace Tangerine.GUI.M1
             #endregion
         }
 
+        /// <summary>
+        /// Carga combobox de Pais
+        /// </summary>
         protected void SelectedCountry_Change(object sender, EventArgs e)
         {
 
@@ -49,24 +58,21 @@ namespace Tangerine.GUI.M1
 
         }
 
+        /// <summary>
+        /// Boton Registrar al Empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            try
-            {
+           
                
                 if (Page.IsValid)
                 {
-                    presentador.AgregarEmpleado();
-                    
+                    presentador.AgregarEmpleado();         
 
                 }
 
-            }
-
-            catch
-            {
-
-            }
         }
 
 
