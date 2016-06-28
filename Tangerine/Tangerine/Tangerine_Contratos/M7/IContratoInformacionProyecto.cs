@@ -58,5 +58,10 @@ namespace Tangerine_Contratos.M7
         /// Encabezado del comboBox de encargado del proyecto
         /// </summary>
         DropDownList inputEncargado { get; set; }
+
+        /// <summary>
+        /// Encabezado del comboBox de Gerente del proyecto
+        /// </summary>
+        DropDownList InputGerente { get; set; }
     }
 }
